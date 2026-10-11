@@ -46,4 +46,3 @@ git push
 ```
 
 ¡Eso es todo! Ve a la página principal de tu GitHub, presiona F5 para refrescar y verás tus nuevos cambios aplicados inmediatamente.
-
