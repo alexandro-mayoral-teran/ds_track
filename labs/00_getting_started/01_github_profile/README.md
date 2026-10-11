@@ -1,9 +1,9 @@
-# Lab 00.02 — Tu perfil y su historial
+# Lab 00.01 — Tu perfil y su historial
 
 ## Relación
 
 - Módulo: `00_getting_started`.
-- Lección: [Git, GitHub, Markdown y perfil](../../../curriculum/00_getting_started/02_github_profile/README.md).
+- Lección: [Git, GitHub, Markdown y perfil](../../../curriculum/00_getting_started/01_github_profile/README.md).
 - Proyecto: no aplica todavía; el README constituye la evidencia inicial.
 
 ## Objetivo
@@ -13,11 +13,13 @@ Documentar tu presentación en Markdown y explicar cómo se conserva una actuali
 ## Tiempo orientativo
 
 Dos sesiones de 20 a 30 minutos, separadas por el
-[lab de terminal](../01_terminal_paths/README.md).
+[lab de terminal](../02_terminal_paths/README.md).
 
 ## Parte A — Escribir y publicar
 
-1. Escribe un README con un título, presentación y lista de objetivos.
+1. Copia la [plantilla de ejemplo](../../../templates/github-profile/PROFILE.md)
+   a tu README. Sustituye `TU_NOMBRE` y `TU_USUARIO` y adapta la presentación
+   y los objetivos a tu situación.
 2. Agrega un enlace útil y un comando como código en línea.
 3. Previsualiza el documento y corrige cualquier problema de formato.
 4. Si eliges GitHub, publícalo en el repositorio público con tu nombre de usuario

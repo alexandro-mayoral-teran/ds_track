@@ -22,15 +22,15 @@ convertir la instalación de herramientas en el tema principal.
 
 | Orden | Tema | Resultado |
 | --- | --- | --- |
-| 1 | [Git, GitHub, Markdown y perfil](02_github_profile/) | Escribir una presentación y publicarla como práctica |
-| 2 | [Terminal, rutas y entorno](01_terminal_paths/) | Navegar en PowerShell y Unix |
-| 3 | [Actualizar el perfil con Git](02_github_profile/#actualizar-desde-la-terminal) | Revisar cambios, crear un commit y hacer push |
+| 1 | [Git, GitHub, Markdown y perfil](01_github_profile/) | Escribir una presentación y publicarla como práctica |
+| 2 | [Terminal, rutas y entorno](02_terminal_paths/) | Navegar en PowerShell y Unix |
+| 3 | [Actualizar el perfil con Git](01_github_profile/#actualizar-desde-la-terminal) | Revisar cambios, crear un commit y hacer push |
 | 4 | Primer script (por desarrollar) | Ejecutar y modificar Python |
 | 5 | Entorno y dependencias (por desarrollar) | Comprender `pip`, `uv` y entornos |
 | 6 | Primer notebook (por desarrollar) | Ejecutar un análisis por celdas |
 
-Las carpetas conservan sus identificadores para mantener los enlaces existentes;
-el orden de estudio es el de esta tabla. El avance se registra en `PROGRESS.md`.
+Estudia la parte A del lab del perfil, completa el lab de terminal y vuelve a la
+parte B del perfil para practicar Git. El avance se registra en `PROGRESS.md`.
 
 ## Evidencias del módulo
 
@@ -44,5 +44,6 @@ el orden de estudio es el de esta tabla. El avance se registra en `PROGRESS.md`.
 
 ## Criterio de salida
 
-El estudiante puede escribir y previsualizar Markdown, descargar el material en otra carpeta, preparar el entorno
+El estudiante puede escribir y previsualizar Markdown, descargar el material en
+otra carpeta, preparar el entorno
 y ejecutar un script y un notebook siguiendo únicamente las instrucciones.

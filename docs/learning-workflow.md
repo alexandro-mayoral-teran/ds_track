@@ -43,7 +43,7 @@ carpeta vacía solo para completar el enlace.
 Usaremos identificadores predecibles:
 
 - Módulo: `00_getting_started`.
-- Lección: `01_terminal_paths`.
+- Lección: `02_terminal_paths`.
 - Lab: `00.01` en el título y una carpeta descriptiva.
 - Proyecto: `01_clean_credit_data`.
 - Checkpoint: `CP-01`, `CP-02`, etc., dentro del README del proyecto.

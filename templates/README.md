@@ -7,3 +7,4 @@ de ejemplo como si fuera documentación final.
 - [`module/`](module/): explicación y ruta de aprendizaje.
 - [`lab/`](lab/): práctica breve de una habilidad.
 - [`project/`](project/): integración incremental mediante checkpoints.
+- [`github-profile/`](github-profile/): README de ejemplo para tu perfil personal.

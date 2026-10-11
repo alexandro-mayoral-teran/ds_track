@@ -10,7 +10,7 @@ el README desde la web; después, su actualización desde la terminal.
 
 Para la primera parte basta con un editor de texto. La publicación requiere una
 cuenta de GitHub. Para la segunda parte completa la
-[lección de terminal y rutas](../01_terminal_paths/README.md) e instala Git.
+[lección de terminal y rutas](../02_terminal_paths/README.md) e instala Git.
 
 ## Conceptos
 
@@ -66,7 +66,11 @@ un objetivo concreto, los datos disponibles y cómo comprobar el resultado.
 2. Crea un repositorio **público** con exactamente ese nombre y agrega un README.
    Para `alexandro-mayoral-teran`, el repositorio es `alexandro-mayoral-teran`.
    Si ya existe, edita su README.
-3. Escribe tu presentación, qué estás aprendiendo y un objetivo concreto.
+3. Copia la [plantilla de perfil](../../../templates/github-profile/PROFILE.md)
+   al README. Sustituye los datos de ejemplo y adapta tu presentación, lo que
+   estás aprendiendo y un objetivo concreto. Las
+   [instrucciones de la plantilla](../../../templates/github-profile/README.md)
+   explican qué conservar.
 4. Usa la vista previa para comprobar títulos, listas y enlaces.
 5. Guarda con un mensaje de commit descriptivo y visita tu perfil.
 
@@ -107,7 +111,8 @@ el historial antes de continuar. No uses `--force` como solución inicial.
 
 ## Práctica y criterio de salida
 
-Realiza el [lab `00.02`](../../../labs/00_getting_started/02_github_profile/README.md).
+Realiza primero la parte A del [lab `00.01`](../../../labs/00_getting_started/01_github_profile/README.md).
+Después completa la lección y el lab de terminal antes de volver a la parte B.
 Puedes avanzar cuando expliques Git frente a GitHub, fuente frente a vista previa
 y archivo guardado frente a commit. Si publicas el perfil, comprueba también
 que tu actualización aparece en GitHub.

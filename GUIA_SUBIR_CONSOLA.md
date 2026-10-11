@@ -23,7 +23,7 @@ Edita el README dentro de esa carpeta. Luego sigue el escenario 2 para guardar
 la actualización y publicarla. No necesitas ejecutar `git init` ni configurar
 el remoto: el clon ya incluye ambos.
 
-Consulta la [lección de Git y perfil](curriculum/00_getting_started/02_github_profile/README.md)
+Consulta la [lección de Git y perfil](curriculum/00_getting_started/01_github_profile/README.md)
 para comprender cada paso.
 
 ---

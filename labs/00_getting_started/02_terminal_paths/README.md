@@ -1,10 +1,10 @@
-# Lab 00.01 — Terminal y rutas
+# Lab 00.02 — Terminal y rutas
 
 ## Relación
 
 - **Módulo:** `00_getting_started`.
 - **Lección:**
-  [`01_terminal_paths`](../../../curriculum/00_getting_started/01_terminal_paths/).
+  [`02_terminal_paths`](../../../curriculum/00_getting_started/02_terminal_paths/).
 - **Proyecto:** no aplica; prepara el entorno común del recorrido.
 
 ## Tiempo orientativo
@@ -14,7 +14,7 @@ resultado.
 
 Realiza el lab en el shell que estés usando. Las instrucciones principales
 están expresadas por intención; consulta la
-[tabla de equivalencias](../../../curriculum/00_getting_started/01_terminal_paths/shell-cheatsheet.md)
+[tabla de equivalencias](../../../curriculum/00_getting_started/02_terminal_paths/shell-cheatsheet.md)
 para PowerShell y Bash/Zsh.
 
 ## Parte A — Ubicación
@@ -59,7 +59,7 @@ persona.
 En PowerShell ejecuta:
 
 ```powershell
-uv run python curriculum\00_getting_started\01_terminal_paths\check_environment.py
+uv run python curriculum\00_getting_started\02_terminal_paths\check_environment.py
 ```
 
 Resultado esperado al final:
@@ -71,7 +71,7 @@ Resultado: entorno minimo disponible.
 En Bash o Zsh, el comando equivalente es:
 
 ```bash
-uv run python curriculum/00_getting_started/01_terminal_paths/check_environment.py
+uv run python curriculum/00_getting_started/02_terminal_paths/check_environment.py
 ```
 
 ## Evidencia

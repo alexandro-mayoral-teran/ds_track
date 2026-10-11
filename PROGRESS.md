@@ -10,7 +10,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 - **Objetivo actual:** comprender Git, GitHub y Markdown mediante la creación
   de un README de presentación.
 - **Siguiente paso:** realizar la parte A del
-  [lab `00.02` — Perfil y Git](labs/00_getting_started/02_github_profile/README.md).
+  [lab `00.01` — Perfil y Git](labs/00_getting_started/01_github_profile/README.md).
 
 ## Estados
 
@@ -42,6 +42,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 - Se creó el repositorio privado de DS Track y se publicó el material inicial.
 - Se incorporó el perfil de GitHub como práctica inicial del nivel 0, con
   Markdown y actualización desde Git. La práctica de terminal se conserva.
+- Se alineó la numeración con el orden de estudio y se agregó una plantilla
+  editable para el README del perfil.
 
 ### 2026-10-08
 

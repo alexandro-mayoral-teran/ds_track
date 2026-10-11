@@ -14,4 +14,7 @@ reglas de enlace están en
 
 | Lab | Módulo | Proyecto asociado |
 | --- | --- | --- |
-| [`00.01 — Terminal y rutas`](00_getting_started/01_terminal_paths/) | `00_getting_started` | No aplica |
+| [`00.01 — Perfil y su historial`](00_getting_started/01_github_profile/) | `00_getting_started` | No aplica |
+| [`00.02 — Terminal y rutas`](00_getting_started/02_terminal_paths/) | `00_getting_started` | No aplica |
+
+Orden de práctica: lab `00.01`, parte A → lab `00.02` → lab `00.01`, parte B.

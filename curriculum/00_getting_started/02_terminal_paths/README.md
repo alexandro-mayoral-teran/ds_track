@@ -1,4 +1,4 @@
-# 01 — Terminal, rutas y verificación del entorno
+# 02 — Terminal, rutas y verificación del entorno
 
 ## Propósito
 
@@ -191,25 +191,25 @@ command -v git
 ## 6. Ejecutar el verificador
 
 ```powershell
-python curriculum\00_getting_started\01_terminal_paths\check_environment.py
+python curriculum\00_getting_started\02_terminal_paths\check_environment.py
 ```
 
 En Bash o Zsh:
 
 ```bash
-python curriculum/00_getting_started/01_terminal_paths/check_environment.py
+python curriculum/00_getting_started/02_terminal_paths/check_environment.py
 ```
 
 También puede ejecutarse mediante el proyecto de `uv`:
 
 ```powershell
-uv run python curriculum\00_getting_started\01_terminal_paths\check_environment.py
+uv run python curriculum\00_getting_started\02_terminal_paths\check_environment.py
 ```
 
 En Bash o Zsh cambia únicamente el separador de la ruta:
 
 ```bash
-uv run python curriculum/00_getting_started/01_terminal_paths/check_environment.py
+uv run python curriculum/00_getting_started/02_terminal_paths/check_environment.py
 ```
 
 Todavía no necesitas entender todos los detalles del script. En la siguiente
@@ -218,7 +218,7 @@ lección lo revisaremos como nuestro primer programa Python.
 ## Práctica
 
 Continúa con el
-[lab de terminal y rutas](../../../labs/00_getting_started/01_terminal_paths/README.md).
+[lab de terminal y rutas](../../../labs/00_getting_started/02_terminal_paths/README.md).
 
 ## Aplicación
 
