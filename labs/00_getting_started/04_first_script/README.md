@@ -87,8 +87,52 @@ El resultado vuelve a ser 100 MXN con las entradas de la parte B.
 - Explica por qué guardar, ejecutar y hacer commit son acciones diferentes.
 - ¿Por qué `producto` usa comillas y `unidades` no?
 - ¿Qué cambiaría si el precio pasara de 25 a 30? Predice y comprueba.
-- Si eliges Git, revisa tu modificación y regístrala como aprendiste en la lección 03.
-  No necesitas publicar en el repositorio compartido para completar el lab.
+
+## Refuerzo opcional — Conservar tu cambio con Git
+
+Si trabajas en una copia con Git, aplica el flujo de la
+[lección 03](../../../curriculum/00_getting_started/03_git_workflow/README.md).
+No necesitas publicar en el repositorio compartido para completar el lab.
+
+1. Consulta `git status` para identificar el script modificado.
+2. Revisa su diferencia: ¿qué entradas cambiaste?, ¿conservaste el cálculo?
+3. Prepara únicamente el script y comprueba la selección antes de registrarla.
+4. Crea un commit con un mensaje que describa tu modificación.
+5. Consulta el último commit y explica qué evidencia conserva de tu práctica.
+
+<details>
+<summary>Ver comandos de apoyo para el refuerzo de Git</summary>
+
+Desde la raíz de tu copia de `ds_track`:
+
+```text
+# Comprueba qué archivos cambiaron
+git status
+# Revisa solo el script de esta práctica
+git diff -- curriculum/00_getting_started/04_first_script/first_summary.py
+# Selecciona únicamente ese archivo
+git add curriculum/00_getting_started/04_first_script/first_summary.py
+# Comprueba todo lo preparado antes del commit
+git diff --staged
+git status
+# Registra cuando la selección incluya solo lo que quieres conservar
+git commit -m "Practica cálculo de venta con nuevas entradas"
+# Comprueba el último registro del historial
+git log --oneline -1
+```
+
+Si ya había otros cambios preparados, detente y revísalos antes del commit:
+este registra toda la selección, no únicamente el último archivo agregado.
+Adapta el mensaje al cambio que realmente hiciste.
+
+</details>
+
+### Para reflexionar sobre Git
+
+- ¿Qué te permite comprobar el diff antes de crear el commit?
+- ¿El commit guarda la salida de la terminal o el cambio del archivo que preparaste?
+- ¿Por qué ejecutar correctamente el script no significa que ya esté registrado en Git?
+- ¿Tu commit ya aparece en GitHub si no hiciste push?
 
 ## Siguiente paso
 
