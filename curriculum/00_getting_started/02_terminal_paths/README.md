@@ -318,6 +318,116 @@ varias líneas. La limpieza y el análisis se estudiarán con Python y pandas.
 > **Para comprobar:** identifica los nombres de las columnas. Si cambias de
 > carpeta, ¿por qué la misma ruta relativa podría dejar de funcionar?
 
+## 8. Extensión: explorar el CSV desde la terminal
+
+Esta sección es opcional. Muestra lo que puedes hacer al combinar comandos;
+no necesitas memorizar su sintaxis para continuar a la lección 03.
+Trabajaremos con el mismo archivo, sin modificarlo.
+
+### PowerShell: de texto a registros
+
+Desde la raíz de `ds_track`, guarda la ruta en una variable para no repetirla:
+
+```powershell
+$ventasPath = "curriculum\00_getting_started\02_terminal_paths\ventas_demo.csv"
+```
+
+Una variable conserva un valor que puedes usar en otros comandos. Aquí guarda
+la ruta, no el contenido del archivo.
+
+**Contar líneas de texto:**
+
+```powershell
+Get-Content $ventasPath | Measure-Object -Line
+```
+
+Verás `Lines: 4`: el encabezado y tres líneas de datos. El símbolo `|`, llamado
+pipe, pasa la salida del comando de la izquierda al de la derecha.
+`Measure-Object` mide lo que recibe.
+
+**Leer registros del CSV:**
+
+```powershell
+$ventas = @(Import-Csv $ventasPath)
+$ventas
+$ventas.Count
+```
+
+`Import-Csv` interpreta el encabezado como nombres de columnas. Cada registro
+se convierte en un objeto con propiedades como `producto` e `importe_mxn`.
+`@(...)` reúne los resultados en una colección; su propiedad `Count` devuelve
+`3`. El encabezado ya no cuenta como un registro.
+
+**Filtrar por producto:**
+
+```powershell
+$ventas | Where-Object { $_.producto -eq "lapiz" }
+```
+
+`Where-Object` conserva los registros que cumplen la condición. Dentro de las
+llaves, `$_` representa el registro que se está revisando y `-eq` significa
+«igual a». El resultado es la venta de cinco lápices por 50 MXN.
+
+**Filtrar por importe y elegir columnas:**
+
+```powershell
+$ventas |
+    Where-Object { [decimal]$_.importe_mxn -ge 50 } |
+    Select-Object producto, importe_mxn
+```
+
+`Import-Csv` devuelve los campos como texto. `[decimal]` convierte el importe
+a número para compararlo; `-ge` significa «mayor o igual que».
+`Select-Object` elige las columnas que quieres mostrar. Verás `cuaderno` y
+`lapiz`, con importes de 80 y 50. La conversión supone importes válidos con el
+formato sencillo de esta muestra.
+
+**Contar las ventas filtradas y sumar importes:**
+
+```powershell
+($ventas | Where-Object { [decimal]$_.importe_mxn -ge 50 } | Measure-Object).Count
+($ventas | ForEach-Object { [decimal]$_.importe_mxn } | Measure-Object -Sum).Sum
+```
+
+Obtendrás `2` ventas con importe de al menos 50 MXN y `165` MXN de importe
+total. `ForEach-Object` transforma cada registro en su importe numérico antes
+de sumar. Aquí `importe_mxn` representa el total de cada venta, no el precio
+por unidad; no debes multiplicarlo de nuevo por `unidades`.
+
+### Bash/Zsh: explorar el texto de esta muestra
+
+En un shell Unix puedes combinar herramientas de texto. Desde la raíz:
+
+```bash
+ventas_path="curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv"
+wc -l < "$ventas_path"
+grep ',lapiz,' "$ventas_path"
+awk -F',' 'NR > 1 && $4 >= 50 { print $2, $4 }' "$ventas_path"
+awk -F',' 'NR > 1 { total += $4 } END { print total }' "$ventas_path"
+```
+
+- `wc -l` cuenta los saltos de línea: `4` en el archivo incluido.
+- `grep` encuentra la línea que contiene `,lapiz,`.
+- `awk -F','` separa por comas; `NR > 1` omite el encabezado, `$2` es producto
+  y `$4` es importe. Los últimos comandos muestran las dos ventas de al menos
+  50 MXN y el total `165`.
+
+Estos comandos de texto funcionan para esta muestra sencilla. `grep` busca
+texto, no interpreta columnas, y separar por comas con `awk` no es un lector
+general de CSV: campos entre comillas pueden contener comas o saltos de línea.
+Para esos casos necesitas un lector de CSV, como los que estudiarás en Python.
+Además, `wc -l` puede dar un resultado distinto si falta el salto de línea final.
+
+### Qué demuestra esta práctica
+
+Puedes encadenar acciones pequeñas: leer → filtrar → seleccionar → resumir.
+Ese mismo patrón aparecerá después en pandas y SQL. La terminal te permite
+explorar rápidamente; elegir una herramienta adecuada y verificar el resultado
+sigue siendo parte del análisis.
+
+> **Reto opcional:** filtra las ventas con al menos dos unidades. ¿Cuántos
+> registros quedan? Antes de ejecutar, predice la respuesta leyendo la muestra.
+
 ## Cuando un comando no funciona
 
 | Mensaje o situación | Qué revisar primero |

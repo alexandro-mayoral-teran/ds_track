@@ -82,6 +82,20 @@ uv run python curriculum/00_getting_started/02_terminal_paths/check_environment.
 4. Explica una tarea de datos que podrías repetir mediante un comando y qué
    necesitaría otra persona para ejecutarlo en su computadora.
 
+## Extensión opcional — Explorar el CSV
+
+Después de leer la sección 8 de la lección:
+
+1. Cuenta las líneas y compara el resultado con la cantidad de registros.
+2. Filtra las ventas de `lapiz` y comprueba el resultado en el archivo.
+3. Filtra los importes de al menos 50 MXN y explica qué registros permanecen.
+4. Calcula el importe total y compruébalo sumando los tres valores manualmente.
+5. Prueba el reto de unidades y explica qué aporta combinar comandos.
+
+Esta extensión no bloquea el avance. En PowerShell, compara los números
+convirtiendo los campos de texto; en Bash/Zsh, aplica los ejemplos solo a la
+muestra sencilla y explica su limitación para CSV más complejos.
+
 ## Evidencia
 
 Da por terminado el lab cuando puedas responder sin probar al azar:
