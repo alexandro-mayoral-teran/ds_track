@@ -50,8 +50,11 @@ capturas, demostraciones o enlaces. No es un directorio de trabajo.
 
 ## Dependencias
 
-Python usa un `pyproject.toml` y un `uv.lock` en la raíz. El lockfile actualmente
-no incorpora bibliotecas externas y se actualizará al agregar dependencias
+Python usa un `pyproject.toml` y un `uv.lock` en la raíz. Esa configuración
+describe el recorrido alternativo con uv. Para quienes ya usan Anaconda, la
+lección 05 enseña Conda como recorrido principal y cómo exportar su configuración;
+los archivos de uv no describen automáticamente un entorno Conda.
+El lockfile no incorpora bibliotecas externas y se actualizará al agregar dependencias
 reales. R adoptará `renv` dentro del material de R cuando se introduzca
 reproducibilidad. No se crearán entornos independientes por cada ejercicio salvo
 que exista una incompatibilidad concreta.

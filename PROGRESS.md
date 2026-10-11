@@ -42,6 +42,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se adaptó la lección 05 a Anaconda/Conda como recorrido principal, con uv como
+  alternativa y un solo entorno requerido en el lab.
 - Se creó la lección 05 y su lab: intérpretes, venv, pip y entorno del proyecto
   con uv, conservando recorridos por shell y soluciones desplegables.
 - Se desarrollaron las primeras tres lecciones y sus labs, con explicaciones
