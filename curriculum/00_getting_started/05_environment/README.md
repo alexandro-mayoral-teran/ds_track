@@ -47,7 +47,47 @@ VS Code te permite escribir el programa. Abrir un archivo o instalar una extensi
 del editor no instala automáticamente las bibliotecas que el programa necesita.
 Esas bibliotecas deben estar disponibles en el entorno del Python que lo ejecuta.
 
-## 2. Cómo funciona un entorno y para qué sirve
+## 2. Qué es pip y qué cambia con uv
+
+### pip: instalar paquetes para un Python concreto
+
+pip es el instalador habitual de paquetes Python. Busca el paquete en un índice,
+como PyPI, obtiene una versión compatible e instala también las dependencias
+que necesita. PyPI es el catálogo; pip es la herramienta que consulta e instala.
+
+```text
+# Consulta el pip asociado al Python elegido
+python -m pip --version
+```
+
+La forma `python -m pip` indica explícitamente qué intérprete recibirá la
+instalación. La salida muestra la versión de pip y dónde está instalado.
+pip permite instalar, consultar, actualizar y retirar paquetes, pero no crea
+el entorno ni descarga otra versión del intérprete por sí solo.
+
+### uv: añadir la gestión del proyecto
+
+uv es una herramienta independiente que puede gestionar Python, crear entornos
+y resolver dependencias. En su flujo de proyectos mantiene los requisitos en
+`pyproject.toml` y la resolución en `uv.lock`.
+
+| Acción | venv + pip | uv, flujo de proyectos |
+| --- | --- | --- |
+| Preparar el entorno | Lo creas con venv | uv lo prepara para el proyecto |
+| Agregar una biblioteca | pip la instala; tú registras el requisito | uv add la declara y prepara el entorno |
+| Reconstruir | Creas el entorno e instalas un archivo de requisitos | uv sync utiliza configuración y lockfile |
+| Ejecutar | Seleccionas el Python del entorno | uv run selecciona el entorno del proyecto |
+
+uv también tiene comandos `uv pip` para flujos parecidos a pip. **No son el
+programa pip**, ni cada comando equivale a la gestión completa de un proyecto.
+En nuestro recorrido de uv utilizaremos `add`, `sync` y `run`; no necesitas
+combinar las dos interfaces para aprender la base.
+
+Conda cubre otra combinación de responsabilidades: administra entornos, Python
+y paquetes de sus canales, incluidos componentes binarios. Lo compararemos
+con las otras opciones después de comprender el aislamiento.
+
+## 3. Cómo funciona un entorno y para qué sirve
 
 Un análisis puede necesitar una versión de una biblioteca y otro una diferente.
 Si comparten una instalación global, actualizar para uno puede afectar al otro.
@@ -98,7 +138,7 @@ la plataforma y las versiones documentadas. No crearemos un entorno por lección
 el elegido puede acompañarte en DS Track. La demostración de uv usa un proyecto
 aparte para no modificar las dependencias del repositorio compartido.
 
-## 3. Qué hace activar un entorno
+## 4. Crear, activar y comprobar un entorno
 
 Activar cambia la selección de comandos de **esa sesión del shell**, para que
 python y otras herramientas resuelvan al entorno. No mueve tu código ni copia
@@ -112,14 +152,120 @@ uv run. En Conda activar también prepara variables que pueden requerir sus bibl
 python -c "import sys; print(sys.executable)"
 ```
 
-En VS Code, Python: Select Interpreter elige el Python del editor, pero no cambia
- automáticamente todas las terminales abiertas. En notebooks elegiremos además
-el kernel; lo veremos en la siguiente lección.
+### Crear no es lo mismo que activar
+
+Crear genera o prepara los archivos del entorno. Activar elige sus comandos
+para la sesión actual. Creas una vez y vuelves a activar cuando lo necesitas.
+Los siguientes bloques son referencias: ejecuta solo el camino que elegiste,
+no todos los entornos. Evita recrear una carpeta o nombre que ya existe.
+
+### Windows — PowerShell, venv
+
+Desde la raíz de `ds_track`, con Python disponible:
+
+```powershell
+# Crea el entorno de práctica una sola vez
+python -m venv .venv-practice
+# Actívalo en esta terminal
+.\.venv-practice\Scripts\Activate.ps1
+# Comprueba qué ejecutable seleccionaste
+python -c "import sys; print(sys.executable)"
+# Sale del entorno cuando termines
+deactivate
+```
+
+Si PowerShell bloquea Activate.ps1, no necesitas cambiar políticas: usa
+`.\.venv-practice\Scripts\python.exe` directamente, como en el recorrido pip.
+
+### Windows — CMD o Anaconda Prompt, venv
+
+```bat
+REM Crea y activa el entorno
+python -m venv .venv-practice
+.venv-practice\Scripts\activate.bat
+REM Comprueba y después sal
+python -c "import sys; print(sys.executable)"
+deactivate
+```
+
+### Linux/macOS — Bash/Zsh, venv
+
+```bash
+# Crea con el Python instalado
+python3 -m venv .venv-practice
+# Carga la activación en el shell actual
+source .venv-practice/bin/activate
+# Después de activar, python pertenece al entorno
+python -c "import sys; print(sys.executable)"
+# Sale de la activación
+deactivate
+```
+
+Windows guarda estos ejecutables y scripts en `Scripts`; Unix utiliza `bin`.
+La activación también depende del shell: no copies Activate.ps1 en Bash ni
+uses source en CMD. Estas rutas son para entornos creados en el sistema indicado.
+
+### Conda — mismo comando, shell preparado
+
+```text
+# Crea una sola vez; revisa y confirma la instalación
+conda create --name ds-track python=3.12 pip
+# Activa en un shell donde Conda esté integrado
+conda activate ds-track
+python -c "import sys; print(sys.executable)"
+# Vuelve al entorno anterior
+conda deactivate
+```
+
+Funciona en PowerShell, CMD y Bash/Zsh cuando Conda está configurado para ese
+shell. Si no lo está, usa primero el acceso de Anaconda que ya funciona y
+consulta el [recorrido Conda](conda.md). No actives además un venv sobre él.
+
+### uv — ejecución sin activación y activación opcional
+
+Entra al mini proyecto que creaste siguiendo el [recorrido uv](uv.md):
+
+```text
+# Prepara el entorno desde los archivos de ese proyecto
+uv sync --locked
+# Ejecuta directamente en él, sin activación
+uv run --locked python -c "import sys; print(sys.executable)"
+```
+
+Si quieres ejecutar `python` sin el prefijo `uv run`, puedes activar su `.venv`
+ya preparado. Elige únicamente el bloque de tu shell:
+
+**PowerShell en Windows:**
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+python -c "import sys; print(sys.executable)"
+deactivate
+```
+
+**CMD en Windows:**
+
+```bat
+.venv\Scripts\activate.bat
+python -c "import sys; print(sys.executable)"
+deactivate
+```
+
+**Bash/Zsh en Linux/macOS:**
+
+```bash
+source .venv/bin/activate
+python -c "import sys; print(sys.executable)"
+deactivate
+```
+
+Para el recorrido mantendremos `uv run`. Activar no instala paquetes nuevos
+ni sincroniza la configuración: esas son acciones diferentes.
 
 > **Para conversar:** ¿por qué «ya instalé la biblioteca» no basta para explicar
 > que el programa pueda importarla?
 
-## 4. Qué aporta cada camino
+## 5. Qué aporta cada camino
 
 ### Conda
 
@@ -165,7 +311,7 @@ Una sincronización exacta puede retirar paquetes que no declaraste.
 Estos archivos no son equivalentes: un YAML con requisitos o una lista de
 paquetes no fija automáticamente toda la resolución para todas las plataformas.
 
-## 5. Elegir tu recorrido
+## 6. Elegir tu recorrido
 
 - **Ya usas Anaconda:** [Conda](conda.md).
 - **Quieres las herramientas estándar:** [venv + pip](venv-pip.md).
@@ -178,6 +324,55 @@ los ejercicios en base o usar --user dentro de un entorno.
 
 No copies carpetas de entornos entre computadoras: reconstruye desde sus archivos.
 Antes de compartir configuración, revisa rutas personales y credenciales.
+
+## 7. Gestionar la elección del entorno en VS Code
+
+### Seleccionar el intérprete existente
+
+1. Abre la carpeta `ds_track` e instala la extensión **Python**, publicada por
+   Microsoft, si está permitida y todavía no la tienes.
+2. Abre el script y la paleta con Ctrl+Shift+P en Windows.
+3. Busca **Python: Select Interpreter** y elige el entorno de tu recorrido.
+4. Si no aparece, utiliza la opción para indicar la ruta del intérprete.
+
+| Recorrido | Qué Python seleccionar |
+| --- | --- |
+| Conda | El de ds-track; consulta su ubicación tras conda activate |
+| venv + pip | .venv-practice/Scripts/python.exe en Windows o .venv-practice/bin/python en Unix |
+| uv de esta práctica | .environment-practice/uv-demo/.venv/Scripts/python.exe en Windows o su equivalente bin/python en Unix |
+
+No selecciones la `.venv` de la raíz para importar tabulate del mini proyecto:
+son entornos distintos. Comprueba la ruta, no solo la etiqueta del menú.
+
+### Crear y consultar desde el editor
+
+La extensión ofrece **Python: Create Environment** para crear entornos; las
+opciones dependen de las extensiones y herramientas detectadas. La extensión
+**Python Environments**, también de Microsoft, puede ofrecer una vista para
+descubrir, crear y consultar entornos y paquetes.
+
+Para esta lección crea el entorno con los comandos de tu recorrido y selecciónalo
+después. Evita crear otro automáticamente y terminar usando una instalación
+distinta. En proyectos uv, conserva el flujo uv add/sync para gestionar dependencias,
+aunque el editor permita acciones de instalación.
+
+### Comprobar la terminal integrada
+
+1. Tras seleccionar el intérprete, abre **Terminal → Nueva terminal**.
+2. La extensión normalmente intenta activarlo en terminales nuevas, según su
+   configuración y el shell. No supongas que ocurrió: compruébalo.
+3. Ejecuta `python -c "import sys; print(sys.executable)"` y compara la ruta con
+   el intérprete seleccionado. Si falta la activación, utiliza el bloque de tu shell.
+4. Comprueba también `python -c "import tabulate; print(tabulate.__version__)"`
+   cuando hayas instalado el paquete según el recorrido elegido.
+
+Seleccionar el intérprete del editor no cambia automáticamente todas las
+terminales abiertas. Si el botón de ejecución funciona pero tu comando no,
+compara ambas rutas. En el flujo uv, `uv run` elige el proyecto según la ubicación;
+seleccionar un intérprete en VS Code no cambia ese proyecto.
+
+En la próxima lección elegiremos además el kernel de un notebook. Consulta la
+[guía de VS Code](../../../docs/vscode-guide.md) para sus paneles y atajos.
 
 ## Práctica y criterio de salida
 
@@ -196,3 +391,5 @@ y explicar cómo reconstruirlo. No hay proyecto de datos asociado todavía.
 - [Conda y uso de pip](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html).
 - [Proyectos con uv](https://docs.astral.sh/uv/guides/projects/).
 - [Sincronización y lockfiles](https://docs.astral.sh/uv/concepts/projects/sync/).
+- [Entornos Python en VS Code](https://code.visualstudio.com/docs/python/environments).
+- [De pip a proyectos uv](https://docs.astral.sh/uv/guides/migration/pip-to-project/).
