@@ -19,6 +19,9 @@ lección 05. Este ejemplo no necesita pip, uv ni paquetes adicionales.
 
 ## Objetivos
 
+Si usarás VS Code, consulta la [guía del editor](../../../docs/vscode-guide.md)
+para abrir el proyecto, guardar archivos y utilizar la terminal integrada.
+
 - Distinguir un archivo `.py`, el editor y el intérprete de Python.
 - Ejecutar un script desde la raíz del proyecto.
 - Reconocer datos de entrada, un cálculo y la salida.

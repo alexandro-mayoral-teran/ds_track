@@ -89,6 +89,9 @@ avance de cada nivel.
 
 ## Cómo estudiar
 
+Como apoyo, la [guía de Visual Studio Code](docs/vscode-guide.md) explica cómo
+editar, previsualizar Markdown y ejecutar comandos, con atajos para Windows.
+
 El recorrido también está pensado para aprender acompañado: una persona realiza
 las prácticas y otra explica conceptos, revisa resultados y ayuda a resolver dudas.
 
