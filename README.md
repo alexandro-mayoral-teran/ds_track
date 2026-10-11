@@ -9,6 +9,25 @@ resultado observable. Git ayuda a publicar y conservar el material, pero no es
 un requisito para estudiar: el contenido también debe funcionar al descargarlo
 como ZIP.
 
+## Empieza aquí
+
+Tu primera meta es escribir tu presentación en Markdown y crear tu perfil en
+GitHub. Para esta primera lección solo necesitas un editor de texto y, si vas
+a publicar el perfil, una cuenta de GitHub.
+
+1. Lee [01 — Markdown y tu perfil en GitHub](curriculum/00_getting_started/01_github_profile/README.md)
+   para entender Git, GitHub y los archivos `.md`.
+2. Copia la [plantilla del perfil](templates/github-profile/PROFILE.md) y
+   personaliza tu nombre, usuario y objetivos.
+3. Completa el [lab 00.01 — Markdown y perfil](labs/00_getting_started/01_github_profile/README.md)
+   y comprueba que tu README se ve correctamente.
+4. Registra tu resultado y tus dudas en [PROGRESS.md](PROGRESS.md).
+
+Después continúa con [02 — Terminal y rutas](curriculum/00_getting_started/02_terminal_paths/README.md)
+y luego con [03 — Git e historial](curriculum/00_getting_started/03_git_workflow/README.md).
+Consulta el [índice del nivel 0](curriculum/00_getting_started/README.md) para
+seguir la secuencia completa.
+
 ## Principios
 
 - Bases antes que herramientas: Python, pandas, SQL y modelado primero.
