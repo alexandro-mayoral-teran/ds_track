@@ -17,7 +17,8 @@ reglas de enlace están en
 | [`00.01 — Markdown y perfil`](00_getting_started/01_github_profile/) | `00_getting_started` | No aplica |
 | [`00.02 — Terminal y rutas`](00_getting_started/02_terminal_paths/) | `00_getting_started` | No aplica |
 | [`00.03 — Actualizar el perfil con Git`](00_getting_started/03_git_workflow/) | `00_getting_started` | No aplica |
+| [`00.04 — Primer script`](00_getting_started/04_first_script/) | `00_getting_started` | No aplica |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
-lección 03 → lab `00.03`. Los enlaces al final de cada lab llevan al material
+lección 03 → lab `00.03` → lección 04 → lab `00.04`. Los enlaces al final de cada lab llevan al material
 de la siguiente lección.

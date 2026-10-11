@@ -206,7 +206,7 @@ La evidencia es el commit del perfil; todavía no hay proyecto de datos asociado
 
 ## Siguiente lección
 
-Primer script Python (por desarrollar). Usarás la terminal para ejecutar un
+[04 — Primer script Python](../04_first_script/README.md). Usarás la terminal para ejecutar un
 programa y Git para conservar sus cambios conforme avances.
 
 ## Referencias

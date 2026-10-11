@@ -104,6 +104,5 @@ Registra el enlace al commit y las dudas en [PROGRESS.md](../../../PROGRESS.md).
 
 ## Siguiente paso
 
-La siguiente lección será Primer script Python; todavía está por desarrollar.
-Consulta el [índice del nivel 0](../../../curriculum/00_getting_started/README.md)
-para revisar el recorrido y registra tus dudas antes de continuar.
+Continúa con la [lección 04 — Primer script Python](../../../curriculum/00_getting_started/04_first_script/README.md).
+Lee el material antes de realizar su lab y registra tus dudas antes de continuar.

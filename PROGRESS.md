@@ -7,10 +7,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo:** `00_getting_started`
 - **Estado:** en curso
-- **Objetivo actual:** comprender Git, GitHub y Markdown mediante la creación
-  de un README de presentación.
-- **Siguiente paso:** realizar el
-  [lab `00.01` — Markdown y perfil](labs/00_getting_started/01_github_profile/README.md).
+- **Foco de desarrollo del material:** lección 04 — Primer script Python.
+- **Estado del contenido:** lecciones y labs 01–03 desarrollados; primera versión
+  de la lección y lab 04 disponible. Esto no acredita finalización del estudiante.
+- **Siguiente paso de estudio:** leer la
+  [lección 04](curriculum/00_getting_started/04_first_script/README.md) y realizar
+  el [lab 00.04](labs/00_getting_started/04_first_script/README.md), después de
+  completar las prácticas previas.
 
 ## Estados
 
@@ -39,6 +42,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se desarrollaron las primeras tres lecciones y sus labs, con explicaciones
+  por pasos y soluciones desplegables.
+- Se preparó la lección 04 y un primer script sin paquetes externos; la
+  preparación del entorno queda para la lección 05.
 - Se creó el repositorio privado de DS Track y se publicó el material inicial.
 - Se incorporó el perfil de GitHub como práctica inicial del nivel 0, con
   Markdown y actualización desde Git. La práctica de terminal se conserva.
