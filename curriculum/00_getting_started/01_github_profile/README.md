@@ -43,9 +43,6 @@ Puedes visitar [DS Track](https://github.com/alexandro-mayoral-teran/ds_track).
 Mi primer comando será `git status`.
 ```
 
-El repositorio de DS Track es privado: su enlace solo permite acceder a personas
-autorizadas. Puedes mencionar el recorrido sin incluir un enlace por ahora.
-
 ## Markdown e IA
 
 Los títulos, listas y bloques de código permiten organizar contexto, requisitos

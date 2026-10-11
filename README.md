@@ -53,6 +53,9 @@ avance de cada nivel.
 
 ## Cómo estudiar
 
+El recorrido también está pensado para aprender acompañado: una persona realiza
+las prácticas y otra explica conceptos, revisa resultados y ayuda a resolver dudas.
+
 Para cada módulo:
 
 1. Lee sus objetivos y conceptos.
@@ -61,6 +64,10 @@ Para cada módulo:
 4. Aplica lo aprendido al checkpoint de proyecto cuando exista.
 5. Registra la evidencia y las dudas pendientes en `PROGRESS.md`.
 6. Avanza cuando cumplas el criterio de salida, no solo por haber leído todo.
+
+En una sesión acompañada, empieza con una explicación breve, realiza la práctica
+y cierra explicando con tus propias palabras qué hiciste y por qué. Usa las
+preguntas del lab para conversar y comprobar lo aprendido.
 
 ## Estado actual
 
