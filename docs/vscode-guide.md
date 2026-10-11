@@ -37,6 +37,14 @@ comprobar. Abrir un archivo no cambia automáticamente ese directorio.
 
 ## 3. Editar y guardar
 
+### Captura de referencia: reconocer la interfaz
+
+![Interfaz de VS Code con sus principales zonas señaladas](https://code.visualstudio.com/assets/docs/editing/userinterface/hero.png)
+
+Captura de la [documentación oficial de VS Code](https://code.visualstudio.com/docs/editing/getting-started/userinterface).
+Localiza el explorador, el editor, el panel inferior y la barra de estado.
+El idioma, el tema y algunos paneles pueden diferir de tu instalación.
+
 1. Localiza `curriculum/00_getting_started/04_first_script/first_summary.py`.
 2. Ábrelo y modifica un valor como indica la lección.
 3. Guarda con **Ctrl+S** antes de ejecutarlo.
@@ -58,6 +66,15 @@ GitHub y la vista previa local pueden presentar diferencias; comprueba también
 el documento en GitHub cuando publiques.
 
 ## 5. Ejecutar desde la terminal integrada
+
+### Captura de referencia: dos archivos lado a lado
+
+![Dos editores abiertos lado a lado en VS Code](https://code.visualstudio.com/assets/docs/editing/userinterface/sidebyside.png)
+
+Captura de la [documentación oficial](https://code.visualstudio.com/docs/editing/getting-started/userinterface#side-by-side-editing).
+Esta distribución permite comparar notas y código, o mantener instrucciones
+visibles mientras editas. Usa el botón para dividir el editor o arrastra una
+pestaña hacia un lado. La vista previa de Markdown utiliza una disposición similar.
 
 Selecciona **Terminal → Nueva terminal** (`Terminal → New Terminal`). En Windows
 comprueba que el perfil sea PowerShell si vas a seguir ese recorrido de la lección.
@@ -109,7 +126,51 @@ pulsa la segunda. Pueden variar por teclado, sistema operativo o personalizació
 Si alguno no funciona, busca la acción en el menú o la paleta; no necesitas
 memorizar toda la tabla. Consulta las referencias oficiales para Linux y macOS.
 
-## 7. Extensiones: introducirlas cuando hagan falta
+## 7. Edición práctica: varias líneas y cursores
+
+Estos atajos de Windows se usan **con el foco en el editor**, no en la terminal.
+Pruébalos en un archivo de notas y usa Ctrl+Z para deshacer si hace falta.
+
+| Acción | Atajo predeterminado | Ejemplo de uso |
+| --- | --- | --- |
+| Mover una línea o un bloque seleccionado | Alt+↑ / Alt+↓ | Reordenar pasos sin copiar y pegar |
+| Duplicar una línea o un bloque | Shift+Alt+↑ / Shift+Alt+↓ | Crear una línea parecida a la anterior |
+| Añadir un cursor arriba o abajo | Ctrl+Alt+↑ / Ctrl+Alt+↓ | Escribir lo mismo en varias líneas |
+| Añadir cursores con el ratón | Alt+clic | Editar posiciones concretas a la vez |
+| Seleccionar la siguiente aparición de una palabra | Ctrl+D | Cambiar varias apariciones del mismo texto |
+| Seleccionar todas las apariciones de la selección | Ctrl+Shift+L | Modificar un texto repetido en todo el archivo |
+| Borrar la línea actual | Ctrl+Shift+K | Quitar una línea sin seleccionarla completa |
+| Insertar una línea debajo | Ctrl+Enter | Continuar sin mover el cursor al final |
+| Insertar una línea arriba | Ctrl+Shift+Enter | Añadir una explicación antes del paso actual |
+| Aumentar o reducir sangría | Tab / Shift+Tab | Ajustar un bloque de líneas seleccionadas |
+
+Al seleccionar un bloque, mover o duplicar opera sobre ese bloque. En Python,
+la sangría forma parte de la estructura del programa; revisa el resultado al
+cambiarla. Algunos atajos pueden ser interceptados por el sistema, por ejemplo
+Ctrl+Alt+flechas; consulta los atajos del editor si no funcionan.
+
+### Mini práctica: escribir en tres líneas a la vez
+
+En un archivo de notas, escribe:
+
+```text
+Leer la lección
+Realizar el lab
+Explicar el resultado
+```
+
+1. Coloca el cursor al principio de la primera línea.
+2. Pulsa Ctrl+Alt+↓ dos veces: verás un cursor en cada línea.
+3. Escribe `- ` para convertir las tres líneas en una lista de Markdown.
+4. Pulsa Escape para volver a un solo cursor.
+5. Mueve una línea con Alt+↑ o Alt+↓ y duplícala con Shift+Alt+↓.
+6. Usa Ctrl+Z para observar qué operación deshaces.
+
+Los cursores múltiples repiten tu escritura en cada posición. Con Ctrl+D puedes
+seleccionar apariciones una a una y comprobar cuáles modificarás; con
+Ctrl+Shift+L debes revisar todas las selecciones antes de escribir.
+
+## 8. Extensiones: introducirlas cuando hagan falta
 
 Markdown y la terminal ya forman parte del editor. Para esta primera práctica
 basta con editar el script y ejecutarlo con Python desde la terminal.
