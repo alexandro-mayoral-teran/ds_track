@@ -524,6 +524,12 @@ general de CSV: campos entre comillas pueden contener comas o saltos de línea.
 Para esos casos necesitas un lector de CSV, como los que estudiarás en Python.
 Además, `wc -l` puede dar un resultado distinto si falta el salto de línea final.
 
+> **Para profundizar más adelante:** se incorporará una sección de terminal
+> avanzada para estudiar con más detalle filtros, pipes, redirecciones,
+> herramientas como `grep` y `awk`, y automatización de tareas con datos.
+> Estos ejemplos son una primera exploración; no necesitas dominar toda su
+> sintaxis para continuar con el recorrido.
+
 ## Cuando un comando no funciona
 
 | Mensaje o situación | Qué revisar primero |
