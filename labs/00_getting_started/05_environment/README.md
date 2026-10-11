@@ -1,119 +1,122 @@
-# Lab 00.05 — Preparar y comprobar un entorno
+# Lab 00.05 — Un entorno, tres caminos posibles
 
-## Relación
+## Relación y entrada
 
-- Módulo: `00_getting_started`.
-- Lección: [05 — Entorno y dependencias](../../../curriculum/00_getting_started/05_environment/README.md).
-- Proyecto: no aplica todavía; se prepara el entorno para las próximas prácticas.
+- Lección: [05 — Teoría de entornos y dependencias](../../../curriculum/00_getting_started/05_environment/README.md).
+- Recorridos: [Conda](../../../curriculum/00_getting_started/05_environment/conda.md),
+  [venv + pip](../../../curriculum/00_getting_started/05_environment/venv-pip.md) o
+  [uv](../../../curriculum/00_getting_started/05_environment/uv.md).
+- Proyecto: no aplica todavía; practicamos con datos ficticios.
 
-## Objetivo y tiempo orientativo
+Reserva 40 a 60 minutos, además de las descargas. Elige un solo camino y lee
+su material antes de ejecutar. La meta común es preparar un entorno, instalar
+tabulate 0.9.0, ejecutar la demostración y registrar sus requisitos.
 
-Preparar **un** entorno, identificar su intérprete y ejecutar el primer script.
-Reserva 30 a 45 minutos, además de las descargas necesarias.
-Si ya usas Anaconda, elige Conda; uv es una alternativa. No necesitas hacer ambos
-ni crear el entorno opcional venv. Intenta antes de abrir las soluciones.
+## Parte A — Comprender y elegir
 
-## Entrada
-
-El proyecto y el script del lab 04. La herramienta del recorrido elegido,
-instalada como explica la lección; acceso a Internet para preparar el entorno.
-
-## Parte A — Reconocer tus herramientas
-
-1. Identifica si usas PowerShell, CMD o Bash/Zsh.
-2. Consulta la versión de Conda o uv, según tu elección.
-3. Explica qué diferencia hay entre tu shell, tu editor y el intérprete Python.
+1. Explica qué es un entorno, qué aísla y qué no protege.
+2. Identifica tu shell y elige un gestor según tu instalación y necesidades.
+3. Explica quién crea el entorno y quién instala sus paquetes en tu recorrido.
 
 <details>
 <summary>Ver respuesta orientativa de la parte A</summary>
 
-Anaconda Prompt suele usar CMD y Anaconda PowerShell Prompt usa PowerShell.
-Comprueba `conda --version` o `uv --version`. El shell interpreta comandos,
-VS Code edita archivos y Python ejecuta el código. Que la ventana sea de
-Anaconda no significa que todos los comandos sean de Conda.
+Conda administra entorno, Python y paquetes; venv crea el entorno y pip instala;
+uv integra entorno y gestión del proyecto. El entorno separa paquetes de otros
+proyectos, pero no es una barrera de seguridad. Si ya usas Anaconda, Conda es
+un comienzo natural. El shell y el gestor son herramientas distintas.
 
 </details>
 
-## Parte B — Preparar el entorno elegido
+## Parte B — Preparar e instalar
 
-1. Sigue el recorrido de tu herramienta y shell en la lección.
-2. Identifica el ejecutable de Python y comprueba que es 3.11 o posterior.
-3. Ejecuta el script y compara la salida con las entradas que guardaste en el lab 04.
-4. Explica por qué los paquetes de otro entorno pueden no estar disponibles aquí.
+1. Sigue el documento de tu recorrido y consulta el ejecutable de Python.
+2. Instala tabulate 0.9.0 en el entorno, no en base ni en el Python global.
+3. Comprueba que el intérprete importa el paquete y muestra su versión.
+4. Ejecuta library_demo.py con ese entorno y revisa la tabla.
 
 <details>
-<summary>Ver solución orientativa — Conda</summary>
+<summary>Ver comprobación — Conda</summary>
+
+Con ds-track activado, desde la raíz:
 
 ```text
-# Consulta antes de crear para no repetir un entorno existente
-conda env list
-# Si no existe ds-track, créalo y confirma la instalación
-conda create --name ds-track python=3.12 pip
-# Activa y comprueba
-conda activate ds-track
-python -c "import sys; print(sys.executable)"
-python -m pip --version
-conda list
+conda install -c conda-forge tabulate=0.9.0
+python -c "import sys, tabulate; print(sys.executable); print(tabulate.__version__)"
+python curriculum/00_getting_started/05_environment/library_demo.py
 ```
 
-Entra en la raíz del proyecto con el comando de navegación de tu shell.
-Después ejecuta:
-
-```text
-python curriculum/00_getting_started/04_first_script/first_summary.py
-```
-
-El Python pertenece a ds-track. La salida depende de tus valores del lab 04.
-No necesitas instalar pandas ni modificar base.
+La ruta pertenece a ds-track. Revisa el plan de Conda antes de confirmar.
 
 </details>
 
 <details>
-<summary>Ver solución orientativa — uv</summary>
+<summary>Ver comprobación — venv + pip</summary>
 
-Sal de cualquier entorno Conda o venv activado y entra en la raíz del proyecto:
+En PowerShell, desde la raíz:
 
-```text
-uv sync --locked
-uv run --locked python -c "import sys; print(sys.executable)"
-uv run --locked python curriculum/00_getting_started/04_first_script/first_summary.py
+```powershell
+.\.venv-practice\Scripts\python.exe -m pip install "tabulate==0.9.0"
+.\.venv-practice\Scripts\python.exe -c "import sys, tabulate; print(sys.executable); print(tabulate.__version__)"
+.\.venv-practice\Scripts\python.exe curriculum\00_getting_started\05_environment\library_demo.py
 ```
 
-El Python pertenece a `.venv`. La salida coincide con el cálculo de tu script;
-no se requieren paquetes externos. No necesitas activar `.venv` para usar uv run.
+En Bash/Zsh sustituye el ejecutable por `./.venv-practice/bin/python` y usa
+barras `/` en la ruta del script. La ruta pertenece al entorno de práctica.
 
 </details>
 
-## Parte C — Retomar y compartir
+<details>
+<summary>Ver comprobación — uv</summary>
 
-1. Explica cómo volverías a ejecutar el script en una sesión nueva.
-2. Identifica los archivos que describen tu entorno y qué no debes subir a Git.
-3. Si usas VS Code, selecciona el intérprete de tu recorrido.
+Desde el mini proyecto .environment-practice/uv-demo creado según la guía:
+
+```text
+uv add "tabulate==0.9.0"
+uv run --locked python -c "import sys, tabulate; print(sys.executable); print(tabulate.__version__)"
+uv run --locked python ../../curriculum/00_getting_started/05_environment/library_demo.py
+```
+
+La ruta pertenece a .venv dentro del mini proyecto. No instales la dependencia
+en el proyecto compartido de la raíz para resolver esta práctica.
+
+</details>
+
+La tabla debe contener tres productos e importes: cuaderno 80, lapiz 50 y
+carpeta 35. No hace falta dominar el código del ejemplo todavía.
+
+## Parte C — Registrar y retomar
+
+1. Consulta los paquetes instalados usando tu gestor.
+2. Conserva una configuración revisada: YAML de Conda, requirements.txt de pip
+   o pyproject.toml y uv.lock de uv. Documenta también la versión de Python.
+3. Explica qué información fija y qué limitaciones tiene tu documento.
+4. En una sesión nueva, selecciona el mismo entorno y vuelve a ejecutar.
 
 <details>
 <summary>Ver respuesta orientativa de la parte C</summary>
 
-Con Conda activas ds-track, entras al proyecto y ejecutas con `python`.
-Puedes exportar los requisitos elegidos con Conda a un environment.yml revisado;
-no compartas rutas personales ni supongas que ese export registra paquetes de pip.
-
-Con uv entras al proyecto y usas `uv run --locked`; pyproject.toml y uv.lock
-permiten reconstruir su entorno. No subes `.venv` ni `.venv-practice`.
-En VS Code seleccionas el ejecutable correspondiente; confirma la ruta cuando
-cambies de herramienta.
+Conda: conda list y export desde historial; el YAML recoge elecciones Conda,
+no todas las versiones transitivas ni lo instalado con pip.
+venv/pip: pip list, pip check y pip freeze; la lista registra lo instalado,
+no un lockfile universal ni la versión del intérprete.
+uv: uv tree y los archivos del mini proyecto; sync --locked permite preparar
+la resolución declarada. No se comparte la carpeta del entorno.
 
 </details>
 
 ## Evidencia y reflexión
 
-- Anota tu recorrido, shell, versión y ruta de Python, y resultado del script.
-- ¿Por qué no agregar los paquetes de tus ejercicios a base?
-- ¿Configurar el intérprete en VS Code cambia todas las terminales abiertas?
-- ¿Dónde instalaría un paquete `python -m pip` en tu sesión?
-- ¿Qué distingue el archivo de entorno de Conda de un lockfile de uv?
-- Si usas Git, comprueba que no preparaste carpetas de entornos.
+Conserva tu elección y su motivo, la ruta de Python, la versión importada,
+el resultado y una copia revisada de la configuración. No subas carpetas de
+entornos ni rutas privadas. Las prácticas locales están excluidas de Git.
+
+- ¿Qué pasaría si instalaras en un intérprete y ejecutaras con otro?
+- ¿Activar cambia el código o la elección de comandos del shell?
+- ¿Por qué pip por sí solo no constituye todo el recorrido de un entorno?
+- ¿Qué necesitaría otra persona para reconstruir tu práctica?
 
 ## Siguiente paso
 
-La lección 06 — Primer notebook está por desarrollar. Consulta el
+06 — Primer notebook está por desarrollar. Consulta el
 [índice del nivel 0](../../../curriculum/00_getting_started/README.md).

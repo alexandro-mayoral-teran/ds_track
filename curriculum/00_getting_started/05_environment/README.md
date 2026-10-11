@@ -1,269 +1,145 @@
-# 05 — Entorno y dependencias
+# 05 — Entornos y administración de dependencias
 
-## Propósito y prerrequisitos
+## Propósito y objetivos
 
-Comprender qué Python ejecuta tu código y dónde se instalan sus paquetes.
-Prepararemos un entorno para continuar hacia la manipulación de datos.
-Completa [04 — Primer script](../04_first_script/README.md) y utiliza las
-instalaciones permitidas en tu equipo. Las descargas requieren Internet.
+Comprender qué Python ejecuta tu código, dónde están sus bibliotecas y cómo
+reconstruir un entorno. Después de [04 — Primer script](../04_first_script/README.md),
+estudia la teoría y completa **uno** de los tres recorridos prácticos.
+La meta es identificar el intérprete, instalar y comprobar una biblioteca pequeña
+y registrar los requisitos. Necesitas Internet para las descargas.
 
-## 1. Distinguir las herramientas
+## 1. Intérprete, bibliotecas y dependencias
 
-| Pieza | Para qué sirve |
-| --- | --- |
-| Anaconda | Distribución que incluye Python, Conda y herramientas para datos |
-| Conda | Crear entornos y administrar Python y paquetes |
-| Intérprete Python | Ejecutar el código `.py` |
-| Biblioteca estándar | Módulos incluidos en Python, como csv o sys |
-| Paquete externo | Funcionalidad que instalas aparte, como pandas |
-| Dependencia | Paquete que necesita un proyecto |
-| pip | Instalar paquetes para un intérprete Python |
-| uv | Gestionar Python y dependencias de proyectos, con archivos de configuración |
-| venv | Módulo de Python para crear entornos virtuales |
-
-Un entorno separa las versiones y paquetes de otros proyectos. No es una máquina
-virtual ni una barrera de seguridad. Dos intérpretes pueden tener paquetes distintos.
-El editor modifica el código, el shell interpreta comandos y Python ejecuta el programa.
-
-## 2. Elegir un recorrido y reconocer tu terminal
-
-**Si ya usas Anaconda, sigue Conda.** Si prefieres gestionar el proyecto desde
-`pyproject.toml` y `uv.lock`, sigue uv. Basta con completar uno; venv queda como
-referencia opcional. No necesitas instalar pandas ni preparar tres entornos.
-
-| Ventana o perfil | Shell habitual | Ejemplo para consultar la ubicación |
+| Concepto | Qué significa | Ejemplo |
 | --- | --- | --- |
-| Anaconda Prompt en Windows | CMD | `cd` sin argumentos |
-| Anaconda PowerShell Prompt | PowerShell | `Get-Location` |
-| Terminal con Bash/Zsh | Bash o Zsh | `pwd` |
-| Terminal integrada de VS Code | El perfil que seleccionaste | Depende del shell |
+| Intérprete | Programa que ejecuta Python | El ejecutable indicado por sys.executable |
+| Biblioteca estándar | Funcionalidad incluida con Python | csv, pathlib, sys |
+| Biblioteca externa | Funcionalidad instalada aparte | tabulate, pandas |
+| Paquete distribuido | Software descargado e instalado por el gestor | tabulate |
+| Dependencia directa | Software que tu proyecto solicita | tabulate para mostrar una tabla |
+| Dependencia transitiva | Software requerido por otra dependencia | Una biblioteca instalada para satisfacer otra |
+| Versión | Edición concreta de un paquete | tabulate==0.9.0 |
 
-Los comandos de Conda son los mismos, pero la navegación y activación de venv
-pueden cambiar. Anaconda Prompt suele abrir con Conda listo; una terminal normal
-necesita su integración configurada. Si no reconoce `conda`, empieza con el
-acceso de Anaconda que funciona y consulta las instrucciones oficiales antes
- de configurar otro shell. No necesitas modificar todos tus perfiles para estudiar.
+Instalar prepara el paquete; import permite utilizarlo desde un programa.
+El nombre para instalar no siempre coincide con el nombre para importar; en
+este ejemplo ambos son tabulate. El editor no incluye automáticamente todas
+las bibliotecas que tu script necesita.
 
-## 3. Recorrido principal — Anaconda y Conda
+## 2. Cómo funciona un entorno y para qué sirve
 
-### Preparar Anaconda si falta
-
-Si ya tienes Anaconda, no reinstales Python por separado para este recorrido.
-Si falta, consulta la [instalación oficial](https://www.anaconda.com/docs/getting-started/anaconda/install).
-Abre su terminal y comprueba `conda --version`.
-
-### Qué significa base
-
-`base` es el entorno inicial de Anaconda. Crearemos `ds-track` para los ejercicios
-sin añadir sus dependencias a base. El entorno se guarda normalmente en el
-área de entornos de Conda, no dentro del repositorio.
-
-### PowerShell — Anaconda PowerShell Prompt
-
-```powershell
-# Consulta la herramienta y los entornos existentes
-conda --version
-conda env list
-# Crea el entorno una sola vez; confirma la propuesta de instalación
-conda create --name ds-track python=3.12 pip
-# Activa el entorno para esta terminal
-conda activate ds-track
-# Comprueba la versión y el ejecutable elegido
-python --version
-python -c "import sys; print(sys.executable)"
-# Consulta pip asociado a ese Python y los paquetes del entorno
-python -m pip --version
-conda list
-# Sitúate en tu carpeta real del proyecto; sustituye el marcador
-Set-Location "RUTA_REAL_DE_DS_TRACK"
-Get-Location
-# Ejecuta el primer script
-python curriculum\00_getting_started\04_first_script\first_summary.py
-```
-
-### CMD — Anaconda Prompt
-
-```bat
-REM Consulta los entornos antes de crear uno nuevo
-conda --version
-conda env list
-REM Crea una sola vez y activa
-conda create --name ds-track python=3.12 pip
-conda activate ds-track
-REM Comprueba el intérprete y los paquetes
-python --version
-python -c "import sys; print(sys.executable)"
-python -m pip --version
-conda list
-REM Sustituye la ruta; /d permite cambiar también de unidad
-cd /d "RUTA_REAL_DE_DS_TRACK"
-REM Muestra la ubicación y ejecuta el script
-cd
-python curriculum\00_getting_started\04_first_script\first_summary.py
-```
-
-### Bash/Zsh — Conda disponible en el shell
-
-```bash
-# Consulta entornos y crea solo si aún no existe ds-track
-conda --version
-conda env list
-conda create --name ds-track python=3.12 pip
-# Activa y comprueba qué Python utilizarás
-conda activate ds-track
-python --version
-python -c "import sys; print(sys.executable)"
-python -m pip --version
-conda list
-# Sustituye la ruta, confirma la ubicación y ejecuta
-cd "RUTA_REAL_DE_DS_TRACK"
-pwd
-python curriculum/00_getting_started/04_first_script/first_summary.py
-```
-
-Elige solo el bloque de tu shell. Python 3.12 es la versión elegida para este
-recorrido; cumple el requisito del proyecto de Python 3.11 o posterior.
-La ruta de `sys.executable` debe pertenecer a `ds-track` y su nombre suele
-aparecer en el prompt. El cálculo coincide con los valores que guardaste en el script.
-Si `ds-track` ya existe, comprueba su contenido y actívalo; no repitas create
-ni sobrescribas un entorno existente sin revisarlo.
-
-### Retomar otra sesión
-
-Ejecuta `conda activate ds-track`, entra en el proyecto y comprueba el intérprete.
-Para salir usa `conda deactivate`. No vuelvas a crear el entorno cada día.
-
-### pip dentro de Conda
-
-`python -m pip` elige el pip de ese Python. En Conda instala primero lo disponible
-con Conda y utiliza pip para lo que necesites y no obtengas por esa vía.
-No uses `--user` dentro del entorno ni agregues paquetes de los ejercicios a base.
-Si después necesitas reorganizar dependencias mezcladas, es preferible reconstruir
-el entorno desde su especificación. En esta práctica solo consultamos pip: no
-hay paquetes externos necesarios para el script.
-
-### Compartir la configuración
-
-Desde la raíz del proyecto, con `ds-track` activado:
+Un análisis puede necesitar una versión de una biblioteca y otro una diferente.
+Si comparten una instalación global, actualizar para uno puede afectar al otro.
+Un entorno por proyecto separa sus paquetes y permite identificar el conjunto usado.
 
 ```text
-# Exporta requisitos elegidos explícitamente, no toda la instalación
-conda env export --from-history > environment.yml
+Proyecto A → entorno A → intérprete y paquetes para A
+Proyecto B → entorno B → intérprete y paquetes para B
 ```
 
-Revisa el archivo antes de compartirlo: elimina un campo `prefix` con una ruta
-personal si aparece. No sobrescribas un environment.yml existente sin revisarlo.
-Este export conserva elecciones hechas con Conda; no registra paquetes instalados
-con pip ni fija todas las dependencias transitivas. No equivale a un lockfile.
-Otra persona puede reconstruirlo con `conda env create -f environment.yml`
-si el nombre no existe. Los paquetes de pip requerirán su declaración aparte.
+venv se apoya en un Python instalado y crea su propio directorio de paquetes,
+normalmente site-packages. Conda también puede administrar el intérprete y
+componentes binarios. uv gestiona entornos y dependencias de proyectos y puede
+obtener versiones de Python.
 
-## 4. Alternativa — uv para el proyecto
+### Ventajas y límites
 
-Sigue esta parte si eliges uv; no es un paso obligatorio después de Conda.
-Consulta su [instalación oficial](https://docs.astral.sh/uv/getting-started/installation/)
-y comprueba `uv --version`. Antes de empezar sal de entornos Conda activados
-con `conda deactivate` hasta que no quede uno activo; para venv usa `deactivate`.
+- **Aislamiento:** instalar en un entorno no cambia los paquetes del otro.
+- **Claridad:** puedes consultar qué Python y paquetes ejecutan la práctica.
+- **Reconstrucción:** guardas requisitos y regeneras el entorno en otro equipo.
+- **Límites:** ocupa espacio y requiere mantenimiento. No es una máquina virtual
+  ni una barrera de seguridad; no protege tus archivos de un programa ejecutado.
 
-### PowerShell
+El entorno por sí solo tampoco garantiza resultados idénticos: cuentan los datos,
+la plataforma y las versiones documentadas. No crearemos un entorno por lección;
+el elegido puede acompañarte en DS Track. La demostración de uv usa un proyecto
+aparte para no modificar las dependencias del repositorio compartido.
 
-Desde la raíz de DS Track:
+## 3. Qué hace activar un entorno
 
-```powershell
-# Prepara .venv respetando el lockfile
-uv sync --locked
-# Comprueba el Python del proyecto
-uv run --locked python -c "import sys; print(sys.executable)"
-# Ejecuta el script sin activar .venv
-uv run --locked python curriculum\00_getting_started\04_first_script\first_summary.py
+Activar cambia la selección de comandos de **esa sesión del shell**, para que
+python y otras herramientas resuelvan al entorno. No mueve tu código ni copia
+paquetes entre instalaciones. Una terminal nueva puede requerir otra activación.
+
+Puedes usar directamente el ejecutable de venv sin activarlo o ejecutar con
+uv run. En Conda activar también prepara variables que pueden requerir sus bibliotecas.
+
+```text
+# Consulta el ejecutable que está usando Python
+python -c "import sys; print(sys.executable)"
 ```
 
-### Bash/Zsh
+En VS Code, Python: Select Interpreter elige el Python del editor, pero no cambia
+ automáticamente todas las terminales abiertas. En notebooks elegiremos además
+el kernel; lo veremos en la siguiente lección.
 
-```bash
-# Desde la raíz, prepara el entorno y consulta su intérprete
-uv sync --locked
-uv run --locked python -c "import sys; print(sys.executable)"
-# Ejecuta el script
-uv run --locked python curriculum/00_getting_started/04_first_script/first_summary.py
-```
+> **Para conversar:** ¿por qué «ya instalé la biblioteca» no basta para explicar
+> que el programa pueda importarla?
 
-En CMD puedes usar los mismos comandos de uv y la ruta con barras `/`.
-El ejecutable debe pertenecer a `.venv`. `--locked` evita actualizar el lockfile
-si no corresponde a la configuración: en ese caso falla para que revises el cambio.
-No instales manualmente con pip o Conda dentro de `.venv`; sync puede retirar
-paquetes que el proyecto no declara. Más adelante usaremos `uv add` cuando
-una lección necesite una dependencia.
+## 4. Qué aporta cada camino
 
-## 5. Referencia opcional — venv y pip
+### Conda
 
-<details>
-<summary>Ver cómo crear un entorno directamente con Python</summary>
+Gestiona entornos, Python y paquetes, incluidos componentes que no son solo
+Python. Obtiene paquetes de canales. Anaconda es una distribución que incluye
+Conda y herramientas; Anaconda Prompt es una ventana con un shell configurado.
 
-Este recorrido explica el mecanismo estándar; no es necesario completarlo si
-ya elegiste Conda o uv. Sal de cualquier entorno activo antes de practicar.
-`.venv-practice` está separado de `.venv` y está excluido de Git.
+**Ventajas:** encaja con Anaconda y permite gestionar Python y componentes
+binarios desde una herramienta. **Limitaciones:** disponibilidad según canales
+ y plataformas, espacio de instalación y resolución de dependencias. Mezclar
+pip requiere cuidado y registrar ambas fuentes.
 
-### PowerShell
+### venv + pip
 
-```powershell
-# Crea solo si todavía no existe
-python -m venv .venv-practice
-# Usa directamente el ejecutable sin activar
-.\.venv-practice\Scripts\python.exe -m pip --version
-.\.venv-practice\Scripts\python.exe curriculum\00_getting_started\04_first_script\first_summary.py
-```
+venv crea el entorno a partir de un Python existente. pip instala paquetes
+Python y resuelve sus dependencias, habitualmente desde PyPI. **pip no crea
+por sí solo el entorno**.
 
-La activación opcional usa `.\.venv-practice\Scripts\Activate.ps1`; si está
-bloqueada, utiliza la ruta directa sin cambiar políticas. Para salir, `deactivate`.
+**Ventajas:** herramientas estándar, ampliamente documentadas y explícitas sobre
+qué intérprete recibe cada instalación. **Limitaciones:** administras Python,
+el entorno y los requisitos por separado; pip no gestiona bibliotecas del sistema.
+pip freeze describe lo instalado, pero no es un lockfile multiplataforma.
 
-### Bash/Zsh
+### uv
 
-```bash
-python3 -m venv .venv-practice
-./.venv-practice/bin/python -m pip --version
-./.venv-practice/bin/python curriculum/00_getting_started/04_first_script/first_summary.py
-```
+Integra entornos, versiones de Python y dependencias de proyectos. Aquí usamos
+su interfaz de proyectos: uv add, uv sync y uv run.
 
-Puedes activar con `source .venv-practice/bin/activate` y salir con `deactivate`.
-En CMD la activación es `.venv-practice\Scripts\activate.bat`.
-En algunas distribuciones Linux necesitas instalar el componente venv de Python.
+**Ventajas:** registra requisitos en pyproject.toml y resolución en uv.lock,
+automatiza el entorno y está diseñado para realizar esas tareas rápidamente.
+**Limitaciones:** requiere aprender otra herramienta y sus convenciones; no
+sustituye la gestión general de componentes binarios de Conda o del sistema.
+Una sincronización exacta puede retirar paquetes que no declaraste.
 
-</details>
+| Pregunta | Conda | venv + pip | uv (proyectos) |
+| --- | --- | --- | --- |
+| ¿Crea entornos? | Sí | venv | Sí |
+| ¿Gestiona Python? | Sí | Usa una instalación existente | Sí |
+| ¿De dónde obtiene paquetes? | Canales Conda | Índices como PyPI | Índices como PyPI |
+| ¿Qué compartes aquí? | environment.yml revisado | requirements.txt y versión de Python | pyproject.toml y uv.lock |
+| ¿Activas en este recorrido? | Sí | No, usamos rutas directas | No, usamos uv run |
 
-## 6. Qué compartir y qué seleccionar en VS Code
+Estos archivos no son equivalentes: un YAML con requisitos o una lista de
+paquetes no fija automáticamente toda la resolución para todas las plataformas.
 
-| Recorrido | Entorno local | Archivos para describirlo |
-| --- | --- | --- |
-| Conda | `ds-track`, normalmente fuera del repositorio | environment.yml revisado |
-| uv | `.venv` | pyproject.toml y uv.lock |
+## 5. Elegir tu recorrido
 
-El repositorio ya incluye los archivos de uv; no describen automáticamente las
-instalaciones hechas con Conda. Cuando introduzcamos paquetes, mantendremos las
-instrucciones de cada recorrido acordes a sus requisitos. No copies carpetas de
-entornos a otra computadora: reconstruye desde la configuración.
+- **Ya usas Anaconda:** [Conda](conda.md).
+- **Quieres las herramientas estándar:** [venv + pip](venv-pip.md).
+- **Quieres configuración y lockfile integrados:** [uv](uv.md).
 
-En VS Code, con la extensión Python de Microsoft, usa **Python: Select Interpreter**
-y selecciona el Python de tu recorrido: `ds-track` para Conda o `.venv` para uv.
-La selección del editor y la activación de la terminal son distintas; comprueba
-`sys.executable` cuando obtengas resultados diferentes.
+Cada documento separa shells, explica instalación y consulta de paquetes, e
+incluye la misma práctica con tabulate 0.9.0. DS Track requiere Python 3.11 o posterior.
+No completes los tres ni mezcles gestores en el mismo entorno. Evita instalar
+los ejercicios en base o usar --user dentro de un entorno.
 
-## Cuando algo no funciona
-
-| Situación | Qué revisar |
-| --- | --- |
-| conda no se reconoce en una terminal normal | Prueba el acceso de Anaconda e integración del shell |
-| El prompt indica base | Activa ds-track y comprueba sys.executable |
-| Falta un módulo | El intérprete elegido y dónde se instaló el paquete |
-| El entorno busca un Python eliminado | Reconstruir el entorno con una instalación compatible |
-| uv rechaza el lockfile | Si cambió pyproject.toml; revisar antes de actualizar |
-| La descarga falla | Conexión, permisos y mensaje del instalador |
+No copies carpetas de entornos entre computadoras: reconstruye desde sus archivos.
+Antes de compartir configuración, revisa rutas personales y credenciales.
 
 ## Práctica y criterio de salida
 
-Realiza el [lab 00.05](../../../labs/00_getting_started/05_environment/README.md).
-Puedes avanzar cuando prepares **un** entorno, identifiques su Python y ejecutes
-el script, explicando dónde se instalarían sus paquetes. No hay proyecto asociado todavía.
+Lee el recorrido elegido y realiza el [lab 00.05](../../../labs/00_getting_started/05_environment/README.md).
+La meta común es preparar un entorno, importar la biblioteca, ejecutar un ejemplo
+y explicar cómo reconstruirlo. No hay proyecto de datos asociado todavía.
 
 ## Siguiente lección
 
@@ -271,7 +147,8 @@ el script, explicando dónde se instalarían sus paquetes. No hay proyecto asoci
 
 ## Referencias oficiales
 
-- [Entornos con Conda](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html).
-- [Paquetes con Conda](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-pkgs.html).
+- [Entornos de Python](https://docs.python.org/3/library/venv.html).
+- [pip y entornos](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/).
+- [Conda y uso de pip](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html).
 - [Proyectos con uv](https://docs.astral.sh/uv/guides/projects/).
-- [Entornos virtuales de Python](https://docs.python.org/3/library/venv.html).
+- [Sincronización y lockfiles](https://docs.astral.sh/uv/concepts/projects/sync/).
