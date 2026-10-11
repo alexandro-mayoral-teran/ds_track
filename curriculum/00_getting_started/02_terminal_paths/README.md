@@ -223,6 +223,14 @@ Get-Command git
 ```
 
 ### 6. Ejecutar el verificador
+> **Nota sobre el orden de aprendizaje:** todavía no hemos estudiado Python,
+> `pip` ni `uv`. Los veremos en las lecciones de Primer script y Entorno y
+> dependencias. Aquí solo mostramos cómo ejecutar un programa desde la terminal
+> y leer su resultado; no necesitas comprender el código ni preparar un entorno
+> nuevo. `pip` no se utiliza en este paso y `uv` es una alternativa si ya lo tienes.
+> Si faltan herramientas, anótalo y deja esta verificación pendiente. Puedes
+> continuar con la práctica de rutas y CSV y volver después de preparar el entorno.
+
 
 ```powershell
 python curriculum\00_getting_started\02_terminal_paths\check_environment.py
@@ -449,6 +457,14 @@ Si tu sistema tiene Python como `python3`, usa `python3` en lugar de `python`
 en los comandos directos. Anota cualquier herramienta faltante para preparar el entorno.
 
 ### 6. Ejecutar el verificador
+> **Nota sobre el orden de aprendizaje:** todavía no hemos estudiado Python,
+> `pip` ni `uv`. Los veremos en las lecciones de Primer script y Entorno y
+> dependencias. Aquí solo mostramos cómo ejecutar un programa desde la terminal
+> y leer su resultado; no necesitas comprender el código ni preparar un entorno
+> nuevo. `pip` no se utiliza en este paso y `uv` es una alternativa si ya lo tienes.
+> Si faltan herramientas, anótalo y deja esta verificación pendiente. Puedes
+> continuar con la práctica de rutas y CSV y volver después de preparar el entorno.
+
 
 ```bash
 # Ejecuta el script desde la raíz del proyecto
