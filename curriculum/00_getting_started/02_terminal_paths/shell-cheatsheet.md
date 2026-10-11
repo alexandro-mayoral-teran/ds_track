@@ -13,6 +13,8 @@ mismas opciones o produzcan exactamente el mismo tipo de resultado.
 | Comprobar una ruta | `Test-Path ruta` | `test -e ruta` |
 | Localizar un comando | `Get-Command python` | `command -v python` |
 | Mostrar un archivo | `Get-Content archivo` | `cat archivo` |
+| Mostrar tres líneas iniciales | `Get-Content archivo -TotalCount 3` | `head -n 3 archivo` |
+| Listar archivos CSV | `Get-ChildItem -Filter *.csv` | `ls *.csv` |
 | Crear una carpeta | `New-Item -ItemType Directory nombre` | `mkdir nombre` |
 | Limpiar la pantalla | `Clear-Host` | `clear` |
 

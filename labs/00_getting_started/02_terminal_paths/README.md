@@ -9,7 +9,7 @@
 
 ## Tiempo orientativo
 
-20 a 30 minutos. No es una carrera: el objetivo es poder explicar cada
+30 a 45 minutos. No es una carrera: el objetivo es poder explicar cada
 resultado.
 
 Realiza el lab en el shell que estés usando. Las instrucciones principales
@@ -74,6 +74,14 @@ En Bash o Zsh, el comando equivalente es:
 uv run python curriculum/00_getting_started/02_terminal_paths/check_environment.py
 ```
 
+## Parte E — Inspección de datos
+
+1. Desde la raíz, localiza `ventas_demo.csv` dentro de la carpeta de la lección.
+2. Comprueba que existe y muestra sus primeras tres líneas.
+3. Identifica las columnas y explica cuántos registros viste, sin contar el encabezado.
+4. Explica una tarea de datos que podrías repetir mediante un comando y qué
+   necesitaría otra persona para ejecutarlo en su computadora.
+
 ## Evidencia
 
 Da por terminado el lab cuando puedas responder sin probar al azar:
@@ -84,6 +92,8 @@ Da por terminado el lab cuando puedas responder sin probar al azar:
 - ¿Cómo sabes qué ejecutable corresponde al comando `python`?
 - ¿Qué comandos anteriores pertenecen al shell y cuáles son programas externos?
 - ¿Qué cambiaría si realizaras el lab en Bash o Zsh?
+- ¿Qué aporta la terminal al repetir un análisis?
+- ¿Por qué leer las primeras líneas de un CSV no equivale a validar sus datos?
 
 No es necesario guardar capturas ni salidas de la terminal en Git.
 
