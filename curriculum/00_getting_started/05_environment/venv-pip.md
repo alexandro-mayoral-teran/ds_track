@@ -3,7 +3,11 @@
 Este recorrido es el camino estándar si eliges administrar paquetes con pip. Sal de cualquier entorno activo antes de practicar.
 `.venv-practice` está separado de `.venv` y está excluido de Git.
 
-### PowerShell
+Lee primero la [teoría común](README.md). Necesitas Python 3.11 o posterior;
+si falta, consulta la [descarga oficial](https://www.python.org/downloads/).
+Elige un solo shell y completa su bloque antes de pasar al lab.
+
+## Recorrido completo en PowerShell
 
 ```powershell
 # Crea solo si todavía no existe
@@ -16,19 +20,7 @@ python -m venv .venv-practice
 La activación opcional usa `.\.venv-practice\Scripts\Activate.ps1`; si está
 bloqueada, utiliza la ruta directa sin cambiar políticas. Para salir, `deactivate`.
 
-### Bash/Zsh
-
-```bash
-python3 -m venv .venv-practice
-./.venv-practice/bin/python -m pip --version
-./.venv-practice/bin/python curriculum/00_getting_started/04_first_script/first_summary.py
-```
-
-Puedes activar con `source .venv-practice/bin/activate` y salir con `deactivate`.
-En CMD la activación es `.venv-practice\Scripts\activate.bat`.
-En algunas distribuciones Linux necesitas instalar el componente venv de Python.
-
-## Instalar y comprobar — PowerShell
+### Instalar, comprobar y registrar
 
 Lee primero la [teoría común](README.md). Desde la raíz, después de crear venv:
 
@@ -46,7 +38,19 @@ New-Item -ItemType Directory -Force .environment-practice
 .\.venv-practice\Scripts\python.exe -m pip freeze | Set-Content -Encoding utf8 .environment-practice/requirements.txt
 ```
 
-## Instalar y comprobar — Bash/Zsh
+## Recorrido completo en Bash/Zsh
+
+```bash
+python3 -m venv .venv-practice
+./.venv-practice/bin/python -m pip --version
+./.venv-practice/bin/python curriculum/00_getting_started/04_first_script/first_summary.py
+```
+
+Puedes activar con `source .venv-practice/bin/activate` y salir con `deactivate`.
+En CMD la activación es `.venv-practice\Scripts\activate.bat`.
+En algunas distribuciones Linux necesitas instalar el componente venv de Python.
+
+### Instalar, comprobar y registrar
 
 ```bash
 # Instala y consulta el paquete en el intérprete elegido

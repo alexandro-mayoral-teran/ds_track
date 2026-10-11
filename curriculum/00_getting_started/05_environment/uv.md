@@ -39,7 +39,7 @@ Set-Location $dsTrackRoot
 
 ```bash
 # Desde ds_track, conserva la ubicación
- ds_track_root="$PWD"
+ds_track_root="$PWD"
 # Crea solo si todavía no existe
 uv init --bare --no-workspace --vcs none --python 3.12 .environment-practice/uv-demo
 cd .environment-practice/uv-demo

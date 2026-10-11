@@ -1,5 +1,8 @@
 # Recorrido — Conda
 
+Lee la [teoría común](README.md) antes de empezar. Sigue solo el bloque de tu
+shell y después instala, comprueba y registra la biblioteca.
+
 ### Preparar Anaconda si falta
 
 Si ya tienes Anaconda, no reinstales Python por separado para este recorrido.
@@ -96,22 +99,6 @@ Si después necesitas reorganizar dependencias mezcladas, es preferible reconstr
 el entorno desde su especificación. En esta práctica solo consultamos pip: no
 hay paquetes externos necesarios para el script.
 
-### Compartir la configuración
-
-Desde la raíz del proyecto, con `ds-track` activado:
-
-```text
-# Exporta requisitos elegidos explícitamente, no toda la instalación
-conda env export --from-history > environment.yml
-```
-
-Revisa el archivo antes de compartirlo: elimina un campo `prefix` con una ruta
-personal si aparece. No sobrescribas un environment.yml existente sin revisarlo.
-Este export conserva elecciones hechas con Conda; no registra paquetes instalados
-con pip ni fija todas las dependencias transitivas. No equivale a un lockfile.
-Otra persona puede reconstruirlo con `conda env create -f environment.yml`
-si el nombre no existe. Los paquetes de pip requerirán su declaración aparte.
-
 ## Instalar y comprobar una biblioteca
 
 Lee primero la [teoría común](README.md). Con ds-track activado, desde la raíz:
@@ -128,9 +115,23 @@ python curriculum/00_getting_started/05_environment/library_demo.py
 
 Debes ver 0.9.0 y una tabla con cuaderno 80, lapiz 50 y carpeta 35.
 El script presenta datos ficticios; sus estructuras se estudiarán en Python fundamental.
-Vuelve a exportar environment.yml después de instalar. Revisa que declare Python,
-tabulate y el canal usado, sin rutas personales ni credenciales. No sobrescribas
-una configuración existente sin revisarla; puedes exportar en una carpeta de práctica.
+Ahora registra el entorno con la biblioteca instalada, como indica el siguiente apartado.
+
+## Registrar después de instalar
+
+Desde la raíz del proyecto, con `ds-track` activado:
+
+```text
+# Exporta requisitos elegidos explícitamente, no toda la instalación
+conda env export --from-history > environment.yml
+```
+
+Revisa el archivo antes de compartirlo: elimina un campo `prefix` con una ruta
+personal si aparece. No sobrescribas un environment.yml existente sin revisarlo.
+Este export conserva elecciones hechas con Conda; no registra paquetes instalados
+con pip ni fija todas las dependencias transitivas. No equivale a un lockfile.
+Otra persona puede reconstruirlo con `conda env create -f environment.yml`
+si el nombre no existe. Los paquetes de pip requerirán su declaración aparte.
 
 ## Consultar, actualizar y retirar: referencia
 

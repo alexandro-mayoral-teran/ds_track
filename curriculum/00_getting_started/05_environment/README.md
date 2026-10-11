@@ -8,6 +8,18 @@ estudia la teoría y completa **uno** de los tres recorridos prácticos.
 La meta es identificar el intérprete, instalar y comprobar una biblioteca pequeña
 y registrar los requisitos. Necesitas Internet para las descargas.
 
+### Cómo leer esta lección
+
+1. Lee las secciones 1–3 para comprender paquetes, gestores y aislamiento.
+2. En la sección 4, consulta la creación y activación de tu camino y shell;
+   los demás bloques son referencias, no ejercicios adicionales.
+3. Compara las opciones en las secciones 5–6 y abre un solo recorrido.
+4. Cuando tengas el entorno preparado, usa la sección 7 si trabajas en VS Code.
+5. Realiza el lab con ese mismo entorno.
+
+Puedes dividirlo en dos sesiones: conceptos y elección primero; preparación
+y práctica después. No ejecutes todos los bloques del documento de una vez.
+
 ## 1. Intérprete, bibliotecas y dependencias
 
 | Concepto | Qué significa | Ejemplo |
@@ -269,20 +281,12 @@ ni sincroniza la configuración: esas son acciones diferentes.
 
 ### Conda
 
-Gestiona entornos, Python y paquetes, incluidos componentes que no son solo
-Python. Obtiene paquetes de canales. Anaconda es una distribución que incluye
-Conda y herramientas; Anaconda Prompt es una ventana con un shell configurado.
-
 **Ventajas:** encaja con Anaconda y permite gestionar Python y componentes
 binarios desde una herramienta. **Limitaciones:** disponibilidad según canales
- y plataformas, espacio de instalación y resolución de dependencias. Mezclar
+y plataformas, espacio de instalación y resolución de dependencias. Mezclar
 pip requiere cuidado y registrar ambas fuentes.
 
 ### venv + pip
-
-venv crea el entorno a partir de un Python existente. pip instala paquetes
-Python y resuelve sus dependencias, habitualmente desde PyPI. **pip no crea
-por sí solo el entorno**.
 
 **Ventajas:** herramientas estándar, ampliamente documentadas y explícitas sobre
 qué intérprete recibe cada instalación. **Limitaciones:** administras Python,
@@ -290,9 +294,6 @@ el entorno y los requisitos por separado; pip no gestiona bibliotecas del sistem
 pip freeze describe lo instalado, pero no es un lockfile multiplataforma.
 
 ### uv
-
-Integra entornos, versiones de Python y dependencias de proyectos. Aquí usamos
-su interfaz de proyectos: uv add, uv sync y uv run.
 
 **Ventajas:** registra requisitos en pyproject.toml y resolución en uv.lock,
 automatiza el entorno y está diseñado para realizar esas tareas rápidamente.
