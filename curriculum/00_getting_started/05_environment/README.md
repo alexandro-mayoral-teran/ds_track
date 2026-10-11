@@ -20,10 +20,32 @@ y registrar los requisitos. Necesitas Internet para las descargas.
 | Dependencia transitiva | Software requerido por otra dependencia | Una biblioteca instalada para satisfacer otra |
 | Versión | Edición concreta de un paquete | tabulate==0.9.0 |
 
-Instalar prepara el paquete; import permite utilizarlo desde un programa.
-El nombre para instalar no siempre coincide con el nombre para importar; en
-este ejemplo ambos son tabulate. El editor no incluye automáticamente todas
-las bibliotecas que tu script necesita.
+### Instalar y utilizar son dos pasos diferentes
+
+1. **Instalar el paquete:** el gestor descarga sus archivos y los coloca en el
+   entorno elegido. Por ejemplo, instalar `tabulate` deja esa biblioteca
+   disponible para el Python de ese entorno.
+2. **Importar en el programa:** el código indica qué funcionalidad quiere
+   utilizar. En nuestro ejemplo, `from tabulate import tabulate` permite usar
+   la función que presenta los datos como una tabla.
+
+Instalar una biblioteca no la añade automáticamente a todos tus programas.
+Importarla tampoco la descarga: si no está disponible para el intérprete que
+ejecuta el código, Python informará que no encuentra el módulo.
+
+### Dos nombres que conviene distinguir
+
+- **Nombre de instalación:** identifica el paquete que solicitas al gestor.
+- **Nombre de importación:** identifica el módulo que utilizas en el código.
+
+En esta práctica ambos son `tabulate`. En otras bibliotecas pueden ser distintos;
+consulta sus instrucciones de instalación y uso en lugar de asumir que coinciden.
+
+### Qué papel tiene el editor
+
+VS Code te permite escribir el programa. Abrir un archivo o instalar una extensión
+del editor no instala automáticamente las bibliotecas que el programa necesita.
+Esas bibliotecas deben estar disponibles en el entorno del Python que lo ejecuta.
 
 ## 2. Cómo funciona un entorno y para qué sirve
 
@@ -36,10 +58,32 @@ Proyecto A → entorno A → intérprete y paquetes para A
 Proyecto B → entorno B → intérprete y paquetes para B
 ```
 
-venv se apoya en un Python instalado y crea su propio directorio de paquetes,
-normalmente site-packages. Conda también puede administrar el intérprete y
-componentes binarios. uv gestiona entornos y dependencias de proyectos y puede
-obtener versiones de Python.
+### Cómo prepara el entorno cada herramienta
+
+**Con venv:**
+
+- Empiezas con una instalación de Python que ya existe en tu computadora.
+- venv crea un entorno basado en ese Python, con su propio lugar para instalar
+  paquetes. Ese directorio suele llamarse `site-packages`.
+- Después utilizas pip para instalar las bibliotecas dentro de ese entorno.
+- venv no descarga otra versión de Python: debes elegir una instalación disponible.
+
+**Con Conda:**
+
+- Puedes crear un entorno indicando qué versión de Python quieres utilizar.
+- Conda instala y administra ese intérprete junto con los paquetes del entorno.
+- También puede instalar componentes binarios: bibliotecas ya compiladas que
+  algunos paquetes necesitan, además del código Python.
+
+**Con uv:**
+
+- Defines los requisitos del proyecto y uv prepara su entorno.
+- Puede obtener una versión de Python si necesita una que no está disponible.
+- Instala las dependencias y registra su resolución en un lockfile, para poder
+  preparar ese conjunto de paquetes nuevamente.
+
+Los tres caminos permiten separar los paquetes de un proyecto. La diferencia
+es qué partes administra cada herramienta y qué necesitas preparar por separado.
 
 ### Ventajas y límites
 
