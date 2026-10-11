@@ -136,5 +136,5 @@ Adapta el mensaje al cambio que realmente hiciste.
 
 ## Siguiente paso
 
-La lección 05 — Entorno y dependencias está por desarrollar. Consulta el
-[índice del nivel 0](../../../curriculum/00_getting_started/README.md).
+Continúa con la [lección 05 — Entorno y dependencias](../../../curriculum/00_getting_started/05_environment/README.md)
+antes de realizar su lab.

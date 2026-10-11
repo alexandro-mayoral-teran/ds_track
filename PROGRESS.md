@@ -7,12 +7,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo:** `00_getting_started`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** lección 04 — Primer script Python.
-- **Estado del contenido:** lecciones y labs 01–03 desarrollados; primera versión
-  de la lección y lab 04 disponible. Esto no acredita finalización del estudiante.
+- **Foco de desarrollo del material:** lección 05 — Entorno y dependencias.
+- **Estado del contenido:** lecciones y labs 01–05 disponibles para revisión
+  y práctica. Esto no acredita finalización del estudiante.
 - **Siguiente paso de estudio:** leer la
-  [lección 04](curriculum/00_getting_started/04_first_script/README.md) y realizar
-  el [lab 00.04](labs/00_getting_started/04_first_script/README.md), después de
+  [lección 05](curriculum/00_getting_started/05_environment/README.md) y realizar
+  el [lab 00.05](labs/00_getting_started/05_environment/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -42,6 +42,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se creó la lección 05 y su lab: intérpretes, venv, pip y entorno del proyecto
+  con uv, conservando recorridos por shell y soluciones desplegables.
 - Se desarrollaron las primeras tres lecciones y sus labs, con explicaciones
   por pasos y soluciones desplegables.
 - Se preparó la lección 04 y un primer script sin paquetes externos; la

@@ -161,7 +161,7 @@ La evidencia es tu script modificado; todavía no hay proyecto asociado.
 
 ## Siguiente lección
 
-05 — Entorno y dependencias (por desarrollar): instalación de Python, entornos,
+[05 — Entorno y dependencias](../05_environment/README.md): instalación de Python, entornos,
 pip y uv. Consulta el [índice del nivel 0](../README.md).
 
 ## Referencias
