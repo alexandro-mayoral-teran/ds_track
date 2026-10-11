@@ -35,18 +35,49 @@ como ZIP.
 La relación entre lecciones, práctica y proyectos se explica en
 [`docs/learning-workflow.md`](docs/learning-workflow.md).
 
-## Ruta resumida
+## Recorrido de aprendizaje
 
-1. Git, GitHub, Markdown y perfil como práctica inicial; terminal y entorno.
-2. Python fundamental.
-3. Manipulación con pandas.
-4. SQL y bases de datos relacionales.
-5. R y tidyverse.
-6. Arrow y Parquet.
-7. Polars y DuckDB.
-8. Reportes reproducibles con Quarto.
-9. Aplicaciones con Shiny y fundamentos web.
-10. Calidad, pruebas y proyectos reproducibles.
+Cada paso desarrolla una capacidad que se aplica en el siguiente. El recorrido
+empieza con tu perfil y termina con un proyecto que puedes reconstruir y explicar.
+
+```mermaid
+flowchart TD
+    subgraph foundations["Preparar y comprender"]
+        A["00 · Entorno de aprendizaje<br/>Markdown y perfil en GitHub → terminal → Git<br/>Primer script → dependencias → notebook"]
+        B["01 · Python fundamental<br/>Leer archivos, validar registros y crear funciones"]
+        C["02 · pandas<br/>Limpiar, transformar y resumir datos"]
+        D["03 · SQL y bases de datos<br/>Modelar tablas y consultar indicadores"]
+        A --> B --> C --> D
+    end
+
+    subgraph analysis["Analizar y procesar"]
+        E["04 · R fundamental<br/>Reproducir un análisis en otro lenguaje"]
+        F["05 · tidyverse<br/>Transformar datos y comunicar con gráficas"]
+        G["06 · Arrow y Parquet<br/>Diseñar almacenamiento columnar"]
+        H["07 · Polars y DuckDB<br/>Procesar más datos y comparar rendimiento"]
+        E --> F --> G --> H
+    end
+
+    subgraph products["Comunicar y construir"]
+        I["08 · Quarto<br/>Generar reportes reproducibles"]
+        J["09 · Shiny y fundamentos web<br/>Crear un explorador interactivo"]
+        K["10 · Proyecto reproducible<br/>Integrar código, datos, pruebas y documentación"]
+        I --> J --> K
+    end
+
+    D --> E
+    H --> I
+
+    classDef foundation fill:#dbeafe,stroke:#2563eb,color:#172554;
+    classDef processing fill:#dcfce7,stroke:#16a34a,color:#14532d;
+    classDef product fill:#fef3c7,stroke:#d97706,color:#78350f;
+    class A,B,C,D foundation;
+    class E,F,G,H processing;
+    class I,J,K product;
+```
+
+La publicación del perfil y el uso de Git son prácticas recomendadas. También
+puedes seguir el recorrido con el material descargado como ZIP.
 
 Consulta [`ROADMAP.md`](ROADMAP.md) para ver los resultados y criterios de
 avance de cada nivel.
