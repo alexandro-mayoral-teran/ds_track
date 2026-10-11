@@ -18,16 +18,39 @@ que este documento permanezca como una referencia estable del plan.
 
 **Objetivo:** ejecutar y organizar material de forma reproducible.
 
+- Práctica: distinguir Git (historial local) de GitHub (alojamiento y colaboración),
+  y comprender repositorios, commits y la relación entre local y remoto.
+- Esencial: archivos Markdown (`.md`), texto plano y vista renderizada;
+  encabezados, listas, enlaces y bloques de código.
+- Práctica: crear un README de perfil en GitHub con presentación, objetivos de
+  aprendizaje y enlaces a evidencias.
+- Extensión: Markdown para documentar contexto e instrucciones de IA;
+  diferenciar estructura del documento y claridad de las instrucciones.
 - Esencial: terminal, rutas y archivos en PowerShell y shells Unix.
 - Esencial: distinguir sistema operativo, terminal, shell y comando.
-- Esencial: Markdown y Jupyter.
+- Práctica: actualizar el perfil desde la terminal con `clone`, `status`, `diff`,
+  `add`, `commit` y `push`.
+- Esencial: primer script Python y primer notebook con Jupyter.
 - Esencial: conceptos de entorno y dependencias.
 - Práctica: `pip` para comprender el estándar de instalación.
 - Extensión: `uv` para administrar el proyecto Python.
 - Extensión: Git y GitHub para historial y publicación.
 
-**Criterio de salida:** ejecutar un script y un notebook desde un entorno limpio
-y explicar dónde están sus dependencias.
+**Orden recomendado:** Git y GitHub → Markdown → perfil desde la web → terminal
+y rutas → actualización del perfil con Git → primer script → entorno y
+dependencias → primer notebook.
+
+**Primera evidencia:** un README con presentación y objetivos. En la práctica
+con GitHub, publicarlo como perfil y explicar cómo actualizarlo conservando su
+historial. Iconos, estadísticas y automatizaciones quedan como extensiones.
+
+GitHub es una práctica recomendada: quien estudie desde un ZIP puede crear el
+README localmente y continuar sin cuenta ni publicación.
+
+**Criterio de salida:** escribir y previsualizar un documento Markdown, ejecutar
+un script y un notebook desde un entorno limpio y explicar dónde están sus
+dependencias. Si se realiza la práctica de GitHub, distinguir Git de GitHub y
+demostrar una actualización del perfil mediante un commit y un push.
 
 ## Nivel 1 — Python fundamental
 

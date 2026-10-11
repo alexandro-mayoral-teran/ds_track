@@ -8,38 +8,30 @@ Esta guía te muestra los comandos exactos de Git para subir tu perfil a GitHub 
 
 ---
 
-## 🟢 Escenario 1: Es la PRIMERA vez que subes los archivos
+## 🟢 Escenario 1: Traer el perfil a tu computadora
 
-Si es la primera vez que vas a enlazar esta carpeta de tu computadora con GitHub, abre tu terminal en esta carpeta (`C:\bluepill5\Devs\git_profile`) y ejecuta estos comandos uno por uno:
+Si creaste el repositorio en GitHub con un README, clónalo para conservar su historial.
+Abre la terminal en `C:\bluepill5\Devs`, fuera de `ds_track`, y ejecuta:
 
-```bash
-# 1. Inicializa el repositorio local (le dice a Git que empiece a rastrear la carpeta)
-git init
-
-# 2. Agrega los archivos que quieres subir. 
-# NOTA: Si usas "git add ." subirás TODOS los archivos de la carpeta. 
-# Si tienes apuntes u otros archivos en esta carpeta que NO quieres subir,
-# especifica mejor los archivos o carpetas exactas así:
-git add README.md .github/workflows/snake.yml assets/
-
-# 3. Guarda los cambios localmente (hace una "captura")
-git commit -m "Primera subida de mi perfil"
-
-# 4. Conecta tu carpeta con el repositorio de GitHub
-git remote add origin https://github.com/alexandro-mayoral-teran/alexandro-mayoral-teran.git
-
-# 5. Sube los archivos a la rama principal (main)
-git branch -M main
-git push -u origin main --force
+```text
+git clone https://github.com/alexandro-mayoral-teran/alexandro-mayoral-teran.git
+cd alexandro-mayoral-teran
+git status
 ```
 
----
+Edita el README dentro de esa carpeta. Luego sigue el escenario 2 para guardar
+la actualización y publicarla. No necesitas ejecutar `git init` ni configurar
+el remoto: el clon ya incluye ambos.
 
+Consulta la [lección de Git y perfil](curriculum/00_getting_started/02_github_profile/README.md)
+para comprender cada paso.
+
+---
 ## 🔄 Escenario 2: Ya lo subiste antes y solo quieres ACTUALIZAR cambios
 
 Si ya enlazaste tu carpeta (hiciste el Escenario 1 en el pasado), y hoy decidiste modificar algo en tu `README.md` (por ejemplo, agregaste una nueva herramienta, cambiaste un texto o agregaste un proyecto) y quieres que se refleje en GitHub, **ya no necesitas hacer todos los pasos de nuevo**. 
 
-Solo abre tu terminal en la misma carpeta y ejecuta la "trinidad" de comandos de Git:
+Solo abre tu terminal en la carpeta clonada de tu perfil y ejecuta la "trinidad" de comandos de Git:
 
 ```bash
 # 1. Prepara el archivo modificado para subirlo.
@@ -54,3 +46,4 @@ git push
 ```
 
 ¡Eso es todo! Ve a la página principal de tu GitHub, presiona F5 para refrescar y verás tus nuevos cambios aplicados inmediatamente.
+

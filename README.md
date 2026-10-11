@@ -1,7 +1,7 @@
 # DS Track
 
 Ruta de aprendizaje práctica para manipulación, análisis, almacenamiento y
-comunicación de datos, usando un dominio sintético de cartera crediticia.
+comunicación de datos.
 
 El repositorio está diseñado para avanzar por etapas. Los fundamentos aparecen
 antes que las herramientas de mayor escala, y cada nivel termina con un
@@ -37,7 +37,7 @@ La relación entre lecciones, práctica y proyectos se explica en
 
 ## Ruta resumida
 
-1. Entorno, terminal, Markdown y Git opcional.
+1. Git, GitHub, Markdown y perfil como práctica inicial; terminal y entorno.
 2. Python fundamental.
 3. Manipulación con pandas.
 4. SQL y bases de datos relacionales.

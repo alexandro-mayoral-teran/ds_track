@@ -7,6 +7,10 @@ convertir la instalación de herramientas en el tema principal.
 
 ## Objetivos
 
+- Distinguir Git de GitHub y un repositorio local de uno remoto.
+- Escribir y previsualizar Markdown para documentar el aprendizaje.
+- Crear y actualizar un perfil de GitHub como práctica recomendada.
+- Reconocer el uso de Markdown en documentación e instrucciones para IA.
 - Reconocer rutas, archivos y directorios.
 - Ejecutar Python desde la terminal.
 - Comprender qué problema resuelve un entorno virtual.
@@ -16,17 +20,22 @@ convertir la instalación de herramientas en el tema principal.
 
 ## Próximo contenido
 
-| Lección | Estado | Resultado |
+| Orden | Tema | Resultado |
 | --- | --- | --- |
-| [01 — Terminal, rutas y entorno](01_terminal_paths/) | En curso | Navegar en PowerShell y Unix |
-| 02 — Primer script | No iniciado | Ejecutar y modificar Python |
-| 03 — Entorno y dependencias | No iniciado | Comprender `pip`, `uv` y entornos |
-| 04 — Primer notebook | No iniciado | Ejecutar un análisis por celdas |
-| 05 — Markdown | No iniciado | Documentar una práctica |
-| 06 — Git opcional | No iniciado | Consultar estado y crear un commit |
+| 1 | [Git, GitHub, Markdown y perfil](02_github_profile/) | Escribir una presentación y publicarla como práctica |
+| 2 | [Terminal, rutas y entorno](01_terminal_paths/) | Navegar en PowerShell y Unix |
+| 3 | [Actualizar el perfil con Git](02_github_profile/#actualizar-desde-la-terminal) | Revisar cambios, crear un commit y hacer push |
+| 4 | Primer script (por desarrollar) | Ejecutar y modificar Python |
+| 5 | Entorno y dependencias (por desarrollar) | Comprender `pip`, `uv` y entornos |
+| 6 | Primer notebook (por desarrollar) | Ejecutar un análisis por celdas |
+
+Las carpetas conservan sus identificadores para mantener los enlaces existentes;
+el orden de estudio es el de esta tabla. El avance se registra en `PROGRESS.md`.
 
 ## Evidencias del módulo
 
+- README de presentación; perfil publicado y actualización con Git si se elige
+  la práctica de GitHub.
 - Resultado del lab de terminal y rutas.
 - Primer script modificado por el estudiante.
 - Entorno reconstruido desde las instrucciones.
@@ -35,5 +44,5 @@ convertir la instalación de herramientas en el tema principal.
 
 ## Criterio de salida
 
-El estudiante puede descargar el material en otra carpeta, preparar el entorno
+El estudiante puede escribir y previsualizar Markdown, descargar el material en otra carpeta, preparar el entorno
 y ejecutar un script y un notebook siguiendo únicamente las instrucciones.
