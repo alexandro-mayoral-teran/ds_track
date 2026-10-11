@@ -15,6 +15,8 @@ existe, entra y consulta sus archivos en lugar de repetir init.
 
 ## PowerShell
 
+### Parte A — Preparar y usar el entorno
+
 Desde la raíz de ds_track:
 
 ```powershell
@@ -22,6 +24,21 @@ Desde la raíz de ds_track:
 $dsTrackRoot = (Get-Location).Path
 # Crea una configuración mínima, sin otro repositorio Git
 uv init --bare --no-workspace --vcs none --python 3.12 .environment-practice/uv-demo
+Set-Location .environment-practice/uv-demo
+# Primera preparación: genera el lockfile inicial sin bibliotecas externas
+uv sync
+uv run --locked python -c "import sys; print(sys.executable)"
+uv run --locked python ../../curriculum/00_getting_started/04_first_script/first_summary.py
+Set-Location $dsTrackRoot
+```
+
+### Parte B — Instalar y conservar dependencias
+
+Lee [05B](dependencies.md). Desde la raíz de ds_track:
+
+```powershell
+# Usa el proyecto que ya preparaste en la parte A
+$dsTrackRoot = (Get-Location).Path
 Set-Location .environment-practice/uv-demo
 # Declara e instala el paquete; actualiza configuración y lockfile
 uv add "tabulate==0.9.0"
@@ -37,11 +54,28 @@ Set-Location $dsTrackRoot
 
 ## Bash/Zsh
 
+### Parte A — Preparar y usar el entorno
+
 ```bash
 # Desde ds_track, conserva la ubicación
 ds_track_root="$PWD"
 # Crea solo si todavía no existe
 uv init --bare --no-workspace --vcs none --python 3.12 .environment-practice/uv-demo
+cd .environment-practice/uv-demo
+# Prepara el entorno y genera su lockfile inicial
+uv sync
+uv run --locked python -c "import sys; print(sys.executable)"
+uv run --locked python ../../curriculum/00_getting_started/04_first_script/first_summary.py
+cd "$ds_track_root"
+```
+
+### Parte B — Instalar y conservar dependencias
+
+Lee [05B](dependencies.md). Desde la raíz de ds_track:
+
+```bash
+# Entra al proyecto ya creado
+ds_track_root="$PWD"
 cd .environment-practice/uv-demo
 # Declara e instala
 uv add 'tabulate==0.9.0'

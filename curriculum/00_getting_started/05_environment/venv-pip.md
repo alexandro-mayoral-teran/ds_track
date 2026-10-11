@@ -7,7 +7,9 @@ Lee primero la [teoría común](README.md). Necesitas Python 3.11 o posterior;
 si falta, consulta la [descarga oficial](https://www.python.org/downloads/).
 Elige un solo shell y completa su bloque antes de pasar al lab.
 
-## Recorrido completo en PowerShell
+## Recorrido en PowerShell
+
+### Parte A — Preparar y usar el entorno
 
 ```powershell
 # Crea solo si todavía no existe
@@ -20,7 +22,9 @@ python -m venv .venv-practice
 La activación opcional usa `.\.venv-practice\Scripts\Activate.ps1`; si está
 bloqueada, utiliza la ruta directa sin cambiar políticas. Para salir, `deactivate`.
 
-### Instalar, comprobar y registrar
+### Parte B — Instalar, comprobar y registrar
+
+Antes de continuar, lee [05B](dependencies.md). Conserva el entorno de la parte A.
 
 Lee primero la [teoría común](README.md). Desde la raíz, después de crear venv:
 
@@ -38,7 +42,9 @@ New-Item -ItemType Directory -Force .environment-practice
 .\.venv-practice\Scripts\python.exe -m pip freeze | Set-Content -Encoding utf8 .environment-practice/requirements.txt
 ```
 
-## Recorrido completo en Bash/Zsh
+## Recorrido en Bash/Zsh
+
+### Parte A — Preparar y usar el entorno
 
 ```bash
 python3 -m venv .venv-practice
@@ -50,7 +56,9 @@ Puedes activar con `source .venv-practice/bin/activate` y salir con `deactivate`
 En CMD la activación es `.venv-practice\Scripts\activate.bat`.
 En algunas distribuciones Linux necesitas instalar el componente venv de Python.
 
-### Instalar, comprobar y registrar
+### Parte B — Instalar, comprobar y registrar
+
+Antes de continuar, lee [05B](dependencies.md). Conserva el entorno de la parte A.
 
 ```bash
 # Instala y consulta el paquete en el intérprete elegido

@@ -8,15 +8,18 @@
   [uv](../../../curriculum/00_getting_started/05_environment/uv.md).
 - Proyecto: no aplica todavía; practicamos con datos ficticios.
 
-Reserva 40 a 60 minutos, además de las descargas. Elige un solo camino y lee
-su material antes de ejecutar. La meta común es preparar un entorno, instalar
-tabulate 0.9.0, ejecutar la demostración y registrar sus requisitos.
+Reserva dos sesiones de 20 a 30 minutos, además de las descargas. Elige un solo
+camino para ambas: sesión A después de [05A](../../../curriculum/00_getting_started/05_environment/environment.md)
+y sesión B después de [05B](../../../curriculum/00_getting_started/05_environment/dependencies.md).
 
-## Parte A — Comprender y elegir
+## Sesión A — Preparar y usar un entorno
 
 1. Explica qué es un entorno, qué aísla y qué no protege.
 2. Identifica tu shell y elige un gestor según tu instalación y necesidades.
 3. Explica quién crea el entorno y quién instala sus paquetes en tu recorrido.
+4. Realiza la parte A de tu recorrido y comprueba la ruta de Python.
+5. Ejecuta el script de la lección 04 sin instalar tabulate todavía.
+6. Si usas VS Code, selecciona ese intérprete y comprueba una terminal nueva.
 
 <details>
 <summary>Ver respuesta orientativa de la parte A</summary>
@@ -26,11 +29,17 @@ uv integra entorno y gestión del proyecto. El entorno separa paquetes de otros
 proyectos, pero no es una barrera de seguridad. Si ya usas Anaconda, Conda es
 un comienzo natural. El shell y el gestor son herramientas distintas.
 
+Conda: prepara y activa ds-track. pip: crea .venv-practice y usa su Python.
+uv: crea el mini proyecto y ejecuta con uv run. El primer script no necesita
+bibliotecas externas. La evidencia es la ruta del intérprete y su resultado.
+
 </details>
 
-## Parte B — Preparar e instalar
+## Sesión B — Instalar y conservar dependencias
 
-1. Sigue el documento de tu recorrido y consulta el ejecutable de Python.
+Lee 05B y continúa con la parte B de tu recorrido, sin crear otro entorno.
+
+1. Selecciona el entorno de la sesión A y consulta el ejecutable de Python.
 2. Instala tabulate 0.9.0 en el entorno, no en base ni en el Python global.
 3. Comprueba que el intérprete importa el paquete y muestra su versión.
 4. Ejecuta library_demo.py con ese entorno y revisa la tabla.
@@ -85,7 +94,7 @@ en el proyecto compartido de la raíz para resolver esta práctica.
 La tabla debe contener tres productos e importes: cuaderno 80, lapiz 50 y
 carpeta 35. No hace falta dominar el código del ejemplo todavía.
 
-## Parte C — Registrar y retomar
+### Registrar y retomar al terminar la sesión B
 
 1. Consulta los paquetes instalados usando tu gestor.
 2. Conserva una configuración revisada: YAML de Conda, requirements.txt de pip

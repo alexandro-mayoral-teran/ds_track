@@ -1,7 +1,9 @@
 # Recorrido — Conda
 
-Lee la [teoría común](README.md) antes de empezar. Sigue solo el bloque de tu
-shell y después instala, comprueba y registra la biblioteca.
+Lee [05A](environment.md) antes de la parte A y [05B](dependencies.md) antes de la parte B.
+Sigue solo el bloque de tu shell.
+
+## Parte A — Preparar y usar el entorno
 
 ### Preparar Anaconda si falta
 
@@ -99,7 +101,11 @@ Si después necesitas reorganizar dependencias mezcladas, es preferible reconstr
 el entorno desde su especificación. En esta práctica solo consultamos pip: no
 hay paquetes externos necesarios para el script.
 
-## Instalar y comprobar una biblioteca
+## Parte B — Instalar y conservar dependencias
+
+Lee [05B](dependencies.md) antes de continuar. Ya debes tener ds-track preparado.
+
+### Instalar y comprobar una biblioteca
 
 Lee primero la [teoría común](README.md). Con ds-track activado, desde la raíz:
 
