@@ -39,6 +39,7 @@ Al terminar, registra el archivo o enlace y tus dudas en
 [`PROGRESS.md`](../../../PROGRESS.md). No marques el nivel completo por terminar
 este lab: aún faltan el script, el entorno y el notebook.
 
-## Siguiente práctica
+## Siguiente paso
 
-Continúa con el [lab 00.02 — Terminal y rutas](../02_terminal_paths/README.md).
+Continúa con la [lección 02 — Terminal y rutas](../../../curriculum/00_getting_started/02_terminal_paths/README.md).
+Lee los conceptos y ejemplos antes de realizar su lab asociado.

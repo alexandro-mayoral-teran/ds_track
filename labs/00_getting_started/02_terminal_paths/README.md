@@ -86,3 +86,8 @@ Da por terminado el lab cuando puedas responder sin probar al azar:
 - ¿Qué cambiaría si realizaras el lab en Bash o Zsh?
 
 No es necesario guardar capturas ni salidas de la terminal en Git.
+
+## Siguiente paso
+
+Continúa con la [lección 03 — Git: historial y actualización del perfil](../../../curriculum/00_getting_started/03_git_workflow/README.md).
+Lee los conceptos y ejemplos antes de realizar su lab asociado.

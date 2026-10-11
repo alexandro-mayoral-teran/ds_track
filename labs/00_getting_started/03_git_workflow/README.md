@@ -34,3 +34,9 @@ Registra el enlace al commit y las dudas en [PROGRESS.md](../../../PROGRESS.md).
 - ¿Qué diferencia hay entre guardar el archivo, hacer commit y hacer push?
 - ¿Por qué clonaste el repositorio que ya tenía un README?
 - ¿Qué te permite comprobar `git diff --staged` antes del commit?
+
+## Siguiente paso
+
+La siguiente lección será Primer script Python; todavía está por desarrollar.
+Consulta el [índice del nivel 0](../../../curriculum/00_getting_started/README.md)
+para revisar el recorrido y registra tus dudas antes de continuar.
