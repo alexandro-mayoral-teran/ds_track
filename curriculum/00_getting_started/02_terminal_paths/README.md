@@ -233,5 +233,8 @@ entre PowerShell y Unix y ejecutar el mismo verificador sin cambiar su código.
 
 ## Referencia rápida
 
+Después de completar el lab, continúa con
+[03 — Git: historial y actualización del perfil](../03_git_workflow/README.md).
+
 Consulta la [tabla de equivalencias](shell-cheatsheet.md) cuando necesites cambiar
 de un shell a otro. No es necesario memorizarla completa.

@@ -22,15 +22,16 @@ convertir la instalación de herramientas en el tema principal.
 
 | Orden | Tema | Resultado |
 | --- | --- | --- |
-| 1 | [Git, GitHub, Markdown y perfil](01_github_profile/) | Escribir una presentación y publicarla como práctica |
+| 1 | [Markdown y tu perfil en GitHub](01_github_profile/) | Entender Git y GitHub; escribir y publicar el README desde la web |
 | 2 | [Terminal, rutas y entorno](02_terminal_paths/) | Navegar en PowerShell y Unix |
-| 3 | [Actualizar el perfil con Git](01_github_profile/#actualizar-desde-la-terminal) | Revisar cambios, crear un commit y hacer push |
+| 3 | [Git: historial y actualización del perfil](03_git_workflow/) | Clonar, revisar cambios, crear un commit y hacer push |
 | 4 | Primer script (por desarrollar) | Ejecutar y modificar Python |
 | 5 | Entorno y dependencias (por desarrollar) | Comprender `pip`, `uv` y entornos |
 | 6 | Primer notebook (por desarrollar) | Ejecutar un análisis por celdas |
 
-Estudia la parte A del lab del perfil, completa el lab de terminal y vuelve a la
-parte B del perfil para practicar Git. El avance se registra en `PROGRESS.md`.
+Cada lección tiene su propio lab y criterio de salida: `00.01` → `00.02` →
+`00.03`. Primero documentas desde la web, después aprendes a navegar en la
+terminal y finalmente usas Git desde ella. El avance se registra en `PROGRESS.md`.
 
 ## Evidencias del módulo
 

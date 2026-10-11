@@ -1,16 +1,14 @@
-# Git, GitHub, Markdown y tu primer perfil
+# 01 — Markdown y tu perfil en GitHub
 
 ## Propósito
 
-Crear una presentación que pueda crecer con tus proyectos mientras aprendes a
-documentar y conservar cambios. Esta práctica se divide en dos sesiones: primero
-el README desde la web; después, su actualización desde la terminal.
+Escribir y previsualizar Markdown, distinguir Git de GitHub y crear una
+presentación desde la web. Los comandos de Git se estudian en la lección 03.
 
 ## Prerrequisitos
 
-Para la primera parte basta con un editor de texto. La publicación requiere una
-cuenta de GitHub. Para la segunda parte completa la
-[lección de terminal y rutas](../02_terminal_paths/README.md) e instala Git.
+Basta con un editor de texto. La publicación requiere una cuenta de GitHub.
+No necesitas usar la terminal ni instalar Git para esta lección.
 
 ## Conceptos
 
@@ -78,46 +76,19 @@ Este repositorio del perfil es distinto del repositorio privado `ds_track`.
 Puedes completar la práctica sin cuenta guardando y previsualizando el README
 localmente. Los iconos, tarjetas de estadísticas y automatizaciones son extensiones.
 
-## Actualizar desde la terminal
-
-Después de la práctica de terminal, clona el repositorio del perfil en una carpeta
-separada de DS Track. Como ya lo creaste con un README, clonar conserva su historial.
-Sustituye `TU_USUARIO` por tu usuario real:
-
-```text
-git clone https://github.com/TU_USUARIO/TU_USUARIO.git
-cd TU_USUARIO
-git status
-```
-
-Edita el README y luego ejecuta:
-
-```text
-git diff
-git add README.md
-git diff --staged
-git commit -m "Describe mis objetivos de aprendizaje"
-git push
-git status
-```
-
-`diff` permite revisar antes de guardar. `add` prepara los cambios; `commit`
-los registra localmente; `push` los envía al remoto. La autenticación puede
-solicitarse al clonar o publicar. Si Git pide tu identidad de autor, configura
-tu nombre y un correo verificado o el correo privado de GitHub antes del commit.
-
-Si `push` indica que hay cambios remotos pendientes, consulta `git status` y
-el historial antes de continuar. No uses `--force` como solución inicial.
-
 ## Práctica y criterio de salida
 
-Realiza primero la parte A del [lab `00.01`](../../../labs/00_getting_started/01_github_profile/README.md).
-Después completa la lección y el lab de terminal antes de volver a la parte B.
-Puedes avanzar cuando expliques Git frente a GitHub, fuente frente a vista previa
-y archivo guardado frente a commit. Si publicas el perfil, comprueba también
-que tu actualización aparece en GitHub.
+Realiza el [lab 00.01](../../../labs/00_getting_started/01_github_profile/README.md).
+Puedes avanzar cuando expliques Git frente a GitHub y fuente frente a vista previa,
+y tu README muestre la presentación y los objetivos con formato correcto.
+Si eliges publicarlo, comprueba que aparece en tu perfil.
 
 No hay proyecto de datos asociado todavía; el README es la primera evidencia.
+
+## Siguiente lección
+
+Continúa con [02 — Terminal y rutas](../02_terminal_paths/README.md).
+Después aprenderás a actualizar el perfil con Git en la lección 03.
 
 ## Referencias
 

@@ -9,8 +9,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 - **Estado:** en curso
 - **Objetivo actual:** comprender Git, GitHub y Markdown mediante la creación
   de un README de presentación.
-- **Siguiente paso:** realizar la parte A del
-  [lab `00.01` — Perfil y Git](labs/00_getting_started/01_github_profile/README.md).
+- **Siguiente paso:** realizar el
+  [lab `00.01` — Markdown y perfil](labs/00_getting_started/01_github_profile/README.md).
 
 ## Estados
 
@@ -44,6 +44,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Markdown y actualización desde Git. La práctica de terminal se conserva.
 - Se alineó la numeración con el orden de estudio y se agregó una plantilla
   editable para el README del perfil.
+- Se separaron las lecciones 01 y 03: creación desde la web y actualización con
+  Git, cada una con su propio documento y lab.
 
 ### 2026-10-08
 

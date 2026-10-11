@@ -1,4 +1,4 @@
-# Lab 00.01 — Tu perfil y su historial
+# Lab 00.01 — Markdown y perfil
 
 ## Relación
 
@@ -8,14 +8,13 @@
 
 ## Objetivo
 
-Documentar tu presentación en Markdown y explicar cómo se conserva una actualización.
+Documentar tu presentación en Markdown y comprobar su formato.
 
 ## Tiempo orientativo
 
-Dos sesiones de 20 a 30 minutos, separadas por el
-[lab de terminal](../02_terminal_paths/README.md).
+20 a 30 minutos.
 
-## Parte A — Escribir y publicar
+## Actividad — Escribir y publicar
 
 1. Copia la [plantilla de ejemplo](../../../templates/github-profile/PROFILE.md)
    a tu README. Sustituye `TU_NOMBRE` y `TU_USUARIO` y adapta la presentación
@@ -27,25 +26,19 @@ Dos sesiones de 20 a 30 minutos, separadas por el
 5. Escribe una instrucción breve para una IA con objetivo, contexto y criterio
    de validación. Explica qué aporta Markdown a su organización.
 
-## Parte B — Actualizar con Git
-
-Esta parte es opcional y requiere completar primero el lab de terminal.
-
-1. Clona el repositorio del perfil fuera de la carpeta de DS Track.
-2. Agrega una frase sobre una habilidad que quieras desarrollar.
-3. Revisa `git diff` y prepara únicamente `README.md`.
-4. Revisa `git diff --staged`, crea un commit descriptivo y haz push.
-5. Comprueba la frase y el commit en GitHub; revisa el estado local.
-
 ## Evidencia y reflexión
 
 - El README se visualiza correctamente y expresa tus objetivos reales.
 - Puedes explicar la diferencia entre Git, GitHub y Markdown.
-- ¿Qué diferencia hay entre guardar el archivo, hacer commit y hacer push?
-- ¿Por qué clonaste el repositorio que ya tenía un README?
+- ¿Qué diferencia hay entre el texto fuente y la vista previa?
+- ¿Qué distingue un repositorio de GitHub de un archivo Markdown?
 - ¿Qué información cambia al hacer público el repositorio del perfil?
 - ¿Por qué Markdown no garantiza que una IA entienda o cumpla una instrucción?
 
 Al terminar, registra el archivo o enlace y tus dudas en
 [`PROGRESS.md`](../../../PROGRESS.md). No marques el nivel completo por terminar
 este lab: aún faltan el script, el entorno y el notebook.
+
+## Siguiente práctica
+
+Continúa con el [lab 00.02 — Terminal y rutas](../02_terminal_paths/README.md).
