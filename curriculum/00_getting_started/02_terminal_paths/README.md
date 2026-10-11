@@ -58,7 +58,9 @@ ejecutarlo. Primero aprenderás a ubicarte, leer rutas y reconocer un comando.
 ## Cómo seguir esta lección
 
 Ejecuta los ejemplos del shell que uses, un comando a la vez. Comprueba el
-resultado antes de continuar. Las rutas relativas parten de la raíz de
+resultado antes de continuar. Elige el [recorrido en PowerShell](#recorrido-en-powershell)
+o el [recorrido en Bash/Zsh](unix-walkthrough.md); no necesitas completar ambos.
+Las rutas relativas parten de la raíz de
 `ds_track`, salvo cuando se indica un cambio de carpeta.
 
 ## Antes de comenzar: cuatro conceptos diferentes
@@ -96,19 +98,18 @@ Las opciones pertenecen a cada herramienta: no todas aceptan las mismas.
 El comando devuelve una salida o un error; leer ambos forma parte del trabajo.
 Un bloque Markdown solo muestra el comando: debes ejecutarlo en la terminal.
 
-## 1. El directorio actual
+## Recorrido en PowerShell
+
+Sigue esta sección si usas PowerShell. Las líneas que empiezan con # son
+comentarios: explican el paso y no se ejecutan como comandos.
+
+### 1. El directorio actual
 
 La terminal siempre está situada en una carpeta. Los comandos que usan rutas
 relativas parten de esa ubicación.
 
 ```powershell
 Get-Location
-```
-
-En Bash o Zsh:
-
-```bash
-pwd
 ```
 
 La ruta depende de dónde descargaste el proyecto. Por ejemplo:
@@ -120,7 +121,7 @@ C:\aprendizaje\ds_track
 No copies esta ruta como si existiera en tu computadora: comprueba la tuya.
 La raíz del proyecto contiene `README.md`, `ROADMAP.md` y `pyproject.toml`.
 
-## 2. Ver el contenido
+### 2. Ver el contenido
 
 ```powershell
 Get-ChildItem
@@ -135,18 +136,11 @@ Para mostrar también elementos ocultos, como `.gitignore`:
 Get-ChildItem -Force
 ```
 
-En Bash o Zsh se usa normalmente:
-
-```bash
-ls
-ls -la
-```
-
 PowerShell trabaja principalmente con objetos; los shells Unix tradicionalmente
 componen herramientas que intercambian texto. Esta diferencia será importante
 cuando estudiemos pipes, pero no necesitamos profundizar todavía.
 
-## 3. Rutas absolutas y relativas
+### 3. Rutas absolutas y relativas
 
 Una ruta absoluta parte desde una unidad:
 
@@ -161,24 +155,13 @@ README.md
 curriculum\00_getting_started\README.md
 ```
 
-En Unix se usa `/` como separador y una ruta absoluta comienza en `/`:
-
-```text
-/home/usuario/ds_track/README.md
-curriculum/00_getting_started/README.md
-```
-
 Git y muchas herramientas aceptan `/` también en Windows. En código Python
 preferiremos `pathlib` para construir rutas sin asumir un sistema operativo.
 
-Si una ruta contiene espacios, escríbela entre comillas. Ejemplos ilustrativos:
+Si una ruta contiene espacios, escríbela entre comillas. Ejemplo ilustrativo:
 
 ```powershell
 Test-Path "C:\Mis proyectos\ds_track\README.md"
-```
-
-```bash
-test -e "/home/usuario/Mis proyectos/ds_track/README.md"
 ```
 
 Podemos preguntar si ambas existen:
@@ -191,30 +174,26 @@ Test-Path curriculum\00_getting_started\README.md
 Ambas instrucciones deben devolver `True` cuando se ejecutan desde la raíz del
 proyecto.
 
-En Bash o Zsh:
-
-```bash
-test -e README.md && echo "existe"
-test -e curriculum/00_getting_started/README.md && echo "existe"
-```
-
-## 4. Cambiar de carpeta
+### 4. Cambiar de carpeta
 
 ```powershell
+# Entra al módulo desde la raíz de ds_track
 Set-Location curriculum\00_getting_started
+
+# Confirma la nueva ubicación
 Get-Location
+
+# Lista los archivos de esta carpeta
 Get-ChildItem
+
+# Sube dos niveles para volver a la raíz
 Set-Location ..\..
+
+# Comprueba que regresaste a ds_track
+Get-Location
 ```
 
-PowerShell también reconoce `cd`. En Bash o Zsh usaríamos:
-
-```bash
-cd curriculum/00_getting_started
-pwd
-ls
-cd ../..
-```
+PowerShell también reconoce `cd` como alias de `Set-Location`.
 
 `..` significa "carpeta padre" y `.` significa "carpeta actual".
 
@@ -222,7 +201,7 @@ Antes de ejecutar un archivo, vuelve a comprobar tu ubicación con
 `Get-Location`. Muchos errores de archivo no encontrado son, en realidad,
 errores de ubicación.
 
-## 5. Comprobar herramientas
+### 5. Comprobar herramientas
 
 Desde la raíz del proyecto:
 
@@ -243,24 +222,10 @@ Get-Command uv
 Get-Command git
 ```
 
-En Bash o Zsh:
-
-```bash
-command -v python
-command -v uv
-command -v git
-```
-
-## 6. Ejecutar el verificador
+### 6. Ejecutar el verificador
 
 ```powershell
 python curriculum\00_getting_started\02_terminal_paths\check_environment.py
-```
-
-En Bash o Zsh:
-
-```bash
-python curriculum/00_getting_started/02_terminal_paths/check_environment.py
 ```
 
 También puede ejecutarse mediante el proyecto de `uv`:
@@ -269,16 +234,10 @@ También puede ejecutarse mediante el proyecto de `uv`:
 uv run python curriculum\00_getting_started\02_terminal_paths\check_environment.py
 ```
 
-En Bash o Zsh cambia únicamente el separador de la ruta:
-
-```bash
-uv run python curriculum/00_getting_started/02_terminal_paths/check_environment.py
-```
-
 Todavía no necesitas entender el código del script. Lo revisaremos en la lección
 de Primer script Python; antes sigue la lección 03 de Git e historial.
 
-## 7. Primer contacto con un archivo de datos
+### 7. Primer contacto con un archivo de datos
 
 Incluimos [ventas_demo.csv](ventas_demo.csv), una muestra ficticia de tres ventas.
 Un CSV es un archivo de texto que representa una tabla; en este ejemplo las
@@ -287,20 +246,17 @@ columnas están separadas por comas y la primera línea contiene sus nombres.
 Desde la raíz del proyecto, localízalo y lee las primeras tres líneas:
 
 ```powershell
+# Busca archivos CSV en la carpeta de la lección
 Get-ChildItem curriculum\00_getting_started\02_terminal_paths -Filter *.csv
+
+# Confirma que existe el archivo de muestra
 Test-Path curriculum\00_getting_started\02_terminal_paths\ventas_demo.csv
+
+# Lee el encabezado y los primeros dos registros
 Get-Content curriculum\00_getting_started\02_terminal_paths\ventas_demo.csv -TotalCount 3
 ```
 
-En Bash o Zsh:
-
-```bash
-ls curriculum/00_getting_started/02_terminal_paths/*.csv
-test -e curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv && echo "existe"
-head -n 3 curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv
-```
-
-`*.csv` busca nombres con esa extensión. `-TotalCount 3` y `head -n 3` muestran
+`*.csv` busca nombres con esa extensión. `-TotalCount 3` muestra
 solo tres líneas, útil para inspeccionar el comienzo sin imprimir todo el archivo.
 
 Resultado esperado de la lectura:
@@ -318,13 +274,13 @@ varias líneas. La limpieza y el análisis se estudiarán con Python y pandas.
 > **Para comprobar:** identifica los nombres de las columnas. Si cambias de
 > carpeta, ¿por qué la misma ruta relativa podría dejar de funcionar?
 
-## 8. Extensión: explorar el CSV desde la terminal
+### 8. Extensión: explorar el CSV desde la terminal
 
 Esta sección es opcional. Muestra lo que puedes hacer al combinar comandos;
 no necesitas memorizar su sintaxis para continuar a la lección 03.
 Trabajaremos con el mismo archivo, sin modificarlo.
 
-### PowerShell: de texto a registros
+#### De texto a registros
 
 Desde la raíz de `ds_track`, guarda la ruta en una variable para no repetirla:
 
@@ -348,8 +304,13 @@ pipe, pasa la salida del comando de la izquierda al de la derecha.
 **Leer registros del CSV:**
 
 ```powershell
+# Interpreta el CSV y reúne sus registros en una colección
 $ventas = @(Import-Csv $ventasPath)
+
+# Muestra los registros importados
 $ventas
+
+# Cuenta los registros sin incluir el encabezado
 $ventas.Count
 ```
 
@@ -385,7 +346,10 @@ formato sencillo de esta muestra.
 **Contar las ventas filtradas y sumar importes:**
 
 ```powershell
+# Filtra los importes y cuenta los registros que cumplen: 2
 ($ventas | Where-Object { [decimal]$_.importe_mxn -ge 50 } | Measure-Object).Count
+
+# Convierte cada importe a número y suma todas las ventas: 165
 ($ventas | ForEach-Object { [decimal]$_.importe_mxn } | Measure-Object -Sum).Sum
 ```
 
@@ -394,31 +358,7 @@ total. `ForEach-Object` transforma cada registro en su importe numérico antes
 de sumar. Aquí `importe_mxn` representa el total de cada venta, no el precio
 por unidad; no debes multiplicarlo de nuevo por `unidades`.
 
-### Bash/Zsh: explorar el texto de esta muestra
-
-En un shell Unix puedes combinar herramientas de texto. Desde la raíz:
-
-```bash
-ventas_path="curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv"
-wc -l < "$ventas_path"
-grep ',lapiz,' "$ventas_path"
-awk -F',' 'NR > 1 && $4 >= 50 { print $2, $4 }' "$ventas_path"
-awk -F',' 'NR > 1 { total += $4 } END { print total }' "$ventas_path"
-```
-
-- `wc -l` cuenta los saltos de línea: `4` en el archivo incluido.
-- `grep` encuentra la línea que contiene `,lapiz,`.
-- `awk -F','` separa por comas; `NR > 1` omite el encabezado, `$2` es producto
-  y `$4` es importe. Los últimos comandos muestran las dos ventas de al menos
-  50 MXN y el total `165`.
-
-Estos comandos de texto funcionan para esta muestra sencilla. `grep` busca
-texto, no interpreta columnas, y separar por comas con `awk` no es un lector
-general de CSV: campos entre comillas pueden contener comas o saltos de línea.
-Para esos casos necesitas un lector de CSV, como los que estudiarás en Python.
-Además, `wc -l` puede dar un resultado distinto si falta el salto de línea final.
-
-### Qué demuestra esta práctica
+#### Qué demuestra esta práctica
 
 Puedes encadenar acciones pequeñas: leer → filtrar → seleccionar → resumir.
 Ese mismo patrón aparecerá después en pandas y SQL. La terminal te permite
@@ -427,6 +367,12 @@ sigue siendo parte del análisis.
 
 > **Reto opcional:** filtra las ventas con al menos dos unidades. ¿Cuántos
 > registros quedan? Antes de ejecutar, predice la respuesta leyendo la muestra.
+
+## Recorrido en Bash/Zsh
+
+Si usas un shell Unix, sigue el [recorrido completo en Bash/Zsh](unix-walkthrough.md).
+Incluye navegación, herramientas, inspección del CSV y la extensión de filtros.
+Si estudias en PowerShell, puedes dejarlo como referencia para otra sesión.
 
 ## Cuando un comando no funciona
 
