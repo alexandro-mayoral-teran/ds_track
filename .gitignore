@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.uv-cache/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# R / RStudio
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+renv/library/
+renv/staging/
+
+# Quarto
+/.quarto/
+**/.quarto/
+_site/
+_book/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated and potentially sensitive data
+data/
+**/data/raw/
+**/data/processed/
+**/output/
+**/outputs/
+*.duckdb
+*.duckdb.wal
+
+# Keep curated repository datasets; ignore ad-hoc files only
+!datasets/
+!datasets/**
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

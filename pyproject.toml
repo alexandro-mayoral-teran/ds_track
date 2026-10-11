@@ -1,0 +1,18 @@
+[project]
+name = "ds-track"
+version = "0.1.0"
+description = "Ruta práctica de aprendizaje para datos con un dominio crediticio sintético"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = []
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
