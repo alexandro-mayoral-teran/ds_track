@@ -11,6 +11,26 @@ como ZIP.
 
 ## Empieza aquí
 
+Estudia una lección a la vez. Sigue este flujo en cada sesión:
+
+1. **Comprende:** lee la lección y conversa sobre los conceptos y ejemplos.
+   Anota lo que no entiendas para revisarlo con quien te acompaña.
+2. **Practica:** realiza el lab asociado. Intenta resolverlo y usa la lección
+   como referencia cuando lo necesites.
+3. **Comprueba:** compara tu resultado con la evidencia y el criterio de salida
+   del lab. Revisa los errores y vuelve a intentarlo si hace falta.
+4. **Explica:** responde las preguntas de reflexión con tus propias palabras.
+   Cuenta qué hiciste, por qué y cómo sabes que funcionó.
+5. **Registra y continúa:** anota tu evidencia, dudas y siguiente paso en
+   [PROGRESS.md](PROGRESS.md). Avanza cuando puedas demostrar la habilidad;
+   si quedan conceptos esenciales pendientes, repásalos antes.
+
+Si estudian juntos, quien acompaña puede explicar y dar pistas; quien aprende
+realiza la práctica y explica su resultado. Cada sesión puede cubrir solo una
+parte de la lección: no necesitas terminar un módulo de una vez.
+
+### Tu primera sesión
+
 Tu primera meta es escribir tu presentación en Markdown y crear tu perfil en
 GitHub. Para esta primera lección solo necesitas un editor de texto y, si vas
 a publicar el perfil, una cuenta de GitHub.
