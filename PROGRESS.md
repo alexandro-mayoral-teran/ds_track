@@ -53,6 +53,9 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se depuraron las instrucciones locales de agentes, separando reglas vigentes
+  de historial. Se crearon plantillas generales de agentes y arquitectura, con
+  instrucciones para copiarlas y adaptarlas a proyectos de otros temas.
 - Se revisaron las instrucciones locales y el roadmap: estado real de pandas,
   alcances opcionales, proyectos aún por implementar y pendientes de R aplicado
   y terminal avanzada. Se alineó el flujo de estudio con checkpoints opcionales.

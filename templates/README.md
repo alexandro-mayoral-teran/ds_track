@@ -8,3 +8,5 @@ de ejemplo como si fuera documentación final.
 - [`lab/`](lab/): práctica breve de una habilidad.
 - [`project/`](project/): integración incremental mediante checkpoints.
 - [`github-profile/`](github-profile/): README de ejemplo para tu perfil personal.
+- [`learning-project/`](learning-project/): dos bases adaptables para iniciar otro
+  proyecto de lecciones: instrucciones de agentes y diseño de arquitectura.

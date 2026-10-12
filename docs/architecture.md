@@ -4,6 +4,10 @@ La arquitectura separa enseñanza, práctica, integración y publicación. Esto
 evita que un notebook aislado tenga que funcionar al mismo tiempo como lección,
 ejercicio, solución y producto final.
 
+Las [plantillas para nuevos proyectos](../templates/learning-project/README.md)
+separan instrucciones de agentes y método de diseño del recorrido. Esta
+arquitectura documenta su aplicación específica a DS Track.
+
 ## Flujo del conocimiento
 
 ```text

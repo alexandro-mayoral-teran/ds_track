@@ -1,5 +1,9 @@
 # Guía para crear material
 
+Para comenzar otro proyecto o tema, utiliza las
+[plantillas de agentes y arquitectura](../templates/learning-project/README.md).
+Esta guía orienta la autoría de contenido dentro del recorrido ya diseñado.
+
 ## Estructura de un módulo
 
 Usa [`templates/module/`](../templates/module/) como punto de partida.
