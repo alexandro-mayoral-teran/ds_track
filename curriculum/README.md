@@ -20,16 +20,16 @@ README que define objetivos y criterio de salida. El estado actual se mantiene
 
 ## Rutas complementarias planificadas
 
-Estas rutas forman parte del diseño del curriculum. Sus lecciones y labs aún
-no están desarrollados; los enlaces llevan a su planificación. No cambian la
+Estas rutas tienen carpetas propias con su planificación. Sus lecciones y labs aún
+no están desarrollados. No cambian la
 numeración 00–10 ni son requisitos para comenzar pandas.
 
 | Ruta | Cuándo se introduce | Contenido previsto |
 | --- | --- | --- |
-| [Python aplicado](../docs/architecture.md#python-aplicado-del-notebook-al-proyecto) | Después de pandas y SQL | Módulos, clases, composición, dataclasses, tipos, generadores, decoradores, pruebas, rendimiento y APIs |
-| [Visualización en Python](../docs/architecture.md#visualización-entender-antes-de-construir-aplicaciones) | Base con pandas; profundización después de un análisis estable | Matplotlib, diseño de gráficos y Altair declarativo e interactivo |
-| [Visualización en R](05_tidyverse/README.md) | R fundamental y tidyverse | ggplot2, estéticas, geometrías, escalas, facetas y comunicación |
-| [Aplicaciones de datos](09_shiny_web/README.md) | Después de análisis y gráficos verificables | Streamlit en Python o Shiny en R; estado, inputs y separación de lógica/UI |
+| [Python aplicado](python_applied/) | Después de pandas y SQL | Módulos, clases, composición, dataclasses, tipos, generadores, decoradores, pruebas, rendimiento y APIs |
+| [Visualización en Python](visualization_python/) | Base con pandas; profundización después de un análisis estable | Matplotlib, diseño de gráficos y Altair declarativo e interactivo |
+| [Visualización en R](visualization_r/) | R fundamental y tidyverse | ggplot2, estéticas, geometrías, escalas, facetas y comunicación |
+| [Streamlit](streamlit/) | Después de análisis y gráficos verificables | Aplicación Python; alternativa al recorrido de Shiny del nivel 9 |
 
 Se podrá elegir un ecosistema para cada producto y comparar el otro después.
 La [arquitectura](../docs/architecture.md#rutas-de-profundización-previstas)
