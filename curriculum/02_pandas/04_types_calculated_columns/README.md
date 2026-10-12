@@ -280,8 +280,8 @@ o falla, revisa dtypes. Si aparecen NA inesperados, revisa operandos e índices.
 Un programa que termina no demuestra por sí solo que todas las filas sean válidas.
 
 No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
-Continúa con el [alcance de 05 — Faltantes, duplicados y reglas](../README.md#05-faltantes-duplicados-y-reglas),
-todavía por desarrollar, antes de su futuro lab.
+Continúa con [05 — Faltantes, duplicados y reglas](../05_missing_duplicates_rules/README.md)
+antes de realizar su lab.
 
 ## Referencias oficiales
 

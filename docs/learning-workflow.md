@@ -88,9 +88,9 @@ checkpoint a la vez.
 ## Ejemplo futuro
 
 ```text
-curriculum/02_pandas/03_missing_values
+curriculum/02_pandas/05_missing_duplicates_rules
         ↕
-labs/pandas/03_missing_values
+labs/02_pandas/05_missing_duplicates_rules
         ↕
 projects/01_clean_credit_data — CP-02
         ↓

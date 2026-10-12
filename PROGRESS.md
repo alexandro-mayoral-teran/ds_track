@@ -7,18 +7,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `02_pandas`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** tipos y columnas calculadas con pandas.
-  Próxima lección por implementar: 02.05 — Faltantes, duplicados y reglas.
+- **Foco de desarrollo del material:** faltantes, duplicados y reglas con pandas.
+  Próxima lección por implementar: 02.06 — Texto y fechas.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
-  Los módulos 02–05 tienen un plan de 39 secciones. Las cuatro primeras de pandas y sus
+  Los módulos 02–05 tienen un plan de 39 secciones. Las cinco primeras de pandas y sus
   labs están disponibles; las demás están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
-  detallada; 02.01–02.04 ya disponen de lección y lab dentro de esos módulos.
+  detallada; 02.01–02.05 ya disponen de lección y lab dentro de esos módulos.
 - **Siguiente paso de estudio:** leer la
-  [lección de tipos y columnas calculadas](curriculum/02_pandas/04_types_calculated_columns/README.md) y realizar
-  el [lab 02.04](labs/02_pandas/04_types_calculated_columns/README.md), después de
+  [lección de faltantes, duplicados y reglas](curriculum/02_pandas/05_missing_duplicates_rules/README.md) y realizar
+  el [lab 02.05](labs/02_pandas/05_missing_duplicates_rules/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -51,6 +51,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-11
+
+- Se desarrolló pandas 02.05: 44 registros sintéticos, reglas explícitas, claves
+  repetidas apartadas para revisión y múltiples motivos por registro. El script
+  concilia la partición y comprueba exportaciones; se agregó lab y navegación.
 
 - Se desarrolló pandas 02.04 con 40 filas sintéticas: conversión trazable, tipos
   nullable, operaciones entre columnas, asignación con loc y conciliación sobre

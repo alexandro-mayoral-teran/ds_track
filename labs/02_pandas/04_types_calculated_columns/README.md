@@ -151,5 +151,5 @@ No hay primera fila que consultar. El cálculo no debe depender de que existan
 - Si utilizas Git, revisa diff y registra cambios de código y notas. output está
   ignorado; publicar en el repo compartido no es requisito para completar el lab.
 
-Continúa con el [alcance de la lección 05 — Faltantes, duplicados y reglas](../../../curriculum/02_pandas/README.md#05-faltantes-duplicados-y-reglas),
-pendiente de desarrollo, antes de su futuro lab.
+Continúa con la [lección 05 — Faltantes, duplicados y reglas](../../../curriculum/02_pandas/05_missing_duplicates_rules/README.md)
+antes de realizar su lab.

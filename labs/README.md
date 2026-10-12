@@ -30,6 +30,7 @@ reglas de enlace están en
 | [`02.02 — Leer, inspeccionar y exportar`](02_pandas/02_read_inspect_export/) | `02_pandas` | No aplica todavía |
 | [`02.03 — Seleccionar, filtrar y ordenar`](02_pandas/03_select_filter_sort/) | `02_pandas` | No aplica todavía |
 | [`02.04 — Tipos y columnas calculadas`](02_pandas/04_types_calculated_columns/) | `02_pandas` | No aplica todavía |
+| [`02.05 — Faltantes, duplicados y reglas`](02_pandas/05_missing_duplicates_rules/) | `02_pandas` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
