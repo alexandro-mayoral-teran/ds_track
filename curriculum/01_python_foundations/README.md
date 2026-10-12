@@ -17,3 +17,14 @@ Los módulos, excepciones y JSON se incorporarán cuando resuelvan una necesidad
 de la práctica. Las lecciones detalladas están por desarrollar.
 La meta es transformar un CSV pequeño y explicar el resultado antes de pasar a pandas.
 
+## Bases y profundización posterior
+
+El alcance esencial incluye mutabilidad y referencias, funciones con parámetros
+y retorno, métodos básicos, rutas, lectura de errores y comprobaciones pequeñas.
+Usaremos objetos y `with` cuando ayuden a leer archivos, sin exigir diseñar clases.
+
+Clases, composición, dataclasses, decoradores y generadores se desarrollarán en
+la [ruta de Python aplicado](../../docs/architecture.md#python-aplicado-del-notebook-al-proyecto)
+después de pandas y SQL. Esa ruta está planificada; todavía no hay lecciones
+ni labs y no bloquea el paso al análisis tabular.
+

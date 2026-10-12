@@ -110,5 +110,9 @@ preguntas del lab para conversar y comprobar lo aprendido.
 
 ## Estado actual
 
-La arquitectura inicial está lista y `00_getting_started` está en curso. El
+El nivel 0 dispone de sus seis lecciones y labs para revisión y práctica; los
+módulos siguientes y las rutas complementarias están en planificación. El
+avance del material no acredita finalización de las prácticas del estudiante.
+El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de
+Python aplicado, visualización y aplicaciones en Python y R. El
 avance diario y el siguiente paso se mantienen en [`PROGRESS.md`](PROGRESS.md).

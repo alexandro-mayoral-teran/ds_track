@@ -88,6 +88,8 @@ resumen mediante funciones pequeñas y reutilizables.
 - Faltantes, duplicados, fechas y texto.
 - Agregaciones, `groupby`, `merge`, reshape y ventanas básicas.
 - Visualización inicial: una gráfica sencilla y una explicación de sus hallazgos.
+- Matplotlib como base Python; Altair como profundización posterior de diseño
+  declarativo e interacción, según la ruta de visualización prevista.
 - Uso responsable de notebooks; comprobaciones de filas, llaves y totales antes
   y después de transformar o unir datos.
 
@@ -200,8 +202,13 @@ datos y el código, sin edición manual de resultados.
 - UI, servidor, estado y reactividad en Shiny.
 - Inputs, outputs, validaciones y módulos.
 - Lectura desde Parquet o una base de datos.
+- Ruta alternativa planificada en Python con Streamlit: inputs, reejecución,
+  estado y caché. Elegir una app; no exigir construir ambas.
 
 **Proyecto asociado:** `06_shiny_portfolio_app`.
+
+El proyecto conserva su identidad para la ruta de R. Si se desarrolla la ruta
+Streamlit, se definirá su checkpoint o proyecto antes de implementarlo.
 
 **Criterio de salida:** construir un explorador de cartera con filtros y
 mensajes de error comprensibles, sin mezclar la UI con las transformaciones.
