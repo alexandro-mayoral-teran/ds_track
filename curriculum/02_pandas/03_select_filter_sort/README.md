@@ -276,8 +276,8 @@ Puedes avanzar cuando predigas y compruebes IDs, orden y subtotal, expliques
 el tratamiento de lo desconocido y resuelvas un filtro vacío sin modificar la fuente.
 No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
 
-04 — Tipos y columnas calculadas está por desarrollar. Consulta su
-[alcance previsto](../README.md#04-tipos-y-columnas-calculadas).
+Continúa con [04 — Tipos y columnas calculadas](../04_types_calculated_columns/README.md)
+antes de realizar su lab.
 
 ## Referencias oficiales
 

@@ -146,6 +146,5 @@ resultado: tres filas para la muestra original o cuatro para la copia de la part
 
 ## Siguiente paso
 
-04 — Tipos y columnas calculadas está por desarrollar. Consulta el
-[plan de la siguiente lección](../../../curriculum/02_pandas/README.md#04-tipos-y-columnas-calculadas)
-antes de su futuro lab.
+Continúa con la [lección 04 — Tipos y columnas calculadas](../../../curriculum/02_pandas/04_types_calculated_columns/README.md)
+antes de realizar su lab.

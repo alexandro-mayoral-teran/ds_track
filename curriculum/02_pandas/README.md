@@ -7,9 +7,10 @@ validar y resumir con pandas. Conservaremos las comprobaciones aprendidas en
 [Python fundamental](../01_python_foundations/README.md).
 
 **Estado:** las lecciones [01 — Series y DataFrame](01_series_dataframe/README.md),
-[02 — Leer, inspeccionar y exportar](02_read_inspect_export/README.md) y
-[03 — Seleccionar, filtrar y ordenar](03_select_filter_sort/README.md), con sus labs
-02.01–02.03, están disponibles. Las secciones 04–10 están por desarrollar;
+[02 — Leer, inspeccionar y exportar](02_read_inspect_export/README.md),
+[03 — Seleccionar, filtrar y ordenar](03_select_filter_sort/README.md) y
+[04 — Tipos y columnas calculadas](04_types_calculated_columns/README.md), con sus labs
+02.01–02.04, están disponibles. Las secciones 05–10 están por desarrollar;
 sus enlaces describen el alcance previsto.
 
 Primero reutilizaremos las ventas ficticias para comparar resultados con Python
@@ -25,7 +26,7 @@ pandas 2.3.3 en el entorno elegido; esa versión se declara en la configuración
 | 1 | [Series y DataFrame](01_series_dataframe/README.md) | Esencial | Interpretar filas, columnas, índice y tipos |
 | 2 | [Leer, inspeccionar y exportar](02_read_inspect_export/README.md) | Esencial | Cargar un CSV y verificar una salida |
 | 3 | [Seleccionar, filtrar y ordenar](03_select_filter_sort/README.md) | Esencial | Responder una pregunta con un subconjunto |
-| 4 | [Tipos y columnas calculadas](#04-tipos-y-columnas-calculadas) | Esencial | Convertir datos y calcular sin ciclos por fila |
+| 4 | [Tipos y columnas calculadas](04_types_calculated_columns/README.md) | Esencial | Convertir datos y calcular sin ciclos por fila |
 | 5 | [Faltantes, duplicados y reglas](#05-faltantes-duplicados-y-reglas) | Esencial | Conservar aceptados y rechazos con motivos |
 | 6 | [Texto y fechas](#06-texto-y-fechas) | Esencial | Normalizar campos y comparar cortes |
 | 7 | [Agrupar y resumir](#07-agrupar-y-resumir) | Esencial | Conciliar indicadores por segmento |
@@ -125,8 +126,9 @@ pandas 2.3.3 en el entorno elegido; esa versión se declara en la configuración
 
 Se prevé un lab por sección (02.01–02.10), con soluciones desplegables y
 comprobaciones conocidas. Los labs 02.01, [02.02](../../labs/02_pandas/02_read_inspect_export/README.md) y
-[02.03](../../labs/02_pandas/03_select_filter_sort/README.md) están disponibles;
-02.04–02.10 están pendientes.
+[02.03](../../labs/02_pandas/03_select_filter_sort/README.md) y
+[02.04](../../labs/02_pandas/04_types_calculated_columns/README.md) están disponibles;
+02.05–02.10 están pendientes.
 El proyecto previsto es 01_clean_credit_data, registrado en
 [proyectos](../../projects/README.md), aún sin carpeta implementada.
 

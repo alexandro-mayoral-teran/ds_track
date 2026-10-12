@@ -86,14 +86,14 @@ crecerá de manera intencional:
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. Los niveles 02–14 conservan planificación,
-salvo las tres primeras lecciones y labs de pandas, ya disponibles. Python aplicado
+salvo las cuatro primeras lecciones y labs de pandas, ya disponibles. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
 ### Desarrollo previsto de los módulos 02–05
 
 Los README de cada módulo contienen el orden numerado y el alcance de cada
 sección. Son planes de desarrollo; los enlaces internos no representan lecciones
-ejecutables, excepto las secciones 02.01–02.03, implementadas con script y lab.
+ejecutables, excepto las secciones 02.01–02.04, implementadas con script y lab.
 No se crean carpetas vacías ni labs antes de implementar el contenido.
 
 | Módulo | Secciones previstas | Cierre |
