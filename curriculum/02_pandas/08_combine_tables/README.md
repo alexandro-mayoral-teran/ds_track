@@ -327,8 +327,8 @@ avanzar cuando predigas filas, justifiques claves/cardinalidad, identifiques
 coincidencias faltantes y pruebes que el left conserva el detalle.
 No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
 
-Continúa con el [alcance de 09 — Cambiar la forma de una tabla](../README.md#09-cambiar-la-forma-de-una-tabla),
-todavía por desarrollar, antes de su futuro lab.
+Continúa con [09 — Cambiar la forma de una tabla](../09_reshape_tables/README.md)
+antes de realizar su lab.
 
 ## Referencias oficiales
 

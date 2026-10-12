@@ -147,5 +147,5 @@ merge, porque pandas podría relacionarlo con segmentos ausentes del detalle.
 - Si usas Git, revisa diff y registra código/notas. output está ignorado;
   publicar resultados no es requisito para completar el lab.
 
-Continúa con el [alcance de 09 — Cambiar la forma de una tabla](../../../curriculum/02_pandas/README.md#09-cambiar-la-forma-de-una-tabla),
-pendiente de desarrollo, antes de su futuro lab.
+Continúa con la [lección 09 — Cambiar la forma de una tabla](../../../curriculum/02_pandas/09_reshape_tables/README.md)
+antes de realizar su lab.

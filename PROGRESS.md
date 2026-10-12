@@ -7,18 +7,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `02_pandas`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** combinación de tablas con pandas.
-  Próxima lección por implementar: 02.09 — Cambiar la forma de una tabla.
+- **Foco de desarrollo del material:** cambio de forma de tablas con pandas.
+  Próxima lección por implementar: 02.10 — Análisis y primera gráfica.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
-  Los módulos 02–05 tienen un plan de 39 secciones. Las ocho primeras de pandas y sus
+  Los módulos 02–05 tienen un plan de 39 secciones. Las nueve primeras de pandas y sus
   labs están disponibles; las demás están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
-  detallada; 02.01–02.08 ya disponen de lección y lab dentro de esos módulos.
+  detallada; 02.01–02.09 ya disponen de lección y lab dentro de esos módulos.
 - **Siguiente paso de estudio:** leer la
-  [lección de combinación de tablas](curriculum/02_pandas/08_combine_tables/README.md) y realizar
-  el [lab 02.08](labs/02_pandas/08_combine_tables/README.md), después de
+  [lección de cambio de forma de tablas](curriculum/02_pandas/09_reshape_tables/README.md) y realizar
+  el [lab 02.09](labs/02_pandas/09_reshape_tables/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -51,6 +51,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-11
+
+- Se desarrolló pandas 02.09: pivot, melt y pivot_table, con diagramas y
+  conservación de presencia para distinguir celdas ausentes de importes desconocidos.
+  Se verificó la vuelta exacta y el resumen por corte; se agregó lab y navegación.
 
 - Se desarrolló pandas 02.08: concat, tipos de merge, validate, indicator y
   comparación por ID sobre una base común. Tres diagramas Mermaid explican las
