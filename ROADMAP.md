@@ -225,6 +225,13 @@ instrucciones documentadas y datos sintéticos.
 
 ## Temas estacionados
 
+Las rutas previstas de **Python aplicado** y **visualización en Python y R**
+se detallan en [la arquitectura](docs/architecture.md#rutas-de-profundización-previstas).
+Incluyen clases, decoradores y robustez después de las bases, Matplotlib y
+Altair para gráficos, ggplot2 para R y Streamlit como alternativa de aplicación
+Python al recorrido de Shiny. Se incorporarán según sus prerrequisitos, sin
+renumerar los niveles ni bloquear el avance a pandas.
+
 Se investigarán después de completar los niveles esenciales:
 
 - Orquestadores como Dagster o Prefect.
