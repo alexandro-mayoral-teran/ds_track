@@ -215,7 +215,7 @@ entradas no fueron modificadas. Todavía no hay checkpoint de proyecto asociado.
 
 ## Siguiente paso
 
-05 — Archivos CSV está por desarrollar. Consulta el [índice del módulo](../README.md).
+Continúa con [05 — Archivos CSV](../05_csv_files/README.md).
 
 ## Referencia
 

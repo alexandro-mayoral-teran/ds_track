@@ -7,9 +7,12 @@ ejercicio, solución y producto final.
 ## Flujo del conocimiento
 
 ```text
-curriculum → labs → checkpoint de proyecto → evidencia → PROGRESS.md
-      ↑                  ↓
-      └──── datasets     └──── resultado terminado → showcase
+lección → lab asociado → comprobar y explicar → evidencia → PROGRESS.md
+   ↑          │
+   └──────────┴── siguiente lección
+
+cuando corresponda: lab → checkpoint de proyecto → resultado → showcase
+datos de entrada: muestras de la lección o datasets
 ```
 
 Las reglas concretas de conexión están en
@@ -61,7 +64,10 @@ que exista una incompatibilidad concreta.
 
 ## Datos del recorrido
 
-El dominio común será una cartera crediticia completamente sintética. Su escala
+Las primeras lecciones de Python utilizan ventas ficticias pequeñas para aprender
+sin introducir vocabulario de otro dominio. La lección 05 conecta lectura CSV,
+conversión y escritura; la 06 desarrollará validación y resumen. Después, el
+dominio común será una cartera crediticia completamente sintética. Su escala
 crecerá de manera intencional:
 
 1. CSV pequeño para Python y pandas.
@@ -73,8 +79,10 @@ crecerá de manera intencional:
 ## Rutas de profundización previstas
 
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
-con prerrequisitos visibles. El nivel 00 tiene lecciones y labs; los demás
-módulos conservan planificación, aún sin lecciones detalladas. Python aplicado
+con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
+el nivel 01 tiene las primeras cinco lecciones y sus labs, con validación y
+resumen todavía pendientes. Los niveles 02–14 conservan planificación,
+aún sin lecciones detalladas. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
 ### Python aplicado: del notebook al proyecto

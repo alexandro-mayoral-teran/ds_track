@@ -102,5 +102,5 @@ para usarlo desde main recibes el diccionario retornado y consultas su campo.
 
 ## Siguiente paso
 
-05 — Archivos CSV está por desarrollar. Consulta el
-[índice de Python fundamental](../../../curriculum/01_python_foundations/README.md).
+Continúa con la [lección 05 — Archivos CSV](../../../curriculum/01_python_foundations/05_csv_files/README.md)
+antes de realizar su lab.

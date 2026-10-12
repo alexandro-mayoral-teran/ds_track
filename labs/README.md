@@ -24,6 +24,7 @@ reglas de enlace están en
 | [`01.02 — Listas y diccionarios`](01_python_foundations/02_lists_dicts/) | `01_python_foundations` | No aplica |
 | [`01.03 — Condiciones y ciclos`](01_python_foundations/03_conditions_loops/) | `01_python_foundations` | No aplica |
 | [`01.04 — Funciones`](01_python_foundations/04_functions/) | `01_python_foundations` | No aplica |
+| [`01.05 — Archivos CSV`](01_python_foundations/05_csv_files/) | `01_python_foundations` | No aplica |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

@@ -7,12 +7,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `01_python_foundations`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** funciones.
-- **Estado del contenido:** nivel 0 disponible y primeras cuatro lecciones de Python
+- **Foco de desarrollo del material:** archivos CSV.
+- **Estado del contenido:** nivel 0 disponible y primeras cinco lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
 - **Siguiente paso de estudio:** leer la
-  [lección de funciones](curriculum/01_python_foundations/04_functions/README.md) y realizar
-  el [lab 01.04](labs/01_python_foundations/04_functions/README.md), después de
+  [lección de archivos CSV](curriculum/01_python_foundations/05_csv_files/README.md) y realizar
+  el [lab 01.05](labs/01_python_foundations/05_csv_files/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -46,6 +46,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se desarrolló la lección 05 de Python fundamental y su lab: lectura CSV,
+  conversión, escritura y comprobación de registros e importes, conservando la entrada.
+- Se revisaron las instrucciones locales, la arquitectura y los diagramas:
+  flujo lección/lab, avances de contenido y diferencia entre muestras iniciales
+  de ventas y dominio crediticio posterior.
 - Se desarrolló la lección 04 de Python fundamental y su lab: parámetros,
   retorno, alcance y reutilización de filtros y resúmenes.
 - Se desarrolló la lección 03 de Python fundamental: condiciones, recorrido,
