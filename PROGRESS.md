@@ -7,14 +7,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `02_pandas`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** planificación de Arrow/Parquet y Polars/DuckDB (09–10).
+- **Foco de desarrollo del material:** investigación y planificación numerada cerrada
+  hasta el módulo 14; siguientes cambios orientados a implementar las lecciones.
   Próxima lección Python por implementar: 02.02 — Leer, inspeccionar y exportar.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. La primera de pandas y su
   lab están disponibles; las demás están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
-  19 secciones planificadas. Estos planes aún no incluyen lecciones ni labs.
+  19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
+  detallada; solo 02.01 ya dispone de lección y lab dentro de esos módulos.
 - **Siguiente paso de estudio:** leer la
   [lección de Series y DataFrame](curriculum/02_pandas/01_series_dataframe/README.md) y realizar
   el [lab 02.01](labs/02_pandas/01_series_dataframe/README.md), después de
@@ -50,6 +52,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-11
+
+- Se investigaron y definieron Quarto (9 secciones), Streamlit (9), Shiny (10)
+  y proyecto reproducible (9). El recorrido numerado completo tiene planes
+  detallados; se retoma la implementación por pandas 02.02 en la siguiente sesión.
 
 - Se investigaron fuentes oficiales y se organizaron Arrow/Parquet (9 secciones)
   y Polars/DuckDB (10), con intercambio Python/R, consultas verificables y mediciones.

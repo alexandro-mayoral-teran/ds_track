@@ -266,6 +266,11 @@ y escoger una herramienta usando mediciones.
 
 ## Nivel 11 — Reportes reproducibles
 
+El [plan de nueve secciones](curriculum/11_reporting_quarto/README.md#orden-de-desarrollo)
+conecta documento, ejecución Python/R, evidencia, parámetros, caché y entrega.
+HTML con un motor es esencial; PDF, dashboard y publicación son ampliaciones.
+Las lecciones y labs están por desarrollar.
+
 **Objetivo:** transformar análisis en productos consumibles.
 
 Este nivel formaliza la comunicación iniciada con gráficas e interpretación en
@@ -283,6 +288,11 @@ datos y el código, sin edición manual de resultados.
 
 ## Nivel 12 — Streamlit
 
+El [plan de nueve secciones](curriculum/12_streamlit/README.md#orden-de-desarrollo)
+introduce reejecución, widgets, funciones de datos, estado, caché, validación,
+presentación, pruebas y entrega local.
+Las lecciones y labs están por desarrollar.
+
 **Objetivo:** convertir un análisis estable en una aplicación de datos Python.
 
 - Esencial: inputs, tablas, gráficos y modelo de reejecución.
@@ -294,6 +304,11 @@ Es la ruta Python; se puede elegir en lugar de Shiny y pasar al proyecto final.
 El proyecto/checkpoint específico se definirá al desarrollar este módulo.
 
 ## Nivel 13 — Shiny y fundamentos web
+
+El [plan de diez secciones](curriculum/13_shiny_web/README.md#orden-de-desarrollo)
+introduce web básica, UI/servidor, reactividad, filtros, eventos, validación,
+presentación, módulos, pruebas y entrega local. Mastering Shiny apoya la ruta R.
+Las lecciones y labs están por desarrollar.
 
 **Objetivo:** convertir un análisis estable en una aplicación interactiva.
 
@@ -310,6 +325,11 @@ Streamlit ocupa el nivel 12. Elegir una de las dos aplicaciones; no exigir ambas
 mensajes de error comprensibles, sin mezclar la UI con las transformaciones.
 
 ## Nivel 14 — Proyecto reproducible
+
+El [plan de nueve secciones](curriculum/14_reproducible_projects/README.md#orden-de-desarrollo)
+consolida contrato, estructura, entornos, reprocesamiento, pruebas, trazabilidad,
+productos y reconstrucción independiente. CI y despliegue son extensiones.
+Las lecciones y labs están por desarrollar.
 
 **Objetivo:** integrar el recorrido con prácticas de ingeniería.
 

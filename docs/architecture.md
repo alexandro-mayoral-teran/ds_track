@@ -203,6 +203,38 @@ velocidad; el criterio es resultado equivalente y costo medido. No se agregan
 paquetes ni datos voluminosos por la planificación. La ruta futura de R aplicado
 sigue pendiente y esta decisión no renumera el track.
 
+### Entrega prevista del producto: 11–14
+
+Los cuatro módulos tienen 37 secciones planificadas y referencias oficiales,
+aún sin lecciones/labs. El flujo es reporte → una app elegida → integración final;
+no se exige completar las dos aplicaciones.
+
+| Módulo | Secciones | Cierre esencial |
+| --- | --- | --- |
+| [11 — Quarto](../curriculum/11_reporting_quarto/README.md) | 9 | HTML regenerable con indicadores, figuras y narrativa del corte |
+| [12 — Streamlit](../curriculum/12_streamlit/README.md) | 9 | Explorador Python local, probado y con filtros conciliados |
+| [13 — Shiny](../curriculum/13_shiny_web/README.md) | 10 | Explorador R local, probado y con dependencias reactivas explícitas |
+| [14 — Proyecto reproducible](../curriculum/14_reproducible_projects/README.md) | 9 | Reconstrucción independiente de datos, reporte y una app |
+
+Quarto comparte teoría de documento y separa recorridos Python/Jupyter y R/knitr.
+HTML y un motor bastan para el cierre; PDF, dashboards y publicación son ampliaciones.
+Caché/freeze requieren un criterio de actualización de datos, no solo un render exitoso.
+
+Streamlit distingue reejecución, estado de sesión y caché; Shiny distingue dependencias
+reactivas, consumidores y estado por sesión. Ambos reutilizan funciones de datos;
+se prueban indicadores, conjuntos vacíos y descargas sobre el mismo universo filtrado.
+Mastering Shiny se incorpora a las lecturas abiertas del recorrido R.
+
+El 14 amplía los proyectos existentes: contrato, configuración, entornos, pipeline,
+pruebas, trazabilidad y entrega. No agrega una pila de herramientas nueva para el
+cierre. Los proyectos 05_monthly_report y 06_shiny_portfolio_app y la alternativa
+Streamlit son productos previstos, todavía sin carpetas implementadas.
+
+La entrega esencial puede comprobarse localmente con datos sintéticos; despliegue,
+autenticación y CI se añaden si responden a una necesidad. Los entornos y versiones
+se fijarán al implementar. El diagrama general conserva sus niveles 00–14 y la
+bifurcación de aplicación; los planes detallados no acreditan avance del estudiante.
+
 ### R aplicado: consideración para el próximo ajuste
 
 Se contempla un puente después de visualización R (08) y antes de Parquet:

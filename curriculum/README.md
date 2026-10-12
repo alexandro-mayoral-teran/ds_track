@@ -9,7 +9,9 @@ todavía sin lecciones ejecutables ni labs.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
-con Polars/DuckDB. Los niveles 11–14 conservan su planificación general.
+con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones
+alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
+la planificación pendiente se implementará lección por lección.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).
 
 | Nivel | Módulo | Resultado previsto |

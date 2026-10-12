@@ -118,7 +118,8 @@ pandas comienza con [Series y DataFrame](curriculum/02_pandas/01_series_datafram
 y su lab. Las secciones restantes de 02–05 conservan su plan para desarrollar una por una;
 los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
-de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 conservan su planificación general. El
+de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
+para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de
 Python aplicado, visualización y aplicaciones en Python y R en su orden de estudio. El

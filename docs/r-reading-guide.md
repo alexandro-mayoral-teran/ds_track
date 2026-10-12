@@ -13,6 +13,7 @@ análisis ya aprendido con Python.
 | [Advanced R, segunda edición](https://adv-r.hadley.nz/) | Hadley Wickham | Consultas sobre estructuras y funciones en 06; profundización posterior |
 | [ggplot2: Elegant Graphics for Data Analysis, tercera edición en línea](https://ggplot2-book.org/) | Hadley Wickham, Danielle Navarro y Thomas Lin Pedersen | Gramática, capas, escalas y comunicación visual en 08 |
 | [R Packages, segunda edición](https://r-pkgs.org/) | Hadley Wickham y Jennifer Bryan | Referencia futura para organizar, documentar y comprobar paquetes |
+| [Mastering Shiny](https://mastering-shiny.org/) | Hadley Wickham | Aplicaciones reactivas y organización en el módulo 13 |
 
 La tercera edición en línea del libro de ggplot2 está en desarrollo. Al crear
 una lección se comprobará la documentación de la versión instalada, especialmente
@@ -52,6 +53,14 @@ con la API vigente y los parámetros de cada función.
 Para continuar después de ggplot2, el [capítulo Arrow de R for Data Science](https://r4ds.hadley.nz/arrow.html)
 apoya la parte R del [módulo 09](../curriculum/09_arrow_parquet/README.md).
 El track añade una práctica de intercambio Python/R y controles de tipos e indicadores.
+
+### 11 — Reportes y 13 — Shiny
+
+El [capítulo Quarto de R for Data Science](https://r4ds.hadley.nz/quarto.html)
+apoya el recorrido R del módulo 11. Para la aplicación del 13, consulta
+[Mastering Shiny](https://mastering-shiny.org/) y
+[reactividad básica](https://mastering-shiny.org/basic-reactivity.html).
+La documentación oficial complementa los libros para verificar APIs al implementar.
 
 ### Futuro R aplicado
 
