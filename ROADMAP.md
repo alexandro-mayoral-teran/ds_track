@@ -89,6 +89,10 @@ El cierre inicial utiliza ventas ficticias; el dominio crediticio se incorpora e
 
 **Objetivo:** dominar el modelo mental de DataFrame y el análisis tabular.
 
+El [plan de diez secciones](curriculum/02_pandas/README.md#orden-de-desarrollo)
+ordena tablas → lectura → selección → tipos → calidad → texto/fechas → agrupación
+→ uniones → reshape → análisis y primera gráfica. Las lecciones están por desarrollar.
+
 - Series, DataFrames, selección, filtrado y tipos.
 - Faltantes, duplicados, fechas y texto.
 - Agregaciones, `groupby`, `merge`, reshape y ventanas básicas.
@@ -106,6 +110,10 @@ calidad aplicada, presentar una gráfica e interpretar sus resultados.
 ## Nivel 3 — SQL y bases de datos
 
 **Objetivo:** consultar y modelar datos persistentes.
+
+El [plan de nueve secciones](curriculum/03_sql_databases/README.md#orden-de-desarrollo)
+conecta modelo, consultas, carga, indicadores, joins, CTE, ventanas, transacciones
+y conciliación con pandas. Las lecciones están por desarrollar.
 
 - Esencial: modelo relacional, tablas, llaves, restricciones y normalización básica.
 - Esencial: selección, filtros, agregaciones y joins con SQLite.
@@ -130,6 +138,10 @@ su visualización y organización; ese análisis consolidado se reutiliza al pas
 
 **Objetivo:** comunicar un análisis conocido con gráficos justificables.
 
+El [plan de nueve secciones](curriculum/04_visualization_python/README.md#orden-de-desarrollo)
+parte de la pregunta, desarrolla Matplotlib y después Altair; la interacción es
+opcional. Las lecciones están por desarrollar.
+
 - Esencial: pregunta, gráfico adecuado, escalas, unidades, etiquetas y color accesible.
 - Esencial: Matplotlib, Figure/Axes, barras, líneas y distribuciones.
 - Práctica: composición, anotaciones y exportación.
@@ -141,6 +153,11 @@ justificar su representación y conservar el código que la reconstruye.
 ## Nivel 5 — Python aplicado
 
 **Objetivo:** transformar un análisis de notebook en código reutilizable y verificable.
+
+El [plan de once secciones](curriculum/05_python_applied/README.md#orden-de-desarrollo)
+define un núcleo de módulos, configuración, errores, pruebas y contratos para
+cerrar el análisis; clases, generadores, decoradores, medición y APIs amplían
+ese núcleo. Las lecciones están por desarrollar.
 
 - Esencial: módulos, funciones, configuración, logging y comprobaciones.
 - Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.

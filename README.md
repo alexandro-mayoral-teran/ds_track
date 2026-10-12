@@ -114,7 +114,8 @@ El nivel 0 dispone de sus seis lecciones y labs para revisión y práctica. Pyth
 fundamental dispone de sus seis lecciones, desde
 [variables y tipos](curriculum/01_python_foundations/01_variables_types/README.md)
 hasta [validación y resumen](curriculum/01_python_foundations/06_validation_summary/README.md).
-Los niveles 02–14 están en planificación. El
+Los niveles 02–05 tienen un plan detallado de secciones para desarrollar una por una;
+los niveles 06–14 conservan su planificación general. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de
 Python aplicado, visualización y aplicaciones en Python y R en su orden de estudio. El

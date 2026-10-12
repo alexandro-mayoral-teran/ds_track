@@ -84,6 +84,29 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. L
 aún sin lecciones detalladas. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
+### Desarrollo previsto de los módulos 02–05
+
+Los README de cada módulo contienen el orden numerado y el alcance de cada
+sección. Son planes de desarrollo; los enlaces internos no representan lecciones
+ejecutables. No se crean carpetas vacías ni labs antes de implementar el contenido.
+
+| Módulo | Secciones previstas | Cierre |
+| --- | --- | --- |
+| [02 — pandas](../curriculum/02_pandas/README.md) | 10: tablas, lectura, selección, tipos, calidad, texto/fechas, agrupación, uniones, reshape y análisis | Dataset limpio, indicadores conciliados y primera figura |
+| [03 — SQL](../curriculum/03_sql_databases/README.md) | 9: modelo, consultas, carga, indicadores, joins, CTE, ventanas, transacciones e integración | Base reconstruible y conciliación pandas/SQL |
+| [04 — Visualización](../curriculum/04_visualization_python/README.md) | 9: pregunta, Matplotlib, comparaciones, distribuciones, diseño, exportación, Altair, interacción y cierre | Figuras e interpretación sobre el mismo análisis |
+| [05 — Python aplicado](../curriculum/05_python_applied/README.md) | 11: módulos, configuración, errores, pruebas, contratos, clases, generadores, decoradores, medición, APIs y cierre | Análisis organizado y comprobado |
+
+Pandas comienza sobre las ventas conocidas y presenta después el vocabulario de
+la cartera sintética. SQL introduce claves y cardinalidad; visualización reutiliza
+sus indicadores; Python aplicado reorganiza ese mismo resultado. Los checkpoints
+propuestos pertenecen a los proyectos previstos 01_clean_credit_data y
+02_credit_database, todavía sin carpetas implementadas.
+
+La interacción de Altair es opcional. En Python aplicado, 01–04 y los contratos
+de 05 preparan el cierre 11; las ampliaciones 06–10 no bloquean R. Las dependencias
+y versiones se elegirán al implementar cada herramienta, verificando la API vigente.
+
 ### Python aplicado: del notebook al proyecto
 
 Ocupa el nivel 05, después de pandas, SQL y visualización en Python, reutilizando un problema conocido.

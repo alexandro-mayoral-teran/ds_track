@@ -5,11 +5,14 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulo activo de desarrollo:** `01_python_foundations`
+- **Módulo activo de desarrollo:** planificación de `02_pandas` a `05_python_applied`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** validación y resumen; cierre de Python fundamental.
+- **Foco de desarrollo del material:** secciones y alcance de los módulos 02–05;
+  próxima lección por implementar: 02.01 — Series y DataFrame.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
+  Los módulos 02–05 tienen un plan detallado de 39 secciones; sus lecciones y labs
+  todavía están por desarrollar.
 - **Siguiente paso de estudio:** leer la
   [lección de validación y resumen](curriculum/01_python_foundations/06_validation_summary/README.md) y realizar
   el [lab 01.06](labs/01_python_foundations/06_validation_summary/README.md), después de
@@ -46,6 +49,9 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se investigó documentación oficial y se organizaron las secciones de pandas (10),
+  SQL (9), visualización Python (9) y Python aplicado (11), con prácticas y cierres
+  propuestos. Se distinguió el recorrido esencial de las ampliaciones opcionales.
 - Se desarrolló la lección 06 de Python fundamental y su lab: reglas, excepciones,
   rechazos trazables y resumen conciliado. El módulo dispone de seis lecciones;
   la finalización del aprendizaje sigue pendiente de evidencias.
