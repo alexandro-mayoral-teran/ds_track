@@ -1,7 +1,7 @@
 # Curriculum
 
 El flujo está numerado por prerrequisitos. El nivel 00 tiene lecciones y labs;
-el nivel 01 dispone de variables/tipos, listas/diccionarios y condiciones/ciclos. Los demás contenidos
+el nivel 01 dispone de variables/tipos, listas/diccionarios, condiciones/ciclos y funciones. Los demás contenidos
 tienen planificación, aún sin lecciones detalladas.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).
 

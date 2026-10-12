@@ -7,12 +7,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `01_python_foundations`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** condiciones y ciclos.
-- **Estado del contenido:** nivel 0 disponible y primeras tres lecciones de Python
+- **Foco de desarrollo del material:** funciones.
+- **Estado del contenido:** nivel 0 disponible y primeras cuatro lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
 - **Siguiente paso de estudio:** leer la
-  [lección de condiciones y ciclos](curriculum/01_python_foundations/03_conditions_loops/README.md) y realizar
-  el [lab 01.03](labs/01_python_foundations/03_conditions_loops/README.md), después de
+  [lección de funciones](curriculum/01_python_foundations/04_functions/README.md) y realizar
+  el [lab 01.04](labs/01_python_foundations/04_functions/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -46,6 +46,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se desarrolló la lección 04 de Python fundamental y su lab: parámetros,
+  retorno, alcance y reutilización de filtros y resúmenes.
 - Se desarrolló la lección 03 de Python fundamental: condiciones, recorrido,
   acumuladores y selección de registros, con script y lab verificables.
 - Se desarrolló la lección 02 de Python fundamental y su lab: listas,

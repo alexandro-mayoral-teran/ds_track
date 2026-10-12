@@ -96,5 +96,5 @@ anterior al ciclo y la suma al bloque que se repite.
 
 ## Siguiente paso
 
-04 — Funciones está por desarrollar. Consulta el
-[índice de Python fundamental](../../../curriculum/01_python_foundations/README.md).
+Continúa con la [lección 04 — Funciones](../../../curriculum/01_python_foundations/04_functions/README.md)
+antes de realizar el lab 01.04.

@@ -245,7 +245,7 @@ el avance. Todavía no hay checkpoint de proyecto asociado.
 
 ## Siguiente paso
 
-04 — Funciones está por desarrollar. Consulta el [índice del módulo](../README.md).
+Continúa con [04 — Funciones](../04_functions/README.md) antes de su lab.
 
 ## Referencia
 
