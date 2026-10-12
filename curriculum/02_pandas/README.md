@@ -12,7 +12,12 @@ y unir tablas; la comunicación y calidad no se posponen hasta el proyecto final
 
 Matplotlib será la base para una primera gráfica: Figure/Axes, elección entre
 barras o líneas según la pregunta, etiquetas, unidades e interpretación.
-La profundización de diseño e interacción con Altair se realizará sobre datos
+El nivel 04 profundizará en diseño e interacción con Altair sobre datos
 ya comprobados en la [ruta de visualización](../../docs/architecture.md#visualización-entender-antes-de-construir-aplicaciones).
 Estos contenidos están planificados; las lecciones detalladas aún no existen.
 
+
+## Continuidad del track
+
+Prerrequisito de estudio: [01 — Python fundamental](../01_python_foundations/README.md).
+Consulta después [03 — SQL y bases de datos](../03_sql_databases/README.md).

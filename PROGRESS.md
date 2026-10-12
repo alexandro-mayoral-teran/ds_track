@@ -30,17 +30,24 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 | 01 | Python fundamental | No iniciado | — |
 | 02 | pandas | No iniciado | — |
 | 03 | SQL y bases de datos | No iniciado | — |
-| 04 | R fundamental | No iniciado | — |
-| 05 | tidyverse | No iniciado | — |
-| 06 | Arrow y Parquet | No iniciado | — |
-| 07 | Polars y DuckDB | No iniciado | — |
-| 08 | Reportes con Quarto | No iniciado | — |
-| 09 | Shiny y fundamentos web | No iniciado | — |
-| 10 | Proyectos reproducibles | No iniciado | — |
+| 04 | Visualización en Python | No iniciado | — |
+| 05 | Python aplicado | No iniciado | — |
+| 06 | R fundamental | No iniciado | — |
+| 07 | tidyverse | No iniciado | — |
+| 08 | Visualización en R | No iniciado | — |
+| 09 | Arrow y Parquet | No iniciado | — |
+| 10 | Polars y DuckDB | No iniciado | — |
+| 11 | Reportes con Quarto | No iniciado | — |
+| 12 | Streamlit | No iniciado | — |
+| 13 | Shiny y fundamentos web | No iniciado | — |
+| 14 | Proyecto reproducible | No iniciado | — |
 
 ## Bitácora
 
 ### 2026-10-11
+
+- Se integraron las rutas en un flujo numerado 00–14; visualización y Python aplicado
+  ahora tienen ubicación y prerrequisitos, con Streamlit/Shiny como elección de aplicación.
 
 - Se revisó el track completo: comunicación y calidad tempranas, cierre integrado
   antes de R y separación de contenidos esenciales y avanzados sin renumerar niveles.

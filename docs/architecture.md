@@ -72,14 +72,14 @@ crecerá de manera intencional:
 
 ## Rutas de profundización previstas
 
-El recorrido principal conserva los niveles 00–10. Estas rutas amplían las
-capacidades cuando ya existe un análisis que mejorar; no bloquean el paso de
-Python fundamental a pandas. Son planificación: todavía no hay lecciones ni
-carpetas de ejercicios para estos bloques.
+El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
+con prerrequisitos visibles. El nivel 00 tiene lecciones y labs; los demás
+módulos conservan planificación, aún sin lecciones detalladas. Python aplicado
+está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
 ### Python aplicado: del notebook al proyecto
 
-Se introducirá después de pandas y SQL, reutilizando un problema conocido.
+Ocupa el nivel 05, después de pandas, SQL y visualización en Python, reutilizando un problema conocido.
 Los contenidos se organizarán por necesidades, no como una lista de sintaxis:
 
 | Bloque | Conceptos previstos | Resultado observable |
@@ -111,9 +111,9 @@ sin repetir todo el análisis para cada biblioteca.
 | Composición e interacción | Altair: marcas, codificaciones, tipos y selecciones | Profundización de ggplot2 y composición de figuras; interacción como extensión | Comparar el mismo indicador en varias vistas |
 | Producto interactivo | Streamlit: inputs, tablas, gráficas, reruns, estado y caché | Shiny: UI, servidor, reactividad, estado y módulos | Explorador de datos con filtros y resultados verificables |
 
-Matplotlib y Altair son herramientas de gráficos; Streamlit es un framework
-para aplicaciones. En R, ggplot2 es la base de visualización del módulo tidyverse,
-y Shiny convierte el análisis en una aplicación. No exigir todas las herramientas
+Matplotlib y Altair son herramientas de gráficos del nivel 04; Streamlit es un framework
+para aplicaciones del nivel 12. En R, ggplot2 básico aparece en tidyverse (07),
+se profundiza en visualización R (08), y Shiny (13) convierte el análisis en una aplicación. No exigir todas las herramientas
 para cada ejercicio: se puede elegir un ecosistema y comparar el otro después.
 
 Para Streamlit se aprenderá primero su modelo de reejecución y después estado
@@ -124,12 +124,15 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Conexión con los niveles y proyectos
 
 - Nivel 2: primera gráfica con Matplotlib y una explicación del hallazgo.
-- Niveles 3–5: cierre analítico conocido, Python aplicado como profundización y
-  visualización equivalente con ggplot2 en tidyverse.
-- Nivel 8: reutilizar figuras e interpretaciones en reportes Quarto.
-- Nivel 9: conservar Shiny en el recorrido principal y contemplar Streamlit como
-  ruta de aplicación en Python; no exigir construir ambas aplicaciones.
-- Nivel 10: integrar las prácticas de organización y robustez que ya se hayan
+- Nivel 03: modelar y consultar los datos; conciliar indicadores con pandas.
+- Nivel 04: representar ese análisis con Matplotlib y Altair.
+- Nivel 05: organizar el análisis y sus comprobaciones antes de cambiar de lenguaje.
+- Niveles 06–08: R fundamental, tidyverse y visualización con ggplot2.
+- Niveles 09–10: Parquet y procesamiento con Polars/DuckDB.
+- Nivel 11: reutilizar figuras e interpretaciones en reportes Quarto.
+- Niveles 12–13: Streamlit en Python y Shiny en R. Elegir una aplicación y
+  pasar al proyecto final; la otra puede estudiarse después para comparar.
+- Nivel 14: integrar las prácticas de organización y robustez que ya se hayan
   introducido. El proyecto final no es la primera ocasión de validar o documentar.
 
 Cada ruta tendrá lecciones, labs y checkpoints cuando se desarrolle. Mantener

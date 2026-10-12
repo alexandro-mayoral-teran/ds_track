@@ -1,37 +1,45 @@
 # Curriculum
 
-Los módulos están ordenados por prerrequisitos. Cada directorio comienza con un
-README que define objetivos y criterio de salida. El estado actual se mantiene
-únicamente en [`PROGRESS.md`](../PROGRESS.md).
+El flujo está numerado por prerrequisitos. El nivel 00 tiene lecciones y labs;
+los niveles 01–14 tienen planificación, aún sin lecciones detalladas.
+El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).
 
-| Módulo | Resultado principal |
-| --- | --- |
-| [`00_getting_started`](00_getting_started/) | Entorno ejecutable |
-| [`01_python_foundations`](01_python_foundations/) | Transformación con Python estándar |
-| [`02_pandas`](02_pandas/) | Datos limpios, análisis y primera gráfica con Matplotlib |
-| [`03_sql_databases`](03_sql_databases/) | Modelo y consultas relacionales |
-| [`04_r_foundations`](04_r_foundations/) | Análisis básico equivalente en R |
-| [`05_tidyverse`](05_tidyverse/) | Análisis y visualización con ggplot2 en R |
-| [`06_arrow_parquet`](06_arrow_parquet/) | Dataset columnar bien diseñado |
-| [`07_polars_duckdb`](07_polars_duckdb/) | Procesamiento local de mayor escala |
-| [`08_reporting_quarto`](08_reporting_quarto/) | Reporte reproducible |
-| [`09_shiny_web`](09_shiny_web/) | Aplicación interactiva: Shiny en R o ruta Streamlit en Python |
-| [`10_reproducible_projects`](10_reproducible_projects/) | Pipeline probado y documentado |
-
-## Rutas complementarias planificadas
-
-Estas rutas tienen carpetas propias con su planificación. Sus lecciones y labs aún
-no están desarrollados. No cambian la
-numeración 00–10 ni son requisitos para comenzar pandas.
-
-| Ruta | Cuándo se introduce | Contenido previsto |
+| Nivel | Módulo | Resultado previsto |
 | --- | --- | --- |
-| [Python aplicado](python_applied/) | Después de pandas y SQL | Módulos, clases, composición, dataclasses, tipos, generadores, decoradores, pruebas, rendimiento y APIs |
-| [Visualización en Python](visualization_python/) | Base con pandas; profundización después de un análisis estable | Matplotlib, diseño de gráficos y Altair declarativo e interactivo |
-| [Visualización en R](visualization_r/) | R fundamental y tidyverse | ggplot2, estéticas, geometrías, escalas, facetas y comunicación |
-| [Streamlit](streamlit/) | Después de análisis y gráficos verificables | Aplicación Python; alternativa al recorrido de Shiny del nivel 9 |
+| 00 | [Entorno de aprendizaje](00_getting_started/) | Editar, ejecutar y comprobar scripts y notebooks |
+| 01 | [Python fundamental](01_python_foundations/) | Transformar y validar registros con Python estándar |
+| 02 | [pandas](02_pandas/) | Limpiar y resumir datos tabulares |
+| 03 | [SQL y bases de datos](03_sql_databases/) | Modelar relaciones y consultar indicadores |
+| 04 | [Visualización en Python](04_visualization_python/) | Comunicar resultados con Matplotlib y Altair |
+| 05 | [Python aplicado](05_python_applied/) | Organizar un análisis en código reutilizable y verificable |
+| 06 | [R fundamental](06_r_foundations/) | Reproducir un análisis conocido en R |
+| 07 | [tidyverse](07_tidyverse/) | Transformar y preparar datos en R |
+| 08 | [Visualización en R](08_visualization_r/) | Comunicar con ggplot2 y comparar representaciones |
+| 09 | [Arrow y Parquet](09_arrow_parquet/) | Almacenar y comprobar datos columnares |
+| 10 | [Polars y DuckDB](10_polars_duckdb/) | Procesar y comparar herramientas a mayor escala |
+| 11 | [Reportes con Quarto](11_reporting_quarto/) | Generar un reporte reproducible |
+| 12 | [Streamlit](12_streamlit/) | Construir una aplicación de datos en Python |
+| 13 | [Shiny y fundamentos web](13_shiny_web/) | Construir una aplicación de datos en R |
+| 14 | [Proyecto reproducible](14_reproducible_projects/) | Integrar datos, código, pruebas y producto final |
 
-Se podrá elegir un ecosistema para cada producto y comparar el otro después.
-La [arquitectura](../docs/architecture.md#rutas-de-profundización-previstas)
-describe prerrequisitos y resultados esperados. El material se creará cuando
-se desarrolle cada ruta, sin mantener carpetas vacías como si fueran lecciones.
+## Por qué este orden
+
+1. **00–05: construir una base en Python.** Preparar herramientas, manipular datos
+   con Python/pandas/SQL, comunicar un análisis y después organizar su código.
+   Python aplicado usa un problema conocido: clases y decoradores no bloquean pandas.
+2. **06–10: comparar ecosistemas y procesar más datos.** Reproducir el análisis
+   en R, preparar tablas con tidyverse, profundizar en ggplot2 y después estudiar
+   Parquet, Polars y DuckDB.
+3. **11–14: entregar un producto.** Crear reportes, elegir una aplicación y
+   cerrar con un proyecto reproducible.
+
+Streamlit (12) y Shiny (13) son rutas de aplicación equivalentes en Python y R.
+La numeración muestra ambas en el flujo, pero puedes elegir una y pasar al 14;
+la otra queda para comparación posterior. ggplot2 básico aparece en tidyverse;
+su diseño y composición se profundizan en el 08. Matplotlib básico aparece en
+pandas; el 04 desarrolla visualización y Altair.
+
+Dentro de Python aplicado, organización y validación son el núcleo; metaprogramación,
+concurrencia y especializaciones no son requisitos para continuar a R.
+Consulta [ROADMAP.md](../ROADMAP.md) para los criterios de salida y
+[la arquitectura](../docs/architecture.md) para el diseño del material.

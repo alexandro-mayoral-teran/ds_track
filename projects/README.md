@@ -15,6 +15,12 @@ Cada proyecto se creará cuando comience su módulo prerrequisito. Así se evita
 mantener esqueletos vacíos y se permite que la arquitectura evolucione con el
 aprendizaje.
 
+Los módulos 04 y 05 amplían el análisis Python con figuras y código reutilizable;
+los módulos 07 y 08 alimentan el análisis en R y sus figuras. Quarto ocupa el
+nivel 11. La aplicación Shiny pertenece al 13; el nivel 12 ofrece Streamlit
+como elección alternativa. Su proyecto o checkpoint se definirá al desarrollar
+esa ruta, sin exigir construir dos aplicaciones para completar el nivel 14.
+
 Los proyectos avanzarán mediante checkpoints enlazados a lecciones y labs. Las
 reglas están en
 [`docs/learning-workflow.md`](../docs/learning-workflow.md), y la estructura

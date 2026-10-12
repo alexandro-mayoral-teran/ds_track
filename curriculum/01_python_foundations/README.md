@@ -28,3 +28,8 @@ la [ruta de Python aplicado](../../docs/architecture.md#python-aplicado-del-note
 después de pandas y SQL. Esa ruta está planificada; todavía no hay lecciones
 ni labs y no bloquea el paso al análisis tabular.
 
+
+## Continuidad del track
+
+Prerrequisito de estudio: [00 — Entorno de aprendizaje](../00_getting_started/README.md).
+Consulta después [02 — pandas](../02_pandas/README.md).

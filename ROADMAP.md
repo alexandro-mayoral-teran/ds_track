@@ -14,6 +14,10 @@ que este documento permanezca como una referencia estable del plan.
 - **Extensión:** tecnología alternativa o moderna.
 - **Avanzado:** profundización que no bloquea el recorrido.
 
+El [curriculum](curriculum/README.md) muestra el flujo numerado 00–14. La
+numeración ordena el estudio; Streamlit (12) y Shiny (13) son dos rutas de
+aplicación y basta elegir una antes del proyecto final (14).
+
 ## Nivel 0 — Entorno de aprendizaje
 
 **Objetivo:** ejecutar y organizar material de forma reproducible.
@@ -114,17 +118,45 @@ calidad aplicada, presentar una gráfica e interpretar sus resultados.
 **Criterio de salida:** diseñar un modelo relacional y obtener indicadores de
 cartera mediante consultas verificables.
 
-**Cierre antes de R:** integrar lo aprendido en un análisis pequeño: leer datos
+**Checkpoint de integración:** integrar lo aprendido en un análisis pequeño: leer datos
 con Python, limpiar con pandas, consultar indicadores en SQLite y explicar una
 gráfica. Reutilizar los proyectos de limpieza y base de datos, sin crear un
 proyecto adicional obligatorio. Conciliar al menos un indicador entre pandas
-y SQL y conservar instrucciones de ejecución.
+y SQL y conservar instrucciones de ejecución. Los niveles 04 y 05 ampliarán
+su visualización y organización; ese análisis consolidado se reutiliza al pasar a R.
 
-## Nivel 4 — R fundamental
+## Nivel 4 — Visualización en Python
+
+**Objetivo:** comunicar un análisis conocido con gráficos justificables.
+
+- Esencial: pregunta, gráfico adecuado, escalas, unidades, etiquetas y color accesible.
+- Esencial: Matplotlib, Figure/Axes, barras, líneas y distribuciones.
+- Práctica: composición, anotaciones y exportación.
+- Práctica: Altair, marcas, codificaciones y tipos; interacción como extensión.
+
+**Criterio de salida:** explicar un indicador de pandas/SQL mediante una figura,
+justificar su representación y conservar el código que la reconstruye.
+
+## Nivel 5 — Python aplicado
+
+**Objetivo:** transformar un análisis de notebook en código reutilizable y verificable.
+
+- Esencial: módulos, funciones, configuración, logging y comprobaciones.
+- Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.
+- Práctica: iteradores y generadores; usar decoradores existentes.
+- Extensión: crear decoradores, gestores de contexto y excepciones propias.
+- Extensión: profiling, APIs y reintentos según necesidades del análisis.
+- Avanzado: herencia, concurrencia y metaprogramación, sin bloquear el recorrido.
+
+**Criterio de salida:** reorganizar el análisis conocido, separar entrada,
+transformación y salida y comprobar que conserva sus indicadores y su figura.
+Este cierre prepara el cambio de lenguaje a R; no exige dominar toda la POO.
+
+## Nivel 6 — R fundamental
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.
 
-**Prerrequisito:** el análisis de cierre del nivel 3. Reutilizar sus preguntas y
+**Prerrequisito:** el análisis consolidado al finalizar el nivel 5. Reutilizar sus preguntas y
 datos para aprender el modelo de R sobre un problema conocido.
 
 - Vectores, listas, data frames, funciones y paquetes.
@@ -135,7 +167,7 @@ datos para aprender el modelo de R sobre un problema conocido.
 **Criterio de salida:** reproducir en R un análisis conocido de Python sin
 traducir mecánicamente cada línea.
 
-## Nivel 5 — tidyverse y comunicación visual
+## Nivel 7 — tidyverse y comunicación visual
 
 **Objetivo:** realizar análisis expresivos y comunicar hallazgos.
 
@@ -148,7 +180,18 @@ traducir mecánicamente cada línea.
 **Criterio de salida:** producir un análisis de cartera entendible por una
 persona que no escribió el código.
 
-## Nivel 6 — Arrow y Parquet
+## Nivel 8 — Visualización en R
+
+**Objetivo:** profundizar en ggplot2 sobre resultados ya conocidos.
+
+- Esencial: estéticas, geometrías, escalas, etiquetas y facetas.
+- Práctica: temas, anotaciones, composición y exportación.
+- Práctica: comparar interpretaciones con las figuras del análisis Python.
+
+**Criterio de salida:** construir y explicar una figura reproducible en R,
+con indicadores conciliados y elección de representación justificada.
+
+## Nivel 9 — Arrow y Parquet
 
 **Objetivo:** comprender almacenamiento columnar y datasets mayores.
 
@@ -163,7 +206,7 @@ persona que no escribió el código.
 conserva registros e indicadores y explicar el diseño. Particionar solo cuando
 se pueda justificar; no es requisito para el primer ejercicio.
 
-## Nivel 7 — Polars y DuckDB
+## Nivel 10 — Polars y DuckDB
 
 **Objetivo:** procesar datos grandes en una sola máquina con criterio.
 
@@ -177,7 +220,7 @@ se pueda justificar; no es requisito para el primer ejercicio.
 **Criterio de salida:** resolver el mismo problema con pandas, Polars y DuckDB,
 y escoger una herramienta usando mediciones.
 
-## Nivel 8 — Reportes reproducibles
+## Nivel 11 — Reportes reproducibles
 
 **Objetivo:** transformar análisis en productos consumibles.
 
@@ -194,7 +237,19 @@ pandas y tidyverse; no es la primera ocasión de explicar resultados.
 **Criterio de salida:** generar nuevamente un reporte completo partiendo de los
 datos y el código, sin edición manual de resultados.
 
-## Nivel 9 — Shiny y fundamentos web
+## Nivel 12 — Streamlit
+
+**Objetivo:** convertir un análisis estable en una aplicación de datos Python.
+
+- Esencial: inputs, tablas, gráficos y modelo de reejecución.
+- Práctica: estado, caché y mensajes para entradas inválidas o filtros vacíos.
+- Esencial: separar lógica de datos de la interfaz y comprobar indicadores.
+
+**Criterio de salida:** crear un explorador con filtros y resultados verificables.
+Es la ruta Python; se puede elegir en lugar de Shiny y pasar al proyecto final.
+El proyecto/checkpoint específico se definirá al desarrollar este módulo.
+
+## Nivel 13 — Shiny y fundamentos web
 
 **Objetivo:** convertir un análisis estable en una aplicación interactiva.
 
@@ -202,18 +257,15 @@ datos y el código, sin edición manual de resultados.
 - UI, servidor, estado y reactividad en Shiny.
 - Inputs, outputs, validaciones y módulos.
 - Lectura desde Parquet o una base de datos.
-- Ruta alternativa planificada en Python con Streamlit: inputs, reejecución,
-  estado y caché. Elegir una app; no exigir construir ambas.
 
 **Proyecto asociado:** `06_shiny_portfolio_app`.
 
-El proyecto conserva su identidad para la ruta de R. Si se desarrolla la ruta
-Streamlit, se definirá su checkpoint o proyecto antes de implementarlo.
+Streamlit ocupa el nivel 12. Elegir una de las dos aplicaciones; no exigir ambas.
 
 **Criterio de salida:** construir un explorador de cartera con filtros y
 mensajes de error comprensibles, sin mezclar la UI con las transformaciones.
 
-## Nivel 10 — Proyecto reproducible
+## Nivel 14 — Proyecto reproducible
 
 **Objetivo:** integrar el recorrido con prácticas de ingeniería.
 
@@ -232,14 +284,7 @@ instrucciones documentadas y datos sintéticos.
 
 ## Temas estacionados
 
-Las rutas previstas de **Python aplicado** y **visualización en Python y R**
-se detallan en [la arquitectura](docs/architecture.md#rutas-de-profundización-previstas).
-Incluyen clases, decoradores y robustez después de las bases, Matplotlib y
-Altair para gráficos, ggplot2 para R y Streamlit como alternativa de aplicación
-Python al recorrido de Shiny. Se incorporarán según sus prerrequisitos, sin
-renumerar los niveles ni bloquear el avance a pandas.
-
-Se investigarán después de completar los niveles esenciales:
+Se investigarán cuando resuelvan una limitación del recorrido:
 
 - Orquestadores como Dagster o Prefect.
 - Almacenamiento de objetos compatible con S3.
@@ -248,5 +293,5 @@ Se investigarán después de completar los niveles esenciales:
 - Spark y procesamiento distribuido.
 - APIs con Plumber o FastAPI.
 
-Estar en esta lista no significa que el tema sea poco importante; significa que
-todavía no resuelve una limitación encontrada durante la ruta principal.
+Estos temas no bloquean los módulos numerados. Las especializaciones avanzadas
+de Python se tratarán dentro del nivel 05 cuando exista una necesidad concreta.

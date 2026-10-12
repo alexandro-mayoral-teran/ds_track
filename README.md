@@ -111,8 +111,8 @@ preguntas del lab para conversar y comprobar lo aprendido.
 ## Estado actual
 
 El nivel 0 dispone de sus seis lecciones y labs para revisión y práctica; los
-módulos siguientes y las rutas complementarias están en planificación. El
+módulos siguientes están en planificación, integrados en el flujo numerado 00–14. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de
-Python aplicado, visualización y aplicaciones en Python y R. El
+Python aplicado, visualización y aplicaciones en Python y R en su orden de estudio. El
 avance diario y el siguiente paso se mantienen en [`PROGRESS.md`](PROGRESS.md).
