@@ -148,7 +148,7 @@ qué archivo compartirías para reconstruir esa instalación y cuáles son sus l
 
 ## Siguiente lección
 
-06 — Primer notebook (por desarrollar). Consulta el [índice del nivel 0](../README.md).
+[06 — Primer notebook](../06_first_notebook/README.md): celdas, kernel y ejecución desde cero.
 
 ## Referencias oficiales
 

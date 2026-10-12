@@ -27,7 +27,7 @@ convertir la instalación de herramientas en el tema principal.
 | 3 | [Git: historial y actualización del perfil](03_git_workflow/) | Clonar, revisar cambios, crear un commit y hacer push |
 | 4 | [Primer script Python](04_first_script/) | Ejecutar, modificar y comprobar un cálculo |
 | 5 | [Entorno y dependencias: partes A y B](05_environment/) | Preparar un entorno y después instalar y registrar bibliotecas |
-| 6 | Primer notebook (por desarrollar) | Ejecutar un análisis por celdas |
+| 6 | [Primer notebook](06_first_notebook/) | Elegir kernel, explorar celdas y reproducir resultados desde cero |
 
 Cada lección tiene su propio lab y criterio de salida: `00.01` → `00.02` →
 `00.03` → `00.04`. Primero documentas desde la web, después aprendes a navegar

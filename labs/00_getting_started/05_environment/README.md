@@ -127,5 +127,5 @@ entornos ni rutas privadas. Las prácticas locales están excluidas de Git.
 
 ## Siguiente paso
 
-06 — Primer notebook está por desarrollar. Consulta el
-[índice del nivel 0](../../../curriculum/00_getting_started/README.md).
+Continúa con la [lección 06 — Primer notebook](../../../curriculum/00_getting_started/06_first_notebook/README.md)
+antes de realizar su lab.

@@ -27,4 +27,4 @@ los otros caminos después; no son ejercicios adicionales obligatorios.
 
 ## Siguiente lección
 
-06 — Primer notebook (por desarrollar). Consulta el [índice del nivel 0](../README.md).
+[06 — Primer notebook](../06_first_notebook/README.md): celdas, kernel y ejecución desde cero.

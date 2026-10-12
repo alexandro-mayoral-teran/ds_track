@@ -7,12 +7,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo:** `00_getting_started`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** lección 05 — Entorno y dependencias.
-- **Estado del contenido:** lecciones y labs 01–05 disponibles para revisión
+- **Foco de desarrollo del material:** lección 06 — Primer notebook.
+- **Estado del contenido:** lecciones y labs 01–06 disponibles para revisión
   y práctica. Esto no acredita finalización del estudiante.
 - **Siguiente paso de estudio:** leer la
-  [lección 05](curriculum/00_getting_started/05_environment/README.md) y realizar
-  el [lab 00.05](labs/00_getting_started/05_environment/README.md), después de
+  [lección 06](curriculum/00_getting_started/06_first_notebook/README.md) y realizar
+  el [lab 00.06](labs/00_getting_started/06_first_notebook/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -42,6 +42,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se creó la lección 06, el notebook de ejemplo y su lab: selección de kernel,
+  celdas, estado en memoria y ejecución desde cero.
 - Se dividió la lección 05 en dos sesiones: preparación del entorno y gestión
   de dependencias, con teoría específica de requirements.txt y archivos de configuración.
 - Se separó la teoría de entornos de tres recorridos prácticos: Conda, venv + pip
