@@ -153,6 +153,27 @@ y caché. Usar un decorador existente, por ejemplo para caché, no exige desarro
 decoradores personalizados. En Shiny, enseñar reactividad antes de ampliar la UI.
 En ambos casos separar transformación y validación de datos de la interfaz.
 
+### Desarrollo previsto de los módulos 06–08
+
+Los planes de R contienen 28 secciones, todavía sin lecciones ejecutables ni labs:
+
+| Módulo | Secciones | Secuencia y cierre |
+| --- | --- | --- |
+| [06 — R fundamental](../curriculum/06_r_foundations/README.md) | 9 | Sesión, vectores, selección, faltantes, tablas, funciones, archivos, renv y conciliación con Python |
+| [07 — tidyverse](../curriculum/07_tidyverse/README.md) | 10 | Importación, verbos, reglas, grupos, uniones, reshape, categorías, fechas y primera figura |
+| [08 — Visualización en R](../curriculum/08_visualization_r/README.md) | 9 | Gramática, geometrías, estéticas, escalas, facetas, comunicación, composición, exportación y cierre |
+
+R fundamental utiliza el análisis conocido como referencia, pero enseña el modelo
+propio de vectores y NA. renv se introduce en 06 y se conserva en el proyecto que
+crecerá con tidyverse. La primera figura de 07 evita posponer comunicación;
+08 profundiza su diseño. Los checkpoints de 03_portfolio_analysis_r son propuestas,
+aún sin implementar.
+
+La [guía de lecturas abiertas](r-reading-guide.md) ubica R for Data Science,
+Advanced R, el libro de ggplot2 y R Packages. Se consultan capítulos por necesidad;
+objetos avanzados, metaprogramación y creación de paquetes no bloquean 06–08.
+No se instalan paquetes ni se fija una versión de R por esta planificación.
+
 ### R aplicado: consideración para el próximo ajuste
 
 Se contempla un puente después de visualización R (08) y antes de Parquet:

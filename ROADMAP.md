@@ -172,6 +172,11 @@ Este cierre prepara el cambio de lenguaje a R; no exige dominar toda la POO.
 
 ## Nivel 6 — R fundamental
 
+El [plan de nueve secciones](curriculum/06_r_foundations/README.md#orden-de-desarrollo)
+introduce el modelo de R, funciones, archivos y renv antes de conciliar con Python.
+Las lecciones y labs están por desarrollar; las referencias abiertas están en
+[la guía de lecturas R](docs/r-reading-guide.md).
+
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.
 
 **Prerrequisito:** el análisis consolidado al finalizar el nivel 5. Reutilizar sus preguntas y
@@ -187,6 +192,11 @@ traducir mecánicamente cada línea.
 
 ## Nivel 7 — tidyverse y comunicación visual
 
+El [plan de diez secciones](curriculum/07_tidyverse/README.md#orden-de-desarrollo)
+conecta importación, transformación, calidad, relaciones, fechas y primera figura.
+Las lecciones y labs están por desarrollar; las referencias abiertas están en
+[la guía de lecturas R](docs/r-reading-guide.md).
+
 **Objetivo:** realizar análisis expresivos y comunicar hallazgos.
 
 - `dplyr`, `tidyr`, `stringr` y manejo de fechas.
@@ -199,6 +209,11 @@ traducir mecánicamente cada línea.
 persona que no escribió el código.
 
 ## Nivel 8 — Visualización en R
+
+El [plan de nueve secciones](curriculum/08_visualization_r/README.md#orden-de-desarrollo)
+profundiza gramática, escalas, composición y exportación sobre el análisis conocido.
+Las lecciones y labs están por desarrollar; las referencias abiertas están en
+[la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** profundizar en ggplot2 sobre resultados ya conocidos.
 

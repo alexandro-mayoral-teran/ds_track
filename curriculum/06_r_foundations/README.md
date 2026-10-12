@@ -1,15 +1,136 @@
 # 06 — R fundamental
 
-Introducir sintaxis, vectores, listas, data frames, funciones, paquetes y lectura
-de datos. Los ejercicios reutilizarán preguntas ya resueltas con Python para
-concentrarse en el modelo mental de R.
+## Propósito y prerrequisitos
 
-Antes de comenzar, completa el análisis de Python, pandas y SQLite, su figura
-del nivel 04 y la organización esencial del nivel 05. Sus datos, preguntas e
-indicadores servirán como referencia para comparar sin volver a resolver el problema.
+Aprender el modelo de R sobre preguntas ya resueltas con Python. Completa el
+cierre esencial de [05 — Python aplicado](../05_python_applied/README.md):
+datos conocidos, indicadores conciliados, figura y ejecución reconstruible.
+No se exige completar todas las ampliaciones de Python.
 
+**Estado:** nueve secciones planificadas; lecciones, ejemplos y labs por desarrollar.
+Los enlaces de la tabla describen el alcance dentro de este documento.
 
-## Continuidad del track
+Empezaremos con ventas pequeñas y luego reutilizaremos la cartera sintética.
+R no se aprenderá traduciendo mecánicamente líneas de pandas: compararemos
+estructuras, reglas y resultados. RStudio será un editor opcional; el intérprete
+R es necesario. Las versiones y dependencias se fijarán al implementar el material.
 
-Prerrequisito de estudio: [05 — Python aplicado](../05_python_applied/README.md).
-Consulta después [07 — tidyverse](../07_tidyverse/README.md).
+## Orden de desarrollo
+
+| Orden | Sección prevista | Alcance | Resultado observable |
+| --- | --- | --- | --- |
+| 1 | [R, editor, scripts y paquetes](#01-r-editor-scripts-y-paquetes) | Esencial | Ejecutar un script e identificar su sesión |
+| 2 | [Objetos, vectores y tipos](#02-objetos-vectores-y-tipos) | Esencial | Representar datos y explicar coerciones |
+| 3 | [Seleccionar elementos](#03-seleccionar-elementos) | Esencial | Distinguir posiciones, nombres y estructuras |
+| 4 | [Lógica y valores faltantes](#04-logica-y-valores-faltantes) | Esencial | Aplicar condiciones con tratamiento explícito de NA |
+| 5 | [Listas y data frames](#05-listas-y-data-frames) | Esencial | Construir y consultar registros tabulares |
+| 6 | [Funciones y control de flujo](#06-funciones-y-control-de-flujo) | Esencial | Separar una transformación de su presentación |
+| 7 | [Archivos y validación básica](#07-archivos-y-validacion-basica) | Esencial | Leer, validar y escribir sin alterar la fuente |
+| 8 | [Proyectos y dependencias con renv](#08-proyectos-y-dependencias-con-renv) | Práctica | Conservar y restaurar paquetes del proyecto |
+| 9 | [Reproducir un resultado conocido](#09-reproducir-un-resultado-conocido) | Práctica de cierre | Conciliar conteos e indicadores con Python |
+
+## Alcance de cada sección
+
+<a id="01-r-editor-scripts-y-paquetes"></a>
+
+### 01 — R, editor, scripts y paquetes
+
+- Distinguir intérprete, consola, script .R y editor; ejecutar desde consola y
+  Rscript. Help, sessionInfo, instalación frente a library y uso de paquete::función.
+- Práctica prevista: ejecutar un cálculo, registrar la versión y reconstruirlo en
+  una sesión nueva sin depender de objetos guardados en .RData.
+
+<a id="02-objetos-vectores-y-tipos"></a>
+
+### 02 — Objetos, vectores y tipos
+
+- Asignación con <-, c, length, typeof y class; vectores numéricos, enteros,
+  lógicos y de texto. Operaciones vectorizadas, coerción y reciclaje de longitudes.
+- Práctica prevista: calcular importes de ventas y reconocer una mezcla de tipos
+  o longitudes que cambia el resultado. No asumir semántica de listas de Python.
+
+<a id="03-seleccionar-elementos"></a>
+
+### 03 — Seleccionar elementos
+
+- Posiciones desde 1, nombres, selección lógica y diferencia entre [, [[ y $.
+  Preservar dimensiones cuando corresponda; columnas y filas se explican en 05.
+- Práctica prevista: extraer elementos por varios caminos y explicar el tipo
+  devuelto. Comparar con Python sin equiparar todos los operadores.
+
+<a id="04-logica-y-valores-faltantes"></a>
+
+### 04 — Lógica y valores faltantes
+
+- Comparaciones, vectores lógicos, & frente a &&, | frente a ||; NA, is.na y
+  propagación de faltantes. Diferenciar NA, NULL, NaN y cero en casos pequeños.
+- Práctica prevista: definir una condición y decidir qué hacer con entradas
+  desconocidas; justificar el uso de na.rm en lugar de eliminar faltantes por costumbre.
+
+<a id="05-listas-y-data-frames"></a>
+
+### 05 — Listas y data frames
+
+- Listas con elementos de tipos distintos; data.frame, nombres, dimensiones y str.
+  Seleccionar una columna como vector frente a mantener una tabla.
+- Práctica prevista: reconstruir las ventas y consultar sus registros. Matrices
+  sirven como comparación; no son una unidad avanzada obligatoria.
+
+<a id="06-funciones-y-control-de-flujo"></a>
+
+### 06 — Funciones y control de flujo
+
+- function, argumentos, retorno explícito o último valor y alcance local básico.
+  if requiere una condición escalar; for y alternativas vectorizadas cuando procedan.
+- Práctica prevista: separar validación, transformación y presentación; reconocer
+  un error y comunicarlo con stop. tryCatch se introduce solo para fallas esperadas.
+
+<a id="07-archivos-y-validacion-basica"></a>
+
+### 07 — Archivos y validación básica
+
+- Rutas relativas al proyecto, read.csv/write.csv, codificación y separadores.
+  Registrar tipos esperados y evitar exportar nombres de fila como columna accidental.
+- Práctica prevista: producir aceptados y rechazos, conciliar conteos y preservar
+  la entrada. Leer una tabla no demuestra calidad de datos; imports con readr siguen en 07.
+
+<a id="08-proyectos-y-dependencias-con-renv"></a>
+
+### 08 — Proyectos y dependencias con renv
+
+- Carpeta de proyecto, archivos .R, librería de paquetes, renv.lock, snapshot y
+  restore. Distinguir conservar paquetes de instalar R o guardar el estado de una sesión.
+- Práctica prevista: restaurar el entorno de un proyecto pequeño y ejecutarlo desde
+  cero; registrar también la versión de R. Reutilizar ese proyecto en tidyverse.
+
+<a id="09-reproducir-un-resultado-conocido"></a>
+
+### 09 — Reproducir un resultado conocido
+
+- Integrar lectura, funciones, reglas, rechazos y resumen sobre la misma muestra
+  y corte que Python; definir cómo comparar tipos, faltantes e importes.
+- Práctica prevista: conciliar un conteo y un indicador, explicar diferencias y
+  conservar instrucciones. Una gráfica inicial en ggplot2 llegará en el módulo 07.
+
+## Prácticas y criterio de salida
+
+Se prevén labs 06.01–06.09 con soluciones desplegables; todavía no existen.
+El cierre reutilizará el resultado Python como referencia y preparará el proyecto
+03_portfolio_analysis_r, previsto en [proyectos](../../projects/README.md), sin
+carpeta implementada todavía. No hay checkpoint activo asociado.
+
+Podrás avanzar al ejecutar un análisis pequeño en una sesión nueva, explicar
+vectores y tablas, tratar faltantes explícitamente y conciliar un resultado con
+Python. Evaluación no estándar, entornos avanzados, S3/S4/R6 y metaprogramación
+no bloquean tidyverse; se contemplan en el futuro R aplicado.
+
+## Continuidad y lecturas
+
+Comenzaremos por la sección 01. Después del cierre, continúa con
+[07 — tidyverse](../07_tidyverse/README.md).
+
+Fuentes: [manual introductorio de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html),
+[selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html) y
+[renv](https://rstudio.github.io/renv/articles/renv.html).
+Consulta la [guía de libros abiertos de R](../../docs/r-reading-guide.md) para
+ubicar estas referencias y las ampliaciones de Hadley Wickham.

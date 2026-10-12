@@ -6,7 +6,9 @@ funciones, archivos CSV y validación/resumen. Sus seis lecciones y labs están
 disponibles. El módulo 02 ya tiene la primera lección de pandas y su lab.
 Las secciones restantes de 02–05 tienen objetivos, prácticas y cierres propuestos,
 todavía sin lecciones ejecutables ni labs.
-Los módulos 06–14 conservan su planificación general.
+Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
+con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los niveles 09–14
+conservan su planificación general.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).
 
 | Nivel | Módulo | Resultado previsto |

@@ -7,12 +7,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `02_pandas`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** Series y DataFrame; próxima lección
-  por implementar: 02.02 — Leer, inspeccionar y exportar.
+- **Foco de desarrollo del material:** secciones y lecturas para los módulos R 06–08.
+  Próxima lección Python por implementar: 02.02 — Leer, inspeccionar y exportar.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. La primera de pandas y su
-  lab están disponibles; las demás están por desarrollar.
+  lab están disponibles; las demás están por desarrollar. Los módulos 06–08 tienen
+  un plan adicional de 28 secciones y lecturas abiertas, todavía sin lecciones ni labs.
 - **Siguiente paso de estudio:** leer la
   [lección de Series y DataFrame](curriculum/02_pandas/01_series_dataframe/README.md) y realizar
   el [lab 02.01](labs/02_pandas/01_series_dataframe/README.md), después de
@@ -48,6 +49,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-11
+
+- Se investigaron libros abiertos de Hadley Wickham y documentación oficial para
+  definir R fundamental (9 secciones), tidyverse (10) y visualización R (9).
+  Se agregó una guía de lecturas y se mantuvo pendiente la numeración de R aplicado.
 
 - Se desarrolló 02.01 — Series y DataFrame, con script y lab; pandas 2.3.3 se
   declaró en pyproject.toml y se resolvió en uv.lock. Se verificó el ejemplo

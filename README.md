@@ -116,7 +116,9 @@ fundamental dispone de sus seis lecciones, desde
 hasta [validación y resumen](curriculum/01_python_foundations/06_validation_summary/README.md).
 pandas comienza con [Series y DataFrame](curriculum/02_pandas/01_series_dataframe/README.md)
 y su lab. Las secciones restantes de 02–05 conservan su plan para desarrollar una por una;
-los niveles 06–14 conservan su planificación general. El
+los niveles 06–08 también tienen secciones definidas y
+[lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–14 conservan
+su planificación general. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de
 Python aplicado, visualización y aplicaciones en Python y R en su orden de estudio. El
