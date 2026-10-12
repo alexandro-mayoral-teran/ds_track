@@ -63,5 +63,5 @@ convertirla; más adelante aprenderemos a validar y gestionar estos errores.
 
 ## Siguiente paso
 
-La lección 02 — Listas y diccionarios está por desarrollar. Consulta el
-[índice de Python fundamental](../../../curriculum/01_python_foundations/README.md).
+Continúa con la [lección 02 — Listas y diccionarios](../../../curriculum/01_python_foundations/02_lists_dicts/README.md)
+antes de realizar el lab 01.02.

@@ -184,7 +184,7 @@ Todavía no hay checkpoint de proyecto asociado.
 
 ## Siguiente paso
 
-02 — Listas y diccionarios está por desarrollar. Consulta el [índice del módulo](../README.md).
+Continúa con [02 — Listas y diccionarios](../02_lists_dicts/README.md) antes de su lab.
 
 ## Referencia
 
