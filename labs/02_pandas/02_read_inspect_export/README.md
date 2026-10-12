@@ -123,6 +123,5 @@ revisar y repetir el ejercicio sin perder la entrada.
 
 ## Siguiente paso
 
-03 — Seleccionar, filtrar y ordenar está por desarrollar. Consulta el
-[plan de la siguiente lección](../../../curriculum/02_pandas/README.md#03-seleccionar-filtrar-y-ordenar)
-antes de su futuro lab.
+Continúa con la [lección 03 — Seleccionar, filtrar y ordenar](../../../curriculum/02_pandas/03_select_filter_sort/README.md)
+antes de realizar su lab.

@@ -93,8 +93,9 @@ El [plan de diez secciones](curriculum/02_pandas/README.md#orden-de-desarrollo)
 ordena tablas → lectura → selección → tipos → calidad → texto/fechas → agrupación
 → uniones → reshape → análisis y primera gráfica. La
 [primera lección](curriculum/02_pandas/01_series_dataframe/README.md) y
-[lectura/exportación](curriculum/02_pandas/02_read_inspect_export/README.md), con sus
-labs, están disponibles; las secciones 03–10 están por desarrollar.
+[lectura/exportación](curriculum/02_pandas/02_read_inspect_export/README.md) y
+[selección/filtros](curriculum/02_pandas/03_select_filter_sort/README.md), con sus
+labs, están disponibles; las secciones 04–10 están por desarrollar.
 
 - Series, DataFrames, selección, filtrado y tipos.
 - Faltantes, duplicados, fechas y texto.

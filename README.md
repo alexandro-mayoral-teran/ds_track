@@ -115,8 +115,8 @@ fundamental dispone de sus seis lecciones, desde
 [variables y tipos](curriculum/01_python_foundations/01_variables_types/README.md)
 hasta [validación y resumen](curriculum/01_python_foundations/06_validation_summary/README.md).
 pandas comienza con [Series y DataFrame](curriculum/02_pandas/01_series_dataframe/README.md)
-y [Leer, inspeccionar y exportar](curriculum/02_pandas/02_read_inspect_export/README.md),
-con sus labs. Las secciones restantes de 02–05 conservan su plan para desarrollar una por una;
+[Leer, inspeccionar y exportar](curriculum/02_pandas/02_read_inspect_export/README.md) y
+[Seleccionar, filtrar y ordenar](curriculum/02_pandas/03_select_filter_sort/README.md), con sus labs. Las secciones restantes de 02–05 conservan su plan para desarrollar una por una;
 los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

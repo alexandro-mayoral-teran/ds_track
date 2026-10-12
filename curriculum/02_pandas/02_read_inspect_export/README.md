@@ -241,8 +241,7 @@ de limpieza sigue previsto: no hay checkpoint implementado todavía.
 
 ## Siguiente paso y referencias
 
-03 — Seleccionar, filtrar y ordenar está por desarrollar. Consulta su
-[alcance previsto](../README.md#03-seleccionar-filtrar-y-ordenar).
+Continúa con [03 — Seleccionar, filtrar y ordenar](../03_select_filter_sort/README.md).
 
 - [read_csv](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.read_csv.html).
 - [info](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.info.html) y
