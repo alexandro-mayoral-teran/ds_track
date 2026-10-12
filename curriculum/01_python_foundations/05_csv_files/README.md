@@ -136,7 +136,7 @@ Los importes esperados son 80, 50 y 35 MXN; su total es 165 MXN.
 
 Si encuentras `"dos"`, un campo vacío o un decimal donde esperabas un entero,
 no lo reemplaces por cero automáticamente. La conversión puede fallar y la
-causa debe revisarse. La siguiente lección definirá reglas y tratamiento de
+causa debe revisarse. La [siguiente lección](../06_validation_summary/README.md) define reglas y tratamiento de
 registros inválidos. Convertir `"-2"` funciona en Python, pero no demuestra
 que esas unidades sean válidas para una venta.
 
@@ -182,8 +182,8 @@ El script hace comprobaciones mínimas del encabezado y la cantidad de campos.
 En el lector, `fieldnames` permite consultar el encabezado; `fila.values()`
 permite examinar sus valores. Una columna sobrante o faltante puede aparecer
 con una clave o valor None en DictReader; el ejemplo rechaza esa estructura.
-`raise ValueError(...)` detiene el proceso con una explicación. Desarrollaremos
-gestión de errores y reglas completas en la lección 06.
+`raise ValueError(...)` detiene el proceso con una explicación. La lección 06 desarrolla
+gestión de errores y reglas explícitas para esta muestra.
 
 Esto no valida duplicados, productos vacíos o cantidades negativas. Mantén clara
 la diferencia entre poder leer el formato y demostrar calidad de los datos.
@@ -269,7 +269,7 @@ Todavía no hay checkpoint de proyecto asociado.
 
 ## Siguiente paso
 
-06 — Validación y resumen está por desarrollar. Consulta el [índice del módulo](../README.md).
+Continúa con [06 — Validación y resumen](../06_validation_summary/README.md).
 
 ## Referencias oficiales
 

@@ -108,5 +108,5 @@ copia con separador coma produciría un encabezado diferente.
 
 ## Siguiente paso
 
-06 — Validación y resumen está por desarrollar. Consulta el
-[índice de Python fundamental](../../../curriculum/01_python_foundations/README.md).
+Continúa con la [lección 06 — Validación y resumen](../../../curriculum/01_python_foundations/06_validation_summary/README.md)
+antes de realizar su lab.

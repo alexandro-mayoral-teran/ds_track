@@ -2,7 +2,8 @@
 
 El flujo está numerado por prerrequisitos. El nivel 00 tiene lecciones y labs;
 el nivel 01 dispone de variables/tipos, listas/diccionarios, condiciones/ciclos,
-funciones y archivos CSV. Los demás contenidos
+funciones, archivos CSV y validación/resumen. Sus seis lecciones y labs están
+disponibles. Los demás contenidos
 tienen planificación, aún sin lecciones detalladas.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).
 

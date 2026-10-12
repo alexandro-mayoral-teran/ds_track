@@ -66,7 +66,7 @@ que exista una incompatibilidad concreta.
 
 Las primeras lecciones de Python utilizan ventas ficticias pequeñas para aprender
 sin introducir vocabulario de otro dominio. La lección 05 conecta lectura CSV,
-conversión y escritura; la 06 desarrollará validación y resumen. Después, el
+conversión y escritura; la 06 desarrolla validación y resumen con rechazos y controles explícitos. Después, el
 dominio común será una cartera crediticia completamente sintética. Su escala
 crecerá de manera intencional:
 
@@ -80,8 +80,7 @@ crecerá de manera intencional:
 
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
-el nivel 01 tiene las primeras cinco lecciones y sus labs, con validación y
-resumen todavía pendientes. Los niveles 02–14 conservan planificación,
+el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. Los niveles 02–14 conservan planificación,
 aún sin lecciones detalladas. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 

@@ -14,16 +14,16 @@ transformación de CSV realizada con la biblioteca estándar.
 | 3 | [Condiciones y ciclos](03_conditions_loops/) | Filtrar registros y comprobar resúmenes |
 | 4 | [Funciones](04_functions/) | Separar, reutilizar y comprobar transformaciones |
 | 5 | [Archivos CSV](05_csv_files/) | Leer, transformar y escribir con la biblioteca estándar |
-| 6 | Validación y resumen (por desarrollar) | Comprobar entradas y totales, documentar reglas |
+| 6 | [Validación y resumen](06_validation_summary/) | Comprobar entradas y totales, documentar reglas |
 
-Los módulos, excepciones y JSON se incorporarán cuando resuelvan una necesidad
-de la práctica. Las lecciones 01–05 y sus labs
+Se utilizan csv y pathlib como módulos de la biblioteca estándar, y excepciones
+para atender conversiones y comprobar resultados. JSON queda como ampliación posterior. Las lecciones 01–06 y sus labs
 [01.01](../../labs/01_python_foundations/01_variables_types/README.md) y
 [01.02](../../labs/01_python_foundations/02_lists_dicts/README.md) y
 [01.03](../../labs/01_python_foundations/03_conditions_loops/README.md) y
 [01.04](../../labs/01_python_foundations/04_functions/README.md) y
-[01.05](../../labs/01_python_foundations/05_csv_files/README.md) están disponibles;
-la lección 06 está por desarrollar.
+[01.05](../../labs/01_python_foundations/05_csv_files/README.md) y
+[01.06](../../labs/01_python_foundations/06_validation_summary/README.md) están disponibles.
 La meta es transformar un CSV pequeño y explicar el resultado antes de pasar a pandas.
 
 ## Bases y profundización posterior

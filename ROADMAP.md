@@ -81,8 +81,9 @@ demostrar una actualización del perfil mediante un commit y un push.
 **Orden recomendado:** tipos → listas y diccionarios → condiciones y ciclos
 → funciones → archivos CSV → validación → resumen verificable.
 
-**Criterio de salida:** leer registros crediticios, validarlos y producir un
-resumen mediante funciones pequeñas y reutilizables.
+**Criterio de salida:** leer registros sintéticos, aplicar reglas explícitas, conservar
+rechazos y producir un resumen conciliado mediante funciones pequeñas y reutilizables.
+El cierre inicial utiliza ventas ficticias; el dominio crediticio se incorpora en pandas.
 
 ## Nivel 2 — pandas
 

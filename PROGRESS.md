@@ -7,12 +7,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `01_python_foundations`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** archivos CSV.
-- **Estado del contenido:** nivel 0 disponible y primeras cinco lecciones de Python
+- **Foco de desarrollo del material:** validación y resumen; cierre de Python fundamental.
+- **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
 - **Siguiente paso de estudio:** leer la
-  [lección de archivos CSV](curriculum/01_python_foundations/05_csv_files/README.md) y realizar
-  el [lab 01.05](labs/01_python_foundations/05_csv_files/README.md), después de
+  [lección de validación y resumen](curriculum/01_python_foundations/06_validation_summary/README.md) y realizar
+  el [lab 01.06](labs/01_python_foundations/06_validation_summary/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -45,6 +45,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-11
+
+- Se desarrolló la lección 06 de Python fundamental y su lab: reglas, excepciones,
+  rechazos trazables y resumen conciliado. El módulo dispone de seis lecciones;
+  la finalización del aprendizaje sigue pendiente de evidencias.
 
 - Se desarrolló la lección 05 de Python fundamental y su lab: lectura CSV,
   conversión, escritura y comprobación de registros e importes, conservando la entrada.
