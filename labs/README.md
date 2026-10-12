@@ -35,6 +35,7 @@ reglas de enlace están en
 | [`02.07 — Agrupar y resumir`](02_pandas/07_group_summarize/) | `02_pandas` | No aplica todavía |
 | [`02.08 — Combinar tablas`](02_pandas/08_combine_tables/) | `02_pandas` | No aplica todavía |
 | [`02.09 — Cambiar la forma de una tabla`](02_pandas/09_reshape_tables/) | `02_pandas` | No aplica todavía |
+| [`02.10 — Análisis y primera gráfica`](02_pandas/10_analysis_plot/) | `02_pandas` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

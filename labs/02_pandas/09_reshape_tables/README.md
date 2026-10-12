@@ -145,5 +145,5 @@ columnas conservadas. Exporta a otras rutas dentro de output.
 - Si usas Git, revisa diff y registra código/notas. output está ignorado;
   publicar resultados no es requisito para completar el lab.
 
-Continúa con el [alcance de 10 — Análisis y primera gráfica](../../../curriculum/02_pandas/README.md#10-analisis-y-primera-grafica),
-pendiente de desarrollo, antes de su futuro lab.
+Continúa con la [lección 10 — Análisis y primera gráfica](../../../curriculum/02_pandas/10_analysis_plot/README.md)
+antes de realizar su lab.

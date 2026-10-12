@@ -99,9 +99,11 @@ ordena tablas → lectura → selección → tipos → calidad → texto/fechas 
 [faltantes/duplicados/reglas](curriculum/02_pandas/05_missing_duplicates_rules/README.md),
 [texto/fechas](curriculum/02_pandas/06_text_dates/README.md),
 [agrupación/resumen](curriculum/02_pandas/07_group_summarize/README.md),
-[combinación de tablas](curriculum/02_pandas/08_combine_tables/README.md) y
-[cambio de forma](curriculum/02_pandas/09_reshape_tables/README.md), con sus
-labs, están disponibles; la sección 10 está por desarrollar.
+[combinación de tablas](curriculum/02_pandas/08_combine_tables/README.md),
+[cambio de forma](curriculum/02_pandas/09_reshape_tables/README.md) y
+[análisis y primera gráfica](curriculum/02_pandas/10_analysis_plot/README.md), con sus
+labs, están disponibles. El material tiene diez lecciones; cerrar el aprendizaje
+requiere evidencia de sus criterios, no solo disponibilidad de los archivos.
 
 - Series, DataFrames, selección, filtrado y tipos.
 - Faltantes, duplicados, fechas y texto.

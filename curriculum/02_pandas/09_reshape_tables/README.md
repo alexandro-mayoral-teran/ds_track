@@ -302,8 +302,8 @@ Puedes avanzar cuando justifiques claves de celdas, distingas reorganización de
 agregación y compruebes la vuelta con valores conocidos y desconocidos.
 No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
 
-Continúa con el [alcance de 10 — Análisis y primera gráfica](../README.md#10-analisis-y-primera-grafica),
-todavía por desarrollar, antes de su futuro lab.
+Continúa con [10 — Análisis y primera gráfica](../10_analysis_plot/README.md)
+antes de realizar su lab.
 
 ## Referencias oficiales
 

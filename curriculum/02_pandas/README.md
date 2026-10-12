@@ -13,10 +13,11 @@ validar y resumir con pandas. Conservaremos las comprobaciones aprendidas en
 [05 — Faltantes, duplicados y reglas](05_missing_duplicates_rules/README.md),
 [06 — Texto y fechas](06_text_dates/README.md),
 [07 — Agrupar y resumir](07_group_summarize/README.md),
-[08 — Combinar tablas](08_combine_tables/README.md) y
-[09 — Cambiar la forma de una tabla](09_reshape_tables/README.md), con sus labs
-02.01–02.09, están disponibles. La sección 10 está por desarrollar;
-sus enlaces describen el alcance previsto.
+[08 — Combinar tablas](08_combine_tables/README.md),
+[09 — Cambiar la forma de una tabla](09_reshape_tables/README.md) y
+[10 — Análisis y primera gráfica](10_analysis_plot/README.md), con sus labs
+02.01–02.10, están disponibles para revisión y práctica. El cierre requiere
+evidencia del estudiante; disponer del material no acredita aprendizaje completado.
 
 Primero reutilizaremos las ventas ficticias para comparar resultados con Python
 estándar. Después introduciremos una cartera sintética con diccionario de datos:
@@ -37,7 +38,7 @@ pandas 2.3.3 en el entorno elegido; esa versión se declara en la configuración
 | 7 | [Agrupar y resumir](07_group_summarize/README.md) | Esencial | Conciliar indicadores por segmento |
 | 8 | [Combinar tablas](08_combine_tables/README.md) | Esencial | Unir datos sin multiplicar filas por accidente |
 | 9 | [Cambiar la forma de una tabla](09_reshape_tables/README.md) | Práctica | Pasar de formato largo a ancho y viceversa |
-| 10 | [Análisis y primera gráfica](#10-analisis-y-primera-grafica) | Práctica de cierre | Reconstruir un análisis y explicar un hallazgo |
+| 10 | [Análisis y primera gráfica](10_analysis_plot/README.md) | Práctica de cierre | Reconstruir un análisis y explicar un hallazgo |
 
 ## Alcance de cada sección
 
@@ -129,16 +130,16 @@ pandas 2.3.3 en el entorno elegido; esa versión se declara en la configuración
 
 ## Prácticas, proyecto y criterio de salida
 
-Se prevé un lab por sección (02.01–02.10), con soluciones desplegables y
+Hay un lab por sección (02.01–02.10), con soluciones desplegables y
 comprobaciones conocidas. Los labs 02.01, [02.02](../../labs/02_pandas/02_read_inspect_export/README.md) y
 [02.03](../../labs/02_pandas/03_select_filter_sort/README.md),
 [02.04](../../labs/02_pandas/04_types_calculated_columns/README.md),
 [02.05](../../labs/02_pandas/05_missing_duplicates_rules/README.md),
 [02.06](../../labs/02_pandas/06_text_dates/README.md),
 [02.07](../../labs/02_pandas/07_group_summarize/README.md),
-[02.08](../../labs/02_pandas/08_combine_tables/README.md) y
-[02.09](../../labs/02_pandas/09_reshape_tables/README.md) están disponibles;
-02.10 está pendiente.
+[02.08](../../labs/02_pandas/08_combine_tables/README.md),
+[02.09](../../labs/02_pandas/09_reshape_tables/README.md) y
+[02.10](../../labs/02_pandas/10_analysis_plot/README.md) están disponibles.
 El proyecto previsto es 01_clean_credit_data, registrado en
 [proyectos](../../projects/README.md), aún sin carpeta implementada.
 

@@ -121,8 +121,10 @@ pandas comienza con [Series y DataFrame](curriculum/02_pandas/01_series_datafram
 [Faltantes, duplicados y reglas](curriculum/02_pandas/05_missing_duplicates_rules/README.md),
 [Texto y fechas](curriculum/02_pandas/06_text_dates/README.md),
 [Agrupar y resumir](curriculum/02_pandas/07_group_summarize/README.md),
-[Combinar tablas](curriculum/02_pandas/08_combine_tables/README.md) y
-[Cambiar la forma de una tabla](curriculum/02_pandas/09_reshape_tables/README.md), con sus labs. Las secciones restantes de 02–05 conservan su plan para desarrollar una por una;
+[Combinar tablas](curriculum/02_pandas/08_combine_tables/README.md),
+[Cambiar la forma de una tabla](curriculum/02_pandas/09_reshape_tables/README.md) y
+[Análisis y primera gráfica](curriculum/02_pandas/10_analysis_plot/README.md), con sus labs.
+El módulo pandas tiene sus diez lecciones disponibles; 03–05 conservan su plan para desarrollar una por una;
 los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
