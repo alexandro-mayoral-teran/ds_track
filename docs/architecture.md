@@ -70,8 +70,6 @@ crecerá de manera intencional:
 4. Dataset Parquet particionado para Polars y DuckDB.
 5. Tablas analíticas para Quarto y Shiny.
 
-## Decisiones futuras
-
 ## Rutas de profundización previstas
 
 El recorrido principal conserva los niveles 00–10. Estas rutas amplían las
