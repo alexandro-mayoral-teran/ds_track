@@ -228,6 +228,11 @@ con indicadores conciliados y elección de representación justificada.
 
 **Objetivo:** comprender almacenamiento columnar y datasets mayores.
 
+El [plan de nueve secciones](curriculum/09_arrow_parquet/README.md#orden-de-desarrollo)
+presenta teoría común, esquemas, recorridos Python y R, intercambio en ambas
+direcciones, lectura selectiva, metadatos y cierre. Particionamiento es opcional.
+Las lecciones y labs están por desarrollar.
+
 - Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.
 - Práctica: comparar CSV y Parquet en tamaño, tipos y lectura selectiva.
 - Práctica: compresión, metadatos, row groups y pushdown con ejemplos pequeños.
@@ -242,6 +247,12 @@ se pueda justificar; no es requisito para el primer ejercicio.
 ## Nivel 10 — Polars y DuckDB
 
 **Objetivo:** procesar datos grandes en una sola máquina con criterio.
+
+El [plan de diez secciones](curriculum/10_polars_duckdb/README.md#orden-de-desarrollo)
+parte de un contrato conocido: expresiones y lazy en Polars, SQL sobre Parquet
+con DuckDB, clientes Python/R, intercambio, mediciones y elección de herramienta.
+Polars se enseña principalmente desde Python; su interfaz R y streaming son
+ampliaciones opcionales. Las lecciones y labs están por desarrollar.
 
 - Ejecución eager y lazy en Polars.
 - Consultas SQL sobre Parquet con DuckDB.

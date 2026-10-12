@@ -47,6 +47,12 @@ y utiliza el índice del libro de ggplot2 para escalas, facetas, temas y composi
 La [documentación de ggplot2](https://ggplot2.tidyverse.org/) complementa los conceptos
 con la API vigente y los parámetros de cada función.
 
+### 09 — Arrow y Parquet
+
+Para continuar después de ggplot2, el [capítulo Arrow de R for Data Science](https://r4ds.hadley.nz/arrow.html)
+apoya la parte R del [módulo 09](../curriculum/09_arrow_parquet/README.md).
+El track añade una práctica de intercambio Python/R y controles de tipos e indicadores.
+
 ### Futuro R aplicado
 
 Advanced R y R Packages servirán para organización, funciones, pruebas,

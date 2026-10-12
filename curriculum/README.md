@@ -7,8 +7,9 @@ disponibles. El módulo 02 ya tiene la primera lección de pandas y su lab.
 Las secciones restantes de 02–05 tienen objetivos, prácticas y cierres propuestos,
 todavía sin lecciones ejecutables ni labs.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
-con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los niveles 09–14
-conservan su planificación general.
+con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
+tienen planes detallados de almacenamiento compartido Python/R y procesamiento
+con Polars/DuckDB. Los niveles 11–14 conservan su planificación general.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).
 
 | Nivel | Módulo | Resultado previsto |

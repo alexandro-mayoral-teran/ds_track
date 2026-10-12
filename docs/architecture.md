@@ -174,6 +174,35 @@ Advanced R, el libro de ggplot2 y R Packages. Se consultan capítulos por necesi
 objetos avanzados, metaprogramación y creación de paquetes no bloquean 06–08.
 No se instalan paquetes ni se fija una versión de R por esta planificación.
 
+### Almacenamiento y procesamiento previstos: 09–10
+
+Se conserva el orden: después del análisis Python/R, el 09 define los archivos
+compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
+19 secciones planificadas, todavía sin scripts ni labs.
+
+| Módulo | Secciones | Papel y cierre |
+| --- | --- | --- |
+| [09 — Arrow y Parquet](../curriculum/09_arrow_parquet/README.md) | 9 | Teoría común, tipos, Python, R, intercambio, lectura selectiva, metadatos, particiones opcionales y contrato compartido |
+| [10 — Polars y DuckDB](../curriculum/10_polars_duckdb/README.md) | 10 | Referencia, Polars inmediato/lazy, semántica, streaming opcional, SQL/DuckDB, clientes, intercambio, medición y decisión |
+
+Parquet es almacenamiento; Arrow aporta representación e interfaces; Polars y
+DuckDB procesan los datos. En 09, teoría una vez y prácticas completas Python/R:
+escribir en un lenguaje y leer en el otro, verificando claves, registros, tipos,
+faltantes e indicadores en ambas direcciones. No asumir precisión o equivalencia
+de clases sin comprobar el contrato.
+
+En 10, Polars se enseña principalmente desde Python, con R como ampliación;
+DuckDB reutiliza SQL y ofrece recorridos para ambos lenguajes. El proyecto previsto
+04_large_credit_dataset integra contrato, consultas y mediciones; sus checkpoints
+se concretarán al implementarlo. No se exige superar la RAM del equipo para cerrar.
+Particionamiento y streaming se estudian cuando una consulta los justifique.
+
+Los planes de consulta y las mediciones deben distinguir preparación, ejecución,
+materialización y exportación. Cambiar de motor no garantiza menos memoria o más
+velocidad; el criterio es resultado equivalente y costo medido. No se agregan
+paquetes ni datos voluminosos por la planificación. La ruta futura de R aplicado
+sigue pendiente y esta decisión no renumera el track.
+
 ### R aplicado: consideración para el próximo ajuste
 
 Se contempla un puente después de visualización R (08) y antes de Parquet:
