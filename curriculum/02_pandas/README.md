@@ -9,9 +9,10 @@ validar y resumir con pandas. Conservaremos las comprobaciones aprendidas en
 **Estado:** las lecciones [01 — Series y DataFrame](01_series_dataframe/README.md),
 [02 — Leer, inspeccionar y exportar](02_read_inspect_export/README.md),
 [03 — Seleccionar, filtrar y ordenar](03_select_filter_sort/README.md),
-[04 — Tipos y columnas calculadas](04_types_calculated_columns/README.md) y
-[05 — Faltantes, duplicados y reglas](05_missing_duplicates_rules/README.md), con sus labs
-02.01–02.05, están disponibles. Las secciones 06–10 están por desarrollar;
+[04 — Tipos y columnas calculadas](04_types_calculated_columns/README.md),
+[05 — Faltantes, duplicados y reglas](05_missing_duplicates_rules/README.md) y
+[06 — Texto y fechas](06_text_dates/README.md), con sus labs
+02.01–02.06, están disponibles. Las secciones 07–10 están por desarrollar;
 sus enlaces describen el alcance previsto.
 
 Primero reutilizaremos las ventas ficticias para comparar resultados con Python
@@ -29,7 +30,7 @@ pandas 2.3.3 en el entorno elegido; esa versión se declara en la configuración
 | 3 | [Seleccionar, filtrar y ordenar](03_select_filter_sort/README.md) | Esencial | Responder una pregunta con un subconjunto |
 | 4 | [Tipos y columnas calculadas](04_types_calculated_columns/README.md) | Esencial | Convertir datos y calcular sin ciclos por fila |
 | 5 | [Faltantes, duplicados y reglas](05_missing_duplicates_rules/README.md) | Esencial | Conservar aceptados y rechazos con motivos |
-| 6 | [Texto y fechas](#06-texto-y-fechas) | Esencial | Normalizar campos y comparar cortes |
+| 6 | [Texto y fechas](06_text_dates/README.md) | Esencial | Normalizar campos y comparar cortes |
 | 7 | [Agrupar y resumir](#07-agrupar-y-resumir) | Esencial | Conciliar indicadores por segmento |
 | 8 | [Combinar tablas](#08-combinar-tablas) | Esencial | Unir datos sin multiplicar filas por accidente |
 | 9 | [Cambiar la forma de una tabla](#09-cambiar-la-forma-de-una-tabla) | Práctica | Pasar de formato largo a ancho y viceversa |
@@ -128,9 +129,10 @@ pandas 2.3.3 en el entorno elegido; esa versión se declara en la configuración
 Se prevé un lab por sección (02.01–02.10), con soluciones desplegables y
 comprobaciones conocidas. Los labs 02.01, [02.02](../../labs/02_pandas/02_read_inspect_export/README.md) y
 [02.03](../../labs/02_pandas/03_select_filter_sort/README.md),
-[02.04](../../labs/02_pandas/04_types_calculated_columns/README.md) y
-[02.05](../../labs/02_pandas/05_missing_duplicates_rules/README.md) están disponibles;
-02.06–02.10 están pendientes.
+[02.04](../../labs/02_pandas/04_types_calculated_columns/README.md),
+[02.05](../../labs/02_pandas/05_missing_duplicates_rules/README.md) y
+[02.06](../../labs/02_pandas/06_text_dates/README.md) están disponibles;
+02.07–02.10 están pendientes.
 El proyecto previsto es 01_clean_credit_data, registrado en
 [proyectos](../../projects/README.md), aún sin carpeta implementada.
 

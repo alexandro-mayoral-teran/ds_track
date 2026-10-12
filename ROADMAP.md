@@ -95,9 +95,10 @@ ordena tablas → lectura → selección → tipos → calidad → texto/fechas 
 [primera lección](curriculum/02_pandas/01_series_dataframe/README.md) y
 [lectura/exportación](curriculum/02_pandas/02_read_inspect_export/README.md) y
 [selección/filtros](curriculum/02_pandas/03_select_filter_sort/README.md),
-[tipos/cálculos](curriculum/02_pandas/04_types_calculated_columns/README.md) y
-[faltantes/duplicados/reglas](curriculum/02_pandas/05_missing_duplicates_rules/README.md), con sus
-labs, están disponibles; las secciones 06–10 están por desarrollar.
+[tipos/cálculos](curriculum/02_pandas/04_types_calculated_columns/README.md),
+[faltantes/duplicados/reglas](curriculum/02_pandas/05_missing_duplicates_rules/README.md) y
+[texto/fechas](curriculum/02_pandas/06_text_dates/README.md), con sus
+labs, están disponibles; las secciones 07–10 están por desarrollar.
 
 - Series, DataFrames, selección, filtrado y tipos.
 - Faltantes, duplicados, fechas y texto.

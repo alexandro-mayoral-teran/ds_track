@@ -264,8 +264,8 @@ Puedes avanzar cuando expliques la clave y la política de duplicados, rastrees
 varios motivos, concilies la partición y distingas lo conocido de lo ausente.
 No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
 
-Continúa con el [alcance de 06 — Texto y fechas](../README.md#06-texto-y-fechas),
-todavía por desarrollar, antes de su futuro lab.
+Continúa con [06 — Texto y fechas](../06_text_dates/README.md)
+antes de realizar su lab.
 
 ## Referencias oficiales
 

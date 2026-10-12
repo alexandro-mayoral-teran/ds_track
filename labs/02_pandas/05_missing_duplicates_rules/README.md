@@ -141,5 +141,5 @@ combinaciones faltantes repetidas; clave_presente impide asignarles esa identida
 - Si usas Git, revisa diff y registra código/notas. output está ignorado; publicar
   resultados en el repo compartido no es requisito para completar el lab.
 
-Continúa con el [alcance de 06 — Texto y fechas](../../../curriculum/02_pandas/README.md#06-texto-y-fechas),
-pendiente de desarrollo, antes de su futuro lab.
+Continúa con la [lección 06 — Texto y fechas](../../../curriculum/02_pandas/06_text_dates/README.md)
+antes de realizar su lab.
