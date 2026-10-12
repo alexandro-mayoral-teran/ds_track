@@ -12,17 +12,21 @@ curriculum
 lab
   practica una habilidad aislada
         ↓
-checkpoint de proyecto
-  integra varias habilidades y exige decisiones
+comprobar y explicar
+  verificar resultados y justificar decisiones
         ↓
 evidencia
   script, consulta, notebook, reporte o aplicación
         ↓
 PROGRESS.md
   registra el resultado y el siguiente paso
+
+cuando existe: lab → checkpoint de proyecto → evidencia integrada
+continuidad: lab → siguiente lección → siguiente lab
 ```
 
-Los datasets apoyan las tres primeras etapas. `showcase/` recibe únicamente
+Las muestras de lección y los datasets apoyan el recorrido. El checkpoint es
+opcional hasta que exista un proyecto asociado. `showcase/` recibe únicamente
 resultados terminados y seguros para compartir.
 
 ## Reglas de enlace

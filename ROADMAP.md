@@ -91,18 +91,21 @@ El cierre inicial utiliza ventas ficticias; el dominio crediticio se incorpora e
 
 El [plan de diez secciones](curriculum/02_pandas/README.md#orden-de-desarrollo)
 ordena tablas → lectura → selección → tipos → calidad → texto/fechas → agrupación
-→ uniones → reshape → análisis y primera gráfica. Las lecciones están por desarrollar.
+→ uniones → reshape → análisis y primera gráfica. La
+[primera lección](curriculum/02_pandas/01_series_dataframe/README.md) y su lab
+están disponibles; las secciones 02–10 están por desarrollar.
 
 - Series, DataFrames, selección, filtrado y tipos.
 - Faltantes, duplicados, fechas y texto.
-- Agregaciones, `groupby`, `merge`, reshape y ventanas básicas.
+- Esencial: agregaciones, `groupby`, `merge` y reshape.
+- Extensión: ventanas y acumulados después de conciliar un resumen básico.
 - Visualización inicial: una gráfica sencilla y una explicación de sus hallazgos.
 - Matplotlib como base Python; Altair como profundización posterior de diseño
   declarativo e interacción, según la ruta de visualización prevista.
 - Uso responsable de notebooks; comprobaciones de filas, llaves y totales antes
   y después de transformar o unir datos.
 
-**Proyecto asociado:** `01_clean_credit_data`.
+**Proyecto previsto (por implementar):** `01_clean_credit_data`.
 
 **Criterio de salida:** limpiar una cartera en CSV y justificar cada regla de
 calidad aplicada, presentar una gráfica e interpretar sus resultados.
@@ -122,7 +125,7 @@ y conciliación con pandas. Las lecciones están por desarrollar.
 - Avanzado: índices, planes de consulta y optimización cuando exista una limitación.
 - Extensión: PostgreSQL después de dominar las operaciones en SQLite.
 
-**Proyecto asociado:** `02_credit_database`.
+**Proyecto previsto (por implementar):** `02_credit_database`.
 
 **Criterio de salida:** diseñar un modelo relacional y obtener indicadores de
 cartera mediante consultas verificables.
@@ -183,7 +186,7 @@ Las lecciones y labs están por desarrollar; las referencias abiertas están en
 datos para aprender el modelo de R sobre un problema conocido.
 
 - Vectores, listas, data frames, funciones y paquetes.
-- Importación, transformación y visualización inicial.
+- Importación, transformación y conciliación básica; primera figura en el nivel 07.
 - Proyectos reproducibles con `renv`.
 - Equivalencias entre pandas y R.
 
@@ -201,9 +204,10 @@ Las lecciones y labs están por desarrollar; las referencias abiertas están en
 
 - `dplyr`, `tidyr`, `stringr` y manejo de fechas.
 - `ggplot2`, escalas, facetas y diseño de gráficas.
-- Acceso a SQL y archivos desde R.
+- Esencial: importación y exportación de archivos desde R.
+- Extensión: acceso a SQL con DBI/RSQLite o dbplyr, reutilizando el nivel 03.
 
-**Proyecto asociado:** `03_portfolio_analysis_r`.
+**Proyecto previsto (por implementar):** `03_portfolio_analysis_r`.
 
 **Criterio de salida:** producir un análisis de cartera entendible por una
 persona que no escribió el código.
@@ -241,7 +245,8 @@ Las lecciones y labs están por desarrollar.
 - Práctica: interoperabilidad entre Python, R y motores SQL.
 
 **Criterio de salida:** convertir un CSV a Parquet bien tipado, comprobar que
-conserva registros e indicadores y explicar el diseño. Particionar solo cuando
+conserva registros e indicadores al intercambiarlo entre Python y R en ambas
+direcciones, y explicar el contrato. Particionar solo cuando
 se pueda justificar; no es requisito para el primer ejercicio.
 
 ## Nivel 10 — Polars y DuckDB
@@ -256,10 +261,10 @@ ampliaciones opcionales. Las lecciones y labs están por desarrollar.
 
 - Ejecución eager y lazy en Polars.
 - Consultas SQL sobre Parquet con DuckDB.
-- Procesamiento por lotes y cargas mayores que memoria.
+- Extensión: procesamiento por lotes y cargas mayores que memoria, según recursos.
 - Benchmarks frente a pandas: tiempo, memoria y legibilidad.
 
-**Proyecto asociado:** `04_large_credit_dataset`.
+**Proyecto previsto (por implementar):** `04_large_credit_dataset`.
 
 **Criterio de salida:** resolver el mismo problema con pandas, Polars y DuckDB,
 y escoger una herramienta usando mediciones.
@@ -277,11 +282,11 @@ Este nivel formaliza la comunicación iniciada con gráficas e interpretación e
 pandas y tidyverse; no es la primera ocasión de explicar resultados.
 
 - Narrativa, tablas, gráficas y parámetros.
-- Quarto con Python y R.
-- Salidas HTML y PDF.
-- Dashboards estáticos y automatización de reportes.
+- Esencial: Quarto con un motor elegido, Python/Jupyter o R/knitr.
+- Esencial: HTML regenerable y revisado.
+- Extensión: comparar el otro motor, PDF, dashboards y automatización de reportes.
 
-**Proyecto asociado:** `05_monthly_report`.
+**Proyecto previsto (por implementar):** `05_monthly_report`.
 
 **Criterio de salida:** generar nuevamente un reporte completo partiendo de los
 datos y el código, sin edición manual de resultados.
@@ -317,7 +322,7 @@ Las lecciones y labs están por desarrollar.
 - Inputs, outputs, validaciones y módulos.
 - Lectura desde Parquet o una base de datos.
 
-**Proyecto asociado:** `06_shiny_portfolio_app`.
+**Proyecto previsto (por implementar):** `06_shiny_portfolio_app`.
 
 Streamlit ocupa el nivel 12. Elegir una de las dos aplicaciones; no exigir ambas.
 
@@ -344,7 +349,8 @@ Aquí se profundiza en pruebas y automatización y se integran en un proyecto fi
 - Automatización con Git como extensión.
 
 **Criterio de salida:** reconstruir datos, métricas y producto final a partir de
-instrucciones documentadas y datos sintéticos.
+instrucciones documentadas y datos sintéticos, incluyendo un reporte HTML y
+una aplicación local elegida. Publicación en línea y CI no son requisitos.
 
 ## Temas estacionados
 
@@ -356,6 +362,10 @@ Se investigarán cuando resuelvan una limitación del recorrido:
 - Apache Iceberg y conceptos lakehouse.
 - Spark y procesamiento distribuido.
 - APIs con Plumber o FastAPI.
+- Terminal avanzada: filtros, redirecciones y automatización de datos, sin ubicación
+  numerada o material desarrollado todavía.
+- R aplicado después de visualización R: organización, pruebas y profundización;
+  su integración numerada sigue pendiente y no modifica los niveles 09–14.
 
 Estos temas no bloquean los módulos numerados. Las especializaciones avanzadas
 de Python se tratarán dentro del nivel 05 cuando exista una necesidad concreta.

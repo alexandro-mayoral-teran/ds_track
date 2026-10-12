@@ -53,6 +53,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se revisaron las instrucciones locales y el roadmap: estado real de pandas,
+  alcances opcionales, proyectos aún por implementar y pendientes de R aplicado
+  y terminal avanzada. Se alineó el flujo de estudio con checkpoints opcionales.
+
 - Se investigaron y definieron Quarto (9 secciones), Streamlit (9), Shiny (10)
   y proyecto reproducible (9). El recorrido numerado completo tiene planes
   detallados; se retoma la implementación por pandas 02.02 en la siguiente sesión.
