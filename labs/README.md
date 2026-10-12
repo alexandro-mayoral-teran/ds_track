@@ -36,6 +36,8 @@ reglas de enlace están en
 | [`02.08 — Combinar tablas`](02_pandas/08_combine_tables/) | `02_pandas` | No aplica todavía |
 | [`02.09 — Cambiar la forma de una tabla`](02_pandas/09_reshape_tables/) | `02_pandas` | No aplica todavía |
 | [`02.10 — Análisis y primera gráfica`](02_pandas/10_analysis_plot/) | `02_pandas` | No aplica todavía |
+| [`03.01 — Modelo relacional y SQLite`](03_sql_databases/01_relational_sqlite/) | `03_sql_databases` | No aplica todavía |
+| [`03.02 — Primeras consultas`](03_sql_databases/02_first_queries/) | `03_sql_databases` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

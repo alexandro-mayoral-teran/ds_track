@@ -288,8 +288,8 @@ conserves rechazos, concilies el resumen y expliques la figura con sus límites.
 El proyecto de limpieza y sus checkpoints siguen previstos; no existe aún una
 carpeta implementada ni una práctica de proyecto adicional obligatoria.
 
-Después continúa con [03 — SQL y bases de datos](../../03_sql_databases/README.md),
-cuyo plan está definido y sus lecciones todavía están por desarrollar.
+Después continúa con [03.01 — Modelo relacional y SQLite](../../03_sql_databases/01_relational_sqlite/README.md)
+antes de su lab. El resto del módulo SQL conserva su plan de desarrollo.
 
 ## Referencias oficiales
 

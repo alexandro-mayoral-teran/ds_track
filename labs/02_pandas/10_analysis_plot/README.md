@@ -120,5 +120,5 @@ El módulo dispone de diez lecciones y labs. Marca el aprendizaje como completad
 solo cuando tengas esta evidencia y hayas cubierto los criterios de las prácticas
 previas; desarrollar el material no acredita tus ejercicios.
 
-Continúa con [03 — SQL y bases de datos](../../../curriculum/03_sql_databases/README.md),
-con plan definido y lecciones pendientes de implementación.
+Continúa con la [lección 03.01 — Modelo relacional y SQLite](../../../curriculum/03_sql_databases/01_relational_sqlite/README.md)
+antes de realizar su lab.

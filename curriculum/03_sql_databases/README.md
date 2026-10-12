@@ -6,9 +6,11 @@ Pasar de archivos a tablas relacionadas, consultar indicadores y comprobar
 escrituras. Reutilizar el análisis de [pandas](../02_pandas/README.md), separando
 qué se pregunta de cómo se expresa la consulta.
 
-**Estado:** secciones planificadas; lecciones y labs por desarrollar. Los enlaces
-internos describen su alcance. Empezaremos con SQLite y el módulo sqlite3 de
-Python; un servidor PostgreSQL y una aplicación gráfica no son requisitos.
+**Estado:** [01 — Modelo relacional y SQLite](01_relational_sqlite/README.md) y su
+lab están disponibles, junto con [02 — Primeras consultas](02_first_queries/README.md)
+y el lab 03.02. Las secciones 03–09 están planificadas; sus enlaces internos
+describen el alcance previsto. Usamos SQLite y el módulo sqlite3 de Python; un
+servidor PostgreSQL y una aplicación gráfica no son requisitos.
 
 Se prevén tablas sintéticas de clientes, créditos y cortes. Antes de consultar
 se explicará qué representa una fila: un crédito no es lo mismo que un registro
@@ -18,8 +20,8 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
-| 1 | [Modelo relacional y SQLite](#01-modelo-relacional-y-sqlite) | Esencial | Explicar tablas, relaciones y unidad de registro |
-| 2 | [Primeras consultas](#02-primeras-consultas) | Esencial | Seleccionar, filtrar y ordenar datos |
+| 1 | [Modelo relacional y SQLite](01_relational_sqlite/README.md) | Esencial | Explicar tablas, relaciones y unidad de registro |
+| 2 | [Primeras consultas](02_first_queries/README.md) | Esencial | Seleccionar, filtrar y ordenar datos |
 | 3 | [Crear tablas y cargar datos](#03-crear-tablas-y-cargar-datos) | Esencial | Construir una base con restricciones comprobadas |
 | 4 | [Agregaciones e indicadores](#04-agregaciones-e-indicadores) | Esencial | Obtener un resumen con denominadores claros |
 | 5 | [Relacionar tablas con joins](#05-relacionar-tablas-con-joins) | Esencial | Unir datos conservando su cardinalidad |
@@ -109,7 +111,9 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 
 ## Prácticas, proyecto y criterio de salida
 
-Se prevén labs 03.01–03.09. Todavía no hay lecciones ejecutables ni labs.
+Se prevén labs 03.01–03.09. El [lab 03.01](../../labs/03_sql_databases/01_relational_sqlite/README.md)
+y el [lab 03.02](../../labs/03_sql_databases/02_first_queries/README.md)
+están disponibles; 03.03–03.09 están pendientes de desarrollo.
 El proyecto previsto 02_credit_database aparece en [proyectos](../../projects/README.md);
 su carpeta y checkpoints están por implementar.
 
@@ -125,7 +129,8 @@ PostgreSQL, administración de servidores y optimización avanzada quedan como e
 
 ## Continuidad y referencias
 
-Después del cierre, continúa con
+Comienza por [01 — Modelo relacional y SQLite](01_relational_sqlite/README.md)
+y su lab. Después del cierre, continúa con
 [04 — Visualización en Python](../04_visualization_python/README.md).
 
 El diseño toma como referencia [el lenguaje SQL de SQLite](https://www.sqlite.org/lang.html),

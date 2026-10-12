@@ -5,20 +5,21 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulo activo de desarrollo:** `02_pandas`
+- **Módulo activo de desarrollo:** `03_sql_databases`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** cierre de pandas con notebook y primera gráfica.
-  Próxima sección por implementar: 03.01 — revisar el plan de SQL antes de desarrollar.
+- **Foco de desarrollo del material:** primeras consultas SQL.
+  Próxima sección por implementar: 03.03 — Crear tablas y cargar datos.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
-  labs están disponibles; las de 03–05 están por desarrollar. Los módulos 06–08 tienen
+  labs están disponibles; también SQL 03.01–03.02 con base local y labs.
+  Las demás de 03–05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Siguiente paso de estudio:** leer la
-  [lección de análisis y primera gráfica](curriculum/02_pandas/10_analysis_plot/README.md) y realizar
-  el [lab 02.10](labs/02_pandas/10_analysis_plot/README.md), después de
+  [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
+  el [lab 03.01](labs/03_sql_databases/01_relational_sqlite/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -50,7 +51,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## Bitácora
 
+### 2026-10-12
+
+- Se desarrolló SQL 03.02: SELECT, filtros, alias, orden y desempates, LIMIT,
+  DISTINCT, NULL y parámetros; script de solo lectura y lab con resultados conocidos.
+  Se comprobó conservación de la base, fronteras y selecciones vacías. El siguiente
+  desarrollo es 03.03; el avance del estudiante sigue pendiente de evidencia.
+
 ### 2026-10-11
+
+- Se desarrolló SQL 03.01: modelo relacional, claves y relaciones con diagramas;
+  base local de 16 clientes, 24 créditos y 48 cortes ficticios. Se verificaron
+  restricciones, persistencia, repetición sin cambios y exploración de solo lectura.
 
 - Se desarrolló pandas 02.10: análisis integrado, rechazos trazables, resumen
   conciliado, primera figura Matplotlib y notebook con funciones compartidas.

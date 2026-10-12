@@ -48,3 +48,9 @@ data/
 Thumbs.db
 .vscode/
 .idea/
+
+# Synthetic inputs required to rebuild the SQL teaching database
+!curriculum/03_sql_databases/01_relational_sqlite/data/
+!curriculum/03_sql_databases/01_relational_sqlite/data/clientes.csv
+!curriculum/03_sql_databases/01_relational_sqlite/data/creditos.csv
+!curriculum/03_sql_databases/01_relational_sqlite/data/cortes.csv
