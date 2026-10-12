@@ -101,5 +101,5 @@ get ofrece un resultado alternativo sin agregar el campo al registro.
 
 ## Siguiente paso
 
-03 — Condiciones y ciclos está por desarrollar. Consulta el
-[índice de Python fundamental](../../../curriculum/01_python_foundations/README.md).
+Continúa con la [lección 03 — Condiciones y ciclos](../../../curriculum/01_python_foundations/03_conditions_loops/README.md)
+antes de realizar el lab 01.03.

@@ -244,7 +244,7 @@ hay checkpoint de proyecto asociado.
 
 ## Siguiente paso
 
-03 — Condiciones y ciclos está por desarrollar. Consulta el [índice del módulo](../README.md).
+Continúa con [03 — Condiciones y ciclos](../03_conditions_loops/README.md) antes de su lab.
 
 ## Referencias
 

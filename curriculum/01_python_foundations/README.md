@@ -11,15 +11,16 @@ transformación de CSV realizada con la biblioteca estándar.
 | --- | --- | --- |
 | 1 | [Variables, tipos y operaciones](01_variables_types/) | Interpretar entradas y comprobar un cálculo |
 | 2 | [Listas y diccionarios](02_lists_dicts/) | Representar, consultar y modificar varios registros |
-| 3 | Condiciones y ciclos (por desarrollar) | Filtrar y recorrer datos |
+| 3 | [Condiciones y ciclos](03_conditions_loops/) | Filtrar registros y comprobar resúmenes |
 | 4 | Funciones (por desarrollar) | Separar y reutilizar transformaciones |
 | 5 | Archivos CSV (por desarrollar) | Leer y escribir con la biblioteca estándar |
 | 6 | Validación y resumen (por desarrollar) | Comprobar entradas y totales, documentar reglas |
 
 Los módulos, excepciones y JSON se incorporarán cuando resuelvan una necesidad
-de la práctica. Las lecciones 01 y 02 y sus labs
+de la práctica. Las lecciones 01–03 y sus labs
 [01.01](../../labs/01_python_foundations/01_variables_types/README.md) y
-[01.02](../../labs/01_python_foundations/02_lists_dicts/README.md) están disponibles;
+[01.02](../../labs/01_python_foundations/02_lists_dicts/README.md) y
+[01.03](../../labs/01_python_foundations/03_conditions_loops/README.md) están disponibles;
 las siguientes están por desarrollar.
 La meta es transformar un CSV pequeño y explicar el resultado antes de pasar a pandas.
 

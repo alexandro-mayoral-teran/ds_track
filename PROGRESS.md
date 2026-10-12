@@ -7,12 +7,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `01_python_foundations`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** listas y diccionarios.
-- **Estado del contenido:** nivel 0 disponible y primeras dos lecciones de Python
+- **Foco de desarrollo del material:** condiciones y ciclos.
+- **Estado del contenido:** nivel 0 disponible y primeras tres lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
 - **Siguiente paso de estudio:** leer la
-  [lección de listas y diccionarios](curriculum/01_python_foundations/02_lists_dicts/README.md) y realizar
-  el [lab 01.02](labs/01_python_foundations/02_lists_dicts/README.md), después de
+  [lección de condiciones y ciclos](curriculum/01_python_foundations/03_conditions_loops/README.md) y realizar
+  el [lab 01.03](labs/01_python_foundations/03_conditions_loops/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -46,6 +46,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se desarrolló la lección 03 de Python fundamental: condiciones, recorrido,
+  acumuladores y selección de registros, con script y lab verificables.
 - Se desarrolló la lección 02 de Python fundamental y su lab: listas,
   diccionarios, registros, mutabilidad y copias.
 - Se inició Python fundamental con la lección y lab de variables, tipos y
