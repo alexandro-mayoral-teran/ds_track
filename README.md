@@ -119,8 +119,9 @@ pandas comienza con [Series y DataFrame](curriculum/02_pandas/01_series_datafram
 [Seleccionar, filtrar y ordenar](curriculum/02_pandas/03_select_filter_sort/README.md),
 [Tipos y columnas calculadas](curriculum/02_pandas/04_types_calculated_columns/README.md),
 [Faltantes, duplicados y reglas](curriculum/02_pandas/05_missing_duplicates_rules/README.md),
-[Texto y fechas](curriculum/02_pandas/06_text_dates/README.md) y
-[Agrupar y resumir](curriculum/02_pandas/07_group_summarize/README.md), con sus labs. Las secciones restantes de 02–05 conservan su plan para desarrollar una por una;
+[Texto y fechas](curriculum/02_pandas/06_text_dates/README.md),
+[Agrupar y resumir](curriculum/02_pandas/07_group_summarize/README.md) y
+[Combinar tablas](curriculum/02_pandas/08_combine_tables/README.md), con sus labs. Las secciones restantes de 02–05 conservan su plan para desarrollar una por una;
 los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

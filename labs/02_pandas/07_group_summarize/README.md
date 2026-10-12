@@ -148,5 +148,5 @@ y por qué agg devuelve menos filas que transform en este caso.
 - Si usas Git, revisa diff y registra código/notas. output está ignorado; publicar
   resultados no es requisito para completar el lab.
 
-Continúa con el [alcance de 08 — Combinar tablas](../../../curriculum/02_pandas/README.md#08-combinar-tablas),
-pendiente de desarrollo, antes de su futuro lab.
+Continúa con la [lección 08 — Combinar tablas](../../../curriculum/02_pandas/08_combine_tables/README.md)
+antes de realizar su lab.

@@ -33,6 +33,7 @@ reglas de enlace están en
 | [`02.05 — Faltantes, duplicados y reglas`](02_pandas/05_missing_duplicates_rules/) | `02_pandas` | No aplica todavía |
 | [`02.06 — Texto y fechas`](02_pandas/06_text_dates/) | `02_pandas` | No aplica todavía |
 | [`02.07 — Agrupar y resumir`](02_pandas/07_group_summarize/) | `02_pandas` | No aplica todavía |
+| [`02.08 — Combinar tablas`](02_pandas/08_combine_tables/) | `02_pandas` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

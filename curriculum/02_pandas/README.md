@@ -11,9 +11,10 @@ validar y resumir con pandas. Conservaremos las comprobaciones aprendidas en
 [03 — Seleccionar, filtrar y ordenar](03_select_filter_sort/README.md),
 [04 — Tipos y columnas calculadas](04_types_calculated_columns/README.md),
 [05 — Faltantes, duplicados y reglas](05_missing_duplicates_rules/README.md),
-[06 — Texto y fechas](06_text_dates/README.md) y
-[07 — Agrupar y resumir](07_group_summarize/README.md), con sus labs
-02.01–02.07, están disponibles. Las secciones 08–10 están por desarrollar;
+[06 — Texto y fechas](06_text_dates/README.md),
+[07 — Agrupar y resumir](07_group_summarize/README.md) y
+[08 — Combinar tablas](08_combine_tables/README.md), con sus labs
+02.01–02.08, están disponibles. Las secciones 09–10 están por desarrollar;
 sus enlaces describen el alcance previsto.
 
 Primero reutilizaremos las ventas ficticias para comparar resultados con Python
@@ -33,7 +34,7 @@ pandas 2.3.3 en el entorno elegido; esa versión se declara en la configuración
 | 5 | [Faltantes, duplicados y reglas](05_missing_duplicates_rules/README.md) | Esencial | Conservar aceptados y rechazos con motivos |
 | 6 | [Texto y fechas](06_text_dates/README.md) | Esencial | Normalizar campos y comparar cortes |
 | 7 | [Agrupar y resumir](07_group_summarize/README.md) | Esencial | Conciliar indicadores por segmento |
-| 8 | [Combinar tablas](#08-combinar-tablas) | Esencial | Unir datos sin multiplicar filas por accidente |
+| 8 | [Combinar tablas](08_combine_tables/README.md) | Esencial | Unir datos sin multiplicar filas por accidente |
 | 9 | [Cambiar la forma de una tabla](#09-cambiar-la-forma-de-una-tabla) | Práctica | Pasar de formato largo a ancho y viceversa |
 | 10 | [Análisis y primera gráfica](#10-analisis-y-primera-grafica) | Práctica de cierre | Reconstruir un análisis y explicar un hallazgo |
 
@@ -132,9 +133,10 @@ comprobaciones conocidas. Los labs 02.01, [02.02](../../labs/02_pandas/02_read_i
 [02.03](../../labs/02_pandas/03_select_filter_sort/README.md),
 [02.04](../../labs/02_pandas/04_types_calculated_columns/README.md),
 [02.05](../../labs/02_pandas/05_missing_duplicates_rules/README.md),
-[02.06](../../labs/02_pandas/06_text_dates/README.md) y
-[02.07](../../labs/02_pandas/07_group_summarize/README.md) están disponibles;
-02.08–02.10 están pendientes.
+[02.06](../../labs/02_pandas/06_text_dates/README.md),
+[02.07](../../labs/02_pandas/07_group_summarize/README.md) y
+[02.08](../../labs/02_pandas/08_combine_tables/README.md) están disponibles;
+02.09–02.10 están pendientes.
 El proyecto previsto es 01_clean_credit_data, registrado en
 [proyectos](../../projects/README.md), aún sin carpeta implementada.
 

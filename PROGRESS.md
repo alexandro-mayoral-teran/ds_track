@@ -7,18 +7,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `02_pandas`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** agrupación y resumen con pandas.
-  Próxima lección por implementar: 02.08 — Combinar tablas.
+- **Foco de desarrollo del material:** combinación de tablas con pandas.
+  Próxima lección por implementar: 02.09 — Cambiar la forma de una tabla.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
-  Los módulos 02–05 tienen un plan de 39 secciones. Las siete primeras de pandas y sus
+  Los módulos 02–05 tienen un plan de 39 secciones. Las ocho primeras de pandas y sus
   labs están disponibles; las demás están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
-  detallada; 02.01–02.07 ya disponen de lección y lab dentro de esos módulos.
+  detallada; 02.01–02.08 ya disponen de lección y lab dentro de esos módulos.
 - **Siguiente paso de estudio:** leer la
-  [lección de agrupación y resumen](curriculum/02_pandas/07_group_summarize/README.md) y realizar
-  el [lab 02.07](labs/02_pandas/07_group_summarize/README.md), después de
+  [lección de combinación de tablas](curriculum/02_pandas/08_combine_tables/README.md) y realizar
+  el [lab 02.08](labs/02_pandas/08_combine_tables/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -51,6 +51,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-11
+
+- Se desarrolló pandas 02.08: concat, tipos de merge, validate, indicator y
+  comparación por ID sobre una base común. Tres diagramas Mermaid explican las
+  operaciones y la multiplicación de filas; se agregó lab con comprobaciones.
 
 - Se desarrolló pandas 02.07 con 48 observaciones: groupby/agg, size/count/nunique,
   grupos con NA, cobertura y tasas con bases explícitas. Los 10 grupos se verificaron

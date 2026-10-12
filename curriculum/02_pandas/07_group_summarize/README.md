@@ -294,8 +294,8 @@ Puedes avanzar cuando reconstruyas indicadores desde el detalle, expliques grupo
 con NA y distingas suma, promedio, cobertura y tasa. No hay checkpoint implementado;
 el proyecto de limpieza sigue previsto.
 
-Continúa con el [alcance de 08 — Combinar tablas](../README.md#08-combinar-tablas),
-todavía por desarrollar, antes de su futuro lab.
+Continúa con [08 — Combinar tablas](../08_combine_tables/README.md)
+antes de realizar su lab.
 
 ## Referencias oficiales
 
