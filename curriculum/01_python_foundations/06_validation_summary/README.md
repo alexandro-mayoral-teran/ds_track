@@ -257,7 +257,8 @@ por sí mismo la finalización de tus prácticas. Todavía no hay checkpoint aso
 ## Siguiente paso
 
 Consulta [02 — pandas](../../02_pandas/README.md), el siguiente módulo del track.
-Actualmente contiene la planificación; sus lecciones detalladas están por desarrollar.
+Ya está disponible la [primera lección — Series y DataFrame](../../02_pandas/01_series_dataframe/README.md);
+las siguientes están por desarrollar.
 DataFrame permitirá expresar operaciones tabulares, conservando estas mismas
 preguntas sobre tipos, reglas, registros y totales.
 

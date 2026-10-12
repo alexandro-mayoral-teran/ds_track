@@ -122,6 +122,6 @@ tipos de campos se comprueban previamente. Importar este script no ejecuta main.
 
 ## Siguiente paso
 
-Consulta [02 — pandas](../../../curriculum/02_pandas/README.md) después de
-comprobar el cierre de Python fundamental. Es planificación: las lecciones de
-ese módulo todavía están por desarrollar.
+Después de comprobar el cierre de Python fundamental, continúa con la
+[primera lección de pandas — Series y DataFrame](../../../curriculum/02_pandas/01_series_dataframe/README.md),
+antes de realizar su lab.

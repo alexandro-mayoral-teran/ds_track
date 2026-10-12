@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Ruta práctica de aprendizaje para datos con un dominio crediticio sintético"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["pandas==2.3.3"]
 
 [dependency-groups]
 dev = []

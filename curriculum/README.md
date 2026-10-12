@@ -3,8 +3,9 @@
 El flujo está numerado por prerrequisitos. El nivel 00 tiene lecciones y labs;
 el nivel 01 dispone de variables/tipos, listas/diccionarios, condiciones/ciclos,
 funciones, archivos CSV y validación/resumen. Sus seis lecciones y labs están
-disponibles. Los módulos 02–05 tienen secciones numeradas, objetivos, prácticas
-y cierres propuestos; todavía no cuentan con lecciones ejecutables ni labs.
+disponibles. El módulo 02 ya tiene la primera lección de pandas y su lab.
+Las secciones restantes de 02–05 tienen objetivos, prácticas y cierres propuestos,
+todavía sin lecciones ejecutables ni labs.
 Los módulos 06–14 conservan su planificación general.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).
 

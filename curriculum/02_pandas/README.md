@@ -6,21 +6,21 @@ Pasar de listas de registros a tablas: cargar datos, seleccionar, transformar,
 validar y resumir con pandas. Conservaremos las comprobaciones aprendidas en
 [Python fundamental](../01_python_foundations/README.md).
 
-**Estado:** secciones planificadas. Las lecciones, ejemplos ejecutables y labs
-se desarrollarán uno por uno. Los enlaces de la tabla llevan al alcance previsto
-más abajo, no a lecciones terminadas.
+**Estado:** la [lección 01 — Series y DataFrame](01_series_dataframe/README.md)
+y su [lab 02.01](../../labs/02_pandas/01_series_dataframe/README.md) están disponibles.
+Las secciones 02–10 están por desarrollar; sus enlaces describen el alcance previsto.
 
 Primero reutilizaremos las ventas ficticias para comparar resultados con Python
 estándar. Después introduciremos una cartera sintética con diccionario de datos:
 qué representa cada fila, identificadores, fechas, unidades y significado del saldo.
-No se presupone conocimiento financiero. Se preparará pandas en el entorno elegido
-al desarrollar la primera lección, registrando su versión y dependencias.
+No se presupone conocimiento financiero. La primera lección explica cómo preparar
+pandas 2.3.3 en el entorno elegido; esa versión se declara en la configuración raíz.
 
 ## Orden de desarrollo
 
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
-| 1 | [Series y DataFrame](#01-series-y-dataframe) | Esencial | Interpretar filas, columnas, índice y tipos |
+| 1 | [Series y DataFrame](01_series_dataframe/README.md) | Esencial | Interpretar filas, columnas, índice y tipos |
 | 2 | [Leer, inspeccionar y exportar](#02-leer-inspeccionar-y-exportar) | Esencial | Cargar un CSV y verificar una salida |
 | 3 | [Seleccionar, filtrar y ordenar](#03-seleccionar-filtrar-y-ordenar) | Esencial | Responder una pregunta con un subconjunto |
 | 4 | [Tipos y columnas calculadas](#04-tipos-y-columnas-calculadas) | Esencial | Convertir datos y calcular sin ciclos por fila |
@@ -122,7 +122,7 @@ al desarrollar la primera lección, registrando su versión y dependencias.
 ## Prácticas, proyecto y criterio de salida
 
 Se prevé un lab por sección (02.01–02.10), con soluciones desplegables y
-comprobaciones conocidas. Todavía no existen esos labs ni sus enlaces.
+comprobaciones conocidas. El lab 02.01 está disponible; 02.02–02.10 están pendientes.
 El proyecto previsto es 01_clean_credit_data, registrado en
 [proyectos](../../projects/README.md), aún sin carpeta implementada.
 
@@ -137,7 +137,7 @@ dominar MultiIndex, optimización o ventanas avanzadas para pasar a SQL.
 
 ## Continuidad y referencias
 
-Comenzaremos por la sección 01. Después del cierre, continúa con
+Comienza por la [lección 01](01_series_dataframe/README.md) y su lab. Después del cierre, continúa con
 [03 — SQL y bases de datos](../03_sql_databases/README.md).
 
 La estructura adapta los [tutoriales introductorios de pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)

@@ -57,8 +57,9 @@ Python usa un `pyproject.toml` y un `uv.lock` en la raíz. Esa configuración
 describe el recorrido alternativo con uv. Para quienes ya usan Anaconda, la
 lección 05 enseña Conda como recorrido principal y cómo exportar su configuración;
 los archivos de uv no describen automáticamente un entorno Conda.
-El lockfile no incorpora bibliotecas externas y se actualizará al agregar dependencias
-reales. R adoptará `renv` dentro del material de R cuando se introduzca
+El proyecto declara pandas 2.3.3 desde la lección 02.01; uv.lock conserva sus
+dependencias resueltas. Conda y pip preparan la misma versión de referencia según
+su recorrido. El mini proyecto uv del nivel 0 sigue siendo una práctica separada. R adoptará `renv` dentro del material de R cuando se introduzca
 reproducibilidad. No se crearán entornos independientes por cada ejercicio salvo
 que exista una incompatibilidad concreta.
 
@@ -81,14 +82,15 @@ crecerá de manera intencional:
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. Los niveles 02–14 conservan planificación,
-aún sin lecciones detalladas. Python aplicado
+salvo la primera lección y lab de pandas, ya disponibles. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
 ### Desarrollo previsto de los módulos 02–05
 
 Los README de cada módulo contienen el orden numerado y el alcance de cada
 sección. Son planes de desarrollo; los enlaces internos no representan lecciones
-ejecutables. No se crean carpetas vacías ni labs antes de implementar el contenido.
+ejecutables, excepto la sección 02.01 ya implementada con script y lab.
+No se crean carpetas vacías ni labs antes de implementar el contenido.
 
 | Módulo | Secciones previstas | Cierre |
 | --- | --- | --- |

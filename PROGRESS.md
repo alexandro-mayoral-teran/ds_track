@@ -5,17 +5,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulo activo de desarrollo:** planificación de `02_pandas` a `05_python_applied`
+- **Módulo activo de desarrollo:** `02_pandas`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** secciones y alcance de los módulos 02–05;
-  próxima lección por implementar: 02.01 — Series y DataFrame.
+- **Foco de desarrollo del material:** Series y DataFrame; próxima lección
+  por implementar: 02.02 — Leer, inspeccionar y exportar.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
-  Los módulos 02–05 tienen un plan detallado de 39 secciones; sus lecciones y labs
-  todavía están por desarrollar.
+  Los módulos 02–05 tienen un plan de 39 secciones. La primera de pandas y su
+  lab están disponibles; las demás están por desarrollar.
 - **Siguiente paso de estudio:** leer la
-  [lección de validación y resumen](curriculum/01_python_foundations/06_validation_summary/README.md) y realizar
-  el [lab 01.06](labs/01_python_foundations/06_validation_summary/README.md), después de
+  [lección de Series y DataFrame](curriculum/02_pandas/01_series_dataframe/README.md) y realizar
+  el [lab 02.01](labs/02_pandas/01_series_dataframe/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -48,6 +48,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-11
+
+- Se desarrolló 02.01 — Series y DataFrame, con script y lab; pandas 2.3.3 se
+  declaró en pyproject.toml y se resolvió en uv.lock. Se verificó el ejemplo
+  en un entorno aislado y se actualizaron navegación y arquitectura.
 
 - Se investigó documentación oficial y se organizaron las secciones de pandas (10),
   SQL (9), visualización Python (9) y Python aplicado (11), con prácticas y cierres
