@@ -42,6 +42,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se revisó el track completo: comunicación y calidad tempranas, cierre integrado
+  antes de R y separación de contenidos esenciales y avanzados sin renumerar niveles.
 - Se creó la lección 06, el notebook de ejemplo y su lab: selección de kernel,
   celdas, estado en memoria y ejecución desde cero.
 - Se dividió la lección 05 en dos sesiones: preparación del entorno y gestión

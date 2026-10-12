@@ -32,13 +32,22 @@ que este documento permanezca como una referencia estable del plan.
   `add`, `commit` y `push`.
 - Esencial: primer script Python y primer notebook con Jupyter.
 - Esencial: conceptos de entorno y dependencias.
-- Práctica: `pip` para comprender el estándar de instalación.
-- Extensión: `uv` para administrar el proyecto Python.
-- Extensión: Git y GitHub para historial y publicación.
+- Práctica: preparar un solo entorno con Conda, venv + pip o uv. Conda es el
+  inicio recomendado si ya se utiliza Anaconda; los otros caminos son alternativas.
+- Esencial: distinguir creación, activación, intérprete y kernel; comprobar
+  qué Python ejecuta un script o notebook.
+- Esencial: comprender qué conservan requirements.txt, environment.yml,
+  pyproject.toml y uv.lock, y revisar la configuración del recorrido elegido.
+- Extensión: explorar CSV con filtros de terminal y consultar otros gestores.
 
 **Orden recomendado:** Git y GitHub → Markdown → perfil desde la web → terminal
 y rutas → actualización del perfil con Git → primer script → entorno y
-dependencias → primer notebook.
+dependencias 05A (preparar entorno) → 05B (instalar y conservar dependencias)
+→ primer notebook.
+
+El [índice del nivel 0](curriculum/00_getting_started/README.md) enlaza las seis
+lecciones y sus labs. Basta practicar el shell y gestor elegidos: no se requiere
+dominar todos los comandos, completar los tres gestores ni resolver las extensiones.
 
 **Primera evidencia:** un README con presentación y objetivos. En la práctica
 con GitHub, publicarlo como perfil y explicar cómo actualizarlo conservando su
@@ -56,10 +65,17 @@ demostrar una actualización del perfil mediante un commit y un push.
 
 **Objetivo:** transformar datos sin depender todavía de una biblioteca tabular.
 
-- Tipos, colecciones, control de flujo y funciones.
-- Módulos, archivos, excepciones y comprensión de iterables.
-- Lectura de CSV y JSON con la biblioteca estándar.
-- Separación entre entrada, transformación y salida.
+- Esencial: tipos y operaciones; listas y diccionarios para representar registros.
+- Esencial: condiciones, ciclos y funciones pequeñas.
+- Esencial: leer y escribir un CSV pequeño con la biblioteca estándar.
+- Esencial: separar entrada, transformación y salida; detectar datos inválidos.
+- Práctica: comprobar cantidades y totales con resultados conocidos y documentar
+  las reglas aplicadas desde los primeros ejercicios.
+- Práctica: módulos, excepciones y lectura de JSON cuando el ejercicio lo necesite.
+- Extensión: comprensiones de iterables y otras formas de expresar un cálculo.
+
+**Orden recomendado:** tipos → listas y diccionarios → condiciones y ciclos
+→ funciones → archivos CSV → validación → resumen verificable.
 
 **Criterio de salida:** leer registros crediticios, validarlos y producir un
 resumen mediante funciones pequeñas y reutilizables.
@@ -71,30 +87,43 @@ resumen mediante funciones pequeñas y reutilizables.
 - Series, DataFrames, selección, filtrado y tipos.
 - Faltantes, duplicados, fechas y texto.
 - Agregaciones, `groupby`, `merge`, reshape y ventanas básicas.
-- Visualización y uso responsable de notebooks.
+- Visualización inicial: una gráfica sencilla y una explicación de sus hallazgos.
+- Uso responsable de notebooks; comprobaciones de filas, llaves y totales antes
+  y después de transformar o unir datos.
 
 **Proyecto asociado:** `01_clean_credit_data`.
 
 **Criterio de salida:** limpiar una cartera en CSV y justificar cada regla de
-calidad aplicada.
+calidad aplicada, presentar una gráfica e interpretar sus resultados.
 
 ## Nivel 3 — SQL y bases de datos
 
 **Objetivo:** consultar y modelar datos persistentes.
 
-- Modelo relacional, tablas, llaves, restricciones y normalización.
-- Consultas, joins, CTE, subconsultas y funciones de ventana.
-- Índices, transacciones y planes de consulta.
-- SQLite primero; PostgreSQL como extensión.
+- Esencial: modelo relacional, tablas, llaves, restricciones y normalización básica.
+- Esencial: selección, filtros, agregaciones y joins con SQLite.
+- Práctica: CTE, subconsultas y ventanas básicas para preguntas concretas.
+- Esencial: comprender transacciones al escribir datos y verificar los indicadores.
+- Avanzado: índices, planes de consulta y optimización cuando exista una limitación.
+- Extensión: PostgreSQL después de dominar las operaciones en SQLite.
 
 **Proyecto asociado:** `02_credit_database`.
 
 **Criterio de salida:** diseñar un modelo relacional y obtener indicadores de
 cartera mediante consultas verificables.
 
+**Cierre antes de R:** integrar lo aprendido en un análisis pequeño: leer datos
+con Python, limpiar con pandas, consultar indicadores en SQLite y explicar una
+gráfica. Reutilizar los proyectos de limpieza y base de datos, sin crear un
+proyecto adicional obligatorio. Conciliar al menos un indicador entre pandas
+y SQL y conservar instrucciones de ejecución.
+
 ## Nivel 4 — R fundamental
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.
+
+**Prerrequisito:** el análisis de cierre del nivel 3. Reutilizar sus preguntas y
+datos para aprender el modelo de R sobre un problema conocido.
 
 - Vectores, listas, data frames, funciones y paquetes.
 - Importación, transformación y visualización inicial.
@@ -121,14 +150,16 @@ persona que no escribió el código.
 
 **Objetivo:** comprender almacenamiento columnar y datasets mayores.
 
-- Esquemas, tipos, compresión y metadatos.
-- Row groups, particiones y estadísticas.
-- Projection y predicate pushdown.
-- Problema de archivos pequeños y evolución de esquemas.
-- Interoperabilidad entre Python, R y motores SQL.
+- Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.
+- Práctica: comparar CSV y Parquet en tamaño, tipos y lectura selectiva.
+- Práctica: compresión, metadatos, row groups y pushdown con ejemplos pequeños.
+- Extensión: particiones cuando las preguntas y el volumen las justifiquen.
+- Avanzado: archivos pequeños y evolución de esquemas.
+- Práctica: interoperabilidad entre Python, R y motores SQL.
 
-**Criterio de salida:** convertir CSV a un dataset Parquet bien tipado y
-particionado, y explicar por qué se eligió ese diseño.
+**Criterio de salida:** convertir un CSV a Parquet bien tipado, comprobar que
+conserva registros e indicadores y explicar el diseño. Particionar solo cuando
+se pueda justificar; no es requisito para el primer ejercicio.
 
 ## Nivel 7 — Polars y DuckDB
 
@@ -147,6 +178,9 @@ y escoger una herramienta usando mediciones.
 ## Nivel 8 — Reportes reproducibles
 
 **Objetivo:** transformar análisis en productos consumibles.
+
+Este nivel formaliza la comunicación iniciada con gráficas e interpretación en
+pandas y tidyverse; no es la primera ocasión de explicar resultados.
 
 - Narrativa, tablas, gráficas y parámetros.
 - Quarto con Python y R.
@@ -175,6 +209,9 @@ mensajes de error comprensibles, sin mezclar la UI con las transformaciones.
 ## Nivel 10 — Proyecto reproducible
 
 **Objetivo:** integrar el recorrido con prácticas de ingeniería.
+
+La validación, documentación y separación de pasos se practican desde Python.
+Aquí se profundiza en pruebas y automatización y se integran en un proyecto final.
 
 - Código modular, configuración y logging.
 - Pruebas unitarias, de integración y de calidad de datos.
