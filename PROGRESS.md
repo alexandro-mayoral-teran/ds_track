@@ -5,14 +5,14 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulo activo:** `00_getting_started`
+- **Módulo activo de desarrollo:** `01_python_foundations`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** lección 06 — Primer notebook.
-- **Estado del contenido:** lecciones y labs 01–06 disponibles para revisión
-  y práctica. Esto no acredita finalización del estudiante.
+- **Foco de desarrollo del material:** variables, tipos y operaciones.
+- **Estado del contenido:** nivel 0 disponible y primera lección de Python
+  fundamental con su lab. Esto no acredita finalización del estudiante.
 - **Siguiente paso de estudio:** leer la
-  [lección 06](curriculum/00_getting_started/06_first_notebook/README.md) y realizar
-  el [lab 00.06](labs/00_getting_started/06_first_notebook/README.md), después de
+  [lección de variables y tipos](curriculum/01_python_foundations/01_variables_types/README.md) y realizar
+  el [lab 01.01](labs/01_python_foundations/01_variables_types/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -46,6 +46,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### 2026-10-11
 
+- Se inició Python fundamental con la lección y lab de variables, tipos y
+  operaciones. Se registró R aplicado como consideración para la próxima revisión.
 - Se integraron las rutas en un flujo numerado 00–14; visualización y Python aplicado
   ahora tienen ubicación y prerrequisitos, con Streamlit/Shiny como elección de aplicación.
 

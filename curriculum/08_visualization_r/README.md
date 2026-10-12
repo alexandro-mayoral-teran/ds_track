@@ -20,5 +20,9 @@ y vuelve al [índice del curriculum](../README.md).
 
 ## Continuidad del track
 
+Se está considerando un puente posterior de **R aplicado**, para organizar y
+comprobar el análisis antes de Parquet. Su numeración y material aún están pendientes;
+consulta la [arquitectura](../../docs/architecture.md#r-aplicado-consideración-para-el-próximo-ajuste).
+
 Prerrequisito de estudio: [07 — tidyverse](../07_tidyverse/README.md).
 Consulta después [09 — Arrow y Parquet](../09_arrow_parquet/README.md).

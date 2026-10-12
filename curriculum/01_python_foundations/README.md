@@ -1,20 +1,24 @@
 # 01 — Python fundamental
 
 Aprender tipos, colecciones, control de flujo, funciones, módulos, archivos y
-errores mediante registros crediticios pequeños. El módulo termina con una
+errores mediante registros sintéticos pequeños. Comenzamos con una venta sencilla
+y después trabajaremos con los registros del recorrido. El módulo termina con una
 transformación de CSV realizada con la biblioteca estándar.
 
 ## Orden de desarrollo
 
-1. Tipos, variables y operaciones sobre datos pequeños.
-2. Listas y diccionarios para representar registros.
-3. Condiciones y ciclos para filtrar y recorrer datos.
-4. Funciones para separar y reutilizar transformaciones.
-5. Lectura y escritura de CSV con la biblioteca estándar.
-6. Validación de entradas, comprobación de totales y resumen documentado.
+| Orden | Lección | Resultado |
+| --- | --- | --- |
+| 1 | [Variables, tipos y operaciones](01_variables_types/) | Interpretar entradas y comprobar un cálculo |
+| 2 | Listas y diccionarios (por desarrollar) | Representar varios registros |
+| 3 | Condiciones y ciclos (por desarrollar) | Filtrar y recorrer datos |
+| 4 | Funciones (por desarrollar) | Separar y reutilizar transformaciones |
+| 5 | Archivos CSV (por desarrollar) | Leer y escribir con la biblioteca estándar |
+| 6 | Validación y resumen (por desarrollar) | Comprobar entradas y totales, documentar reglas |
 
 Los módulos, excepciones y JSON se incorporarán cuando resuelvan una necesidad
-de la práctica. Las lecciones detalladas están por desarrollar.
+de la práctica. La primera lección y su [lab 01.01](../../labs/01_python_foundations/01_variables_types/README.md)
+están disponibles; las siguientes están por desarrollar.
 La meta es transformar un CSV pequeño y explicar el resultado antes de pasar a pandas.
 
 ## Bases y profundización posterior

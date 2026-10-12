@@ -20,6 +20,7 @@ reglas de enlace están en
 | [`00.04 — Primer script`](00_getting_started/04_first_script/) | `00_getting_started` | No aplica |
 | [`00.05 — Entorno y dependencias`](00_getting_started/05_environment/) | `00_getting_started` | No aplica |
 | [`00.06 — Primer notebook`](00_getting_started/06_first_notebook/) | `00_getting_started` | No aplica |
+| [`01.01 — Variables y tipos`](01_python_foundations/01_variables_types/) | `01_python_foundations` | No aplica |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

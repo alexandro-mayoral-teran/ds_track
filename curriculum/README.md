@@ -1,7 +1,8 @@
 # Curriculum
 
 El flujo está numerado por prerrequisitos. El nivel 00 tiene lecciones y labs;
-los niveles 01–14 tienen planificación, aún sin lecciones detalladas.
+el nivel 01 comienza con su lección de variables y tipos. Los demás contenidos
+tienen planificación, aún sin lecciones detalladas.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).
 
 | Nivel | Módulo | Resultado previsto |

@@ -110,8 +110,9 @@ preguntas del lab para conversar y comprobar lo aprendido.
 
 ## Estado actual
 
-El nivel 0 dispone de sus seis lecciones y labs para revisión y práctica; los
-módulos siguientes están en planificación, integrados en el flujo numerado 00–14. El
+El nivel 0 dispone de sus seis lecciones y labs para revisión y práctica. Python
+fundamental comienza con [variables y tipos](curriculum/01_python_foundations/01_variables_types/README.md);
+el resto del material está en planificación dentro del flujo numerado 00–14. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de
 Python aplicado, visualización y aplicaciones en Python y R en su orden de estudio. El

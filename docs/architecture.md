@@ -121,7 +121,20 @@ y caché. Usar un decorador existente, por ejemplo para caché, no exige desarro
 decoradores personalizados. En Shiny, enseñar reactividad antes de ampliar la UI.
 En ambos casos separar transformación y validación de datos de la interfaz.
 
-### Conexión con los niveles y proyectos
+### R aplicado: consideración para el próximo ajuste
+
+Se contempla un puente después de visualización R (08) y antes de Parquet:
+organizar scripts y funciones, reutilizar transformaciones, gestionar proyectos
+y paquetes, comprobar resultados, manejar errores y medir rendimiento. Los
+sistemas de objetos y otras especializaciones se tratarían cuando aporten claridad.
+La meta sería convertir el análisis R conocido en código reconstruible, de forma
+equivalente al cierre de Python aplicado.
+
+Su integración en la numeración se decidirá en el próximo ajuste del track.
+Todavía no hay carpeta, lecciones ni labs; esta consideración no renumera los
+módulos mientras se inicia Python fundamental.
+
+### Ubicación actual de módulos y proyectos
 
 - Nivel 2: primera gráfica con Matplotlib y una explicación del hallazgo.
 - Nivel 03: modelar y consultar los datos; conciliar indicadores con pandas.
