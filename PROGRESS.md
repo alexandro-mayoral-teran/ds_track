@@ -7,19 +7,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `02_pandas`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** investigación y planificación numerada cerrada
-  hasta el módulo 14; siguientes cambios orientados a implementar las lecciones.
-  Próxima lección Python por implementar: 02.02 — Leer, inspeccionar y exportar.
+- **Foco de desarrollo del material:** lectura, inspección y exportación CSV con pandas.
+  Próxima lección por implementar: 02.03 — Seleccionar, filtrar y ordenar.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
-  Los módulos 02–05 tienen un plan de 39 secciones. La primera de pandas y su
-  lab están disponibles; las demás están por desarrollar. Los módulos 06–08 tienen
+  Los módulos 02–05 tienen un plan de 39 secciones. Las dos primeras de pandas y sus
+  labs están disponibles; las demás están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
-  detallada; solo 02.01 ya dispone de lección y lab dentro de esos módulos.
+  detallada; 02.01 y 02.02 ya disponen de lección y lab dentro de esos módulos.
 - **Siguiente paso de estudio:** leer la
-  [lección de Series y DataFrame](curriculum/02_pandas/01_series_dataframe/README.md) y realizar
-  el [lab 02.01](labs/02_pandas/01_series_dataframe/README.md), después de
+  [lección de lectura, inspección y exportación](curriculum/02_pandas/02_read_inspect_export/README.md) y realizar
+  el [lab 02.02](labs/02_pandas/02_read_inspect_export/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -52,6 +51,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-11
+
+- Se desarrolló pandas 02.02 con muestra crediticia ficticia y diccionario: lectura
+  tipada, head/info/describe, exportación y comparación de la tabla recargada.
+  Se agregó su lab y se enlazó desde la primera lección.
 
 - Se depuraron las instrucciones locales de agentes, separando reglas vigentes
   de historial. Se crearon plantillas generales de agentes y arquitectura, con

@@ -27,6 +27,7 @@ reglas de enlace están en
 | [`01.05 — Archivos CSV`](01_python_foundations/05_csv_files/) | `01_python_foundations` | No aplica |
 | [`01.06 — Validación y resumen`](01_python_foundations/06_validation_summary/) | `01_python_foundations` | No aplica |
 | [`02.01 — Series y DataFrame`](02_pandas/01_series_dataframe/) | `02_pandas` | No aplica todavía |
+| [`02.02 — Leer, inspeccionar y exportar`](02_pandas/02_read_inspect_export/) | `02_pandas` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

@@ -1,0 +1,7 @@
+id_credito,segmento,fecha_corte,saldo_mxn,dias_atraso
+001,consumo,2026-09-30,1000,0
+002,"comercio, local",2026-09-30,1500,10
+003,servicios,2026-09-30,750,45
+004,consumo,2026-09-30,0,0
+005,educación,2026-09-30,2250,
+006,servicios,2026-09-30,500,5

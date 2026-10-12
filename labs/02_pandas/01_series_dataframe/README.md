@@ -112,6 +112,5 @@ tipos de una tabla vacía ni crea registros ficticios.
 
 ## Siguiente paso
 
-02 — Leer, inspeccionar y exportar está por desarrollar. Consulta el
-[plan de la siguiente lección](../../../curriculum/02_pandas/README.md#02-leer-inspeccionar-y-exportar),
-antes de su futuro lab.
+Continúa con la [lección 02 — Leer, inspeccionar y exportar](../../../curriculum/02_pandas/02_read_inspect_export/README.md)
+antes de realizar su lab.

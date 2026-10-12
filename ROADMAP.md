@@ -92,8 +92,9 @@ El cierre inicial utiliza ventas ficticias; el dominio crediticio se incorpora e
 El [plan de diez secciones](curriculum/02_pandas/README.md#orden-de-desarrollo)
 ordena tablas → lectura → selección → tipos → calidad → texto/fechas → agrupación
 → uniones → reshape → análisis y primera gráfica. La
-[primera lección](curriculum/02_pandas/01_series_dataframe/README.md) y su lab
-están disponibles; las secciones 02–10 están por desarrollar.
+[primera lección](curriculum/02_pandas/01_series_dataframe/README.md) y
+[lectura/exportación](curriculum/02_pandas/02_read_inspect_export/README.md), con sus
+labs, están disponibles; las secciones 03–10 están por desarrollar.
 
 - Series, DataFrames, selección, filtrado y tipos.
 - Faltantes, duplicados, fechas y texto.

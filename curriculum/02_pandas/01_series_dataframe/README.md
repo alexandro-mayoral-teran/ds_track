@@ -259,8 +259,7 @@ implementado; el proyecto de limpieza sigue en planificación.
 
 ## Siguiente paso y referencias
 
-02 — Leer, inspeccionar y exportar está por desarrollar. Consulta su
-[alcance previsto](../README.md#02-leer-inspeccionar-y-exportar).
+Continúa con [02 — Leer, inspeccionar y exportar](../02_read_inspect_export/README.md).
 
 - [Primeras estructuras tabulares](https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html).
 - [DataFrame, pandas 2.3](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.html).
