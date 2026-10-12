@@ -294,8 +294,8 @@ Realiza el [lab 02.06](../../../labs/02_pandas/06_text_dates/README.md). Puedes 
 cuando expliques normalizaciones, causas de NaT, conflictos de clave y límites de
 la comparación entre cortes. No hay checkpoint implementado; el proyecto sigue previsto.
 
-Continúa con el [alcance de 07 — Agrupar y resumir](../README.md#07-agrupar-y-resumir),
-todavía por desarrollar, antes de su futuro lab.
+Continúa con [07 — Agrupar y resumir](../07_group_summarize/README.md)
+antes de realizar su lab.
 
 ## Referencias oficiales
 

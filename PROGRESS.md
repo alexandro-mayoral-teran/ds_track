@@ -7,18 +7,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `02_pandas`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** texto y fechas con pandas.
-  Próxima lección por implementar: 02.07 — Agrupar y resumir.
+- **Foco de desarrollo del material:** agrupación y resumen con pandas.
+  Próxima lección por implementar: 02.08 — Combinar tablas.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
-  Los módulos 02–05 tienen un plan de 39 secciones. Las seis primeras de pandas y sus
+  Los módulos 02–05 tienen un plan de 39 secciones. Las siete primeras de pandas y sus
   labs están disponibles; las demás están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
-  detallada; 02.01–02.06 ya disponen de lección y lab dentro de esos módulos.
+  detallada; 02.01–02.07 ya disponen de lección y lab dentro de esos módulos.
 - **Siguiente paso de estudio:** leer la
-  [lección de texto y fechas](curriculum/02_pandas/06_text_dates/README.md) y realizar
-  el [lab 02.06](labs/02_pandas/06_text_dates/README.md), después de
+  [lección de agrupación y resumen](curriculum/02_pandas/07_group_summarize/README.md) y realizar
+  el [lab 02.07](labs/02_pandas/07_group_summarize/README.md), después de
   completar las prácticas previas.
 
 ## Estados
@@ -51,6 +51,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-11
+
+- Se desarrolló pandas 02.07 con 48 observaciones: groupby/agg, size/count/nunique,
+  grupos con NA, cobertura y tasas con bases explícitas. Los 10 grupos se verificaron
+  contra cálculos independientes; se agregó lab y transform como ampliación.
 
 - Se desarrolló pandas 02.06 con 48 registros de dos cortes: normalización
   trazable, formatos temporales explícitos, NaT, relaciones de fechas y claves

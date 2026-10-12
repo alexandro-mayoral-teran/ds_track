@@ -156,5 +156,5 @@ min_count=1 es NA. No depende de que existan 48 filas ni una primera fila que co
 - Si usas Git, revisa diff y registra código/notas. output está ignorado; publicar
   los resultados no es requisito para completar el lab.
 
-Continúa con el [alcance de 07 — Agrupar y resumir](../../../curriculum/02_pandas/README.md#07-agrupar-y-resumir),
-pendiente de desarrollo, antes de su futuro lab.
+Continúa con la [lección 07 — Agrupar y resumir](../../../curriculum/02_pandas/07_group_summarize/README.md)
+antes de realizar su lab.
