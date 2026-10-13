@@ -298,8 +298,8 @@ mantiene datos y medida, expliques la escala y conserves exclusiones. Entrega
 figura, tabla, descripción y justificación de cobertura y señales accesibles.
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.06 — Composición y exportación](../README.md#06-composicion-y-exportacion),
-todavía pendiente. Las secciones 04.06–04.09 no cuentan como material terminado.
+[04.06 — Composición y exportación](../06_composition_export/README.md).
+Las secciones 04.07–04.09 no cuentan como material terminado.
 
 ## Referencias y atribución
 

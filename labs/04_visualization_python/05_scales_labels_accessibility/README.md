@@ -157,5 +157,4 @@ log? ¿Cómo sabe alguien qué significan los datos sin ver sus colores? ¿Qué
 información seguiría faltando aunque la figura fuera legible?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.06 — Composición y exportación](../../../curriculum/04_visualization_python/README.md#06-composicion-y-exportacion),
-todavía pendiente de desarrollo.
+[04.06 — Composición y exportación](../../../curriculum/04_visualization_python/06_composition_export/README.md).
