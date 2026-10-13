@@ -292,8 +292,7 @@ Realiza el [lab 04.02](../../../labs/04_visualization_python/02_figure_axes/READ
 Puedes avanzar cuando construyas una Figure con Axes explícito, conserves
 contrato y ausencias, guardes el archivo correcto y cierres tus figuras.
 Los proyectos y checkpoints visuales siguen pendientes. Continúa con el
-[plan de 04.03 — Comparaciones y evolución](../README.md#03-comparaciones-y-evolucion),
-todavía sin lección ni siguiente lab disponible.
+[04.03 — Comparaciones y evolución](../03_comparisons_evolution/README.md).
 
 ## Referencias primarias
 

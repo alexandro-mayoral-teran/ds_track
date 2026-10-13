@@ -7,13 +7,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `04_visualization_python`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** construcción explícita de figuras con Matplotlib.
-  Próxima sección por implementar: 04.03 — Comparaciones y evolución.
+- **Foco de desarrollo del material:** comparaciones por segmento y fecha con bases explícitas.
+  Próxima sección por implementar: 04.04 — Distribuciones y relaciones.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
-  04.01–04.02 tienen lecciones y labs; 04.03–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
+  04.01–04.03 tienen lecciones y labs; 04.04–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -52,6 +52,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-12
+
+- Se desarrolló 04.03: barras agrupadas, medidas y denominadores, fechas, pares
+  comparables y huecos sin imputación, con tres figuras y lab razonado. Se
+  comprobaron sumas, tasas, pares, cero/ausencia, calendario, exportaciones y
+  entradas intactas con pandas 2.3.3 y Matplotlib 3.10.6 locales; referencia
+  Matplotlib 3.10.7 conservada. Sigue 04.04; el estudiante requiere evidencia.
 
 - Se desarrolló 04.02: Figure/Axes/Axis, interfaz explícita, dibujo reutilizable,
   guardado y cierre, con resumen derivado de SQL, figuras y lab. Se verificaron

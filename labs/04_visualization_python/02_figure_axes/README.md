@@ -153,5 +153,4 @@ revisión visual? ¿Cómo puedes dibujar sin depender del panel actual?
 ¿Qué representa la barra de longitud cero frente a una suma ausente?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.03 — Comparaciones y evolución](../../../curriculum/04_visualization_python/README.md#03-comparaciones-y-evolucion),
-pendiente de desarrollo; todavía no hay siguiente lab disponible.
+[04.03 — Comparaciones y evolución](../../../curriculum/04_visualization_python/03_comparisons_evolution/README.md).

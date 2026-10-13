@@ -38,6 +38,9 @@ reglas de enlace están en
 | [`02.10 — Análisis y primera gráfica`](02_pandas/10_analysis_plot/) | `02_pandas` | No aplica todavía |
 | [`03.01 — Modelo relacional y SQLite`](03_sql_databases/01_relational_sqlite/) | `03_sql_databases` | No aplica todavía |
 | [`03.02 — Primeras consultas`](03_sql_databases/02_first_queries/) | `03_sql_databases` | No aplica todavía |
+| [`04.01 — Pregunta y elección de gráfico`](04_visualization_python/01_question_chart/) | `04_visualization_python` | No aplica todavía |
+| [`04.02 — Matplotlib: Figure y Axes`](04_visualization_python/02_figure_axes/) | `04_visualization_python` | No aplica todavía |
+| [`04.03 — Comparaciones y evolución`](04_visualization_python/03_comparisons_evolution/) | `04_visualization_python` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
