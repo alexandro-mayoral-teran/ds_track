@@ -496,8 +496,7 @@ Realiza el [lab 03.06](../../../labs/03_sql_databases/06_subqueries_cte/README.m
 Puedes continuar cuando identifiques la forma de cada subconsulta, justifiques
 presencia y correlación, compruebes cada etapa y demuestres equivalencia sin
 ocultar duplicados ni NULL. El proyecto y sus checkpoints siguen pendientes.
-Después consulta el [plan de 03.07 — Ventanas para comparar registros](../README.md#07-ventanas-para-comparar-registros),
-todavía sin lección ni siguiente lab disponible. Su idea central será comparar
+Después consulta el [03.07 — Ventanas para comparar registros](../07_windows/README.md). Su idea central será comparar
 filas conservando el detalle, en contraste con agrupar.
 
 ## Referencias primarias

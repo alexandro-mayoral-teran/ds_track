@@ -273,5 +273,4 @@ guardada? ¿Cómo puede una coincidencia en conteos esconder resultados distinto
 
 Registra evidencia y dudas en PROGRESS.md; ejecutar el ejemplo no acredita por
 sí solo el criterio de aprendizaje. No hay checkpoint de proyecto implementado.
-Continúa con el [plan de 03.07 — Ventanas para comparar registros](../../../curriculum/03_sql_databases/README.md#07-ventanas-para-comparar-registros),
-pendiente de desarrollo; todavía no hay siguiente lab disponible.
+Continúa con el [03.07 — Ventanas para comparar registros](../../../curriculum/03_sql_databases/07_windows/README.md).

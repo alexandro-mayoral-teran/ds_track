@@ -85,7 +85,7 @@ crecerá de manera intencional:
 
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
-el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. Los niveles 03–14 conservan planificación, salvo 03.01–03.06, ya disponibles con base local y labs;
+el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. Los niveles 03–14 conservan planificación, salvo 03.01–03.07, ya disponibles con base local y labs;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -113,6 +113,10 @@ tablas derivadas; las CTE separan selección, relación, resumen e indicadores.
 Compara consultas equivalentes y referencias Python sobre los mismos CSV,
 con NULL y vacíos comprobados. El archivo SQLite se conserva en solo lectura;
 los casos adicionales se crean en memoria. La recursión sigue como profundización.
+SQL 03.07 conserva detalle mediante ventanas, particiones y orden; compara
+observaciones con LAG, selecciona posiciones con ROW_NUMBER y explica marcos
+ROWS/RANGE. Contrasta contra recorridos Python y separa cobertura, saldos
+y movimientos aditivos; las consultas al archivo siguen en solo lectura.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

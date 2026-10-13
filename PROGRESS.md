@@ -7,12 +7,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `03_sql_databases`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** subconsultas y consultas SQL por pasos.
-  Próxima sección por implementar: 03.07 — Ventanas para comparar registros.
+- **Foco de desarrollo del material:** ventanas SQL y comparación entre observaciones.
+  Próxima sección por implementar: 03.08 — Escrituras y transacciones.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
-  labs están disponibles; también SQL 03.01–03.06 con base local y labs.
+  labs están disponibles; también SQL 03.01–03.07 con base local y labs.
   Las demás de 03–05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
@@ -52,6 +52,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-12
+
+- Se desarrolló SQL 03.07: OVER, particiones, ROW_NUMBER, LAG y marcos, con
+  explicación gradual, diagramas y lab. Se comprobó la comparación de 19 pares
+  conocidos, selección con empates, vacíos, huecos temporales y base cero;
+  también se conciliaron acumulados y cobertura conservando las fuentes.
+  El siguiente desarrollo es 03.08; el aprendizaje requiere evidencia.
 
 - Se desarrolló SQL 03.06 con explicación gradual de subconsultas escalares, IN,
   EXISTS/NOT EXISTS, correlación, tablas derivadas y CTE por etapas; lab amplio
