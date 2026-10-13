@@ -264,5 +264,4 @@ empates puede saltar? ¿Cómo evitas sumar una referencia repetida?
 ¿Qué información conserva fecha_anterior que no conserva saldo_anterior?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 03.08 — Escrituras y transacciones](../../../curriculum/03_sql_databases/README.md#08-escrituras-y-transacciones),
-pendiente de desarrollo; todavía no hay siguiente lab disponible.
+[03.08 — Escrituras y transacciones](../../../curriculum/03_sql_databases/08_transactions/README.md).

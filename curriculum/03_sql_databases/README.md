@@ -14,8 +14,9 @@ y el lab 03.04 también están disponibles, junto con
 [05 — Relacionar tablas con joins](05_joins/README.md) y su lab.
 [06 — Subconsultas y CTE](06_subqueries_cte/README.md) y su lab también están disponibles.
 [07 — Ventanas para comparar registros](07_windows/README.md) y su lab también están disponibles.
-Las secciones 08–09 están planificadas; sus enlaces internos
-describen el alcance previsto. Usamos SQLite y el módulo sqlite3 de Python; un
+[08 — Escrituras y transacciones](08_transactions/README.md) y su lab también están disponibles.
+La sección 09 está planificada; su enlace interno describe el alcance previsto.
+Usamos SQLite y el módulo sqlite3 de Python; un
 servidor PostgreSQL y una aplicación gráfica no son requisitos.
 
 Se prevén tablas sintéticas de clientes, créditos y cortes. Antes de consultar
@@ -33,7 +34,7 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 | 5 | [Relacionar tablas con joins](05_joins/README.md) | Esencial | Unir datos conservando su cardinalidad |
 | 6 | [Subconsultas y CTE](06_subqueries_cte/README.md) | Práctica | Dividir una consulta en pasos legibles |
 | 7 | [Ventanas para comparar registros](07_windows/README.md) | Práctica | Comparar cortes sin perder el detalle |
-| 8 | [Escrituras y transacciones](#08-escrituras-y-transacciones) | Esencial | Confirmar o revertir cambios de forma explícita |
+| 8 | [Escrituras y transacciones](08_transactions/README.md) | Esencial | Confirmar o revertir cambios de forma explícita |
 | 9 | [Integración pandas y SQL](#09-integracion-pandas-y-sql) | Práctica de cierre | Conciliar un indicador entre herramientas |
 
 ## Alcance de cada sección
@@ -124,7 +125,8 @@ y el [lab 03.04](../../labs/03_sql_databases/04_aggregations/README.md)
 y el [lab 03.05](../../labs/03_sql_databases/05_joins/README.md)
 y el [lab 03.06](../../labs/03_sql_databases/06_subqueries_cte/README.md)
 y el [lab 03.07](../../labs/03_sql_databases/07_windows/README.md)
-están disponibles; 03.08–03.09 están pendientes de desarrollo.
+y el [lab 03.08](../../labs/03_sql_databases/08_transactions/README.md)
+están disponibles; 03.09 está pendiente de desarrollo.
 El proyecto previsto 02_credit_database aparece en [proyectos](../../projects/README.md);
 su carpeta y checkpoints están por implementar.
 

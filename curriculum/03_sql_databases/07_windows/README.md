@@ -466,8 +466,7 @@ Puedes avanzar cuando expliques partición, orden y marco, conserves detalle y
 justifiques filas anteriores, empates y cambios sin imputar cero. La cobertura
 de comparación debe acompañar a los resultados. No hay checkpoint de proyecto
 implementado. Continúa con el
-[plan de 03.08 — Escrituras y transacciones](../README.md#08-escrituras-y-transacciones),
-todavía sin lección ni siguiente lab disponible.
+[03.08 — Escrituras y transacciones](../08_transactions/README.md).
 
 ## Referencias primarias
 
