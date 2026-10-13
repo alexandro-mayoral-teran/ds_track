@@ -38,6 +38,13 @@ reglas de enlace están en
 | [`02.10 — Análisis y primera gráfica`](02_pandas/10_analysis_plot/) | `02_pandas` | No aplica todavía |
 | [`03.01 — Modelo relacional y SQLite`](03_sql_databases/01_relational_sqlite/) | `03_sql_databases` | No aplica todavía |
 | [`03.02 — Primeras consultas`](03_sql_databases/02_first_queries/) | `03_sql_databases` | No aplica todavía |
+| [`03.03 — Crear tablas y cargar datos`](03_sql_databases/03_create_load/) | `03_sql_databases` | No aplica todavía |
+| [`03.04 — Agregaciones e indicadores`](03_sql_databases/04_aggregations/) | `03_sql_databases` | No aplica todavía |
+| [`03.05 — Relacionar tablas con joins`](03_sql_databases/05_joins/) | `03_sql_databases` | No aplica todavía |
+| [`03.06 — Subconsultas y CTE`](03_sql_databases/06_subqueries_cte/) | `03_sql_databases` | No aplica todavía |
+| [`03.07 — Ventanas para comparar registros`](03_sql_databases/07_windows/) | `03_sql_databases` | No aplica todavía |
+| [`03.08 — Escrituras y transacciones`](03_sql_databases/08_transactions/) | `03_sql_databases` | No aplica todavía |
+| [`03.09 — Integración pandas y SQL`](03_sql_databases/09_pandas_sql/) | `03_sql_databases` | No aplica todavía |
 | [`04.01 — Pregunta y elección de gráfico`](04_visualization_python/01_question_chart/) | `04_visualization_python` | No aplica todavía |
 | [`04.02 — Matplotlib: Figure y Axes`](04_visualization_python/02_figure_axes/) | `04_visualization_python` | No aplica todavía |
 | [`04.03 — Comparaciones y evolución`](04_visualization_python/03_comparisons_evolution/) | `04_visualization_python` | No aplica todavía |

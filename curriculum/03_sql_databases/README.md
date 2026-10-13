@@ -20,8 +20,8 @@ disponible de las nueve secciones; el aprendizaje requiere evidencia.
 Usamos SQLite y el módulo sqlite3 de Python; un
 servidor PostgreSQL y una aplicación gráfica no son requisitos.
 
-Se prevén tablas sintéticas de clientes, créditos y cortes. Antes de consultar
-se explicará qué representa una fila: un crédito no es lo mismo que un registro
+Se utilizan tablas sintéticas de clientes, créditos y cortes. Antes de consultar
+se explica qué representa una fila: un crédito no es lo mismo que un registro
 crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 
 ## Orden de desarrollo
@@ -46,7 +46,7 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 
 - Base, tabla, fila, columna, clave primaria y foránea; relaciones uno a muchos.
 - Diagrama pequeño de entidades y normalización básica para evitar inconsistencias.
-  Práctica prevista: distinguir crédito, cliente y corte antes de escribir joins.
+  Práctica: distinguir crédito, cliente y corte antes de escribir joins.
 
 <a id="02-primeras-consultas"></a>
 
@@ -55,7 +55,7 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 - Conectar y cerrar explícitamente; consultar una base didáctica preparada.
   SELECT, FROM, WHERE, alias, ORDER BY, LIMIT y DISTINCT.
 - NULL e IS NULL, lógica de condiciones y comparación con faltantes de pandas.
-  Práctica prevista: recuperar un conjunto conocido; orden explícito cuando importe.
+  Práctica: recuperar un conjunto conocido; orden explícito cuando importe.
 
 <a id="03-crear-tablas-y-cargar-datos"></a>
 
@@ -72,7 +72,7 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 ### 04 — Agregaciones e indicadores
 
 - COUNT(*) frente a COUNT(columna), SUM, AVG, GROUP BY y HAVING; efecto de NULL.
-- CASE y porcentajes con numerador/denominador definidos. Práctica prevista:
+- CASE y porcentajes con numerador/denominador definidos. Práctica:
   conciliar un indicador por segmento y tratar el caso sin filas o denominador cero.
 
 <a id="05-relacionar-tablas-con-joins"></a>
@@ -81,14 +81,14 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 
 - INNER JOIN y LEFT JOIN con condiciones explícitas; registros sin correspondencia.
 - Detectar multiplicación de filas, no usar DISTINCT para esconder una unión
-  incorrecta. Práctica prevista: comparar conteos y saldo antes y después del join.
+  incorrecta. Práctica: comparar conteos y saldo antes y después del join.
 
 <a id="06-subconsultas-y-cte"></a>
 
 ### 06 — Subconsultas y CTE
 
 - Subconsultas, EXISTS y WITH para separar selección, agregación y presentación.
-- Práctica prevista: expresar una misma pregunta de dos formas y comprobar
+- Práctica: expresar una misma pregunta de dos formas y comprobar
   resultados equivalentes. CTE recursivas quedan como profundización.
 
 <a id="07-ventanas-para-comparar-registros"></a>
@@ -97,7 +97,7 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 
 - OVER, PARTITION BY, ORDER BY, ROW_NUMBER y LAG con una pregunta concreta.
 - Diferenciar ventana y GROUP BY; ordenar empates y explicar el marco de un
-  acumulado. Práctica prevista: comparar el saldo de un crédito entre cortes.
+  acumulado. Práctica: comparar el saldo de un crédito entre cortes.
 
 <a id="08-escrituras-y-transacciones"></a>
 

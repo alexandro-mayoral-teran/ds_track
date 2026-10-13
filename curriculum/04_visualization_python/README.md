@@ -13,9 +13,9 @@ y su lab están disponibles, con vistas comprobadas y práctica de justificació
 [04 — Distribuciones y relaciones](04_distributions_relationships/README.md) y su lab están disponibles.
 Las secciones 05–09 siguen planificadas; sus enlaces internos describen el alcance.
 
-Pandas ya introduce una primera gráfica. Aquí profundizaremos primero con
+Pandas ya introduce una primera gráfica. Aquí trabajamos primero con
 Matplotlib y después con Altair. No repetiremos la limpieza para cada biblioteca.
-Instalación y versiones se explicarán al introducir cada herramienta.
+Entorno y versiones se explican en las lecciones de cada herramienta.
 
 ## Orden de desarrollo
 
@@ -39,7 +39,7 @@ Instalación y versiones se explicarán al introducir cada herramienta.
 
 - Comparar categorías, evolución, distribución y relación; identificar población,
   unidad de análisis y agregación. Distinguir observación de explicación causal.
-- Práctica prevista: proponer gráficos para preguntas sobre saldo, cortes y segmentos,
+- Práctica: proponer gráficos para preguntas sobre saldo, cortes y segmentos,
   justificando la elección antes de escribir código.
 
 <a id="02-matplotlib-figure-y-axes"></a>
@@ -48,14 +48,14 @@ Instalación y versiones se explicarán al introducir cada herramienta.
 
 - Figure como contenedor y Axes como área de representación; usar subplots y la
   interfaz de objetos para controlar una figura, sin depender del estado anterior.
-- Práctica prevista: reconstruir la gráfica inicial, etiquetar y guardar la salida.
+- Práctica: reconstruir la gráfica inicial, etiquetar y guardar la salida.
 
 <a id="03-comparaciones-y-evolucion"></a>
 
 ### 03 — Comparaciones y evolución
 
 - Barras, orden de categorías y líneas por fecha; valores absolutos frente a tasas.
-- Práctica prevista: comparar segmentos y cortes, revisando períodos faltantes,
+- Práctica: comparar segmentos y cortes, revisando períodos faltantes,
   denominadores y unidades antes de interpretar una tendencia.
 
 <a id="04-distribuciones-y-relaciones"></a>
@@ -63,7 +63,7 @@ Instalación y versiones se explicarán al introducir cada herramienta.
 ### 04 — Distribuciones y relaciones
 
 - Histogramas, intervalos, boxplots y dispersión; distinguir resumen y detalle.
-- Práctica prevista: describir variabilidad y casos extremos sin confundir
+- Práctica: describir variabilidad y casos extremos sin confundir
   correlación con causalidad ni eliminar observaciones por su apariencia.
 
 <a id="05-escalas-etiquetas-y-accesibilidad"></a>

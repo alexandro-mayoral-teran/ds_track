@@ -7,8 +7,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `04_visualization_python`
 - **Estado:** en curso
+- **Sesión de desarrollo:** cerrada el 2026-10-13 después de completar 04.04
+  y revisar la documentación. El módulo 04 continúa en desarrollo.
 - **Foco de desarrollo del material:** distribuciones, variabilidad y relaciones con pares conocidos.
-  Próxima sección por implementar: 04.05 — Escalas, etiquetas y accesibilidad.
+  Próxima sección por implementar:
+  [04.05 — Escalas, etiquetas y accesibilidad](curriculum/04_visualization_python/README.md#05-escalas-etiquetas-y-accesibilidad).
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -17,10 +20,23 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
-- **Siguiente paso de estudio:** leer la
+- **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
   el [lab 03.01](labs/03_sql_databases/01_relational_sqlite/README.md), después de
   completar las prácticas previas.
+
+### Para retomar el desarrollo
+
+El último material disponible es
+[04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md)
+con su [lab](labs/04_visualization_python/04_distributions_relationships/README.md),
+publicado en `main` mediante `2f89128`. Las secciones 04.05–04.09 aún son planes.
+Retomar con 04.05: escalas lineales/logarítmicas y sus condiciones, etiquetas,
+unidades y señales accesibles además del color. Reutilizar las figuras de
+04.02–04.04 para revisar representaciones que puedan inducir a error.
+
+Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
+estado del estudiante sin evidencia de las prácticas.
 
 ## Estados
 
@@ -30,6 +46,9 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 - `Completado`: se alcanzó el criterio de salida definido en el roadmap.
 
 ## Avance por módulo
+
+Esta tabla registra el aprendizaje del estudiante según sus evidencias;
+la disponibilidad del material se resume arriba y no modifica estos estados.
 
 | Nivel | Módulo | Estado | Evidencia de finalización |
 | --- | --- | --- | --- |
@@ -52,6 +71,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-13
+
+- Se cerró la sesión con revisión documental: índices generales, navegación de
+  visualización y punto de retorno a 04.05. Se completó el índice de labs SQL
+  03.03–03.09 y se distinguieron material disponible, planes y evidencias del
+  estudiante. Se comprobaron enlaces locales y fragmentos de los 109 documentos
+  Markdown versionados fuera de las plantillas, junto con git diff --check.
+  AGENTS.md permanece local e ignorado; no se versionan salidas de práctica.
 
 - Se desarrolló 04.04: histogramas e intervalos, cuartiles/cajas/bigotes, valores
   exteriores y dispersión con pares conocidos, sin atribución causal. Incluye

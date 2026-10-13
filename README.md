@@ -126,10 +126,12 @@ pandas comienza con [Series y DataFrame](curriculum/02_pandas/01_series_datafram
 [Análisis y primera gráfica](curriculum/02_pandas/10_analysis_plot/README.md), con sus labs.
 El módulo pandas tiene sus diez lecciones disponibles. SQL dispone de [sus nueve lecciones y labs](curriculum/03_sql_databases/README.md),
 desde el modelo relacional hasta [Integración pandas y SQL](curriculum/03_sql_databases/09_pandas_sql/README.md),
-con indicadores conciliados y gráfica. Visualización comienza con [04.01 — Pregunta y elección de gráfico](curriculum/04_visualization_python/01_question_chart/README.md)
-y su lab, junto con [04.02 — Matplotlib: Figure y Axes](curriculum/04_visualization_python/02_figure_axes/README.md) y [04.03 — Comparaciones y evolución](curriculum/04_visualization_python/03_comparisons_evolution/README.md) y
-[04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md)
-con sus labs; 04.05–04.09 y el módulo 05 conservan su plan de desarrollo;
+con indicadores conciliados y gráfica. Visualización dispone de
+[04.01 — Pregunta y elección de gráfico](curriculum/04_visualization_python/01_question_chart/README.md),
+[04.02 — Matplotlib: Figure y Axes](curriculum/04_visualization_python/02_figure_axes/README.md),
+[04.03 — Comparaciones y evolución](curriculum/04_visualization_python/03_comparisons_evolution/README.md) y
+[04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md),
+con sus labs. Las secciones 04.05–04.09 y el módulo 05 conservan su plan de desarrollo;
 los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

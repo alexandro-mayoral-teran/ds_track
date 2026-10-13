@@ -6,11 +6,13 @@ funciones, archivos CSV y validación/resumen. Sus seis lecciones y labs están
 disponibles. El módulo 02 tiene las diez lecciones de pandas y sus labs, incluido el cierre
 con notebook y gráfica. SQL dispone de [sus nueve lecciones y labs](03_sql_databases/README.md),
 incluido el [cierre de integración pandas/SQL](03_sql_databases/09_pandas_sql/README.md)
-con indicadores y gráfica. [04.01 — Pregunta y elección de gráfico](04_visualization_python/01_question_chart/README.md)
-y su lab están disponibles, junto con [04.02 — Matplotlib: Figure y Axes](04_visualization_python/02_figure_axes/README.md) y [04.03 — Comparaciones y evolución](04_visualization_python/03_comparisons_evolution/README.md) y
-[04.04 — Distribuciones y relaciones](04_visualization_python/04_distributions_relationships/README.md)
-con sus labs. Las secciones 04.05–04.09 y el módulo 05
-tienen objetivos, prácticas y cierres propuestos, todavía sin lecciones ni labs.
+con indicadores y gráfica. Visualización dispone de
+[04.01 — Pregunta y elección de gráfico](04_visualization_python/01_question_chart/README.md),
+[04.02 — Matplotlib: Figure y Axes](04_visualization_python/02_figure_axes/README.md),
+[04.03 — Comparaciones y evolución](04_visualization_python/03_comparisons_evolution/README.md) y
+[04.04 — Distribuciones y relaciones](04_visualization_python/04_distributions_relationships/README.md),
+con sus labs. Las secciones 04.05–04.09 y el módulo 05 tienen objetivos,
+prácticas y cierres propuestos, todavía sin lecciones ni labs.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
