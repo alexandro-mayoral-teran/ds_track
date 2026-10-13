@@ -138,5 +138,4 @@ qué comprueba Python? ¿Por qué UNIQUE debe venir del contrato? ¿Cómo sabes 
 los datos persistieron y que repetir no duplicó filas?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 03.04 — Agregaciones e indicadores](../../../curriculum/03_sql_databases/README.md#04-agregaciones-e-indicadores),
-pendiente de desarrollo; todavía no hay siguiente lab disponible.
+[03.04 — Agregaciones e indicadores](../../../curriculum/03_sql_databases/04_aggregations/README.md).

@@ -7,12 +7,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `03_sql_databases`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** creación de tablas y carga SQL.
-  Próxima sección por implementar: 03.04 — Agregaciones e indicadores.
+- **Foco de desarrollo del material:** agregaciones e indicadores SQL.
+  Próxima sección por implementar: 03.05 — Relacionar tablas con joins.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
-  labs están disponibles; también SQL 03.01–03.03 con base local y labs.
+  labs están disponibles; también SQL 03.01–03.04 con base local y labs.
   Las demás de 03–05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
@@ -52,6 +52,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-12
+
+- Se desarrolló SQL 03.04: COUNT/SUM/AVG, grupos, HAVING, CASE, tasas y cobertura,
+  con script de solo lectura y detalle temporal por segmento. Se conciliaron
+  ocho grupos contra cálculos Python sobre los CSV y se comprobaron vacíos,
+  desconocidos, cero y frontera 30. El siguiente desarrollo es 03.05;
+  el borrador local de joins aún no está publicado ni cuenta como material disponible.
 
 - Se desarrolló SQL 03.03: esquema, tipos y restricciones, INSERT con parámetros,
   carga desde los CSV existentes y lab con soluciones. Se comprobaron rechazos,

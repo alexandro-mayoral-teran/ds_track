@@ -255,8 +255,7 @@ Realiza el [lab 03.03](../../../labs/03_sql_databases/03_create_load/README.md).
 Puedes continuar cuando expliques las restricciones, demuestres carga y
 persistencia, justifiques los rechazos y conserves las entradas. El proyecto
 02_credit_database y sus checkpoints siguen pendientes.
-Después consulta el [plan de 03.04 — Agregaciones e indicadores](../README.md#04-agregaciones-e-indicadores),
-todavía sin lección ni lab.
+Después consulta el [03.04 — Agregaciones e indicadores](../04_aggregations/README.md).
 
 ## Referencias primarias
 
