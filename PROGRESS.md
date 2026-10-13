@@ -5,15 +5,15 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulo activo de desarrollo:** `03_sql_databases`
+- **Módulo activo de desarrollo:** `04_visualization_python`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** cierre de integración pandas y SQL; material de nueve secciones disponible.
-  Próxima sección por implementar: 04.01 — Pregunta y elección de gráfico.
+- **Foco de desarrollo del material:** pregunta analítica y elección de representación visual.
+  Próxima sección por implementar: 04.02 — Matplotlib: Figure y Axes.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
-  Los módulos 04–05 están por desarrollar. Los módulos 06–08 tienen
+  04.01 tiene lección y lab; 04.02–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -52,6 +52,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-12
+
+- Se desarrolló 04.01: pregunta, público, población, unidad y medida; elección
+  entre categorías, tiempo, distribución y relación. Se añadieron vistas propias
+  con bases comprobadas, ficha y lab; la regeneración es opcional. Se revisaron
+  figuras, ausencias, vacíos y conservación de entradas, con las bibliotecas locales
+  disponibles. El siguiente desarrollo es 04.02; el aprendizaje requiere evidencia.
 
 - Se desarrolló SQL 03.09: base reconstruible, read_sql_query parametrizado,
   referencia independiente desde CSV/pandas, tipos y conciliación de detalle/grupos;

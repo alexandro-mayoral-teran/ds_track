@@ -195,5 +195,4 @@ controladas de 03.08: este análisis de lectura no sustituye esa habilidad.
 Registra evidencia y dudas en PROGRESS.md. El módulo puede cerrarse como
 aprendizaje solo cuando demuestres sus criterios, no porque haya nueve lecciones
 disponibles. No hay checkpoint de 02_credit_database implementado.
-Continúa con el [plan de 04 — Visualización en Python](../../../curriculum/04_visualization_python/README.md),
-cuya primera lección todavía está pendiente de desarrollo.
+Continúa con el [04.01 — Pregunta y elección de gráfico](../../../curriculum/04_visualization_python/01_question_chart/README.md).

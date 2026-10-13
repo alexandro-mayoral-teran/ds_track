@@ -294,8 +294,7 @@ Puedes cerrar el aprendizaje del módulo cuando reconstruyas, consultes,
 concilies, expliques la figura y demuestres también las escrituras controladas
 de 03.08. El proyecto 02_credit_database y sus checkpoints siguen pendientes;
 esta práctica integrada no los presenta como implementados.
-Después continúa con el [plan de 04 — Visualización en Python](../../04_visualization_python/README.md):
-su primera lección aún está pendiente de desarrollo.
+Después continúa con el [04.01 — Pregunta y elección de gráfico](../../04_visualization_python/01_question_chart/README.md).
 
 ## Referencias primarias
 

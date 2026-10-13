@@ -6,8 +6,9 @@ funciones, archivos CSV y validación/resumen. Sus seis lecciones y labs están
 disponibles. El módulo 02 tiene las diez lecciones de pandas y sus labs, incluido el cierre
 con notebook y gráfica. SQL dispone de [sus nueve lecciones y labs](03_sql_databases/README.md),
 incluido el [cierre de integración pandas/SQL](03_sql_databases/09_pandas_sql/README.md)
-con indicadores y gráfica. Los módulos 04–05 tienen objetivos, prácticas y cierres propuestos,
-todavía sin lecciones ejecutables ni labs.
+con indicadores y gráfica. [04.01 — Pregunta y elección de gráfico](04_visualization_python/01_question_chart/README.md)
+y su lab están disponibles. Las secciones 04.02–04.09 y el módulo 05
+tienen objetivos, prácticas y cierres propuestos, todavía sin lecciones ni labs.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
