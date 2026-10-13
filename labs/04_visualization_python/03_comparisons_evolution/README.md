@@ -173,5 +173,4 @@ la solución. Reflexiona: ¿qué afirmación dejó de ser válida al cambiar la 
 Registra evidencia y dudas en PROGRESS.md; producir contenido no acredita aprendizaje.
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.04 — Distribuciones y relaciones](../../../curriculum/04_visualization_python/README.md#04-distribuciones-y-relaciones),
-todavía pendiente de desarrollo.
+[04.04 — Distribuciones y relaciones](../../../curriculum/04_visualization_python/04_distributions_relationships/README.md).

@@ -10,7 +10,8 @@ de [pandas](../02_pandas/README.md) y [SQL](../03_sql_databases/README.md).
 y su lab están disponibles, con vistas comprobadas y práctica de justificación.
 [02 — Matplotlib: Figure y Axes](02_figure_axes/README.md) y su lab también están disponibles.
 [03 — Comparaciones y evolución](03_comparisons_evolution/README.md) y su lab están disponibles.
-Las secciones 04–09 siguen planificadas; sus enlaces internos describen el alcance.
+[04 — Distribuciones y relaciones](04_distributions_relationships/README.md) y su lab están disponibles.
+Las secciones 05–09 siguen planificadas; sus enlaces internos describen el alcance.
 
 Pandas ya introduce una primera gráfica. Aquí profundizaremos primero con
 Matplotlib y después con Altair. No repetiremos la limpieza para cada biblioteca.
@@ -23,7 +24,7 @@ Instalación y versiones se explicarán al introducir cada herramienta.
 | 1 | [Pregunta y elección de gráfico](01_question_chart/README.md) | Esencial | Justificar una representación según la pregunta |
 | 2 | [Matplotlib: Figure y Axes](02_figure_axes/README.md) | Esencial | Crear y guardar una figura desde código |
 | 3 | [Comparaciones y evolución](03_comparisons_evolution/README.md) | Esencial | Construir barras y líneas con unidades |
-| 4 | [Distribuciones y relaciones](#04-distribuciones-y-relaciones) | Esencial | Interpretar dispersión y variabilidad |
+| 4 | [Distribuciones y relaciones](04_distributions_relationships/README.md) | Esencial | Interpretar dispersión y variabilidad |
 | 5 | [Escalas, etiquetas y accesibilidad](#05-escalas-etiquetas-y-accesibilidad) | Esencial | Revisar una figura que puede inducir a error |
 | 6 | [Composición y exportación](#06-composicion-y-exportacion) | Práctica | Comparar vistas y producir una figura legible |
 | 7 | [Altair: visualización declarativa](#07-altair-visualizacion-declarativa) | Práctica | Expresar datos, marcas y codificaciones |
@@ -114,7 +115,8 @@ Se prevén labs 04.01–04.09; el 04.08 será opcional.
 El [lab 04.01](../../labs/04_visualization_python/01_question_chart/README.md)
 y el [lab 04.02](../../labs/04_visualization_python/02_figure_axes/README.md)
 y el [lab 04.03](../../labs/04_visualization_python/03_comparisons_evolution/README.md)
-están disponibles; 04.04–04.09 siguen pendientes.
+y el [lab 04.04](../../labs/04_visualization_python/04_distributions_relationships/README.md)
+están disponibles; 04.05–04.09 siguen pendientes.
 Se ampliarán los productos previstos en [proyectos](../../projects/README.md)
 01_clean_credit_data y 02_credit_database, sin crear un proyecto adicional obligatorio.
 

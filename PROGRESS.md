@@ -7,13 +7,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `04_visualization_python`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** comparaciones por segmento y fecha con bases explícitas.
-  Próxima sección por implementar: 04.04 — Distribuciones y relaciones.
+- **Foco de desarrollo del material:** distribuciones, variabilidad y relaciones con pares conocidos.
+  Próxima sección por implementar: 04.05 — Escalas, etiquetas y accesibilidad.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
-  04.01–04.03 tienen lecciones y labs; 04.04–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
+  04.01–04.04 tienen lecciones y labs; 04.05–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -50,6 +50,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 | 14 | Proyecto reproducible | No iniciado | — |
 
 ## Bitácora
+
+### 2026-10-13
+
+- Se desarrolló 04.04: histogramas e intervalos, cuartiles/cajas/bigotes, valores
+  exteriores y dispersión con pares conocidos, sin atribución causal. Incluye
+  cuatro figuras, script con siete tablas de comprobación y lab con soluciones.
+  Se verificaron frecuencias, cuartiles, coordenadas, exclusiones, fronteras,
+  vacíos, ausencias/cero, exportaciones y fuentes intactas. Runtime local:
+  pandas 2.3.3 y Matplotlib 3.10.6; referencia 3.10.7 conservada. Sigue 04.05;
+  el material disponible no acredita aprendizaje.
 
 ### 2026-10-12
 

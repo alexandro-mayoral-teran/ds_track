@@ -349,8 +349,8 @@ escala, intervalo y unidad. Si totales y pares discrepan, comprueba identidad
 de los créditos antes de sospechar que la gráfica es incorrecta.
 
 No hay checkpoint de proyecto implementado. La siguiente sección es
-[04.04 — Distribuciones y relaciones](../README.md#04-distribuciones-y-relaciones),
-todavía planificada: explorar variabilidad detrás de estos resúmenes.
+[04.04 — Distribuciones y relaciones](../04_distributions_relationships/README.md),
+para explorar variabilidad detrás de estos resúmenes.
 
 ## Referencias y atribución
 

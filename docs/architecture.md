@@ -86,14 +86,14 @@ crecerá de manera intencional:
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
-los niveles 04–14 conservan planificación, salvo 04.01–04.03, disponibles con lecciones y labs;
+los niveles 04–14 conservan planificación, salvo 04.01–04.04, disponibles con lecciones y labs;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
 ### Desarrollo previsto de los módulos 02–05
 
 Los README de cada módulo contienen el orden numerado y el alcance de cada
-sección. Los módulos 02 y 03 disponen de sus lecciones y labs; 04.01–04.03 están disponibles con lecciones y labs; las demás secciones de 04–05
+sección. Los módulos 02 y 03 disponen de sus lecciones y labs; 04.01–04.04 están disponibles con lecciones y labs; las demás secciones de 04–05
 conservan planes de desarrollo. pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -137,6 +137,10 @@ con suma desconocida y permite dos paneles como extensión. No agrega dependenci
 importe, tasa y cobertura. Lee las fuentes originales y exporta tablas y tres
 figuras en una carpeta nueva. Una serie didáctica independiente muestra huecos
 mensuales, presencia de fila y cero sin imputar saldos. No agrega dependencias.
+04.04 conserva el detalle conocido al explorar variabilidad: histogramas con
+bordes comprobados, cajas con cuartiles/bigotes y puntos, dispersión con variables
+conocidas del mismo registro. Exporta exclusiones por variable y no confunde
+un valor exterior con un error ni asociación con causa. No agrega dependencias.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.
