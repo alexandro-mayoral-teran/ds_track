@@ -179,5 +179,4 @@ decisión de agrupación? ¿Qué dato exterior conservarías y por qué? ¿Cómo
 comprobarías un par si solo vieras una nube sin identificadores?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.05 — Escalas, etiquetas y accesibilidad](../../../curriculum/04_visualization_python/README.md#05-escalas-etiquetas-y-accesibilidad),
-todavía pendiente de desarrollo.
+[04.05 — Escalas, etiquetas y accesibilidad](../../../curriculum/04_visualization_python/05_scales_labels_accessibility/README.md).

@@ -129,9 +129,10 @@ desde el modelo relacional hasta [Integración pandas y SQL](curriculum/03_sql_d
 con indicadores conciliados y gráfica. Visualización dispone de
 [04.01 — Pregunta y elección de gráfico](curriculum/04_visualization_python/01_question_chart/README.md),
 [04.02 — Matplotlib: Figure y Axes](curriculum/04_visualization_python/02_figure_axes/README.md),
-[04.03 — Comparaciones y evolución](curriculum/04_visualization_python/03_comparisons_evolution/README.md) y
-[04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md),
-con sus labs. Las secciones 04.05–04.09 y el módulo 05 conservan su plan de desarrollo;
+[04.03 — Comparaciones y evolución](curriculum/04_visualization_python/03_comparisons_evolution/README.md),
+[04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md) y
+[04.05 — Escalas, etiquetas y accesibilidad](curriculum/04_visualization_python/05_scales_labels_accessibility/README.md),
+con sus labs. Las secciones 04.06–04.09 y el módulo 05 conservan su plan de desarrollo;
 los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

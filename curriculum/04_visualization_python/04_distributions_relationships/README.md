@@ -384,8 +384,8 @@ ausencias y límites. Debes poder conservar un valor exterior válido y justific
 por qué las variables de dispersión permanecen emparejadas.
 
 No hay checkpoint de proyecto implementado. Sigue el
-[plan de 04.05 — Escalas, etiquetas y accesibilidad](../README.md#05-escalas-etiquetas-y-accesibilidad),
-todavía pendiente de desarrollo. El módulo conserva otras cinco secciones
+[04.05 — Escalas, etiquetas y accesibilidad](../05_scales_labels_accessibility/README.md).
+El módulo conserva otras cuatro secciones
 planificadas; esta lección no representa su cierre completo.
 
 ## Referencias y atribución

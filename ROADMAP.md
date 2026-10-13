@@ -166,9 +166,10 @@ parte de la pregunta, desarrolla Matplotlib y después Altair; la interacción e
 opcional. Están disponibles
 [04.01 — Pregunta y elección de gráfico](curriculum/04_visualization_python/01_question_chart/README.md),
 [04.02 — Matplotlib: Figure y Axes](curriculum/04_visualization_python/02_figure_axes/README.md),
-[04.03 — Comparaciones y evolución](curriculum/04_visualization_python/03_comparisons_evolution/README.md) y
-[04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md),
-con sus labs; 04.05–04.09 están por desarrollar.
+[04.03 — Comparaciones y evolución](curriculum/04_visualization_python/03_comparisons_evolution/README.md),
+[04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md) y
+[04.05 — Escalas, etiquetas y accesibilidad](curriculum/04_visualization_python/05_scales_labels_accessibility/README.md),
+con sus labs; 04.06–04.09 están por desarrollar.
 
 - Esencial: pregunta, gráfico adecuado, escalas, unidades, etiquetas y color accesible.
 - Esencial: Matplotlib, Figure/Axes, barras, líneas y distribuciones.

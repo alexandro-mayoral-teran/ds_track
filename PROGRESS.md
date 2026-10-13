@@ -7,16 +7,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `04_visualization_python`
 - **Estado:** en curso
-- **Sesión de desarrollo:** cerrada el 2026-10-13 después de completar 04.04
-  y revisar la documentación. El módulo 04 continúa en desarrollo.
-- **Foco de desarrollo del material:** distribuciones, variabilidad y relaciones con pares conocidos.
+- **Sesión de desarrollo:** 2026-10-13, sección 04.05 disponible con lección y lab.
+  El módulo 04 continúa en desarrollo.
+- **Foco de desarrollo del material:** escalas, etiquetas, cobertura y accesibilidad.
   Próxima sección por implementar:
-  [04.05 — Escalas, etiquetas y accesibilidad](curriculum/04_visualization_python/README.md#05-escalas-etiquetas-y-accesibilidad).
+  [04.06 — Composición y exportación](curriculum/04_visualization_python/README.md#06-composicion-y-exportacion).
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
-  04.01–04.04 tienen lecciones y labs; 04.05–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
+  04.01–04.05 tienen lecciones y labs; 04.06–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -28,12 +28,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md)
-con su [lab](labs/04_visualization_python/04_distributions_relationships/README.md),
-publicado en `main` mediante `2f89128`. Las secciones 04.05–04.09 aún son planes.
-Retomar con 04.05: escalas lineales/logarítmicas y sus condiciones, etiquetas,
-unidades y señales accesibles además del color. Reutilizar las figuras de
-04.02–04.04 para revisar representaciones que puedan inducir a error.
+[04.05 — Escalas, etiquetas y accesibilidad](curriculum/04_visualization_python/05_scales_labels_accessibility/README.md)
+con su [lab](labs/04_visualization_python/05_scales_labels_accessibility/README.md).
+Las secciones 04.06–04.09 aún son planes. Retomar con 04.06: vistas múltiples,
+ejes comparables, anotaciones, tamaño, resolución y exportación PNG/SVG.
+Reutilizar las figuras y las tablas comprobadas de 04.02–04.05.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -71,6 +70,14 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-13
+
+- Se desarrolló 04.05: límites y origen de barras, escala lineal/logarítmica,
+  exclusiones trazables, unidades, cobertura, formas/tramas y descripción textual.
+  Incluye cuatro figuras, cinco CSV reconstruibles y lab con soluciones razonadas.
+  Se verificaron medianas contra los CSV originales, coordenadas, ceros, ausencias,
+  vacíos, partición log y conservación de fuentes/salidas. Runtime local: pandas
+  2.3.3 y Matplotlib 3.10.6; referencia 3.10.7 conservada. Sigue 04.06;
+  la disponibilidad del material no acredita aprendizaje del estudiante.
 
 - Se cerró la sesión con revisión documental: índices generales, navegación de
   visualización y punto de retorno a 04.05. Se completó el índice de labs SQL

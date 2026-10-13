@@ -49,6 +49,7 @@ reglas de enlace están en
 | [`04.02 — Matplotlib: Figure y Axes`](04_visualization_python/02_figure_axes/) | `04_visualization_python` | No aplica todavía |
 | [`04.03 — Comparaciones y evolución`](04_visualization_python/03_comparisons_evolution/) | `04_visualization_python` | No aplica todavía |
 | [`04.04 — Distribuciones y relaciones`](04_visualization_python/04_distributions_relationships/) | `04_visualization_python` | No aplica todavía |
+| [`04.05 — Escalas, etiquetas y accesibilidad`](04_visualization_python/05_scales_labels_accessibility/) | `04_visualization_python` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

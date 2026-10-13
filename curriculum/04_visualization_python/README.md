@@ -11,7 +11,8 @@ y su lab están disponibles, con vistas comprobadas y práctica de justificació
 [02 — Matplotlib: Figure y Axes](02_figure_axes/README.md) y su lab también están disponibles.
 [03 — Comparaciones y evolución](03_comparisons_evolution/README.md) y su lab están disponibles.
 [04 — Distribuciones y relaciones](04_distributions_relationships/README.md) y su lab están disponibles.
-Las secciones 05–09 siguen planificadas; sus enlaces internos describen el alcance.
+[05 — Escalas, etiquetas y accesibilidad](05_scales_labels_accessibility/README.md) y su lab están disponibles.
+Las secciones 06–09 siguen planificadas; sus enlaces internos describen el alcance.
 
 Pandas ya introduce una primera gráfica. Aquí trabajamos primero con
 Matplotlib y después con Altair. No repetiremos la limpieza para cada biblioteca.
@@ -25,7 +26,7 @@ Entorno y versiones se explican en las lecciones de cada herramienta.
 | 2 | [Matplotlib: Figure y Axes](02_figure_axes/README.md) | Esencial | Crear y guardar una figura desde código |
 | 3 | [Comparaciones y evolución](03_comparisons_evolution/README.md) | Esencial | Construir barras y líneas con unidades |
 | 4 | [Distribuciones y relaciones](04_distributions_relationships/README.md) | Esencial | Interpretar dispersión y variabilidad |
-| 5 | [Escalas, etiquetas y accesibilidad](#05-escalas-etiquetas-y-accesibilidad) | Esencial | Revisar una figura que puede inducir a error |
+| 5 | [Escalas, etiquetas y accesibilidad](05_scales_labels_accessibility/README.md) | Esencial | Revisar una figura que puede inducir a error |
 | 6 | [Composición y exportación](#06-composicion-y-exportacion) | Práctica | Comparar vistas y producir una figura legible |
 | 7 | [Altair: visualización declarativa](#07-altair-visualizacion-declarativa) | Práctica | Expresar datos, marcas y codificaciones |
 | 8 | [Interacción con Altair](#08-interaccion-con-altair) | Extensión | Explorar un indicador con filtros o selección |
@@ -72,7 +73,7 @@ Entorno y versiones se explican en las lecciones de cada herramienta.
 
 - Límites de ejes, escala lineal/logarítmica y sus condiciones; bases de comparación.
   Títulos informativos, leyendas, formatos y paletas legibles.
-- Práctica prevista: corregir una figura engañosa y explicar qué cambió. Usar
+- Práctica disponible: corregir una figura engañosa y explicar qué cambió. Usar
   señales adicionales al color y documentar incertidumbre o cobertura limitada.
 
 <a id="06-composicion-y-exportacion"></a>
@@ -116,7 +117,8 @@ El [lab 04.01](../../labs/04_visualization_python/01_question_chart/README.md)
 y el [lab 04.02](../../labs/04_visualization_python/02_figure_axes/README.md)
 y el [lab 04.03](../../labs/04_visualization_python/03_comparisons_evolution/README.md)
 y el [lab 04.04](../../labs/04_visualization_python/04_distributions_relationships/README.md)
-están disponibles; 04.05–04.09 siguen pendientes.
+y el [lab 04.05](../../labs/04_visualization_python/05_scales_labels_accessibility/README.md)
+están disponibles; 04.06–04.09 siguen pendientes.
 Se ampliarán los productos previstos en [proyectos](../../projects/README.md)
 01_clean_credit_data y 02_credit_database, sin crear un proyecto adicional obligatorio.
 
