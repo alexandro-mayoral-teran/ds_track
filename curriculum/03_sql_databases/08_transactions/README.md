@@ -446,8 +446,7 @@ Realiza el [lab 03.08](../../../labs/03_sql_databases/08_transactions/README.md)
 Puedes continuar cuando demuestres selección previa, alcance comprobado,
 confirmación/reversión, carga repetible y persistencia con las fuentes intactas.
 No hay checkpoint de proyecto implementado. Después consulta el
-[plan de 03.09 — Integración pandas y SQL](../README.md#09-integracion-pandas-y-sql),
-todavía sin lección ni siguiente lab disponible.
+[03.09 — Integración pandas y SQL](../09_pandas_sql/README.md).
 
 ## Referencias primarias
 

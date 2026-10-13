@@ -7,13 +7,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `03_sql_databases`
 - **Estado:** en curso
-- **Foco de desarrollo del material:** escrituras controladas y transacciones SQL.
-  Próxima sección por implementar: 03.09 — Integración pandas y SQL.
+- **Foco de desarrollo del material:** cierre de integración pandas y SQL; material de nueve secciones disponible.
+  Próxima sección por implementar: 04.01 — Pregunta y elección de gráfico.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
-  labs están disponibles; también SQL 03.01–03.08 con base local y labs.
-  Las demás de 03–05 están por desarrollar. Los módulos 06–08 tienen
+  labs están disponibles; también SQL 03.01–03.09 con base local y labs.
+  Los módulos 04–05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -52,6 +52,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## Bitácora
 
 ### 2026-10-12
+
+- Se desarrolló SQL 03.09: base reconstruible, read_sql_query parametrizado,
+  referencia independiente desde CSV/pandas, tipos y conciliación de detalle/grupos;
+  exportaciones recargadas y figura con cobertura. SQL tiene nueve lecciones y labs;
+  el estudiante aún requiere evidencias. El siguiente desarrollo es 04.01.
+  Se verificó con pandas 2.3.3 y Matplotlib 3.10.6 disponibles, contrastando la API
+  de referencia 3.10.7; no se modificó el entorno local incompleto ni las dependencias.
 
 - Se desarrolló SQL 03.08: copia separada, UPDATE/DELETE con selección previa,
   control explícito, commit/rollback, carga repetible y conflictos; lección amplia

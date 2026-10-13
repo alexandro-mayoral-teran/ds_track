@@ -293,5 +293,4 @@ Explica: ¿por qué el fallo de una sentencia no garantiza revertir las anterior
 ¿Qué cambios quedan si la ejecución falla entre dos decisiones ya confirmadas?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 03.09 — Integración pandas y SQL](../../../curriculum/03_sql_databases/README.md#09-integracion-pandas-y-sql),
-pendiente de desarrollo; todavía no hay siguiente lab disponible.
+[03.09 — Integración pandas y SQL](../../../curriculum/03_sql_databases/09_pandas_sql/README.md).

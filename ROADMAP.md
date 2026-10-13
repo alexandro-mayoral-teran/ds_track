@@ -134,7 +134,9 @@ y [Relacionar tablas con joins](curriculum/03_sql_databases/05_joins/README.md)
 y [Subconsultas y CTE](curriculum/03_sql_databases/06_subqueries_cte/README.md)
 y [Ventanas para comparar registros](curriculum/03_sql_databases/07_windows/README.md)
 y [Escrituras y transacciones](curriculum/03_sql_databases/08_transactions/README.md)
-con sus labs están disponibles; la sección 09 está por desarrollar.
+y [Integración pandas y SQL](curriculum/03_sql_databases/09_pandas_sql/README.md)
+con sus labs están disponibles. Las nueve secciones tienen material;
+la finalización del aprendizaje requiere evidencia de los criterios.
 
 - Esencial: modelo relacional, tablas, llaves, restricciones y normalización básica.
 - Esencial: selección, filtros, agregaciones y joins con SQLite.

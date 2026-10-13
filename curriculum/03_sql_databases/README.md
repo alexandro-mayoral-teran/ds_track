@@ -15,7 +15,8 @@ y el lab 03.04 también están disponibles, junto con
 [06 — Subconsultas y CTE](06_subqueries_cte/README.md) y su lab también están disponibles.
 [07 — Ventanas para comparar registros](07_windows/README.md) y su lab también están disponibles.
 [08 — Escrituras y transacciones](08_transactions/README.md) y su lab también están disponibles.
-La sección 09 está planificada; su enlace interno describe el alcance previsto.
+[09 — Integración pandas y SQL](09_pandas_sql/README.md) y su lab cierran el material
+disponible de las nueve secciones; el aprendizaje requiere evidencia.
 Usamos SQLite y el módulo sqlite3 de Python; un
 servidor PostgreSQL y una aplicación gráfica no son requisitos.
 
@@ -35,7 +36,7 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 | 6 | [Subconsultas y CTE](06_subqueries_cte/README.md) | Práctica | Dividir una consulta en pasos legibles |
 | 7 | [Ventanas para comparar registros](07_windows/README.md) | Práctica | Comparar cortes sin perder el detalle |
 | 8 | [Escrituras y transacciones](08_transactions/README.md) | Esencial | Confirmar o revertir cambios de forma explícita |
-| 9 | [Integración pandas y SQL](#09-integracion-pandas-y-sql) | Práctica de cierre | Conciliar un indicador entre herramientas |
+| 9 | [Integración pandas y SQL](09_pandas_sql/README.md) | Práctica de cierre | Conciliar un indicador entre herramientas |
 
 ## Alcance de cada sección
 
@@ -126,7 +127,9 @@ y el [lab 03.05](../../labs/03_sql_databases/05_joins/README.md)
 y el [lab 03.06](../../labs/03_sql_databases/06_subqueries_cte/README.md)
 y el [lab 03.07](../../labs/03_sql_databases/07_windows/README.md)
 y el [lab 03.08](../../labs/03_sql_databases/08_transactions/README.md)
-están disponibles; 03.09 está pendiente de desarrollo.
+y el [lab 03.09](../../labs/03_sql_databases/09_pandas_sql/README.md)
+están disponibles. El material de las nueve secciones está implementado;
+la finalización del aprendizaje requiere demostrar los criterios de salida.
 El proyecto previsto 02_credit_database aparece en [proyectos](../../projects/README.md);
 su carpeta y checkpoints están por implementar.
 
