@@ -276,8 +276,7 @@ Puedes avanzar cuando redactes una ficha verificable, elijas una representación
 con sus bases, justifiques una alternativa y escribas una observación con su
 limitación. Un boceto y la ficha bastan; no necesitas programar cuatro gráficos.
 Los proyectos y checkpoints visuales siguen pendientes.
-Después consulta el [plan de 04.02 — Matplotlib: Figure y Axes](../README.md#02-matplotlib-figure-y-axes),
-todavía sin lección ni siguiente lab disponible.
+Después consulta el [04.02 — Matplotlib: Figure y Axes](../02_figure_axes/README.md).
 
 ## Referencias primarias y lecturas abiertas
 

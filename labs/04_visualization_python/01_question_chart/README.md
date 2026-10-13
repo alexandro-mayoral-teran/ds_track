@@ -152,5 +152,4 @@ Explica: ¿qué dato perdiste al agrupar? ¿Por qué igualar conteos no garantiz
 igualar bases? ¿Cuándo elegirías una tabla? ¿Qué afirmación causal no puedes
 defender con estas variables? No hay checkpoint de proyecto implementado.
 
-Continúa con el [plan de 04.02 — Matplotlib: Figure y Axes](../../../curriculum/04_visualization_python/README.md#02-matplotlib-figure-y-axes),
-pendiente de desarrollo; todavía no hay siguiente lab disponible.
+Continúa con el [04.02 — Matplotlib: Figure y Axes](../../../curriculum/04_visualization_python/02_figure_axes/README.md).

@@ -8,7 +8,8 @@ de [pandas](../02_pandas/README.md) y [SQL](../03_sql_databases/README.md).
 
 **Estado:** [01 — Pregunta y elección de gráfico](01_question_chart/README.md)
 y su lab están disponibles, con vistas comprobadas y práctica de justificación.
-Las secciones 02–09 siguen planificadas; sus enlaces internos describen el alcance.
+[02 — Matplotlib: Figure y Axes](02_figure_axes/README.md) y su lab también están disponibles.
+Las secciones 03–09 siguen planificadas; sus enlaces internos describen el alcance.
 
 Pandas ya introduce una primera gráfica. Aquí profundizaremos primero con
 Matplotlib y después con Altair. No repetiremos la limpieza para cada biblioteca.
@@ -19,7 +20,7 @@ Instalación y versiones se explicarán al introducir cada herramienta.
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
 | 1 | [Pregunta y elección de gráfico](01_question_chart/README.md) | Esencial | Justificar una representación según la pregunta |
-| 2 | [Matplotlib: Figure y Axes](#02-matplotlib-figure-y-axes) | Esencial | Crear y guardar una figura desde código |
+| 2 | [Matplotlib: Figure y Axes](02_figure_axes/README.md) | Esencial | Crear y guardar una figura desde código |
 | 3 | [Comparaciones y evolución](#03-comparaciones-y-evolucion) | Esencial | Construir barras y líneas con unidades |
 | 4 | [Distribuciones y relaciones](#04-distribuciones-y-relaciones) | Esencial | Interpretar dispersión y variabilidad |
 | 5 | [Escalas, etiquetas y accesibilidad](#05-escalas-etiquetas-y-accesibilidad) | Esencial | Revisar una figura que puede inducir a error |
@@ -110,7 +111,8 @@ Instalación y versiones se explicarán al introducir cada herramienta.
 
 Se prevén labs 04.01–04.09; el 04.08 será opcional.
 El [lab 04.01](../../labs/04_visualization_python/01_question_chart/README.md)
-está disponible; 04.02–04.09 siguen pendientes.
+y el [lab 04.02](../../labs/04_visualization_python/02_figure_axes/README.md)
+están disponibles; 04.03–04.09 siguen pendientes.
 Se ampliarán los productos previstos en [proyectos](../../projects/README.md)
 01_clean_credit_data y 02_credit_database, sin crear un proyecto adicional obligatorio.
 

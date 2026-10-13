@@ -164,7 +164,8 @@ su visualización y organización; ese análisis consolidado se reutiliza al pas
 El [plan de nueve secciones](curriculum/04_visualization_python/README.md#orden-de-desarrollo)
 parte de la pregunta, desarrolla Matplotlib y después Altair; la interacción es
 opcional. [04.01 — Pregunta y elección de gráfico](curriculum/04_visualization_python/01_question_chart/README.md)
-y su lab están disponibles; 04.02–04.09 están por desarrollar.
+y [04.02 — Matplotlib: Figure y Axes](curriculum/04_visualization_python/02_figure_axes/README.md)
+con sus labs están disponibles; 04.03–04.09 están por desarrollar.
 
 - Esencial: pregunta, gráfico adecuado, escalas, unidades, etiquetas y color accesible.
 - Esencial: Matplotlib, Figure/Axes, barras, líneas y distribuciones.
