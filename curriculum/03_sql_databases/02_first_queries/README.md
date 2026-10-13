@@ -191,8 +191,7 @@ Realiza el [lab 03.02](../../../labs/03_sql_databases/02_first_queries/README.md
 Puedes avanzar cuando justifiques unidad, columnas, filtros, orden y resultado;
 distingas cero, desconocido y selección vacía; y cierres tu conexión. El proyecto
 y sus checkpoints siguen pendientes. Después consulta el
-[plan de 03.03 — Crear tablas y cargar datos](../README.md#03-crear-tablas-y-cargar-datos),
-aún no desarrollado.
+[03.03 — Crear tablas y cargar datos](../03_create_load/README.md).
 
 ## Referencias primarias
 

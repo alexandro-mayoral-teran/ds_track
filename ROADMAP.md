@@ -128,7 +128,8 @@ El [plan de nueve secciones](curriculum/03_sql_databases/README.md#orden-de-desa
 conecta modelo, consultas, carga, indicadores, joins, CTE, ventanas, transacciones
 y conciliación con pandas. [Modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md)
 y [Primeras consultas](curriculum/03_sql_databases/02_first_queries/README.md)
-con sus labs están disponibles; las secciones 03–09 están por desarrollar.
+y [Crear tablas y cargar datos](curriculum/03_sql_databases/03_create_load/README.md)
+con sus labs están disponibles; las secciones 04–09 están por desarrollar.
 
 - Esencial: modelo relacional, tablas, llaves, restricciones y normalización básica.
 - Esencial: selección, filtros, agregaciones y joins con SQLite.

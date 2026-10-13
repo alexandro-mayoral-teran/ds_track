@@ -85,7 +85,7 @@ crecerá de manera intencional:
 
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
-el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. Los niveles 03–14 conservan planificación, salvo 03.01–03.02, ya disponibles con base local y labs;
+el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. Los niveles 03–14 conservan planificación, salvo 03.01–03.03, ya disponibles con base local y labs;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -99,6 +99,8 @@ preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
 base en solo lectura, con filtros, orden, parámetros y tratamiento de NULL; usa sqlite3 estándar, sin
 servidor ni nuevas dependencias. La exploración se hace en solo lectura y la
 preparación comprueba bases existentes sin reiniciarlas.
+SQL 03.03 construye una base de práctica separada desde las mismas fuentes,
+comprueba restricciones en memoria y conserva bases existentes en solo lectura.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

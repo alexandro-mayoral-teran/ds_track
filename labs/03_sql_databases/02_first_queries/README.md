@@ -160,5 +160,4 @@ Repite la ejecución: el resultado ordenado debe ser el mismo y la base debe seg
 intacta. ¿Qué dato necesitarías para clasificar un atraso desconocido? ¿Qué pregunta
 responde una lista de fechas distintas? No hay checkpoint implementado todavía.
 
-Continúa con el [plan de 03.03 — Crear tablas y cargar datos](../../../curriculum/03_sql_databases/README.md#03-crear-tablas-y-cargar-datos),
-pendiente de desarrollo; no hay un siguiente lab disponible aún.
+Continúa con la [lección 03.03 — Crear tablas y cargar datos](../../../curriculum/03_sql_databases/03_create_load/README.md).
