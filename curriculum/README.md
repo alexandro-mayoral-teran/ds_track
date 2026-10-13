@@ -8,7 +8,8 @@ con notebook y gráfica. SQL dispone de [03.01 — Modelo relacional y SQLite](0
 y [03.02 — Primeras consultas](03_sql_databases/02_first_queries/README.md),
 ambas con lab, y [03.03 — Crear tablas y cargar datos](03_sql_databases/03_create_load/README.md)
 con su lab, junto con [03.04 — Agregaciones e indicadores](03_sql_databases/04_aggregations/README.md)
-y su lab. Las demás secciones de 03–05 tienen objetivos, prácticas y cierres propuestos,
+y su lab. [03.05 — Relacionar tablas con joins](03_sql_databases/05_joins/README.md)
+también tiene lección y lab. Las demás secciones de 03–05 tienen objetivos, prácticas y cierres propuestos,
 todavía sin lecciones ejecutables ni labs.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10

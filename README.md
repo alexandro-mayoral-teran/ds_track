@@ -129,7 +129,8 @@ El módulo pandas tiene sus diez lecciones disponibles. SQL comienza con
 y [Primeras consultas](curriculum/03_sql_databases/02_first_queries/README.md),
 ambas con lab, y [Crear tablas y cargar datos](curriculum/03_sql_databases/03_create_load/README.md)
 con su lab, junto con [Agregaciones e indicadores](curriculum/03_sql_databases/04_aggregations/README.md)
-y su lab. Las demás secciones de 03–05 conservan su plan de desarrollo;
+y su lab. [Relacionar tablas con joins](curriculum/03_sql_databases/05_joins/README.md)
+también tiene lección y lab. Las demás secciones de 03–05 conservan su plan de desarrollo;
 los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

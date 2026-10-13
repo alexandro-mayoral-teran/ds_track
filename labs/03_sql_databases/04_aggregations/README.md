@@ -188,5 +188,4 @@ si filtras los NULL antes de agrupar? ¿Qué demuestra cobertura cero?
 ¿Por qué una suma conocida necesita su cantidad de conocidos?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 03.05 — Relacionar tablas con joins](../../../curriculum/03_sql_databases/README.md#05-relacionar-tablas-con-joins),
-pendiente de publicación; aún no hay siguiente lab publicado.
+[03.05 — Relacionar tablas con joins](../../../curriculum/03_sql_databases/05_joins/README.md).

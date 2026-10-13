@@ -328,8 +328,7 @@ Realiza el [lab 03.04](../../../labs/03_sql_databases/04_aggregations/README.md)
 Puedes avanzar cuando justifiques unidad, universo y denominadores, concilies
 los grupos y distingas cero, vacío y desconocido. El proyecto y sus checkpoints
 siguen pendientes. Continúa con el
-[plan de 03.05 — Relacionar tablas con joins](../README.md#05-relacionar-tablas-con-joins),
-todavía sin lección publicada ni siguiente lab disponible.
+[03.05 — Relacionar tablas con joins](../05_joins/README.md).
 
 ## Referencias primarias
 
