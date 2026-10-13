@@ -131,7 +131,8 @@ y [Primeras consultas](curriculum/03_sql_databases/02_first_queries/README.md)
 y [Crear tablas y cargar datos](curriculum/03_sql_databases/03_create_load/README.md)
 y [Agregaciones e indicadores](curriculum/03_sql_databases/04_aggregations/README.md)
 y [Relacionar tablas con joins](curriculum/03_sql_databases/05_joins/README.md)
-con sus labs están disponibles; las secciones 06–09 están por desarrollar.
+y [Subconsultas y CTE](curriculum/03_sql_databases/06_subqueries_cte/README.md)
+con sus labs están disponibles; las secciones 07–09 están por desarrollar.
 
 - Esencial: modelo relacional, tablas, llaves, restricciones y normalización básica.
 - Esencial: selección, filtros, agregaciones y joins con SQLite.

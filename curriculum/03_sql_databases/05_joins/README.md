@@ -359,8 +359,8 @@ Puedes continuar cuando expliques unidad y cardinalidad, conserves el universo
 elegido, detectes ausencia con una clave derecha y demuestres conciliación sin
 DISTINCT para esconder errores. No hay checkpoint de proyecto implementado.
 Después, el
-[plan de 03.06 — Subconsultas y CTE](../README.md#06-subconsultas-y-cte)
-describe la siguiente sección; todavía no hay lección ni lab de 03.06.
+[03.06 — Subconsultas y CTE](../06_subqueries_cte/README.md)
+continúa el recorrido con consultas por pasos.
 
 ## Referencias primarias
 

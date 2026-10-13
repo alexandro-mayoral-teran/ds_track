@@ -215,5 +215,4 @@ a un cliente a tener créditos? ¿Cómo distinguirías una pareja ausente de un
 saldo desconocido? ¿Por qué un total coincidente no basta para validar una unión?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 03.06 — Subconsultas y CTE](../../../curriculum/03_sql_databases/README.md#06-subconsultas-y-cte),
-todavía sin lección ni siguiente lab disponible.
+[03.06 — Subconsultas y CTE](../../../curriculum/03_sql_databases/06_subqueries_cte/README.md).
