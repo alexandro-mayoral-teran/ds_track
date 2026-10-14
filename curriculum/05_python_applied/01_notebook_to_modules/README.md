@@ -433,8 +433,8 @@ No hay todavía proyecto/checkpoint implementado asociado.
 
 ## Siguiente paso
 
-Continúa con el [plan 05.02 — Configuración y registro de ejecución](../README.md#02-configuracion-y-registro-de-ejecucion).
-Todavía no tiene lección ni lab: hará explícitas rutas/parámetros y registro.
+Continúa con [05.02 — Configuración y registro de ejecución](../02_configuration_logging/README.md),
+que hace explícitas rutas/parámetros y registro sobre el mismo paquete.
 Volver al [índice de Python aplicado](../README.md).
 
 ## Referencias y atribución

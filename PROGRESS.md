@@ -6,17 +6,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01 implementada; siguiente desarrollo 05.02.
-- **Sesión de desarrollo:** 2026-10-14, módulos/paquetes y consumidores verificados.
-- **Foco de desarrollo del material:** organizar el análisis sin cambiar resultados.
+- **Estado de desarrollo:** 05.01–05.02 implementadas; siguiente desarrollo 05.03.
+- **Sesión de desarrollo:** 2026-10-14, configuración y registro verificados.
+- **Foco de desarrollo del material:** parámetros explícitos, rutas y contexto de ejecución.
   Próxima sección por implementar:
-  [05.02 — Configuración y registro de ejecución](curriculum/05_python_applied/README.md#02-configuracion-y-registro-de-ejecucion).
+  [05.03 — Errores y gestión de recursos](curriculum/05_python_applied/README.md#03-errores-y-gestion-de-recursos).
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
   04.01–04.09 tienen lecciones y labs (04.08 opcional); 05.01 tiene lección,
-  paquete local, script, notebook y lab. 05.02–05.11 están por desarrollar. Los módulos 06–08 tienen
+  paquete local, script, notebook y lab. 05.02 añade argumentos, configuración
+  JSON, logging y lab; 05.03–05.11 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -28,24 +29,27 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.01 — Del notebook a módulos](curriculum/05_python_applied/01_notebook_to_modules/README.md)
-con su [lab](labs/05_python_applied/01_notebook_to_modules/README.md).
-Completar material no acredita aprendizaje. Retomar con 05.02: rutas y
-parámetros explícitos mediante argparse, configuración y logging, usando
-el paquete local de 05.01. Introducir esas herramientas antes de exigirlas.
-Conservar las tablas y figuras equivalentes a 04.09, sin ajustes de sys.path.
+[05.02 — Configuración y registro de ejecución](curriculum/05_python_applied/02_configuration_logging/README.md)
+con su [lab](labs/05_python_applied/02_configuration_logging/README.md).
+Completar material no acredita aprendizaje. Retomar con 05.03: excepciones
+específicas, propagación, cierre de recursos y fallas sin resultados engañosos.
+Usar el paquete de 05.01 y la entrada configurable de 05.02, conservando
+consumidores anteriores. Distinguir escritura atómica de un archivo y cierre
+de una carpeta completa: entrega.json puede existir sin ejecucion.json si
+falla el registro posterior. Introducir manejo de errores antes de ampliarlo.
 
-05.01 reutiliza pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0.
-Se comprobaron importaciones sin lecturas/exportaciones/mensajes ni figuras,
-equivalencia de cinco tablas frente a 04.09, veinte conciliaciones independientes,
-reconstrucción, fuentes/entregas intactas, vacíos, ausencias, cero y medio MXN.
-Se verificaron coordenadas de figuras, especificación Altair idéntica al cierre,
-entradas por script/-m y falla sin metadatos finales. PNG y Altair renderizado
-se revisaron; el notebook se ejecutó completo en un kernel nuevo y se entrega
-sin salidas ni rutas personales. La revisión reutilizó .venv-altair-review,
-con el grupo notebooks del lockfile, sin modificar Anaconda base.
-Interacción y HTML incorporado se conservan en 04.08/04.09 como ampliaciones;
-el HTML básico de 05.01 necesita conexión. No se agregaron dependencias raíz.
+05.02 reutiliza pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0, sin dependencias
+nuevas. Se comprobaron importaciones sin ejecución ni configuración de logging,
+cinco tablas equivalentes a 05.01 por corte, veinte conciliaciones en septiembre
+y octubre, precedencia predeterminados/JSON/terminal y bases de rutas desde
+otra carpeta, incluidos espacios. Se verificaron niveles de consola, registro
+efectivo/versiones, PNG a 160/120 dpi, reconstrucción, vacíos y todo desconocido.
+Entradas inválidas y destinos existentes no crean ni sobrescriben salidas;
+una falla simulada al escribir ejecucion.json termina con 1 sin mensaje final.
+Se revisaron figuras de ambos cortes y se volvió a comprobar el recorrido
+anterior de 05.01. La revisión reutilizó .venv-altair-review, sin instalar
+paquetes ni modificar base. HTML básico requiere conexión; las ampliaciones
+de interacción/exportación se conservan en 04.08/04.09.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -83,6 +87,15 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-14
+
+- Se desarrolló 05.02 con argumentos, configuración JSON, precedencia,
+  bases de rutas y logging. Añade una entrada configurable al paquete de 05.01,
+  conservando el consumidor original. Cada entrega registra valores efectivos,
+  procedencia, reglas y versiones; lab con comparación de dos cortes y soluciones.
+  Se verificaron parámetros, niveles, rutas, errores antes de exportar,
+  reconstrucción y falla del registro final; tablas equivalentes al análisis
+  previo y fuentes/entregas intactas. Figuras revisadas y navegación actualizada.
+  Sigue 05.03; no se acreditó aprendizaje ni se instalaron dependencias nuevas.
 
 - Se desarrolló 05.01: módulo pequeño, explicación de importaciones/nombres,
   main/__main__, paquetes regulares, búsqueda de código frente a rutas de datos

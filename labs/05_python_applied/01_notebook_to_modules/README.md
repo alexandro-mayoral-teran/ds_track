@@ -205,5 +205,5 @@ Registra resultados, revisión visual, dudas y siguiente paso en PROGRESS.md.
 Puedes avanzar cuando expliques esas decisiones y uses el mismo cálculo desde
 script/notebook sin editar sys.path ni depender de variables ocultas.
 
-Continúa con el [plan de la siguiente lección, 05.02 — Configuración y registro](../../../curriculum/05_python_applied/README.md#02-configuracion-y-registro-de-ejecucion),
-todavía pendiente de implementación. Volver a la [lección 05.01](../../../curriculum/05_python_applied/01_notebook_to_modules/README.md).
+Continúa con la [siguiente lección, 05.02 — Configuración y registro](../../../curriculum/05_python_applied/02_configuration_logging/README.md).
+Volver a la [lección 05.01](../../../curriculum/05_python_applied/01_notebook_to_modules/README.md).

@@ -87,7 +87,7 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01 dispone de lección/lab y paquete local; 05.02–05.11 y 06–14 conservan planificación;
+05.01–05.02 disponen de lección/lab y paquete local; 05.03–05.11 y 06–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -95,7 +95,8 @@ está después de pandas, SQL y visualización básica: no bloquea el inicio de 
 
 Los README de cada módulo contienen el orden numerado y el alcance de cada
 sección. Los módulos 02, 03 y 04 disponen de sus lecciones y labs;
-05.01 tiene lección/lab, paquete, script y notebook; 05.02–05.11 conservan planes.
+05.01 tiene lección/lab, paquete, script y notebook; 05.02 agrega configuración
+y logging sobre ese paquete. 05.03–05.11 conservan planes.
 pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -179,7 +180,14 @@ sin modificar sys.path ni leer CSV/exportar al importar. Conserva referencia
 independiente, medianas/cobertura, fuentes y figuras del cierre esencial.
 Interacción y HTML incorporado se conservan en 04.08/04.09, fuera de esta
 primera reorganización. No agrega dependencias; reutiliza notebooks cuando
-se ejecuta ese consumidor. Configuración y logging siguen previstos para 05.02.
+se ejecuta ese consumidor.
+05.02 conserva las entradas anteriores y agrega ejecutar_configurado.py y
+analisis_cartera.cli, con configuración y registro mediante biblioteca estándar.
+Combina predeterminados → JSON → opciones explícitas, distinguiendo rutas del
+archivo y del directorio de trabajo. Valida antes de exportar; configura logging
+solo en la entrada y guarda valores efectivos, procedencia, reglas y versiones.
+El registro final sucede después del cierre de export: una falla puede dejar
+entrega.json sin ejecucion.json. No promete atomicidad; se profundizará en 05.03.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

@@ -7,10 +7,12 @@ reutilizable, comprobable y reconstruible. Completar primero
 [04 — Visualización en Python](../04_visualization_python/README.md), incluido
 su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
 La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis. La primera sección ya tiene material disponible.
+reorganizar ese mismo análisis. Las dos primeras secciones tienen material disponible.
 
 **Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
-dispone de lección, paquete local, script, notebook y lab. Las secciones 02–11
+dispone de lección, paquete local, script, notebook y lab;
+[05.02 — Configuración y registro de ejecución](02_configuration_logging/README.md)
+añade argumentos, JSON y logging sobre el mismo paquete. Las secciones 03–11
 siguen planificadas; sus enlaces internos describen el alcance pendiente.
 La disponibilidad del material no acredita aprendizaje del estudiante.
 
@@ -24,7 +26,7 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
 | 1 | [Del notebook a módulos](01_notebook_to_modules/README.md) | Esencial | Importar y reutilizar transformaciones |
-| 2 | [Configuración y registro de ejecución](#02-configuracion-y-registro-de-ejecucion) | Esencial | Ejecutar con entradas y parámetros explícitos |
+| 2 | [Configuración y registro de ejecución](02_configuration_logging/README.md) | Esencial | Ejecutar con entradas y parámetros explícitos |
 | 3 | [Errores y gestión de recursos](#03-errores-y-gestion-de-recursos) | Esencial | Comunicar fallas sin dejar resultados engañosos |
 | 4 | [Pruebas de código y datos](#04-pruebas-de-codigo-y-datos) | Esencial | Detectar regresiones con casos significativos |
 | 5 | [Tipos y contratos de funciones](#05-tipos-y-contratos-de-funciones) | Práctica | Hacer explícitas entradas y salidas |
@@ -54,8 +56,11 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 
 - Rutas, parámetros de corte, configuración y argumentos con argparse.
   Separar valores configurables de la lógica y conservar versiones de dependencias.
-- logging frente a print, niveles y contexto de ejecución. Práctica prevista:
-  ejecutar dos cortes y explicar qué entrada, reglas y salida se utilizaron.
+- logging frente a print, niveles y contexto de ejecución.
+- [Lección disponible](02_configuration_logging/README.md) y
+  [lab 05.02](../../labs/05_python_applied/02_configuration_logging/README.md):
+  ejecutar dos cortes, comprobar precedencia y rutas, y explicar qué entrada,
+  reglas y salida se utilizaron mediante el registro efectivo.
 
 <a id="03-errores-y-gestion-de-recursos"></a>
 
@@ -148,7 +153,7 @@ Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
 no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
 metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
 
-El lab 05.01 está disponible; los labs 05.02–05.11 siguen previstos,
+Los labs 05.01 y 05.02 están disponibles; los labs 05.03–05.11 siguen previstos,
 señalando los opcionales cuando se desarrollen.
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
 registrados en [proyectos](../../projects/README.md); no se exige crear otro.

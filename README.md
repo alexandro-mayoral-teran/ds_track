@@ -139,7 +139,9 @@ con indicadores conciliados y gráfica. Visualización dispone de
 con sus labs. Las nueve secciones de visualización están disponibles, con
 interacción opcional. Python aplicado comienza con
 [05.01 — Del notebook a módulos](curriculum/05_python_applied/01_notebook_to_modules/README.md),
-con paquete local, script, notebook y lab; 05.02–05.11 siguen planificadas.
+con paquete local, script, notebook y lab, y
+[05.02 — Configuración y registro](curriculum/05_python_applied/02_configuration_logging/README.md),
+con argumentos, JSON, logging y lab; 05.03–05.11 siguen planificadas.
 Los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
