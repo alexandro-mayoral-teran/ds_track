@@ -6,17 +6,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `04_visualization_python`
-- **Estado de desarrollo:** en curso; 04.07 implementada y verificada.
-- **Sesión de desarrollo:** retomada el 2026-10-13 para completar Altair.
-- **Foco de desarrollo del material:** Altair y visualización declarativa completada.
+- **Estado de desarrollo:** en curso; 04.08 implementada y verificada.
+- **Sesión de desarrollo:** 2026-10-13, interacción opcional completada.
+- **Foco de desarrollo del material:** controles y selección con bases explícitas.
   Próxima sección por implementar:
-  [04.08 — Interacción con Altair](curriculum/04_visualization_python/README.md#08-interaccion-con-altair),
-  ampliación opcional antes del cierre 04.09.
+  [04.09 — Cierre visual del análisis](curriculum/04_visualization_python/README.md#09-cierre-visual-del-analisis).
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
-  04.01–04.07 tienen lecciones y labs; 04.08–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
+  04.01–04.08 tienen lecciones y labs (04.08 opcional); 04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -28,22 +27,21 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[04.07 — Altair: visualización declarativa](curriculum/04_visualization_python/07_altair_declarative/README.md)
-con su [lab](labs/04_visualization_python/07_altair_declarative/README.md).
-Las secciones 04.08–04.09 aún son planes. Retomar con 04.08: parámetros,
-selecciones, condiciones y filtros mediante la API vigente, conservando
-población, indicadores y cobertura. Es ampliación opcional; 04.09 cerrará
-la entrega visual del análisis sin exigir interacción.
+[04.08 — Interacción con Altair](curriculum/04_visualization_python/08_altair_interaction/README.md)
+con su [lab opcional](labs/04_visualization_python/08_altair_interaction/README.md).
+Retomar con 04.09: integrar una figura estática, una vista declarativa y una
+interpretación sobre indicadores ya conciliados. La interacción es opcional;
+no exigirla para el cierre. Verificar reconstrucción y lectura independiente,
+sin presentar todavía un checkpoint de proyecto inexistente.
 
-04.07 utiliza Altair 6.3.0, pandas 2.3.3 y Matplotlib 3.10.7 comprobados;
-chart-export fija vl-convert-python 1.9.0.post1. Se verificaron medianas desde
-CSV con biblioteca estándar, agregación renderizada, pares, tramos y fronteras,
-cero/ausencia/vacío, exportaciones y conservación de fuentes/entregas.
-Los cuatro HTML con bibliotecas incorporadas renderizaron en Edge con la red
-desactivada, sin solicitudes HTTP ni errores de JavaScript. Se revisaron
-las cuatro figuras y se conservaron versiones curadas en assets.
-La verificación reutilizó .venv-altair-review, ignorado, sin modificar base
-ni reparar el entorno .venv previo.
+04.08 reutiliza Altair 6.3.0 y pandas 2.3.3; chart-export con
+vl-convert-python 1.9.0.post1 permite HTML incorporado y PNG/SVG iniciales.
+Se verificaron datos por opción desde CSV con biblioteca estándar, mediana
+global y por segmento, pares/exclusiones, ceros, ausencias, corte vacío,
+exportaciones recargadas y conservación. En Edge sin red se comprobaron
+menú, selección por clic, limpieza, intervalo y contador, sin errores de
+JavaScript ni solicitudes HTTP. La revisión reutilizó .venv-altair-review,
+ignorado, sin modificar base ni reparar el entorno .venv previo.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -81,6 +79,15 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-13
+
+- Se desarrolló 04.08 como extensión opcional: parámetro variable con menú,
+  selección de segmento, condiciones de opacidad/borde y filtro por intervalo.
+  Incluye tres HTML, tablas de bases, capturas curadas y lab con soluciones.
+  Se verificaron medianas, pares y exclusiones desde CSV, ausencia/cero/vacío,
+  exportaciones y fuentes conservadas; controles, limpieza, contador e HTML
+  sin red en Edge. No agrega dependencias; referencias de 04.07 reutilizadas.
+  Se actualizaron navegación, arquitectura e índices. Sigue 04.09;
+  la disponibilidad del material no acredita aprendizaje del estudiante.
 
 - Se completó 04.07 desde el borrador conservado: explicación de Chart,
   marcas, canales N/O/Q/T, composición, agregación y exportación; lab con

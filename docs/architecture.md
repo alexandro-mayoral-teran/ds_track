@@ -86,14 +86,14 @@ crecerá de manera intencional:
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
-los niveles 04–14 conservan planificación, salvo 04.01–04.07, disponibles con lecciones y labs;
+los niveles 04–14 conservan planificación, salvo 04.01–04.08, disponibles con lecciones y labs;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
 ### Desarrollo previsto de los módulos 02–05
 
 Los README de cada módulo contienen el orden numerado y el alcance de cada
-sección. Los módulos 02 y 03 disponen de sus lecciones y labs; 04.01–04.07 están disponibles con lecciones y labs; las demás secciones de 04–05
+sección. Los módulos 02 y 03 disponen de sus lecciones y labs; 04.01–04.08 están disponibles con lecciones y labs; las demás secciones de 04–05
 conservan planes de desarrollo. pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -156,7 +156,14 @@ fechas comprobadas; compara medianas preparadas y agregación desde detalle.
 Exporta JSON/HTML; el grupo opcional chart-export con vl-convert-python
 1.9.0.post1 permite HTML con bibliotecas incorporadas y PNG/SVG. Las entregas
 requieren carpeta nueva; fuentes y SQLite permanecen intactos. Interacción
-y selecciones pertenecen a 04.08, todavía pendiente.
+y selecciones se desarrollan en 04.08, disponible como extensión opcional.
+04.08 incorpora menú con parámetro variable, selección por segmento con
+resaltado y un intervalo que filtra otra vista. Conserva bases y dominios
+explícitos, opciones sin pares y restablecimiento; la mediana de cada segmento
+usa sus saldos conocidos, no solo los pares. Los controles actúan en el
+navegador sobre datos incorporados y no reejecutan Python ni escriben CSV.
+HTML conserva interacción; PNG/SVG representan estados iniciales. Las capturas
+requieren registrar estado y bases. No agrega dependencias.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

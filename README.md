@@ -132,9 +132,10 @@ con indicadores conciliados y gráfica. Visualización dispone de
 [04.03 — Comparaciones y evolución](curriculum/04_visualization_python/03_comparisons_evolution/README.md),
 [04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md),
 [04.05 — Escalas, etiquetas y accesibilidad](curriculum/04_visualization_python/05_scales_labels_accessibility/README.md),
-[04.06 — Composición y exportación](curriculum/04_visualization_python/06_composition_export/README.md) y
-[04.07 — Altair: visualización declarativa](curriculum/04_visualization_python/07_altair_declarative/README.md),
-con sus labs. Las secciones 04.08–04.09 y el módulo 05 conservan su plan de desarrollo;
+[04.06 — Composición y exportación](curriculum/04_visualization_python/06_composition_export/README.md),
+[04.07 — Altair: visualización declarativa](curriculum/04_visualization_python/07_altair_declarative/README.md) y
+[04.08 — Interacción con Altair (opcional)](curriculum/04_visualization_python/08_altair_interaction/README.md),
+con sus labs. La sección 04.09 y el módulo 05 conservan su plan de desarrollo;
 los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

@@ -14,7 +14,8 @@ y su lab están disponibles, con vistas comprobadas y práctica de justificació
 [05 — Escalas, etiquetas y accesibilidad](05_scales_labels_accessibility/README.md) y su lab están disponibles.
 [06 — Composición y exportación](06_composition_export/README.md) y su lab están disponibles.
 [07 — Altair: visualización declarativa](07_altair_declarative/README.md) y su lab están disponibles.
-Las secciones 08–09 siguen planificadas; sus enlaces internos describen el alcance.
+[08 — Interacción con Altair](08_altair_interaction/README.md) y su lab opcional están disponibles.
+La sección 09 sigue planificada; su enlace interno describe el alcance.
 
 Pandas ya introduce una primera gráfica. Aquí trabajamos primero con
 Matplotlib y después con Altair. No repetiremos la limpieza para cada biblioteca.
@@ -31,7 +32,7 @@ Entorno y versiones se explican en las lecciones de cada herramienta.
 | 5 | [Escalas, etiquetas y accesibilidad](05_scales_labels_accessibility/README.md) | Esencial | Revisar una figura que puede inducir a error |
 | 6 | [Composición y exportación](06_composition_export/README.md) | Práctica | Comparar vistas y producir una figura legible |
 | 7 | [Altair: visualización declarativa](07_altair_declarative/README.md) | Práctica | Expresar datos, marcas y codificaciones |
-| 8 | [Interacción con Altair](#08-interaccion-con-altair) | Extensión | Explorar un indicador con filtros o selección |
+| 8 | [Interacción con Altair](08_altair_interaction/README.md) | Extensión | Explorar un indicador con filtros o selección |
 | 9 | [Cierre visual del análisis](#09-cierre-visual-del-analisis) | Práctica de cierre | Entregar figuras reconstruibles e interpretación |
 
 ## Alcance de cada sección
@@ -100,7 +101,7 @@ Entorno y versiones se explican en las lecciones de cada herramienta.
 ### 08 — Interacción con Altair
 
 - Parámetros, selecciones, condiciones, filtros y tooltips con la API vigente.
-- Práctica prevista: seleccionar un segmento y mantener explícito qué muestra
+- Práctica disponible: seleccionar un segmento y mantener explícito qué muestra
   el resultado. Revisar exportación y recursos necesarios para compartirlo.
   Esta ampliación no exige construir una aplicación Streamlit.
 
@@ -114,7 +115,7 @@ Entorno y versiones se explican en las lecciones de cada herramienta.
 
 ## Prácticas, integración y criterio de salida
 
-Se prevén labs 04.01–04.09; el 04.08 será opcional.
+Se prevén labs 04.01–04.09; el 04.08 es opcional.
 El [lab 04.01](../../labs/04_visualization_python/01_question_chart/README.md)
 y el [lab 04.02](../../labs/04_visualization_python/02_figure_axes/README.md)
 y el [lab 04.03](../../labs/04_visualization_python/03_comparisons_evolution/README.md)
@@ -122,7 +123,8 @@ y el [lab 04.04](../../labs/04_visualization_python/04_distributions_relationshi
 y el [lab 04.05](../../labs/04_visualization_python/05_scales_labels_accessibility/README.md)
 y el [lab 04.06](../../labs/04_visualization_python/06_composition_export/README.md)
 y el [lab 04.07](../../labs/04_visualization_python/07_altair_declarative/README.md)
-están disponibles; 04.08–04.09 siguen pendientes.
+y el [lab 04.08 opcional](../../labs/04_visualization_python/08_altair_interaction/README.md)
+están disponibles; 04.09 sigue pendiente.
 Se ampliarán los productos previstos en [proyectos](../../projects/README.md)
 01_clean_credit_data y 02_credit_database, sin crear un proyecto adicional obligatorio.
 

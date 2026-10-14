@@ -17,7 +17,7 @@ Necesitas selección y agrupación en pandas; no necesitas escribir JavaScript.
 **Práctica principal:** Chart, marcas, canales, tipos N/O/Q/T, tablas preparadas,
 composición y comprobación frente a Matplotlib. **Ampliación:** agregación dentro
 del gráfico, exportación sin conexión y PNG/SVG. Parámetros, selección y filtros
-interactivos se desarrollarán en 04.08; no necesitas construirlos aquí.
+interactivos se desarrollan en 04.08; no necesitas construirlos aquí.
 
 ## Objetivos, datos y versiones de referencia
 
@@ -476,8 +476,8 @@ que otra persona pueda abrir y leer. Debes justificar ausencias y agregación,
 no solo conseguir que aparezcan barras.
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.08 — Interacción con Altair](../README.md#08-interaccion-con-altair),
-todavía pendiente y opcional. Si omites esa ampliación, consulta el
+[04.08 — Interacción con Altair](../08_altair_interaction/README.md),
+disponible y opcional. Si omites esa ampliación, consulta el
 [plan de 04.09 — Cierre visual del análisis](../README.md#09-cierre-visual-del-analisis),
 también pendiente; no se presenta como lección disponible.
 

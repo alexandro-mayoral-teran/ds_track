@@ -219,7 +219,7 @@ un ID numérico puede ser nominal? ¿Qué cambia al añadir una agregación?
 ¿Cómo distingues fallo del visor de ausencia real de datos?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.08 — Interacción con Altair](../../../curriculum/04_visualization_python/README.md#08-interaccion-con-altair),
-pendiente y opcional. Si omites esa ampliación, consulta el
+[04.08 — Interacción con Altair](../../../curriculum/04_visualization_python/08_altair_interaction/README.md),
+disponible y opcional. Si omites esa ampliación, consulta el
 [plan de 04.09 — Cierre visual del análisis](../../../curriculum/04_visualization_python/README.md#09-cierre-visual-del-analisis),
 también pendiente. Las referencias primarias están en la lección.

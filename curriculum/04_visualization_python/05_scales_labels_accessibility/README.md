@@ -299,7 +299,7 @@ figura, tabla, descripción y justificación de cobertura y señales accesibles.
 
 No hay checkpoint de proyecto implementado. Continúa con el
 [04.06 — Composición y exportación](../06_composition_export/README.md).
-Las secciones 04.08–04.09 no cuentan como material terminado.
+La sección 04.09 no cuenta como material terminado.
 
 ## Referencias y atribución
 
