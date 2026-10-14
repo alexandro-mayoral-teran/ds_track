@@ -221,5 +221,5 @@ un ID numérico puede ser nominal? ¿Qué cambia al añadir una agregación?
 No hay checkpoint de proyecto implementado. Continúa con el
 [04.08 — Interacción con Altair](../../../curriculum/04_visualization_python/08_altair_interaction/README.md),
 disponible y opcional. Si omites esa ampliación, consulta el
-[plan de 04.09 — Cierre visual del análisis](../../../curriculum/04_visualization_python/README.md#09-cierre-visual-del-analisis),
-también pendiente. Las referencias primarias están en la lección.
+[04.09 — Cierre visual del análisis](../../../curriculum/04_visualization_python/09_visual_closure/README.md),
+disponible sin exigir interacción. Las referencias primarias están en la lección.

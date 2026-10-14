@@ -16,7 +16,9 @@ SIZE = (12, 5.5)
 
 
 def money(value, position=None):
-    return f"{value:,.0f}".replace(",", " ")
+    # Una mediana de saldos enteros puede terminar en medio MXN; no redondearla a cero.
+    formatted = f"{value:,.2f}".rstrip("0").rstrip(".")
+    return formatted.replace(",", " ")
 
 
 def summarize(detail, cut):

@@ -86,15 +86,16 @@ crecerá de manera intencional:
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
-los niveles 04–14 conservan planificación, salvo 04.01–04.08, disponibles con lecciones y labs;
+visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
+los niveles 05–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
 ### Desarrollo previsto de los módulos 02–05
 
 Los README de cada módulo contienen el orden numerado y el alcance de cada
-sección. Los módulos 02 y 03 disponen de sus lecciones y labs; 04.01–04.08 están disponibles con lecciones y labs; las demás secciones de 04–05
-conservan planes de desarrollo. pandas 02.10 también dispone de notebook.
+sección. Los módulos 02, 03 y 04 disponen de sus lecciones y labs;
+el módulo 05 conserva planes de desarrollo. pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
 base en solo lectura, con filtros, orden, parámetros y tratamiento de NULL; usa sqlite3 estándar, sin
@@ -164,6 +165,12 @@ usa sus saldos conocidos, no solo los pares. Los controles actúan en el
 navegador sobre datos incorporados y no reejecutan Python ni escriben CSV.
 HTML conserva interacción; PNG/SVG representan estados iniciales. Las capturas
 requieren registrar estado y bases. No agrega dependencias.
+04.09 integra la tabla de medianas/cobertura en Matplotlib y Altair, con
+referencia independiente CSV/statistics, veinte comprobaciones, informe e
+instrucciones. Conserva copias de cortes/créditos, reconstruye desde ellas
+y usa carpetas nuevas. El informe no acredita revisión visual ni aprendizaje;
+HTML incorporado y explorador son ampliaciones. No requiere Quarto ni un
+proyecto adicional; prepara el análisis que se reorganizará en 05.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

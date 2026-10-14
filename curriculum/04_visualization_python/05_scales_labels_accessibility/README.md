@@ -299,7 +299,7 @@ figura, tabla, descripción y justificación de cobertura y señales accesibles.
 
 No hay checkpoint de proyecto implementado. Continúa con el
 [04.06 — Composición y exportación](../06_composition_export/README.md).
-La sección 04.09 no cuenta como material terminado.
+El módulo 04 dispone de sus nueve secciones; el aprendizaje requiere evidencia.
 
 ## Referencias y atribución
 

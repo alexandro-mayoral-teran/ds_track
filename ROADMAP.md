@@ -170,9 +170,12 @@ opcional. Están disponibles
 [04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md),
 [04.05 — Escalas, etiquetas y accesibilidad](curriculum/04_visualization_python/05_scales_labels_accessibility/README.md),
 [04.06 — Composición y exportación](curriculum/04_visualization_python/06_composition_export/README.md),
-[04.07 — Altair: visualización declarativa](curriculum/04_visualization_python/07_altair_declarative/README.md) y
-[04.08 — Interacción con Altair (opcional)](curriculum/04_visualization_python/08_altair_interaction/README.md),
-con sus labs; 04.09 está por desarrollar.
+[04.07 — Altair: visualización declarativa](curriculum/04_visualization_python/07_altair_declarative/README.md),
+[04.08 — Interacción con Altair (opcional)](curriculum/04_visualization_python/08_altair_interaction/README.md) y
+[04.09 — Cierre visual del análisis](curriculum/04_visualization_python/09_visual_closure/README.md),
+con sus labs. Las nueve secciones tienen material; interacción es opcional
+y el cierre reconstruye figuras, indicadores conciliados e interpretación.
+La finalización del aprendizaje requiere evidencia de sus criterios.
 
 - Esencial: pregunta, gráfico adecuado, escalas, unidades, etiquetas y color accesible.
 - Esencial: Matplotlib, Figure/Axes, barras, líneas y distribuciones.

@@ -359,8 +359,8 @@ compruebes bases y ausencias, expliques el estado inicial/restablecimiento
 y conserves una evidencia reproducible de una interacción.
 
 No hay checkpoint de proyecto implementado. Sigue con el
-[plan de 04.09 — Cierre visual del análisis](../README.md#09-cierre-visual-del-analisis),
-todavía pendiente. Omitir interacción no bloquea ese cierre ni Python aplicado.
+[04.09 — Cierre visual del análisis](../09_visual_closure/README.md),
+disponible. Omitir interacción no bloquea ese cierre ni Python aplicado.
 La disponibilidad del material no acredita completar prácticas del estudiante.
 
 ## Referencias y atribución

@@ -210,5 +210,5 @@ una selección vacía? ¿Por qué contar solo puntos no describe todos los
 registros? ¿Qué necesitas guardar para que otra persona interprete tu captura?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.09 — Cierre visual del análisis](../../../curriculum/04_visualization_python/README.md#09-cierre-visual-del-analisis),
-todavía pendiente. Las referencias primarias están en la lección.
+[04.09 — Cierre visual del análisis](../../../curriculum/04_visualization_python/09_visual_closure/README.md),
+disponible. Las referencias primarias están en la lección.

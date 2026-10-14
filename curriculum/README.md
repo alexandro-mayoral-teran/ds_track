@@ -13,10 +13,12 @@ con indicadores y gráfica. Visualización dispone de
 [04.04 — Distribuciones y relaciones](04_visualization_python/04_distributions_relationships/README.md),
 [04.05 — Escalas, etiquetas y accesibilidad](04_visualization_python/05_scales_labels_accessibility/README.md),
 [04.06 — Composición y exportación](04_visualization_python/06_composition_export/README.md),
-[04.07 — Altair: visualización declarativa](04_visualization_python/07_altair_declarative/README.md) y
-[04.08 — Interacción con Altair (opcional)](04_visualization_python/08_altair_interaction/README.md),
-con sus labs. La sección 04.09 y el módulo 05 tienen objetivos,
-prácticas y cierres propuestos, todavía sin lecciones ni labs.
+[04.07 — Altair: visualización declarativa](04_visualization_python/07_altair_declarative/README.md),
+[04.08 — Interacción con Altair (opcional)](04_visualization_python/08_altair_interaction/README.md) y
+[04.09 — Cierre visual del análisis](04_visualization_python/09_visual_closure/README.md),
+con sus labs. Visualización dispone de nueve secciones, con interacción
+opcional. El módulo 05 tiene objetivos, prácticas y cierres propuestos,
+todavía sin lecciones ni labs.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento

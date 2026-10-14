@@ -478,8 +478,8 @@ no solo conseguir que aparezcan barras.
 No hay checkpoint de proyecto implementado. Continúa con el
 [04.08 — Interacción con Altair](../08_altair_interaction/README.md),
 disponible y opcional. Si omites esa ampliación, consulta el
-[plan de 04.09 — Cierre visual del análisis](../README.md#09-cierre-visual-del-analisis),
-también pendiente; no se presenta como lección disponible.
+[04.09 — Cierre visual del análisis](../09_visual_closure/README.md),
+disponible sin exigir interacción.
 
 ## Referencias y atribución
 

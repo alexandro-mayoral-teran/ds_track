@@ -28,7 +28,7 @@ def summaries(tables):
         n, k, p = len(part), len(balances), len(pairs)
         median = float(balances.median()) if k else None
         coverage = 100 * k / n if n else None
-        value = f'mediana {median:,.0f} MXN' if k else 'sin mediana'
+        value = f"mediana {format(median, ',.2f').rstrip('0').rstrip('.')} MXN" if k else 'sin mediana'
         label = (f'{group} · {n} registros · saldos {k}/{n} · pares {p}/{n} · {value}'
                  if n else f'{group} · Sin registros · mediana y cobertura no definidas')
         message = '' if p else ('Sin registros' if n == 0 else 'Sin pares conocidos')

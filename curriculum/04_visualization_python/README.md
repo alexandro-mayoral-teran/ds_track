@@ -15,7 +15,8 @@ y su lab están disponibles, con vistas comprobadas y práctica de justificació
 [06 — Composición y exportación](06_composition_export/README.md) y su lab están disponibles.
 [07 — Altair: visualización declarativa](07_altair_declarative/README.md) y su lab están disponibles.
 [08 — Interacción con Altair](08_altair_interaction/README.md) y su lab opcional están disponibles.
-La sección 09 sigue planificada; su enlace interno describe el alcance.
+[09 — Cierre visual del análisis](09_visual_closure/README.md) y su lab están disponibles.
+Las nueve secciones tienen material; el aprendizaje requiere evidencia.
 
 Pandas ya introduce una primera gráfica. Aquí trabajamos primero con
 Matplotlib y después con Altair. No repetiremos la limpieza para cada biblioteca.
@@ -33,7 +34,7 @@ Entorno y versiones se explican en las lecciones de cada herramienta.
 | 6 | [Composición y exportación](06_composition_export/README.md) | Práctica | Comparar vistas y producir una figura legible |
 | 7 | [Altair: visualización declarativa](07_altair_declarative/README.md) | Práctica | Expresar datos, marcas y codificaciones |
 | 8 | [Interacción con Altair](08_altair_interaction/README.md) | Extensión | Explorar un indicador con filtros o selección |
-| 9 | [Cierre visual del análisis](#09-cierre-visual-del-analisis) | Práctica de cierre | Entregar figuras reconstruibles e interpretación |
+| 9 | [Cierre visual del análisis](09_visual_closure/README.md) | Práctica de cierre | Entregar figuras reconstruibles e interpretación |
 
 ## Alcance de cada sección
 
@@ -110,12 +111,12 @@ Entorno y versiones se explican en las lecciones de cada herramienta.
 ### 09 — Cierre visual del análisis
 
 - Integrar datos verificados, código de gráficos y una interpretación escrita.
-- Práctica prevista: reconstruir al menos una figura estática, comparar una vista
+- Práctica disponible: reconstruir al menos una figura estática, comparar una vista
   Altair y explicar hallazgo, población y límites. Interacción opcional.
 
 ## Prácticas, integración y criterio de salida
 
-Se prevén labs 04.01–04.09; el 04.08 es opcional.
+Los labs 04.01–04.09 están disponibles; el 04.08 es opcional.
 El [lab 04.01](../../labs/04_visualization_python/01_question_chart/README.md)
 y el [lab 04.02](../../labs/04_visualization_python/02_figure_axes/README.md)
 y el [lab 04.03](../../labs/04_visualization_python/03_comparisons_evolution/README.md)
@@ -124,13 +125,15 @@ y el [lab 04.05](../../labs/04_visualization_python/05_scales_labels_accessibili
 y el [lab 04.06](../../labs/04_visualization_python/06_composition_export/README.md)
 y el [lab 04.07](../../labs/04_visualization_python/07_altair_declarative/README.md)
 y el [lab 04.08 opcional](../../labs/04_visualization_python/08_altair_interaction/README.md)
-están disponibles; 04.09 sigue pendiente.
+y el [lab 04.09](../../labs/04_visualization_python/09_visual_closure/README.md)
+están disponibles.
 Se ampliarán los productos previstos en [proyectos](../../projects/README.md)
 01_clean_credit_data y 02_credit_database, sin crear un proyecto adicional obligatorio.
 
-Checkpoint visual propuesto: conservar una tabla de indicadores conciliados,
-una figura estática, una vista declarativa y una interpretación. El nombre del
-checkpoint se concretará en esos proyectos al implementar el material.
+El cierre visual de 04.09 conserva indicadores conciliados, una figura
+estática, una vista declarativa, interpretación e instrucciones de
+reconstrucción. No hay checkpoint de proyecto implementado: esos proyectos
+siguen pendientes y no se exige crear otro para cerrar el módulo.
 
 Para avanzar debes justificar la representación, revisar escalas y unidades y
 reconstruir la figura desde los datos. Diseñar interacción avanzada no es requisito.

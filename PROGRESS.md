@@ -6,16 +6,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `04_visualization_python`
-- **Estado de desarrollo:** en curso; 04.08 implementada y verificada.
-- **Sesión de desarrollo:** 2026-10-13, interacción opcional completada.
-- **Foco de desarrollo del material:** controles y selección con bases explícitas.
+- **Estado de desarrollo:** material del módulo 04 completado; siguiente desarrollo 05.01.
+- **Sesión de desarrollo:** 2026-10-13, cierre visual implementado y verificado.
+- **Foco de desarrollo del material:** entrega reconstruible, conciliación e interpretación.
   Próxima sección por implementar:
-  [04.09 — Cierre visual del análisis](curriculum/04_visualization_python/README.md#09-cierre-visual-del-analisis).
+  [05.01 — Del notebook a módulos](curriculum/05_python_applied/README.md#01-del-notebook-a-modulos).
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
-  04.01–04.08 tienen lecciones y labs (04.08 opcional); 04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
+  04.01–04.09 tienen lecciones y labs (04.08 opcional); el módulo 05 está por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -27,21 +27,23 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[04.08 — Interacción con Altair](curriculum/04_visualization_python/08_altair_interaction/README.md)
-con su [lab opcional](labs/04_visualization_python/08_altair_interaction/README.md).
-Retomar con 04.09: integrar una figura estática, una vista declarativa y una
-interpretación sobre indicadores ya conciliados. La interacción es opcional;
-no exigirla para el cierre. Verificar reconstrucción y lectura independiente,
-sin presentar todavía un checkpoint de proyecto inexistente.
+[04.09 — Cierre visual del análisis](curriculum/04_visualization_python/09_visual_closure/README.md)
+con su [lab](labs/04_visualization_python/09_visual_closure/README.md).
+El módulo 04 dispone de sus nueve secciones; completar material no acredita
+aprendizaje. Retomar con 05.01: separar entrada, transformación y presentación
+del análisis conocido en módulos, sin efectos al importar ni rutas manuales
+en sys.path. Introducir módulos/paquetes antes de exigir esa reorganización.
+Usar la entrega de 04.09 y conservar indicadores, ausencias y figuras.
 
-04.08 reutiliza Altair 6.3.0 y pandas 2.3.3; chart-export con
-vl-convert-python 1.9.0.post1 permite HTML incorporado y PNG/SVG iniciales.
-Se verificaron datos por opción desde CSV con biblioteca estándar, mediana
-global y por segmento, pares/exclusiones, ceros, ausencias, corte vacío,
-exportaciones recargadas y conservación. En Edge sin red se comprobaron
-menú, selección por clic, limpieza, intervalo y contador, sin errores de
-JavaScript ni solicitudes HTTP. La revisión reutilizó .venv-altair-review,
-ignorado, sin modificar base ni reparar el entorno .venv previo.
+04.09 reutiliza pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0;
+chart-export con vl-convert-python 1.9.0.post1 sigue siendo ampliación.
+Se verificaron veinte conciliaciones CSV/statistics frente al análisis,
+reconstrucción desde copias, valores/ausencias/global, cero, mediana de medio
+MXN, corte vacío y todo desconocido. Se comprobó conservación de fuentes y
+entregas, cierre de figuras y falla sin archivo final de metadatos.
+PNG/SVG y HTML se revisaron; Altair incorporado y el explorador opcional
+funcionaron en Edge sin red, sin errores de JavaScript ni solicitudes HTTP.
+La revisión reutilizó .venv-altair-review, ignorado, sin modificar base.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -79,6 +81,16 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-13
+
+- Se desarrolló 04.09: entrega de medianas/cobertura con figuras Matplotlib
+  y Altair, referencia independiente CSV, veinte conciliaciones, fuentes
+  conservadas, informe e instrucciones de reconstrucción. Lab con soluciones
+  y revisión acompañada; interacción y HTML sin conexión siguen opcionales.
+  Se comprobaron fuentes/carpeta intactas, reconstrucción, vacíos, ausencias,
+  ceros y fallas. Se corrigieron etiquetas monetarias compartidas para conservar
+  medianas de medio MXN sin redondearlas a cero. Figuras y HTML revisados;
+  navegación y arquitectura actualizadas. El módulo 04 tiene nueve secciones
+  disponibles; sigue 05.01 planificada. No se acreditó aprendizaje sin evidencia.
 
 - Se desarrolló 04.08 como extensión opcional: parámetro variable con menú,
   selección de segmento, condiciones de opacidad/borde y filtro por intervalo.

@@ -4,7 +4,10 @@
 
 Convertir el análisis conocido de pandas, SQL y visualización en código
 reutilizable, comprobable y reconstruible. Completar primero
-[04 — Visualización en Python](../04_visualization_python/README.md).
+[04 — Visualización en Python](../04_visualization_python/README.md), incluido
+su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
+La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
+reorganizar ese mismo análisis; el módulo 05 aún es planificación.
 
 **Estado:** secciones planificadas; lecciones y labs por desarrollar. Los enlaces
 internos describen su alcance. No se agregarán paquetes ni infraestructura hasta

@@ -35,7 +35,7 @@ def prepare(detail, cut):
     comparison = pd.concat([summarize(detail, d)[1] for d in DATES], ignore_index=True)
     comparison["fecha_corte"] = pd.to_datetime(comparison.fecha_corte, format="%Y-%m-%d")
     summary["etiqueta"] = [
-        f"{row.mediana_mxn:,.0f} MXN · {row.conocidos}/{row.registros}"
+        f"{format(row.mediana_mxn, ',.2f').rstrip('0').rstrip('.')} MXN · {row.conocidos}/{row.registros}"
         if pd.notna(row.mediana_mxn) else
         ("Sin registros" if row.registros == 0 else f"Sin mediana · 0/{row.registros}")
         for row in summary.itertuples(index=False)
@@ -65,7 +65,7 @@ def medians_chart(summary, cut):
     position = alt.X("mediana_mxn:Q", title="Mediana conocida (MXN)",
                      scale=alt.Scale(domain=[0, right], nice=False, zero=True))
     base = alt.Chart(valid).encode(x=position, y=category_axis(),
-        tooltip=[alt.Tooltip("segmento:N"), alt.Tooltip("mediana_mxn:Q", format=",.0f"),
+        tooltip=[alt.Tooltip("segmento:N"), alt.Tooltip("mediana_mxn:Q", format=",.2f"),
                  alt.Tooltip("fraccion:N", title="Conocidos/registros")])
     bars = base.mark_bar(color="#2563eb", size=28)
     labels = base.mark_text(align="left", dx=6, fontSize=12).encode(text="etiqueta:N")
