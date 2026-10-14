@@ -197,6 +197,6 @@ una conciliación correcta? ¿Qué se pierde al enviar solo un PNG? ¿Qué
 cambio de la fuente obligaría a reconstruir y revisar toda la entrega?
 
 No hay proyecto/checkpoint implementado asociado. Continúa con el
-[plan de 05.01 — Del notebook a módulos](../../../curriculum/05_python_applied/README.md#01-del-notebook-a-modulos),
-todavía pendiente, reutilizando este análisis. El material del módulo 04
+[05.01 — Del notebook a módulos](../../../curriculum/05_python_applied/01_notebook_to_modules/README.md),
+reutilizando este análisis. El material del módulo 04
 está disponible; el aprendizaje requiere evidencia de sus criterios.

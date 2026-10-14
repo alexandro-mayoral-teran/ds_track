@@ -5,17 +5,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulo activo de desarrollo:** `04_visualization_python`
-- **Estado de desarrollo:** material del módulo 04 completado; siguiente desarrollo 05.01.
-- **Sesión de desarrollo:** 2026-10-13, cierre visual implementado y verificado.
-- **Foco de desarrollo del material:** entrega reconstruible, conciliación e interpretación.
+- **Módulo activo de desarrollo:** `05_python_applied`
+- **Estado de desarrollo:** 05.01 implementada; siguiente desarrollo 05.02.
+- **Sesión de desarrollo:** 2026-10-14, módulos/paquetes y consumidores verificados.
+- **Foco de desarrollo del material:** organizar el análisis sin cambiar resultados.
   Próxima sección por implementar:
-  [05.01 — Del notebook a módulos](curriculum/05_python_applied/README.md#01-del-notebook-a-modulos).
+  [05.02 — Configuración y registro de ejecución](curriculum/05_python_applied/README.md#02-configuracion-y-registro-de-ejecucion).
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
-  04.01–04.09 tienen lecciones y labs (04.08 opcional); el módulo 05 está por desarrollar. Los módulos 06–08 tienen
+  04.01–04.09 tienen lecciones y labs (04.08 opcional); 05.01 tiene lección,
+  paquete local, script, notebook y lab. 05.02–05.11 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -27,23 +28,24 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[04.09 — Cierre visual del análisis](curriculum/04_visualization_python/09_visual_closure/README.md)
-con su [lab](labs/04_visualization_python/09_visual_closure/README.md).
-El módulo 04 dispone de sus nueve secciones; completar material no acredita
-aprendizaje. Retomar con 05.01: separar entrada, transformación y presentación
-del análisis conocido en módulos, sin efectos al importar ni rutas manuales
-en sys.path. Introducir módulos/paquetes antes de exigir esa reorganización.
-Usar la entrega de 04.09 y conservar indicadores, ausencias y figuras.
+[05.01 — Del notebook a módulos](curriculum/05_python_applied/01_notebook_to_modules/README.md)
+con su [lab](labs/05_python_applied/01_notebook_to_modules/README.md).
+Completar material no acredita aprendizaje. Retomar con 05.02: rutas y
+parámetros explícitos mediante argparse, configuración y logging, usando
+el paquete local de 05.01. Introducir esas herramientas antes de exigirlas.
+Conservar las tablas y figuras equivalentes a 04.09, sin ajustes de sys.path.
 
-04.09 reutiliza pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0;
-chart-export con vl-convert-python 1.9.0.post1 sigue siendo ampliación.
-Se verificaron veinte conciliaciones CSV/statistics frente al análisis,
-reconstrucción desde copias, valores/ausencias/global, cero, mediana de medio
-MXN, corte vacío y todo desconocido. Se comprobó conservación de fuentes y
-entregas, cierre de figuras y falla sin archivo final de metadatos.
-PNG/SVG y HTML se revisaron; Altair incorporado y el explorador opcional
-funcionaron en Edge sin red, sin errores de JavaScript ni solicitudes HTTP.
-La revisión reutilizó .venv-altair-review, ignorado, sin modificar base.
+05.01 reutiliza pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0.
+Se comprobaron importaciones sin lecturas/exportaciones/mensajes ni figuras,
+equivalencia de cinco tablas frente a 04.09, veinte conciliaciones independientes,
+reconstrucción, fuentes/entregas intactas, vacíos, ausencias, cero y medio MXN.
+Se verificaron coordenadas de figuras, especificación Altair idéntica al cierre,
+entradas por script/-m y falla sin metadatos finales. PNG y Altair renderizado
+se revisaron; el notebook se ejecutó completo en un kernel nuevo y se entrega
+sin salidas ni rutas personales. La revisión reutilizó .venv-altair-review,
+con el grupo notebooks del lockfile, sin modificar Anaconda base.
+Interacción y HTML incorporado se conservan en 04.08/04.09 como ampliaciones;
+el HTML básico de 05.01 necesita conexión. No se agregaron dependencias raíz.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -79,6 +81,19 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 | 14 | Proyecto reproducible | No iniciado | — |
 
 ## Bitácora
+
+### 2026-10-14
+
+- Se desarrolló 05.01: módulo pequeño, explicación de importaciones/nombres,
+  main/__main__, paquetes regulares, búsqueda de código frente a rutas de datos
+  y caché del kernel. El análisis de 04.09 se organiza en un paquete local
+  con entrada, transformación, comprobación, presentación y flujo; script y
+  notebook reutilizan las mismas funciones. Lab gradual con soluciones razonadas.
+  Se verificaron equivalencia con el cierre, fronteras, conservación de entradas
+  y entregas, reconstrucción, importaciones y entradas completas. Notebook
+  ejecutado desde kernel nuevo; figuras revisadas. Índices, continuidad,
+  roadmap y arquitectura actualizados. Sigue 05.02, todavía planificada;
+  el estado del estudiante se conserva sin nuevas evidencias.
 
 ### 2026-10-13
 

@@ -87,7 +87,7 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-los niveles 05–14 conservan planificación;
+05.01 dispone de lección/lab y paquete local; 05.02–05.11 y 06–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -95,7 +95,8 @@ está después de pandas, SQL y visualización básica: no bloquea el inicio de 
 
 Los README de cada módulo contienen el orden numerado y el alcance de cada
 sección. Los módulos 02, 03 y 04 disponen de sus lecciones y labs;
-el módulo 05 conserva planes de desarrollo. pandas 02.10 también dispone de notebook.
+05.01 tiene lección/lab, paquete, script y notebook; 05.02–05.11 conservan planes.
+pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
 base en solo lectura, con filtros, orden, parámetros y tratamiento de NULL; usa sqlite3 estándar, sin
@@ -171,6 +172,14 @@ instrucciones. Conserva copias de cortes/créditos, reconstruye desde ellas
 y usa carpetas nuevas. El informe no acredita revisión visual ni aprendizaje;
 HTML incorporado y explorador son ampliaciones. No requiere Quarto ni un
 proyecto adicional; prepara el análisis que se reorganizará en 05.
+05.01 introduce módulos/importaciones antes de separar el análisis de 04.09
+en un paquete regular local: entrada, transformación, comprobación,
+presentación y coordinación. Script y notebook consumen las mismas funciones,
+sin modificar sys.path ni leer CSV/exportar al importar. Conserva referencia
+independiente, medianas/cobertura, fuentes y figuras del cierre esencial.
+Interacción y HTML incorporado se conservan en 04.08/04.09, fuera de esta
+primera reorganización. No agrega dependencias; reutiliza notebooks cuando
+se ejecuta ese consumidor. Configuración y logging siguen previstos para 05.02.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

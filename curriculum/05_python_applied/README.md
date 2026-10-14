@@ -7,11 +7,12 @@ reutilizable, comprobable y reconstruible. Completar primero
 [04 — Visualización en Python](../04_visualization_python/README.md), incluido
 su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
 La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis; el módulo 05 aún es planificación.
+reorganizar ese mismo análisis. La primera sección ya tiene material disponible.
 
-**Estado:** secciones planificadas; lecciones y labs por desarrollar. Los enlaces
-internos describen su alcance. No se agregarán paquetes ni infraestructura hasta
-que se implemente una necesidad concreta.
+**Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
+dispone de lección, paquete local, script, notebook y lab. Las secciones 02–11
+siguen planificadas; sus enlaces internos describen el alcance pendiente.
+La disponibilidad del material no acredita aprendizaje del estudiante.
 
 El núcleo es organización, configuración, errores y pruebas. Clases, generadores,
 decoradores, rendimiento y APIs amplían esa base; no son requisitos para poder
@@ -22,7 +23,7 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
-| 1 | [Del notebook a módulos](#01-del-notebook-a-modulos) | Esencial | Importar y reutilizar transformaciones |
+| 1 | [Del notebook a módulos](01_notebook_to_modules/README.md) | Esencial | Importar y reutilizar transformaciones |
 | 2 | [Configuración y registro de ejecución](#02-configuracion-y-registro-de-ejecucion) | Esencial | Ejecutar con entradas y parámetros explícitos |
 | 3 | [Errores y gestión de recursos](#03-errores-y-gestion-de-recursos) | Esencial | Comunicar fallas sin dejar resultados engañosos |
 | 4 | [Pruebas de código y datos](#04-pruebas-de-codigo-y-datos) | Esencial | Detectar regresiones con casos significativos |
@@ -42,8 +43,10 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 
 - Separar exploración, transformación y presentación; importaciones, módulos,
   paquetes básicos, main y punto de entrada sin efectos al importar.
-- Práctica prevista: extraer funciones del análisis y reutilizarlas desde script
-  y notebook, conservando resultados y sin agregar rutas manuales a sys.path.
+- [Lección disponible](01_notebook_to_modules/README.md) y
+  [lab 05.01](../../labs/05_python_applied/01_notebook_to_modules/README.md):
+  módulo pequeño, paquete del análisis de 04.09 y reutilización desde script
+  y notebook, conservando resultados sin agregar rutas manuales a sys.path.
 
 <a id="02-configuracion-y-registro-de-ejecucion"></a>
 
@@ -145,7 +148,8 @@ Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
 no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
 metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
 
-Se prevén labs 05.01–05.11, señalando los opcionales. Aún no existen.
+El lab 05.01 está disponible; los labs 05.02–05.11 siguen previstos,
+señalando los opcionales cuando se desarrollen.
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
 registrados en [proyectos](../../projects/README.md); no se exige crear otro.
 Checkpoint de organización propuesto: ejecución reconstruible, controles,

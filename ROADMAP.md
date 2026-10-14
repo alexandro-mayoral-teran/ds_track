@@ -192,7 +192,8 @@ justificar su representación y conservar el código que la reconstruye.
 El [plan de once secciones](curriculum/05_python_applied/README.md#orden-de-desarrollo)
 define un núcleo de módulos, configuración, errores, pruebas y contratos para
 cerrar el análisis; clases, generadores, decoradores, medición y APIs amplían
-ese núcleo. Las lecciones están por desarrollar.
+ese núcleo. [05.01 — Del notebook a módulos](curriculum/05_python_applied/01_notebook_to_modules/README.md)
+dispone de lección y lab; las secciones 02–11 están por desarrollar.
 
 - Esencial: módulos, funciones, configuración, logging y comprobaciones.
 - Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.

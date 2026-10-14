@@ -137,8 +137,10 @@ con indicadores conciliados y gráfica. Visualización dispone de
 [04.08 — Interacción con Altair (opcional)](curriculum/04_visualization_python/08_altair_interaction/README.md) y
 [04.09 — Cierre visual del análisis](curriculum/04_visualization_python/09_visual_closure/README.md),
 con sus labs. Las nueve secciones de visualización están disponibles, con
-interacción opcional. El módulo 05 conserva su plan de desarrollo;
-los niveles 06–08 también tienen secciones definidas y
+interacción opcional. Python aplicado comienza con
+[05.01 — Del notebook a módulos](curriculum/05_python_applied/01_notebook_to_modules/README.md),
+con paquete local, script, notebook y lab; 05.02–05.11 siguen planificadas.
+Los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

@@ -54,6 +54,7 @@ reglas de enlace están en
 | [`04.07 — Altair: visualización declarativa`](04_visualization_python/07_altair_declarative/) | `04_visualization_python` | No aplica todavía |
 | [`04.08 — Interacción con Altair (opcional)`](04_visualization_python/08_altair_interaction/) | `04_visualization_python` | No aplica todavía |
 | [`04.09 — Cierre visual del análisis`](04_visualization_python/09_visual_closure/) | `04_visualization_python` | No aplica todavía |
+| [`05.01 — Del notebook a módulos`](05_python_applied/01_notebook_to_modules/) | `05_python_applied` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

@@ -306,8 +306,8 @@ no acredita haber completado estas prácticas.
 
 No hay proyecto/checkpoint implementado asociado. Este cierre es una práctica
 de integración, no un nuevo proyecto obligatorio ni una entrega en showcase.
-Continúa con el [plan de 05.01 — Del notebook a módulos](../../05_python_applied/README.md#01-del-notebook-a-modulos),
-todavía pendiente: reutilizarás el análisis para separar responsabilidades
+Continúa con [05.01 — Del notebook a módulos](../../05_python_applied/01_notebook_to_modules/README.md):
+reutilizarás el análisis para separar responsabilidades
 y evitar importaciones mediante rutas manuales. No se requiere dominar clases
 o decoradores antes de continuar.
 
