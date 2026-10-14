@@ -7,12 +7,15 @@ reutilizable, comprobable y reconstruible. Completar primero
 [04 — Visualización en Python](../04_visualization_python/README.md), incluido
 su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
 La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis. Las dos primeras secciones tienen material disponible.
+reorganizar ese mismo análisis. Las tres primeras secciones tienen material disponible.
 
 **Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
 dispone de lección, paquete local, script, notebook y lab;
 [05.02 — Configuración y registro de ejecución](02_configuration_logging/README.md)
-añade argumentos, JSON y logging sobre el mismo paquete. Las secciones 03–11
+añade argumentos, JSON y logging;
+[05.03 — Errores y gestión de recursos](03_errors_resources/README.md)
+añade cierre por etapas y demostraciones de recursos sobre el mismo paquete.
+Las secciones 04–11
 siguen planificadas; sus enlaces internos describen el alcance pendiente.
 La disponibilidad del material no acredita aprendizaje del estudiante.
 
@@ -27,7 +30,7 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 | --- | --- | --- | --- |
 | 1 | [Del notebook a módulos](01_notebook_to_modules/README.md) | Esencial | Importar y reutilizar transformaciones |
 | 2 | [Configuración y registro de ejecución](02_configuration_logging/README.md) | Esencial | Ejecutar con entradas y parámetros explícitos |
-| 3 | [Errores y gestión de recursos](#03-errores-y-gestion-de-recursos) | Esencial | Comunicar fallas sin dejar resultados engañosos |
+| 3 | [Errores y gestión de recursos](03_errors_resources/README.md) | Esencial | Comunicar fallas sin dejar resultados engañosos |
 | 4 | [Pruebas de código y datos](#04-pruebas-de-codigo-y-datos) | Esencial | Detectar regresiones con casos significativos |
 | 5 | [Tipos y contratos de funciones](#05-tipos-y-contratos-de-funciones) | Práctica | Hacer explícitas entradas y salidas |
 | 6 | [Clases, composición y dataclasses](#06-clases-composicion-y-dataclasses) | Práctica opcional | Representar estructuras cuando resulte útil |
@@ -68,9 +71,11 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 
 - Excepciones específicas, propagación y mensajes útiles; archivos y conexiones
   cerrados explícitamente. Reutilizar with antes de diseñar gestores propios.
-- Práctica prevista: simular una falla y comprobar que no se anuncia éxito ni se
-  confunden salidas anteriores con nuevas. Escritura atómica de un archivo y sus
-  límites; excepciones propias y gestores personalizados como ampliación.
+- [Lección disponible](03_errors_resources/README.md) y
+  [lab 05.03](../../labs/05_python_applied/03_errors_resources/README.md):
+  simular fallas sin anunciar cierre ni confundir salidas previas, comprobar
+  recursos y conservación de un JSON anterior. Escritura atómica de un archivo
+  y sus límites; excepciones propias y gestores personalizados como ampliación.
 
 <a id="04-pruebas-de-codigo-y-datos"></a>
 
@@ -153,7 +158,7 @@ Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
 no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
 metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
 
-Los labs 05.01 y 05.02 están disponibles; los labs 05.03–05.11 siguen previstos,
+Los labs 05.01–05.03 están disponibles; los labs 05.04–05.11 siguen previstos,
 señalando los opcionales cuando se desarrollen.
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
 registrados en [proyectos](../../projects/README.md); no se exige crear otro.

@@ -6,18 +6,19 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01–05.02 implementadas; siguiente desarrollo 05.03.
-- **Sesión de desarrollo:** 2026-10-14, configuración y registro verificados.
-- **Foco de desarrollo del material:** parámetros explícitos, rutas y contexto de ejecución.
+- **Estado de desarrollo:** 05.01–05.03 implementadas; siguiente desarrollo 05.04.
+- **Sesión de desarrollo:** 2026-10-14, cerrada después de verificar 05.03.
+- **Foco de desarrollo del material:** errores, cierre de recursos y entregas por etapas.
   Próxima sección por implementar:
-  [05.03 — Errores y gestión de recursos](curriculum/05_python_applied/README.md#03-errores-y-gestion-de-recursos).
+  [05.04 — Pruebas de código y datos](curriculum/05_python_applied/README.md#04-pruebas-de-codigo-y-datos).
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
   04.01–04.09 tienen lecciones y labs (04.08 opcional); 05.01 tiene lección,
   paquete local, script, notebook y lab. 05.02 añade argumentos, configuración
-  JSON, logging y lab; 05.03–05.11 están por desarrollar. Los módulos 06–08 tienen
+  JSON, logging y lab; 05.03 añade errores, recursos, JSON atómico y lab.
+  05.04–05.11 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -29,27 +30,29 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.02 — Configuración y registro de ejecución](curriculum/05_python_applied/02_configuration_logging/README.md)
-con su [lab](labs/05_python_applied/02_configuration_logging/README.md).
-Completar material no acredita aprendizaje. Retomar con 05.03: excepciones
-específicas, propagación, cierre de recursos y fallas sin resultados engañosos.
-Usar el paquete de 05.01 y la entrada configurable de 05.02, conservando
-consumidores anteriores. Distinguir escritura atómica de un archivo y cierre
-de una carpeta completa: entrega.json puede existir sin ejecucion.json si
-falla el registro posterior. Introducir manejo de errores antes de ampliarlo.
+[05.03 — Errores y gestión de recursos](curriculum/05_python_applied/03_errors_resources/README.md)
+con su [lab](labs/05_python_applied/03_errors_resources/README.md).
+Sesión cerrada a petición del usuario después de esta sección. Completar
+material no acredita aprendizaje. Retomar con 05.04: unittest de la biblioteca
+estándar, casos conocidos/fronteras/vacíos, fixtures pequeñas y directorios
+temporales; distinguir prueba de función, integración y validación de datos.
+Usar el paquete compartido y sus consumidores, conservando muestras anteriores.
+Los scripts de revisión locales no constituyen todavía la lección de pruebas.
 
-05.02 reutiliza pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0, sin dependencias
-nuevas. Se comprobaron importaciones sin ejecución ni configuración de logging,
-cinco tablas equivalentes a 05.01 por corte, veinte conciliaciones en septiembre
-y octubre, precedencia predeterminados/JSON/terminal y bases de rutas desde
-otra carpeta, incluidos espacios. Se verificaron niveles de consola, registro
-efectivo/versiones, PNG a 160/120 dpi, reconstrucción, vacíos y todo desconocido.
-Entradas inválidas y destinos existentes no crean ni sobrescriben salidas;
-una falla simulada al escribir ejecucion.json termina con 1 sin mensaje final.
-Se revisaron figuras de ambos cortes y se volvió a comprobar el recorrido
-anterior de 05.01. La revisión reutilizó .venv-altair-review, sin instalar
-paquetes ni modificar base. HTML básico requiere conexión; las ampliaciones
-de interacción/exportación se conservan en 04.08/04.09.
+05.03 reutiliza pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0 sin dependencias
+nuevas. Se comprobaron importaciones sin ejecución/configuración de logging,
+tablas y especificación Altair equivalentes a 05.01, veinte conciliaciones,
+reconstrucción, vacíos, ausencias, cero y medio MXN. Se verificaron archivo y
+conexión en memoria cerrados, Figure propia cerrada ante falla sin afectar otra,
+JSON anterior intacto ante falla antes de replace, fsync/reemplazo fallidos,
+serialización inválida y causa conservada incluso con falla de limpieza.
+Las tres simulaciones no publican cierre; código 1 sin mensaje final. Errores
+inesperados/interrupción se propagan. Inspector rechaza cierre ilegible/incompleto
+o archivos requeridos ausentes, sin prometer integridad completa. Fuentes y
+entregas anteriores intactas; consumidores 05.01/05.02 vueltos a comprobar.
+Figuras revisadas; lectura de enlaces/fragmentos y bloques comprobada.
+La revisión reutilizó .venv-altair-review, sin instalar paquetes ni modificar
+base. El cierre no hace transaccional la carpeta ni garantiza durabilidad total.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -87,6 +90,15 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-14
+
+- Se cerró la sesión con 05.03: explicación gradual de excepciones, causa,
+  propagación, with/finally, conexión/transacción y reemplazo atómico de JSON.
+  Añade consumidor con cierre final después del registro y tres fallas didácticas,
+  conserva parciales y consumidores anteriores. Lab con soluciones razonadas,
+  recursos cerrados, archivo anterior preservado y reconstrucción comprobada.
+  Se verificaron fallas de serialización/escritura/limpieza, interrupción y
+  errores inesperados; tablas, ausencias y figuras conservadas. Se actualizaron
+  índices, arquitectura, continuidad y retorno a 05.04. No se acreditó aprendizaje.
 
 - Se desarrolló 05.02 con argumentos, configuración JSON, precedencia,
   bases de rutas y logging. Añade una entrada configurable al paquete de 05.01,

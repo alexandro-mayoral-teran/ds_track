@@ -443,8 +443,8 @@ y distingas cobertura parcial, configuración inválida y exportación incomplet
 
 ## Siguiente paso y referencias
 
-Continúa con el [plan 05.03 — Errores y gestión de recursos](../README.md#03-errores-y-gestion-de-recursos),
-todavía sin lección ni lab. Volver al [índice de Python aplicado](../README.md).
+Continúa con [05.03 — Errores y gestión de recursos](../03_errors_resources/README.md).
+Volver al [índice de Python aplicado](../README.md).
 
 Ejemplos propios de DS Track; análisis y figuras de 05.01, con referencia CSV
 independiente conservada de 04.09. Documentación consultada el 2026-10-14 para

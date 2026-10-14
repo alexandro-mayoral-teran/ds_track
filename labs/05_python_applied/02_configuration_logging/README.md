@@ -184,5 +184,5 @@ PROGRESS.md. Puedes avanzar cuando cambies corte/destino sin editar el cálculo,
 justifiques la precedencia y distingas advertencias, configuración inválida y
 una entrega incompleta.
 
-Continúa con el [plan 05.03 — Errores y gestión de recursos](../../../curriculum/05_python_applied/README.md#03-errores-y-gestion-de-recursos),
-todavía pendiente. Volver a la [lección 05.02](../../../curriculum/05_python_applied/02_configuration_logging/README.md).
+Continúa con [05.03 — Errores y gestión de recursos](../../../curriculum/05_python_applied/03_errors_resources/README.md).
+Volver a la [lección 05.02](../../../curriculum/05_python_applied/02_configuration_logging/README.md).

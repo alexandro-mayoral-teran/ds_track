@@ -141,7 +141,10 @@ interacción opcional. Python aplicado comienza con
 [05.01 — Del notebook a módulos](curriculum/05_python_applied/01_notebook_to_modules/README.md),
 con paquete local, script, notebook y lab, y
 [05.02 — Configuración y registro](curriculum/05_python_applied/02_configuration_logging/README.md),
-con argumentos, JSON, logging y lab; 05.03–05.11 siguen planificadas.
+con argumentos, JSON, logging y lab, y
+[05.03 — Errores y recursos](curriculum/05_python_applied/03_errors_resources/README.md),
+con fallas controladas, cierre de recursos, JSON atómico y lab;
+05.04–05.11 siguen planificadas.
 Los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

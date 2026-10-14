@@ -21,7 +21,9 @@ opcional. Python aplicado dispone de
 [05.01 — Del notebook a módulos](05_python_applied/01_notebook_to_modules/README.md),
 con paquete local, script, notebook y lab, y
 [05.02 — Configuración y registro](05_python_applied/02_configuration_logging/README.md),
-con argumentos, JSON, logging y lab; 05.03–05.11 conservan sus planes.
+con argumentos, JSON, logging y lab, y
+[05.03 — Errores y recursos](05_python_applied/03_errors_resources/README.md),
+con fallas controladas, recursos, JSON atómico y lab. 05.04–05.11 conservan sus planes.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
