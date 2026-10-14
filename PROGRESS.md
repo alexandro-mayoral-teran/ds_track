@@ -6,17 +6,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `04_visualization_python`
-- **Estado:** en curso
-- **Sesión de desarrollo:** 2026-10-13, sección 04.06 disponible con lección y lab.
-  El módulo 04 continúa en desarrollo.
-- **Foco de desarrollo del material:** composición, anotaciones, tamaño y exportación.
+- **Estado de desarrollo:** en curso; 04.07 implementada y verificada.
+- **Sesión de desarrollo:** retomada el 2026-10-13 para completar Altair.
+- **Foco de desarrollo del material:** Altair y visualización declarativa completada.
   Próxima sección por implementar:
-  [04.07 — Altair: visualización declarativa](curriculum/04_visualization_python/README.md#07-altair-visualizacion-declarativa).
+  [04.08 — Interacción con Altair](curriculum/04_visualization_python/README.md#08-interaccion-con-altair),
+  ampliación opcional antes del cierre 04.09.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
   labs están disponibles; también SQL 03.01–03.09 con base local y labs.
-  04.01–04.06 tienen lecciones y labs; 04.07–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
+  04.01–04.07 tienen lecciones y labs; 04.08–04.09 y el módulo 05 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -28,12 +28,22 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[04.06 — Composición y exportación](curriculum/04_visualization_python/06_composition_export/README.md)
-con su [lab](labs/04_visualization_python/06_composition_export/README.md).
-Las secciones 04.07–04.09 aún son planes. Retomar con 04.07: Chart, marcas,
-canales y tipos nominal/ordinal/cuantitativo/temporal en Altair. Verificar API,
-versión y dependencias al implementarla; comparar un indicador ya comprobado
-sin volver a limpiar ni cambiar su base. Interacción pertenece a 04.08.
+[04.07 — Altair: visualización declarativa](curriculum/04_visualization_python/07_altair_declarative/README.md)
+con su [lab](labs/04_visualization_python/07_altair_declarative/README.md).
+Las secciones 04.08–04.09 aún son planes. Retomar con 04.08: parámetros,
+selecciones, condiciones y filtros mediante la API vigente, conservando
+población, indicadores y cobertura. Es ampliación opcional; 04.09 cerrará
+la entrega visual del análisis sin exigir interacción.
+
+04.07 utiliza Altair 6.3.0, pandas 2.3.3 y Matplotlib 3.10.7 comprobados;
+chart-export fija vl-convert-python 1.9.0.post1. Se verificaron medianas desde
+CSV con biblioteca estándar, agregación renderizada, pares, tramos y fronteras,
+cero/ausencia/vacío, exportaciones y conservación de fuentes/entregas.
+Los cuatro HTML con bibliotecas incorporadas renderizaron en Edge con la red
+desactivada, sin solicitudes HTTP ni errores de JavaScript. Se revisaron
+las cuatro figuras y se conservaron versiones curadas en assets.
+La verificación reutilizó .venv-altair-review, ignorado, sin modificar base
+ni reparar el entorno .venv previo.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -71,6 +81,20 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-13
+
+- Se completó 04.07 desde el borrador conservado: explicación de Chart,
+  marcas, canales N/O/Q/T, composición, agregación y exportación; lab con
+  soluciones razonadas y cuatro figuras curadas. Se conciliaron medianas,
+  pares y tramos contra CSV originales; se comprobaron fronteras, vacíos,
+  ausencias, cero, esquema, agregación renderizada y entregas conservadas.
+  HTML sin conexión comprobado en Edge; referencias Altair 6.3.0, pandas
+  2.3.3, Matplotlib 3.10.7 y vl-convert-python 1.9.0.post1 ejecutadas.
+  Se actualizaron índices, arquitectura y navegación. Sigue 04.08 opcional;
+  el avance del material no acredita aprendizaje del estudiante.
+
+- Antes de retomar, se pausó la sesión a petición del usuario durante 04.07.
+  Se conservaron investigación, dependencias, script y lección en borrador
+  sin commit ni push. El lab y la verificación final se completaron al retomar.
 
 - Se desarrolló 04.06 con explicación ampliada: composición por pregunta, ejes
   comunes o unidades distintas, anotaciones, espacio, pulgadas/píxeles/dpi,

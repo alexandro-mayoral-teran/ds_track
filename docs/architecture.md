@@ -86,14 +86,14 @@ crecerá de manera intencional:
 El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
-los niveles 04–14 conservan planificación, salvo 04.01–04.06, disponibles con lecciones y labs;
+los niveles 04–14 conservan planificación, salvo 04.01–04.07, disponibles con lecciones y labs;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
 ### Desarrollo previsto de los módulos 02–05
 
 Los README de cada módulo contienen el orden numerado y el alcance de cada
-sección. Los módulos 02 y 03 disponen de sus lecciones y labs; 04.01–04.06 están disponibles con lecciones y labs; las demás secciones de 04–05
+sección. Los módulos 02 y 03 disponen de sus lecciones y labs; 04.01–04.07 están disponibles con lecciones y labs; las demás secciones de 04–05
 conservan planes de desarrollo. pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -150,6 +150,13 @@ unidades separadas. Reutiliza la misma lectura, añade anotación comprobable y
 exporta una Figure en PNG a dos resoluciones y en SVG, junto con tablas,
 registro de tamaños y nota textual. Conserva entregas previas, cierra solo sus
 figuras y no agrega dependencias.
+04.07 declara marcas, canales y tipos N/O/Q/T en Altair 6.3.0, reutilizando
+las tablas de 04.06 y pares de 04.04. Conserva ausencias, tramos ordenados y
+fechas comprobadas; compara medianas preparadas y agregación desde detalle.
+Exporta JSON/HTML; el grupo opcional chart-export con vl-convert-python
+1.9.0.post1 permite HTML con bibliotecas incorporadas y PNG/SVG. Las entregas
+requieren carpeta nueva; fuentes y SQLite permanecen intactos. Interacción
+y selecciones pertenecen a 04.08, todavía pendiente.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 .venv/
 .venv-practice/
+.venv-altair-review/
 .environment-practice/
 .uv-cache/
 .pytest_cache/

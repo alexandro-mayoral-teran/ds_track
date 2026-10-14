@@ -188,5 +188,4 @@ que recibe solo el archivo de imagen? ¿Cómo comprobarías que exportaste la
 Figure correcta si tu sesión tuviera varias abiertas?
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.07 — Altair: visualización declarativa](../../../curriculum/04_visualization_python/README.md#07-altair-visualizacion-declarativa),
-todavía pendiente de desarrollo.
+[04.07 — Altair: visualización declarativa](../../../curriculum/04_visualization_python/07_altair_declarative/README.md).

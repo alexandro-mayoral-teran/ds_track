@@ -375,8 +375,7 @@ y ejes, exportes una entrega legible y cotejes formatos y dimensiones. Entrega
 código, tabla, imagen y comentario de población, medida, fuente y límites.
 
 No hay checkpoint de proyecto implementado. Continúa con el
-[plan de 04.07 — Altair: visualización declarativa](../README.md#07-altair-visualizacion-declarativa),
-todavía pendiente de desarrollo. Interacción pertenece a 04.08 y sigue siendo
+[04.07 — Altair: visualización declarativa](../07_altair_declarative/README.md). Interacción pertenece a 04.08 y sigue siendo
 opcional; no necesitas instalar Altair para completar esta sección.
 
 ## Referencias y atribución

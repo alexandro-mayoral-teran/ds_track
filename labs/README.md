@@ -51,6 +51,7 @@ reglas de enlace están en
 | [`04.04 — Distribuciones y relaciones`](04_visualization_python/04_distributions_relationships/) | `04_visualization_python` | No aplica todavía |
 | [`04.05 — Escalas, etiquetas y accesibilidad`](04_visualization_python/05_scales_labels_accessibility/) | `04_visualization_python` | No aplica todavía |
 | [`04.06 — Composición y exportación`](04_visualization_python/06_composition_export/) | `04_visualization_python` | No aplica todavía |
+| [`04.07 — Altair: visualización declarativa`](04_visualization_python/07_altair_declarative/) | `04_visualization_python` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

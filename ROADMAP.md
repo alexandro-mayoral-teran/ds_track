@@ -168,9 +168,10 @@ opcional. Están disponibles
 [04.02 — Matplotlib: Figure y Axes](curriculum/04_visualization_python/02_figure_axes/README.md),
 [04.03 — Comparaciones y evolución](curriculum/04_visualization_python/03_comparisons_evolution/README.md),
 [04.04 — Distribuciones y relaciones](curriculum/04_visualization_python/04_distributions_relationships/README.md),
-[04.05 — Escalas, etiquetas y accesibilidad](curriculum/04_visualization_python/05_scales_labels_accessibility/README.md) y
-[04.06 — Composición y exportación](curriculum/04_visualization_python/06_composition_export/README.md),
-con sus labs; 04.07–04.09 están por desarrollar.
+[04.05 — Escalas, etiquetas y accesibilidad](curriculum/04_visualization_python/05_scales_labels_accessibility/README.md),
+[04.06 — Composición y exportación](curriculum/04_visualization_python/06_composition_export/README.md) y
+[04.07 — Altair: visualización declarativa](curriculum/04_visualization_python/07_altair_declarative/README.md),
+con sus labs; 04.08–04.09 están por desarrollar.
 
 - Esencial: pregunta, gráfico adecuado, escalas, unidades, etiquetas y color accesible.
 - Esencial: Matplotlib, Figure/Axes, barras, líneas y distribuciones.
