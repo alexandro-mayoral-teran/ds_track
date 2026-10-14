@@ -91,6 +91,12 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 
 ### 2026-10-14
 
+- Cierre final del día: material 05.01–05.03 publicado en main mediante
+  los commits 8a3c4ea, 8428187 y 54db292. Retorno acordado: 05.04,
+  todavía planificada. AGENTS.md permanece local e ignorado; entorno y
+  salidas de revisión se conservan localmente, fuera de Git. No se modificó
+  la evidencia de aprendizaje del estudiante.
+
 - Se cerró la sesión con 05.03: explicación gradual de excepciones, causa,
   propagación, with/finally, conexión/transacción y reemplazo atómico de JSON.
   Añade consumidor con cierre final después del registro y tres fallas didácticas,
