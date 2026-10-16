@@ -80,6 +80,8 @@ reglas de enlace están en
 
 | [`06.03 — Seleccionar elementos`](06_r_foundations/03_subsetting/) | `06_r_foundations` | No aplica todavía |
 
+| [`06.04 — Lógica y valores faltantes`](06_r_foundations/04_logic_missing/) | `06_r_foundations` | No aplica todavía |
+
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
 lab `00.05` (A/B) → lección 06 → lab `00.06`. Los enlaces al final de cada lab llevan al material

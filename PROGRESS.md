@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `06_r_foundations`
-- **Estado de desarrollo:** 06.01–06.03 implementadas; 06.04–06.09 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 06.03 y revisión de continuidad.
-- **Foco de desarrollo del material:** selección por posición/nombre/máscara y estructura devuelta.
+- **Estado de desarrollo:** 06.01–06.04 implementadas; 06.05–06.09 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-16, desarrollo de 06.04 y revisión de continuidad.
+- **Foco de desarrollo del material:** condiciones, faltantes, grupos pendientes y cobertura de resúmenes.
   Próxima sección por implementar:
-  [06.04 — Lógica y valores faltantes](curriculum/06_r_foundations/README.md#04-logica-y-valores-faltantes), todavía planificada.
+  [06.05 — Listas y data frames](curriculum/06_r_foundations/README.md#05-listas-y-data-frames), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -28,8 +28,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
-  28 secciones y lecturas abiertas; 06.01–06.03 disponen de lecciones, scripts y labs,
-  y las otras 25 siguen planificadas. Los módulos 09–10 tienen
+  28 secciones y lecturas abiertas; 06.01–06.04 disponen de lecciones, scripts y labs,
+  y las otras 24 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -40,21 +40,25 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[06.03 — Seleccionar elementos](curriculum/06_r_foundations/03_subsetting/README.md)
-con su [lab](labs/06_r_foundations/03_subsetting/README.md).
-Retomar con 06.04: comparaciones, vectores lógicos, & frente a && y | frente a ||;
-NA/is.na, propagación de faltantes y diferencia entre NA, NULL, NaN y cero.
-Reutilizar ventas y máscaras conocidas; definir qué hacer con una condición
-desconocida antes de filtrar. Justificar na.rm, sin descartar/imputar por costumbre.
-Conservar entradas y conteos; tablas/listas completas siguen en 06.05.
+[06.04 — Lógica y valores faltantes](curriculum/06_r_foundations/04_logic_missing/README.md)
+con su [lab](labs/06_r_foundations/04_logic_missing/README.md).
+Retomar con 06.05: listas con componentes de tipos distintos y data.frame;
+nombres, dimensiones y str. Construir y consultar registros tabulares, conservando
+la correspondencia y distinguiendo una columna vector de una tabla. Reutilizar
+ventas conocidas y faltantes explícitos; introducir cada operación antes de usarla.
+Funciones/control de flujo siguen en 06.06 y archivos en 06.07.
 Contrastar libros y ayuda oficial de la versión elegida, sin nuevas instalaciones.
 
-06.03 añade seleccionar_ventas.R con las mismas cuatro ventas: selección por
-posición/nombre/máscara, contraste de contenedor/contenido y cambio de copia.
-Nombres, duplicados, vacío/faltante/error y correspondencia explícitos; comparación
-simple y lista mínima introducidas antes de usar. Dimensiones/drop son opcionales.
-Selección primera/cuarta suma 420; unidades positivas conserva tres ventas y 660;
-variante del script 720 y del lab 620. Se conservan las muestras 06.01–06.02.
+06.04 añade logica_faltantes.R: conserva las cuatro ventas anteriores y agrega
+dos casos incompletos en otra muestra. Máscaras para cumplen/no cumplen/pendientes
+concilian 2/2/2; cuatro importes conocidos y dos faltantes, cobertura 4/6, suma
+observada 660 y media 165. El total de seis ventas permanece desconocido.
+Umbral 100 produce 3/1/2; confirmar una unidad de V005 en copia produce 2/3/1,
+cobertura 5/6, suma observada 760 y media 152. any/all, cortocircuito escalar,
+NA/NaN/NULL/cero y fronteras de vacío/todos faltantes comprobados. Se ejecutaron
+los once bloques R de la lección y los siete del lab, con tres errores deliberados
+por separado y controles que detectan pérdida de pendientes, imputación a cero
+y exclusión incorrecta de la frontera. Se conservan las muestras 06.01–06.03.
 Comprobado con R 4.6.1 independiente y paquetes incluidos, sin instalaciones ni
 modificaciones de Conda, PATH o bibliotecas. Locale C solo en los procesos de
 revisión por el aviso heredado de C.UTF-8; los scripts no cambian locale.
@@ -94,6 +98,15 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 | 14 | Proyecto reproducible | No iniciado | — |
 
 ## Bitácora
+
+### 2026-10-16
+
+- Se desarrolló 06.04 con lección, script y lab de soluciones desplegables:
+  condiciones, lógica con NA, grupos conciliados y resúmenes con cobertura.
+  Ejemplos, variantes, cortocircuito y fronteras comprobados con R 4.6.1;
+  fuentes previas intactas, sin paquetes externos. Índices y continuidad actualizados.
+- Material R disponible hasta 06.04; 06.05 sigue planificada. No se modificó el
+  estado del estudiante ni se implementaron proyectos/checkpoints pendientes.
 
 ### 2026-10-15
 

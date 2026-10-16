@@ -322,8 +322,8 @@ correspondencia y distingas subconjunto de contenido. No hay proyecto/checkpoint
 implementado asociado. Conserva evidencia real y dudas en PROGRESS.md; disponer
 del material no acredita aprendizaje.
 
-Continúa con el [plan 06.04 — Lógica y valores faltantes](../README.md#04-logica-y-valores-faltantes),
-todavía pendiente. Volver al [índice de R fundamental](../README.md).
+Continúa con [06.04 — Lógica y valores faltantes](../04_logic_missing/README.md).
+Volver al [índice de R fundamental](../README.md).
 
 ## Referencias y atribución
 

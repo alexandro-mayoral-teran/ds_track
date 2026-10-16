@@ -240,7 +240,9 @@ dispone de lección, script y lab.
 añade tipos/longitudes, coerción, operaciones vectorizadas y reciclaje con scripts y lab.
 [06.03 — Seleccionar elementos](curriculum/06_r_foundations/03_subsetting/README.md)
 dispone de lección/script/lab, correspondencia y contraste de operadores.
-06.04–06.09 siguen por desarrollar. Las referencias están en
+[06.04 — Lógica y valores faltantes](curriculum/06_r_foundations/04_logic_missing/README.md)
+dispone de lección/script/lab: condiciones desconocidas, grupos conciliados,
+any/all y resúmenes con cobertura. 06.05–06.09 siguen por desarrollar. Las referencias están en
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.

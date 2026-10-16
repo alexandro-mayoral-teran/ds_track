@@ -87,8 +87,8 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.03 tienen lección/scripts/lab;
-06.04–06.09 y 07–14 conservan planificación;
+05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.04 tienen lección/scripts/lab;
+06.05–06.09 y 07–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -341,8 +341,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 
 ### Desarrollo previsto de los módulos 06–08
 
-Los planes de R contienen 28 secciones; 06.01–06.03 tienen lecciones, scripts y labs,
-y las otras 25 conservan planificación:
+Los planes de R contienen 28 secciones; 06.01–06.04 tienen lecciones, scripts y labs,
+y las otras 24 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -376,6 +376,14 @@ mínima antes de usar $ y distingue [ de [[ según objeto y contenido; dimension
 con matriz/drop son ampliación opcional. Faltantes y lógica solo se anticipan con
 explicación; el detalle de tablas queda en 06.05. Script/lab comprobados con R 4.6.1,
 sin modificar fuentes ni instalar paquetes.
+
+06.04 añade logica_faltantes.R con dos ventas incompletas además de las cuatro
+anteriores. Conserva tres grupos y concilia sus conteos; diferencia máscaras
+vectoriales de preguntas escalares con any/all y cortocircuito. NA, NaN, NULL y
+cero explícitos, suma/media observadas con cobertura y fronteras de vacío/todos
+faltantes; una confirmación se realiza sobre copia. Lección, script y lab
+comprobados con R 4.6.1 y documentación oficial; R4DS segunda edición como lectura
+puntual, sin paquetes externos ni cambios en las fuentes previas.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

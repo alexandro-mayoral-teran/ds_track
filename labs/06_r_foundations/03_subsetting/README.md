@@ -180,5 +180,5 @@ Registra evidencia real y dudas en PROGRESS.md. Puedes cerrar la práctica cuand
 predigas valores/estructuras y mantengas la correspondencia al seleccionar.
 Desarrollar el material no acredita aprendizaje ni completa un proyecto.
 
-Continúa con el [plan 06.04 — Lógica y valores faltantes](../../../curriculum/06_r_foundations/README.md#04-logica-y-valores-faltantes),
-todavía pendiente. Volver a la [lección 06.03](../../../curriculum/06_r_foundations/03_subsetting/README.md).
+Continúa con [06.04 — Lógica y valores faltantes](../../../curriculum/06_r_foundations/04_logic_missing/README.md).
+Volver a la [lección 06.03](../../../curriculum/06_r_foundations/03_subsetting/README.md).

@@ -45,6 +45,14 @@ puntual y contrasta Extract/names con R 4.6.1. Distingue el objeto seleccionado,
 el contenedor y su contenido; anticipa solo una lista mínima y deja la selección
 de tablas para 06.05. drop con una matriz es ampliación opcional.
 
+La [lección 06.04](../curriculum/06_r_foundations/04_logic_missing/README.md) consulta
+[Logical vectors de R4DS segunda edición](https://r4ds.hadley.nz/logicals.html),
+de Wickham, Çetinkaya-Rundel y Grolemund. Usa ejemplos propios de ventas en R base,
+sin requerir dplyr. Contrasta operadores, NA/is.na, any/all y na.rm con la ayuda
+oficial y R 4.6.1: cumplimiento, incumplimiento conocido y pendiente son grupos
+distintos; una suma observada requiere declarar cobertura. Vacío, todos faltantes,
+cero, NULL y NaN se comparan antes de automatizar decisiones en 06.06.
+
 Comienza con el [manual introductorio oficial de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 y consulta [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html)
 para entender las diferencias entre [, [[ y $. Advanced R es apoyo para preguntas
