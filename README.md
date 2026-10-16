@@ -150,8 +150,10 @@ añade unittest, casos conocidos, fronteras, vacíos, fallas e integración, con
 añade anotaciones, docstrings, parámetros opcionales y validación explícita,
 con ejemplos comprobados y lab.
 [05.06 — Clases, composición y dataclasses](curriculum/05_python_applied/06_classes_composition/README.md)
-añade una ampliación opcional con objetos pequeños, configuración y lab;
-05.07–05.11 siguen planificadas.
+añade una ampliación opcional con objetos pequeños, configuración y lab.
+[05.07 — Iteradores y generadores](curriculum/05_python_applied/07_iterators_generators/README.md)
+añade consumo por lotes, conciliación, recursos y límites de memoria, con lab
+opcional; 05.08–05.11 siguen planificadas.
 Los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

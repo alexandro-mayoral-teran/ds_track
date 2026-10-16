@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01–05.06 implementadas; siguiente desarrollo 05.07 (extensión).
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.06 y revisión de continuidad.
-- **Foco de desarrollo del material:** clases pequeñas, estado y dataclasses por composición (opcional).
+- **Estado de desarrollo:** 05.01–05.07 implementadas; siguiente desarrollo 05.08 (extensión).
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.07 y revisión de continuidad.
+- **Foco de desarrollo del material:** iteradores/generadores, lotes, conciliación y recursos (extensión).
   Próxima sección por implementar:
-  [05.07 — Iteradores y generadores](curriculum/05_python_applied/README.md#07-iteradores-y-generadores), extensión.
+  [05.08 — Funciones como valores y decoradores](curriculum/05_python_applied/README.md#08-funciones-como-valores-y-decoradores), extensión.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -20,7 +20,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   JSON, logging y lab; 05.03 añade errores, recursos, JSON atómico y lab.
   05.04 añade lección, 21 pruebas unittest y lab; 05.05 añade tipos, contratos,
   revisión sin exportar, doce pruebas y lab. 05.06 añade clases/composición,
-  dataclasses, trece pruebas y lab opcionales. 05.07–05.11 están por desarrollar.
+  dataclasses, trece pruebas y lab opcionales. 05.07 añade generadores, lotes
+  conciliados, quince pruebas y lab de extensión. 05.08–05.11 están por desarrollar.
   Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
@@ -33,22 +34,24 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.06 — Clases, composición y dataclasses](curriculum/05_python_applied/06_classes_composition/README.md)
-con su [lab](labs/05_python_applied/06_classes_composition/README.md), opcionales.
-Retomar con 05.07, extensión: iterable/iterador, consumo, yield y lotes sobre
-una fuente conocida; conciliar con la lectura completa y explicar qué objetos
-siguen en memoria. No prometer memoria constante si se retienen resultados.
+[05.07 — Iteradores y generadores](curriculum/05_python_applied/07_iterators_generators/README.md)
+con su [lab](labs/05_python_applied/07_iterators_generators/README.md), de extensión.
+Retomar con 05.08: funciones como valores, paso de funciones y envoltura de un
+comportamiento transversal; introducir decoradores propios y functools.wraps
+sin ocultar resultados, excepciones ni efectos. Usar funciones conocidas y
+pruebas; no convertir caché o metaprogramación en requisito para el núcleo.
 El núcleo 05.01–05.05 está disponible; 05.11 sigue planificado. Las ampliaciones
 05.06–05.10 no bloquean ese cierre esencial ni cambian la numeración del track.
 
-05.06 añade objetos.py sin modificar funciones/consumidores anteriores.
-CoverageCounts ilustra atributos mutables, alias y método con validación;
-ReviewOptions conserva corte/tupla de segmentos con dataclass, frozen y
-__post_init__. ReviewJob compone fuente/opciones y delega el resumen a 05.05:
-construir no lee; summary relee y concilia, sin guardar tablas ni exportar.
-replace prepara variaciones validadas. Trece métodos nuevos y catorce con la
-solución del lab; las 21 pruebas de 05.04 y 12 de 05.05 permanecen separadas.
-No se agregaron dependencias ni se envolvieron DataFrames en clases propias.
+05.07 añade iteracion.py y ejecutar_lotes.py sin modificar el recorrido anterior.
+iter_batches entrega listas nuevas y conserva el último lote; valida al consumir.
+batch_indicators usa CSV por lotes, valida claves/fechas/valores incluso fuera
+del corte y retorna indicadores al terminar. Retiene catálogo, claves y saldos
+para mediana: no promete memoria constante. Archivos bajo with, sin exportar.
+Quince métodos nuevos y dieciséis con la solución del lab; las colecciones
+anteriores conservan sus 21/12/13 métodos. Se distingue tamaño en registros de
+memoria total, gramática CSV de conversiones pandas y mediana de promedio de
+medianas. No se agregaron dependencias ni grandes datasets.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -86,6 +89,24 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-15
+
+- Se desarrolló 05.07 como extensión: iterables/iteradores, consumo compartido,
+  agotamiento, yield, expresiones generadoras, errores diferidos, islice y lotes.
+  Incluye CSV con cierre explícito, indicadores por lotes conciliados, diagrama
+  con lectura textual e inventario de memoria, sin prometer memoria constante.
+  Lab con soluciones razonadas y prueba propia del último lote.
+- Pasaron los 61 métodos combinados (21/12/13 previos y 15 nuevos), dieciséis
+  con la solución del lab en copia y quince con Python -O. Se ejecutaron los
+  ejemplos Markdown; nueve combinaciones de corte/tamaño de fuentes originales
+  coinciden con la lectura completa. Fuentes intactas y archivos cerrados en
+  éxito/falla. Copias temporales detectaron pérdida del último lote, olvido de
+  claves entre lotes y exclusión de cero. Se comprobaron errores tardíos fuera
+  del corte, campos faltantes/adicionales, comillas sin cierre, vacíos y rangos.
+  Se reutilizó .venv-altair-review, sin instalaciones ni cambios al lockfile.
+- Índices, navegación, roadmap y arquitectura actualizados; enlaces locales,
+  fragmentos y bloques Markdown revisados. Sigue 05.08 como extensión;
+  05.11 permanece planificado y el estado del estudiante se conserva sin
+  evidencias nuevas. El desarrollo del material no acredita aprendizaje.
 
 - Se desarrolló 05.06 como ampliación opcional: función/diccionario/clase,
   instancias, __init__, self, métodos, alias, atributos compartidos y propios;

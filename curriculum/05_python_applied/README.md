@@ -7,7 +7,7 @@ reutilizable, comprobable y reconstruible. Completar primero
 [04 — Visualización en Python](../04_visualization_python/README.md), incluido
 su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
 La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis. Las seis primeras secciones tienen material disponible; 05.06 es opcional.
+reorganizar ese mismo análisis. Las siete primeras secciones tienen material disponible; 05.06 y 05.07 son opcionales.
 
 **Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
 dispone de lección, paquete local, script, notebook y lab;
@@ -22,7 +22,10 @@ docstrings, validación de conteos, parámetros opcionales y revisión del resum
 con pruebas y lab.
 [05.06 — Clases, composición y dataclasses](06_classes_composition/README.md)
 añade objetos pequeños, configuración y revisión por composición, con pruebas
-y lab opcionales. Las secciones 07–11
+y lab opcionales.
+[05.07 — Iteradores y generadores](07_iterators_generators/README.md) incorpora
+consumo, yield, CSV por lotes y conciliación con memoria/recursos explícitos,
+con pruebas y lab de extensión. Las secciones 08–11
 siguen planificadas; sus enlaces internos describen el alcance pendiente.
 La disponibilidad del material no acredita aprendizaje del estudiante.
 
@@ -41,7 +44,7 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 | 4 | [Pruebas de código y datos](04_testing/README.md) | Esencial | Detectar regresiones con casos significativos |
 | 5 | [Tipos y contratos de funciones](05_types_contracts/README.md) | Práctica | Hacer explícitas entradas y salidas |
 | 6 | [Clases, composición y dataclasses](06_classes_composition/README.md) | Práctica opcional | Representar estructuras cuando resulte útil |
-| 7 | [Iteradores y generadores](#07-iteradores-y-generadores) | Extensión | Procesar lotes sin reunir toda la entrada |
+| 7 | [Iteradores y generadores](07_iterators_generators/README.md) | Extensión | Procesar lotes sin reunir toda la entrada |
 | 8 | [Funciones como valores y decoradores](#08-funciones-como-valores-y-decoradores) | Extensión | Reutilizar un comportamiento transversal |
 | 9 | [Medir antes de optimizar](#09-medir-antes-de-optimizar) | Extensión | Localizar un costo y comprobar una mejora |
 | 10 | [Integración con APIs](#10-integracion-con-apis) | Extensión | Obtener datos externos con controles explícitos |
@@ -125,9 +128,12 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 ### 07 — Iteradores y generadores
 
 - Iterables, iteradores, consumo, yield y procesamiento por lotes.
-- Práctica prevista: resumir una entrada por lotes, conciliar con el resultado
-  completo y explicar qué sigue ocupando memoria. No prometer memoria constante
-  si se retienen todos los resultados o grupos.
+- [Lección disponible](07_iterators_generators/README.md) y
+  [lab 05.07](../../labs/05_python_applied/07_iterators_generators/README.md),
+  de extensión: consumo único, último lote, errores diferidos y recursos; CSV
+  por lotes con claves/valores conservados y conciliación de indicadores.
+  Catálogo, claves y saldos para mediana siguen en memoria; no se promete
+  memoria constante ni se promedian medianas de lotes.
 
 <a id="08-funciones-como-valores-y-decoradores"></a>
 
@@ -173,7 +179,7 @@ Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
 no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
 metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
 
-Los labs 05.01–05.06 están disponibles (05.06 opcional); los labs 05.07–05.11 siguen previstos,
+Los labs 05.01–05.07 están disponibles (05.06/05.07 opcionales); los labs 05.08–05.11 siguen previstos,
 señalando los opcionales cuando se desarrollen.
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
 registrados en [proyectos](../../projects/README.md); no se exige crear otro.

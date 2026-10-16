@@ -30,7 +30,9 @@ añade lección, colección unittest y lab.
 añade lección, ejemplos, pruebas de contratos y lab.
 [05.06 — Clases, composición y dataclasses](05_python_applied/06_classes_composition/README.md)
 añade lección/lab opcionales y pruebas de objetos sobre las mismas funciones.
-05.07–05.11 conservan sus planes.
+[05.07 — Iteradores y generadores](05_python_applied/07_iterators_generators/README.md)
+añade lección/lab de extensión, lectura por lotes y conciliación de indicadores.
+05.08–05.11 conservan sus planes.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
