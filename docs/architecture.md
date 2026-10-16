@@ -87,7 +87,7 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.10 disponen de lección/lab y paquete local; 05.11 y 06–14 conservan planificación;
+05.01–05.11 disponen de lección/lab y paquete local; 06–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -104,7 +104,8 @@ y logging sobre ese paquete; 05.03 desarrolla errores y recursos;
 05.08 incorpora funciones como valores y una envoltura de registro comprobada.
 05.09 incorpora mediciones repetidas, perfiles y comparación de memoria/tiempo
 con contratos conservados. 05.10 incorpora paginación, respuestas locales y
-normalización conciliada, con transporte HTTPS probado sin red. 05.11 conserva su plan.
+normalización conciliada, con transporte HTTPS probado sin red. 05.11 integra
+ejecución, figura, verificación y reconstrucción; el material del módulo está disponible.
 pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -264,6 +265,14 @@ atómico, sin hacer atómica la carpeta. urllib cierra respuestas y HTTPError,
 limita bytes y usa timeout explícito; el adaptador se prueba con sustitutos locales.
 Dieciocho pruebas nuevas y lab de extensión, sin credenciales, servicios reales
 obligatorios ni nuevas dependencias. No implementa snapshots ni un cliente universal.
+05.11 reutiliza ejecutar_seguro.py/run_delivery con configuración de cierre,
+sin duplicar cálculos. auditoria.py y verificar_entrega.py recalculan desde
+fuentes copiadas, contrastan cinco tablas en la frontera CSV y la especificación
+Altair, y comprueban propiedades de PNG/SVG. Comparan reconstrucciones por corte,
+hashes de fuentes, tablas y especificación, sin exigir imágenes de bytes idénticos.
+Diez pruebas nuevas y lab de cierre, incluida falla controlada y revisión visual.
+El verificador es de solo lectura y no acredita revisión visual ni aprendizaje;
+no exige ampliaciones opcionales ni crea proyectos/checkpoints pendientes.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

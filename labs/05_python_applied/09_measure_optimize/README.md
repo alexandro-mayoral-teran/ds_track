@@ -194,6 +194,6 @@ material con completar el aprendizaje.
 
 Si sigues las ampliaciones, continúa con la siguiente lección:
 [05.10 — Integración con APIs](../../../curriculum/05_python_applied/10_api_integration/README.md),
-disponible con lab. El cierre 05.11 sigue planificado. Esta extensión no
+disponible con lab. El cierre 05.11 está disponible con lab. Esta extensión no
 bloquea el núcleo ni R. Volver a la
 [lección 05.09](../../../curriculum/05_python_applied/09_measure_optimize/README.md).

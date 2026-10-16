@@ -214,7 +214,10 @@ compara alternativas equivalentes sin prometer una mejora universal.
 [05.10 — Integración con APIs](curriculum/05_python_applied/10_api_integration/README.md)
 dispone de lección/lab de extensión, respuestas locales, paginación acotada y
 conciliación; transporte HTTPS probado con sustitutos, sin conexión obligatoria.
-La sección 11 está por desarrollar.
+[05.11 — Cierre del proyecto Python](curriculum/05_python_applied/11_project_closure/README.md)
+dispone de lección/lab, reconstrucción desde fuentes copiadas y verificación
+de tablas y figura guardadas. Las once secciones tienen material disponible;
+el aprendizaje se acredita mediante evidencias revisadas.
 
 - Esencial: módulos, funciones, configuración, logging y comprobaciones.
 - Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.

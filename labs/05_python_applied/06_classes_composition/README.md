@@ -181,5 +181,5 @@ ejecutar ejemplos no acredita por sí solo el aprendizaje del estudiante.
 
 Si sigues las ampliaciones, continúa con el
 [05.07 — Iteradores y generadores](../../../curriculum/05_python_applied/07_iterators_generators/README.md),
-disponible como extensión. El cierre 05.11 continúa planificado; esta ampliación no
+disponible como extensión. El cierre 05.11 está disponible con lab; esta ampliación no
 bloquea el núcleo. Volver a la [lección 05.06](../../../curriculum/05_python_applied/06_classes_composition/README.md).

@@ -72,6 +72,8 @@ reglas de enlace están en
 
 | [`05.10 — Integración con APIs (extensión)`](05_python_applied/10_api_integration/) | `05_python_applied` | No aplica todavía |
 
+| [`05.11 — Cierre del proyecto Python`](05_python_applied/11_project_closure/) | `05_python_applied` | No aplica todavía |
+
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
 lab `00.05` (A/B) → lección 06 → lab `00.06`. Los enlaces al final de cada lab llevan al material

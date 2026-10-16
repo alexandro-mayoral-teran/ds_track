@@ -466,8 +466,8 @@ y dudas en PROGRESS.md; material disponible no acredita aprendizaje.
 
 Si sigues las ampliaciones, continúa con el
 [05.07 — Iteradores y generadores](../07_iterators_generators/README.md),
-disponible como extensión con consumo, lotes y conciliación. El [cierre 05.11](../README.md#11-cierre-del-proyecto-python)
-sigue planificado. Las ampliaciones 05.06–05.10 no bloquean el núcleo ni R.
+disponible como extensión con consumo, lotes y conciliación. El [cierre 05.11](../11_project_closure/README.md)
+está disponible con lab. Las ampliaciones 05.06–05.10 no bloquean el núcleo ni R.
 Volver al [índice de Python aplicado](../README.md).
 
 ## Referencias y atribución

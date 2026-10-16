@@ -173,6 +173,6 @@ Puedes cerrar esta extensión cuando expliques esas decisiones y compruebes
 desarrollo del material no acredita aprendizaje del estudiante.
 
 Continúa con la siguiente lección prevista:
-[plan 05.11 — Cierre del proyecto Python](../../../curriculum/05_python_applied/README.md#11-cierre-del-proyecto-python),
-todavía pendiente. Las ampliaciones no obligan a usar una API real para cerrar.
+[05.11 — Cierre del proyecto Python](../../../curriculum/05_python_applied/11_project_closure/README.md),
+disponible con lab. Las ampliaciones no obligan a usar una API real para cerrar.
 Volver a la [lección 05.10](../../../curriculum/05_python_applied/10_api_integration/README.md).

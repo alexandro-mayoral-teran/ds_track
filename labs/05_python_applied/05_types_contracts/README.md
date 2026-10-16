@@ -181,5 +181,5 @@ firma, el contrato y las comprobaciones con tus palabras, sin confundir pasar
 ejemplos con validación de cualquier archivo futuro.
 
 Continúa con [05.06 — Clases, composición y dataclasses](../../../curriculum/05_python_applied/06_classes_composition/README.md),
-disponible como práctica opcional. El cierre 05.11 sigue planificado; las ampliaciones
+disponible como práctica opcional. El cierre 05.11 está disponible con lab; las ampliaciones
 no bloquean el núcleo. Volver a la [lección 05.05](../../../curriculum/05_python_applied/05_types_contracts/README.md).

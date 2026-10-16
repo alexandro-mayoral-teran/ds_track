@@ -445,8 +445,8 @@ evidencia y dudas en PROGRESS.md; el material disponible no acredita aprendizaje
 
 Si sigues las ampliaciones, continúa con el
 [05.09 — Medir antes de optimizar](../09_measure_optimize/README.md),
-disponible con lab de extensión. El [cierre 05.11](../README.md#11-cierre-del-proyecto-python)
-sigue planificado. Las extensiones 05.06–05.10 no bloquean el núcleo ni R.
+disponible con lab de extensión. El [cierre 05.11](../11_project_closure/README.md)
+está disponible con lab. Las extensiones 05.06–05.10 no bloquean el núcleo ni R.
 Volver al [índice de Python aplicado](../README.md).
 
 ## Referencias y atribución

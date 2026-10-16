@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01–05.10 implementadas; siguiente desarrollo 05.11 (cierre).
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.10 y revisión de continuidad.
-- **Foco de desarrollo del material:** HTTP/JSON, paginación, reintentos acotados y normalización conciliada (extensión).
+- **Estado de desarrollo:** 05.01–05.11 implementadas; material del módulo 05 disponible.
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.11 y revisión de continuidad.
+- **Foco de desarrollo del material:** cierre, entrega reconstruible y verificación de archivos guardados.
   Próxima sección por implementar:
-  [05.11 — Cierre del proyecto Python](curriculum/05_python_applied/README.md#11-cierre-del-proyecto-python), práctica de cierre.
+  [06.01 — R, editor, scripts y paquetes](curriculum/06_r_foundations/README.md#01-r-editor-scripts-y-paquetes), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -25,7 +25,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   valores, decoradores, trece pruebas y lab de extensión. 05.09 añade mediciones
   repetidas, memoria trazada, perfiles, trece pruebas y lab de extensión.
   05.10 añade páginas simuladas, normalización conciliada, dieciocho pruebas
-  y lab de extensión. 05.11 está por desarrollar.
+  y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
+  diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
@@ -38,26 +39,22 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.10 — Integración con APIs](curriculum/05_python_applied/10_api_integration/README.md)
-con su [lab](labs/05_python_applied/10_api_integration/README.md), de extensión.
-Retomar con 05.11: reconstruir indicadores y figura desde una ejecución explícita,
-con entradas, configuración, resultados comprobados e instrucciones. Reutilizar
-el paquete y las fuentes anteriores; conciliar con pandas/SQL y probar una falla
-relevante. El cierre local basta; no exigir API real, decoradores, clases ni
-otras ampliaciones opcionales. Revisar primero qué mecanismos de ejecución y
-entrega ya existen para integrarlos sin duplicar lógica ni sobrescribir salidas.
-El núcleo 05.01–05.05 está disponible; 05.11 sigue planificado. Las ampliaciones
-05.06–05.10 no bloquean ese cierre esencial ni cambian la numeración del track.
+[05.11 — Cierre del proyecto Python](curriculum/05_python_applied/11_project_closure/README.md)
+con su [lab](labs/05_python_applied/11_project_closure/README.md).
+Retomar con 06.01: revisar el plan de R fundamental, entorno elegido, intérprete,
+editor y primeros scripts/paquetes. Enseñar el modelo propio de R, no traducir
+Python línea por línea. Las versiones/dependencias se verifican al implementar;
+no instalar ni fijar requisitos por anticipación. Mantener lecturas abiertas,
+renv en 06 y el orden de prerrequisitos. El material de 05 está disponible;
+las ampliaciones 05.06–05.10 no bloquean el cierre esencial ni la continuación.
 
-05.10 añade api.py, ejecutar_api.py, configuración y muestras de 48 observaciones
-en tres páginas, sin cambiar algoritmos previos. Transporte inyectable, contrato
-JSON explícito, límites, claves globales, total conciliado y tabla tipada sin
-pérdida de precisión. Solo reintenta timeout/503 sin Retry-After; otros errores
-se comunican sin tabla parcial. El script es simulado y registra pausas sin
-dormir; concilia con los CSV y no requiere red. El adaptador HTTPS se comprobó
-con sustitutos locales. Dieciocho métodos nuevos; diecinueve con la solución del
-lab. La colección combinada conserva 105 métodos iniciales
-(21/12/13/15/13/13/18), sin nuevas dependencias.
+05.11 reutiliza ejecutar_seguro.py y añade configuración, auditoria.py y
+verificar_entrega.py, sin duplicar cálculo ni exigir ampliaciones. Recalcula
+desde fuentes copiadas, contrasta cinco tablas/20 conciliaciones y Altair,
+comprueba propiedades de PNG/SVG y compara reconstrucciones. Verificación de
+solo lectura; revisión visual y evidencia del estudiante siguen separadas.
+Diez métodos nuevos; once con la solución del lab. La colección combinada
+conserva 115 métodos iniciales (21/12/13/15/13/13/18/10), sin dependencias nuevas.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -95,6 +92,25 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-15
+
+- Se desarrolló 05.11 como cierre: recorrido completo de ejecución, verificación,
+  reconstrucción desde copias y falla antes del cierre. Reutiliza la entrada de
+  05.03; añade auditoría de solo lectura de tablas/Altair y propiedades de figuras.
+  Incluye diagrama, referencias primarias, lab con soluciones y prueba de estructura.
+  Las once lecciones/labs del módulo tienen material, sin acreditar aprendizaje.
+- Pasaron 115 métodos combinados, diez con Python -O y once con la solución del
+  lab en copia. Entrega original y reconstruida equivalentes; cinco tablas y
+  20 controles, PNG 1920×880 revisado visualmente. Destino existente conserva
+  sus archivos; falla before-close conserva carpeta parcial sin marcador, y
+  verificación falla sin repararla. Fuentes originales intactas. Copias aisladas
+  detectaron omisión de tablas, uso de ruta original en vez de copia y omisión
+  de especificación. También se comprobaron corte vacío, registros incoherentes,
+  tabla/fuente alterada, figura truncada y SVG inválido.
+- Índices, navegación, roadmap y arquitectura actualizados; continuidad desde
+  lecciones/labs anteriores al cierre disponible y siguiente desarrollo 06.01.
+  Enlaces, fragmentos, bloques y diff revisados. Entorno existente, sin instalaciones
+  ni cambios al lockfile. Proyectos/checkpoints siguen pendientes y el estado del
+  estudiante se conserva sin agregar evidencias personales.
 
 - Se desarrolló 05.10 como extensión: solicitud HTTP/GET, estados, cabeceras,
   JSON frente a contrato de datos, paginación, límites y política explícita de

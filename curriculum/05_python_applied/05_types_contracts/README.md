@@ -400,8 +400,8 @@ No hay proyecto/checkpoint implementado asociado; conserva evidencia y dudas
 en PROGRESS.md sin acreditar aprendizaje por la disponibilidad del material.
 
 Después puedes estudiar [05.06 — Clases, composición y dataclasses](../06_classes_composition/README.md),
-disponible como práctica opcional con objetos pequeños y composición. El [cierre 05.11](../README.md#11-cierre-del-proyecto-python)
-sigue planificado; las ampliaciones 05.06–05.10 no bloquean el cierre esencial.
+disponible como práctica opcional con objetos pequeños y composición. El [cierre 05.11](../11_project_closure/README.md)
+está disponible con lab; las ampliaciones 05.06–05.10 no bloquean el cierre esencial.
 Volver al [índice de Python aplicado](../README.md).
 
 ## Referencias y atribución

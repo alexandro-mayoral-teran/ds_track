@@ -409,7 +409,7 @@ evidencia y dudas en PROGRESS.md; disponer del material no acredita aprendizaje.
 
 Si continúas las ampliaciones, sigue el
 [05.10 — Integración con APIs](../10_api_integration/README.md), disponible con lab.
-El [cierre 05.11](../README.md#11-cierre-del-proyecto-python) sigue planificado.
+El [cierre 05.11](../11_project_closure/README.md) está disponible con lab.
 Volver al [índice de Python aplicado](../README.md).
 
 ## Referencias y atribución

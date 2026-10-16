@@ -430,8 +430,8 @@ por disponer del material ni por ejecutar sus pruebas.
 
 Si sigues las ampliaciones, continúa con el
 [05.08 — Funciones como valores y decoradores](../08_functions_decorators/README.md),
-disponible como extensión con reenvío, metadatos y registro de llamadas. El [cierre 05.11](../README.md#11-cierre-del-proyecto-python)
-sigue planificado. Las extensiones 05.06–05.10 no bloquean el núcleo ni R.
+disponible como extensión con reenvío, metadatos y registro de llamadas. El [cierre 05.11](../11_project_closure/README.md)
+está disponible con lab. Las extensiones 05.06–05.10 no bloquean el núcleo ni R.
 Volver al [índice de Python aplicado](../README.md).
 
 ## Referencias y atribución

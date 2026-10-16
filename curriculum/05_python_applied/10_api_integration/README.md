@@ -381,9 +381,9 @@ reintenta. No hay proyecto/checkpoint implementado asociado. Registra evidencia
 y dudas en PROGRESS.md; tener el material no demuestra haberlo aprendido.
 
 La siguiente sección es el
-[plan 05.11 — Cierre del proyecto Python](../README.md#11-cierre-del-proyecto-python),
-todavía pendiente. Integrará la reconstrucción de indicadores y figura; no
-exigirá incorporar todas las ampliaciones opcionales.
+[05.11 — Cierre del proyecto Python](../11_project_closure/README.md),
+disponible con lab. Integra la reconstrucción de indicadores y figura sin
+exigir todas las ampliaciones opcionales.
 Volver al [índice de Python aplicado](../README.md).
 
 ## Referencias y atribución

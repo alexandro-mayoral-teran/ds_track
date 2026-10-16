@@ -161,7 +161,10 @@ añade mediciones repetidas, perfiles, memoria y comparación de contratos con l
 de extensión.
 [05.10 — Integración con APIs](curriculum/05_python_applied/10_api_integration/README.md)
 añade páginas JSON simuladas, límites, reintentos y normalización conciliada,
-con pruebas y lab de extensión; 05.11 sigue planificada.
+con pruebas y lab de extensión.
+[05.11 — Cierre del proyecto Python](curriculum/05_python_applied/11_project_closure/README.md)
+integra ejecución, figura, verificación de archivos y reconstrucción con lab.
+Las once secciones de Python aplicado tienen material disponible.
 Los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
