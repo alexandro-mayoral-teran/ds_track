@@ -324,8 +324,8 @@ Puedes avanzar cuando ejecutes y expliques la colección, interpretes una falla,
 agregues un caso con respuesta manual y distingas validación de datos y pruebas.
 Conserva tu evidencia y dudas en PROGRESS.md; no hay proyecto/checkpoint implementado asociado.
 
-Continúa con el [plan 05.05 — Tipos y contratos](../README.md#05-tipos-y-contratos-de-funciones),
-todavía sin lección ni lab. Volver al [índice de Python aplicado](../README.md).
+Continúa con [05.05 — Tipos y contratos](../05_types_contracts/README.md),
+con anotaciones, documentación y límites comprobables sobre el mismo paquete. Volver al [índice de Python aplicado](../README.md).
 
 ## Referencias y atribución
 

@@ -197,7 +197,9 @@ y [05.02 — Configuración y registro](curriculum/05_python_applied/02_configur
 y [05.03 — Errores y recursos](curriculum/05_python_applied/03_errors_resources/README.md)
 y [05.04 — Pruebas de código y datos](curriculum/05_python_applied/04_testing/README.md)
 disponen de lección y lab; 05.04 incluye pruebas unittest sobre el paquete compartido.
-Las secciones 05–11 están por desarrollar.
+[05.05 — Tipos y contratos](curriculum/05_python_applied/05_types_contracts/README.md)
+dispone de lección/lab, cobertura con contrato explícito y revisión sin exportar.
+Las secciones 06–11 están por desarrollar.
 
 - Esencial: módulos, funciones, configuración, logging y comprobaciones.
 - Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.

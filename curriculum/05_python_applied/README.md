@@ -7,7 +7,7 @@ reutilizable, comprobable y reconstruible. Completar primero
 [04 — Visualización en Python](../04_visualization_python/README.md), incluido
 su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
 La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis. Las cuatro primeras secciones tienen material disponible.
+reorganizar ese mismo análisis. Las cinco primeras secciones tienen material disponible.
 
 **Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
 dispone de lección, paquete local, script, notebook y lab;
@@ -17,7 +17,9 @@ añade argumentos, JSON y logging;
 añade cierre por etapas y demostraciones de recursos sobre el mismo paquete.
 [05.04 — Pruebas de código y datos](04_testing/README.md) añade una colección
 unittest, casos conocidos, fronteras, vacíos e integración, con lab.
-Las secciones 05–11
+[05.05 — Tipos y contratos](05_types_contracts/README.md) incorpora anotaciones,
+docstrings, validación de conteos, parámetros opcionales y revisión del resumen,
+con pruebas y lab. Las secciones 06–11
 siguen planificadas; sus enlaces internos describen el alcance pendiente.
 La disponibilidad del material no acredita aprendizaje del estudiante.
 
@@ -34,7 +36,7 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 | 2 | [Configuración y registro de ejecución](02_configuration_logging/README.md) | Esencial | Ejecutar con entradas y parámetros explícitos |
 | 3 | [Errores y gestión de recursos](03_errors_resources/README.md) | Esencial | Comunicar fallas sin dejar resultados engañosos |
 | 4 | [Pruebas de código y datos](04_testing/README.md) | Esencial | Detectar regresiones con casos significativos |
-| 5 | [Tipos y contratos de funciones](#05-tipos-y-contratos-de-funciones) | Práctica | Hacer explícitas entradas y salidas |
+| 5 | [Tipos y contratos de funciones](05_types_contracts/README.md) | Práctica | Hacer explícitas entradas y salidas |
 | 6 | [Clases, composición y dataclasses](#06-clases-composicion-y-dataclasses) | Práctica opcional | Representar estructuras cuando resulte útil |
 | 7 | [Iteradores y generadores](#07-iteradores-y-generadores) | Extensión | Procesar lotes sin reunir toda la entrada |
 | 8 | [Funciones como valores y decoradores](#08-funciones-como-valores-y-decoradores) | Extensión | Reutilizar un comportamiento transversal |
@@ -97,8 +99,11 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 
 - Anotaciones, docstrings, argumentos opcionales y estructuras esperadas.
   Las anotaciones por sí solas no validan datos durante la ejecución.
-- Práctica prevista: documentar transformaciones conocidas y diferenciar
-  comprobaciones de datos de análisis estático opcional.
+- [Lección disponible](05_types_contracts/README.md) y
+  [lab 05.05](../../labs/05_python_applied/05_types_contracts/README.md): leer
+  firmas, documentar estructuras y unidades, distinguir None/cero/vacío y
+  comprobar límites de contratos sobre el paquete. Análisis estático opcional,
+  sin nuevas dependencias ni promesa de validación por las anotaciones.
 
 <a id="06-clases-composicion-y-dataclasses"></a>
 
@@ -162,7 +167,7 @@ Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
 no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
 metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
 
-Los labs 05.01–05.04 están disponibles; los labs 05.05–05.11 siguen previstos,
+Los labs 05.01–05.05 están disponibles; los labs 05.06–05.11 siguen previstos,
 señalando los opcionales cuando se desarrollen.
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
 registrados en [proyectos](../../projects/README.md); no se exige crear otro.

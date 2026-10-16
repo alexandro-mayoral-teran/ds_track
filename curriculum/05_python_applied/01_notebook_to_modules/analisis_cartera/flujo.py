@@ -6,6 +6,7 @@ import shutil
 
 import altair as alt
 import matplotlib
+import pandas as pd
 
 from .entrada import read_detail
 from .transformacion import summarize
@@ -13,8 +14,16 @@ from .comprobacion import reference, reconcile
 from .presentacion import delivery_figure, save_variant, medians_chart, report
 
 
-def build_analysis(source, cut="2026-10-31"):
-    """Leer, transformar y conciliar; devolver tablas sin escribir entregas."""
+def build_analysis(source: str | Path, cut: str = "2026-10-31") -> dict[str, pd.DataFrame]:
+    """Leer, transformar y conciliar; devolver tablas sin escribir entregas.
+
+    source sigue read_detail y cut sigue summarize. Retorna las claves corte,
+    resumen, referencia_csv, indicadores y conciliacion. Todas contienen
+    DataFrames; indicadores incluye Todos y conciliacion contiene veinte
+    controles. No modifica fuentes, no dibuja ni crea carpetas. Propaga errores
+    de lectura/validación; reconcile lanza ValueError ante una diferencia.
+    La anotación del diccionario no impone sus claves ni el esquema de tablas.
+    """
     detail = read_detail(source)
     selected, summary = summarize(detail, cut)
     expected = reference(source, cut)
@@ -23,9 +32,10 @@ def build_analysis(source, cut="2026-10-31"):
             "indicadores": totals, "conciliacion": checks}
 
 
-def export(source, output, cut="2026-10-31", dpi=160):
+def export(
+    source: str | Path, output: str | Path, cut: str = "2026-10-31", dpi: int = 160,
+) -> dict[str, pd.DataFrame]:
     """Construir una entrega nueva; solo esta llamada escribe y dibuja."""
-    import pandas as pd
     import matplotlib.pyplot as plt
 
     if isinstance(dpi, bool) or not isinstance(dpi, int) or dpi <= 0:

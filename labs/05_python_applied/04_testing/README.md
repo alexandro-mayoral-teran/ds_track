@@ -179,5 +179,4 @@ Registra cuentas manuales, comandos, falla/corrección, método nuevo y dudas
 en PROGRESS.md sin cambiar el estado de aprendizaje por la mera disponibilidad
 del material. Avanza cuando puedas explicar esas evidencias con tus palabras.
 
-Continúa con el [plan 05.05 — Tipos y contratos](../../../curriculum/05_python_applied/README.md#05-tipos-y-contratos-de-funciones),
-todavía pendiente. Volver a la [lección 05.04](../../../curriculum/05_python_applied/04_testing/README.md).
+Continúa con [05.05 — Tipos y contratos](../../../curriculum/05_python_applied/05_types_contracts/README.md). Volver a la [lección 05.04](../../../curriculum/05_python_applied/04_testing/README.md).

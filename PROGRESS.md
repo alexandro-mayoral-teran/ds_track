@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01–05.04 implementadas; siguiente desarrollo 05.05.
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.04 y revisión de continuidad.
-- **Foco de desarrollo del material:** pruebas de código y datos con unittest sobre el paquete compartido.
+- **Estado de desarrollo:** 05.01–05.05 implementadas; siguiente desarrollo 05.06 (opcional).
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.05 y revisión de continuidad.
+- **Foco de desarrollo del material:** tipos, docstrings y contratos comprobables sobre el paquete compartido.
   Próxima sección por implementar:
-  [05.05 — Tipos y contratos de funciones](curriculum/05_python_applied/README.md#05-tipos-y-contratos-de-funciones).
+  [05.06 — Clases, composición y dataclasses](curriculum/05_python_applied/README.md#06-clases-composicion-y-dataclasses), opcional.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -18,7 +18,9 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   04.01–04.09 tienen lecciones y labs (04.08 opcional); 05.01 tiene lección,
   paquete local, script, notebook y lab. 05.02 añade argumentos, configuración
   JSON, logging y lab; 05.03 añade errores, recursos, JSON atómico y lab.
-  05.04 añade lección, 21 pruebas unittest y lab; 05.05–05.11 están por desarrollar. Los módulos 06–08 tienen
+  05.04 añade lección, 21 pruebas unittest y lab; 05.05 añade tipos, contratos,
+  revisión sin exportar, doce pruebas y lab. 05.06–05.11 están por desarrollar.
+  Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -30,20 +32,22 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.04 — Pruebas de código y datos](curriculum/05_python_applied/04_testing/README.md)
-con su [lab](labs/05_python_applied/04_testing/README.md).
-Retomar con 05.05: anotaciones, docstrings, argumentos opcionales y estructuras
-esperadas sobre el paquete compartido. Distinguir documentación/análisis estático
-de validación efectiva, sin agregar dependencias por anticipación.
+[05.05 — Tipos y contratos de funciones](curriculum/05_python_applied/05_types_contracts/README.md)
+con su [lab](labs/05_python_applied/05_types_contracts/README.md).
+Retomar con 05.06, opcional: clases, instancias, atributos, métodos y composición;
+comparar funciones/diccionarios antes de introducir una clase y después dataclass
+para una estructura que lo justifique. No envolver cada DataFrame en clases.
+El núcleo 05.01–05.05 está disponible; 05.11 sigue planificado. Las ampliaciones
+05.06–05.10 no bloquean ese cierre esencial ni cambian la numeración del track.
 
-05.04 explica expectativas manuales, pruebas de función e integración, validación,
-fronteras, vacíos, comparación de tablas y conservación ante fallas. La colección
-pruebas_0504 vive junto al paquete de 05.01: seis observaciones pequeñas, CSV
-creados en directorios temporales y 21 métodos iniciales. El lab añade un método
-para distinguir mediana de promedio; interpretar una falla no exige modificar
-el paquete. Las veinte conciliaciones de cada análisis siguen siendo controles
-de datos distintos del número de métodos unittest. No se automatiza revisión
-visual ni se acredita aprendizaje por pasar los ejemplos.
+05.05 añade contratos.coverage_pct y normalize_cut, anotaciones/docstrings de
+lectura, transformación y coordinación, y review_summary para revisar sin
+exportar. None usa el corte didáctico fijo; en segmentos None conserva todos y
+[] ninguno, sin omitir validación de fuentes. Se conservan fuentes, consumidores,
+medianas, cobertura y referencia independiente. Doce métodos nuevos protegen
+contratos; los veintiuno de 05.04 permanecen separados. El lab añade un caso
+sobre segmento sin registros (trece métodos en la copia con solución).
+No se instaló checker/stubs ni se promete validación por las anotaciones.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -81,6 +85,21 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-15
+
+- Se desarrolló 05.05 con explicación gradual de firmas, uniones, retorno None,
+  argumentos predeterminados/por nombre, docstrings, pre/postcondiciones y
+  estructura de tablas. Distingue documentación, análisis estático, validación
+  y pruebas. Añade revisión de segmentos sin exportar y lab con soluciones.
+- Se comprobaron doce métodos nuevos y los veintiuno de 05.04; la solución del
+  lab pasó con trece y los doce pasan también con Python -O. Copias temporales
+  detectaron [] tratado como None, texto vacío como fecha omitida y bool como
+  conteo. Comparadas con la versión anterior: tablas y especificaciones Altair
+  idénticas para dos cortes y uno vacío; consumidores 05.01/05.02/05.03 ejecutados
+  en destinos temporales, con fuentes anteriores intactas. Se reutilizó el
+  entorno .venv-altair-review sin instalaciones ni cambios al lockfile.
+- Se actualizaron índices, roadmap, arquitectura y continuidad. Enlaces locales,
+  fragmentos y bloques Markdown revisados. Sigue 05.06 opcional; 05.11 continúa
+  planificado. El estado del estudiante se conserva sin nuevas evidencias.
 
 - Se desarrolló 05.04: explicación gradual de resultados esperados, unittest,
   clases mínimas de TestCase, fixtures, comparación de tablas y límites de las
