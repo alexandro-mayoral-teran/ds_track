@@ -57,29 +57,17 @@ reglas de enlace están en
 | [`05.01 — Del notebook a módulos`](05_python_applied/01_notebook_to_modules/) | `05_python_applied` | No aplica todavía |
 | [`05.02 — Configuración y registro de ejecución`](05_python_applied/02_configuration_logging/) | `05_python_applied` | No aplica todavía |
 | [`05.03 — Errores y gestión de recursos`](05_python_applied/03_errors_resources/) | `05_python_applied` | No aplica todavía |
-
 | [`05.04 — Pruebas de código y datos`](05_python_applied/04_testing/) | `05_python_applied` | No aplica todavía |
-
 | [`05.05 — Tipos y contratos de funciones`](05_python_applied/05_types_contracts/) | `05_python_applied` | No aplica todavía |
-
 | [`05.06 — Clases, composición y dataclasses (opcional)`](05_python_applied/06_classes_composition/) | `05_python_applied` | No aplica todavía |
-
 | [`05.07 — Iteradores y generadores (extensión)`](05_python_applied/07_iterators_generators/) | `05_python_applied` | No aplica todavía |
-
 | [`05.08 — Funciones como valores y decoradores (extensión)`](05_python_applied/08_functions_decorators/) | `05_python_applied` | No aplica todavía |
-
 | [`05.09 — Medir antes de optimizar (extensión)`](05_python_applied/09_measure_optimize/) | `05_python_applied` | No aplica todavía |
-
 | [`05.10 — Integración con APIs (extensión)`](05_python_applied/10_api_integration/) | `05_python_applied` | No aplica todavía |
-
 | [`05.11 — Cierre del proyecto Python`](05_python_applied/11_project_closure/) | `05_python_applied` | No aplica todavía |
-
 | [`06.01 — R, editor, scripts y paquetes`](06_r_foundations/01_r_session/) | `06_r_foundations` | No aplica todavía |
-
 | [`06.02 — Objetos, vectores y tipos`](06_r_foundations/02_objects_vectors/) | `06_r_foundations` | No aplica todavía |
-
 | [`06.03 — Seleccionar elementos`](06_r_foundations/03_subsetting/) | `06_r_foundations` | No aplica todavía |
-
 | [`06.04 — Lógica y valores faltantes`](06_r_foundations/04_logic_missing/) | `06_r_foundations` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →

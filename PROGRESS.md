@@ -7,7 +7,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo activo de desarrollo:** `06_r_foundations`
 - **Estado de desarrollo:** 06.01–06.04 implementadas; 06.05–06.09 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-16, desarrollo de 06.04 y revisión de continuidad.
+- **Sesión de desarrollo:** 2026-10-16, cerrada tras desarrollar 06.04 y revisar la documentación.
 - **Foco de desarrollo del material:** condiciones, faltantes, grupos pendientes y cobertura de resúmenes.
   Próxima sección por implementar:
   [06.05 — Listas y data frames](curriculum/06_r_foundations/README.md#05-listas-y-data-frames), todavía planificada.
@@ -107,6 +107,11 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
   fuentes previas intactas, sin paquetes externos. Índices y continuidad actualizados.
 - Material R disponible hasta 06.04; 06.05 sigue planificada. No se modificó el
   estado del estudiante ni se implementaron proyectos/checkpoints pendientes.
+- Cierre de sesión: material 06.04 publicado en main, commit `cf65948`.
+  Se ejecutaron los 18 bloques R de lección/lab y se comprobaron 1,258 enlaces
+  locales sin problemas. Revisión final de índices, lecturas, arquitectura y
+  continuidad; corregida la tabla del índice de labs y añadido el tiempo
+  orientativo del lab 06.04. Retomar con 06.05, sin iniciar otra sección hoy.
 
 ### 2026-10-15
 

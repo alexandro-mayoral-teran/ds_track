@@ -1,5 +1,7 @@
 # Lab 06.04 — Condiciones con información pendiente
 
+**Tiempo orientativo:** 45–75 minutos; puedes repartirlo entre varias sesiones.
+
 ## Propósito, entradas y preparación
 
 Aplica la [lección 06.04 — Lógica y valores faltantes](../../../curriculum/06_r_foundations/04_logic_missing/README.md).
