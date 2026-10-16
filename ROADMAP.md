@@ -199,7 +199,9 @@ y [05.04 — Pruebas de código y datos](curriculum/05_python_applied/04_testing
 disponen de lección y lab; 05.04 incluye pruebas unittest sobre el paquete compartido.
 [05.05 — Tipos y contratos](curriculum/05_python_applied/05_types_contracts/README.md)
 dispone de lección/lab, cobertura con contrato explícito y revisión sin exportar.
-Las secciones 06–11 están por desarrollar.
+[05.06 — Clases, composición y dataclasses](curriculum/05_python_applied/06_classes_composition/README.md)
+dispone de lección/lab opcionales, configuración por campos y composición sobre
+la revisión existente. Las secciones 07–11 están por desarrollar.
 
 - Esencial: módulos, funciones, configuración, logging y comprobaciones.
 - Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.

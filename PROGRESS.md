@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01–05.05 implementadas; siguiente desarrollo 05.06 (opcional).
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.05 y revisión de continuidad.
-- **Foco de desarrollo del material:** tipos, docstrings y contratos comprobables sobre el paquete compartido.
+- **Estado de desarrollo:** 05.01–05.06 implementadas; siguiente desarrollo 05.07 (extensión).
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.06 y revisión de continuidad.
+- **Foco de desarrollo del material:** clases pequeñas, estado y dataclasses por composición (opcional).
   Próxima sección por implementar:
-  [05.06 — Clases, composición y dataclasses](curriculum/05_python_applied/README.md#06-clases-composicion-y-dataclasses), opcional.
+  [05.07 — Iteradores y generadores](curriculum/05_python_applied/README.md#07-iteradores-y-generadores), extensión.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -19,7 +19,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   paquete local, script, notebook y lab. 05.02 añade argumentos, configuración
   JSON, logging y lab; 05.03 añade errores, recursos, JSON atómico y lab.
   05.04 añade lección, 21 pruebas unittest y lab; 05.05 añade tipos, contratos,
-  revisión sin exportar, doce pruebas y lab. 05.06–05.11 están por desarrollar.
+  revisión sin exportar, doce pruebas y lab. 05.06 añade clases/composición,
+  dataclasses, trece pruebas y lab opcionales. 05.07–05.11 están por desarrollar.
   Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
@@ -32,22 +33,22 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.05 — Tipos y contratos de funciones](curriculum/05_python_applied/05_types_contracts/README.md)
-con su [lab](labs/05_python_applied/05_types_contracts/README.md).
-Retomar con 05.06, opcional: clases, instancias, atributos, métodos y composición;
-comparar funciones/diccionarios antes de introducir una clase y después dataclass
-para una estructura que lo justifique. No envolver cada DataFrame en clases.
+[05.06 — Clases, composición y dataclasses](curriculum/05_python_applied/06_classes_composition/README.md)
+con su [lab](labs/05_python_applied/06_classes_composition/README.md), opcionales.
+Retomar con 05.07, extensión: iterable/iterador, consumo, yield y lotes sobre
+una fuente conocida; conciliar con la lectura completa y explicar qué objetos
+siguen en memoria. No prometer memoria constante si se retienen resultados.
 El núcleo 05.01–05.05 está disponible; 05.11 sigue planificado. Las ampliaciones
 05.06–05.10 no bloquean ese cierre esencial ni cambian la numeración del track.
 
-05.05 añade contratos.coverage_pct y normalize_cut, anotaciones/docstrings de
-lectura, transformación y coordinación, y review_summary para revisar sin
-exportar. None usa el corte didáctico fijo; en segmentos None conserva todos y
-[] ninguno, sin omitir validación de fuentes. Se conservan fuentes, consumidores,
-medianas, cobertura y referencia independiente. Doce métodos nuevos protegen
-contratos; los veintiuno de 05.04 permanecen separados. El lab añade un caso
-sobre segmento sin registros (trece métodos en la copia con solución).
-No se instaló checker/stubs ni se promete validación por las anotaciones.
+05.06 añade objetos.py sin modificar funciones/consumidores anteriores.
+CoverageCounts ilustra atributos mutables, alias y método con validación;
+ReviewOptions conserva corte/tupla de segmentos con dataclass, frozen y
+__post_init__. ReviewJob compone fuente/opciones y delega el resumen a 05.05:
+construir no lee; summary relee y concilia, sin guardar tablas ni exportar.
+replace prepara variaciones validadas. Trece métodos nuevos y catorce con la
+solución del lab; las 21 pruebas de 05.04 y 12 de 05.05 permanecen separadas.
+No se agregaron dependencias ni se envolvieron DataFrames en clases propias.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -85,6 +86,23 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-15
+
+- Se desarrolló 05.06 como ampliación opcional: función/diccionario/clase,
+  instancias, __init__, self, métodos, alias, atributos compartidos y propios;
+  dataclasses, __post_init__, frozen, fábricas y replace. Incluye diagrama de
+  composición y lectura textual, ejemplos propios y lab con soluciones razonadas.
+- Pasaron los 46 métodos combinados (21 de 05.04, 12 de 05.05 y 13 nuevos),
+  los 14 de la solución del lab en copia y los 13 nuevos con Python -O.
+  Se comprobaron ejemplos Markdown de listas compartidas/propias, igualdad y
+  frozen superficial. Nueve combinaciones de cortes/selecciones de la fuente
+  original produjeron tablas idénticas a la función; fuentes intactas. Copias
+  temporales detectaron tupla vacía tratada como todos, corte ignorado y fecha
+  no validada. Se reutilizó .venv-altair-review, sin instalaciones ni cambios
+  al lockfile. La revisión de código no acredita aprendizaje del estudiante.
+- Se actualizaron índices, continuidad, roadmap y arquitectura; enlaces locales,
+  fragmentos y bloques Markdown comprobados. Sigue 05.07 como extensión;
+  el cierre esencial 05.11 todavía está planificado. Se conserva el estado del
+  estudiante sin añadir evidencias personales.
 
 - Se desarrolló 05.05 con explicación gradual de firmas, uniones, retorno None,
   argumentos predeterminados/por nombre, docstrings, pre/postcondiciones y

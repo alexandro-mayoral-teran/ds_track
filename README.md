@@ -148,7 +148,10 @@ con fallas controladas, cierre de recursos, JSON atómico y lab.
 añade unittest, casos conocidos, fronteras, vacíos, fallas e integración, con lab.
 [05.05 — Tipos y contratos](curriculum/05_python_applied/05_types_contracts/README.md)
 añade anotaciones, docstrings, parámetros opcionales y validación explícita,
-con ejemplos comprobados y lab; 05.06–05.11 siguen planificadas.
+con ejemplos comprobados y lab.
+[05.06 — Clases, composición y dataclasses](curriculum/05_python_applied/06_classes_composition/README.md)
+añade una ampliación opcional con objetos pequeños, configuración y lab;
+05.07–05.11 siguen planificadas.
 Los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

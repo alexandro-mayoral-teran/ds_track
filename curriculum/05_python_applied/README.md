@@ -7,7 +7,7 @@ reutilizable, comprobable y reconstruible. Completar primero
 [04 — Visualización en Python](../04_visualization_python/README.md), incluido
 su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
 La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis. Las cinco primeras secciones tienen material disponible.
+reorganizar ese mismo análisis. Las seis primeras secciones tienen material disponible; 05.06 es opcional.
 
 **Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
 dispone de lección, paquete local, script, notebook y lab;
@@ -19,7 +19,10 @@ añade cierre por etapas y demostraciones de recursos sobre el mismo paquete.
 unittest, casos conocidos, fronteras, vacíos e integración, con lab.
 [05.05 — Tipos y contratos](05_types_contracts/README.md) incorpora anotaciones,
 docstrings, validación de conteos, parámetros opcionales y revisión del resumen,
-con pruebas y lab. Las secciones 06–11
+con pruebas y lab.
+[05.06 — Clases, composición y dataclasses](06_classes_composition/README.md)
+añade objetos pequeños, configuración y revisión por composición, con pruebas
+y lab opcionales. Las secciones 07–11
 siguen planificadas; sus enlaces internos describen el alcance pendiente.
 La disponibilidad del material no acredita aprendizaje del estudiante.
 
@@ -37,7 +40,7 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 | 3 | [Errores y gestión de recursos](03_errors_resources/README.md) | Esencial | Comunicar fallas sin dejar resultados engañosos |
 | 4 | [Pruebas de código y datos](04_testing/README.md) | Esencial | Detectar regresiones con casos significativos |
 | 5 | [Tipos y contratos de funciones](05_types_contracts/README.md) | Práctica | Hacer explícitas entradas y salidas |
-| 6 | [Clases, composición y dataclasses](#06-clases-composicion-y-dataclasses) | Práctica opcional | Representar estructuras cuando resulte útil |
+| 6 | [Clases, composición y dataclasses](06_classes_composition/README.md) | Práctica opcional | Representar estructuras cuando resulte útil |
 | 7 | [Iteradores y generadores](#07-iteradores-y-generadores) | Extensión | Procesar lotes sin reunir toda la entrada |
 | 8 | [Funciones como valores y decoradores](#08-funciones-como-valores-y-decoradores) | Extensión | Reutilizar un comportamiento transversal |
 | 9 | [Medir antes de optimizar](#09-medir-antes-de-optimizar) | Extensión | Localizar un costo y comprobar una mejora |
@@ -111,8 +114,11 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 
 - Instancias, atributos, métodos y responsabilidades; comparar una función,
   un diccionario y una clase. dataclass para registros o configuración.
-- Práctica prevista: representar una configuración y justificar si mejora la
-  claridad. Composición antes de jerarquías; no envolver cada DataFrame en una clase.
+- [Lección disponible](06_classes_composition/README.md) y
+  [lab 05.06](../../labs/05_python_applied/06_classes_composition/README.md),
+  opcionales: comparar representaciones, estado/alias y composición de fuente
+  y opciones; dataclasses con validación, frozen y replace. No envolver cada
+  DataFrame en una clase ni duplicar el cálculo de las funciones.
 
 <a id="07-iteradores-y-generadores"></a>
 
@@ -167,7 +173,7 @@ Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
 no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
 metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
 
-Los labs 05.01–05.05 están disponibles; los labs 05.06–05.11 siguen previstos,
+Los labs 05.01–05.06 están disponibles (05.06 opcional); los labs 05.07–05.11 siguen previstos,
 señalando los opcionales cuando se desarrollen.
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
 registrados en [proyectos](../../projects/README.md); no se exige crear otro.

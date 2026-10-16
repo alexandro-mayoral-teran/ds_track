@@ -87,7 +87,7 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.05 disponen de lección/lab y paquete local; 05.06–05.11 y 06–14 conservan planificación;
+05.01–05.06 disponen de lección/lab y paquete local; 05.07–05.11 y 06–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -98,8 +98,9 @@ sección. Los módulos 02, 03 y 04 disponen de sus lecciones y labs;
 05.01 tiene lección/lab, paquete, script y notebook; 05.02 agrega configuración
 y logging sobre ese paquete; 05.03 desarrolla errores y recursos;
 05.04 añade pruebas de función, archivos e integración con unittest;
-05.05 documenta firmas/contratos y valida conteos/opciones de revisión.
-05.06–05.11 conservan planes.
+05.05 documenta firmas/contratos y valida conteos/opciones de revisión;
+05.06 incorpora clases y dataclasses como ampliación opcional por composición.
+05.07–05.11 conservan planes.
 pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -213,6 +214,14 @@ y validación de fuentes. normalize_cut asigna None al corte didáctico fijo.
 Las doce pruebas nuevas comprueban sus límites; las veintiuna de 05.04 siguen
 separadas. No incorpora checker, stubs ni esquemas tabulares; el análisis estático
 queda opcional y las anotaciones no sustituyen validación ni conciliación.
+05.06 añade objetos.py sin modificar consumidores ni algoritmos anteriores.
+CoverageCounts ilustra estado mutable y métodos; ReviewOptions conserva corte
+y tupla de segmentos con validación explícita y frozen. ReviewJob contiene
+fuente/opciones y delega en review_summary; no guarda tablas ni recursos, no
+exporta y relee las fuentes al ejecutar summary. replace crea variaciones
+validadas, sin modificar el original. Trece pruebas y lab opcionales comprueban
+alias, estado, composición, vacíos y conservación. No exige herencia, clases
+para DataFrames ni dependencias nuevas; el cierre esencial sigue siendo 05.11.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

@@ -27,7 +27,10 @@ con fallas controladas, recursos, JSON atómico y lab.
 [05.04 — Pruebas de código y datos](05_python_applied/04_testing/README.md)
 añade lección, colección unittest y lab.
 [05.05 — Tipos y contratos](05_python_applied/05_types_contracts/README.md)
-añade lección, ejemplos, pruebas de contratos y lab. 05.06–05.11 conservan sus planes.
+añade lección, ejemplos, pruebas de contratos y lab.
+[05.06 — Clases, composición y dataclasses](05_python_applied/06_classes_composition/README.md)
+añade lección/lab opcionales y pruebas de objetos sobre las mismas funciones.
+05.07–05.11 conservan sus planes.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
