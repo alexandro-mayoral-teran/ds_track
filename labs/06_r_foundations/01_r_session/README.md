@@ -144,6 +144,6 @@ Puedes cerrar la práctica cuando ejecutes y expliques el resultado desde una
 sesión nueva. Registra evidencia real y dudas en PROGRESS.md; tener esta lección
 no acredita haberla completado.
 
-Continúa con la siguiente lección prevista:
-[plan 06.02 — Objetos, vectores y tipos](../../../curriculum/06_r_foundations/README.md#02-objetos-vectores-y-tipos),
-todavía pendiente. Volver a la [lección 06.01](../../../curriculum/06_r_foundations/01_r_session/README.md).
+Continúa con la siguiente lección:
+[06.02 — Objetos, vectores y tipos](../../../curriculum/06_r_foundations/02_objects_vectors/README.md),
+disponible con scripts y lab. Volver a la [lección 06.01](../../../curriculum/06_r_foundations/01_r_session/README.md).

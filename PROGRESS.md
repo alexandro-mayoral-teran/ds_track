@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `06_r_foundations`
-- **Estado de desarrollo:** 06.01 implementada; 06.02–06.09 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 06.01 y revisión de continuidad.
-- **Foco de desarrollo del material:** R, sesión, script completo, ayuda y paquetes incluidos.
+- **Estado de desarrollo:** 06.01–06.02 implementadas; 06.03–06.09 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 06.02 y revisión de continuidad.
+- **Foco de desarrollo del material:** objetos, vectores atómicos, tipos, coerción y reciclaje.
   Próxima sección por implementar:
-  [06.02 — Objetos, vectores y tipos](curriculum/06_r_foundations/README.md#02-objetos-vectores-y-tipos), todavía planificada.
+  [06.03 — Seleccionar elementos](curriculum/06_r_foundations/README.md#03-seleccionar-elementos), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -28,8 +28,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
-  28 secciones y lecturas abiertas; 06.01 dispone de lección, script y lab, y
-  las otras 27 siguen planificadas. Los módulos 09–10 tienen
+  28 secciones y lecturas abiertas; 06.01–06.02 disponen de lecciones, scripts y labs,
+  y las otras 26 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -40,22 +40,22 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[06.01 — R, editor, scripts y paquetes](curriculum/06_r_foundations/01_r_session/README.md)
-con su [lab](labs/06_r_foundations/01_r_session/README.md).
-Retomar con 06.02: asignación, c, length, typeof/class, vectores numéricos,
-enteros, lógicos y de texto; operaciones vectorizadas, coerción y reciclaje.
-Ampliar la venta pequeña sin traducir listas de Python; introducir requisitos
-antes de usarlos y reservar selección/faltantes/tablas para sus secciones.
-Contrastar libros y documentación de la versión elegida. Mantener renv en 06.08
-y no instalar tidyverse por anticipación. El material de 05 está disponible;
-sus ampliaciones opcionales no bloquean el cierre esencial ni la continuación.
+[06.02 — Objetos, vectores y tipos](curriculum/06_r_foundations/02_objects_vectors/README.md)
+con su [lab](labs/06_r_foundations/02_objects_vectors/README.md).
+Retomar con 06.03: posiciones desde 1, nombres y selección lógica; distinguir
+[, [[ y $ y el tipo devuelto, sin equiparar operadores con Python. Reutilizar
+los vectores conocidos e introducir cada requisito antes de utilizarlo.
+Reservar detalle de faltantes/lógica para 06.04 y tablas/listas para 06.05;
+explicar o marcar cualquier adelanto necesario. Contrastar Advanced R y ayuda
+oficial de la versión elegida; no instalar tidyverse por anticipación.
 
-06.01 añade primer_script.R: venta de 300 MXN definida por completo y diagnóstico
-de versión, instalación, directorio, bibliotecas y sesión. Consola/source frente a
-Rscript --vanilla; RStudio opcional, ayuda, library y :: frente a instalación.
-Comprobado con R 4.6.1 independiente ya disponible en Windows, sin paquetes
-externos ni modificaciones de Conda, PATH o bibliotecas. Locale C solo para los
-procesos de revisión por un aviso heredado de C.UTF-8; el script no cambia locale.
+06.02 añade ventas_vectores.R (cuatro ventas, total 660 y 594 con descuento) y
+riesgos_vectores.R (demostraciones deliberadamente incorrectas del análisis).
+Longitud/tipo/clase, coerción, truncamiento, alineación y reciclaje explícitos;
+el código 0 no acredita datos correctos. Se conserva la muestra escalar de 06.01.
+Comprobado con R 4.6.1 independiente y paquetes incluidos, sin instalaciones ni
+modificaciones de Conda, PATH o bibliotecas. Locale C solo en los procesos de
+revisión por el aviso heredado de C.UTF-8; los scripts no cambian locale.
 La colección Python conserva sus 115 métodos; no se mezclan con evidencia de R.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
@@ -94,6 +94,26 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-15
+
+- Se desarrolló 06.02 con lección, dos scripts y lab: nombres/asignación,
+  vectores atómicos, length/typeof/class, tipos comunes, operaciones por posición,
+  suma, coerción y truncamiento. Distingue un factor único deliberado de precios
+  incompletos y separa resultados correctos de demostraciones incorrectas.
+  Incluye vacío frente a cero observado, límites de precisión, diagrama textual
+  y soluciones razonadas. Advanced R como consulta puntual, con documentación
+  oficial y sin exigir sus temas avanzados.
+- Dos procesos nuevos del cálculo correcto conservan importes 300/240/0/120,
+  total 660 y descuento 594. Se comprobaron tipos/clases/longitudes, ceros,
+  vacío, coerción y conversión conservando entradas. Reciclaje 4/2 produce 900
+  sin aviso; 4/3 produce 300/240/0/225 con aviso y código 0. Texto en aritmética
+  falla con código 1. Bloques R de lección y soluciones ejecutados; variante
+  del lab da 720/648 y precios desordenados 485. Copias con precio alterado o
+  reciclaje silencioso fallan contra valores manuales. Scripts y muestra 06.01
+  intactos, R 4.6.1 existente y ninguna instalación.
+- Índices, roadmap, arquitectura, guía de lecturas y continuidad actualizados;
+  enlaces locales/fragmentos/bloques y diff revisados. Sigue 06.03. La colección
+  Python conserva sus 115 métodos, sin mezclarlos con evidencia de R. Estado del
+  estudiante conservado sin evidencias nuevas ni proyectos acreditados.
 
 - Se desarrolló 06.01: intérprete/editor/terminal, asignación y cálculo pequeño,
   archivo .R, print, source, Rscript, sesión nueva y paquetes incluidos. Lecturas

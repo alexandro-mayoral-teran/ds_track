@@ -306,8 +306,8 @@ expliques total y sesión, distingas R/editor/terminal y sepas dónde consultar
 la ayuda de un paquete. No hay proyecto/checkpoint implementado asociado.
 Registra evidencia real y dudas; desarrollar material no acredita aprendizaje.
 
-Continúa con el [plan 06.02 — Objetos, vectores y tipos](../README.md#02-objetos-vectores-y-tipos),
-todavía por desarrollar. Volver al [índice de R fundamental](../README.md).
+Continúa con [06.02 — Objetos, vectores y tipos](../02_objects_vectors/README.md),
+disponible con scripts y lab. Volver al [índice de R fundamental](../README.md).
 
 ## Referencias y atribución
 

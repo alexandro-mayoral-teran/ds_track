@@ -166,7 +166,8 @@ con pruebas y lab de extensión.
 integra ejecución, figura, verificación de archivos y reconstrucción con lab.
 Las once secciones de Python aplicado tienen material disponible.
 El nivel 06 dispone de [06.01 — R, editor, scripts y paquetes](curriculum/06_r_foundations/01_r_session/README.md),
-con script y lab; 06.02–06.09 y los niveles 07–08 conservan sus planes y
+con script y lab, y de [06.02 — Objetos, vectores y tipos](curriculum/06_r_foundations/02_objects_vectors/README.md),
+con ventas vectorizadas, coerción y reciclaje. 06.03–06.09 y los niveles 07–08 conservan sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

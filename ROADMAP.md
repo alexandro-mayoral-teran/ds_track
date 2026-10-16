@@ -235,7 +235,10 @@ Este cierre prepara el cambio de lenguaje a R; no exige dominar toda la POO.
 El [plan de nueve secciones](curriculum/06_r_foundations/README.md#orden-de-desarrollo)
 introduce el modelo de R, funciones, archivos y renv antes de conciliar con Python.
 [06.01 — R, editor, scripts y paquetes](curriculum/06_r_foundations/01_r_session/README.md)
-dispone de lección, script y lab; 06.02–06.09 siguen por desarrollar. Las referencias están en
+dispone de lección, script y lab.
+[06.02 — Objetos, vectores y tipos](curriculum/06_r_foundations/02_objects_vectors/README.md)
+añade tipos/longitudes, coerción, operaciones vectorizadas y reciclaje con scripts y lab.
+06.03–06.09 siguen por desarrollar. Las referencias están en
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.

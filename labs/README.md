@@ -76,6 +76,8 @@ reglas de enlace están en
 
 | [`06.01 — R, editor, scripts y paquetes`](06_r_foundations/01_r_session/) | `06_r_foundations` | No aplica todavía |
 
+| [`06.02 — Objetos, vectores y tipos`](06_r_foundations/02_objects_vectors/) | `06_r_foundations` | No aplica todavía |
+
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
 lab `00.05` (A/B) → lección 06 → lab `00.06`. Los enlaces al final de cada lab llevan al material

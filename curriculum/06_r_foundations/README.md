@@ -8,13 +8,15 @@ datos conocidos, indicadores conciliados, figura y ejecución reconstruible.
 No se exige completar todas las ampliaciones de Python.
 
 **Estado:** [06.01 — R, editor, scripts y paquetes](01_r_session/README.md)
-dispone de lección, script ejecutable y lab. 06.02–06.09 siguen planificadas;
+dispone de lección, script ejecutable y lab.
+[06.02 — Objetos, vectores y tipos](02_objects_vectors/README.md) añade ventas
+vectorizadas, coerción y reciclaje con scripts y lab. 06.03–06.09 siguen planificadas;
 sus enlaces de la tabla describen el alcance pendiente dentro de este documento.
 
 Empezaremos con ventas pequeñas y luego reutilizaremos la cartera sintética.
 R no se aprenderá traduciendo mecánicamente líneas de pandas: compararemos
 estructuras, reglas y resultados. RStudio será un editor opcional; el intérprete
-R es necesario. 06.01 se comprobó con R 4.6.1 y paquetes incluidos; la versión
+R es necesario. 06.01–06.02 se comprobaron con R 4.6.1 y paquetes incluidos; la versión
 efectiva se registra por sesión. Las dependencias posteriores se fijarán al implementarlas.
 
 ## Orden de desarrollo
@@ -22,7 +24,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
 | 1 | [R, editor, scripts y paquetes](01_r_session/README.md) | Esencial | Ejecutar un script e identificar su sesión |
-| 2 | [Objetos, vectores y tipos](#02-objetos-vectores-y-tipos) | Esencial | Representar datos y explicar coerciones |
+| 2 | [Objetos, vectores y tipos](02_objects_vectors/README.md) | Esencial | Representar datos y explicar coerciones |
 | 3 | [Seleccionar elementos](#03-seleccionar-elementos) | Esencial | Distinguir posiciones, nombres y estructuras |
 | 4 | [Lógica y valores faltantes](#04-logica-y-valores-faltantes) | Esencial | Aplicar condiciones con tratamiento explícito de NA |
 | 5 | [Listas y data frames](#05-listas-y-data-frames) | Esencial | Construir y consultar registros tabulares |
@@ -50,8 +52,11 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 - Asignación con <-, c, length, typeof y class; vectores numéricos, enteros,
   lógicos y de texto. Operaciones vectorizadas, coerción y reciclaje de longitudes.
-- Práctica prevista: calcular importes de ventas y reconocer una mezcla de tipos
-  o longitudes que cambia el resultado. No asumir semántica de listas de Python.
+- [Lección disponible](02_objects_vectors/README.md) y
+  [lab 06.02](../../labs/06_r_foundations/02_objects_vectors/README.md): calcular
+  cuatro ventas, comprobar tipos/longitudes y detectar coerción, truncamiento,
+  reciclaje silencioso y parcial. Separar cálculo correcto de demostraciones
+  incorrectas; no asumir semántica de listas de Python ni unión por claves.
 
 <a id="03-seleccionar-elementos"></a>
 
@@ -118,7 +123,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 ## Prácticas y criterio de salida
 
-El lab 06.01 está disponible con soluciones desplegables; 06.02–06.09 siguen previstos.
+Los labs 06.01–06.02 están disponibles con soluciones desplegables; 06.03–06.09 siguen previstos.
 El cierre reutilizará el resultado Python como referencia y preparará el proyecto
 03_portfolio_analysis_r, previsto en [proyectos](../../projects/README.md), sin
 carpeta implementada todavía. No hay checkpoint activo asociado.

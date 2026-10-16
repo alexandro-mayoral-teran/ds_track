@@ -32,6 +32,13 @@ sessionInfo y paquetes con la documentación oficial y R 4.6.1 local.
 No se traslada la instalación inicial de tidyverse del libro a esta primera
 práctica: utiliza paquetes incluidos. Renv se desarrolla en 06.08.
 
+La [lección 06.02](../curriculum/06_r_foundations/02_objects_vectors/README.md)
+consulta [vectores de Advanced R](https://adv-r.hadley.nz/vectors-chap.html), de
+Hadley Wickham, para relacionar tipo común, longitud y coerción. No exige estudiar
+todo el capítulo. Contrasta c, typeof/class, as.integer y aritmética con la ayuda
+oficial y R 4.6.1 local; en particular, distingue reciclaje base silencioso de
+validación de datos y de reglas más estrictas de otros paquetes.
+
 Comienza con el [manual introductorio oficial de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 y consulta [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html)
 para entender las diferencias entre [, [[ y $. Advanced R es apoyo para preguntas
