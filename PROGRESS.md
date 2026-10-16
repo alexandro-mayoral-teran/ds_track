@@ -5,12 +5,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01–05.11 implementadas; material del módulo 05 disponible.
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.11 y revisión de continuidad.
-- **Foco de desarrollo del material:** cierre, entrega reconstruible y verificación de archivos guardados.
+- **Módulo activo de desarrollo:** `06_r_foundations`
+- **Estado de desarrollo:** 06.01 implementada; 06.02–06.09 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 06.01 y revisión de continuidad.
+- **Foco de desarrollo del material:** R, sesión, script completo, ayuda y paquetes incluidos.
   Próxima sección por implementar:
-  [06.01 — R, editor, scripts y paquetes](curriculum/06_r_foundations/README.md#01-r-editor-scripts-y-paquetes), todavía planificada.
+  [06.02 — Objetos, vectores y tipos](curriculum/06_r_foundations/README.md#02-objetos-vectores-y-tipos), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -28,7 +28,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
-  un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
+  28 secciones y lecturas abiertas; 06.01 dispone de lección, script y lab, y
+  las otras 27 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -39,22 +40,23 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.11 — Cierre del proyecto Python](curriculum/05_python_applied/11_project_closure/README.md)
-con su [lab](labs/05_python_applied/11_project_closure/README.md).
-Retomar con 06.01: revisar el plan de R fundamental, entorno elegido, intérprete,
-editor y primeros scripts/paquetes. Enseñar el modelo propio de R, no traducir
-Python línea por línea. Las versiones/dependencias se verifican al implementar;
-no instalar ni fijar requisitos por anticipación. Mantener lecturas abiertas,
-renv en 06 y el orden de prerrequisitos. El material de 05 está disponible;
-las ampliaciones 05.06–05.10 no bloquean el cierre esencial ni la continuación.
+[06.01 — R, editor, scripts y paquetes](curriculum/06_r_foundations/01_r_session/README.md)
+con su [lab](labs/06_r_foundations/01_r_session/README.md).
+Retomar con 06.02: asignación, c, length, typeof/class, vectores numéricos,
+enteros, lógicos y de texto; operaciones vectorizadas, coerción y reciclaje.
+Ampliar la venta pequeña sin traducir listas de Python; introducir requisitos
+antes de usarlos y reservar selección/faltantes/tablas para sus secciones.
+Contrastar libros y documentación de la versión elegida. Mantener renv en 06.08
+y no instalar tidyverse por anticipación. El material de 05 está disponible;
+sus ampliaciones opcionales no bloquean el cierre esencial ni la continuación.
 
-05.11 reutiliza ejecutar_seguro.py y añade configuración, auditoria.py y
-verificar_entrega.py, sin duplicar cálculo ni exigir ampliaciones. Recalcula
-desde fuentes copiadas, contrasta cinco tablas/20 conciliaciones y Altair,
-comprueba propiedades de PNG/SVG y compara reconstrucciones. Verificación de
-solo lectura; revisión visual y evidencia del estudiante siguen separadas.
-Diez métodos nuevos; once con la solución del lab. La colección combinada
-conserva 115 métodos iniciales (21/12/13/15/13/13/18/10), sin dependencias nuevas.
+06.01 añade primer_script.R: venta de 300 MXN definida por completo y diagnóstico
+de versión, instalación, directorio, bibliotecas y sesión. Consola/source frente a
+Rscript --vanilla; RStudio opcional, ayuda, library y :: frente a instalación.
+Comprobado con R 4.6.1 independiente ya disponible en Windows, sin paquetes
+externos ni modificaciones de Conda, PATH o bibliotecas. Locale C solo para los
+procesos de revisión por un aviso heredado de C.UTF-8; el script no cambia locale.
+La colección Python conserva sus 115 métodos; no se mezclan con evidencia de R.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -92,6 +94,22 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-15
+
+- Se desarrolló 06.01: intérprete/editor/terminal, asignación y cálculo pequeño,
+  archivo .R, print, source, Rscript, sesión nueva y paquetes incluidos. Lecturas
+  selectivas de R4DS segunda edición con coautoría reconocida, contrastadas con
+  documentación de R y Posit. Lección/lab, diagrama con lectura textual y ejemplos
+  propios; renv/tidyverse siguen en sus secciones sin instalaciones anticipadas.
+- Script ejecutado en dos procesos Rscript --vanilla con total 300 y sesión
+  identificada. Variante y solución del lab producen 450. Caso de objeto oculto
+  funciona tras source previo y falla en proceso nuevo; corrección comprobada.
+  Muestras temporales .RData/.Rprofile/.Renviron no se cargan con --vanilla;
+  error de sintaxis devuelve código no cero. Ayuda instalada consultable y bloques
+  R válidos; archivo original intacto. R 4.6.1 existente, sin nuevas instalaciones.
+- Índices, roadmap, arquitectura, guía de lecturas y continuidad de 05.11
+  actualizados; enlaces locales/fragmentos/bloques y diff revisados. Sigue 06.02.
+  Estado del estudiante conservado sin evidencias nuevas; material disponible
+  no acredita aprendizaje ni completa los proyectos todavía pendientes.
 
 - Se desarrolló 05.11 como cierre: recorrido completo de ejecución, verificación,
   reconstrucción desde copias y falla antes del cierre. Reutiliza la entrada de

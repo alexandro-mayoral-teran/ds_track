@@ -44,7 +44,8 @@ acotados y tablas conciliadas.
 [05.11 — Cierre del proyecto Python](05_python_applied/11_project_closure/README.md)
 integra ejecución, figura y reconstrucción comprobable con lección/lab.
 Las once secciones de Python aplicado tienen material disponible.
-Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
+06.01 dispone de [lección, script y lab](06_r_foundations/01_r_session/README.md).
+06.02–06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

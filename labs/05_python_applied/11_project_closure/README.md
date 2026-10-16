@@ -165,8 +165,8 @@ expliques una prueba que detecta una falla relevante. El material completo no
 acredita automáticamente haber completado estas prácticas.
 
 Continúa con [06 — R fundamental](../../../curriculum/06_r_foundations/README.md),
-cuyas lecciones siguen planificadas. Su
-[primera sección prevista](../../../curriculum/06_r_foundations/README.md#01-r-editor-scripts-y-paquetes)
-introducirá el entorno y modelo propio de R. No hay que completar todas las
+cuya [primera lección](../../../curriculum/06_r_foundations/01_r_session/README.md)
+está disponible con script y lab; las restantes siguen planificadas.
+Introduce el entorno y modelo propio de R. No hay que completar todas las
 ampliaciones de Python para avanzar. Volver a la
 [lección 05.11](../../../curriculum/05_python_applied/11_project_closure/README.md).

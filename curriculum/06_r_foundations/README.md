@@ -7,19 +7,21 @@ cierre esencial de [05 — Python aplicado](../05_python_applied/README.md):
 datos conocidos, indicadores conciliados, figura y ejecución reconstruible.
 No se exige completar todas las ampliaciones de Python.
 
-**Estado:** nueve secciones planificadas; lecciones, ejemplos y labs por desarrollar.
-Los enlaces de la tabla describen el alcance dentro de este documento.
+**Estado:** [06.01 — R, editor, scripts y paquetes](01_r_session/README.md)
+dispone de lección, script ejecutable y lab. 06.02–06.09 siguen planificadas;
+sus enlaces de la tabla describen el alcance pendiente dentro de este documento.
 
 Empezaremos con ventas pequeñas y luego reutilizaremos la cartera sintética.
 R no se aprenderá traduciendo mecánicamente líneas de pandas: compararemos
 estructuras, reglas y resultados. RStudio será un editor opcional; el intérprete
-R es necesario. Las versiones y dependencias se fijarán al implementar el material.
+R es necesario. 06.01 se comprobó con R 4.6.1 y paquetes incluidos; la versión
+efectiva se registra por sesión. Las dependencias posteriores se fijarán al implementarlas.
 
 ## Orden de desarrollo
 
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
-| 1 | [R, editor, scripts y paquetes](#01-r-editor-scripts-y-paquetes) | Esencial | Ejecutar un script e identificar su sesión |
+| 1 | [R, editor, scripts y paquetes](01_r_session/README.md) | Esencial | Ejecutar un script e identificar su sesión |
 | 2 | [Objetos, vectores y tipos](#02-objetos-vectores-y-tipos) | Esencial | Representar datos y explicar coerciones |
 | 3 | [Seleccionar elementos](#03-seleccionar-elementos) | Esencial | Distinguir posiciones, nombres y estructuras |
 | 4 | [Lógica y valores faltantes](#04-logica-y-valores-faltantes) | Esencial | Aplicar condiciones con tratamiento explícito de NA |
@@ -37,8 +39,10 @@ R es necesario. Las versiones y dependencias se fijarán al implementar el mater
 
 - Distinguir intérprete, consola, script .R y editor; ejecutar desde consola y
   Rscript. Help, sessionInfo, instalación frente a library y uso de paquete::función.
-- Práctica prevista: ejecutar un cálculo, registrar la versión y reconstruirlo en
-  una sesión nueva sin depender de objetos guardados en .RData.
+- [Lección disponible](01_r_session/README.md) y
+  [lab 06.01](../../labs/06_r_foundations/01_r_session/README.md): ejecutar una venta,
+  identificar versión/instalación/directorio/bibliotecas y repetir en una sesión
+  nueva sin .RData. RStudio opcional, ayuda y paquetes incluidos, sin instalaciones.
 
 <a id="02-objetos-vectores-y-tipos"></a>
 
@@ -114,7 +118,7 @@ R es necesario. Las versiones y dependencias se fijarán al implementar el mater
 
 ## Prácticas y criterio de salida
 
-Se prevén labs 06.01–06.09 con soluciones desplegables; todavía no existen.
+El lab 06.01 está disponible con soluciones desplegables; 06.02–06.09 siguen previstos.
 El cierre reutilizará el resultado Python como referencia y preparará el proyecto
 03_portfolio_analysis_r, previsto en [proyectos](../../projects/README.md), sin
 carpeta implementada todavía. No hay checkpoint activo asociado.
@@ -126,7 +130,7 @@ no bloquean tidyverse; se contemplan en el futuro R aplicado.
 
 ## Continuidad y lecturas
 
-Comenzaremos por la sección 01. Después del cierre, continúa con
+Comienza por [06.01](01_r_session/README.md). Después del cierre, continúa con
 [07 — tidyverse](../07_tidyverse/README.md).
 
 Fuentes: [manual introductorio de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html),

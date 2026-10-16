@@ -23,6 +23,15 @@ si un ejemplo del libro utiliza una API diferente.
 
 ### 06 — R fundamental
 
+La [lección 06.01](../curriculum/06_r_foundations/01_r_session/README.md) utiliza
+[Workflow: basics](https://r4ds.hadley.nz/workflow-basics.html),
+[Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts.html) y
+[Workflow: getting help](https://r4ds.hadley.nz/workflow-help.html) de R4DS segunda
+edición. Se adaptan sus ideas a una venta propia y se verifican source, Rscript,
+sessionInfo y paquetes con la documentación oficial y R 4.6.1 local.
+No se traslada la instalación inicial de tidyverse del libro a esta primera
+práctica: utiliza paquetes incluidos. Renv se desarrolla en 06.08.
+
 Comienza con el [manual introductorio oficial de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 y consulta [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html)
 para entender las diferencias entre [, [[ y $. Advanced R es apoyo para preguntas
@@ -76,6 +85,11 @@ comunitaria de la primera edición de R for Data Science. Puede ayudar con el
 vocabulario, pero su organización y algunos ejemplos difieren de la segunda
 edición. No mezclar instrucciones de versiones sin comprobarlas; DS Track
 explicará cada concepto en español y verificará las APIs al desarrollar el material.
+
+Consulta 06.01: 2026-10-15. No se presume que todos los libros estén desactualizados:
+se contrasta la función o el flujo concreto con la versión usada. Las páginas web
+de R-patched/R-devel y los libros en desarrollo pueden describir otras versiones;
+la ayuda instalada permite comprobar lo que realmente está disponible.
 
 ## Aplicar una lectura
 

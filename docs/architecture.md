@@ -87,7 +87,8 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.11 disponen de lección/lab y paquete local; 06–14 conservan planificación;
+05.01–05.11 disponen de lección/lab y paquete local; 06.01 tiene lección/script/lab;
+06.02–06.09 y 07–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -340,7 +341,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 
 ### Desarrollo previsto de los módulos 06–08
 
-Los planes de R contienen 28 secciones, todavía sin lecciones ejecutables ni labs:
+Los planes de R contienen 28 secciones; 06.01 tiene lección, script y lab,
+y las otras 27 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -357,7 +359,12 @@ aún sin implementar.
 La [guía de lecturas abiertas](r-reading-guide.md) ubica R for Data Science,
 Advanced R, el libro de ggplot2 y R Packages. Se consultan capítulos por necesidad;
 objetos avanzados, metaprogramación y creación de paquetes no bloquean 06–08.
-No se instalan paquetes ni se fija una versión de R por esta planificación.
+06.01 usa una venta escalar propia y diagnóstico de sesión con paquetes incluidos;
+distingue R/editor/terminal, source frente a proceso nuevo y uso frente a instalación
+de paquetes. Se verificó con R 4.6.1 ya instalado, sin cambiar Conda, PATH ni
+bibliotecas. RStudio es opcional; renv y paquetes externos siguen en sus secciones.
+Se contrastan R4DS segunda edición, documentación de R y guía oficial de Posit.
+La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10
 

@@ -265,8 +265,8 @@ la evidencia en PROGRESS.md cuando esa práctica se haya revisado. Desarrollar e
 once secciones cierra la disponibilidad del material del módulo, no su aprendizaje.
 
 El siguiente módulo es [06 — R fundamental](../../06_r_foundations/README.md).
-Su [primera sección prevista](../../06_r_foundations/README.md#01-r-editor-scripts-y-paquetes)
-sigue por desarrollar. Se retomarán preguntas conocidas aprendiendo el modelo
+Su [primera lección](../../06_r_foundations/01_r_session/README.md)
+está disponible con script y lab. Se retoman preguntas conocidas aprendiendo el modelo
 propio de R; no se exige traducir Python línea por línea ni instalar R por anticipado.
 Volver al [índice de Python aplicado](../README.md).
 
