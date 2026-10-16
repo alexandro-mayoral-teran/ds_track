@@ -417,8 +417,8 @@ Puedes avanzar cuando distingas error de dato ausente, expliques qué se captura
 y qué se propaga, compruebes cierre de recursos y conservación del JSON anterior,
 y reconozcas los límites del marcador final y de la escritura atómica.
 
-Continúa con el [plan 05.04 — Pruebas de código y datos](../README.md#04-pruebas-de-codigo-y-datos),
-todavía sin lección ni lab. Volver al [índice de Python aplicado](../README.md).
+Continúa con [05.04 — Pruebas de código y datos](../04_testing/README.md),
+con casos conocidos y una colección unittest sobre el mismo paquete. Volver al [índice de Python aplicado](../README.md).
 
 ## Referencias y atribución
 

@@ -7,7 +7,7 @@ reutilizable, comprobable y reconstruible. Completar primero
 [04 — Visualización en Python](../04_visualization_python/README.md), incluido
 su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
 La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis. Las tres primeras secciones tienen material disponible.
+reorganizar ese mismo análisis. Las cuatro primeras secciones tienen material disponible.
 
 **Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
 dispone de lección, paquete local, script, notebook y lab;
@@ -15,7 +15,9 @@ dispone de lección, paquete local, script, notebook y lab;
 añade argumentos, JSON y logging;
 [05.03 — Errores y gestión de recursos](03_errors_resources/README.md)
 añade cierre por etapas y demostraciones de recursos sobre el mismo paquete.
-Las secciones 04–11
+[05.04 — Pruebas de código y datos](04_testing/README.md) añade una colección
+unittest, casos conocidos, fronteras, vacíos e integración, con lab.
+Las secciones 05–11
 siguen planificadas; sus enlaces internos describen el alcance pendiente.
 La disponibilidad del material no acredita aprendizaje del estudiante.
 
@@ -31,7 +33,7 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 | 1 | [Del notebook a módulos](01_notebook_to_modules/README.md) | Esencial | Importar y reutilizar transformaciones |
 | 2 | [Configuración y registro de ejecución](02_configuration_logging/README.md) | Esencial | Ejecutar con entradas y parámetros explícitos |
 | 3 | [Errores y gestión de recursos](03_errors_resources/README.md) | Esencial | Comunicar fallas sin dejar resultados engañosos |
-| 4 | [Pruebas de código y datos](#04-pruebas-de-codigo-y-datos) | Esencial | Detectar regresiones con casos significativos |
+| 4 | [Pruebas de código y datos](04_testing/README.md) | Esencial | Detectar regresiones con casos significativos |
 | 5 | [Tipos y contratos de funciones](#05-tipos-y-contratos-de-funciones) | Práctica | Hacer explícitas entradas y salidas |
 | 6 | [Clases, composición y dataclasses](#06-clases-composicion-y-dataclasses) | Práctica opcional | Representar estructuras cuando resulte útil |
 | 7 | [Iteradores y generadores](#07-iteradores-y-generadores) | Extensión | Procesar lotes sin reunir toda la entrada |
@@ -84,7 +86,9 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 - Casos conocidos, fronteras, colecciones vacías, fallas esperadas y conservación
   de entradas; pruebas de una función frente a integración del recorrido.
 - Empezar con unittest de la biblioteca estándar; fixtures pequeñas y directorios
-  temporales. Práctica prevista: detectar un cambio que altera un total o una unión.
+  temporales. [Lección disponible](04_testing/README.md) y
+  [lab 05.04](../../labs/05_python_applied/04_testing/README.md): interpretar una
+  falla, comprobar conservación y agregar un caso que distinga mediana de promedio.
   La validación de entradas no debe depender exclusivamente de assert.
 
 <a id="05-tipos-y-contratos-de-funciones"></a>
@@ -158,7 +162,7 @@ Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
 no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
 metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
 
-Los labs 05.01–05.03 están disponibles; los labs 05.04–05.11 siguen previstos,
+Los labs 05.01–05.04 están disponibles; los labs 05.05–05.11 siguen previstos,
 señalando los opcionales cuando se desarrollen.
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
 registrados en [proyectos](../../projects/README.md); no se exige crear otro.

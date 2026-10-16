@@ -58,6 +58,8 @@ reglas de enlace están en
 | [`05.02 — Configuración y registro de ejecución`](05_python_applied/02_configuration_logging/) | `05_python_applied` | No aplica todavía |
 | [`05.03 — Errores y gestión de recursos`](05_python_applied/03_errors_resources/) | `05_python_applied` | No aplica todavía |
 
+| [`05.04 — Pruebas de código y datos`](05_python_applied/04_testing/) | `05_python_applied` | No aplica todavía |
+
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
 lab `00.05` (A/B) → lección 06 → lab `00.06`. Los enlaces al final de cada lab llevan al material

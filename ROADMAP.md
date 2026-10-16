@@ -195,7 +195,9 @@ cerrar el análisis; clases, generadores, decoradores, medición y APIs amplían
 ese núcleo. [05.01 — Del notebook a módulos](curriculum/05_python_applied/01_notebook_to_modules/README.md)
 y [05.02 — Configuración y registro](curriculum/05_python_applied/02_configuration_logging/README.md)
 y [05.03 — Errores y recursos](curriculum/05_python_applied/03_errors_resources/README.md)
-disponen de lección y lab; las secciones 04–11 están por desarrollar.
+y [05.04 — Pruebas de código y datos](curriculum/05_python_applied/04_testing/README.md)
+disponen de lección y lab; 05.04 incluye pruebas unittest sobre el paquete compartido.
+Las secciones 05–11 están por desarrollar.
 
 - Esencial: módulos, funciones, configuración, logging y comprobaciones.
 - Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.

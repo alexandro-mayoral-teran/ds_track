@@ -169,5 +169,4 @@ Registra resultados, revisión visual, dudas y siguiente paso en PROGRESS.md.
 Puedes avanzar cuando demuestres conservación y cierre de recursos, interpretes
 las etapas y no confundas una falla con un resultado válido vacío.
 
-Continúa con el [plan 05.04 — Pruebas de código y datos](../../../curriculum/05_python_applied/README.md#04-pruebas-de-codigo-y-datos),
-todavía pendiente. Volver a la [lección 05.03](../../../curriculum/05_python_applied/03_errors_resources/README.md).
+Continúa con [05.04 — Pruebas de código y datos](../../../curriculum/05_python_applied/04_testing/README.md). Volver a la [lección 05.03](../../../curriculum/05_python_applied/03_errors_resources/README.md).

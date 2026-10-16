@@ -87,7 +87,7 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.03 disponen de lección/lab y paquete local; 05.04–05.11 y 06–14 conservan planificación;
+05.01–05.04 disponen de lección/lab y paquete local; 05.05–05.11 y 06–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -96,7 +96,9 @@ está después de pandas, SQL y visualización básica: no bloquea el inicio de 
 Los README de cada módulo contienen el orden numerado y el alcance de cada
 sección. Los módulos 02, 03 y 04 disponen de sus lecciones y labs;
 05.01 tiene lección/lab, paquete, script y notebook; 05.02 agrega configuración
-y logging sobre ese paquete; 05.03 desarrolla errores y recursos. 05.04–05.11 conservan planes.
+y logging sobre ese paquete; 05.03 desarrolla errores y recursos;
+05.04 añade pruebas de función, archivos e integración con unittest.
+05.05–05.11 conservan planes.
 pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -196,6 +198,12 @@ de registro e instrucciones, con archivos requeridos comprobados. El inspector
 verifica etapa/presencia, no integridad completa ni aprendizaje. Un reemplazo
 atómico de JSON no hace transaccionales los CSV/figuras ni garantiza durabilidad
 ante pérdida de energía; limpieza fallida informa el temporal sin ocultar la causa.
+05.04 conserva el paquete y los consumidores; pruebas_0504 vive junto al paquete
+para importarlo desde su directorio sin modificar sys.path. Las fixtures pequeñas
+separan tabla tipada y CSV temporales; la colección comprueba resultados manuales,
+claves, ausencias, tipos, conservación, reconstrucción y fallas por etapas.
+No agrega dependencias ni sustituye validación de datos, revisión visual o
+evidencia de aprendizaje. El lab añade un caso que distingue mediana de promedio.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

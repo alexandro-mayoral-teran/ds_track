@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01–05.03 implementadas; siguiente desarrollo 05.04.
-- **Sesión de desarrollo:** 2026-10-14, cerrada después de verificar 05.03.
-- **Foco de desarrollo del material:** errores, cierre de recursos y entregas por etapas.
+- **Estado de desarrollo:** 05.01–05.04 implementadas; siguiente desarrollo 05.05.
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.04 y revisión de continuidad.
+- **Foco de desarrollo del material:** pruebas de código y datos con unittest sobre el paquete compartido.
   Próxima sección por implementar:
-  [05.04 — Pruebas de código y datos](curriculum/05_python_applied/README.md#04-pruebas-de-codigo-y-datos).
+  [05.05 — Tipos y contratos de funciones](curriculum/05_python_applied/README.md#05-tipos-y-contratos-de-funciones).
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -18,7 +18,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   04.01–04.09 tienen lecciones y labs (04.08 opcional); 05.01 tiene lección,
   paquete local, script, notebook y lab. 05.02 añade argumentos, configuración
   JSON, logging y lab; 05.03 añade errores, recursos, JSON atómico y lab.
-  05.04–05.11 están por desarrollar. Los módulos 06–08 tienen
+  05.04 añade lección, 21 pruebas unittest y lab; 05.05–05.11 están por desarrollar. Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
@@ -30,29 +30,20 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.03 — Errores y gestión de recursos](curriculum/05_python_applied/03_errors_resources/README.md)
-con su [lab](labs/05_python_applied/03_errors_resources/README.md).
-Sesión cerrada a petición del usuario después de esta sección. Completar
-material no acredita aprendizaje. Retomar con 05.04: unittest de la biblioteca
-estándar, casos conocidos/fronteras/vacíos, fixtures pequeñas y directorios
-temporales; distinguir prueba de función, integración y validación de datos.
-Usar el paquete compartido y sus consumidores, conservando muestras anteriores.
-Los scripts de revisión locales no constituyen todavía la lección de pruebas.
+[05.04 — Pruebas de código y datos](curriculum/05_python_applied/04_testing/README.md)
+con su [lab](labs/05_python_applied/04_testing/README.md).
+Retomar con 05.05: anotaciones, docstrings, argumentos opcionales y estructuras
+esperadas sobre el paquete compartido. Distinguir documentación/análisis estático
+de validación efectiva, sin agregar dependencias por anticipación.
 
-05.03 reutiliza pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0 sin dependencias
-nuevas. Se comprobaron importaciones sin ejecución/configuración de logging,
-tablas y especificación Altair equivalentes a 05.01, veinte conciliaciones,
-reconstrucción, vacíos, ausencias, cero y medio MXN. Se verificaron archivo y
-conexión en memoria cerrados, Figure propia cerrada ante falla sin afectar otra,
-JSON anterior intacto ante falla antes de replace, fsync/reemplazo fallidos,
-serialización inválida y causa conservada incluso con falla de limpieza.
-Las tres simulaciones no publican cierre; código 1 sin mensaje final. Errores
-inesperados/interrupción se propagan. Inspector rechaza cierre ilegible/incompleto
-o archivos requeridos ausentes, sin prometer integridad completa. Fuentes y
-entregas anteriores intactas; consumidores 05.01/05.02 vueltos a comprobar.
-Figuras revisadas; lectura de enlaces/fragmentos y bloques comprobada.
-La revisión reutilizó .venv-altair-review, sin instalar paquetes ni modificar
-base. El cierre no hace transaccional la carpeta ni garantiza durabilidad total.
+05.04 explica expectativas manuales, pruebas de función e integración, validación,
+fronteras, vacíos, comparación de tablas y conservación ante fallas. La colección
+pruebas_0504 vive junto al paquete de 05.01: seis observaciones pequeñas, CSV
+creados en directorios temporales y 21 métodos iniciales. El lab añade un método
+para distinguir mediana de promedio; interpretar una falla no exige modificar
+el paquete. Las veinte conciliaciones de cada análisis siguen siendo controles
+de datos distintos del número de métodos unittest. No se automatiza revisión
+visual ni se acredita aprendizaje por pasar los ejemplos.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -88,6 +79,25 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 | 14 | Proyecto reproducible | No iniciado | — |
 
 ## Bitácora
+
+### 2026-10-15
+
+- Se desarrolló 05.04: explicación gradual de resultados esperados, unittest,
+  clases mínimas de TestCase, fixtures, comparación de tablas y límites de las
+  pruebas frente a la validación de cada ejecución. Incluye 21 métodos sobre el
+  paquete compartido, entradas temporales y lab con soluciones razonadas; su
+  ejercicio añade el método 22 sin entregarlo ya integrado en la suite inicial.
+- Se comprobaron ceros, medio MXN, mediana impar, ausencias, vacíos, tipos,
+  claves, fechas, negativos, conservación de entradas/archivos, JSON anterior,
+  causa del error, reconstrucción y tres fallas sin cierre. En copias temporales,
+  mediana sustituida por promedio, denominador incorrecto y exclusión de cero
+  provocan fallas. La solución del lab pasó con 22 métodos; fuentes originales
+  conservaron sus bytes e indicadores 24/21/2300/87,5. La revisión reutiliza
+  Python 3.12.12 y .venv-altair-review, sin instalaciones. Los temporales de
+  revisión se ubicaron en output local por los permisos del sandbox.
+- Se actualizaron índices, enlaces de continuidad, roadmap y arquitectura;
+  se comprobaron enlaces/fragmentos y bloques Markdown. Retomar con 05.05,
+  todavía planificada. No se modificó la evidencia de aprendizaje del estudiante.
 
 ### 2026-10-14
 
