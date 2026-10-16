@@ -39,6 +39,12 @@ todo el capítulo. Contrasta c, typeof/class, as.integer y aritmética con la ay
 oficial y R 4.6.1 local; en particular, distingue reciclaje base silencioso de
 validación de datos y de reglas más estrictas de otros paquetes.
 
+La [lección 06.03](../curriculum/06_r_foundations/03_subsetting/README.md) toma
+[selección en Advanced R](https://adv-r.hadley.nz/subsetting.html) como consulta
+puntual y contrasta Extract/names con R 4.6.1. Distingue el objeto seleccionado,
+el contenedor y su contenido; anticipa solo una lista mínima y deja la selección
+de tablas para 06.05. drop con una matriz es ampliación opcional.
+
 Comienza con el [manual introductorio oficial de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 y consulta [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html)
 para entender las diferencias entre [, [[ y $. Advanced R es apoyo para preguntas

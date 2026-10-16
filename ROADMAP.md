@@ -238,7 +238,9 @@ introduce el modelo de R, funciones, archivos y renv antes de conciliar con Pyth
 dispone de lección, script y lab.
 [06.02 — Objetos, vectores y tipos](curriculum/06_r_foundations/02_objects_vectors/README.md)
 añade tipos/longitudes, coerción, operaciones vectorizadas y reciclaje con scripts y lab.
-06.03–06.09 siguen por desarrollar. Las referencias están en
+[06.03 — Seleccionar elementos](curriculum/06_r_foundations/03_subsetting/README.md)
+dispone de lección/script/lab, correspondencia y contraste de operadores.
+06.04–06.09 siguen por desarrollar. Las referencias están en
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.

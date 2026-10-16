@@ -185,5 +185,5 @@ Puedes cerrar la práctica cuando reconstruyas los resultados y expliques los
 errores con tus palabras. Registra evidencia real y dudas en PROGRESS.md;
 desarrollar este material no acredita aprendizaje.
 
-Continúa con el [plan 06.03 — Seleccionar elementos](../../../curriculum/06_r_foundations/README.md#03-seleccionar-elementos),
-todavía pendiente. Volver a la [lección 06.02](../../../curriculum/06_r_foundations/02_objects_vectors/README.md).
+Continúa con [06.03 — Seleccionar elementos](../../../curriculum/06_r_foundations/03_subsetting/README.md),
+disponible con script y lab. Volver a la [lección 06.02](../../../curriculum/06_r_foundations/02_objects_vectors/README.md).

@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `06_r_foundations`
-- **Estado de desarrollo:** 06.01–06.02 implementadas; 06.03–06.09 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 06.02 y revisión de continuidad.
-- **Foco de desarrollo del material:** objetos, vectores atómicos, tipos, coerción y reciclaje.
+- **Estado de desarrollo:** 06.01–06.03 implementadas; 06.04–06.09 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 06.03 y revisión de continuidad.
+- **Foco de desarrollo del material:** selección por posición/nombre/máscara y estructura devuelta.
   Próxima sección por implementar:
-  [06.03 — Seleccionar elementos](curriculum/06_r_foundations/README.md#03-seleccionar-elementos), todavía planificada.
+  [06.04 — Lógica y valores faltantes](curriculum/06_r_foundations/README.md#04-logica-y-valores-faltantes), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -28,8 +28,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
-  28 secciones y lecturas abiertas; 06.01–06.02 disponen de lecciones, scripts y labs,
-  y las otras 26 siguen planificadas. Los módulos 09–10 tienen
+  28 secciones y lecturas abiertas; 06.01–06.03 disponen de lecciones, scripts y labs,
+  y las otras 25 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -40,19 +40,21 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[06.02 — Objetos, vectores y tipos](curriculum/06_r_foundations/02_objects_vectors/README.md)
-con su [lab](labs/06_r_foundations/02_objects_vectors/README.md).
-Retomar con 06.03: posiciones desde 1, nombres y selección lógica; distinguir
-[, [[ y $ y el tipo devuelto, sin equiparar operadores con Python. Reutilizar
-los vectores conocidos e introducir cada requisito antes de utilizarlo.
-Reservar detalle de faltantes/lógica para 06.04 y tablas/listas para 06.05;
-explicar o marcar cualquier adelanto necesario. Contrastar Advanced R y ayuda
-oficial de la versión elegida; no instalar tidyverse por anticipación.
+[06.03 — Seleccionar elementos](curriculum/06_r_foundations/03_subsetting/README.md)
+con su [lab](labs/06_r_foundations/03_subsetting/README.md).
+Retomar con 06.04: comparaciones, vectores lógicos, & frente a && y | frente a ||;
+NA/is.na, propagación de faltantes y diferencia entre NA, NULL, NaN y cero.
+Reutilizar ventas y máscaras conocidas; definir qué hacer con una condición
+desconocida antes de filtrar. Justificar na.rm, sin descartar/imputar por costumbre.
+Conservar entradas y conteos; tablas/listas completas siguen en 06.05.
+Contrastar libros y ayuda oficial de la versión elegida, sin nuevas instalaciones.
 
-06.02 añade ventas_vectores.R (cuatro ventas, total 660 y 594 con descuento) y
-riesgos_vectores.R (demostraciones deliberadamente incorrectas del análisis).
-Longitud/tipo/clase, coerción, truncamiento, alineación y reciclaje explícitos;
-el código 0 no acredita datos correctos. Se conserva la muestra escalar de 06.01.
+06.03 añade seleccionar_ventas.R con las mismas cuatro ventas: selección por
+posición/nombre/máscara, contraste de contenedor/contenido y cambio de copia.
+Nombres, duplicados, vacío/faltante/error y correspondencia explícitos; comparación
+simple y lista mínima introducidas antes de usar. Dimensiones/drop son opcionales.
+Selección primera/cuarta suma 420; unidades positivas conserva tres ventas y 660;
+variante del script 720 y del lab 620. Se conservan las muestras 06.01–06.02.
 Comprobado con R 4.6.1 independiente y paquetes incluidos, sin instalaciones ni
 modificaciones de Conda, PATH o bibliotecas. Locale C solo en los procesos de
 revisión por el aviso heredado de C.UTF-8; los scripts no cambian locale.
@@ -94,6 +96,23 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-15
+
+- Se desarrolló 06.03 con lección, script y lab: índices desde 1, orden/repetición,
+  exclusión, nombres exactos y máscaras alineadas. Contrasta [, [[ y $ según
+  objeto, tipo y contenido con una lista mínima explicada; matrices/drop opcionales.
+  Incluye modificación de copia, vacíos/faltantes/errores, diagrama con lectura
+  textual y soluciones razonadas. Advanced R y documentación oficial contrastados.
+- Script ejecutado en dos procesos nuevos R 4.6.1 sin avisos. Se comprobaron valores,
+  nombres/tipos/longitudes, selección 420, tres ventas positivas con total 660,
+  variante 720 y soluciones del lab 360/620. Cinco errores deliberados devuelven
+  código 1; también se verificaron índice decimal, máscara corta, nombres inexistentes,
+  búsqueda parcial de $ y dimensiones opcionales. Bloques Markdown y soluciones
+  ejecutados. Índice repetido y máscara corta se detectan contra selecciones
+  manuales; el cambio de contenedor/contenido se observa en la salida. Scripts
+  previos intactos, sin paquetes externos ni modificaciones de entornos.
+- Índices, roadmap, arquitectura, lecturas y continuidad actualizados; enlaces,
+  fragmentos, bloques y diff revisados. Sigue 06.04. Estado del estudiante sin
+  nuevas evidencias ni proyectos acreditados; la colección Python conserva 115 métodos.
 
 - Se desarrolló 06.02 con lección, dos scripts y lab: nombres/asignación,
   vectores atómicos, length/typeof/class, tipos comunes, operaciones por posición,

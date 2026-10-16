@@ -325,8 +325,8 @@ las cuatro ventas y detectes tanto el aviso como el reciclaje silencioso. Conser
 evidencia y dudas en PROGRESS.md; disponer del material no acredita aprendizaje.
 No hay proyecto/checkpoint implementado asociado.
 
-Continúa con el [plan 06.03 — Seleccionar elementos](../README.md#03-seleccionar-elementos),
-todavía pendiente. Volver al [índice de R fundamental](../README.md).
+Continúa con [06.03 — Seleccionar elementos](../03_subsetting/README.md),
+disponible con script y lab. Volver al [índice de R fundamental](../README.md).
 
 ## Referencias y atribución
 

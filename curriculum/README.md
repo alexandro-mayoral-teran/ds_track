@@ -47,7 +47,9 @@ Las once secciones de Python aplicado tienen material disponible.
 06.01 dispone de [lección, script y lab](06_r_foundations/01_r_session/README.md).
 [06.02 — Objetos, vectores y tipos](06_r_foundations/02_objects_vectors/README.md)
 añade lección/scripts/lab con cálculo correcto y casos de coerción/reciclaje.
-06.03–06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
+[06.03 — Seleccionar elementos](06_r_foundations/03_subsetting/README.md) añade
+posiciones/nombres/máscaras, contenedor/contenido y lab.
+06.04–06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

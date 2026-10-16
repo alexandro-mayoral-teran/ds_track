@@ -87,8 +87,8 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.02 tienen lección/scripts/lab;
-06.03–06.09 y 07–14 conservan planificación;
+05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.03 tienen lección/scripts/lab;
+06.04–06.09 y 07–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -341,8 +341,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 
 ### Desarrollo previsto de los módulos 06–08
 
-Los planes de R contienen 28 secciones; 06.01–06.02 tienen lecciones, scripts y labs,
-y las otras 26 conservan planificación:
+Los planes de R contienen 28 secciones; 06.01–06.03 tienen lecciones, scripts y labs,
+y las otras 25 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -370,6 +370,12 @@ riesgos_vectores.R separa reciclaje silencioso/parcial, coerción a texto y
 truncamiento como demostraciones no aceptadas. Tipos/clases, vacío y correspondencia
 explícitos, sin adelantar selección/tablas ni instalar paquetes. Ejemplos y lab
 comprobados con R 4.6.1, Advanced R como lectura puntual y documentación oficial.
+06.03 conserva las cuatro ventas y añade seleccionar_ventas.R: posiciones,
+nombres/máscaras, correspondencia y modificación de copia. Introduce una lista
+mínima antes de usar $ y distingue [ de [[ según objeto y contenido; dimensiones
+con matriz/drop son ampliación opcional. Faltantes y lógica solo se anticipan con
+explicación; el detalle de tablas queda en 06.05. Script/lab comprobados con R 4.6.1,
+sin modificar fuentes ni instalar paquetes.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10
