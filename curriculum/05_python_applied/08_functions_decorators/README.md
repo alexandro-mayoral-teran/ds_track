@@ -444,8 +444,8 @@ errores y límites. No hay proyecto/checkpoint implementado asociado. Registra
 evidencia y dudas en PROGRESS.md; el material disponible no acredita aprendizaje.
 
 Si sigues las ampliaciones, continúa con el
-[plan 05.09 — Medir antes de optimizar](../README.md#09-medir-antes-de-optimizar),
-todavía pendiente. El [cierre 05.11](../README.md#11-cierre-del-proyecto-python)
+[05.09 — Medir antes de optimizar](../09_measure_optimize/README.md),
+disponible con lab de extensión. El [cierre 05.11](../README.md#11-cierre-del-proyecto-python)
 sigue planificado. Las extensiones 05.06–05.10 no bloquean el núcleo ni R.
 Volver al [índice de Python aplicado](../README.md).
 

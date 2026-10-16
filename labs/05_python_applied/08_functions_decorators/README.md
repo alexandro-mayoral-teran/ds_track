@@ -201,6 +201,6 @@ expliques el flujo y compruebes argumentos, retorno, errores y límites con tus
 palabras. Desarrollar o ejecutar el material no acredita aprendizaje.
 
 Si sigues las ampliaciones, continúa con el
-[plan 05.09 — Medir antes de optimizar](../../../curriculum/05_python_applied/README.md#09-medir-antes-de-optimizar),
-todavía pendiente. El cierre 05.11 sigue planificado; esta extensión no bloquea
+[05.09 — Medir antes de optimizar](../../../curriculum/05_python_applied/09_measure_optimize/README.md),
+disponible con lab de extensión. El cierre 05.11 sigue planificado; esta extensión no bloquea
 el núcleo. Volver a la [lección 05.08](../../../curriculum/05_python_applied/08_functions_decorators/README.md).

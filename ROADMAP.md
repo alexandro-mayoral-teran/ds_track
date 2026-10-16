@@ -207,7 +207,11 @@ dispone de lección/lab de extensión, consumo y lectura por lotes conciliada,
 con límites de memoria explícitos.
 [05.08 — Funciones como valores y decoradores](curriculum/05_python_applied/08_functions_decorators/README.md)
 dispone de lección/lab de extensión y envoltura de registro con comportamiento
-comprobado. Las secciones 09–11 están por desarrollar.
+comprobado.
+[05.09 — Medir antes de optimizar](curriculum/05_python_applied/09_measure_optimize/README.md)
+dispone de lección/lab de extensión, tiempos repetidos, memoria trazada y perfiles;
+compara alternativas equivalentes sin prometer una mejora universal.
+Las secciones 10–11 están por desarrollar.
 
 - Esencial: módulos, funciones, configuración, logging y comprobaciones.
 - Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.

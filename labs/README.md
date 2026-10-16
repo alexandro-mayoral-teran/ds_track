@@ -68,6 +68,8 @@ reglas de enlace están en
 
 | [`05.08 — Funciones como valores y decoradores (extensión)`](05_python_applied/08_functions_decorators/) | `05_python_applied` | No aplica todavía |
 
+| [`05.09 — Medir antes de optimizar (extensión)`](05_python_applied/09_measure_optimize/) | `05_python_applied` | No aplica todavía |
+
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
 lab `00.05` (A/B) → lección 06 → lab `00.06`. Los enlaces al final de cada lab llevan al material

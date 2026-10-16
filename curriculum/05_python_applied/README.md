@@ -7,7 +7,7 @@ reutilizable, comprobable y reconstruible. Completar primero
 [04 — Visualización en Python](../04_visualization_python/README.md), incluido
 su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
 La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis. Las ocho primeras secciones tienen material disponible; 05.06–05.08 son opcionales.
+reorganizar ese mismo análisis. Las nueve primeras secciones tienen material disponible; 05.06–05.09 son opcionales.
 
 **Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
 dispone de lección, paquete local, script, notebook y lab;
@@ -28,7 +28,10 @@ consumo, yield, CSV por lotes y conciliación con memoria/recursos explícitos,
 con pruebas y lab de extensión.
 [05.08 — Funciones como valores y decoradores](08_functions_decorators/README.md)
 añade funciones como argumentos/retorno, envolturas, wraps y registro del análisis,
-con pruebas y lab de extensión. Las secciones 09–11
+con pruebas y lab de extensión.
+[05.09 — Medir antes de optimizar](09_measure_optimize/README.md) incorpora
+tiempos repetidos, memoria trazada, perfiles y comparación de contratos,
+con pruebas y lab de extensión. Las secciones 10–11
 siguen planificadas; sus enlaces internos describen el alcance pendiente.
 La disponibilidad del material no acredita aprendizaje del estudiante.
 
@@ -49,7 +52,7 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 | 6 | [Clases, composición y dataclasses](06_classes_composition/README.md) | Práctica opcional | Representar estructuras cuando resulte útil |
 | 7 | [Iteradores y generadores](07_iterators_generators/README.md) | Extensión | Procesar lotes sin reunir toda la entrada |
 | 8 | [Funciones como valores y decoradores](08_functions_decorators/README.md) | Extensión | Reutilizar un comportamiento transversal |
-| 9 | [Medir antes de optimizar](#09-medir-antes-de-optimizar) | Extensión | Localizar un costo y comprobar una mejora |
+| 9 | [Medir antes de optimizar](09_measure_optimize/README.md) | Extensión | Localizar un costo y comprobar una mejora |
 | 10 | [Integración con APIs](#10-integracion-con-apis) | Extensión | Obtener datos externos con controles explícitos |
 | 11 | [Cierre del proyecto Python](#11-cierre-del-proyecto-python) | Práctica de cierre | Reconstruir indicadores y figura con una ejecución |
 
@@ -154,10 +157,13 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 
 ### 09 — Medir antes de optimizar
 
-- Tiempo, memoria, mediciones repetidas y profiling; identificar el cuello de
-  botella. Complejidad básica con tamaños y casos comparables.
-- Práctica prevista: comparar dos implementaciones conservando resultados y
-  explicar el costo en claridad. La optimización no sustituye la validación.
+- Tiempo, memoria trazada, mediciones repetidas y perfiles; definir fronteras
+  y localizar trabajo antes de cambiarlo. Tamaño/diversidad y complejidad básica.
+- [Lección disponible](09_measure_optimize/README.md) y
+  [lab 05.09](../../labs/05_python_applied/09_measure_optimize/README.md),
+  de extensión: comparar validación de fechas por aparición/reutilización local,
+  conservando conteos, errores y consumo. Instrumentos separados, evidencia
+  cruda, costo de memoria y decisión sin prometer velocidad universal.
 
 <a id="10-integracion-con-apis"></a>
 
@@ -185,7 +191,7 @@ Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
 no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
 metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
 
-Los labs 05.01–05.08 están disponibles (05.06–05.08 opcionales); los labs 05.09–05.11 siguen previstos,
+Los labs 05.01–05.09 están disponibles (05.06–05.09 opcionales); los labs 05.10–05.11 siguen previstos,
 señalando los opcionales cuando se desarrollen.
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
 registrados en [proyectos](../../projects/README.md); no se exige crear otro.

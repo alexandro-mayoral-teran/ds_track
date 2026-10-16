@@ -87,7 +87,7 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.08 disponen de lección/lab y paquete local; 05.09–05.11 y 06–14 conservan planificación;
+05.01–05.09 disponen de lección/lab y paquete local; 05.10–05.11 y 06–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -102,7 +102,8 @@ y logging sobre ese paquete; 05.03 desarrolla errores y recursos;
 05.06 incorpora clases y dataclasses como ampliación opcional por composición;
 05.07 desarrolla iteradores y generadores con lotes y conciliación;
 05.08 incorpora funciones como valores y una envoltura de registro comprobada.
-05.09–05.11 conservan planes.
+05.09 incorpora mediciones repetidas, perfiles y comparación de memoria/tiempo
+con contratos conservados. 05.10–05.11 conservan planes.
 pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -243,6 +244,15 @@ concilia con la lectura completa sin exportar. No consume iteradores retornados;
 rechaza funciones generadoras/async declaradas como tales. Trece pruebas y lab
 de extensión comprueban contrato, metadatos y límites. No añade caché, reintentos,
 medición ni dependencias; la fiabilidad del backend logging queda como supuesto.
+05.09 añade medicion.py y ejecutar_medicion.py sobre el mismo paquete, sin cambiar
+los algoritmos anteriores. Compara validación por aparición/reutilización local
+de fechas con contratos equivalentes, tamaños y diversidad explícitos. Guarda
+tiempos crudos con calentamiento/orden alterno, memoria trazada y perfiles en
+llamadas separadas; las fases del análisis son fronteras solapadas, no sumables.
+Trece pruebas nuevas protegen equivalencia, fallas y sesiones ajenas de instrumentos,
+incluido cProfile de CPython 3.12. La salida requiere carpeta nueva y puede quedar
+parcial ante fallas de escritura; no sustituye el cierre de entrega de 05.03.
+No instala dependencias ni promete memoria total acotada o mejoras universales.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.
