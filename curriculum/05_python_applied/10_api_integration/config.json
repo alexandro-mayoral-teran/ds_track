@@ -1,0 +1,7 @@
+{
+  "timeout": 5.0,
+  "max_attempts": 2,
+  "retry_delay": 0.25,
+  "max_pages": 3,
+  "max_rows": 100
+}

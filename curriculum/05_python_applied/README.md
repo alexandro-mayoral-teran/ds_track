@@ -7,7 +7,7 @@ reutilizable, comprobable y reconstruible. Completar primero
 [04 — Visualización en Python](../04_visualization_python/README.md), incluido
 su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
 La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis. Las nueve primeras secciones tienen material disponible; 05.06–05.09 son opcionales.
+reorganizar ese mismo análisis. Las diez primeras secciones tienen material disponible; 05.06–05.10 son opcionales.
 
 **Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
 dispone de lección, paquete local, script, notebook y lab;
@@ -31,8 +31,10 @@ añade funciones como argumentos/retorno, envolturas, wraps y registro del anál
 con pruebas y lab de extensión.
 [05.09 — Medir antes de optimizar](09_measure_optimize/README.md) incorpora
 tiempos repetidos, memoria trazada, perfiles y comparación de contratos,
-con pruebas y lab de extensión. Las secciones 10–11
-siguen planificadas; sus enlaces internos describen el alcance pendiente.
+con pruebas y lab de extensión.
+[05.10 — Integración con APIs](10_api_integration/README.md) añade respuestas
+locales, paginación, reintentos y tablas conciliadas, con pruebas y lab de extensión.
+La sección 11 sigue planificada; su enlace interno describe el alcance pendiente.
 La disponibilidad del material no acredita aprendizaje del estudiante.
 
 El núcleo es organización, configuración, errores y pruebas. Clases, generadores,
@@ -53,7 +55,7 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 | 7 | [Iteradores y generadores](07_iterators_generators/README.md) | Extensión | Procesar lotes sin reunir toda la entrada |
 | 8 | [Funciones como valores y decoradores](08_functions_decorators/README.md) | Extensión | Reutilizar un comportamiento transversal |
 | 9 | [Medir antes de optimizar](09_measure_optimize/README.md) | Extensión | Localizar un costo y comprobar una mejora |
-| 10 | [Integración con APIs](#10-integracion-con-apis) | Extensión | Obtener datos externos con controles explícitos |
+| 10 | [Integración con APIs](10_api_integration/README.md) | Extensión | Obtener datos externos con controles explícitos |
 | 11 | [Cierre del proyecto Python](#11-cierre-del-proyecto-python) | Práctica de cierre | Reconstruir indicadores y figura con una ejecución |
 
 ## Alcance de cada sección
@@ -171,9 +173,11 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
 
 - HTTP, respuesta JSON, códigos de estado, paginación, tiempos de espera y
   reintentos limitados cuando sean adecuados; configuración fuera del código.
-- Práctica prevista: procesar respuestas locales simuladas, incluidos errores,
-  sin exigir credenciales ni un servicio activo. Una consulta real será opcional;
-  normalizar y validar datos antes de incorporarlos al análisis.
+- [Lección disponible](10_api_integration/README.md) y
+  [lab 05.10](../../labs/05_python_applied/10_api_integration/README.md),
+  de extensión: procesar tres páginas locales, incluidos errores tardíos y
+  reintentos acotados, sin credenciales ni servicio activo. Normalizar, validar
+  y conciliar con las fuentes anteriores; adaptador HTTPS probado sin red.
 
 <a id="11-cierre-del-proyecto-python"></a>
 
@@ -191,8 +195,7 @@ Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
 no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
 metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
 
-Los labs 05.01–05.09 están disponibles (05.06–05.09 opcionales); los labs 05.10–05.11 siguen previstos,
-señalando los opcionales cuando se desarrollen.
+Los labs 05.01–05.10 están disponibles (05.06–05.10 opcionales); el lab 05.11 sigue previsto.
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
 registrados en [proyectos](../../projects/README.md); no se exige crear otro.
 Checkpoint de organización propuesto: ejecución reconstruible, controles,

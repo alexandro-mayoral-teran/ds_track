@@ -1,0 +1,118 @@
+{
+  "items": [
+    {
+      "id_credito": "001",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 1100,
+      "dias_atraso": 10,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "002",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 1200,
+      "dias_atraso": 20,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "003",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 1300,
+      "dias_atraso": null,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "004",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 1400,
+      "dias_atraso": 40,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "005",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": null,
+      "dias_atraso": 0,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "006",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 1600,
+      "dias_atraso": 10,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "007",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 1700,
+      "dias_atraso": 20,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "008",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 1800,
+      "dias_atraso": null,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "009",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": null,
+      "dias_atraso": 40,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "010",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 2000,
+      "dias_atraso": 0,
+      "segmento": "consumo"
+    },
+    {
+      "id_credito": "011",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 2100,
+      "dias_atraso": 10,
+      "segmento": "servicios"
+    },
+    {
+      "id_credito": "012",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 2200,
+      "dias_atraso": 20,
+      "segmento": "servicios"
+    },
+    {
+      "id_credito": "013",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 2300,
+      "dias_atraso": 30,
+      "segmento": "servicios"
+    },
+    {
+      "id_credito": "014",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 2400,
+      "dias_atraso": 40,
+      "segmento": "servicios"
+    },
+    {
+      "id_credito": "015",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 2500,
+      "dias_atraso": 0,
+      "segmento": "servicios"
+    },
+    {
+      "id_credito": "016",
+      "fecha_corte": "2026-09-30",
+      "saldo_mxn": 2600,
+      "dias_atraso": 10,
+      "segmento": "servicios"
+    }
+  ],
+  "next_page": 2,
+  "total": 48
+}

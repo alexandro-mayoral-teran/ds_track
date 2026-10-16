@@ -408,7 +408,7 @@ velocidad universal. No hay proyecto/checkpoint implementado asociado. Registra
 evidencia y dudas en PROGRESS.md; disponer del material no acredita aprendizaje.
 
 Si continúas las ampliaciones, sigue el
-[plan 05.10 — Integración con APIs](../README.md#10-integracion-con-apis), pendiente.
+[05.10 — Integración con APIs](../10_api_integration/README.md), disponible con lab.
 El [cierre 05.11](../README.md#11-cierre-del-proyecto-python) sigue planificado.
 Volver al [índice de Python aplicado](../README.md).
 

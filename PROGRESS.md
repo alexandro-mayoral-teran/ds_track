@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01–05.09 implementadas; siguiente desarrollo 05.10 (extensión).
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.09 y revisión de continuidad.
-- **Foco de desarrollo del material:** fronteras de medición, tiempo/memoria, perfiles y contratos conservados (extensión).
+- **Estado de desarrollo:** 05.01–05.10 implementadas; siguiente desarrollo 05.11 (cierre).
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.10 y revisión de continuidad.
+- **Foco de desarrollo del material:** HTTP/JSON, paginación, reintentos acotados y normalización conciliada (extensión).
   Próxima sección por implementar:
-  [05.10 — Integración con APIs](curriculum/05_python_applied/README.md#10-integracion-con-apis), extensión.
+  [05.11 — Cierre del proyecto Python](curriculum/05_python_applied/README.md#11-cierre-del-proyecto-python), práctica de cierre.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -24,7 +24,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   conciliados, quince pruebas y lab de extensión. 05.08 añade funciones como
   valores, decoradores, trece pruebas y lab de extensión. 05.09 añade mediciones
   repetidas, memoria trazada, perfiles, trece pruebas y lab de extensión.
-  05.10–05.11 están por desarrollar.
+  05.10 añade páginas simuladas, normalización conciliada, dieciocho pruebas
+  y lab de extensión. 05.11 está por desarrollar.
   Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
@@ -37,24 +38,26 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.09 — Medir antes de optimizar](curriculum/05_python_applied/09_measure_optimize/README.md)
-con su [lab](labs/05_python_applied/09_measure_optimize/README.md), de extensión.
-Retomar con 05.10: HTTP/JSON, estados, paginación, tiempos de espera y reintentos
-limitados según contrato. Empezar con respuestas locales simuladas, incluidas
-fallas, sin credenciales ni servicio activo obligatorio. Una consulta real será
-opcional; validar/normalizar antes de incorporar datos al análisis. No instalar
-herramientas por anticipación ni ocultar fallas con resultados vacíos de éxito.
+[05.10 — Integración con APIs](curriculum/05_python_applied/10_api_integration/README.md)
+con su [lab](labs/05_python_applied/10_api_integration/README.md), de extensión.
+Retomar con 05.11: reconstruir indicadores y figura desde una ejecución explícita,
+con entradas, configuración, resultados comprobados e instrucciones. Reutilizar
+el paquete y las fuentes anteriores; conciliar con pandas/SQL y probar una falla
+relevante. El cierre local basta; no exigir API real, decoradores, clases ni
+otras ampliaciones opcionales. Revisar primero qué mecanismos de ejecución y
+entrega ya existen para integrarlos sin duplicar lógica ni sobrescribir salidas.
 El núcleo 05.01–05.05 está disponible; 05.11 sigue planificado. Las ampliaciones
 05.06–05.10 no bloquean ese cierre esencial ni cambian la numeración del track.
 
-05.09 añade medicion.py y ejecutar_medicion.py sin cambiar algoritmos previos.
-Compara validación de fechas por aparición/reutilización local con resultados,
-errores y consumo conservados. Tiempo, memoria y perfiles se ejecutan por
-separado; los tiempos de fases usan fronteras solapadas y no son sumables.
-Conserva evidencia cruda en carpeta nueva y fuentes intactas; no convierte listas
-de fechas ampliadas en carteras válidas. Trece métodos nuevos; catorce con la
-solución del lab. La colección combinada conserva 87 métodos iniciales
-(21/12/13/15/13/13), sin nuevas dependencias ni umbrales de rendimiento en tests.
+05.10 añade api.py, ejecutar_api.py, configuración y muestras de 48 observaciones
+en tres páginas, sin cambiar algoritmos previos. Transporte inyectable, contrato
+JSON explícito, límites, claves globales, total conciliado y tabla tipada sin
+pérdida de precisión. Solo reintenta timeout/503 sin Retry-After; otros errores
+se comunican sin tabla parcial. El script es simulado y registra pausas sin
+dormir; concilia con los CSV y no requiere red. El adaptador HTTPS se comprobó
+con sustitutos locales. Dieciocho métodos nuevos; diecinueve con la solución del
+lab. La colección combinada conserva 105 métodos iniciales
+(21/12/13/15/13/13/18), sin nuevas dependencias.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -92,6 +95,27 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-15
+
+- Se desarrolló 05.10 como extensión: solicitud HTTP/GET, estados, cabeceras,
+  JSON frente a contrato de datos, paginación, límites y política explícita de
+  reintentos. Muestras propias de las 48 observaciones anteriores en tres páginas,
+  cuatro escenarios, configuración local, tabla tipada y conciliación con CSV.
+  Incluye diagrama con lectura textual, referencias primarias y lab con soluciones.
+- Pasaron 105 métodos combinados, dieciocho con Python -O y diecinueve con la
+  solución del lab en copia. Ejemplos Markdown y cuatro escenarios comprobados;
+  errores tardíos/JSON inválido no crean carpetas de resultados. Dos escenarios
+  exitosos conservan 48 filas, cinco indicadores y 20 controles. Se comprobaron
+  no sobrescritura, max_pages=1 sin segunda solicitud, fuentes intactas y ausencia
+  de rutas personales en evidencia. No hubo consultas de red ni esperas reales.
+- Pruebas de HTTP sustituyen urlopen y verifican solicitud GET, timeout, bytes,
+  UTF-8 y cierre de respuesta/HTTPError incluso ante lectura interrumpida. Cubren
+  duplicados globales, segmento cambiante, esquema, JSON no estándar, vacío,
+  cero/ausencia, precisión Int64, errores y agotamiento. Copias aisladas detectaron
+  claves olvidadas entre páginas, reintento indebido de 401 y respuesta sin cerrar.
+  Importaciones sin salida ni configuración del logging raíz; entorno existente,
+  sin instalaciones ni cambios al lockfile. Índices, navegación, roadmap,
+  arquitectura, enlaces, bloques y diff revisados. Sigue 05.11, aún planificada;
+  estado del estudiante conservado sin nuevas evidencias personales.
 
 - Se desarrolló 05.09 como extensión: frontera, tiempo transcurrido, repeticiones,
   calentamiento/orden alterno, memoria trazada frente a RSS, perfiles de llamadas

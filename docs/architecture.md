@@ -87,7 +87,7 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.09 disponen de lección/lab y paquete local; 05.10–05.11 y 06–14 conservan planificación;
+05.01–05.10 disponen de lección/lab y paquete local; 05.11 y 06–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -103,7 +103,8 @@ y logging sobre ese paquete; 05.03 desarrolla errores y recursos;
 05.07 desarrolla iteradores y generadores con lotes y conciliación;
 05.08 incorpora funciones como valores y una envoltura de registro comprobada.
 05.09 incorpora mediciones repetidas, perfiles y comparación de memoria/tiempo
-con contratos conservados. 05.10–05.11 conservan planes.
+con contratos conservados. 05.10 incorpora paginación, respuestas locales y
+normalización conciliada, con transporte HTTPS probado sin red. 05.11 conserva su plan.
 pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -253,6 +254,16 @@ Trece pruebas nuevas protegen equivalencia, fallas y sesiones ajenas de instrume
 incluido cProfile de CPython 3.12. La salida requiere carpeta nueva y puede quedar
 parcial ante fallas de escritura; no sustituye el cierre de entrega de 05.03.
 No instala dependencias ni promete memoria total acotada o mejoras universales.
+05.10 añade api.py y ejecutar_api.py con muestras de las mismas 48 observaciones
+en tres páginas y configuración local. fetch_detail recibe un transporte inyectable,
+valida estado/JSON/esquema/claves/total, conserva ausencias y enteros precisos,
+y retorna solo una tabla completa. Reintentos limitados de GET para timeout/503
+sin Retry-After; otros estados/fallas se comunican sin datos parciales de éxito.
+El script simulado concilia con CSV, registra intentos/pausas y escribe JSON final
+atómico, sin hacer atómica la carpeta. urllib cierra respuestas y HTTPError,
+limita bytes y usa timeout explícito; el adaptador se prueba con sustitutos locales.
+Dieciocho pruebas nuevas y lab de extensión, sin credenciales, servicios reales
+obligatorios ni nuevas dependencias. No implementa snapshots ni un cliente universal.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

@@ -192,8 +192,8 @@ Puedes cerrar esta extensión cuando expliques la comparación y sus límites co
 tus palabras. Registra evidencia y dudas en PROGRESS.md sin confundir desarrollar
 material con completar el aprendizaje.
 
-Si sigues las ampliaciones, continúa con la siguiente lección prevista:
-[plan 05.10 — Integración con APIs](../../../curriculum/05_python_applied/README.md#10-integracion-con-apis),
-todavía pendiente. El cierre 05.11 también sigue planificado. Esta extensión no
+Si sigues las ampliaciones, continúa con la siguiente lección:
+[05.10 — Integración con APIs](../../../curriculum/05_python_applied/10_api_integration/README.md),
+disponible con lab. El cierre 05.11 sigue planificado. Esta extensión no
 bloquea el núcleo ni R. Volver a la
 [lección 05.09](../../../curriculum/05_python_applied/09_measure_optimize/README.md).

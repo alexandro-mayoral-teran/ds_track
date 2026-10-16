@@ -37,7 +37,10 @@ añade lección/lab de extensión y registro alrededor del análisis con pruebas
 de argumentos, retorno, errores y metadatos.
 [05.09 — Medir antes de optimizar](05_python_applied/09_measure_optimize/README.md)
 añade lección/lab de extensión, tiempos repetidos, perfiles y memoria trazada,
-con contratos conservados. 05.10–05.11 conservan sus planes.
+con contratos conservados.
+[05.10 — Integración con APIs](05_python_applied/10_api_integration/README.md)
+añade lección/lab de extensión, respuestas simuladas, paginación, reintentos
+acotados y tablas conciliadas. 05.11 conserva su plan.
 Los módulos 06–08 tienen planes detallados de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento

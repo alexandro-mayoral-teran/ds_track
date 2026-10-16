@@ -211,7 +211,10 @@ comprobado.
 [05.09 — Medir antes de optimizar](curriculum/05_python_applied/09_measure_optimize/README.md)
 dispone de lección/lab de extensión, tiempos repetidos, memoria trazada y perfiles;
 compara alternativas equivalentes sin prometer una mejora universal.
-Las secciones 10–11 están por desarrollar.
+[05.10 — Integración con APIs](curriculum/05_python_applied/10_api_integration/README.md)
+dispone de lección/lab de extensión, respuestas locales, paginación acotada y
+conciliación; transporte HTTPS probado con sustitutos, sin conexión obligatoria.
+La sección 11 está por desarrollar.
 
 - Esencial: módulos, funciones, configuración, logging y comprobaciones.
 - Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.

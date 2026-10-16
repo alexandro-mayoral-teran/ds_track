@@ -158,7 +158,10 @@ añade reenvío de argumentos, wraps y registro de etapas con errores conservado
 con lección/lab de extensión.
 [05.09 — Medir antes de optimizar](curriculum/05_python_applied/09_measure_optimize/README.md)
 añade mediciones repetidas, perfiles, memoria y comparación de contratos con lab
-de extensión; 05.10–05.11 siguen planificadas.
+de extensión.
+[05.10 — Integración con APIs](curriculum/05_python_applied/10_api_integration/README.md)
+añade páginas JSON simuladas, límites, reintentos y normalización conciliada,
+con pruebas y lab de extensión; 05.11 sigue planificada.
 Los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

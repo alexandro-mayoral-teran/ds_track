@@ -1,0 +1,36 @@
+{
+  "steps": [
+    {
+      "page": 1,
+      "status": 503,
+      "content_type": "application/json",
+      "retry_after": null,
+      "body_file": "pagina_01.json"
+    },
+    {
+      "page": 1,
+      "status": 200,
+      "content_type": "application/json",
+      "retry_after": null,
+      "body_file": "pagina_01.json"
+    },
+    {
+      "page": 2,
+      "error": "timeout"
+    },
+    {
+      "page": 2,
+      "status": 200,
+      "content_type": "application/json",
+      "retry_after": null,
+      "body_file": "pagina_02.json"
+    },
+    {
+      "page": 3,
+      "status": 200,
+      "content_type": "application/json",
+      "retry_after": null,
+      "body_file": "pagina_03.json"
+    }
+  ]
+}
