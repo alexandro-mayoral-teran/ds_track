@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `05_python_applied`
-- **Estado de desarrollo:** 05.01–05.07 implementadas; siguiente desarrollo 05.08 (extensión).
-- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.07 y revisión de continuidad.
-- **Foco de desarrollo del material:** iteradores/generadores, lotes, conciliación y recursos (extensión).
+- **Estado de desarrollo:** 05.01–05.08 implementadas; siguiente desarrollo 05.09 (extensión).
+- **Sesión de desarrollo:** 2026-10-15, desarrollo de 05.08 y revisión de continuidad.
+- **Foco de desarrollo del material:** funciones como valores, envolturas y metadatos conservados (extensión).
   Próxima sección por implementar:
-  [05.08 — Funciones como valores y decoradores](curriculum/05_python_applied/README.md#08-funciones-como-valores-y-decoradores), extensión.
+  [05.09 — Medir antes de optimizar](curriculum/05_python_applied/README.md#09-medir-antes-de-optimizar), extensión.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -21,7 +21,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   05.04 añade lección, 21 pruebas unittest y lab; 05.05 añade tipos, contratos,
   revisión sin exportar, doce pruebas y lab. 05.06 añade clases/composición,
   dataclasses, trece pruebas y lab opcionales. 05.07 añade generadores, lotes
-  conciliados, quince pruebas y lab de extensión. 05.08–05.11 están por desarrollar.
+  conciliados, quince pruebas y lab de extensión. 05.08 añade funciones como
+  valores, decoradores, trece pruebas y lab de extensión. 05.09–05.11 están por desarrollar.
   Los módulos 06–08 tienen
   un plan adicional de 28 secciones y lecturas abiertas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
@@ -34,24 +35,24 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[05.07 — Iteradores y generadores](curriculum/05_python_applied/07_iterators_generators/README.md)
-con su [lab](labs/05_python_applied/07_iterators_generators/README.md), de extensión.
-Retomar con 05.08: funciones como valores, paso de funciones y envoltura de un
-comportamiento transversal; introducir decoradores propios y functools.wraps
-sin ocultar resultados, excepciones ni efectos. Usar funciones conocidas y
-pruebas; no convertir caché o metaprogramación en requisito para el núcleo.
+[05.08 — Funciones como valores y decoradores](curriculum/05_python_applied/08_functions_decorators/README.md)
+con su [lab](labs/05_python_applied/08_functions_decorators/README.md), de extensión.
+Retomar con 05.09: medir tiempo/memoria, repetir comparaciones y localizar un
+costo antes de optimizar; conservar resultados, entradas y fases comparables.
+Distinguir memoria de objetos Python de memoria total del proceso, y separar
+lectura, cálculo, materialización y exportación. No instalar herramientas por
+anticipación ni prometer mejoras sin evidencia.
 El núcleo 05.01–05.05 está disponible; 05.11 sigue planificado. Las ampliaciones
 05.06–05.10 no bloquean ese cierre esencial ni cambian la numeración del track.
 
-05.07 añade iteracion.py y ejecutar_lotes.py sin modificar el recorrido anterior.
-iter_batches entrega listas nuevas y conserva el último lote; valida al consumir.
-batch_indicators usa CSV por lotes, valida claves/fechas/valores incluso fuera
-del corte y retorna indicadores al terminar. Retiene catálogo, claves y saldos
-para mediana: no promete memoria constante. Archivos bajo with, sin exportar.
-Quince métodos nuevos y dieciséis con la solución del lab; las colecciones
-anteriores conservan sus 21/12/13 métodos. Se distingue tamaño en registros de
-memoria total, gramática CSV de conversiones pandas y mediana de promedio de
-medianas. No se agregaron dependencias ni grandes datasets.
+05.08 añade instrumentacion.py y ejecutar_decoradores.py sin modificar el
+recorrido anterior. log_call prepara una envoltura sin ejecutar el cálculo;
+reenvía parámetros, devuelve el mismo objeto y propaga la misma excepción/causa.
+wraps conserva metadatos y el enlace original, sin imponer tipos ni reconstruir
+la firma ejecutable. logged_indicators delega a 05.07, sin exportar, caché ni
+reintentos. No instrumenta consumo de generadores/async y supone logging funcional.
+Trece métodos nuevos; catorce con la solución del lab. La colección combinada
+conserva 74 métodos iniciales (21/12/13/15/13), sin nuevas dependencias.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -89,6 +90,24 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-15
+
+- Se desarrolló 05.08 como extensión: funciones como valores, callbacks,
+  funciones anidadas/cierre, reenvío de argumentos, @, wraps y metadatos.
+  Registro de inicio/fin/falla alrededor del análisis conocido, con errores
+  conservados y límites de generadores/caché. Incluye diagrama y lectura textual,
+  ejemplos propios y lab con soluciones razonadas y prueba de efecto único.
+- Pasaron los 74 métodos combinados (61 previos y 13 nuevos), catorce con la
+  solución del lab en copia y trece con Python -O. Ejemplos Markdown ejecutados;
+  nueve combinaciones de corte/tamaño equivalentes a lectura completa. Fuentes
+  intactas e importaciones sin ejecución/mensajes ni cambios al logging raíz.
+  Copias temporales detectaron pérdida de retorno, ocultación de error y falta
+  de metadatos. Se comprobaron causa, identidad, retorno None, interrupciones,
+  rechazo de funciones generadoras/async y no consumo de iteradores retornados.
+  Se reutilizó .venv-altair-review sin instalaciones ni cambios al lockfile.
+- Índices, roadmap, arquitectura y continuidad actualizados; enlaces locales,
+  fragmentos y bloques Markdown comprobados. Sigue 05.09 como extensión;
+  05.11 permanece planificado. Estado del estudiante conservado sin añadir
+  evidencias personales; desarrollar el material no acredita aprendizaje.
 
 - Se desarrolló 05.07 como extensión: iterables/iteradores, consumo compartido,
   agotamiento, yield, expresiones generadoras, errores diferidos, islice y lotes.

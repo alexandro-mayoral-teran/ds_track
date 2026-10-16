@@ -204,7 +204,10 @@ dispone de lección/lab opcionales, configuración por campos y composición sob
 la revisión existente.
 [05.07 — Iteradores y generadores](curriculum/05_python_applied/07_iterators_generators/README.md)
 dispone de lección/lab de extensión, consumo y lectura por lotes conciliada,
-con límites de memoria explícitos. Las secciones 08–11 están por desarrollar.
+con límites de memoria explícitos.
+[05.08 — Funciones como valores y decoradores](curriculum/05_python_applied/08_functions_decorators/README.md)
+dispone de lección/lab de extensión y envoltura de registro con comportamiento
+comprobado. Las secciones 09–11 están por desarrollar.
 
 - Esencial: módulos, funciones, configuración, logging y comprobaciones.
 - Práctica: anotaciones de tipos, clases, composición y dataclasses cuando aporten claridad.

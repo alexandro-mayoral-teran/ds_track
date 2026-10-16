@@ -200,6 +200,6 @@ expliques el consumo, concilies el resultado y justifiques recursos/memoria con
 tus palabras. La disponibilidad del material no acredita aprendizaje.
 
 Continúa, si sigues las ampliaciones, con el
-[plan 05.08 — Funciones como valores y decoradores](../../../curriculum/05_python_applied/README.md#08-funciones-como-valores-y-decoradores),
-todavía pendiente. El cierre 05.11 sigue planificado; esta extensión no bloquea
+[05.08 — Funciones como valores y decoradores](../../../curriculum/05_python_applied/08_functions_decorators/README.md),
+disponible como extensión. El cierre 05.11 sigue planificado; esta extensión no bloquea
 el núcleo. Volver a la [lección 05.07](../../../curriculum/05_python_applied/07_iterators_generators/README.md).

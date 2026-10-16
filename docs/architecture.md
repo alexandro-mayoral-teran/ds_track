@@ -87,7 +87,7 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.07 disponen de lección/lab y paquete local; 05.08–05.11 y 06–14 conservan planificación;
+05.01–05.08 disponen de lección/lab y paquete local; 05.09–05.11 y 06–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -100,8 +100,9 @@ y logging sobre ese paquete; 05.03 desarrolla errores y recursos;
 05.04 añade pruebas de función, archivos e integración con unittest;
 05.05 documenta firmas/contratos y valida conteos/opciones de revisión;
 05.06 incorpora clases y dataclasses como ampliación opcional por composición;
-05.07 desarrolla iteradores y generadores con lotes y conciliación.
-05.08–05.11 conservan planes.
+05.07 desarrolla iteradores y generadores con lotes y conciliación;
+05.08 incorpora funciones como valores y una envoltura de registro comprobada.
+05.09–05.11 conservan planes.
 pandas 02.10 también dispone de notebook.
 SQL 03.01 tiene diagrama relacional, esquema
 preparado y tres CSV que generan una base SQLite local. SQL 03.02 consulta esa
@@ -233,6 +234,15 @@ Retorna cinco grupos de indicadores al terminar, sin exportar; el script concili
 con la lectura completa. Contrato CSV explícito de enteros decimales no negativos
 y archivos bajo with; quince pruebas y lab de extensión protegen resultados,
 recursos y errores tardíos. Sin dependencias nuevas ni mediciones anticipadas.
+05.08 añade instrumentacion.py sin modificar consumidores o algoritmos anteriores.
+log_call recibe funciones normales, prepara una envoltura con wraps y registra
+inicio/fin/falla al llamar; reenvía argumentos, retorna el mismo objeto y propaga
+la misma excepción/causa. No configura logging al importar y no registra valores
+de argumentos/resultados. logged_indicators delega a 05.07 y el script nuevo
+concilia con la lectura completa sin exportar. No consume iteradores retornados;
+rechaza funciones generadoras/async declaradas como tales. Trece pruebas y lab
+de extensión comprueban contrato, metadatos y límites. No añade caché, reintentos,
+medición ni dependencias; la fiabilidad del backend logging queda como supuesto.
 La configuración raíz incluye Matplotlib 3.10.7
 y un grupo notebooks con ipykernel 6.30.1, además de pandas 2.3.3.
 No se crean carpetas vacías ni labs antes de implementar el contenido.

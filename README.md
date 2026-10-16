@@ -153,7 +153,9 @@ con ejemplos comprobados y lab.
 añade una ampliación opcional con objetos pequeños, configuración y lab.
 [05.07 — Iteradores y generadores](curriculum/05_python_applied/07_iterators_generators/README.md)
 añade consumo por lotes, conciliación, recursos y límites de memoria, con lab
-opcional; 05.08–05.11 siguen planificadas.
+opcional. [05.08 — Funciones como valores y decoradores](curriculum/05_python_applied/08_functions_decorators/README.md)
+añade reenvío de argumentos, wraps y registro de etapas con errores conservados,
+con lección/lab de extensión; 05.09–05.11 siguen planificadas.
 Los niveles 06–08 también tienen secciones definidas y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas

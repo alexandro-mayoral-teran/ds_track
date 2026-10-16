@@ -429,8 +429,8 @@ asociado. Registra evidencia y dudas en PROGRESS.md; no se acredita aprendizaje
 por disponer del material ni por ejecutar sus pruebas.
 
 Si sigues las ampliaciones, continúa con el
-[plan 05.08 — Funciones como valores y decoradores](../README.md#08-funciones-como-valores-y-decoradores),
-todavía pendiente. El [cierre 05.11](../README.md#11-cierre-del-proyecto-python)
+[05.08 — Funciones como valores y decoradores](../08_functions_decorators/README.md),
+disponible como extensión con reenvío, metadatos y registro de llamadas. El [cierre 05.11](../README.md#11-cierre-del-proyecto-python)
 sigue planificado. Las extensiones 05.06–05.10 no bloquean el núcleo ni R.
 Volver al [índice de Python aplicado](../README.md).
 
