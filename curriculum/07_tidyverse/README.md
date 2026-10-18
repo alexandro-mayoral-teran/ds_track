@@ -8,7 +8,8 @@ sus datos y proyecto renv; no se crea un entorno independiente por cada ejercici
 El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
 con conciliación Python/R.
 
-**Estado:** 07.01–07.02 disponen de lecciones, scripts, lockfiles y labs; 07.03–07.10
+**Estado:** 07.01–07.03 disponen de lecciones, scripts y labs; 07.01–07.02
+tienen lockfiles y 07.03 reutiliza el de 07.02. 07.04–07.10
 siguen planificadas. Los enlaces internos describen el alcance pendiente.
 
 Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
@@ -22,7 +23,7 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 | --- | --- | --- | --- |
 | 1 | [Tibbles, importación y pipes](01_tibbles_import_pipes/README.md) | Esencial | Cargar una tabla y leer una secuencia de pasos |
 | 2 | [Seleccionar, filtrar y ordenar](02_select_filter_sort/README.md) | Esencial | Obtener un subconjunto verificable |
-| 3 | [Transformar columnas](#03-transformar-columnas) | Esencial | Calcular indicadores con reglas explícitas |
+| 3 | [Transformar columnas](03_transform_columns/README.md) | Esencial | Calcular indicadores con reglas explícitas |
 | 4 | [Faltantes, duplicados y calidad](#04-faltantes-duplicados-y-calidad) | Esencial | Conservar aceptados y rechazos con motivos |
 | 5 | [Agrupar y resumir](#05-agrupar-y-resumir) | Esencial | Conciliar medidas y denominadores |
 | 6 | [Unir tablas](#06-unir-tablas) | Esencial | Detectar relaciones que multiplican registros |
@@ -61,9 +62,13 @@ IDE y comparación de significado con pandas/SQL, sin exportar ni modificar la f
 
 ### 03 — Transformar columnas
 
-- mutate, operaciones vectorizadas, if_else y case_when; conversiones explícitas.
-- Práctica prevista: crear una clasificación con fronteras conocidas y registrar
-  conversiones fallidas. across se ofrece como ampliación tras dominar un campo.
+Disponible: [lección 07.03](03_transform_columns/README.md) y
+[lab 07.03](../../labs/07_tidyverse/03_transform_columns/README.md).
+mutate, if_else/case_when y prioridades; conversión auditable sin truncar ni
+imputar cero. Empieza con seis observaciones y retoma las 40 filas de pandas 02.04:
+40 × 15, 36 restas/35 porcentajes evaluables y 211150 MXN en la base conciliada.
+Conserva textos y marcas, fuente y dependencias de 07.02; preparación y práctica
+desde el IDE sin reinstalar. across permanece como ampliación posterior.
 
 <a id="04-faltantes-duplicados-y-calidad"></a>
 
@@ -130,7 +135,7 @@ IDE y comparación de significado con pandas/SQL, sin exportar ni modificar la f
 
 ## Prácticas, proyecto y criterio de salida
 
-Los labs 07.01–07.02 están disponibles; 07.03–07.10 siguen previstos. El proyecto previsto
+Los labs 07.01–07.03 están disponibles; 07.04–07.10 siguen previstos. El proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 todavía no tiene carpeta ni checkpoints implementados.
 

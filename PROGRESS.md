@@ -7,11 +7,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
 - **Módulo de desarrollo activo:** `07_tidyverse`.
-- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.02 implementadas; 07.03–07.10 y 08 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-17, selección con dplyr en 07.02.
-- **Foco de desarrollo del material:** columnas, condiciones con NA, pendientes y orden verificable.
+- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.03 implementadas; 07.04–07.10 y 08 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-17, transformaciones y conversiones en 07.03.
+- **Foco de desarrollo del material:** mutate, reglas y tipos, conversiones auditables y denominadores.
   Próxima sección por implementar:
-  [07.03 — Transformar columnas](curriculum/07_tidyverse/README.md#03-transformar-columnas), todavía planificada.
+  [07.04 — Faltantes, duplicados y calidad](curriculum/07_tidyverse/README.md#04-faltantes-duplicados-y-calidad), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.02; las otras 17 siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.03; las otras 16 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -43,17 +43,42 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
 o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
-material nuevo. 07.01 y su lab ya se ajustaron; 07.02 nace con ese recorrido. Revisar las demás lecciones
+material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.03 nacen con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[07.02 — Seleccionar, filtrar y ordenar](curriculum/07_tidyverse/02_select_filter_sort/README.md)
-con su [lab](labs/07_tidyverse/02_select_filter_sort/README.md).
-Retomar con 07.03: mutate, operaciones vectorizadas, if_else/case_when y reglas
-explícitas de indicadores; introducir cada requisito antes de usarlo. Conservar
-el proyecto renv; no añadir paquetes por anticipado. La primera figura permanece en 07.10.
+[07.03 — Transformar columnas](curriculum/07_tidyverse/03_transform_columns/README.md)
+con su [lab](labs/07_tidyverse/03_transform_columns/README.md).
+Retomar con 07.04: ausencias, duplicados, claves y reglas de calidad; separar
+aceptados/rechazos con motivos y conciliar conteos sin ocultar el origen. Revisar
+el contrato de la muestra antes de definir reglas; mantener ejemplos previos.
+Conservar el proyecto renv; no añadir paquetes por anticipado. La primera figura permanece en 07.10.
 El proyecto/checkpoints integradores siguen pendientes; el estado del estudiante
 no se modificó sin evidencia.
+
+07.03 añade lección ampliada, lab, funciones y ejecutor sin dependencias nuevas
+ni modificar metadatos. Preparador desde R copia exactamente tres archivos al
+mismo proyecto: funciones, script y CSV de 40 filas de pandas 02.04. Ejemplos
+pequeños con las seis filas previas antes de convertir/calcular la muestra mayor.
+mutate, if_else/case_when, tipos y prioridad; texto de origen y marcas conservados.
+parse_double más requisito de entero finito/en rango: no trunca 3.5, no imputa
+ausentes. Denominador positivo antes de dividir; resta double para evitar overflow.
+40 × 15, 36 restas/35 porcentajes evaluables; en la misma base,
+217750 − 6600 = 211150 MXN y etiquetas 21/16/3. Clasificar no acredita validez.
+
+Comprobados diez bloques R de la lección y diez del lab (uno con error de tipos
+aislado), reconstrucción desde sesión nueva y compatibilidad con scripts previos.
+Conciliados 600 campos con pandas 2.3.3: claves, textos, máscaras y marcas exactos,
+restas/etiquetas exactas, porcentajes con tolerancia absoluta 1e-10. R 4.6.1,
+dplyr 1.2.1/readr 2.2.0 existentes. Fronteras integer, fracciones/Inf/NaN/texto NA,
+cero/negativo/sobrepago, datos ausentes, prioridad, vacío tipado y todos faltantes.
+Segunda preparación y cinco argumentos inválidos rechazados; lectura con esquema
+incorrecto y mutate con tamaño incorrecto fallan. Fuente, muestras anteriores,
+funciones y lockfile intactos. Advertencias esperadas visibles, sin instalaciones
+ni cambios globales; las pruebas ejecutan R, no la interfaz gráfica del IDE.
+Preparación sin biblioteca añade exactamente tres archivos y conserva todos
+los anteriores, sin inicializar ni instalar. 1,486 enlaces locales/fragmentos
+revisados, bloques/soluciones equilibrados y git diff --check limpio.
 
 07.02 añade dplyr 1.2.1/generics 0.1.4 al lockfile del mismo proyecto, con
 respaldo exacto de DESCRIPTION/lock de 07.01. Preparador como función cargada
@@ -162,6 +187,13 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-17
+
+- Se desarrolló 07.03 con lección ampliada, lab, funciones y script, sin paquetes
+  nuevos. mutate/if_else/case_when, conversión con origen/marcas y denominadores
+  explícitos; muestra de 40 filas de pandas conservada y 600 campos conciliados.
+  Ejemplos, fronteras, vacío, fuente intacta y ejecución completa desde R
+  comprobados; 1,486 enlaces locales revisados. Sigue 07.04, todavía planificada;
+  sin acreditar aprendizaje.
 
 - Se desarrolló 07.02 con lección/lab, preparador desde R, lockfile dplyr 1.2.1
   y script de selección comprobable. Recorrido IDE, lógica de tres valores,

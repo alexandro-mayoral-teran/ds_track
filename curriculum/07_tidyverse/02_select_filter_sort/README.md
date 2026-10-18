@@ -281,8 +281,8 @@ expliques el desempate y el vacío y reconstruyas sin modificar la fuente.
 Conserva evidencia; material disponible no acredita aprendizaje. No hay
 checkpoint integrador implementado asociado.
 
-Siguiente: [07.03 — Transformar columnas](../README.md#03-transformar-columnas),
-todavía planificada. Volver al [índice del módulo](../README.md).
+Siguiente: [07.03 — Transformar columnas](../03_transform_columns/README.md),
+con lección y lab disponibles. Volver al [índice del módulo](../README.md).
 
 ## Referencias y atribución
 

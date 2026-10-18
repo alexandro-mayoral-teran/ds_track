@@ -76,6 +76,7 @@ reglas de enlace están en
 | [`06.09 — Reproducir un resultado conocido`](06_r_foundations/09_known_result/) | `06_r_foundations` | No aplica todavía |
 | [`07.01 — Tibbles, importación y pipes`](07_tidyverse/01_tibbles_import_pipes/) | `07_tidyverse` | No aplica todavía |
 | [`07.02 — Seleccionar, filtrar y ordenar`](07_tidyverse/02_select_filter_sort/) | `07_tidyverse` | No aplica todavía |
+| [`07.03 — Transformar columnas`](07_tidyverse/03_transform_columns/) | `07_tidyverse` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

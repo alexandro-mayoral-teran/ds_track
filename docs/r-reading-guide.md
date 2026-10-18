@@ -135,6 +135,14 @@ cartera conocida; selección, lógica de tres valores, pendientes, empates y
 vacío comprobados con R 4.6.1/dplyr 1.2.1. Contrasta pandas/SQLite bajo la misma
 pregunta y conserva las dependencias previas de renv. Consulta: 2026-10-17.
 
+La [lección 07.03](../curriculum/07_tidyverse/03_transform_columns/README.md)
+consulta Numbers y Logical vectors de R4DS segunda edición, de Wickham,
+Çetinkaya-Rundel y Grolemund, junto con mutate/if_else/case_when de dplyr y
+parse_double/problemas de readr. Se contrasta con ayuda instalada y ejemplos
+propios: conservación del origen, tipos y prioridad, conversiones incompatibles
+y denominadores. R 4.6.1/dplyr 1.2.1/readr 2.2.0; sin paquetes nuevos. Reutiliza
+40 filas de pandas 02.04 y concilia todas sus columnas. Consulta: 2026-10-17.
+
 ### 08 — Visualización en R
 
 Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)

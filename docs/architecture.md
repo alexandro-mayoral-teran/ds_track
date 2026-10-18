@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.02 tienen lecciones/scripts/labs y lockfiles; 07.03–07.10 y 08–14 conservan planificación;
+07.01–07.03 tienen lecciones/scripts/labs; 07.04–07.10 y 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; 07.01–07.02 también están disponibles y las otras 17 conservan planificación:
+scripts y labs; 07.01–07.03 también están disponibles y las otras 16 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -454,7 +454,19 @@ comprueban selección 002/003/006, subtotal 2750 con cobertura 3/3 y partición
 de tres valores y sin imputar cero. Empates, NA al ordenar, vacío tipado, claves,
 objeto/fuente intactos y equivalencia con pandas/SQLite sobre el mismo CSV.
 Recorrido IDE: bloques y reinicio/Source; no requiere terminal ni exporta.
-Continúa el desarrollo con 07.03, todavía planificada.
+07.03 reutiliza el lockfile y biblioteca de 07.02 sin dependencias nuevas. Su
+preparador añade funciones, ejecutor y el CSV de 40 filas de pandas 02.04;
+conserva muestras y scripts previos. Inicia con ejemplos pequeños y después
+interpreta texto, marca incompatibilidades de tipo/rango y conserva _texto.
+No trunca fracciones; distingue parseo, requisito entero y reglas de dominio.
+mutate/if_else/case_when mantienen filas y explican tipos, prioridad y NA.
+Porcentaje con denominador positivo antes de dividir; resta double para evitar
+desbordamiento integer. 40 × 15 con 36 restas/35 porcentajes evaluables, base
+común 217750 − 6600 = 211150 MXN y etiquetas 21/16/3. Conciliación con pandas
+por clave/campo, tolerancia absoluta 1e-10 en porcentajes; R integer e Int64 no
+se equiparan fuera de este contrato. RStudio/IDE con reinicio/Source y advertencias
+esperadas visibles; no exporta ni decide aceptación de registros.
+Continúa el desarrollo con 07.04, todavía planificada.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10
