@@ -89,8 +89,8 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.08 tienen lecciones/scripts/labs;
-06.09 y 07–14 conservan planificación;
+05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
+07–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -343,8 +343,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 
 ### Desarrollo previsto de los módulos 06–08
 
-Los planes de R contienen 28 secciones; 06.01–06.08 tienen lecciones, scripts y labs,
-y las otras 20 conservan planificación:
+Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
+scripts y labs, y las otras 19 de 07–08 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -420,6 +420,17 @@ activación explícita que realizan los scripts. Dos bibliotecas restauradas, ta
 equivalentes y recuperación de paquete retirado comprobadas con R 4.6.1. El
 proyecto de práctica prepara la organización para tidyverse; no implementa el
 proyecto integrador ni instala paquetes del módulo 07.
+06.09 integra funciones y datos de 06.06/06.07 con el lockfile de 06.08 en una
+copia de cierre. Una referencia Python de biblioteca estándar calcula el mismo
+contrato de ventas; no reutiliza sin adaptar las reglas diferentes de 01.06 ni
+lee salidas R. El comparador R conserva texto/identidad/motivos, exige conteos y
+máscaras de faltantes exactos y usa tolerancia absoluta 1e-9 para valores numéricos.
+Contexto y huella de fuente previenen referencias antiguas; 36 controles en memoria
+y 36 tras releer CSV. El verificador recalcula y compara sin escribir y exige
+los archivos finales, sin confiar en el informe como prueba de corrección.
+R 4.6.1/Python 3.12.12 comprobados; renv/withr conservados, sin dependencias nuevas.
+Las nueve secciones de R fundamental tienen material; no acreditan aprendizaje
+ni completan el proyecto integrador pendiente. Continúa el desarrollo con 07.01.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

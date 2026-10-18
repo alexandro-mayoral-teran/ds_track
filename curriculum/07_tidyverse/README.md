@@ -5,6 +5,8 @@
 Transformar tablas de manera expresiva y comprobable con dplyr, tidyr y paquetes
 relacionados. Completa [R fundamental](../06_r_foundations/README.md) y reutiliza
 sus datos y proyecto renv; no se crea un entorno independiente por cada ejercicio.
+El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
+con conciliación Python/R; las secciones de tidyverse siguen planificadas.
 
 **Estado:** diez secciones planificadas; lecciones y labs por desarrollar.
 Los enlaces internos describen su alcance previsto.

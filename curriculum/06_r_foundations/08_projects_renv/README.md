@@ -319,8 +319,7 @@ copia. Explica también cuándo usar snapshot y qué no conserva renv.
 No hay proyecto/checkpoint integrador implementado asociado. Registra evidencia
 real: preparar material no acredita aprendizaje del estudiante.
 
-Sigue el [plan 06.09 — Reproducir un resultado conocido](../README.md#09-reproducir-un-resultado-conocido),
-todavía pendiente. Volver al [índice de R](../README.md).
+Sigue [06.09 — Reproducir un resultado conocido](../09_known_result/README.md). Volver al [índice de R](../README.md).
 
 ## Referencias y atribución
 

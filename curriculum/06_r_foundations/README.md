@@ -23,20 +23,23 @@ validación, cálculo y resumen reutilizables, decisiones y ciclos con scripts y
 CSV textual, reglas por registro, rechazos conservados y relectura de la exportación.
 [06.08 — Proyectos y dependencias con renv](08_projects_renv/README.md) añade
 plantilla con lockfile, preparación de copias, restauración y reconstrucción local.
-06.09 sigue planificada;
-sus enlaces de la tabla describen el alcance pendiente dentro de este documento.
+[06.09 — Reproducir un resultado conocido](09_known_result/README.md) integra
+la lectura, validación y resumen con una referencia Python independiente y
+verificador de solo lectura. Las nueve secciones tienen lecciones y labs;
+la finalización del aprendizaje requiere evidencia, no solo disponibilidad.
 
 Empezaremos con ventas pequeñas y luego reutilizaremos la cartera sintética.
 R no se aprenderá traduciendo mecánicamente líneas de pandas: compararemos
 estructuras, reglas y resultados. RStudio será un editor opcional; el intérprete
 R es necesario. 06.01–06.07 se comprobaron con R 4.6.1 y paquetes incluidos; la versión
-efectiva se registra por sesión. 06.08 se comprobó con renv 1.3.1 y withr 3.0.3,
-instalados en bibliotecas locales de práctica. Las dependencias posteriores se
-fijarán al implementarlas.
+efectiva se registra por sesión. 06.08–06.09 se comprobaron con renv 1.3.1 y withr 3.0.3,
+instalados en bibliotecas locales de práctica. La referencia 06.09 se comprobó
+con Python 3.12.12 y biblioteca estándar. Las dependencias posteriores se fijarán
+al implementarlas.
 
 ## Orden de desarrollo
 
-| Orden | Sección prevista | Alcance | Resultado observable |
+| Orden | Sección | Alcance | Resultado observable |
 | --- | --- | --- | --- |
 | 1 | [R, editor, scripts y paquetes](01_r_session/README.md) | Esencial | Ejecutar un script e identificar su sesión |
 | 2 | [Objetos, vectores y tipos](02_objects_vectors/README.md) | Esencial | Representar datos y explicar coerciones |
@@ -46,7 +49,7 @@ fijarán al implementarlas.
 | 6 | [Funciones y control de flujo](06_functions_control/README.md) | Esencial | Separar una transformación de su presentación |
 | 7 | [Archivos y validación básica](07_files_validation/README.md) | Esencial | Leer, validar y escribir sin alterar la fuente |
 | 8 | [Proyectos y dependencias con renv](08_projects_renv/README.md) | Práctica | Conservar y restaurar paquetes del proyecto |
-| 9 | [Reproducir un resultado conocido](#09-reproducir-un-resultado-conocido) | Práctica de cierre | Conciliar conteos e indicadores con Python |
+| 9 | [Reproducir un resultado conocido](09_known_result/README.md) | Práctica de cierre | Conciliar conteos e indicadores con Python |
 
 ## Alcance de cada sección
 
@@ -150,16 +153,20 @@ fijarán al implementarlas.
 ### 09 — Reproducir un resultado conocido
 
 - Integrar lectura, funciones, reglas, rechazos y resumen sobre la misma muestra
-  y corte que Python; definir cómo comparar tipos, faltantes e importes.
-- Práctica prevista: conciliar un conteo y un indicador, explicar diferencias y
-  conservar instrucciones. Una gráfica inicial en ggplot2 llegará en el módulo 07.
+  y reglas que Python; definir cómo comparar tipos, faltantes e importes.
+- [Lección disponible](09_known_result/README.md) y
+  [lab 06.09](../../labs/06_r_foundations/09_known_result/README.md): referencia Python
+  independiente, tablas/indicadores conciliados, exportación releída y verificador
+  de solo lectura. Copia autocontenida, tolerancia explícita y entradas conservadas.
+  Una gráfica inicial en ggplot2 llegará en el módulo 07.
 
 ## Prácticas y criterio de salida
 
-Los labs 06.01–06.08 están disponibles con soluciones desplegables; 06.09 sigue previsto.
-El cierre reutilizará el resultado Python como referencia y preparará el proyecto
-03_portfolio_analysis_r, previsto en [proyectos](../../projects/README.md), sin
-carpeta implementada todavía. No hay checkpoint activo asociado.
+Los nueve labs 06.01–06.09 están disponibles con soluciones desplegables.
+El cierre compara el mismo contrato de ventas en Python y R; su copia de práctica
+prepara la organización que se reutilizará en tidyverse. El proyecto integrador
+03_portfolio_analysis_r sigue previsto en [proyectos](../../projects/README.md),
+sin carpeta implementada todavía. No hay checkpoint activo asociado.
 
 Podrás avanzar al ejecutar un análisis pequeño en una sesión nueva, explicar
 vectores y tablas, tratar faltantes explícitamente y conciliar un resultado con
@@ -168,8 +175,10 @@ no bloquean tidyverse; se contemplan en el futuro R aplicado.
 
 ## Continuidad y lecturas
 
-Comienza por [06.01](01_r_session/README.md). Después del cierre, continúa con
-[07 — tidyverse](../07_tidyverse/README.md).
+Comienza por [06.01](01_r_session/README.md). Después del
+[cierre 06.09](09_known_result/README.md), continúa con el
+[plan 07.01 — Tibbles, importación y pipes](../07_tidyverse/README.md#01-tibbles-importacion-y-pipes),
+todavía sin lección ni lab.
 
 Fuentes: [manual introductorio de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html),
 [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html) y

@@ -62,7 +62,10 @@ con CSV propio, scripts y lab.
 [06.08 — Proyectos y dependencias con renv](06_r_foundations/08_projects_renv/README.md)
 añade copia autocontenida, lockfile real, restauración y reconstrucción comprobada,
 con preparador y lab.
-06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
+[06.09 — Reproducir un resultado conocido](06_r_foundations/09_known_result/README.md)
+integra lectura/validación/resumen con referencia Python, conciliación y verificación.
+Las nueve secciones de R fundamental tienen material disponible.
+Los módulos 07–08 conservan planes de tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

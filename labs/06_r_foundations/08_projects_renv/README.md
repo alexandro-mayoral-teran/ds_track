@@ -244,5 +244,4 @@ Responde con tus palabras:
 Cierra cuando puedas reconstruir y justificar los resultados en una sesión
 nueva. Registra evidencia real y dudas en [PROGRESS.md](../../../PROGRESS.md).
 No hay proyecto/checkpoint integrador implementado asociado. Continúa con el
-[plan 06.09 — Reproducir un resultado conocido](../../../curriculum/06_r_foundations/README.md#09-reproducir-un-resultado-conocido),
-todavía pendiente. Volver a la [lección 06.08](../../../curriculum/06_r_foundations/08_projects_renv/README.md).
+[06.09 — Reproducir un resultado conocido](../../../curriculum/06_r_foundations/09_known_result/README.md). Volver a la [lección 06.08](../../../curriculum/06_r_foundations/08_projects_renv/README.md).

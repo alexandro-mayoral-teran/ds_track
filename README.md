@@ -183,7 +183,10 @@ con CSV propio, scripts y lab.
 [06.08 — Proyectos y dependencias con renv](curriculum/06_r_foundations/08_projects_renv/README.md)
 añade copia autocontenida, lockfile real, restauración y reconstrucción comprobada,
 con preparador y lab.
-06.09 y los niveles 07–08 conservan sus planes y
+[06.09 — Reproducir un resultado conocido](curriculum/06_r_foundations/09_known_result/README.md)
+integra el cierre con referencia Python independiente, conciliación y verificador
+sin escrituras. Las nueve secciones de R fundamental tienen material disponible.
+Los niveles 07–08 conservan sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

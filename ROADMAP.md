@@ -253,7 +253,11 @@ con CSV propio, scripts y lab.
 [06.08 — Proyectos y dependencias con renv](curriculum/06_r_foundations/08_projects_renv/README.md)
 añade copia autocontenida, lockfile real, restauración y reconstrucción comprobada,
 con preparador y lab.
-06.09 sigue por desarrollar. Las referencias están en
+[06.09 — Reproducir un resultado conocido](curriculum/06_r_foundations/09_known_result/README.md)
+cierra con referencia Python independiente sobre el mismo contrato, comparación
+de detalle/rechazos/indicadores y verificador de solo lectura. Las nueve secciones
+tienen material; acreditar aprendizaje requiere evidencia de sus criterios.
+Las referencias están en
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.

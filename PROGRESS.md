@@ -5,12 +5,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulo activo de desarrollo:** `06_r_foundations`
-- **Estado de desarrollo:** 06.01–06.08 implementadas; 06.09 conserva su plan.
-- **Sesión de desarrollo:** 2026-10-17, desarrollo y revisión de 06.08.
-- **Foco de desarrollo del material:** proyectos autocontenidos, bibliotecas locales y reconstrucción con renv.
+- **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
+- **Siguiente módulo por desarrollar:** `07_tidyverse`.
+- **Estado de desarrollo:** 06.01–06.09 implementadas; 07–08 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-17, cierre del material 06 con 06.09.
+- **Foco de desarrollo del material:** conciliación Python/R, detalle y rechazos conservados, verificación sin escrituras.
   Próxima sección por implementar:
-  [06.09 — Reproducir un resultado conocido](curriculum/06_r_foundations/README.md#09-reproducir-un-resultado-conocido), todavía planificada.
+  [07.01 — Tibbles, importación y pipes](curriculum/07_tidyverse/README.md#01-tibbles-importacion-y-pipes), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -28,8 +29,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
-  28 secciones y lecturas abiertas; 06.01–06.08 disponen de lecciones, scripts y labs,
-  y las otras 20 siguen planificadas. Los módulos 09–10 tienen
+  28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
+  y las otras 19 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -40,34 +41,37 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[06.08 — Proyectos y dependencias con renv](curriculum/06_r_foundations/08_projects_renv/README.md)
-con su [lab](labs/06_r_foundations/08_projects_renv/README.md).
-Retomar con 06.09: integrar lectura, funciones, reglas, rechazos y resumen sobre
-la misma muestra que Python; conciliar conteos e indicadores con contrato explícito
-de tipos, faltantes e importes. Reutilizar las copias de práctica, sin traducir
-Python línea por línea ni anticipar la primera figura de ggplot2 del módulo 07.
-Mantener separados cierre del material y evidencia de aprendizaje del estudiante.
+[06.09 — Reproducir un resultado conocido](curriculum/06_r_foundations/09_known_result/README.md)
+con su [lab](labs/06_r_foundations/09_known_result/README.md).
+Las nueve secciones de R fundamental tienen material. Retomar el desarrollo con
+07.01: tibble frente a data.frame, lectura readr con tipos/problemas explícitos y
+pipe nativo. Reutilizar la organización y el proyecto renv; seleccionar e instalar
+solo los paquetes necesarios al implementar, sin un entorno nuevo por ejercicio.
+Reincorporar la cartera sintética conocida con su diccionario e indicadores;
+la primera figura permanece en 07.10. Revisar referencias y versiones efectivas.
+No se inició 07.01 ni se modificó el avance de aprendizaje del estudiante.
 
-06.08 añade preparar_proyecto.R y plantilla con DESCRIPTION, renv.lock y activador
-generado por renv. Copia funciones/CSV de 06.06/06.07 en R/ y datos/ de una carpeta
-nueva. La biblioteca y el estado de la práctica quedan locales; --vanilla se
-combina con activación explícita del perfil. withr presenta cuatro cifras
-significativas temporalmente, sin redondear los CSV. Se conserva 14 = 8 + 6,
-cobertura 6/8, suma observada 765.5 y total NA. Snapshot explícito conserva el
-lockfile; restore prepara bibliotecas a partir de él. No se inicializó renv en
-la raíz del repositorio ni se implementó el proyecto integrador pendiente.
+06.09 añade copia autocontenida con referencia Python independiente, cálculo R,
+comparador y verificador de solo lectura. Usa las mismas 14 ventas y reglas
+06.07, distintas de 01.06; ese ejercicio anterior se conserva. Concilia 14/8/6,
+cobertura 6/8, suma observada 765.5 y total desconocido. Posiciones, claves,
+textos, motivos y faltantes exactos; valores numéricos con tolerancia absoluta
+1e-9. Contexto Python con contrato, umbral y huella de fuente. Se comparan
+36 controles en memoria y 36 sobre CSV guardados; informe final y sesión.
 
-Comprobado con R 4.6.1, renv 1.3.1 y withr 3.0.3 instalados localmente para
-esta práctica. Restauraciones reales en copias independientes y sesiones nuevas;
-cuatro CSV equivalentes. Retirar withr de una copia bloquea la ejecución antes
-de exportar; restore recupera sin cambiar el lockfile ni los resultados. Opciones
-de presentación restauradas también tras error. Activación incorrecta, destino
-existente y ejecución desde otra carpeta rechazados. Snapshot y bloques de
-lección/lab comprobados; fuentes anteriores y biblioteca del sistema conservadas.
-Locale UTF-8 solo en procesos de revisión; sin modificar Conda, PATH o configuración
-global de R. Los enlaces locales del sandbox renv de Windows requieren que la
-revisión pueda leer los paquetes base de R; restricciones del ejecutor no se
-corrigen desactivando las comprobaciones de renv. Python no se reejecutó.
+Comprobado con R 4.6.1/Python 3.12.12 y el lockfile renv 1.3.1/withr 3.0.3 de
+06.08, sin dependencias nuevas. Recorrido predeterminado y seis bloques R del
+lab ejecutados, uno con error deliberado por separado. Ocho fronteras conciliadas:
+solo cabecera, todos rechazados, todos faltantes, cero, frontera de umbral,
+decimales, motivos múltiples y notas con comillas/acentos/NA. Variante confirmada
+V006: suma 885.5, media 126.5, cobertura 87.5% y grupos 2/5/1.
+Diez alteraciones de tablas detectadas sin reparar: importe, NA por cero, clave,
+orden, conteo, conteo fraccionario, motivo, texto rechazado, total falso y media
+redondeada. Referencia antigua o discrepancia previa no crea salida; corrupción
+durante escritura deja parcial sin informe, y entrega sin informe se rechaza.
+Entradas y salidas anteriores intactas; verificador sin escrituras comprobado.
+Locale UTF-8 solo en procesos de revisión; sin cambios globales de configuración.
+No se reejecutó la colección Python 05: la referencia de cierre se probó aparte.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -105,6 +109,15 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-17
+
+- Se desarrolló 06.09 con lección/lab, referencia Python de biblioteca estándar,
+  preparador, comparación de tablas y verificador sin escrituras. Cierre material
+  de las nueve secciones de R fundamental, sin acreditar aprendizaje del estudiante.
+- Recorrido, fronteras, variante, referencia antigua, alteraciones y conservación
+  comprobados. Índices, navegación, roadmap, arquitectura y lecturas actualizados.
+  1,370 enlaces locales y sus fragmentos revisados; bloques y soluciones equilibrados.
+  Sigue 07.01, todavía planificada; no se inicia tidyverse en este cierre.
+  Proyectos/checkpoints integradores siguen pendientes.
 
 - Se desarrolló 06.08 con lección, preparador, plantilla con lockfile real y lab:
   bibliotecas locales, activación explícita, snapshot/restore y reconstrucción.

@@ -93,6 +93,16 @@ presentación temporal. Lockfile y activador generados realmente, restauración 
 copias independientes y ejecución comprobadas con R 4.6.1. No confunde paquetes,
 intérprete y estado de consola ni exige tidyverse por anticipado. Consulta: 2026-10-17.
 
+La [lección 06.09](../curriculum/06_r_foundations/09_known_result/README.md)
+retoma [Workflow: scripts and projects de R4DS](https://r4ds.hadley.nz/workflow-scripts.html),
+de Wickham, Çetinkaya-Rundel y Grolemund, para reconstruir desde archivos.
+El cierre compara implementaciones propias de Python/R sobre el mismo contrato:
+identidad, rechazos, faltantes, conteos e importes con tolerancia explícita.
+Documentación de comparación/huellas en R y csv/math/hashlib en Python contrastada;
+R 4.6.1 y Python 3.12.12 comprobados. Se conserva el lockfile de 06.08 y no se
+adelanta ggplot2 ni se confunde material completo con aprendizaje acreditado.
+Consulta: 2026-10-17.
+
 Comienza con el [manual introductorio oficial de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 y consulta [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html)
 para entender las diferencias entre [, [[ y $. Advanced R es apoyo para preguntas
