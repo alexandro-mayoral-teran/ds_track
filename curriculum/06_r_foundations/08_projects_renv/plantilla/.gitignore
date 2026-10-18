@@ -1,0 +1,9 @@
+.renv-local/
+renv/library/
+renv/staging/
+renv/lock/
+output/
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/

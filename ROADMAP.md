@@ -250,7 +250,10 @@ con scripts y lab.
 [06.07 — Archivos y validación básica](curriculum/06_r_foundations/07_files_validation/README.md)
 añade lectura textual, aceptados/rechazos conciliados y exportación comprobada,
 con CSV propio, scripts y lab.
-06.08–06.09 siguen por desarrollar. Las referencias están en
+[06.08 — Proyectos y dependencias con renv](curriculum/06_r_foundations/08_projects_renv/README.md)
+añade copia autocontenida, lockfile real, restauración y reconstrucción comprobada,
+con preparador y lab.
+06.09 sigue por desarrollar. Las referencias están en
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.

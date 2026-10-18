@@ -390,8 +390,7 @@ conciliar conteos, interpretar la cobertura y comprobar la exportación sin
 alterar fuentes ni entregas previas. No hay proyecto/checkpoint implementado
 asociado. Registra evidencia real; este material no acredita aprendizaje.
 
-Sigue el [plan 06.08 — Proyectos y dependencias con renv](../README.md#08-proyectos-y-dependencias-con-renv),
-todavía pendiente. Volver al [índice de R](../README.md).
+Sigue [06.08 — Proyectos y dependencias con renv](../08_projects_renv/README.md). Volver al [índice de R](../README.md).
 
 ## Referencias y atribución
 

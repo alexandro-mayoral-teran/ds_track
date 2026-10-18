@@ -63,9 +63,11 @@ lección 05 enseña Conda como recorrido principal y cómo exportar su configura
 los archivos de uv no describen automáticamente un entorno Conda.
 El proyecto declara pandas 2.3.3 desde la lección 02.01; uv.lock conserva sus
 dependencias resueltas. Conda y pip preparan la misma versión de referencia según
-su recorrido. El mini proyecto uv del nivel 0 sigue siendo una práctica separada. R adoptará `renv` dentro del material de R cuando se introduzca
-reproducibilidad. No se crearán entornos independientes por cada ejercicio salvo
-que exista una incompatibilidad concreta.
+su recorrido. El mini proyecto uv del nivel 0 sigue siendo una práctica separada.
+R utiliza `renv` desde 06.08 en copias autocontenidas de práctica, con biblioteca
+y estado locales; no se inicializa renv en la raíz de DS Track. Las dos copias
+permiten comprobar reconstrucción: no exigen una biblioteca nueva por cada
+ejercicio del recorrido.
 
 ## Datos del recorrido
 
@@ -87,8 +89,8 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.07 tienen lección/scripts/lab;
-06.08–06.09 y 07–14 conservan planificación;
+05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.08 tienen lecciones/scripts/labs;
+06.09 y 07–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -341,8 +343,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 
 ### Desarrollo previsto de los módulos 06–08
 
-Los planes de R contienen 28 secciones; 06.01–06.07 tienen lecciones, scripts y labs,
-y las otras 21 conservan planificación:
+Los planes de R contienen 28 secciones; 06.01–06.08 tienen lecciones, scripts y labs,
+y las otras 20 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -409,6 +411,15 @@ importes e indicadores. CSV con un registro por línea, UTF-8 y gramática numé
 explícita; no es un lector universal ni una entrega atómica. Vacíos y errores
 estructurales comprobados con R 4.6.1; locale UTF-8 solo en procesos de revisión,
 sin paquetes externos ni cambios globales. readr y renv siguen en sus secciones.
+06.08 añade preparador y plantilla con DESCRIPTION, lockfile y activador generado
+por renv 1.3.1. Las copias reciben funciones y CSV de 06.06/06.07; no dependen de
+rutas hacia otras lecciones. withr 3.0.3 presenta el resumen con opciones temporales
+sin redondear los datos guardados. Perfil de proyecto, biblioteca/estado locales,
+snapshot explícito y restore separados de R y de .RData. --vanilla requiere la
+activación explícita que realizan los scripts. Dos bibliotecas restauradas, tablas
+equivalentes y recuperación de paquete retirado comprobadas con R 4.6.1. El
+proyecto de práctica prepara la organización para tidyverse; no implementa el
+proyecto integrador ni instala paquetes del módulo 07.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

@@ -17,6 +17,8 @@ __pycache__/
 .Rproj.user/
 renv/library/
 renv/staging/
+renv/lock/
+.renv-local/
 
 # Quarto
 /.quarto/

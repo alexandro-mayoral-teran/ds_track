@@ -21,14 +21,18 @@ tablas, selección por filas/columnas y modificación de copia con recálculo.
 validación, cálculo y resumen reutilizables, decisiones y ciclos con scripts y lab.
 [06.07 — Archivos y validación básica](07_files_validation/README.md) añade
 CSV textual, reglas por registro, rechazos conservados y relectura de la exportación.
-06.08–06.09 siguen planificadas;
+[06.08 — Proyectos y dependencias con renv](08_projects_renv/README.md) añade
+plantilla con lockfile, preparación de copias, restauración y reconstrucción local.
+06.09 sigue planificada;
 sus enlaces de la tabla describen el alcance pendiente dentro de este documento.
 
 Empezaremos con ventas pequeñas y luego reutilizaremos la cartera sintética.
 R no se aprenderá traduciendo mecánicamente líneas de pandas: compararemos
 estructuras, reglas y resultados. RStudio será un editor opcional; el intérprete
 R es necesario. 06.01–06.07 se comprobaron con R 4.6.1 y paquetes incluidos; la versión
-efectiva se registra por sesión. Las dependencias posteriores se fijarán al implementarlas.
+efectiva se registra por sesión. 06.08 se comprobó con renv 1.3.1 y withr 3.0.3,
+instalados en bibliotecas locales de práctica. Las dependencias posteriores se
+fijarán al implementarlas.
 
 ## Orden de desarrollo
 
@@ -41,7 +45,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 | 5 | [Listas y data frames](05_lists_data_frames/README.md) | Esencial | Construir y consultar registros tabulares |
 | 6 | [Funciones y control de flujo](06_functions_control/README.md) | Esencial | Separar una transformación de su presentación |
 | 7 | [Archivos y validación básica](07_files_validation/README.md) | Esencial | Leer, validar y escribir sin alterar la fuente |
-| 8 | [Proyectos y dependencias con renv](#08-proyectos-y-dependencias-con-renv) | Práctica | Conservar y restaurar paquetes del proyecto |
+| 8 | [Proyectos y dependencias con renv](08_projects_renv/README.md) | Práctica | Conservar y restaurar paquetes del proyecto |
 | 9 | [Reproducir un resultado conocido](#09-reproducir-un-resultado-conocido) | Práctica de cierre | Conciliar conteos e indicadores con Python |
 
 ## Alcance de cada sección
@@ -135,8 +139,11 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 - Carpeta de proyecto, archivos .R, librería de paquetes, renv.lock, snapshot y
   restore. Distinguir conservar paquetes de instalar R o guardar el estado de una sesión.
-- Práctica prevista: restaurar el entorno de un proyecto pequeño y ejecutarlo desde
-  cero; registrar también la versión de R. Reutilizar ese proyecto en tidyverse.
+- [Lección disponible](08_projects_renv/README.md) y
+  [lab 06.08](../../labs/06_r_foundations/08_projects_renv/README.md): preparar copias
+  con fuentes, datos y lockfile, restaurar paquetes locales y comparar resultados.
+  Distinguir activación, snapshot/restore y ejecución; withr para presentación
+  temporal. Organización reutilizable en tidyverse, sin instalarlo por anticipado.
 
 <a id="09-reproducir-un-resultado-conocido"></a>
 
@@ -149,7 +156,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 ## Prácticas y criterio de salida
 
-Los labs 06.01–06.07 están disponibles con soluciones desplegables; 06.08–06.09 siguen previstos.
+Los labs 06.01–06.08 están disponibles con soluciones desplegables; 06.09 sigue previsto.
 El cierre reutilizará el resultado Python como referencia y preparará el proyecto
 03_portfolio_analysis_r, previsto en [proyectos](../../projects/README.md), sin
 carpeta implementada todavía. No hay checkpoint activo asociado.

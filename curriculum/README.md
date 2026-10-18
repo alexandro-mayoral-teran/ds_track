@@ -59,7 +59,10 @@ con scripts y lab.
 [06.07 — Archivos y validación básica](06_r_foundations/07_files_validation/README.md)
 añade lectura textual, aceptados/rechazos conciliados y exportación comprobada,
 con CSV propio, scripts y lab.
-06.08–06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
+[06.08 — Proyectos y dependencias con renv](06_r_foundations/08_projects_renv/README.md)
+añade copia autocontenida, lockfile real, restauración y reconstrucción comprobada,
+con preparador y lab.
+06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

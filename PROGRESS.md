@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `06_r_foundations`
-- **Estado de desarrollo:** 06.01–06.07 implementadas; 06.08–06.09 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-17, desarrollo y revisión de 06.07.
-- **Foco de desarrollo del material:** archivos CSV, texto conservado, aceptados/rechazos y exportación comprobada.
+- **Estado de desarrollo:** 06.01–06.08 implementadas; 06.09 conserva su plan.
+- **Sesión de desarrollo:** 2026-10-17, desarrollo y revisión de 06.08.
+- **Foco de desarrollo del material:** proyectos autocontenidos, bibliotecas locales y reconstrucción con renv.
   Próxima sección por implementar:
-  [06.08 — Proyectos y dependencias con renv](curriculum/06_r_foundations/README.md#08-proyectos-y-dependencias-con-renv), todavía planificada.
+  [06.09 — Reproducir un resultado conocido](curriculum/06_r_foundations/README.md#09-reproducir-un-resultado-conocido), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -28,8 +28,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
-  28 secciones y lecturas abiertas; 06.01–06.07 disponen de lecciones, scripts y labs,
-  y las otras 21 siguen planificadas. Los módulos 09–10 tienen
+  28 secciones y lecturas abiertas; 06.01–06.08 disponen de lecciones, scripts y labs,
+  y las otras 20 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -40,35 +40,34 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[06.07 — Archivos y validación básica](curriculum/06_r_foundations/07_files_validation/README.md)
-con su [lab](labs/06_r_foundations/07_files_validation/README.md).
-Retomar con 06.08: carpeta de proyecto, archivos .R, biblioteca de paquetes y
-renv.lock; snapshot/restore, sin confundir dependencias con R o estado guardado.
-Preparar un proyecto pequeño para reutilizar en tidyverse, con ejecución desde
-cero y versión R registrada. Revisar herramientas ya existentes antes de proponer
-instalaciones; no modificar Conda, PATH ni bibliotecas globales. readr sigue en 07.
+[06.08 — Proyectos y dependencias con renv](curriculum/06_r_foundations/08_projects_renv/README.md)
+con su [lab](labs/06_r_foundations/08_projects_renv/README.md).
+Retomar con 06.09: integrar lectura, funciones, reglas, rechazos y resumen sobre
+la misma muestra que Python; conciliar conteos e indicadores con contrato explícito
+de tipos, faltantes e importes. Reutilizar las copias de práctica, sin traducir
+Python línea por línea ni anticipar la primera figura de ggplot2 del módulo 07.
+Mantener separados cierre del material y evidencia de aprendizaje del estudiante.
 
-06.07 añade ventas_entrada.csv (14 registros), funciones_archivos.R y
-ejecutar_archivos.R. Lee texto con esquema/CSV explícitos y conserva notas UTF-8;
-separa errores estructurales de reglas por registro. Todos los duplicados se
-rechazan, incluidos los primeros; motivos múltiples no duplican registros.
-Concilia 14 entradas = 8 aceptados + 6 rechazos. Seis importes conocidos entre
-ocho aceptados: cobertura 75%, suma observada 765.5, media 765.5/6, total NA;
-grupos 2/4/2 con umbral 200. Variante del lab confirma precio 60 de V006:
-cobertura 87.5%, suma 885.5 y media 126.5. Fuentes previas intactas.
+06.08 añade preparar_proyecto.R y plantilla con DESCRIPTION, renv.lock y activador
+generado por renv. Copia funciones/CSV de 06.06/06.07 en R/ y datos/ de una carpeta
+nueva. La biblioteca y el estado de la práctica quedan locales; --vanilla se
+combina con activación explícita del perfil. withr presenta cuatro cifras
+significativas temporalmente, sin redondear los CSV. Se conserva 14 = 8 + 6,
+cobertura 6/8, suma observada 765.5 y total NA. Snapshot explícito conserva el
+lockfile; restore prepara bibliotecas a partir de él. No se inicializó renv en
+la raíz del repositorio ni se implementó el proyecto integrador pendiente.
 
-Se ejecutaron los siete bloques R de la lección y diez del lab (dos errores
-intencionales por separado). Script completo en dos procesos nuevos; carga de
-definiciones sin lectura/salida, relectura de exportaciones y no sobrescritura
-comprobadas. Fronteras: solo cabecera, todos rechazados, todos faltantes, cero,
-notas literales NA/vacías, acentos/comillas/comas y notación científica de salida.
-CSV vacíos, esquema incorrecto, filas incompletas/adicionales, líneas vacías,
-multilínea, otro separador, UTF-8 inválido y archivo sin salto final rechazados
-antes de crear destino. Cuatro alteraciones detectadas: primer duplicado aceptado,
-pendientes eliminados, texto inválido tratado como faltante e índice exportado.
-R 4.6.1 y paquetes incluidos; locale en_US.UTF-8 solo en procesos de revisión
-para conservar acentos (C no permite esta conversión). Scripts sin cambios de
-locale; ninguna instalación ni cambio global de entornos. Python no se reejecutó.
+Comprobado con R 4.6.1, renv 1.3.1 y withr 3.0.3 instalados localmente para
+esta práctica. Restauraciones reales en copias independientes y sesiones nuevas;
+cuatro CSV equivalentes. Retirar withr de una copia bloquea la ejecución antes
+de exportar; restore recupera sin cambiar el lockfile ni los resultados. Opciones
+de presentación restauradas también tras error. Activación incorrecta, destino
+existente y ejecución desde otra carpeta rechazados. Snapshot y bloques de
+lección/lab comprobados; fuentes anteriores y biblioteca del sistema conservadas.
+Locale UTF-8 solo en procesos de revisión; sin modificar Conda, PATH o configuración
+global de R. Los enlaces locales del sandbox renv de Windows requieren que la
+revisión pueda leer los paquetes base de R; restricciones del ejecutor no se
+corrigen desactivando las comprobaciones de renv. Python no se reejecutó.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -106,6 +105,17 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-17
+
+- Se desarrolló 06.08 con lección, preparador, plantilla con lockfile real y lab:
+  bibliotecas locales, activación explícita, snapshot/restore y reconstrucción.
+  Documentación renv/withr y R4DS contrastada con las versiones usadas.
+- Dos copias restauradas producen cuatro tablas equivalentes; paquete retirado
+  recuperado sin alterar lockfile, entradas ni entregas previas. Índices,
+  continuidad, arquitectura y lecturas actualizados. Sigue 06.09, todavía planificada.
+  Recorrido predeterminado comprobado y 1,340 enlaces locales con sus fragmentos
+  revisados; bloques y soluciones equilibrados.
+  Sin cambios globales de configuración; estado del estudiante conservado y
+  proyectos/checkpoints integradores pendientes.
 
 - Se desarrolló 06.07 con lección, CSV propio, funciones, script y lab:
   lectura textual, reglas explícitas, aceptados/rechazos conciliados y exportación

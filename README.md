@@ -180,7 +180,10 @@ con scripts y lab.
 [06.07 — Archivos y validación básica](curriculum/06_r_foundations/07_files_validation/README.md)
 añade lectura textual, aceptados/rechazos conciliados y exportación comprobada,
 con CSV propio, scripts y lab.
-06.08–06.09 y los niveles 07–08 conservan sus planes y
+[06.08 — Proyectos y dependencias con renv](curriculum/06_r_foundations/08_projects_renv/README.md)
+añade copia autocontenida, lockfile real, restauración y reconstrucción comprobada,
+con preparador y lab.
+06.09 y los niveles 07–08 conservan sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

@@ -1,0 +1,5 @@
+Type: Project
+Title: Revision reproducible de ventas ficticias
+Version: 0.1.0
+Imports:
+    withr

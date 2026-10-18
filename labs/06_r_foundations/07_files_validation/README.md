@@ -263,5 +263,4 @@ Explica con tus palabras:
 5. ¿Cómo sabes que el CSV conserva campos y resultados, aunque no clases R?
 
 Registra evidencia real y dudas en [PROGRESS.md](../../../PROGRESS.md).
-Después sigue el [plan 06.08 — Proyectos y dependencias con renv](../../../curriculum/06_r_foundations/README.md#08-proyectos-y-dependencias-con-renv),
-todavía pendiente. Volver a la [lección 06.07](../../../curriculum/06_r_foundations/07_files_validation/README.md).
+Después sigue el [06.08 — Proyectos y dependencias con renv](../../../curriculum/06_r_foundations/08_projects_renv/README.md). Volver a la [lección 06.07](../../../curriculum/06_r_foundations/07_files_validation/README.md).

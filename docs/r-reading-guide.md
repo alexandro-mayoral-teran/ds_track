@@ -83,6 +83,16 @@ no se intercambian con las de R base ni se instalan por anticipado. UTF-8 del
 archivo y locale de la sesión se distinguen; una entrega parcial no se considera
 comprobada. Consulta: 2026-10-17.
 
+La [lección 06.08](../curriculum/06_r_foundations/08_projects_renv/README.md)
+consulta [Workflow: scripts and projects de R4DS](https://r4ds.hadley.nz/workflow-scripts.html),
+de Wickham, Çetinkaya-Rundel y Grolemund, y la
+[introducción a renv](https://rstudio.github.io/renv/articles/renv.html), de Kevin
+Ushey y Hadley Wickham. Contrasta init, snapshot explícito, restore, status y
+rutas con renv 1.3.1; withr 3.0.3 proporciona una dependencia pequeña para
+presentación temporal. Lockfile y activador generados realmente, restauración en
+copias independientes y ejecución comprobadas con R 4.6.1. No confunde paquetes,
+intérprete y estado de consola ni exige tidyverse por anticipado. Consulta: 2026-10-17.
+
 Comienza con el [manual introductorio oficial de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 y consulta [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html)
 para entender las diferencias entre [, [[ y $. Advanced R es apoyo para preguntas
