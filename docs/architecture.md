@@ -87,8 +87,8 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.05 tienen lección/scripts/lab;
-06.06–06.09 y 07–14 conservan planificación;
+05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.06 tienen lección/scripts/lab;
+06.07–06.09 y 07–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -341,8 +341,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 
 ### Desarrollo previsto de los módulos 06–08
 
-Los planes de R contienen 28 secciones; 06.01–06.05 tienen lecciones, scripts y labs,
-y las otras 23 conservan planificación:
+Los planes de R contienen 28 secciones; 06.01–06.06 tienen lecciones, scripts y labs,
+y las otras 22 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -390,6 +390,15 @@ pendientes e identidad, contrasta vacío con faltantes y modifica una copia con
 recálculo explícito. Demuestra reciclaje incorrecto por separado y nombres exactos;
 lab con variante independiente. Advanced R y ayuda de R 4.6.1 contrastados, incluido
 el valor predeterminado stringsAsFactors desde R 4.0; sin paquetes externos.
+06.06 separa funciones_ventas.R (definiciones sin ejecución de análisis) y
+ejecutar_funciones.R (muestra, llamadas y presentación). Funciones pequeñas validan
+vectores numéricos ordinarios, rechazan reciclaje e importes no finitos, calculan
+por posición y devuelven un resumen con cobertura. Vacío y todos faltantes producen
+indicadores NA, distintos del cero observado; total solo con registros completos.
+Retorno y alcance local, if escalar, stop y for/seq_along explicados; tryCatch es
+extensión para un rechazo esperado. Script/lab comprobados con R 4.6.1, fuentes
+previas conservadas y referencias de R4DS/Advanced R contrastadas. Sin paquetes
+externos ni validación de archivos anticipada.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

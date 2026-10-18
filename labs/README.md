@@ -70,6 +70,7 @@ reglas de enlace están en
 | [`06.03 — Seleccionar elementos`](06_r_foundations/03_subsetting/) | `06_r_foundations` | No aplica todavía |
 | [`06.04 — Lógica y valores faltantes`](06_r_foundations/04_logic_missing/) | `06_r_foundations` | No aplica todavía |
 | [`06.05 — Listas y data frames`](06_r_foundations/05_lists_data_frames/) | `06_r_foundations` | No aplica todavía |
+| [`06.06 — Funciones y control de flujo`](06_r_foundations/06_functions_control/) | `06_r_foundations` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

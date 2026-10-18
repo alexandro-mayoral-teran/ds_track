@@ -62,6 +62,17 @@ factor: el valor predeterminado de stringsAsFactors es FALSE desde R 4.0.0, seg�
 la documentación oficial. Matrices son comparación opcional; tibble queda para 07.
 Consulta de estas referencias: 2026-10-17.
 
+La [lección 06.06](../curriculum/06_r_foundations/06_functions_control/README.md)
+consulta [Functions de R4DS segunda edición](https://r4ds.hadley.nz/functions.html),
+de Wickham, Çetinkaya-Rundel y Grolemund, y los capítulos de
+[funciones](https://adv-r.hadley.nz/functions.html) y
+[control de flujo](https://adv-r.hadley.nz/control-flow.html) de Advanced R,
+de Wickham. Adapta ideas a las ventas propias con R base: entradas explícitas,
+retorno y alcance local, validación, decisiones con cobertura y repetición segura.
+Contrasta if/for/stop/seq_along/tryCatch con ayuda instalada de R 4.6.1;
+no exige tidyverse, evaluación avanzada o sistemas de condiciones propios.
+Consulta de estas referencias: 2026-10-17.
+
 Comienza con el [manual introductorio oficial de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 y consulta [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html)
 para entender las diferencias entre [, [[ y $. Advanced R es apoyo para preguntas

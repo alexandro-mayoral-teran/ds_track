@@ -244,7 +244,10 @@ dispone de lección/script/lab, correspondencia y contraste de operadores.
 dispone de lección/script/lab: condiciones desconocidas, grupos conciliados,
 any/all y resúmenes con cobertura. [06.05 — Listas y data frames](curriculum/06_r_foundations/05_lists_data_frames/README.md)
 añade listas, tablas, selección con dimensiones conservadas y copia recalculada, con script y lab.
-06.06–06.09 siguen por desarrollar. Las referencias están en
+[06.06 — Funciones y control de flujo](curriculum/06_r_foundations/06_functions_control/README.md)
+añade funciones reutilizables, decisiones con cobertura, ciclos y rechazos explícitos,
+con scripts y lab.
+06.07–06.09 siguen por desarrollar. Las referencias están en
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.

@@ -53,7 +53,10 @@ posiciones/nombres/máscaras, contenedor/contenido y lab.
 añade condiciones, pendientes, conteos y resúmenes con cobertura, con script y lab.
 [06.05 — Listas y data frames](06_r_foundations/05_lists_data_frames/README.md)
 añade listas, tablas, selección con dimensiones conservadas y copia recalculada, con script y lab.
-06.06–06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
+[06.06 — Funciones y control de flujo](06_r_foundations/06_functions_control/README.md)
+añade funciones reutilizables, decisiones con cobertura, ciclos y rechazos explícitos,
+con scripts y lab.
+06.07–06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

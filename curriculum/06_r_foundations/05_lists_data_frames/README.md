@@ -359,8 +359,7 @@ selección, conserves los pendientes y compruebes original y copia con resultado
 manuales. No hay proyecto/checkpoint implementado asociado. Registra evidencia
 real y dudas: el material disponible no acredita aprendizaje.
 
-Sigue el [plan 06.06 — Funciones y control de flujo](../README.md#06-funciones-y-control-de-flujo),
-todavía pendiente. Volver al [índice de R](../README.md).
+Sigue [06.06 — Funciones y control de flujo](../06_functions_control/README.md). Volver al [índice de R](../README.md).
 
 ## Referencias y atribución
 

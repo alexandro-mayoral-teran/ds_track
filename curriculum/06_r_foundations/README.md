@@ -17,13 +17,15 @@ nombres, máscaras y operadores, con script y lab.
 grupos pendientes y resúmenes con cobertura, con script y lab.
 [06.05 — Listas y data frames](05_lists_data_frames/README.md) incorpora listas,
 tablas, selección por filas/columnas y modificación de copia con recálculo.
-06.06–06.09 siguen planificadas;
+[06.06 — Funciones y control de flujo](06_functions_control/README.md) añade
+validación, cálculo y resumen reutilizables, decisiones y ciclos con scripts y lab.
+06.07–06.09 siguen planificadas;
 sus enlaces de la tabla describen el alcance pendiente dentro de este documento.
 
 Empezaremos con ventas pequeñas y luego reutilizaremos la cartera sintética.
 R no se aprenderá traduciendo mecánicamente líneas de pandas: compararemos
 estructuras, reglas y resultados. RStudio será un editor opcional; el intérprete
-R es necesario. 06.01–06.05 se comprobaron con R 4.6.1 y paquetes incluidos; la versión
+R es necesario. 06.01–06.06 se comprobaron con R 4.6.1 y paquetes incluidos; la versión
 efectiva se registra por sesión. Las dependencias posteriores se fijarán al implementarlas.
 
 ## Orden de desarrollo
@@ -35,7 +37,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 | 3 | [Seleccionar elementos](03_subsetting/README.md) | Esencial | Distinguir posiciones, nombres y estructuras |
 | 4 | [Lógica y valores faltantes](04_logic_missing/README.md) | Esencial | Aplicar condiciones con tratamiento explícito de NA |
 | 5 | [Listas y data frames](05_lists_data_frames/README.md) | Esencial | Construir y consultar registros tabulares |
-| 6 | [Funciones y control de flujo](#06-funciones-y-control-de-flujo) | Esencial | Separar una transformación de su presentación |
+| 6 | [Funciones y control de flujo](06_functions_control/README.md) | Esencial | Separar una transformación de su presentación |
 | 7 | [Archivos y validación básica](#07-archivos-y-validacion-basica) | Esencial | Leer, validar y escribir sin alterar la fuente |
 | 8 | [Proyectos y dependencias con renv](#08-proyectos-y-dependencias-con-renv) | Práctica | Conservar y restaurar paquetes del proyecto |
 | 9 | [Reproducir un resultado conocido](#09-reproducir-un-resultado-conocido) | Práctica de cierre | Conciliar conteos e indicadores con Python |
@@ -107,8 +109,11 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 - function, argumentos, retorno explícito o último valor y alcance local básico.
   if requiere una condición escalar; for y alternativas vectorizadas cuando procedan.
-- Práctica prevista: separar validación, transformación y presentación; reconocer
-  un error y comunicarlo con stop. tryCatch se introduce solo para fallas esperadas.
+- [Lección disponible](06_functions_control/README.md) y
+  [lab 06.06](../../labs/06_r_foundations/06_functions_control/README.md): funciones
+  sin datos globales, validación con stop, resumen con cobertura y casos sin base.
+  Separa definiciones, ejecución y presentación; for con secuencia segura y
+  multiplicación vectorizada. tryCatch para una falla esperada como extensión.
 
 <a id="07-archivos-y-validacion-basica"></a>
 
@@ -139,7 +144,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 ## Prácticas y criterio de salida
 
-Los labs 06.01–06.05 están disponibles con soluciones desplegables; 06.06–06.09 siguen previstos.
+Los labs 06.01–06.06 están disponibles con soluciones desplegables; 06.07–06.09 siguen previstos.
 El cierre reutilizará el resultado Python como referencia y preparará el proyecto
 03_portfolio_analysis_r, previsto en [proyectos](../../projects/README.md), sin
 carpeta implementada todavía. No hay checkpoint activo asociado.
