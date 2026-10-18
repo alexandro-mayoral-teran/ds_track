@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `06_r_foundations`
-- **Estado de desarrollo:** 06.01–06.06 implementadas; 06.07–06.09 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-17, desarrollo y revisión de 06.06.
-- **Foco de desarrollo del material:** funciones reutilizables, decisiones con cobertura y repetición segura.
+- **Estado de desarrollo:** 06.01–06.07 implementadas; 06.08–06.09 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-17, desarrollo y revisión de 06.07.
+- **Foco de desarrollo del material:** archivos CSV, texto conservado, aceptados/rechazos y exportación comprobada.
   Próxima sección por implementar:
-  [06.07 — Archivos y validación básica](curriculum/06_r_foundations/README.md#07-archivos-y-validacion-basica), todavía planificada.
+  [06.08 — Proyectos y dependencias con renv](curriculum/06_r_foundations/README.md#08-proyectos-y-dependencias-con-renv), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -28,8 +28,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
-  28 secciones y lecturas abiertas; 06.01–06.06 disponen de lecciones, scripts y labs,
-  y las otras 22 siguen planificadas. Los módulos 09–10 tienen
+  28 secciones y lecturas abiertas; 06.01–06.07 disponen de lecciones, scripts y labs,
+  y las otras 21 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -40,35 +40,35 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[06.06 — Funciones y control de flujo](curriculum/06_r_foundations/06_functions_control/README.md)
-con su [lab](labs/06_r_foundations/06_functions_control/README.md).
-Retomar con 06.07: rutas relativas, read.csv/write.csv, codificación, separadores
-y tipos esperados. Introducir validación de registros con aceptados/rechazos,
-conciliar conteos, preservar entradas y evitar nombres de fila exportados como
-columna accidental. Reutilizar funciones y ventas conocidas; readr sigue en 07,
-renv en 06.08. Contrastar documentación y versión elegida sin instalar por anticipado.
+[06.07 — Archivos y validación básica](curriculum/06_r_foundations/07_files_validation/README.md)
+con su [lab](labs/06_r_foundations/07_files_validation/README.md).
+Retomar con 06.08: carpeta de proyecto, archivos .R, biblioteca de paquetes y
+renv.lock; snapshot/restore, sin confundir dependencias con R o estado guardado.
+Preparar un proyecto pequeño para reutilizar en tidyverse, con ejecución desde
+cero y versión R registrada. Revisar herramientas ya existentes antes de proponer
+instalaciones; no modificar Conda, PATH ni bibliotecas globales. readr sigue en 07.
 
-06.06 añade funciones_ventas.R y ejecutar_funciones.R: cargar definiciones no
-crea ventas ni imprime. validar_numeros rechaza tipos incompatibles, dimensiones,
-negativos, NaN e infinitos; calcular_importes exige longitudes iguales, convierte
-explícitamente a double y rechaza productos no finitos; resumir_importes devuelve
-una lista, con umbral escalar conocido y cobertura. Original 6/4/2, suma observada
-660 y media 165; total desconocido, grupos 2/2/2 con umbral 200. Vacío y todos
-faltantes conservan conteos distintos e indicadores no calculables NA; cero
-observado conserva total cero. for con seq_along recorre umbrales 100/200/300 y
-produce 3/2/1; vacío sin iteraciones. Variante del lab confirma V006: 780/156,
-cinco importes conocidos y grupos 4/1/1 con umbral 120; fuente original intacta.
+06.07 añade ventas_entrada.csv (14 registros), funciones_archivos.R y
+ejecutar_archivos.R. Lee texto con esquema/CSV explícitos y conserva notas UTF-8;
+separa errores estructurales de reglas por registro. Todos los duplicados se
+rechazan, incluidos los primeros; motivos múltiples no duplican registros.
+Concilia 14 entradas = 8 aceptados + 6 rechazos. Seis importes conocidos entre
+ocho aceptados: cobertura 75%, suma observada 765.5, media 765.5/6, total NA;
+grupos 2/4/2 con umbral 200. Variante del lab confirma precio 60 de V006:
+cobertura 87.5%, suma 885.5 y media 126.5. Fuentes previas intactas.
 
-Se ejecutaron los 16 bloques R de la lección (tres errores deliberados separados)
-y los 14 del lab (siete errores deliberados separados). Demostración en dos procesos
-nuevos; fronteras, ausencia de datos globales y carga sin salida comprobadas.
-Veinte casos adicionales rechazados, incluidos desbordamientos y umbral inválido.
-Cuatro alteraciones detectadas: reciclaje permitido, suma sin base, frontera
-excluida y total incompleto presentado como conocido. Fuentes 06.01–06.05 intactas.
-R 4.6.1 y paquetes incluidos; sin instalaciones ni cambios a Conda, PATH o bibliotecas.
-Locale C solo en los procesos de revisión por el aviso heredado de C.UTF-8;
-los scripts no cambian locale. La colección Python no se reejecutó: el cambio
-corresponde al material de R.
+Se ejecutaron los siete bloques R de la lección y diez del lab (dos errores
+intencionales por separado). Script completo en dos procesos nuevos; carga de
+definiciones sin lectura/salida, relectura de exportaciones y no sobrescritura
+comprobadas. Fronteras: solo cabecera, todos rechazados, todos faltantes, cero,
+notas literales NA/vacías, acentos/comillas/comas y notación científica de salida.
+CSV vacíos, esquema incorrecto, filas incompletas/adicionales, líneas vacías,
+multilínea, otro separador, UTF-8 inválido y archivo sin salto final rechazados
+antes de crear destino. Cuatro alteraciones detectadas: primer duplicado aceptado,
+pendientes eliminados, texto inválido tratado como faltante e índice exportado.
+R 4.6.1 y paquetes incluidos; locale en_US.UTF-8 solo en procesos de revisión
+para conservar acentos (C no permite esta conversión). Scripts sin cambios de
+locale; ninguna instalación ni cambio global de entornos. Python no se reejecutó.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -106,6 +106,16 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-17
+
+- Se desarrolló 06.07 con lección, CSV propio, funciones, script y lab:
+  lectura textual, reglas explícitas, aceptados/rechazos conciliados y exportación
+  con relectura. R4DS y documentación de R contrastados con R 4.6.1 local.
+- Ejemplos, fronteras, errores estructurales, no sobrescritura y cuatro variantes
+  incorrectas comprobados. Índices, continuidad, arquitectura y lecturas actualizados;
+  1,315 enlaces locales y sus fragmentos comprobados; bloques y soluciones equilibrados.
+  Una falla de escritura simulada conserva carpeta parcial y propaga el error.
+  Sigue 06.08, todavía planificada. Sin instalaciones ni cambios globales.
+  Estado del estudiante conservado; proyectos/checkpoints siguen pendientes.
 
 - Se desarrolló 06.06 con lección, funciones reutilizables, script de ejecución
   y lab con soluciones: argumentos/retorno/alcance, if, stop, for y tryCatch opcional.

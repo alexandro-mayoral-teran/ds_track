@@ -247,7 +247,10 @@ añade listas, tablas, selección con dimensiones conservadas y copia recalculad
 [06.06 — Funciones y control de flujo](curriculum/06_r_foundations/06_functions_control/README.md)
 añade funciones reutilizables, decisiones con cobertura, ciclos y rechazos explícitos,
 con scripts y lab.
-06.07–06.09 siguen por desarrollar. Las referencias están en
+[06.07 — Archivos y validación básica](curriculum/06_r_foundations/07_files_validation/README.md)
+añade lectura textual, aceptados/rechazos conciliados y exportación comprobada,
+con CSV propio, scripts y lab.
+06.08–06.09 siguen por desarrollar. Las referencias están en
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.

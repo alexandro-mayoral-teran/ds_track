@@ -73,6 +73,16 @@ Contrasta if/for/stop/seq_along/tryCatch con ayuda instalada de R 4.6.1;
 no exige tidyverse, evaluación avanzada o sistemas de condiciones propios.
 Consulta de estas referencias: 2026-10-17.
 
+La [lección 06.07](../curriculum/06_r_foundations/07_files_validation/README.md)
+consulta [Data import de R4DS segunda edición](https://r4ds.hadley.nz/data-import.html),
+de Wickham, Çetinkaya-Rundel y Grolemund, sobre columnas, tipos y faltantes.
+Adapta el problema a R base y un CSV propio: texto conservado, reglas por registro,
+rechazos conciliados y exportación/relectura. read.csv/write.csv/count.fields y
+codificación contrastados con ayuda de R 4.6.1. El capítulo usa readr; sus APIs
+no se intercambian con las de R base ni se instalan por anticipado. UTF-8 del
+archivo y locale de la sesión se distinguen; una entrega parcial no se considera
+comprobada. Consulta: 2026-10-17.
+
 Comienza con el [manual introductorio oficial de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 y consulta [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html)
 para entender las diferencias entre [, [[ y $. Advanced R es apoyo para preguntas

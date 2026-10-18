@@ -280,5 +280,4 @@ Reflexiona:
 Cierra cuando puedas justificar esas decisiones y reproducir los resultados.
 Registra evidencia real y dudas en [PROGRESS.md](../../../PROGRESS.md), sin
 confundir material disponible con aprendizaje acreditado. Después continúa
-con el [plan 06.07 — Archivos y validación básica](../../../curriculum/06_r_foundations/README.md#07-archivos-y-validacion-basica),
-todavía pendiente. Volver a la [lección 06.06](../../../curriculum/06_r_foundations/06_functions_control/README.md).
+con el [06.07 — Archivos y validación básica](../../../curriculum/06_r_foundations/07_files_validation/README.md). Volver a la [lección 06.06](../../../curriculum/06_r_foundations/06_functions_control/README.md).

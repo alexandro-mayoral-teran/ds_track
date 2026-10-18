@@ -19,13 +19,15 @@ grupos pendientes y resúmenes con cobertura, con script y lab.
 tablas, selección por filas/columnas y modificación de copia con recálculo.
 [06.06 — Funciones y control de flujo](06_functions_control/README.md) añade
 validación, cálculo y resumen reutilizables, decisiones y ciclos con scripts y lab.
-06.07–06.09 siguen planificadas;
+[06.07 — Archivos y validación básica](07_files_validation/README.md) añade
+CSV textual, reglas por registro, rechazos conservados y relectura de la exportación.
+06.08–06.09 siguen planificadas;
 sus enlaces de la tabla describen el alcance pendiente dentro de este documento.
 
 Empezaremos con ventas pequeñas y luego reutilizaremos la cartera sintética.
 R no se aprenderá traduciendo mecánicamente líneas de pandas: compararemos
 estructuras, reglas y resultados. RStudio será un editor opcional; el intérprete
-R es necesario. 06.01–06.06 se comprobaron con R 4.6.1 y paquetes incluidos; la versión
+R es necesario. 06.01–06.07 se comprobaron con R 4.6.1 y paquetes incluidos; la versión
 efectiva se registra por sesión. Las dependencias posteriores se fijarán al implementarlas.
 
 ## Orden de desarrollo
@@ -38,7 +40,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 | 4 | [Lógica y valores faltantes](04_logic_missing/README.md) | Esencial | Aplicar condiciones con tratamiento explícito de NA |
 | 5 | [Listas y data frames](05_lists_data_frames/README.md) | Esencial | Construir y consultar registros tabulares |
 | 6 | [Funciones y control de flujo](06_functions_control/README.md) | Esencial | Separar una transformación de su presentación |
-| 7 | [Archivos y validación básica](#07-archivos-y-validacion-basica) | Esencial | Leer, validar y escribir sin alterar la fuente |
+| 7 | [Archivos y validación básica](07_files_validation/README.md) | Esencial | Leer, validar y escribir sin alterar la fuente |
 | 8 | [Proyectos y dependencias con renv](#08-proyectos-y-dependencias-con-renv) | Práctica | Conservar y restaurar paquetes del proyecto |
 | 9 | [Reproducir un resultado conocido](#09-reproducir-un-resultado-conocido) | Práctica de cierre | Conciliar conteos e indicadores con Python |
 
@@ -121,8 +123,11 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 - Rutas relativas al proyecto, read.csv/write.csv, codificación y separadores.
   Registrar tipos esperados y evitar exportar nombres de fila como columna accidental.
-- Práctica prevista: producir aceptados y rechazos, conciliar conteos y preservar
-  la entrada. Leer una tabla no demuestra calidad de datos; imports con readr siguen en 07.
+- [Lección disponible](07_files_validation/README.md) y
+  [lab 06.07](../../labs/06_r_foundations/07_files_validation/README.md): leer texto,
+  comprobar estructura y reglas, conservar motivos y conciliar aceptados/rechazos.
+  Exportar sin sobrescribir y releer identidad, notas e importes con cobertura.
+  R base; imports con readr siguen en 07, sin instalaciones anticipadas.
 
 <a id="08-proyectos-y-dependencias-con-renv"></a>
 
@@ -144,7 +149,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 ## Prácticas y criterio de salida
 
-Los labs 06.01–06.06 están disponibles con soluciones desplegables; 06.07–06.09 siguen previstos.
+Los labs 06.01–06.07 están disponibles con soluciones desplegables; 06.08–06.09 siguen previstos.
 El cierre reutilizará el resultado Python como referencia y preparará el proyecto
 03_portfolio_analysis_r, previsto en [proyectos](../../projects/README.md), sin
 carpeta implementada todavía. No hay checkpoint activo asociado.

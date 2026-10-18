@@ -87,8 +87,8 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.06 tienen lección/scripts/lab;
-06.07–06.09 y 07–14 conservan planificación;
+05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.07 tienen lección/scripts/lab;
+06.08–06.09 y 07–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -341,8 +341,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 
 ### Desarrollo previsto de los módulos 06–08
 
-Los planes de R contienen 28 secciones; 06.01–06.06 tienen lecciones, scripts y labs,
-y las otras 22 conservan planificación:
+Los planes de R contienen 28 secciones; 06.01–06.07 tienen lecciones, scripts y labs,
+y las otras 21 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -399,6 +399,16 @@ Retorno y alcance local, if escalar, stop y for/seq_along explicados; tryCatch e
 extensión para un rechazo esperado. Script/lab comprobados con R 4.6.1, fuentes
 previas conservadas y referencias de R4DS/Advanced R contrastadas. Sin paquetes
 externos ni validación de archivos anticipada.
+06.07 incorpora un CSV propio de 14 registros que conserva las seis ventas previas.
+funciones_archivos.R separa lectura textual/estructura, conversión, validación y
+exportación; ejecutar_archivos.R coordina con el resumen de 06.06. Rechaza todas
+las apariciones de identificadores repetidos y conserva texto/posición/motivos;
+faltantes numéricos permitidos siguen pendientes, sin imputación. Concilia 14/8/6
+y cobertura 6/8, suma observada 765.5; exige destino nuevo y relee identidad, notas,
+importes e indicadores. CSV con un registro por línea, UTF-8 y gramática numérica
+explícita; no es un lector universal ni una entrega atómica. Vacíos y errores
+estructurales comprobados con R 4.6.1; locale UTF-8 solo en procesos de revisión,
+sin paquetes externos ni cambios globales. readr y renv siguen en sus secciones.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

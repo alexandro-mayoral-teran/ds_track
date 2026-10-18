@@ -476,8 +476,7 @@ justificar las ramas con vacío/faltantes y comprobar cálculos, errores y fuent
 intactas en una sesión nueva. No hay proyecto/checkpoint implementado asociado.
 Registra evidencia real y dudas; disponer del material no acredita aprendizaje.
 
-Sigue el [plan 06.07 — Archivos y validación básica](../README.md#07-archivos-y-validacion-basica),
-todavía pendiente. Volver al [índice de R](../README.md).
+Sigue [06.07 — Archivos y validación básica](../07_files_validation/README.md). Volver al [índice de R](../README.md).
 
 ## Referencias y atribución
 

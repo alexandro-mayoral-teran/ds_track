@@ -1,0 +1,15 @@
+id_venta,unidades,precio_mxn,nota
+V001,4,75,Venta original
+V002,2,120,Venta original
+V003,0,50,Cero observado
+V004,3,40,Venta original
+V005,,100,Unidades pendientes
+V006,2,,Precio pendiente
+V007,1,80,"México, mostrador"
+V008,dos,50,Texto en unidades
+V009,-1,40,Unidades negativas
+V010,1,100,Primera aparición repetida
+V010,2,100,Segunda aparición repetida
+,1,90,Identificador ausente
+V013,1,Inf,Precio no finito
+V014,1,25.5,Precio con punto decimal

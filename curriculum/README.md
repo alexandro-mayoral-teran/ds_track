@@ -56,7 +56,10 @@ añade listas, tablas, selección con dimensiones conservadas y copia recalculad
 [06.06 — Funciones y control de flujo](06_r_foundations/06_functions_control/README.md)
 añade funciones reutilizables, decisiones con cobertura, ciclos y rechazos explícitos,
 con scripts y lab.
-06.07–06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
+[06.07 — Archivos y validación básica](06_r_foundations/07_files_validation/README.md)
+añade lectura textual, aceptados/rechazos conciliados y exportación comprobada,
+con CSV propio, scripts y lab.
+06.08–06.09 y los módulos 07–08 conservan planes de R fundamental, tidyverse y gráficos,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones
