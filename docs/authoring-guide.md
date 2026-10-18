@@ -70,3 +70,19 @@ de extensión y avanzadas nunca deben bloquear un módulo posterior esencial.
 - Explicar por qué se realiza cada transformación importante.
 - Trasladar lógica repetida a funciones cuando ese aprendizaje ya se haya
   presentado.
+
+## Ejecución en R e IDE
+
+En las lecciones de R, el recorrido principal utiliza RStudio o el IDE elegido:
+abrir el proyecto, editar un script, ejecutar bloques, inspeccionar objetos y
+comprobar resultados. Distinguir la consola de R dentro del IDE de una terminal
+del sistema; indicar dónde se ejecuta cada ejemplo.
+
+Introducir terminal y Rscript cuando respondan a una necesidad concreta, como
+automatizar o comprobar una ejecución completa desde una sesión nueva. Si son
+una alternativa, presentarlos como apoyo opcional sin desplazar el objetivo de
+la lección ni repetir recorridos de shell innecesariamente. La reproducibilidad
+también se practica reiniciando la sesión del IDE y ejecutando el script completo.
+
+Aplicar este criterio al material nuevo. La adaptación de las lecciones ya
+implementadas queda para una revisión posterior.

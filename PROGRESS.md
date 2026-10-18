@@ -40,6 +40,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
+**Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
+scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
+o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
+material nuevo; revisar las lecciones implementadas posteriormente con el usuario.
+
 El último material disponible es
 [07.01 — Tibbles, importación y pipes](curriculum/07_tidyverse/01_tibbles_import_pipes/README.md)
 con su [lab](labs/07_tidyverse/01_tibbles_import_pipes/README.md).
@@ -129,6 +134,10 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-17
+
+- Se acordó priorizar el trabajo en RStudio/IDE en el material R nuevo y reservar
+  la terminal para necesidades concretas. Criterio registrado en la guía de
+  autoría; adaptación de lecciones existentes pendiente de revisión posterior.
 
 - Se desarrolló 07.01 con lección, lab, lector/ejecutor y extensión del proyecto
   renv con respaldo de metadatos. Retoma cartera de pandas 02.02; controles de
