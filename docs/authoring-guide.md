@@ -84,5 +84,5 @@ una alternativa, presentarlos como apoyo opcional sin desplazar el objetivo de
 la lección ni repetir recorridos de shell innecesariamente. La reproducibilidad
 también se practica reiniciando la sesión del IDE y ejecutando el script completo.
 
-Aplicar este criterio al material nuevo. La adaptación de las lecciones ya
-implementadas queda para una revisión posterior.
+Aplicar este criterio al material nuevo. La 07.01 y su lab ya se adaptaron;
+las demás lecciones implementadas quedan para una revisión posterior.

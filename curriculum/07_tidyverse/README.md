@@ -43,6 +43,8 @@ Tibble frente a data.frame, tipos/problemas de readr y pipe nativo. Reutiliza la
 seis observaciones de pandas 02.02 con diccionario, controles 6 × 5 y 6000 MXN.
 Extiende el mismo proyecto renv de 06.09 con respaldo de metadatos y lockfile
 comprobado: readr 2.2.0/tibble 3.3.1; no exige todo tidyverse ni dplyr todavía.
+Recorrido principal en RStudio/IDE: preparación desde R, scripts por bloques,
+inspección y reinicio con ejecución completa. Rscript es una alternativa opcional.
 
 <a id="02-seleccionar-filtrar-y-ordenar"></a>
 

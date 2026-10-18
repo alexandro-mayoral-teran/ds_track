@@ -42,7 +42,7 @@ el marcador NA como ausencia. Esa política afecta también a columnas de texto:
 si NA fuera un identificador legítimo, tendríamos que cambiarla. Aquí no lo es.
 No sustituimos desconocidos por cero ni deducimos riesgo de estas columnas.
 
-## 2. Extender el proyecto que ya utilizas
+## 2. Preparar la práctica desde RStudio o tu IDE
 
 En [06.08](../../06_r_foundations/08_projects_renv/README.md) aprendiste la diferencia
 entre declarar, instalar y registrar dependencias. Ahora las necesitamos:
@@ -50,9 +50,9 @@ entre declarar, instalar y registrar dependencias. Ahora las necesitamos:
 registra sus versiones y dependencias transitivas. Que aparezca magrittr en el
 lockfile no obliga a usar su pipe. El operador nativo pertenece a R.
 
-[preparar_tidyverse.R](preparar_tidyverse.R) recibe la carpeta **existente** de
-06.09. Respalda DESCRIPTION/renv.lock en respaldo_06_09/, actualiza esos dos
-metadatos y copia el CSV, funciones y ejecutor nuevos. No instala paquetes ni
+[preparar_tidyverse.R](preparar_tidyverse.R) define una función que recibe la
+carpeta **existente** de 06.09. Respalda DESCRIPTION/renv.lock en respaldo_06_09/,
+actualiza esos dos metadatos y copia el CSV, funciones y ejecutor nuevos. No instala paquetes ni
 reemplaza funciones, datos de ventas o resultados anteriores. Rechaza destinos
 propios ocupados o una segunda preparación para evitar sobrescribir tu trabajo.
 Es una copia por pasos: un fallo puede dejar preparación parcial; conserva la
@@ -64,50 +64,68 @@ instalar en bibliotecas globales. El lockfile de la lección 06.08 permanece igu
 Si vuelves a las versiones de 06, usa ambos metadatos respaldados y restaura;
 volver a ejecutar restaurar.R con el lockfile de 07 mantiene el estado de 07.
 
-Los recorridos parten de la raíz de DS Track. El destino mostrado es el de
-06.09; si tu práctica tiene otra ruta, reemplázala. Si todavía no existe,
-completa primero la preparación de 06.09. Rscript debe estar disponible según
-[06.01](../../06_r_foundations/01_r_session/README.md); no se exige RStudio.
+### A. Preparar los archivos una sola vez
 
-### PowerShell
+Trabaja en RStudio; si usas otro IDE, abre la carpeta y utiliza su sesión de R.
+**Console** ejecuta código R; **Terminal** ejecuta comandos del sistema. En este
+recorrido usamos Console y el editor de scripts, sin abrir Terminal.
 
-```powershell
-# En la raíz de DS Track
-Rscript --vanilla curriculum/07_tidyverse/01_tibbles_import_pipes/preparar_tidyverse.R curriculum/06_r_foundations/09_known_result/output/cierre_ventas
-Set-Location curriculum/06_r_foundations/09_known_result/output/cierre_ventas
-Rscript --vanilla restaurar.R
-Rscript --vanilla importar_cartera.R
+Si ya preparaste 07.01, pasa directamente a B. En caso contrario, sitúa la
+sesión en la raíz de DS Track: en RStudio, **Session > Set Working Directory >
+Choose Directory…** y elige la carpeta del repositorio. Comprueba allí:
+
+```r
+getwd()
+stopifnot(file.exists("curriculum/07_tidyverse/01_tibbles_import_pipes/preparar_tidyverse.R"))
+source("curriculum/07_tidyverse/01_tibbles_import_pipes/preparar_tidyverse.R")
+destino <- preparar_tidyverse(
+  "curriculum/06_r_foundations/09_known_result/output/cierre_ventas"
+)
 ```
 
-### Bash/Zsh
+source carga la definición; la llamada preparar_tidyverse realiza la copia.
+El destino mostrado es el de 06.09: reemplázalo si tu práctica tiene otra ruta.
+Si todavía no existe, completa primero la preparación de 06.09. No ejecutes
+el preparador una segunda vez sobre el mismo destino.
 
-```bash
-# En la raíz de DS Track
-Rscript --vanilla curriculum/07_tidyverse/01_tibbles_import_pipes/preparar_tidyverse.R curriculum/06_r_foundations/09_known_result/output/cierre_ventas
-cd curriculum/06_r_foundations/09_known_result/output/cierre_ventas
-Rscript --vanilla restaurar.R
-Rscript --vanilla importar_cartera.R
+### B. Abrir la carpeta de práctica como proyecto
+
+Abre el archivo .Rproj de **la práctica** si ya existe. Si no existe, usa
+**File > New Project > Existing Directory**, elige cierre_ventas (o tu destino)
+y crea el proyecto sobre esa carpeta. No elijas New Directory ni inicialices
+renv otra vez: los datos y la biblioteca ya pertenecen a esa práctica.
+El archivo .Rproj organiza la apertura en RStudio; no sustituye renv.lock.
+En otro IDE, abre esa misma carpeta y una sesión R con ella como directorio.
+
+Comprueba en Console que getwd() termina en la carpeta de práctica y que
+file.exists("renv.lock") devuelve TRUE. A partir de aquí, las rutas parten
+de esa carpeta, **no de la raíz de DS Track ni de output/**.
+
+En Console, ejecuta una vez tras actualizar los metadatos:
+
+```r
+source("restaurar.R")
 ```
 
-### CMD / Anaconda Prompt
+El restaurador activa .Rprofile y puede descargar e instalar en la biblioteca
+local. Si ya está sincronizada, comprueba el estado sin reinstalar. Al volver
+a estudiar, basta con abrir el proyecto y comprobar renv::status(); restaura
+solo si falta sincronizar. No uses objetos guardados de una sesión anterior
+para sustituir los pasos del script.
 
-```bat
-REM En la raíz de DS Track; renv administra los paquetes R
-Rscript --vanilla curriculum/07_tidyverse/01_tibbles_import_pipes/preparar_tidyverse.R curriculum/06_r_foundations/09_known_result/output/cierre_ventas
-cd curriculum\06_r_foundations\09_known_result\output\cierre_ventas
-Rscript --vanilla restaurar.R
-Rscript --vanilla importar_cartera.R
-```
+### C. Escribir y ejecutar por bloques
 
-restaurar.R puede descargar e instalar en la biblioteca local. Si ya está
-sincronizada, comprueba el estado sin reinstalar. Los ejecutores activan
-explícitamente .Rprofile porque --vanilla omite perfiles automáticos. En una
-consola R nueva ubicada en esa carpeta, inicia los ejemplos siguientes con:
+Con **File > New File > R Script**, crea un script y guárdalo en la práctica.
+Escribe los ejemplos allí para conservarlos. Para ejecutar una línea o una
+selección, usa **Run** o Ctrl+Enter (Cmd+Enter en macOS). Si una llamada ocupa
+varias líneas, ejecuta la expresión completa y observa su resultado en Console.
+
+Empieza tu script con este bloque, que también funciona tras reiniciar R:
 
 ```r
 source(".Rprofile")
 stopifnot(isTRUE(renv::status()$synchronized))
-source("R/funciones_importacion.R")
+source("R/funciones_importacion.R", encoding = "UTF-8")
 ```
 
 Usaremos `paquete::función`: carga la función desde ese paquete sin adjuntar
@@ -125,6 +143,11 @@ typeof(mini[["saldo_mxn"]])        # double: tipo del vector
 mini["saldo_mxn"]                  # tabla de 2 filas y 1 columna
 mini[["saldo_mxn"]]                # vector de longitud 2
 ```
+
+Observa mini en **Environment** y, si quieres explorar la tabla, ejecuta
+`View(mini)` desde Console o abre el objeto en el visor. Es una ayuda visual:
+los controles de filas, tipos y valores siguen escritos en el script. No
+incluyas View en el script de comprobación completa, porque abre una interfaz.
 
 Como una data.frame, es una lista de columnas de igual longitud y cada columna
 conserva su tipo. Su impresión muestra tamaño, tipos y una vista limitada según
@@ -253,8 +276,13 @@ cartera |> head(2) |> nrow()           # 2; cartera aún tiene 6 filas
 Esperamos identificadores 001–006, saldo cero en 004, atraso desconocido en 005,
 segmento con coma en 002 y educación con acento en 005. La cobertura de saldo
 es 6/6; la de atraso, 5/6. No sumamos atrasos ni inventamos una media de riesgo.
-[importar_cartera.R](importar_cartera.R) ejecuta esos controles en una sesión
-nueva, imprime versiones y comprueba la huella del CSV antes/después. No exporta
+[importar_cartera.R](importar_cartera.R) reúne esos controles, imprime versiones
+y comprueba la huella del CSV antes/después. Ábrelo desde Files para leer sus
+bloques. Guarda tu trabajo, usa **Session > Restart R** y ejecútalo completo con
+**Source** o con `source("importar_cartera.R", encoding = "UTF-8")` en Console.
+Así compruebas que se reconstruye sin objetos creados manualmente. Reiniciar
+vacía los objetos de la sesión; limpiar Console solo quita el texto visible.
+La comprobación no exporta
 ni limpia. El control de muestra exige estos seis registros; leer_cartera puede
 leer otras tablas con ese esquema, sin certificar su calidad.
 
@@ -270,6 +298,40 @@ Puedes avanzar cuando reconstruyas la carga desde una sesión nueva, expliques
 los tipos y la forma de la tabla, traduzcas el pipe a llamadas y justifiques el
 faltante sin alterar la fuente. Conserva script y explicación como evidencia;
 la existencia del material no acredita el aprendizaje.
+
+<a id="comprobacion-opcional-desde-terminal"></a>
+
+### Comprobación opcional desde terminal
+
+Puedes completar esta lección desde el IDE. Si quieres comprobar también la
+ejecución fuera de él o preparar una automatización, abre una terminal **en la
+raíz de la práctica ya preparada y restaurada**. No copies estos comandos en
+Console de R. Rscript --vanilla inicia otro proceso sin restaurar el workspace;
+el ejecutor activa explícitamente el perfil local. Esta alternativa no cambia
+el criterio de salida.
+
+<details>
+<summary>Ejecutar el script con Rscript (opcional)</summary>
+
+#### PowerShell
+
+```powershell
+Rscript --vanilla importar_cartera.R
+```
+
+#### Bash/Zsh
+
+```bash
+Rscript --vanilla importar_cartera.R
+```
+
+#### CMD / Anaconda Prompt
+
+```bat
+Rscript --vanilla importar_cartera.R
+```
+
+</details>
 
 Siguiente: [07.02 — Seleccionar, filtrar y ordenar](../README.md#02-seleccionar-filtrar-y-ordenar),
 todavía planificada. Volver al [índice del módulo](../README.md).
@@ -289,3 +351,7 @@ R 4.6.1, readr 2.2.0 y tibble 3.3.1 comprobados localmente.
 - R oficial: [pipe nativo](https://stat.ethz.ch/R-manual/R-devel/library/base/html/pipeOp.html).
   La ayuda instalada de R 4.6.1 confirma las llamadas utilizadas.
 - [Guía de lecturas y coautorías](../../../docs/r-reading-guide.md).
+- Posit: [proyectos en RStudio](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects),
+  [ejecución de scripts](https://support.posit.co/hc/en-us/articles/200484448-Editing-and-Executing-Code-in-the-RStudio-IDE)
+  y [directorio de trabajo](https://support.posit.co/hc/en-us/articles/200711843-Working-Directories-and-Workspaces-in-the-RStudio-IDE).
+  Menús y atajos contrastados con su documentación; otros IDE pueden variar.

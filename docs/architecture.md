@@ -441,6 +441,9 @@ créditos por corte, claves de texto, fecha aún character, double/integer y NA
 explícitos. Separa parseo de reglas de dominio, detiene problemas, comprueba
 esquema/valores conocidos y fuente intacta. Pipe nativo sin verbos adelantados;
 no exporta ni grafica. Continúa el desarrollo con 07.02; el integrador sigue pendiente.
+La 07.01 prioriza RStudio/IDE: el preparador define una función al usar source(),
+y solo interpreta argumentos al ejecutarse por terminal. Apertura del proyecto,
+restauración y comprobación completa desde R; terminal opcional al final.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

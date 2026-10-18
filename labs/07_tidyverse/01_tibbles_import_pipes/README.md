@@ -5,7 +5,7 @@
 Practica la [lección 07.01](../../../curriculum/07_tidyverse/01_tibbles_import_pipes/README.md)
 antes de aplicar verbos de dplyr. Recibes el CSV ficticio de seis créditos,
 su diccionario y el lector con controles. Usa la misma carpeta renv de 06.09
-extendida según los recorridos de preparación de la lección; no crees otro
+extendida según el recorrido en RStudio/IDE de la lección; no crees otro
 entorno ni vuelvas a ejecutar el preparador si ya lo hiciste.
 
 **Resultado:** un script propio que inspeccione la tabla y una explicación
@@ -35,33 +35,40 @@ fecha se conserva como character hasta aprender su interpretación en 07.09.
 
 </details>
 
-## 2. Cargar desde una sesión nueva
+## 2. Cargar desde el editor de RStudio o tu IDE
 
-Abre una consola R nueva en la raíz **de tu práctica**, donde están .Rprofile,
-renv.lock y datos/. Crea output/ para guardar importar_mi_cartera.R, sin editar
-el ejecutor ni la fuente. Empieza con:
+Abre el proyecto **de tu práctica**, donde están .Rprofile, renv.lock y datos/.
+Comprueba getwd() en **Console**; no abras Terminal para esta actividad.
+Desde **File > New File > R Script**, crea output/importar_mi_cartera.R
+(crea output/ desde Files si falta), sin editar el ejecutor ni la fuente.
+Aunque guardes el script en output/, conserva la raíz de la práctica como
+directorio de trabajo. Empieza con:
 
 ```r
 source(".Rprofile")
 stopifnot(isTRUE(renv::status()$synchronized))
-source("R/funciones_importacion.R")
+source("R/funciones_importacion.R", encoding = "UTF-8")
 cartera <- leer_cartera("datos/cartera_demo.csv")
 ```
 
+Selecciona el bloque completo y usa **Run** o Ctrl+Enter (Cmd+Enter en macOS).
+Observa cartera en **Environment**; puedes abrirla en el visor para inspeccionarla,
+sin sustituir los controles del script por una revisión visual.
 Añade llamadas que muestren clase, dimensión, nombres y tipo de cada columna.
 Muestra las seis filas completas y ejecuta comprobar_muestra(cartera).
 La función de comprobación devuelve TRUE invisiblemente: si no hay error,
 pasaron los controles de esta muestra. No exige una captura idéntica a otra
-terminal: el ancho y el formato impreso pueden variar.
+sesión: el ancho y el formato impreso pueden variar. Usa print() para las
+salidas que quieras ver también al ejecutar el script completo con source().
 
 <details>
 <summary>Una solución posible</summary>
 
 ```r
-class(cartera)
-dim(cartera)
-names(cartera)
-vapply(cartera, typeof, character(1))
+print(class(cartera))
+print(dim(cartera))
+print(names(cartera))
+print(vapply(cartera, typeof, character(1)))
 print(cartera, n = 6, width = Inf)
 comprobar_muestra(cartera)
 stopifnot(sum(cartera[["saldo_mxn"]]) == 6000,
@@ -169,35 +176,37 @@ problems vacía no certifica claves, rangos o fechas.
 
 ## 6. Reconstruir y guardar evidencia
 
-Guarda el script propio en output/importar_mi_cartera.R. Deja el ejemplo de
-error esperado en otro archivo o ejecútalo aparte; no debe impedir reconstruir
-la carga correcta. Ejecuta tu script con Rscript desde la raíz de la práctica:
+Guarda output/importar_mi_cartera.R. Deja el ejemplo de error esperado en otro
+archivo o ejecútalo aparte; no debe impedir reconstruir la carga correcta.
+Mantén el bloque de inicio de la actividad 2 en tu script.
 
-### PowerShell
+1. Guarda los archivos y usa **Session > Restart R** (o reinicia la sesión R
+   en tu IDE). Comprueba que no se recuperó cartera desde un workspace guardado;
+   la evidencia debe reconstruirse con código. Limpiar Console no reinicia R.
+2. Conserva abierto el mismo proyecto: el directorio sigue siendo la raíz de
+   la práctica. Ejecuta en Console el bloque siguiente. source() lee tu archivo
+   y ejecuta todas sus expresiones; no cambia el directorio a output/.
+3. Comprueba que vuelven a aparecer cartera, los controles y los resultados
+   esperados. Si falta un objeto, añade a tu script el paso que lo construye.
 
-```powershell
-Rscript --vanilla output/importar_mi_cartera.R
-Rscript --vanilla importar_cartera.R
+```r
+source("output/importar_mi_cartera.R", encoding = "UTF-8")
+source("importar_cartera.R", encoding = "UTF-8")
 ```
 
-### Bash/Zsh
-
-```bash
-Rscript --vanilla output/importar_mi_cartera.R
-Rscript --vanilla importar_cartera.R
-```
-
-### CMD / Anaconda Prompt
-
-```bat
-Rscript --vanilla output\importar_mi_cartera.R
-Rscript --vanilla importar_cartera.R
-```
+También puedes usar **Source** para ejecutar el archivo abierto completo,
+manteniendo el directorio de la práctica. La ejecución por bloques ayuda a
+explorar; el reinicio seguido de la ejecución completa comprueba las dependencias
+entre pasos. No necesitas salir del IDE para esta comprobación.
 
 Conserva el script, versiones, resultado de los controles y una explicación de
 la interpretación fallida. Comprueba que la fuente conserva su contenido; el
 ejecutor compara su huella antes/después. output/ está ignorado: no agregues con
 fuerza bibliotecas, resultados de práctica o cachés a Git.
+
+Si necesitas ejecutar fuera del IDE, la lección conserva una
+[alternativa opcional con Rscript](../../../curriculum/07_tidyverse/01_tibbles_import_pipes/README.md#comprobacion-opcional-desde-terminal).
+No es un requisito adicional del lab.
 
 Responde con tus palabras: ¿qué conserva una tibble?, ¿qué garantiza leer sin
 problemas?, ¿qué queda por validar?, ¿por qué la vista y la tabla tienen tamaños

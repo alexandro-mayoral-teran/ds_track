@@ -43,7 +43,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
 o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
-material nuevo; revisar las lecciones implementadas posteriormente con el usuario.
+material nuevo. 07.01 y su lab ya se ajustaron; revisar las demás lecciones
+implementadas posteriormente con el usuario.
 
 El último material disponible es
 [07.01 — Tibbles, importación y pipes](curriculum/07_tidyverse/01_tibbles_import_pipes/README.md)
@@ -64,8 +65,8 @@ restaurado en biblioteca local: R 4.6.1, readr 2.2.0, tibble 3.3.1, withr 3.0.3,
 renv 1.3.1; 23 paquetes nuevos incluyendo dependencias transitivas.
 Sin instalación global ni cambio en las semillas 06 o dependencias Python.
 
-Comprobados los seis bloques R de la lección y seis del lab (uno con error
-deliberado), ejecutor en sesión nueva y fronteras: solo cabecera, NA permitido,
+En la primera versión se comprobaron seis bloques R de la lección y seis del lab
+(uno con error deliberado), ejecutor en sesión nueva y fronteras: solo cabecera, NA permitido,
 cero, UTF-8/coma/decimal, texto numérico inválido, atraso fraccionario, campos
 de más/de menos, esquema extra/duplicado/reordenado, fila vacía y longitudes
 incompatibles. Un negativo/fecha inválida ilustra los límites del parseo sin
@@ -75,6 +76,13 @@ silenciarlas; locale UTF-8 solo por proceso. Una entrega previa de 06.09 se
 conservó byte a byte tras extender el proyecto; verificador y nuevo cálculo
 06.09 pasan con el lockfile ampliado (72 controles). Revisados 1,427 enlaces
 locales y fragmentos; bloques/soluciones equilibrados y git diff --check limpio.
+En la adaptación al IDE se comprobaron los ocho bloques R de lección y siete
+del lab: preparación por función, restauración con source y reconstrucción del
+script propio y del ejecutor desde otro proceso sin objetos previos. Cargar el
+preparador no copia archivos; llamada por R y CLI producen archivos idénticos.
+Segunda preparación y cinco argumentos inválidos rechazados; entrada, lockfile
+y respaldo intactos. Menús/atajos contrastados con documentación oficial Posit;
+la revisión automatizada ejecutó las llamadas R, no la interfaz de RStudio.
 
 06.09 añade copia autocontenida con referencia Python independiente, cálculo R,
 comparador y verificador de solo lectura. Usa las mismas 14 ventas y reglas
@@ -134,6 +142,13 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-17
+
+- Se adaptaron 07.01 y su lab al recorrido RStudio/IDE: preparación con función
+  cargada por source, apertura de la carpeta existente como proyecto, restauración
+  desde R, script por bloques y reinicio seguido de ejecución completa. Console
+  y Terminal diferenciados; Rscript queda como alternativa opcional desplegable.
+  Recorrido R, compatibilidad CLI, controles de preparación y reconstrucción
+  comprobados; archivos de entrada y lockfile conservados, 1,427 enlaces válidos.
 
 - Se acordó priorizar el trabajo en RStudio/IDE en el material R nuevo y reservar
   la terminal para necesidades concretas. Criterio registrado en la guía de
