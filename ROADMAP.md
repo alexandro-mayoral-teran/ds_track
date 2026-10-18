@@ -277,7 +277,9 @@ traducir mecánicamente cada línea.
 
 El [plan de diez secciones](curriculum/07_tidyverse/README.md#orden-de-desarrollo)
 conecta importación, transformación, calidad, relaciones, fechas y primera figura.
-Las lecciones y labs están por desarrollar; las referencias abiertas están en
+La [lección 07.01](curriculum/07_tidyverse/01_tibbles_import_pipes/README.md) y su
+lab están disponibles: readr, tibble y pipe nativo sobre la cartera conocida,
+con dependencias registradas en renv. 07.02–07.10 siguen planificadas; consulta
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** realizar análisis expresivos y comunicar hallazgos.

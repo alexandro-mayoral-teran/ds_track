@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07–14 conservan planificación;
+07.01 tiene lección/scripts/lab y lockfile; 07.02–07.10 y 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs, y las otras 19 de 07–08 conservan planificación:
+scripts y labs; 07.01 también está disponible y las otras 18 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -430,7 +430,17 @@ y 36 tras releer CSV. El verificador recalcula y compara sin escribir y exige
 los archivos finales, sin confiar en el informe como prueba de corrección.
 R 4.6.1/Python 3.12.12 comprobados; renv/withr conservados, sin dependencias nuevas.
 Las nueve secciones de R fundamental tienen material; no acreditan aprendizaje
-ni completan el proyecto integrador pendiente. Continúa el desarrollo con 07.01.
+ni completan el proyecto integrador pendiente.
+
+07.01 incorpora readr 2.2.0/tibble 3.3.1 en el mismo proyecto renv de práctica.
+El preparador respalda los metadatos 06.09 antes de actualizar DESCRIPTION/lock;
+conserva perfil, funciones de ventas y salidas. No reinicializa renv. El lockfile
+fue generado y restaurado realmente; no modifica la semilla de 06.08 ni instala
+el metapaquete tidyverse. Reutiliza el CSV y diccionario de pandas 02.02: seis
+créditos por corte, claves de texto, fecha aún character, double/integer y NA
+explícitos. Separa parseo de reglas de dominio, detiene problemas, comprueba
+esquema/valores conocidos y fuente intacta. Pipe nativo sin verbos adelantados;
+no exporta ni grafica. Continúa el desarrollo con 07.02; el integrador sigue pendiente.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

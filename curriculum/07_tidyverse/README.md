@@ -6,10 +6,10 @@ Transformar tablas de manera expresiva y comprobable con dplyr, tidyr y paquetes
 relacionados. Completa [R fundamental](../06_r_foundations/README.md) y reutiliza
 sus datos y proyecto renv; no se crea un entorno independiente por cada ejercicio.
 El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
-con conciliación Python/R; las secciones de tidyverse siguen planificadas.
+con conciliación Python/R.
 
-**Estado:** diez secciones planificadas; lecciones y labs por desarrollar.
-Los enlaces internos describen su alcance previsto.
+**Estado:** 07.01 dispone de lección, scripts, lockfile y lab; 07.02–07.10
+siguen planificadas. Los enlaces internos describen el alcance pendiente.
 
 Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
 La primera figura con ggplot2 aparece aquí; el módulo 08 profundiza su diseño.
@@ -18,9 +18,9 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 
 ## Orden de desarrollo
 
-| Orden | Sección prevista | Alcance | Resultado observable |
+| Orden | Sección | Alcance | Resultado observable |
 | --- | --- | --- | --- |
-| 1 | [Tibbles, importación y pipes](#01-tibbles-importacion-y-pipes) | Esencial | Cargar una tabla y leer una secuencia de pasos |
+| 1 | [Tibbles, importación y pipes](01_tibbles_import_pipes/README.md) | Esencial | Cargar una tabla y leer una secuencia de pasos |
 | 2 | [Seleccionar, filtrar y ordenar](#02-seleccionar-filtrar-y-ordenar) | Esencial | Obtener un subconjunto verificable |
 | 3 | [Transformar columnas](#03-transformar-columnas) | Esencial | Calcular indicadores con reglas explícitas |
 | 4 | [Faltantes, duplicados y calidad](#04-faltantes-duplicados-y-calidad) | Esencial | Conservar aceptados y rechazos con motivos |
@@ -37,10 +37,12 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 
 ### 01 — Tibbles, importación y pipes
 
-- tibble frente a data.frame; readr, tipos de columnas y problemas de lectura.
-  Seleccionar paquetes necesarios y registrar sus versiones con renv.
-- Pipe nativo |> como secuencia de pasos; reconocer %>% en material anterior sin
-  alternar estilos en los ejemplos iniciales. Práctica: verificar filas y esquema.
+Disponible: [lección 07.01](01_tibbles_import_pipes/README.md) y
+[lab 07.01](../../labs/07_tidyverse/01_tibbles_import_pipes/README.md).
+Tibble frente a data.frame, tipos/problemas de readr y pipe nativo. Reutiliza las
+seis observaciones de pandas 02.02 con diccionario, controles 6 × 5 y 6000 MXN.
+Extiende el mismo proyecto renv de 06.09 con respaldo de metadatos y lockfile
+comprobado: readr 2.2.0/tibble 3.3.1; no exige todo tidyverse ni dplyr todavía.
 
 <a id="02-seleccionar-filtrar-y-ordenar"></a>
 
@@ -123,7 +125,7 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 
 ## Prácticas, proyecto y criterio de salida
 
-Se prevén labs 07.01–07.10; aún no existen. El proyecto previsto
+El lab 07.01 está disponible; 07.02–07.10 siguen previstos. El proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 todavía no tiene carpeta ni checkpoints implementados.
 

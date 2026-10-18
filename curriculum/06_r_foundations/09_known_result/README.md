@@ -304,9 +304,9 @@ Las nueve secciones de R fundamental tienen material, pero esa disponibilidad
 no acredita aprendizaje ni completa proyectos pendientes. Conserva evidencia
 y dudas en PROGRESS.md solo después de realizar y explicar las prácticas.
 
-Continúa con el [plan 07.01 — Tibbles, importación y pipes](../../07_tidyverse/README.md#01-tibbles-importacion-y-pipes),
-todavía pendiente de lección y lab. Reutilizaremos la organización del proyecto;
-la cartera sintética y la primera figura llegarán según el plan de tidyverse.
+Continúa con [07.01 — Tibbles, importación y pipes](../../07_tidyverse/01_tibbles_import_pipes/README.md),
+ya disponible con lab. Extiende el mismo proyecto renv y retoma la cartera
+ficticia conocida; la primera figura llegará en 07.10.
 Volver al [índice de R fundamental](../README.md).
 
 ## Referencias y atribución

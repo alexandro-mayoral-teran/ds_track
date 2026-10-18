@@ -177,8 +177,8 @@ no bloquean tidyverse; se contemplan en el futuro R aplicado.
 
 Comienza por [06.01](01_r_session/README.md). Después del
 [cierre 06.09](09_known_result/README.md), continúa con el
-[plan 07.01 — Tibbles, importación y pipes](../07_tidyverse/README.md#01-tibbles-importacion-y-pipes),
-todavía sin lección ni lab.
+[07.01 — Tibbles, importación y pipes](../07_tidyverse/01_tibbles_import_pipes/README.md),
+con lección y lab disponibles.
 
 Fuentes: [manual introductorio de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html),
 [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html) y

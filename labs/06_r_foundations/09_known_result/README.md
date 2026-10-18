@@ -276,5 +276,5 @@ Registra lo realizado y las dudas en [PROGRESS.md](../../../PROGRESS.md), sin
 confundir el cierre del material con finalización automática del estudiante.
 No hay proyecto/checkpoint integrador implementado asociado.
 
-Siguiente: [plan 07.01 — Tibbles, importación y pipes](../../../curriculum/07_tidyverse/README.md#01-tibbles-importacion-y-pipes),
-todavía sin lección ni lab. Volver a la [lección 06.09](../../../curriculum/06_r_foundations/09_known_result/README.md).
+Siguiente: [07.01 — Tibbles, importación y pipes](../../../curriculum/07_tidyverse/01_tibbles_import_pipes/README.md),
+con lección y lab disponibles. Volver a la [lección 06.09](../../../curriculum/06_r_foundations/09_known_result/README.md).

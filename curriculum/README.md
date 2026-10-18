@@ -65,7 +65,8 @@ con preparador y lab.
 [06.09 — Reproducir un resultado conocido](06_r_foundations/09_known_result/README.md)
 integra lectura/validación/resumen con referencia Python, conciliación y verificación.
 Las nueve secciones de R fundamental tienen material disponible.
-Los módulos 07–08 conservan planes de tidyverse y gráficos,
+[07.01 — Tibbles, importación y pipes](07_tidyverse/01_tibbles_import_pipes/README.md)
+tiene lección, scripts, lockfile y lab. 07.02–07.10 y el módulo 08 conservan planes,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

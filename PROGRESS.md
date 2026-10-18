@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
-- **Siguiente módulo por desarrollar:** `07_tidyverse`.
-- **Estado de desarrollo:** 06.01–06.09 implementadas; 07–08 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-17, cierre del material 06 con 06.09.
-- **Foco de desarrollo del material:** conciliación Python/R, detalle y rechazos conservados, verificación sin escrituras.
+- **Módulo de desarrollo activo:** `07_tidyverse`.
+- **Estado de desarrollo:** 06.01–06.09 y 07.01 implementadas; 07.02–07.10 y 08 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-17, inicio de tidyverse con 07.01.
+- **Foco de desarrollo del material:** tibbles, importación con tipos/problemas y pipe nativo.
   Próxima sección por implementar:
-  [07.01 — Tibbles, importación y pipes](curriculum/07_tidyverse/README.md#01-tibbles-importacion-y-pipes), todavía planificada.
+  [07.02 — Seleccionar, filtrar y ordenar](curriculum/07_tidyverse/README.md#02-seleccionar-filtrar-y-ordenar), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  y las otras 19 siguen planificadas. Los módulos 09–10 tienen
+  también 07.01; las otras 18 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -41,15 +41,35 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[06.09 — Reproducir un resultado conocido](curriculum/06_r_foundations/09_known_result/README.md)
-con su [lab](labs/06_r_foundations/09_known_result/README.md).
-Las nueve secciones de R fundamental tienen material. Retomar el desarrollo con
-07.01: tibble frente a data.frame, lectura readr con tipos/problemas explícitos y
-pipe nativo. Reutilizar la organización y el proyecto renv; seleccionar e instalar
-solo los paquetes necesarios al implementar, sin un entorno nuevo por ejercicio.
-Reincorporar la cartera sintética conocida con su diccionario e indicadores;
-la primera figura permanece en 07.10. Revisar referencias y versiones efectivas.
-No se inició 07.01 ni se modificó el avance de aprendizaje del estudiante.
+[07.01 — Tibbles, importación y pipes](curriculum/07_tidyverse/01_tibbles_import_pipes/README.md)
+con su [lab](labs/07_tidyverse/01_tibbles_import_pipes/README.md).
+Retomar con 07.02: select/rename/filter/arrange, condiciones y NA, subconjuntos
+vacíos y comparación con pandas/SQL. Introducir dplyr y registrar dependencias
+cuando se implemente, sobre el mismo proyecto. La primera figura permanece en 07.10.
+El proyecto/checkpoints integradores siguen pendientes; el estado del estudiante
+no se modificó sin evidencia.
+
+07.01 reutiliza el CSV/diccionario de pandas 02.02: seis créditos, cinco columnas,
+6000 MXN con cobertura 6/6 y atraso desconocido 1/6. Lector con tipos explícitos,
+problems/stop_for_problems, comprobación del esquema y controles de muestra.
+Pipe nativo y extracción tabla/vector sin verbos de dplyr adelantados.
+Preparador extiende la práctica 06.09 con respaldo exacto de DESCRIPTION/lockfile;
+conserva perfil, funciones, datos y salidas anteriores. Lockfile generado y
+restaurado en biblioteca local: R 4.6.1, readr 2.2.0, tibble 3.3.1, withr 3.0.3,
+renv 1.3.1; 23 paquetes nuevos incluyendo dependencias transitivas.
+Sin instalación global ni cambio en las semillas 06 o dependencias Python.
+
+Comprobados los seis bloques R de la lección y seis del lab (uno con error
+deliberado), ejecutor en sesión nueva y fronteras: solo cabecera, NA permitido,
+cero, UTF-8/coma/decimal, texto numérico inválido, atraso fraccionario, campos
+de más/de menos, esquema extra/duplicado/reordenado, fila vacía y longitudes
+incompatibles. Un negativo/fecha inválida ilustra los límites del parseo sin
+confundirlo con calidad. Segunda preparación rechazada sin cambios; respaldo
+de metadatos exacto y fuentes intactas. Advertencias esperadas observadas sin
+silenciarlas; locale UTF-8 solo por proceso. Una entrega previa de 06.09 se
+conservó byte a byte tras extender el proyecto; verificador y nuevo cálculo
+06.09 pasan con el lockfile ampliado (72 controles). Revisados 1,427 enlaces
+locales y fragmentos; bloques/soluciones equilibrados y git diff --check limpio.
 
 06.09 añade copia autocontenida con referencia Python independiente, cálculo R,
 comparador y verificador de solo lectura. Usa las mismas 14 ventas y reglas
@@ -109,6 +129,14 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-17
+
+- Se desarrolló 07.01 con lección, lab, lector/ejecutor y extensión del proyecto
+  renv con respaldo de metadatos. Retoma cartera de pandas 02.02; controles de
+  tipos, forma, faltantes y saldo, pipe nativo y problemas de lectura.
+- Lockfile generado/restaurado con readr 2.2.0 y tibble 3.3.1; ejemplos y fronteras
+  ejecutados. Entrega 06.09 intacta y recalculada con el lock ampliado; 1,427
+  enlaces locales revisados. Índices, continuidad y fuentes actualizados. Sigue 07.02,
+  todavía planificada; sin acreditar aprendizaje ni crear checkpoints ficticios.
 
 - Se desarrolló 06.09 con lección/lab, referencia Python de biblioteca estándar,
   preparador, comparación de tablas y verificador sin escrituras. Cierre material

@@ -114,6 +114,13 @@ diferentes; no se equiparan a los entornos virtuales de Python.
 
 ### 07 — tidyverse
 
+La [lección 07.01](../curriculum/07_tidyverse/01_tibbles_import_pipes/README.md)
+consulta Data import de R4DS segunda edición, de Wickham, Çetinkaya-Rundel y
+Grolemund, y las referencias oficiales de readr/tibble/pipe. Usa ejemplos propios
+sobre el CSV de pandas 02.02; comprueba tipos, problemas y extracción con R 4.6.1,
+readr 2.2.0 y tibble 3.3.1. El proyecto renv se extiende con un lockfile realmente
+restaurado; no exige el metapaquete tidyverse. Consulta: 2026-10-17.
+
 En R for Data Science, consulta [transformación](https://r4ds.hadley.nz/data-transform.html),
 [datos ordenados](https://r4ds.hadley.nz/data-tidy.html) y
 [uniones](https://r4ds.hadley.nz/joins.html). Después utiliza los capítulos de
