@@ -71,7 +71,9 @@ tiene lección, scripts, lockfile y lab.
 añade dplyr, selección comprobada y lab.
 [07.03 — Transformar columnas](07_tidyverse/03_transform_columns/README.md)
 añade conversión auditable, cálculos, funciones/script y lab en el IDE.
-07.04–07.10 y el módulo 08 conservan planes,
+[07.04 — Faltantes, duplicados y calidad](07_tidyverse/04_missing_duplicates_quality/README.md)
+añade claves, reglas, partición conservada y lab.
+07.05–07.10 y el módulo 08 conservan planes,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

@@ -8,8 +8,8 @@ sus datos y proyecto renv; no se crea un entorno independiente por cada ejercici
 El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
 con conciliación Python/R.
 
-**Estado:** 07.01–07.03 disponen de lecciones, scripts y labs; 07.01–07.02
-tienen lockfiles y 07.03 reutiliza el de 07.02. 07.04–07.10
+**Estado:** 07.01–07.04 disponen de lecciones, scripts y labs; 07.01–07.02
+tienen lockfiles y 07.03–07.04 reutilizan el de 07.02. 07.05–07.10
 siguen planificadas. Los enlaces internos describen el alcance pendiente.
 
 Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
@@ -24,7 +24,7 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 | 1 | [Tibbles, importación y pipes](01_tibbles_import_pipes/README.md) | Esencial | Cargar una tabla y leer una secuencia de pasos |
 | 2 | [Seleccionar, filtrar y ordenar](02_select_filter_sort/README.md) | Esencial | Obtener un subconjunto verificable |
 | 3 | [Transformar columnas](03_transform_columns/README.md) | Esencial | Calcular indicadores con reglas explícitas |
-| 4 | [Faltantes, duplicados y calidad](#04-faltantes-duplicados-y-calidad) | Esencial | Conservar aceptados y rechazos con motivos |
+| 4 | [Faltantes, duplicados y calidad](04_missing_duplicates_quality/README.md) | Esencial | Conservar aceptados y rechazos con motivos |
 | 5 | [Agrupar y resumir](#05-agrupar-y-resumir) | Esencial | Conciliar medidas y denominadores |
 | 6 | [Unir tablas](#06-unir-tablas) | Esencial | Detectar relaciones que multiplican registros |
 | 7 | [Datos ordenados y reshape](#07-datos-ordenados-y-reshape) | Práctica | Cambiar formato preservando indicadores |
@@ -74,10 +74,13 @@ desde el IDE sin reinstalar. across permanece como ampliación posterior.
 
 ### 04 — Faltantes, duplicados y calidad
 
-- is.na, distinct, claves y reglas; separar faltante explícito de combinación
-  ausente. Reemplazar o eliminar solo con una decisión justificada.
-- Práctica prevista: detalle de aceptados/rechazos y conteos conciliados;
-  no usar distinct para ocultar problemas en una unión.
+Disponible: [lección 07.04](04_missing_duplicates_quality/README.md) y
+[lab 07.04](../../labs/07_tidyverse/04_missing_duplicates_quality/README.md).
+Ausencia explícita frente a observación ausente, claves compuestas, duplicated
+y distinct, reglas y motivos múltiples. Reutiliza 44 registros de pandas 02.05:
+29 aceptados/15 rechazados, 19 incidencias; partición reconstruida y saldo
+interpretable con cobertura. Sin imputar ni elegir una versión repetida;
+preparación desde R y recorrido IDE, sin dependencias nuevas.
 
 <a id="05-agrupar-y-resumir"></a>
 
@@ -135,7 +138,7 @@ desde el IDE sin reinstalar. across permanece como ampliación posterior.
 
 ## Prácticas, proyecto y criterio de salida
 
-Los labs 07.01–07.03 están disponibles; 07.04–07.10 siguen previstos. El proyecto previsto
+Los labs 07.01–07.04 están disponibles; 07.05–07.10 siguen previstos. El proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 todavía no tiene carpeta ni checkpoints implementados.
 

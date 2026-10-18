@@ -143,6 +143,14 @@ propios: conservación del origen, tipos y prioridad, conversiones incompatibles
 y denominadores. R 4.6.1/dplyr 1.2.1/readr 2.2.0; sin paquetes nuevos. Reutiliza
 40 filas de pandas 02.04 y concilia todas sus columnas. Consulta: 2026-10-17.
 
+La [lección 07.04](../curriculum/07_tidyverse/04_missing_duplicates_quality/README.md)
+consulta Missing values de R4DS segunda edición (Wickham, Çetinkaya-Rundel y
+Grolemund), distinct/coalesce/bind_rows de dplyr y duplicated/rowSums de R.
+Ejemplos propios sobre los 44 registros de pandas 02.05: ausencia frente a
+combinación ausente, claves, motivos múltiples y partición reconstruida.
+R 4.6.1/dplyr 1.2.1 existentes, sin dependencias nuevas; casos de frontera y
+comparación exacta de trabajo, partes y banderas con pandas. Revisión: 2026-10-18.
+
 ### 08 — Visualización en R
 
 Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)

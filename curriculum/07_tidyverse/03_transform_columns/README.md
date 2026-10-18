@@ -372,8 +372,8 @@ across para repetir una transformación sobre varias columnas queda como
 ampliación posterior; no bloquea avanzar. No hay checkpoint integrador activo.
 La disponibilidad del material no acredita aprendizaje.
 
-Siguiente: [07.04 — Faltantes, duplicados y calidad](../README.md#04-faltantes-duplicados-y-calidad),
-todavía planificada. Volver al [índice del módulo](../README.md).
+Siguiente: [07.04 — Faltantes, duplicados y calidad](../04_missing_duplicates_quality/README.md),
+con lección y lab disponibles. Volver al [índice del módulo](../README.md).
 
 ## Referencias y atribución
 

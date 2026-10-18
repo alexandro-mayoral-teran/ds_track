@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.03 tienen lecciones/scripts/labs; 07.04–07.10 y 08–14 conservan planificación;
+07.01–07.04 tienen lecciones/scripts/labs; 07.05–07.10 y 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; 07.01–07.03 también están disponibles y las otras 16 conservan planificación:
+scripts y labs; 07.01–07.04 también están disponibles y las otras 15 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -466,7 +466,21 @@ común 217750 − 6600 = 211150 MXN y etiquetas 21/16/3. Conciliación con panda
 por clave/campo, tolerancia absoluta 1e-10 en porcentajes; R integer e Int64 no
 se equiparan fuera de este contrato. RStudio/IDE con reinicio/Source y advertencias
 esperadas visibles; no exporta ni decide aceptación de registros.
-Continúa el desarrollo con 07.04, todavía planificada.
+07.04 reutiliza la lectura/conversión de 07.03 y el lockfile de 07.02, sin
+instalar ni cambiar metadatos. Su preparador añade funciones, ejecutor y el
+CSV de 44 registros de pandas 02.05. Reglas de presencia, entero, no negatividad,
+catálogo, pago ≤ saldo y unicidad de ID/corte completo. Marca todas las
+apariciones de claves repetidas con duplicated en ambos sentidos; distinct
+solo se usa para explicar su reducción y dependencia de la primera fila.
+Mantiene numero_registro, tres textos numéricos y todos los motivos; banderas
+sin NA gracias a reglas explícitas de ausencia/incompatibilidad. 44 × 12 en
+trabajo, 44 × 15 en banderas; 29 aceptados/15 rechazados y 19 incidencias.
+Reconstrucción por bind_rows/orden y comparación de todas las columnas, claves
+aceptadas y motivos frente a banderas. Saldo interpretable 234900 = 177250 +
+57650 MXN con cobertura 42/44 y dos saldos sin interpretar; no es total limpio
+de créditos únicos. Conciliación exacta con pandas de filas, partes y reglas;
+fronteras y particiones alteradas comprobadas. RStudio/IDE con reinicio/Source,
+sin exportar ni imputar. Continúa el desarrollo con 07.05, todavía planificada.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

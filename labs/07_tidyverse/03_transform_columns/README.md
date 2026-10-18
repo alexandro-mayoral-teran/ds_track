@@ -263,5 +263,5 @@ denominador, pruebes fronteras y conserves fuente y textos de origen. Registra
 evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md); no se acredita aprendizaje
 por estar disponible el material. No hay checkpoint integrador implementado.
 
-Siguiente: [07.04 — Faltantes, duplicados y calidad](../../../curriculum/07_tidyverse/README.md#04-faltantes-duplicados-y-calidad),
-todavía planificada. Volver a la [lección 07.03](../../../curriculum/07_tidyverse/03_transform_columns/README.md).
+Siguiente: [07.04 — Faltantes, duplicados y calidad](../../../curriculum/07_tidyverse/04_missing_duplicates_quality/README.md),
+con lección y lab disponibles. Volver a la [lección 07.03](../../../curriculum/07_tidyverse/03_transform_columns/README.md).

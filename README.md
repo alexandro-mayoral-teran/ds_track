@@ -193,7 +193,10 @@ añade dplyr, condiciones con NA, desempates y vacíos, con script y lab en el I
 [07.03 — Transformar columnas](curriculum/07_tidyverse/03_transform_columns/README.md)
 añade conversiones auditables, mutate, condiciones y cálculos con denominador
 explícito sobre 40 filas, con funciones, script y lab sin dependencias nuevas.
-07.04–07.10 y el nivel 08 conservan sus planes y
+[07.04 — Faltantes, duplicados y calidad](curriculum/07_tidyverse/04_missing_duplicates_quality/README.md)
+añade claves, reglas y partición de 44 registros en aceptados/rechazos con
+todos sus motivos, funciones/script y lab sin dependencias nuevas.
+07.05–07.10 y el nivel 08 conservan sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
