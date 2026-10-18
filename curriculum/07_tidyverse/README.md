@@ -8,7 +8,7 @@ sus datos y proyecto renv; no se crea un entorno independiente por cada ejercici
 El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
 con conciliación Python/R.
 
-**Estado:** 07.01 dispone de lección, scripts, lockfile y lab; 07.02–07.10
+**Estado:** 07.01–07.02 disponen de lecciones, scripts, lockfiles y labs; 07.03–07.10
 siguen planificadas. Los enlaces internos describen el alcance pendiente.
 
 Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
@@ -21,7 +21,7 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 | Orden | Sección | Alcance | Resultado observable |
 | --- | --- | --- | --- |
 | 1 | [Tibbles, importación y pipes](01_tibbles_import_pipes/README.md) | Esencial | Cargar una tabla y leer una secuencia de pasos |
-| 2 | [Seleccionar, filtrar y ordenar](#02-seleccionar-filtrar-y-ordenar) | Esencial | Obtener un subconjunto verificable |
+| 2 | [Seleccionar, filtrar y ordenar](02_select_filter_sort/README.md) | Esencial | Obtener un subconjunto verificable |
 | 3 | [Transformar columnas](#03-transformar-columnas) | Esencial | Calcular indicadores con reglas explícitas |
 | 4 | [Faltantes, duplicados y calidad](#04-faltantes-duplicados-y-calidad) | Esencial | Conservar aceptados y rechazos con motivos |
 | 5 | [Agrupar y resumir](#05-agrupar-y-resumir) | Esencial | Conciliar medidas y denominadores |
@@ -50,9 +50,12 @@ inspección y reinicio con ejecución completa. Rscript es una alternativa opcio
 
 ### 02 — Seleccionar, filtrar y ordenar
 
-- select, rename, filter y arrange; condiciones y comportamiento ante NA.
-- Práctica prevista: comparar una selección con pandas/SQL, incluso cuando no
-  hay coincidencias. Los nombres de fila no sustituyen identificadores de origen.
+Disponible: [lección 07.02](02_select_filter_sort/README.md) y
+[lab 07.02](../../labs/07_tidyverse/02_select_filter_sort/README.md).
+select/rename/filter/arrange, lógica de tres valores, pendientes, desempates y
+vacíos con esquema. Mismo CSV que 07.01 y pandas 02.03: 002/003/006, 2750 MXN,
+partición 3/2/1. Extiende el proyecto desde R con dplyr 1.2.1/lockfile; recorrido
+IDE y comparación de significado con pandas/SQL, sin exportar ni modificar la fuente.
 
 <a id="03-transformar-columnas"></a>
 
@@ -127,7 +130,7 @@ inspección y reinicio con ejecución completa. Rscript es una alternativa opcio
 
 ## Prácticas, proyecto y criterio de salida
 
-El lab 07.01 está disponible; 07.02–07.10 siguen previstos. El proyecto previsto
+Los labs 07.01–07.02 están disponibles; 07.03–07.10 siguen previstos. El proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 todavía no tiene carpeta ni checkpoints implementados.
 

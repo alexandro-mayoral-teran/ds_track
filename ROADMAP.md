@@ -279,7 +279,10 @@ El [plan de diez secciones](curriculum/07_tidyverse/README.md#orden-de-desarroll
 conecta importación, transformación, calidad, relaciones, fechas y primera figura.
 La [lección 07.01](curriculum/07_tidyverse/01_tibbles_import_pipes/README.md) y su
 lab están disponibles: readr, tibble y pipe nativo sobre la cartera conocida,
-con dependencias registradas en renv. 07.02–07.10 siguen planificadas; consulta
+con dependencias registradas en renv.
+[07.02](curriculum/07_tidyverse/02_select_filter_sort/README.md) dispone de lección/lab
+y script: columnas, condiciones con NA y orden con dplyr. 07.03–07.10 siguen
+planificadas; consulta
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** realizar análisis expresivos y comunicar hallazgos.

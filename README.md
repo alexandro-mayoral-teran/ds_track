@@ -188,7 +188,9 @@ integra el cierre con referencia Python independiente, conciliación y verificad
 sin escrituras. Las nueve secciones de R fundamental tienen material disponible.
 [07.01 — Tibbles, importación y pipes](curriculum/07_tidyverse/01_tibbles_import_pipes/README.md)
 añade lectura readr, controles y lab, extendiendo el proyecto renv.
-07.02–07.10 y el nivel 08 conservan sus planes y
+[07.02 — Seleccionar, filtrar y ordenar](curriculum/07_tidyverse/02_select_filter_sort/README.md)
+añade dplyr, condiciones con NA, desempates y vacíos, con script y lab en el IDE.
+07.03–07.10 y el nivel 08 conservan sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

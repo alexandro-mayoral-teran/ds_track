@@ -128,6 +128,13 @@ En R for Data Science, consulta [transformación](https://r4ds.hadley.nz/data-tr
 [fechas](https://r4ds.hadley.nz/datetimes.html) para las preguntas del proyecto.
 El libro se consulta por necesidad; su índice no es una lista obligatoria del curso.
 
+La [lección 07.02](../curriculum/07_tidyverse/02_select_filter_sort/README.md)
+retoma Data transformation de R4DS (Wickham, Çetinkaya-Rundel y Grolemund) y las
+referencias oficiales select/rename/filter/arrange. Ejemplos propios sobre la
+cartera conocida; selección, lógica de tres valores, pendientes, empates y
+vacío comprobados con R 4.6.1/dplyr 1.2.1. Contrasta pandas/SQLite bajo la misma
+pregunta y conserva las dependencias previas de renv. Consulta: 2026-10-17.
+
 ### 08 — Visualización en R
 
 Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)

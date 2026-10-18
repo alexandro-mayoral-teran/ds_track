@@ -333,8 +333,8 @@ Rscript --vanilla importar_cartera.R
 
 </details>
 
-Siguiente: [07.02 — Seleccionar, filtrar y ordenar](../README.md#02-seleccionar-filtrar-y-ordenar),
-todavía planificada. Volver al [índice del módulo](../README.md).
+Siguiente: [07.02 — Seleccionar, filtrar y ordenar](../02_select_filter_sort/README.md),
+con lección y lab disponibles. Volver al [índice del módulo](../README.md).
 
 ## Referencias y atribución
 

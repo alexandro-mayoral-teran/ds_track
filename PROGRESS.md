@@ -7,11 +7,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
 - **Módulo de desarrollo activo:** `07_tidyverse`.
-- **Estado de desarrollo:** 06.01–06.09 y 07.01 implementadas; 07.02–07.10 y 08 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-17, inicio de tidyverse con 07.01.
-- **Foco de desarrollo del material:** tibbles, importación con tipos/problemas y pipe nativo.
+- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.02 implementadas; 07.03–07.10 y 08 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-17, selección con dplyr en 07.02.
+- **Foco de desarrollo del material:** columnas, condiciones con NA, pendientes y orden verificable.
   Próxima sección por implementar:
-  [07.02 — Seleccionar, filtrar y ordenar](curriculum/07_tidyverse/README.md#02-seleccionar-filtrar-y-ordenar), todavía planificada.
+  [07.03 — Transformar columnas](curriculum/07_tidyverse/README.md#03-transformar-columnas), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01; las otras 18 siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.02; las otras 17 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -43,17 +43,37 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
 o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
-material nuevo. 07.01 y su lab ya se ajustaron; revisar las demás lecciones
+material nuevo. 07.01 y su lab ya se ajustaron; 07.02 nace con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[07.01 — Tibbles, importación y pipes](curriculum/07_tidyverse/01_tibbles_import_pipes/README.md)
-con su [lab](labs/07_tidyverse/01_tibbles_import_pipes/README.md).
-Retomar con 07.02: select/rename/filter/arrange, condiciones y NA, subconjuntos
-vacíos y comparación con pandas/SQL. Introducir dplyr y registrar dependencias
-cuando se implemente, sobre el mismo proyecto. La primera figura permanece en 07.10.
+[07.02 — Seleccionar, filtrar y ordenar](curriculum/07_tidyverse/02_select_filter_sort/README.md)
+con su [lab](labs/07_tidyverse/02_select_filter_sort/README.md).
+Retomar con 07.03: mutate, operaciones vectorizadas, if_else/case_when y reglas
+explícitas de indicadores; introducir cada requisito antes de usarlo. Conservar
+el proyecto renv; no añadir paquetes por anticipado. La primera figura permanece en 07.10.
 El proyecto/checkpoints integradores siguen pendientes; el estado del estudiante
 no se modificó sin evidencia.
+
+07.02 añade dplyr 1.2.1/generics 0.1.4 al lockfile del mismo proyecto, con
+respaldo exacto de DESCRIPTION/lock de 07.01. Preparador como función cargada
+por source; restaura desde R y trabaja en scripts del IDE. Mismo CSV de seis
+filas, selección saldo ≥ 500/atraso ≥ 5: claves 002/003/006 y 2750 MXN con saldo
+conocido 3/3. Condición completa separada en 3 confirmados, 2 no cumplen y 1
+pendiente. select/rename/filter/arrange, empates explícitos y vacío tipado.
+
+Comprobados los ocho bloques R de la lección y ocho del lab, con un error
+deliberado por separado; restauración real y reconstrucción por source desde
+sesiones nuevas. R 4.6.1/pandas 2.3.3/SQLite concilian registros completos y orden
+de la selección, pendiente 005 y caso sin coincidencias sobre el mismo CSV.
+Nueve combinaciones de lógica de tres valores, fronteras incluidas, todos
+faltantes/todos falsos/vacío, empate con entrada invertida, NA al final y
+duplicados conservados al filtrar. Segunda preparación y cinco argumentos
+inválidos rechazados sin cambios. Fuente, lector, metadatos, versiones previas
+y respaldo comprobados; sin instalación global ni cambios en dependencias Python.
+Revisados 1,455 enlaces locales y fragmentos, bloques y soluciones equilibrados;
+git diff --check limpio. Los menús del IDE se reutilizan de 07.01; las pruebas
+automatizadas ejecutan llamadas R, sin afirmar una prueba de la interfaz gráfica.
 
 07.01 reutiliza el CSV/diccionario de pandas 02.02: seis créditos, cinco columnas,
 6000 MXN con cobertura 6/6 y atraso desconocido 1/6. Lector con tipos explícitos,
@@ -142,6 +162,12 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-17
+
+- Se desarrolló 07.02 con lección/lab, preparador desde R, lockfile dplyr 1.2.1
+  y script de selección comprobable. Recorrido IDE, lógica de tres valores,
+  partición 3/2/1, empates, vacío y conservación. pandas/SQLite concilian la
+  misma selección y orden; 1,455 enlaces locales revisados. Continúa 07.03, todavía planificada; sin acreditar
+  aprendizaje ni crear checkpoints integradores pendientes.
 
 - Se adaptaron 07.01 y su lab al recorrido RStudio/IDE: preparación con función
   cargada por source, apertura de la carpeta existente como proyecto, restauración

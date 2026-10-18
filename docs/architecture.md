@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01 tiene lección/scripts/lab y lockfile; 07.02–07.10 y 08–14 conservan planificación;
+07.01–07.02 tienen lecciones/scripts/labs y lockfiles; 07.03–07.10 y 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; 07.01 también está disponible y las otras 18 conservan planificación:
+scripts y labs; 07.01–07.02 también están disponibles y las otras 17 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -440,10 +440,21 @@ el metapaquete tidyverse. Reutiliza el CSV y diccionario de pandas 02.02: seis
 créditos por corte, claves de texto, fecha aún character, double/integer y NA
 explícitos. Separa parseo de reglas de dominio, detiene problemas, comprueba
 esquema/valores conocidos y fuente intacta. Pipe nativo sin verbos adelantados;
-no exporta ni grafica. Continúa el desarrollo con 07.02; el integrador sigue pendiente.
+no exporta ni grafica; el integrador sigue pendiente.
 La 07.01 prioriza RStudio/IDE: el preparador define una función al usar source(),
 y solo interpreta argumentos al ejecutarse por terminal. Apertura del proyecto,
 restauración y comprobación completa desde R; terminal opcional al final.
+
+07.02 añade dplyr 1.2.1/generics 0.1.4 al lockfile del mismo proyecto con
+respaldo de metadatos 07.01 y preparación por función desde R. Conserva lector,
+datos, scripts y versiones previas. select/rename/filter/arrange sobre tablas
+locales sin agrupar; no introduce mutate ni resúmenes agrupados. Script y lab
+comprueban selección 002/003/006, subtotal 2750 con cobertura 3/3 y partición
+3 confirmados/2 no cumplen/1 pendiente. Evalúa la condición completa, con lógica
+de tres valores y sin imputar cero. Empates, NA al ordenar, vacío tipado, claves,
+objeto/fuente intactos y equivalencia con pandas/SQLite sobre el mismo CSV.
+Recorrido IDE: bloques y reinicio/Source; no requiere terminal ni exporta.
+Continúa el desarrollo con 07.03, todavía planificada.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10
