@@ -87,8 +87,8 @@ El recorrido se reorganiza en niveles 00–14 para integrar estas capacidades
 con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
-05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.04 tienen lección/scripts/lab;
-06.05–06.09 y 07–14 conservan planificación;
+05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.05 tienen lección/scripts/lab;
+06.06–06.09 y 07–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -341,8 +341,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 
 ### Desarrollo previsto de los módulos 06–08
 
-Los planes de R contienen 28 secciones; 06.01–06.04 tienen lecciones, scripts y labs,
-y las otras 24 conservan planificación:
+Los planes de R contienen 28 secciones; 06.01–06.05 tienen lecciones, scripts y labs,
+y las otras 23 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -384,6 +384,12 @@ cero explícitos, suma/media observadas con cobertura y fronteras de vacío/todo
 faltantes; una confirmación se realiza sobre copia. Lección, script y lab
 comprobados con R 4.6.1 y documentación oficial; R4DS segunda edición como lectura
 puntual, sin paquetes externos ni cambios en las fuentes previas.
+06.05 añade listas_tablas.R: listas con componentes distintos, tabla de seis ventas,
+tipos por columna y selección que conserva dimensiones con drop = FALSE. Conserva
+pendientes e identidad, contrasta vacío con faltantes y modifica una copia con
+recálculo explícito. Demuestra reciclaje incorrecto por separado y nombres exactos;
+lab con variante independiente. Advanced R y ayuda de R 4.6.1 contrastados, incluido
+el valor predeterminado stringsAsFactors desde R 4.0; sin paquetes externos.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

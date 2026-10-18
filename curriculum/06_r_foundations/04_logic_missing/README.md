@@ -331,8 +331,7 @@ sus registros, concilies los grupos y describas correctamente un resumen parcial
 y un caso sin observaciones. No hay proyecto/checkpoint implementado asociado.
 Registra evidencia real y dudas; disponer del material no acredita aprendizaje.
 
-Continúa con el [plan 06.05 — Listas y data frames](../README.md#05-listas-y-data-frames),
-todavía pendiente. Volver al [índice de R fundamental](../README.md).
+Continúa con [06.05 — Listas y data frames](../05_lists_data_frames/README.md). Volver al [índice de R fundamental](../README.md).
 
 ## Referencias y atribución
 

@@ -6,11 +6,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulo activo de desarrollo:** `06_r_foundations`
-- **Estado de desarrollo:** 06.01–06.04 implementadas; 06.05–06.09 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-16, cerrada tras desarrollar 06.04 y revisar la documentación.
-- **Foco de desarrollo del material:** condiciones, faltantes, grupos pendientes y cobertura de resúmenes.
+- **Estado de desarrollo:** 06.01–06.05 implementadas; 06.06–06.09 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-17, desarrollo y revisión de 06.05.
+- **Foco de desarrollo del material:** listas, tablas, selección con estructura conservada y recálculo en copia.
   Próxima sección por implementar:
-  [06.05 — Listas y data frames](curriculum/06_r_foundations/README.md#05-listas-y-data-frames), todavía planificada.
+  [06.06 — Funciones y control de flujo](curriculum/06_r_foundations/README.md#06-funciones-y-control-de-flujo), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -28,8 +28,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
-  28 secciones y lecturas abiertas; 06.01–06.04 disponen de lecciones, scripts y labs,
-  y las otras 24 siguen planificadas. Los módulos 09–10 tienen
+  28 secciones y lecturas abiertas; 06.01–06.05 disponen de lecciones, scripts y labs,
+  y las otras 23 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -40,29 +40,32 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 El último material disponible es
-[06.04 — Lógica y valores faltantes](curriculum/06_r_foundations/04_logic_missing/README.md)
-con su [lab](labs/06_r_foundations/04_logic_missing/README.md).
-Retomar con 06.05: listas con componentes de tipos distintos y data.frame;
-nombres, dimensiones y str. Construir y consultar registros tabulares, conservando
-la correspondencia y distinguiendo una columna vector de una tabla. Reutilizar
-ventas conocidas y faltantes explícitos; introducir cada operación antes de usarla.
-Funciones/control de flujo siguen en 06.06 y archivos en 06.07.
-Contrastar libros y ayuda oficial de la versión elegida, sin nuevas instalaciones.
+[06.05 — Listas y data frames](curriculum/06_r_foundations/05_lists_data_frames/README.md)
+con su [lab](labs/06_r_foundations/05_lists_data_frames/README.md).
+Retomar con 06.06: function, argumentos, retorno y alcance local; condición
+escalar en if, for y alternativas vectorizadas. Separar transformación de
+presentación, introducir stop y reservar tryCatch para fallas esperadas.
+Reutilizar las ventas y sus faltantes; archivos siguen en 06.07. Contrastar
+libros y ayuda oficial de la versión elegida, sin instalaciones anticipadas.
 
-06.04 añade logica_faltantes.R: conserva las cuatro ventas anteriores y agrega
-dos casos incompletos en otra muestra. Máscaras para cumplen/no cumplen/pendientes
-concilian 2/2/2; cuatro importes conocidos y dos faltantes, cobertura 4/6, suma
-observada 660 y media 165. El total de seis ventas permanece desconocido.
-Umbral 100 produce 3/1/2; confirmar una unidad de V005 en copia produce 2/3/1,
-cobertura 5/6, suma observada 760 y media 152. any/all, cortocircuito escalar,
-NA/NaN/NULL/cero y fronteras de vacío/todos faltantes comprobados. Se ejecutaron
-los once bloques R de la lección y los siete del lab, con tres errores deliberados
-por separado y controles que detectan pérdida de pendientes, imputación a cero
-y exclusión incorrecta de la frontera. Se conservan las muestras 06.01–06.03.
-Comprobado con R 4.6.1 independiente y paquetes incluidos, sin instalaciones ni
-modificaciones de Conda, PATH o bibliotecas. Locale C solo en los procesos de
-revisión por el aviso heredado de C.UTF-8; los scripts no cambian locale.
-La colección Python conserva sus 115 métodos; no se mezclan con evidencia de R.
+06.05 añade listas_tablas.R: lista de componentes heterogéneos, tabla 6 × 4,
+inspección y selección por filas/columnas. Distingue vector de tabla 6 × 1,
+conserva grupos 2/2/2, pendientes identificados y vacío 0 × 4 con tipos.
+Original: cuatro importes conocidos, cobertura 4/6, suma observada 660 y media
+165; copia con V005 confirmada: cinco conocidos, 760 y 152. Lab independiente
+confirma precio 60 de V006: cinco conocidos, cobertura 5/6, suma 780 y media 156.
+Cada copia recalcula importes y conserva el original; el total completo sigue
+sin conocerse. Reciclaje incorrecto separado, búsquedas exactas, NULL frente a
+faltante y matrices opcionales. Advanced R y ayuda instalada contrastados,
+incluido stringsAsFactors = FALSE desde R 4.0.0.
+
+Se ejecutaron los trece bloques R de la lección (dos errores deliberados por
+separado) y siete del lab; script en dos procesos nuevos y fronteras comprobadas.
+Controles detectan pérdida de dimensiones, precios alterados, omisión de
+pendientes e importe sin recalcular. Fuentes 06.01–06.04 intactas. R 4.6.1 ya
+instalado y paquetes incluidos; sin cambios a Conda, PATH o bibliotecas. Locale C
+solo en procesos de revisión por el aviso heredado de C.UTF-8; el script no cambia
+locale. No se reejecutó la colección Python: esta revisión cambia material de R.
 
 Los proyectos y checkpoints asociados siguen pendientes. No se cambió el
 estado del estudiante sin evidencia de las prácticas.
@@ -98,6 +101,19 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 | 14 | Proyecto reproducible | No iniciado | — |
 
 ## Bitácora
+
+### 2026-10-17
+
+- Se desarrolló 06.05 con lección, script y lab de soluciones desplegables:
+  listas, data.frame, tipos/forma, selección, pendientes y copia con recálculo.
+  Referencias de Wickham y documentación oficial contrastadas con R 4.6.1;
+  sin paquetes externos ni cambios de entornos. Conservadas las muestras previas.
+- Bloques de lección/lab ejecutados, dos errores intencionales por separado,
+  resultados y fronteras comprobados. Cuatro variantes incorrectas detectadas
+  por controles independientes; script repetido en procesos nuevos. Índices,
+  continuidad, arquitectura y lecturas actualizados; enlaces/fragmentos y bloques
+  revisados. Sigue 06.06, todavía planificada.
+- Estado del estudiante conservado; proyectos/checkpoints siguen pendientes.
 
 ### 2026-10-16
 

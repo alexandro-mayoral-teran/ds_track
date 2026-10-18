@@ -14,13 +14,16 @@ vectorizadas, coerción y reciclaje con scripts y lab.
 [06.03 — Seleccionar elementos](03_subsetting/README.md) incorpora posiciones,
 nombres, máscaras y operadores, con script y lab.
 [06.04 — Lógica y valores faltantes](04_logic_missing/README.md) añade condiciones,
-grupos pendientes y resúmenes con cobertura, con script y lab. 06.05–06.09 siguen planificadas;
+grupos pendientes y resúmenes con cobertura, con script y lab.
+[06.05 — Listas y data frames](05_lists_data_frames/README.md) incorpora listas,
+tablas, selección por filas/columnas y modificación de copia con recálculo.
+06.06–06.09 siguen planificadas;
 sus enlaces de la tabla describen el alcance pendiente dentro de este documento.
 
 Empezaremos con ventas pequeñas y luego reutilizaremos la cartera sintética.
 R no se aprenderá traduciendo mecánicamente líneas de pandas: compararemos
 estructuras, reglas y resultados. RStudio será un editor opcional; el intérprete
-R es necesario. 06.01–06.04 se comprobaron con R 4.6.1 y paquetes incluidos; la versión
+R es necesario. 06.01–06.05 se comprobaron con R 4.6.1 y paquetes incluidos; la versión
 efectiva se registra por sesión. Las dependencias posteriores se fijarán al implementarlas.
 
 ## Orden de desarrollo
@@ -31,7 +34,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 | 2 | [Objetos, vectores y tipos](02_objects_vectors/README.md) | Esencial | Representar datos y explicar coerciones |
 | 3 | [Seleccionar elementos](03_subsetting/README.md) | Esencial | Distinguir posiciones, nombres y estructuras |
 | 4 | [Lógica y valores faltantes](04_logic_missing/README.md) | Esencial | Aplicar condiciones con tratamiento explícito de NA |
-| 5 | [Listas y data frames](#05-listas-y-data-frames) | Esencial | Construir y consultar registros tabulares |
+| 5 | [Listas y data frames](05_lists_data_frames/README.md) | Esencial | Construir y consultar registros tabulares |
 | 6 | [Funciones y control de flujo](#06-funciones-y-control-de-flujo) | Esencial | Separar una transformación de su presentación |
 | 7 | [Archivos y validación básica](#07-archivos-y-validacion-basica) | Esencial | Leer, validar y escribir sin alterar la fuente |
 | 8 | [Proyectos y dependencias con renv](#08-proyectos-y-dependencias-con-renv) | Práctica | Conservar y restaurar paquetes del proyecto |
@@ -92,8 +95,11 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 - Listas con elementos de tipos distintos; data.frame, nombres, dimensiones y str.
   Seleccionar una columna como vector frente a mantener una tabla.
-- Práctica prevista: reconstruir las ventas y consultar sus registros. Matrices
-  sirven como comparación; no son una unidad avanzada obligatoria.
+- [Lección disponible](05_lists_data_frames/README.md) y
+  [lab 06.05](../../labs/06_r_foundations/05_lists_data_frames/README.md): reconstruir
+  seis ventas, distinguir columna vector y tabla, conservar pendientes y modificar
+  una copia con recálculo. Reciclaje, nombres exactos y vacío comprobados; matrices
+  como comparación opcional, sin paquetes externos.
 
 <a id="06-funciones-y-control-de-flujo"></a>
 
@@ -133,7 +139,7 @@ efectiva se registra por sesión. Las dependencias posteriores se fijarán al im
 
 ## Prácticas y criterio de salida
 
-Los labs 06.01–06.04 están disponibles con soluciones desplegables; 06.05–06.09 siguen previstos.
+Los labs 06.01–06.05 están disponibles con soluciones desplegables; 06.06–06.09 siguen previstos.
 El cierre reutilizará el resultado Python como referencia y preparará el proyecto
 03_portfolio_analysis_r, previsto en [proyectos](../../projects/README.md), sin
 carpeta implementada todavía. No hay checkpoint activo asociado.

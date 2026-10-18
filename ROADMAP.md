@@ -242,7 +242,9 @@ añade tipos/longitudes, coerción, operaciones vectorizadas y reciclaje con scr
 dispone de lección/script/lab, correspondencia y contraste de operadores.
 [06.04 — Lógica y valores faltantes](curriculum/06_r_foundations/04_logic_missing/README.md)
 dispone de lección/script/lab: condiciones desconocidas, grupos conciliados,
-any/all y resúmenes con cobertura. 06.05–06.09 siguen por desarrollar. Las referencias están en
+any/all y resúmenes con cobertura. [06.05 — Listas y data frames](curriculum/06_r_foundations/05_lists_data_frames/README.md)
+añade listas, tablas, selección con dimensiones conservadas y copia recalculada, con script y lab.
+06.06–06.09 siguen por desarrollar. Las referencias están en
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** trasladar conceptos de análisis al ecosistema de R.

@@ -227,6 +227,5 @@ haría un informe que mostrara únicamente 660 o únicamente `all(...) = TRUE`?
 Registra lo que efectivamente realizaste y las dudas; este material no completa
 por sí mismo el módulo ni cambia tu estado de aprendizaje.
 
-Siguiente: [plan 06.05 — Listas y data frames](../../../curriculum/06_r_foundations/README.md#05-listas-y-data-frames),
-todavía pendiente. Volver a la [lección 06.04](../../../curriculum/06_r_foundations/04_logic_missing/README.md)
+Siguiente: [06.05 — Listas y data frames](../../../curriculum/06_r_foundations/05_lists_data_frames/README.md). Volver a la [lección 06.04](../../../curriculum/06_r_foundations/04_logic_missing/README.md)
 y al [índice de labs](../../README.md).

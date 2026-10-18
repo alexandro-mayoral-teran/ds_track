@@ -172,7 +172,9 @@ con ventas vectorizadas, coerción y reciclaje.
 añade posiciones, nombres, máscaras y estructura devuelta, con script y lab.
 [06.04 — Lógica y valores faltantes](curriculum/06_r_foundations/04_logic_missing/README.md)
 añade condiciones, pendientes y resúmenes con cobertura, con script y lab.
-06.05–06.09 y los niveles 07–08 conservan sus planes y
+[06.05 — Listas y data frames](curriculum/06_r_foundations/05_lists_data_frames/README.md)
+añade listas, tablas, selección con dimensiones conservadas y copia recalculada, con script y lab.
+06.06–06.09 y los niveles 07–08 conservan sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

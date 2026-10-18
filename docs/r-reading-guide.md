@@ -53,6 +53,15 @@ oficial y R 4.6.1: cumplimiento, incumplimiento conocido y pendiente son grupos
 distintos; una suma observada requiere declarar cobertura. Vacío, todos faltantes,
 cero, NULL y NaN se comparan antes de automatizar decisiones en 06.06.
 
+La [lección 06.05](../curriculum/06_r_foundations/05_lists_data_frames/README.md)
+consulta listas y data frames de [Advanced R](https://adv-r.hadley.nz/vectors-chap.html),
+de Hadley Wickham, y su capítulo de selección. Usa ventas propias y R base;
+contrasta construcción, reciclaje, extracción y dimensiones con la ayuda instalada
+de R 4.6.1. Algunos pasajes del libro describen conversión automática de texto a
+factor: el valor predeterminado de stringsAsFactors es FALSE desde R 4.0.0, según
+la documentación oficial. Matrices son comparación opcional; tibble queda para 07.
+Consulta de estas referencias: 2026-10-17.
+
 Comienza con el [manual introductorio oficial de R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 y consulta [selección de estructuras en Advanced R](https://adv-r.hadley.nz/subsetting.html)
 para entender las diferencias entre [, [[ y $. Advanced R es apoyo para preguntas
