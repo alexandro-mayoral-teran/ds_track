@@ -183,6 +183,14 @@ equivalencias exactas, ausencias/desconocidos, niveles y orden sin alterar datos
 R 4.6.1/stringr 1.6.0/forcats 1.0.1, con lockfile real y conciliación pandas.
 Consulta: 2026-10-19.
 
+La [lección 07.09](../curriculum/07_tidyverse/09_dates_cutoffs/README.md)
+consulta Dates and times de R4DS segunda edición (Wickham, Çetinkaya-Rundel y
+Grolemund), ymd/componentes/floor_date de lubridate y difftime de R. Ejemplos
+propios sobre la fuente de texto de 07.08: formato/calendario, diferencias con
+unidad, motivos y claves conservados, períodos y base común. R 4.6.1/lubridate
+1.9.5, con lockfile/restauración local y conciliación pandas/datetime.
+Consulta: 2026-10-19.
+
 ### 08 — Visualización en R
 
 Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)

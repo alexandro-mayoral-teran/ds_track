@@ -66,7 +66,7 @@ corte inventado a esos aceptados ni mezclamos sus indicadores.
 El contrato analítico de esta fuente permite ausencias que 07.04 rechazaba.
 No cambiamos retroactivamente aquellas reglas. Las fechas siguen siendo texto;
 las usaremos como etiquetas exactas, sin calcular duraciones. Su interpretación
-temporal se desarrolla en [07.09](../README.md#09-fechas-y-cortes).
+temporal se desarrolla en [07.09](../09_dates_cutoffs/README.md).
 
 La práctica conserva una **proyección de tres campos**: id_credito, corte y
 saldo_mxn. corte es el nuevo nombre de fecha_corte, no una conversión de tipo.

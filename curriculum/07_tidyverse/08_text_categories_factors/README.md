@@ -59,7 +59,7 @@ integer presente y no negativo. Lee un campo vacío como NA, sin recortar espaci
 
 **Solo normalizamos segmento.** ID y fechas se conservan exactamente como se
 leyeron, incluso si contienen espacios, faltantes o fechas inválidas. El trabajo
-temporal corresponde a [07.09](../README.md#09-fechas-y-cortes). Aquí no declaramos
+temporal corresponde a [07.09](../09_dates_cutoffs/README.md). Aquí no declaramos
 créditos válidos ni una clave ID/corte depurada: numero_registro identifica la
 posición de cada entrada para reconstruirla sin perder filas.
 
@@ -355,7 +355,7 @@ tablas sin alterar sus indicadores desde una sesión nueva. Registra evidencia
 y dudas; material disponible no acredita aprendizaje. El proyecto/checkpoint
 integrador sigue pendiente.
 
-Siguiente: [07.09 — Fechas y cortes](../README.md#09-fechas-y-cortes), todavía planificada.
+Siguiente: [07.09 — Fechas y cortes](../09_dates_cutoffs/README.md).
 Volver al [índice del módulo](../README.md).
 
 ## Referencias y atribución

@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.08 tienen lecciones/scripts/labs; 07.09–07.10 y 08–14 conservan planificación;
+07.01–07.09 tienen lecciones/scripts/labs; 07.10 y 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; 07.01–07.08 también están disponibles y las otras 11 conservan planificación:
+scripts y labs; 07.01–07.09 también están disponibles y las otras 10 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -523,7 +523,19 @@ frente a orden por medida; grupos vacíos y niveles descartados explícitos.
 Stringr 1.6.0 pasa a dependencia directa y se añade forcats 1.0.1 sin cambiar
 registros anteriores del lockfile; restauración local comprobada. Comparación
 independiente pandas de texto, estados, partes y resumen; fronteras y alteraciones.
-No grafica ni valida fechas/IDs; continúa con 07.09, todavía planificada.
+No grafica ni valida fechas/IDs.
+07.09 continúa sobre la fuente de texto de 07.08, sin filtrar previamente sus
+pendientes. ID/segmento normalizados y fechas Date bajo forma ISO, calendario
+y años 1900–2100; originales y todos los motivos conservados. Alta ≤ corte y
+clave ID/corte única después de interpretar: trabajo 48 × 15, 36 aceptados/
+12 rechazados; suma de registros 112800 = 81400 + 31400 MXN, no saldo a una fecha.
+Diferencia explícita en días, componentes y clave mensual Date; períodos con
+fin exclusivo. Dos cortes de 18 aceptados no implican mismos IDs: base común
+14, saldos 29000/31800 MXN y diferencia 2800; no coincidentes conservados.
+Lubridate 1.9.5/timechange 0.4.0 añadidos con registros previos del lockfile
+intactos, respaldo 07.08 y restauración local comprobada. Revisión pandas de
+columnas, banderas, motivos, selecciones y base común; calendario con datetime.
+No grafica; continúa con 07.10, todavía planificada.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

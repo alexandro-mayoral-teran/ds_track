@@ -208,7 +208,10 @@ conservados; incorpora tidyr al proyecto renv con respaldo de metadatos.
 [07.08 — Texto, categorías y factores](curriculum/07_tidyverse/08_text_categories_factors/README.md)
 añade normalización auditable, categorías pendientes y factores con niveles
 controlados, con lección/lab y forcats en el mismo proyecto renv.
-07.09–07.10 y el nivel 08 conservan sus planes y
+[07.09 — Fechas y cortes](curriculum/07_tidyverse/09_dates_cutoffs/README.md)
+añade fechas interpretadas, reglas temporales, períodos y comparación de IDs
+comunes, con lección/lab y lubridate en el proyecto renv.
+07.10 y el nivel 08 conservan sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

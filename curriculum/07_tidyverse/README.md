@@ -8,11 +8,10 @@ sus datos y proyecto renv; no se crea un entorno independiente por cada ejercici
 El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
 con conciliación Python/R.
 
-**Estado:** 07.01–07.08 disponen de lecciones, scripts y labs; 07.01–07.02
+**Estado:** 07.01–07.09 disponen de lecciones, scripts y labs; 07.01–07.02
 tienen lockfiles y 07.03–07.06 reutilizan el de 07.02; 07.07 añade tidyr con
 su lockfile y respaldo; 07.08 declara stringr y añade forcats con otro respaldo.
-07.09–07.10
-siguen planificadas. Los enlaces internos describen el alcance pendiente.
+07.09 incorpora lubridate con respaldo y lockfile. 07.10 sigue planificada. Los enlaces internos describen el alcance pendiente.
 
 Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
 La primera figura con ggplot2 aparece aquí; el módulo 08 profundiza su diseño.
@@ -31,7 +30,7 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 | 6 | [Unir tablas](06_join_tables/README.md) | Esencial | Detectar relaciones que multiplican registros |
 | 7 | [Datos ordenados y reshape](07_tidy_reshape/README.md) | Práctica | Cambiar formato preservando indicadores |
 | 8 | [Texto, categorías y factores](08_text_categories_factors/README.md) | Esencial | Normalizar categorías y controlar su orden |
-| 9 | [Fechas y cortes](#09-fechas-y-cortes) | Esencial | Comparar períodos con fechas interpretadas |
+| 9 | [Fechas y cortes](09_dates_cutoffs/README.md) | Esencial | Comparar períodos con fechas interpretadas |
 | 10 | [Primera figura y cierre del análisis](#10-primera-figura-y-cierre-del-analisis) | Práctica de cierre | Reconstruir tablas e interpretar un gráfico |
 
 ## Alcance de cada sección
@@ -136,10 +135,13 @@ Stringr directo y forcats 1.0.1 en el mismo proyecto con respaldo y lockfile rea
 
 ### 09 — Fechas y cortes
 
-- lubridate, parseo y fechas inválidas; fechas frente a instantes, períodos y zonas
-  horarias solo cuando el origen incluya horas.
-- Práctica prevista: seleccionar cortes y calcular una diferencia temporal con
-  unidades definidas, conciliando el período con Python.
+Disponible: [lección 07.09](09_dates_cutoffs/README.md) y
+[lab 07.09](../../labs/07_tidyverse/09_dates_cutoffs/README.md).
+Fechas ISO, calendario/rango, diferencias en días, relaciones y claves normalizadas.
+Reutiliza la fuente de 07.08: 48 = 36 aceptados + 12 rechazados, motivos conservados;
+18 aceptados por corte y 14 IDs comunes con diferencia 2800 MXN. Intervalos con
+fin exclusivo y población explícita, conciliados con pandas/datetime. Lubridate
+1.9.5 en el mismo proyecto renv, con respaldo y restauración local real.
 
 <a id="10-primera-figura-y-cierre-del-analisis"></a>
 
@@ -152,7 +154,7 @@ Stringr directo y forcats 1.0.1 en el mismo proyecto con respaldo y lockfile rea
 
 ## Prácticas, proyecto y criterio de salida
 
-Los labs 07.01–07.08 están disponibles; 07.09–07.10 siguen previstos. El proyecto previsto
+Los labs 07.01–07.09 están disponibles; 07.10 sigue previsto. El proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 todavía no tiene carpeta ni checkpoints implementados.
 

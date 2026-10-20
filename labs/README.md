@@ -82,6 +82,7 @@ reglas de enlace están en
 | [`07.06 — Unir tablas`](07_tidyverse/06_join_tables/) | `07_tidyverse` | No aplica todavía |
 | [`07.07 — Datos ordenados y reshape`](07_tidyverse/07_tidy_reshape/) | `07_tidyverse` | No aplica todavía |
 | [`07.08 — Texto, categorías y factores`](07_tidyverse/08_text_categories_factors/) | `07_tidyverse` | No aplica todavía |
+| [`07.09 — Fechas y cortes`](07_tidyverse/09_dates_cutoffs/) | `07_tidyverse` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

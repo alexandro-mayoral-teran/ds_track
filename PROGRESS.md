@@ -7,11 +7,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
 - **Módulo de desarrollo activo:** `07_tidyverse`.
-- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.08 implementadas; 07.09–07.10 y 08 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.08.
-- **Foco de desarrollo del material:** texto auditable, categorías pendientes y niveles nominales.
+- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.09 implementadas; 07.10 y 08 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.09.
+- **Foco de desarrollo del material:** fechas interpretadas, unidades temporales y base comparable.
   Próxima sección por implementar:
-  [07.09 — Fechas y cortes](curriculum/07_tidyverse/README.md#09-fechas-y-cortes), todavía planificada.
+  [07.10 — Primera figura y cierre del análisis](curriculum/07_tidyverse/README.md#10-primera-figura-y-cierre-del-analisis), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.08; las otras 11 siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.09; las otras 10 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -43,19 +43,56 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
 o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
-material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.08 nacen con ese recorrido. Revisar las demás lecciones
+material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.09 nacen con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[07.08 — Texto, categorías y factores](curriculum/07_tidyverse/08_text_categories_factors/README.md)
-con su [lab](labs/07_tidyverse/08_text_categories_factors/README.md).
-Retomar con 07.09: fechas y cortes, formato literal y calendario válido,
-ausencias frente a texto incompatible y relaciones temporales con unidades
-explícitas. Reutilizar la fuente de texto conservada, declarar población y
-comprobar claves si se normalizan IDs; no tratar los 45 segmentos reconocidos
-como registros aceptados completos. Mantener el proyecto renv y añadir solo
-las dependencias necesarias. Primera figura en 07.10; proyectos/checkpoints
-integradores pendientes, sin modificar aprendizaje sin evidencia.
+[07.09 — Fechas y cortes](curriculum/07_tidyverse/09_dates_cutoffs/README.md)
+con su [lab](labs/07_tidyverse/09_dates_cutoffs/README.md).
+Retomar con 07.10: primera figura ggplot2 y cierre reproducible. Reutilizar
+población y reglas declaradas, preferentemente los aceptados de 07.09, sin
+mezclar muestras anteriores. Reconstruir lectura, normalización, fechas,
+indicadores y figura desde sesión nueva; distinguir contar filas de graficar
+importes agregados, conciliar datos de la figura y explicar unidades/cobertura.
+Mantener el mismo proyecto renv, instalar solo lo necesario y profundizar
+diseño visual en 08. Proyecto/checkpoints integradores siguen pendientes;
+no se modificó el estado del estudiante sin evidencia.
+
+07.09 añade lección/lab, funciones, ejecutor y preparador desde R. Reutiliza
+el CSV conservado de 07.08 sin copiar otra fuente. Forma YYYY-MM-DD, calendario
+y rango 1900–2100 antes de aceptar Date; ID/segmento normalizados, textos
+originales y diez banderas con motivos conservados. Alta ≤ corte y clave
+ID/corte única tras interpretar; ambas apariciones repetidas se apartan.
+Trabajo 48 × 15: 36 aceptados/12 rechazados, 12 motivos en esta muestra.
+Suma de registros 112800 = 81400 + 31400 MXN, no saldo a una fecha única.
+Diferencia en días desde alta (no atraso), componentes e inicio_mes Date;
+42 diferencias evaluables en trabajo, 36/36 entre aceptados.
+
+Selección con límites Date y fin exclusivo; septiembre/octubre contienen
+18 aceptados cada uno y 39900/41500 MXN. La base común tiene 14 IDs, con
+29000/31800 MXN y diferencia 2800; cuatro no coincidentes por lado conservados.
+Igual cantidad de filas no acredita igual población ni permite inferir altas/bajas.
+Lubridate 1.9.5/timechange 0.4.0 incorporados con registros previos idénticos;
+respaldo 07.08 y restauración real en segunda copia que no tenía lubridate.
+Preparador actualiza metadatos y añade dos archivos, sin instalar por preparar.
+
+Comprobados doce bloques R de lección y seis de lab, errores esperados aislados
+y reconstrucción por source desde procesos nuevos. R 4.6.1/lubridate 1.9.5 y
+pandas 2.3.3: quince columnas, banderas/motivos, partes, períodos, componentes,
+resúmenes e IDs comunes conciliados; medias con tolerancia absoluta 1e-10.
+Calendario/rango contrastados con datetime.date independiente. Fronteras:
+vacío/todos ausentes/incompatibles, 1900/2000/2100 bisiestos, años límite,
+formatos no acordados, relación igual/invertida, motivos múltiples, clave
+normalizada repetida y claves incompletas; orden invertido/agrupación previa.
+Límites texto/NA/Inf/fraccionarios/instantes/múltiples/invertidos rechazados,
+fin exclusivo y selección vacía comprobados. Ocho resultados alterados detectados,
+incluidos saldos/conteos compensados. Preparación sin biblioteca, respaldo exacto,
+repetición y seis argumentos inválidos comprobados. Fuentes y archivos previos
+intactos; 07.01–07.08 pasan con el nuevo lockfile, sin cambiar Conda ni bibliotecas
+globales. Advertencias de fechas imposibles visibles y justificadas; no se
+desactivan comprobaciones. Las revisiones ejecutan R, no la interfaz del IDE.
+Revisados 1,628 enlaces locales/fragmentos, bloques/soluciones equilibrados
+y git diff --check limpio.
 
 07.08 añade lección/lab, funciones, ejecutor y preparador desde R con respaldo
 07.07. Reutiliza 48 entradas de pandas 02.06, distintas de la fuente de 07.07:
@@ -328,6 +365,15 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-19
+
+- Se desarrolló 07.09 con lección/lab, funciones, ejecutor y preparador: fechas
+  bajo formato/calendario, relaciones y claves, 36 aceptados/12 rechazados con
+  todos sus motivos; diferencias en días y selección con fin exclusivo.
+- Comparación por corte y base común de 14 IDs conciliadas con pandas; calendario
+  con datetime, fronteras y alteraciones comprobados. Lubridate/timechange
+  incorporados con respaldo, restauración local y versiones previas conservadas.
+  Navegación y 1,628 enlaces revisados. Sigue 07.10, todavía planificada; no se
+  acredita aprendizaje ni se crean checkpoints integradores pendientes.
 
 - Se desarrolló 07.08 con lección/lab, funciones, ejecutor y preparador: texto
   original conservado, equivalencias exactas, 45 segmentos reconocidos y tres
