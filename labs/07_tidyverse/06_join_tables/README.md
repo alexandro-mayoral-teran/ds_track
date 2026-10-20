@@ -234,5 +234,4 @@ detectes multiplicidad y conserves toda la evidencia. Registra resultado y dudas
 en [PROGRESS.md](../../../PROGRESS.md); disponer del material no acredita aprendizaje.
 No hay checkpoint integrador implementado asociado.
 
-Siguiente: [07.07 — Datos ordenados y reshape](../../../curriculum/07_tidyverse/README.md#07-datos-ordenados-y-reshape),
-todavía planificada. Volver a la [lección 07.06](../../../curriculum/07_tidyverse/06_join_tables/README.md).
+Siguiente: [07.07 — Datos ordenados y reshape](../../../curriculum/07_tidyverse/07_tidy_reshape/README.md). Volver a la [lección 07.06](../../../curriculum/07_tidyverse/06_join_tables/README.md).

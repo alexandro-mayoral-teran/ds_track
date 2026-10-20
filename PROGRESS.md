@@ -7,11 +7,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
 - **Módulo de desarrollo activo:** `07_tidyverse`.
-- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.06 implementadas; 07.07–07.10 y 08 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.06.
-- **Foco de desarrollo del material:** claves de unión, cardinalidad, cobertura e identidad conservada.
+- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.07 implementadas; 07.08–07.10 y 08 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.07.
+- **Foco de desarrollo del material:** cambio de forma, claves de celda, tipos y ausencias conservadas.
   Próxima sección por implementar:
-  [07.07 — Datos ordenados y reshape](curriculum/07_tidyverse/README.md#07-datos-ordenados-y-reshape), todavía planificada.
+  [07.08 — Texto, categorías y factores](curriculum/07_tidyverse/README.md#08-texto-categorias-y-factores), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.06; las otras 13 siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.07; las otras 12 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -43,18 +43,50 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
 o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
-material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.06 nacen con ese recorrido. Revisar las demás lecciones
+material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.07 nacen con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[07.06 — Unir tablas](curriculum/07_tidyverse/06_join_tables/README.md)
-con su [lab](labs/07_tidyverse/06_join_tables/README.md).
-Retomar con 07.07: datos ordenados, pivot_longer/pivot_wider y claves antes de
-reorganizar. Distinguir cambiar forma de agregar; detectar combinaciones
-repetidas o ausentes y conservar tipos, indicadores y fuentes. Mantener el
-proyecto renv y añadir solo las dependencias necesarias al implementar.
-La primera figura permanece en 07.10. Proyectos/checkpoints integradores
-siguen pendientes; el estado del estudiante no se modificó sin evidencia.
+[07.07 — Datos ordenados y reshape](curriculum/07_tidyverse/07_tidy_reshape/README.md)
+con su [lab](labs/07_tidyverse/07_tidy_reshape/README.md).
+Retomar con 07.08: texto, categorías y factores; conservar origen antes de
+normalizar espacios/patrones, detectar categorías desconocidas y no colapsar
+valores distintos sin regla. Niveles y orden para presentación; mantener el
+proyecto renv y declarar dependencias directas según el uso real. stringr ya
+está instalado como dependencia transitiva de tidyr; no instalar ampliaciones
+por anticipado. Primera figura en 07.10; proyectos/checkpoints integradores
+siguen pendientes y no se modificó el estado del estudiante sin evidencia.
+
+07.07 añade lección/lab, lector/funciones, ejecutor y preparador desde R.
+Muestra analítica de pandas 02.07: 48 observaciones de 24 IDs en dos cortes,
+distinta de los 29 aceptados previos. Proyección ID/corte/saldo 48 × 3 →
+ancho 24 × 3 → 48 × 3 recuperado, con seis NA y tipos conservados. Saldos
+observados 47200/46700 MXN; cobertura 21/24 en cada corte, sin afirmar totales
+completos. Inventario de claves presentes distingue NA explícito de combinación
+ausente en una muestra mínima independiente. Validación de celda única antes
+del pivot, esquema vacío estable, values_drop_na/values_fill y values_fn
+explicados sin borrar ausencias, imputar cero ni agregar duplicados.
+
+Lockfile generado con R 4.6.1/renv 1.3.1: incorpora tidyr 1.3.2, purrr 1.2.2,
+stringr 1.6.0 y stringi 1.8.9; todos los registros previos permanecen idénticos.
+Preparador respalda DESCRIPTION/lockfile en respaldo_07_06/, actualiza ambos
+y añade funciones, ejecutor y CSV; sin instalar por preparar. Comprobada una
+restauración real desde biblioteca nueva y ejecución completa en esa copia.
+Sin modificar Conda, bibliotecas globales ni las semillas renv anteriores.
+
+Comprobados doce bloques R de lección y nueve de lab, con errores esperados
+separados; reconstrucción por source desde procesos nuevos. Conciliación
+campo a campo con pandas 2.3.3 de proyección, ancho, vuelta y muestra con huecos.
+Fronteras: vacío, un corte, cero, todos NA, rango integer, orden invertido,
+agrupación previa, clave repetida/incompleta y corte ajeno. Tipos incompatibles
+y factores rechazados; lector probado con cabecera sola, esquema incorrecto,
+fracciones, negativos, campos extra y duplicados. Ocho alteraciones detectadas,
+incluidos saldos compensados, sustitución de NA por cero y cambios de claves.
+Preparación sin biblioteca, respaldo exacto, repetición y seis argumentos
+inválidos comprobados. Fuentes y archivos previos intactos; 07.01–07.06 pasan
+con el nuevo lockfile. Revisión automatizada ejecuta R, no la interfaz del IDE.
+Revisados 1,585 enlaces locales/fragmentos; bloques y soluciones equilibrados,
+git diff --check limpio y lockfile de la copia restaurada idéntico al entregado.
 
 07.06 añade lección/lab, funciones, ejecutor y catálogo estático sintético;
 preparador desde R añade exactamente tres archivos sin alterar los anteriores.
@@ -262,6 +294,15 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-19
+
+- Se desarrolló 07.07 con lección/lab, funciones, ejecutor y preparador.
+  Cambio largo/ancho/largo de la proyección de 48 observaciones; claves,
+  tipos, NA y cobertura conservados. Inventario explícito para huecos.
+- Tidyr y tres dependencias incorporados al mismo proyecto renv con respaldo;
+  registros previos intactos y restauración desde biblioteca nueva comprobada.
+  Ejemplos, fronteras, alteraciones y conciliación pandas verificados; navegación,
+  referencias y estado actualizados. Sigue 07.08, todavía planificada, sin
+  acreditar aprendizaje ni crear checkpoints integradores pendientes.
 
 - Se desarrolló 07.06 con lección/lab, catálogo, funciones, ejecutor y preparador.
   Unión muchos a uno sobre 29 aceptados; coincidencias, etiquetas ausentes y

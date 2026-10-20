@@ -8,8 +8,9 @@ sus datos y proyecto renv; no se crea un entorno independiente por cada ejercici
 El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
 con conciliación Python/R.
 
-**Estado:** 07.01–07.06 disponen de lecciones, scripts y labs; 07.01–07.02
-tienen lockfiles y 07.03–07.06 reutilizan el de 07.02. 07.07–07.10
+**Estado:** 07.01–07.07 disponen de lecciones, scripts y labs; 07.01–07.02
+tienen lockfiles y 07.03–07.06 reutilizan el de 07.02; 07.07 añade tidyr con
+su lockfile y respaldo. 07.08–07.10
 siguen planificadas. Los enlaces internos describen el alcance pendiente.
 
 Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
@@ -27,7 +28,7 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 | 4 | [Faltantes, duplicados y calidad](04_missing_duplicates_quality/README.md) | Esencial | Conservar aceptados y rechazos con motivos |
 | 5 | [Agrupar y resumir](05_group_summarize/README.md) | Esencial | Conciliar medidas y denominadores |
 | 6 | [Unir tablas](06_join_tables/README.md) | Esencial | Detectar relaciones que multiplican registros |
-| 7 | [Datos ordenados y reshape](#07-datos-ordenados-y-reshape) | Práctica | Cambiar formato preservando indicadores |
+| 7 | [Datos ordenados y reshape](07_tidy_reshape/README.md) | Práctica | Cambiar formato preservando indicadores |
 | 8 | [Texto, categorías y factores](#08-texto-categorias-y-factores) | Esencial | Normalizar categorías y controlar su orden |
 | 9 | [Fechas y cortes](#09-fechas-y-cortes) | Esencial | Comparar períodos con fechas interpretadas |
 | 10 | [Primera figura y cierre del análisis](#10-primera-figura-y-cierre-del-analisis) | Práctica de cierre | Reconstruir tablas e interpretar un gráfico |
@@ -110,10 +111,13 @@ y NA demostrados; conciliación pandas/SQLite. Mismo proyecto, sin paquetes nuev
 
 ### 07 — Datos ordenados y reshape
 
-- Una variable por columna y una observación por fila; pivot_longer/pivot_wider.
-  Definir claves antes de reorganizar y distinguir reshape de agregación.
-- Práctica prevista: comparar cortes en formatos largo y ancho, detectando
-  combinaciones repetidas o ausentes que afectan el resultado.
+Disponible: [lección 07.07](07_tidy_reshape/README.md) y
+[lab 07.07](../../labs/07_tidyverse/07_tidy_reshape/README.md).
+pivot_wider/pivot_longer, claves de celda, tipos y NA explícito frente a combinación
+ausente. Reutiliza las 48 observaciones de pandas 02.07: proyección 48 × 3,
+ancho 24 × 3 y vuelta exacta; inventario de claves para huecos de combinación.
+Saldos 47200/46700 MXN y cobertura 21/24 por corte, conciliados con pandas.
+Mismo proyecto renv, respaldo 07.06 y lockfile real con tidyr 1.3.2.
 
 <a id="08-texto-categorias-y-factores"></a>
 
@@ -144,7 +148,7 @@ y NA demostrados; conciliación pandas/SQLite. Mismo proyecto, sin paquetes nuev
 
 ## Prácticas, proyecto y criterio de salida
 
-Los labs 07.01–07.06 están disponibles; 07.07–07.10 siguen previstos. El proyecto previsto
+Los labs 07.01–07.07 están disponibles; 07.08–07.10 siguen previstos. El proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 todavía no tiene carpeta ni checkpoints implementados.
 

@@ -293,7 +293,11 @@ cobertura y conciliación con pandas sin nuevas dependencias.
 [07.06](curriculum/07_tidyverse/06_join_tables/README.md) añade lección/lab,
 uniones con cardinalidad y cobertura explícitas, catálogo estático y
 conciliación pandas/SQLite; conserva los 29 aceptados y su saldo.
-07.07–07.10 siguen planificadas; consulta
+[07.07](curriculum/07_tidyverse/07_tidy_reshape/README.md) añade lección/lab,
+pivot_longer/pivot_wider, claves únicas y distinción de ausencias; conserva
+una proyección de 48 observaciones de dos cortes y sus indicadores. Incorpora
+tidyr con lockfile/restauración local y respaldo, sin mezclar otras muestras.
+07.08–07.10 siguen planificadas; consulta
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** realizar análisis expresivos y comunicar hallazgos.

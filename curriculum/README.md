@@ -77,7 +77,9 @@ añade claves, reglas, partición conservada y lab.
 añade indicadores por grupo, denominadores y cobertura con lección/lab.
 [07.06 — Unir tablas](07_tidyverse/06_join_tables/README.md)
 añade claves, cardinalidad, cobertura y uniones comprobadas con lección/lab.
-07.07–07.10 y el módulo 08 conservan planes,
+[07.07 — Datos ordenados y reshape](07_tidyverse/07_tidy_reshape/README.md)
+añade lección/lab, tidyr, claves de celda y reconstrucción con cobertura.
+07.08–07.10 y el módulo 08 conservan planes,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

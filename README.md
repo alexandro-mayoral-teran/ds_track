@@ -202,7 +202,10 @@ con lección/lab y conciliación pandas; conserva el proyecto y las dependencias
 [07.06 — Unir tablas](curriculum/07_tidyverse/06_join_tables/README.md)
 añade catálogo, cardinalidad y cobertura de coincidencias con lección/lab,
 funciones/script y conciliación pandas/SQLite, sin nuevas dependencias.
-07.07–07.10 y el nivel 08 conservan sus planes y
+[07.07 — Datos ordenados y reshape](curriculum/07_tidyverse/07_tidy_reshape/README.md)
+añade lección/lab y vuelta largo/ancho comprobada, con claves y faltantes
+conservados; incorpora tidyr al proyecto renv con respaldo de metadatos.
+07.08–07.10 y el nivel 08 conservan sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

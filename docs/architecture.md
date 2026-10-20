@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.06 tienen lecciones/scripts/labs; 07.07–07.10 y 08–14 conservan planificación;
+07.01–07.07 tienen lecciones/scripts/labs; 07.08–07.10 y 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; 07.01–07.06 también están disponibles y las otras 13 conservan planificación:
+scripts y labs; 07.01–07.07 también están disponibles y las otras 12 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -500,7 +500,19 @@ coinciden; cardinalidad y cobertura son controles distintos. Catálogo completo
 validado, incluidas claves sin uso; identidad, columnas, orden e indicadores
 comprobados. Conciliación pandas/SQLite sobre la misma población y políticas
 de NA, multiplicación incorrecta y casos vacíos. IDE con reinicio/Source;
-sin exportar ni graficar. Continúa con 07.07, todavía planificada.
+sin exportar ni graficar.
+07.07 añade lección/lab, lector, funciones y ejecutor de cambio de forma.
+Reutiliza la muestra analítica de pandas 02.07 (48 observaciones/24 IDs),
+distinta de los 29 aceptados previos. Proyección ID/corte/saldo: 48 × 3 → 24 × 3
+→ 48 × 3, tipos y seis NA conservados; 47200/46700 MXN, cobertura 21/24 por corte.
+Claves únicas antes del pivot, esquema vacío estable e inventario explícito
+para distinguir combinaciones ausentes de NA en una observación. No reconstruye
+segmento/atraso desde la proyección; mantiene la fuente completa intacta.
+Preparador respalda metadatos 07.06 y añade tres archivos; lockfile generado
+con tidyr 1.3.2, purrr 1.2.2, stringr 1.6.0 y stringi 1.8.9, preservando registros
+anteriores. Restauración en biblioteca local, sin cambiar entornos globales.
+Revisión de vuelta, fronteras y alteraciones con conciliación pandas independiente.
+Continúa con 07.08, todavía planificada.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

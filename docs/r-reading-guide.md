@@ -167,6 +167,14 @@ claves, cardinalidad, cobertura, etiqueta desconocida y coincidencias de NA.
 R 4.6.1/dplyr 1.2.1; conciliación pandas/SQLite sin nuevas dependencias.
 Consulta: 2026-10-19.
 
+La [lección 07.07](../curriculum/07_tidyverse/07_tidy_reshape/README.md)
+consulta Data tidying de R4DS segunda edición (Wickham, Çetinkaya-Rundel y
+Grolemund), pivot_longer/pivot_wider y Pivoting de tidyr, además de renv.
+Ejemplos propios sobre la muestra de pandas 02.07: claves, formas, tipos,
+NA explícito y combinaciones ausentes con inventario conservado. R 4.6.1,
+tidyr 1.3.2; lockfile real y conciliación pandas sobre la misma proyección.
+Consulta: 2026-10-19.
+
 ### 08 — Visualización en R
 
 Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)

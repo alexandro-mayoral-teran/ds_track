@@ -400,8 +400,7 @@ conserves los no coincidentes y compruebes filas, importes y etiquetas desde
 una sesión nueva. Registra evidencia y dudas; material disponible no acredita
 aprendizaje. No hay checkpoint integrador implementado asociado.
 
-Siguiente: [07.07 — Datos ordenados y reshape](../README.md#07-datos-ordenados-y-reshape),
-todavía planificada. Volver al [índice del módulo](../README.md).
+Siguiente: [07.07 — Datos ordenados y reshape](../07_tidy_reshape/README.md). Volver al [índice del módulo](../README.md).
 
 ## Referencias y atribución
 

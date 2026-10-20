@@ -80,6 +80,7 @@ reglas de enlace están en
 | [`07.04 — Faltantes, duplicados y calidad`](07_tidyverse/04_missing_duplicates_quality/) | `07_tidyverse` | No aplica todavía |
 | [`07.05 — Agrupar y resumir`](07_tidyverse/05_group_summarize/) | `07_tidyverse` | No aplica todavía |
 | [`07.06 — Unir tablas`](07_tidyverse/06_join_tables/) | `07_tidyverse` | No aplica todavía |
+| [`07.07 — Datos ordenados y reshape`](07_tidyverse/07_tidy_reshape/) | `07_tidyverse` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
