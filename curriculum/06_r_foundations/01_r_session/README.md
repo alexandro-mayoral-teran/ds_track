@@ -266,7 +266,7 @@ La biblioteca utilizada depende de .libPaths() y de la instalación de R. Si apa
 una instalación sin saber su destino. La documentación de
 [install.packages](https://stat.ethz.ch/R-manual/R-patched/library/utils/html/install.packages.html)
 explica el argumento lib. La instalación controlada y restauración de dependencias
-del proyecto se desarrolla en [06.08, todavía planificada](../README.md#08-proyectos-y-dependencias-con-renv).
+del proyecto se desarrolla en [06.08 — Proyectos y dependencias con renv](../08_projects_renv/README.md).
 Aquí no ejecutamos install.packages ni añadimos requisitos de tidyverse.
 
 ## 7. Ayuda y sesión nueva como comprobación

@@ -396,9 +396,10 @@ ejecutar finally, y un marcador final no evita daños posteriores a los archivos
 
 Una excepción específica del dominio puede expresar, por ejemplo, que una
 entrega no pasó su contrato, diferenciándola de otros ValueError. Definirla
-requiere una clase que derive de Exception; diseñar clases se profundiza en
-[05.06, todavía planificada](../README.md#06-clases-composicion-y-dataclasses).
-No hace falta envolver cada error ni ocultar su causa.
+requiere una clase que derive de Exception. Puedes repasar objetos y composición
+en [05.06 — Clases, composición y dataclasses](../06_classes_composition/README.md),
+una ampliación opcional. La herencia de excepciones es una profundización
+adicional; no hace falta envolver cada error ni ocultar su causa.
 
 Un gestor propio permite adquirir/liberar un recurso con un contrato definido.
 contextlib.contextmanager utiliza una función generadora y un decorador: esos

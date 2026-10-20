@@ -8,7 +8,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 - **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
 - **Módulo en desarrollo:** `08_visualization_r` (08.01–08.02 disponibles).
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.02 implementadas; 08.03–08.09 siguen planificadas.
-- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.02.
+- **Sesión de desarrollo:** 2026-10-20, cierre de la mañana y revisión documental tras 08.02.
 - **Foco actual:** geometrías, identidad/conteo, intervalos, cuartiles y bigotes.
   Próxima sección por implementar:
   [08.03 — Mapear y fijar estéticas](curriculum/08_visualization_r/README.md#03-mapear-y-fijar-esteticas), todavía planificada.
@@ -443,6 +443,21 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 
 ### 2026-10-20
 
+- Se desarrollaron [08.01](curriculum/08_visualization_r/01_question_grammar/README.md)
+  y [08.02](curriculum/08_visualization_r/02_geometries_stats/README.md), con
+  lecciones, scripts, labs y figuras de referencia. Reconstrucciones desde
+  procesos R nuevos y comprobaciones de datos/capas/figuras completadas;
+  sin dependencias nuevas ni cambios de fuente, lockfile o entregas anteriores.
+- Cierre de la mañana: índices, navegación, arquitectura, lecturas y pendientes
+  revisados; referencias antiguas a lecciones planificadas corregidas y mapa
+  general separado del progreso. Retomar con **08.03 — Mapear y fijar estéticas**;
+  las otras siete secciones de 08 y los proyectos/checkpoints siguen pendientes.
+  El estado de aprendizaje del estudiante no se modifica sin evidencia.
+  Comprobados 1,735 enlaces locales/fragmentos en 196 Markdown, bloques y
+  soluciones equilibrados, SVG válido con textos dentro del espacio disponible
+  y git diff --check limpio. Esta revisión documental no reejecuta los ejemplos
+  de código ya comprobados durante el desarrollo de 08.01–08.02.
+
 - Se cerró el material de 07 con lección/lab 07.10, figura ggplot2 y entrega
   reconstruible. Conserva las reglas y población de 07.09, con base común
   explícita, tablas auditables y límites de interpretación.
@@ -450,8 +465,9 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
   comparación pandas/SQLite comprobados; scripts previos conservados. PNG
   inspeccionado y 1,671 enlaces revisados. Índices, arquitectura y lecturas
   actualizados; criterios y pendientes en docs/tidyverse-closure.md.
-- Siguen pendientes la evidencia del estudiante, el proyecto/checkpoints y
-  08.01–08.09. Próximo desarrollo: 08.01; no se acredita aprendizaje por autoría.
+- En ese cierre de 07 quedaban pendientes la evidencia del estudiante,
+  el proyecto/checkpoints y 08.01–08.09; el siguiente desarrollo era 08.01.
+  Su implementación posterior se registra arriba, sin acreditar aprendizaje por autoría.
 
 ### 2026-10-19
 

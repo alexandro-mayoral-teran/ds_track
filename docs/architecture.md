@@ -636,7 +636,7 @@ equivalente al cierre de Python aplicado.
 
 Su integración en la numeración se decidirá en el próximo ajuste del track.
 Todavía no hay carpeta, lecciones ni labs; esta consideración no renumera los
-módulos mientras se inicia Python fundamental.
+módulos vigentes. Su integración requiere revisar prerrequisitos y referencias.
 
 ### Ubicación actual de módulos y proyectos
 
