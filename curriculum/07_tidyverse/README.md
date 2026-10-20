@@ -8,8 +8,8 @@ sus datos y proyecto renv; no se crea un entorno independiente por cada ejercici
 El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
 con conciliación Python/R.
 
-**Estado:** 07.01–07.04 disponen de lecciones, scripts y labs; 07.01–07.02
-tienen lockfiles y 07.03–07.04 reutilizan el de 07.02. 07.05–07.10
+**Estado:** 07.01–07.05 disponen de lecciones, scripts y labs; 07.01–07.02
+tienen lockfiles y 07.03–07.05 reutilizan el de 07.02. 07.06–07.10
 siguen planificadas. Los enlaces internos describen el alcance pendiente.
 
 Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
@@ -25,7 +25,7 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 | 2 | [Seleccionar, filtrar y ordenar](02_select_filter_sort/README.md) | Esencial | Obtener un subconjunto verificable |
 | 3 | [Transformar columnas](03_transform_columns/README.md) | Esencial | Calcular indicadores con reglas explícitas |
 | 4 | [Faltantes, duplicados y calidad](04_missing_duplicates_quality/README.md) | Esencial | Conservar aceptados y rechazos con motivos |
-| 5 | [Agrupar y resumir](#05-agrupar-y-resumir) | Esencial | Conciliar medidas y denominadores |
+| 5 | [Agrupar y resumir](05_group_summarize/README.md) | Esencial | Conciliar medidas y denominadores |
 | 6 | [Unir tablas](#06-unir-tablas) | Esencial | Detectar relaciones que multiplican registros |
 | 7 | [Datos ordenados y reshape](#07-datos-ordenados-y-reshape) | Práctica | Cambiar formato preservando indicadores |
 | 8 | [Texto, categorías y factores](#08-texto-categorias-y-factores) | Esencial | Normalizar categorías y controlar su orden |
@@ -86,10 +86,13 @@ preparación desde R y recorrido IDE, sin dependencias nuevas.
 
 ### 05 — Agrupar y resumir
 
-- group_by, summarise, n y medidas sobre grupos; estado de agrupación y ungroup.
-  Revisar denominadores, sumas de valores desconocidos y grupos vacíos.
-- Práctica prevista: conciliar saldo y registros por segmento con un corte conocido.
-  Acumulados y funciones de ventana quedan como ampliación de esa pregunta.
+Disponible: [lección 07.05](05_group_summarize/README.md) y
+[lab 07.05](../../labs/07_tidyverse/05_group_summarize/README.md).
+group_by/summarise/n, estado de agrupación y ungroup; cobertura, denominadores,
+ceros, desconocidos y vacío. Resume los 29 aceptados de 07.04: cuatro grupos,
+177250 MXN y 18 atrasos ≥ 30, con conciliación pandas sobre la misma población.
+Muestra mínima independiente para faltantes; factores como ampliación opcional.
+Preparación desde R, mismo proyecto/lockfile y sin dependencias nuevas.
 
 <a id="06-unir-tablas"></a>
 
@@ -138,7 +141,7 @@ preparación desde R y recorrido IDE, sin dependencias nuevas.
 
 ## Prácticas, proyecto y criterio de salida
 
-Los labs 07.01–07.04 están disponibles; 07.05–07.10 siguen previstos. El proyecto previsto
+Los labs 07.01–07.05 están disponibles; 07.06–07.10 siguen previstos. El proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 todavía no tiene carpeta ni checkpoints implementados.
 

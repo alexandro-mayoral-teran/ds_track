@@ -7,11 +7,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
 - **Módulo de desarrollo activo:** `07_tidyverse`.
-- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.04 implementadas; 07.05–07.10 y 08 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-18, revisión y cierre documental de 07.04.
-- **Foco de desarrollo del material:** ausencias, claves, motivos de rechazo y partición conservada.
+- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.05 implementadas; 07.06–07.10 y 08 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.05.
+- **Foco de desarrollo del material:** agrupación, denominadores, cobertura y conciliación de indicadores.
   Próxima sección por implementar:
-  [07.05 — Agrupar y resumir](curriculum/07_tidyverse/README.md#05-agrupar-y-resumir), todavía planificada.
+  [07.06 — Unir tablas](curriculum/07_tidyverse/README.md#06-unir-tablas), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.04; las otras 15 siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.05; las otras 14 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -43,18 +43,42 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
 o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
-material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.04 nacen con ese recorrido. Revisar las demás lecciones
+material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.05 nacen con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[07.04 — Faltantes, duplicados y calidad](curriculum/07_tidyverse/04_missing_duplicates_quality/README.md)
-con su [lab](labs/07_tidyverse/04_missing_duplicates_quality/README.md).
-Retomar con 07.05: group_by/summarise/n y ungroup, estado de agrupación,
-denominadores, grupos vacíos y cobertura. Usar aceptados de reglas explícitas y
-conciliar resultados con pandas sobre la misma población; no mezclar muestras.
-Conservar el proyecto renv; no añadir paquetes por anticipado. La primera figura permanece en 07.10.
-El proyecto/checkpoints integradores siguen pendientes; el estado del estudiante
-no se modificó sin evidencia.
+[07.05 — Agrupar y resumir](curriculum/07_tidyverse/05_group_summarize/README.md)
+con su [lab](labs/07_tidyverse/05_group_summarize/README.md).
+Retomar con 07.06: claves y cardinalidad de uniones, left_join/inner_join y
+semi_join/anti_join; definir tratamiento de claves faltantes y detectar
+multiplicación de registros antes de conciliar saldos. Reutilizar poblaciones
+con contrato explícito, conservar fuentes y el mismo proyecto renv; añadir
+archivos o dependencias solo si el objetivo lo necesita. La primera figura
+permanece en 07.10. Proyectos/checkpoints integradores siguen pendientes;
+el estado del estudiante no se modificó sin evidencia.
+
+07.05 añade lección/lab, funciones, ejecutor y preparador desde R; incorpora
+exactamente dos archivos al proyecto sin nuevos datos ni dependencias. Resume
+los 29 aceptados de 07.04: cuatro grupos corte/segmento, 177250 MXN y 18 atrasos
+≥ 30 entre 29 conocidos. group_by/summarise/n, estado de agrupación/ungroup,
+suma observada/total completo, promedio y tasas con denominadores explícitos.
+Muestra analítica mínima independiente para ausencias sin cambiar aceptación;
+NA en clave, cero, todos faltantes, vacío y factores como ampliación opcional.
+
+Comprobados once bloques R de lección y ocho de lab, con error deliberado
+separado; reconstrucción desde procesos nuevos. R 4.6.1/dplyr 1.2.1 y pandas
+2.3.3: doce columnas conciliadas en resumen principal y muestra mínima; base
+principal aceptada independientemente con las reglas pandas de 02.05.
+Fronteras: 29/30/31 días, rango integer, suma double, NA/cero/vacío, varios
+cortes, orden invertido y agrupación previa; duplicados/claves incompletas y
+cantidades fuera de contrato rechazados. Ocho resúmenes alterados detectados,
+incluso sumas/conteos compensados. Preparación sin biblioteca, repetición y
+seis argumentos inválidos comprobados; archivos previos y lockfile intactos.
+El ejecutor restringido no resolvió enlaces base renv; la ejecución con permisos
+de lectura pasó, sin desactivar comprobaciones, instalar ni cambiar entornos.
+Las revisiones ejecutan R; no afirman una prueba de la interfaz gráfica del IDE.
+Ejecutor final y compatibilidad con 07.01–07.04 comprobados; 1,537 enlaces
+locales/fragmentos revisados, bloques y soluciones equilibrados y diff limpio.
 
 07.04 añade lección/lab, funciones y ejecutor sobre 44 registros de pandas 02.05,
 sin dependencias nuevas. Preparador desde R añade exactamente tres archivos al
@@ -210,6 +234,16 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 | 14 | Proyecto reproducible | No iniciado | — |
 
 ## Bitácora
+
+### 2026-10-19
+
+- Se desarrolló 07.05 con lección/lab, funciones, ejecutor y preparador desde R.
+  Agrupación, estado persistente, cobertura y denominadores; resumen de los
+  29 aceptados de 07.04 conciliado con pandas, sin mezclar otras muestras.
+- Comprobados bloques, reconstrucción, fronteras y resúmenes alterados;
+  fuentes y dependencias conservadas. Índices, continuidad y referencias
+  actualizados. Continúa 07.06, todavía planificada; no se acredita aprendizaje
+  ni se crean checkpoints integradores pendientes.
 
 ### 2026-10-18
 

@@ -151,6 +151,14 @@ combinación ausente, claves, motivos múltiples y partición reconstruida.
 R 4.6.1/dplyr 1.2.1 existentes, sin dependencias nuevas; casos de frontera y
 comparación exacta de trabajo, partes y banderas con pandas. Revisión: 2026-10-18.
 
+La [lección 07.05](../curriculum/07_tidyverse/05_group_summarize/README.md)
+consulta Data transformation de R4DS segunda edición (Wickham, Çetinkaya-Rundel
+y Grolemund), group_by/summarise/context/n_distinct y la guía de agrupación de
+dplyr, además de sum de R. Ejemplos propios sobre los 29 aceptados de 07.04:
+estado de agrupación, cobertura, denominadores y conciliación con pandas.
+Muestra mínima independiente para NA/cero/vacío; factores opcionales.
+R 4.6.1/dplyr 1.2.1, sin dependencias nuevas. Consulta: 2026-10-19.
+
 ### 08 — Visualización en R
 
 Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)

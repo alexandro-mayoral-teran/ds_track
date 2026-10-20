@@ -78,6 +78,7 @@ reglas de enlace están en
 | [`07.02 — Seleccionar, filtrar y ordenar`](07_tidyverse/02_select_filter_sort/) | `07_tidyverse` | No aplica todavía |
 | [`07.03 — Transformar columnas`](07_tidyverse/03_transform_columns/) | `07_tidyverse` | No aplica todavía |
 | [`07.04 — Faltantes, duplicados y calidad`](07_tidyverse/04_missing_duplicates_quality/) | `07_tidyverse` | No aplica todavía |
+| [`07.05 — Agrupar y resumir`](07_tidyverse/05_group_summarize/) | `07_tidyverse` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

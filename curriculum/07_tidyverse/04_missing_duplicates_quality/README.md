@@ -342,8 +342,7 @@ conserves todos los motivos y reconstruyas aceptados/rechazados sin perder
 registros. Guarda evidencia; material disponible no acredita aprendizaje.
 No hay checkpoint integrador implementado asociado.
 
-Siguiente: [07.05 — Agrupar y resumir](../README.md#05-agrupar-y-resumir),
-todavía planificada. Volver al [índice del módulo](../README.md).
+Siguiente: [07.05 — Agrupar y resumir](../05_group_summarize/README.md). Volver al [índice del módulo](../README.md).
 
 ## Referencias y atribución
 

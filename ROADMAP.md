@@ -287,8 +287,10 @@ conversión auditable e indicadores con mutate/if_else/case_when; conserva
 el lockfile de 07.02.
 [07.04](curriculum/07_tidyverse/04_missing_duplicates_quality/README.md) añade lección/lab,
 reglas, claves y todos los motivos, con aceptados/rechazos reconstruidos sobre
-44 registros. 07.05–07.10 siguen
-planificadas; consulta
+44 registros. [07.05](curriculum/07_tidyverse/05_group_summarize/README.md)
+añade lección/lab y resúmenes de los aceptados: agrupación, denominadores,
+cobertura y conciliación con pandas sin nuevas dependencias.
+07.06–07.10 siguen planificadas; consulta
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** realizar análisis expresivos y comunicar hallazgos.

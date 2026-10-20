@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.04 tienen lecciones/scripts/labs; 07.05–07.10 y 08–14 conservan planificación;
+07.01–07.05 tienen lecciones/scripts/labs; 07.06–07.10 y 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; 07.01–07.04 también están disponibles y las otras 15 conservan planificación:
+scripts y labs; 07.01–07.05 también están disponibles y las otras 14 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -480,7 +480,16 @@ aceptadas y motivos frente a banderas. Saldo interpretable 234900 = 177250 +
 57650 MXN con cobertura 42/44 y dos saldos sin interpretar; no es total limpio
 de créditos únicos. Conciliación exacta con pandas de filas, partes y reglas;
 fronteras y particiones alteradas comprobadas. RStudio/IDE con reinicio/Source,
-sin exportar ni imputar. Continúa el desarrollo con 07.05, todavía planificada.
+sin exportar ni imputar.
+07.05 añade funciones, ejecutor, preparador y lección/lab para resumir esos
+29 aceptados por corte/segmento: cuatro grupos, 177250 MXN, 18 atrasos ≥ 30.
+Conserva datos/lockfile/biblioteca; solo añade dos archivos a la práctica.
+Distingue estado de agrupación, suma observada/total completo, tasas entre
+conocidos y cobertura. Una muestra analítica mínima independiente permite NA
+sin cambiar las reglas de aceptación de 07.04; vacío y factores opcionales
+aclaran grupos sin observaciones. Revisión de claves, tipos y todos los valores,
+con conciliación pandas sobre la misma población. IDE con reinicio/Source;
+no exporta ni grafica. Continúa el desarrollo con 07.06, todavía planificada.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10
