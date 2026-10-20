@@ -175,8 +175,8 @@ inicial. Arrow y Parquet se desarrollan en 09; Quarto en 11 y Shiny en 13.
 
 ## Continuidad y referencias
 
-Después del cierre, continúa con [08 — Visualización en R](../08_visualization_r/README.md),
-todavía planificado. Los criterios y pendientes están en
+Después del cierre, continúa con [08.01 — Pregunta y gramática de gráficos](../08_visualization_r/01_question_grammar/README.md),
+disponible con lección, script y lab. Los criterios y pendientes están en
 [el documento de cierre](../../docs/tidyverse-closure.md).
 
 Lecturas de R for Data Science: [transformación](https://r4ds.hadley.nz/data-transform.html),

@@ -8,8 +8,9 @@ Se reutiliza la primera figura disponible en
 [07.10](../07_tidyverse/10_first_plot_closure/README.md) y se
 compara con el análisis Python; no se repite toda la limpieza para aprender gráficos.
 
-**Estado:** nueve secciones planificadas; lecciones y labs por desarrollar.
-Los enlaces internos describen el alcance, no material ejecutable.
+**Estado:** [08.01](01_question_grammar/README.md) dispone de lección, script y
+[lab](../../labs/08_visualization_r/01_question_grammar/README.md).
+08.02–08.09 siguen planificadas; sus enlaces internos describen el alcance.
 
 La pregunta, la representación y la interpretación guían el recorrido. El libro
 abierto de ggplot2 aporta la gramática de gráficos; su tercera edición en línea
@@ -19,7 +20,7 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
-| 1 | [Pregunta y gramática de gráficos](#01-pregunta-y-gramatica-de-graficos) | Esencial | Explicar datos, estéticas y capas de una figura |
+| 1 | [Pregunta y gramática de gráficos](01_question_grammar/README.md) | Esencial | Explicar datos, estéticas y capas de una figura |
 | 2 | [Geometrías y transformaciones estadísticas](#02-geometrias-y-transformaciones-estadisticas) | Esencial | Elegir una geometría y verificar qué agrega |
 | 3 | [Mapear y fijar estéticas](#03-mapear-y-fijar-esteticas) | Esencial | Distinguir variables de estilos constantes |
 | 4 | [Escalas y coordenadas](#04-escalas-y-coordenadas) | Esencial | Justificar límites, transformaciones y unidades |
@@ -37,7 +38,10 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 - Revisar unidad de análisis, corte y población; ggplot, datos, aes, capas y objeto
   de gráfico. Construir por partes la figura inicial del módulo 07.
-- Práctica prevista: describir qué aporta cada capa y qué pregunta responde.
+- Disponible: [lección y script](01_question_grammar/README.md) y
+  [lab 08.01](../../labs/08_visualization_r/01_question_grammar/README.md).
+  Reconstrucción por partes, unidad original/resumida, herencia, conteo frente
+  a saldo y explicación de población/límites, sin dependencias nuevas.
 
 <a id="02-geometrias-y-transformaciones-estadisticas"></a>
 
@@ -112,7 +116,8 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 ## Prácticas, integración y criterio de salida
 
-Se prevén labs 08.01–08.09; todavía no existen. Se ampliará el proyecto previsto
+El [lab 08.01](../../labs/08_visualization_r/01_question_grammar/README.md) está
+disponible; 08.02–08.09 siguen previstos. Se ampliará el proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 con un checkpoint visual cuyo nombre se definirá al implementarlo.
 
@@ -131,8 +136,11 @@ Por ahora, el siguiente módulo numerado es [09 — Arrow y Parquet](../09_arrow
 Consulta la [arquitectura de R aplicado](../../docs/architecture.md#r-aplicado-consideración-para-el-próximo-ajuste)
 para la consideración pendiente.
 
-Fuente principal: [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/),
-con lectura de [construcción por capas](https://ggplot2-book.org/layers).
+Para iniciar: [Data visualization de R4DS segunda edición](https://r4ds.hadley.nz/data-visualize.html)
+y [documentación de ggplot2](https://ggplot2.tidyverse.org/reference/).
+El libro [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)
+apoya la gramática; su capítulo de capas advierte que es un borrador y no es
+lectura obligatoria. La lección 08.01 enlaza las funciones comprobadas.
 Para exportar se verificará [la referencia de ggsave](https://ggplot2.tidyverse.org/reference/ggsave.html).
 Consulta la [guía de libros abiertos](../../docs/r-reading-guide.md) para las
 lecturas iniciales y de profundización.

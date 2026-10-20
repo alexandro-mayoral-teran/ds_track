@@ -38,17 +38,18 @@ no basta para marcar una competencia como adquirida.
 
 | Pendiente | Alcance y condición para darlo por implementado |
 | --- | --- |
-| 08 — Visualización en R | Nueve secciones aún planificadas: pregunta/gramática, geometrías, estéticas, escalas, facetas, comunicación, composición, exportación y cierre. Cada una necesitará lección, lab y comprobaciones. |
+| 08 — Visualización en R | 08.01 dispone de [lección/script](../curriculum/08_visualization_r/01_question_grammar/README.md) y lab; las otras ocho secciones siguen planificadas: geometrías, estéticas, escalas, facetas, comunicación, composición, exportación y cierre. |
 | Proyecto 03_portfolio_analysis_r | No tiene carpeta ni checkpoints activos. Antes de crearlos, definir producto, entradas, contrato y rúbrica; enlazar las lecciones y evidencias efectivamente exigidas. |
 | Checkpoints propuestos de 07 | Importación/contrato, calidad, indicadores/relaciones y categorías/cortes/figura. Son propuestas para el proyecto, no entregas ya habilitadas. |
 | Revisión del recorrido IDE anterior | 07.01–07.10 ya priorizan IDE. Revisar con el usuario las lecciones anteriores que aún necesiten adaptación, conservando terminal como apoyo cuando corresponda. |
 | Decisiones de estructura | Integración numerada de R aplicado, terminal avanzada y separación entre avance del material y bitácoras personales: resolver antes de cambiar numeración o referencias. |
 | Resto del track | 09–14 conservan planes: almacenamiento/procesamiento, reportes, una alternativa de aplicación y proyecto final. No están terminados por cerrar 07. |
 
-El siguiente trabajo de autoría es
-[08.01 — Pregunta y gramática de gráficos](../curriculum/08_visualization_r/README.md#01-pregunta-y-gramatica-de-graficos),
-todavía planificado. Reutilizar la figura, datos y población explícita de 07.10
-para estudiar sus capas sin repetir toda la limpieza. Instalar dependencias
+[08.01 — Pregunta y gramática de gráficos](../curriculum/08_visualization_r/01_question_grammar/README.md)
+ya reutiliza la figura, datos y población explícita de 07.10 para estudiar sus
+capas sin repetir toda la limpieza. El siguiente trabajo de autoría es
+[08.02 — Geometrías y transformaciones estadísticas](../curriculum/08_visualization_r/README.md#02-geometrias-y-transformaciones-estadisticas),
+todavía planificado. Instalar dependencias
 adicionales solo cuando una práctica implementada las requiera.
 
 Para el proyecto integrador, consultar el [índice de proyectos](../projects/README.md)

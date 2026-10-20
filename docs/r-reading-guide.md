@@ -202,10 +202,15 @@ tercera edición en línea sigue en desarrollo. Consulta: 2026-10-20.
 
 ### 08 — Visualización en R
 
-Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)
-y utiliza el índice del libro de ggplot2 para escalas, facetas, temas y composición.
-La [documentación de ggplot2](https://ggplot2.tidyverse.org/) complementa los conceptos
-con la API vigente y los parámetros de cada función.
+[08.01 — Pregunta y gramática](../curriculum/08_visualization_r/01_question_grammar/README.md)
+usa [Data visualization de R4DS segunda edición](https://r4ds.hadley.nz/data-visualize.html),
+de Wickham, Çetinkaya-Rundel y Grolemund, como lectura inicial. La documentación
+oficial de ggplot, aes, geometrías y componentes fundamenta los ejemplos,
+comprobados con R 4.6.1/ggplot2 4.0.3 y sin nuevas dependencias.
+El capítulo de [capas](https://ggplot2-book.org/layers.html) de Wickham, Navarro
+y Pedersen advierte que es un borrador y desaconseja leerlo actualmente; sirve
+solo como consulta de autoría, no lectura obligatoria. Para escalas, facetas,
+temas y composición se contrastarán libro y API al implementar cada sección.
 
 ### 09 — Arrow y Parquet
 

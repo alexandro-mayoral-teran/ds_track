@@ -152,5 +152,5 @@ permanecen locales; el proyecto integrador no tiene carpeta ni checkpoint activo
 
 Cierra cuando puedas reconstruir y justificar esos puntos. Revisa los
 [pendientes del módulo](../../../docs/tidyverse-closure.md).
-Siguiente: [08.01 — Pregunta y gramática de gráficos](../../../curriculum/08_visualization_r/README.md#01-pregunta-y-gramatica-de-graficos),
-todavía planificada. Volver a la [lección 07.10](../../../curriculum/07_tidyverse/10_first_plot_closure/README.md).
+Siguiente: [08.01 — Pregunta y gramática de gráficos](../../../curriculum/08_visualization_r/01_question_grammar/README.md),
+ya disponible. Volver a la [lección 07.10](../../../curriculum/07_tidyverse/10_first_plot_closure/README.md).

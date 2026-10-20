@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
-- **Siguiente módulo por desarrollar:** `08_visualization_r` (plan disponible).
-- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.10 implementadas; 08 conserva sus nueve planes.
-- **Sesión de desarrollo:** 2026-10-20, cierre y comprobación de 07.10.
-- **Foco del cierre:** primera figura ggplot2, reconstrucción y entrega conciliada.
+- **Módulo en desarrollo:** `08_visualization_r` (08.01 disponible).
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01 implementadas; 08.02–08.09 siguen planificadas.
+- **Sesión de desarrollo:** 2026-10-20, desarrollo de 08.01 sobre el cierre de 07.10.
+- **Foco actual:** pregunta, unidad de la tabla, estéticas, capas y herencia.
   Próxima sección por implementar:
-  [08.01 — Pregunta y gramática de gráficos](curriculum/08_visualization_r/README.md#01-pregunta-y-gramatica-de-graficos), todavía planificada.
+  [08.02 — Geometrías y transformaciones estadísticas](curriculum/08_visualization_r/README.md#02-geometrias-y-transformaciones-estadisticas), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10; las otras nueve siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.10 y 08.01; las otras ocho siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -47,14 +47,36 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[07.10 — Primera figura y cierre del análisis](curriculum/07_tidyverse/10_first_plot_closure/README.md)
-con su [lab](labs/07_tidyverse/10_first_plot_closure/README.md).
-Las diez secciones de 07 tienen material; los criterios para cerrar la práctica
-y las tareas pendientes están en [cierre y pendientes](docs/tidyverse-closure.md).
-Retomar con 08.01: pregunta y gramática sobre la figura y datos de 07.10,
-sin repetir toda la limpieza ni cambiar la población. Las nueve secciones de
-08 están planificadas. Proyecto/checkpoints integradores siguen pendientes;
-no se modificó el estado del estudiante sin evidencia.
+[08.01 — Pregunta y gramática de gráficos](curriculum/08_visualization_r/01_question_grammar/README.md)
+con [script](curriculum/08_visualization_r/01_question_grammar/explorar_gramatica.R)
+y [lab](labs/08_visualization_r/01_question_grammar/README.md).
+Retomar con 08.02: geometrías y transformaciones estadísticas sobre el análisis
+conocido. Las otras ocho secciones de 08 siguen planificadas. Las diez de 07
+tienen material; los criterios de práctica y tareas pendientes siguen en
+[cierre y pendientes](docs/tidyverse-closure.md). Proyecto/checkpoints integradores
+siguen pendientes; no se modificó el estado del estudiante sin evidencia.
+
+08.01 amplía pregunta, población y unidades; gramática, objeto ggplot, mapeos,
+capas/herencia, componentes y presentación explícita. Reconstruye 07.10 sin
+cambiar su fuente ni sus reglas: 14 IDs comunes, 29000/31800 MXN, +2800 y
+9.66% sobre septiembre; cobertura 14/18 por corte. Script por etapas y lab con
+dos barras/una etiqueta de octubre; conteo separado 1/1 sobre las filas resumidas.
+Sin dependencias nuevas, cambios de lockfile ni nueva exportación obligatoria.
+Referencias oficiales y R4DS segunda edición consultadas; el borrador de capas
+del libro ggplot2 se identifica como consulta, no lectura obligatoria.
+
+Comprobados los diez bloques R de lección y tres de lab, incluidas las llamadas
+de reconstrucción, además del script de referencia con source desde procesos
+nuevos. R 4.6.1/ggplot2 4.0.3: alturas/etiquetas, fechas/posiciones, conteo 1/1,
+herencia con una sola etiqueta, orden de filas invertido y capa de texto vacía
+comprobados; tabla de capa sin columnas heredadas rechazada. El cierre completo
+es idéntico al RDS previamente verificado en 07.10; fuentes, funciones anteriores,
+metadatos, lockfile y entrega previa conservan sus huellas. Figura de referencia
+y variantes revisadas visualmente a 1296 × 864, con textos legibles y base cero.
+El ejecutor restringido no resolvió enlaces base renv; ejecución con permisos de
+lectura comprobada, sin desactivar controles ni instalar paquetes. Las revisiones
+ejecutan R, no la interfaz del IDE. Revisados 1,702 enlaces locales/fragmentos en
+194 Markdown, bloques y soluciones equilibrados, y git diff --check limpio.
 
 07.10 añade lección/lab, funciones, ejecutor, verificador de entrega y preparador
 con respaldo de metadatos 07.09. Reutiliza el CSV original y reglas de 07.09:

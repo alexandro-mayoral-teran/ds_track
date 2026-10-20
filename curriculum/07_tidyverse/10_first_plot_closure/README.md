@@ -291,8 +291,8 @@ no marques aprendizaje como concluido solo por existir este material.
 
 El [documento de cierre y pendientes](../../../docs/tidyverse-closure.md) distingue
 material, evidencia y proyecto integrador. Continúa con
-[08 — Visualización en R, sección 01](../../08_visualization_r/README.md#01-pregunta-y-gramatica-de-graficos),
-todavía planificada. Volver al [índice de 07](../README.md).
+[08.01 — Pregunta y gramática de gráficos](../../08_visualization_r/01_question_grammar/README.md),
+ya disponible con lección, script y lab. Volver al [índice de 07](../README.md).
 
 ## Referencias y atribución
 
