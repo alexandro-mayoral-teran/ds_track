@@ -380,7 +380,7 @@ denominador, distingas cero/NA/vacío y concilies con el detalle desde una sesi�
 nueva. Registra evidencia y dudas; disponer del material no acredita aprendizaje.
 No hay checkpoint integrador implementado asociado.
 
-Siguiente: [07.06 — Unir tablas](../README.md#06-unir-tablas), todavía planificada.
+Siguiente: [07.06 — Unir tablas](../06_join_tables/README.md).
 Volver al [índice del módulo](../README.md).
 
 ## Referencias y atribución

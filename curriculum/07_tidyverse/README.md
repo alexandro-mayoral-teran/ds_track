@@ -8,8 +8,8 @@ sus datos y proyecto renv; no se crea un entorno independiente por cada ejercici
 El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
 con conciliación Python/R.
 
-**Estado:** 07.01–07.05 disponen de lecciones, scripts y labs; 07.01–07.02
-tienen lockfiles y 07.03–07.05 reutilizan el de 07.02. 07.06–07.10
+**Estado:** 07.01–07.06 disponen de lecciones, scripts y labs; 07.01–07.02
+tienen lockfiles y 07.03–07.06 reutilizan el de 07.02. 07.07–07.10
 siguen planificadas. Los enlaces internos describen el alcance pendiente.
 
 Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
@@ -26,7 +26,7 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 | 3 | [Transformar columnas](03_transform_columns/README.md) | Esencial | Calcular indicadores con reglas explícitas |
 | 4 | [Faltantes, duplicados y calidad](04_missing_duplicates_quality/README.md) | Esencial | Conservar aceptados y rechazos con motivos |
 | 5 | [Agrupar y resumir](05_group_summarize/README.md) | Esencial | Conciliar medidas y denominadores |
-| 6 | [Unir tablas](#06-unir-tablas) | Esencial | Detectar relaciones que multiplican registros |
+| 6 | [Unir tablas](06_join_tables/README.md) | Esencial | Detectar relaciones que multiplican registros |
 | 7 | [Datos ordenados y reshape](#07-datos-ordenados-y-reshape) | Práctica | Cambiar formato preservando indicadores |
 | 8 | [Texto, categorías y factores](#08-texto-categorias-y-factores) | Esencial | Normalizar categorías y controlar su orden |
 | 9 | [Fechas y cortes](#09-fechas-y-cortes) | Esencial | Comparar períodos con fechas interpretadas |
@@ -98,10 +98,13 @@ Preparación desde R, mismo proyecto/lockfile y sin dependencias nuevas.
 
 ### 06 — Unir tablas
 
-- left_join/inner_join, claves explícitas y cardinalidad; semi_join y anti_join
-  para detectar coincidencias y ausencias. Verificar controles de relaciones en
-  la versión de dplyr elegida y decidir cómo tratar claves faltantes.
-- Práctica prevista: agregar un catálogo sin inflar el saldo; comparar con el join SQL.
+Disponible: [lección 07.06](06_join_tables/README.md) y
+[lab 07.06](../../labs/07_tidyverse/06_join_tables/README.md).
+left_join/inner_join y semi_join/anti_join; claves, relationship y na_matches,
+cardinalidad frente a cobertura. Catálogo estático sobre los 29 aceptados:
+19 coincidencias/10 sin catálogo, 177250 MXN conservados; seis etiquetas
+desconocidas y una clave sin uso distinguidas. Multiplicación, claves compuestas
+y NA demostrados; conciliación pandas/SQLite. Mismo proyecto, sin paquetes nuevos.
 
 <a id="07-datos-ordenados-y-reshape"></a>
 
@@ -141,7 +144,7 @@ Preparación desde R, mismo proyecto/lockfile y sin dependencias nuevas.
 
 ## Prácticas, proyecto y criterio de salida
 
-Los labs 07.01–07.05 están disponibles; 07.06–07.10 siguen previstos. El proyecto previsto
+Los labs 07.01–07.06 están disponibles; 07.07–07.10 siguen previstos. El proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 todavía no tiene carpeta ni checkpoints implementados.
 

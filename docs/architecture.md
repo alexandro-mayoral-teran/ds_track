@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.05 tienen lecciones/scripts/labs; 07.06–07.10 y 08–14 conservan planificación;
+07.01–07.06 tienen lecciones/scripts/labs; 07.07–07.10 y 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; 07.01–07.05 también están disponibles y las otras 14 conservan planificación:
+scripts y labs; 07.01–07.06 también están disponibles y las otras 13 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -489,7 +489,18 @@ conocidos y cobertura. Una muestra analítica mínima independiente permite NA
 sin cambiar las reglas de aceptación de 07.04; vacío y factores opcionales
 aclaran grupos sin observaciones. Revisión de claves, tipos y todos los valores,
 con conciliación pandas sobre la misma población. IDE con reinicio/Source;
-no exporta ni grafica. Continúa el desarrollo con 07.06, todavía planificada.
+no exporta ni grafica.
+07.06 añade funciones, ejecutor, catálogo y lección/lab; preparador desde R
+incorpora tres archivos al mismo proyecto sin cambiar los anteriores ni paquetes.
+Unión estática de los 29 aceptados con una fila por segmento: 29 × 14, saldo
+177250 MXN conservado, 19 coincidencias/10 sin catálogo y seis etiquetas ausentes
+a pesar de coincidir. Salud queda sin uso; educacion sin correspondencia.
+left/inner y semi/anti, claves compuestas, relación muchos a uno y NA que no
+coinciden; cardinalidad y cobertura son controles distintos. Catálogo completo
+validado, incluidas claves sin uso; identidad, columnas, orden e indicadores
+comprobados. Conciliación pandas/SQLite sobre la misma población y políticas
+de NA, multiplicación incorrecta y casos vacíos. IDE con reinicio/Source;
+sin exportar ni graficar. Continúa con 07.07, todavía planificada.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

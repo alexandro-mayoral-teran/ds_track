@@ -159,6 +159,14 @@ estado de agrupación, cobertura, denominadores y conciliación con pandas.
 Muestra mínima independiente para NA/cero/vacío; factores opcionales.
 R 4.6.1/dplyr 1.2.1, sin dependencias nuevas. Consulta: 2026-10-19.
 
+La [lección 07.06](../curriculum/07_tidyverse/06_join_tables/README.md)
+consulta Joins de R4DS segunda edición (Wickham, Çetinkaya-Rundel y Grolemund),
+mutate-joins/filter-joins/join_by y Two-table verbs de dplyr, además de SELECT
+de SQLite. Ejemplos propios sobre los 29 aceptados de 07.04 y un catálogo estático:
+claves, cardinalidad, cobertura, etiqueta desconocida y coincidencias de NA.
+R 4.6.1/dplyr 1.2.1; conciliación pandas/SQLite sin nuevas dependencias.
+Consulta: 2026-10-19.
+
 ### 08 — Visualización en R
 
 Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)

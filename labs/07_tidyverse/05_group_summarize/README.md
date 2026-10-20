@@ -219,5 +219,4 @@ agrupación y los casos NA/cero/vacío. Registra evidencia y dudas en
 [PROGRESS.md](../../../PROGRESS.md); la disponibilidad del material no acredita
 aprendizaje. No hay checkpoint integrador implementado asociado.
 
-Siguiente: [07.06 — Unir tablas](../../../curriculum/07_tidyverse/README.md#06-unir-tablas),
-todavía planificada. Volver a la [lección 07.05](../../../curriculum/07_tidyverse/05_group_summarize/README.md).
+Siguiente: [07.06 — Unir tablas](../../../curriculum/07_tidyverse/06_join_tables/README.md). Volver a la [lección 07.05](../../../curriculum/07_tidyverse/05_group_summarize/README.md).

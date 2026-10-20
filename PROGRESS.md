@@ -7,11 +7,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
 - **Módulo de desarrollo activo:** `07_tidyverse`.
-- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.05 implementadas; 07.06–07.10 y 08 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.05.
-- **Foco de desarrollo del material:** agrupación, denominadores, cobertura y conciliación de indicadores.
+- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.06 implementadas; 07.07–07.10 y 08 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.06.
+- **Foco de desarrollo del material:** claves de unión, cardinalidad, cobertura e identidad conservada.
   Próxima sección por implementar:
-  [07.06 — Unir tablas](curriculum/07_tidyverse/README.md#06-unir-tablas), todavía planificada.
+  [07.07 — Datos ordenados y reshape](curriculum/07_tidyverse/README.md#07-datos-ordenados-y-reshape), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.05; las otras 14 siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.06; las otras 13 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -43,19 +43,45 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
 o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
-material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.05 nacen con ese recorrido. Revisar las demás lecciones
+material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.06 nacen con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[07.05 — Agrupar y resumir](curriculum/07_tidyverse/05_group_summarize/README.md)
-con su [lab](labs/07_tidyverse/05_group_summarize/README.md).
-Retomar con 07.06: claves y cardinalidad de uniones, left_join/inner_join y
-semi_join/anti_join; definir tratamiento de claves faltantes y detectar
-multiplicación de registros antes de conciliar saldos. Reutilizar poblaciones
-con contrato explícito, conservar fuentes y el mismo proyecto renv; añadir
-archivos o dependencias solo si el objetivo lo necesita. La primera figura
-permanece en 07.10. Proyectos/checkpoints integradores siguen pendientes;
-el estado del estudiante no se modificó sin evidencia.
+[07.06 — Unir tablas](curriculum/07_tidyverse/06_join_tables/README.md)
+con su [lab](labs/07_tidyverse/06_join_tables/README.md).
+Retomar con 07.07: datos ordenados, pivot_longer/pivot_wider y claves antes de
+reorganizar. Distinguir cambiar forma de agregar; detectar combinaciones
+repetidas o ausentes y conservar tipos, indicadores y fuentes. Mantener el
+proyecto renv y añadir solo las dependencias necesarias al implementar.
+La primera figura permanece en 07.10. Proyectos/checkpoints integradores
+siguen pendientes; el estado del estudiante no se modificó sin evidencia.
+
+07.06 añade lección/lab, funciones, ejecutor y catálogo estático sintético;
+preparador desde R añade exactamente tres archivos sin alterar los anteriores.
+left_join/inner_join y semi_join/anti_join, claves completas, relationship y
+na_matches. Unión de 29 aceptados de 07.04: 29 × 14, 177250 MXN conservados,
+19 coincidencias/10 sin catálogo, con partición 120250/57000 MXN. Seis registros
+coinciden pero tienen etiqueta desconocida; salud queda sin uso. Catálogo
+completo y único validado antes de unir, incluso claves sin uso. Estado de
+coincidencia distinto de presencia de etiqueta; cobertura y cardinalidad son
+contratos independientes. Demostración incorrecta: duplicar comercio genera
+37 filas y 224250 MXN; la relación muchos a uno detiene la multiplicación.
+
+Comprobados doce bloques R de lección y nueve de lab, con errores esperados
+separados; reconstrucción por source desde procesos nuevos. R 4.6.1/dplyr 1.2.1,
+pandas 2.3.3 y SQLite: conciliación de todas las columnas del detalle/ampliado,
+partes con/sin coincidencia, catálogo sin uso y políticas NA/NULL. Fronteras:
+detalle/catálogo vacíos, coincidencia total/nula, cantidades NA/cero, orden
+invertido, agrupaciones previas y varios cortes. Rechazados duplicados usados
+y sin uso, claves incompletas, rastros repetidos/inválidos y columnas en conflicto.
+Probados uno a muchos sin advertencia predeterminada, clave compuesta, límites
+de relationship y unmatched; ocho resultados alterados detectados, incluso saldos
+y conteos compensados. Preparación sin biblioteca, repetición y seis argumentos
+inválidos comprobados. Archivos previos, fuentes, metadatos y lockfile intactos;
+07.01–07.05 siguen funcionando. Sin instalaciones ni cambios globales; revisión
+R con permisos de lectura de enlaces base renv existentes, sin desactivar controles.
+Las pruebas ejecutan R, no la interfaz del IDE. Revisados 1,562 enlaces locales
+y fragmentos, bloques/soluciones equilibrados y git diff --check limpio.
 
 07.05 añade lección/lab, funciones, ejecutor y preparador desde R; incorpora
 exactamente dos archivos al proyecto sin nuevos datos ni dependencias. Resume
@@ -236,6 +262,14 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-19
+
+- Se desarrolló 07.06 con lección/lab, catálogo, funciones, ejecutor y preparador.
+  Unión muchos a uno sobre 29 aceptados; coincidencias, etiquetas ausentes y
+  claves sin uso distinguidas, sin inflar el saldo ni descartar no coincidencias.
+- Ejemplos, fronteras, reconstrucción, alteraciones y compatibilidad previa
+  comprobados; todas las columnas conciliadas con pandas/SQLite. Índices,
+  navegación, referencias y estado actualizados; 1,562 enlaces revisados.
+  Sigue 07.07, todavía planificada; sin acreditar aprendizaje ni crear checkpoints.
 
 - Se desarrolló 07.05 con lección/lab, funciones, ejecutor y preparador desde R.
   Agrupación, estado persistente, cobertura y denominadores; resumen de los
