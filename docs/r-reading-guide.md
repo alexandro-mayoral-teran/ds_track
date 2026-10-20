@@ -212,6 +212,15 @@ y Pedersen advierte que es un borrador y desaconseja leerlo actualmente; sirve
 solo como consulta de autoría, no lectura obligatoria. Para escalas, facetas,
 temas y composición se contrastarán libro y API al implementar cada sección.
 
+[08.02 — Geometrías y transformaciones estadísticas](../curriculum/08_visualization_r/02_geometries_stats/README.md)
+consulta referencias oficiales de geom_col/bar, líneas, puntos, histogramas,
+cajas, layer_data, after_stat y jitter; hist/quantile/IQR de R fundamentan
+frecuencias, cuartiles tipo 7 y bigotes. Ejemplos propios sobre los mismos 14 IDs
+de 07.10 y muestras mínimas independientes de exteriores/huecos. Comprobados
+con R 4.6.1/ggplot2 4.0.3 y referencia Python estándar, sin dependencias nuevas.
+Suavizados y bandas se identifican como ampliación que requiere método y límites,
+sin convertirlos en requisito de esta sección. Consulta: 2026-10-20.
+
 ### 09 — Arrow y Parquet
 
 Para continuar después de ggplot2, el [capítulo Arrow de R for Data Science](https://r4ds.hadley.nz/arrow.html)

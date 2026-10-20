@@ -165,5 +165,5 @@ seis frases. Registra la evidencia y dudas reales según
 de una solución. No hay proyecto integrador ni checkpoint activo todavía.
 
 Continúa cuando puedas reconstruir y explicar tus decisiones. Siguiente:
-[08.02 — Geometrías y transformaciones estadísticas](../../../curriculum/08_visualization_r/README.md#02-geometrias-y-transformaciones-estadisticas),
-todavía planificada. Volver a la [lección 08.01](../../../curriculum/08_visualization_r/01_question_grammar/README.md).
+[08.02 — Geometrías y transformaciones estadísticas](../../../curriculum/08_visualization_r/02_geometries_stats/README.md),
+ya disponible. Volver a la [lección 08.01](../../../curriculum/08_visualization_r/01_question_grammar/README.md).

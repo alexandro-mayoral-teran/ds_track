@@ -306,8 +306,8 @@ en días, selección de períodos y comparación de 14 IDs comunes. Incorpora
 lubridate con lockfile y respaldo.
 [07.10](curriculum/07_tidyverse/10_first_plot_closure/README.md) cierra el material
 con lección/lab, primera figura ggplot2, exportación y verificación de tablas
-reconstruidas. Las diez secciones de 07 están disponibles; 08.01 tiene lección,
-script y lab, 08.02–08.09 siguen planificadas y el proyecto integrador permanece pendiente. Consulta
+reconstruidas. Las diez secciones de 07 están disponibles; 08.01–08.02 tienen
+lección, script y lab, 08.03–08.09 siguen planificadas y el proyecto integrador permanece pendiente. Consulta
 [el cierre y pendientes](docs/tidyverse-closure.md) y
 [la guía de lecturas R](docs/r-reading-guide.md).
 
@@ -328,8 +328,10 @@ persona que no escribió el código.
 El [plan de nueve secciones](curriculum/08_visualization_r/README.md#orden-de-desarrollo)
 profundiza gramática, escalas, composición y exportación sobre el análisis conocido.
 [08.01 — Pregunta y gramática de gráficos](curriculum/08_visualization_r/01_question_grammar/README.md)
-tiene lección, script y lab; 08.02–08.09 siguen planificadas. Las referencias
-abiertas están en [la guía de lecturas R](docs/r-reading-guide.md).
+tiene lección, script y lab; también
+[08.02 — Geometrías y transformaciones estadísticas](curriculum/08_visualization_r/02_geometries_stats/README.md),
+con figuras y cálculos comprobados. 08.03–08.09 siguen planificadas.
+Las referencias abiertas están en [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** profundizar en ggplot2 sobre resultados ya conocidos.
 

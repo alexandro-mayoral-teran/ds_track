@@ -216,7 +216,9 @@ añade lección/lab, ggplot2, tablas y figura reconstruidas con verificación de
 Las diez secciones de 07 tienen material; el [cierre y los pendientes](docs/tidyverse-closure.md)
 distinguen práctica, proyecto integrador y desarrollo posterior. 08.01 dispone de [lección y script](curriculum/08_visualization_r/01_question_grammar/README.md),
 con [lab](labs/08_visualization_r/01_question_grammar/README.md) sobre pregunta,
-datos, estéticas y capas; 08.02–08.09 siguen planificadas, con
+datos, estéticas y capas. [08.02](curriculum/08_visualization_r/02_geometries_stats/README.md)
+añade geometrías y estadísticas con [lab](labs/08_visualization_r/02_geometries_stats/README.md),
+script y figuras; 08.03–08.09 siguen planificadas, con
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

@@ -166,8 +166,9 @@ Una **capa de datos** combina datos, mapeo, geometría, transformación estadís
 y ajuste de posición. Las funciones `geom_*` preparan muchos de esos valores
 por nosotros; no hace falta llamar a `layer()` directamente.
 [Referencia de layer](https://ggplot2.tidyverse.org/reference/layer.html).
-Las estadísticas se profundizan en 08.02; las coordenadas en 08.04 y las facetas
-en 08.05, todavía planificadas en el [índice](../README.md).
+Las estadísticas se profundizan en [08.02](../02_geometries_stats/README.md),
+ya disponible; las coordenadas en 08.04 y las facetas en 08.05, todavía
+planificadas en el [índice](../README.md).
 
 ## 4. Construir un objeto, luego mostrarlo
 
@@ -389,8 +390,8 @@ ambas geometrías, reconstruyas desde sesión nueva y justifiques población,
 unidades y límites. El proyecto integrador y sus checkpoints siguen pendientes.
 Registrar material disponible no acredita aprendizaje del estudiante.
 
-Siguiente: [08.02 — Geometrías y transformaciones estadísticas](../README.md#02-geometrias-y-transformaciones-estadisticas),
-todavía planificada. Volver al [índice de 08](../README.md).
+Siguiente: [08.02 — Geometrías y transformaciones estadísticas](../02_geometries_stats/README.md),
+disponible con lección, script y lab. Volver al [índice de 08](../README.md).
 
 ## Referencias y atribución
 

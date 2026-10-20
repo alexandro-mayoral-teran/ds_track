@@ -88,7 +88,9 @@ añade lección/lab, figura ggplot2 y entrega reconstruible. Las diez secciones 
 tienen material; consulta el [cierre y pendientes](../docs/tidyverse-closure.md).
 08.01 dispone de [lección y script](08_visualization_r/01_question_grammar/README.md),
 con [lab](../labs/08_visualization_r/01_question_grammar/README.md) sobre pregunta,
-datos, estéticas y capas; 08.02–08.09 siguen planificadas,
+datos, estéticas y capas. [08.02](08_visualization_r/02_geometries_stats/README.md)
+añade geometrías y estadísticas con [lab](../labs/08_visualization_r/02_geometries_stats/README.md),
+script y figuras; 08.03–08.09 siguen planificadas,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

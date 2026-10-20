@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
-- **Módulo en desarrollo:** `08_visualization_r` (08.01 disponible).
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01 implementadas; 08.02–08.09 siguen planificadas.
-- **Sesión de desarrollo:** 2026-10-20, desarrollo de 08.01 sobre el cierre de 07.10.
-- **Foco actual:** pregunta, unidad de la tabla, estéticas, capas y herencia.
+- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.02 disponibles).
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.02 implementadas; 08.03–08.09 siguen planificadas.
+- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.02.
+- **Foco actual:** geometrías, identidad/conteo, intervalos, cuartiles y bigotes.
   Próxima sección por implementar:
-  [08.02 — Geometrías y transformaciones estadísticas](curriculum/08_visualization_r/README.md#02-geometrias-y-transformaciones-estadisticas), todavía planificada.
+  [08.03 — Mapear y fijar estéticas](curriculum/08_visualization_r/README.md#03-mapear-y-fijar-esteticas), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10 y 08.01; las otras ocho siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.10 y 08.01–08.02; las otras siete siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -47,14 +47,41 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[08.01 — Pregunta y gramática de gráficos](curriculum/08_visualization_r/01_question_grammar/README.md)
-con [script](curriculum/08_visualization_r/01_question_grammar/explorar_gramatica.R)
-y [lab](labs/08_visualization_r/01_question_grammar/README.md).
-Retomar con 08.02: geometrías y transformaciones estadísticas sobre el análisis
-conocido. Las otras ocho secciones de 08 siguen planificadas. Las diez de 07
+[08.02 — Geometrías y transformaciones estadísticas](curriculum/08_visualization_r/02_geometries_stats/README.md)
+con [script](curriculum/08_visualization_r/02_geometries_stats/explorar_geometrias.R)
+y [lab](labs/08_visualization_r/02_geometries_stats/README.md).
+Retomar con 08.03: mapear y fijar estéticas. Las otras siete secciones de 08
+siguen planificadas. Las diez de 07
 tienen material; los criterios de práctica y tareas pendientes siguen en
 [cierre y pendientes](docs/tidyverse-closure.md). Proyecto/checkpoints integradores
 siguen pendientes; no se modificó el estado del estudiante sin evidencia.
+
+08.02 añade lección/script/lab y figuras sobre el cierre de 07.10, sin modificar
+fuente, funciones anteriores ni metadatos renv. Misma población: dos sumas
+29000/31800 MXN, 14 pares y 28 observaciones. Identidad/conteo (1/1 en resumen,
+14/14 en detalle), líneas con dos fechas y dispersión de pares; histograma de
+septiembre con bordes 1000–3500 cada 500 MXN, cierre derecho y frecuencias
+4/3/3/2/2. Cajas tipo 7: Q1/mediana/Q3 1475/2050/2575 y 1675/2250/2775;
+bigotes 1100/3200 y 1300/3400. Jitter solo horizontal reproducible y puntos
+conservados. Lab con intervalos de 1000 (7/5/2), exterior independiente de
+1000 MXN conservado y ampliaciones de proporciones/huecos temporales.
+No instala paquetes ni exige nueva exportación; suavizados no son requisito.
+
+Comprobados nueve bloques R de lección y cinco de lab, incluidas reconstrucción
+y ampliaciones, con R 4.6.1/ggplot2 4.0.3. Script de referencia y scripts propios
+de lección/lab ejecutados mediante source desde procesos nuevos, sin workspace.
+Inspección por capa: sumas/conteos, fechas, pares, intervalos, cuartiles, bigotes
+y exteriores. Fronteras de todos los bordes incluidos, octubre con los mismos
+intervalos (3/3/3/3/2), orden invertido, empates/cero, un valor, vacío, apilado
+de 28 rectángulos y NA interior frente a fila ausente comprobados. Frecuencias,
+cuartiles tipo 7 y bigotes conciliados con Python estándar independiente.
+El cierre coincide con el RDS verificado de 07.10; huellas de fuentes, funciones,
+metadatos, lockfile y entrega anterior intactas. Figuras principales y variantes
+revisadas a 1296 × 864, con textos legibles; histogramas y cajas incorporados
+como referencias. Ejecución con lectura de enlaces base renv, sin instalar ni
+modificar entornos. Las comprobaciones ejecutan R, no la interfaz del IDE.
+Revisados 1,733 enlaces locales/fragmentos en 196 Markdown, bloques y soluciones
+equilibrados y git diff --check limpio.
 
 08.01 amplía pregunta, población y unidades; gramática, objeto ggplot, mapeos,
 capas/herencia, componentes y presentación explícita. Reconstruye 07.10 sin

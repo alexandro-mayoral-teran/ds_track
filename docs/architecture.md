@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.10 y 08.01 tienen lecciones/scripts/labs; 08.02–08.09 y 09–14 conservan planificación;
+07.01–07.10 y 08.01–08.02 tienen lecciones/scripts/labs; 08.03–08.09 y 09–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,8 +344,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; las diez de 07 también están disponibles. 08.01 tiene material
-y las otras ocho secciones de 08 conservan planificación:
+scripts y labs; las diez de 07 también están disponibles. 08.01–08.02 tienen
+material y las otras siete secciones de 08 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -554,8 +554,15 @@ copiar fuentes ni modificar funciones anteriores o metadatos renv. Lección,
 script y lab distinguen crédito/corte de fila resumida, mapeos de posición,
 geometrías, herencia y componentes. La variante de una etiqueta usa datos locales
 a una capa sin filtrar las barras. Scripts por bloques y reconstrucción completa
-desde sesión nueva; no agrega dependencias ni exige otra exportación. Las otras
-ocho secciones de 08 siguen planificadas; el proyecto integrador continúa pendiente.
+desde sesión nueva; no agrega dependencias ni exige otra exportación.
+08.02 amplía geometrías y estadísticas sobre los mismos 14 IDs: resumen de dos
+filas, 14 pares y detalle de 28 observaciones conciliados. Barras/conteos,
+líneas, dispersión, histograma de septiembre con bordes/cierre explícitos y
+cajas con cuartiles tipo 7/bigotes 1.5 IQR. Figuras y cálculos por capa comprobados;
+lab con cambio de intervalos y muestra independiente con exterior conservado.
+Proporciones y huecos de línea son ampliaciones. No cambia funciones anteriores,
+fuentes o lockfile ni agrega dependencias. Las otras siete secciones de 08 siguen
+planificadas; el proyecto integrador continúa pendiente.
 
 ### Almacenamiento y procesamiento previstos: 09–10
 

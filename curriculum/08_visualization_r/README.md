@@ -8,9 +8,9 @@ Se reutiliza la primera figura disponible en
 [07.10](../07_tidyverse/10_first_plot_closure/README.md) y se
 compara con el análisis Python; no se repite toda la limpieza para aprender gráficos.
 
-**Estado:** [08.01](01_question_grammar/README.md) dispone de lección, script y
-[lab](../../labs/08_visualization_r/01_question_grammar/README.md).
-08.02–08.09 siguen planificadas; sus enlaces internos describen el alcance.
+**Estado:** [08.01](01_question_grammar/README.md) y
+[08.02](02_geometries_stats/README.md) disponen de lección, script y lab.
+08.03–08.09 siguen planificadas; sus enlaces internos describen el alcance.
 
 La pregunta, la representación y la interpretación guían el recorrido. El libro
 abierto de ggplot2 aporta la gramática de gráficos; su tercera edición en línea
@@ -21,7 +21,7 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
 | 1 | [Pregunta y gramática de gráficos](01_question_grammar/README.md) | Esencial | Explicar datos, estéticas y capas de una figura |
-| 2 | [Geometrías y transformaciones estadísticas](#02-geometrias-y-transformaciones-estadisticas) | Esencial | Elegir una geometría y verificar qué agrega |
+| 2 | [Geometrías y transformaciones estadísticas](02_geometries_stats/README.md) | Esencial | Elegir una geometría y verificar qué agrega |
 | 3 | [Mapear y fijar estéticas](#03-mapear-y-fijar-esteticas) | Esencial | Distinguir variables de estilos constantes |
 | 4 | [Escalas y coordenadas](#04-escalas-y-coordenadas) | Esencial | Justificar límites, transformaciones y unidades |
 | 5 | [Facetas y comparación entre grupos](#05-facetas-y-comparacion-entre-grupos) | Práctica | Comparar segmentos con escalas explícitas |
@@ -49,8 +49,11 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 - Barras, líneas, puntos, histogramas y boxplots según la pregunta; datos de entrada
   frente a cálculos de la geometría. Diferenciar geom_bar de geom_col.
-- Práctica prevista: contrastar conteos con saldos ya agregados y comprobarlos
-  contra la tabla. Bandas o suavizados requieren explicar su método y límites.
+- Disponible: [lección, script y figuras](02_geometries_stats/README.md) y
+  [lab 08.02](../../labs/08_visualization_r/02_geometries_stats/README.md).
+  Identidad/conteo, líneas/puntos, intervalos y cajas sobre los mismos 14 IDs,
+  con frecuencias/cuartiles comprobados. Sin dependencias nuevas; proporciones
+  y huecos temporales como ampliaciones. Suavizados no son requisito.
 
 <a id="03-mapear-y-fijar-esteticas"></a>
 
@@ -116,8 +119,9 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 ## Prácticas, integración y criterio de salida
 
-El [lab 08.01](../../labs/08_visualization_r/01_question_grammar/README.md) está
-disponible; 08.02–08.09 siguen previstos. Se ampliará el proyecto previsto
+Los labs [08.01](../../labs/08_visualization_r/01_question_grammar/README.md) y
+[08.02](../../labs/08_visualization_r/02_geometries_stats/README.md) están
+disponibles; 08.03–08.09 siguen previstos. Se ampliará el proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 con un checkpoint visual cuyo nombre se definirá al implementarlo.
 
