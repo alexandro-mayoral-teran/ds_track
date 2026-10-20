@@ -5,13 +5,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
-- **Módulo de desarrollo activo:** `07_tidyverse`.
-- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.09 implementadas; 07.10 y 08 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.09.
-- **Foco de desarrollo del material:** fechas interpretadas, unidades temporales y base comparable.
+- **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
+- **Siguiente módulo por desarrollar:** `08_visualization_r` (plan disponible).
+- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.10 implementadas; 08 conserva sus nueve planes.
+- **Sesión de desarrollo:** 2026-10-20, cierre y comprobación de 07.10.
+- **Foco del cierre:** primera figura ggplot2, reconstrucción y entrega conciliada.
   Próxima sección por implementar:
-  [07.10 — Primera figura y cierre del análisis](curriculum/07_tidyverse/README.md#10-primera-figura-y-cierre-del-analisis), todavía planificada.
+  [08.01 — Pregunta y gramática de gráficos](curriculum/08_visualization_r/README.md#01-pregunta-y-gramatica-de-graficos), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.09; las otras 10 siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.10; las otras nueve siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -43,20 +43,48 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
 o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
-material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.09 nacen con ese recorrido. Revisar las demás lecciones
+material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[07.09 — Fechas y cortes](curriculum/07_tidyverse/09_dates_cutoffs/README.md)
-con su [lab](labs/07_tidyverse/09_dates_cutoffs/README.md).
-Retomar con 07.10: primera figura ggplot2 y cierre reproducible. Reutilizar
-población y reglas declaradas, preferentemente los aceptados de 07.09, sin
-mezclar muestras anteriores. Reconstruir lectura, normalización, fechas,
-indicadores y figura desde sesión nueva; distinguir contar filas de graficar
-importes agregados, conciliar datos de la figura y explicar unidades/cobertura.
-Mantener el mismo proyecto renv, instalar solo lo necesario y profundizar
-diseño visual en 08. Proyecto/checkpoints integradores siguen pendientes;
+[07.10 — Primera figura y cierre del análisis](curriculum/07_tidyverse/10_first_plot_closure/README.md)
+con su [lab](labs/07_tidyverse/10_first_plot_closure/README.md).
+Las diez secciones de 07 tienen material; los criterios para cerrar la práctica
+y las tareas pendientes están en [cierre y pendientes](docs/tidyverse-closure.md).
+Retomar con 08.01: pregunta y gramática sobre la figura y datos de 07.10,
+sin repetir toda la limpieza ni cambiar la población. Las nueve secciones de
+08 están planificadas. Proyecto/checkpoints integradores siguen pendientes;
 no se modificó el estado del estudiante sin evidencia.
+
+07.10 añade lección/lab, funciones, ejecutor, verificador de entrega y preparador
+con respaldo de metadatos 07.09. Reutiliza el CSV original y reglas de 07.09:
+48 = 36 aceptados + 12 rechazos; 14 IDs comunes y cuatro aceptados sin pareja
+por corte. Dos filas alimentan geom_col: 29000/31800 MXN, cambio +2800 y 9.66%
+sobre septiembre de la base común; cobertura 14/18 por fecha. Contraste explícito
+con geom_bar, que cuenta una fila por corte en esa tabla resumida.
+
+Entrega en carpeta nueva: siete CSV, RDS con tipos/originales/banderas, PNG y
+sessionInfo local. Relectura y reconstrucción desde la fuente comparan todas las
+tablas; la firma/presencia PNG no certifica píxeles y requiere revisión visual.
+Figura de 1296 × 864 revisada, con base cero, etiquetas, MXN, fechas y población,
+sin textos cortados. Restauración real en segunda copia sin ggplot2 previo;
+R 4.6.1/ggplot2 4.0.3 y ocho dependencias nuevas, registros previos del lockfile
+idénticos y respaldo exacto. No se cambia Conda ni bibliotecas globales.
+
+Ejemplos y soluciones R ejecutados por bloques; errores esperados aislados,
+source tras reinicio y verificador en proceso nuevo sin alterar la entrega.
+Fronteras: fuente vacía, todos rechazados, sin pares, un par con saldos cero,
+base inicial cero y otro corte conservado aparte; orden invertido y agrupación
+previa. Alteraciones de tablas, motivos y saldos compensados detectadas;
+RDS/CSV modificados y PNG ausente rechazados. Exportación a ruta ocupada,
+carpeta madre ausente y seis tipos/rutas inválidos controlados sin sobrescribir.
+Preparación sin biblioteca, respaldo exacto, repetición y seis argumentos
+inválidos comprobados. Aceptados/rechazos, pares, no coincidentes, resumen y
+figura conciliados con pandas 2.3.3/SQLite; medias con tolerancia absoluta 1e-10.
+Fuentes y archivos previos intactos, 07.01–07.09 pasan con el nuevo lockfile.
+Las revisiones ejecutan R, no la interfaz del IDE. Revisados 1,671 enlaces
+locales/fragmentos en 192 Markdown, bloques y soluciones equilibrados,
+y git diff --check limpio.
 
 07.09 añade lección/lab, funciones, ejecutor y preparador desde R. Reutiliza
 el CSV conservado de 07.08 sin copiar otra fuente. Forma YYYY-MM-DD, calendario
@@ -363,6 +391,18 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 | 14 | Proyecto reproducible | No iniciado | — |
 
 ## Bitácora
+
+### 2026-10-20
+
+- Se cerró el material de 07 con lección/lab 07.10, figura ggplot2 y entrega
+  reconstruible. Conserva las reglas y población de 07.09, con base común
+  explícita, tablas auditables y límites de interpretación.
+- Lockfile/restauración local, fuentes, fronteras, datos alterados, relectura y
+  comparación pandas/SQLite comprobados; scripts previos conservados. PNG
+  inspeccionado y 1,671 enlaces revisados. Índices, arquitectura y lecturas
+  actualizados; criterios y pendientes en docs/tidyverse-closure.md.
+- Siguen pendientes la evidencia del estudiante, el proyecto/checkpoints y
+  08.01–08.09. Próximo desarrollo: 08.01; no se acredita aprendizaje por autoría.
 
 ### 2026-10-19
 

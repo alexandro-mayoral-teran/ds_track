@@ -8,10 +8,13 @@ sus datos y proyecto renv; no se crea un entorno independiente por cada ejercici
 El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
 con conciliación Python/R.
 
-**Estado:** 07.01–07.09 disponen de lecciones, scripts y labs; 07.01–07.02
+**Estado:** 07.01–07.10 disponen de lecciones, scripts y labs; 07.01–07.02
 tienen lockfiles y 07.03–07.06 reutilizan el de 07.02; 07.07 añade tidyr con
 su lockfile y respaldo; 07.08 declara stringr y añade forcats con otro respaldo.
-07.09 incorpora lubridate con respaldo y lockfile. 07.10 sigue planificada. Los enlaces internos describen el alcance pendiente.
+07.09 incorpora lubridate con respaldo y lockfile; 07.10 añade ggplot2, primera
+figura y entrega reconstruible. Las diez secciones tienen material. El proyecto
+integrador y la evidencia de aprendizaje siguen pendientes; consulta el
+[cierre del módulo](../../docs/tidyverse-closure.md).
 
 Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
 La primera figura con ggplot2 aparece aquí; el módulo 08 profundiza su diseño.
@@ -31,7 +34,7 @@ ya trabajados en DS Track, sin exigir leer el libro completo.
 | 7 | [Datos ordenados y reshape](07_tidy_reshape/README.md) | Práctica | Cambiar formato preservando indicadores |
 | 8 | [Texto, categorías y factores](08_text_categories_factors/README.md) | Esencial | Normalizar categorías y controlar su orden |
 | 9 | [Fechas y cortes](09_dates_cutoffs/README.md) | Esencial | Comparar períodos con fechas interpretadas |
-| 10 | [Primera figura y cierre del análisis](#10-primera-figura-y-cierre-del-analisis) | Práctica de cierre | Reconstruir tablas e interpretar un gráfico |
+| 10 | [Primera figura y cierre del análisis](10_first_plot_closure/README.md) | Práctica de cierre | Reconstruir tablas e interpretar un gráfico |
 
 ## Alcance de cada sección
 
@@ -147,14 +150,17 @@ fin exclusivo y población explícita, conciliados con pandas/datetime. Lubridat
 
 ### 10 — Primera figura y cierre del análisis
 
-- ggplot, aes y una geometría de barras o líneas; títulos, unidades y ggsave.
-  Distinguir contar registros de graficar un indicador ya agregado.
-- Práctica prevista: reconstruir limpieza, indicadores y figura desde una sesión
-  nueva, comparar con pandas/SQL y explicar el hallazgo sin atribuir causalidad.
+Disponible: [lección 07.10](10_first_plot_closure/README.md) y
+[lab 07.10](../../labs/07_tidyverse/10_first_plot_closure/README.md).
+Reconstruye 07.09 desde el CSV original: 48 = 36 + 12, 14 IDs comunes y saldos
+29000/31800 MXN. ggplot/aes/geom_col frente a conteo con geom_bar, etiquetas,
+unidades y exportación explícita. Tablas, RDS y PNG en destino nuevo; verificación
+de entrega desde sesión nueva y contraste pandas/SQLite. ggplot2 4.0.3 con
+lockfile y respaldo 07.09, restauración local y límites descriptivos explícitos.
 
 ## Prácticas, proyecto y criterio de salida
 
-Los labs 07.01–07.09 están disponibles; 07.10 sigue previsto. El proyecto previsto
+Los diez labs 07.01–07.10 están disponibles. El proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 todavía no tiene carpeta ni checkpoints implementados.
 
@@ -169,7 +175,9 @@ inicial. Arrow y Parquet se desarrollan en 09; Quarto en 11 y Shiny en 13.
 
 ## Continuidad y referencias
 
-Después del cierre, continúa con [08 — Visualización en R](../08_visualization_r/README.md).
+Después del cierre, continúa con [08 — Visualización en R](../08_visualization_r/README.md),
+todavía planificado. Los criterios y pendientes están en
+[el documento de cierre](../../docs/tidyverse-closure.md).
 
 Lecturas de R for Data Science: [transformación](https://r4ds.hadley.nz/data-transform.html),
 [datos ordenados](https://r4ds.hadley.nz/data-tidy.html),

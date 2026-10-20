@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.09 tienen lecciones/scripts/labs; 07.10 y 08–14 conservan planificación;
+07.01–07.10 tienen lecciones/scripts/labs; 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; 07.01–07.09 también están disponibles y las otras 10 conservan planificación:
+scripts y labs; las diez de 07 también están disponibles y las nueve de 08 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -535,7 +535,17 @@ fin exclusivo. Dos cortes de 18 aceptados no implican mismos IDs: base común
 Lubridate 1.9.5/timechange 0.4.0 añadidos con registros previos del lockfile
 intactos, respaldo 07.08 y restauración local comprobada. Revisión pandas de
 columnas, banderas, motivos, selecciones y base común; calendario con datetime.
-No grafica; continúa con 07.10, todavía planificada.
+07.09 no grafica; 07.10 reconstruye sus reglas y la base común desde el CSV.
+Conserva 36 aceptados/12 rechazos y ocho aceptados sin pareja; dos filas de
+saldos 29000/31800 MXN alimentan geom_col. ggplot/aes/capas, diferencia frente
+a conteo, ejes desde cero, etiquetas y ggsave con objeto explícito. Entrega en
+carpeta nueva: siete CSV, RDS con tipos/originales, PNG y diagnóstico de sesión.
+El verificador reconstruye tablas desde la fuente y relee los CSV; firma/presencia
+PNG no sustituyen inspección visual. ggplot2 4.0.3 y ocho dependencias nuevas con
+lockfile real, respaldo 07.09 y registros anteriores intactos; restauración local
+comprobada. Datos, pares e indicadores conciliados con pandas/SQLite. Las diez
+secciones tienen material; proyecto/checkpoints permanecen pendientes, según
+[el cierre de 07](tidyverse-closure.md).
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

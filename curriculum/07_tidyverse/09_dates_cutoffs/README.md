@@ -343,8 +343,8 @@ con una base explícita desde una sesión nueva. Registra evidencia y dudas;
 material disponible no acredita aprendizaje. No hay checkpoint integrador
 implementado asociado.
 
-Siguiente: [07.10 — Primera figura y cierre del análisis](../README.md#10-primera-figura-y-cierre-del-analisis),
-todavía planificada. Volver al [índice del módulo](../README.md).
+Siguiente: [07.10 — Primera figura y cierre del análisis](../10_first_plot_closure/README.md).
+Volver al [índice del módulo](../README.md).
 
 ## Referencias y atribución
 

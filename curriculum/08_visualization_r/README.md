@@ -3,7 +3,9 @@
 ## Propósito y prerrequisitos
 
 Profundizar en ggplot2 sobre tablas e indicadores ya comprobados en
-[07 — tidyverse](../07_tidyverse/README.md). Se reutiliza su primera figura y se
+[07 — tidyverse](../07_tidyverse/README.md), cuyas diez secciones tienen material.
+Se reutiliza la primera figura disponible en
+[07.10](../07_tidyverse/10_first_plot_closure/README.md) y se
 compara con el análisis Python; no se repite toda la limpieza para aprender gráficos.
 
 **Estado:** nueve secciones planificadas; lecciones y labs por desarrollar.

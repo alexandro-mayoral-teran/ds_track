@@ -191,6 +191,15 @@ unidad, motivos y claves conservados, períodos y base común. R 4.6.1/lubridate
 1.9.5, con lockfile/restauración local y conciliación pandas/datetime.
 Consulta: 2026-10-19.
 
+La [lección 07.10](../curriculum/07_tidyverse/10_first_plot_closure/README.md)
+consulta Data visualization de R4DS segunda edición (Wickham, Çetinkaya-Rundel y
+Grolemund), la documentación oficial de ggplot/aes/geom_col/geom_bar/labs/ggsave
+y saveRDS/readRDS de R. Reconstruye reglas y población de 07.09 con ejemplos
+propios, primera figura y entrega conciliada. R 4.6.1/ggplot2 4.0.3 con lockfile
+y restauración local; comparación pandas/SQLite y revisión visual del PNG. El libro
+de ggplot2 de Wickham, Navarro y Pedersen apoya la continuidad hacia 08; su
+tercera edición en línea sigue en desarrollo. Consulta: 2026-10-20.
+
 ### 08 — Visualización en R
 
 Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)

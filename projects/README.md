@@ -11,9 +11,15 @@ Los proyectos integran módulos y producen un resultado compartible.
 | `05_monthly_report` | Quarto | Reporte reproducible por corte |
 | `06_shiny_portfolio_app` | Shiny, web básico | Explorador interactivo |
 
-Cada proyecto se creará cuando comience su módulo prerrequisito. Así se evita
-mantener esqueletos vacíos y se permite que la arquitectura evolucione con el
-aprendizaje.
+Los proyectos de la tabla son planes: se creará cada carpeta cuando se
+implemente una práctica integradora con entradas, producto y criterios de salida.
+El inicio o cierre del material de un módulo no activa por sí solo su proyecto.
+Así se evita mantener esqueletos vacíos.
+
+Las diez secciones de 07 ya tienen material y un cierre de práctica reproducible,
+pero 03_portfolio_analysis_r y sus checkpoints siguen pendientes. Consulta los
+[criterios y pendientes de 07](../docs/tidyverse-closure.md) antes de tratarlos
+como entregas disponibles.
 
 Los módulos 04 y 05 amplían el análisis Python con figuras y código reutilizable;
 los módulos 07 y 08 alimentan el análisis en R y sus figuras. Quarto ocupa el

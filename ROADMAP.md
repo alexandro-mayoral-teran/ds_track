@@ -303,7 +303,12 @@ con niveles controlados. Incorpora forcats y declara stringr en el mismo proyect
 [07.09](curriculum/07_tidyverse/09_dates_cutoffs/README.md) añade lección/lab,
 fechas interpretadas con formato/calendario y motivos conservados, diferencias
 en días, selección de períodos y comparación de 14 IDs comunes. Incorpora
-lubridate con lockfile y respaldo. 07.10 sigue planificada; consulta
+lubridate con lockfile y respaldo.
+[07.10](curriculum/07_tidyverse/10_first_plot_closure/README.md) cierra el material
+con lección/lab, primera figura ggplot2, exportación y verificación de tablas
+reconstruidas. Las diez secciones de 07 están disponibles; 08 conserva sus nueve
+planes y el proyecto integrador permanece pendiente. Consulta
+[el cierre y pendientes](docs/tidyverse-closure.md) y
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** realizar análisis expresivos y comunicar hallazgos.

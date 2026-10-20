@@ -211,7 +211,10 @@ controlados, con lección/lab y forcats en el mismo proyecto renv.
 [07.09 — Fechas y cortes](curriculum/07_tidyverse/09_dates_cutoffs/README.md)
 añade fechas interpretadas, reglas temporales, períodos y comparación de IDs
 comunes, con lección/lab y lubridate en el proyecto renv.
-07.10 y el nivel 08 conservan sus planes y
+[07.10 — Primera figura y cierre del análisis](curriculum/07_tidyverse/10_first_plot_closure/README.md)
+añade lección/lab, ggplot2, tablas y figura reconstruidas con verificación de entrega.
+Las diez secciones de 07 tienen material; el [cierre y los pendientes](docs/tidyverse-closure.md)
+distinguen práctica, proyecto integrador y desarrollo posterior. El nivel 08 conserva sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

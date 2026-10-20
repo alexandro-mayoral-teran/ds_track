@@ -181,5 +181,5 @@ población comparable. Registra evidencia y dudas en [PROGRESS.md](../../../PROG
 disponer del material no acredita aprendizaje. No hay checkpoint integrador
 implementado asociado.
 
-Siguiente: [07.10 — Primera figura y cierre del análisis](../../../curriculum/07_tidyverse/README.md#10-primera-figura-y-cierre-del-analisis),
-todavía planificada. Volver a la [lección 07.09](../../../curriculum/07_tidyverse/09_dates_cutoffs/README.md).
+Siguiente: [07.10 — Primera figura y cierre del análisis](../../../curriculum/07_tidyverse/10_first_plot_closure/README.md).
+Volver a la [lección 07.09](../../../curriculum/07_tidyverse/09_dates_cutoffs/README.md).
