@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.07 tienen lecciones/scripts/labs; 07.08–07.10 y 08–14 conservan planificación;
+07.01–07.08 tienen lecciones/scripts/labs; 07.09–07.10 y 08–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,7 +344,7 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; 07.01–07.07 también están disponibles y las otras 12 conservan planificación:
+scripts y labs; 07.01–07.08 también están disponibles y las otras 11 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -512,7 +512,18 @@ Preparador respalda metadatos 07.06 y añade tres archivos; lockfile generado
 con tidyr 1.3.2, purrr 1.2.2, stringr 1.6.0 y stringi 1.8.9, preservando registros
 anteriores. Restauración en biblioteca local, sin cambiar entornos globales.
 Revisión de vuelta, fronteras y alteraciones con conciliación pandas independiente.
-Continúa con 07.08, todavía planificada.
+07.08 añade lección/lab, funciones, ejecutor y preparador desde R con respaldo
+07.07. Reutiliza las 48 entradas de pandas 02.06; solo normaliza segmento,
+conservando ID, fechas y cantidades. Origen, texto recortado/normalizado,
+estado y marca de cambio: 48 × 10, 45 reconocidos/3 pendientes, dos ausencias
+y una categoría fuera de catálogo. Suma de registros 112800 = 105800 + 7000 MXN,
+sin presentarla como saldo a una fecha única ni aceptación completa.
+Factores estrictos solo para reconocidos, niveles nominales y orden manual
+frente a orden por medida; grupos vacíos y niveles descartados explícitos.
+Stringr 1.6.0 pasa a dependencia directa y se añade forcats 1.0.1 sin cambiar
+registros anteriores del lockfile; restauración local comprobada. Comparación
+independiente pandas de texto, estados, partes y resumen; fronteras y alteraciones.
+No grafica ni valida fechas/IDs; continúa con 07.09, todavía planificada.
 La planificación restante no instala paquetes ni fija versiones por anticipación.
 
 ### Almacenamiento y procesamiento previstos: 09–10

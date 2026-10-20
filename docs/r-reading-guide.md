@@ -175,6 +175,14 @@ NA explícito y combinaciones ausentes con inventario conservado. R 4.6.1,
 tidyr 1.3.2; lockfile real y conciliación pandas sobre la misma proyección.
 Consulta: 2026-10-19.
 
+La [lección 07.08](../curriculum/07_tidyverse/08_text_categories_factors/README.md)
+consulta Strings y Factors de R4DS segunda edición (Wickham, Çetinkaya-Rundel
+y Grolemund), espacios/minúsculas/str_detect de stringr, fct/relevel/reorder/drop
+de forcats y factor de R. Ejemplos propios sobre pandas 02.06: origen,
+equivalencias exactas, ausencias/desconocidos, niveles y orden sin alterar datos.
+R 4.6.1/stringr 1.6.0/forcats 1.0.1, con lockfile real y conciliación pandas.
+Consulta: 2026-10-19.
+
 ### 08 — Visualización en R
 
 Profundiza en [construcción de una figura por capas](https://ggplot2-book.org/layers)

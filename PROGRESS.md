@@ -7,11 +7,11 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 - **Módulo de desarrollo cerrado:** `06_r_foundations` (material disponible).
 - **Módulo de desarrollo activo:** `07_tidyverse`.
-- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.07 implementadas; 07.08–07.10 y 08 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.07.
-- **Foco de desarrollo del material:** cambio de forma, claves de celda, tipos y ausencias conservadas.
+- **Estado de desarrollo:** 06.01–06.09 y 07.01–07.08 implementadas; 07.09–07.10 y 08 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-19, desarrollo y comprobación de 07.08.
+- **Foco de desarrollo del material:** texto auditable, categorías pendientes y niveles nominales.
   Próxima sección por implementar:
-  [07.08 — Texto, categorías y factores](curriculum/07_tidyverse/README.md#08-texto-categorias-y-factores), todavía planificada.
+  [07.09 — Fechas y cortes](curriculum/07_tidyverse/README.md#09-fechas-y-cortes), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.07; las otras 12 siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.08; las otras 11 siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -43,19 +43,53 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo
 o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
-material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.07 nacen con ese recorrido. Revisar las demás lecciones
+material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.08 nacen con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[07.07 — Datos ordenados y reshape](curriculum/07_tidyverse/07_tidy_reshape/README.md)
-con su [lab](labs/07_tidyverse/07_tidy_reshape/README.md).
-Retomar con 07.08: texto, categorías y factores; conservar origen antes de
-normalizar espacios/patrones, detectar categorías desconocidas y no colapsar
-valores distintos sin regla. Niveles y orden para presentación; mantener el
-proyecto renv y declarar dependencias directas según el uso real. stringr ya
-está instalado como dependencia transitiva de tidyr; no instalar ampliaciones
-por anticipado. Primera figura en 07.10; proyectos/checkpoints integradores
-siguen pendientes y no se modificó el estado del estudiante sin evidencia.
+[07.08 — Texto, categorías y factores](curriculum/07_tidyverse/08_text_categories_factors/README.md)
+con su [lab](labs/07_tidyverse/08_text_categories_factors/README.md).
+Retomar con 07.09: fechas y cortes, formato literal y calendario válido,
+ausencias frente a texto incompatible y relaciones temporales con unidades
+explícitas. Reutilizar la fuente de texto conservada, declarar población y
+comprobar claves si se normalizan IDs; no tratar los 45 segmentos reconocidos
+como registros aceptados completos. Mantener el proyecto renv y añadir solo
+las dependencias necesarias. Primera figura en 07.10; proyectos/checkpoints
+integradores pendientes, sin modificar aprendizaje sin evidencia.
+
+07.08 añade lección/lab, funciones, ejecutor y preparador desde R con respaldo
+07.07. Reutiliza 48 entradas de pandas 02.06, distintas de la fuente de 07.07:
+trabajo 48 × 10 con cinco columnas originales conservadas, segmento recortado,
+normalizado, estado y marca de cambio. Reglas explícitas: trim exterior,
+vacío a NA, minúsculas en locale es y equivalencia exacta educación/educacion.
+45 segmentos reconocidos y tres pendientes (registros 5/9/48): dos ausencias
+y microcredito fuera de catálogo. 46 textos modificados; suma de registros
+112800 = 105800 + 7000 MXN, sin presentarla como saldo a una fecha única.
+Fechas e IDs siguen sin interpretar/normalizar: reconocimiento no acredita
+aceptación completa. Los pendientes conservan texto e importes.
+
+Forcats 1.0.1 añadido y stringr 1.6.0 declarado directamente; todos los registros
+previos del lockfile permanecen idénticos. Preparador sin instalación respalda
+DESCRIPTION/renv.lock en respaldo_07_07/, actualiza ambos y añade tres archivos.
+Restauración real en segunda copia que no tenía forcats, con ejecución completa.
+Factores estrictos solo para reconocidos; etiquetas/códigos/niveles y orden
+nominal, fct_relevel/reorder/drop, grupos vacíos y patrones sencillos explicados.
+No grafica, no absorbe desconocidos en NA ni recodifica categorías sin regla.
+
+Comprobados catorce bloques R de lección y siete de lab, errores esperados
+separados y reconstrucción por source desde procesos nuevos. R 4.6.1/stringr
+1.6.0/forcats 1.0.1 y pandas 2.3.3: todas las columnas de texto, estados,
+marcas, partes, niveles y resumen conciliados independientemente. Fronteras:
+vacío, todos pendientes/reconocidos, cero, rango integer, espacios/tabulación/
+NBSP, acentos y representación Unicode descompuesta conservada, textos NA/no_dato,
+grupos previos y orden invertido. Tipos/esquemas incompatibles, saldo ausente/
+negativo/fraccionario y campos extra rechazados por el lector o contrato.
+Ocho alteraciones detectadas, incluidas sumas/conteos compensados y cambios
+de niveles. Preparación sin biblioteca, respaldo exacto, repetición y seis
+argumentos inválidos comprobados; fuentes y archivos previos intactos.
+07.01–07.07 pasan con el nuevo lockfile; sin cambiar Conda ni bibliotecas globales.
+Revisión automatizada ejecuta R, no la interfaz del IDE. Revisados 1,607 enlaces
+locales/fragmentos, bloques y soluciones equilibrados y git diff --check limpio.
 
 07.07 añade lección/lab, lector/funciones, ejecutor y preparador desde R.
 Muestra analítica de pandas 02.07: 48 observaciones de 24 IDs en dos cortes,
@@ -294,6 +328,15 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-19
+
+- Se desarrolló 07.08 con lección/lab, funciones, ejecutor y preparador: texto
+  original conservado, equivalencias exactas, 45 segmentos reconocidos y tres
+  pendientes sobre 48 entradas. Factores nominales y orden sin alterar indicadores.
+- Forcats añadido y stringr declarado directamente, con respaldo y restauración
+  local comprobada; registros previos del lockfile conservados. Ejemplos,
+  fronteras, alteraciones y conciliación pandas verificados; 1,607 enlaces y
+  navegación revisados. Sigue 07.09, todavía planificada, sin acreditar aprendizaje
+  ni crear checkpoints integradores pendientes.
 
 - Se desarrolló 07.07 con lección/lab, funciones, ejecutor y preparador.
   Cambio largo/ancho/largo de la proyección de 48 observaciones; claves,

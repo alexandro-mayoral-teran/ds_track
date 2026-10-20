@@ -359,8 +359,7 @@ presentes y reconstruyas los tres campos con indicadores conciliados desde
 una sesión nueva. Registra evidencia y dudas; material disponible no acredita
 aprendizaje. No hay checkpoint integrador implementado asociado.
 
-Siguiente: [07.08 — Texto, categorías y factores](../README.md#08-texto-categorias-y-factores),
-todavía planificada. Volver al [índice del módulo](../README.md).
+Siguiente: [07.08 — Texto, categorías y factores](../08_text_categories_factors/README.md). Volver al [índice del módulo](../README.md).
 
 ## Referencias y atribución
 

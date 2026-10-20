@@ -216,5 +216,4 @@ y expliques cobertura y límites desde una sesión nueva. Registra evidencia y
 dudas en [PROGRESS.md](../../../PROGRESS.md); disponer del material no acredita
 aprendizaje. No hay checkpoint integrador implementado asociado.
 
-Siguiente: [07.08 — Texto, categorías y factores](../../../curriculum/07_tidyverse/README.md#08-texto-categorias-y-factores),
-todavía planificada. Volver a la [lección 07.07](../../../curriculum/07_tidyverse/07_tidy_reshape/README.md).
+Siguiente: [07.08 — Texto, categorías y factores](../../../curriculum/07_tidyverse/08_text_categories_factors/README.md). Volver a la [lección 07.07](../../../curriculum/07_tidyverse/07_tidy_reshape/README.md).

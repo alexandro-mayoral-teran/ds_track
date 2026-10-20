@@ -205,7 +205,10 @@ funciones/script y conciliación pandas/SQLite, sin nuevas dependencias.
 [07.07 — Datos ordenados y reshape](curriculum/07_tidyverse/07_tidy_reshape/README.md)
 añade lección/lab y vuelta largo/ancho comprobada, con claves y faltantes
 conservados; incorpora tidyr al proyecto renv con respaldo de metadatos.
-07.08–07.10 y el nivel 08 conservan sus planes y
+[07.08 — Texto, categorías y factores](curriculum/07_tidyverse/08_text_categories_factors/README.md)
+añade normalización auditable, categorías pendientes y factores con niveles
+controlados, con lección/lab y forcats en el mismo proyecto renv.
+07.09–07.10 y el nivel 08 conservan sus planes y
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

@@ -297,7 +297,10 @@ conciliación pandas/SQLite; conserva los 29 aceptados y su saldo.
 pivot_longer/pivot_wider, claves únicas y distinción de ausencias; conserva
 una proyección de 48 observaciones de dos cortes y sus indicadores. Incorpora
 tidyr con lockfile/restauración local y respaldo, sin mezclar otras muestras.
-07.08–07.10 siguen planificadas; consulta
+[07.08](curriculum/07_tidyverse/08_text_categories_factors/README.md) añade lección/lab,
+texto normalizado con reglas y origen conservado, pendientes y factores nominales
+con niveles controlados. Incorpora forcats y declara stringr en el mismo proyecto.
+07.09–07.10 siguen planificadas; consulta
 [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** realizar análisis expresivos y comunicar hallazgos.
