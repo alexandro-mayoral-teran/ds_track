@@ -223,5 +223,5 @@ activo; ejecutar una referencia no acredita aprendizaje.
 - ¿Cómo detectarías un cambio de segmento sin ocultarlo en un resumen global?
 
 Cierra cuando puedas reconstruir y justificar esas decisiones. Siguiente:
-[08.06 — Etiquetas, temas y accesibilidad](../../../curriculum/08_visualization_r/README.md#06-etiquetas-temas-y-accesibilidad),
-todavía planificada. Volver a la [lección 08.05](../../../curriculum/08_visualization_r/05_facets_groups/README.md).
+[08.06 — Etiquetas, temas y accesibilidad](../../../curriculum/08_visualization_r/06_labels_themes_accessibility/README.md),
+ya disponible. Volver a la [lección 08.05](../../../curriculum/08_visualization_r/05_facets_groups/README.md).

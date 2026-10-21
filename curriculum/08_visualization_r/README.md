@@ -11,9 +11,10 @@ compara con el análisis Python; no se repite toda la limpieza para aprender gr�
 **Estado:** [08.01](01_question_grammar/README.md),
 [08.02](02_geometries_stats/README.md),
 [08.03](03_aesthetic_mapping/README.md),
-[08.04](04_scales_coordinates/README.md) y
-[08.05](05_facets_groups/README.md) disponen de lección, script y lab.
-08.06–08.09 siguen planificadas; sus enlaces internos describen el alcance.
+[08.04](04_scales_coordinates/README.md),
+[08.05](05_facets_groups/README.md) y
+[08.06](06_labels_themes_accessibility/README.md) disponen de lección, script y lab.
+08.07–08.09 siguen planificadas; sus enlaces internos describen el alcance.
 
 La pregunta, la representación y la interpretación guían el recorrido. El libro
 abierto de ggplot2 aporta la gramática de gráficos; su tercera edición en línea
@@ -28,7 +29,7 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 | 3 | [Mapear y fijar estéticas](03_aesthetic_mapping/README.md) | Esencial | Distinguir variables de estilos constantes |
 | 4 | [Escalas y coordenadas](04_scales_coordinates/README.md) | Esencial | Justificar límites, transformaciones y unidades |
 | 5 | [Facetas y comparación entre grupos](05_facets_groups/README.md) | Práctica | Comparar segmentos con escalas explícitas |
-| 6 | [Etiquetas, temas y accesibilidad](#06-etiquetas-temas-y-accesibilidad) | Esencial | Comunicar población, hallazgo y límites |
+| 6 | [Etiquetas, temas y accesibilidad](06_labels_themes_accessibility/README.md) | Esencial | Comunicar población, hallazgo y límites |
 | 7 | [Componer figuras](#07-componer-figuras) | Práctica | Reunir vistas sin perder contexto |
 | 8 | [Exportación reproducible](#08-exportacion-reproducible) | Esencial | Producir archivos legibles desde código |
 | 9 | [Cierre visual y comparación con Python](#09-cierre-visual-y-comparacion-con-python) | Práctica de cierre | Explicar indicadores equivalentes en dos ecosistemas |
@@ -96,8 +97,10 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 - labs, anotaciones, themes y leyendas; títulos informativos, corte y fuente.
   Contraste, señales adicionales al color y categorías con orden justificado.
-- Práctica prevista: mejorar una figura y escribir una interpretación que distinga
-  datos observados, cobertura e incertidumbre de afirmaciones causales.
+- Disponible: [lección, script y figuras](06_labels_themes_accessibility/README.md) y
+  [lab 08.06](../../labs/08_visualization_r/06_labels_themes_accessibility/README.md).
+  Mensaje, anotaciones, temas locales, señales adicionales al color y descripción
+  alternativa con tabla; mismos datos/lockfile, sin nuevas dependencias.
 
 <a id="07-componer-figuras"></a>
 
@@ -131,9 +134,10 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 Los labs [08.01](../../labs/08_visualization_r/01_question_grammar/README.md),
 [08.02](../../labs/08_visualization_r/02_geometries_stats/README.md),
 [08.03](../../labs/08_visualization_r/03_aesthetic_mapping/README.md),
-[08.04](../../labs/08_visualization_r/04_scales_coordinates/README.md) y
-[08.05](../../labs/08_visualization_r/05_facets_groups/README.md) están
-disponibles; 08.06–08.09 siguen previstos. Se ampliará el proyecto previsto
+[08.04](../../labs/08_visualization_r/04_scales_coordinates/README.md),
+[08.05](../../labs/08_visualization_r/05_facets_groups/README.md) y
+[08.06](../../labs/08_visualization_r/06_labels_themes_accessibility/README.md) están
+disponibles; 08.07–08.09 siguen previstos. Se ampliará el proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 con un checkpoint visual cuyo nombre se definirá al implementarlo.
 

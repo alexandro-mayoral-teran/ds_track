@@ -89,6 +89,7 @@ reglas de enlace están en
 | [`08.03 — Mapear y fijar estéticas`](08_visualization_r/03_aesthetic_mapping/) | `08_visualization_r` | No aplica todavía |
 | [`08.04 — Escalas y coordenadas`](08_visualization_r/04_scales_coordinates/) | `08_visualization_r` | No aplica todavía |
 | [`08.05 — Facetas y comparación entre grupos`](08_visualization_r/05_facets_groups/) | `08_visualization_r` | No aplica todavía |
+| [`08.06 — Etiquetas, temas y accesibilidad`](08_visualization_r/06_labels_themes_accessibility/) | `08_visualization_r` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

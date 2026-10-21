@@ -97,8 +97,10 @@ añade mapeos, propiedades constantes y agrupación por ID con
 unidades y coordenadas con [lab](../labs/08_visualization_r/04_scales_coordinates/README.md),
 script y figuras. [08.05](08_visualization_r/05_facets_groups/README.md)
 añade facetas, escalas y cobertura por grupo, con
-[lab](../labs/08_visualization_r/05_facets_groups/README.md), script y figuras;
-08.06–08.09 siguen planificadas,
+[lab](../labs/08_visualization_r/05_facets_groups/README.md), script y figuras.
+[08.06](08_visualization_r/06_labels_themes_accessibility/README.md) añade
+etiquetas, temas y accesibilidad con [lab](../labs/08_visualization_r/06_labels_themes_accessibility/README.md),
+script y figuras; 08.07–08.09 siguen planificadas,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

@@ -461,8 +461,8 @@ controles y notas de revisión visual. No exigimos nuevas exportaciones ni
 restaurar otra biblioteca. El proyecto integrador y sus checkpoints siguen
 pendientes; desarrollar material no acredita aprendizaje del estudiante.
 
-Siguiente: [08.06 — Etiquetas, temas y accesibilidad](../README.md#06-etiquetas-temas-y-accesibilidad),
-todavía planificada. Volver al [índice de 08](../README.md).
+Siguiente: [08.06 — Etiquetas, temas y accesibilidad](../06_labels_themes_accessibility/README.md),
+ya disponible. Volver al [índice de 08](../README.md).
 
 ## Referencias y atribución
 

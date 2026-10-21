@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
-- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.05 disponibles).
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.05 implementadas; 08.06–08.09 siguen planificadas.
-- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.05.
-- **Foco actual:** facetas, escalas por panel, integrantes y cobertura por grupo.
+- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.06 disponibles).
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.06 implementadas; 08.07–08.09 siguen planificadas.
+- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.06.
+- **Foco actual:** mensaje, etiquetas, temas locales y accesibilidad.
   Próxima sección por implementar:
-  [08.06 — Etiquetas, temas y accesibilidad](curriculum/08_visualization_r/README.md#06-etiquetas-temas-y-accesibilidad), todavía planificada.
+  [08.07 — Componer figuras](curriculum/08_visualization_r/README.md#07-componer-figuras), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10 y 08.01–08.05; las otras cuatro siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.10 y 08.01–08.06; las otras tres siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -47,14 +47,41 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[08.05 — Facetas y comparación entre grupos](curriculum/08_visualization_r/05_facets_groups/README.md)
-con [script](curriculum/08_visualization_r/05_facets_groups/explorar_facetas.R)
-y [lab](labs/08_visualization_r/05_facets_groups/README.md).
-Retomar con 08.06: etiquetas, temas y accesibilidad. Las otras cuatro secciones de 08
+[08.06 — Etiquetas, temas y accesibilidad](curriculum/08_visualization_r/06_labels_themes_accessibility/README.md)
+con [script](curriculum/08_visualization_r/06_labels_themes_accessibility/comunicar_resultados.R)
+y [lab](labs/08_visualization_r/06_labels_themes_accessibility/README.md).
+Retomar con 08.07: componer figuras. Las otras tres secciones de 08
 siguen planificadas. Las diez de 07
 tienen material; los criterios de práctica y tareas pendientes siguen en
 [cierre y pendientes](docs/tidyverse-closure.md). Proyecto/checkpoints integradores
 siguen pendientes; no se modificó el estado del estudiante sin evidencia.
+
+08.06 añade lección/script/lab y tres figuras, sin nuevas dependencias ni
+cambios de fuente, funciones previas o lockfile. Mensaje, títulos, unidades,
+texto/etiquetas y annotate, tema completo seguido de ajustes locales, tamaños
+en puntos explícitos y señales adicionales al color. Conserva los mismos 14
+IDs y 29000/31800 MXN, +2800 y aproximadamente +9.66% sobre septiembre;
+cobertura 14/18 por corte y alcance descriptivo. Puntos con color/forma y
+variante de color único; descripción alternativa recuperable y tabla de lectura.
+Se distingue guardar alt en el objeto de integrarlo en el documento de destino.
+
+Comprobados ocho bloques R de lección y tres de lab, incluidos source tras
+reinicio, más el script de referencia en procesos nuevos; R 4.6.1/ggplot2 4.0.3.
+Temas locales y orden de aplicación, tema global intacto, posiciones/importes,
+nota local de una fila y annotate sin medición nueva, etiqueta vacía, filas
+invertidas y categoría exterior que amplía escala comprobados. Correspondencia
+de fecha/forma con dos colores y uno, alternativa recuperada y rama matemática
+de base cero/cambio negativo/sin cambio revisadas. Datos y cambio conciliados
+con Python estándar frente a 07.10; contraste de texto/colores seleccionados
+contra blanco calculado independientemente, sin certificar accesibilidad completa.
+Cierre idéntico al RDS de 07.10; fuentes, funciones, metadatos, lockfile y entrega
+previa conservan huellas. Tres figuras inspeccionadas a 1296 × 864; versión
+reducida 1008 × 720, variante de lab y anotación también revisadas. Sin instalar
+ni cambiar entornos: ejecución con lectura de enlaces base renv, sin probar la
+interfaz del IDE. Índices, navegación y pendientes actualizados; proyecto y
+checkpoints siguen pendientes y no se acredita aprendizaje del estudiante.
+Revisados 1,874 enlaces locales/fragmentos en 204 Markdown, bloques y soluciones
+equilibrados y git diff --check limpio.
 
 08.05 añade lección/script/lab y cuatro figuras, sin nuevas dependencias ni
 cambios de fuente, funciones previas o lockfile. Recupera segmento desde los
@@ -522,6 +549,13 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-20
+
+- Se desarrolló [08.06 — Etiquetas, temas y accesibilidad](curriculum/08_visualization_r/06_labels_themes_accessibility/README.md)
+  con script, tres figuras y [lab](labs/08_visualization_r/06_labels_themes_accessibility/README.md).
+  Mensaje, etiquetas/anotaciones, temas locales, señales además del color,
+  descripción alternativa y tabla; ejemplos R, variantes y contraste comprobados.
+  Datos/cambio conciliados con Python, fuentes/lockfile/entregas intactos.
+  Siguiente: **08.07 — Componer figuras**, todavía planificada.
 
 - Se desarrolló [08.05 — Facetas y comparación entre grupos](curriculum/08_visualization_r/05_facets_groups/README.md)
   con script, cuatro figuras y [lab](labs/08_visualization_r/05_facets_groups/README.md).
