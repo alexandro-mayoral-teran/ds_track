@@ -195,5 +195,5 @@ activo; consultar la solución no demuestra aprendizaje.
 - ¿Cuándo tiene sentido igualar la longitud de una unidad en ambos ejes?
 
 Cierra cuando puedas reconstruir y justificar esas decisiones. Siguiente:
-[08.05 — Facetas y comparación entre grupos](../../../curriculum/08_visualization_r/README.md#05-facetas-y-comparacion-entre-grupos),
-todavía planificada. Volver a la [lección 08.04](../../../curriculum/08_visualization_r/04_scales_coordinates/README.md).
+[08.05 — Facetas y comparación entre grupos](../../../curriculum/08_visualization_r/05_facets_groups/README.md),
+ya disponible. Volver a la [lección 08.04](../../../curriculum/08_visualization_r/04_scales_coordinates/README.md).

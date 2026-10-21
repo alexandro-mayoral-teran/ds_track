@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.10 y 08.01–08.04 tienen lecciones/scripts/labs; 08.05–08.09 y 09–14 conservan planificación;
+07.01–07.10 y 08.01–08.05 tienen lecciones/scripts/labs; 08.06–08.09 y 09–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,8 +344,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; las diez de 07 también están disponibles. 08.01–08.04 tienen
-material y las otras cinco secciones de 08 conservan planificación:
+scripts y labs; las diez de 07 también están disponibles. 08.01–08.05 tienen
+material y las otras cuatro secciones de 08 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -571,7 +571,12 @@ unidades, marcas y etiquetas, límite de escala frente a ventana de coordenadas.
 Cajas tipo 7 de 14/10 saldos con mediana 2050/1750; el zoom conserva el cálculo.
 Log10 sobre positivos y proporción fija en dispersión; conserva 14 pares y
 29000/31800 MXN sin nuevas dependencias ni cambios de fuentes o lockfile.
-Las otras cinco secciones de 08 siguen planificadas; el proyecto integrador continúa pendiente.
+08.05 añade lección/script/lab y figuras: wrap/grid, escalas compartidas/libres
+y capas con claves de faceta. Selecciona del detalle aceptado los mismos 14 IDs,
+con segmento estable comprobado: ocho sumas y 29000/31800 MXN, cuatro/cuatro/
+tres/tres créditos por corte y denominador común 14. Ocho cajas y 28 puntos;
+muestra independiente con cero, saldo NA y combinaciones sin registro, sin
+imputar ni modificar fuentes/lockfile. Las otras cuatro secciones de 08 siguen planificadas; el proyecto integrador continúa pendiente.
 
 ### Almacenamiento y procesamiento previstos: 09–10
 

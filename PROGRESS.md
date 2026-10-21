@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
-- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.04 disponibles).
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.04 implementadas; 08.05–08.09 siguen planificadas.
-- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.04.
-- **Foco actual:** escalas, unidades, límites frente a zoom y coordenadas.
+- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.05 disponibles).
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.05 implementadas; 08.06–08.09 siguen planificadas.
+- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.05.
+- **Foco actual:** facetas, escalas por panel, integrantes y cobertura por grupo.
   Próxima sección por implementar:
-  [08.05 — Facetas y comparación entre grupos](curriculum/08_visualization_r/README.md#05-facetas-y-comparacion-entre-grupos), todavía planificada.
+  [08.06 — Etiquetas, temas y accesibilidad](curriculum/08_visualization_r/README.md#06-etiquetas-temas-y-accesibilidad), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10 y 08.01–08.04; las otras cinco siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.10 y 08.01–08.05; las otras cuatro siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -47,14 +47,43 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[08.04 — Escalas y coordenadas](curriculum/08_visualization_r/04_scales_coordinates/README.md)
-con [script](curriculum/08_visualization_r/04_scales_coordinates/explorar_escalas.R)
-y [lab](labs/08_visualization_r/04_scales_coordinates/README.md).
-Retomar con 08.05: facetas y comparación entre grupos. Las otras cinco secciones de 08
+[08.05 — Facetas y comparación entre grupos](curriculum/08_visualization_r/05_facets_groups/README.md)
+con [script](curriculum/08_visualization_r/05_facets_groups/explorar_facetas.R)
+y [lab](labs/08_visualization_r/05_facets_groups/README.md).
+Retomar con 08.06: etiquetas, temas y accesibilidad. Las otras cuatro secciones de 08
 siguen planificadas. Las diez de 07
 tienen material; los criterios de práctica y tareas pendientes siguen en
 [cierre y pendientes](docs/tidyverse-closure.md). Proyecto/checkpoints integradores
 siguen pendientes; no se modificó el estado del estudiante sin evidencia.
+
+08.05 añade lección/script/lab y cuatro figuras, sin nuevas dependencias ni
+cambios de fuente, funciones previas o lockfile. Recupera segmento desde los
+aceptados para los mismos 14 IDs; comprueba segmento estable por ID. Ocho sumas
+por segmento/corte: comercio 7600/8400, consumo 9200/10000, educacion 5800/6400
+y servicios 6400/7000 MXN; cuatro/cuatro/tres/tres créditos por fecha y
+fracciones con denominador común 14. Wrap fijo/libre y grid con ocho cajas,
+28 puntos y escalas compartidas por fila cuando y es libre. Muestra independiente
+A/B/C: tres filas, dos saldos conocidos, un saldo NA y tres combinaciones sin
+registro en inventario de seis celdas; cero conservado, sin imputación.
+
+Comprobados ocho bloques R de lección y cuatro de lab, incluidos source tras
+reinicio, más el script de referencia en procesos nuevos; R 4.6.1/ggplot2 4.0.3.
+Paneles, rangos, sumas/etiquetas por clave y cuartiles por celda comprobados;
+capas globales sin segmento repetidas y corregidas. Drop con/sin inventario,
+wrap frente a grid, vacío con/sin niveles, un segmento, cero, saldo NA, categoría
+NA, niveles/filas reordenados y tabla sin variable de faceta comprobados.
+Cambio de segmento con totales globales conservados y alteración compensada
+detectados. Los 28 registros coinciden exactamente con el detalle de la entrega
+07.10; integrantes, ocho sumas/fracciones, cuartiles/bigotes y estados conciliados
+con Python estándar independiente. Cierre idéntico al RDS de 07.10 y huellas de
+fuentes, funciones, metadatos, lockfile y entrega previa intactas. Cuatro figuras
+inspeccionadas a 1296 × 864 (grid 1296 × 1152), con encabezados y notas legibles;
+variantes de lab también revisadas. Sin instalar ni modificar entornos: R con
+lectura de enlaces base renv existentes; no se prueba la interfaz del IDE.
+Índices, navegación y pendientes actualizados. Proyecto/checkpoints y aprendizaje
+del estudiante no se acreditan por el desarrollo del material.
+Revisados 1,842 enlaces locales/fragmentos en 202 Markdown, bloques y soluciones
+equilibrados y git diff --check limpio.
 
 08.04 añade lección/script/lab y tres figuras, sin nuevas dependencias ni
 cambios de fuente, funciones previas o lockfile. Escalas continuas/discretas/Date,
@@ -493,6 +522,13 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-20
+
+- Se desarrolló [08.05 — Facetas y comparación entre grupos](curriculum/08_visualization_r/05_facets_groups/README.md)
+  con script, cuatro figuras y [lab](labs/08_visualization_r/05_facets_groups/README.md).
+  Paneles, escalas compartidas/libres, integrantes, denominadores y capas con
+  claves; muestra independiente de cero/NA/sin registro. Ejemplos R comprobados,
+  detalle y cálculos conciliados con Python; fuentes/lockfile/entregas intactos.
+  Siguiente: **08.06 — Etiquetas, temas y accesibilidad**, todavía planificada.
 
 - Se desarrolló [08.04 — Escalas y coordenadas](curriculum/08_visualization_r/04_scales_coordinates/README.md)
   con script, tres figuras y [lab](labs/08_visualization_r/04_scales_coordinates/README.md).

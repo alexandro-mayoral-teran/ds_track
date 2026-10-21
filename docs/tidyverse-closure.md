@@ -38,7 +38,7 @@ no basta para marcar una competencia como adquirida.
 
 | Pendiente | Alcance y condición para darlo por implementado |
 | --- | --- |
-| 08 — Visualización en R | 08.01–08.04 disponen de lección/script y lab; [08.04](../curriculum/08_visualization_r/04_scales_coordinates/README.md) añade escalas, unidades y coordenadas. Las otras cinco secciones siguen planificadas: facetas, comunicación, composición, exportación y cierre. |
+| 08 — Visualización en R | 08.01–08.05 disponen de lección/script y lab; [08.05](../curriculum/08_visualization_r/05_facets_groups/README.md) añade facetas, escalas y cobertura por grupo. Las otras cuatro secciones siguen planificadas: comunicación, composición, exportación y cierre. |
 | Proyecto 03_portfolio_analysis_r | No tiene carpeta ni checkpoints activos. Antes de crearlos, definir producto, entradas, contrato y rúbrica; enlazar las lecciones y evidencias efectivamente exigidas. |
 | Checkpoints propuestos de 07 | Importación/contrato, calidad, indicadores/relaciones y categorías/cortes/figura. Son propuestas para el proyecto, no entregas ya habilitadas. |
 | Revisión del recorrido IDE anterior | 07.01–07.10 ya priorizan IDE. Revisar con el usuario las lecciones anteriores que aún necesiten adaptación, conservando terminal como apoyo cuando corresponda. |
@@ -52,8 +52,10 @@ amplía geometrías y estadísticas sobre la misma base común.
 [08.03](../curriculum/08_visualization_r/03_aesthetic_mapping/README.md) distingue
 mapeos, propiedades constantes y agrupación por ID.
 [08.04](../curriculum/08_visualization_r/04_scales_coordinates/README.md) amplía
-unidades, límites, zoom y transformaciones. El siguiente trabajo
-de autoría es [08.05 — Facetas y comparación entre grupos](../curriculum/08_visualization_r/README.md#05-facetas-y-comparacion-entre-grupos),
+unidades, límites, zoom y transformaciones.
+[08.05](../curriculum/08_visualization_r/05_facets_groups/README.md) añade paneles
+por segmento/corte, escalas y cobertura explícitas. El siguiente trabajo
+de autoría es [08.06 — Etiquetas, temas y accesibilidad](../curriculum/08_visualization_r/README.md#06-etiquetas-temas-y-accesibilidad),
 todavía planificado. Instalar dependencias
 adicionales solo cuando una práctica implementada las requiera.
 

@@ -452,8 +452,8 @@ Conserva script propio, inspección visual y explicación. No exigimos otra
 exportación ni una biblioteca nueva. El proyecto integrador y sus checkpoints
 siguen pendientes; desarrollar material no acredita aprendizaje del estudiante.
 
-Siguiente: [08.05 — Facetas y comparación entre grupos](../README.md#05-facetas-y-comparacion-entre-grupos),
-todavía planificada. Volver al [índice de 08](../README.md).
+Siguiente: [08.05 — Facetas y comparación entre grupos](../05_facets_groups/README.md),
+ya disponible. Volver al [índice de 08](../README.md).
 
 ## Referencias y atribución
 
