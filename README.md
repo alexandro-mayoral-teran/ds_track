@@ -220,8 +220,10 @@ datos, estéticas y capas. [08.02](curriculum/08_visualization_r/02_geometries_s
 añade geometrías y estadísticas con [lab](labs/08_visualization_r/02_geometries_stats/README.md),
 script y figuras. [08.03](curriculum/08_visualization_r/03_aesthetic_mapping/README.md)
 añade mapeos, propiedades constantes y agrupación por ID con
-[lab](labs/08_visualization_r/03_aesthetic_mapping/README.md), script y figura;
-08.04–08.09 siguen planificadas, con
+[lab](labs/08_visualization_r/03_aesthetic_mapping/README.md), script y figura.
+[08.04](curriculum/08_visualization_r/04_scales_coordinates/README.md) añade escalas,
+unidades y coordenadas con [lab](labs/08_visualization_r/04_scales_coordinates/README.md),
+script y figuras; 08.05–08.09 siguen planificadas, con
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
-- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.03 disponibles).
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.03 implementadas; 08.04–08.09 siguen planificadas.
-- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.03.
-- **Foco actual:** mapeos, propiedades constantes, leyendas y agrupación por ID.
+- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.04 disponibles).
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.04 implementadas; 08.05–08.09 siguen planificadas.
+- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.04.
+- **Foco actual:** escalas, unidades, límites frente a zoom y coordenadas.
   Próxima sección por implementar:
-  [08.04 — Escalas y coordenadas](curriculum/08_visualization_r/README.md#04-escalas-y-coordenadas), todavía planificada.
+  [08.05 — Facetas y comparación entre grupos](curriculum/08_visualization_r/README.md#05-facetas-y-comparacion-entre-grupos), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10 y 08.01–08.03; las otras seis siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.10 y 08.01–08.04; las otras cinco siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -47,14 +47,41 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[08.03 — Mapear y fijar estéticas](curriculum/08_visualization_r/03_aesthetic_mapping/README.md)
-con [script](curriculum/08_visualization_r/03_aesthetic_mapping/explorar_esteticas.R)
-y [lab](labs/08_visualization_r/03_aesthetic_mapping/README.md).
-Retomar con 08.04: escalas y coordenadas. Las otras seis secciones de 08
+[08.04 — Escalas y coordenadas](curriculum/08_visualization_r/04_scales_coordinates/README.md)
+con [script](curriculum/08_visualization_r/04_scales_coordinates/explorar_escalas.R)
+y [lab](labs/08_visualization_r/04_scales_coordinates/README.md).
+Retomar con 08.05: facetas y comparación entre grupos. Las otras cinco secciones de 08
 siguen planificadas. Las diez de 07
 tienen material; los criterios de práctica y tareas pendientes siguen en
 [cierre y pendientes](docs/tidyverse-closure.md). Proyecto/checkpoints integradores
 siguen pendientes; no se modificó el estado del estudiante sin evidencia.
+
+08.04 añade lección/script/lab y tres figuras, sin nuevas dependencias ni
+cambios de fuente, funciones previas o lockfile. Escalas continuas/discretas/Date,
+marcas/etiquetas, unidades y miles de MXN; límites de escala frente a zoom con
+márgenes verticales explícitos, log10 sobre positivos y proporción fija.
+Conserva 14 pares y 29000/31800 MXN. Caja septiembre: 14 saldos, cuartiles
+1475/2050/2575; límite 1000–2500 deja diez y 1325/1750/2075, mientras el zoom
+conserva la estadística completa. Lab 1000–2000: siete/siete, 10500/18500 MXN,
+cuartiles 1250/1400/1750; muestra independiente de fechas con distancias 1/30
+frente a categorías equidistantes, y cero conservado en escala lineal.
+
+Comprobados once bloques R de lección y cuatro de lab, incluidos source tras
+reinicio, más el script de referencia desde procesos nuevos; R 4.6.1/ggplot2 4.0.3.
+Fronteras incluidas, valores justo fuera, NA, vacío, un valor, ceros, empates y
+orden invertido comprobados. Avisos esperados de censura revisados; log10 de
+cero/negativo, Date incompatible, categorías excluidas y barras sin base cero.
+Posiciones, etiquetas/unidades, rangos de panel y proporción 1:1 comprobados;
+transformación antes de cuartiles contrastada en la extensión opcional. Cuartiles,
+bigotes, partición y calendario conciliados con Python estándar independiente.
+Cierre idéntico al RDS verificado de 07.10; fuentes, funciones, metadatos,
+lockfile y entrega anterior conservan huellas. Figuras de referencia y variantes
+inspeccionadas a 1296 × 864, con textos legibles y recortes declarados. Sin
+instalar ni cambiar entornos: ejecución con lectura de enlaces base renv, sin
+probar la interfaz del IDE. Índices, navegación y pendientes actualizados;
+proyecto/checkpoints y estado del estudiante siguen pendientes de evidencia.
+Revisados 1,804 enlaces locales/fragmentos en 200 Markdown, bloques y soluciones
+equilibrados y git diff --check limpio.
 
 08.03 añade lección/script/lab y figura sobre el mismo proyecto de 07.10,
 sin dependencias nuevas ni cambios de fuente, funciones previas o lockfile.
@@ -466,6 +493,13 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-20
+
+- Se desarrolló [08.04 — Escalas y coordenadas](curriculum/08_visualization_r/04_scales_coordinates/README.md)
+  con script, tres figuras y [lab](labs/08_visualization_r/04_scales_coordinates/README.md).
+  Unidades, límites frente a zoom, fechas, log10 y proporción 1:1; ejemplos R
+  comprobados y cuartiles/bigotes/partición conciliados con Python. Fuentes,
+  lockfile y entregas previas intactos. Siguiente: **08.05 — Facetas y comparación
+  entre grupos**, todavía planificada; no se modifica el estado del estudiante.
 
 - Se desarrolló [08.03 — Mapear y fijar estéticas](curriculum/08_visualization_r/03_aesthetic_mapping/README.md)
   con script, figura y [lab](labs/08_visualization_r/03_aesthetic_mapping/README.md).

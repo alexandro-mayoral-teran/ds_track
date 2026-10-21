@@ -194,5 +194,5 @@ acredita por sí solo aprendizaje.
 - ¿Qué información aporta la forma además del color y qué no puede mostrar la figura?
 
 Cierra cuando puedas reconstruir, corregir y justificar esas decisiones.
-Siguiente: [08.04 — Escalas y coordenadas](../../../curriculum/08_visualization_r/README.md#04-escalas-y-coordenadas),
-todavía planificada. Volver a la [lección 08.03](../../../curriculum/08_visualization_r/03_aesthetic_mapping/README.md).
+Siguiente: [08.04 — Escalas y coordenadas](../../../curriculum/08_visualization_r/04_scales_coordinates/README.md),
+ya disponible. Volver a la [lección 08.03](../../../curriculum/08_visualization_r/03_aesthetic_mapping/README.md).

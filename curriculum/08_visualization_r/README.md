@@ -9,9 +9,10 @@ Se reutiliza la primera figura disponible en
 compara con el análisis Python; no se repite toda la limpieza para aprender gráficos.
 
 **Estado:** [08.01](01_question_grammar/README.md),
-[08.02](02_geometries_stats/README.md) y
-[08.03](03_aesthetic_mapping/README.md) disponen de lección, script y lab.
-08.04–08.09 siguen planificadas; sus enlaces internos describen el alcance.
+[08.02](02_geometries_stats/README.md),
+[08.03](03_aesthetic_mapping/README.md) y
+[08.04](04_scales_coordinates/README.md) disponen de lección, script y lab.
+08.05–08.09 siguen planificadas; sus enlaces internos describen el alcance.
 
 La pregunta, la representación y la interpretación guían el recorrido. El libro
 abierto de ggplot2 aporta la gramática de gráficos; su tercera edición en línea
@@ -24,7 +25,7 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 | 1 | [Pregunta y gramática de gráficos](01_question_grammar/README.md) | Esencial | Explicar datos, estéticas y capas de una figura |
 | 2 | [Geometrías y transformaciones estadísticas](02_geometries_stats/README.md) | Esencial | Elegir una geometría y verificar qué agrega |
 | 3 | [Mapear y fijar estéticas](03_aesthetic_mapping/README.md) | Esencial | Distinguir variables de estilos constantes |
-| 4 | [Escalas y coordenadas](#04-escalas-y-coordenadas) | Esencial | Justificar límites, transformaciones y unidades |
+| 4 | [Escalas y coordenadas](04_scales_coordinates/README.md) | Esencial | Justificar límites, transformaciones y unidades |
 | 5 | [Facetas y comparación entre grupos](#05-facetas-y-comparacion-entre-grupos) | Práctica | Comparar segmentos con escalas explícitas |
 | 6 | [Etiquetas, temas y accesibilidad](#06-etiquetas-temas-y-accesibilidad) | Esencial | Comunicar población, hallazgo y límites |
 | 7 | [Componer figuras](#07-componer-figuras) | Práctica | Reunir vistas sin perder contexto |
@@ -73,8 +74,10 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 - Escalas continuas, discretas y temporales; ejes, transformaciones y unidades.
   Diferenciar limitar una escala de ampliar una vista con coordenadas.
-- Práctica prevista: comprobar si cambiar límites excluye observaciones y altera
-  un cálculo estadístico; justificar una comparación legible.
+- Disponible: [lección, script y figuras](04_scales_coordinates/README.md) y
+  [lab 08.04](../../labs/08_visualization_r/04_scales_coordinates/README.md).
+  Unidades, marcas/etiquetas, censura frente a zoom, fechas, log10 sobre positivos
+  y proporción fija; misma fuente/lockfile, sin dependencias nuevas.
 
 <a id="05-facetas-y-comparacion-entre-grupos"></a>
 
@@ -123,9 +126,10 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 ## Prácticas, integración y criterio de salida
 
 Los labs [08.01](../../labs/08_visualization_r/01_question_grammar/README.md),
-[08.02](../../labs/08_visualization_r/02_geometries_stats/README.md) y
-[08.03](../../labs/08_visualization_r/03_aesthetic_mapping/README.md) están
-disponibles; 08.04–08.09 siguen previstos. Se ampliará el proyecto previsto
+[08.02](../../labs/08_visualization_r/02_geometries_stats/README.md),
+[08.03](../../labs/08_visualization_r/03_aesthetic_mapping/README.md) y
+[08.04](../../labs/08_visualization_r/04_scales_coordinates/README.md) están
+disponibles; 08.05–08.09 siguen previstos. Se ampliará el proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 con un checkpoint visual cuyo nombre se definirá al implementarlo.
 

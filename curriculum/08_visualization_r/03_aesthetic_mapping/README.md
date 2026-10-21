@@ -161,7 +161,7 @@ la fuente ni cambiamos qué representa cada barra.
 
 Si queremos elegir los colores de cada fecha, mantenemos `aes(fill = corte)` y
 especificamos la correspondencia. Introducimos este caso pequeño antes del
-estudio completo de escalas de 08.04:
+estudio completo de escalas de [08.04](../04_scales_coordinates/README.md):
 
 ```r
 paleta <- c("2026-09-30" = "#246A86", "2026-10-31" = "#A34E12")
@@ -403,7 +403,7 @@ comprobación. Ninguna inspección visual sustituye las claves y los controles.
 
 No enseñamos a ocultar un error de agrupación mediante una leyenda más bonita.
 Primero tabla y conexiones; después presentación. Escalas completas y límites
-pertenecen a 08.04, facetas a 08.05 y accesibilidad/temas a 08.06; sus alcances
+pertenecen a [08.04](../04_scales_coordinates/README.md), facetas a 08.05 y accesibilidad/temas a 08.06; sus alcances
 siguen en el [índice](../README.md). No es requisito usar simultáneamente todas
 las estéticas, representar 14 IDs con 14 colores ni exportar otra entrega.
 
@@ -424,8 +424,8 @@ ID sin alterar población ni saldos. Conserva comprobaciones y explicación prop
 el desarrollo del material no acredita aprendizaje. No existe aún proyecto
 integrador ni checkpoint activo.
 
-Siguiente: [08.04 — Escalas y coordenadas](../README.md#04-escalas-y-coordenadas),
-todavía planificada. Volver al [índice de 08](../README.md).
+Siguiente: [08.04 — Escalas y coordenadas](../04_scales_coordinates/README.md),
+ya disponible. Volver al [índice de 08](../README.md).
 
 ## Referencias y atribución
 
