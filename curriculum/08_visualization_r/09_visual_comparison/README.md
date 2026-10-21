@@ -8,17 +8,18 @@ comunicar; la equivalencia se comprueba en población, claves, fechas y valores.
 
 Retoma [07.09 — Fechas y cortes](../../07_tidyverse/09_dates_cutoffs/README.md),
 [07.10 — Primera figura y cierre](../../07_tidyverse/10_first_plot_closure/README.md)
-y [08.01–08.07](../README.md). En Python, retoma
+y [08.01–08.08](../README.md). En Python, retoma
 [texto y fechas](../../02_pandas/06_text_dates/README.md) y el
 [cierre visual](../../02_pandas/10_analysis_plot/README.md).
 Necesitas el mismo proyecto renv y un entorno Python del track ya preparado.
 Referencias comprobadas: R 4.6.1, ggplot2 4.0.3, Python 3.12.12 y Matplotlib 3.10.7.
 Esta sección no añade paquetes ni modifica lockfiles.
 
-**08.08 — Exportación reproducible sigue pendiente de desarrollo.** Aquí usamos
-la entrega PNG/CSV ya introducida en 07.10; la elección entre PNG/SVG/PDF,
-dimensiones y resolución se profundizará en 08.08. Esta práctica no acredita
-esa sección ni completa el módulo o el proyecto integrador.
+La elección entre PNG/SVG/PDF, dimensiones, resolución y comprobación del archivo
+se desarrolla en [08.08 — Exportación reproducible](../08_reproducible_export/README.md).
+Aquí reutilizamos la entrega PNG/CSV de 07.10 para centrar el cierre en la
+conciliación R/Python. Las nueve secciones tienen material; completar su
+desarrollo no acredita las prácticas del estudiante ni el proyecto integrador.
 
 Al terminar podrás:
 
@@ -269,11 +270,9 @@ seis conciliaciones, detectes una alteración compensada y redactes el hallazgo
 con denominadores y límites. Entrega la tabla de pares junto al resumen: las
 barras no permiten auditar por sí solas la selección de la población.
 
-El siguiente trabajo de este módulo es
-[08.08 — Exportación reproducible](../README.md#08-exportacion-reproducible),
-todavía planificado. Después corresponde revisar el criterio global del
-[módulo 08](../README.md). [09 — Arrow y Parquet](../../09_arrow_parquet/README.md)
-conserva su plan; el proyecto y sus checkpoints integradores siguen pendientes.
+Después del lab, revisa el criterio global del [módulo 08](../README.md).
+El siguiente módulo numerado es [09 — Arrow y Parquet](../../09_arrow_parquet/README.md),
+cuyas nueve secciones conservan su plan; el proyecto y sus checkpoints integradores siguen pendientes.
 Escribir el material no acredita aprendizaje del estudiante.
 
 ## Referencias primarias

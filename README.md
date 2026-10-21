@@ -231,8 +231,11 @@ etiquetas, temas y accesibilidad con [lab](labs/08_visualization_r/06_labels_the
 script y figuras. [08.07](curriculum/08_visualization_r/07_compose_figures/README.md)
 añade composición de resumen/detalle, preparador, lockfile y
 [lab](labs/08_visualization_r/07_compose_figures/README.md), con script y figuras;
+[08.08](curriculum/08_visualization_r/08_reproducible_export/README.md) añade exportación
+reproducible con script y lab: PNG esencial, dimensiones, configuración y
+relectura; SVG/PDF opcionales.
 [08.09](curriculum/08_visualization_r/09_visual_comparison/README.md) añade cierre visual,
-conciliación independiente con Python y lab. 08.08 sigue planificada, con
+conciliación independiente con Python y lab. Las nueve secciones de 08 tienen material, con
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

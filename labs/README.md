@@ -91,7 +91,8 @@ reglas de enlace están en
 | [`08.05 — Facetas y comparación entre grupos`](08_visualization_r/05_facets_groups/) | `08_visualization_r` | No aplica todavía |
 | [`08.06 — Etiquetas, temas y accesibilidad`](08_visualization_r/06_labels_themes_accessibility/) | `08_visualization_r` | No aplica todavía |
 | [`08.07 — Componer figuras`](08_visualization_r/07_compose_figures/) | `08_visualization_r` | No aplica todavía |
-| [`08.09 — Cierre visual y comparación con Python`](08_visualization_r/09_visual_comparison/) | `08_visualization_r` | No aplica todavía; 08.08 pendiente |
+| [`08.08 — Exportación reproducible`](08_visualization_r/08_reproducible_export/) | `08_visualization_r` | No aplica todavía |
+| [`08.09 — Cierre visual y comparación con Python`](08_visualization_r/09_visual_comparison/) | `08_visualization_r` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

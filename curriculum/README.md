@@ -103,8 +103,11 @@ etiquetas, temas y accesibilidad con [lab](../labs/08_visualization_r/06_labels_
 script y figuras. [08.07](08_visualization_r/07_compose_figures/README.md)
 añade composición de resumen/detalle, preparador, lockfile y
 [lab](../labs/08_visualization_r/07_compose_figures/README.md), con script y figuras;
+[08.08](08_visualization_r/08_reproducible_export/README.md) añade exportación
+reproducible con script y lab: PNG esencial, dimensiones, configuración y
+relectura; SVG/PDF opcionales.
 [08.09](08_visualization_r/09_visual_comparison/README.md) añade cierre visual,
-conciliación independiente con Python y lab. 08.08 sigue planificada,
+conciliación independiente con Python y lab. Las nueve secciones de 08 tienen material,
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md). Los módulos 09–10
 tienen planes detallados de almacenamiento compartido Python/R y procesamiento
 con Polars/DuckDB. Los módulos 11–14 tienen planes de reportes, aplicaciones

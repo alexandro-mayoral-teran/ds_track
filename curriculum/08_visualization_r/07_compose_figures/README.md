@@ -399,8 +399,7 @@ rangos y guías, y describas el conjunto sin depender de la imagen. Conserva
 script propio, controles y revisión visual. El proyecto integrador y sus
 checkpoints siguen pendientes; desarrollar material no acredita aprendizaje.
 
-Siguiente: [08.08 — Exportación reproducible](../README.md#08-exportacion-reproducible),
-todavía planificada. Volver al [índice de 08](../README.md).
+Siguiente: [08.08 — Exportación reproducible](../08_reproducible_export/README.md). Volver al [índice de 08](../README.md).
 
 ## Referencias y atribución
 

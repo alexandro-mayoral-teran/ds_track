@@ -5,13 +5,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
-- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.07 y 08.09 disponibles; 08.08 pendiente).
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.07 y 08.09 implementadas; 08.08 sigue planificada.
-- **Sesión de desarrollo:** 2026-10-21, desarrollo y comprobación de 08.09.
-- **Foco actual:** cierre visual y conciliación independiente R/Python, pares, porcentajes y cobertura.
-  Próxima sección por implementar:
-  [08.08 — Exportación reproducible](curriculum/08_visualization_r/README.md#08-exportacion-reproducible), todavía planificada.
+- **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
+- **Próximo módulo por desarrollar:** `09_arrow_parquet`, con nueve secciones todavía planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.09 implementadas; 09–14 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-21, desarrollo y comprobación de 08.08; navegación 08.07 → 08.08 → 08.09 restablecida.
+- **Foco actual:** exportación reproducible, dimensiones/resolución, tablas/configuración y revisión final.
+  Próximo paso: revisar el cierre de 08 y desarrollar
+  [09.01 — CSV, Parquet y Arrow](curriculum/09_arrow_parquet/README.md#01-csv-parquet-y-arrow), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10, 08.01–08.07 y 08.09; 08.08 sigue planificada. Los módulos 09–10 tienen
+  también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -46,17 +46,33 @@ o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
 material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
-El último material disponible es
-[08.09 — Cierre visual y comparación con Python](curriculum/08_visualization_r/09_visual_comparison/README.md)
-con [script R](curriculum/08_visualization_r/09_visual_comparison/cerrar_visual.R),
-[referencia Python](curriculum/08_visualization_r/09_visual_comparison/comparar_python.py)
-y [lab](labs/08_visualization_r/09_visual_comparison/README.md).
-Se desarrolló por solicitud expresa antes de 08.08; retomar con
-[08.08 — Exportación reproducible](curriculum/08_visualization_r/README.md#08-exportacion-reproducible),
-todavía planificada. El módulo no se da por completo. Las diez de 07 tienen
-material; los criterios de práctica y tareas pendientes siguen en
-[cierre y pendientes](docs/tidyverse-closure.md). Proyecto/checkpoints integradores
-siguen pendientes; no se modificó el estado del estudiante sin evidencia.
+La última sección desarrollada es
+[08.08 — Exportación reproducible](curriculum/08_visualization_r/08_reproducible_export/README.md),
+con [script](curriculum/08_visualization_r/08_reproducible_export/exportar_figuras.R),
+[figura](curriculum/08_visualization_r/08_reproducible_export/assets/saldo_exportado.png)
+y [lab](labs/08_visualization_r/08_reproducible_export/README.md). Se cubrió el hueco
+entre 08.07 y 08.09, ambas ya disponibles; las nueve secciones tienen material.
+Retomar revisando su criterio global y el plan de
+[09.01 — CSV, Parquet y Arrow](curriculum/09_arrow_parquet/README.md#01-csv-parquet-y-arrow).
+No instalar dependencias solo por planificar. La consideración de R aplicado
+sigue pendiente de diseño, sin renumerar el track. Los criterios de práctica y
+tareas pendientes siguen en [cierre y pendientes](docs/tidyverse-closure.md).
+Proyecto/checkpoints integradores siguen pendientes; no se modificó el estado
+del estudiante sin evidencia.
+
+08.08 conserva la fuente, funciones y metadatos del proyecto renv, sin paquetes
+nuevos. PNG esencial con objeto explícito, 9 × 6 pulgadas/144 dpi (1296 × 864),
+tablas de resumen/pares, configuración, descripción, sesión y manifiesto de
+huellas. Verificador de solo lectura: fuente, tablas reconstruidas, huellas y
+cabecera PNG; revisión visual complementaria, sin certificar los píxeles.
+Ampliaciones: 288 dpi (2592 × 1728) y SVG/PDF con dispositivos Cairo incluidos
+en R. Lección/lab ejecutados en procesos nuevos con R 4.6.1/ggplot2 4.0.3;
+entrada vacía, valores/tamaño inválidos, destinos ocupados, archivos ausentes o alterados,
+pares compensados y configuración incoherente comprobados. Python independiente
+concilia pares y resumen, densidad/dimensiones PNG y tamaño SVG; PDF de una página
+648 × 432 puntos comprobado. PNG y renderizados SVG/PDF inspeccionados.
+Fuentes, funciones, metadatos y entregas 07.10/08.09 conservados mediante huellas.
+No se probó la interfaz del IDE ni se exige identidad binaria entre plataformas.
 
 08.09 reutiliza la entrega de 07.10 y el proyecto renv existente, sin nuevas
 dependencias ni cambios de lockfile. Python relee la fuente y reconstruye reglas,
@@ -597,8 +613,13 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 
 ## Bitácora
 
-
 ### 2026-10-21
+
+- Se implementó [08.08 — Exportación reproducible](curriculum/08_visualization_r/08_reproducible_export/README.md)
+  con script, figura y lab: PNG esencial, dimensiones/dpi, configuración y
+  verificación; SVG/PDF opcionales. Ejemplos, sesiones nuevas, alteraciones y
+  conservación de archivos anteriores comprobados. Navegación 08.07 → 08.08 →
+  08.09 restablecida; las nueve secciones tienen material, sin acreditar prácticas.
 
 - Se desarrolló 08.09 con lección/lab, scripts R/Python y dos figuras. Reconstrucción
   independiente, seis tablas conciliadas, denominadores y error compensado; sesiones

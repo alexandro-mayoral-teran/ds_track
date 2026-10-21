@@ -14,9 +14,10 @@ compara con el análisis Python; no se repite toda la limpieza para aprender gr�
 [08.04](04_scales_coordinates/README.md),
 [08.05](05_facets_groups/README.md),
 [08.06](06_labels_themes_accessibility/README.md),
-[08.07](07_compose_figures/README.md) y
+[08.07](07_compose_figures/README.md),
+[08.08](08_reproducible_export/README.md) y
 [08.09](09_visual_comparison/README.md) disponen de lección, scripts y lab.
-08.08 sigue planificada; su enlace interno describe el alcance.
+Las nueve secciones tienen material; el proyecto y sus checkpoints siguen pendientes.
 
 La pregunta, la representación y la interpretación guían el recorrido. El libro
 abierto de ggplot2 aporta la gramática de gráficos; su tercera edición en línea
@@ -33,7 +34,7 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 | 5 | [Facetas y comparación entre grupos](05_facets_groups/README.md) | Práctica | Comparar segmentos con escalas explícitas |
 | 6 | [Etiquetas, temas y accesibilidad](06_labels_themes_accessibility/README.md) | Esencial | Comunicar población, hallazgo y límites |
 | 7 | [Componer figuras](07_compose_figures/README.md) | Práctica | Reunir vistas sin perder contexto |
-| 8 | [Exportación reproducible](#08-exportacion-reproducible) | Esencial | Producir archivos legibles desde código |
+| 8 | [Exportación reproducible](08_reproducible_export/README.md) | Esencial | Producir archivos legibles desde código |
 | 9 | [Cierre visual y comparación con Python](09_visual_comparison/README.md) | Práctica de cierre | Explicar indicadores equivalentes en dos ecosistemas |
 
 ## Alcance de cada sección
@@ -121,8 +122,11 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 - ggsave con objeto explícito, dimensiones, formato y resolución según el destino.
   Diferenciar salida PNG/SVG/PDF y comprobar etiquetas en el archivo final.
-- Práctica prevista: regenerar la figura desde una sesión nueva y conservar su
-  tabla fuente y configuración. El reporte Quarto se introduce en el nivel 11.
+- Disponible: [lección, script y figura](08_reproducible_export/README.md) y
+  [lab 08.08](../../labs/08_visualization_r/08_reproducible_export/README.md).
+  PNG esencial, dimensiones/resolución, pares/resumen y configuración; verificador
+  de solo lectura y reconstrucción en otra carpeta. SVG/PDF opcionales con
+  dispositivos incluidos en R, sin dependencias nuevas. Quarto se introduce en 11.
 
 <a id="09-cierre-visual-y-comparacion-con-python"></a>
 
@@ -134,7 +138,7 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
   y [lab 08.09](../../labs/08_visualization_r/09_visual_comparison/README.md).
   Reconstrucción independiente de la fuente, seis tablas conciliadas, pares,
   cambio relativo y cobertura. Reutiliza la entrega de 07.10, sin nuevas
-  dependencias; 08.08 sigue pendiente y el proyecto integrador no se acredita.
+  dependencias; el proyecto integrador no se acredita.
 
 ## Prácticas, integración y criterio de salida
 
@@ -144,9 +148,10 @@ Los labs [08.01](../../labs/08_visualization_r/01_question_grammar/README.md),
 [08.04](../../labs/08_visualization_r/04_scales_coordinates/README.md),
 [08.05](../../labs/08_visualization_r/05_facets_groups/README.md),
 [08.06](../../labs/08_visualization_r/06_labels_themes_accessibility/README.md),
-[08.07](../../labs/08_visualization_r/07_compose_figures/README.md) y
+[08.07](../../labs/08_visualization_r/07_compose_figures/README.md),
+[08.08](../../labs/08_visualization_r/08_reproducible_export/README.md) y
 [08.09](../../labs/08_visualization_r/09_visual_comparison/README.md) están
-disponibles; 08.08 sigue prevista. Se ampliará el proyecto previsto
+disponibles. Las nueve secciones tienen material. Se ampliará el proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 con un checkpoint visual cuyo nombre se definirá al implementarlo.
 
@@ -170,6 +175,6 @@ y [documentación de ggplot2](https://ggplot2.tidyverse.org/reference/).
 El libro [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)
 apoya la gramática; su capítulo de capas advierte que es un borrador y no es
 lectura obligatoria. La lección 08.01 enlaza las funciones comprobadas.
-Para exportar se verificará [la referencia de ggsave](https://ggplot2.tidyverse.org/reference/ggsave.html).
+La lección 08.08 contrasta [la referencia de ggsave](https://ggplot2.tidyverse.org/reference/ggsave.html).
 Consulta la [guía de libros abiertos](../../docs/r-reading-guide.md) para las
 lecturas iniciales y de profundización.

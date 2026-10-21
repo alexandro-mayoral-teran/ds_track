@@ -38,7 +38,7 @@ no basta para marcar una competencia como adquirida.
 
 | Pendiente | Alcance y condición para darlo por implementado |
 | --- | --- |
-| 08 — Visualización en R | 08.01–08.07 disponen de lección/script y lab; [08.07](../curriculum/08_visualization_r/07_compose_figures/README.md) añade composición y patchwork con preparador/lockfile. [08.09](../curriculum/08_visualization_r/09_visual_comparison/README.md) añade cierre y conciliación con Python. 08.08 sigue planificada: exportación. |
+| Criterio de salida de 08 | Las nueve secciones tienen lección/scripts y lab. Revisar evidencia de geometrías, escalas, indicadores, reconstrucción y explicación; disponer del material no acredita las prácticas del estudiante. |
 | Proyecto 03_portfolio_analysis_r | No tiene carpeta ni checkpoints activos. Antes de crearlos, definir producto, entradas, contrato y rúbrica; enlazar las lecciones y evidencias efectivamente exigidas. |
 | Checkpoints propuestos de 07 | Importación/contrato, calidad, indicadores/relaciones y categorías/cortes/figura. Son propuestas para el proyecto, no entregas ya habilitadas. |
 | Revisión del recorrido IDE anterior | 07.01–07.10 ya priorizan IDE. Revisar con el usuario las lecciones anteriores que aún necesiten adaptación, conservando terminal como apoyo cuando corresponda. |
@@ -60,9 +60,11 @@ añade mensaje, etiquetas, temas locales y señales alternativas al color.
 [08.07](../curriculum/08_visualization_r/07_compose_figures/README.md) reúne
 resumen/detalle con contexto, ejes y guías explícitos.
 [08.09](../curriculum/08_visualization_r/09_visual_comparison/README.md) añade
-cierre visual y contraste independiente de registros, pares y saldos con Python. El siguiente trabajo
-de autoría es [08.08 — Exportación reproducible](../curriculum/08_visualization_r/README.md#08-exportacion-reproducible),
-todavía planificado. Instalar dependencias
+cierre visual y contraste independiente de registros, pares y saldos con Python.
+[08.08 — Exportación reproducible](../curriculum/08_visualization_r/08_reproducible_export/README.md)
+añade dimensiones, resolución y comprobación de archivos. Las nueve secciones
+tienen material; revisar el criterio global y la evidencia antes de avanzar al
+plan de 09.01 — CSV, Parquet y Arrow. Instalar dependencias
 adicionales solo cuando una práctica implementada las requiera.
 
 Para el proyecto integrador, consultar el [índice de proyectos](../projects/README.md)

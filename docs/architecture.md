@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.10, 08.01–08.07 y 08.09 tienen lecciones/scripts/labs; 08.08 y 09–14 conservan planificación;
+07.01–07.10 y 08.01–08.09 tienen lecciones/scripts/labs; 09–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -341,11 +341,11 @@ y caché. Usar un decorador existente, por ejemplo para caché, no exige desarro
 decoradores personalizados. En Shiny, enseñar reactividad antes de ampliar la UI.
 En ambos casos separar transformación y validación de datos de la interfaz.
 
-### Desarrollo previsto de los módulos 06–08
+### Recorrido de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; las diez de 07 también están disponibles. 08.01–08.07 tienen
-material; 08.09 añade cierre visual con Python y 08.08 conserva planificación:
+scripts y labs; las diez de 07 y las nueve de 08 también están disponibles.
+Proyecto y checkpoints siguen pendientes:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -590,12 +590,16 @@ Patchwork 1.3.2 se incorpora al mismo proyecto renv, con respaldo 08.06; los
 compatibles y ejes explícitos; anidación con proporción fija como ampliación.
 Restauración real en otra copia sin biblioteca, sin cambiar Conda ni paquetes
 globales; fuentes y funciones previas intactas.
+08.08 añade lección/script/lab y figura: PNG esencial de 9 × 6 pulgadas a 144 dpi,
+configuración, descripción, huellas y tablas reconstruidas; verificación de solo
+lectura, dimensiones y revisión al tamaño final. Doble dpi y SVG/PDF con
+dispositivos incluidos en R son ampliaciones; sin dependencias nuevas.
 08.09 añade lección, scripts R/Python, figuras y lab. Reconstruye el CSV original
 por rutas independientes y concilia campos de auditoría de aceptados/rechazos,
 sin pareja/fuera de cortes, pares y resumen antes de dibujar. Reutiliza la entrega
 de 07.10; 14 IDs, 29000/31800 MXN y 9.66% sobre el saldo inicial. Denominadores
 y alcance explícitos, sin comparar píxeles ni cambiar dependencias.
-08.08 sigue planificada; el proyecto integrador continúa pendiente.
+Las nueve secciones de 08 tienen material; el proyecto integrador continúa pendiente.
 
 ### Almacenamiento y procesamiento previstos: 09–10
 

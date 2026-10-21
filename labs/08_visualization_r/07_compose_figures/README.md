@@ -187,5 +187,4 @@ demuestra aprendizaje por sí solo.
 - ¿Qué cambia en la explicación si reordenas o agregas una vista?
 
 Cierra cuando puedas reconstruir y justificar esas decisiones. Siguiente:
-[08.08 — Exportación reproducible](../../../curriculum/08_visualization_r/README.md#08-exportacion-reproducible),
-todavía planificada. Volver a la [lección 08.07](../../../curriculum/08_visualization_r/07_compose_figures/README.md).
+[08.08 — Exportación reproducible](../../../curriculum/08_visualization_r/08_reproducible_export/README.md). Volver a la [lección 08.07](../../../curriculum/08_visualization_r/07_compose_figures/README.md).

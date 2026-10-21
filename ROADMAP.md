@@ -306,9 +306,8 @@ en días, selección de períodos y comparación de 14 IDs comunes. Incorpora
 lubridate con lockfile y respaldo.
 [07.10](curriculum/07_tidyverse/10_first_plot_closure/README.md) cierra el material
 con lección/lab, primera figura ggplot2, exportación y verificación de tablas
-reconstruidas. Las diez secciones de 07 están disponibles; 08.01–08.07 tienen
-lección, script y lab; 08.09 también dispone de cierre visual y comparación con Python.
-08.08 sigue planificada y el proyecto integrador permanece pendiente. Consulta
+reconstruidas. Las diez secciones de 07 y 08.01–08.09 tienen lección, scripts y
+lab; el proyecto integrador permanece pendiente. Consulta
 [el cierre y pendientes](docs/tidyverse-closure.md) y
 [la guía de lecturas R](docs/r-reading-guide.md).
 
@@ -346,9 +345,13 @@ adicionales al color y descripción alternativa.
 [08.07 — Componer figuras](curriculum/08_visualization_r/07_compose_figures/README.md)
 añade lección/script/lab, composición de resumen/detalle y patchwork con
 preparador, respaldo y lockfile.
+[08.08 — Exportación reproducible](curriculum/08_visualization_r/08_reproducible_export/README.md)
+añade lección/script/lab: PNG, tamaño/resolución, configuración, huellas y
+reconstrucción; SVG/PDF opcionales sin dependencias nuevas. Las nueve secciones
+de 08 disponen de material; proyecto y checkpoints siguen pendientes.
 [08.09 — Cierre visual y comparación con Python](curriculum/08_visualization_r/09_visual_comparison/README.md)
 añade lección, scripts R/Python, figuras y lab: registros, pares, indicadores
-y alcance de la equivalencia. 08.08 sigue planificada.
+y alcance de la equivalencia.
 Las referencias abiertas están en [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** profundizar en ggplot2 sobre resultados ya conocidos.

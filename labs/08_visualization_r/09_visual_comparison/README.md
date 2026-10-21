@@ -6,7 +6,8 @@ Practicar el [cierre visual y comparación con Python](../../../curriculum/08_vi
 Recibes la fuente conservada `datos/cartera_texto.csv`, las funciones R de 07.10,
 el [script R](../../../curriculum/08_visualization_r/09_visual_comparison/cerrar_visual.R)
 y la [referencia Python](../../../curriculum/08_visualization_r/09_visual_comparison/comparar_python.py).
-Usa los entornos existentes; no cambia ningún lockfile. 08.08 sigue pendiente.
+Usa los entornos existentes; no cambia ningún lockfile. Retoma la
+[exportación de 08.08](../../../curriculum/08_visualization_r/08_reproducible_export/README.md).
 
 Trabaja en el proyecto renv desde RStudio o tu IDE. Para Python usa la terminal
 y uno de los recorridos completos de la lección, desde la raíz de DS Track.
@@ -129,9 +130,9 @@ distintas. Identifica lo que no comprueba el JSON ni una inspección visual.
 
 Puedes cerrar el lab cuando reconstruyas sin estado previo, concilies la
 relectura, detectes el error compensado y expliques las medidas con sus bases.
-Registra evidencia y dudas; 08.08 continúa pendiente. Regresa a la
+Registra evidencia y dudas. Regresa a la
 [lección 08.09](../../../curriculum/08_visualization_r/09_visual_comparison/README.md)
-y revisa como siguiente sección
-[08.08 — Exportación reproducible](../../../curriculum/08_visualization_r/README.md#08-exportacion-reproducible).
-Todavía es un plan, no un enlace a una lección disponible. El proyecto y los
-checkpoints integradores siguen pendientes.
+y revisa el criterio global de [08](../../../curriculum/08_visualization_r/README.md).
+El siguiente módulo es [09 — Arrow y Parquet](../../../curriculum/09_arrow_parquet/README.md),
+todavía planificado: sus lecciones y labs están por desarrollar. El proyecto y
+los checkpoints integradores siguen pendientes.
