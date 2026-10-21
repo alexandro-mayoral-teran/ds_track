@@ -14,19 +14,25 @@ y su [lab](../labs/09_arrow_parquet/02_schemas_types/README.md) también están
 disponibles: contrato de la base conocida, evaluadores Python estándar/R base
 y 23 casos separados, sin nuevas dependencias. Se conservan originales y motivos;
 se explican rango/precisión, dinero, fechas/instantes y categorías. No se ha
-implementado todavía conversión o lectura cruzada Parquet en ambos lenguajes.
+implementado todavía lectura cruzada Parquet en ambos lenguajes.
+
+[09.03 — Leer y escribir desde Python](../curriculum/09_arrow_parquet/03_python_read_write/README.md)
+dispone de lección, recorridos completos de entorno, funciones/ejecutor/verificador
+y [lab](../labs/09_arrow_parquet/03_python_read_write/README.md). PyArrow 21.0.0
+declarado con lockfile real; pandas 2.3.3 y registros previos conservados.
+Esquema no anulable, índice omitido, entrega nueva y relectura completa por clave
+contra el CSV reconstruido, sin cambiar la muestra de 09.01 ni el entorno R.
 
 El siguiente trabajo concreto es
-[09.03 — Leer y escribir desde Python](../curriculum/09_arrow_parquet/README.md#03-leer-y-escribir-desde-python).
+[09.04 — Leer y escribir desde R](../curriculum/09_arrow_parquet/README.md#04-leer-y-escribir-desde-r).
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
-sin duplicar aquí una bitácora. **09.01–09.02 no completan el módulo ni acreditan práctica
+sin duplicar aquí una bitácora. **09.01–09.03 no completan el módulo ni acreditan práctica
 del estudiante.**
 
 ## Qué falta desarrollar para cerrar el módulo
 
 | Sección pendiente | Producto y condición de cierre |
 | --- | --- |
-| 09.03 — Python | Recorrido completo de instalación solo en el entorno elegido, versiones registradas, conversión y relectura. Definir índice pandas explícitamente; comparar claves, tipos y valores. Mantener los requisitos existentes y comprobar lockfile. |
 | 09.04 — R | Incorporar arrow al mismo proyecto renv con respaldo/lockfile y restauración local real; IDE como recorrido principal. No cambiar Conda ni bibliotecas globales. Comprobar tipos y NA, sin asumir compatibilidad por coincidir nombres de versiones. |
 | 09.05 — Lectura cruzada | Python escribe/R lee y R escribe/Python lee; comparar claves, tipos, faltantes e indicadores por ambas rutas. No basta releer con el mismo escritor ni comparar dos sumas. |
 | 09.06 — Consulta selectiva | Selección de columnas/filtros y varios archivos; explicar cuándo se prepara una consulta y cuándo se materializa. Comprobar equivalencia con el análisis de referencia y límites de memoria. |
@@ -34,22 +40,23 @@ del estudiante.**
 | 09.08 — Particiones, extensión | Implementar solo como ampliación: consulta justificada, archivos repetidos y particiones excesivas. No bloquear el cierre esencial por particionar. |
 | 09.09 — Entrega integrada | Reconstrucción desde una sesión nueva en ambos lenguajes; archivos/contrato y verificadores de solo lectura, con interpretación y límites. Mantener entradas y rechazar sobrescrituras accidentales. |
 
-Para 09.03 partir del contrato de 09.02 y la muestra conservada: completa y sin
-ausencias. Reutilizar casos separados para comprobar conversión/relectura y
-rechazos explícitos, sin imponer el tamaño de la muestra como regla universal.
-Elegir y comprobar esquema Arrow, nulabilidad e índice pandas con el lector
-real. Conservar muestras y resultados previos. El esquema no comprueba por sí
-solo unicidad, cobertura o saldo válido.
+Para 09.04 partir del contrato de 09.02 y del Parquet Python de 09.03, sin
+modificarlos. Incorporar arrow al mismo proyecto renv con respaldo, lockfile
+y restauración local comprobada. Leer tipos reales antes de convertir, conservar
+ID/date32/int32 y nulabilidad, comprobar todos los valores por clave. Reutilizar
+casos separados de ausencia/calendario/rango y no imponer el tamaño de la muestra
+como regla universal. Mantener IDE como recorrido principal y conservar entregas.
 
 PyArrow 21.0.0 se utilizó en un entorno de autoría ya existente para producir y
-releer el ejemplo 09.01; **no es una dependencia nueva fijada del track**. Elegir,
-verificar y registrar versiones forma parte de 09.03. No instalar por adelantado
-PyArrow, arrow de R, Polars o DuckDB solo para planificar el recorrido.
+releer el ejemplo 09.01; no se añadió como dependencia durante esa introducción.
+Desde 09.03 sí es dependencia declarada y comprobada del track, con instalación
+y segunda reconstrucción uv local. No instalar por adelantado arrow de R,
+Polars o DuckDB solo para planificar el recorrido.
 
 ## Qué falta para cerrar las prácticas y la integración
 
-- Reunir evidencia propia del estudiante de 09.01–09.02 y, más adelante, de
-  conversiones, intercambio y consulta. Material disponible no acredita aprendizaje.
+- Reunir evidencia propia del estudiante de 09.01–09.03 y, más adelante, de
+  conversión R, intercambio y consulta. Material disponible no acredita aprendizaje.
 - Revisar el cierre de [08](../curriculum/08_visualization_r/README.md): geometrías,
   escalas, población, exportación desde sesión nueva y conciliación con Python.
   Sus nueve secciones tienen material; no faltan lecciones de ese módulo.

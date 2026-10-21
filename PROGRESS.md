@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
-- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.02 disponibles; 09.03–09.09 todavía planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.02 implementadas; 09.03–09.09 y 10–14 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-21, desarrollo de 09.02 y comprobación de su contrato Python/R.
-- **Foco actual:** esquema y contrato, tipos/nulabilidad, rango/precisión, unidades y calendario.
+- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.03 disponibles; 09.04–09.09 todavía planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.03 implementadas; 09.04–09.09 y 10–14 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-21, desarrollo de 09.03 y comprobación de escritura/relectura Parquet Python.
+- **Foco actual:** esquema Arrow explícito, índice pandas y conservación por clave al escribir/releer.
   Próximo paso: desarrollar
-  [09.03 — Leer y escribir desde Python](curriculum/09_arrow_parquet/README.md#03-leer-y-escribir-desde-python), todavía planificada.
+  [09.04 — Leer y escribir desde R](curriculum/09_arrow_parquet/README.md#04-leer-y-escribir-desde-r), todavía planificada.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -32,7 +32,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: 09.01–09.02 disponibles y las otras 17 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: 09.01–09.03 disponibles y las otras 16 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -48,8 +48,35 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 La última sección desarrollada es
-[09.02 — Esquemas y tipos entre lenguajes](curriculum/09_arrow_parquet/02_schemas_types/README.md),
-con [evaluador Python](curriculum/09_arrow_parquet/02_schemas_types/contrato_tabla.py),
+[09.03 — Leer y escribir desde Python](curriculum/09_arrow_parquet/03_python_read_write/README.md),
+con [recorridos por shell/gestor](curriculum/09_arrow_parquet/03_python_read_write/recorridos.md),
+[funciones/ejecutor/verificador](curriculum/09_arrow_parquet/03_python_read_write/intercambio_python.py)
+y [lab](labs/09_arrow_parquet/03_python_read_write/README.md).
+PyArrow 21.0.0 queda declarado en pyproject.toml/uv.lock; todos los registros
+previos, salvo la dependencia del proyecto, permanecen idénticos, con pandas
+2.3.3 conservado. Python 3.12.12; entorno uv local nuevo y segunda reconstrucción
+desde caché, sin modificar Conda ni bibliotecas globales. El venv anterior de la
+raíz no se reutilizó porque apuntaba a un intérprete inexistente; se conservó.
+
+CSV de 09.01 validado bajo 09.02, DataFrame con string/date/Int32, esquema Arrow
+string/date32/int32 no anulable, índice omitido y metadatos pandas auxiliares
+retirados. Escritura en carpeta nueva, cierre y relectura real por clave;
+Parquet y sesion.json sin rutas personales. Verificador de solo lectura
+reconstruye el CSV; misma base de 28 registros/14 IDs y 29000/31800 MXN.
+Nueve bloques de lección/lab comprobados en proceso nuevo y treinta controles
+adicionales: vacío tipado en disco, límites/cero, ausencias, tipos/nulabilidad,
+claves, orden, alteración compensada, firma falsa, destinos ocupados, columna
+extra, archivo bajo carpeta con nombre de partición y fallo de escritura.
+Muestra 09.01, reglas/casos 09.02 y lockfiles R conservados; lectura R y cruce
+siguen pendientes. La nota JSON no sustituye volver a verificar el archivo.
+No se probaron instalaciones Conda/Bash en otros equipos ni interfaces IDE.
+Los lectores previos 09.01 (incluida decodificación Parquet) y 09.02 pasan
+en el entorno nuevo; uv pip check confirma compatibilidad de sus 25 paquetes.
+Revisados 2092 enlaces locales/fragmentos fuera de bloques en 219 Markdown,
+bloques y soluciones equilibrados y git diff --check limpio.
+
+[09.02 — Esquemas y tipos entre lenguajes](curriculum/09_arrow_parquet/02_schemas_types/README.md)
+dispone de [evaluador Python](curriculum/09_arrow_parquet/02_schemas_types/contrato_tabla.py),
 [evaluador R](curriculum/09_arrow_parquet/02_schemas_types/contrato_tabla.R),
 [casos separados](curriculum/09_arrow_parquet/02_schemas_types/casos_contrato.csv)
 y [lab](labs/09_arrow_parquet/02_schemas_types/README.md).
@@ -71,10 +98,11 @@ en los procesos de revisión; no se probó la interfaz del IDE.
 Revisados 2051 enlaces locales/fragmentos fuera de bloques en 216 Markdown,
 bloques y soluciones equilibrados y git diff --check limpio.
 
-Retomar con [09.03 — Leer y escribir desde Python](curriculum/09_arrow_parquet/README.md#03-leer-y-escribir-desde-python):
-elegir y verificar versiones en el entorno elegido, conversión/relectura real,
-esquema/nulabilidad e índice pandas explícitos. Conservar muestras, resultados y
-dependencias existentes. Consultar los [pendientes de almacenamiento](docs/storage-closure.md).
+Retomar con [09.04 — Leer y escribir desde R](curriculum/09_arrow_parquet/README.md#04-leer-y-escribir-desde-r):
+incorporar arrow al mismo proyecto renv con respaldo/lockfile y restauración
+local real, sin cambiar dependencias previas. IDE como recorrido principal;
+leer el esquema real y comparar todos los valores por clave, con casos separados
+de ausencia/rango/calendario. Consultar los [pendientes de almacenamiento](docs/storage-closure.md).
 
 09.01 contiene CSV/Parquet reales de los mismos 14 IDs: 28 × 3, dos cortes de
 14 registros y 29000/31800 MXN. Generados desde las reglas y fuente anteriores;
@@ -92,7 +120,7 @@ rechaza y orden distinto se acepta por clave. Son límites explícitos del
 inspector, no una afirmación de validación completa. Huellas/atributos LF y
 binario conservan la muestra al clonar; fuentes, entornos y entregas previos intactos.
 
-09.03–09.09 siguen pendientes (09.08 opcional); lectura cruzada de Parquet en R
+09.04–09.09 siguen pendientes (09.08 opcional); lectura cruzada de Parquet en R
 no implementada. Las nueve secciones de 08 tienen material, pero falta evidencia
 del estudiante para acreditar su práctica. Los proyectos/checkpoints previstos
 03_portfolio_analysis_r y 04_large_credit_dataset siguen sin implementar. R

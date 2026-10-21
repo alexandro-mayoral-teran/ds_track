@@ -320,8 +320,8 @@ ceros/ausencias y explicas por qué igualar sumas o clases no demuestra igualdad
 La comprobación futura debe comparar esquema, claves, valores, ausencia y
 cobertura por corte; la igualdad de bytes es otra propiedad.
 
-Siguiente: [09.03 — Leer y escribir desde Python](../README.md#03-leer-y-escribir-desde-python),
-todavía planificada. No hay proyecto ni checkpoint asociado implementado.
+Siguiente: [09.03 — Leer y escribir desde Python](../03_python_read_write/README.md).
+No hay proyecto ni checkpoint asociado implementado.
 El [cierre de almacenamiento](../../../docs/storage-closure.md) mantiene los
 pendientes: esta sección no acredita lectura Parquet en R ni práctica del estudiante.
 

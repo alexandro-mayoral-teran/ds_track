@@ -127,5 +127,5 @@ para comprobar una fila inexistente en vez de una celda ausente?
 
 Cierra cuando justifiques el contrato, los resultados y sus límites, con
 evidencia propia. Regresa a la [lección 09.02](../../../curriculum/09_arrow_parquet/02_schemas_types/README.md).
-Continúa con [09.03 — Leer y escribir desde Python](../../../curriculum/09_arrow_parquet/README.md#03-leer-y-escribir-desde-python),
-todavía planificada. Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
+Continúa con [09.03 — Leer y escribir desde Python](../../../curriculum/09_arrow_parquet/03_python_read_write/README.md).
+Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
