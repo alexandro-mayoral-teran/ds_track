@@ -7,7 +7,8 @@ Completa [08 — Visualización en R](../08_visualization_r/README.md) y reutili
 los datos e indicadores conocidos del análisis anterior.
 
 **Estado:** [09.01](01_csv_parquet_arrow/README.md) dispone de lección, scripts
-de inspección, muestra CSV/Parquet y lab. 09.02–09.09 siguen planificadas; sus
+de inspección, muestra CSV/Parquet y lab. [09.02](02_schemas_types/README.md)
+añade contrato, evaluadores Python/R, casos de frontera y lab. 09.03–09.09 siguen planificadas; sus
 enlaces internos describen el alcance. El [estado y pendientes de cierre](../../docs/storage-closure.md)
 distingue material, práctica del estudiante e integración todavía pendiente.
 
@@ -34,7 +35,7 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 | Orden | Sección prevista | Alcance | Resultado observable |
 | --- | --- | --- | --- |
 | 1 | [CSV, Parquet y Arrow](01_csv_parquet_arrow/README.md) | Esencial | Distinguir archivo, representación y biblioteca |
-| 2 | [Esquemas y tipos entre lenguajes](#02-esquemas-y-tipos-entre-lenguajes) | Esencial | Definir el contrato de una tabla compartida |
+| 2 | [Esquemas y tipos entre lenguajes](02_schemas_types/README.md) | Esencial | Definir el contrato de una tabla compartida |
 | 3 | [Leer y escribir desde Python](#03-leer-y-escribir-desde-python) | Esencial | Convertir una muestra y comprobar su lectura |
 | 4 | [Leer y escribir desde R](#04-leer-y-escribir-desde-r) | Esencial | Repetir el recorrido con el mismo contrato |
 | 5 | [Intercambio Python y R](#05-intercambio-python-y-r) | Práctica | Conciliar archivos escritos por el otro lenguaje |
@@ -63,9 +64,12 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 
 - Nombres, claves, tipos y nulabilidad; enteros, texto, fechas, marcas de tiempo,
   decimales y categorías. Distinguir esquema de reglas de negocio.
-- Práctica prevista: acordar representación de identificadores, dinero y faltantes;
-  detectar pérdida de precisión o información al convertir. Los factores de R y
-  categorías de pandas requieren comprobación, no una equivalencia asumida.
+- Disponible: [lección, evaluadores y casos](02_schemas_types/README.md) y
+  [lab 09.02](../../labs/09_arrow_parquet/02_schemas_types/README.md). Contrato de
+  la base conocida y 23 casos separados; ausencia/vacío/cero, calendario, rango,
+  precisión, centavos, timestamps y categorías. Python estándar/R base, sin
+  instalar paquetes ni decodificar Parquet. Los factores de R y categorías de
+  pandas requieren comprobación, no una equivalencia asumida.
 
 <a id="03-leer-y-escribir-desde-python"></a>
 
@@ -135,8 +139,9 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 
 ## Prácticas, proyecto y criterio de salida
 
-Está disponible el [lab 09.01](../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md).
-09.02–09.09 siguen previstos, con 09.08 opcional. No se da el módulo por completo.
+Están disponibles los [labs 09.01](../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md)
+y [09.02](../../labs/09_arrow_parquet/02_schemas_types/README.md).
+09.03–09.09 siguen previstos, con 09.08 opcional. No se da el módulo por completo.
 El cierre enlazará el análisis R con el proyecto previsto 04_large_credit_dataset,
 registrado en [proyectos](../../projects/README.md), aún sin carpeta implementada.
 
@@ -163,7 +168,7 @@ los mismos archivos. Se conserva la numeración del track; R aplicado sigue pend
   [datasets en R](https://arrow.apache.org/docs/r/articles/dataset.html).
 - [Arrow en R for Data Science](https://r4ds.hadley.nz/arrow.html), como lectura abierta de apoyo.
 
-09.01 se comprobó con Python 3.12.12/R 4.6.1; su muestra y lectura de autoría
+09.01–09.02 se comprobaron con Python 3.12.12/R 4.6.1; la muestra y lectura de autoría de 09.01
 utilizan PyArrow 21.0.0 ya existente, sin fijarlo como dependencia del track.
 Versiones y capacidades de los recorridos por desarrollar se comprobarán al
 implementarlos. Esta planificación no instala paquetes.

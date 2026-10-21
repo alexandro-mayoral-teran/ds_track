@@ -9,17 +9,23 @@ lectura real y recorridos esenciales de solo lectura sin dependencias nuevas.
 El esencial distingue inspección de firma de decodificación Parquet; la opción
 PyArrow es una ampliación de autoría. No se implementó el lector arrow de R.
 
+[09.02 — Esquemas y tipos entre lenguajes](../curriculum/09_arrow_parquet/02_schemas_types/README.md)
+y su [lab](../labs/09_arrow_parquet/02_schemas_types/README.md) también están
+disponibles: contrato de la base conocida, evaluadores Python estándar/R base
+y 23 casos separados, sin nuevas dependencias. Se conservan originales y motivos;
+se explican rango/precisión, dinero, fechas/instantes y categorías. No se ha
+implementado todavía conversión o lectura cruzada Parquet en ambos lenguajes.
+
 El siguiente trabajo concreto es
-[09.02 — Esquemas y tipos entre lenguajes](../curriculum/09_arrow_parquet/README.md#02-esquemas-y-tipos-entre-lenguajes).
+[09.03 — Leer y escribir desde Python](../curriculum/09_arrow_parquet/README.md#03-leer-y-escribir-desde-python).
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
-sin duplicar aquí una bitácora. **09.01 no completa el módulo ni acredita práctica
+sin duplicar aquí una bitácora. **09.01–09.02 no completan el módulo ni acreditan práctica
 del estudiante.**
 
 ## Qué falta desarrollar para cerrar el módulo
 
 | Sección pendiente | Producto y condición de cierre |
 | --- | --- |
-| 09.02 — Contrato | Lección/lab con nombres, unidad, clave ID/corte, tipos y nulabilidad. Distinguir ausente, texto vacío y cero; ID con ceros, fechas de calendario frente a instantes, dinero/unidad/rango y precisión. Separar esquema y reglas de negocio. |
 | 09.03 — Python | Recorrido completo de instalación solo en el entorno elegido, versiones registradas, conversión y relectura. Definir índice pandas explícitamente; comparar claves, tipos y valores. Mantener los requisitos existentes y comprobar lockfile. |
 | 09.04 — R | Incorporar arrow al mismo proyecto renv con respaldo/lockfile y restauración local real; IDE como recorrido principal. No cambiar Conda ni bibliotecas globales. Comprobar tipos y NA, sin asumir compatibilidad por coincidir nombres de versiones. |
 | 09.05 — Lectura cruzada | Python escribe/R lee y R escribe/Python lee; comparar claves, tipos, faltantes e indicadores por ambas rutas. No basta releer con el mismo escritor ni comparar dos sumas. |
@@ -28,11 +34,12 @@ del estudiante.**
 | 09.08 — Particiones, extensión | Implementar solo como ampliación: consulta justificada, archivos repetidos y particiones excesivas. No bloquear el cierre esencial por particionar. |
 | 09.09 — Entrega integrada | Reconstrucción desde una sesión nueva en ambos lenguajes; archivos/contrato y verificadores de solo lectura, con interpretación y límites. Mantener entradas y rechazar sobrescrituras accidentales. |
 
-Para 09.02 empezar por la muestra actual y explicar qué **no** cubre: está
-completa y sin ausencias. Diseñar casos pequeños separados con NA/null, campos
-vacíos, ID textual, fechas inválidas y fronteras de precisión/rango; conservar
-la muestra y sus resultados. Un caso rechazado se documenta, no se corrige
-silenciosamente. El esquema no comprueba unicidad, cobertura o saldo válido.
+Para 09.03 partir del contrato de 09.02 y la muestra conservada: completa y sin
+ausencias. Reutilizar casos separados para comprobar conversión/relectura y
+rechazos explícitos, sin imponer el tamaño de la muestra como regla universal.
+Elegir y comprobar esquema Arrow, nulabilidad e índice pandas con el lector
+real. Conservar muestras y resultados previos. El esquema no comprueba por sí
+solo unicidad, cobertura o saldo válido.
 
 PyArrow 21.0.0 se utilizó en un entorno de autoría ya existente para producir y
 releer el ejemplo 09.01; **no es una dependencia nueva fijada del track**. Elegir,
@@ -41,7 +48,7 @@ PyArrow, arrow de R, Polars o DuckDB solo para planificar el recorrido.
 
 ## Qué falta para cerrar las prácticas y la integración
 
-- Reunir evidencia propia del estudiante de 09.01 y, más adelante, del contrato,
+- Reunir evidencia propia del estudiante de 09.01–09.02 y, más adelante, de
   conversiones, intercambio y consulta. Material disponible no acredita aprendizaje.
 - Revisar el cierre de [08](../curriculum/08_visualization_r/README.md): geometrías,
   escalas, población, exportación desde sesión nueva y conciliación con Python.

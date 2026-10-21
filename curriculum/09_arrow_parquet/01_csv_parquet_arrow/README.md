@@ -283,8 +283,8 @@ Puedes avanzar cuando clasifiques archivo/formato/representación/biblioteca,
 expliques las tres medidas de tamaño y reconstruyas los controles esenciales
 sin afirmar que leíste Parquet cuando solo inspeccionaste su firma.
 
-Siguiente: [09.02 — Esquemas y tipos entre lenguajes](../README.md#02-esquemas-y-tipos-entre-lenguajes),
-todavía planificada. Consulta [cierre y pendientes](../../../docs/storage-closure.md)
+Siguiente: [09.02 — Esquemas y tipos entre lenguajes](../02_schemas_types/README.md).
+Consulta [cierre y pendientes](../../../docs/storage-closure.md)
 para retomar el trabajo. El módulo completo, la lectura cruzada R/Python y sus
 checkpoints no quedan terminados por implementar esta introducción.
 

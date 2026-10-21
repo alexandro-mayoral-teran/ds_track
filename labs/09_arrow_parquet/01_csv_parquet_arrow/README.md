@@ -111,6 +111,6 @@ contrato en 09.02 y una afirmación que requiere una medición posterior.
 Cierra el lab cuando puedas justificar la clasificación, los controles y los
 límites de lo observado. Registra dudas y evidencia real; no se acredita por
 consultar la solución. Regresa a la [lección 09.01](../../../curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md).
-Siguiente: [09.02 — Esquemas y tipos entre lenguajes](../../../curriculum/09_arrow_parquet/README.md#02-esquemas-y-tipos-entre-lenguajes),
-todavía planificada. Los [pendientes de cierre](../../../docs/storage-closure.md)
+Siguiente: [09.02 — Esquemas y tipos entre lenguajes](../../../curriculum/09_arrow_parquet/02_schemas_types/README.md).
+Los [pendientes de cierre](../../../docs/storage-closure.md)
 distinguen esta introducción del módulo completo y del proyecto aún previsto.

@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
-- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01 disponible; 09.02–09.09 todavía planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01 implementadas; 09.02–09.09 y 10–14 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-21, desarrollo y comprobación de 09.01; cierre de sesión documentado.
-- **Foco actual:** CSV/Parquet, representación Arrow, bibliotecas y medidas de disco/memoria.
+- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.02 disponibles; 09.03–09.09 todavía planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.02 implementadas; 09.03–09.09 y 10–14 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-21, desarrollo de 09.02 y comprobación de su contrato Python/R.
+- **Foco actual:** esquema y contrato, tipos/nulabilidad, rango/precisión, unidades y calendario.
   Próximo paso: desarrollar
-  [09.02 — Esquemas y tipos entre lenguajes](curriculum/09_arrow_parquet/README.md#02-esquemas-y-tipos-entre-lenguajes), todavía planificada.
+  [09.03 — Leer y escribir desde Python](curriculum/09_arrow_parquet/README.md#03-leer-y-escribir-desde-python), todavía planificada.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -32,7 +32,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: 09.01 disponible y las otras 18 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: 09.01–09.02 disponibles y las otras 17 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -48,16 +48,33 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 La última sección desarrollada es
-[09.01 — CSV, Parquet y Arrow](curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md),
-con [script Python](curriculum/09_arrow_parquet/01_csv_parquet_arrow/inspeccionar_formatos.py),
-[script R](curriculum/09_arrow_parquet/01_csv_parquet_arrow/inspeccionar_formatos.R),
-[muestra e inventario](curriculum/09_arrow_parquet/01_csv_parquet_arrow/datos/README.md)
-y [lab](labs/09_arrow_parquet/01_csv_parquet_arrow/README.md).
-La sesión queda cerrada con el estado real y los
-[pendientes para cerrar almacenamiento](docs/storage-closure.md). Retomar con
-[09.02 — Esquemas y tipos entre lenguajes](curriculum/09_arrow_parquet/README.md#02-esquemas-y-tipos-entre-lenguajes):
-contrato de tipos/nulabilidad, casos separados de NA/null/vacío/cero, fechas,
-ID textual, unidades, rango y precisión. No instalar paquetes todavía.
+[09.02 — Esquemas y tipos entre lenguajes](curriculum/09_arrow_parquet/02_schemas_types/README.md),
+con [evaluador Python](curriculum/09_arrow_parquet/02_schemas_types/contrato_tabla.py),
+[evaluador R](curriculum/09_arrow_parquet/02_schemas_types/contrato_tabla.R),
+[casos separados](curriculum/09_arrow_parquet/02_schemas_types/casos_contrato.csv)
+y [lab](labs/09_arrow_parquet/02_schemas_types/README.md).
+Contrato de la base conocida sin cambiar sus 28 registros: nombres, clave,
+tipos y nulabilidad; ausencia/vacío/cero, calendario, rango y precisión.
+Veintitrés casos separados: cinco aceptados/dieciocho rechazados, con textos y
+todos los motivos conservados, incluidas ambas apariciones de claves repetidas.
+Centavos/decimal, Date/timestamp y categorías se explican sin dependencias nuevas;
+no se acredita conversión ni lectura Parquet en R.
+
+Comprobados los cinco bloques Python/R de lección y lab desde procesos nuevos,
+con Python 3.12.12/R 4.6.1 y sin paquetes externos. Los 23 casos oficiales y
+39 fronteras adicionales concilian textos, fechas, saldos y motivos entre ambos
+lenguajes; vacío, orden invertido, claves con saldo inválido y tres CSV malformados
+comprobados. Año cero se rechaza explícitamente también en R para conservar
+el calendario compartido. Se conservan muestra e inventario 09.01, requisitos
+y lockfiles; sus dos inspectores esenciales siguen pasando. Locale UTF-8 solo
+en los procesos de revisión; no se probó la interfaz del IDE.
+Revisados 2051 enlaces locales/fragmentos fuera de bloques en 216 Markdown,
+bloques y soluciones equilibrados y git diff --check limpio.
+
+Retomar con [09.03 — Leer y escribir desde Python](curriculum/09_arrow_parquet/README.md#03-leer-y-escribir-desde-python):
+elegir y verificar versiones en el entorno elegido, conversión/relectura real,
+esquema/nulabilidad e índice pandas explícitos. Conservar muestras, resultados y
+dependencias existentes. Consultar los [pendientes de almacenamiento](docs/storage-closure.md).
 
 09.01 contiene CSV/Parquet reales de los mismos 14 IDs: 28 × 3, dos cortes de
 14 registros y 29000/31800 MXN. Generados desde las reglas y fuente anteriores;
@@ -75,7 +92,7 @@ rechaza y orden distinto se acepta por clave. Son límites explícitos del
 inspector, no una afirmación de validación completa. Huellas/atributos LF y
 binario conservan la muestra al clonar; fuentes, entornos y entregas previos intactos.
 
-09.02–09.09 siguen pendientes (09.08 opcional); lectura cruzada de Parquet en R
+09.03–09.09 siguen pendientes (09.08 opcional); lectura cruzada de Parquet en R
 no implementada. Las nueve secciones de 08 tienen material, pero falta evidencia
 del estudiante para acreditar su práctica. Los proyectos/checkpoints previstos
 03_portfolio_analysis_r y 04_large_credit_dataset siguen sin implementar. R

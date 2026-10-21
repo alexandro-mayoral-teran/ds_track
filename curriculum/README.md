@@ -111,7 +111,9 @@ conciliación independiente con Python y lab. Las nueve secciones de 08 tienen m
 con [lecturas abiertas de apoyo](../docs/r-reading-guide.md).
 [09.01 — CSV, Parquet y Arrow](09_arrow_parquet/01_csv_parquet_arrow/README.md)
 dispone de lección, scripts, muestra y [lab](../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md).
-09.02–09.09 y el módulo 10 conservan sus planes de almacenamiento compartido
+[09.02 — Esquemas y tipos entre lenguajes](09_arrow_parquet/02_schemas_types/README.md)
+añade contrato, casos de frontera, evaluadores y [lab](../labs/09_arrow_parquet/02_schemas_types/README.md).
+09.03–09.09 y el módulo 10 conservan sus planes de almacenamiento compartido
 y procesamiento con Polars/DuckDB. Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;

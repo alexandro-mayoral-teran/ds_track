@@ -373,7 +373,10 @@ direcciones, lectura selectiva, metadatos y cierre. Particionamiento es opcional
 [09.01](curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md) dispone de
 lección/scripts/lab, muestra CSV/Parquet y comparación de disco/memoria.
 Esencial sin dependencias nuevas; evidencia de lectura real de autoría.
-09.02–09.09 siguen planificadas. Consultar [pendientes de cierre](docs/storage-closure.md).
+[09.02](curriculum/09_arrow_parquet/02_schemas_types/README.md) añade contrato,
+evaluadores Python/R y lab con casos separados de ausencia, rango y calendario,
+sin dependencias nuevas. 09.03–09.09 siguen planificadas.
+Consultar [pendientes de cierre](docs/storage-closure.md).
 
 - Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.
 - Práctica: comparar CSV y Parquet en tamaño, tipos y lectura selectiva.
