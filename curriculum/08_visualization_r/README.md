@@ -8,9 +8,10 @@ Se reutiliza la primera figura disponible en
 [07.10](../07_tidyverse/10_first_plot_closure/README.md) y se
 compara con el análisis Python; no se repite toda la limpieza para aprender gráficos.
 
-**Estado:** [08.01](01_question_grammar/README.md) y
-[08.02](02_geometries_stats/README.md) disponen de lección, script y lab.
-08.03–08.09 siguen planificadas; sus enlaces internos describen el alcance.
+**Estado:** [08.01](01_question_grammar/README.md),
+[08.02](02_geometries_stats/README.md) y
+[08.03](03_aesthetic_mapping/README.md) disponen de lección, script y lab.
+08.04–08.09 siguen planificadas; sus enlaces internos describen el alcance.
 
 La pregunta, la representación y la interpretación guían el recorrido. El libro
 abierto de ggplot2 aporta la gramática de gráficos; su tercera edición en línea
@@ -22,7 +23,7 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 | --- | --- | --- | --- |
 | 1 | [Pregunta y gramática de gráficos](01_question_grammar/README.md) | Esencial | Explicar datos, estéticas y capas de una figura |
 | 2 | [Geometrías y transformaciones estadísticas](02_geometries_stats/README.md) | Esencial | Elegir una geometría y verificar qué agrega |
-| 3 | [Mapear y fijar estéticas](#03-mapear-y-fijar-esteticas) | Esencial | Distinguir variables de estilos constantes |
+| 3 | [Mapear y fijar estéticas](03_aesthetic_mapping/README.md) | Esencial | Distinguir variables de estilos constantes |
 | 4 | [Escalas y coordenadas](#04-escalas-y-coordenadas) | Esencial | Justificar límites, transformaciones y unidades |
 | 5 | [Facetas y comparación entre grupos](#05-facetas-y-comparacion-entre-grupos) | Práctica | Comparar segmentos con escalas explícitas |
 | 6 | [Etiquetas, temas y accesibilidad](#06-etiquetas-temas-y-accesibilidad) | Esencial | Comunicar población, hallazgo y límites |
@@ -61,8 +62,10 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 - Dentro de aes se vinculan variables; fuera se establecen propiedades constantes.
   Color, relleno, tamaño, forma y agrupación de líneas.
-- Práctica prevista: corregir una leyenda accidental y verificar que cada línea
-  representa el grupo esperado.
+- Disponible: [lección, script y figura](03_aesthetic_mapping/README.md) y
+  [lab 08.03](../../labs/08_visualization_r/03_aesthetic_mapping/README.md).
+  Propiedades constantes/mapeos, leyendas, relleno/borde, formas/tamaño y
+  agrupación por ID con mapeos locales. Misma base de 14 IDs, sin dependencias nuevas.
 
 <a id="04-escalas-y-coordenadas"></a>
 
@@ -119,9 +122,10 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 ## Prácticas, integración y criterio de salida
 
-Los labs [08.01](../../labs/08_visualization_r/01_question_grammar/README.md) y
-[08.02](../../labs/08_visualization_r/02_geometries_stats/README.md) están
-disponibles; 08.03–08.09 siguen previstos. Se ampliará el proyecto previsto
+Los labs [08.01](../../labs/08_visualization_r/01_question_grammar/README.md),
+[08.02](../../labs/08_visualization_r/02_geometries_stats/README.md) y
+[08.03](../../labs/08_visualization_r/03_aesthetic_mapping/README.md) están
+disponibles; 08.04–08.09 siguen previstos. Se ampliará el proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 con un checkpoint visual cuyo nombre se definirá al implementarlo.
 

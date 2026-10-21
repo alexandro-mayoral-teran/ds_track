@@ -235,5 +235,5 @@ activo; ejecutar la referencia no acredita por sí solo aprendizaje.
 - ¿Qué tabla revisarías antes de afirmar que la suma de octubre aumentó por una causa concreta?
 
 Cierra cuando puedas reconstruir y justificar esos puntos. Siguiente:
-[08.03 — Mapear y fijar estéticas](../../../curriculum/08_visualization_r/README.md#03-mapear-y-fijar-esteticas),
-todavía planificada. Volver a la [lección 08.02](../../../curriculum/08_visualization_r/02_geometries_stats/README.md).
+[08.03 — Mapear y fijar estéticas](../../../curriculum/08_visualization_r/03_aesthetic_mapping/README.md),
+ya disponible. Volver a la [lección 08.02](../../../curriculum/08_visualization_r/02_geometries_stats/README.md).

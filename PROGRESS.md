@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
-- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.02 disponibles).
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.02 implementadas; 08.03–08.09 siguen planificadas.
-- **Sesión de desarrollo:** 2026-10-20, cierre de la mañana y revisión documental tras 08.02.
-- **Foco actual:** geometrías, identidad/conteo, intervalos, cuartiles y bigotes.
+- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.03 disponibles).
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.03 implementadas; 08.04–08.09 siguen planificadas.
+- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.03.
+- **Foco actual:** mapeos, propiedades constantes, leyendas y agrupación por ID.
   Próxima sección por implementar:
-  [08.03 — Mapear y fijar estéticas](curriculum/08_visualization_r/README.md#03-mapear-y-fijar-esteticas), todavía planificada.
+  [08.04 — Escalas y coordenadas](curriculum/08_visualization_r/README.md#04-escalas-y-coordenadas), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10 y 08.01–08.02; las otras siete siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.10 y 08.01–08.03; las otras seis siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -47,14 +47,38 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[08.02 — Geometrías y transformaciones estadísticas](curriculum/08_visualization_r/02_geometries_stats/README.md)
-con [script](curriculum/08_visualization_r/02_geometries_stats/explorar_geometrias.R)
-y [lab](labs/08_visualization_r/02_geometries_stats/README.md).
-Retomar con 08.03: mapear y fijar estéticas. Las otras siete secciones de 08
+[08.03 — Mapear y fijar estéticas](curriculum/08_visualization_r/03_aesthetic_mapping/README.md)
+con [script](curriculum/08_visualization_r/03_aesthetic_mapping/explorar_esteticas.R)
+y [lab](labs/08_visualization_r/03_aesthetic_mapping/README.md).
+Retomar con 08.04: escalas y coordenadas. Las otras seis secciones de 08
 siguen planificadas. Las diez de 07
 tienen material; los criterios de práctica y tareas pendientes siguen en
 [cierre y pendientes](docs/tidyverse-closure.md). Proyecto/checkpoints integradores
 siguen pendientes; no se modificó el estado del estudiante sin evidencia.
+
+08.03 añade lección/script/lab y figura sobre el mismo proyecto de 07.10,
+sin dependencias nuevas ni cambios de fuente, funciones previas o lockfile.
+Estéticas mapeadas frente a propiedades constantes, leyenda accidental, escalas
+manuales con nombres, relleno/borde de puntos, formas/tamaño y mapeos locales.
+Base común conservada: 14 IDs, 28 observaciones y 29000/31800 MXN. Agrupación
+por ID independiente del color/forma por fecha; caso incorrecto de dos grupos
+de 14 filas corregido a 14 grupos de dos fechas y pares originales.
+
+Comprobados diez bloques R de lección y cuatro de lab, incluidas reconstrucciones,
+además del script de referencia mediante source desde procesos nuevos, con
+R 4.6.1/ggplot2 4.0.3. Propiedades, escalas/leyendas, posiciones y grupos revisados;
+orden invertido, agrupación previa, vacío, un ID, ceros, empates y claves numéricas.
+Errores esperados de forma continua y herencia incompatible comprobados; paleta
+incompleta y agrupaciones incorrectas detectadas. Pares, fechas y sumas conciliados
+con Python estándar independiente. Cierre idéntico al RDS verificado de 07.10;
+huellas de fuentes, funciones, metadatos, lockfile y entrega anterior intactas.
+Figura de trayectorias revisada visualmente a 1296 × 864, con textos legibles;
+variantes de relleno y puntos también inspeccionadas. Sin instalar ni modificar
+entornos: R ejecutado con lectura de enlaces base renv existentes; no se prueba
+la interfaz del IDE. Índices, navegación y pendientes actualizados. El proyecto
+integrador y el estado de aprendizaje del estudiante continúan sin cambios.
+Revisados 1,768 enlaces locales/fragmentos en 198 Markdown, bloques y soluciones
+equilibrados y git diff --check limpio.
 
 08.02 añade lección/script/lab y figuras sobre el cierre de 07.10, sin modificar
 fuente, funciones anteriores ni metadatos renv. Misma población: dos sumas
@@ -442,6 +466,13 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-20
+
+- Se desarrolló [08.03 — Mapear y fijar estéticas](curriculum/08_visualization_r/03_aesthetic_mapping/README.md)
+  con script, figura y [lab](labs/08_visualization_r/03_aesthetic_mapping/README.md).
+  Mapeos/constantes, leyendas, relleno/borde, formas/tamaño y líneas por ID;
+  ejemplos y reconstrucciones R comprobados y pares conciliados con Python.
+  Fuentes, lockfile y entregas previas intactos. Siguiente: **08.04 — Escalas y
+  coordenadas**, todavía planificada; los proyectos/checkpoints siguen pendientes.
 
 - Se desarrollaron [08.01](curriculum/08_visualization_r/01_question_grammar/README.md)
   y [08.02](curriculum/08_visualization_r/02_geometries_stats/README.md), con

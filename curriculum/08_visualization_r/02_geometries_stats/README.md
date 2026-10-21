@@ -438,8 +438,8 @@ siguen pendientes; la existencia de material no acredita aprendizaje.
 
 Puedes avanzar cuando justifiques tabla/geometría, anticipes conteos y sumas,
 compruebes intervalos y cuartiles y expliques lo que cada figura pierde.
-Siguiente: [08.03 — Mapear y fijar estéticas](../README.md#03-mapear-y-fijar-esteticas),
-todavía planificada. Volver al [índice de 08](../README.md).
+Siguiente: [08.03 — Mapear y fijar estéticas](../03_aesthetic_mapping/README.md),
+ya disponible. Volver al [índice de 08](../README.md).
 
 ## Referencias y atribución
 

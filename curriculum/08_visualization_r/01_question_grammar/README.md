@@ -217,8 +217,8 @@ envía un objeto a una función; no sustituye la suma de componentes de ggplot2.
 calcula la aceptación, no empareja IDs ni decide qué población es comparable.
 Todo eso tuvo que resolverse antes. `fill` fija el relleno azul de las barras;
 `width` controla su ancho. Son constantes fuera de `aes`, sin una variable
-adicional representada por color. La comparación de mapeo/fijación se ampliará
-en 08.03.
+adicional representada por color. La comparación de mapeo/fijación se amplía
+en [08.03](../03_aesthetic_mapping/README.md).
 
 No intercambies `geom_col` y `geom_bar` conservando la interpretación. Por
 defecto, `geom_bar` cuenta filas por x. El siguiente contraste **omite y** porque
@@ -361,7 +361,7 @@ dos saldos cero. Un cero observado con créditos presentes es otro caso.
 | `object 'corte' not found` | Ejecutar primero la preparación de `datos`; escribir el nombre real sin comillas |
 | Una columna es texto en vez de cantidad | No usar `etiqueta` como y; el saldo numérico y su texto tienen responsabilidades distintas |
 | Barras 1 y 1 | Se contó la tabla resumida con `geom_bar`; revisar la medida, no los colores |
-| Aparece una leyenda inesperada al escribir `aes(fill = "azul")` | Se mapeó una categoría constante; para fijar relleno, escribir `fill = "blue"` fuera de `aes`. Se ampliará en 08.03 |
+| Aparece una leyenda inesperada al escribir `aes(fill = "azul")` | Se mapeó una categoría constante; para fijar relleno, escribir `fill = "blue"` fuera de `aes`. Se amplía en [08.03](../03_aesthetic_mapping/README.md) |
 | Funciona al ejecutar bloques, falla con `source` | Faltan pasos previos en el script o el directorio de trabajo no es la raíz de la práctica |
 | Figura correcta, conclusión sobre otra población | Comparar título, tabla y selección de IDs antes de interpretar |
 

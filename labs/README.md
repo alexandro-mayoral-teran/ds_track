@@ -86,6 +86,7 @@ reglas de enlace están en
 | [`07.10 — Primera figura y cierre del análisis`](07_tidyverse/10_first_plot_closure/) | `07_tidyverse` | No aplica todavía |
 | [`08.01 — Pregunta y gramática de gráficos`](08_visualization_r/01_question_grammar/) | `08_visualization_r` | No aplica todavía |
 | [`08.02 — Geometrías y transformaciones estadísticas`](08_visualization_r/02_geometries_stats/) | `08_visualization_r` | No aplica todavía |
+| [`08.03 — Mapear y fijar estéticas`](08_visualization_r/03_aesthetic_mapping/) | `08_visualization_r` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
