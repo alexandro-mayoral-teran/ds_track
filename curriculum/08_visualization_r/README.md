@@ -13,9 +13,10 @@ compara con el análisis Python; no se repite toda la limpieza para aprender gr�
 [08.03](03_aesthetic_mapping/README.md),
 [08.04](04_scales_coordinates/README.md),
 [08.05](05_facets_groups/README.md),
-[08.06](06_labels_themes_accessibility/README.md) y
-[08.07](07_compose_figures/README.md) disponen de lección, script y lab.
-08.08–08.09 siguen planificadas; sus enlaces internos describen el alcance.
+[08.06](06_labels_themes_accessibility/README.md),
+[08.07](07_compose_figures/README.md) y
+[08.09](09_visual_comparison/README.md) disponen de lección, scripts y lab.
+08.08 sigue planificada; su enlace interno describe el alcance.
 
 La pregunta, la representación y la interpretación guían el recorrido. El libro
 abierto de ggplot2 aporta la gramática de gráficos; su tercera edición en línea
@@ -33,7 +34,7 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 | 6 | [Etiquetas, temas y accesibilidad](06_labels_themes_accessibility/README.md) | Esencial | Comunicar población, hallazgo y límites |
 | 7 | [Componer figuras](07_compose_figures/README.md) | Práctica | Reunir vistas sin perder contexto |
 | 8 | [Exportación reproducible](#08-exportacion-reproducible) | Esencial | Producir archivos legibles desde código |
-| 9 | [Cierre visual y comparación con Python](#09-cierre-visual-y-comparacion-con-python) | Práctica de cierre | Explicar indicadores equivalentes en dos ecosistemas |
+| 9 | [Cierre visual y comparación con Python](09_visual_comparison/README.md) | Práctica de cierre | Explicar indicadores equivalentes en dos ecosistemas |
 
 ## Alcance de cada sección
 
@@ -129,8 +130,11 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 - Comparar indicadores, población y corte antes de comparar apariencia con
   Matplotlib/Altair. No se exige reproducir exactamente el estilo del otro ecosistema.
-- Práctica prevista: entregar una figura reconstruible, tabla conciliada y
-  comentario con hallazgo y límites, ampliando el proyecto R conocido.
+- Disponible: [lección, scripts R/Python y figuras](09_visual_comparison/README.md)
+  y [lab 08.09](../../labs/08_visualization_r/09_visual_comparison/README.md).
+  Reconstrucción independiente de la fuente, seis tablas conciliadas, pares,
+  cambio relativo y cobertura. Reutiliza la entrega de 07.10, sin nuevas
+  dependencias; 08.08 sigue pendiente y el proyecto integrador no se acredita.
 
 ## Prácticas, integración y criterio de salida
 
@@ -139,9 +143,10 @@ Los labs [08.01](../../labs/08_visualization_r/01_question_grammar/README.md),
 [08.03](../../labs/08_visualization_r/03_aesthetic_mapping/README.md),
 [08.04](../../labs/08_visualization_r/04_scales_coordinates/README.md),
 [08.05](../../labs/08_visualization_r/05_facets_groups/README.md),
-[08.06](../../labs/08_visualization_r/06_labels_themes_accessibility/README.md) y
-[08.07](../../labs/08_visualization_r/07_compose_figures/README.md) están
-disponibles; 08.08–08.09 siguen previstos. Se ampliará el proyecto previsto
+[08.06](../../labs/08_visualization_r/06_labels_themes_accessibility/README.md),
+[08.07](../../labs/08_visualization_r/07_compose_figures/README.md) y
+[08.09](../../labs/08_visualization_r/09_visual_comparison/README.md) están
+disponibles; 08.08 sigue prevista. Se ampliará el proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 con un checkpoint visual cuyo nombre se definirá al implementarlo.
 

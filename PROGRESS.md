@@ -6,10 +6,10 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
-- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.07 disponibles).
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.07 implementadas; 08.08–08.09 siguen planificadas.
-- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.07.
-- **Foco actual:** composición de resumen/detalle, guías, escalas y contexto común.
+- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.07 y 08.09 disponibles; 08.08 pendiente).
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.07 y 08.09 implementadas; 08.08 sigue planificada.
+- **Sesión de desarrollo:** 2026-10-21, desarrollo y comprobación de 08.09.
+- **Foco actual:** cierre visual y conciliación independiente R/Python, pares, porcentajes y cobertura.
   Próxima sección por implementar:
   [08.08 — Exportación reproducible](curriculum/08_visualization_r/README.md#08-exportacion-reproducible), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10 y 08.01–08.07; las otras dos siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.10, 08.01–08.07 y 08.09; 08.08 sigue planificada. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -47,14 +47,30 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[08.07 — Componer figuras](curriculum/08_visualization_r/07_compose_figures/README.md)
-con [script](curriculum/08_visualization_r/07_compose_figures/componer_figuras.R)
-y [lab](labs/08_visualization_r/07_compose_figures/README.md).
-Retomar con 08.08: exportación reproducible. Las otras dos secciones de 08
-siguen planificadas. Las diez de 07
-tienen material; los criterios de práctica y tareas pendientes siguen en
+[08.09 — Cierre visual y comparación con Python](curriculum/08_visualization_r/09_visual_comparison/README.md)
+con [script R](curriculum/08_visualization_r/09_visual_comparison/cerrar_visual.R),
+[referencia Python](curriculum/08_visualization_r/09_visual_comparison/comparar_python.py)
+y [lab](labs/08_visualization_r/09_visual_comparison/README.md).
+Se desarrolló por solicitud expresa antes de 08.08; retomar con
+[08.08 — Exportación reproducible](curriculum/08_visualization_r/README.md#08-exportacion-reproducible),
+todavía planificada. El módulo no se da por completo. Las diez de 07 tienen
+material; los criterios de práctica y tareas pendientes siguen en
 [cierre y pendientes](docs/tidyverse-closure.md). Proyecto/checkpoints integradores
 siguen pendientes; no se modificó el estado del estudiante sin evidencia.
+
+08.09 reutiliza la entrega de 07.10 y el proyecto renv existente, sin nuevas
+dependencias ni cambios de lockfile. Python relee la fuente y reconstruye reglas,
+particiones, pares y resumen antes de contrastar seis tablas R. Concilia campos
+de auditoría y motivos por registro, 14 pares y 29000/31800 MXN; explica 2800 MXN,
+9.66% del saldo inicial y cobertura 14/18 por fecha. Incluye dos figuras, relectura
+Python, error compensado y explicación razonada. R 4.6.1/ggplot2 4.0.3 y Python
+3.12.12/Matplotlib 3.10.7 comprobados en procesos nuevos; cuatro muestras de
+frontera (fechas/rango/claves, vacío, sin pares y ceros), alteraciones, destinos
+ocupados y ejemplos completos del lab comprobados. Sin pares se conserva
+saldo ausente, sin dibujar ceros ficticios; los ceros observados son distintos.
+Se conservaron fuentes, funciones, metadatos y entrega 07.10 mediante huellas.
+Las figuras se inspeccionaron; no se certifica equivalencia de píxeles ni se
+probó la interfaz del IDE. La biblioteca local renv se usó sin cambios globales.
 
 08.07 añade lección/script/lab, preparador, metadatos y tres figuras. Patchwork
 1.3.2 se añade al mismo proyecto renv con respaldo exacto en respaldo_08_06/;
@@ -580,6 +596,15 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 | 14 | Proyecto reproducible | No iniciado | — |
 
 ## Bitácora
+
+
+### 2026-10-21
+
+- Se desarrolló 08.09 con lección/lab, scripts R/Python y dos figuras. Reconstrucción
+  independiente, seis tablas conciliadas, denominadores y error compensado; sesiones
+  nuevas, fronteras y archivos previos conservados comprobados. Sin dependencias nuevas.
+- 08.08 conserva su plan y es el siguiente trabajo de autoría; no se da el módulo
+  por terminado ni se acredita al estudiante o al proyecto integrador.
 
 ### 2026-10-20
 

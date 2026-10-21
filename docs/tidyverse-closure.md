@@ -38,7 +38,7 @@ no basta para marcar una competencia como adquirida.
 
 | Pendiente | Alcance y condición para darlo por implementado |
 | --- | --- |
-| 08 — Visualización en R | 08.01–08.07 disponen de lección/script y lab; [08.07](../curriculum/08_visualization_r/07_compose_figures/README.md) añade composición y patchwork con preparador/lockfile. Las otras dos secciones siguen planificadas: exportación y cierre. |
+| 08 — Visualización en R | 08.01–08.07 disponen de lección/script y lab; [08.07](../curriculum/08_visualization_r/07_compose_figures/README.md) añade composición y patchwork con preparador/lockfile. [08.09](../curriculum/08_visualization_r/09_visual_comparison/README.md) añade cierre y conciliación con Python. 08.08 sigue planificada: exportación. |
 | Proyecto 03_portfolio_analysis_r | No tiene carpeta ni checkpoints activos. Antes de crearlos, definir producto, entradas, contrato y rúbrica; enlazar las lecciones y evidencias efectivamente exigidas. |
 | Checkpoints propuestos de 07 | Importación/contrato, calidad, indicadores/relaciones y categorías/cortes/figura. Son propuestas para el proyecto, no entregas ya habilitadas. |
 | Revisión del recorrido IDE anterior | 07.01–07.10 ya priorizan IDE. Revisar con el usuario las lecciones anteriores que aún necesiten adaptación, conservando terminal como apoyo cuando corresponda. |
@@ -58,7 +58,9 @@ por segmento/corte, escalas y cobertura explícitas.
 [08.06](../curriculum/08_visualization_r/06_labels_themes_accessibility/README.md)
 añade mensaje, etiquetas, temas locales y señales alternativas al color.
 [08.07](../curriculum/08_visualization_r/07_compose_figures/README.md) reúne
-resumen/detalle con contexto, ejes y guías explícitos. El siguiente trabajo
+resumen/detalle con contexto, ejes y guías explícitos.
+[08.09](../curriculum/08_visualization_r/09_visual_comparison/README.md) añade
+cierre visual y contraste independiente de registros, pares y saldos con Python. El siguiente trabajo
 de autoría es [08.08 — Exportación reproducible](../curriculum/08_visualization_r/README.md#08-exportacion-reproducible),
 todavía planificado. Instalar dependencias
 adicionales solo cuando una práctica implementada las requiera.

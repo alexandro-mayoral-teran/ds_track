@@ -307,7 +307,8 @@ lubridate con lockfile y respaldo.
 [07.10](curriculum/07_tidyverse/10_first_plot_closure/README.md) cierra el material
 con lección/lab, primera figura ggplot2, exportación y verificación de tablas
 reconstruidas. Las diez secciones de 07 están disponibles; 08.01–08.07 tienen
-lección, script y lab, 08.08–08.09 siguen planificadas y el proyecto integrador permanece pendiente. Consulta
+lección, script y lab; 08.09 también dispone de cierre visual y comparación con Python.
+08.08 sigue planificada y el proyecto integrador permanece pendiente. Consulta
 [el cierre y pendientes](docs/tidyverse-closure.md) y
 [la guía de lecturas R](docs/r-reading-guide.md).
 
@@ -344,7 +345,10 @@ añade lección/script/lab y figuras: mensaje, anotaciones, temas locales, seña
 adicionales al color y descripción alternativa.
 [08.07 — Componer figuras](curriculum/08_visualization_r/07_compose_figures/README.md)
 añade lección/script/lab, composición de resumen/detalle y patchwork con
-preparador, respaldo y lockfile. 08.08–08.09 siguen planificadas.
+preparador, respaldo y lockfile.
+[08.09 — Cierre visual y comparación con Python](curriculum/08_visualization_r/09_visual_comparison/README.md)
+añade lección, scripts R/Python, figuras y lab: registros, pares, indicadores
+y alcance de la equivalencia. 08.08 sigue planificada.
 Las referencias abiertas están en [la guía de lecturas R](docs/r-reading-guide.md).
 
 **Objetivo:** profundizar en ggplot2 sobre resultados ya conocidos.
