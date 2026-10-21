@@ -43,7 +43,7 @@ no basta para marcar una competencia como adquirida.
 | Checkpoints propuestos de 07 | Importación/contrato, calidad, indicadores/relaciones y categorías/cortes/figura. Son propuestas para el proyecto, no entregas ya habilitadas. |
 | Revisión del recorrido IDE anterior | 07.01–07.10 ya priorizan IDE. Revisar con el usuario las lecciones anteriores que aún necesiten adaptación, conservando terminal como apoyo cuando corresponda. |
 | Decisiones de estructura | Integración numerada de R aplicado, terminal avanzada y separación entre avance del material y bitácoras personales: resolver antes de cambiar numeración o referencias. |
-| Resto del track | 09–14 conservan planes: almacenamiento/procesamiento, reportes, una alternativa de aplicación y proyecto final. No están terminados por cerrar 07. |
+| Resto del track | 09.01 dispone de material; 09.02–09.09 y 10–14 conservan planes. Consultar [cierre de almacenamiento](storage-closure.md); cerrar 07 no completa el track. |
 
 [08.01 — Pregunta y gramática de gráficos](../curriculum/08_visualization_r/01_question_grammar/README.md)
 ya reutiliza la figura, datos y población explícita de 07.10 para estudiar sus
@@ -64,7 +64,9 @@ cierre visual y contraste independiente de registros, pares y saldos con Python.
 [08.08 — Exportación reproducible](../curriculum/08_visualization_r/08_reproducible_export/README.md)
 añade dimensiones, resolución y comprobación de archivos. Las nueve secciones
 tienen material; revisar el criterio global y la evidencia antes de avanzar al
-plan de 09.01 — CSV, Parquet y Arrow. Instalar dependencias
+[lección 09.01 — CSV, Parquet y Arrow](../curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md),
+ya disponible. Los [pendientes de almacenamiento](storage-closure.md) distinguen
+la introducción del cierre completo. Instalar dependencias
 adicionales solo cuando una práctica implementada las requiera.
 
 Para el proyecto integrador, consultar el [índice de proyectos](../projects/README.md)

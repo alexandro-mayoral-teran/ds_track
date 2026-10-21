@@ -370,7 +370,10 @@ con indicadores conciliados y elección de representación justificada.
 El [plan de nueve secciones](curriculum/09_arrow_parquet/README.md#orden-de-desarrollo)
 presenta teoría común, esquemas, recorridos Python y R, intercambio en ambas
 direcciones, lectura selectiva, metadatos y cierre. Particionamiento es opcional.
-Las lecciones y labs están por desarrollar.
+[09.01](curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md) dispone de
+lección/scripts/lab, muestra CSV/Parquet y comparación de disco/memoria.
+Esencial sin dependencias nuevas; evidencia de lectura real de autoría.
+09.02–09.09 siguen planificadas. Consultar [pendientes de cierre](docs/storage-closure.md).
 
 - Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.
 - Práctica: comparar CSV y Parquet en tamaño, tipos y lectura selectiva.

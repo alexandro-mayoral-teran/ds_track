@@ -6,12 +6,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
-- **Próximo módulo por desarrollar:** `09_arrow_parquet`, con nueve secciones todavía planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.09 implementadas; 09–14 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-21, desarrollo y comprobación de 08.08; navegación 08.07 → 08.08 → 08.09 restablecida.
-- **Foco actual:** exportación reproducible, dimensiones/resolución, tablas/configuración y revisión final.
-  Próximo paso: revisar el cierre de 08 y desarrollar
-  [09.01 — CSV, Parquet y Arrow](curriculum/09_arrow_parquet/README.md#01-csv-parquet-y-arrow), todavía planificada.
+- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01 disponible; 09.02–09.09 todavía planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01 implementadas; 09.02–09.09 y 10–14 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-21, desarrollo y comprobación de 09.01; cierre de sesión documentado.
+- **Foco actual:** CSV/Parquet, representación Arrow, bibliotecas y medidas de disco/memoria.
+  Próximo paso: desarrollar
+  [09.02 — Esquemas y tipos entre lenguajes](curriculum/09_arrow_parquet/README.md#02-esquemas-y-tipos-entre-lenguajes), todavía planificada.
+  Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -31,7 +32,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
+  19 secciones: 09.01 disponible y las otras 18 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -47,18 +48,39 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 La última sección desarrollada es
-[08.08 — Exportación reproducible](curriculum/08_visualization_r/08_reproducible_export/README.md),
-con [script](curriculum/08_visualization_r/08_reproducible_export/exportar_figuras.R),
-[figura](curriculum/08_visualization_r/08_reproducible_export/assets/saldo_exportado.png)
-y [lab](labs/08_visualization_r/08_reproducible_export/README.md). Se cubrió el hueco
-entre 08.07 y 08.09, ambas ya disponibles; las nueve secciones tienen material.
-Retomar revisando su criterio global y el plan de
-[09.01 — CSV, Parquet y Arrow](curriculum/09_arrow_parquet/README.md#01-csv-parquet-y-arrow).
-No instalar dependencias solo por planificar. La consideración de R aplicado
-sigue pendiente de diseño, sin renumerar el track. Los criterios de práctica y
-tareas pendientes siguen en [cierre y pendientes](docs/tidyverse-closure.md).
-Proyecto/checkpoints integradores siguen pendientes; no se modificó el estado
-del estudiante sin evidencia.
+[09.01 — CSV, Parquet y Arrow](curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md),
+con [script Python](curriculum/09_arrow_parquet/01_csv_parquet_arrow/inspeccionar_formatos.py),
+[script R](curriculum/09_arrow_parquet/01_csv_parquet_arrow/inspeccionar_formatos.R),
+[muestra e inventario](curriculum/09_arrow_parquet/01_csv_parquet_arrow/datos/README.md)
+y [lab](labs/09_arrow_parquet/01_csv_parquet_arrow/README.md).
+La sesión queda cerrada con el estado real y los
+[pendientes para cerrar almacenamiento](docs/storage-closure.md). Retomar con
+[09.02 — Esquemas y tipos entre lenguajes](curriculum/09_arrow_parquet/README.md#02-esquemas-y-tipos-entre-lenguajes):
+contrato de tipos/nulabilidad, casos separados de NA/null/vacío/cero, fechas,
+ID textual, unidades, rango y precisión. No instalar paquetes todavía.
+
+09.01 contiene CSV/Parquet reales de los mismos 14 IDs: 28 × 3, dos cortes de
+14 registros y 29000/31800 MXN. Generados desde las reglas y fuente anteriores;
+original R y referencia Python conciliados observación por observación. CSV de
+593 bytes y Parquet de 1668; 420 bytes lógicos de buffers de tabla Arrow no se
+presentan como RAM del proceso. Esquema string/date32/int32 no anulable, dos
+grupos de filas y Snappy; evidencia de autoría con PyArrow 21.0.0 ya existente,
+sin incorporarlo a pyproject/uv.lock ni al renv. Esencial comprobado sin paquetes
+externos (Python -S y R base); opcional sí decodifica Parquet y compara por clave.
+Python 3.12.12/R 4.6.1; bloques de lección/lab desde procesos nuevos. Vacío,
+ceros, fronteras, fechas inválidas, repeticiones, faltantes y enteros fuera de
+rango comprobados en ambos lectores. Una firma PAR1 falsa pasa el control
+parcial con inventario alterado, pero falla el lector real; tipo incorrecto se
+rechaza y orden distinto se acepta por clave. Son límites explícitos del
+inspector, no una afirmación de validación completa. Huellas/atributos LF y
+binario conservan la muestra al clonar; fuentes, entornos y entregas previos intactos.
+
+09.02–09.09 siguen pendientes (09.08 opcional); lectura cruzada de Parquet en R
+no implementada. Las nueve secciones de 08 tienen material, pero falta evidencia
+del estudiante para acreditar su práctica. Los proyectos/checkpoints previstos
+03_portfolio_analysis_r y 04_large_credit_dataset siguen sin implementar. R
+aplicado, terminal avanzada y separación de bitácoras mantienen su consideración
+de diseño, sin renumerar el track. Consultar también [cierre de 07](docs/tidyverse-closure.md).
 
 08.08 conserva la fuente, funciones y metadatos del proyecto renv, sin paquetes
 nuevos. PNG esencial con objeto explícito, 9 × 6 pulgadas/144 dpi (1296 × 864),
@@ -614,6 +636,14 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-21
+
+- Se desarrolló [09.01](curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md)
+  con lección/lab, scripts de inspección, CSV/Parquet reales y evidencia de lectura.
+  Controles R/Python y lectores desde sesiones nuevas comprobados; sin dependencias
+  nuevas ni cambios de entornos. El esencial distingue firma de decodificación.
+- Se documentaron [pendientes de cierre](docs/storage-closure.md) y el punto de
+  reanudación 09.02. No se da por terminado el módulo 09 ni se acredita práctica
+  del estudiante o proyectos/checkpoints previstos.
 
 - Se implementó [08.08 — Exportación reproducible](curriculum/08_visualization_r/08_reproducible_export/README.md)
   con script, figura y lab: PNG esencial, dimensiones/dpi, configuración y

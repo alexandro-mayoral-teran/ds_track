@@ -236,8 +236,12 @@ reproducible con script y lab: PNG esencial, dimensiones, configuración y
 relectura; SVG/PDF opcionales.
 [08.09](curriculum/08_visualization_r/09_visual_comparison/README.md) añade cierre visual,
 conciliación independiente con Python y lab. Las nueve secciones de 08 tienen material, con
-[lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
-de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
+[lecturas abiertas de R](docs/r-reading-guide.md).
+[09.01 — CSV, Parquet y Arrow](curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md)
+añade lección, scripts de inspección, muestra y
+[lab](labs/09_arrow_parquet/01_csv_parquet_arrow/README.md), sin dependencias nuevas.
+[Pendientes de cierre](docs/storage-closure.md): 09.02–09.09 e integración por
+desarrollar. El nivel 10 conserva su plan de Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de

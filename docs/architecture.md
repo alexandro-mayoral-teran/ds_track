@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.10 y 08.01–08.09 tienen lecciones/scripts/labs; 09–14 conservan planificación;
+07.01–07.10, 08.01–08.09 y 09.01 tienen lecciones/scripts/labs; 09.02–09.09 y 10–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -601,11 +601,18 @@ de 07.10; 14 IDs, 29000/31800 MXN y 9.66% sobre el saldo inicial. Denominadores
 y alcance explícitos, sin comparar píxeles ni cambiar dependencias.
 Las nueve secciones de 08 tienen material; el proyecto integrador continúa pendiente.
 
-### Almacenamiento y procesamiento previstos: 09–10
+### Almacenamiento y procesamiento: 09–10
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones planificadas, todavía sin scripts ni labs.
+19 secciones; 09.01 dispone de lección/lab y scripts, las otras 18 siguen planificadas.
+09.01 distingue formato, representación y biblioteca con una proyección de 28
+observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
+inventario conservados; inspección esencial Python estándar/R base y lectura
+Parquet opcional de autoría con PyArrow 21.0.0 ya existente. No se incorporan
+paquetes ni se acredita lectura Parquet en R. Los tamaños de disco y buffers
+no se presentan como RAM del proceso ni como benchmark.
+El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 
 | Módulo | Secciones | Papel y cierre |
 | --- | --- | --- |

@@ -1,0 +1,13 @@
+Productor: PyArrow 21.0.0
+Formato Parquet declarado por el lector: 2.6
+Filas: 28
+Columnas: 3
+Grupos de filas: 2
+Compresion de todos los bloques de columna: SNAPPY
+Esquema Arrow reconstruido por el lector:
+id_credito: string not null
+fecha_corte: date32[day] not null
+saldo_mxn: int32 not null
+Bytes logicos de buffers de tabla Arrow (table.nbytes): 420
+Comprobacion por clave y valor: 28 observaciones, 14 IDs, 29000/31800 MXN.
+Esta lectura real corresponde a autoría; no es una lectura efectuada por el inspector sin PyArrow.

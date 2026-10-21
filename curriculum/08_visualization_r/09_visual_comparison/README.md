@@ -272,7 +272,8 @@ barras no permiten auditar por sí solas la selección de la población.
 
 Después del lab, revisa el criterio global del [módulo 08](../README.md).
 El siguiente módulo numerado es [09 — Arrow y Parquet](../../09_arrow_parquet/README.md),
-cuyas nueve secciones conservan su plan; el proyecto y sus checkpoints integradores siguen pendientes.
+cuya [primera sección](../../09_arrow_parquet/01_csv_parquet_arrow/README.md) está disponible.
+09.02–09.09, el proyecto y sus checkpoints integradores siguen pendientes.
 Escribir el material no acredita aprendizaje del estudiante.
 
 ## Referencias primarias
