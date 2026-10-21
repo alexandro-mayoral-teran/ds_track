@@ -185,5 +185,5 @@ material no acredita aprendizaje por sí solo.
 - ¿Qué revisarías al trasladar esa imagen y su descripción a otro documento?
 
 Cierra cuando puedas reconstruir y justificar esas decisiones. Siguiente:
-[08.07 — Componer figuras](../../../curriculum/08_visualization_r/README.md#07-componer-figuras),
-todavía planificada. Volver a la [lección 08.06](../../../curriculum/08_visualization_r/06_labels_themes_accessibility/README.md).
+[08.07 — Componer figuras](../../../curriculum/08_visualization_r/07_compose_figures/README.md),
+ya disponible. Volver a la [lección 08.06](../../../curriculum/08_visualization_r/06_labels_themes_accessibility/README.md).

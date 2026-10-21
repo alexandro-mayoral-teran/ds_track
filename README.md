@@ -228,7 +228,10 @@ añade facetas, escalas y cobertura por grupo, con
 [lab](labs/08_visualization_r/05_facets_groups/README.md), script y figuras.
 [08.06](curriculum/08_visualization_r/06_labels_themes_accessibility/README.md) añade
 etiquetas, temas y accesibilidad con [lab](labs/08_visualization_r/06_labels_themes_accessibility/README.md),
-script y figuras; 08.07–08.09 siguen planificadas, con
+script y figuras. [08.07](curriculum/08_visualization_r/07_compose_figures/README.md)
+añade composición de resumen/detalle, preparador, lockfile y
+[lab](labs/08_visualization_r/07_compose_figures/README.md), con script y figuras;
+08.08–08.09 siguen planificadas, con
 [lecturas abiertas de R](docs/r-reading-guide.md). Los niveles 09–10 tienen planes
 de Arrow/Parquet y Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El

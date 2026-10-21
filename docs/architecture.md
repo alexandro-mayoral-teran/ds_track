@@ -90,7 +90,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.10 y 08.01–08.06 tienen lecciones/scripts/labs; 08.07–08.09 y 09–14 conservan planificación;
+07.01–07.10 y 08.01–08.07 tienen lecciones/scripts/labs; 08.08–08.09 y 09–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -344,8 +344,8 @@ En ambos casos separar transformación y validación de datos de la interfaz.
 ### Desarrollo previsto de los módulos 06–08
 
 Los planes de R contienen 28 secciones; las nueve de 06 tienen lecciones,
-scripts y labs; las diez de 07 también están disponibles. 08.01–08.06 tienen
-material y las otras tres secciones de 08 conservan planificación:
+scripts y labs; las diez de 07 también están disponibles. 08.01–08.07 tienen
+material y las otras dos secciones de 08 conservan planificación:
 
 | Módulo | Secciones | Secuencia y cierre |
 | --- | --- | --- |
@@ -582,7 +582,14 @@ labels frente a temas/capas, anotación local y tema local sin cambiar la sesió
 Conserva 29000/31800 MXN, +2800 y cobertura 14/18; color/forma y variante de
 color único, descripción alternativa recuperable y tabla de lectura. Contraste
 y revisión del destino sin certificar accesibilidad completa; fuentes/lockfile
-intactos y sin nuevas dependencias. Las otras tres secciones de 08 siguen planificadas; el proyecto integrador continúa pendiente.
+intactos y sin nuevas dependencias.
+08.07 añade lección/script/lab y figuras de composición: resumen de dos sumas
+y detalle de 28 observaciones, 14 pares y 29000/31800 MXN conciliados.
+Patchwork 1.3.2 se incorpora al mismo proyecto renv, con respaldo 08.06; los
+43 registros anteriores del lockfile siguen idénticos. Disposición, guías
+compatibles y ejes explícitos; anidación con proporción fija como ampliación.
+Restauración real en otra copia sin biblioteca, sin cambiar Conda ni paquetes
+globales; fuentes y funciones previas intactas. Las otras dos secciones de 08 siguen planificadas; el proyecto integrador continúa pendiente.
 
 ### Almacenamiento y procesamiento previstos: 09–10
 

@@ -414,8 +414,8 @@ requiere otra exportación, publicación web ni una auditoría completa de
 accesibilidad. Proyecto integrador y checkpoints siguen pendientes; desarrollar
 material no acredita aprendizaje del estudiante.
 
-Siguiente: [08.07 — Componer figuras](../README.md#07-componer-figuras), todavía
-planificada. Volver al [índice de 08](../README.md).
+Siguiente: [08.07 — Componer figuras](../07_compose_figures/README.md), ya
+disponible. Volver al [índice de 08](../README.md).
 
 ## Referencias y atribución
 

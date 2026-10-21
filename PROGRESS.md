@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de material cerrado:** `06_r_foundations` y `07_tidyverse`.
-- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.06 disponibles).
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.06 implementadas; 08.07–08.09 siguen planificadas.
-- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.06.
-- **Foco actual:** mensaje, etiquetas, temas locales y accesibilidad.
+- **Módulo en desarrollo:** `08_visualization_r` (08.01–08.07 disponibles).
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10 y 08.01–08.07 implementadas; 08.08–08.09 siguen planificadas.
+- **Sesión de desarrollo:** 2026-10-20, desarrollo y comprobación de 08.07.
+- **Foco actual:** composición de resumen/detalle, guías, escalas y contexto común.
   Próxima sección por implementar:
-  [08.07 — Componer figuras](curriculum/08_visualization_r/README.md#07-componer-figuras), todavía planificada.
+  [08.08 — Exportación reproducible](curriculum/08_visualization_r/README.md#08-exportacion-reproducible), todavía planificada.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -30,7 +30,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10 y 08.01–08.06; las otras tres siguen planificadas. Los módulos 09–10 tienen
+  también 07.01–07.10 y 08.01–08.07; las otras dos siguen planificadas. Los módulos 09–10 tienen
   19 secciones planificadas y 11–14 añaden 37. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
@@ -47,14 +47,47 @@ material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese reco
 implementadas posteriormente con el usuario.
 
 El último material disponible es
-[08.06 — Etiquetas, temas y accesibilidad](curriculum/08_visualization_r/06_labels_themes_accessibility/README.md)
-con [script](curriculum/08_visualization_r/06_labels_themes_accessibility/comunicar_resultados.R)
-y [lab](labs/08_visualization_r/06_labels_themes_accessibility/README.md).
-Retomar con 08.07: componer figuras. Las otras tres secciones de 08
+[08.07 — Componer figuras](curriculum/08_visualization_r/07_compose_figures/README.md)
+con [script](curriculum/08_visualization_r/07_compose_figures/componer_figuras.R)
+y [lab](labs/08_visualization_r/07_compose_figures/README.md).
+Retomar con 08.08: exportación reproducible. Las otras dos secciones de 08
 siguen planificadas. Las diez de 07
 tienen material; los criterios de práctica y tareas pendientes siguen en
 [cierre y pendientes](docs/tidyverse-closure.md). Proyecto/checkpoints integradores
 siguen pendientes; no se modificó el estado del estudiante sin evidencia.
+
+08.07 añade lección/script/lab, preparador, metadatos y tres figuras. Patchwork
+1.3.2 se añade al mismo proyecto renv con respaldo exacto en respaldo_08_06/;
+los 43 registros anteriores del lockfile siguen idénticos. El preparador no
+instala: copia solo DESCRIPTION, renv.lock y componer_figuras.R, rechaza
+repeticiones, destinos ocupados y metadatos personalizados sin sobrescribirlos.
+Restauración local y segunda restauración real desde biblioteca vacía comprobadas;
+sin cambiar Conda ni bibliotecas globales. Fuentes, funciones y entregas intactas.
+
+Composición A/B de dos sumas 29000/31800 MXN y 28 observaciones de los mismos
+14 IDs; cobertura 14/18, 14 grupos de dos cortes y +2800 conciliados. Disposición
+horizontal/vertical, tamaños relativos, ejes/títulos propios y guía común;
+facetas frente a gráficos distintos, anotación superior y descripción del conjunto.
+Ampliación anidada con dispersión de 14 pares y proporción fija; ruta esencial
+comprobada sin exigir esa ampliación. Guías correctas recogidas: una; locales:
+dos; correspondencias de color incoherentes: dos y diferencia detectada.
+
+Nueve bloques de lección, incluidas preparación/restauración y reinicio,
+y cuatro de lab comprobados; scripts por source desde procesos nuevos con
+R 4.6.1/ggplot2 4.0.3/patchwork 1.3.2. Composición completa construida como
+gtable, hijos, rangos, pares, guía, proporción y tema global intacto revisados;
+vacío sin puntos inventados, ceros con un ID y orden de hijos comprobados.
+Preparador sin biblioteca, respaldo, repetición, metadatos alterados, ruta
+ocupada, raíz incorrecta y siete argumentos inválidos comprobados. Los scripts
+de referencia 08.01–08.06 pasan con el nuevo lockfile. Python estándar concilia
+los 14 pares, 28 observaciones, sumas, conexiones y registros del lockfile;
+respaldo conserva huellas previas y cierre idéntico al RDS verificado de 07.10.
+Figuras revisadas: horizontal 1728 × 1008, vertical 1296 × 1296 y anidada
+1728 × 1440; variantes del lab también inspeccionadas. Ejecución con lectura de
+enlaces base renv, sin probar la interfaz del IDE. Índices, navegación y pendientes
+actualizados; proyecto/checkpoints y aprendizaje del estudiante siguen separados.
+Revisados 1,909 enlaces locales/fragmentos en 206 Markdown, bloques y soluciones
+equilibrados y git diff --check limpio.
 
 08.06 añade lección/script/lab y tres figuras, sin nuevas dependencias ni
 cambios de fuente, funciones previas o lockfile. Mensaje, títulos, unidades,
@@ -549,6 +582,13 @@ la disponibilidad del material se resume arriba y no modifica estos estados.
 ## Bitácora
 
 ### 2026-10-20
+
+- Se desarrolló [08.07 — Componer figuras](curriculum/08_visualization_r/07_compose_figures/README.md)
+  con script, tres figuras y [lab](labs/08_visualization_r/07_compose_figures/README.md).
+  Resumen/detalle conciliados, disposición, guías y contexto; patchwork 1.3.2
+  registrado con respaldo y restauración local real, conservando dependencias
+  previas. Ejemplos y 08.01–08.06 comprobados; fuentes/funciones/entregas intactas.
+  Siguiente: **08.08 — Exportación reproducible**, todavía planificada.
 
 - Se desarrolló [08.06 — Etiquetas, temas y accesibilidad](curriculum/08_visualization_r/06_labels_themes_accessibility/README.md)
   con script, tres figuras y [lab](labs/08_visualization_r/06_labels_themes_accessibility/README.md).

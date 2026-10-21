@@ -12,9 +12,10 @@ compara con el análisis Python; no se repite toda la limpieza para aprender gr�
 [08.02](02_geometries_stats/README.md),
 [08.03](03_aesthetic_mapping/README.md),
 [08.04](04_scales_coordinates/README.md),
-[08.05](05_facets_groups/README.md) y
-[08.06](06_labels_themes_accessibility/README.md) disponen de lección, script y lab.
-08.07–08.09 siguen planificadas; sus enlaces internos describen el alcance.
+[08.05](05_facets_groups/README.md),
+[08.06](06_labels_themes_accessibility/README.md) y
+[08.07](07_compose_figures/README.md) disponen de lección, script y lab.
+08.08–08.09 siguen planificadas; sus enlaces internos describen el alcance.
 
 La pregunta, la representación y la interpretación guían el recorrido. El libro
 abierto de ggplot2 aporta la gramática de gráficos; su tercera edición en línea
@@ -30,7 +31,7 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 | 4 | [Escalas y coordenadas](04_scales_coordinates/README.md) | Esencial | Justificar límites, transformaciones y unidades |
 | 5 | [Facetas y comparación entre grupos](05_facets_groups/README.md) | Práctica | Comparar segmentos con escalas explícitas |
 | 6 | [Etiquetas, temas y accesibilidad](06_labels_themes_accessibility/README.md) | Esencial | Comunicar población, hallazgo y límites |
-| 7 | [Componer figuras](#07-componer-figuras) | Práctica | Reunir vistas sin perder contexto |
+| 7 | [Componer figuras](07_compose_figures/README.md) | Práctica | Reunir vistas sin perder contexto |
 | 8 | [Exportación reproducible](#08-exportacion-reproducible) | Esencial | Producir archivos legibles desde código |
 | 9 | [Cierre visual y comparación con Python](#09-cierre-visual-y-comparacion-con-python) | Práctica de cierre | Explicar indicadores equivalentes en dos ecosistemas |
 
@@ -108,8 +109,10 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
 
 - Combinar vistas con una herramienta como patchwork cuando aporte claridad;
   mantener escalas, unidades y leyendas comparables.
-- Práctica prevista: detalle y resumen en una misma composición. La biblioteca
-  adicional se incorporará al renv del proyecto solo al implementar esta sección.
+- Disponible: [lección, script y figuras](07_compose_figures/README.md) y
+  [lab 08.07](../../labs/08_visualization_r/07_compose_figures/README.md).
+  Resumen/detalle, disposición, guías y ejes explícitos; patchwork 1.3.2 añadido
+  al mismo proyecto renv con respaldo y lockfile, registros previos conservados.
 
 <a id="08-exportacion-reproducible"></a>
 
@@ -135,9 +138,10 @@ Los labs [08.01](../../labs/08_visualization_r/01_question_grammar/README.md),
 [08.02](../../labs/08_visualization_r/02_geometries_stats/README.md),
 [08.03](../../labs/08_visualization_r/03_aesthetic_mapping/README.md),
 [08.04](../../labs/08_visualization_r/04_scales_coordinates/README.md),
-[08.05](../../labs/08_visualization_r/05_facets_groups/README.md) y
-[08.06](../../labs/08_visualization_r/06_labels_themes_accessibility/README.md) están
-disponibles; 08.07–08.09 siguen previstos. Se ampliará el proyecto previsto
+[08.05](../../labs/08_visualization_r/05_facets_groups/README.md),
+[08.06](../../labs/08_visualization_r/06_labels_themes_accessibility/README.md) y
+[08.07](../../labs/08_visualization_r/07_compose_figures/README.md) están
+disponibles; 08.08–08.09 siguen previstos. Se ampliará el proyecto previsto
 03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
 con un checkpoint visual cuyo nombre se definirá al implementarlo.
 
