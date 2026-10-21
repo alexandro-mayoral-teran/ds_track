@@ -614,6 +614,9 @@ inventario conservados; inspección esencial Python estándar/R base y lectura
 Parquet opcional de autoría con PyArrow 21.0.0 ya existente. No se incorporan
 paquetes en esa introducción ni se acredita lectura Parquet en R. Los tamaños de disco y buffers
 no se presentan como RAM del proceso ni como benchmark.
+La introducción incluye comparación conceptual por filas/columnas, codificación
+frente a compresión y selección lógica frente a lectura física, antes de las
+APIs y mediciones posteriores. Conserva el esencial sin paquetes externos.
 09.02 define el contrato de esas tres columnas, sin modificar la muestra ni
 dependencias. Python estándar/R base evalúan 23 casos separados con originales
 y motivos conservados: 5 aceptados/18 rechazados. Distingue ausencia/vacío/cero,

@@ -8,8 +8,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
 - **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.03 disponibles; 09.04–09.09 todavía planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.03 implementadas; 09.04–09.09 y 10–14 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-21, desarrollo de 09.03 y comprobación de escritura/relectura Parquet Python.
-- **Foco actual:** esquema Arrow explícito, índice pandas y conservación por clave al escribir/releer.
+- **Sesión de desarrollo:** 2026-10-21, 09.03 implementada y revisión teórica de 09.01; cierre de sesión documentado.
+- **Foco al cierre:** bases CSV/Parquet/Arrow revisadas y conversión Python comprobada.
   Próximo paso: desarrollar
   [09.04 — Leer y escribir desde R](curriculum/09_arrow_parquet/README.md#04-leer-y-escribir-desde-r), todavía planificada.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
@@ -40,6 +40,21 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Cierre de sesión — 2026-10-21:** revisada la teoría de 09.01 y ampliadas las
+explicaciones de filas/columnas, selección lógica frente a lectura física,
+codificación de texto/valores y compresión, serialización y condiciones del
+intercambio Arrow. Ejemplos conceptuales con registros ya conocidos; lab,
+solución y procedencia actualizados. Corregidas referencias al estado de 09.03:
+PyArrow ya está declarado desde esa sección, aunque no se requiere para el
+esencial de 09.01. Fuentes oficiales revisadas; no se modifican scripts, muestras,
+entornos, dependencias ni resultados. No se inició 09.04; sigue siendo el punto
+para retomar después de este cierre. Los proyectos/checkpoints y la evidencia
+del estudiante permanecen pendientes.
+Comprobados esencial Python (también con -S), decodificación PyArrow y los dos
+bloques R de lección/lab desde procesos nuevos; ejemplos conceptuales contrastados
+con el CSV. Revisados 2097 enlaces locales/fragmentos en 219 Markdown, bloques
+y soluciones equilibrados y git diff --check limpio.
 
 **Criterio de autoría acordado:** en R, priorizar RStudio o el IDE elegido,
 scripts y ejecución por bloques; terminal/Rscript solo cuando aporten al objetivo

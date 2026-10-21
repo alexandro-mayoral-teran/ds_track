@@ -47,6 +47,12 @@ print(r$alcance)
 8. Redacta entre 100 y 180 palabras para alguien que conoce CSV y quiere saber
    qué aportan Parquet y Arrow. Incluye sus diferencias y una afirmación de
    rendimiento que todavía no puedes sostener con esta muestra.
+9. Dibuja los dos primeros registros por filas y por columnas. Para sumar saldo
+   por fecha, identifica los campos del cálculo y los que además necesitas para
+   validar la clave. Explica por qué seleccionar dos columnas no demuestra haber
+   leído menos bytes. Después resuelve tres decisiones: revisar unas filas en
+   texto, guardar una tabla tipada para análisis e intercambiar representaciones
+   en memoria. Justifica el papel de CSV, Parquet o Arrow en cada caso.
 
 ## Comprobación y evidencia
 
@@ -58,6 +64,8 @@ print(r$alcance)
 | Inventario | CSV 593 bytes; Parquet 1668 bytes; huellas coincidentes |
 | Inspector esencial | Interpreta CSV; no decodifica Parquet |
 | Evidencia de autoría | Lectura Parquet real con PyArrow, esquema y valores conciliados |
+| Organización y lectura | Misma información por filas/columnas; selección lógica no demuestra ahorro físico |
+| Codificación y compresión | UTF-8, diccionario y Snappy tienen funciones distintas; no corrigen pérdidas previas |
 | Sesión nueva | Mismos controles; entradas conservadas |
 
 Conserva la clasificación, tu script/nota, resultados de ambos recorridos y la
@@ -100,6 +108,18 @@ debe ser única. Un esquema con saldo entero no impide por sí solo un saldo
 negativo ni una clave duplicada. Concatenar ambas representaciones duplicaría
 la misma población, no añadiría otro corte.
 
+Para sumar saldo por fecha bastan esos dos campos del cálculo; para validar la
+identidad de observaciones también se necesita el ID. Parquet permite localizar
+bloques por columna, pero el trabajo físico depende del lector y la consulta.
+Un CSV pequeño con contrato puede bastar para revisar texto; Parquet conserva
+una representación tipada para análisis, y Arrow facilita representaciones e
+interfaces de intercambio en memoria. Pueden usarse juntos en un mismo flujo.
+
+UTF-8 codifica caracteres; un diccionario Parquet codifica valores y referencias;
+Snappy comprime bloques. Comprimir no convierte texto a tipos, no cifra los datos
+ni recupera ceros del ID que se perdieron antes de escribir. Ninguna de estas
+decisiones demuestra por sí sola que una consulta sea más rápida.
+
 </details>
 
 ## Reflexión, criterio de salida y continuidad
@@ -108,7 +128,7 @@ Explica qué significa «conservar los datos» cuando cambian los bytes y los ti
 internos de los objetos. Identifica dos decisiones que deberán formar parte del
 contrato en 09.02 y una afirmación que requiere una medición posterior.
 
-Cierra el lab cuando puedas justificar la clasificación, los controles y los
+Cierra el lab cuando puedas justificar la clasificación, filas/columnas, los controles y los
 límites de lo observado. Registra dudas y evidencia real; no se acredita por
 consultar la solución. Regresa a la [lección 09.01](../../../curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md).
 Siguiente: [09.02 — Esquemas y tipos entre lenguajes](../../../curriculum/09_arrow_parquet/02_schemas_types/README.md).

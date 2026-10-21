@@ -20,7 +20,9 @@ con PyArrow 21.0.0 existente, esquema explícito con `string`, `date32[day]` e
 `int32`, campos no anulables, `row_group_size=14`, `compression="snappy"`,
 `version="2.6"` y `store_schema=True`. Su lectura se comparó valor por valor,
 conservando fechas e IDs; no basta comprobar solo totales. No se instaló ni
-registró PyArrow en los requisitos raíz. El lector R de Parquet queda para 09.04.
+registró PyArrow en los requisitos raíz durante esa preparación. Desde
+[09.03](../../03_python_read_write/README.md) sí es una dependencia declarada
+y comprobada, sin regenerar estas muestras. El lector R de Parquet queda para 09.04.
 
 [inventario.csv](inventario.csv) conserva tamaño y MD5 de las dos representaciones.
 Las reglas locales de atributos Git fijan LF para estas muestras CSV y tratan

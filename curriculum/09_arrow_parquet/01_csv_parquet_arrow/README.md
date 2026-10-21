@@ -16,16 +16,18 @@ Al terminar podrás:
 
 - Clasificar CSV y Parquet como formatos de archivo, y reconocer el papel de Arrow.
 - Explicar filas, columnas, esquema y dataset con un ejemplo concreto.
+- Diferenciar codificación, compresión y decodificación sin atribuirles mejoras no medidas.
 - Distinguir tamaño de archivo, buffers de una tabla y memoria de un proceso.
 - Inspeccionar una muestra sin confundir una firma de archivo con una lectura completa.
 - Mantener claves e indicadores al cambiar de representación.
 
 El recorrido esencial usa Python estándar y R base, sin instalar paquetes ni
 modificar entornos o lockfiles. La lectura real de Parquet se proporciona como
-evidencia de autoría y ampliación opcional con PyArrow **ya disponible**. Los
-recorridos de instalación/conversión Python y R se desarrollarán en 09.03 y
-09.04, después del contrato de 09.02. No necesitas completar esa ampliación
-para explicar los conceptos de esta primera sección.
+evidencia de autoría y ampliación opcional con PyArrow **ya disponible**.
+El recorrido Python de instalación/conversión ya está disponible en
+[09.03](../03_python_read_write/README.md); el recorrido R corresponde a 09.04,
+todavía planificada, después del contrato de [09.02](../02_schemas_types/README.md).
+No necesitas completar esa ampliación para explicar los conceptos de esta primera sección.
 
 ## 1. La misma tabla puede tener distintas representaciones
 
@@ -135,10 +137,69 @@ de IDs, fechas y saldos; no son tres CSV concatenados ni una promesa sobre bytes
 legibles. Parquet organiza grupos de filas y bloques de columna con metadatos;
 sus detalles se desarrollarán en 09.07.
 
+### Filas y columnas: la misma información, otra organización
+
+Piensa en los dos primeros registros conocidos. Una representación orientada
+a filas mantiene juntos los campos de cada registro; una orientada a columnas
+mantiene juntos valores del mismo campo. Este dibujo es **conceptual**, no una
+descripción exacta de los bytes de CSV, Parquet o Arrow:
+
+```text
+Por registros:
+  (001, 2026-09-30, 1100)  (002, 2026-09-30, 1200)
+
+Por columnas, sobre esos mismos registros:
+  id_credito:  [001,        002       ]
+  fecha_corte: [2026-09-30, 2026-09-30]
+  saldo_mxn:   [1100,       1200      ]
+```
+
+Si la pregunta es «¿cuál es la suma de saldo por fecha?», el cálculo necesita
+fecha y saldo. Para una consulta que solo usa esos campos, el lector Parquet
+puede localizar sus bloques de columna mediante los metadatos y omitir otros
+bloques. Eso no elimina la necesidad de revisar ID/corte al validar la tabla
+completa. Son actividades distintas: responder una consulta y comprobar el
+contrato de toda la entrada.
+
+En CSV, seleccionar columnas con una biblioteca puede evitar conservar las
+otras en la tabla resultante, pero normalmente sigue haciendo falta recorrer
+el texto para localizar los campos de cada registro. **Obtener menos columnas
+no demuestra que se hayan leído menos bytes del archivo.** El efecto concreto
+se comprueba con el lector y la consulta utilizados.
+
 Leer pocas columnas puede evitar trabajo que no necesita la consulta. Omitir
 filas o grupos depende del lector, filtro y metadatos; no se garantiza por usar
 la extensión `.parquet`. La lectura selectiva se practica en 09.06.
 [Estructura del archivo](https://parquet.apache.org/docs/file-format/).
+
+### Codificación, compresión y reconstrucción
+
+Estas palabras describen decisiones relacionadas, pero diferentes:
+
+| Concepto | Qué transforma | Ejemplo y límite |
+| --- | --- | --- |
+| Codificación de texto | Caracteres en bytes | UTF-8 permite representar texto; no declara tipos de saldo o fecha |
+| Codificación de valores Parquet | Valores en una representación del formato | Un diccionario puede guardar valores distintos y referencias a ellos; no decide el significado de una categoría |
+| Compresión | Bloques de datos en una forma que ocupa otro tamaño | Snappy es el códec de esta muestra; no cambia MXN a otra unidad |
+| Lectura y decodificación | Bytes del archivo en valores y tipos utilizables | Requiere un lector compatible; reconocer la firma no reconstruye las filas |
+
+Agrupar valores de un mismo campo puede facilitar aprovechar repeticiones,
+como las fechas de corte. El escritor decide codificaciones y opciones; eso
+no significa que cada columna use siempre un diccionario ni que obtengamos
+un ahorro en cualquier muestra. La compresión es otra etapa y no es requisito
+para que un archivo sea Parquet. También puede comprimirse un CSV; «CSV o
+Parquet» y «comprimido o sin comprimir» son decisiones distintas.
+[Codificaciones Parquet](https://parquet.apache.org/docs/file-format/data-pages/encodings/)
+y [compresión](https://parquet.apache.org/docs/file-format/data-pages/compression/).
+
+**Serializar** es producir una representación para guardarla o transmitirla;
+**deserializar** es reconstruir valores a partir de ella. En un lector Parquet,
+eso puede incluir descomprimir, decodificar y construir una tabla. El proceso
+no se reduce a cambiar la extensión ni a copiar el archivo comprimido a RAM.
+Una compresión sin pérdida conserva lo que recibió el escritor: no recupera
+un `001` que ya se hubiera convertido a `1` antes de escribir.
+
+### Esquema y límites de la inspección
 
 En la muestra, el lector reconstruyó este esquema Arrow a partir del Parquet:
 
@@ -188,6 +249,29 @@ Un Parquet comprimido que ocupa poco en disco puede necesitar más espacio al
 decodificarse. Arrow puede permitir compartir buffers en operaciones compatibles,
 pero convertir tipos, descomprimir o pasar a otra representación puede copiar o
 asignar memoria. No asumimos «cero copias» ni memoria acotada por usar Arrow.
+
+Arrow establece una representación compartida para facilitar el intercambio:
+dos componentes compatibles pueden entender la organización de los buffers
+sin inventar una traducción distinta para cada pareja de herramientas. Pero
+la compatibilidad de tipos, la operación y el manejo de memoria determinan
+si se puede compartir o hay que convertir. Los procesos Python y R separados
+no comparten automáticamente sus objetos porque ambos utilicen Arrow.
+[Introducción al formato Arrow](https://arrow.apache.org/docs/format/Intro.html).
+
+### Elegir según la tarea, no solo por la extensión
+
+| Necesidad | Decisión razonada para explorar |
+| --- | --- |
+| Revisar unas filas como texto o intercambiar con una herramienta sencilla | CSV con codificación, dialecto y contrato explícitos |
+| Guardar tablas tipadas para consultas analíticas de columnas | Parquet con lector compatible y relectura comprobada |
+| Intercambiar representaciones en memoria entre componentes compatibles | Interfaces Arrow; comprobar tipos y condiciones de intercambio |
+| Consultar o actualizar datos con reglas de una base de datos | Retomar [SQL y bases de datos](../../03_sql_databases/README.md); un archivo Parquet no aporta por sí solo esas reglas |
+
+Las opciones pueden convivir: conservar una fuente CSV, producir un Parquet
+y procesarlo mediante una biblioteca que usa Arrow es un recorrido coherente.
+Hay que mantener la procedencia y evitar sumar dos representaciones como si
+fueran lotes diferentes. No hace falta migrar cada CSV pequeño ni cambiar de
+herramienta solo porque otra representación exista.
 
 ## 6. Inspección esencial: Python completo
 
@@ -251,9 +335,11 @@ intérpretes mediante reticulate.
 
 Abre [lectura_parquet.txt](datos/lectura_parquet.txt). Documenta una **lectura
 real realizada durante la autoría**, con PyArrow 21.0.0 ya disponible, dos grupos
-de 14 filas y Snappy. No se añadió PyArrow al entorno del curso. La versión de
+de 14 filas y Snappy. Durante esa introducción no se añadió PyArrow a los
+requisitos; desde [09.03](../03_python_read_write/README.md) sí se declara
+PyArrow 21.0.0 y se comprueba su instalación local. La versión de
 la biblioteca `21.0.0` no es la versión de formato Parquet `2.6` que informa el
-lector. Las versiones a usar por el estudiante se verificarán en 09.03/09.04.
+lector. Las versiones y capacidades del recorrido R se verificarán en 09.04.
 
 **Ampliación de autoría:** si PyArrow ya existe en el entorno que elegiste,
 puedes ejecutar desde la raíz:
@@ -265,7 +351,7 @@ python curriculum/09_arrow_parquet/01_csv_parquet_arrow/inspeccionar_formatos.py
 El mismo comando sirve en Bash/Zsh. Esta opción importa PyArrow, lee el Parquet,
 revisa esquema y compara cada observación por ID/corte con el CSV. También muestra
 `table.nbytes`. Sin el paquete fallará la importación; conserva el recorrido
-esencial y espera 09.03. No lo instales en un entorno global para esta ampliación.
+esencial y continúa hasta 09.03. No lo instales en un entorno global para esta ampliación.
 La API interna se proporciona como referencia, no como sintaxis que debas dominar
 antes de su lección. [ParquetFile](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.ParquetFile.html).
 
@@ -280,7 +366,7 @@ grupo de filas interno y una partición. Se profundizará en 09.06–09.08.
 
 Realiza el [lab 09.01](../../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md).
 Puedes avanzar cuando clasifiques archivo/formato/representación/biblioteca,
-expliques las tres medidas de tamaño y reconstruyas los controles esenciales
+expliques codificación/compresión y las tres medidas de tamaño, y reconstruyas los controles esenciales
 sin afirmar que leíste Parquet cuando solo inspeccionaste su firma.
 
 Siguiente: [09.02 — Esquemas y tipos entre lenguajes](../02_schemas_types/README.md).

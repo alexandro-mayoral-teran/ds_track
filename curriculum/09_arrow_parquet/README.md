@@ -59,6 +59,8 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
   CSV/Parquet reales de 28 observaciones, 14 IDs y 29000/31800 MXN; tamaños y
   límites de inspección. Esencial con Python estándar/R base; lectura real
   PyArrow como evidencia y ampliación opcional, sin dependencias nuevas.
+  Teoría de filas/columnas, lectura lógica/física, codificación frente a compresión
+  y papel de Arrow en memoria; decisiones de uso sin anticipar benchmarks.
 
 <a id="02-esquemas-y-tipos-entre-lenguajes"></a>
 

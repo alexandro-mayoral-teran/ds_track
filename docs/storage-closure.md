@@ -6,6 +6,9 @@
 y su [lab](../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md) están disponibles.
 Incluyen la muestra CSV/Parquet de 28 observaciones, inventario, evidencia de
 lectura real y recorridos esenciales de solo lectura sin dependencias nuevas.
+La introducción explica filas/columnas, selección lógica frente a lectura física,
+codificación/compresión y condiciones del intercambio en memoria, con decisiones
+de uso sin anticipar la práctica de datasets ni la medición de rendimiento.
 El esencial distingue inspección de firma de decodificación Parquet; la opción
 PyArrow es una ampliación de autoría. No se implementó el lector arrow de R.
 
