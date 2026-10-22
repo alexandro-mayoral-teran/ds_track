@@ -377,7 +377,9 @@ Esencial sin dependencias nuevas; evidencia de lectura real de autoría.
 evaluadores Python/R y lab con casos separados de ausencia, rango y calendario,
 sin dependencias nuevas. [09.03](curriculum/09_arrow_parquet/03_python_read_write/README.md)
 incorpora PyArrow, esquema explícito, escritura/relectura Python y lab.
-09.04–09.09 siguen planificadas.
+[09.04](curriculum/09_arrow_parquet/04_r_read_write/README.md) añade arrow en renv,
+ejemplos completos, esquema no anulable, escritura/relectura R y lab.
+09.05–09.09 siguen planificadas.
 Consultar [pendientes de cierre](docs/storage-closure.md).
 
 - Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.

@@ -66,6 +66,8 @@ dependencias resueltas. Conda y pip preparan la misma versión de referencia seg
 su recorrido. El mini proyecto uv del nivel 0 sigue siendo una práctica separada.
 09.03 añade PyArrow 21.0.0 a esos requisitos y comprueba el lockfile en entornos
 uv locales, conservando las versiones previas y sin modificar Conda base.
+09.04 incorpora arrow de R al lockfile del proyecto de práctica, con respaldo
+y restauración local comprobada, conservando los registros anteriores.
 R utiliza `renv` desde 06.08 en copias autocontenidas de práctica, con biblioteca
 y estado locales; no se inicializa renv en la raíz de DS Track. Las dos copias
 permiten comprobar reconstrucción: no exigen una biblioteca nueva por cada
@@ -92,7 +94,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.10, 08.01–08.09 y 09.01–09.03 tienen lecciones/scripts/labs; 09.04–09.09 y 10–14 conservan planificación;
+07.01–07.10, 08.01–08.09 y 09.01–09.04 tienen lecciones/scripts/labs; 09.05–09.09 y 10–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -607,7 +609,7 @@ Las nueve secciones de 08 tienen material; el proyecto integrador continúa pend
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones; 09.01–09.03 disponen de lección/lab y scripts, las otras 16 siguen planificadas.
+19 secciones; 09.01–09.04 disponen de lección/lab y scripts, las otras 15 siguen planificadas.
 09.01 distingue formato, representación y biblioteca con una proyección de 28
 observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
 inventario conservados; inspección esencial Python estándar/R base y lectura
@@ -629,7 +631,15 @@ y reconstrucción uv locales comprobadas. CSV validado, pandas tipado, esquema
 Arrow string/date32/int32 no anulable, índice omitido y Parquet nuevo con
 relectura por clave; mantiene 28 registros y 29000/31800 MXN. Verificador de
 solo lectura, límites/vacío/alteraciones y destinos ocupados; no cambia datos
-previos, Conda ni bibliotecas globales. 09.04 es el siguiente desarrollo.
+previos, Conda ni bibliotecas globales.
+09.04 incorpora arrow 25.0.1/assertthat 0.2.1 al mismo proyecto renv, con respaldo
+08.09, 44 registros anteriores idénticos y restauración local desde biblioteca
+vacía. Ejemplo pequeño completo, sin depender de entregas Python o de objetos
+previos; base común y evaluador copiados sin cambios. Lectura del esquema real
+antes de convertir a R, contrato string/date32/int32 no anulable, comparación
+por clave, entrega nueva y verificador de solo lectura. Mantiene los 28 registros
+y 29000/31800 MXN. Sesiones nuevas, fronteras y contraste Python comprobados;
+09.05 sigue pendiente como práctica de intercambio en ambas direcciones.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 
 | Módulo | Secciones | Papel y cierre |

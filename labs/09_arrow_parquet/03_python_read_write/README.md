@@ -145,6 +145,6 @@ usar `safe=False` o rellenar null con cero impediría reconocer algunas pérdida
 Cierra cuando puedas reconstruir la entrega, justificar esquema/índice y
 detectar la alteración compensada con evidencia propia. Regresa a la
 [lección 09.03](../../../curriculum/09_arrow_parquet/03_python_read_write/README.md).
-Continúa con [09.04 — Leer y escribir desde R](../../../curriculum/09_arrow_parquet/README.md#04-leer-y-escribir-desde-r),
-todavía planificada. Los [pendientes de almacenamiento](../../../docs/storage-closure.md)
+Continúa con [09.04 — Leer y escribir desde R](../../../curriculum/09_arrow_parquet/04_r_read_write/README.md),
+con lección y lab disponibles. Los [pendientes de almacenamiento](../../../docs/storage-closure.md)
 separan material disponible, práctica del estudiante e integración futura.

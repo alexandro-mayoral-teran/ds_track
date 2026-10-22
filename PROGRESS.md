@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
-- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.03 disponibles; 09.04–09.09 todavía planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.03 implementadas; 09.04–09.09 y 10–14 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-21, 09.03 implementada y revisión teórica de 09.01; cierre de sesión documentado.
-- **Foco al cierre:** bases CSV/Parquet/Arrow revisadas y conversión Python comprobada.
+- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.04 disponibles; 09.05–09.09 todavía planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.04 implementadas; 09.05–09.09 y 10–14 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-21, 09.04 implementada y ejemplos con contexto completo por sección.
+- **Foco al cierre:** lectura/escritura Parquet desde R con contrato y renv local comprobadas.
   Próximo paso: desarrollar
-  [09.04 — Leer y escribir desde R](curriculum/09_arrow_parquet/README.md#04-leer-y-escribir-desde-r), todavía planificada.
+  [09.05 — Intercambio Python y R](curriculum/09_arrow_parquet/README.md#05-intercambio-python-y-r), todavía planificada.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -32,7 +32,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: 09.01–09.03 disponibles y las otras 16 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: 09.01–09.04 disponibles y las otras 15 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -40,6 +40,46 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-21, 09.04:** disponible
+[Leer y escribir desde R](curriculum/09_arrow_parquet/04_r_read_write/README.md)
+y su [lab](labs/09_arrow_parquet/04_r_read_write/README.md), con funciones,
+ejecutor, preparador, DESCRIPTION y lockfile real. Ejemplo de tres créditos
+definido completo en la lección y muestra propia de dos en el lab; la base común
+se presenta de nuevo con contexto, reglas y resultados. No requiere entregas
+personales Python ni reconstruir los ejercicios de cartera de 07–08. Criterio
+incorporado a autoría; revisión retroactiva de ejemplos existentes pendiente.
+
+Arrow 25.0.1/assertthat 0.2.1 añadidos al mismo proyecto renv con respaldo
+08.09 y 44 registros previos idénticos; segunda restauración local desde
+biblioteca vacía comprobada. R 4.6.1/renv 1.3.1, sin cambiar Conda ni bibliotecas
+globales. El ejecutor necesita lectura de los enlaces renv a paquetes base;
+se comprobó con esos permisos sin desactivar verificaciones.
+
+Esquema string/date32/int32 no anulable; lectura del esquema real antes de
+convertir, validación de presencia/dominio/clave y comparación completa por
+ID/fecha. Entrega nueva con Parquet/resumen/sesión y verificador de solo lectura;
+28 registros, 14 IDs y 29000/31800 MXN. Los ejemplos de ausencia/cero usan
+otra tabla y otro permiso, sin modificar la cartera. Fuentes y entregas previas
+conservadas; no se exige identidad binaria entre escritores.
+
+Siete bloques de lección después de preparar y tres de lab comprobados desde
+procesos nuevos, también con la segunda biblioteca restaurada. Cuarenta y siete
+controles adicionales: vacío en disco, límites/suma, NA, fracciones, Date con
+fracciones/infinitos, calendario/rango, tipos/nulabilidad, claves, metadatos,
+orden inverso, archivo falso, alteración compensada y destinos ocupados.
+Python 3.12.12/PyArrow 21.0.0 concilia esquema y todos los valores de cuatro
+entregas R. Se comprueba lectura en R de la referencia escrita por Python;
+09.05 sigue pendiente como práctica completa de intercambio en ambas direcciones.
+Preparador: copia/respaldo y nueve rechazos conservadores comprobados.
+Revisados 2130 enlaces locales/fragmentos en 221 Markdown, bloques/soluciones
+equilibrados y git diff --check limpio. No se probó la interfaz del IDE ni
+instalación en otros sistemas.
+
+Retomar con [09.05](curriculum/09_arrow_parquet/README.md#05-intercambio-python-y-r)
+y [storage-closure.md](docs/storage-closure.md). Proyectos/checkpoints y práctica
+del estudiante siguen pendientes. Las notas anteriores se conservan como
+historial del estado al cierre de cada sesión.
 
 **Cierre de sesión — 2026-10-21:** revisada la teoría de 09.01 y ampliadas las
 explicaciones de filas/columnas, selección lógica frente a lectura física,
@@ -62,7 +102,7 @@ o como alternativa opcional. Distinguir consola R de terminal. Aplicar desde el
 material nuevo. 07.01 y su lab ya se ajustaron; 07.02–07.10 nacen con ese recorrido. Revisar las demás lecciones
 implementadas posteriormente con el usuario.
 
-La última sección desarrollada es
+**Cierre anterior — 09.03:**
 [09.03 — Leer y escribir desde Python](curriculum/09_arrow_parquet/03_python_read_write/README.md),
 con [recorridos por shell/gestor](curriculum/09_arrow_parquet/03_python_read_write/recorridos.md),
 [funciones/ejecutor/verificador](curriculum/09_arrow_parquet/03_python_read_write/intercambio_python.py)
@@ -113,7 +153,7 @@ en los procesos de revisión; no se probó la interfaz del IDE.
 Revisados 2051 enlaces locales/fragmentos fuera de bloques en 216 Markdown,
 bloques y soluciones equilibrados y git diff --check limpio.
 
-Retomar con [09.04 — Leer y escribir desde R](curriculum/09_arrow_parquet/README.md#04-leer-y-escribir-desde-r):
+En el cierre de 09.03 se dejó previsto [09.04 — Leer y escribir desde R](curriculum/09_arrow_parquet/README.md#04-leer-y-escribir-desde-r):
 incorporar arrow al mismo proyecto renv con respaldo/lockfile y restauración
 local real, sin cambiar dependencias previas. IDE como recorrido principal;
 leer el esquema real y comparar todos los valores por clave, con casos separados
@@ -135,8 +175,8 @@ rechaza y orden distinto se acepta por clave. Son límites explícitos del
 inspector, no una afirmación de validación completa. Huellas/atributos LF y
 binario conservan la muestra al clonar; fuentes, entornos y entregas previos intactos.
 
-09.04–09.09 siguen pendientes (09.08 opcional); lectura cruzada de Parquet en R
-no implementada. Las nueve secciones de 08 tienen material, pero falta evidencia
+En ese cierre, 09.04–09.09 seguían pendientes (09.08 opcional); la lectura Parquet
+en R todavía no estaba implementada. Las nueve secciones de 08 tienen material, pero falta evidencia
 del estudiante para acreditar su práctica. Los proyectos/checkpoints previstos
 03_portfolio_analysis_r y 04_large_credit_dataset siguen sin implementar. R
 aplicado, terminal avanzada y separación de bitácoras mantienen su consideración

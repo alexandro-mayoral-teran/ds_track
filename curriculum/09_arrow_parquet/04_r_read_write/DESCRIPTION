@@ -1,0 +1,15 @@
+Type: Project
+Title: Practicas reproducibles de R y tablas
+Version: 0.9.0
+Imports:
+    withr,
+    readr,
+    tibble,
+    dplyr,
+    tidyr,
+    stringr,
+    forcats,
+    lubridate,
+    ggplot2,
+    patchwork,
+    arrow

@@ -244,7 +244,9 @@ añade lección, scripts de inspección, muestra y
 añade contrato, casos de frontera, evaluadores Python/R y lab, sin paquetes nuevos.
 [09.03 — Leer y escribir desde Python](curriculum/09_arrow_parquet/03_python_read_write/README.md)
 añade PyArrow, conversión/relectura con contrato, recorridos de entorno y lab.
-[Pendientes de cierre](docs/storage-closure.md): 09.04–09.09 e integración por
+[09.04 — Leer y escribir desde R](curriculum/09_arrow_parquet/04_r_read_write/README.md)
+añade ejemplos completos, esquema explícito, lectura/escritura R y lab con renv local.
+[Pendientes de cierre](docs/storage-closure.md): 09.05–09.09 e integración por
 desarrollar. El nivel 10 conserva su plan de Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.

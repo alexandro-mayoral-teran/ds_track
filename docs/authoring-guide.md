@@ -30,6 +30,17 @@ cuando contengan material útil.
 - Criterio de salida.
 - Referencias primarias.
 
+## Ejemplos comprensibles por sección
+
+Cada sección nueva presenta el contexto, los datos, las reglas y los resultados
+necesarios para entender sus ejemplos sin recordar un ejercicio anterior.
+Cuando sea posible, comenzar con una muestra pequeña definida en la propia
+lección; después conectar con la base común para conciliar. Mantener enlaces
+a conceptos previos y reutilizar funciones verificadas sin duplicar algoritmos.
+Distinguir prerrequisitos conceptuales y preparación de entorno de la necesidad
+de ejecutar entregas de capítulos anteriores. La revisión retroactiva del
+material existente queda pendiente con el usuario.
+
 ## Diseño de ejercicios
 
 Un ejercicio debe indicar:

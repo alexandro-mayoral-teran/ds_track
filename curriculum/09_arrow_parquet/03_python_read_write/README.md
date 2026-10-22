@@ -308,8 +308,8 @@ Puedes avanzar si reconstruyes una entrega desde sesión nueva, justificas el
 índice y el esquema, y detectas una alteración que conserve los totales.
 Una sesión puede cubrir solo parte de la lección.
 
-Siguiente: [09.04 — Leer y escribir desde R](../README.md#04-leer-y-escribir-desde-r),
-todavía planificada. No existe proyecto ni checkpoint implementado asociado;
+Siguiente: [09.04 — Leer y escribir desde R](../04_r_read_write/README.md),
+con lección y lab disponibles. No existe proyecto ni checkpoint implementado asociado;
 consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
 La disponibilidad de material no acredita la práctica del estudiante.
 

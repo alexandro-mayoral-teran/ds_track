@@ -115,7 +115,9 @@ dispone de lección, scripts, muestra y [lab](../labs/09_arrow_parquet/01_csv_pa
 añade contrato, casos de frontera, evaluadores y [lab](../labs/09_arrow_parquet/02_schemas_types/README.md).
 [09.03 — Leer y escribir desde Python](09_arrow_parquet/03_python_read_write/README.md)
 añade PyArrow y conversión/relectura verificadas con [lab](../labs/09_arrow_parquet/03_python_read_write/README.md).
-09.04–09.09 y el módulo 10 conservan sus planes de almacenamiento compartido
+[09.04 — Leer y escribir desde R](09_arrow_parquet/04_r_read_write/README.md)
+añade esquema, lectura/escritura y ejemplos completos con [lab](../labs/09_arrow_parquet/04_r_read_write/README.md).
+09.05–09.09 y el módulo 10 conservan sus planes de almacenamiento compartido
 y procesamiento con Polars/DuckDB. Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
