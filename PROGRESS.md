@@ -8,7 +8,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
 - **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.06 disponibles; 09.07–09.09 todavía planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.06 implementadas; 09.07–09.09 y 10–14 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-21, 09.06 implementada con lectura selectiva de varios archivos.
+- **Sesión de desarrollo:** 2026-10-21, 09.04–09.06 implementadas; sesión cerrada.
 - **Foco al cierre:** consultas Dataset/Scanner y dplyr, con auditoría completa separada.
   Próximo paso: desarrollar
   [09.07 — Metadatos, row groups y compresión](curriculum/09_arrow_parquet/README.md#07-metadatos-row-groups-y-compresion), todavía planificada.
@@ -40,6 +40,41 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Cierre de sesión — 2026-10-21 (09.04–09.06):** completado el desarrollo de
+[lectura/escritura desde R](curriculum/09_arrow_parquet/04_r_read_write/README.md),
+[intercambio Python/R](curriculum/09_arrow_parquet/05_python_r_exchange/README.md)
+y [lectura selectiva y datasets](curriculum/09_arrow_parquet/06_selective_datasets/README.md),
+con sus labs, funciones, preparadores y navegación. Publicados en `main` los
+commits `3ec6d33`, `c4d3b37` y `2badcc3`. Se incorporó a autoría el criterio de
+presentar ejemplos con contexto, datos y resultados completos por sección;
+la revisión retroactiva del material existente queda pendiente con el usuario.
+
+Se conservan fuentes y entregas anteriores: base de 28 registros, 14 IDs y
+29000/31800 MXN. R dispone de arrow 25.0.1 en renv local con respaldo y
+restauración comprobada; 09.05–09.06 no añaden dependencias ni cambian lockfiles.
+Cruces reales en ambos sentidos y consultas por clave contrastados con CSV;
+09.06 distingue auditoría completa, plan de consulta y materialización.
+La selección de octubre ≥ 2000 conserva nueve IDs y 24100 MXN, sin atribuir
+al ejemplo pruebas de rendimiento, I/O físico o RAM acotada.
+
+Las verificaciones funcionales de cada sección, incluidas sesiones nuevas,
+fronteras y conservación de originales, están registradas en las entradas
+siguientes. Este cierre es documental: no modifica código, muestras, entornos
+ni resultados y no vuelve a ejecutar esas pruebas. Se revisan enlaces,
+fragmentos (2193 enlaces locales en 225 Markdown), bloques/soluciones y
+git diff --check del estado final, sin errores.
+
+**Para la próxima sesión:** empezar por este registro y
+[storage-closure.md](docs/storage-closure.md), después desarrollar
+[09.07 — Metadatos, row groups y compresión](curriculum/09_arrow_parquet/README.md#07-metadatos-row-groups-y-compresion).
+Investigar las APIs oficiales al implementarla; presentar un ejemplo pequeño
+completo, comparar archivos con registros/esquema equivalentes, separar
+codificación de compresión y conservar mediciones crudas. No instalar paquetes
+solo por planificar ni inferir rendimiento general a partir de 28 filas.
+09.07 no se inició; 09.08 sigue opcional y 09.09 pendiente. Proyectos/checkpoints,
+práctica del estudiante y módulos 10–14 mantienen su estado pendiente.
+
 
 **Desarrollo — 2026-10-21, 09.06:** disponible
 [Lectura selectiva y datasets](curriculum/09_arrow_parquet/06_selective_datasets/README.md)
