@@ -10,14 +10,14 @@ La introducción explica filas/columnas, selección lógica frente a lectura fí
 codificación/compresión y condiciones del intercambio en memoria, con decisiones
 de uso sin anticipar la práctica de datasets ni la medición de rendimiento.
 El esencial distingue inspección de firma de decodificación Parquet; la opción
-PyArrow es una ampliación de autoría. No se implementó el lector arrow de R.
+PyArrow es una ampliación de autoría. Esta introducción no implementa el lector arrow de R.
 
 [09.02 — Esquemas y tipos entre lenguajes](../curriculum/09_arrow_parquet/02_schemas_types/README.md)
 y su [lab](../labs/09_arrow_parquet/02_schemas_types/README.md) también están
 disponibles: contrato de la base conocida, evaluadores Python estándar/R base
 y 23 casos separados, sin nuevas dependencias. Se conservan originales y motivos;
-se explican rango/precisión, dinero, fechas/instantes y categorías. No se ha
-implementado todavía lectura cruzada Parquet en ambos lenguajes.
+se explican rango/precisión, dinero, fechas/instantes y categorías. Esta sección no realiza
+lectura cruzada Parquet en ambos lenguajes.
 
 [09.03 — Leer y escribir desde Python](../curriculum/09_arrow_parquet/03_python_read_write/README.md)
 dispone de lección, recorridos completos de entorno, funciones/ejecutor/verificador
@@ -34,30 +34,37 @@ renv con respaldo 08.09, 44 registros previos idénticos y segunda restauración
 local desde biblioteca vacía. Lectura del esquema real antes de convertir,
 valores por clave y entrega R verificada desde sesión nueva, conservando
 28 registros y 29000/31800 MXN. Se lee la referencia escrita por Python;
-09.05 aún debe desarrollar el intercambio en ambas direcciones.
+la práctica completa del intercambio en ambas direcciones se desarrolla en 09.05.
+
+[09.05 — Intercambio Python y R](../curriculum/09_arrow_parquet/05_python_r_exchange/README.md)
+y su [lab](../labs/09_arrow_parquet/05_python_r_exchange/README.md) están disponibles.
+Python escribe/R lee y R escribe/Python lee, sin depender de entregas anteriores
+ni añadir paquetes. Conserva la base común y concilia esquema y valores por
+clave; muestra independiente de tres filas con acentos, vacío/ausencia/cero y
+otro contrato. Verificaciones desde procesos nuevos, fuentes/lockfiles intactos.
 
 El siguiente trabajo concreto es
-[09.05 — Intercambio Python y R](../curriculum/09_arrow_parquet/README.md#05-intercambio-python-y-r).
+[09.06 — Lectura selectiva y datasets](../curriculum/09_arrow_parquet/README.md#06-lectura-selectiva-y-datasets).
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
-sin duplicar aquí una bitácora. **09.01–09.04 no completan el módulo ni acreditan práctica
+sin duplicar aquí una bitácora. **09.01–09.05 no completan el módulo ni acreditan práctica
 del estudiante.**
 
 ## Qué falta desarrollar para cerrar el módulo
 
 | Sección pendiente | Producto y condición de cierre |
 | --- | --- |
-| 09.05 — Lectura cruzada | Python escribe/R lee y R escribe/Python lee; comparar claves, tipos, faltantes e indicadores por ambas rutas. No basta releer con el mismo escritor ni comparar dos sumas. |
 | 09.06 — Consulta selectiva | Selección de columnas/filtros y varios archivos; explicar cuándo se prepara una consulta y cuándo se materializa. Comprobar equivalencia con el análisis de referencia y límites de memoria. |
 | 09.07 — Metadatos y compresión | Leer grupos/columnas/estadísticas; comparar configuraciones con datos equivalentes, tamaño y mediciones separadas. Evitar conclusiones de rendimiento a partir de 28 filas o solo bytes. |
 | 09.08 — Particiones, extensión | Implementar solo como ampliación: consulta justificada, archivos repetidos y particiones excesivas. No bloquear el cierre esencial por particionar. |
 | 09.09 — Entrega integrada | Reconstrucción desde una sesión nueva en ambos lenguajes; archivos/contrato y verificadores de solo lectura, con interpretación y límites. Mantener entradas y rechazar sobrescrituras accidentales. |
 
-Para 09.05 conservar los contratos y escritores de 09.03/09.04. Presentar
-entradas y ejemplos completos en la sección sin exigir recordar los ejercicios
-anteriores. Python debe leer el Parquet escrito por R y R el escrito por Python;
-comparar esquema, nulabilidad y todos los valores por clave antes de indicadores.
-Reutilizar casos separados de ausencia/calendario/rango y conservar entradas y
-entregas. Distinguir equivalencia lógica de igualdad binaria.
+Para 09.06 conservar los contratos, escritores y verificadores existentes.
+Introducir proyección, filtros y varios archivos con un ejemplo pequeño completo,
+sin exigir recordar ejercicios anteriores. Separar preparación de consulta y
+materialización; comparar todos los registros seleccionados por clave y los
+indicadores con una referencia independiente. No convertir una selección de
+columnas en validación del contrato completo ni afirmar memoria acotada por
+usar una API diferida. Distinguir selección lógica de omisión física de datos.
 
 PyArrow 21.0.0 se utilizó en un entorno de autoría ya existente para producir y
 releer el ejemplo 09.01; no se añadió como dependencia durante esa introducción.
@@ -67,8 +74,8 @@ Polars o DuckDB solo para planificar el recorrido.
 
 ## Qué falta para cerrar las prácticas y la integración
 
-- Reunir evidencia propia del estudiante de 09.01–09.04 y, más adelante, de
-  intercambio y consulta. Material disponible no acredita aprendizaje.
+- Reunir evidencia propia del estudiante de 09.01–09.05 y, más adelante, de
+  consulta e integración. Material disponible no acredita aprendizaje.
 - Revisar el cierre de [08](../curriculum/08_visualization_r/README.md): geometrías,
   escalas, población, exportación desde sesión nueva y conciliación con Python.
   Sus nueve secciones tienen material; no faltan lecciones de ese módulo.

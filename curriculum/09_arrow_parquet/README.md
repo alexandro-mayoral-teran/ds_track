@@ -12,7 +12,8 @@ añade contrato, evaluadores Python/R, casos de frontera y lab.
 [09.03](03_python_read_write/README.md) incorpora PyArrow, conversión/relectura
 Python, recorridos de entorno y lab. [09.04](04_r_read_write/README.md) añade
 arrow en renv, ejemplos completos y escritura/relectura R con lab.
-09.05–09.09 siguen planificadas; sus
+[09.05](05_python_r_exchange/README.md) añade intercambio en ambas direcciones,
+muestra independiente y lab sin dependencias nuevas. 09.06–09.09 siguen planificadas; sus
 enlaces internos describen el alcance. El [estado y pendientes de cierre](../../docs/storage-closure.md)
 distingue material, práctica del estudiante e integración todavía pendiente.
 
@@ -42,7 +43,7 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 | 2 | [Esquemas y tipos entre lenguajes](02_schemas_types/README.md) | Esencial | Definir el contrato de una tabla compartida |
 | 3 | [Leer y escribir desde Python](03_python_read_write/README.md) | Esencial | Convertir una muestra y comprobar su lectura |
 | 4 | [Leer y escribir desde R](04_r_read_write/README.md) | Esencial | Repetir el recorrido con el mismo contrato |
-| 5 | [Intercambio Python y R](#05-intercambio-python-y-r) | Práctica | Conciliar archivos escritos por el otro lenguaje |
+| 5 | [Intercambio Python y R](05_python_r_exchange/README.md) | Práctica | Conciliar archivos escritos por el otro lenguaje |
 | 6 | [Lectura selectiva y datasets](#06-lectura-selectiva-y-datasets) | Esencial | Consultar columnas y filas de varios archivos |
 | 7 | [Metadatos, row groups y compresión](#07-metadatos-row-groups-y-compresion) | Práctica | Explicar y medir una decisión de almacenamiento |
 | 8 | [Particionamiento justificado](#08-particionamiento-justificado) | Extensión | Elegir particiones según una consulta y comprobarlas |
@@ -109,9 +110,11 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 
 - Escribir en Python y leer en R; después escribir en R y leer en Python.
   Comparar datos por claves acordadas, no por orden accidental ni igualdad de bytes.
-- Práctica prevista: verificar número de registros, unicidad, faltantes, tipos y
-  totales. Revisar casos con acentos, fechas e identificadores; usar tolerancias
-  explícitas si el contrato contiene valores de punto flotante.
+- Disponible: [lección, funciones y preparador](05_python_r_exchange/README.md) y
+  [lab 09.05](../../labs/09_arrow_parquet/05_python_r_exchange/README.md). Base común
+  conciliada en ambas direcciones y muestra de tres filas con acentos, vacío,
+  ausencia y cero bajo otro contrato. Sesiones nuevas, tipos/nulabilidad y
+  valores por clave; no exige entregas anteriores ni añade dependencias.
 
 <a id="06-lectura-selectiva-y-datasets"></a>
 
@@ -153,11 +156,12 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 
 ## Prácticas, proyecto y criterio de salida
 
-Están disponibles los [labs 09.01](../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md)
+Están disponibles los [labs 09.01](../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md),
 [09.02](../../labs/09_arrow_parquet/02_schemas_types/README.md),
-[09.03](../../labs/09_arrow_parquet/03_python_read_write/README.md) y
-[09.04](../../labs/09_arrow_parquet/04_r_read_write/README.md).
-09.05–09.09 siguen previstos, con 09.08 opcional. No se da el módulo por completo.
+[09.03](../../labs/09_arrow_parquet/03_python_read_write/README.md),
+[09.04](../../labs/09_arrow_parquet/04_r_read_write/README.md) y
+[09.05](../../labs/09_arrow_parquet/05_python_r_exchange/README.md).
+09.06–09.09 siguen previstos, con 09.08 opcional. No se da el módulo por completo.
 El cierre enlazará el análisis R con el proyecto previsto 04_large_credit_dataset,
 registrado en [proyectos](../../projects/README.md), aún sin carpeta implementada.
 
@@ -190,5 +194,7 @@ utilizan PyArrow 21.0.0 ya existente, sin añadirlo durante esa introducción.
 reconstrucción uv local con Python 3.12.12 comprobadas, sin cambios globales.
 09.04 se comprueba con R 4.6.1/arrow 25.0.1 y renv 1.3.1, con segunda restauración
 local; conserva 44 registros anteriores y añade arrow/assertthat.
+09.05 comprueba ambas direcciones con esas versiones, conservando entornos,
+fuentes y lockfiles; no incorpora dependencias.
 Versiones y capacidades de los recorridos por desarrollar se comprobarán al
 implementarlos. Esta planificación no instala paquetes.

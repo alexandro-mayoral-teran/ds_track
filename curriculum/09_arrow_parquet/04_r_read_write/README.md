@@ -347,10 +347,10 @@ Puedes avanzar si explicas las tres representaciones, justificas tipos y
 nulabilidad, reconstruyes desde sesión nueva y detectas una alteración con
 totales conservados. Puedes dividir la lección en varias sesiones.
 
-Siguiente: [09.05 — Intercambio Python y R](../README.md#05-intercambio-python-y-r),
-todavía planificada. Aquí se ha leído en R una referencia escrita por Python y
-se ha escrito/releído desde R; falta desarrollar la práctica de intercambio
-en ambas direcciones. No hay proyecto/checkpoint implementado asociado.
+Siguiente: [09.05 — Intercambio Python y R](../05_python_r_exchange/README.md),
+con lección y lab disponibles. Aquí se ha leído en R una referencia escrita
+por Python y se ha escrito/releído desde R; 09.05 desarrolla la práctica
+de intercambio en ambas direcciones. No hay proyecto/checkpoint implementado asociado.
 Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
 Material disponible no acredita práctica del estudiante.
 

@@ -379,7 +379,9 @@ sin dependencias nuevas. [09.03](curriculum/09_arrow_parquet/03_python_read_writ
 incorpora PyArrow, esquema explícito, escritura/relectura Python y lab.
 [09.04](curriculum/09_arrow_parquet/04_r_read_write/README.md) añade arrow en renv,
 ejemplos completos, esquema no anulable, escritura/relectura R y lab.
-09.05–09.09 siguen planificadas.
+[09.05](curriculum/09_arrow_parquet/05_python_r_exchange/README.md) añade cruce
+en ambas direcciones, valores por clave y lab; sin dependencias nuevas.
+09.06–09.09 siguen planificadas.
 Consultar [pendientes de cierre](docs/storage-closure.md).
 
 - Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.

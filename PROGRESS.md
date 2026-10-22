@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
-- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.04 disponibles; 09.05–09.09 todavía planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.04 implementadas; 09.05–09.09 y 10–14 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-21, 09.04 implementada y ejemplos con contexto completo por sección.
-- **Foco al cierre:** lectura/escritura Parquet desde R con contrato y renv local comprobadas.
+- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.05 disponibles; 09.06–09.09 todavía planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.05 implementadas; 09.06–09.09 y 10–14 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-21, 09.05 implementada con intercambio en ambas direcciones.
+- **Foco al cierre:** Python/R concilian esquema y todos los valores en ambas direcciones.
   Próximo paso: desarrollar
-  [09.05 — Intercambio Python y R](curriculum/09_arrow_parquet/README.md#05-intercambio-python-y-r), todavía planificada.
+  [09.06 — Lectura selectiva y datasets](curriculum/09_arrow_parquet/README.md#06-lectura-selectiva-y-datasets), todavía planificada.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -32,7 +32,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: 09.01–09.04 disponibles y las otras 15 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: 09.01–09.05 disponibles y las otras 14 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -40,6 +40,45 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-21, 09.05:** disponible
+[Intercambio Python y R](curriculum/09_arrow_parquet/05_python_r_exchange/README.md)
+y su [lab](labs/09_arrow_parquet/05_python_r_exchange/README.md). Funciones Python/R
+y preparador; cada sección presenta datos, contratos y resultados completos,
+sin necesitar entregas de capítulos anteriores. Reutiliza los escritores y
+validadores de 09.03/09.04, sin cambiar algoritmos, muestras o lockfiles.
+
+Python escribe/R lee y R escribe/Python lee: esquema real antes de convertir,
+presencia, dominio, claves y cada valor. Conserva 28 registros, 14 IDs y
+29000/31800 MXN. Muestra propia de tres filas con fecha bisiesta, texto
+acentuado, vacío/ausencia y cero; esquema independiente con etiqueta/importe
+anulables, suma observada 10 y cobertura 2/3, sin inventar el total completo.
+Distingue equivalencia lógica, clases y bytes; notas de sesión no acreditan
+el cruce. No implementa contratos nuevos para decimales o factores.
+
+Sin dependencias nuevas: Python 3.12.12/pandas 2.3.3/PyArrow 21.0.0 y
+R 4.6.1/arrow 25.0.1/renv 1.3.1. Mismo proyecto y biblioteca renv; preparador
+solo añade script/ruta local y conserva metadatos, funciones y datos. No
+modifica Conda ni bibliotecas globales. Recorridos de lección/lab comprobados
+con procesos nuevos, reinicios y permisos de lectura de enlaces R base;
+no se probó la interfaz del IDE ni instalación en otros sistemas.
+
+Veintiséis controles Python, veintidós R y cuatro relecturas adicionales:
+tipos/nulabilidad, filas repetidas/faltantes, acentos/fechas, ausencia frente
+a vacío/cero, muestras incompletas y archivo falso. Cruces con fuente vacía
+y cinco fronteras válidas de 09.02; orden invertido y metadatos auxiliares
+aceptados por clave. Saldos intercambiados conservan sumas pero fallan en ambos
+lectores; reemplazar vacío por ausencia también falla. Huellas de originales
+conservadas. Preparador: ruta absoluta/fuentes intactas y trece rechazos
+conservadores comprobados; ninguna salida personal se incorpora al material.
+Revisados 2158 enlaces locales/fragmentos en 223 Markdown, bloques/soluciones
+equilibrados y git diff --check limpio.
+
+Retomar con [09.06](curriculum/09_arrow_parquet/README.md#06-lectura-selectiva-y-datasets)
+y [storage-closure.md](docs/storage-closure.md). Proyectos/checkpoints y práctica
+del estudiante siguen pendientes. Las entradas siguientes describen cierres
+anteriores y se conservan como historial.
+
 
 **Desarrollo — 2026-10-21, 09.04:** disponible
 [Leer y escribir desde R](curriculum/09_arrow_parquet/04_r_read_write/README.md)
@@ -76,7 +115,7 @@ Revisados 2130 enlaces locales/fragmentos en 221 Markdown, bloques/soluciones
 equilibrados y git diff --check limpio. No se probó la interfaz del IDE ni
 instalación en otros sistemas.
 
-Retomar con [09.05](curriculum/09_arrow_parquet/README.md#05-intercambio-python-y-r)
+Al cerrar 09.04 se dejó previsto [09.05](curriculum/09_arrow_parquet/05_python_r_exchange/README.md)
 y [storage-closure.md](docs/storage-closure.md). Proyectos/checkpoints y práctica
 del estudiante siguen pendientes. Las notas anteriores se conservan como
 historial del estado al cierre de cada sesión.

@@ -125,5 +125,5 @@ comprobar y qué sigue pendiente; una salida impresa no acredita comprensión.
 - ¿Por qué no vuelves a crear la carpeta al verificar después del reinicio?
 
 No hay proyecto/checkpoint implementado asociado. Después de comprobar y
-explicar el lab, continúa con [09.05 — Intercambio Python y R](../../../curriculum/09_arrow_parquet/README.md#05-intercambio-python-y-r),
-todavía planificada. Consulta los [pendientes de cierre](../../../docs/storage-closure.md).
+explicar el lab, continúa con [09.05 — Intercambio Python y R](../../../curriculum/09_arrow_parquet/05_python_r_exchange/README.md),
+con lección y lab disponibles. Consulta los [pendientes de cierre](../../../docs/storage-closure.md).
