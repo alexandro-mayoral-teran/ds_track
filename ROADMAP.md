@@ -381,7 +381,9 @@ incorpora PyArrow, esquema explícito, escritura/relectura Python y lab.
 ejemplos completos, esquema no anulable, escritura/relectura R y lab.
 [09.05](curriculum/09_arrow_parquet/05_python_r_exchange/README.md) añade cruce
 en ambas direcciones, valores por clave y lab; sin dependencias nuevas.
-09.06–09.09 siguen planificadas.
+[09.06](curriculum/09_arrow_parquet/06_selective_datasets/README.md) añade
+Dataset/Scanner y dplyr sobre varios Parquet, materialización y lab con
+selecciones conciliadas; sin dependencias nuevas. 09.07–09.09 siguen planificadas.
 Consultar [pendientes de cierre](docs/storage-closure.md).
 
 - Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.

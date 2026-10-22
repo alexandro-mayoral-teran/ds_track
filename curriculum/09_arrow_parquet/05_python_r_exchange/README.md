@@ -338,8 +338,8 @@ Puedes avanzar cuando otro proceso haya leído cada escritor, expliques la
 cobertura 2/3 y detectes una alteración que conserve los totales. Puedes dividir
 la práctica en varias sesiones. No hay proyecto/checkpoint implementado asociado.
 
-Siguiente: [09.06 — Lectura selectiva y datasets](../README.md#06-lectura-selectiva-y-datasets),
-todavía planificada. Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
+Siguiente: [09.06 — Lectura selectiva y datasets](../06_selective_datasets/README.md),
+con lección y lab disponibles. Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
 Material disponible y verificaciones técnicas no acreditan práctica del estudiante.
 
 ## Referencias y atribución

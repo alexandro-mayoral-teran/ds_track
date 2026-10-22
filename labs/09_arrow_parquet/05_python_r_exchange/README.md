@@ -158,5 +158,5 @@ en tu copia local; no publiques esos datos como parte del material del curso.
 - ¿Qué acuerdo haría falta antes de intercambiar decimales o factores?
 
 No hay proyecto/checkpoint implementado asociado. Después de comprobar y
-explicar, continúa con [09.06 — Lectura selectiva y datasets](../../../curriculum/09_arrow_parquet/README.md#06-lectura-selectiva-y-datasets),
-todavía planificada. Consulta los [pendientes de cierre](../../../docs/storage-closure.md).
+explicar, continúa con [09.06 — Lectura selectiva y datasets](../../../curriculum/09_arrow_parquet/06_selective_datasets/README.md),
+con lección y lab disponibles. Consulta los [pendientes de cierre](../../../docs/storage-closure.md).

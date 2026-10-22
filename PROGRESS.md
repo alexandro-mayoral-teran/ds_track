@@ -6,12 +6,12 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
-- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.05 disponibles; 09.06–09.09 todavía planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.05 implementadas; 09.06–09.09 y 10–14 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-21, 09.05 implementada con intercambio en ambas direcciones.
-- **Foco al cierre:** Python/R concilian esquema y todos los valores en ambas direcciones.
+- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.06 disponibles; 09.07–09.09 todavía planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.06 implementadas; 09.07–09.09 y 10–14 conservan sus planes.
+- **Sesión de desarrollo:** 2026-10-21, 09.06 implementada con lectura selectiva de varios archivos.
+- **Foco al cierre:** consultas Dataset/Scanner y dplyr, con auditoría completa separada.
   Próximo paso: desarrollar
-  [09.06 — Lectura selectiva y datasets](curriculum/09_arrow_parquet/README.md#06-lectura-selectiva-y-datasets), todavía planificada.
+  [09.07 — Metadatos, row groups y compresión](curriculum/09_arrow_parquet/README.md#07-metadatos-row-groups-y-compresion), todavía planificada.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -32,7 +32,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: 09.01–09.05 disponibles y las otras 14 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: 09.01–09.06 disponibles y las otras 13 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -40,6 +40,50 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-21, 09.06:** disponible
+[Lectura selectiva y datasets](curriculum/09_arrow_parquet/06_selective_datasets/README.md)
+y su [lab](labs/09_arrow_parquet/06_selective_datasets/README.md), con funciones
+Python/R y preparador. Ejemplo completo de cuatro observaciones en cada lenguaje;
+base común presentada con contexto/reglas/resultados, sin exigir entregas previas.
+Conserva 28 filas, 14 IDs y 29000/31800 MXN, distribuidas en dos partes planas.
+
+Dataset/Scanner en Python y open_dataset/dplyr en R; proyección y filtro antes
+de to_table/collect. Esquemas reales de todos los archivos antes de abrir;
+auditoría completa deliberadamente en memoria separada de consulta selectiva.
+Referencia CSV con recorrido Python/indexación R base, sin reutilizar el filtro
+Arrow para lo esperado. Octubre ≥ 2000: nueve IDs, dos columnas y 24100 MXN.
+Lab: octubre ≥ 2800 cuatro/12400, septiembre ≥ 2000 ocho/20500 y selección
+vacía de noviembre cero filas, sin afirmar saldo cero del corte completo.
+
+Duplicar septiembre deja correcta la consulta de octubre, pero ambos auditores
+rechazan las claves repetidas. Se diferencia validación del conjunto y de su
+selección; se conservan claves/valores y originales. Lotes Python como ampliación,
+sin acreditar RAM total acotada. No se mide I/O, rendimiento ni bytes omitidos;
+no se implementan particiones o validación escalable de grandes volúmenes.
+
+Sin dependencias nuevas ni cambios de lockfiles: Python 3.12.12/pandas 2.3.3/
+PyArrow 21.0.0 y R 4.6.1/arrow 25.0.1/dplyr 1.2.1/renv 1.3.1. Mismo proyecto
+renv, metadatos, funciones y datos anteriores intactos; preparador solo añade
+script/ruta local. No cambia Conda ni bibliotecas globales. Lección/lab ejecutados
+con rutas de revisión en procesos nuevos, también ampliación por lotes; no se
+probó la interfaz del IDE ni instalación en otros sistemas.
+
+Cincuenta y ocho controles Python, cincuenta y cuatro R y cuatro consultas
+adicionales de frontera escritas en R/releídas en Python. Vacío con esquema,
+carpeta sin archivos, partes ausentes/extrañas, esquemas distintos incluso en
+la última parte, nulabilidad, filas negativas fuera del filtro, alteraciones
+compensadas, parámetros/tamaños inválidos y umbrales inclusivos. Todos los
+pares Python/R conciliados con CSV estándar; huellas de originales conservadas.
+Preparador: fuentes intactas, ruta absoluta y trece rechazos comprobados.
+Revisados 2188 enlaces locales/fragmentos en 225 Markdown, bloques/soluciones
+equilibrados y git diff --check limpio.
+
+Retomar con [09.07](curriculum/09_arrow_parquet/README.md#07-metadatos-row-groups-y-compresion)
+y [storage-closure.md](docs/storage-closure.md). Proyectos/checkpoints y práctica
+del estudiante siguen pendientes. Las entradas siguientes describen cierres
+anteriores y se conservan como historial.
+
 
 **Desarrollo — 2026-10-21, 09.05:** disponible
 [Intercambio Python y R](curriculum/09_arrow_parquet/05_python_r_exchange/README.md)
@@ -74,7 +118,7 @@ conservadores comprobados; ninguna salida personal se incorpora al material.
 Revisados 2158 enlaces locales/fragmentos en 223 Markdown, bloques/soluciones
 equilibrados y git diff --check limpio.
 
-Retomar con [09.06](curriculum/09_arrow_parquet/README.md#06-lectura-selectiva-y-datasets)
+Al cerrar 09.05 se dejó previsto [09.06](curriculum/09_arrow_parquet/06_selective_datasets/README.md)
 y [storage-closure.md](docs/storage-closure.md). Proyectos/checkpoints y práctica
 del estudiante siguen pendientes. Las entradas siguientes describen cierres
 anteriores y se conservan como historial.

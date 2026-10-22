@@ -94,7 +94,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.10, 08.01–08.09 y 09.01–09.05 tienen lecciones/scripts/labs; 09.06–09.09 y 10–14 conservan planificación;
+07.01–07.10, 08.01–08.09 y 09.01–09.06 tienen lecciones/scripts/labs; 09.07–09.09 y 10–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -609,7 +609,7 @@ Las nueve secciones de 08 tienen material; el proyecto integrador continúa pend
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones; 09.01–09.05 disponen de lección/lab y scripts, las otras 14 siguen planificadas.
+19 secciones; 09.01–09.06 disponen de lección/lab y scripts, las otras 13 siguen planificadas.
 09.01 distingue formato, representación y biblioteca con una proyección de 28
 observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
 inventario conservados; inspección esencial Python estándar/R base y lectura
@@ -646,7 +646,17 @@ de tres filas con texto acentuado, vacío/ausencia y cero. Contrato independient
 anulable en etiqueta/importe, suma observada 10 y cobertura 2/3. Preparador
 solo añade script y ruta local compartida; no exige entregas anteriores.
 Sesiones nuevas, tipos/nulabilidad, valores por clave, fronteras y alteraciones
-compensadas comprobados en ambos lectores. 09.06 es el siguiente desarrollo.
+compensadas comprobados en ambos lectores.
+09.06 añade Dataset/Scanner y consultas dplyr sobre partes Parquet, sin cambiar
+fuentes, dependencias ni lockfiles. Ejemplo completo de cuatro filas y base
+común de 28 filas en dos partes; inspección del esquema de cada archivo antes
+de abrir el dataset. Auditoría completa en memoria separada de la consulta
+selectiva y referencia independiente CSV en Python/R base. Octubre ≥ 2000:
+nueve IDs y 24100 MXN. El lab muestra que una consulta correcta no certifica
+filas excluidas: duplicar septiembre mantiene la selección de octubre, pero
+la auditoría global rechaza claves repetidas. Vacíos, fronteras, partes
+incompletas/esquemas distintos y conservación comprobados; no acredita I/O
+medido, rendimiento ni memoria total acotada. 09.07 es el siguiente desarrollo.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 
 | Módulo | Secciones | Papel y cierre |
