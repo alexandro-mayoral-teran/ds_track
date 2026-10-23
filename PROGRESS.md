@@ -45,6 +45,19 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
+**Revisión — 2026-10-23, cierre 10.10:** se reprodujeron y corrigieron dos
+omisiones: la comparación por clave aceptaba Parquet de salida desordenados
+aunque la entrega promete selección por ID/resumen por fecha; la CLI aceptaba
+opciones de otra acción y las ignoraba (generar --exigir-decision devolvía
+borrador sin avisar). Ahora se exige el orden final y cada acción declara solo
+sus opciones, con rechazo antes de crear archivos. La fuente puede seguir
+llegando en otro orden. Cuatro grupos de regresión comprueban ambos rechazos,
+CLI documentada, decisión pendiente y entregas anteriores válidas con medidas,
+vacío, suma amplia, fuente invertida y máximo 1998. Navegación del módulo y
+260 Markdown/2666 enlaces locales revisados sin incidencias; git diff --check
+sin errores. Sin cambios de dependencias, datos o mediciones previas.
+Retoma vigente: 11.01, aún planificada.
+
 **Desarrollo — 2026-10-23, 10.10 y cierre del material de 10:** disponibles la
 [lección](curriculum/10_polars_duckdb/10_closure_tool_choice/README.md),
 CSV propio de cuarenta filas, generador/verificador de entrega, referencia R

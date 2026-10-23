@@ -136,6 +136,8 @@ else:
 
 La fuente externa sigue diciendo 015/2001 y 016/2138. El total no basta para
 certificar esos pares; la huella describe contenido pero no su corrección.
+La fuente puede llegar desordenada, pero el resultado guardado debe respetar
+el orden prometido: selección por ID y resumen por fecha.
 
 </details>
 

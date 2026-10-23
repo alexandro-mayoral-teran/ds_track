@@ -151,7 +151,9 @@ diferir entre motores; se comprueba también que no haya ausencias reales.
 
 La lectura completa se audita contra CSV externo antes de filtrar. Después
 de escribir, se releen **ambos Parquet por motor** y se comparan cada par y cada
-grupo con Python estándar. Esto comprueba la entrega guardada, no solo objetos
+grupo con Python estándar. La fuente puede llegar en otro orden; la selección
+guardada debe quedar por ID y el resumen por fecha, como exige esta entrega.
+Esto comprueba los archivos guardados, no solo objetos
 de una sesión. Conserva fuentes sin cambios durante el recorrido; no ofrece
 instantánea frente a modificaciones concurrentes ni RAM acotada para la auditoría.
 

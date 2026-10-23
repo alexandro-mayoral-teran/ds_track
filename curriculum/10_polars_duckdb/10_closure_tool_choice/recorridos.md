@@ -78,6 +78,9 @@ python -X utf8 curriculum/10_polars_duckdb/10_closure_tool_choice/cierre.py veri
 Antes de completar el archivo, exigir-decision debe fallar; el borrador no
 acredita cierre de práctica. El verificador revisa evidencia y estructura,
 no sustituye conversar con quien te acompaña sobre la calidad del argumento.
+--exigir-decision pertenece solo a verificar; --corte, --minimo, --nota y
+--sin-mediciones pertenecen solo a generar. Una combinación incorrecta se
+rechaza antes de ejecutar, sin ignorar opciones ni crear una carpeta nueva.
 
 Para otra pregunta, generar admite --corte/--minimo con otro destino. Septiembre
 ≥ 2000 debe dejar cinco/11645; noviembre exporta selección vacía y conserva

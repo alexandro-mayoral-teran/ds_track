@@ -92,7 +92,10 @@ def comprobar(seleccion, resumen, fuente=FUENTE, corte=date(2026, 10, 31), minim
         raise ValueError("Columnas de seleccion distintas")
     if not (pa.types.is_string(seleccion[0].type) or pa.types.is_large_string(seleccion[0].type)) or seleccion[1].type != pa.int32():
         raise ValueError("Seleccion exige texto/int32 antes de adaptar")
-    control = mediciones.referencia.comprobar_seleccion(seleccion.to_pylist(), fuente, corte, minimo)
+    pares = seleccion.to_pylist()
+    control = mediciones.referencia.comprobar_seleccion(pares, fuente, corte, minimo)
+    if pares != sorted(pares, key=lambda f: f["id_credito"]):
+        raise ValueError("Seleccion debe estar ordenada por ID")
     esperado = pa.schema([("fecha_corte", pa.date32()), ("registros", pa.int64()), ("saldo_mxn", pa.int64())])
     if not isinstance(resumen, pa.Table) or resumen.column_names != esperado.names or list(resumen.schema.types) != list(esperado.types):
         raise ValueError("Resumen exige date32/int64/int64 antes de adaptar")
@@ -101,9 +104,11 @@ def comprobar(seleccion, resumen, fuente=FUENTE, corte=date(2026, 10, 31), minim
            type(f["saldo_mxn"]) is not int for f in filas):
         raise ValueError("Ausencias/tipos nativos del resumen incompatibles")
     observadas = [dict(f, fecha_corte=f["fecha_corte"].isoformat()) for f in filas]
-    if sorted(observadas, key=lambda f: f["fecha_corte"]) != r["resumen"]:
+    if observadas != sorted(observadas, key=lambda f: f["fecha_corte"]):
+        raise ValueError("Resumen debe estar ordenado por fecha")
+    if observadas != r["resumen"]:
         raise ValueError("Resumen distinto por fecha/valor")
-    return dict(control=control, seleccion=sorted(seleccion.to_pylist(), key=lambda f: f["id_credito"]),
+    return dict(control=control, seleccion=pares,
                 resumen=r["resumen"])
 
 
@@ -203,14 +208,17 @@ def verificar(destino, fuente=FUENTE, exigir_decision=False):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("accion", choices=["generar", "verificar"])
-    p.add_argument("destino", type=Path)
-    p.add_argument("--fuente", type=Path, default=FUENTE)
-    p.add_argument("--corte", type=date.fromisoformat, default=date(2026, 10, 31))
-    p.add_argument("--minimo", type=int, default=2000)
-    p.add_argument("--sin-mediciones", action="store_true", help="solo depuracion; no completa evidencia de costos")
-    p.add_argument("--exigir-decision", action="store_true")
-    p.add_argument("--nota", default="sin anotaciones de disco/carga")
+    comandos = p.add_subparsers(dest="accion", required=True)
+    generar_p = comandos.add_parser("generar", help="crear una entrega nueva")
+    verificar_p = comandos.add_parser("verificar", help="reconstruir una entrega existente")
+    for comando in (generar_p, verificar_p):
+        comando.add_argument("destino", type=Path)
+        comando.add_argument("--fuente", type=Path, default=FUENTE)
+    generar_p.add_argument("--corte", type=date.fromisoformat, default=date(2026, 10, 31))
+    generar_p.add_argument("--minimo", type=int, default=2000)
+    generar_p.add_argument("--sin-mediciones", action="store_true", help="solo depuracion; no completa evidencia de costos")
+    generar_p.add_argument("--nota", default="sin anotaciones de disco/carga")
+    verificar_p.add_argument("--exigir-decision", action="store_true")
     a = p.parse_args()
     x = (generar(a.destino, a.fuente, a.corte, a.minimo, not a.sin_mediciones, a.nota)
          if a.accion == "generar" else verificar(a.destino, a.fuente, a.exigir_decision))
