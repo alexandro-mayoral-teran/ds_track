@@ -50,6 +50,10 @@ auditoría completa separada de la selección. Mantiene la base común y concili
 nueve IDs/24100 MXN para octubre ≥ 2000, contra CSV independiente en cada lenguaje.
 Ejemplo pequeño completo, sesiones nuevas y fuentes/lockfiles intactos; no
 acredita bytes omitidos, rendimiento ni RAM acotada.
+La ampliación didáctica presenta la tabla pequeña antes del código y ejemplos
+iniciales con APIs Arrow directas, sin funciones ni archivos de capítulos
+anteriores. El lab separa esa práctica de la integración con CSV; Python y R
+crean sus propias copias alteradas y pueden ejecutarse por separado.
 
 El siguiente trabajo concreto es
 [09.07 — Metadatos, row groups y compresión](../curriculum/09_arrow_parquet/README.md#07-metadatos-row-groups-y-compresion).

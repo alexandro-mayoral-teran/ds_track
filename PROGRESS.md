@@ -8,7 +8,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
 - **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.06 disponibles; 09.07–09.09 todavía planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.06 implementadas; 09.07–09.09 y 10–14 conservan sus planes.
-- **Sesión de desarrollo:** 2026-10-21, 09.04–09.06 implementadas; sesión cerrada.
+- **Última revisión:** 2026-10-22, ampliación didáctica de 09.06 y su lab;
+  ejemplos pequeños autónomos Python/R comprobados. 09.07 no se inició.
 - **Foco al cierre:** consultas Dataset/Scanner y dplyr, con auditoría completa separada.
   Próximo paso: desarrollar
   [09.07 — Metadatos, row groups y compresión](curriculum/09_arrow_parquet/README.md#07-metadatos-row-groups-y-compresion), todavía planificada.
@@ -40,6 +41,35 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Revisión — 2026-10-22, 09.06:** ampliadas la
+[lección](curriculum/09_arrow_parquet/06_selective_datasets/README.md) y su
+[lab](labs/09_arrow_parquet/06_selective_datasets/README.md). La muestra completa
+de cuatro filas aparece antes del código; los ejemplos iniciales declaran el
+esquema y escriben/consultan sus archivos directamente con Arrow. No necesitan
+CSV, TXT, preparador, funciones ni entregas de capítulos anteriores; sí las
+bibliotecas del lenguaje elegido. La base común conserva su recorrido separado.
+
+Se explican unidad y clave, objetos antes/después de materializar, columnas de
+filtro frente a proyección, sintaxis Python/R, consulta frente a auditoría y
+vacío/cero/ausencia. El lab añade cuatro consultas pequeñas con comparación de
+cada ID/importe; la integración R crea su propia copia alterada y puede
+ejecutarse sin la ruta Python. Los dos recorridos integrados siguen comprobando
+cuatro/12400, ocho/20500 y selección vacía, más rechazo de duplicados fuera del
+filtro. Base común de 28 registros y 29000/31800 MXN conservada.
+
+Ejemplos pequeños, fronteras y relectura desde procesos nuevos ejecutados con
+Python 3.12.12/PyArrow 21.0.0 y R 4.6.1/arrow 25.0.1/dplyr 1.2.1; lab integrado
+ejecutado en ambos lenguajes con carpetas nuevas. En R se permitió la lectura
+de la biblioteca renv local fuera del ejecutor restringido; locale C solo en
+esos procesos. No se instalaron paquetes ni cambiaron funciones, fuentes,
+lockfiles o entregas anteriores. Referencias oficiales revisadas; enlaces,
+fragmentos, bloques/soluciones y git diff --check comprobados. No se probó la
+interfaz del IDE ni se midieron I/O, rendimiento o RAM.
+
+El siguiente desarrollo sigue siendo **09.07 — Metadatos, row groups y
+compresión**, después de [storage-closure.md](docs/storage-closure.md).
+Proyectos/checkpoints y evidencia del estudiante mantienen su estado pendiente.
 
 **Cierre de sesión — 2026-10-21 (09.04–09.06):** completado el desarrollo de
 [lectura/escritura desde R](curriculum/09_arrow_parquet/04_r_read_write/README.md),
