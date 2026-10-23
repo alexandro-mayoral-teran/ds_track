@@ -278,7 +278,9 @@ añade consultas compartidas, parámetros, tipos y recursos con lección/lab.
 añade conversiones pandas/Arrow/Polars/DuckDB, tipos y materialización con lab.
 [10.09 — Comparar tiempo y memoria](curriculum/10_polars_duckdb/09_time_memory/README.md)
 añade observaciones repetidas, fases, pico residente y verificación con lab.
-10.10 sigue planificada.
+[10.10 — Cierre y elección de herramienta](curriculum/10_polars_duckdb/10_closure_tool_choice/README.md)
+añade entrega reconstruible, mediciones nuevas y decisión argumentada con lab.
+Las diez secciones de 10 tienen material; práctica y proyecto integrador siguen pendientes.
 Los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.

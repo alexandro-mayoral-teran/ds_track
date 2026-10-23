@@ -32,7 +32,9 @@ Polars; 10.03 añade planes lazy y ejecución conciliada.
 10.07 añade SQL compartido y resultados conciliados desde Python y R;
 10.08 añade intercambio pandas/Arrow/Polars/DuckDB con tipos/valores conciliados;
 10.09 añade mediciones repetidas/fases y pico residente con respuesta conciliada;
-10.10 sigue planificada. Esto no implementa el proyecto.
+10.10 añade entrega reconstruible de cuarenta filas, selección/resumen en tres
+motores, mediciones nuevas y decisión con revisión humana. Las diez secciones
+de 10 tienen material; esto no implementa el proyecto ni acredita práctica.
 Consulta los [pendientes de almacenamiento](../docs/storage-closure.md).
 
 Los módulos 04 y 05 amplían el análisis Python con figuras y código reutilizable;

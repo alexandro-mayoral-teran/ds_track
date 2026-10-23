@@ -1,4 +1,4 @@
-# Estado y pendientes de almacenamiento — módulo 09
+# Estado y pendientes de almacenamiento — módulos 09 y 10
 
 ## Punto de reanudación
 
@@ -135,21 +135,29 @@ procesos nuevos, orden rotado, fases y crudas/medianas/rangos. Pico residente
 Windows con alcance explícito y fuente/exportaciones conciliadas; R opcional
 system.time con protocolo separado. Sin paquetes nuevos ni cambios globales;
 no autentica tiempos históricos ni generaliza rendimiento, I/O o RAM.
-El siguiente desarrollo es [10.10 — Cierre y elección de herramienta](../curriculum/10_polars_duckdb/README.md#10-cierre-y-eleccion-de-herramienta),
-todavía planificada.
+[10.10 — Cierre y elección de herramienta](../curriculum/10_polars_duckdb/10_closure_tool_choice/README.md)
+y su [lab](../labs/10_polars_duckdb/10_closure_tool_choice/README.md) están disponibles:
+cuarenta filas propias, selección/resumen conciliados en pandas/Polars/DuckDB,
+fuente/contrato, escritura/relectura y reconstrucción por clave. Seis/14061 MXN
+y totales 26030/27690, referencia R base y mediciones nuevas de selección con
+alcance acotado. La decisión exige evidencia/estructura y revisión humana del
+argumento. No instala paquetes ni implementa el proyecto integrador.
+El siguiente desarrollo es [11.01 — Reporte, fuente y renderizado](../curriculum/11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado),
+todavía planificada; las diez secciones de 10 ya tienen material.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
 sin duplicar aquí una bitácora. **El material disponible no acredita práctica
 del estudiante ni implementa el proyecto integrador.**
 
 ## Desarrollo del material y siguiente módulo
 
-09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.09
-(10.05 opcional); 10.10 sigue planificada. Desarrollar el cierre con contexto,
-datos y resultados completos; resolver una pregunta con alternativas equivalentes
-y justificar la herramienta por claridad, entorno y costos medidos con alcance
-explícito. No exigir entregas personales anteriores ni presentar una muestra
-pequeña como grandes datos. Conservar fuentes, lockfiles, evidencia cruda y
-distinción entre material, práctica e integración. No activar checkpoints sin proyecto.
+09 y 10 no tienen secciones pendientes de autoría; 09.08 y 10.05 son opcionales.
+Retomar con 11.01, todavía planificada: pregunta/público, documento fuente,
+resultado renderizado y narrativa que use tablas verificadas. Presentar contexto,
+datos y resultados completos, con preparación de entorno separada de exigir
+entregas personales previas. La teoría será común y los recorridos Python/Jupyter
+y R/knitr separados. Verificar herramientas/APIs al implementar; no instalar
+Quarto ni paquetes solo para planificar. Conservar fuentes, lockfiles, evidencia
+cruda y distinción entre material, práctica e integración.
 
 Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
 preparación de entorno de exigir resultados personales anteriores. No modificar
@@ -168,6 +176,9 @@ Polars o DuckDB solo para planificar el recorrido.
 
 - Reunir evidencia propia del estudiante de 09.01–09.07 y 09.09, de 09.08 si
   se elige la ampliación y, más adelante, del proyecto. Material disponible no acredita aprendizaje.
+- Reunir evidencia propia de 10.01–10.04 y 10.06–10.10; 10.05 es extensión
+  opcional. Revisar respuesta por clave, costos de alcance explícito y argumento
+  de elección. La salida del verificador no sustituye explicación/revisión humana.
 - Revisar el cierre de [08](../curriculum/08_visualization_r/README.md): geometrías,
   escalas, población, exportación desde sesión nueva y conciliación con Python.
   Sus nueve secciones tienen material; no faltan lecciones de ese módulo.
@@ -194,4 +205,5 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 10.10 y 11–14 conservan sus planes.
+quedan fuera de Git. 11–14 conservan sus planes; el material de 09/10 está
+disponible, con práctica/proyectos/checkpoints pendientes.

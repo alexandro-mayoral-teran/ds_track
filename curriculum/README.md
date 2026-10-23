@@ -156,7 +156,10 @@ añade fronteras pandas/Arrow/Polars/DuckDB, ausencias y materialización con
 [10.09 — Comparar tiempo y memoria](10_polars_duckdb/09_time_memory/README.md)
 añade procesos nuevos, crudas/medianas, fases y memoria con
 [lab](../labs/10_polars_duckdb/09_time_memory/README.md).
-10.10 sigue planificada.
+[10.10 — Cierre y elección de herramienta](10_polars_duckdb/10_closure_tool_choice/README.md)
+añade entrega de cuarenta filas con tablas conciliadas, costos y decisión con
+[lab](../labs/10_polars_duckdb/10_closure_tool_choice/README.md).
+Las diez secciones del módulo tienen material; práctica/proyecto siguen pendientes.
 Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;

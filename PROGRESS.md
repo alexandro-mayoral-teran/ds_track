@@ -5,17 +5,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.09 disponibles; 10.10 planificada.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.09 implementadas (09.08 y 10.05 opcionales); 10.10 y 11–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 10.09 con lección/lab, mediciones repetidas
-  y fases de costo/memoria, sin dependencias nuevas.
-- **Punto de reanudación:** 10.10; 10.09 ya tiene material disponible.
-- **Foco actual:** mediciones con resultados equivalentes y límites explícitos.
+- **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
+- **Siguiente módulo por desarrollar:** `11_reporting_quarto`: nueve secciones planificadas; retomar 11.01.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.10 implementadas (09.08 y 10.05 opcionales); 11–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 10.10 con lección/lab, entrega reconstruible,
+  mediciones nuevas y decisión argumentada. Las diez secciones de 10 tienen material.
+- **Punto de reanudación:** 11.01, todavía planificada; no instalar por adelantar el plan.
+- **Foco actual:** pasar de evidencia técnica/decisión a narrativa reproducible.
   Próximo paso: desarrollar
-  [10.10 — Cierre y elección de herramienta](curriculum/10_polars_duckdb/README.md#10-cierre-y-eleccion-de-herramienta),
-  todavía planificada; contexto/datos completos, respuesta conciliada y decisión
-  justificada por claridad, entorno y costos observados con alcance explícito.
+  [11.01 — Reporte, fuente y renderizado](curriculum/11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado),
+  todavía planificada; pregunta/público, fuente frente a resultado generado y
+  datos completos, con teoría común y recorridos Python/Jupyter y R/knitr separados.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -36,7 +36,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y 10.01–10.09 disponibles, la última de 10 planificada; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -44,6 +44,55 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 10.10 y cierre del material de 10:** disponibles la
+[lección](curriculum/10_polars_duckdb/10_closure_tool_choice/README.md),
+CSV propio de cuarenta filas, generador/verificador de entrega, referencia R
+base, recorridos y [lab](labs/10_polars_duckdb/10_closure_tool_choice/README.md).
+Contexto/diccionario/reglas completos, mini muestra de seis filas independiente
+y todos los valores de veinte créditos/dos cortes. Las diez secciones de 10
+tienen lección/lab (10.05 opcional); esto no acredita práctica ni implementa
+04_large_credit_dataset o sus checkpoints.
+
+Python 3.12.12, pandas 2.3.3/PyArrow 21.0.0/Polars 2.0.0/DuckDB 2.0.0 y R
+base 4.6.1 conservados. No hay instalaciones ni cambios de dependencias,
+pyproject/uv.lock, renv o entornos globales. Misma selección y resumen en tres
+motores; seis IDs 015–020, 14061 MXN; veinte/26030 y veinte/27690 por corte.
+Int64 antes de agregar; cota didáctica <=1998 saldos Int32 justifica BIGINT y
+la referencia R double por debajo de 2^53, sin generalizar a cualquier base.
+
+Entrega fuente/contrato, entrada, seis Parquet de resultados, comparación,
+manifiesto, mediciones nuevas y decisión inicialmente en borrador. Escritura/
+relectura y comparación por clave contra referencia externa Python estándar;
+R calcula pares/grupos independientemente. Nueve procesos nuevos con protocolo
+10.09 sobre esta entrada/pregunta: solo selección/JSON, no resumen o entrega
+completa. La decisión usa contexto/claridad/entorno/costos/límites y condición
+para revisarla; verificador de solo lectura exige evidencia/estructura, no
+certifica calidad del argumento o autenticidad de tiempos. La revisión humana
+pertenece al cierre de práctica, no al estado de autoría.
+
+**Verificación:** seis grupos con subcasos y bloques completos Python de
+lección/lab ejecutados; dos entregas con mediciones reales de nueve procesos
+para octubre. Segunda biblioteca Python genera/verifica otra entrega con nueve
+procesos para noviembre vacío. Septiembre >=2000, octubre >=2002/todos y
+noviembre conciliados; vacío completo tipado, suma 4294967294, fechas 1900/2100,
+orden físico invertido y máximo 1998 aceptados; 1999, duplicados, ausencias y
+negativos rechazados antes de crear entrega. Selección/resumen/entrada con
+errores compensados y huellas actualizadas, esquema float, contrato/comparación
+alterados rechazados. Borrador, motor/alcance inválido o decisión sin costos no
+pasan revisión exigida. Fallo parcial conserva resultados sin manifiesto final;
+destinos existentes y fuentes anteriores protegidos, verificación no modifica archivos.
+Referencia R base y fronteras comprobadas en procesos nuevos; no se probó la
+interfaz del IDE ni Linux/macOS u otras instalaciones. No se acreditan grandes
+volúmenes, I/O físico o RAM acotada. Enlaces/fragmentos, navegación y git diff
+--check revisados; roadmap y referencias de cierre previas actualizados.
+
+**Siguiente:** [11.01 — Reporte, fuente y renderizado](curriculum/11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado),
+después de [storage-closure.md](docs/storage-closure.md). Teoría común de reporte/
+fuente/renderizado, contexto/datos completos y recorridos Python/Jupyter y R/knitr
+separados al implementar; verificar APIs/herramientas sin instalar solo por
+planificar. 11–14, proyectos/checkpoints y práctica del estudiante siguen
+pendientes. Este es el punto de retoma vigente; las entradas siguientes son historial.
 
 **Desarrollo — 2026-10-23, 10.09:** disponibles la
 [lección](curriculum/10_polars_duckdb/09_time_memory/README.md),

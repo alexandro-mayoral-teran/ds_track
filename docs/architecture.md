@@ -95,7 +95,7 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01–10.09 tienen lección/muestra/funciones/lab (10.05 opcional); 10.10 y 11–14 conservan planificación;
+10.01–10.10 tienen lección/muestra/funciones/lab (10.05 opcional); 11–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -610,8 +610,8 @@ Las nueve secciones de 08 tienen material; el proyecto integrador continúa pend
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones; 09.01–09.09 y 10.01–10.09 disponen de lección/lab y scripts;
-10.05 es opcional; 10.10 sigue planificada.
+19 secciones; 09.01–09.09 y 10.01–10.10 disponen de lección/lab y scripts;
+10.05 es opcional; proyectos/checkpoints y práctica siguen pendientes.
 09.01 distingue formato, representación y biblioteca con una proyección de 28
 observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
 inventario conservados; inspección esencial Python estándar/R base y lectura
@@ -757,7 +757,15 @@ conciliados fuera del trabajador; crudas/resumen y verificador de solo lectura.
 Mantiene seis filas/003/2600; vacíos, precisión y alteraciones comprobados.
 Caché SO sin vaciar y entrada leída en auditoría; medición local sin generalización.
 R opcional system.time es un protocolo distinto de tabla en memoria/DBI.
-Sin paquetes/lockfiles nuevos; 10.10 es el siguiente desarrollo previsto.
+Sin paquetes/lockfiles nuevos.
+10.10 integra selección/resumen en los tres motores con cuarenta filas propias,
+fuente/contrato, seis Parquet de resultados y verificador de solo lectura.
+Seis seleccionados/14061 MXN y grupos 26030/27690; Int64 antes de sumar, con cota
+didáctica de 1998 filas. Referencia Python estándar/R base y relectura por clave.
+Mediciones nuevas de selección con protocolo 10.09; no se atribuyen al resumen
+o entrega completa. Decisión editable con campos/evidencia revisados y argumento
+para revisión humana; huellas no autentican tiempos. Las diez secciones tienen
+material, sin activar proyecto/checkpoints. 11.01 es el siguiente desarrollo previsto.
 Los ejemplos conservan contexto propio.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 

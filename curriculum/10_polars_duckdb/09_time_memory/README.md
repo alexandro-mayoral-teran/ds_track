@@ -333,8 +333,7 @@ y explicar alcance, caché y memoria sin convertir una observación en una regla
 universal. No hay checkpoint activo: el [proyecto integrador](../../../projects/README.md)
 sigue previsto. Registra evidencia en [PROGRESS.md](../../../PROGRESS.md);
 desarrollar material no acredita aprendizaje.
-Siguiente: [10.10 — Cierre y elección de herramienta](../README.md#10-cierre-y-eleccion-de-herramienta),
-todavía planificada.
+Siguiente: [10.10 — Cierre y elección de herramienta](../10_closure_tool_choice/README.md).
 
 ## Referencias primarias
 

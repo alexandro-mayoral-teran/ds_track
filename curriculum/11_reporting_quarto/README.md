@@ -14,6 +14,10 @@ La teoría del documento se explica una vez. Habrá recorridos separados para
 Python/Jupyter y R/knitr: elige un motor para el reporte esencial y compara el
 otro como ampliación. No se exige mezclar ambos intérpretes en un documento.
 Quarto se instala como herramienta; no sustituye Python, R o sus dependencias.
+El [cierre 10.10](../10_polars_duckdb/10_closure_tool_choice/README.md) ya ofrece
+tablas verificables, pregunta, método y límites como posible entrada del reporte.
+Al desarrollar las lecciones se presentarán ejemplos completos sin exigir
+entregas personales anteriores. Ese enlace no implementa aún las secciones de 11.
 
 ## Orden de desarrollo
 

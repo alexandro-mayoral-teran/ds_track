@@ -410,7 +410,7 @@ se pueda justificar; no es requisito para el primer ejercicio.
 
 **Objetivo:** procesar datos grandes en una sola máquina con criterio.
 
-El [plan de diez secciones](curriculum/10_polars_duckdb/README.md#orden-de-desarrollo)
+El [recorrido de diez secciones](curriculum/10_polars_duckdb/README.md#orden-de-desarrollo)
 parte de un contrato conocido: expresiones y lazy en Polars, SQL sobre Parquet
 con DuckDB, clientes Python/R, intercambio, mediciones y elección de herramienta.
 Polars se enseña principalmente desde Python; su interfaz R y streaming son
@@ -421,7 +421,12 @@ sin motores nuevos en esa introducción.
 [10.02 — Polars: tablas y expresiones](curriculum/10_polars_duckdb/02_polars_tables_expressions/README.md)
 añade lección/lab, operaciones inmediatas y conciliación por valores con
 Polars 2.0.0 declarado y reconstruido en entornos locales.
-10.03–10.10 siguen planificadas.
+[10.10 — Cierre y elección de herramienta](curriculum/10_polars_duckdb/10_closure_tool_choice/README.md)
+integra selección/resumen en pandas, Polars y DuckDB, mediciones nuevas y
+decisión revisable. Las diez secciones tienen lección/lab (10.05 opcional).
+El cierre usa cuarenta filas con 14061 MXN seleccionados y 26030/27690 por
+corte; no acredita grandes volúmenes ni práctica del estudiante. El proyecto
+integrador sigue pendiente. Retomar desarrollo en 11.01, todavía planificada.
 
 - Ejecución eager y lazy en Polars.
 - Consultas SQL sobre Parquet con DuckDB.

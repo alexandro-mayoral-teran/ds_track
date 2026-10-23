@@ -149,5 +149,4 @@ una aplicación ya importó bibliotecas o retiene tablas?, ¿qué no autentican 
 Avanza cuando puedas conciliar la respuesta, reconstruir el resumen y detectar
 comparaciones con fases distintas. No hay checkpoint activo; proyecto y práctica
 del estudiante siguen pendientes aunque el material exista.
-Siguiente: [10.10 — Cierre y elección de herramienta](../../../curriculum/10_polars_duckdb/README.md#10-cierre-y-eleccion-de-herramienta),
-todavía planificada.
+Siguiente: [10.10 — Cierre y elección de herramienta](../../../curriculum/10_polars_duckdb/10_closure_tool_choice/README.md).

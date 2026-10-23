@@ -26,10 +26,12 @@ añade SQL compartido, parámetros, tipos/clases y recursos con lección/lab.
 añade conversiones, ausencias, tipos y materialización con lección/lab.
 [10.09 — Comparar tiempo y memoria](09_time_memory/README.md)
 añade protocolo repetido, fases, crudas y pico residente con lección/lab.
-10.10 sigue planificada: su enlace interno describe el alcance previsto.
+[10.10 — Cierre y elección de herramienta](10_closure_tool_choice/README.md)
+añade entrega reconstruible, referencia R base, mediciones nuevas y decisión con lab.
+Las diez secciones tienen material (10.05 opcional); práctica y proyecto siguen pendientes.
 
-Polars se enseñará principalmente desde Python, con su interfaz R como comparación
-opcional. DuckDB se enseñará desde SQL, con recorridos separados para Python y R.
+Polars se enseña principalmente desde Python, con su interfaz R como comparación
+opcional. DuckDB se enseña desde SQL, con recorridos separados para Python y R.
 El objetivo no es repetir toda la teoría en cada lenguaje ni elegir un ganador
 universal: verificaremos el resultado antes de comparar costos.
 
@@ -44,7 +46,8 @@ universal: verificaremos el resultado antes de comparar costos.
 
 Polars no es exclusivo de Python: existe una interfaz para R. No exigiremos
 aprender ambas APIs para cerrar el módulo. DuckDB reutiliza conocimientos SQL;
-DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje.
+DBI y el cliente R se explican en [10.07](07_duckdb_python_r/README.md)
+antes de pedir una consulta desde ese lenguaje.
 
 ## Orden de desarrollo
 
@@ -59,7 +62,7 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 | 7 | [DuckDB desde Python y R](07_duckdb_python_r/README.md) | Práctica | Reutilizar una consulta desde ambos lenguajes |
 | 8 | [Intercambio entre motores](08_engine_interchange/README.md) | Práctica | Verificar conversiones y materialización de resultados |
 | 9 | [Comparar tiempo y memoria](09_time_memory/README.md) | Práctica | Producir mediciones interpretables y repetibles |
-| 10 | [Cierre y elección de herramienta](#10-cierre-y-eleccion-de-herramienta) | Práctica de cierre | Resolver una pregunta y justificar el motor elegido |
+| 10 | [Cierre y elección de herramienta](10_closure_tool_choice/README.md) | Práctica de cierre | Resolver una pregunta y justificar el motor elegido |
 
 ## Alcance de cada sección
 
@@ -209,8 +212,14 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 - Resolver el mismo problema con pandas, Polars y DuckDB; reutilizar la referencia R
   cuando ayude a comprobar semántica o interoperabilidad.
-- Práctica prevista: entregar indicadores conciliados, mediciones y una decisión
-  justificada por volumen, claridad, entorno y costos, incluyendo límites del experimento.
+- Disponible: [lección, muestra, entrega/verificador y referencia R](10_closure_tool_choice/README.md)
+  y [lab 10.10](../../labs/10_polars_duckdb/10_closure_tool_choice/README.md).
+  Muestra propia de cuarenta filas y ejemplo mínimo completo; selección octubre
+  de seis créditos/14061 MXN y resumen 26030/27690 conciliados en los tres motores.
+  Int64 antes de agregar, escritura/relectura, contrato y fuente externos,
+  mediciones nuevas de selección con alcance explícito y decisión documentada.
+  Verificador comprueba estructura/evidencia; el argumento requiere revisión humana.
+  Vacíos, fronteras, compensaciones y referencia R base comprobados; sin paquetes nuevos.
 
 ## Prácticas, proyecto y criterio de salida
 
@@ -221,9 +230,10 @@ Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_cont
 [10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md),
 [10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md),
 [10.07](../../labs/10_polars_duckdb/07_duckdb_python_r/README.md),
-[10.08](../../labs/10_polars_duckdb/08_engine_interchange/README.md)
-y [10.09](../../labs/10_polars_duckdb/09_time_memory/README.md);
-10.10 sigue previsto. 10.05 y Polars en R son opcionales.
+[10.08](../../labs/10_polars_duckdb/08_engine_interchange/README.md),
+[10.09](../../labs/10_polars_duckdb/09_time_memory/README.md)
+y [10.10](../../labs/10_polars_duckdb/10_closure_tool_choice/README.md).
+Las diez secciones disponen de lección/lab; 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -241,6 +251,8 @@ SQL avanzado, ajuste fino de hilos y particiones no bloquean el cierre esencial.
 
 Continúa con [11 — Reportes con Quarto](../11_reporting_quarto/README.md),
 reutilizando tablas y figuras verificadas en lugar de recalcular sin controles.
+Su [11.01](../11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado)
+todavía está planificada; no se instala Quarto solo por cerrar este módulo.
 
 - Polars: [ejecución lazy](https://docs.pola.rs/user-guide/lazy/using/),
   [optimizaciones](https://docs.pola.rs/user-guide/lazy/optimizations/),
@@ -281,3 +293,8 @@ CPU del proceso y PeakWorkingSetSize en Windows. Datos/pares/exportaciones
 conciliados fuera del trabajador, tres observaciones por motor y crudas verificables.
 No certifica tiempos históricos, RAM acotada ni rendimiento general. R opcional
 ejecuta otro protocolo con system.time, sin mezclar sus observaciones con Python.
+10.10 conserva entornos/lockfiles y usa cuarenta filas propias, seis Parquet de
+resultados y comparación reconstruida por clave con Python estándar/R base.
+Mediciones de selección se generan nuevas con 10.09; no miden resumen o entrega
+completa. Manifestar una decisión exige evidencia/estructura, con revisión humana
+del argumento. Límite didáctico de 1998 filas, sin acreditar grandes volúmenes.
