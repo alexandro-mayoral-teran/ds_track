@@ -10,6 +10,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01 implementadas (09.08 opcional); 10.02–10.10 y 11–14 conservan sus planes.
 - **Último desarrollo:** 2026-10-22, 10.01 con lección, muestra propia,
   referencia Python estándar/R base, generador opcional y lab comprobados.
+- **Sesión de desarrollo:** 2026-10-22 cerrada en 10.01; 10.02 no se inició.
 - **Foco al cierre:** pregunta precisa, contrato y referencia independiente antes de comparar motores.
   Próximo paso: desarrollar
   [10.02 — Polars: tablas y expresiones](curriculum/10_polars_duckdb/README.md#02-polars-tablas-y-expresiones),
@@ -42,6 +43,36 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Cierre de sesión — 2026-10-22 (hasta 10.01):** publicada la ampliación de
+09.06 (`61a082b`), 09.07 (`d911179`), 09.08 (`c553bbd`), el cierre 09.09
+(`eb85ac4`) y 10.01 (`03ee6d6`) en `main`. Las nueve secciones de 09 tienen
+material; el módulo 10 dispone de su primera sección. Lecciones, labs,
+navegación, arquitectura y pendientes están actualizados. Se corrige además
+la referencia antigua al estado de 09 en [tidyverse-closure.md](docs/tidyverse-closure.md).
+
+La sesión termina con [10.01](curriculum/10_polars_duckdb/01_question_contract_reference/README.md)
+y su [lab](labs/10_polars_duckdb/01_question_contract_reference/README.md):
+datos completos por ejemplo, pregunta/contrato y referencia antes de motores.
+La revisión funcional previa dejó 81 controles Python y 50 R correctos,
+incluidas sesiones nuevas, fronteras y conciliación por cada ID/importe.
+Este cierre solo modifica documentación: no vuelve a ejecutar esas pruebas,
+no cambia código, muestras, dependencias ni resultados. Se revisan enlaces,
+fragmentos, bloques/soluciones y git diff --check del estado documental final.
+
+**Próxima sesión:** empezar por este registro y
+[storage-closure.md](docs/storage-closure.md); después desarrollar
+[10.02 — Polars: tablas y expresiones](curriculum/10_polars_duckdb/README.md#02-polars-tablas-y-expresiones).
+Investigar API y versión oficiales, incorporar Polars solo al implementarlo y
+comprobar un entorno local sin modificar bibliotecas globales. Presentar una
+muestra pequeña completa con contexto, reglas y resultados; mantener referencia
+independiente y revisión de tipos antes de adaptar la salida. No exigir conocer
+ejemplos ni tener entregas previas; la API lazy pertenece a 10.03.
+
+10.02 no se inició. 10.02–10.10 y 11–14 siguen planificadas; proyectos,
+checkpoints, evidencias del estudiante y revisión retroactiva de ejemplos/IDE
+mantienen sus pendientes. Desarrollar el material no acredita aprendizaje.
+Las entradas siguientes detallan verificaciones y desarrollo previos.
 
 **Desarrollo — 2026-10-22, 10.01:** disponibles la
 [lección](curriculum/10_polars_duckdb/01_question_contract_reference/README.md) y el

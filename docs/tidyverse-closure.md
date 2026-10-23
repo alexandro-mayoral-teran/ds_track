@@ -43,7 +43,7 @@ no basta para marcar una competencia como adquirida.
 | Checkpoints propuestos de 07 | Importación/contrato, calidad, indicadores/relaciones y categorías/cortes/figura. Son propuestas para el proyecto, no entregas ya habilitadas. |
 | Revisión del recorrido IDE anterior | 07.01–07.10 ya priorizan IDE. Revisar con el usuario las lecciones anteriores que aún necesiten adaptación, conservando terminal como apoyo cuando corresponda. |
 | Decisiones de estructura | Integración numerada de R aplicado, terminal avanzada y separación entre avance del material y bitácoras personales: resolver antes de cambiar numeración o referencias. |
-| Resto del track | 09.01 dispone de material; 09.02–09.09 y 10–14 conservan planes. Consultar [cierre de almacenamiento](storage-closure.md); cerrar 07 no completa el track. |
+| Resto del track | Las nueve secciones de 09 y 10.01 tienen material; 10.02–10.10 y 11–14 conservan planes. Consultar [cierre de almacenamiento](storage-closure.md); cerrar 07 no completa el track ni acredita las prácticas posteriores. |
 
 [08.01 — Pregunta y gramática de gráficos](../curriculum/08_visualization_r/01_question_grammar/README.md)
 ya reutiliza la figura, datos y población explícita de 07.10 para estudiar sus
