@@ -141,7 +141,10 @@ añade ejemplos autónomos, preparación Parquet, planes, ejecución conciliada 
 [10.04 — Tipos, faltantes y uniones](10_polars_duckdb/04_types_missing_joins/README.md)
 añade conversiones, null/NaN, cobertura y cardinalidad con
 [lab](../labs/10_polars_duckdb/04_types_missing_joins/README.md).
-10.05–10.10 siguen planificadas; 10.05 es una extensión opcional.
+[10.05 — Streaming y límites de memoria](10_polars_duckdb/05_streaming_memory/README.md)
+añade extensión opcional, sink, lotes, planes físicos y observación de memoria con
+[lab](../labs/10_polars_duckdb/05_streaming_memory/README.md).
+10.06–10.10 siguen planificadas.
 Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;

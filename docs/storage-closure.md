@@ -106,22 +106,28 @@ y su [lab](../labs/10_polars_duckdb/04_types_missing_joins/README.md) están dis
 conversiones con originales, null/NaN, cobertura y catálogo propio. Left m:1
 conserva seis saldos y 4500/4600 MXN, separa coincidencia/etiqueta conocida;
 contraste Python/pandas/SQLite sin dependencias nuevas.
-El siguiente desarrollo es [10.05 — Streaming y límites de memoria](../curriculum/10_polars_duckdb/README.md#05-streaming-y-limites-de-memoria),
-extensión opcional todavía planificada. El siguiente esencial previsto es 10.06.
+[10.05 — Streaming y límites de memoria](../curriculum/10_polars_duckdb/05_streaming_memory/README.md)
+y su [lab](../labs/10_polars_duckdb/05_streaming_memory/README.md) están disponibles
+como extensión opcional: ejemplos autónomos de lotes/sink, plan físico y
+observación del pico residente en procesos nuevos Windows. Fuente/pares
+conciliados, vacío y fronteras; sin paquetes nuevos ni promesa de RAM acotada.
+El siguiente desarrollo esencial es [10.06 — DuckDB: SQL sobre Parquet](../curriculum/10_polars_duckdb/README.md#06-duckdb-sql-sobre-parquet),
+todavía planificada.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
 sin duplicar aquí una bitácora. **El material disponible no acredita práctica
 del estudiante ni implementa el proyecto integrador.**
 
 ## Desarrollo del material y siguiente módulo
 
-09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.04;
-10.05–10.10 siguen planificadas. Desarrollar 10.05 como extensión opcional, con
-contexto, datos, contrato y referencia independientes de entregas anteriores.
-Explicar ejecución por lotes, operaciones con estado y materialización/salida;
-verificar soporte real de la versión fijada, sin prometer RAM acotada para
-cualquier consulta. Distinguir planes, ejecución y memoria medida; 10.09
-profundizará la comparación de costos. 10.06 inicia el siguiente esencial con
-DuckDB; no instalarlo solo por planificar ni hacer que 10.05 bloquee esa ruta.
+09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.05
+(10.05 opcional); 10.06–10.10 siguen planificadas. Desarrollar 10.06 con pregunta,
+datos, contrato y referencia independientes de entregas anteriores. Explicar
+SQL sobre Parquet, archivo frente a base persistente, proyección/filtro,
+EXPLAIN frente a EXPLAIN ANALYZE y ejecución real conciliada. Verificar APIs
+y versión antes de incorporar DuckDB a un entorno local y lockfile; no instalar
+solo por planificar ni cambiar los globales. Conservar el alcance de 10.05:
+estado/salida importan y la auditoría completa no tiene memoria acotada.
+10.09 profundizará la comparación de costos, sin inferirlos solo del plan.
 
 Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
 preparación de entorno de exigir resultados personales anteriores. No modificar
@@ -166,4 +172,4 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 10.05–10.10 y 11–14 conservan sus planes.
+quedan fuera de Git. 10.06–10.10 y 11–14 conservan sus planes.

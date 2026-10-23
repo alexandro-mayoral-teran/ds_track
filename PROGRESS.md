@@ -6,16 +6,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.04 disponibles; 10.05–10.10 planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.04 implementadas (09.08 opcional); 10.05–10.10 y 11–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 10.04 con lección, fuentes propias,
-  funciones/verificador, recorridos y lab comprobados en dos entornos locales.
-- **Punto de reanudación:** 10.05, extensión opcional; 10.04 ya tiene material.
-- **Foco actual:** tipos, faltantes, cobertura y cardinalidad sin alterar saldos.
+- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.05 disponibles; 10.06–10.10 planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.05 implementadas (09.08 y 10.05 opcionales); 10.06–10.10 y 11–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 10.05 con lección, muestra propia,
+  lotes/sink, observador de memoria, recorridos y lab comprobados.
+- **Punto de reanudación:** 10.06; la extensión opcional 10.05 tiene material.
+- **Foco actual:** ejecución por lotes, estado/salida y memoria observada con alcance.
   Próximo paso: desarrollar
-  [10.05 — Streaming y límites de memoria](curriculum/10_polars_duckdb/README.md#05-streaming-y-limites-de-memoria),
-  extensión todavía planificada; conservar Polars 2.0.0 y comprobar sus APIs.
-  No bloquea el siguiente esencial previsto, 10.06 — DuckDB: SQL sobre Parquet.
+  [10.06 — DuckDB: SQL sobre Parquet](curriculum/10_polars_duckdb/README.md#06-duckdb-sql-sobre-parquet),
+  todavía planificada; verificar APIs/versión e incorporar dependencias solo
+  al implementar, en entornos locales y conservando registros previos.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -36,7 +36,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y 10.01–10.04 disponibles, las otras seis de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y 10.01–10.05 disponibles, las otras cinco de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -44,6 +44,55 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 10.05 (extensión opcional):** disponibles la
+[lección](curriculum/10_polars_duckdb/05_streaming_memory/README.md),
+CSV propio, funciones/preparador/verificador, observador, recorridos completos y
+[lab](labs/10_polars_duckdb/05_streaming_memory/README.md). Contexto/datos/reglas
+autónomos; ejemplos directos de collect streaming, lotes sin lista y sink
+Parquet exclusivo. Plan lógico y físico DOT sin instalar Graphviz; estado de
+operaciones, buffers, concurrencia y materialización explicados. APIs oficiales
+consultadas y ejecutadas con Polars 2.0.0; collect_batches es inestable.
+
+Seis observaciones y tres créditos/dos cortes, fuente sin ausencias ni claves
+repetidas. Octubre ≥ 2000: 003/2600; octubre ≥ 0: tres pares/4600 MXN;
+septiembre ≥ 2000: dos/4500; noviembre vacío con String/Int32. Auditoría
+completa contra CSV externo separada de la consulta y de los trabajadores;
+relectura del sink por cada par. La auditoría materializa datos y no tiene
+garantía de memoria acotada. Fuentes conservadas; no exige entregas previas.
+
+**Verificación:** nueve grupos con escenarios/subcasos en dos entornos uv
+locales existentes, Python 3.12.12/Polars 2.0.0. Bloques Python de lección/lab
+ejecutados en orden, cambiando solo destinos temporales. Consumidores streaming/
+in-memory y sink conciliados; tamaños de entrega 1/2/7, vacío, fronteras,
+fechas extremas y suma 4294967294. Esquemas alterados, duplicados/null/negativos
+fuera del filtro, saldos compensados y destinos existentes rechazados; orden
+físico invertido aceptado. Escalas 40/400/1998 y base común de 28 filas
+(selección nueve/24100) conciliadas. Procesos nuevos y verificación de solo
+lectura comprobados; fuentes y lockfiles conservados.
+
+Observador probado en Windows: procesos collect+escritura/sink separados,
+trazas POLARS_VERBOSE limitadas a hijos y PeakWorkingSetSize en bytes tras
+consulta/escritura. Pico incluye vida del proceso hasta leer el contador,
+importaciones e instrumentación; auditoría/conciliación en el padre. Ambos
+archivos releídos y conciliados. No es RAM exclusiva de consulta ni benchmark:
+una observación por modo, sin control de caché o afirmación de ahorro general.
+Rama Linux/ru_maxrss documentada, no ejecutada; otras plataformas informan
+no disponible. No acredita I/O físico, disco temporal ni RAM acotada.
+
+Sin nuevas dependencias, instalaciones o cambios de Conda, renv, venv raíz
+o configuración global. Controles, trazas y salidas auxiliares ignorados bajo
+output/. No se probaron instalaciones Conda, otros sistemas o la interfaz del IDE.
+Navegación, bloques/soluciones y git diff --check revisados; 245 Markdown y
+2474 enlaces locales sin incidencias, incluidos sus fragmentos.
+
+**Siguiente:** [10.06 — DuckDB: SQL sobre Parquet](curriculum/10_polars_duckdb/README.md#06-duckdb-sql-sobre-parquet),
+después de [storage-closure.md](docs/storage-closure.md). Pregunta/contrato,
+archivos frente a base persistente, SQL, EXPLAIN/EXPLAIN ANALYZE y ejecución
+conciliada; revisar API/versión antes de incorporar DuckDB localmente. No
+instalar por planificar. 10.06–10.10 y 11–14 conservan planes; proyectos/
+checkpoints y práctica del estudiante siguen pendientes. El punto de retoma
+anterior en 10.05 queda sustituido; las entradas siguientes son historial.
 
 **Desarrollo — 2026-10-23, 10.04:** disponibles la
 [lección](curriculum/10_polars_duckdb/04_types_missing_joins/README.md),

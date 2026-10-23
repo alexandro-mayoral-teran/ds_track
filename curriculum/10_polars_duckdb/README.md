@@ -16,7 +16,9 @@ añade lección, CSV autónomo, funciones, recorridos y lab con Polars 2.0.0.
 añade ejemplos autónomos, preparación Parquet, planes, ejecución conciliada y lab.
 [10.04 — Tipos, faltantes y uniones](04_types_missing_joins/README.md)
 añade ejemplos completos, catálogo propio, cobertura y cardinalidad con lab.
-10.05–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
+[10.05 — Streaming y límites de memoria](05_streaming_memory/README.md)
+añade la extensión opcional de lotes, sink, plan físico y pico residente observado.
+10.06–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
 DuckDB todavía no se incorpora como dependencia.
 
 Polars se enseñará principalmente desde Python, con su interfaz R como comparación
@@ -45,7 +47,7 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 | 2 | [Polars: tablas y expresiones](02_polars_tables_expressions/README.md) | Esencial | Seleccionar, transformar y resumir una muestra |
 | 3 | [Polars lazy y planes de consulta](03_polars_lazy_plans/README.md) | Esencial | Explicar scan, collect y un plan optimizado |
 | 4 | [Tipos, faltantes y uniones](04_types_missing_joins/README.md) | Esencial | Conservar semántica e indicadores al cambiar de motor |
-| 5 | [Streaming y límites de memoria](#05-streaming-y-limites-de-memoria) | Extensión | Comprobar cómo se ejecuta una consulta por lotes |
+| 5 | [Streaming y límites de memoria](05_streaming_memory/README.md) | Extensión | Comprobar cómo se ejecuta una consulta por lotes |
 | 6 | [DuckDB: SQL sobre Parquet](#06-duckdb-sql-sobre-parquet) | Esencial | Consultar archivos sin cargar primero todo en pandas |
 | 7 | [DuckDB desde Python y R](#07-duckdb-desde-python-y-r) | Práctica | Reutilizar una consulta desde ambos lenguajes |
 | 8 | [Intercambio entre motores](#08-intercambio-entre-motores) | Práctica | Verificar conversiones y materialización de resultados |
@@ -121,9 +123,14 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 - Ejecución por lotes, operaciones que retienen estado y salida materializada.
   Consultar soporte y comportamiento del motor para la versión elegida.
-- Práctica prevista: ejecutar una consulta compatible, observar su plan y memoria
-  y escribir una salida sin recoger un resultado enorme innecesariamente.
-  Streaming no promete que cualquier consulta o resultado quepa en cualquier RAM.
+- Disponible como extensión opcional: [lección, muestra y scripts](05_streaming_memory/README.md)
+  y [lab 10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md).
+  Ejemplos autónomos de collect streaming, consumo de lotes sin lista y sink
+  Parquet a destino nuevo; plan físico DOT sin Graphviz y trazas de ejecución.
+  Seis filas, octubre uno/2600 o tres/4600 MXN conciliados por clave; vacío,
+  fronteras, suma amplia y escalas 40/400/1998 comprobados. Procesos nuevos
+  observan PeakWorkingSetSize en Windows, con auditoría fuera del trabajador.
+  Sin dependencias nuevas, benchmark ni promesa de RAM acotada para todo el recorrido.
 
 <a id="06-duckdb-sql-sobre-parquet"></a>
 
@@ -177,9 +184,10 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md),
 [10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md),
-[10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md)
-y [10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md);
-10.05–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
+[10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md),
+[10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md)
+y [10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md);
+10.06–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -218,3 +226,6 @@ se conservan; no cambia renv, Conda ni bibliotecas globales.
 nuevos, sin añadir dependencias ni cambiar lockfiles.
 10.04 conserva esos entornos, añade contraste con pandas 2.3.3/SQLite estándar
 y verifica valores/tipos/cobertura sin nuevas dependencias ni archivos de entorno.
+10.05 usa Polars 2.0.0 y biblioteca estándar para lotes, sink y observación
+exploratoria del pico residente en procesos nuevos Windows; sin paquetes nuevos
+ni cambios de configuración global. No mide rendimiento ni acredita RAM acotada.

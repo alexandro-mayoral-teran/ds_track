@@ -95,7 +95,7 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01–10.04 tienen lección/muestra/funciones/lab; 10.05–10.10 y 11–14 conservan planificación;
+10.01–10.05 tienen lección/muestra/funciones/lab (10.05 opcional); 10.06–10.10 y 11–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -610,8 +610,8 @@ Las nueve secciones de 08 tienen material; el proyecto integrador continúa pend
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones; 09.01–09.09 y 10.01–10.04 disponen de lección/lab y scripts;
-10.05–10.10 siguen planificadas.
+19 secciones; 09.01–09.09 y 10.01–10.05 disponen de lección/lab y scripts;
+10.05 es opcional; 10.06–10.10 siguen planificadas.
 09.01 distingue formato, representación y biblioteca con una proyección de 28
 observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
 inventario conservados; inspección esencial Python estándar/R base y lectura
@@ -718,8 +718,15 @@ productos conocidos sobre seis observaciones; distingue etiqueta pendiente
 de falta de catálogo. Inner/semi/anti y full opcional, duplicados sin uso,
 claves ausentes y vacío comprobados. Referencia Python estándar y contraste
 de seis campos por fila con pandas/SQLite; sin nuevas dependencias ni mediciones.
-10.05, extensión opcional, es el siguiente desarrollo previsto; 10.06 es el
-siguiente esencial. Los ejemplos conservan contexto propio.
+10.05 desarrolla la extensión opcional de collect streaming, lotes consumidos
+sin acumular y sink Parquet con destinos nuevos. Plan físico DOT y trazas;
+seis filas, uno/2600 o tres/4600 MXN conciliados por clave. Auditoría completa
+separada; vacío, fronteras, sumas amplias y escalas 40/400/1998 comprobados.
+Observador en procesos nuevos Windows con PeakWorkingSetSize en bytes,
+incluye arranque/consulta/escritura sin auditoría del padre. Sin dependencias
+nuevas, benchmark, medición I/O físico ni promesa de RAM acotada; soporte de
+estado/fallback según operación y versión. 10.06 es el siguiente desarrollo
+esencial previsto. Los ejemplos conservan contexto propio.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 
 | Módulo | Secciones | Papel y cierre |

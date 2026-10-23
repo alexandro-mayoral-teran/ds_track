@@ -501,8 +501,8 @@ en [proyectos](../../../projects/README.md). Registra evidencia, explicaciones
 y dudas según [PROGRESS.md](../../../PROGRESS.md). Material desarrollado no
 acredita aprendizaje del estudiante.
 
-Siguiente: [10.05 — Streaming y límites de memoria](../README.md#05-streaming-y-limites-de-memoria),
-extensión todavía planificada. Es opcional; el siguiente apartado esencial
+Siguiente: [10.05 — Streaming y límites de memoria](../05_streaming_memory/README.md),
+extensión disponible. Es opcional; el siguiente apartado esencial
 previsto es [10.06 — DuckDB: SQL sobre Parquet](../README.md#06-duckdb-sql-sobre-parquet),
 también pendiente de desarrollo.
 
