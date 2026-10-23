@@ -402,8 +402,7 @@ en [proyectos](../../../projects/README.md). Registra práctica, evidencia y dud
 según [PROGRESS.md](../../../PROGRESS.md); disponibilidad del material no acredita
 aprendizaje del estudiante.
 
-Siguiente: [10.04 — Tipos, faltantes y uniones](../README.md#04-tipos-faltantes-y-uniones),
-todavía planificada. Esta lección no desarrolla ese apartado por anticipado.
+Siguiente: [10.04 — Tipos, faltantes y uniones](../04_types_missing_joins/README.md).
 
 ## Referencias primarias
 

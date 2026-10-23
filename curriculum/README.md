@@ -138,7 +138,10 @@ con Polars 2.0.0 y conciliación independiente.
 [10.03 — Polars lazy y planes de consulta](10_polars_duckdb/03_polars_lazy_plans/README.md)
 añade ejemplos autónomos, preparación Parquet, planes, ejecución conciliada y
 [lab](../labs/10_polars_duckdb/03_polars_lazy_plans/README.md).
-10.04–10.10 siguen planificadas.
+[10.04 — Tipos, faltantes y uniones](10_polars_duckdb/04_types_missing_joins/README.md)
+añade conversiones, null/NaN, cobertura y cardinalidad con
+[lab](../labs/10_polars_duckdb/04_types_missing_joins/README.md).
+10.05–10.10 siguen planificadas; 10.05 es una extensión opcional.
 Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;

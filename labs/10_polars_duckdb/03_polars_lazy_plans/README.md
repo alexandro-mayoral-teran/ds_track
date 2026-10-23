@@ -184,7 +184,7 @@ rechazo esperado de la copia. Registra evidencia y dudas en
 [PROGRESS.md](../../../PROGRESS.md). No publiques salidas ni entornos.
 El proyecto `04_large_credit_dataset` y sus checkpoints siguen pendientes.
 
-Siguiente: [10.04 — Tipos, faltantes y uniones](../../../curriculum/10_polars_duckdb/README.md#04-tipos-faltantes-y-uniones),
-todavía planificada. Vuelve a la
+Siguiente: [10.04 — Tipos, faltantes y uniones](../../../curriculum/10_polars_duckdb/04_types_missing_joins/README.md).
+Vuelve a la
 [lección 10.03](../../../curriculum/10_polars_duckdb/03_polars_lazy_plans/README.md)
 si quedan conceptos esenciales por explicar.

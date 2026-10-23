@@ -6,15 +6,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.03 disponibles; 10.04–10.10 planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.03 implementadas (09.08 opcional); 10.04–10.10 y 11–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 10.03 con lección, muestra propia,
-  consultas lazy, preparador/verificador, recorridos y lab comprobados.
-- **Punto de reanudación:** 10.04; 10.03 ya tiene material disponible.
-- **Foco actual:** planes, ejecución real y auditoría completa separada.
+- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.04 disponibles; 10.05–10.10 planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.04 implementadas (09.08 opcional); 10.05–10.10 y 11–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 10.04 con lección, fuentes propias,
+  funciones/verificador, recorridos y lab comprobados en dos entornos locales.
+- **Punto de reanudación:** 10.05, extensión opcional; 10.04 ya tiene material.
+- **Foco actual:** tipos, faltantes, cobertura y cardinalidad sin alterar saldos.
   Próximo paso: desarrollar
-  [10.04 — Tipos, faltantes y uniones](curriculum/10_polars_duckdb/README.md#04-tipos-faltantes-y-uniones),
-  todavía planificada; conservar Polars 2.0.0 y comprobar sus APIs al implementarla.
+  [10.05 — Streaming y límites de memoria](curriculum/10_polars_duckdb/README.md#05-streaming-y-limites-de-memoria),
+  extensión todavía planificada; conservar Polars 2.0.0 y comprobar sus APIs.
+  No bloquea el siguiente esencial previsto, 10.06 — DuckDB: SQL sobre Parquet.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -35,7 +36,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y 10.01–10.03 disponibles, las otras siete de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y 10.01–10.04 disponibles, las otras seis de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -43,6 +44,50 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 10.04:** disponibles la
+[lección](curriculum/10_polars_duckdb/04_types_missing_joins/README.md),
+CSV propios de saldos/catálogo, funciones/verificador, recorridos completos y
+[lab](labs/10_polars_duckdb/04_types_missing_joins/README.md). Ejemplos autónomos
+de conversión con originales, pérdida de fracciones/ceros, null/NaN/filtros,
+agregaciones con cobertura y uniones por igualdad. Fuentes oficiales consultadas
+y APIs ejecutadas con Polars 2.0.0; no exige entregas anteriores.
+
+Seis observaciones, tres créditos y dos cortes; catálogo de tres claves con
+002 sin etiqueta y 004 sin uso. Left m:1 conserva seis filas y 4500/4600 MXN;
+cuatro coincidencias y dos etiquetas conocidas sobre seis observaciones.
+Por corte: tres registros, dos coincidencias, un producto conocido, una etiqueta
+pendiente y un registro sin catálogo. Inner/semi/anti y full opcional; duplicar
+002 sin control produce ocho filas y 6500/6500 MXN. Se rechazan también claves
+duplicadas sin uso, sin deduplicar ni imputar saldos/productos. Las muestras de
+saldos opcionales y mediciones flotantes tienen contratos independientes.
+
+**Verificación:** diez grupos con escenarios/subcasos en dos entornos uv
+locales existentes, Python 3.12.12/Polars 2.0.0/pandas 2.3.3/SQLite 3.51.1.
+Bloques de lección/lab ejecutados en orden, cambiando solo destinos temporales.
+Conversión fallida frente a ausencia de origen, truncamiento estricto, NaN,
+filtros con desconocidos, grupos sin valores y suma comunicada con cobertura.
+Fuente/catálogo vacíos por separado y juntos; esquema conservado, fechas
+extremas y suma 4294967294. Claves repetidas/incompletas, columnas/tipos,
+valores compensados y banderas/etiquetas alteradas rechazados; orden invertido
+aceptado. Los seis campos por fila se concilian con Python estándar y contraste
+pandas/SQLite. Unión lazy con motor in-memory comprobada; políticas de claves
+null y SUM sin valores contrastadas. Procesos nuevos y solo lectura comprobados.
+
+Sin nuevas dependencias, instalaciones ni cambios de lockfiles, Conda, renv,
+venv raíz o configuración global. Fuentes previas conservadas; controles y
+salidas auxiliares ignorados bajo output/. No se probaron instalaciones Conda,
+otros sistemas o la interfaz del IDE; no se midió rendimiento ni RAM.
+Navegación, bloques/soluciones y git diff --check revisados; 242 Markdown y
+2435 enlaces locales sin incidencias, incluidos sus fragmentos.
+
+**Siguiente:** [10.05 — Streaming y límites de memoria](curriculum/10_polars_duckdb/README.md#05-streaming-y-limites-de-memoria),
+extensión opcional, después de [storage-closure.md](docs/storage-closure.md).
+Contexto autónomo, lotes, estado de operaciones y salida/materialización;
+verificar soporte real sin prometer memoria acotada. No bloquea el siguiente
+esencial previsto, 10.06. 10.05–10.10 y 11–14 conservan planes; proyectos/
+checkpoints y evidencia del estudiante siguen pendientes. Este desarrollo
+sustituye el punto de retoma anterior en 10.04. Las entradas siguientes son historial.
 
 **Desarrollo — 2026-10-23, 10.03:** disponibles la
 [lección](curriculum/10_polars_duckdb/03_polars_lazy_plans/README.md),

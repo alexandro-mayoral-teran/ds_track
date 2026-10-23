@@ -101,21 +101,27 @@ y su [lab](../labs/10_polars_duckdb/03_polars_lazy_plans/README.md) están dispo
 ejemplos autónomos, Parquet nuevo, esquema, planes y ejecución real conciliada.
 Auditoría completa separada de la selección, dependencias de columnas y límites
 del plan; mismos seis registros y 4500/4600 MXN, sin dependencias nuevas.
-El siguiente desarrollo es [10.04 — Tipos, faltantes y uniones](../curriculum/10_polars_duckdb/README.md#04-tipos-faltantes-y-uniones),
-todavía planificada.
+[10.04 — Tipos, faltantes y uniones](../curriculum/10_polars_duckdb/04_types_missing_joins/README.md)
+y su [lab](../labs/10_polars_duckdb/04_types_missing_joins/README.md) están disponibles:
+conversiones con originales, null/NaN, cobertura y catálogo propio. Left m:1
+conserva seis saldos y 4500/4600 MXN, separa coincidencia/etiqueta conocida;
+contraste Python/pandas/SQLite sin dependencias nuevas.
+El siguiente desarrollo es [10.05 — Streaming y límites de memoria](../curriculum/10_polars_duckdb/README.md#05-streaming-y-limites-de-memoria),
+extensión opcional todavía planificada. El siguiente esencial previsto es 10.06.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
 sin duplicar aquí una bitácora. **El material disponible no acredita práctica
 del estudiante ni implementa el proyecto integrador.**
 
 ## Desarrollo del material y siguiente módulo
 
-09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.03;
-10.04–10.10 siguen planificadas. Desarrollar 10.04 desde su propio contexto,
-datos y resultados, manteniendo contrato y referencia independiente. Explicar
-tipos, null/NaN, conversiones, agregaciones y cardinalidad de uniones antes
-de pedir interpretarlas; probar vacíos, claves repetidas y sin correspondencia.
-Conservar la distinción plan/ejecución y no equiparar lazy a memoria acotada.
-Revisar APIs oficiales de la versión fijada.
+09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.04;
+10.05–10.10 siguen planificadas. Desarrollar 10.05 como extensión opcional, con
+contexto, datos, contrato y referencia independientes de entregas anteriores.
+Explicar ejecución por lotes, operaciones con estado y materialización/salida;
+verificar soporte real de la versión fijada, sin prometer RAM acotada para
+cualquier consulta. Distinguir planes, ejecución y memoria medida; 10.09
+profundizará la comparación de costos. 10.06 inicia el siguiente esencial con
+DuckDB; no instalarlo solo por planificar ni hacer que 10.05 bloquee esa ruta.
 
 Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
 preparación de entorno de exigir resultados personales anteriores. No modificar
@@ -160,4 +166,4 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 10.04–10.10 y 11–14 conservan sus planes.
+quedan fuera de Git. 10.05–10.10 y 11–14 conservan sus planes.

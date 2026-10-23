@@ -105,6 +105,7 @@ reglas de enlace están en
 | [`10.01 — Pregunta, contrato y referencia`](10_polars_duckdb/01_question_contract_reference/) | `10_polars_duckdb` | No aplica todavía |
 | [`10.02 — Polars: tablas y expresiones`](10_polars_duckdb/02_polars_tables_expressions/) | `10_polars_duckdb` | No aplica todavía |
 | [`10.03 — Polars lazy y planes de consulta`](10_polars_duckdb/03_polars_lazy_plans/) | `10_polars_duckdb` | No aplica todavía |
+| [`10.04 — Tipos, faltantes y uniones`](10_polars_duckdb/04_types_missing_joins/) | `10_polars_duckdb` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

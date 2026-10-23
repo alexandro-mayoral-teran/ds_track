@@ -95,7 +95,7 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01–10.03 tienen lección/muestra/funciones/lab; 10.04–10.10 y 11–14 conservan planificación;
+10.01–10.04 tienen lección/muestra/funciones/lab; 10.05–10.10 y 11–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -610,8 +610,8 @@ Las nueve secciones de 08 tienen material; el proyecto integrador continúa pend
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones; 09.01–09.09 y 10.01–10.03 disponen de lección/lab y scripts;
-10.04–10.10 siguen planificadas.
+19 secciones; 09.01–09.09 y 10.01–10.04 disponen de lección/lab y scripts;
+10.05–10.10 siguen planificadas.
 09.01 distingue formato, representación y biblioteca con una proyección de 28
 observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
 inventario conservados; inspección esencial Python estándar/R base y lectura
@@ -711,7 +711,15 @@ clave con CSV externo: 003/2600 y resumen 4500/4600 MXN. Auditoría completa
 separada de consulta nativa; vacío, fronteras, errores compensados/fuera del
 filtro y suma amplia comprobados en procesos nuevos. Sin nuevas dependencias
 ni cambios de lockfiles; el plan no mide I/O físico, tiempo ni memoria acotada.
-10.04 es el siguiente desarrollo previsto; los ejemplos conservan contexto propio.
+10.04 añade tipos/conversión con originales, null/NaN y agregaciones con
+cobertura en muestras independientes, además de seis saldos y catálogo propio
+de tres claves. Left m:1 conserva 4500/4600 MXN, cuatro coincidencias y dos
+productos conocidos sobre seis observaciones; distingue etiqueta pendiente
+de falta de catálogo. Inner/semi/anti y full opcional, duplicados sin uso,
+claves ausentes y vacío comprobados. Referencia Python estándar y contraste
+de seis campos por fila con pandas/SQLite; sin nuevas dependencias ni mediciones.
+10.05, extensión opcional, es el siguiente desarrollo previsto; 10.06 es el
+siguiente esencial. Los ejemplos conservan contexto propio.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 
 | Módulo | Secciones | Papel y cierre |

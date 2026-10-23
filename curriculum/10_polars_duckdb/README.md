@@ -14,7 +14,9 @@ generador opcional y lab. [10.02 — Polars: tablas y expresiones](02_polars_tab
 añade lección, CSV autónomo, funciones, recorridos y lab con Polars 2.0.0.
 [10.03 — Polars lazy y planes de consulta](03_polars_lazy_plans/README.md)
 añade ejemplos autónomos, preparación Parquet, planes, ejecución conciliada y lab.
-10.04–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
+[10.04 — Tipos, faltantes y uniones](04_types_missing_joins/README.md)
+añade ejemplos completos, catálogo propio, cobertura y cardinalidad con lab.
+10.05–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
 DuckDB todavía no se incorpora como dependencia.
 
 Polars se enseñará principalmente desde Python, con su interfaz R como comparación
@@ -42,7 +44,7 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 | 1 | [Pregunta, contrato y referencia](01_question_contract_reference/README.md) | Esencial | Definir resultados equivalentes para comparar |
 | 2 | [Polars: tablas y expresiones](02_polars_tables_expressions/README.md) | Esencial | Seleccionar, transformar y resumir una muestra |
 | 3 | [Polars lazy y planes de consulta](03_polars_lazy_plans/README.md) | Esencial | Explicar scan, collect y un plan optimizado |
-| 4 | [Tipos, faltantes y uniones](#04-tipos-faltantes-y-uniones) | Esencial | Conservar semántica e indicadores al cambiar de motor |
+| 4 | [Tipos, faltantes y uniones](04_types_missing_joins/README.md) | Esencial | Conservar semántica e indicadores al cambiar de motor |
 | 5 | [Streaming y límites de memoria](#05-streaming-y-limites-de-memoria) | Extensión | Comprobar cómo se ejecuta una consulta por lotes |
 | 6 | [DuckDB: SQL sobre Parquet](#06-duckdb-sql-sobre-parquet) | Esencial | Consultar archivos sin cargar primero todo en pandas |
 | 7 | [DuckDB desde Python y R](#07-duckdb-desde-python-y-r) | Práctica | Reutilizar una consulta desde ambos lenguajes |
@@ -103,8 +105,15 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 - Conversión y esquema; null frente a NaN, agregaciones y claves sin correspondencia.
   Tipos de join, cardinalidad y registros que pueden multiplicar el resultado.
-- Práctica prevista: conciliar con pandas/SQL, incluidos vacíos y claves repetidas;
-  documentar diferencias semánticas antes de medir rendimiento.
+- Disponible: [lección, fuentes, funciones y recorridos](04_types_missing_joins/README.md)
+  y [lab 10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md).
+  Conversiones con originales, null/NaN y agregaciones con cobertura en muestras
+  independientes. Seis saldos y catálogo de tres claves; left m:1 conserva
+  4500/4600 MXN, distingue cuatro coincidencias/dos etiquetas conocidas sobre
+  seis observaciones. Inner/semi/anti y full opcional, multiplicación, claves
+  ausentes y diferencias pandas/SQL. Campos conciliados con Python estándar,
+  pandas y SQLite; vacío, fronteras y duplicados sin uso comprobados.
+  Sin dependencias nuevas ni mediciones de rendimiento.
 
 <a id="05-streaming-y-limites-de-memoria"></a>
 
@@ -167,9 +176,10 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 ## Prácticas, proyecto y criterio de salida
 
 Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md),
-[10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md)
-y [10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md);
-10.04–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
+[10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md),
+[10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md)
+y [10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md);
+10.05–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -206,3 +216,5 @@ con Python 3.12.12 en dos entornos uv locales. Los registros previos del lockfil
 se conservan; no cambia renv, Conda ni bibliotecas globales.
 10.03 usa esos mismos entornos para comprobar planes y ejecución desde procesos
 nuevos, sin añadir dependencias ni cambiar lockfiles.
+10.04 conserva esos entornos, añade contraste con pandas 2.3.3/SQLite estándar
+y verifica valores/tipos/cobertura sin nuevas dependencias ni archivos de entorno.

@@ -265,7 +265,9 @@ añade operaciones inmediatas, muestra completa y lab con Polars 2.0.0,
 conciliados en entornos locales.
 [10.03 — Polars lazy y planes de consulta](curriculum/10_polars_duckdb/03_polars_lazy_plans/README.md)
 añade ejemplos autónomos, scan/collect/explain, auditoría completa y lab.
-10.04–10.10 siguen planificadas.
+[10.04 — Tipos, faltantes y uniones](curriculum/10_polars_duckdb/04_types_missing_joins/README.md)
+añade conversiones, null/NaN, cobertura y uniones conciliadas con lab.
+10.05–10.10 siguen planificadas; 10.05 es una extensión opcional.
 Los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
