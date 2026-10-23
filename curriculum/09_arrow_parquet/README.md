@@ -15,7 +15,9 @@ arrow en renv, ejemplos completos y escritura/relectura R con lab.
 [09.05](05_python_r_exchange/README.md) añade intercambio en ambas direcciones,
 muestra independiente y lab sin dependencias nuevas. [09.06](06_selective_datasets/README.md)
 añade consultas sobre varios Parquet y auditoría separada con lab.
-09.07–09.09 siguen planificadas; sus
+[09.07](07_metadata_compression/README.md) añade metadatos, grupos y comparación
+controlada de compresión/codificación con lab, sin paquetes nuevos.
+09.08–09.09 siguen planificadas; sus
 enlaces internos describen el alcance. El [estado y pendientes de cierre](../../docs/storage-closure.md)
 distingue material, práctica del estudiante e integración todavía pendiente.
 
@@ -47,7 +49,7 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 | 4 | [Leer y escribir desde R](04_r_read_write/README.md) | Esencial | Repetir el recorrido con el mismo contrato |
 | 5 | [Intercambio Python y R](05_python_r_exchange/README.md) | Práctica | Conciliar archivos escritos por el otro lenguaje |
 | 6 | [Lectura selectiva y datasets](06_selective_datasets/README.md) | Esencial | Consultar columnas y filas de varios archivos |
-| 7 | [Metadatos, row groups y compresión](#07-metadatos-row-groups-y-compresion) | Práctica | Explicar y medir una decisión de almacenamiento |
+| 7 | [Metadatos, row groups y compresión](07_metadata_compression/README.md) | Práctica | Explicar y medir una decisión de almacenamiento |
 | 8 | [Particionamiento justificado](#08-particionamiento-justificado) | Extensión | Elegir particiones según una consulta y comprobarlas |
 | 9 | [Cierre del contrato compartido](#09-cierre-del-contrato-compartido) | Práctica de cierre | Reconstruir datos e indicadores desde ambos lenguajes |
 
@@ -137,9 +139,14 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 
 - Row groups, columnas, estadísticas y códecs; distinguir compresión de codificación
   y de particionamiento. Leer metadatos antes de modificar parámetros.
-- Práctica prevista: comparar una muestra equivalente con dos configuraciones,
-  midiendo tamaño y lectura sin alterar el indicador. No asumir que la opción
-  más pequeña siempre será la más rápida.
+- Disponible: [lección, funciones y preparador](07_metadata_compression/README.md) y
+  [lab 09.07](../../labs/09_arrow_parquet/07_metadata_compression/README.md).
+  Ejemplos autónomos de cuatro filas y comparación de cuatro variantes de la
+  base común, una modificación por comparación y tres repeticiones crudas.
+  Esquema/valores por clave conservados, conteos/metadatos reales y tiempos
+  separados de la validación. R expone esquema/conteos y lectura de grupos;
+  PyArrow inspecciona también estadísticas/codificaciones de los archivos R.
+  No acredita rendimiento general, I/O físico ni RAM; sin paquetes nuevos.
 
 <a id="08-particionamiento-justificado"></a>
 
@@ -165,9 +172,10 @@ Están disponibles los [labs 09.01](../../labs/09_arrow_parquet/01_csv_parquet_a
 [09.02](../../labs/09_arrow_parquet/02_schemas_types/README.md),
 [09.03](../../labs/09_arrow_parquet/03_python_read_write/README.md),
 [09.04](../../labs/09_arrow_parquet/04_r_read_write/README.md),
-[09.05](../../labs/09_arrow_parquet/05_python_r_exchange/README.md) y
-[09.06](../../labs/09_arrow_parquet/06_selective_datasets/README.md).
-09.07–09.09 siguen previstos, con 09.08 opcional. No se da el módulo por completo.
+[09.05](../../labs/09_arrow_parquet/05_python_r_exchange/README.md),
+[09.06](../../labs/09_arrow_parquet/06_selective_datasets/README.md) y
+[09.07](../../labs/09_arrow_parquet/07_metadata_compression/README.md).
+09.08–09.09 siguen previstos, con 09.08 opcional. No se da el módulo por completo.
 El cierre enlazará el análisis R con el proyecto previsto 04_large_credit_dataset,
 registrado en [proyectos](../../projects/README.md), aún sin carpeta implementada.
 
@@ -206,3 +214,5 @@ fuentes y lockfiles; no incorpora dependencias.
 ni lockfiles. Consultas y auditoría comprobadas desde procesos nuevos.
 Versiones y capacidades de los recorridos por desarrollar se comprobarán al
 implementarlos. Esta planificación no instala paquetes.
+09.07 conserva esas versiones y lockfiles; compara archivos completos con
+PyArrow 21.0.0/arrow 25.0.1, con sesiones nuevas y mediciones crudas locales.

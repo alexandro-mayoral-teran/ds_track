@@ -230,5 +230,5 @@ qué no puedes inferir los bytes leídos a partir de su tamaño.
 - ¿Qué ocurriría si reunieras todos los lotes en una lista?
 
 No hay proyecto/checkpoint implementado asociado. Después de comprobar y
-explicar, continúa con [09.07 — Metadatos, row groups y compresión](../../../curriculum/09_arrow_parquet/README.md#07-metadatos-row-groups-y-compresion),
-todavía planificada. Consulta los [pendientes de cierre](../../../docs/storage-closure.md).
+explicar, continúa con [09.07 — Metadatos, row groups y compresión](../../../curriculum/09_arrow_parquet/07_metadata_compression/README.md).
+Consulta los [pendientes de cierre](../../../docs/storage-closure.md).

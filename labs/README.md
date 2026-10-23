@@ -99,6 +99,7 @@ reglas de enlace están en
 | [`09.04 — Leer y escribir desde R`](09_arrow_parquet/04_r_read_write/) | `09_arrow_parquet` | No aplica todavía |
 | [`09.05 — Intercambio Python y R`](09_arrow_parquet/05_python_r_exchange/) | `09_arrow_parquet` | No aplica todavía |
 | [`09.06 — Lectura selectiva y datasets`](09_arrow_parquet/06_selective_datasets/) | `09_arrow_parquet` | No aplica todavía |
+| [`09.07 — Metadatos, row groups y compresión`](09_arrow_parquet/07_metadata_compression/) | `09_arrow_parquet` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

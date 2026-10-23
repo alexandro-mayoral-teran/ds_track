@@ -55,28 +55,37 @@ iniciales con APIs Arrow directas, sin funciones ni archivos de capítulos
 anteriores. El lab separa esa práctica de la integración con CSV; Python y R
 crean sus propias copias alteradas y pueden ejecutarse por separado.
 
+[09.07 — Metadatos, row groups y compresión](../curriculum/09_arrow_parquet/07_metadata_compression/README.md)
+y su [lab](../labs/09_arrow_parquet/07_metadata_compression/README.md) están
+disponibles: muestra autónoma de cuatro filas y base común con cuatro variantes
+y tres repeticiones. Una modificación respecto de la base por comparación,
+esquema/valores por clave conservados y tiempos separados de validación.
+PyArrow inspecciona estadísticas/codificaciones/códecs, también de archivos R;
+arrow R 25.0.1 expone esquema/conteos y lectura de grupos. Mediciones crudas,
+sesiones nuevas y fronteras comprobadas, sin cambios de dependencias/lockfiles.
+La muestra no acredita rendimiento general, I/O físico ni RAM acotada.
+
 El siguiente trabajo concreto es
-[09.07 — Metadatos, row groups y compresión](../curriculum/09_arrow_parquet/README.md#07-metadatos-row-groups-y-compresion).
+[09.08 — Particionamiento justificado](../curriculum/09_arrow_parquet/README.md#08-particionamiento-justificado),
+ampliación opcional; [09.09](../curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido)
+sigue pendiente como cierre esencial.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
-sin duplicar aquí una bitácora. **09.01–09.06 no completan el módulo ni acreditan práctica
+sin duplicar aquí una bitácora. **09.01–09.07 no completan el módulo ni acreditan práctica
 del estudiante.**
 
 ## Qué falta desarrollar para cerrar el módulo
 
 | Sección pendiente | Producto y condición de cierre |
 | --- | --- |
-| 09.07 — Metadatos y compresión | Leer grupos/columnas/estadísticas; comparar configuraciones con datos equivalentes, tamaño y mediciones separadas. Evitar conclusiones de rendimiento a partir de 28 filas o solo bytes. |
 | 09.08 — Particiones, extensión | Implementar solo como ampliación: consulta justificada, archivos repetidos y particiones excesivas. No bloquear el cierre esencial por particionar. |
 | 09.09 — Entrega integrada | Reconstrucción desde una sesión nueva en ambos lenguajes; archivos/contrato y verificadores de solo lectura, con interpretación y límites. Mantener entradas y rechazar sobrescrituras accidentales. |
 
-Para 09.07 conservar los contratos, escritores y verificadores existentes.
-Presentar metadatos, grupos de filas y compresión con ejemplos completos;
-comparar archivos que representen los mismos registros y esquema. Separar
-codificación de compresión y verificar códecs disponibles antes de usarlos.
-Medir tamaño y tiempo por separado, conservar observaciones crudas y distinguir
-caché/entorno de diferencias de formato. Estos 28 registros no justifican
-conclusiones generales de rendimiento. No inferir bytes físicamente omitidos
-por una consulta solo de su plan o del número de filas resultantes.
+Para 09.08 conservar contratos, fuentes y verificadores existentes. Justificar
+la columna de partición por una consulta concreta, diferenciar carpetas/archivos/
+grupos y comprobar repeticiones sin duplicar ni sobrescribir entregas. No exigir
+datos mayores que la RAM ni inferir bytes físicamente omitidos de un plan.
+Conservar la separación de medidas y las observaciones crudas de 09.07; sus
+28 registros no justifican conclusiones generales de rendimiento.
 
 PyArrow 21.0.0 se utilizó en un entorno de autoría ya existente para producir y
 releer el ejemplo 09.01; no se añadió como dependencia durante esa introducción.
@@ -86,8 +95,8 @@ Polars o DuckDB solo para planificar el recorrido.
 
 ## Qué falta para cerrar las prácticas y la integración
 
-- Reunir evidencia propia del estudiante de 09.01–09.06 y, más adelante, de
-  metadatos, compresión e integración. Material disponible no acredita aprendizaje.
+- Reunir evidencia propia del estudiante de 09.01–09.07 y, más adelante, de
+  integración. Material disponible no acredita aprendizaje.
 - Revisar el cierre de [08](../curriculum/08_visualization_r/README.md): geometrías,
   escalas, población, exportación desde sesión nueva y conciliación con Python.
   Sus nueve secciones tienen material; no faltan lecciones de ese módulo.

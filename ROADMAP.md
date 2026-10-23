@@ -383,7 +383,10 @@ ejemplos completos, esquema no anulable, escritura/relectura R y lab.
 en ambas direcciones, valores por clave y lab; sin dependencias nuevas.
 [09.06](curriculum/09_arrow_parquet/06_selective_datasets/README.md) añade
 Dataset/Scanner y dplyr sobre varios Parquet, materialización y lab con
-selecciones conciliadas; sin dependencias nuevas. 09.07–09.09 siguen planificadas.
+selecciones conciliadas; sin dependencias nuevas.
+[09.07](curriculum/09_arrow_parquet/07_metadata_compression/README.md) añade
+metadatos, grupos y mediciones crudas con equivalencia comprobada y lab.
+09.08–09.09 siguen planificadas; sin dependencias nuevas en 09.07.
 Consultar [pendientes de cierre](docs/storage-closure.md).
 
 - Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.

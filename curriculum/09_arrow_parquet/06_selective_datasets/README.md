@@ -513,8 +513,8 @@ la materialización, concilies cada valor y expliques qué filas no validó esa
 selección. La ampliación por lotes no bloquea avanzar. No hay proyecto/checkpoint
 implementado asociado; el material no acredita práctica del estudiante.
 
-Siguiente: [09.07 — Metadatos, row groups y compresión](../README.md#07-metadatos-row-groups-y-compresion),
-todavía planificada. Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
+Siguiente: [09.07 — Metadatos, row groups y compresión](../07_metadata_compression/README.md).
+Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
 
 ## Referencias y atribución
 

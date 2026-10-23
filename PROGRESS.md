@@ -6,13 +6,14 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
-- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.06 disponibles; 09.07–09.09 todavía planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.06 implementadas; 09.07–09.09 y 10–14 conservan sus planes.
-- **Última revisión:** 2026-10-22, ampliación didáctica de 09.06 y su lab;
-  ejemplos pequeños autónomos Python/R comprobados. 09.07 no se inició.
-- **Foco al cierre:** consultas Dataset/Scanner y dplyr, con auditoría completa separada.
+- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.07 disponibles; 09.08–09.09 todavía planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.07 implementadas; 09.08–09.09 y 10–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-22, 09.07 con lección, funciones Python/R,
+  preparador y lab; ejemplos autónomos, metadatos y mediciones comprobados.
+- **Foco al cierre:** metadatos, grupos, codificación/compresión y mediciones separadas.
   Próximo paso: desarrollar
-  [09.07 — Metadatos, row groups y compresión](curriculum/09_arrow_parquet/README.md#07-metadatos-row-groups-y-compresion), todavía planificada.
+  [09.08 — Particionamiento justificado](curriculum/09_arrow_parquet/README.md#08-particionamiento-justificado),
+  ampliación opcional todavía planificada; 09.09 sigue pendiente como cierre esencial.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -33,7 +34,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: 09.01–09.06 disponibles y las otras 13 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: 09.01–09.07 disponibles y las otras 12 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -41,6 +42,44 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-22, 09.07:** disponibles la
+[lección](curriculum/09_arrow_parquet/07_metadata_compression/README.md) y el
+[lab](labs/09_arrow_parquet/07_metadata_compression/README.md), con funciones
+Python/R y preparador. Teoría común de archivo/grupo/bloque/página, esquema y
+estadísticas, codificación frente a compresión y límites de las mediciones.
+Ejemplos de cuatro filas definidos completos, sin archivos ni funciones previas;
+dos grupos frente a uno y estadísticas ausentes con valores conservados.
+
+Base común reconstruida desde CSV: 28 registros, 14 IDs y 29000/31800 MXN.
+Cuatro variantes (base sin compresión, Snappy, diccionario, grupos de siete),
+una modificación respecto de la base por comparación y tres repeticiones con
+orden rotado. Escritura/lectura completas separadas de preparación, validación
+e inspección; notas crudas locales y verificadores de solo lectura. Los
+archivos son variantes completas, no partes que se deban abrir como un dataset.
+PyArrow observa estadísticas/códecs/codificaciones reales, también de archivos R;
+arrow R 25.0.1 expone esquema/conteos y lectura de grupos, sin ese detalle.
+
+Bloques de lección/lab ejecutados con Python 3.12.12/PyArrow 21.0.0 y
+R 4.6.1/arrow 25.0.1, sin paquetes nuevos ni cambios de lockfiles. Setenta y
+cinco controles Python, cuarenta y cinco R y trece rechazos del preparador:
+vacíos, fechas/extremos enteros, duplicados, ausencias, fracciones, desborde,
+archivos ausentes/adicionales, esquema, alteraciones compensadas y notas
+inválidas. Intercambio de los doce archivos de cada lenguaje contrastado por
+clave con CSV y metadatos; escrituras solo en carpetas nuevas. R se comprobó
+con lectura de la biblioteca local fuera del ejecutor restringido y locale C
+solo en procesos de revisión. Fuentes, metadatos del proyecto y entregas
+anteriores conservados. Relecturas desde procesos nuevos y comprobación de
+enlaces/fragmentos, bloques/soluciones y git diff --check.
+
+No se midió RAM ni I/O físico; caché no controlada y sin fsync. Los tiempos R
+pueden ser cero por resolución; no comparan velocidad entre lenguajes ni
+generalizan rendimiento a partir de 28 filas. No se probó la interfaz del IDE.
+Siguiente: [09.08](curriculum/09_arrow_parquet/README.md#08-particionamiento-justificado),
+ampliación opcional; [09.09](curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido)
+y proyectos/checkpoints siguen pendientes. Consultar
+[storage-closure.md](docs/storage-closure.md). Material disponible no acredita
+práctica del estudiante. Las entradas siguientes conservan su carácter histórico.
 
 **Revisión — 2026-10-22, 09.06:** ampliadas la
 [lección](curriculum/09_arrow_parquet/06_selective_datasets/README.md) y su

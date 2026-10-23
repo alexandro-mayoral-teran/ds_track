@@ -121,7 +121,9 @@ añade esquema, lectura/escritura y ejemplos completos con [lab](../labs/09_arro
 añade cruce en ambas direcciones y [lab](../labs/09_arrow_parquet/05_python_r_exchange/README.md), sin dependencias nuevas.
 [09.06 — Lectura selectiva y datasets](09_arrow_parquet/06_selective_datasets/README.md)
 añade consultas diferidas, proyección/filtro y [lab](../labs/09_arrow_parquet/06_selective_datasets/README.md), sin paquetes nuevos.
-09.07–09.09 y el módulo 10 conservan sus planes de almacenamiento compartido
+[09.07 — Metadatos, row groups y compresión](09_arrow_parquet/07_metadata_compression/README.md)
+añade inspección y mediciones separadas con [lab](../labs/09_arrow_parquet/07_metadata_compression/README.md), sin dependencias nuevas.
+09.08–09.09 y el módulo 10 conservan sus planes de almacenamiento compartido
 y procesamiento con Polars/DuckDB. Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
