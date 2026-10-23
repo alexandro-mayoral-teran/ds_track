@@ -417,7 +417,11 @@ Polars se enseña principalmente desde Python; su interfaz R y streaming son
 ampliaciones opcionales.
 [10.01 — Pregunta, contrato y referencia](curriculum/10_polars_duckdb/01_question_contract_reference/README.md)
 tiene lección, muestra autónoma, referencia Python estándar/R base y lab,
-sin motores nuevos. 10.02–10.10 siguen planificadas.
+sin motores nuevos en esa introducción.
+[10.02 — Polars: tablas y expresiones](curriculum/10_polars_duckdb/02_polars_tables_expressions/README.md)
+añade lección/lab, operaciones inmediatas y conciliación por valores con
+Polars 2.0.0 declarado y reconstruido en entornos locales.
+10.03–10.10 siguen planificadas.
 
 - Ejecución eager y lazy en Polars.
 - Consultas SQL sobre Parquet con DuckDB.

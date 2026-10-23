@@ -10,8 +10,10 @@ no exigen entregas personales anteriores para comprender los ejemplos.
 
 **Estado:** [10.01 — Pregunta, contrato y referencia](01_question_contract_reference/README.md)
 dispone de lección, muestra propia, referencias Python estándar/R base,
-generador opcional y lab. 10.02–10.10 siguen planificadas: sus enlaces internos
-describen el alcance previsto. No se han incorporado Polars/DuckDB como dependencias.
+generador opcional y lab. [10.02 — Polars: tablas y expresiones](02_polars_tables_expressions/README.md)
+añade lección, CSV autónomo, funciones, recorridos y lab con Polars 2.0.0.
+10.03–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
+DuckDB todavía no se incorpora como dependencia.
 
 Polars se enseñará principalmente desde Python, con su interfaz R como comparación
 opcional. DuckDB se enseñará desde SQL, con recorridos separados para Python y R.
@@ -36,7 +38,7 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 | Orden | Sección | Alcance | Resultado observable |
 | --- | --- | --- | --- |
 | 1 | [Pregunta, contrato y referencia](01_question_contract_reference/README.md) | Esencial | Definir resultados equivalentes para comparar |
-| 2 | [Polars: tablas y expresiones](#02-polars-tablas-y-expresiones) | Esencial | Seleccionar, transformar y resumir una muestra |
+| 2 | [Polars: tablas y expresiones](02_polars_tables_expressions/README.md) | Esencial | Seleccionar, transformar y resumir una muestra |
 | 3 | [Polars lazy y planes de consulta](#03-polars-lazy-y-planes-de-consulta) | Esencial | Explicar scan, collect y un plan optimizado |
 | 4 | [Tipos, faltantes y uniones](#04-tipos-faltantes-y-uniones) | Esencial | Conservar semántica e indicadores al cambiar de motor |
 | 5 | [Streaming y límites de memoria](#05-streaming-y-limites-de-memoria) | Extensión | Comprobar cómo se ejecuta una consulta por lotes |
@@ -69,8 +71,14 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 - DataFrame, esquema, col, select, with_columns, filter y group_by/agg.
   Comparar las expresiones con pandas, sin trasladar mecánicamente sus índices.
-- Práctica prevista: reproducir un indicador conocido con operaciones nativas;
-  evitar funciones Python por fila cuando una expresión resuelva la necesidad.
+- Disponible: [lección, muestra, funciones y recorridos](02_polars_tables_expressions/README.md)
+  y [lab 10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md).
+  Seis observaciones completas, tipos explícitos y operaciones inmediatas;
+  selección 003/2600, resumen por corte 4500/4600 MXN y derivada en miles.
+  Esquema/valores conciliados con Python estándar; vacío, fronteras, errores
+  compensados y suma Int64 comprobados. Escalas 40/400 y base común contrastadas.
+  Polars 2.0.0 declarado, instalación y segunda reconstrucción uv locales;
+  no introduce lazy, DuckDB ni mediciones de rendimiento.
 
 <a id="03-polars-lazy-y-planes-de-consulta"></a>
 
@@ -150,8 +158,9 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 ## Prácticas, proyecto y criterio de salida
 
-Está disponible el [lab 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md);
-10.02–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
+Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md)
+y [10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md);
+10.03–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -183,4 +192,6 @@ reutilizando tablas y figuras verificadas en lugar de recalcular sin controles.
 Las versiones, capacidades y dependencias se comprobarán al implementar cada
 práctica; la investigación y planificación no instalan herramientas adicionales.
 10.01 se comprueba con Python 3.12.12 y R 4.6.1 usando solo sus bibliotecas
-estándar/base. No cambia pyproject/uv.lock, renv ni bibliotecas globales.
+estándar/base. 10.02 incorpora Polars 2.0.0 a pyproject/uv.lock y se comprueba
+con Python 3.12.12 en dos entornos uv locales. Los registros previos del lockfile
+se conservan; no cambia renv, Conda ni bibliotecas globales.

@@ -95,7 +95,7 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01 tiene lección/muestra/referencias/lab; 10.02–10.10 y 11–14 conservan planificación;
+10.01–10.02 tienen lección/muestra/funciones/lab; 10.03–10.10 y 11–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -610,8 +610,8 @@ Las nueve secciones de 08 tienen material; el proyecto integrador continúa pend
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones; 09.01–09.09 y 10.01 disponen de lección/lab y scripts;
-10.02–10.10 siguen planificadas.
+19 secciones; 09.01–09.09 y 10.01–10.02 disponen de lección/lab y scripts;
+10.03–10.10 siguen planificadas.
 09.01 distingue formato, representación y biblioteca con una proyección de 28
 observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
 inventario conservados; inspección esencial Python estándar/R base y lectura
@@ -694,7 +694,16 @@ Vacío, fronteras, tipos, agregados amplios y errores compensados comprobados.
 Generador opcional determinista de 1–999 créditos/dos cortes, 40/400 filas como
 ejemplos y máximo 1998; la cota conserva IDs de tres dígitos. Se distingue
 adaptación de resultados de inspección del esquema y ejecución de mediciones.
-No incorpora Polars/DuckDB, cambia lockfiles ni afirma rendimiento. 10.02 es
+10.01 no incorpora motores ni cambia lockfiles. 10.02 introduce Polars 2.0.0
+declarado en pyproject/uv.lock, con runtime estándar y registros previos intactos;
+instalación y segunda reconstrucción uv locales con Python 3.12.12.
+DataFrame/Series/expresiones, select/with_columns/filter/group_by/agg, tipos
+explícitos y suma ampliada antes de reducir. Muestra propia de seis filas,
+003/2600 y resumen 4500/4600 MXN; derivada Float64 en miles solo para presentación.
+Auditoría completa y conciliación independiente por pares/corte; vacío,
+fronteras, errores compensados y escalas 40/400 comprobados. Los controles
+materializan registros Python y no constituyen ejecución con memoria acotada.
+No incorpora DuckDB, cambia renv ni afirma rendimiento. 10.03 lazy es
 el siguiente desarrollo previsto; los ejemplos nuevos conservan contexto propio.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 

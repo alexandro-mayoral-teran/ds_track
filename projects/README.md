@@ -24,7 +24,8 @@ como entregas disponibles.
 Las nueve secciones de 09 también tienen material, incluido un
 [cierre de práctica verificable](../curriculum/09_arrow_parquet/09_shared_contract_closure/README.md).
 Eso no implementa `04_large_credit_dataset` ni activa sus checkpoints; el módulo
-10.01 ya tiene material de contrato/referencia; 10.02–10.10 siguen planificadas.
+10.01 ya tiene material de contrato/referencia y 10.02 de tablas/expresiones
+Polars; 10.03–10.10 siguen planificadas. Esto no implementa el proyecto.
 Consulta los [pendientes de almacenamiento](../docs/storage-closure.md).
 
 Los módulos 04 y 05 amplían el análisis Python con figuras y código reutilizable;

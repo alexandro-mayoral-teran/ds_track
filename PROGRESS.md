@@ -6,15 +6,15 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01 disponible; 10.02–10.10 planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01 implementadas (09.08 opcional); 10.02–10.10 y 11–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-22, 10.01 con lección, muestra propia,
-  referencia Python estándar/R base, generador opcional y lab comprobados.
-- **Sesión de desarrollo:** 2026-10-22 cerrada en 10.01; 10.02 no se inició.
-- **Foco al cierre:** pregunta precisa, contrato y referencia independiente antes de comparar motores.
+- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.02 disponibles; 10.03–10.10 planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.02 implementadas (09.08 opcional); 10.03–10.10 y 11–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 10.02 con lección, muestra propia,
+  funciones Polars, recorridos y lab comprobados en dos entornos uv locales.
+- **Sesión de desarrollo:** cerrada en 10.02, conforme a la corrección del usuario.
+- **Foco al cierre:** tablas y expresiones inmediatas con tipos y resultados conciliados.
   Próximo paso: desarrollar
-  [10.02 — Polars: tablas y expresiones](curriculum/10_polars_duckdb/README.md#02-polars-tablas-y-expresiones),
-  todavía planificada; comprobar versión/entorno local al implementarla.
+  [10.03 — Polars lazy y planes de consulta](curriculum/10_polars_duckdb/README.md#03-polars-lazy-y-planes-de-consulta),
+  todavía planificada; conservar Polars 2.0.0 y comprobar sus APIs al implementarla.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -35,7 +35,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y 10.01 disponibles, las otras nueve de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y 10.01–10.02 disponibles, las otras ocho de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -44,35 +44,51 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
-**Cierre de sesión — 2026-10-22 (hasta 10.01):** publicada la ampliación de
-09.06 (`61a082b`), 09.07 (`d911179`), 09.08 (`c553bbd`), el cierre 09.09
-(`eb85ac4`) y 10.01 (`03ee6d6`) en `main`. Las nueve secciones de 09 tienen
-material; el módulo 10 dispone de su primera sección. Lecciones, labs,
-navegación, arquitectura y pendientes están actualizados. Se corrige además
-la referencia antigua al estado de 09 en [tidyverse-closure.md](docs/tidyverse-closure.md).
+**Cierre de sesión — 2026-10-23 (hasta 10.02):** disponibles la
+[lección 10.02](curriculum/10_polars_duckdb/02_polars_tables_expressions/README.md),
+CSV autónomo, funciones, recorridos PowerShell/Bash/Zsh/CMD y
+[lab](labs/10_polars_duckdb/02_polars_tables_expressions/README.md).
+El usuario corrigió el punto de cierre: 10.02 sustituye el cierre documental
+anterior en 10.01 (`6886052`). Navegación, índices, arquitectura y pendientes
+reflejan este estado; proyectos/checkpoints y evidencia del estudiante pendientes.
 
-La sesión termina con [10.01](curriculum/10_polars_duckdb/01_question_contract_reference/README.md)
-y su [lab](labs/10_polars_duckdb/01_question_contract_reference/README.md):
-datos completos por ejemplo, pregunta/contrato y referencia antes de motores.
-La revisión funcional previa dejó 81 controles Python y 50 R correctos,
-incluidas sesiones nuevas, fronteras y conciliación por cada ID/importe.
-Este cierre solo modifica documentación: no vuelve a ejecutar esas pruebas,
-no cambia código, muestras, dependencias ni resultados. Se revisan enlaces,
-fragmentos, bloques/soluciones y git diff --check del estado documental final.
+**Qué se desarrolló:** DataFrame/Series/expresiones, select, with_columns,
+filter y group_by/agg; contexto, forma de salida, literales/alias y dependencias.
+Seis filas completas, IDs textuales, fechas Date y saldos Int32; derivada en
+miles Float64 solo para presentación y suma ampliada a Int64 antes de reducir.
+Octubre ≥ 2000: 003/2600; resumen septiembre tres/4500, octubre tres/4600 MXN.
+Entrada completa auditada antes del filtro, esquema y pares conciliados con
+Python estándar; controles didácticos separados de la consulta nativa.
+No desarrolla lazy, DuckDB ni mediciones de tiempo/RAM.
 
-**Próxima sesión:** empezar por este registro y
-[storage-closure.md](docs/storage-closure.md); después desarrollar
-[10.02 — Polars: tablas y expresiones](curriculum/10_polars_duckdb/README.md#02-polars-tablas-y-expresiones).
-Investigar API y versión oficiales, incorporar Polars solo al implementarlo y
-comprobar un entorno local sin modificar bibliotecas globales. Presentar una
-muestra pequeña completa con contexto, reglas y resultados; mantener referencia
-independiente y revisión de tipos antes de adaptar la salida. No exigir conocer
-ejemplos ni tener entregas previas; la API lazy pertenece a 10.03.
+**Verificación:** Python 3.12.12/Polars 2.0.0; once grupos de comprobaciones
+funcionales con escenarios/subcasos, ejecutados en dos entornos uv locales.
+Bloques exactos de lección/lab, esquema vacío, frontera inclusiva/2001,
+parámetros inválidos, incidentes fuera del filtro, duplicados, null y tipos
+alterados; errores compensados y suma 4294967294 MXN comprobados.
+Escalas 40/400 conciliadas; para 40 filas, 26030/27690 MXN y selección seis/14061;
+base común de 28, 29000/31800 y selección nueve/24100 también conservados.
+Polars y su runtime estándar son los únicos paquetes añadidos al lockfile;
+registros anteriores idénticos salvo la dependencia del proyecto. Instalación y
+segunda reconstrucción desde entorno vacío (offline con caché local), sin
+modificar el venv raíz, Conda, renv ni bibliotecas globales. Rutas/entornos de
+autoría y controles auxiliares quedan ignorados bajo output/. No se probaron
+instalaciones Conda, otros sistemas ni la interfaz del IDE.
+Revisión documental final: 236 Markdown, 2359 enlaces locales sin errores,
+fragmentos/bloques/soluciones revisados y git diff --check correcto.
 
-10.02 no se inició. 10.02–10.10 y 11–14 siguen planificadas; proyectos,
-checkpoints, evidencias del estudiante y revisión retroactiva de ejemplos/IDE
-mantienen sus pendientes. Desarrollar el material no acredita aprendizaje.
-Las entradas siguientes detallan verificaciones y desarrollo previos.
+**Próxima sesión:** leer este registro y [storage-closure.md](docs/storage-closure.md),
+después desarrollar [10.03 — Polars lazy y planes de consulta](curriculum/10_polars_duckdb/README.md#03-polars-lazy-y-planes-de-consulta).
+Presentar datos, reglas y resultados completos sin exigir entregas anteriores;
+explicar scan/collect/explain, comparar esquemas/valores tras ejecutar y
+distinguir plan de ejecución efectiva. Lazy no implica memoria acotada.
+10.03–10.10 y 11–14 conservan planes. La revisión retroactiva de ejemplos/IDE,
+proyectos/checkpoints e integración mantienen sus pendientes. Desarrollar el
+material no acredita aprendizaje. Las entradas siguientes conservan el historial.
+
+**Cierre anterior — 2026-10-22:** publicada la ampliación de 09.06 (`61a082b`),
+09.07 (`d911179`), 09.08 (`c553bbd`), 09.09 (`eb85ac4`) y 10.01 (`03ee6d6`),
+con cierre documental `6886052`. Ese punto de retoma queda sustituido por 10.03.
 
 **Desarrollo — 2026-10-22, 10.01:** disponibles la
 [lección](curriculum/10_polars_duckdb/01_question_contract_reference/README.md) y el

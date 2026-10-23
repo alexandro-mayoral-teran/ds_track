@@ -89,7 +89,14 @@ y su [lab](../labs/10_polars_duckdb/01_question_contract_reference/README.md)
 ya están disponibles: muestra autónoma, referencia Python estándar y contraste
 opcional R base, sin motores nuevos. Se comprueba cada ID/importe, vacíos,
 tipos, fronteras y escalas deterministas de 40/400 filas; no se mide rendimiento.
-El siguiente desarrollo es [10.02 — Polars: tablas y expresiones](../curriculum/10_polars_duckdb/README.md#02-polars-tablas-y-expresiones),
+[10.02 — Polars: tablas y expresiones](../curriculum/10_polars_duckdb/02_polars_tables_expressions/README.md)
+y su [lab](../labs/10_polars_duckdb/02_polars_tables_expressions/README.md)
+ya están disponibles: DataFrame, expresiones y operaciones inmediatas, muestra
+completa y conciliación independiente. Selección 003/2600 y resumen por corte
+4500/4600 MXN, tipos explícitos y suma Int64 antes de agregar. Polars 2.0.0
+declarado, instalación y segunda reconstrucción uv locales comprobadas;
+registros previos del lockfile conservados, sin modificar Conda, renv ni globales.
+El siguiente desarrollo es [10.03 — Polars lazy y planes de consulta](../curriculum/10_polars_duckdb/README.md#03-polars-lazy-y-planes-de-consulta),
 todavía planificado.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
 sin duplicar aquí una bitácora. **El material disponible no acredita práctica
@@ -97,12 +104,12 @@ del estudiante ni implementa el proyecto integrador.**
 
 ## Desarrollo del material y siguiente módulo
 
-09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01;
-10.02–10.10 siguen planificadas. Desarrollar 10.02 desde su propio contexto,
+09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.02;
+10.03–10.10 siguen planificadas. Desarrollar 10.03 desde su propio contexto,
 datos y resultados, manteniendo el contrato y una referencia independiente.
-Presentar DataFrame/expresiones y tipos antes de pedir adaptaciones; comprobar
-versión y entorno local de Polars al incorporarlo, sin anticipar la API lazy
-de 10.03 como requisito. Revisar fuentes oficiales al implementar.
+Explicar DataFrame/LazyFrame, scan/collect/explain y optimizaciones antes de
+pedir interpretarlas; comprobar ejecución real además de construcción del plan.
+No equiparar lazy a memoria acotada. Revisar APIs oficiales de la versión fijada.
 
 Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
 preparación de entorno de exigir resultados personales anteriores. No modificar
@@ -147,4 +154,4 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 10.02–10.10 y 11–14 conservan sus planes.
+quedan fuera de Git. 10.03–10.10 y 11–14 conservan sus planes.

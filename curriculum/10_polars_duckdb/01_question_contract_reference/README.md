@@ -413,8 +413,8 @@ conserva suma/conteo pero cambia pares. R base y las escalas son apoyos opcional
 
 No hay proyecto/checkpoint implementado asociado: `04_large_credit_dataset`
 sigue planificado. Material disponible no acredita práctica del estudiante.
-Siguiente: [10.02 — Polars: tablas y expresiones](../README.md#02-polars-tablas-y-expresiones),
-todavía planificada. Consulta los [pendientes de almacenamiento y procesamiento](../../../docs/storage-closure.md).
+Siguiente: [10.02 — Polars: tablas y expresiones](../02_polars_tables_expressions/README.md).
+Consulta los [pendientes de almacenamiento y procesamiento](../../../docs/storage-closure.md).
 
 ## Referencias y atribución
 

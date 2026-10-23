@@ -194,5 +194,5 @@ referencia repetible y detección del error compensado. R y escalas no bloquean
 avanzar. No hay proyecto/checkpoint activo asociado; `04_large_credit_dataset`
 sigue planificado. El material no acredita aprendizaje sin evidencia propia.
 
-Siguiente: [10.02 — Polars: tablas y expresiones](../../../curriculum/10_polars_duckdb/README.md#02-polars-tablas-y-expresiones),
-todavía planificada. Consulta los [pendientes del recorrido](../../../docs/storage-closure.md).
+Siguiente: [10.02 — Polars: tablas y expresiones](../../../curriculum/10_polars_duckdb/02_polars_tables_expressions/README.md).
+Consulta los [pendientes del recorrido](../../../docs/storage-closure.md).

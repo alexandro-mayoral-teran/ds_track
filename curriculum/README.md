@@ -130,7 +130,11 @@ añade entrega reconstruible, verificadores y [lab](../labs/09_arrow_parquet/09_
 Las nueve secciones de 09 tienen material.
 [10.01 — Pregunta, contrato y referencia](10_polars_duckdb/01_question_contract_reference/README.md)
 inicia el módulo 10 con muestra propia y [lab](../labs/10_polars_duckdb/01_question_contract_reference/README.md),
-sin dependencias nuevas; 10.02–10.10 siguen planificadas.
+sin dependencias nuevas en esa sección.
+[10.02 — Polars: tablas y expresiones](10_polars_duckdb/02_polars_tables_expressions/README.md)
+añade muestra autónoma, operaciones inmediatas, recorridos y
+[lab](../labs/10_polars_duckdb/02_polars_tables_expressions/README.md)
+con Polars 2.0.0 y conciliación independiente. 10.03–10.10 siguen planificadas.
 Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
