@@ -6,14 +6,14 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.02 disponibles; 10.03–10.10 planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.02 implementadas (09.08 opcional); 10.03–10.10 y 11–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 10.02 con lección, muestra propia,
-  funciones Polars, recorridos y lab comprobados en dos entornos uv locales.
-- **Sesión de desarrollo:** cerrada en 10.02, conforme a la corrección del usuario.
-- **Foco al cierre:** tablas y expresiones inmediatas con tipos y resultados conciliados.
+- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.03 disponibles; 10.04–10.10 planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.03 implementadas (09.08 opcional); 10.04–10.10 y 11–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 10.03 con lección, muestra propia,
+  consultas lazy, preparador/verificador, recorridos y lab comprobados.
+- **Punto de reanudación:** 10.04; 10.03 ya tiene material disponible.
+- **Foco actual:** planes, ejecución real y auditoría completa separada.
   Próximo paso: desarrollar
-  [10.03 — Polars lazy y planes de consulta](curriculum/10_polars_duckdb/README.md#03-polars-lazy-y-planes-de-consulta),
+  [10.04 — Tipos, faltantes y uniones](curriculum/10_polars_duckdb/README.md#04-tipos-faltantes-y-uniones),
   todavía planificada; conservar Polars 2.0.0 y comprobar sus APIs al implementarla.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
@@ -35,7 +35,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y 10.01–10.02 disponibles, las otras ocho de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y 10.01–10.03 disponibles, las otras siete de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -43,6 +43,47 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 10.03:** disponibles la
+[lección](curriculum/10_polars_duckdb/03_polars_lazy_plans/README.md),
+CSV autónomo, funciones, preparador/verificador, recorridos de shell y
+[lab](labs/10_polars_duckdb/03_polars_lazy_plans/README.md). Ejemplos completos
+sin entregas previas: tabla en memoria, escritura Parquet nueva, scan y esquema,
+planes lógicos sin optimizar/optimizado y collect real. Las expresiones y
+dependencias se explican antes de utilizarlas. Fuentes oficiales consultadas
+y APIs comprobadas con Polars 2.0.0.
+
+Seis filas propias y tres créditos/dos cortes; selección octubre 003/2600,
+resumen por corte tres/4500 y tres/4600 MXN. El filtro necesita tres columnas
+aunque devuelva dos; el resumen proyecta dos de tres. Auditoría completa
+separada de consulta nativa: referencia CSV externa con Python estándar,
+esquemas/valores por clave y rechazo de incidentes fuera del filtro. No se
+infiere I/O físico, rendimiento ni memoria acotada a partir del plan. Se
+explica que resolver esquema puede leer metadatos y que collect materializa
+la salida; engine auto no identifica lazy con un límite de memoria.
+
+**Verificación:** diez grupos de comprobaciones con escenarios/subcasos en
+dos entornos uv locales ya existentes, Python 3.12.12/Polars 2.0.0. Bloques
+Python de lección/lab ejecutados en orden, cambiando solo destinos temporales;
+frontera inclusiva/2001, vacío con tipos, fechas extremas, suma 4294967294,
+parámetros inválidos, null/duplicados/negativos fuera del filtro, esquemas
+alterados y valores compensados. Orden físico invertido aceptado; selección
+y resumen conciliados en escalas 40/400 y base común de 28 (29000/31800,
+nueve/24100). Procesos nuevos y verificación de solo lectura comprobados;
+destinos existentes rechazados y fuentes/lockfiles conservados.
+
+Sin instalaciones, dependencias nuevas ni cambios de entornos globales,
+Conda, renv o venv raíz. Controles y salidas auxiliares ignorados bajo output/.
+No se probaron instalaciones Conda, otros sistemas o la interfaz del IDE.
+Navegación, bloques/soluciones y git diff --check revisados; 239 Markdown y
+2395 enlaces locales sin incidencias, incluidos sus fragmentos.
+
+**Siguiente:** [10.04 — Tipos, faltantes y uniones](curriculum/10_polars_duckdb/README.md#04-tipos-faltantes-y-uniones),
+después de [storage-closure.md](docs/storage-closure.md): contexto autónomo,
+null/NaN, conversión, agregaciones y cardinalidad con referencia independiente.
+10.04–10.10 y 11–14 conservan planes; proyectos/checkpoints, revisión retroactiva
+y evidencia del estudiante siguen pendientes. Este desarrollo sustituye el
+punto de retoma anterior en 10.03. Las entradas siguientes son historial.
 
 **Cierre de sesión — 2026-10-23 (hasta 10.02):** disponibles la
 [lección 10.02](curriculum/10_polars_duckdb/02_polars_tables_expressions/README.md),

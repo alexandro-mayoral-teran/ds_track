@@ -262,7 +262,10 @@ separan práctica del estudiante y proyecto todavía por desarrollar.
 inicia el módulo 10 con muestra autónoma y lab, sin motores nuevos;
 [10.02 — Polars: tablas y expresiones](curriculum/10_polars_duckdb/02_polars_tables_expressions/README.md)
 añade operaciones inmediatas, muestra completa y lab con Polars 2.0.0,
-conciliados en entornos locales. 10.03–10.10 siguen planificadas.
+conciliados en entornos locales.
+[10.03 — Polars lazy y planes de consulta](curriculum/10_polars_duckdb/03_polars_lazy_plans/README.md)
+añade ejemplos autónomos, scan/collect/explain, auditoría completa y lab.
+10.04–10.10 siguen planificadas.
 Los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.

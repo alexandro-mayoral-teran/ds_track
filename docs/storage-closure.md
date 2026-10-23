@@ -96,20 +96,26 @@ completa y conciliación independiente. Selección 003/2600 y resumen por corte
 4500/4600 MXN, tipos explícitos y suma Int64 antes de agregar. Polars 2.0.0
 declarado, instalación y segunda reconstrucción uv locales comprobadas;
 registros previos del lockfile conservados, sin modificar Conda, renv ni globales.
-El siguiente desarrollo es [10.03 — Polars lazy y planes de consulta](../curriculum/10_polars_duckdb/README.md#03-polars-lazy-y-planes-de-consulta),
-todavía planificado.
+[10.03 — Polars lazy y planes de consulta](../curriculum/10_polars_duckdb/03_polars_lazy_plans/README.md)
+y su [lab](../labs/10_polars_duckdb/03_polars_lazy_plans/README.md) están disponibles:
+ejemplos autónomos, Parquet nuevo, esquema, planes y ejecución real conciliada.
+Auditoría completa separada de la selección, dependencias de columnas y límites
+del plan; mismos seis registros y 4500/4600 MXN, sin dependencias nuevas.
+El siguiente desarrollo es [10.04 — Tipos, faltantes y uniones](../curriculum/10_polars_duckdb/README.md#04-tipos-faltantes-y-uniones),
+todavía planificada.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
 sin duplicar aquí una bitácora. **El material disponible no acredita práctica
 del estudiante ni implementa el proyecto integrador.**
 
 ## Desarrollo del material y siguiente módulo
 
-09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.02;
-10.03–10.10 siguen planificadas. Desarrollar 10.03 desde su propio contexto,
-datos y resultados, manteniendo el contrato y una referencia independiente.
-Explicar DataFrame/LazyFrame, scan/collect/explain y optimizaciones antes de
-pedir interpretarlas; comprobar ejecución real además de construcción del plan.
-No equiparar lazy a memoria acotada. Revisar APIs oficiales de la versión fijada.
+09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.03;
+10.04–10.10 siguen planificadas. Desarrollar 10.04 desde su propio contexto,
+datos y resultados, manteniendo contrato y referencia independiente. Explicar
+tipos, null/NaN, conversiones, agregaciones y cardinalidad de uniones antes
+de pedir interpretarlas; probar vacíos, claves repetidas y sin correspondencia.
+Conservar la distinción plan/ejecución y no equiparar lazy a memoria acotada.
+Revisar APIs oficiales de la versión fijada.
 
 Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
 preparación de entorno de exigir resultados personales anteriores. No modificar
@@ -154,4 +160,4 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 10.03–10.10 y 11–14 conservan sus planes.
+quedan fuera de Git. 10.04–10.10 y 11–14 conservan sus planes.

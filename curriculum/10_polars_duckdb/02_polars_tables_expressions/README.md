@@ -413,8 +413,8 @@ y justificar el vacío y la ampliación de enteros antes de avanzar.
 
 Proyecto `04_large_credit_dataset` y checkpoints siguen planificados; no hay
 checkpoint activo asociado. Desarrollar material no acredita práctica del estudiante.
-Siguiente: [10.03 — Polars lazy y planes de consulta](../README.md#03-polars-lazy-y-planes-de-consulta),
-todavía planificada. Al retomar, consulta [PROGRESS.md](../../../PROGRESS.md).
+Siguiente: [10.03 — Polars lazy y planes de consulta](../03_polars_lazy_plans/README.md).
+Al retomar, consulta [PROGRESS.md](../../../PROGRESS.md).
 
 ## Referencias y atribución
 

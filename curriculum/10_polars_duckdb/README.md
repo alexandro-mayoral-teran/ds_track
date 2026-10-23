@@ -12,7 +12,9 @@ no exigen entregas personales anteriores para comprender los ejemplos.
 dispone de lección, muestra propia, referencias Python estándar/R base,
 generador opcional y lab. [10.02 — Polars: tablas y expresiones](02_polars_tables_expressions/README.md)
 añade lección, CSV autónomo, funciones, recorridos y lab con Polars 2.0.0.
-10.03–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
+[10.03 — Polars lazy y planes de consulta](03_polars_lazy_plans/README.md)
+añade ejemplos autónomos, preparación Parquet, planes, ejecución conciliada y lab.
+10.04–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
 DuckDB todavía no se incorpora como dependencia.
 
 Polars se enseñará principalmente desde Python, con su interfaz R como comparación
@@ -39,7 +41,7 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 | --- | --- | --- | --- |
 | 1 | [Pregunta, contrato y referencia](01_question_contract_reference/README.md) | Esencial | Definir resultados equivalentes para comparar |
 | 2 | [Polars: tablas y expresiones](02_polars_tables_expressions/README.md) | Esencial | Seleccionar, transformar y resumir una muestra |
-| 3 | [Polars lazy y planes de consulta](#03-polars-lazy-y-planes-de-consulta) | Esencial | Explicar scan, collect y un plan optimizado |
+| 3 | [Polars lazy y planes de consulta](03_polars_lazy_plans/README.md) | Esencial | Explicar scan, collect y un plan optimizado |
 | 4 | [Tipos, faltantes y uniones](#04-tipos-faltantes-y-uniones) | Esencial | Conservar semántica e indicadores al cambiar de motor |
 | 5 | [Streaming y límites de memoria](#05-streaming-y-limites-de-memoria) | Extensión | Comprobar cómo se ejecuta una consulta por lotes |
 | 6 | [DuckDB: SQL sobre Parquet](#06-duckdb-sql-sobre-parquet) | Esencial | Consultar archivos sin cargar primero todo en pandas |
@@ -86,8 +88,14 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 - DataFrame frente a LazyFrame; scan_parquet frente a lectura inmediata, collect
   y explain. Revisar proyección y filtros en el plan.
-- Práctica prevista: construir una consulta, inspeccionarla y después ejecutarla.
-  Una consulta diferida no garantiza por sí sola procesamiento con memoria acotada.
+- Disponible: [lección, muestra, funciones y recorridos](03_polars_lazy_plans/README.md)
+  y [lab 10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md).
+  Ejemplo autónomo en memoria y Parquet nuevo, esquema y planes sin optimizar/
+  optimizado; dependencias de columnas, filtros/proyección y collect real.
+  Seis filas, 003/2600 y resumen 4500/4600 MXN conciliados con CSV externo.
+  Auditoría completa separada; vacío, fronteras, errores compensados y fuera
+  del filtro comprobados. Sin dependencias nuevas ni mediciones de rendimiento;
+  una consulta diferida no garantiza memoria acotada.
 
 <a id="04-tipos-faltantes-y-uniones"></a>
 
@@ -158,9 +166,10 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 ## Prácticas, proyecto y criterio de salida
 
-Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md)
-y [10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md);
-10.03–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
+Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md),
+[10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md)
+y [10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md);
+10.04–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -195,3 +204,5 @@ práctica; la investigación y planificación no instalan herramientas adicional
 estándar/base. 10.02 incorpora Polars 2.0.0 a pyproject/uv.lock y se comprueba
 con Python 3.12.12 en dos entornos uv locales. Los registros previos del lockfile
 se conservan; no cambia renv, Conda ni bibliotecas globales.
+10.03 usa esos mismos entornos para comprobar planes y ejecución desde procesos
+nuevos, sin añadir dependencias ni cambiar lockfiles.

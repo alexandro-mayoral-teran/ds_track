@@ -134,7 +134,11 @@ sin dependencias nuevas en esa sección.
 [10.02 — Polars: tablas y expresiones](10_polars_duckdb/02_polars_tables_expressions/README.md)
 añade muestra autónoma, operaciones inmediatas, recorridos y
 [lab](../labs/10_polars_duckdb/02_polars_tables_expressions/README.md)
-con Polars 2.0.0 y conciliación independiente. 10.03–10.10 siguen planificadas.
+con Polars 2.0.0 y conciliación independiente.
+[10.03 — Polars lazy y planes de consulta](10_polars_duckdb/03_polars_lazy_plans/README.md)
+añade ejemplos autónomos, preparación Parquet, planes, ejecución conciliada y
+[lab](../labs/10_polars_duckdb/03_polars_lazy_plans/README.md).
+10.04–10.10 siguen planificadas.
 Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;

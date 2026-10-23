@@ -185,7 +185,7 @@ nueva y detectas el error compensado sin alterar entradas. La extensión no bloq
 avanzar. No existe proyecto/checkpoint implementado asociado; el material no
 acredita aprendizaje sin tu evidencia.
 
-Siguiente: [10.03 — Polars lazy y planes de consulta](../../../curriculum/10_polars_duckdb/README.md#03-polars-lazy-y-planes-de-consulta),
-todavía planificada. Vuelve a la
+Siguiente: [10.03 — Polars lazy y planes de consulta](../../../curriculum/10_polars_duckdb/03_polars_lazy_plans/README.md).
+Vuelve a la
 [lección 10.02](../../../curriculum/10_polars_duckdb/02_polars_tables_expressions/README.md)
 para referencias y explicaciones.
