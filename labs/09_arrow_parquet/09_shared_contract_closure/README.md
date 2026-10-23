@@ -194,5 +194,5 @@ intactos. Eso acredita esta práctica cuando aportes su evidencia; disponer de
 las nueve lecciones no acredita haberlas cursado.
 
 No hay proyecto/checkpoint activo asociado: `04_large_credit_dataset` sigue
-planificado. Siguiente: [10.01 — Pregunta, contrato y referencia](../../../curriculum/10_polars_duckdb/README.md#01-pregunta-contrato-y-referencia),
-todavía planificada. Consulta los [pendientes de integración](../../../docs/storage-closure.md).
+planificado. Siguiente: [10.01 — Pregunta, contrato y referencia](../../../curriculum/10_polars_duckdb/01_question_contract_reference/README.md),
+disponible. Consulta los [pendientes de integración](../../../docs/storage-closure.md).

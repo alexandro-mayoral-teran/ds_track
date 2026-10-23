@@ -102,6 +102,7 @@ reglas de enlace están en
 | [`09.07 — Metadatos, row groups y compresión`](09_arrow_parquet/07_metadata_compression/) | `09_arrow_parquet` | No aplica todavía |
 | [`09.08 — Particionamiento justificado, opcional`](09_arrow_parquet/08_justified_partitioning/) | `09_arrow_parquet` | No aplica todavía |
 | [`09.09 — Cierre del contrato compartido`](09_arrow_parquet/09_shared_contract_closure/) | `09_arrow_parquet` | No aplica todavía |
+| [`10.01 — Pregunta, contrato y referencia`](10_polars_duckdb/01_question_contract_reference/) | `10_polars_duckdb` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

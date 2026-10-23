@@ -3,11 +3,15 @@
 ## Propósito y prerrequisitos
 
 Procesar los datos conocidos con otros motores, comprender sus formas de
-ejecución y elegir con evidencia. Completa [09 — Arrow y Parquet](../09_arrow_parquet/README.md)
-y reutiliza sus archivos, contrato e indicadores de referencia de pandas/SQL/R.
+ejecución y elegir con evidencia. Retoma los conceptos de
+[09 — Arrow y Parquet](../09_arrow_parquet/README.md), contratos y referencias.
+Las nuevas lecciones presentan su contexto, datos y resultados completos;
+no exigen entregas personales anteriores para comprender los ejemplos.
 
-**Estado:** diez secciones planificadas; lecciones, ejemplos y labs por desarrollar.
-Los enlaces internos describen el alcance previsto.
+**Estado:** [10.01 — Pregunta, contrato y referencia](01_question_contract_reference/README.md)
+dispone de lección, muestra propia, referencias Python estándar/R base,
+generador opcional y lab. 10.02–10.10 siguen planificadas: sus enlaces internos
+describen el alcance previsto. No se han incorporado Polars/DuckDB como dependencias.
 
 Polars se enseñará principalmente desde Python, con su interfaz R como comparación
 opcional. DuckDB se enseñará desde SQL, con recorridos separados para Python y R.
@@ -29,9 +33,9 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 ## Orden de desarrollo
 
-| Orden | Sección prevista | Alcance | Resultado observable |
+| Orden | Sección | Alcance | Resultado observable |
 | --- | --- | --- | --- |
-| 1 | [Pregunta, contrato y referencia](#01-pregunta-contrato-y-referencia) | Esencial | Definir resultados equivalentes para comparar |
+| 1 | [Pregunta, contrato y referencia](01_question_contract_reference/README.md) | Esencial | Definir resultados equivalentes para comparar |
 | 2 | [Polars: tablas y expresiones](#02-polars-tablas-y-expresiones) | Esencial | Seleccionar, transformar y resumir una muestra |
 | 3 | [Polars lazy y planes de consulta](#03-polars-lazy-y-planes-de-consulta) | Esencial | Explicar scan, collect y un plan optimizado |
 | 4 | [Tipos, faltantes y uniones](#04-tipos-faltantes-y-uniones) | Esencial | Conservar semántica e indicadores al cambiar de motor |
@@ -50,8 +54,14 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 - Definir entrada, corte, filtros, llaves, faltantes, unidades y resultado esperado.
   Separar costo de lectura, transformación y exportación.
-- Práctica prevista: un filtro y resumen sobre una muestra conocida; generar luego
-  varias escalas sintéticas reproducibles sin exigir que superen la RAM disponible.
+- Disponible: [lección, muestra y referencias](01_question_contract_reference/README.md)
+  y [lab 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md).
+  Seis filas autónomas, pregunta/contrato, respuesta manual y comparación por
+  ID/importe con Python estándar y contraste opcional R base. Generador
+  determinista de hasta 1998 filas, con ejemplos de 40/400 y claves conservadas;
+  conexión opcional con 28 filas incluidas, sin necesitar entregas anteriores.
+  Vacíos, fronteras y errores compensados comprobados; no ejecuta motores,
+  instala paquetes ni mide rendimiento. 10.02 inicia Polars.
 
 <a id="02-polars-tablas-y-expresiones"></a>
 
@@ -140,7 +150,8 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 ## Prácticas, proyecto y criterio de salida
 
-Se prevén labs 10.01–10.10; todavía no existen. 10.05 y Polars en R son opcionales.
+Está disponible el [lab 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md);
+10.02–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -171,3 +182,5 @@ reutilizando tablas y figuras verificadas en lugar de recalcular sin controles.
 
 Las versiones, capacidades y dependencias se comprobarán al implementar cada
 práctica; la investigación y planificación no instalan herramientas adicionales.
+10.01 se comprueba con Python 3.12.12 y R 4.6.1 usando solo sus bibliotecas
+estándar/base. No cambia pyproject/uv.lock, renv ni bibliotecas globales.

@@ -414,7 +414,10 @@ El [plan de diez secciones](curriculum/10_polars_duckdb/README.md#orden-de-desar
 parte de un contrato conocido: expresiones y lazy en Polars, SQL sobre Parquet
 con DuckDB, clientes Python/R, intercambio, mediciones y elección de herramienta.
 Polars se enseña principalmente desde Python; su interfaz R y streaming son
-ampliaciones opcionales. Las lecciones y labs están por desarrollar.
+ampliaciones opcionales.
+[10.01 — Pregunta, contrato y referencia](curriculum/10_polars_duckdb/01_question_contract_reference/README.md)
+tiene lección, muestra autónoma, referencia Python estándar/R base y lab,
+sin motores nuevos. 10.02–10.10 siguen planificadas.
 
 - Ejecución eager y lazy en Polars.
 - Consultas SQL sobre Parquet con DuckDB.

@@ -127,8 +127,11 @@ añade inspección y mediciones separadas con [lab](../labs/09_arrow_parquet/07_
 añade particiones, auditoría de etiquetas y [lab](../labs/09_arrow_parquet/08_justified_partitioning/README.md) como extensión opcional.
 [09.09 — Cierre del contrato compartido](09_arrow_parquet/09_shared_contract_closure/README.md)
 añade entrega reconstruible, verificadores y [lab](../labs/09_arrow_parquet/09_shared_contract_closure/README.md).
-Las nueve secciones de 09 tienen material; el módulo 10 conserva sus planes
-de procesamiento con Polars/DuckDB. Los [pendientes de cierre](../docs/storage-closure.md)
+Las nueve secciones de 09 tienen material.
+[10.01 — Pregunta, contrato y referencia](10_polars_duckdb/01_question_contract_reference/README.md)
+inicia el módulo 10 con muestra propia y [lab](../labs/10_polars_duckdb/01_question_contract_reference/README.md),
+sin dependencias nuevas; 10.02–10.10 siguen planificadas.
+Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
 la planificación pendiente se implementará lección por lección.

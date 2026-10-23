@@ -388,8 +388,8 @@ Eso cierra el desarrollo de las lecciones, no acredita que el estudiante haya
 completado las prácticas. El proyecto `04_large_credit_dataset` y sus checkpoints
 siguen pendientes; no hay un checkpoint activo asociado a este lab.
 
-Siguiente desarrollo: [10.01 — Pregunta, contrato y referencia](../../10_polars_duckdb/README.md#01-pregunta-contrato-y-referencia),
-todavía planificada. No instales Polars/DuckDB por anticipado. Consulta los
+Siguiente: [10.01 — Pregunta, contrato y referencia](../../10_polars_duckdb/01_question_contract_reference/README.md),
+disponible sin motores nuevos. No instales Polars/DuckDB por anticipado. Consulta los
 [pendientes de almacenamiento e integración](../../../docs/storage-closure.md).
 
 ## Referencias y atribución

@@ -6,14 +6,14 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo por desarrollar:** `10_polars_duckdb`: diez secciones planificadas; 10.01 no se inició.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.09 implementadas (09.08 opcional); 10–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-22, 09.09 con lección, funciones Python/R,
-  preparador y lab; entrega y verificadores desde procesos nuevos comprobados.
-- **Foco al cierre:** contrato compartido, reconstrucción y lectura cruzada completa.
+- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01 disponible; 10.02–10.10 planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01 implementadas (09.08 opcional); 10.02–10.10 y 11–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-22, 10.01 con lección, muestra propia,
+  referencia Python estándar/R base, generador opcional y lab comprobados.
+- **Foco al cierre:** pregunta precisa, contrato y referencia independiente antes de comparar motores.
   Próximo paso: desarrollar
-  [10.01 — Pregunta, contrato y referencia](curriculum/10_polars_duckdb/README.md#01-pregunta-contrato-y-referencia),
-  todavía planificada; no instalar motores solo por planificar.
+  [10.02 — Polars: tablas y expresiones](curriculum/10_polars_duckdb/README.md#02-polars-tablas-y-expresiones),
+  todavía planificada; comprobar versión/entorno local al implementarla.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -34,7 +34,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 disponibles y las diez de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y 10.01 disponibles, las otras nueve de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -42,6 +42,44 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-22, 10.01:** disponibles la
+[lección](curriculum/10_polars_duckdb/01_question_contract_reference/README.md) y el
+[lab](labs/10_polars_duckdb/01_question_contract_reference/README.md), con muestra
+CSV nueva de seis filas y tres créditos, referencia Python estándar y contraste
+opcional R base. Cada ejemplo inicial define sus datos completos; no necesita
+entregas personales ni recordar resultados de capítulos anteriores. Reutiliza
+reglas verificadas como código y vuelve a presentar fuente, contrato y pregunta.
+
+Octubre ≥ 2000: `003/2600`, una fila y 2600 MXN. Septiembre ≥ 2000:
+`002/2000`, `003/2500`, dos filas/4500; frontera 2001, cero y selección vacía
+explicados. Contrato de entrada frente a esquema/adaptación de salida, suma
+amplia, ausencia frente a vacío y pares frente a conteos/totales. Preparación,
+lectura, validación, transformación, materialización y exportación diferenciadas
+sin cronometrar. Se investiga documentación primaria Polars/DuckDB, pero no se
+instalan ni ejecutan motores ni se fijan sus versiones por anticipado.
+
+Generador opcional determinista, IDs nuevos y dos cortes: ejemplos de 40/400
+filas, máximo 1998 por el contrato de tres dígitos. Parámetros inválidos y
+destinos ocupados rechazados; no usa azar ni cambia semilla global. Referencia
+común opcional de 28 filas presentada de nuevo y conservada (nueve/24100 MXN).
+
+Python 3.12.12 y R 4.6.1, biblioteca estándar/base: bloques exactos de lección/
+lab y procesos nuevos comprobados, Python también con -I -S. Ochenta y un
+controles Python y cincuenta R: pares/fronteras, orden, selección vacía, tipos,
+errores compensados, errores fuera del filtro, duplicados, ausencias, calendario,
+desborde y suma de 4294967294. Escalas de 1/20/200/999 créditos conciliadas
+entre Python/R en cada ID/importe; determinismo y fuentes intactas comprobados.
+Sin cambios de requisitos, lockfiles, renv, bibliotecas globales o muestras
+anteriores. Locale C solo en procesos R de revisión; no se probó la interfaz
+del IDE. Enlaces/fragmentos, bloques/soluciones y git diff --check revisados.
+
+Siguiente: [10.02](curriculum/10_polars_duckdb/README.md#02-polars-tablas-y-expresiones)
+después de [storage-closure.md](docs/storage-closure.md). Presentar de nuevo
+contexto/datos/reglas, comprobar la API y el entorno local al incorporar Polars.
+No adelantar lazy como requisito de 10.02. Proyecto/checkpoints y práctica del
+estudiante siguen pendientes; 10.02–10.10 y 11–14 conservan sus planes.
+Las entradas siguientes se conservan como historial.
 
 **Desarrollo — 2026-10-22, 09.09:** disponibles la
 [lección](curriculum/09_arrow_parquet/09_shared_contract_closure/README.md) y el

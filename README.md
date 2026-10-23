@@ -258,7 +258,9 @@ añade la ampliación opcional de particiones Hive con ejemplos completos y lab.
 añade entrega reconstruible, verificadores y lab con cruces Python/R.
 Las nueve secciones de 09 tienen material; los [pendientes de integración](docs/storage-closure.md)
 separan práctica del estudiante y proyecto todavía por desarrollar.
-El nivel 10 conserva su plan de Polars/DuckDB; los niveles 11–14 tienen secciones definidas
+[10.01 — Pregunta, contrato y referencia](curriculum/10_polars_duckdb/01_question_contract_reference/README.md)
+inicia el módulo 10 con muestra autónoma y lab, sin motores nuevos;
+10.02–10.10 siguen planificadas. Los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de
