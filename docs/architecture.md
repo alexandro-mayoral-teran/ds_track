@@ -95,7 +95,7 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01–10.07 tienen lección/muestra/funciones/lab (10.05 opcional); 10.08–10.10 y 11–14 conservan planificación;
+10.01–10.08 tienen lección/muestra/funciones/lab (10.05 opcional); 10.09–10.10 y 11–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -610,8 +610,8 @@ Las nueve secciones de 08 tienen material; el proyecto integrador continúa pend
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones; 09.01–09.09 y 10.01–10.07 disponen de lección/lab y scripts;
-10.05 es opcional; 10.08–10.10 siguen planificadas.
+19 secciones; 09.01–09.09 y 10.01–10.08 disponen de lección/lab y scripts;
+10.05 es opcional; 10.09–10.10 siguen planificadas.
 09.01 distingue formato, representación y biblioteca con una proyección de 28
 observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
 inventario conservados; inspección esencial Python estándar/R base y lectura
@@ -740,7 +740,15 @@ auditoría completa y lectura cruzada, sin compartir base persistente entre vers
 Python DuckDB 2.0.0 permanece; R DuckDB 1.5.6/DBI 1.3.0 se registran junto con
 dbplyr 2.6.0/blob 1.3.0 inferidos por renv. Respaldo del mismo proyecto, 46 registros
 previos idénticos y segunda restauración vacía comprobados. No cambia bibliotecas
-globales ni acredita RAM acotada. 10.08 es el siguiente desarrollo previsto.
+globales ni acredita RAM acotada.
+10.08 desarrolla pandas/Arrow/Polars/DuckDB en memoria con ocho etapas conciliadas:
+esquemas antes de adaptar, equivalencia string/large_string acotada y comparación
+por clave. Mantiene seis filas, 003/2600 y 4500/4600 MXN; muestra independiente
+de ausencia/vacío/cero (suma 10, cobertura 2/3), índice e integer/float.
+Relación/registro frente a Table y lector; no acredita ausencia de copias ni RAM
+acotada. R opcional registra Arrow y recupera por DBI antes de reconstruir Arrow.
+Sin paquetes ni lockfiles nuevos; procesos nuevos y ambos entornos Python/R
+existentes comprobados. 10.09 es el siguiente desarrollo previsto.
 Los ejemplos conservan contexto propio.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 

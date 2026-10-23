@@ -345,8 +345,7 @@ universal entre versiones.
 No hay proyecto/checkpoint activo: `04_large_credit_dataset` sigue previsto
 en [proyectos](../../../projects/README.md). Registra evidencia y dudas según
 [PROGRESS.md](../../../PROGRESS.md); material disponible no acredita aprendizaje.
-Siguiente: [10.08 — Intercambio entre motores](../README.md#08-intercambio-entre-motores),
-todavía planificada.
+Siguiente: [10.08 — Intercambio entre motores](../08_engine_interchange/README.md).
 
 ## Referencias primarias
 

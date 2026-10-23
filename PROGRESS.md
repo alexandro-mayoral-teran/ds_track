@@ -6,16 +6,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.07 disponibles; 10.08–10.10 planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.07 implementadas (09.08 y 10.05 opcionales); 10.08–10.10 y 11–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 10.07 con lección/lab, SQL compartido,
-  clientes Python/R y renv local restaurado desde segunda biblioteca vacía.
-- **Punto de reanudación:** 10.08; 10.07 ya tiene material disponible.
-- **Foco actual:** clientes, parámetros, representaciones y materialización.
+- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.08 disponibles; 10.09–10.10 planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.08 implementadas (09.08 y 10.05 opcionales); 10.09–10.10 y 11–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 10.08 con lección/lab, intercambio
+  pandas/Arrow/Polars/DuckDB y ampliación R, sin dependencias nuevas.
+- **Punto de reanudación:** 10.09; 10.08 ya tiene material disponible.
+- **Foco actual:** fronteras de representación y materialización antes de medir.
   Próximo paso: desarrollar
-  [10.08 — Intercambio entre motores](curriculum/10_polars_duckdb/README.md#08-intercambio-entre-motores),
-  todavía planificada; contexto/datos completos, APIs efectivas y comparación
-  por clave/esquema después de convertir, sin prometer ausencia de copias.
+  [10.09 — Comparar tiempo y memoria](curriculum/10_polars_duckdb/README.md#09-comparar-tiempo-y-memoria),
+  todavía planificada; contexto/datos completos, resultados equivalentes,
+  repeticiones crudas y métricas con alcance explícito, sin generalizar costos.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -36,7 +36,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y 10.01–10.07 disponibles, las otras tres de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y 10.01–10.08 disponibles, las otras dos de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -44,6 +44,53 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 10.08:** disponibles la
+[lección](curriculum/10_polars_duckdb/08_engine_interchange/README.md),
+CSV propio, módulo/ejecutor Python, ampliación R/ejecutor/preparador,
+recorridos por shell y [lab](labs/10_polars_duckdb/08_engine_interchange/README.md).
+Contexto/datos/reglas completos, ejemplos iniciales autónomos en memoria;
+no exige Parquet ni entregas personales anteriores. Python 3.12.12,
+pandas 2.3.3/PyArrow 21.0.0/Polars 2.0.0/DuckDB 2.0.0; R 4.6.1,
+Arrow 25.0.1/DuckDB 1.5.6/DBI 1.3.0. Sin instalaciones, dependencias nuevas
+ni cambios en pyproject/uv.lock o DESCRIPTION/renv.lock; conserva entornos globales.
+
+Ocho etapas: pandas → Arrow → Polars → Arrow, registros directos pandas/Polars
+y Arrow en DuckDB, salida Arrow/Polars y vuelta completa a pandas/Arrow.
+Tipos inspeccionados antes de adaptar y cada valor conciliado por clave con
+CSV externo/Python estándar. Seis filas, 003/2600 y resumen tres/4500,
+tres/4600 MXN conservados. Equivalencia acotada string/large_string, índice
+omitido explícitamente y marcas de ausencia; no acredita igualdad de metadatos
+o disposición física. Contrato anulable independiente: 0/ausencia/10 y
+vacío/ausencia/café, suma observada 10 y cobertura 2/3. Entero mayor que 2^53
+muestra pérdida al pasar a float; no pertenece al contrato Int32 de cartera.
+
+Registro/relación frente a materialización/lector; DuckDB 2.0 usa salida Arrow
+desde con.sql para evitar la copia adicional advertida en la ruta DB-API.
+Ejemplo separado de lector con lotes 2/2/1 y cierre dentro de la conexión;
+no garantiza RAM acotada. R registra Arrow, recupera por DBI, compara clases/
+valores y reconstruye Arrow; no instala Polars en R ni implementa esa alternativa.
+
+**Verificación:** ocho grupos Python con fronteras/subcasos en dos entornos
+existentes, advertencias tratadas como errores. Bloques completos de lección/lab
+ejecutados; fuente y selección vacías tipadas, umbral inclusivo/2001, fechas
+1900/2100 y suma 4294967294. Duplicados fuera del filtro, ausencias, negativos,
+esquemas float/int64/timestamp, columnas extra y saldos compensados rechazados.
+Orden físico invertido aceptado; escalas 40/400 y base común 28 filas (nueve/24100)
+conciliadas. Vida de relación frente a Table y agotamiento del lector comprobados.
+R ejecutado en ambas bibliotecas existentes y procesos nuevos, con vacío/suma
+amplia/fronteras. Error simulado después del registro comprueba retirada y
+desconexión. Preparador protege ocupados/personalizaciones y conserva metadatos;
+fuentes/lockfiles anteriores intactos. No se probó interfaz del IDE ni otros
+sistemas operativos o instalaciones Conda. No se midió rendimiento, I/O o RAM.
+Navegación, enlaces/fragmentos, bloques/soluciones y git diff --check revisados.
+
+**Siguiente:** [10.09 — Comparar tiempo y memoria](curriculum/10_polars_duckdb/README.md#09-comparar-tiempo-y-memoria),
+después de [storage-closure.md](docs/storage-closure.md): resultados equivalentes,
+fases de costo, repeticiones crudas y métricas cuyo alcance sea explícito.
+10.09–10.10 y 11–14 conservan planes; proyectos/checkpoints y práctica del
+estudiante siguen pendientes. Este es el punto de retoma vigente; las entradas
+siguientes son historial.
 
 **Desarrollo — 2026-10-23, 10.07:** disponibles la
 [lección](curriculum/10_polars_duckdb/07_duckdb_python_r/README.md),

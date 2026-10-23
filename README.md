@@ -274,7 +274,9 @@ residente; lab y salidas conciliadas.
 añade SQL directo, planes/ejecución y archivos completos/partes conciliados con lab.
 [10.07 — DuckDB desde Python y R](curriculum/10_polars_duckdb/07_duckdb_python_r/README.md)
 añade consultas compartidas, parámetros, tipos y recursos con lección/lab.
-10.08–10.10 siguen planificadas.
+[10.08 — Intercambio entre motores](curriculum/10_polars_duckdb/08_engine_interchange/README.md)
+añade conversiones pandas/Arrow/Polars/DuckDB, tipos y materialización con lab.
+10.09–10.10 siguen planificadas.
 Los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.

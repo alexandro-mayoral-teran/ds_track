@@ -137,5 +137,4 @@ de concatenación?, ¿qué perderías al convertir HUGEINT a numeric antes de te
 Avanza cuando puedas recuperar la misma respuesta desde ambos clientes,
 explicar las representaciones y demostrar el vacío tipado. No hay checkpoint
 activo; desarrollar el material no acredita que hayas realizado la práctica.
-Siguiente: [10.08 — Intercambio entre motores](../../../curriculum/10_polars_duckdb/README.md#08-intercambio-entre-motores),
-todavía planificada.
+Siguiente: [10.08 — Intercambio entre motores](../../../curriculum/10_polars_duckdb/08_engine_interchange/README.md).

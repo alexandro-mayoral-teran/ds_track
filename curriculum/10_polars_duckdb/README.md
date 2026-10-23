@@ -22,7 +22,9 @@ añade la extensión opcional de lotes, sink, plan físico y pico residente obse
 añade DuckDB 2.0.0, SQL, planes y ejecución conciliada con lección/lab.
 [10.07 — DuckDB desde Python y R](07_duckdb_python_r/README.md)
 añade SQL compartido, parámetros, tipos/clases y recursos con lección/lab.
-10.08–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
+[10.08 — Intercambio entre motores](08_engine_interchange/README.md)
+añade conversiones, ausencias, tipos y materialización con lección/lab.
+10.09–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
 
 Polars se enseñará principalmente desde Python, con su interfaz R como comparación
 opcional. DuckDB se enseñará desde SQL, con recorridos separados para Python y R.
@@ -53,7 +55,7 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 | 5 | [Streaming y límites de memoria](05_streaming_memory/README.md) | Extensión | Comprobar cómo se ejecuta una consulta por lotes |
 | 6 | [DuckDB: SQL sobre Parquet](06_duckdb_parquet/README.md) | Esencial | Consultar archivos sin cargar primero todo en pandas |
 | 7 | [DuckDB desde Python y R](07_duckdb_python_r/README.md) | Práctica | Reutilizar una consulta desde ambos lenguajes |
-| 8 | [Intercambio entre motores](#08-intercambio-entre-motores) | Práctica | Verificar conversiones y materialización de resultados |
+| 8 | [Intercambio entre motores](08_engine_interchange/README.md) | Práctica | Verificar conversiones y materialización de resultados |
 | 9 | [Comparar tiempo y memoria](#09-comparar-tiempo-y-memoria) | Práctica | Producir mediciones interpretables y repetibles |
 | 10 | [Cierre y elección de herramienta](#10-cierre-y-eleccion-de-herramienta) | Práctica de cierre | Resolver una pregunta y justificar el motor elegido |
 
@@ -172,9 +174,15 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 - Conversiones entre pandas, Arrow, Polars y resultados DuckDB según las interfaces
   disponibles. Diferenciar entregar una consulta de materializar una tabla.
-- Práctica prevista: comparar esquema y valores después de convertir, midiendo
-  el costo si importa. No prometer intercambio sin copias para cualquier operación.
-  Polars en R se ofrece como ampliación sobre este mismo ejemplo.
+- Disponible: [lección, muestra y funciones](08_engine_interchange/README.md)
+  y [lab 10.08](../../labs/10_polars_duckdb/08_engine_interchange/README.md).
+  Ejemplos autónomos, ocho etapas pandas/Arrow/Polars/DuckDB con tipos/valores
+  por clave; seis filas, 003/2600 y resumen exacto 4500/4600 MXN.
+  Registro/relación/tabla/lector, índice, string/large_string y muestra anulable
+  independiente (suma 10, cobertura 2/3). Ampliación R Arrow/DBI comprobada en
+  el mismo proyecto, sin paquetes ni metadatos nuevos. Vacíos, fronteras y
+  alteraciones comprobados; sin mediciones ni garantías de ausencia de copias.
+  Polars en R queda como profundización no implementada aquí.
 
 <a id="09-comparar-tiempo-y-memoria"></a>
 
@@ -203,9 +211,10 @@ Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_cont
 [10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md),
 [10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md),
 [10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md),
-[10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md)
-y [10.07](../../labs/10_polars_duckdb/07_duckdb_python_r/README.md);
-10.08–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
+[10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md),
+[10.07](../../labs/10_polars_duckdb/07_duckdb_python_r/README.md)
+y [10.08](../../labs/10_polars_duckdb/08_engine_interchange/README.md);
+10.09–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -254,3 +263,7 @@ desde caché comprobadas. No cambia entornos globales, Conda, renv ni venv raíz
 duckdb 1.5.6 y dbplyr 2.6.0/blob 1.3.0 por inferencia de dependencias. Los
 46 registros anteriores permanecen idénticos; segunda biblioteca restaurada
 y consulta desde procesos nuevos comprobadas. Sin cambios globales ni benchmark.
+10.08 conserva todas las versiones/lockfiles. Comprueba cruces en memoria,
+esquemas antes de adaptar y valores por clave, incluidos vacío y precisión.
+Recorrido Python en dos entornos existentes y R Arrow/DBI en ambas bibliotecas
+locales; sin instalaciones nuevas ni certificación de copias, RAM o rendimiento.
