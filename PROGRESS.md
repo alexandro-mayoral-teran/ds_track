@@ -6,16 +6,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.05 disponibles; 10.06–10.10 planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.05 implementadas (09.08 y 10.05 opcionales); 10.06–10.10 y 11–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 10.05 con lección, muestra propia,
-  lotes/sink, observador de memoria, recorridos y lab comprobados.
-- **Punto de reanudación:** 10.06; la extensión opcional 10.05 tiene material.
-- **Foco actual:** ejecución por lotes, estado/salida y memoria observada con alcance.
+- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.06 disponibles; 10.07–10.10 planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.06 implementadas (09.08 y 10.05 opcionales); 10.07–10.10 y 11–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 10.06 con lección, muestra propia,
+  SQL, preparador/verificador, recorridos y lab comprobados con DuckDB 2.0.0.
+- **Punto de reanudación:** 10.07; 10.06 ya tiene material disponible.
+- **Foco actual:** SQL sobre Parquet, esquema/valores y planes frente a ejecución.
   Próximo paso: desarrollar
-  [10.06 — DuckDB: SQL sobre Parquet](curriculum/10_polars_duckdb/README.md#06-duckdb-sql-sobre-parquet),
-  todavía planificada; verificar APIs/versión e incorporar dependencias solo
-  al implementar, en entornos locales y conservando registros previos.
+  [10.07 — DuckDB desde Python y R](curriculum/10_polars_duckdb/README.md#07-duckdb-desde-python-y-r),
+  todavía planificada; verificar cliente R/DBI y compatibilidad, con respaldo/
+  restauración local al incorporar dependencias y registros previos conservados.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -36,7 +36,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y 10.01–10.05 disponibles, las otras cinco de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y 10.01–10.06 disponibles, las otras cuatro de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -44,6 +44,50 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 10.06:** disponibles la
+[lección](curriculum/10_polars_duckdb/06_duckdb_parquet/README.md),
+CSV autónomo, consultas SQL, preparador/verificador, recorridos por shell y
+[lab](labs/10_polars_duckdb/06_duckdb_parquet/README.md). DuckDB 2.0.0 se añade
+a pyproject/uv.lock; todos los registros anteriores permanecen idénticos salvo
+la dependencia del proyecto. Instalación en entorno uv nuevo y segunda
+reconstrucción local desde caché comprobadas con Python 3.12.12; no cambia
+Conda, renv, venv raíz ni bibliotecas globales. No se incorporan paquetes R.
+
+Ejemplos completos sin entregas previas: tabla pequeña, escritura Parquet en
+carpeta nueva y conexión en memoria distinta que consulta el archivo. SELECT,
+WHERE, GROUP BY, ORDER BY, parámetros y recuperación con tipos; unión pequeña
+como ampliación. Seis filas y tres créditos/dos cortes; selección 003/2600,
+resumen tres/4500 y tres/4600 MXN, COUNT BIGINT y SUM INTEGER a HUGEINT.
+Archivo Parquet frente a base persistente; COPY puede sobrescribir un archivo
+único y la práctica evita destinos existentes mediante carpeta exclusiva.
+
+EXPLAIN muestra plan/estimaciones, EXPLAIN ANALYZE ejecuta solo nuestro SELECT
+y se recuperan después sus valores en otra ejecución. Archivos y grupos/Data
+Read son métricas del motor, no acreditan I/O físico, RAM acotada o benchmark.
+Fuente completa y partes se consultan por separado; auditoría de cada esquema
+y todas las filas contra CSV externo con Python estándar, incluida clave global.
+La auditoría materializa registros y no se confunde con la consulta selectiva.
+
+**Verificación:** ocho grupos con escenarios/subcasos en los dos entornos uv.
+Bloques Python de lección/lab ejecutados en orden, cambiando solo destinos
+temporales. Completo/partes, vacío tipado, frontera inclusiva/2001, fechas
+extremas y suma 4294967294. Esquemas incompatibles, partes omitidas, duplicados
+fuera del filtro, null/negativos y saldos compensados rechazados; orden físico
+invertido aceptado. Escalas 40/400/1998 y base común de 28 filas (nueve/24100)
+conciliadas. Procesos nuevos, verificación de solo lectura y conservación de
+fuentes/lockfiles comprobados. No se probaron instalaciones Conda, otros
+sistemas o la interfaz del IDE; no se midió rendimiento ni RAM.
+Navegación, bloques/soluciones y git diff --check revisados; 248 Markdown y
+2514 enlaces locales sin incidencias, incluidos sus fragmentos.
+
+**Siguiente:** [10.07 — DuckDB desde Python y R](curriculum/10_polars_duckdb/README.md#07-duckdb-desde-python-y-r),
+después de [storage-closure.md](docs/storage-closure.md): contexto/datos propios,
+misma consulta parametrizada en recorridos separados, tipos y cierre de
+conexiones. Revisar clientes R/DBI y compatibilidad antes de ampliar renv,
+con respaldo y restauración local. 10.07–10.10 y 11–14 conservan planes;
+proyectos/checkpoints y práctica del estudiante siguen pendientes. Este
+desarrollo sustituye el punto de retoma anterior; las entradas siguientes son historial.
 
 **Desarrollo — 2026-10-23, 10.05 (extensión opcional):** disponibles la
 [lección](curriculum/10_polars_duckdb/05_streaming_memory/README.md),

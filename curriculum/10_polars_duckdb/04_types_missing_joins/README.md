@@ -503,8 +503,7 @@ acredita aprendizaje del estudiante.
 
 Siguiente: [10.05 — Streaming y límites de memoria](../05_streaming_memory/README.md),
 extensión disponible. Es opcional; el siguiente apartado esencial
-previsto es [10.06 — DuckDB: SQL sobre Parquet](../README.md#06-duckdb-sql-sobre-parquet),
-también pendiente de desarrollo.
+es [10.06 — DuckDB: SQL sobre Parquet](../06_duckdb_parquet/README.md), disponible.
 
 ## Referencias primarias
 

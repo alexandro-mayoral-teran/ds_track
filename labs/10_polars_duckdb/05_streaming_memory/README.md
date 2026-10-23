@@ -205,7 +205,7 @@ memoria, añade JSON/log y una interpretación de unidad/alcance, sin un ranking
 Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
 El proyecto `04_large_credit_dataset` y sus checkpoints siguen pendientes.
 
-Siguiente: [10.06 — DuckDB: SQL sobre Parquet](../../../curriculum/10_polars_duckdb/README.md#06-duckdb-sql-sobre-parquet),
-todavía planificada. Vuelve a la
+Siguiente: [10.06 — DuckDB: SQL sobre Parquet](../../../curriculum/10_polars_duckdb/06_duckdb_parquet/README.md).
+Vuelve a la
 [lección 10.05](../../../curriculum/10_polars_duckdb/05_streaming_memory/README.md)
 para revisar conceptos; esta extensión no bloquea esa continuación esencial.

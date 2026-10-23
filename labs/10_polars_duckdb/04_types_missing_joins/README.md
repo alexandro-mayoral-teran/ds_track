@@ -223,7 +223,7 @@ Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
 El proyecto `04_large_credit_dataset` y sus checkpoints siguen pendientes.
 
 Siguiente: [10.05 — Streaming y límites de memoria](../../../curriculum/10_polars_duckdb/05_streaming_memory/README.md),
-extensión opcional disponible. El siguiente esencial previsto es
-[10.06 — DuckDB: SQL sobre Parquet](../../../curriculum/10_polars_duckdb/README.md#06-duckdb-sql-sobre-parquet),
-también pendiente. Vuelve a la [lección](../../../curriculum/10_polars_duckdb/04_types_missing_joins/README.md)
+extensión opcional disponible. El siguiente esencial es
+[10.06 — DuckDB: SQL sobre Parquet](../../../curriculum/10_polars_duckdb/06_duckdb_parquet/README.md),
+disponible. Vuelve a la [lección](../../../curriculum/10_polars_duckdb/04_types_missing_joins/README.md)
 si quedan conceptos por explicar.

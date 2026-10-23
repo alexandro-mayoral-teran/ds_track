@@ -5,8 +5,7 @@
 Entender qué cambia cuando el motor procesa datos por lotes, qué memoria sigue
 siendo necesaria y cómo escribir una salida sin recoger primero toda la tabla
 final en Python. **Esta sección es una extensión opcional**: no bloquea
-[10.06 — DuckDB: SQL sobre Parquet](../README.md#06-duckdb-sql-sobre-parquet),
-todavía planificada.
+[10.06 — DuckDB: SQL sobre Parquet](../06_duckdb_parquet/README.md).
 
 Necesitas reconocer tablas, expresiones y planes. Puedes consultar
 [10.03](../03_polars_lazy_plans/README.md) y
@@ -411,8 +410,8 @@ en [proyectos](../../../projects/README.md). Registra evidencia, explicación
 y dudas según [PROGRESS.md](../../../PROGRESS.md); desarrollar el material no
 acredita aprendizaje del estudiante.
 
-Siguiente: [10.06 — DuckDB: SQL sobre Parquet](../README.md#06-duckdb-sql-sobre-parquet),
-todavía planificada. No se incorpora DuckDB por anticipación en esta extensión.
+Siguiente: [10.06 — DuckDB: SQL sobre Parquet](../06_duckdb_parquet/README.md).
+DuckDB se incorpora en esa sección; esta extensión conserva su alcance Polars.
 
 ## Referencias primarias
 

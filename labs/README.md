@@ -107,6 +107,7 @@ reglas de enlace están en
 | [`10.03 — Polars lazy y planes de consulta`](10_polars_duckdb/03_polars_lazy_plans/) | `10_polars_duckdb` | No aplica todavía |
 | [`10.04 — Tipos, faltantes y uniones`](10_polars_duckdb/04_types_missing_joins/) | `10_polars_duckdb` | No aplica todavía |
 | [`10.05 — Streaming y límites de memoria (opcional)`](10_polars_duckdb/05_streaming_memory/) | `10_polars_duckdb` | No aplica todavía |
+| [`10.06 — DuckDB: SQL sobre Parquet`](10_polars_duckdb/06_duckdb_parquet/) | `10_polars_duckdb` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

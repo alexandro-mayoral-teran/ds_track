@@ -18,8 +18,9 @@ añade ejemplos autónomos, preparación Parquet, planes, ejecución conciliada 
 añade ejemplos completos, catálogo propio, cobertura y cardinalidad con lab.
 [10.05 — Streaming y límites de memoria](05_streaming_memory/README.md)
 añade la extensión opcional de lotes, sink, plan físico y pico residente observado.
-10.06–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
-DuckDB todavía no se incorpora como dependencia.
+[10.06 — DuckDB: SQL sobre Parquet](06_duckdb_parquet/README.md)
+añade DuckDB 2.0.0, SQL, planes y ejecución conciliada con lección/lab.
+10.07–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
 
 Polars se enseñará principalmente desde Python, con su interfaz R como comparación
 opcional. DuckDB se enseñará desde SQL, con recorridos separados para Python y R.
@@ -48,7 +49,7 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 | 3 | [Polars lazy y planes de consulta](03_polars_lazy_plans/README.md) | Esencial | Explicar scan, collect y un plan optimizado |
 | 4 | [Tipos, faltantes y uniones](04_types_missing_joins/README.md) | Esencial | Conservar semántica e indicadores al cambiar de motor |
 | 5 | [Streaming y límites de memoria](05_streaming_memory/README.md) | Extensión | Comprobar cómo se ejecuta una consulta por lotes |
-| 6 | [DuckDB: SQL sobre Parquet](#06-duckdb-sql-sobre-parquet) | Esencial | Consultar archivos sin cargar primero todo en pandas |
+| 6 | [DuckDB: SQL sobre Parquet](06_duckdb_parquet/README.md) | Esencial | Consultar archivos sin cargar primero todo en pandas |
 | 7 | [DuckDB desde Python y R](#07-duckdb-desde-python-y-r) | Práctica | Reutilizar una consulta desde ambos lenguajes |
 | 8 | [Intercambio entre motores](#08-intercambio-entre-motores) | Práctica | Verificar conversiones y materialización de resultados |
 | 9 | [Comparar tiempo y memoria](#09-comparar-tiempo-y-memoria) | Práctica | Producir mediciones interpretables y repetibles |
@@ -138,8 +139,14 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 - read_parquet, filtros, agregaciones y joins; consultar varios archivos con el
   contrato de 09. EXPLAIN y EXPLAIN ANALYZE para relacionar consulta y ejecución.
-- Práctica prevista: obtener el mismo indicador directamente de Parquet y revisar
-  proyección/filtros. Distinguir archivo Parquet de una base persistente .duckdb.
+- Disponible: [lección, muestra, SQL y ejecutor](06_duckdb_parquet/README.md)
+  y [lab 10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md).
+  Datos completos, preparación propia y conexión en memoria; selección 003/2600,
+  resumen 4500/4600 MXN, unión pequeña y tipos SQL/HUGEINT comprobados.
+  EXPLAIN frente a EXPLAIN ANALYZE; completo/partes con auditoría de cada
+  esquema y todos los valores. DuckDB 2.0.0 declarado y dos entornos uv locales
+  comprobados, registros previos conservados. Vacío, fronteras, duplicados
+  fuera del filtro y saldos compensados; sin paquetes R ni benchmark.
 
 <a id="07-duckdb-desde-python-y-r"></a>
 
@@ -185,9 +192,10 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md),
 [10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md),
 [10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md),
-[10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md)
-y [10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md);
-10.06–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
+[10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md),
+[10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md)
+y [10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md);
+10.07–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -229,3 +237,6 @@ y verifica valores/tipos/cobertura sin nuevas dependencias ni archivos de entorn
 10.05 usa Polars 2.0.0 y biblioteca estándar para lotes, sink y observación
 exploratoria del pico residente en procesos nuevos Windows; sin paquetes nuevos
 ni cambios de configuración global. No mide rendimiento ni acredita RAM acotada.
+10.06 incorpora DuckDB 2.0.0 a pyproject/uv.lock sin alterar otros registros
+salvo la dependencia del proyecto; instalación y segunda reconstrucción local
+desde caché comprobadas. No cambia entornos globales, Conda, renv ni venv raíz.

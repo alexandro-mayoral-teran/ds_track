@@ -269,7 +269,10 @@ añade ejemplos autónomos, scan/collect/explain, auditoría completa y lab.
 añade conversiones, null/NaN, cobertura y uniones conciliadas con lab.
 [10.05 — Streaming y límites de memoria](curriculum/10_polars_duckdb/05_streaming_memory/README.md)
 añade extensión opcional con lotes, sink, planes físicos y observación del pico
-residente; lab y salidas conciliadas. 10.06–10.10 siguen planificadas.
+residente; lab y salidas conciliadas.
+[10.06 — DuckDB: SQL sobre Parquet](curriculum/10_polars_duckdb/06_duckdb_parquet/README.md)
+añade SQL directo, planes/ejecución y archivos completos/partes conciliados con lab.
+10.07–10.10 siguen planificadas.
 Los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.

@@ -111,7 +111,12 @@ y su [lab](../labs/10_polars_duckdb/05_streaming_memory/README.md) están dispon
 como extensión opcional: ejemplos autónomos de lotes/sink, plan físico y
 observación del pico residente en procesos nuevos Windows. Fuente/pares
 conciliados, vacío y fronteras; sin paquetes nuevos ni promesa de RAM acotada.
-El siguiente desarrollo esencial es [10.06 — DuckDB: SQL sobre Parquet](../curriculum/10_polars_duckdb/README.md#06-duckdb-sql-sobre-parquet),
+[10.06 — DuckDB: SQL sobre Parquet](../curriculum/10_polars_duckdb/06_duckdb_parquet/README.md)
+y su [lab](../labs/10_polars_duckdb/06_duckdb_parquet/README.md) están disponibles:
+SQL directo sobre completo/partes, esquema y valores por clave conciliados;
+EXPLAIN/EXPLAIN ANALYZE, seis filas y 4500/4600 MXN. DuckDB 2.0.0 declarado,
+instalación/reconstrucción uv local comprobadas; registros anteriores conservados.
+El siguiente desarrollo es [10.07 — DuckDB desde Python y R](../curriculum/10_polars_duckdb/README.md#07-duckdb-desde-python-y-r),
 todavía planificada.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
 sin duplicar aquí una bitácora. **El material disponible no acredita práctica
@@ -119,15 +124,15 @@ del estudiante ni implementa el proyecto integrador.**
 
 ## Desarrollo del material y siguiente módulo
 
-09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.05
-(10.05 opcional); 10.06–10.10 siguen planificadas. Desarrollar 10.06 con pregunta,
-datos, contrato y referencia independientes de entregas anteriores. Explicar
-SQL sobre Parquet, archivo frente a base persistente, proyección/filtro,
-EXPLAIN frente a EXPLAIN ANALYZE y ejecución real conciliada. Verificar APIs
-y versión antes de incorporar DuckDB a un entorno local y lockfile; no instalar
-solo por planificar ni cambiar los globales. Conservar el alcance de 10.05:
-estado/salida importan y la auditoría completa no tiene memoria acotada.
-10.09 profundizará la comparación de costos, sin inferirlos solo del plan.
+09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.06
+(10.05 opcional); 10.07–10.10 siguen planificadas. Desarrollar 10.07 con contexto,
+datos y resultados completos; recorridos Python y R separados para una misma
+consulta parametrizada, tipos/valores y cierre de conexiones. Verificar cliente
+R/DBI y compatibilidad antes de incorporar dependencias al proyecto renv local
+con respaldo/restauración; no asumir igualdad de versiones de clientes ni
+instalar por planificar. Preservar fuentes y lockfiles anteriores. Conservar
+la distinción plan/ejecución y el alcance de auditoría completa; 10.09
+profundizará la comparación de costos, sin inferirlos solo del plan.
 
 Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
 preparación de entorno de exigir resultados personales anteriores. No modificar
@@ -172,4 +177,4 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 10.06–10.10 y 11–14 conservan sus planes.
+quedan fuera de Git. 10.07–10.10 y 11–14 conservan sus planes.

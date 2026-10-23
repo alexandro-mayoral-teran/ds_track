@@ -144,7 +144,10 @@ añade conversiones, null/NaN, cobertura y cardinalidad con
 [10.05 — Streaming y límites de memoria](10_polars_duckdb/05_streaming_memory/README.md)
 añade extensión opcional, sink, lotes, planes físicos y observación de memoria con
 [lab](../labs/10_polars_duckdb/05_streaming_memory/README.md).
-10.06–10.10 siguen planificadas.
+[10.06 — DuckDB: SQL sobre Parquet](10_polars_duckdb/06_duckdb_parquet/README.md)
+añade DuckDB 2.0.0, SQL directo, planes y fuentes múltiples conciliadas con
+[lab](../labs/10_polars_duckdb/06_duckdb_parquet/README.md).
+10.07–10.10 siguen planificadas.
 Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
