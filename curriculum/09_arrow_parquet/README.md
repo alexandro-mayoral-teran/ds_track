@@ -17,7 +17,9 @@ muestra independiente y lab sin dependencias nuevas. [09.06](06_selective_datase
 añade consultas sobre varios Parquet y auditoría separada con lab.
 [09.07](07_metadata_compression/README.md) añade metadatos, grupos y comparación
 controlada de compresión/codificación con lab, sin paquetes nuevos.
-09.08–09.09 siguen planificadas; sus
+[09.08](08_justified_partitioning/README.md) añade particiones Hive y auditoría
+de etiquetas/valores con lab como extensión opcional, sin paquetes nuevos.
+09.09 sigue planificada; sus
 enlaces internos describen el alcance. El [estado y pendientes de cierre](../../docs/storage-closure.md)
 distingue material, práctica del estudiante e integración todavía pendiente.
 
@@ -50,7 +52,7 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 | 5 | [Intercambio Python y R](05_python_r_exchange/README.md) | Práctica | Conciliar archivos escritos por el otro lenguaje |
 | 6 | [Lectura selectiva y datasets](06_selective_datasets/README.md) | Esencial | Consultar columnas y filas de varios archivos |
 | 7 | [Metadatos, row groups y compresión](07_metadata_compression/README.md) | Práctica | Explicar y medir una decisión de almacenamiento |
-| 8 | [Particionamiento justificado](#08-particionamiento-justificado) | Extensión | Elegir particiones según una consulta y comprobarlas |
+| 8 | [Particionamiento justificado](08_justified_partitioning/README.md) | Extensión | Elegir particiones según una consulta y comprobarlas |
 | 9 | [Cierre del contrato compartido](#09-cierre-del-contrato-compartido) | Práctica de cierre | Reconstruir datos e indicadores desde ambos lenguajes |
 
 ## Alcance de cada sección
@@ -154,9 +156,14 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 
 - Carpetas por corte u otra clave de consulta, descubrimiento y pruning.
   Diferenciar particiones de archivos y row groups; evitar particiones excesivas.
-- Práctica prevista: comparar una consulta de un corte con y sin particiones,
-  revisar archivos generados y evitar duplicados al repetir una escritura.
-  Evolución de esquemas y compactación quedan como profundización posterior.
+- Disponible: [lección, funciones y preparador](08_justified_partitioning/README.md) y
+  [lab 09.08](../../labs/09_arrow_parquet/08_justified_partitioning/README.md).
+  Muestra autónoma de cuatro filas y base común; organización plana/por corte,
+  etiqueta auxiliar y tres columnas físicas conservadas. Misma selección de
+  nueve IDs/24100 MXN, auditoría de etiquetas y claves, copias duplicadas
+  rechazadas y 28 particiones excesivas contrastadas con dos cortes.
+  Sin dependencias nuevas ni medición de I/O, rendimiento o RAM; evolución
+  de esquemas y compactación quedan como profundización posterior.
 
 <a id="09-cierre-del-contrato-compartido"></a>
 
@@ -173,9 +180,10 @@ Están disponibles los [labs 09.01](../../labs/09_arrow_parquet/01_csv_parquet_a
 [09.03](../../labs/09_arrow_parquet/03_python_read_write/README.md),
 [09.04](../../labs/09_arrow_parquet/04_r_read_write/README.md),
 [09.05](../../labs/09_arrow_parquet/05_python_r_exchange/README.md),
-[09.06](../../labs/09_arrow_parquet/06_selective_datasets/README.md) y
-[09.07](../../labs/09_arrow_parquet/07_metadata_compression/README.md).
-09.08–09.09 siguen previstos, con 09.08 opcional. No se da el módulo por completo.
+[09.06](../../labs/09_arrow_parquet/06_selective_datasets/README.md),
+[09.07](../../labs/09_arrow_parquet/07_metadata_compression/README.md) y
+[09.08](../../labs/09_arrow_parquet/08_justified_partitioning/README.md), opcional.
+09.09 sigue previsto. No se da el módulo por completo.
 El cierre enlazará el análisis R con el proyecto previsto 04_large_credit_dataset,
 registrado en [proyectos](../../projects/README.md), aún sin carpeta implementada.
 
@@ -216,3 +224,5 @@ Versiones y capacidades de los recorridos por desarrollar se comprobarán al
 implementarlos. Esta planificación no instala paquetes.
 09.07 conserva esas versiones y lockfiles; compara archivos completos con
 PyArrow 21.0.0/arrow 25.0.1, con sesiones nuevas y mediciones crudas locales.
+09.08 conserva también esas versiones y contrasta datasets Hive en ambos
+lenguajes, con fechas físicas/etiquetas conciliadas y sin cambios de dependencias.

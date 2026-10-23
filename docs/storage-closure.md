@@ -65,27 +65,34 @@ arrow R 25.0.1 expone esquema/conteos y lectura de grupos. Mediciones crudas,
 sesiones nuevas y fronteras comprobadas, sin cambios de dependencias/lockfiles.
 La muestra no acredita rendimiento general, I/O físico ni RAM acotada.
 
+[09.08 — Particionamiento justificado](../curriculum/09_arrow_parquet/08_justified_partitioning/README.md)
+y su [lab](../labs/09_arrow_parquet/08_justified_partitioning/README.md) están
+disponibles como ampliación opcional. Ejemplos autónomos y base común en
+organización plana/Hive; etiqueta auxiliar con tres columnas físicas conservadas.
+Auditoría de rutas/valores y referencia CSV por clave; 28 particiones por clave
+contrastadas con dos cortes. Repeticiones, etiquetas falsas, vacíos y lectura
+cruzada comprobados sin cambiar dependencias ni lockfiles. No acredita I/O,
+rendimiento ni RAM. Esta extensión no bloquea el cierre esencial.
+
 El siguiente trabajo concreto es
-[09.08 — Particionamiento justificado](../curriculum/09_arrow_parquet/README.md#08-particionamiento-justificado),
-ampliación opcional; [09.09](../curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido)
-sigue pendiente como cierre esencial.
+[09.09 — Cierre del contrato compartido](../curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido).
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
-sin duplicar aquí una bitácora. **09.01–09.07 no completan el módulo ni acreditan práctica
+sin duplicar aquí una bitácora. **09.01–09.08 no completan el módulo ni acreditan práctica
 del estudiante.**
 
 ## Qué falta desarrollar para cerrar el módulo
 
 | Sección pendiente | Producto y condición de cierre |
 | --- | --- |
-| 09.08 — Particiones, extensión | Implementar solo como ampliación: consulta justificada, archivos repetidos y particiones excesivas. No bloquear el cierre esencial por particionar. |
 | 09.09 — Entrega integrada | Reconstrucción desde una sesión nueva en ambos lenguajes; archivos/contrato y verificadores de solo lectura, con interpretación y límites. Mantener entradas y rechazar sobrescrituras accidentales. |
 
-Para 09.08 conservar contratos, fuentes y verificadores existentes. Justificar
-la columna de partición por una consulta concreta, diferenciar carpetas/archivos/
-grupos y comprobar repeticiones sin duplicar ni sobrescribir entregas. No exigir
-datos mayores que la RAM ni inferir bytes físicamente omitidos de un plan.
-Conservar la separación de medidas y las observaciones crudas de 09.07; sus
-28 registros no justifican conclusiones generales de rendimiento.
+Para 09.09 conservar contratos, fuentes y verificadores existentes. Definir
+una entrega que reconstruya el CSV, escriba y relea desde procesos nuevos en
+Python/R, con interpretación y controles completos. No exigir entregas previas
+ni particiones de 09.08 para cerrar. Distinguir inventarios y notas de sesión
+de comprobación real de archivos/valores; rechazar sobrescrituras accidentales.
+Conservar observaciones crudas de 09.07 sin generalizar rendimiento a partir
+de 28 registros ni inferir I/O físico o RAM de planes/candidatos.
 
 PyArrow 21.0.0 se utilizó en un entorno de autoría ya existente para producir y
 releer el ejemplo 09.01; no se añadió como dependencia durante esa introducción.
@@ -95,8 +102,8 @@ Polars o DuckDB solo para planificar el recorrido.
 
 ## Qué falta para cerrar las prácticas y la integración
 
-- Reunir evidencia propia del estudiante de 09.01–09.07 y, más adelante, de
-  integración. Material disponible no acredita aprendizaje.
+- Reunir evidencia propia del estudiante de 09.01–09.07, de 09.08 si se elige
+  la ampliación y, más adelante, de integración. Material disponible no acredita aprendizaje.
 - Revisar el cierre de [08](../curriculum/08_visualization_r/README.md): geometrías,
   escalas, población, exportación desde sesión nueva y conciliación con Python.
   Sus nueve secciones tienen material; no faltan lecciones de ese módulo.

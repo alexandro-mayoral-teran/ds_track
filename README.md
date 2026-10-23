@@ -252,7 +252,9 @@ añade lectura cruzada, ejemplos completos y lab en ambos lenguajes, sin depende
 añade consulta de varios archivos, proyección/filtro y auditoría separada, con lab.
 [09.07 — Metadatos, row groups y compresión](curriculum/09_arrow_parquet/07_metadata_compression/README.md)
 añade ejemplos autónomos, inspección y mediciones comparables con lab, sin paquetes nuevos.
-[Pendientes de cierre](docs/storage-closure.md): 09.08–09.09 e integración por
+[09.08 — Particionamiento justificado](curriculum/09_arrow_parquet/08_justified_partitioning/README.md)
+añade la ampliación opcional de particiones Hive con ejemplos completos y lab.
+[Pendientes de cierre](docs/storage-closure.md): 09.09 e integración por
 desarrollar. El nivel 10 conserva su plan de Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.

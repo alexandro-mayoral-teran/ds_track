@@ -386,7 +386,9 @@ Dataset/Scanner y dplyr sobre varios Parquet, materialización y lab con
 selecciones conciliadas; sin dependencias nuevas.
 [09.07](curriculum/09_arrow_parquet/07_metadata_compression/README.md) añade
 metadatos, grupos y mediciones crudas con equivalencia comprobada y lab.
-09.08–09.09 siguen planificadas; sin dependencias nuevas en 09.07.
+[09.08](curriculum/09_arrow_parquet/08_justified_partitioning/README.md) añade
+particiones Hive justificadas y lab opcional con auditoría de etiquetas/claves.
+09.09 sigue planificada; sin dependencias nuevas en 09.07–09.08.
 Consultar [pendientes de cierre](docs/storage-closure.md).
 
 - Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.

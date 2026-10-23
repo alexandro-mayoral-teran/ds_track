@@ -94,7 +94,7 @@ con prerrequisitos visibles. El nivel 00 tiene sus seis lecciones y labs;
 el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. SQL dispone de sus nueve lecciones y labs con base local, integración y gráfica;
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
-07.01–07.10, 08.01–08.09 y 09.01–09.07 tienen lecciones/scripts/labs; 09.08–09.09 y 10–14 conservan planificación;
+07.01–07.10, 08.01–08.09 y 09.01–09.08 tienen lecciones/scripts/labs; 09.09 y 10–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -609,7 +609,7 @@ Las nueve secciones de 08 tienen material; el proyecto integrador continúa pend
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones; 09.01–09.07 disponen de lección/lab y scripts, las otras 12 siguen planificadas.
+19 secciones; 09.01–09.08 disponen de lección/lab y scripts, las otras 11 siguen planificadas.
 09.01 distingue formato, representación y biblioteca con una proyección de 28
 observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
 inventario conservados; inspección esencial Python estándar/R base y lectura
@@ -665,8 +665,17 @@ Python inspecciona estadísticas/códecs/codificaciones por bloque, incluso de
 archivos R; arrow 25.0.1 expone esquema/conteos y lectura de grupos, no ese
 detalle de metadatos. Tiempos de escritura/lectura separados de validación,
 notas crudas y verificadores de solo lectura. Sin dependencias ni cambios de
-lockfiles; no acredita I/O físico, RAM ni rendimiento general. 09.08 es la
-siguiente ampliación opcional; 09.09 sigue pendiente como cierre esencial.
+lockfiles; no acredita I/O físico, RAM ni rendimiento general.
+09.08 implementa la ampliación opcional de particiones Hive, con ejemplos
+autónomos y comparación plana/por corte. Etiqueta auxiliar textual, tres columnas
+físicas conservadas y auditoría de correspondencia de rutas antes de conciliar
+por clave. Base común de 28 filas, 29000/31800 MXN y selección de nueve IDs/
+24100 MXN; demostración de 28 particiones por clave frente a dos cortes.
+Duplicados, etiquetas falsas, vacíos y esquemas de todas las partes comprobados
+con lectura cruzada Python/R y sesiones nuevas. Destinos nuevos y política error,
+sin sobrescrituras, borrados, dependencias nuevas ni cambios de lockfiles.
+El inventario/candidatos no acredita I/O físico, tiempo o RAM. 09.09 sigue
+pendiente como cierre esencial; particionar no es requisito para cursarlo.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 
 | Módulo | Secciones | Papel y cierre |

@@ -6,14 +6,14 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
-- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.07 disponibles; 09.08–09.09 todavía planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.07 implementadas; 09.08–09.09 y 10–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-22, 09.07 con lección, funciones Python/R,
-  preparador y lab; ejemplos autónomos, metadatos y mediciones comprobados.
-- **Foco al cierre:** metadatos, grupos, codificación/compresión y mediciones separadas.
+- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.08 disponibles (09.08 opcional); 09.09 todavía planificada.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.08 implementadas; 09.09 y 10–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-22, 09.08 con lección, funciones Python/R,
+  preparador y lab; particiones, etiquetas y valores por clave comprobados.
+- **Foco al cierre:** particiones Hive justificadas, auditoría completa y destinos nuevos.
   Próximo paso: desarrollar
-  [09.08 — Particionamiento justificado](curriculum/09_arrow_parquet/README.md#08-particionamiento-justificado),
-  ampliación opcional todavía planificada; 09.09 sigue pendiente como cierre esencial.
+  [09.09 — Cierre del contrato compartido](curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido),
+  todavía planificada; no exige la ampliación opcional 09.08 ni entregas previas.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -34,7 +34,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: 09.01–09.07 disponibles y las otras 12 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: 09.01–09.08 disponibles y las otras 11 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -42,6 +42,39 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-22, 09.08:** disponibles la
+[lección](curriculum/09_arrow_parquet/08_justified_partitioning/README.md) y el
+[lab](labs/09_arrow_parquet/08_justified_partitioning/README.md), como ampliación
+opcional, con funciones Python/R y preparador. Ejemplos autónomos de cuatro
+filas; carpetas Hive, columnas físicas/virtuales, candidatos, cardinalidad y
+políticas de escritura explicadas. Etiqueta textual auxiliar derivada de la
+fecha; tres columnas físicas no anulables conservadas en cada archivo.
+
+Base común reconstruida desde CSV, sin entregas previas: 28 filas, 14 IDs,
+29000/31800 MXN. Comparación plana/por corte y selección de octubre ≥ 2000:
+nueve IDs/24100 MXN, contrastados por clave con CSV en ambos lenguajes.
+Dos particiones por corte frente a 28 por clave ID/fecha. Destinos nuevos y
+existing_data_behavior error, sin borrar ni sobrescribir; duplicar septiembre
+en una copia no altera la consulta de octubre, pero la auditoría lo rechaza.
+
+Bloques completos de lección/lab y fronteras ejecutados con Python 3.12.12/
+PyArrow 21.0.0/pandas 2.3.3 y R 4.6.1/arrow 25.0.1/dplyr 1.2.1. Setenta y dos
+controles Python, cincuenta y uno R y trece rechazos del preparador: lectura
+cruzada, umbrales, vacío con esquema, fechas/extremos enteros, duplicados,
+faltantes, notas/subcarpetas intrusas, etiqueta física incorrecta, calendario,
+esquemas distintos y alteraciones compensadas. Fuentes, metadatos, lockfiles,
+entornos y entregas anteriores conservados. El preparador solo añade script,
+módulo de consultas incluido y ruta local. Lectura renv autorizada fuera del
+ejecutor restringido; locale C solo en procesos de revisión, sin paquetes nuevos.
+
+Relecturas desde procesos nuevos, verificadores de solo lectura y revisión de
+enlaces/fragmentos, bloques/soluciones y git diff --check. Inventarios y
+candidatos no miden I/O físico, tiempo ni RAM; no se probó la interfaz del IDE.
+No hay proyecto/checkpoint activo ni se acredita práctica del estudiante.
+Siguiente: [09.09](curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido)
+y [storage-closure.md](docs/storage-closure.md), con entrega integrada sin exigir
+particiones ni resultados personales previos. Las entradas siguientes son historial.
 
 **Desarrollo — 2026-10-22, 09.07:** disponibles la
 [lección](curriculum/09_arrow_parquet/07_metadata_compression/README.md) y el

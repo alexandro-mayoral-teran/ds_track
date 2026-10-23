@@ -412,8 +412,8 @@ contrastes dos variantes equivalentes y documentes tamaño/tiempo por separado,
 con límites de la muestra y relectura desde sesión nueva. No hay proyecto ni
 checkpoint implementado asociado; crear material no acredita aprendizaje.
 
-Siguiente: [09.08 — Particionamiento justificado](../README.md#08-particionamiento-justificado),
-extensión todavía planificada. Puede omitirse para el cierre esencial
+Siguiente: [09.08 — Particionamiento justificado](../08_justified_partitioning/README.md),
+extensión disponible. Puede omitirse para el cierre esencial
 [09.09](../README.md#09-cierre-del-contrato-compartido), también pendiente.
 Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
 
