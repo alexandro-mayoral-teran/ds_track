@@ -153,7 +153,10 @@ añade SQL compartido, tipos/clases y recursos desde ambos clientes con
 [10.08 — Intercambio entre motores](10_polars_duckdb/08_engine_interchange/README.md)
 añade fronteras pandas/Arrow/Polars/DuckDB, ausencias y materialización con
 [lab](../labs/10_polars_duckdb/08_engine_interchange/README.md).
-10.09–10.10 siguen planificadas.
+[10.09 — Comparar tiempo y memoria](10_polars_duckdb/09_time_memory/README.md)
+añade procesos nuevos, crudas/medianas, fases y memoria con
+[lab](../labs/10_polars_duckdb/09_time_memory/README.md).
+10.10 sigue planificada.
 Los [pendientes de cierre](../docs/storage-closure.md)
 permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;

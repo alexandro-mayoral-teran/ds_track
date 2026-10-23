@@ -24,7 +24,9 @@ añade DuckDB 2.0.0, SQL, planes y ejecución conciliada con lección/lab.
 añade SQL compartido, parámetros, tipos/clases y recursos con lección/lab.
 [10.08 — Intercambio entre motores](08_engine_interchange/README.md)
 añade conversiones, ausencias, tipos y materialización con lección/lab.
-10.09–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
+[10.09 — Comparar tiempo y memoria](09_time_memory/README.md)
+añade protocolo repetido, fases, crudas y pico residente con lección/lab.
+10.10 sigue planificada: su enlace interno describe el alcance previsto.
 
 Polars se enseñará principalmente desde Python, con su interfaz R como comparación
 opcional. DuckDB se enseñará desde SQL, con recorridos separados para Python y R.
@@ -56,7 +58,7 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 | 6 | [DuckDB: SQL sobre Parquet](06_duckdb_parquet/README.md) | Esencial | Consultar archivos sin cargar primero todo en pandas |
 | 7 | [DuckDB desde Python y R](07_duckdb_python_r/README.md) | Práctica | Reutilizar una consulta desde ambos lenguajes |
 | 8 | [Intercambio entre motores](08_engine_interchange/README.md) | Práctica | Verificar conversiones y materialización de resultados |
-| 9 | [Comparar tiempo y memoria](#09-comparar-tiempo-y-memoria) | Práctica | Producir mediciones interpretables y repetibles |
+| 9 | [Comparar tiempo y memoria](09_time_memory/README.md) | Práctica | Producir mediciones interpretables y repetibles |
 | 10 | [Cierre y elección de herramienta](#10-cierre-y-eleccion-de-herramienta) | Práctica de cierre | Resolver una pregunta y justificar el motor elegido |
 
 ## Alcance de cada sección
@@ -191,9 +193,15 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 - Datos y resultado equivalentes; versiones, hardware, hilos, caché, repeticiones
   y métricas de memoria con un método explícito. Contar la ejecución completa:
   preparar un plan lazy no equivale a ejecutarlo.
-- Práctica prevista: medir lectura, consulta y exportación por separado y de extremo
-  a extremo; conciliar antes de comparar. DuckDB puede usar disco temporal según
-  operación y configuración: medir también ese costo cuando corresponda.
+- Disponible: [lección, muestra y ejecutores](09_time_memory/README.md)
+  y [lab 10.09](../../labs/10_polars_duckdb/09_time_memory/README.md).
+  Mismo Parquet/pregunta/salida JSON en pandas, Polars y DuckDB: tres observaciones
+  por motor, nueve procesos nuevos y orden rotado. Seis fases, crudas/mediana/rango,
+  pico residente Windows y exportaciones conciliadas contra fuente externa.
+  Ejemplos autónomos, seis filas/003/2600 y ampliación R system.time separada.
+  Vacío, fronteras, precisión y alteraciones comprobados; sin paquetes nuevos.
+  Caché SO sin vaciar, métricas acotadas y sin generalizar rendimiento o RAM.
+  Temporales retenidos al final no acreditan I/O ni pico de disco.
 
 <a id="10-cierre-y-eleccion-de-herramienta"></a>
 
@@ -212,9 +220,10 @@ Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_cont
 [10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md),
 [10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md),
 [10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md),
-[10.07](../../labs/10_polars_duckdb/07_duckdb_python_r/README.md)
-y [10.08](../../labs/10_polars_duckdb/08_engine_interchange/README.md);
-10.09–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
+[10.07](../../labs/10_polars_duckdb/07_duckdb_python_r/README.md),
+[10.08](../../labs/10_polars_duckdb/08_engine_interchange/README.md)
+y [10.09](../../labs/10_polars_duckdb/09_time_memory/README.md);
+10.10 sigue previsto. 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -267,3 +276,8 @@ y consulta desde procesos nuevos comprobadas. Sin cambios globales ni benchmark.
 esquemas antes de adaptar y valores por clave, incluidos vacío y precisión.
 Recorrido Python en dos entornos existentes y R Arrow/DBI en ambas bibliotecas
 locales; sin instalaciones nuevas ni certificación de copias, RAM o rendimiento.
+10.09 conserva entornos/versiones y añade mediciones locales con perf_counter_ns,
+CPU del proceso y PeakWorkingSetSize en Windows. Datos/pares/exportaciones
+conciliados fuera del trabajador, tres observaciones por motor y crudas verificables.
+No certifica tiempos históricos, RAM acotada ni rendimiento general. R opcional
+ejecuta otro protocolo con system.time, sin mezclar sus observaciones con Python.

@@ -345,8 +345,7 @@ repetir desde otra sesión. No se exige demostrar cero copias o un ahorro de RAM
 La [integración prevista](../../../projects/README.md) aún no tiene proyecto ni
 checkpoints activos. Registra evidencia según [PROGRESS.md](../../../PROGRESS.md);
 disponibilidad del material no acredita aprendizaje.
-Siguiente: [10.09 — Comparar tiempo y memoria](../README.md#09-comparar-tiempo-y-memoria),
-todavía planificada.
+Siguiente: [10.09 — Comparar tiempo y memoria](../09_time_memory/README.md).
 
 ## Referencias primarias
 

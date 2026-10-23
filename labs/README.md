@@ -110,6 +110,7 @@ reglas de enlace están en
 | [`10.06 — DuckDB: SQL sobre Parquet`](10_polars_duckdb/06_duckdb_parquet/) | `10_polars_duckdb` | No aplica todavía |
 | [`10.07 — DuckDB desde Python y R`](10_polars_duckdb/07_duckdb_python_r/) | `10_polars_duckdb` | No aplica todavía |
 | [`10.08 — Intercambio entre motores`](10_polars_duckdb/08_engine_interchange/) | `10_polars_duckdb` | No aplica todavía |
+| [`10.09 — Comparar tiempo y memoria`](10_polars_duckdb/09_time_memory/) | `10_polars_duckdb` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

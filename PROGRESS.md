@@ -6,16 +6,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.08 disponibles; 10.09–10.10 planificadas.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.08 implementadas (09.08 y 10.05 opcionales); 10.09–10.10 y 11–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 10.08 con lección/lab, intercambio
-  pandas/Arrow/Polars/DuckDB y ampliación R, sin dependencias nuevas.
-- **Punto de reanudación:** 10.09; 10.08 ya tiene material disponible.
-- **Foco actual:** fronteras de representación y materialización antes de medir.
+- **Módulo en desarrollo:** `10_polars_duckdb`: 10.01–10.09 disponibles; 10.10 planificada.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.09 implementadas (09.08 y 10.05 opcionales); 10.10 y 11–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 10.09 con lección/lab, mediciones repetidas
+  y fases de costo/memoria, sin dependencias nuevas.
+- **Punto de reanudación:** 10.10; 10.09 ya tiene material disponible.
+- **Foco actual:** mediciones con resultados equivalentes y límites explícitos.
   Próximo paso: desarrollar
-  [10.09 — Comparar tiempo y memoria](curriculum/10_polars_duckdb/README.md#09-comparar-tiempo-y-memoria),
-  todavía planificada; contexto/datos completos, resultados equivalentes,
-  repeticiones crudas y métricas con alcance explícito, sin generalizar costos.
+  [10.10 — Cierre y elección de herramienta](curriculum/10_polars_duckdb/README.md#10-cierre-y-eleccion-de-herramienta),
+  todavía planificada; contexto/datos completos, respuesta conciliada y decisión
+  justificada por claridad, entorno y costos observados con alcance explícito.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -36,7 +36,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y 10.01–10.08 disponibles, las otras dos de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y 10.01–10.09 disponibles, la última de 10 planificada; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -44,6 +44,57 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 10.09:** disponibles la
+[lección](curriculum/10_polars_duckdb/09_time_memory/README.md),
+CSV propio, preparador/coordinador/verificador, trabajador aislado, métricas SO,
+recorridos y [lab](labs/10_polars_duckdb/09_time_memory/README.md).
+Contexto/datos/contrato completos y ejemplos iniciales autónomos. Python 3.12.12,
+pandas 2.3.3/PyArrow 21.0.0/Polars 2.0.0/DuckDB 2.0.0 conservados; no se
+instalan paquetes ni cambian pyproject/uv.lock o metadatos R. R opcional usa
+4.6.1/DuckDB 1.5.6/DBI 1.3.0 del proyecto existente, sin modificarlo.
+
+Mismo Parquet, filtro/orden/pares y JSON UTF-8 en tres variantes: tres
+observaciones por motor/nueve procesos nuevos, orden rotado y pools a uno.
+Seis fases (importar/configurar/entrada_o_plan/ejecutar_recuperar/adaptar/exportar),
+consulta/intervalo/proceso y CPU con límites explícitos. PeakWorkingSetSize y
+WorkingSetSize Windows en bytes después de exportar, antes de cerrar conexión/
+emitir crudas. Pico absoluto del proceso, no RAM exclusiva de una consulta;
+temporales retenidos al final no acreditan I/O ni pico de disco. Entrada leída
+en auditoría previa y caché SO sin vaciar: proceso nuevo no se llama disco frío.
+
+Preparación/auditoría y conciliación fuera del trabajador. Seis filas,
+003/2600 conservados; cada exportación y esquema se comprueban por clave con
+CSV externo/Python estándar. Crudas y medianas/mínimos/máximos conservados,
+con hardware conocido/notas, versiones, hilos efectivos y resolución del reloj.
+Verificador de solo lectura revisa huellas, pares/exportaciones, fases y orden;
+no autentica duraciones históricas. R system.time mide otro intervalo sobre
+tabla en memoria/DBI, con tres conexiones en una sesión, sin mezclar protocolos.
+
+**Verificación:** siete grupos de pruebas con subcasos, bloques completos
+Python de lección/lab ejecutados y dos corridas reales de nueve procesos para
+octubre; segunda biblioteca Python ejecuta nueve procesos para noviembre vacío
+y verifica desde otro proceso. Fases suman sus intervalos, exportaciones concilian
+y contadores/hilos se registran. Fronteras del trabajador: fuente vacía, umbral
+2001, todos los pares, fechas 1900/2100, saldos individuales Int32/suma 4294967294,
+escalas 40/400/1998 y base común 28 filas (nueve/24100). Fuente duplicada fuera
+del filtro, compensaciones y esquema float rechazados. Pares, exportaciones,
+orden, tiempos incoherentes, resumen, columnas/tipos y contadores alterados
+rechazados; duraciones ficticias aritméticamente coherentes ilustran el límite
+de autenticidad. Verificar no modifica archivos; destinos existentes protegidos.
+R ejecutado desde procesos nuevos en ambas bibliotecas existentes, sin probar
+la interfaz del IDE. Linux/macOS y otras instalaciones no probados; rama Linux
+marcada sin verificar, otras plataformas con contador no disponible. No se
+acreditan grandes volúmenes, I/O físico ni RAM acotada. Fuentes, lockfiles y
+entregas anteriores conservados; enlaces/fragmentos y git diff --check revisados.
+
+**Siguiente:** [10.10 — Cierre y elección de herramienta](curriculum/10_polars_duckdb/README.md#10-cierre-y-eleccion-de-herramienta),
+después de [storage-closure.md](docs/storage-closure.md): pregunta propia,
+alternativas con respuesta equivalente y decisión por claridad/entorno/costos
+medidos, sin exigir entregas previas ni generalizar desde muestras pequeñas.
+10.10 y 11–14 conservan planes; proyectos/checkpoints y práctica del estudiante
+siguen pendientes. Este es el punto de retoma vigente; las entradas siguientes
+son historial.
 
 **Desarrollo — 2026-10-23, 10.08:** disponibles la
 [lección](curriculum/10_polars_duckdb/08_engine_interchange/README.md),

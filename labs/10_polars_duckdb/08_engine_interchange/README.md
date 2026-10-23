@@ -140,5 +140,4 @@ en el contrato para aceptar timestamps, categorías o dinero decimal?
 Avanza cuando puedas comprobar tipos y valores de cada frontera y señalar
 qué no prueban esas comparaciones sobre copias, RAM o tiempo. No hay checkpoint
 activo: el proyecto integrador sigue previsto y el material no acredita práctica.
-Siguiente: [10.09 — Comparar tiempo y memoria](../../../curriculum/10_polars_duckdb/README.md#09-comparar-tiempo-y-memoria),
-todavía planificada.
+Siguiente: [10.09 — Comparar tiempo y memoria](../../../curriculum/10_polars_duckdb/09_time_memory/README.md).
