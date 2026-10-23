@@ -388,7 +388,10 @@ selecciones conciliadas; sin dependencias nuevas.
 metadatos, grupos y mediciones crudas con equivalencia comprobada y lab.
 [09.08](curriculum/09_arrow_parquet/08_justified_partitioning/README.md) añade
 particiones Hive justificadas y lab opcional con auditoría de etiquetas/claves.
-09.09 sigue planificada; sin dependencias nuevas en 09.07–09.08.
+[09.09](curriculum/09_arrow_parquet/09_shared_contract_closure/README.md) añade
+entrega integrada y lab con verificación desde sesiones nuevas en ambos lenguajes.
+Las nueve secciones tienen material; no acredita aprendizaje ni implementación
+del proyecto. Sin dependencias nuevas en 09.07–09.09.
 Consultar [pendientes de cierre](docs/storage-closure.md).
 
 - Esencial: leer y escribir Parquet; comprender tipos, esquemas y almacenamiento columnar.

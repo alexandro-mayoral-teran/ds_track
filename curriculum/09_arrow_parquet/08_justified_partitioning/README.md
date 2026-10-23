@@ -10,7 +10,7 @@ Retoma Dataset/filtro/materialización de [09.06](../06_selective_datasets/READM
 y archivos/grupos/estadísticas de [09.07](../07_metadata_compression/README.md).
 Necesitas sus conceptos y bibliotecas, no sus entregas. Los primeros ejemplos
 incluyen todos sus datos; después se reconstruye un CSV incluido en el track.
-Esta ampliación no bloquea [09.09](../README.md#09-cierre-del-contrato-compartido).
+Esta ampliación no bloquea [09.09](../09_shared_contract_closure/README.md).
 
 Al terminar podrás:
 
@@ -439,8 +439,8 @@ reconstruyas el contrato, concilies la consulta y rechaces duplicados/etiquetas
 incorrectas. No hay proyecto/checkpoint implementado asociado. El material no
 acredita práctica del estudiante; omitir esta extensión no bloquea el cierre.
 
-Siguiente: [09.09 — Cierre del contrato compartido](../README.md#09-cierre-del-contrato-compartido),
-todavía planificada. Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
+Siguiente: [09.09 — Cierre del contrato compartido](../09_shared_contract_closure/README.md).
+Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
 
 ## Referencias y atribución
 

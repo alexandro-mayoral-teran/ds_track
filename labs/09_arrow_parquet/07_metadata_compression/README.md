@@ -214,5 +214,5 @@ del curso. Registra tu evidencia y dudas en el mecanismo de estudio acordado.
 No hay proyecto/checkpoint implementado asociado. Después de comprobar y
 explicar, continúa con [09.08 — Particionamiento justificado](../../../curriculum/09_arrow_parquet/08_justified_partitioning/README.md),
 extensión disponible, o con el cierre esencial
-[09.09](../../../curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido),
-también pendiente. Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
+[09.09](../../../curriculum/09_arrow_parquet/09_shared_contract_closure/README.md),
+disponible. Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).

@@ -414,7 +414,7 @@ checkpoint implementado asociado; crear material no acredita aprendizaje.
 
 Siguiente: [09.08 — Particionamiento justificado](../08_justified_partitioning/README.md),
 extensión disponible. Puede omitirse para el cierre esencial
-[09.09](../README.md#09-cierre-del-contrato-compartido), también pendiente.
+[09.09](../09_shared_contract_closure/README.md), disponible.
 Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
 
 ## Referencias y atribución

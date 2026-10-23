@@ -74,25 +74,35 @@ contrastadas con dos cortes. Repeticiones, etiquetas falsas, vacíos y lectura
 cruzada comprobados sin cambiar dependencias ni lockfiles. No acredita I/O,
 rendimiento ni RAM. Esta extensión no bloquea el cierre esencial.
 
-El siguiente trabajo concreto es
-[09.09 — Cierre del contrato compartido](../curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido).
+[09.09 — Cierre del contrato compartido](../curriculum/09_arrow_parquet/09_shared_contract_closure/README.md)
+y su [lab](../labs/09_arrow_parquet/09_shared_contract_closure/README.md) están
+disponibles. Ambos escritores producen fuente/contrato, Parquet completo/partes
+planas, resumen/selección y notas/huellas; ambos lectores reconstruyen la fuente
+externa y verifican archivos/valores desde procesos nuevos. Mantiene 28 registros,
+29000/31800 MXN y nueve seleccionados/24100 MXN. Copias con errores compensados
+se rechazan aun actualizando huellas. Sin dependencias nuevas, entregas previas
+ni requisito de particiones; no autentica sesiones históricas ni mide rendimiento.
+
+**El desarrollo de las nueve secciones de 09 está cerrado.** El siguiente
+trabajo es [10.01 — Pregunta, contrato y referencia](../curriculum/10_polars_duckdb/README.md#01-pregunta-contrato-y-referencia),
+todavía planificado.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
-sin duplicar aquí una bitácora. **09.01–09.08 no completan el módulo ni acreditan práctica
-del estudiante.**
+sin duplicar aquí una bitácora. **El material disponible no acredita práctica
+del estudiante ni implementa el proyecto integrador.**
 
-## Qué falta desarrollar para cerrar el módulo
+## Desarrollo del material y siguiente módulo
 
-| Sección pendiente | Producto y condición de cierre |
-| --- | --- |
-| 09.09 — Entrega integrada | Reconstrucción desde una sesión nueva en ambos lenguajes; archivos/contrato y verificadores de solo lectura, con interpretación y límites. Mantener entradas y rechazar sobrescrituras accidentales. |
+09 no tiene secciones pendientes de autoría. El módulo 10 conserva sus diez
+secciones planificadas, sin lecciones/labs implementados. Empezar 10.01 por
+la pregunta y el contrato conocidos, con una referencia independiente antes
+de cambiar motores. Revisar las APIs oficiales al desarrollar cada sección.
 
-Para 09.09 conservar contratos, fuentes y verificadores existentes. Definir
-una entrega que reconstruya el CSV, escriba y relea desde procesos nuevos en
-Python/R, con interpretación y controles completos. No exigir entregas previas
-ni particiones de 09.08 para cerrar. Distinguir inventarios y notas de sesión
-de comprobación real de archivos/valores; rechazar sobrescrituras accidentales.
-Conservar observaciones crudas de 09.07 sin generalizar rendimiento a partir
-de 28 registros ni inferir I/O físico o RAM de planes/candidatos.
+Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
+preparación de entorno de exigir resultados personales anteriores. No modificar
+lockfiles ni instalar Polars/DuckDB solo para planificar. Al incorporarlos,
+comprobar entornos locales y resultados equivalentes. Mantener observaciones
+crudas de 09.07 sin generalizar rendimiento a partir de 28 registros ni inferir
+I/O físico o RAM de planes/candidatos.
 
 PyArrow 21.0.0 se utilizó en un entorno de autoría ya existente para producir y
 releer el ejemplo 09.01; no se añadió como dependencia durante esa introducción.
@@ -102,8 +112,8 @@ Polars o DuckDB solo para planificar el recorrido.
 
 ## Qué falta para cerrar las prácticas y la integración
 
-- Reunir evidencia propia del estudiante de 09.01–09.07, de 09.08 si se elige
-  la ampliación y, más adelante, de integración. Material disponible no acredita aprendizaje.
+- Reunir evidencia propia del estudiante de 09.01–09.07 y 09.09, de 09.08 si
+  se elige la ampliación y, más adelante, del proyecto. Material disponible no acredita aprendizaje.
 - Revisar el cierre de [08](../curriculum/08_visualization_r/README.md): geometrías,
   escalas, población, exportación desde sesión nueva y conciliación con Python.
   Sus nueve secciones tienen material; no faltan lecciones de ese módulo.

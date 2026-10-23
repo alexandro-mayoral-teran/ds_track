@@ -254,8 +254,11 @@ añade consulta de varios archivos, proyección/filtro y auditoría separada, co
 añade ejemplos autónomos, inspección y mediciones comparables con lab, sin paquetes nuevos.
 [09.08 — Particionamiento justificado](curriculum/09_arrow_parquet/08_justified_partitioning/README.md)
 añade la ampliación opcional de particiones Hive con ejemplos completos y lab.
-[Pendientes de cierre](docs/storage-closure.md): 09.09 e integración por
-desarrollar. El nivel 10 conserva su plan de Polars/DuckDB; los niveles 11–14 tienen secciones definidas
+[09.09 — Cierre del contrato compartido](curriculum/09_arrow_parquet/09_shared_contract_closure/README.md)
+añade entrega reconstruible, verificadores y lab con cruces Python/R.
+Las nueve secciones de 09 tienen material; los [pendientes de integración](docs/storage-closure.md)
+separan práctica del estudiante y proyecto todavía por desarrollar.
+El nivel 10 conserva su plan de Polars/DuckDB; los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de

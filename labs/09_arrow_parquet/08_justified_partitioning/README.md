@@ -198,5 +198,5 @@ el repositorio del curso.
 - ¿Qué diferencia hay entre un Parquet vacío con esquema y ninguna fuente?
 
 No hay proyecto/checkpoint implementado asociado. Esta extensión no bloquea
-el cierre esencial. Siguiente: [09.09 — Cierre del contrato compartido](../../../curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido),
-todavía planificada. Consulta los [pendientes de cierre](../../../docs/storage-closure.md).
+el cierre esencial. Siguiente: [09.09 — Cierre del contrato compartido](../../../curriculum/09_arrow_parquet/09_shared_contract_closure/README.md).
+Consulta los [pendientes de cierre](../../../docs/storage-closure.md).

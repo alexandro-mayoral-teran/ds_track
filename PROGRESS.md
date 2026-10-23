@@ -5,15 +5,15 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse` y `08_visualization_r`; proyecto/checkpoints pendientes.
-- **Módulo en desarrollo:** `09_arrow_parquet`: 09.01–09.08 disponibles (09.08 opcional); 09.09 todavía planificada.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.08 implementadas; 09.09 y 10–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-22, 09.08 con lección, funciones Python/R,
-  preparador y lab; particiones, etiquetas y valores por clave comprobados.
-- **Foco al cierre:** particiones Hive justificadas, auditoría completa y destinos nuevos.
+- **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r` y `09_arrow_parquet`; proyectos/checkpoints y práctica del estudiante pendientes.
+- **Módulo por desarrollar:** `10_polars_duckdb`: diez secciones planificadas; 10.01 no se inició.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09 y 09.01–09.09 implementadas (09.08 opcional); 10–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-22, 09.09 con lección, funciones Python/R,
+  preparador y lab; entrega y verificadores desde procesos nuevos comprobados.
+- **Foco al cierre:** contrato compartido, reconstrucción y lectura cruzada completa.
   Próximo paso: desarrollar
-  [09.09 — Cierre del contrato compartido](curriculum/09_arrow_parquet/README.md#09-cierre-del-contrato-compartido),
-  todavía planificada; no exige la ampliación opcional 09.08 ni entregas previas.
+  [10.01 — Pregunta, contrato y referencia](curriculum/10_polars_duckdb/README.md#01-pregunta-contrato-y-referencia),
+  todavía planificada; no instalar motores solo por planificar.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -34,7 +34,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: 09.01–09.08 disponibles y las otras 11 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 disponibles y las diez de 10 planificadas; 11–14 añaden 37 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -42,6 +42,44 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-22, 09.09:** disponibles la
+[lección](curriculum/09_arrow_parquet/09_shared_contract_closure/README.md) y el
+[lab](labs/09_arrow_parquet/09_shared_contract_closure/README.md), con funciones
+Python/R y preparador. Ejemplo autónomo de cuatro filas y entrega completa
+desde el CSV incluido: fuente/contrato, Parquet completo/partes planas,
+resumen/selección, notas/huellas. No requiere entregas previas ni particiones.
+Las nueve secciones de 09 tienen material; no queda autoría pendiente del módulo.
+
+La entrega conserva 28 registros, 14 IDs y 29000/31800 MXN; octubre ≥ 2000:
+nueve ID/importe y 24100 MXN. Ambos lectores revisan estructura, fuente externa,
+esquemas/valores por clave, partes, inventario, resumen, selección, notas y
+huellas MD5. Las huellas detectan cambios accidentales, no autentican sesiones
+ni sustituyen la relectura; se rechazan saldos compensados aun registrando
+las huellas nuevas. Reordenar el Parquet se acepta tras registrar sus nuevos
+bytes porque la comparación lógica es por clave.
+
+Bloques completos de lección/lab ejecutados con Python 3.12.12/PyArrow 21.0.0/
+pandas 2.3.3 y R 4.6.1/arrow 25.0.1/dplyr 1.2.1/renv 1.3.1. Reconstrucciones
+independientes y cuatro combinaciones escritor/lector desde procesos nuevos.
+Sesenta y cuatro controles Python, cincuenta y seis R y trece rechazos del
+preparador: vacío, fechas/extremos enteros, duplicados, ausencias/fracciones,
+desborde/calendario, archivos ausentes/adicionales, esquemas, notas/huellas,
+fuente copiada, CSV exportados, alteraciones compensadas y solo lectura.
+Entregas vacías/de frontera escritas y verificadas también en el otro lenguaje.
+
+Sin dependencias nuevas ni cambios de lockfiles, fuentes, entornos o entregas
+previas. El preparador añade script, consultas compartidas y ruta local; R
+se comprobó con lectura de biblioteca renv fuera del ejecutor restringido y
+locale C solo en procesos de revisión. Enlaces/fragmentos, bloques/soluciones
+y git diff --check revisados. No se midieron I/O, rendimiento o RAM ni se probó
+la interfaz del IDE. Proyecto `04_large_credit_dataset`, checkpoints y práctica
+del estudiante siguen pendientes; desarrollar contenido no acredita aprendizaje.
+
+**Retomar:** [10.01](curriculum/10_polars_duckdb/README.md#01-pregunta-contrato-y-referencia),
+después de [storage-closure.md](docs/storage-closure.md): pregunta, contrato y
+referencia antes de cambiar motores. 10–14 siguen planificados. No instalar
+paquetes por anticipado. Las entradas siguientes se conservan como historial.
 
 **Desarrollo — 2026-10-22, 09.08:** disponibles la
 [lección](curriculum/09_arrow_parquet/08_justified_partitioning/README.md) y el

@@ -19,8 +19,10 @@ añade consultas sobre varios Parquet y auditoría separada con lab.
 controlada de compresión/codificación con lab, sin paquetes nuevos.
 [09.08](08_justified_partitioning/README.md) añade particiones Hive y auditoría
 de etiquetas/valores con lab como extensión opcional, sin paquetes nuevos.
-09.09 sigue planificada; sus
-enlaces internos describen el alcance. El [estado y pendientes de cierre](../../docs/storage-closure.md)
+[09.09](09_shared_contract_closure/README.md) añade entrega reconstruible,
+verificadores de solo lectura y lab con lectura cruzada. Las nueve secciones
+tienen material; eso no acredita práctica del estudiante ni proyecto integrado.
+El [estado y pendientes de cierre](../../docs/storage-closure.md)
 distingue material, práctica del estudiante e integración todavía pendiente.
 
 El módulo es un puente entre lenguajes. La teoría se explica una vez; las prácticas
@@ -53,7 +55,7 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 | 6 | [Lectura selectiva y datasets](06_selective_datasets/README.md) | Esencial | Consultar columnas y filas de varios archivos |
 | 7 | [Metadatos, row groups y compresión](07_metadata_compression/README.md) | Práctica | Explicar y medir una decisión de almacenamiento |
 | 8 | [Particionamiento justificado](08_justified_partitioning/README.md) | Extensión | Elegir particiones según una consulta y comprobarlas |
-| 9 | [Cierre del contrato compartido](#09-cierre-del-contrato-compartido) | Práctica de cierre | Reconstruir datos e indicadores desde ambos lenguajes |
+| 9 | [Cierre del contrato compartido](09_shared_contract_closure/README.md) | Práctica de cierre | Reconstruir datos e indicadores desde ambos lenguajes |
 
 ## Alcance de cada sección
 
@@ -170,8 +172,13 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 ### 09 — Cierre del contrato compartido
 
 - Integrar conversión, lectura cruzada y consulta selectiva con reglas documentadas.
-- Práctica prevista: reconstruir el Parquet y demostrar desde Python y R que
-  conserva registros e indicadores. Particionar no es requisito del cierre esencial.
+- Disponible: [lección, funciones y preparador](09_shared_contract_closure/README.md) y
+  [lab 09.09](../../labs/09_arrow_parquet/09_shared_contract_closure/README.md).
+  Fuente copiada/contrato, archivo completo/partes planas, resumen/selección,
+  notas/huellas y verificadores de solo lectura. Reconstrucción desde CSV
+  independiente y cruces Python/R con 28 registros, 29000/31800 MXN y nueve
+  seleccionados/24100 MXN. Ejemplo autónomo, sesiones nuevas y alteraciones
+  compensadas comprobadas; no exige entregas previas ni particiones.
 
 ## Prácticas, proyecto y criterio de salida
 
@@ -181,9 +188,10 @@ Están disponibles los [labs 09.01](../../labs/09_arrow_parquet/01_csv_parquet_a
 [09.04](../../labs/09_arrow_parquet/04_r_read_write/README.md),
 [09.05](../../labs/09_arrow_parquet/05_python_r_exchange/README.md),
 [09.06](../../labs/09_arrow_parquet/06_selective_datasets/README.md),
-[09.07](../../labs/09_arrow_parquet/07_metadata_compression/README.md) y
-[09.08](../../labs/09_arrow_parquet/08_justified_partitioning/README.md), opcional.
-09.09 sigue previsto. No se da el módulo por completo.
+[09.07](../../labs/09_arrow_parquet/07_metadata_compression/README.md),
+[09.08](../../labs/09_arrow_parquet/08_justified_partitioning/README.md), opcional, y
+[09.09](../../labs/09_arrow_parquet/09_shared_contract_closure/README.md).
+Las nueve secciones tienen material; el aprendizaje requiere evidencias propias.
 El cierre enlazará el análisis R con el proyecto previsto 04_large_credit_dataset,
 registrado en [proyectos](../../projects/README.md), aún sin carpeta implementada.
 
@@ -226,3 +234,5 @@ implementarlos. Esta planificación no instala paquetes.
 PyArrow 21.0.0/arrow 25.0.1, con sesiones nuevas y mediciones crudas locales.
 09.08 conserva también esas versiones y contrasta datasets Hive en ambos
 lenguajes, con fechas físicas/etiquetas conciliadas y sin cambios de dependencias.
+09.09 conserva versiones y lockfiles; verifica entregas completas de ambos
+escritores en ambos lectores desde procesos nuevos, sin dependencias nuevas.
