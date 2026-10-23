@@ -272,7 +272,9 @@ añade extensión opcional con lotes, sink, planes físicos y observación del p
 residente; lab y salidas conciliadas.
 [10.06 — DuckDB: SQL sobre Parquet](curriculum/10_polars_duckdb/06_duckdb_parquet/README.md)
 añade SQL directo, planes/ejecución y archivos completos/partes conciliados con lab.
-10.07–10.10 siguen planificadas.
+[10.07 — DuckDB desde Python y R](curriculum/10_polars_duckdb/07_duckdb_python_r/README.md)
+añade consultas compartidas, parámetros, tipos y recursos con lección/lab.
+10.08–10.10 siguen planificadas.
 Los niveles 11–14 tienen secciones definidas
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.

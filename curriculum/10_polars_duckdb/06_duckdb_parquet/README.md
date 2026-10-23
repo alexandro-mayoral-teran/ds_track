@@ -342,8 +342,8 @@ No hay proyecto/checkpoint activo: `04_large_credit_dataset` sigue previsto
 en [proyectos](../../../projects/README.md). Registra evidencia y dudas según
 [PROGRESS.md](../../../PROGRESS.md); desarrollar material no acredita aprendizaje.
 
-Siguiente: [10.07 — DuckDB desde Python y R](../README.md#07-duckdb-desde-python-y-r),
-todavía planificada. Esta sección no incorpora paquetes R ni modifica renv.
+Siguiente: [10.07 — DuckDB desde Python y R](../07_duckdb_python_r/README.md).
+Esta sección 10.06 no incorpora paquetes R ni modifica renv.
 
 ## Referencias primarias
 

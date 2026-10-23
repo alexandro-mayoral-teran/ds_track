@@ -179,6 +179,6 @@ Conserva script/SQL, versiones, planes anotados, pares/resumen y rechazos espera
 
 Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
 El proyecto `04_large_credit_dataset` y sus checkpoints siguen pendientes.
-Siguiente: [10.07 — DuckDB desde Python y R](../../../curriculum/10_polars_duckdb/README.md#07-duckdb-desde-python-y-r),
-todavía planificada. Vuelve a la [lección](../../../curriculum/10_polars_duckdb/06_duckdb_parquet/README.md)
+Siguiente: [10.07 — DuckDB desde Python y R](../../../curriculum/10_polars_duckdb/07_duckdb_python_r/README.md).
+Vuelve a la [lección](../../../curriculum/10_polars_duckdb/06_duckdb_parquet/README.md)
 para revisar los conceptos antes de avanzar.

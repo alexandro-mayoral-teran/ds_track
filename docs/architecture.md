@@ -95,7 +95,7 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01–10.06 tienen lección/muestra/funciones/lab (10.05 opcional); 10.07–10.10 y 11–14 conservan planificación;
+10.01–10.07 tienen lección/muestra/funciones/lab (10.05 opcional); 10.08–10.10 y 11–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -610,8 +610,8 @@ Las nueve secciones de 08 tienen material; el proyecto integrador continúa pend
 
 Se conserva el orden: después del análisis Python/R, el 09 define los archivos
 compartidos y el 10 compara motores sobre esos mismos datos. Sus README contienen
-19 secciones; 09.01–09.09 y 10.01–10.06 disponen de lección/lab y scripts;
-10.05 es opcional; 10.07–10.10 siguen planificadas.
+19 secciones; 09.01–09.09 y 10.01–10.07 disponen de lección/lab y scripts;
+10.05 es opcional; 10.08–10.10 siguen planificadas.
 09.01 distingue formato, representación y biblioteca con una proyección de 28
 observaciones de los mismos 14 IDs y 29000/31800 MXN. CSV/Parquet reales e
 inventario conservados; inspección esencial Python estándar/R base y lectura
@@ -732,8 +732,16 @@ partes y unión pequeña; fuente autónoma de seis filas, 003/2600 y resumen
 4500/4600 MXN. Esquema de cada archivo y valores auditados contra CSV externo;
 EXPLAIN/EXPLAIN ANALYZE distinguen plan/ejecución, sin acreditar I/O físico ni
 RAM acotada. Vacío, fronteras, sumas amplias, partes omitidas/duplicadas y
-alteraciones comprobados. No modifica renv ni incorpora cliente R; 10.07 es
-el siguiente desarrollo previsto. Los ejemplos conservan contexto propio.
+alteraciones comprobados. 10.06 no modifica renv ni incorpora cliente R.
+10.07 incorpora recorridos autónomos Python/R con SQL parametrizado compartido,
+tipos/clases nativas, páginas y cierre de resultados/conexiones ante errores.
+Conserva seis filas, 003/2600 y resumen 4500/4600 MXN como texto decimal exacto;
+auditoría completa y lectura cruzada, sin compartir base persistente entre versiones.
+Python DuckDB 2.0.0 permanece; R DuckDB 1.5.6/DBI 1.3.0 se registran junto con
+dbplyr 2.6.0/blob 1.3.0 inferidos por renv. Respaldo del mismo proyecto, 46 registros
+previos idénticos y segunda restauración vacía comprobados. No cambia bibliotecas
+globales ni acredita RAM acotada. 10.08 es el siguiente desarrollo previsto.
+Los ejemplos conservan contexto propio.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 
 | Módulo | Secciones | Papel y cierre |

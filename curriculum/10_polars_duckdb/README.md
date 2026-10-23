@@ -20,7 +20,9 @@ añade ejemplos completos, catálogo propio, cobertura y cardinalidad con lab.
 añade la extensión opcional de lotes, sink, plan físico y pico residente observado.
 [10.06 — DuckDB: SQL sobre Parquet](06_duckdb_parquet/README.md)
 añade DuckDB 2.0.0, SQL, planes y ejecución conciliada con lección/lab.
-10.07–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
+[10.07 — DuckDB desde Python y R](07_duckdb_python_r/README.md)
+añade SQL compartido, parámetros, tipos/clases y recursos con lección/lab.
+10.08–10.10 siguen planificadas: sus enlaces internos describen el alcance previsto.
 
 Polars se enseñará principalmente desde Python, con su interfaz R como comparación
 opcional. DuckDB se enseñará desde SQL, con recorridos separados para Python y R.
@@ -50,7 +52,7 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 | 4 | [Tipos, faltantes y uniones](04_types_missing_joins/README.md) | Esencial | Conservar semántica e indicadores al cambiar de motor |
 | 5 | [Streaming y límites de memoria](05_streaming_memory/README.md) | Extensión | Comprobar cómo se ejecuta una consulta por lotes |
 | 6 | [DuckDB: SQL sobre Parquet](06_duckdb_parquet/README.md) | Esencial | Consultar archivos sin cargar primero todo en pandas |
-| 7 | [DuckDB desde Python y R](#07-duckdb-desde-python-y-r) | Práctica | Reutilizar una consulta desde ambos lenguajes |
+| 7 | [DuckDB desde Python y R](07_duckdb_python_r/README.md) | Práctica | Reutilizar una consulta desde ambos lenguajes |
 | 8 | [Intercambio entre motores](#08-intercambio-entre-motores) | Práctica | Verificar conversiones y materialización de resultados |
 | 9 | [Comparar tiempo y memoria](#09-comparar-tiempo-y-memoria) | Práctica | Producir mediciones interpretables y repetibles |
 | 10 | [Cierre y elección de herramienta](#10-cierre-y-eleccion-de-herramienta) | Práctica de cierre | Resolver una pregunta y justificar el motor elegido |
@@ -154,8 +156,15 @@ DBI y el cliente R se explicarán antes de pedir una consulta desde ese lenguaje
 
 - Python: conexión, consultas parametrizadas y recuperación de resultados.
   R: DBI/duckdb, conexión, parámetros y cierre explícito.
-- Práctica prevista: ejecutar la misma consulta en apartados separados y conciliar
-  resultados. duckplyr/dbplyr serán alternativas opcionales, no requisitos iniciales.
+- Disponible: [lección, muestra, SQL y clientes](07_duckdb_python_r/README.md)
+  y [lab 10.07](../../labs/10_polars_duckdb/07_duckdb_python_r/README.md).
+  Ejemplos autónomos y consulta parametrizada compartida; seis filas, 003/2600,
+  resumen exacto 4500/4600 MXN y lectura cruzada. Python DuckDB 2.0.0 y R
+  DuckDB 1.5.6/DBI 1.3.0, tipos/clases y limpieza ante errores. renv local
+  con respaldo y segunda restauración vacía; 46 registros previos conservados.
+  Vacío, fronteras y alteraciones comprobados; paginar no garantiza RAM acotada.
+  dbplyr queda registrado por inferencia de renv, sin usarlo como interfaz;
+  duckplyr/dbplyr son alternativas opcionales.
 
 <a id="08-intercambio-entre-motores"></a>
 
@@ -193,9 +202,10 @@ Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_cont
 [10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md),
 [10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md),
 [10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md),
-[10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md)
-y [10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md);
-10.07–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
+[10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md),
+[10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md)
+y [10.07](../../labs/10_polars_duckdb/07_duckdb_python_r/README.md);
+10.08–10.10 siguen previstos. 10.05 y Polars en R son opcionales.
 El proyecto previsto 04_large_credit_dataset aparece en
 [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -240,3 +250,7 @@ ni cambios de configuración global. No mide rendimiento ni acredita RAM acotada
 10.06 incorpora DuckDB 2.0.0 a pyproject/uv.lock sin alterar otros registros
 salvo la dependencia del proyecto; instalación y segunda reconstrucción local
 desde caché comprobadas. No cambia entornos globales, Conda, renv ni venv raíz.
+10.07 conserva Python y amplía el mismo proyecto renv con respaldo: DBI 1.3.0,
+duckdb 1.5.6 y dbplyr 2.6.0/blob 1.3.0 por inferencia de dependencias. Los
+46 registros anteriores permanecen idénticos; segunda biblioteca restaurada
+y consulta desde procesos nuevos comprobadas. Sin cambios globales ni benchmark.

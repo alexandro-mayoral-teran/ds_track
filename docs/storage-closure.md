@@ -116,7 +116,13 @@ y su [lab](../labs/10_polars_duckdb/06_duckdb_parquet/README.md) están disponib
 SQL directo sobre completo/partes, esquema y valores por clave conciliados;
 EXPLAIN/EXPLAIN ANALYZE, seis filas y 4500/4600 MXN. DuckDB 2.0.0 declarado,
 instalación/reconstrucción uv local comprobadas; registros anteriores conservados.
-El siguiente desarrollo es [10.07 — DuckDB desde Python y R](../curriculum/10_polars_duckdb/README.md#07-duckdb-desde-python-y-r),
+[10.07 — DuckDB desde Python y R](../curriculum/10_polars_duckdb/07_duckdb_python_r/README.md)
+y su [lab](../labs/10_polars_duckdb/07_duckdb_python_r/README.md) están disponibles:
+misma consulta parametrizada, ejemplos autónomos y tipos/clases conciliados.
+Python DuckDB 2.0.0 y R DuckDB 1.5.6/DBI 1.3.0; lectura cruzada, vacío y
+recursos ante errores. renv con respaldo y segunda restauración local, 46
+registros previos conservados; dbplyr/blob registrados por inferencia de renv.
+El siguiente desarrollo es [10.08 — Intercambio entre motores](../curriculum/10_polars_duckdb/README.md#08-intercambio-entre-motores),
 todavía planificada.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
 sin duplicar aquí una bitácora. **El material disponible no acredita práctica
@@ -124,13 +130,12 @@ del estudiante ni implementa el proyecto integrador.**
 
 ## Desarrollo del material y siguiente módulo
 
-09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.06
-(10.05 opcional); 10.07–10.10 siguen planificadas. Desarrollar 10.07 con contexto,
-datos y resultados completos; recorridos Python y R separados para una misma
-consulta parametrizada, tipos/valores y cierre de conexiones. Verificar cliente
-R/DBI y compatibilidad antes de incorporar dependencias al proyecto renv local
-con respaldo/restauración; no asumir igualdad de versiones de clientes ni
-instalar por planificar. Preservar fuentes y lockfiles anteriores. Conservar
+09 no tiene secciones pendientes de autoría. El módulo 10 dispone de 10.01–10.07
+(10.05 opcional); 10.08–10.10 siguen planificadas. Desarrollar 10.08 con contexto,
+datos y resultados completos; conversiones entre motores, materialización y
+comparación por clave/esquema después de adaptar. Revisar las APIs efectivas,
+sin prometer ausencia de copias ni asumir igualdad de versiones de clientes.
+Preservar fuentes y lockfiles anteriores. Conservar
 la distinción plan/ejecución y el alcance de auditoría completa; 10.09
 profundizará la comparación de costos, sin inferirlos solo del plan.
 
@@ -177,4 +182,4 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 10.07–10.10 y 11–14 conservan sus planes.
+quedan fuera de Git. 10.08–10.10 y 11–14 conservan sus planes.

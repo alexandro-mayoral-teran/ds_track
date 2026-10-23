@@ -29,7 +29,8 @@ Polars; 10.03 añade planes lazy y ejecución conciliada.
 10.04 añade tipos, faltantes y uniones conciliadas con cobertura.
 10.05 añade la extensión opcional de lotes/sink y memoria observada;
 10.06 añade SQL DuckDB sobre Parquet y fuentes múltiples conciliadas;
-10.07–10.10 siguen planificadas. Esto no implementa el proyecto.
+10.07 añade SQL compartido y resultados conciliados desde Python y R;
+10.08–10.10 siguen planificadas. Esto no implementa el proyecto.
 Consulta los [pendientes de almacenamiento](../docs/storage-closure.md).
 
 Los módulos 04 y 05 amplían el análisis Python con figuras y código reutilizable;
