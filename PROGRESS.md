@@ -6,17 +6,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.02 disponibles; 11.03–11.09 planificadas.
+- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.03 disponibles; 11.04–11.09 planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
-  10.01–10.10 y 11.01–11.02 implementadas (09.08 y 10.05 opcionales);
-  11.03–11.09 y 12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 11.02 con lección/lab, primer `.qmd`,
-  preparación Python/R y render/preview HTML con Quarto 1.9.38 existente.
-- **Punto de reanudación:** 11.03, todavía planificada: ejecución dentro del documento.
-- **Foco actual:** preparación calculada frente a render, YAML/Markdown y salida HTML.
+  10.01–10.10 y 11.01–11.03 implementadas (09.08 y 10.05 opcionales);
+  11.04–11.09 y 12–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 11.03 con lección/lab, ejecución Python/Jupyter
+  y R/knitr dentro del `.qmd`, dependencias declaradas y entornos reconstruidos.
+- **Punto de reanudación:** 11.04, todavía planificada: tablas, figuras y referencias.
+- **Foco actual:** regeneración durante el render, entorno real y fallos explícitos.
   Próximo paso: desarrollar
-  [11.03 — Ejecución con Python o R](curriculum/11_reporting_quarto/README.md#03-ejecucion-con-python-o-r),
-  comprobando motor y entorno reales para regenerar resultados dentro del `.qmd`.
+  [11.04 — Tablas, figuras y referencias](curriculum/11_reporting_quarto/README.md#04-tablas-figuras-y-referencias),
+  relacionando narrativa y evidencia desde los mismos resultados de ejecución.
   Mantener datos completos, separar Python/Jupyter y R/knitr y no cambiar entornos globales.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
@@ -39,7 +39,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
   19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
-  con 11.01–11.02 disponibles y 35 previstas. La planificación de 02–14 está
+  con 11.01–11.03 disponibles y 34 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -47,6 +47,42 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 11.03:** disponibles la
+[lección](curriculum/11_reporting_quarto/03_execution_python_r/README.md),
+CSV propio, funciones Python/R, documentos ejecutables, preparadores y
+[lab](labs/11_reporting_quarto/03_execution_python_r/README.md). Teoría común,
+recorridos separados, mínimo con tres saldos y comparación completa de seis
+filas. Render lee CSV/funciones desde cero: 6000/6300 MXN, +300 y 5% sobre
+septiembre; cambio a 6600/+600/10% sin regenerar texto con el preparador.
+Se comprueba el intérprete dentro del kernel y proyecto/biblioteca R activos.
+Sin caché ni daemon Python; `error: false` detiene errores de ejecución.
+
+Grupo notebooks: nbclient 0.10.2, nbformat 5.10.4 y PyYAML 6.0.3 añadidos,
+ipykernel 6.30.1 conservado. Los 58 registros Python previos (sin el registro
+del proyecto) permanecen idénticos. Dos entornos uv nuevos Python 3.12.12
+sin modificar la venv raíz ni Conda. R 4.6.1/renv 1.3.1: knitr 1.52 y
+rmarkdown 2.32; lockfile real conserva 50 registros y añade 21, sin cambios
+de versiones previas. Una copia del proyecto anterior y una restauración
+completa desde biblioteca vacía, con estado sincronizado. Preparador extiende
+metadatos con respaldo_10_07 o crea entorno autónomo reutilizando configuración
+local; no necesita entregas personales ni inicializa renv en la raíz.
+
+**Verificación:** 18 casos Python/R con pares, sumas y tasas conciliados:
+base/cambio/orden inverso/baja/sin cambio/base cero/todos cero/máximo y rechazo
+de vacío/incompleto/duplicado/ID/fecha/ausencia/negativo/decimal/exceso/espacio.
+Quarto 1.9.38/Pandoc 3.8.3 existentes: renders reales de ambos lenguajes desde
+entornos reconstruidos para base, cambio y base cero; fallos por duplicado,
+entrada ausente y función ausente, y recuperación a base. Mínimos ejecutados
+y dependencia Python ausente comprobada con fallo explícito. Recursos incluidos
+en reportes completos, salida de celdas/cifras inspeccionadas por parser;
+los mínimos mantienen su carpeta de recursos. Preparadores protegen destinos
+y metadatos, respaldos coinciden y archivos anteriores se conservan.
+Jupyter requirió comunicación local entre procesos y renv lectura de enlaces
+base fuera del ejecutor restringido; no se desactivaron controles. No se probó
+la interfaz del IDE, Linux/macOS ni revisión visual/accesibilidad completa.
+No cambian bibliotecas globales, fuentes o entregas anteriores. Proyecto,
+checkpoints y práctica del estudiante pendientes. Retomar con 11.04.
 
 **Desarrollo — 2026-10-23, 11.02:** disponibles la
 [lección](curriculum/11_reporting_quarto/02_first_document/README.md),

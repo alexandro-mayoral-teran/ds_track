@@ -17,6 +17,9 @@ dependencies = [
 dev = []
 notebooks = [
     "ipykernel==6.30.1",
+    "nbclient==0.10.2",
+    "nbformat==5.10.4",
+    "pyyaml==6.0.3",
 ]
 chart-export = [
     "vl-convert-python==1.9.0.post1",

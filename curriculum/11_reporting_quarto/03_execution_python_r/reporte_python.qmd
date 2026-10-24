@@ -1,0 +1,58 @@
+---
+title: "Cambio de saldo de tres créditos ficticios"
+lang: es
+jupyter: python3
+format:
+  html:
+    embed-resources: true
+execute:
+  daemon: false
+  cache: false
+  error: false
+---
+
+## Pregunta y datos
+
+¿Cómo cambió el saldo de los mismos créditos 001, 002 y 003 entre el
+30 de septiembre y el 31 de octubre de 2026? Una fila es un crédito en un corte.
+La fuente es cartera.csv: seis claves únicas, sin ausencias; saldo entero en MXN
+entre 0 y 1000000. El contrato exige los tres créditos en ambas fechas.
+
+## Ejecutar desde archivos
+
+```{python}
+import os
+import platform
+import sys
+from pathlib import Path
+from analisis import analizar
+
+# Comprobar el intérprete del kernel, no solo el que lanzó Quarto.
+elegido = Path(os.environ["QUARTO_PYTHON"]).resolve()
+assert Path(sys.executable).resolve() == elegido, "El kernel usa otro Python"
+print("Python:", platform.python_version(), "— intérprete elegido comprobado")
+resultado = analizar(Path("cartera.csv"))
+```
+
+## Resultado calculado
+
+```{python}
+print(f"Septiembre: {resultado['septiembre']} MXN")
+print(f"Octubre: {resultado['octubre']} MXN")
+print(f"Diferencia octubre menos septiembre: {resultado['diferencia']} MXN")
+print(f"Variación sobre septiembre: {resultado['tasa']}")
+print("Crédito | septiembre | octubre | diferencia (MXN)")
+for credito, a, b in resultado["pares"]:
+    print(f"{credito} | {a} | {b} | {b-a}")
+```
+
+## Interpretación y límites
+
+La comparación usa tres créditos por corte. La diferencia se calcula restando
+septiembre a octubre; el porcentaje usa septiembre como denominador. Una base
+inicial cero deja la tasa no definida. Los pares permiten revisar si el agregado
+oculta movimientos distintos. No se infieren causas, pagos ni desembolsos a
+partir de saldos. La muestra es ficticia y no representa una cartera real.
+
+Las cifras anteriores se vuelven a calcular al renderizar este documento.
+Un error en datos o código detiene la ejecución; un HTML anterior no prueba éxito nuevo.

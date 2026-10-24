@@ -1,0 +1,58 @@
+---
+title: "Cambio de saldo de tres créditos ficticios"
+lang: es
+engine: knitr
+format:
+  html:
+    embed-resources: true
+execute:
+  cache: false
+  error: false
+---
+
+## Pregunta y datos
+
+¿Cómo cambió el saldo de los mismos créditos 001, 002 y 003 entre el
+30 de septiembre y el 31 de octubre de 2026? Una fila es un crédito en un corte.
+La fuente es datos/cartera_1103.csv: seis claves únicas, sin ausencias; saldo
+entero en MXN entre 0 y 1000000. Se exigen los tres créditos en ambas fechas.
+
+## Ejecutar desde archivos
+
+```{r}
+# Quarto debe cargar el proyecto renv, no la biblioteca global del usuario.
+stopifnot(requireNamespace("renv", quietly = TRUE))
+stopifnot(identical(normalizePath(renv::project()), normalizePath(getwd())))
+local <- normalizePath(.libPaths()[1], winslash = "/")
+ubicacion <- normalizePath(find.package("knitr"), winslash = "/")
+stopifnot(startsWith(ubicacion, paste0(local, "/")))
+cat(R.version.string, "— biblioteca del proyecto comprobada\n")
+source("R/analisis_1103.R", encoding = "UTF-8")
+resultado <- analizar("datos/cartera_1103.csv")
+```
+
+## Resultado calculado
+
+```{r}
+cat(sprintf("Septiembre: %d MXN\n", resultado$septiembre))
+cat(sprintf("Octubre: %d MXN\n", resultado$octubre))
+cat(sprintf("Diferencia octubre menos septiembre: %d MXN\n", resultado$diferencia))
+cat(sprintf("Variación sobre septiembre: %s\n", resultado$tasa))
+cat("Crédito | septiembre | octubre | diferencia (MXN)\n")
+for (i in seq_len(nrow(resultado$pares))) {
+  p <- resultado$pares[i, ]
+  cat(sprintf("%s | %d | %d | %d\n", p$credito_id, p$septiembre, p$octubre,
+              p$octubre - p$septiembre))
+}
+```
+
+## Interpretación y límites
+
+La comparación usa tres créditos por corte. La diferencia se calcula restando
+septiembre a octubre; el porcentaje usa septiembre como denominador. Una base
+inicial cero deja la tasa no definida. Los pares permiten revisar si el agregado
+oculta movimientos distintos. No se infieren causas, pagos ni desembolsos a
+partir de saldos. La muestra es ficticia y no representa una cartera real.
+
+Las cifras anteriores se vuelven a calcular al renderizar este documento.
+Un error en datos o código detiene la ejecución; un HTML anterior no prueba éxito nuevo.

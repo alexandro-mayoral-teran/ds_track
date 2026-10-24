@@ -148,8 +148,8 @@ print(6000 + 300)
 
 El HTML mostrará la instrucción; **no calcula ni imprime 6300** como salida.
 Cambiarla a un bloque ejecutable requiere preparar Jupyter/Python o knitr/R.
-Eso corresponde a [11.03](../README.md#03-ejecucion-con-python-o-r), todavía
-planificada. No añadas llaves para intentar resolver un problema de estilo.
+Eso corresponde a [11.03](../03_execution_python_r/README.md), ya disponible.
+No añadas llaves para intentar resolver un problema de estilo.
 
 En el siguiente ejemplo calcularemos primero con un script y renderizaremos
 después. Es una secuencia reproducible de dos comandos/acciones; Quarto no
@@ -339,8 +339,8 @@ lectura y cifras sin editar el HTML. Registra evidencia en
 `05_monthly_report` y sus checkpoints siguen previstos en
 [proyectos](../../../projects/README.md); este lab no los implementa ni acredita
 aprendizaje. El siguiente desarrollo es
-[11.03 — Ejecución con Python o R](../README.md#03-ejecucion-con-python-o-r),
-todavía planificado: cálculo dentro del `.qmd`, motor y entorno correctos.
+[11.03 — Ejecución con Python o R](../03_execution_python_r/README.md),
+ya disponible: cálculo dentro del `.qmd`, motor y entorno correctos.
 
 ## Referencias primarias
 

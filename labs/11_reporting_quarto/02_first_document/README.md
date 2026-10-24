@@ -143,5 +143,5 @@ Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
 `05_monthly_report` y checkpoints siguen pendientes en
 [proyectos](../../../projects/README.md); el material disponible no acredita tu práctica.
 
-Siguiente: [11.03 — Ejecución con Python o R](../../../curriculum/11_reporting_quarto/README.md#03-ejecucion-con-python-o-r),
-todavía planificada. No es necesario comenzarla para cerrar esta sesión de trabajo.
+Siguiente: [11.03 — Ejecución con Python o R](../../../curriculum/11_reporting_quarto/03_execution_python_r/README.md),
+ya disponible. No es necesario comenzarla para cerrar esta sesión de trabajo.

@@ -7,10 +7,10 @@ figuras e interpretación, y que pueda regenerarse sin editar resultados a mano.
 Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequisito
 conceptual. Las lecciones incluyen datos completos y no exigen entregas personales previas.
 
-**Estado:** 11.01 y 11.02 disponibles con lecciones, datos, preparadores Python/R
-y labs. 11.03–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
+**Estado:** 11.01–11.03 disponibles con lecciones, datos, preparadores Python/R
+y labs. 11.04–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
 
-La teoría del documento se explica una vez. Habrá recorridos separados para
+La teoría del documento se explica una vez. Hay recorridos separados para
 Python/Jupyter y R/knitr: elige un motor para el reporte esencial y compara el
 otro como ampliación. No se exige mezclar ambos intérpretes en un documento.
 Quarto se instala como herramienta; no sustituye Python, R o sus dependencias.
@@ -20,7 +20,7 @@ La 11.01 empieza con una muestra propia pequeña y una preparación editorial;
 no instala Quarto ni genera todavía un `.qmd` o HTML.
 La 11.02 crea/renderiza HTML con Quarto 1.9.38 y conserva una secuencia de dos
 pasos: preparación calculada Python/R y render de texto. Ejecución dentro del
-documento con Jupyter/knitr se desarrollará en 11.03.
+documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobados.
 
 ## Orden de desarrollo
 
@@ -28,7 +28,7 @@ documento con Jupyter/knitr se desarrollará en 11.03.
 | --- | --- | --- | --- |
 | 1 | [Reporte, fuente y renderizado](01_report_source_render/README.md) | Esencial disponible | Distinguir documento fuente y resultado generado |
 | 2 | [Primer documento Quarto](02_first_document/README.md) | Esencial disponible | Crear un .qmd y renderizar HTML |
-| 3 | [Ejecución con Python o R](#03-ejecucion-con-python-o-r) | Esencial | Regenerar datos y resultados en el entorno correcto |
+| 3 | [Ejecución con Python o R](03_execution_python_r/README.md) | Esencial disponible | Regenerar datos y resultados en el entorno correcto |
 | 4 | [Tablas, figuras y referencias](#04-tablas-figuras-y-referencias) | Esencial | Relacionar evidencia y narrativa |
 | 5 | [Parámetros y cortes](#05-parametros-y-cortes) | Práctica | Generar dos reportes desde una misma fuente |
 | 6 | [Proyectos, caché y freeze](#06-proyectos-cache-y-freeze) | Práctica | Controlar cuándo se recalculan resultados |
@@ -68,8 +68,11 @@ documento con Jupyter/knitr se desarrollará en 11.03.
 
 - Python/Jupyter: kernel y entorno. R/knitr: proyecto, librería y renv.
   Reutilizar funciones y entradas del análisis en lugar de depender de una sesión previa.
-- Práctica prevista: renderizar desde cero y detectar una dependencia o archivo
-  faltante. Explicar qué se ejecutó; no ocultar una falla para conservar un reporte viejo.
+- [Lección disponible](03_execution_python_r/README.md), CSV propio, funciones,
+  documentos ejecutables, preparadores y
+  [lab 11.03](../../labs/11_reporting_quarto/03_execution_python_r/README.md).
+  Jupyter/Python o knitr/R, versiones fijadas, cálculo durante el render,
+  comprobación del entorno real y detección de entradas/funciones ausentes.
 
 <a id="04-tablas-figuras-y-referencias"></a>
 
@@ -128,9 +131,10 @@ documento con Jupyter/knitr se desarrollará en 11.03.
 
 ## Prácticas, proyecto y criterio de salida
 
-Los labs [11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md)
-y [11.02](../../labs/11_reporting_quarto/02_first_document/README.md)
-están disponibles. Los labs 11.03–11.09 siguen previstos, con 11.08 opcional.
+Los labs [11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md),
+[11.02](../../labs/11_reporting_quarto/02_first_document/README.md) y
+[11.03](../../labs/11_reporting_quarto/03_execution_python_r/README.md)
+están disponibles. Los labs 11.04–11.09 siguen previstos, con 11.08 opcional.
 El proyecto previsto 05_monthly_report figura en [proyectos](../../projects/README.md),
 sin carpeta ni checkpoints implementados.
 

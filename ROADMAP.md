@@ -448,8 +448,10 @@ tiene lección/lab, seis filas propias, narrativa calculada Python/R y actualiza
 de entradas. No genera todavía `.qmd` ni HTML en esa introducción.
 [11.02 — Primer documento Quarto](curriculum/11_reporting_quarto/02_first_document/README.md)
 tiene lección/lab, `.qmd`, YAML, Markdown, render/preview y HTML con recursos
-incluidos. Calcula con Python/R antes de renderizar; retomar desarrollo en 11.03.
-11.03–11.09 siguen planificadas.
+incluidos. Calcula con Python/R antes de renderizar.
+[11.03 — Ejecución con Python o R](curriculum/11_reporting_quarto/03_execution_python_r/README.md)
+añade lección/lab, ejecución durante el render, Jupyter/knitr y dependencias
+locales reconstruibles. Retomar desarrollo en 11.04; 11.04–11.09 siguen planificadas.
 
 **Objetivo:** transformar análisis en productos consumibles.
 
