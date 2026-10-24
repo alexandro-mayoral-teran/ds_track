@@ -159,8 +159,10 @@ pares, resumen y borrador calculado en carpeta nueva. No genera `.qmd`/HTML.
 YAML/Markdown y render/preview con Quarto 1.9.38 existente, sin paquetes nuevos.
 11.03 ya ejecuta código dentro del documento con Python/Jupyter o R/knitr,
 funciones/CSV propios y dependencias locales declaradas y reconstruibles.
-Retomar con 11.04, todavía planificada: tablas, figuras, referencias y narrativa
-que utilicen los mismos resultados comprobados durante la ejecución.
+11.04 ya presenta texto calculado, tabla y figura desde el mismo resultado,
+con referencias cruzadas, procedencia y bibliografía local; sin dependencias nuevas.
+Retomar con 11.05, todavía planificada: parámetros y cortes para generar dos
+reportes desde un mismo fuente, comprobando sintaxis por motor y universo de cada corte.
 Mantener contexto/datos completos y separación entre preparar entorno y exigir
 entregas previas. Verificar requisitos reales antes de instalar, sin cambiar
 entornos globales. Conservar fuentes, lockfiles, evidencia cruda y distinción
@@ -212,5 +214,5 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 11.01–11.03 tienen material; 11.04–11.09 y 12–14 conservan sus planes. El material de 09/10 está
+quedan fuera de Git. 11.01–11.04 tienen material; 11.05–11.09 y 12–14 conservan sus planes. El material de 09/10 está
 disponible, con práctica/proyectos/checkpoints pendientes.

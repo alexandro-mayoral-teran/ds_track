@@ -7,8 +7,8 @@ figuras e interpretación, y que pueda regenerarse sin editar resultados a mano.
 Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequisito
 conceptual. Las lecciones incluyen datos completos y no exigen entregas personales previas.
 
-**Estado:** 11.01–11.03 disponibles con lecciones, datos, preparadores Python/R
-y labs. 11.04–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
+**Estado:** 11.01–11.04 disponibles con lecciones, datos, preparadores Python/R
+y labs. 11.05–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
 
 La teoría del documento se explica una vez. Hay recorridos separados para
 Python/Jupyter y R/knitr: elige un motor para el reporte esencial y compara el
@@ -29,7 +29,7 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 | 1 | [Reporte, fuente y renderizado](01_report_source_render/README.md) | Esencial disponible | Distinguir documento fuente y resultado generado |
 | 2 | [Primer documento Quarto](02_first_document/README.md) | Esencial disponible | Crear un .qmd y renderizar HTML |
 | 3 | [Ejecución con Python o R](03_execution_python_r/README.md) | Esencial disponible | Regenerar datos y resultados en el entorno correcto |
-| 4 | [Tablas, figuras y referencias](#04-tablas-figuras-y-referencias) | Esencial | Relacionar evidencia y narrativa |
+| 4 | [Tablas, figuras y referencias](04_tables_figures_references/README.md) | Esencial disponible | Relacionar evidencia y narrativa |
 | 5 | [Parámetros y cortes](#05-parametros-y-cortes) | Práctica | Generar dos reportes desde una misma fuente |
 | 6 | [Proyectos, caché y freeze](#06-proyectos-cache-y-freeze) | Práctica | Controlar cuándo se recalculan resultados |
 | 7 | [Formatos y revisión visual](#07-formatos-y-revision-visual) | Práctica | Entregar HTML legible; PDF como ampliación |
@@ -80,8 +80,11 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 
 - Tablas, captions, identificadores, referencias cruzadas, notas de fuente y
   cifras dentro del texto generadas desde resultados. Mostrar código solo cuando ayude.
-- Práctica prevista: explicar un indicador y enlazar su tabla/figura, incluyendo
-  unidades, corte, población y limitaciones de interpretación.
+- [Lección disponible](04_tables_figures_references/README.md), mínimo estático,
+  CSV propio, reportes Python/R, preparadores y
+  [lab 11.04](../../labs/11_reporting_quarto/04_tables_figures_references/README.md).
+  Párrafo calculado, tabla/figura enlazadas, procedencia y cita bibliográfica;
+  un mismo resultado, sin dependencias nuevas ni cambios de lockfiles.
 
 <a id="05-parametros-y-cortes"></a>
 
@@ -132,9 +135,10 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 ## Prácticas, proyecto y criterio de salida
 
 Los labs [11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md),
-[11.02](../../labs/11_reporting_quarto/02_first_document/README.md) y
-[11.03](../../labs/11_reporting_quarto/03_execution_python_r/README.md)
-están disponibles. Los labs 11.04–11.09 siguen previstos, con 11.08 opcional.
+[11.02](../../labs/11_reporting_quarto/02_first_document/README.md),
+[11.03](../../labs/11_reporting_quarto/03_execution_python_r/README.md) y
+[11.04](../../labs/11_reporting_quarto/04_tables_figures_references/README.md)
+están disponibles. Los labs 11.05–11.09 siguen previstos, con 11.08 opcional.
 El proyecto previsto 05_monthly_report figura en [proyectos](../../projects/README.md),
 sin carpeta ni checkpoints implementados.
 

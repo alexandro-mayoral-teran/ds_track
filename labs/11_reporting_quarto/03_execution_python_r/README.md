@@ -151,5 +151,5 @@ Puedes avanzar cuando reconstruyes sin objetos ocultos, justificas cada cifra
 y reconoces fallos del entorno o de entradas. El proyecto `05_monthly_report`
 y sus checkpoints siguen pendientes en [proyectos](../../../projects/README.md).
 Material disponible no acredita práctica del estudiante.
-Siguiente: [11.04 — Tablas, figuras y referencias](../../../curriculum/11_reporting_quarto/README.md#04-tablas-figuras-y-referencias),
-todavía planificada.
+Siguiente: [11.04 — Tablas, figuras y referencias](../../../curriculum/11_reporting_quarto/04_tables_figures_references/README.md),
+ya disponible.

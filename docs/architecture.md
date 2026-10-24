@@ -95,8 +95,8 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01–10.10 tienen lección/muestra/funciones/lab (10.05 opcional); 11.01–11.03 tienen material,
-11.04–11.09 y 12–14 conservan planificación;
+10.01–10.10 tienen lección/muestra/funciones/lab (10.05 opcional); 11.01–11.04 tienen material,
+11.05–11.09 y 12–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -795,8 +795,8 @@ sigue pendiente y esta decisión no renumera el track.
 
 ### Entrega prevista del producto: 11–14
 
-Los cuatro módulos tienen 37 secciones y referencias oficiales; 11.01–11.03 disponen
-de lección/lab y las otras 34 siguen planificadas.
+Los cuatro módulos tienen 37 secciones y referencias oficiales; 11.01–11.04 disponen
+de lección/lab y las otras 33 siguen planificadas.
 El flujo es reporte → una app elegida → integración final;
 no se exige completar las dos aplicaciones.
 
@@ -838,6 +838,15 @@ o arranque autónomo desde su configuración local, sin exigir entregas previas.
 Comprobaciones del intérprete real del kernel y del proyecto/biblioteca R;
 sin caché ni daemon Python. El render lee datos de nuevo; errores detienen
 la ejecución. No modifica entornos globales ni activa proyecto/checkpoints.
+
+[11.04](../curriculum/11_reporting_quarto/04_tables_figures_references/README.md)
+reutiliza las funciones/entornos de 11.03 con CSV propio y sin exigir entregas.
+Párrafo con código en línea, tabla por crédito y barras del agregado desde el
+mismo resultado. Matplotlib/IPython y ggplot2/knitr ya declarados; sin paquetes
+ni cambios de metadatos. Identificadores, captions, texto alternativo, referencias
+cruzadas y bibliografía local, separada de la procedencia de datos sintéticos.
+Los renders deben revisarse también por advertencias de referencias/citas:
+una salida exitosa no garantiza que esas claves estén resueltas.
 
 Streamlit distingue reejecución, estado de sesión y caché; Shiny distingue dependencias
 reactivas, consumidores y estado por sesión. Ambos reutilizan funciones de datos;

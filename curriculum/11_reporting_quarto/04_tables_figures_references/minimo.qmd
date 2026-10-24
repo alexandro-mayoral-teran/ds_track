@@ -1,0 +1,17 @@
+---
+title: "Una tabla y su referencia"
+lang: es
+format: html
+---
+
+La @tbl-ejemplo muestra dos saldos ficticios del crédito 001.
+
+| Corte | Saldo (MXN) |
+| --- | ---: |
+| 2026-09-30 | 1000 |
+| 2026-10-31 | 1200 |
+
+: Saldo observado del crédito 001 en dos fechas. {#tbl-ejemplo}
+
+Fuente: ejemplo sintético propio. Una fila representa un crédito en un corte.
+Este documento demuestra la sintaxis de referencias; sus cifras son texto fijo.

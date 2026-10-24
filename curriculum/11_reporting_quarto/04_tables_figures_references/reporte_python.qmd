@@ -1,0 +1,104 @@
+---
+title: "Saldo observado: evidencia y explicación"
+subtitle: "Tres créditos ficticios, septiembre y octubre de 2026"
+lang: es
+jupyter: python3
+bibliography: referencias.bib
+format:
+  html:
+    embed-resources: true
+execute:
+  daemon: false
+  cache: false
+  error: false
+  echo: false
+---
+
+```{python}
+#| label: preparar-datos
+#| include: false
+import os
+import sys
+from pathlib import Path
+import matplotlib.pyplot as plt
+from IPython.display import Markdown, display
+from analisis import analizar
+
+assert Path(sys.executable).resolve() == Path(os.environ["QUARTO_PYTHON"]).resolve()
+resultado = analizar(Path("cartera.csv"))
+pares = [(i, a, b, b-a) for i, a, b in resultado["pares"]]
+fechas = ["2026-09-30", "2026-10-31"]
+totales = [resultado["septiembre"], resultado["octubre"]]
+assert sum(p[1] for p in pares) == totales[0]
+assert sum(p[2] for p in pares) == totales[1]
+assert sum(p[3] for p in pares) == resultado["diferencia"]
+```
+
+## Pregunta y hallazgo
+
+¿Cómo cambió el saldo de los mismos tres créditos entre los cortes indicados?
+El saldo pasó de **`{python} resultado['septiembre']` MXN** a
+**`{python} resultado['octubre']` MXN**. La diferencia octubre menos septiembre
+es **`{python} resultado['diferencia']` MXN** y la variación sobre septiembre es
+**`{python} resultado['tasa']`**.
+
+La @tbl-pares permite revisar cada crédito; la @fig-saldo muestra el agregado
+de la misma base. La figura no permite concluir que todos se movieron igual.
+
+## Evidencia por crédito
+
+```{python}
+#| label: tbl-pares
+#| tbl-cap: "Saldos por crédito y diferencia entre cortes (MXN)."
+lineas = ["| Crédito | Septiembre (MXN) | Octubre (MXN) | Diferencia (MXN) |",
+          "| :--- | ---: | ---: | ---: |"]
+lineas += [f"| {i} | {a} | {b} | {d} |" for i, a, b, d in pares]
+display(Markdown("\n".join(lineas)))
+```
+
+Fuente: elaboración propia con datos sintéticos de `cartera.csv`. Una fila de
+esta tabla corresponde a un crédito con observación en ambos cortes. La
+diferencia es octubre menos septiembre; los ceros iniciales forman parte del ID.
+
+## Comparación del agregado
+
+```{python}
+#| label: fig-saldo
+#| fig-cap: "Saldo total de los mismos tres créditos por fecha de corte (MXN)."
+#| fig-alt: "Dos barras con base cero y etiquetas numéricas comparan el saldo total de septiembre y octubre. Los valores por crédito se encuentran en la tabla de saldos del reporte."
+#| fig-width: 6
+#| fig-height: 3.6
+fig, ax = plt.subplots(figsize=(6, 3.6))
+barras = ax.bar(fechas, totales, color="#245b78", width=0.55)
+ax.bar_label(barras, labels=[str(v) for v in totales], padding=4)
+ax.set(xlabel="Fecha de corte", ylabel="Saldo total (MXN)",
+       ylim=(0, max(1, max(totales)) * 1.18))
+ax.spines[["top", "right"]].set_visible(False)
+fig.tight_layout()
+plt.show()
+```
+
+Fuente: misma muestra y mismos resultados que @tbl-pares. Las barras empiezan
+en cero. Cada total representa tres créditos a una fecha, no pagos del mes.
+
+## Método y límites
+
+La entrada tiene seis observaciones: tres IDs en dos cortes. Se exige una sola
+fila por ID/fecha, los tres IDs en ambos cortes y saldos enteros entre 0 y
+1000000 MXN, sin ausencias. Se suman saldos por corte y se resta septiembre de
+octubre. La tasa divide esa diferencia entre septiembre; con base inicial cero
+se informa como no definida. No se redondean pesos para construir la comparación.
+
+Estos datos no permiten identificar causas, pagos o desembolsos y no representan
+una cartera real. La tabla conserva movimientos individuales que el agregado
+puede ocultar. Las cifras, la tabla y las barras proceden del mismo cálculo.
+
+## Referencias del método de presentación
+
+La documentación de Quarto explica los identificadores y las referencias cruzadas
+usados para relacionar texto y evidencia [@quarto-referencias]. Esa documentación
+respalda el procedimiento de presentación; la fuente de los saldos es la muestra
+sintética indicada junto a la tabla y la figura.
+
+::: {#refs}
+:::

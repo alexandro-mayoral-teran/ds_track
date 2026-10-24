@@ -288,7 +288,9 @@ sin instalar Quarto en esa introducción.
 añade `.qmd`, YAML/Markdown, render/preview y HTML con cifras preparadas Python/R.
 [11.03 — Ejecución con Python o R](curriculum/11_reporting_quarto/03_execution_python_r/README.md)
 añade cálculo dentro del documento, selección del entorno y reconstrucción Jupyter/knitr.
-11.04–11.09 y los niveles 12–14 mantienen planes
+[11.04 — Tablas, figuras y referencias](curriculum/11_reporting_quarto/04_tables_figures_references/README.md)
+añade cifras en línea, tabla/figura enlazadas, procedencia y bibliografía con lab.
+11.05–11.09 y los niveles 12–14 mantienen planes
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de

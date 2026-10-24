@@ -335,8 +335,8 @@ Registra evidencia en [PROGRESS.md](../../../PROGRESS.md).
 `05_monthly_report` y sus checkpoints siguen previstos en
 [proyectos](../../../projects/README.md); desarrollar material no acredita aprendizaje.
 
-Siguiente: [11.04 — Tablas, figuras y referencias](../README.md#04-tablas-figuras-y-referencias),
-todavía planificada. Allí se relacionarán resultados y narrativa con presentación
+Siguiente: [11.04 — Tablas, figuras y referencias](../04_tables_figures_references/README.md),
+ya disponible. Allí se relacionan resultados y narrativa con presentación
 y referencias; esta lección mantiene salidas de texto sencillas para centrarse en ejecución.
 
 ## Referencias primarias y alcance comprobado

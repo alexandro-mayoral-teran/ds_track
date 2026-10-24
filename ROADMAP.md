@@ -451,7 +451,10 @@ tiene lección/lab, `.qmd`, YAML, Markdown, render/preview y HTML con recursos
 incluidos. Calcula con Python/R antes de renderizar.
 [11.03 — Ejecución con Python o R](curriculum/11_reporting_quarto/03_execution_python_r/README.md)
 añade lección/lab, ejecución durante el render, Jupyter/knitr y dependencias
-locales reconstruibles. Retomar desarrollo en 11.04; 11.04–11.09 siguen planificadas.
+locales reconstruibles.
+[11.04 — Tablas, figuras y referencias](curriculum/11_reporting_quarto/04_tables_figures_references/README.md)
+añade lección/lab, cifras en línea y evidencia enlazada desde el mismo cálculo,
+sin dependencias nuevas. Retomar desarrollo en 11.05; 11.05–11.09 siguen planificadas.
 
 **Objetivo:** transformar análisis en productos consumibles.
 

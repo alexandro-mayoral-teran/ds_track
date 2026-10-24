@@ -6,17 +6,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.03 disponibles; 11.04–11.09 planificadas.
+- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.04 disponibles; 11.05–11.09 planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
-  10.01–10.10 y 11.01–11.03 implementadas (09.08 y 10.05 opcionales);
-  11.04–11.09 y 12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 11.03 con lección/lab, ejecución Python/Jupyter
-  y R/knitr dentro del `.qmd`, dependencias declaradas y entornos reconstruidos.
-- **Punto de reanudación:** 11.04, todavía planificada: tablas, figuras y referencias.
-- **Foco actual:** regeneración durante el render, entorno real y fallos explícitos.
+  10.01–10.10 y 11.01–11.04 implementadas (09.08 y 10.05 opcionales);
+  11.05–11.09 y 12–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 11.04 con lección/lab, cifras en línea,
+  tabla/figura enlazadas y bibliografía desde un mismo cálculo Python/R.
+- **Punto de reanudación:** 11.05, todavía planificada: parámetros y cortes.
+- **Foco actual:** coherencia entre narrativa y evidencia, procedencia y referencias.
   Próximo paso: desarrollar
-  [11.04 — Tablas, figuras y referencias](curriculum/11_reporting_quarto/README.md#04-tablas-figuras-y-referencias),
-  relacionando narrativa y evidencia desde los mismos resultados de ejecución.
+  [11.05 — Parámetros y cortes](curriculum/11_reporting_quarto/README.md#05-parametros-y-cortes),
+  generando dos reportes desde un mismo fuente y comprobando corte/universo por motor.
   Mantener datos completos, separar Python/Jupyter y R/knitr y no cambiar entornos globales.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
@@ -39,7 +39,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
   19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
-  con 11.01–11.03 disponibles y 34 previstas. La planificación de 02–14 está
+  con 11.01–11.04 disponibles y 33 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -47,6 +47,32 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 11.04:** disponibles la
+[lección](curriculum/11_reporting_quarto/04_tables_figures_references/README.md),
+mínimo completo de referencia estática, CSV propio, reportes Python/R con
+cifras en línea, tabla por crédito y barras del agregado, bibliografía local,
+preparadores y [lab](labs/11_reporting_quarto/04_tables_figures_references/README.md).
+Funciones de 11.03 reutilizadas sin exigir entregas previas. Identificador,
+caption, texto alternativo, referencia interna, procedencia y cita bibliográfica
+distinguidos con ejemplos. El texto, la tabla y las barras se alimentan del mismo
+resultado: 6000/6300 MXN, diferencia 300 y 5% sobre septiembre.
+
+**Verificación:** Quarto 1.9.38/Pandoc 3.8.3, Python 3.12.12/Matplotlib 3.10.7 y
+R 4.6.1/knitr 1.52/ggplot2 4.0.3 existentes. Sin nuevas dependencias, instalaciones
+ni cambios en pyproject/uv.lock, DESCRIPTION/renv.lock o bibliotecas globales.
+Seis escenarios renderizados en ambos motores: base, cambio 6600/+600/10%,
+modificación compensada con total idéntico, base cero, todos cero y baja.
+HTML inspeccionado: cifras del párrafo, cada celda por clave, vínculos/captions,
+cita resuelta, imagen incorporada y texto alternativo. Alturas y etiquetas
+reales de las barras (artistas Matplotlib/capas ggplot2) conciliadas contra
+entrada independiente; ambas figuras base revisadas visualmente desde el PNG
+incorporado al HTML. Duplicados detienen ejecución en ambos motores.
+Tabla adicional renumera la referencia correcta; referencia y cita inexistentes
+generan advertencia aun con salida exitosa del comando. Mínimo, bibliografía,
+recuperación y metadatos intactos comprobados. No se acredita revisión visual
+completa del HTML, interfaz del IDE, Linux/macOS ni accesibilidad completa.
+Proyecto/checkpoints y práctica del estudiante pendientes. Retomar con 11.05.
 
 **Desarrollo — 2026-10-23, 11.03:** disponibles la
 [lección](curriculum/11_reporting_quarto/03_execution_python_r/README.md),
