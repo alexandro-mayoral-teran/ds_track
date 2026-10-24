@@ -454,7 +454,11 @@ añade lección/lab, ejecución durante el render, Jupyter/knitr y dependencias
 locales reconstruibles.
 [11.04 — Tablas, figuras y referencias](curriculum/11_reporting_quarto/04_tables_figures_references/README.md)
 añade lección/lab, cifras en línea y evidencia enlazada desde el mismo cálculo,
-sin dependencias nuevas. Retomar desarrollo en 11.05; 11.05–11.09 siguen planificadas.
+sin dependencias nuevas en esa sección.
+[11.05 — Parámetros y cortes](curriculum/11_reporting_quarto/05_parameters_cutoffs/README.md)
+añade lección/lab, YAML por corte, parámetros Python/Jupyter o R/knitr, validación
+y reportes con universo/selección explícitos. Papermill 2.7.0 en notebooks para
+la sustitución Python; R sin paquetes nuevos. Retomar 11.06; 11.06–11.09 planificadas.
 
 **Objetivo:** transformar análisis en productos consumibles.
 

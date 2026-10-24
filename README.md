@@ -290,7 +290,11 @@ añade `.qmd`, YAML/Markdown, render/preview y HTML con cifras preparadas Python
 añade cálculo dentro del documento, selección del entorno y reconstrucción Jupyter/knitr.
 [11.04 — Tablas, figuras y referencias](curriculum/11_reporting_quarto/04_tables_figures_references/README.md)
 añade cifras en línea, tabla/figura enlazadas, procedencia y bibliografía con lab.
-11.05–11.09 y los niveles 12–14 mantienen planes
+[11.05 — Parámetros y cortes](curriculum/11_reporting_quarto/05_parameters_cutoffs/README.md)
+añade variantes por fecha y umbral desde una fuente, con parámetros visibles y
+universos comprobados en Python o R, y su
+[lab](labs/11_reporting_quarto/05_parameters_cutoffs/README.md).
+11.06–11.09 y los niveles 12–14 mantienen planes
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de

@@ -95,8 +95,8 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01–10.10 tienen lección/muestra/funciones/lab (10.05 opcional); 11.01–11.04 tienen material,
-11.05–11.09 y 12–14 conservan planificación;
+10.01–10.10 tienen lección/muestra/funciones/lab (10.05 opcional); 11.01–11.05 tienen material,
+11.06–11.09 y 12–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -795,8 +795,8 @@ sigue pendiente y esta decisión no renumera el track.
 
 ### Entrega prevista del producto: 11–14
 
-Los cuatro módulos tienen 37 secciones y referencias oficiales; 11.01–11.04 disponen
-de lección/lab y las otras 33 siguen planificadas.
+Los cuatro módulos tienen 37 secciones y referencias oficiales; 11.01–11.05 disponen
+de lección/lab y las otras 32 siguen planificadas.
 El flujo es reporte → una app elegida → integración final;
 no se exige completar las dos aplicaciones.
 
@@ -847,6 +847,16 @@ ni cambios de metadatos. Identificadores, captions, texto alternativo, referenci
 cruzadas y bibliografía local, separada de la procedencia de datos sintéticos.
 Los renders deben revisarse también por advertencias de referencias/citas:
 una salida exitosa no garantiza que esas claves estén resueltas.
+
+[11.05](../curriculum/11_reporting_quarto/05_parameters_cutoffs/README.md)
+separa los parámetros recibidos, el filtro aplicado y el nombre de salida. CSV
+propio de siete filas, mínimos completos y funciones independientes por motor;
+valida la fuente completa antes de seleccionar, incluso registros fuera del corte.
+Python usa celda parameters y Papermill 2.7.0 declarado en notebooks; los cálculos
+derivados siguen a la sustitución. R usa params de knitr sin nuevas dependencias.
+YAML por variante, salidas separadas y parámetros visibles; corte ausente no
+equivale a selección vacía y el denominador pertenece al universo del corte.
+Sin proyectos/checkpoints implementados ni cambios en bibliotecas globales.
 
 Streamlit distingue reejecución, estado de sesión y caché; Shiny distingue dependencias
 reactivas, consumidores y estado por sesión. Ambos reutilizan funciones de datos;

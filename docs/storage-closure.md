@@ -161,8 +161,12 @@ YAML/Markdown y render/preview con Quarto 1.9.38 existente, sin paquetes nuevos.
 funciones/CSV propios y dependencias locales declaradas y reconstruibles.
 11.04 ya presenta texto calculado, tabla y figura desde el mismo resultado,
 con referencias cruzadas, procedencia y bibliografía local; sin dependencias nuevas.
-Retomar con 11.05, todavía planificada: parámetros y cortes para generar dos
-reportes desde un mismo fuente, comprobando sintaxis por motor y universo de cada corte.
+11.05 ya genera variantes desde un mismo `.qmd` con YAML por corte, parámetros
+visibles, universo/selección y validación antes del filtro; CSV autónomo de siete
+filas y selección vacía válida. Papermill 2.7.0 añadido al grupo notebooks para
+sustituir parámetros Python; R conserva sus metadatos/dependencias.
+Retomar con 11.06, todavía planificada: proyectos, caché y freeze; comprobar
+cuándo se recalcula al cambiar datos, código o parámetros y evitar salidas obsoletas.
 Mantener contexto/datos completos y separación entre preparar entorno y exigir
 entregas previas. Verificar requisitos reales antes de instalar, sin cambiar
 entornos globales. Conservar fuentes, lockfiles, evidencia cruda y distinción
@@ -214,5 +218,5 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 11.01–11.04 tienen material; 11.05–11.09 y 12–14 conservan sus planes. El material de 09/10 está
+quedan fuera de Git. 11.01–11.05 tienen material; 11.06–11.09 y 12–14 conservan sus planes. El material de 09/10 está
 disponible, con práctica/proyectos/checkpoints pendientes.

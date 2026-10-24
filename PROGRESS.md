@@ -6,17 +6,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.04 disponibles; 11.05–11.09 planificadas.
+- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.05 disponibles; 11.06–11.09 planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
-  10.01–10.10 y 11.01–11.04 implementadas (09.08 y 10.05 opcionales);
-  11.05–11.09 y 12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 11.04 con lección/lab, cifras en línea,
-  tabla/figura enlazadas y bibliografía desde un mismo cálculo Python/R.
-- **Punto de reanudación:** 11.05, todavía planificada: parámetros y cortes.
-- **Foco actual:** coherencia entre narrativa y evidencia, procedencia y referencias.
+  10.01–10.10 y 11.01–11.05 implementadas (09.08 y 10.05 opcionales);
+  11.06–11.09 y 12–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 11.05 con lección/lab, parámetros por motor,
+  YAML por corte y reportes con universo/selección comprobados.
+- **Punto de reanudación:** 11.06, todavía planificada: proyectos, caché y freeze.
+- **Foco actual:** recalcular cuando cambien datos, código o parámetros.
   Próximo paso: desarrollar
-  [11.05 — Parámetros y cortes](curriculum/11_reporting_quarto/README.md#05-parametros-y-cortes),
-  generando dos reportes desde un mismo fuente y comprobando corte/universo por motor.
+  [11.06 — Proyectos, caché y freeze](curriculum/11_reporting_quarto/README.md#06-proyectos-cache-y-freeze),
+  comprobando actualización y distinguiendo caché, freeze y nueva ejecución.
   Mantener datos completos, separar Python/Jupyter y R/knitr y no cambiar entornos globales.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
@@ -39,7 +39,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
   19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
-  con 11.01–11.04 disponibles y 33 previstas. La planificación de 02–14 está
+  con 11.01–11.05 disponibles y 32 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -47,6 +47,39 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 11.05:** disponibles la
+[lección](curriculum/11_reporting_quarto/05_parameters_cutoffs/README.md),
+mínimos completos Python/R, CSV propio de siete filas, funciones, documentos,
+dos YAML, preparadores y [lab](labs/11_reporting_quarto/05_parameters_cutoffs/README.md).
+Parámetro, filtro y nombre de salida distinguidos; Jupyter sustituye valores
+después de la celda parameters y los cálculos derivados van después; knitr usa
+params. Fuente completa validada antes del filtro. Septiembre: universo 3/6000
+MXN, selección 2/5000/66.67%; octubre: 4/7000 y 1/3300/25%, mínimo 2000.
+Umbral inclusivo, denominador por corte, observación adicional en octubre y
+selección vacía frente a corte ausente; las barras de universo/selección se
+solapan y no se suman. Recorridos independientes sin entregas personales previas.
+
+**Verificación:** Quarto 1.9.38/Pandoc 3.8.3, Python 3.12.12 y R 4.6.1/knitr 1.52.
+Papermill 2.7.0 declarado en notebooks y uv.lock real: 64 registros previos
+completos conservados y 17 añadidos; dos entornos uv locales reconstruidos.
+R conserva DESCRIPTION/renv.lock y biblioteca previa; sin cambios globales.
+31 casos de parámetros conciliados Python/R; seis fuentes inválidas (incluidos
+duplicado y saldo inválido fuera del corte), no finitos y destinos ocupados
+rechazados. Saldos cero y máximos con mínimo cero conservan los cuatro créditos
+de octubre en ambos motores. Ambos renderizan septiembre, octubre, octubre vacío y
+frontera septiembre/2001; cada celda, parámetro visible, cifra y altura/etiqueta
+real de barras conciliados con referencia independiente. PNG incorporados de
+Python/septiembre y R/octubre revisados visualmente. CLI -P, corte/tipo inválidos
+y clave no declarada comprobados: Jupyter puede ignorar una variable extra y
+usar el valor predeterminado; knitr rechaza la clave. Mínimos ejecutados en ambos
+motores. Un entorno anterior sin Papermill renderiza defaults pero falla al
+sustituir; se documenta el requisito real. En Quarto 1.9.38 se observó fallo de
+recursos con salida desde otra carpeta: los recorridos entran en la del documento.
+Fuentes y metadatos R intactos. No se acredita revisión visual completa del HTML,
+IDE, otros sistemas ni accesibilidad completa. Proyecto/checkpoints y práctica
+del estudiante pendientes. Revisados 2812 enlaces locales en 270 Markdown,
+fragmentos, bloques y soluciones; sin incidencias. Retomar con 11.06.
 
 **Desarrollo — 2026-10-23, 11.04:** disponibles la
 [lección](curriculum/11_reporting_quarto/04_tables_figures_references/README.md),

@@ -154,5 +154,4 @@ Puedes avanzar cuando cada afirmación tiene evidencia localizable, las tres
 representaciones concuerdan y distingues referencia interna, procedencia y cita.
 `05_monthly_report` y checkpoints siguen pendientes en
 [proyectos](../../../projects/README.md); el material no acredita aprendizaje.
-Siguiente: [11.05 — Parámetros y cortes](../../../curriculum/11_reporting_quarto/README.md#05-parametros-y-cortes),
-todavía planificada.
+Siguiente: [11.05 — Parámetros y cortes](../../../curriculum/11_reporting_quarto/05_parameters_cutoffs/README.md).

@@ -116,6 +116,7 @@ reglas de enlace están en
 | [`11.02 — Primer documento Quarto`](11_reporting_quarto/02_first_document/) | `11_reporting_quarto` | No aplica todavía |
 | [`11.03 — Ejecución con Python o R`](11_reporting_quarto/03_execution_python_r/) | `11_reporting_quarto` | No aplica todavía |
 | [`11.04 — Tablas, figuras y referencias`](11_reporting_quarto/04_tables_figures_references/) | `11_reporting_quarto` | No aplica todavía |
+| [`11.05 — Parámetros y cortes`](11_reporting_quarto/05_parameters_cutoffs/) | `11_reporting_quarto` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

@@ -7,8 +7,8 @@ figuras e interpretación, y que pueda regenerarse sin editar resultados a mano.
 Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequisito
 conceptual. Las lecciones incluyen datos completos y no exigen entregas personales previas.
 
-**Estado:** 11.01–11.04 disponibles con lecciones, datos, preparadores Python/R
-y labs. 11.05–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
+**Estado:** 11.01–11.05 disponibles con lecciones, datos, preparadores Python/R
+y labs. 11.06–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
 
 La teoría del documento se explica una vez. Hay recorridos separados para
 Python/Jupyter y R/knitr: elige un motor para el reporte esencial y compara el
@@ -30,7 +30,7 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 | 2 | [Primer documento Quarto](02_first_document/README.md) | Esencial disponible | Crear un .qmd y renderizar HTML |
 | 3 | [Ejecución con Python o R](03_execution_python_r/README.md) | Esencial disponible | Regenerar datos y resultados en el entorno correcto |
 | 4 | [Tablas, figuras y referencias](04_tables_figures_references/README.md) | Esencial disponible | Relacionar evidencia y narrativa |
-| 5 | [Parámetros y cortes](#05-parametros-y-cortes) | Práctica | Generar dos reportes desde una misma fuente |
+| 5 | [Parámetros y cortes](05_parameters_cutoffs/README.md) | Práctica disponible | Generar dos reportes desde una misma fuente |
 | 6 | [Proyectos, caché y freeze](#06-proyectos-cache-y-freeze) | Práctica | Controlar cuándo se recalculan resultados |
 | 7 | [Formatos y revisión visual](#07-formatos-y-revision-visual) | Práctica | Entregar HTML legible; PDF como ampliación |
 | 8 | [Dashboard y distribución](#08-dashboard-y-distribucion) | Extensión | Organizar vistas sin exigir una app con servidor |
@@ -92,8 +92,13 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 
 - Parámetros compatibles con el motor elegido y controles de corte/segmento.
   Nombres de salida explícitos y verificación del universo usado.
-- Práctica prevista: generar dos reportes con la misma fuente, conciliando sus
-  indicadores con los datos de cada corte. La sintaxis se comprobará por motor.
+- [Lección disponible](05_parameters_cutoffs/README.md), mínimos autónomos, CSV
+  de siete filas, funciones/reportes Python/R, YAML por corte, preparadores y
+  [lab 11.05](../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md).
+  Dos reportes desde el mismo cálculo: septiembre 2/5000 MXN de 3/6000, octubre
+  1/3300 de 4/7000, con mínimo de 2000 MXN. Parámetros efectivos visibles,
+  selección vacía, frontera inclusiva y corte ausente distinguidos. Papermill
+  2.7.0 declarado en notebooks; entorno R y sus metadatos conservados.
 
 <a id="06-proyectos-cache-y-freeze"></a>
 
@@ -136,9 +141,10 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 
 Los labs [11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md),
 [11.02](../../labs/11_reporting_quarto/02_first_document/README.md),
-[11.03](../../labs/11_reporting_quarto/03_execution_python_r/README.md) y
-[11.04](../../labs/11_reporting_quarto/04_tables_figures_references/README.md)
-están disponibles. Los labs 11.05–11.09 siguen previstos, con 11.08 opcional.
+[11.03](../../labs/11_reporting_quarto/03_execution_python_r/README.md),
+[11.04](../../labs/11_reporting_quarto/04_tables_figures_references/README.md) y
+[11.05](../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md)
+están disponibles. Los labs 11.06–11.09 siguen previstos, con 11.08 opcional.
 El proyecto previsto 05_monthly_report figura en [proyectos](../../projects/README.md),
 sin carpeta ni checkpoints implementados.
 

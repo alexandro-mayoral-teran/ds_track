@@ -174,7 +174,10 @@ añade ejecución Jupyter/knitr y entornos comprobados con
 [11.04 — Tablas, figuras y referencias](11_reporting_quarto/04_tables_figures_references/README.md)
 añade narrativa calculada, tabla, figura y referencias con
 [lab](../labs/11_reporting_quarto/04_tables_figures_references/README.md).
-11.05–11.09 y los módulos 12–14 conservan planes de reportes, aplicaciones
+[11.05 — Parámetros y cortes](11_reporting_quarto/05_parameters_cutoffs/README.md)
+añade dos reportes desde una fuente, parámetros visibles y universos comprobados,
+con [lab](../labs/11_reporting_quarto/05_parameters_cutoffs/README.md).
+11.06–11.09 y los módulos 12–14 conservan planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
 la planificación pendiente se implementará lección por lección.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).

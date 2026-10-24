@@ -369,8 +369,7 @@ una referencia a evidencia de una cita bibliográfica. Registra evidencia y duda
 en [PROGRESS.md](../../../PROGRESS.md).
 El proyecto `05_monthly_report` y sus checkpoints siguen previstos en
 [proyectos](../../../projects/README.md); el desarrollo no acredita aprendizaje.
-Siguiente: [11.05 — Parámetros y cortes](../README.md#05-parametros-y-cortes),
-todavía planificada.
+Siguiente: [11.05 — Parámetros y cortes](../05_parameters_cutoffs/README.md).
 
 ## Referencias primarias y alcance
 

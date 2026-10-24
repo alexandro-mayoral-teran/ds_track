@@ -1,0 +1,86 @@
+---
+title: "Créditos por corte y umbral"
+lang: es
+engine: knitr
+params:
+  fecha_corte: "2026-09-30"
+  minimo_mxn: 2000
+format:
+  html:
+    embed-resources: true
+execute:
+  cache: false
+  error: false
+  echo: false
+---
+
+```{r}
+#| include: false
+stopifnot(requireNamespace("renv", quietly = TRUE))
+stopifnot(identical(normalizePath(renv::project()), normalizePath(getwd())))
+local <- normalizePath(.libPaths()[1], winslash = "/")
+stopifnot(startsWith(normalizePath(find.package("knitr"), winslash = "/"), paste0(local, "/")))
+source("R/analisis_1105.R", encoding = "UTF-8")
+r <- analizar("datos/cartera_1105.csv", params$fecha_corte, params$minimo_mxn)
+tabla <- data.frame(credito = r$filas$credito_id, saldo = r$filas$saldo,
+                    cumple = ifelse(r$filas$cumple, "sí", "no"))
+resumen <- data.frame(grupo = factor(c("Universo del corte", "Selección"),
+                                    levels = c("Universo del corte", "Selección")),
+                      saldo = c(r$universo_mxn, r$seleccion_mxn))
+```
+
+## Parámetros utilizados
+
+Fecha de corte: **`r r$fecha`**. Regla: saldo **mayor o igual a
+`r r$minimo` MXN**, incluidos los valores exactamente en el umbral.
+El nombre del archivo no determina estos parámetros: aquí se muestran los
+valores utilizados por el cálculo.
+
+## Universo y selección
+
+El universo del corte contiene **`r r$universo_n` créditos** con
+**`r r$universo_mxn` MXN** de saldo. Cumplen el umbral **`r r$seleccion_n` créditos**,
+con **`r r$seleccion_mxn` MXN**. Su proporción sobre el número de créditos del corte
+es **`r r$proporcion`**. IDs seleccionados: **`r r$ids`**.
+
+La @tbl-corte conserva todo el universo y marca la selección. La @fig-saldos
+compara sus saldos; la selección es un subconjunto y las dos barras no se suman.
+
+```{r}
+#| label: tbl-corte
+#| tbl-cap: "Créditos del corte y cumplimiento del umbral; saldo en MXN."
+knitr::kable(tabla, format = "pipe", row.names = FALSE,
+              col.names = c("Crédito", "Saldo (MXN)", "Cumple umbral"))
+```
+
+```{r}
+#| label: fig-saldos
+#| fig-cap: "Saldo del universo y de la selección (MXN); la selección es un subconjunto."
+#| fig-alt: "Dos barras con base cero y etiquetas numéricas muestran el saldo del universo del corte y el de los créditos seleccionados. La tabla identifica cada crédito y su condición."
+#| fig-width: 6
+#| fig-height: 3.6
+figura <- ggplot2::ggplot(resumen, ggplot2::aes(x = grupo, y = saldo)) +
+  ggplot2::geom_col(fill = "#245b78", width = 0.55) +
+  ggplot2::geom_text(ggplot2::aes(label = saldo), vjust = -0.5) +
+  ggplot2::scale_y_continuous(limits = c(0, max(1, resumen$saldo) * 1.18),
+                            expand = ggplot2::expansion(mult = c(0, 0))) +
+  ggplot2::labs(x = NULL, y = "Saldo (MXN)") + ggplot2::theme_minimal(base_size = 11)
+figura
+```
+
+## Fuente, método y límites
+
+Fuente: elaboración propia con siete observaciones sintéticas de `datos/cartera_1105.csv`.
+Cada fila es un crédito en un corte. Se valida todo el archivo antes de filtrar,
+incluidas las observaciones de la otra fecha. Septiembre contiene tres IDs y
+octubre cuatro; el crédito 004 solo aparece en octubre, según el contrato.
+
+La selección compara saldo contra un umbral en pesos enteros. La proporción usa
+el número de créditos del corte, no el saldo ni las siete filas del archivo.
+Una selección sin coincidencias tiene cero créditos y cero saldo, pero conserva
+el universo y no inventa filas. Un corte no disponible se rechaza.
+
+Los parámetros definen variantes de una pregunta. No demuestran causas ni
+permiten atribuir una diferencia entre fechas a los mismos créditos: el universo
+y la pertenencia a la selección pueden cambiar. Los datos no representan una
+cartera real. Las cifras, tabla y barras se vuelven a calcular durante el render.
