@@ -48,6 +48,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
+**Cierre de sesión — 2026-10-24:** material hasta 11.05 publicado en `main`
+mediante `2c25d22`; árbol de trabajo limpio al cerrar. No se inició 11.06.
+Retomar con **11.06 — Proyectos, caché y freeze**, revisando esta bitácora y
+[los pendientes de cierre](docs/storage-closure.md). Mantener ejemplos autónomos,
+recorridos Python/R separados y comprobación del recálculo ante cambios de datos,
+código o parámetros. Práctica del estudiante y proyecto/checkpoints pendientes.
+
 **Desarrollo — 2026-10-23, 11.05:** disponibles la
 [lección](curriculum/11_reporting_quarto/05_parameters_cutoffs/README.md),
 mínimos completos Python/R, CSV propio de siete filas, funciones, documentos,
