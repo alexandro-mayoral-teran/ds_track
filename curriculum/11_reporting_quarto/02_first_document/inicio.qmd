@@ -1,0 +1,13 @@
+---
+title: "Saldo observado de tres créditos ficticios"
+subtitle: "Septiembre y octubre de 2026"
+lang: es
+format:
+  html:
+    embed-resources: true
+    toc: true
+---
+
+Este reporte se prepara en dos pasos: Python o R valida los datos y escribe
+el contenido; Quarto transforma el documento fuente en HTML. Este archivo no
+contiene bloques ejecutables. Para actualizar cifras hay que repetir ambos pasos.

@@ -123,5 +123,5 @@ Puedes avanzar cuando otra persona localice la evidencia de cada cifra, entienda
 la comparación y distinga leer una salida de regenerarla. El proyecto
 `05_monthly_report` y sus checkpoints siguen pendientes en
 [proyectos](../../../projects/README.md).
-Siguiente: [11.02 — Primer documento Quarto](../../../curriculum/11_reporting_quarto/README.md#02-primer-documento-quarto),
-todavía planificada; el material de esta práctica no acredita haberla completado.
+Siguiente: [11.02 — Primer documento Quarto](../../../curriculum/11_reporting_quarto/02_first_document/README.md),
+ya disponible; el material de esta práctica no acredita haberla completado.

@@ -14,8 +14,8 @@ una entrega personal de 10.10. Basta saber leer CSV y ejecutar un script en
 **Python o R**, y reconocer [Markdown](../../00_getting_started/README.md).
 Los preparadores utilizan biblioteca estándar de Python o R base. No instales
 Quarto ni paquetes para esta preparación editorial: la creación y el primer
-render del `.qmd` se desarrollarán en
-[11.02](../README.md#02-primer-documento-quarto), todavía planificada.
+render del `.qmd` se explican en
+[11.02](../02_first_document/README.md), ya disponible.
 
 Al terminar podrás distinguir entrada, código, documento fuente y salida;
 redactar una pregunta para un público; relacionar una afirmación con su tabla;
@@ -254,8 +254,8 @@ Registra evidencia y reflexión en [PROGRESS.md](../../../PROGRESS.md).
 `05_monthly_report` y sus checkpoints siguen previstos en
 [proyectos](../../../projects/README.md); este material no los implementa ni
 acredita aprendizaje. Sigue con
-[11.02 — Primer documento Quarto](../README.md#02-primer-documento-quarto),
-todavía planificada. Allí se preparará la herramienta y se generará el primer HTML.
+[11.02 — Primer documento Quarto](../02_first_document/README.md),
+ya disponible. Allí se comprueba la herramienta y se genera el primer HTML.
 
 ## Referencias primarias
 

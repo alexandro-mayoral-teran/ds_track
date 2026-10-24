@@ -1,0 +1,20 @@
+---
+title: "Mi primer reporte"
+lang: es
+format:
+  html:
+    embed-resources: true
+---
+
+## Pregunta
+
+¿Qué archivos necesito para explicar un resultado?
+
+## Respuesta inicial
+
+Conservo **datos, código y documento fuente** para reconstruir el análisis.
+El HTML permite leer el resultado generado.
+
+## Próximo paso
+
+Preparar una comparación con datos ficticios y comprobar sus cifras.

@@ -6,18 +6,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01 disponible; 11.02–11.09 planificadas.
+- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.02 disponibles; 11.03–11.09 planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
-  10.01–10.10 y 11.01 implementadas (09.08 y 10.05 opcionales);
-  11.02–11.09 y 12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 11.01 con lección/lab, seis filas propias,
-  preparadores Python estándar/R base y borrador narrativo con cifras calculadas.
-- **Punto de reanudación:** 11.02, todavía planificada: primer `.qmd` y HTML.
-- **Foco actual:** documento fuente frente a salida, evidencia y narrativa.
+  10.01–10.10 y 11.01–11.02 implementadas (09.08 y 10.05 opcionales);
+  11.03–11.09 y 12–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 11.02 con lección/lab, primer `.qmd`,
+  preparación Python/R y render/preview HTML con Quarto 1.9.38 existente.
+- **Punto de reanudación:** 11.03, todavía planificada: ejecución dentro del documento.
+- **Foco actual:** preparación calculada frente a render, YAML/Markdown y salida HTML.
   Próximo paso: desarrollar
-  [11.02 — Primer documento Quarto](curriculum/11_reporting_quarto/README.md#02-primer-documento-quarto),
-  comprobando herramienta y requisitos reales sin modificar entornos globales.
-  Mantener datos completos y separar después ejecución Python/Jupyter y R/knitr.
+  [11.03 — Ejecución con Python o R](curriculum/11_reporting_quarto/README.md#03-ejecucion-con-python-o-r),
+  comprobando motor y entorno reales para regenerar resultados dentro del `.qmd`.
+  Mantener datos completos, separar Python/Jupyter y R/knitr y no cambiar entornos globales.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -39,7 +39,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
   19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
-  con 11.01 disponible y 36 previstas. La planificación de 02–14 está
+  con 11.01–11.02 disponibles y 35 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -47,6 +47,34 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 11.02:** disponibles la
+[lección](curriculum/11_reporting_quarto/02_first_document/README.md),
+primer `hola.qmd`, encabezado reutilizable, CSV propio, preparadores Python/R y
+[lab](labs/11_reporting_quarto/02_first_document/README.md). YAML, Markdown,
+archivo fuente/extensión, CLI frente a extensión, código mostrado frente a
+ejecutable, render/preview y recursos HTML. Se reutilizan las reglas/narrativa
+de 11.01 sin exigir sus entregas. Dos fases explícitas: Python/R calcula y
+escribe `reporte.qmd`; Quarto renderiza texto ya guardado, sin ejecutar Jupyter
+o knitr. Tres créditos, 6000/6300 MXN, diferencia 300 y 5% sobre septiembre.
+
+**Verificación:** Quarto 1.9.38 y Pandoc 3.8.3 incluidos en RStudio, sin instalar
+ni actualizar herramientas. Python 3.12.12/R 4.6.1 con UTF-8 de autoría; ambas
+preparaciones y renders comprobados para base, cambio 6600/+600/10% y base cero
+con tasa no definida. Pares/grupos, copia y texto coinciden; vacío, duplicado y
+destinos existentes se rechazan conservando archivos. `hola.qmd` renderiza y
+su bloque sin llaves muestra código sin salida ejecutada. Render aislado conserva
+cifras previas tras cambiar CSV, como corresponde al flujo documentado; YAML
+inválido falla y puede dejar HTML previo. HTML separado inspeccionado por parser:
+idioma, título, secciones, cifras y recursos de presentación incluidos.
+Preview respondió HTTP y actualizó al guardar desde una comprobación fuera del
+ejecutor restringido, que no permite conectarse al puerto local. No se automatizó
+el botón Render del IDE. El navegador integrado no permitió revisar el archivo
+local; no se acredita revisión visual, offline en navegador ni accesibilidad completa.
+Los pasos de lectura/ventana estrecha quedan explícitos en el lab.
+No cambian dependencias, lockfiles, Conda, renv ni bibliotecas globales.
+Proyecto/checkpoints y práctica del estudiante pendientes. Cierre de la sesión
+de desarrollo solicitado; siguiente sección por implementar: 11.03.
 
 **Desarrollo — 2026-10-23, 11.01:** disponibles la
 [lección](curriculum/11_reporting_quarto/01_report_source_render/README.md),

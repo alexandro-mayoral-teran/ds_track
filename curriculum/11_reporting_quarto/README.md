@@ -7,8 +7,8 @@ figuras e interpretación, y que pueda regenerarse sin editar resultados a mano.
 Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequisito
 conceptual. Las lecciones incluyen datos completos y no exigen entregas personales previas.
 
-**Estado:** 11.01 disponible con lección, CSV propio, preparadores Python/R y lab.
-11.02–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
+**Estado:** 11.01 y 11.02 disponibles con lecciones, datos, preparadores Python/R
+y labs. 11.03–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
 
 La teoría del documento se explica una vez. Habrá recorridos separados para
 Python/Jupyter y R/knitr: elige un motor para el reporte esencial y compara el
@@ -18,13 +18,16 @@ El [cierre 10.10](../10_polars_duckdb/10_closure_tool_choice/README.md) ya ofrec
 tablas verificables, pregunta, método y límites como posible entrada del reporte.
 La 11.01 empieza con una muestra propia pequeña y una preparación editorial;
 no instala Quarto ni genera todavía un `.qmd` o HTML.
+La 11.02 crea/renderiza HTML con Quarto 1.9.38 y conserva una secuencia de dos
+pasos: preparación calculada Python/R y render de texto. Ejecución dentro del
+documento con Jupyter/knitr se desarrollará en 11.03.
 
 ## Orden de desarrollo
 
 | Orden | Sección | Alcance | Resultado observable |
 | --- | --- | --- | --- |
 | 1 | [Reporte, fuente y renderizado](01_report_source_render/README.md) | Esencial disponible | Distinguir documento fuente y resultado generado |
-| 2 | [Primer documento Quarto](#02-primer-documento-quarto) | Esencial | Crear un .qmd y renderizar HTML |
+| 2 | [Primer documento Quarto](02_first_document/README.md) | Esencial disponible | Crear un .qmd y renderizar HTML |
 | 3 | [Ejecución con Python o R](#03-ejecucion-con-python-o-r) | Esencial | Regenerar datos y resultados en el entorno correcto |
 | 4 | [Tablas, figuras y referencias](#04-tablas-figuras-y-referencias) | Esencial | Relacionar evidencia y narrativa |
 | 5 | [Parámetros y cortes](#05-parametros-y-cortes) | Práctica | Generar dos reportes desde una misma fuente |
@@ -53,8 +56,11 @@ no instala Quarto ni genera todavía un `.qmd` o HTML.
 
 - Markdown, encabezado YAML, título, formato y bloques de código; preview y render.
   Distinguir CLI Quarto de la extensión del editor.
-- Práctica prevista: un documento mínimo HTML con texto y resultado calculado;
-  comprobar archivos y recursos necesarios para abrirlo en otro equipo.
+- [Lección disponible](02_first_document/README.md), primer archivo completo,
+  muestra propia, preparadores Python/R y
+  [lab 11.02](../../labs/11_reporting_quarto/02_first_document/README.md).
+  YAML/Markdown, código mostrado, render/preview, HTML con recursos incluidos y
+  actualización en dos fases. Cifras calculadas antes del render; sin Jupyter/knitr aún.
 
 <a id="03-ejecucion-con-python-o-r"></a>
 
@@ -122,8 +128,9 @@ no instala Quarto ni genera todavía un `.qmd` o HTML.
 
 ## Prácticas, proyecto y criterio de salida
 
-El [lab 11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md)
-está disponible. Los labs 11.02–11.09 siguen previstos, con 11.08 opcional.
+Los labs [11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md)
+y [11.02](../../labs/11_reporting_quarto/02_first_document/README.md)
+están disponibles. Los labs 11.03–11.09 siguen previstos, con 11.08 opcional.
 El proyecto previsto 05_monthly_report figura en [proyectos](../../projects/README.md),
 sin carpeta ni checkpoints implementados.
 

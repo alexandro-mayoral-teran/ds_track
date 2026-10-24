@@ -445,8 +445,11 @@ conecta documento, ejecución Python/R, evidencia, parámetros, caché y entrega
 HTML con un motor es esencial; PDF, dashboard y publicación son ampliaciones.
 [11.01 — Reporte, fuente y renderizado](curriculum/11_reporting_quarto/01_report_source_render/README.md)
 tiene lección/lab, seis filas propias, narrativa calculada Python/R y actualización
-de entradas. No genera todavía `.qmd` ni HTML; retomar desarrollo en 11.02.
-11.02–11.09 siguen planificadas.
+de entradas. No genera todavía `.qmd` ni HTML en esa introducción.
+[11.02 — Primer documento Quarto](curriculum/11_reporting_quarto/02_first_document/README.md)
+tiene lección/lab, `.qmd`, YAML, Markdown, render/preview y HTML con recursos
+incluidos. Calcula con Python/R antes de renderizar; retomar desarrollo en 11.03.
+11.03–11.09 siguen planificadas.
 
 **Objetivo:** transformar análisis en productos consumibles.
 

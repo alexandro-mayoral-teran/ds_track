@@ -283,7 +283,10 @@ añade entrega reconstruible, mediciones nuevas y decisión argumentada con lab.
 Las diez secciones de 10 tienen material; práctica y proyecto integrador siguen pendientes.
 [11.01 — Reporte, fuente y renderizado](curriculum/11_reporting_quarto/01_report_source_render/README.md)
 inicia reportes con pregunta/público, datos propios y borrador calculado Python/R,
-sin instalar Quarto en esta introducción. 11.02–11.09 y los niveles 12–14 mantienen planes
+sin instalar Quarto en esa introducción.
+[11.02 — Primer documento Quarto](curriculum/11_reporting_quarto/02_first_document/README.md)
+añade `.qmd`, YAML/Markdown, render/preview y HTML con cifras preparadas Python/R.
+11.03–11.09 y los niveles 12–14 mantienen planes
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de

@@ -155,12 +155,14 @@ del estudiante ni implementa el proyecto integrador.**
 11.01 tiene preparación editorial Python estándar/R base: seis filas propias,
 tres créditos, 6000/6300 MXN, diferencia 300 y 5% sobre septiembre; fuente,
 pares, resumen y borrador calculado en carpeta nueva. No genera `.qmd`/HTML.
-Retomar con 11.02, todavía planificada: comprobar herramienta y crear/renderizar
-el primer documento HTML. Mantener contexto, datos completos y separación entre
-preparar entorno y exigir entregas previas. La teoría es común; ejecución
-Python/Jupyter y R/knitr se desarrollará por separado en 11.03. Verificar requisitos
-reales antes de instalar, sin cambiar entornos globales. Conservar fuentes,
-lockfiles, evidencia cruda y distinción entre material, práctica e integración.
+11.02 ya tiene lección/lab y primer `.qmd`/HTML: preparación calculada Python/R,
+YAML/Markdown y render/preview con Quarto 1.9.38 existente, sin paquetes nuevos.
+Retomar con 11.03, todavía planificada: ejecutar código dentro del documento
+con Python/Jupyter o R/knitr y comprobar motor, entorno y regeneración real.
+Mantener contexto/datos completos y separación entre preparar entorno y exigir
+entregas previas. Verificar requisitos reales antes de instalar, sin cambiar
+entornos globales. Conservar fuentes, lockfiles, evidencia cruda y distinción
+entre material, práctica e integración.
 
 Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
 preparación de entorno de exigir resultados personales anteriores. No modificar
@@ -208,5 +210,5 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 11.01 tiene material; 11.02–11.09 y 12–14 conservan sus planes. El material de 09/10 está
+quedan fuera de Git. 11.01–11.02 tienen material; 11.03–11.09 y 12–14 conservan sus planes. El material de 09/10 está
 disponible, con práctica/proyectos/checkpoints pendientes.
