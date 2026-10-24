@@ -281,7 +281,9 @@ añade observaciones repetidas, fases, pico residente y verificación con lab.
 [10.10 — Cierre y elección de herramienta](curriculum/10_polars_duckdb/10_closure_tool_choice/README.md)
 añade entrega reconstruible, mediciones nuevas y decisión argumentada con lab.
 Las diez secciones de 10 tienen material; práctica y proyecto integrador siguen pendientes.
-Los niveles 11–14 tienen secciones definidas
+[11.01 — Reporte, fuente y renderizado](curriculum/11_reporting_quarto/01_report_source_render/README.md)
+inicia reportes con pregunta/público, datos propios y borrador calculado Python/R,
+sin instalar Quarto en esta introducción. 11.02–11.09 y los niveles 12–14 mantienen planes
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de

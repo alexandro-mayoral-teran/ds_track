@@ -161,6 +161,6 @@ explicación revisada, no solo con una salida exitosa del programa.
 `04_large_credit_dataset` y sus checkpoints siguen previstos en
 [proyectos](../../../projects/README.md). Este lab no los implementa.
 Siguiente: [11 — Reportes con Quarto](../../../curriculum/11_reporting_quarto/README.md),
-comenzando por [11.01 — Reporte, fuente y renderizado](../../../curriculum/11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado),
-todavía planificada. Conserva pregunta, tablas, método y límites como entradas
+comenzando por [11.01 — Reporte, fuente y renderizado](../../../curriculum/11_reporting_quarto/01_report_source_render/README.md),
+ya disponible con datos completos. Conserva pregunta, tablas, método y límites como entradas
 para un reporte posterior; no instales herramientas solo por planificarlo.

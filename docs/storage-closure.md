@@ -142,8 +142,9 @@ fuente/contrato, escritura/relectura y reconstrucción por clave. Seis/14061 MXN
 y totales 26030/27690, referencia R base y mediciones nuevas de selección con
 alcance acotado. La decisión exige evidencia/estructura y revisión humana del
 argumento. No instala paquetes ni implementa el proyecto integrador.
-El siguiente desarrollo es [11.01 — Reporte, fuente y renderizado](../curriculum/11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado),
-todavía planificada; las diez secciones de 10 ya tienen material.
+La [11.01 — Reporte, fuente y renderizado](../curriculum/11_reporting_quarto/01_report_source_render/README.md)
+ya inicia la preparación editorial con datos propios y lab;
+las diez secciones de 10 tienen material.
 El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
 sin duplicar aquí una bitácora. **El material disponible no acredita práctica
 del estudiante ni implementa el proyecto integrador.**
@@ -151,13 +152,15 @@ del estudiante ni implementa el proyecto integrador.**
 ## Desarrollo del material y siguiente módulo
 
 09 y 10 no tienen secciones pendientes de autoría; 09.08 y 10.05 son opcionales.
-Retomar con 11.01, todavía planificada: pregunta/público, documento fuente,
-resultado renderizado y narrativa que use tablas verificadas. Presentar contexto,
-datos y resultados completos, con preparación de entorno separada de exigir
-entregas personales previas. La teoría será común y los recorridos Python/Jupyter
-y R/knitr separados. Verificar herramientas/APIs al implementar; no instalar
-Quarto ni paquetes solo para planificar. Conservar fuentes, lockfiles, evidencia
-cruda y distinción entre material, práctica e integración.
+11.01 tiene preparación editorial Python estándar/R base: seis filas propias,
+tres créditos, 6000/6300 MXN, diferencia 300 y 5% sobre septiembre; fuente,
+pares, resumen y borrador calculado en carpeta nueva. No genera `.qmd`/HTML.
+Retomar con 11.02, todavía planificada: comprobar herramienta y crear/renderizar
+el primer documento HTML. Mantener contexto, datos completos y separación entre
+preparar entorno y exigir entregas previas. La teoría es común; ejecución
+Python/Jupyter y R/knitr se desarrollará por separado en 11.03. Verificar requisitos
+reales antes de instalar, sin cambiar entornos globales. Conservar fuentes,
+lockfiles, evidencia cruda y distinción entre material, práctica e integración.
 
 Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
 preparación de entorno de exigir resultados personales anteriores. No modificar
@@ -205,5 +208,5 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 11–14 conservan sus planes; el material de 09/10 está
+quedan fuera de Git. 11.01 tiene material; 11.02–11.09 y 12–14 conservan sus planes. El material de 09/10 está
 disponible, con práctica/proyectos/checkpoints pendientes.

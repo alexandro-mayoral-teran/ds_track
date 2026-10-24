@@ -161,7 +161,11 @@ añade entrega de cuarenta filas con tablas conciliadas, costos y decisión con
 [lab](../labs/10_polars_duckdb/10_closure_tool_choice/README.md).
 Las diez secciones del módulo tienen material; práctica/proyecto siguen pendientes.
 Los [pendientes de cierre](../docs/storage-closure.md)
-permiten retomar sin confundir material con prácticas acreditadas. Los módulos 11–14 tienen planes de reportes, aplicaciones
+permiten retomar sin confundir material con prácticas acreditadas.
+[11.01 — Reporte, fuente y renderizado](11_reporting_quarto/01_report_source_render/README.md)
+tiene lección, datos propios, preparadores Python/R y
+[lab](../labs/11_reporting_quarto/01_report_source_render/README.md).
+11.02–11.09 y los módulos 12–14 conservan planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
 la planificación pendiente se implementará lección por lección.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).

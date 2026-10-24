@@ -6,16 +6,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Siguiente módulo por desarrollar:** `11_reporting_quarto`: nueve secciones planificadas; retomar 11.01.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09 y 10.01–10.10 implementadas (09.08 y 10.05 opcionales); 11–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 10.10 con lección/lab, entrega reconstruible,
-  mediciones nuevas y decisión argumentada. Las diez secciones de 10 tienen material.
-- **Punto de reanudación:** 11.01, todavía planificada; no instalar por adelantar el plan.
-- **Foco actual:** pasar de evidencia técnica/decisión a narrativa reproducible.
+- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01 disponible; 11.02–11.09 planificadas.
+- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
+  10.01–10.10 y 11.01 implementadas (09.08 y 10.05 opcionales);
+  11.02–11.09 y 12–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-23, 11.01 con lección/lab, seis filas propias,
+  preparadores Python estándar/R base y borrador narrativo con cifras calculadas.
+- **Punto de reanudación:** 11.02, todavía planificada: primer `.qmd` y HTML.
+- **Foco actual:** documento fuente frente a salida, evidencia y narrativa.
   Próximo paso: desarrollar
-  [11.01 — Reporte, fuente y renderizado](curriculum/11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado),
-  todavía planificada; pregunta/público, fuente frente a resultado generado y
-  datos completos, con teoría común y recorridos Python/Jupyter y R/knitr separados.
+  [11.02 — Primer documento Quarto](curriculum/11_reporting_quarto/README.md#02-primer-documento-quarto),
+  comprobando herramienta y requisitos reales sin modificar entornos globales.
+  Mantener datos completos y separar después ejecución Python/Jupyter y R/knitr.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -36,7 +38,8 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   Los módulos 06–08 tienen
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37 previstas. La planificación de 02–14 está
+  19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
+  con 11.01 disponible y 36 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -44,6 +47,30 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-23, 11.01:** disponibles la
+[lección](curriculum/11_reporting_quarto/01_report_source_render/README.md),
+CSV autónomo, preparadores Python estándar/R base y
+[lab](labs/11_reporting_quarto/01_report_source_render/README.md).
+Pregunta/público, entrada frente a documento fuente, cálculo frente a renderizado,
+notebook exploratorio y narrativa con evidencia/límites. Seis filas de tres
+créditos en dos cortes: 6000/6300 MXN, diferencia 300 y 5% sobre septiembre.
+Cada preparador genera fuente copiada, pares, resumen y borrador Markdown con
+cifras insertadas desde los cálculos, en un destino nuevo. El lab cambia una
+copia a 6600 MXN, +600 y 10%, conservando la preparación anterior.
+
+**Verificación:** Python 3.12.12/R 4.6.1 (locale UTF-8 en procesos de autoría),
+procesos nuevos y 18 casos en ambos
+lenguajes: base, cambio, orden invertido, baja, sin cambio, base cero, todos
+cero, máximo y rechazos de vacío, cobertura incompleta, duplicados, ID/fecha
+incorrectos, ausencia, negativo, decimal, exceso y espacio. Pares, grupos,
+texto y copia conciliados; originales y destinos existentes protegidos.
+No se añaden dependencias ni cambian lockfiles, Conda, renv o bibliotecas
+globales. No se genera `.qmd`/HTML ni se ejecuta Quarto en esta preparación;
+las APIs de documentos y motores se contrastaron con fuentes oficiales.
+La revisión de autoría no prueba la interfaz del IDE ni acredita práctica del
+estudiante. Proyecto `05_monthly_report` y checkpoints siguen pendientes.
+Retomar con 11.02, después de comprobar los requisitos del primer render.
 
 **Revisión — 2026-10-23, cierre 10.10:** se reprodujeron y corrigieron dos
 omisiones: la comparación por clave aceptaba Parquet de salida desordenados

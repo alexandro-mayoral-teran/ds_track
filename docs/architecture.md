@@ -95,7 +95,8 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01–10.10 tienen lección/muestra/funciones/lab (10.05 opcional); 11–14 conservan planificación;
+10.01–10.10 tienen lección/muestra/funciones/lab (10.05 opcional); 11.01 tiene material,
+11.02–11.09 y 12–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -765,7 +766,7 @@ didáctica de 1998 filas. Referencia Python estándar/R base y relectura por cla
 Mediciones nuevas de selección con protocolo 10.09; no se atribuyen al resumen
 o entrega completa. Decisión editable con campos/evidencia revisados y argumento
 para revisión humana; huellas no autentican tiempos. Las diez secciones tienen
-material, sin activar proyecto/checkpoints. 11.01 es el siguiente desarrollo previsto.
+material, sin activar proyecto/checkpoints. La 11.01 ya inicia la preparación editorial.
 Los ejemplos conservan contexto propio.
 El estado y las condiciones pendientes están en [cierre de almacenamiento](storage-closure.md).
 
@@ -794,8 +795,9 @@ sigue pendiente y esta decisión no renumera el track.
 
 ### Entrega prevista del producto: 11–14
 
-Los cuatro módulos tienen 37 secciones planificadas y referencias oficiales,
-aún sin lecciones/labs. El flujo es reporte → una app elegida → integración final;
+Los cuatro módulos tienen 37 secciones y referencias oficiales; 11.01 dispone
+de lección/lab y las otras 36 siguen planificadas.
+El flujo es reporte → una app elegida → integración final;
 no se exige completar las dos aplicaciones.
 
 | Módulo | Secciones | Cierre esencial |
@@ -808,6 +810,15 @@ no se exige completar las dos aplicaciones.
 Quarto comparte teoría de documento y separa recorridos Python/Jupyter y R/knitr.
 HTML y un motor bastan para el cierre; PDF, dashboards y publicación son ampliaciones.
 Caché/freeze requieren un criterio de actualización de datos, no solo un render exitoso.
+
+[11.01](../curriculum/11_reporting_quarto/01_report_source_render/README.md) usa
+seis filas propias para tres créditos en dos cortes (6000/6300 MXN, +300 y 5%).
+Preparadores independientes Python estándar/R base validan las seis claves y
+generan copia de entrada, pares, resumen y borrador Markdown con cifras insertadas.
+Es preparación editorial, no render Quarto; no añade dependencias ni modifica
+entornos. El lab cambia una copia de entrada y conserva ambas preparaciones.
+El primer `.qmd`/HTML se implementará en 11.02; ejecución Jupyter/knitr en 11.03.
+El proyecto y sus checkpoints siguen pendientes.
 
 Streamlit distingue reejecución, estado de sesión y caché; Shiny distingue dependencias
 reactivas, consumidores y estado por sesión. Ambos reutilizan funciones de datos;

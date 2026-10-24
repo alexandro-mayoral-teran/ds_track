@@ -312,8 +312,8 @@ según [proyectos](../../../projects/README.md) y
 [pendientes de almacenamiento](../../../docs/storage-closure.md).
 
 El siguiente módulo es [11 — Reportes con Quarto](../../11_reporting_quarto/README.md),
-con [11.01 — Reporte, fuente y renderizado](../../11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado)
-todavía planificada. Esta entrega aporta pregunta, tablas, método, decisión y
+con [11.01 — Reporte, fuente y renderizado](../../11_reporting_quarto/01_report_source_render/README.md)
+ya disponible. Esta entrega aporta pregunta, tablas, método, decisión y
 límites para una narrativa; no exige instalar Quarto ni copiar cifras manualmente.
 Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
 

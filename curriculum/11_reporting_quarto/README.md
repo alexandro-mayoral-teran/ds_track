@@ -4,11 +4,11 @@
 
 Convertir el análisis conocido en un reporte que reúna contexto, tablas,
 figuras e interpretación, y que pueda regenerarse sin editar resultados a mano.
-Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) y reutiliza
-sus datos e indicadores verificados.
+Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequisito
+conceptual. Las lecciones incluyen datos completos y no exigen entregas personales previas.
 
-**Estado:** nueve secciones planificadas; lecciones, ejemplos y labs por desarrollar.
-Los enlaces internos describen el alcance previsto.
+**Estado:** 11.01 disponible con lección, CSV propio, preparadores Python/R y lab.
+11.02–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
 
 La teoría del documento se explica una vez. Habrá recorridos separados para
 Python/Jupyter y R/knitr: elige un motor para el reporte esencial y compara el
@@ -16,14 +16,14 @@ otro como ampliación. No se exige mezclar ambos intérpretes en un documento.
 Quarto se instala como herramienta; no sustituye Python, R o sus dependencias.
 El [cierre 10.10](../10_polars_duckdb/10_closure_tool_choice/README.md) ya ofrece
 tablas verificables, pregunta, método y límites como posible entrada del reporte.
-Al desarrollar las lecciones se presentarán ejemplos completos sin exigir
-entregas personales anteriores. Ese enlace no implementa aún las secciones de 11.
+La 11.01 empieza con una muestra propia pequeña y una preparación editorial;
+no instala Quarto ni genera todavía un `.qmd` o HTML.
 
 ## Orden de desarrollo
 
-| Orden | Sección prevista | Alcance | Resultado observable |
+| Orden | Sección | Alcance | Resultado observable |
 | --- | --- | --- | --- |
-| 1 | [Reporte, fuente y renderizado](#01-reporte-fuente-y-renderizado) | Esencial | Distinguir documento fuente y resultado generado |
+| 1 | [Reporte, fuente y renderizado](01_report_source_render/README.md) | Esencial disponible | Distinguir documento fuente y resultado generado |
 | 2 | [Primer documento Quarto](#02-primer-documento-quarto) | Esencial | Crear un .qmd y renderizar HTML |
 | 3 | [Ejecución con Python o R](#03-ejecucion-con-python-o-r) | Esencial | Regenerar datos y resultados en el entorno correcto |
 | 4 | [Tablas, figuras y referencias](#04-tablas-figuras-y-referencias) | Esencial | Relacionar evidencia y narrativa |
@@ -41,8 +41,11 @@ entregas personales anteriores. Ese enlace no implementa aún las secciones de 1
 
 - Pregunta, público y estructura: contexto, método, hallazgos y límites.
   Fuente .qmd, entradas, archivos generados y diferencia con un notebook exploratorio.
-- Práctica prevista: ordenar los resultados conocidos en una narrativa sin
-  introducir otro análisis ni copiar indicadores manualmente.
+- [Lección disponible](01_report_source_render/README.md), muestra propia de seis
+  filas, preparadores Python estándar/R base y
+  [lab 11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md).
+  Narrativa calculada: tres créditos, 6000/6300 MXN, +300 y 5% sobre septiembre.
+  Cambio de entrada, base cero y distinción entre leer, regenerar y renderizar.
 
 <a id="02-primer-documento-quarto"></a>
 
@@ -119,7 +122,8 @@ entregas personales anteriores. Ese enlace no implementa aún las secciones de 1
 
 ## Prácticas, proyecto y criterio de salida
 
-Se prevén labs 11.01–11.09, con 11.08 opcional. Aún no existen.
+El [lab 11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md)
+está disponible. Los labs 11.02–11.09 siguen previstos, con 11.08 opcional.
 El proyecto previsto 05_monthly_report figura en [proyectos](../../projects/README.md),
 sin carpeta ni checkpoints implementados.
 

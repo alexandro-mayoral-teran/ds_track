@@ -112,6 +112,7 @@ reglas de enlace están en
 | [`10.08 — Intercambio entre motores`](10_polars_duckdb/08_engine_interchange/) | `10_polars_duckdb` | No aplica todavía |
 | [`10.09 — Comparar tiempo y memoria`](10_polars_duckdb/09_time_memory/) | `10_polars_duckdb` | No aplica todavía |
 | [`10.10 — Cierre y elección de herramienta`](10_polars_duckdb/10_closure_tool_choice/) | `10_polars_duckdb` | No aplica todavía |
+| [`11.01 — Reporte, fuente y renderizado`](11_reporting_quarto/01_report_source_render/) | `11_reporting_quarto` | No aplica todavía |
 
 Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
 lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →

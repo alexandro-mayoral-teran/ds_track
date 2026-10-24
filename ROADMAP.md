@@ -426,7 +426,7 @@ integra selección/resumen en pandas, Polars y DuckDB, mediciones nuevas y
 decisión revisable. Las diez secciones tienen lección/lab (10.05 opcional).
 El cierre usa cuarenta filas con 14061 MXN seleccionados y 26030/27690 por
 corte; no acredita grandes volúmenes ni práctica del estudiante. El proyecto
-integrador sigue pendiente. Retomar desarrollo en 11.01, todavía planificada.
+integrador sigue pendiente. La 11.01 ya introduce la preparación editorial del reporte.
 
 - Ejecución eager y lazy en Polars.
 - Consultas SQL sobre Parquet con DuckDB.
@@ -443,7 +443,10 @@ y escoger una herramienta usando mediciones.
 El [plan de nueve secciones](curriculum/11_reporting_quarto/README.md#orden-de-desarrollo)
 conecta documento, ejecución Python/R, evidencia, parámetros, caché y entrega.
 HTML con un motor es esencial; PDF, dashboard y publicación son ampliaciones.
-Las lecciones y labs están por desarrollar.
+[11.01 — Reporte, fuente y renderizado](curriculum/11_reporting_quarto/01_report_source_render/README.md)
+tiene lección/lab, seis filas propias, narrativa calculada Python/R y actualización
+de entradas. No genera todavía `.qmd` ni HTML; retomar desarrollo en 11.02.
+11.02–11.09 siguen planificadas.
 
 **Objetivo:** transformar análisis en productos consumibles.
 
