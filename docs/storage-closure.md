@@ -165,8 +165,11 @@ con referencias cruzadas, procedencia y bibliografía local; sin dependencias nu
 visibles, universo/selección y validación antes del filtro; CSV autónomo de siete
 filas y selección vacía válida. Papermill 2.7.0 añadido al grupo notebooks para
 sustituir parámetros Python; R conserva sus metadatos/dependencias.
-Retomar con 11.06, todavía planificada: proyectos, caché y freeze; comprobar
-cuándo se recalcula al cambiar datos, código o parámetros y evitar salidas obsoletas.
+11.06 ya dispone de proyecto, caché/freeze, rutas y reporte por motor; recupera
+resultados actuales al cambiar datos, código o parámetros. Verifica HTML por
+fila contra el CSV actual, incluso compensaciones; jupyter-cache 1.0.1 añadido
+al grupo notebooks, sin cambios de metadatos R.
+Retomar con 11.07, todavía planificada: formatos y revisión visual.
 Mantener contexto/datos completos y separación entre preparar entorno y exigir
 entregas previas. Verificar requisitos reales antes de instalar, sin cambiar
 entornos globales. Conservar fuentes, lockfiles, evidencia cruda y distinción
@@ -218,5 +221,5 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 11.01–11.05 tienen material; 11.06–11.09 y 12–14 conservan sus planes. El material de 09/10 está
+quedan fuera de Git. 11.01–11.06 tienen material; 11.07–11.09 y 12–14 conservan sus planes. El material de 09/10 está
 disponible, con práctica/proyectos/checkpoints pendientes.

@@ -160,5 +160,5 @@ Puedes avanzar cuando las dos variantes conservadas concuerdan con sus parámetr
 y universos, y puedes justificar fronteras y límites. `05_monthly_report` y sus
 checkpoints siguen pendientes en [proyectos](../../../projects/README.md).
 El material disponible no acredita práctica del estudiante.
-Siguiente: [11.06 — Proyectos, caché y freeze](../../../curriculum/11_reporting_quarto/README.md#06-proyectos-cache-y-freeze),
-todavía planificada.
+Siguiente: [11.06 — Proyectos, caché y freeze](../../../curriculum/11_reporting_quarto/06_projects_cache_freeze/README.md),
+ya disponible.

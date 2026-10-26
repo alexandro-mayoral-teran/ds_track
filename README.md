@@ -294,7 +294,10 @@ añade cifras en línea, tabla/figura enlazadas, procedencia y bibliografía con
 añade variantes por fecha y umbral desde una fuente, con parámetros visibles y
 universos comprobados en Python o R, y su
 [lab](labs/11_reporting_quarto/05_parameters_cutoffs/README.md).
-11.06–11.09 y los niveles 12–14 mantienen planes
+[11.06 — Proyectos, caché y freeze](curriculum/11_reporting_quarto/06_projects_cache_freeze/README.md)
+añade proyectos y rutas, experimentos de reutilización/recálculo y verificación
+por fila, con [lab](labs/11_reporting_quarto/06_projects_cache_freeze/README.md).
+11.07–11.09 y los niveles 12–14 mantienen planes
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de

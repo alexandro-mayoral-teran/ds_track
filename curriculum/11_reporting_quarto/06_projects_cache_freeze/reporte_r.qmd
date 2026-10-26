@@ -1,0 +1,39 @@
+---
+title: "Proyecto y resultados reutilizados"
+engine: knitr
+params:
+  fecha_corte: "2026-09-30"
+  minimo_mxn: 2000
+---
+
+```{r}
+#| label: calcular
+#| results: asis
+stopifnot(identical(normalizePath(getwd()), normalizePath(Sys.getenv("QUARTO_PROJECT_DIR"))))
+stopifnot(requireNamespace("renv", quietly = TRUE))
+stopifnot(identical(normalizePath(renv::project()), normalizePath(getwd())))
+biblioteca <- normalizePath(.libPaths()[1], winslash = "/")
+stopifnot(startsWith(normalizePath(find.package("knitr"), winslash = "/"), paste0(biblioteca, "/")))
+source("R/analisis_1106.R", encoding = "UTF-8")
+r <- analizar("datos/cartera_1106.csv", params$fecha_corte, params$minimo_mxn)
+revision <- 1
+ejecucion <- paste(Sys.getpid(), basename(tempfile()), sep = "_")
+dir.create("output", showWarnings = FALSE)
+cat(ejecucion, "\n", file = "output/ejecuciones_1106.log", append = TRUE, sep = "")
+cat(sprintf("Corte **%s**; mínimo **%s MXN**. Universo: **%s créditos / %s MXN**. Selección: **%s créditos / %s MXN**. IDs: **%s**; cobertura: **%s**.\n\n",
+    r$fecha, r$minimo, r$universo_n, r$universo_mxn,
+    r$seleccion_n, r$seleccion_mxn, r$ids, r$proporcion))
+tabla <- data.frame(credito = r$filas$credito_id,
+                    saldo_mxn = formatC(r$filas$saldo, format = "f", digits = 0),
+                    cumple = ifelse(r$filas$cumple, "sí", "no"))
+cat(knitr::kable(tabla, format = "pipe", row.names = FALSE), sep = "\n")
+cat(sprintf("\n\n```text\nEVIDENCIA_1106|fecha=%s|minimo=%s|universo=%s|seleccion=%s|n=%s|revision=%s|ejecucion=%s\n```\n\n",
+    r$fecha, r$minimo, r$universo_mxn, r$seleccion_mxn, r$seleccion_n, revision, ejecucion))
+```
+
+La evidencia anterior se produjo al ejecutar el bloque de cálculo. Si se
+reutiliza una salida, conserva su identificador. Contrasta la tabla con el CSV
+actual: renderizar correctamente no demuestra que se haya vuelto a leer.
+
+La selección está contenida en el universo; sus saldos no se suman entre sí.
+La bitácora es una ayuda didáctica local, no autentica ejecuciones históricas.

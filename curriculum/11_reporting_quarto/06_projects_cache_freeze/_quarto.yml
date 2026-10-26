@@ -1,0 +1,16 @@
+project:
+  type: default
+  render:
+    - informes/reporte_1106.qmd
+  output-dir: output/1106_html
+  execute-dir: project
+lang: es
+format:
+  html:
+    embed-resources: true
+execute:
+  freeze: false
+  cache: false
+  error: false
+  echo: false
+  daemon: false

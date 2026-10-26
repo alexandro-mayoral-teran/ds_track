@@ -398,8 +398,8 @@ explicar la frontera inclusiva y conservar evidencia suficiente para repetirlas.
 Registra resultados y dudas en [PROGRESS.md](../../../PROGRESS.md).
 `05_monthly_report` y sus checkpoints siguen pendientes en
 [proyectos](../../../projects/README.md); el material no acredita aprendizaje.
-Siguiente: [11.06 — Proyectos, caché y freeze](../README.md#06-proyectos-cache-y-freeze),
-todavía planificada.
+Siguiente: [11.06 — Proyectos, caché y freeze](../06_projects_cache_freeze/README.md),
+con lección, preparadores y lab disponibles.
 
 ## Referencias primarias y alcance
 

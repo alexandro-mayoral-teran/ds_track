@@ -6,18 +6,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.05 disponibles; 11.06–11.09 planificadas.
+- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.06 disponibles; 11.07–11.09 planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
-  10.01–10.10 y 11.01–11.05 implementadas (09.08 y 10.05 opcionales);
-  11.06–11.09 y 12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-23, 11.05 con lección/lab, parámetros por motor,
-  YAML por corte y reportes con universo/selección comprobados.
-- **Punto de reanudación:** 11.06, todavía planificada: proyectos, caché y freeze.
-- **Foco actual:** recalcular cuando cambien datos, código o parámetros.
+  10.01–10.10 y 11.01–11.06 implementadas (09.08 y 10.05 opcionales);
+  11.07–11.09 y 12–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-26, 11.06 con lección/lab, proyectos Quarto,
+  caché/freeze y recuperación de resultados actuales en Python/R.
+- **Punto de reanudación:** 11.07, todavía planificada: formatos y revisión visual.
+- **Foco actual:** revisar el HTML completo y contrastar cifras/tablas/figuras.
   Próximo paso: desarrollar
-  [11.06 — Proyectos, caché y freeze](curriculum/11_reporting_quarto/README.md#06-proyectos-cache-y-freeze),
-  comprobando actualización y distinguiendo caché, freeze y nueva ejecución.
-  Mantener datos completos, separar Python/Jupyter y R/knitr y no cambiar entornos globales.
+  [11.07 — Formatos y revisión visual](curriculum/11_reporting_quarto/README.md#07-formatos-y-revision-visual).
+  Mantener recorridos Python/R separados, copias nuevas y entornos globales intactos.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -39,7 +38,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
   19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
-  con 11.01–11.05 disponibles y 32 previstas. La planificación de 02–14 está
+  con 11.01–11.06 disponibles y 31 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -47,6 +46,42 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-26, 11.06:** disponibles la
+[lección](curriculum/11_reporting_quarto/06_projects_cache_freeze/README.md) y el
+[lab](labs/11_reporting_quarto/06_projects_cache_freeze/README.md), CSV propio de
+siete filas, configuración de proyecto, reportes/preparadores Python/R y
+verificador de solo lectura. Funciones de 11.05 reutilizadas sin entregas previas.
+Rutas desde proyecto, render global frente a individual, freeze auto/true y
+caché por motor. Septiembre 6000/5000 MXN; cambio de 003 a 3600 produce 6600/5600;
+octubre conserva 7000/3300. Identificadores/bitácora permiten observar recálculo,
+sin autenticar sesiones históricas. Un refresco global no evita freeze; documento
+explícito más refresco y contraste por fila recuperan resultados actuales.
+
+**Verificación principal:** veinte renders por motor en Quarto 1.9.38,
+Python 3.12.12/jupyter-cache 1.0.1 y R 4.6.1/knitr 1.52. Datos, código del
+documento, funciones externas y parámetros; reutilización y recuperación reales.
+Volver a una versión conocida del código puede recuperar una entrada Jupyter
+anterior con dependencias externas antiguas: por eso se separan los experimentos
+y se exige refresco explícito. Jupyter-cache declarado en notebooks; 81 registros
+uv previos completos conservados y cinco añadidos. Segundo entorno local
+reconstruido desde caché. R sin paquetes ni metadatos nuevos; ejecutor restringido
+no resuelve enlaces base de renv, comprobación realizada con permisos de lectura
+adecuados, sin desactivar validaciones. No modifica entornos globales ni
+implementa el portal o proyectos/checkpoints. Retomar con 11.07.
+
+**Cierre de revisión 11.06:** diez escenarios adicionales por motor: base,
+frontera inclusiva, selección vacía, ceros, máximos, fuente invertida, duplicado
+y saldo inválido fuera del corte, corte ausente y recuperación. Dos cambios
+compensados rechazados por el verificador, uno con total/selección iguales y
+detalle distinto; archivos conservados al verificar. Mínimos 3500 → 4000
+ejecutados en ambos motores. Tabla R con enteros formateados explícitamente
+para no presentar 1000000 como notación científica. Preparadores protegen destinos
+ocupados; metadatos R conservados. Revisados 2833 enlaces locales en 272 Markdown,
+fragmentos y bloques, y diff sin errores de espacios. No se acredita revisión
+visual completa del HTML, IDE ni otros sistemas. La publicación se consulta
+en el historial Git.
+
 
 **Cierre de sesión — 2026-10-24:** material hasta 11.05 publicado en `main`
 mediante `2c25d22`; árbol de trabajo limpio al cerrar. No se inició 11.06.

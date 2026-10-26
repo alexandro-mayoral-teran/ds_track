@@ -1,0 +1,49 @@
+---
+title: "Proyecto y resultados reutilizados"
+jupyter: python3
+---
+
+```{python}
+#| tags: [parameters]
+fecha_corte = "2026-09-30"
+minimo_mxn = 2000
+```
+
+```{python}
+#| label: calcular
+import os
+import sys
+from pathlib import Path
+from uuid import uuid4
+from IPython.display import Markdown, display
+
+assert Path.cwd().resolve() == Path(os.environ["QUARTO_PROJECT_DIR"]).resolve()
+assert Path(sys.executable).resolve() == Path(os.environ["QUARTO_PYTHON"]).resolve()
+# Leer las funciones de nuevo evita reutilizar una importacion de otra sesion.
+namespace = {}
+exec(compile(Path("funciones/analisis.py").read_text(encoding="utf-8"),
+             "funciones/analisis.py", "exec"), namespace)
+r = namespace["analizar"](Path("datos/cartera.csv"), fecha_corte, minimo_mxn)
+revision = 1
+ejecucion = uuid4().hex
+Path("output").mkdir(exist_ok=True)
+with Path("output/ejecuciones_1106.log").open("a", encoding="utf-8") as archivo:
+    archivo.write(ejecucion + "\n")
+
+display(Markdown(f"Corte **{r['fecha']}**; mínimo **{r['minimo']} MXN**. "
+                 f"Universo: **{r['universo_n']} créditos / {r['universo_mxn']} MXN**. "
+                 f"Selección: **{r['seleccion_n']} créditos / {r['seleccion_mxn']} MXN**. "
+                 f"IDs: **{r['ids']}**; cobertura: **{r['proporcion']}**."))
+display(Markdown("| Crédito | Saldo MXN | Cumple |\n| --- | ---: | --- |\n" +
+    "\n".join(f"| {i} | {s} | {'sí' if c else 'no'} |" for i, s, c in r['filas'])))
+print(f"EVIDENCIA_1106|fecha={r['fecha']}|minimo={r['minimo']}"
+      f"|universo={r['universo_mxn']}|seleccion={r['seleccion_mxn']}"
+      f"|n={r['seleccion_n']}|revision={revision}|ejecucion={ejecucion}")
+```
+
+La evidencia anterior se produjo al ejecutar el bloque de cálculo. Si se
+reutiliza una salida, conserva su identificador. Contrasta la tabla con el CSV
+actual: renderizar correctamente no demuestra que se haya vuelto a leer.
+
+La selección está contenida en el universo; sus saldos no se suman entre sí.
+La bitácora es una ayuda didáctica local, no autentica ejecuciones históricas.
