@@ -1,0 +1,19 @@
+project:
+  type: default
+  render:
+    - reporte.qmd
+  execute-dir: project
+lang: es
+format:
+  html:
+    toc: true
+    toc-location: body
+    toc-title: "En este reporte"
+    embed-resources: true
+    css: estilos.css
+execute:
+  cache: false
+  freeze: false
+  daemon: false
+  error: false
+  echo: false

@@ -7,8 +7,8 @@ figuras e interpretación, y que pueda regenerarse sin editar resultados a mano.
 Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequisito
 conceptual. Las lecciones incluyen datos completos y no exigen entregas personales previas.
 
-**Estado:** 11.01–11.08 disponibles con lecciones, datos, preparadores Python/R
-y labs (11.08 opcional). 11.09 conserva su alcance previsto; su lección y lab siguen pendientes.
+**Estado:** las nueve secciones 11.01–11.09 tienen lecciones y labs; 11.08 es
+opcional. El proyecto integrador, checkpoints y práctica personal siguen pendientes.
 
 La teoría del documento se explica una vez. Hay recorridos separados para
 Python/Jupyter y R/knitr: elige un motor para el reporte esencial y compara el
@@ -34,7 +34,7 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 | 6 | [Proyectos, caché y freeze](06_projects_cache_freeze/README.md) | Práctica disponible | Controlar cuándo se recalculan resultados |
 | 7 | [Formatos y revisión visual](07_formats_visual_review/README.md) | Práctica disponible | Entregar HTML legible; PDF como ampliación |
 | 8 | [Dashboard y distribución](08_dashboard_distribution/README.md) | Extensión opcional disponible | Organizar vistas sin exigir una app con servidor |
-| 9 | [Cierre del reporte reproducible](#09-cierre-del-reporte-reproducible) | Práctica de cierre | Reconstruir y comprobar un reporte por corte |
+| 9 | [Cierre del reporte reproducible](09_reproducible_report_closure/README.md) | Práctica de cierre disponible | Reconstruir y comprobar un reporte por corte |
 
 ## Alcance de cada sección
 
@@ -146,8 +146,11 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 
 - Integrar código, parámetros, fuentes, dependencias y comprobaciones en un
   reporte regenerable, indicando qué archivos se producen.
-- Práctica prevista: reconstruir un corte y verificar cifras, figuras y narrativa
-  sin editar manualmente resultados. Basta un motor y una salida HTML para el cierre.
+- [Lección disponible](09_reproducible_report_closure/README.md) y
+  [lab 11.09](../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md):
+  entrega completa, copia de solo fuentes y reconstrucción; referencia externa
+  por clave, parámetros explícitos y texto/tablas/barras conciliados. Un motor
+  y HTML bastan. Sin dependencias nuevas ni cambios de lockfiles.
 
 ## Prácticas, proyecto y criterio de salida
 
@@ -157,9 +160,11 @@ Los labs [11.01](../../labs/11_reporting_quarto/01_report_source_render/README.m
 [11.04](../../labs/11_reporting_quarto/04_tables_figures_references/README.md),
 [11.05](../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md),
 [11.06](../../labs/11_reporting_quarto/06_projects_cache_freeze/README.md),
-[11.07](../../labs/11_reporting_quarto/07_formats_visual_review/README.md) y
-[11.08](../../labs/11_reporting_quarto/08_dashboard_distribution/README.md)
-están disponibles. El lab 11.09 sigue previsto; 11.08 es opcional.
+[11.07](../../labs/11_reporting_quarto/07_formats_visual_review/README.md),
+[11.08](../../labs/11_reporting_quarto/08_dashboard_distribution/README.md) y
+[11.09](../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md)
+están disponibles; 11.08 es opcional. Consulta los
+[criterios de cierre](../../docs/reporting-closure.md).
 El proyecto previsto 05_monthly_report figura en [proyectos](../../projects/README.md),
 sin carpeta ni checkpoints implementados.
 

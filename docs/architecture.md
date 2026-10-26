@@ -95,8 +95,8 @@ el nivel 01 tiene sus seis lecciones y labs, incluyendo validación y resumen. S
 visualización dispone de 04.01–04.09 con lecciones y labs (04.08 opcional);
 05.01–05.11 disponen de lección/lab y paquete local; 06.01–06.09 tienen lecciones/scripts/labs;
 07.01–07.10, 08.01–08.09 y 09.01–09.09 tienen lecciones/scripts/labs;
-10.01–10.10 tienen lección/muestra/funciones/lab (10.05 opcional); 11.01–11.08 tienen material,
-11.09 y 12–14 conservan planificación;
+10.01–10.10 tienen lección/muestra/funciones/lab (10.05 opcional); 11.01–11.09 tienen material,
+12–14 conservan planificación;
 pandas dispone de sus diez lecciones y labs, con notebook y gráfica de cierre. Python aplicado
 está después de pandas, SQL y visualización básica: no bloquea el inicio de pandas.
 
@@ -795,8 +795,8 @@ sigue pendiente y esta decisión no renumera el track.
 
 ### Entrega prevista del producto: 11–14
 
-Los cuatro módulos tienen 37 secciones y referencias oficiales; 11.01–11.08 disponen
-de lección/lab y las otras 29 siguen planificadas.
+Los cuatro módulos tienen 37 secciones y referencias oficiales; 11.01–11.09 disponen
+de lección/lab y las otras 28 siguen planificadas.
 El flujo es reporte → una app elegida → integración final;
 no se exige completar las dos aplicaciones.
 
@@ -883,7 +883,13 @@ tarjetas nativas y tabla HTML única; sin widgets nuevos ni servidor Python/R.
 Distribuidores copian HTML y nota a un destino nuevo; igualdad de copia no
 autentica ni concilia datos. Verificador externo por CSV y revisión offline de
 la copia con navegación/teclado a tres anchos. Fuentes y entorno se conservan
-aparte para reconstruir; 11.09 integrará el cierre. Sin dependencias nuevas.
+aparte para reconstruir; [11.09](../curriculum/11_reporting_quarto/09_reproducible_report_closure/README.md) integra el cierre. Sin dependencias nuevas.
+
+[11.09](../curriculum/11_reporting_quarto/09_reproducible_report_closure/README.md)
+reúne fuentes, parámetros, entorno y artefactos en carpetas nuevas. Construcción
+protegida, copia de fuentes y verificación de solo lectura contra CSV externo;
+valores por clave y texto/tablas/barras. Huellas y logs no autentican ejecución.
+Los [criterios de cierre](reporting-closure.md) separan material, práctica y proyecto.
 
 Streamlit distingue reejecución, estado de sesión y caché; Shiny distingue dependencias
 reactivas, consumidores y estado por sesión. Ambos reutilizan funciones de datos;

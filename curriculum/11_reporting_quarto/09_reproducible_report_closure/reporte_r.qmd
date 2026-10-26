@@ -1,0 +1,122 @@
+---
+title: "Cierre del reporte por corte"
+engine: knitr
+params:
+  fecha_corte: "2026-09-30"
+  minimo_mxn: 2000
+---
+
+```{r}
+#| include: false
+stopifnot(requireNamespace("renv", quietly = TRUE))
+stopifnot(identical(normalizePath(renv::project()), normalizePath(getwd())))
+stopifnot(identical(normalizePath(getwd()), normalizePath(Sys.getenv("QUARTO_PROJECT_DIR"))))
+biblioteca <- normalizePath(.libPaths()[1], winslash = "/")
+stopifnot(startsWith(normalizePath(find.package("knitr"), winslash = "/"), paste0(biblioteca, "/")))
+if (file.exists("reporte.html") || file.exists("salida")) stop("No reemplazar entregas anteriores")
+source("analisis.R", encoding = "UTF-8")
+r <- analizar("cartera.csv", params$fecha_corte, params$minimo_mxn)
+if (!dir.create("salida")) stop("Destino de resultados ocupado")
+pesos <- function(x) formatC(x, format = "f", digits = 0)
+detalle <- data.frame(credito_id = r$filas$credito_id, fecha_corte = r$fecha,
+                      saldo_mxn = pesos(r$filas$saldo), seleccionado = ifelse(r$filas$cumple, "si", "no"))
+write.csv(detalle, "salida/detalle.csv", row.names = FALSE, fileEncoding = "UTF-8")
+resumen <- data.frame(fecha_corte = r$fecha, minimo_mxn = pesos(r$minimo),
+                      universo_n = pesos(r$universo_n), universo_mxn = pesos(r$universo_mxn),
+                      seleccion_n = pesos(r$seleccion_n), seleccion_mxn = pesos(r$seleccion_mxn),
+                      proporcion = r$proporcion)
+write.csv(resumen, "salida/resumen.csv", row.names = FALSE, fileEncoding = "UTF-8")
+meta <- list(motor = "r", version_motor = paste(R.version$major, R.version$minor, sep = "."),
+              version_grafica = as.character(packageVersion("ggplot2")),
+              fecha_corte = r$fecha, minimo_mxn = as.integer(r$minimo))
+jsonlite::write_json(meta, "salida/metadatos.json", pretty = TRUE, auto_unbox = TRUE)
+```
+
+## Pregunta y parámetros efectivos {#parametros}
+
+¿Qué créditos de una fecha exacta tienen saldo mayor o igual al mínimo?
+Los parámetros efectivos se muestran en el texto y en la tabla; el nombre del
+archivo no decide qué corte se calculó.
+
+```{r}
+#| results: asis
+cat(sprintf("Corte %s; mínimo %s MXN. Universo: %s créditos / %s MXN. Selección: %s créditos / %s MXN. Proporción: %s.\n",
+    r$fecha, pesos(r$minimo), pesos(r$universo_n), pesos(r$universo_mxn),
+    pesos(r$seleccion_n), pesos(r$seleccion_mxn), r$proporcion))
+```
+
+## Indicadores conciliables {#resultados}
+
+```{r}
+#| label: tbl-resumen
+#| tbl-cap: "Universo y selección del corte; saldos en MXN."
+indicadores <- data.frame(Indicador = c("Fecha de corte", "Mínimo (MXN)", "Créditos del universo", "Saldo del universo (MXN)",
+                                       "Créditos seleccionados", "Saldo seleccionado (MXN)", "Proporción de créditos"),
+                          Valor = c(r$fecha, pesos(r$minimo), pesos(r$universo_n), pesos(r$universo_mxn),
+                                    pesos(r$seleccion_n), pesos(r$seleccion_mxn), r$proporcion))
+knitr::kable(indicadores, format = "pipe", row.names = FALSE)
+```
+
+## Detalle del universo {#detalle}
+
+La tabla conserva todos los créditos del corte y marca el cumplimiento; una
+selección vacía no elimina el universo. Si hace falta, enfoca el recuadro con
+Tab y usa las flechas para llegar a la última columna.
+
+::: {.detalle role="region" aria-label="Créditos del corte y condición de selección" tabindex="0"}
+
+```{r}
+#| label: tbl-detalle
+#| tbl-cap: "Detalle por ID y condición del umbral; saldo en MXN."
+knitr::kable(data.frame(Crédito = r$filas$credito_id, "Saldo (MXN)" = pesos(r$filas$saldo),
+                        Seleccionado = ifelse(r$filas$cumple, "sí", "no"), check.names = FALSE),
+              format = "pipe", row.names = FALSE)
+```
+
+:::
+
+## Comparación visual {#figura}
+
+```{r}
+#| label: fig-corte
+#| fig-cap: "Saldo del universo y de su selección; categorías superpuestas, MXN."
+#| fig-alt: "Dos barras con base cero y etiquetas comparan el saldo del universo y de la selección. La tabla conserva los valores y cada crédito. La selección está contenida en el universo."
+#| fig-width: 6
+#| fig-height: 3.5
+resumen_figura <- data.frame(grupo = factor(c("Universo", "Selección"), levels = c("Universo", "Selección")),
+                            saldo = c(r$universo_mxn, r$seleccion_mxn))
+figura <- ggplot2::ggplot(resumen_figura, ggplot2::aes(x = grupo, y = saldo)) +
+  ggplot2::geom_col(fill = "#245b78", width = .55) +
+  ggplot2::geom_text(ggplot2::aes(label = pesos(saldo)), vjust = -.5) +
+  ggplot2::scale_y_continuous(limits = c(0, max(1, resumen_figura$saldo) * 1.2), labels = pesos,
+                            expand = ggplot2::expansion(mult = c(0, 0))) +
+  ggplot2::labs(x = NULL, y = "Saldo (MXN)") + ggplot2::theme_minimal(base_size = 11)
+capas <- ggplot2::ggplot_build(figura)$data
+write.csv(data.frame(grupo = c("universo", "seleccion"), altura = capas[[1]]$y,
+                      etiqueta = capas[[2]]$label), "salida/barras.csv", row.names = FALSE)
+ggplot2::ggsave("salida/figura.png", plot = figura, width = 6, height = 3.5, dpi = 150)
+knitr::include_graphics("salida/figura.png")
+```
+
+La selección es un subconjunto: las barras no se suman. La @tbl-resumen y el
+detalle permiten recuperar las cifras sin depender del color o del tamaño de
+la imagen. No se atribuye a todos los créditos la misma condición.
+
+## Fuente, método y límites {#limites}
+
+Fuente: siete observaciones sintéticas de `cartera.csv`. Una fila es un crédito
+en una fecha exacta, con clave ID/fecha única y saldo entero de 0 a 1000000 MXN,
+sin ausencias. Se valida todo el archivo, incluso la otra fecha, antes del filtro.
+Septiembre tiene tres créditos y octubre cuatro; 004 solo aparece en octubre.
+
+El mínimo es inclusivo y la proporción divide el número seleccionado entre los
+créditos del corte. Un corte ausente es error; cero seleccionados es válido.
+Las diferencias entre variantes no son un cambio de los mismos IDs ni explican
+causas. No son datos reales ni pagos del período.
+
+## Reconstrucción y revisión {#reconstruccion}
+
+Conserva fuentes, parámetros, configuración del entorno y las salidas. El HTML
+incorpora recursos de lectura, no sustituye el paquete de reconstrucción.
+Las huellas ayudan a detectar cambios accidentales; no acreditan autenticidad.
+Contrasta con una referencia externa y abre el HTML final antes de entregar.

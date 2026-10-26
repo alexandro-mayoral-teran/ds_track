@@ -408,8 +408,7 @@ copia local revisada. Registra evidencia en [PROGRESS.md](../../../PROGRESS.md).
 
 El proyecto integrador y sus checkpoints siguen pendientes en
 [proyectos](../../../projects/README.md). El portal del curso no se implementa
-aquí. Continúa con [11.09 — Cierre del reporte reproducible](../README.md#09-cierre-del-reporte-reproducible),
-todavía planificada. Tener material disponible no acredita aprendizaje.
+aquí. Continúa con [11.09 — Cierre del reporte reproducible](../09_reproducible_report_closure/README.md). Tener material disponible no acredita aprendizaje.
 
 ## Referencias primarias y alcance
 

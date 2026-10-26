@@ -5,19 +5,19 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ## En este momento
 
-- **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.08 disponibles; 11.09 planificada.
+- **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet`, `10_polars_duckdb` y `11_reporting_quarto`; proyectos/checkpoints y práctica del estudiante pendientes.
+- **Siguiente trabajo:** delimitar un piloto pequeño de experiencia sobre material existente;
+  comenzar con 02.01 y una sesión acompañada. Los módulos 12–14 siguen planificados.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
-  10.01–10.10 y 11.01–11.08 implementadas (09.08, 10.05 y 11.08 opcionales);
-  11.09 y 12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-26, 11.08 con lección/lab opcionales, dashboards
-  Python/R conciliados y copia local de lectura revisada sin conexión.
-- **Punto de reanudación:** 11.09, todavía planificada: cierre del reporte reproducible.
-- **Foco actual:** integrar fuente, código, parámetros, dependencias y comprobaciones
-  en una entrega reconstruible; un motor y HTML bastan.
-  Próximo paso: desarrollar
-  [11.09 — Cierre del reporte reproducible](curriculum/11_reporting_quarto/README.md#09-cierre-del-reporte-reproducible).
-  Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
+  10.01–10.10 y 11.01–11.09 implementadas (09.08, 10.05 y 11.08 opcionales);
+  12–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-26, 11.09: entrega de cierre por motor,
+  reconstrucción sin resultados previos y conciliación contra referencia externa.
+- **Punto de reanudación:** diseño acotado del prototipo; lección/lab/comprobación
+  y evidencia sobre 02.01, antes de ampliar a otras secciones.
+- **Foco actual:** probar la experiencia con una pareja; conservar práctica personal
+  y proyectos/checkpoints como pendientes. Los [criterios de cierre](docs/reporting-closure.md)
+  distinguen esas capas del material disponible.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
   Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
@@ -38,7 +38,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
   19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
-  con 11.01–11.08 disponibles y 29 previstas. La planificación de 02–14 está
+  con 11.01–11.09 disponibles y 28 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -46,6 +46,25 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-26, 11.09:** disponibles la
+[lección](curriculum/11_reporting_quarto/09_reproducible_report_closure/README.md) y el
+[lab](labs/11_reporting_quarto/09_reproducible_report_closure/README.md). CSV propio
+de siete filas, parámetros JSON estrictos, documentos/preparadores/construcción
+Python/R y copia de solo fuentes. Entrega HTML, detalle/resumen/barras/PNG,
+versiones, comando, diagnóstico y huellas; verificador Python estándar de solo
+lectura con referencia externa y parámetros esperados. Septiembre 3/6000 y
+selección 2/5000 MXN; octubre 4/7000 y 1/3300. Sin dependencias ni lockfiles nuevos.
+Seis escenarios por motor, reconstrucciones desde fuentes, 24 entradas/parámetros
+inválidos y doce alteraciones con huellas actualizadas comprobados. Verificación
+sin mutaciones, entornos Python reconstruidos y dos bibliotecas R locales;
+HTML offline a 1280/640/390 px, navegación y teclado revisados.
+El entorno R se restauró localmente: los binarios conservados de arrow/duckdb
+permitieron evitar compilación desde fuentes, manteniendo versiones bloqueadas.
+Las nueve secciones de Quarto tienen material; práctica personal, proyecto
+integrador y checkpoints siguen pendientes. Próximo trabajo: piloto de experiencia
+con alcance pequeño sobre el contenido existente; 12–14 conservan sus planes.
+
 
 **Desarrollo — 2026-10-26, 11.08:** disponibles la
 [lección](curriculum/11_reporting_quarto/08_dashboard_distribution/README.md) y el

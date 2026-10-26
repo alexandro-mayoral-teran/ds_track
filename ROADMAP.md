@@ -458,7 +458,15 @@ sin dependencias nuevas en esa sección.
 [11.05 — Parámetros y cortes](curriculum/11_reporting_quarto/05_parameters_cutoffs/README.md)
 añade lección/lab, YAML por corte, parámetros Python/Jupyter o R/knitr, validación
 y reportes con universo/selección explícitos. Papermill 2.7.0 en notebooks para
-la sustitución Python; R sin paquetes nuevos. Retomar 11.06; 11.06–11.09 planificadas.
+la sustitución Python; R sin paquetes nuevos.
+[11.06](curriculum/11_reporting_quarto/06_projects_cache_freeze/README.md),
+[11.07](curriculum/11_reporting_quarto/07_formats_visual_review/README.md),
+[11.08](curriculum/11_reporting_quarto/08_dashboard_distribution/README.md) opcional y
+[11.09](curriculum/11_reporting_quarto/09_reproducible_report_closure/README.md)
+ya tienen lecciones y labs: recálculo, revisión HTML, distribución y entrega
+reconstruible. Las nueve secciones del módulo tienen material; práctica personal,
+proyecto integrador y checkpoints siguen pendientes. Consulta los
+[criterios de cierre](docs/reporting-closure.md). Los módulos 12–14 conservan planes.
 
 **Objetivo:** transformar análisis en productos consumibles.
 

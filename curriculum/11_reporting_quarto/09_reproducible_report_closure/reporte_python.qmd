@@ -1,0 +1,131 @@
+---
+title: "Cierre del reporte por corte"
+jupyter: python3
+---
+
+```{python}
+#| tags: [parameters]
+fecha_corte = "2026-09-30"
+minimo_mxn = 2000
+```
+
+```{python}
+#| include: false
+import csv
+import json
+import os
+import platform
+import sys
+from pathlib import Path
+import matplotlib
+import matplotlib.pyplot as plt
+from IPython.display import Image, Markdown, display
+from analisis import analizar
+
+assert Path.cwd().resolve() == Path(os.environ["QUARTO_PROJECT_DIR"]).resolve()
+assert Path(sys.executable).resolve() == Path(os.environ["QUARTO_PYTHON"]).resolve()
+if Path("reporte.html").exists() or Path("salida").exists():
+    raise FileExistsError("No reemplazar entregas anteriores; preparar otra copia")
+r = analizar(Path("cartera.csv"), fecha_corte, minimo_mxn)
+salida = Path("salida")
+salida.mkdir(exist_ok=False)
+def escribir_csv(nombre, columnas, filas):
+    with (salida / nombre).open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(columnas)
+        w.writerows(filas)
+escribir_csv("detalle.csv", ["credito_id", "fecha_corte", "saldo_mxn", "seleccionado"],
+             [(i, r["fecha"], s, "si" if c else "no") for i, s, c in r["filas"]])
+columnas = ["fecha_corte", "minimo_mxn", "universo_n", "universo_mxn", "seleccion_n", "seleccion_mxn", "proporcion"]
+valores = [r["fecha"], r["minimo"], r["universo_n"], r["universo_mxn"], r["seleccion_n"], r["seleccion_mxn"], r["proporcion"]]
+escribir_csv("resumen.csv", columnas, [valores])
+meta = dict(motor="python", version_motor=platform.python_version(), version_grafica=matplotlib.__version__,
+            fecha_corte=r["fecha"], minimo_mxn=r["minimo"])
+(salida / "metadatos.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+```
+
+## Pregunta y parámetros efectivos {#parametros}
+
+¿Qué créditos de una fecha exacta tienen saldo mayor o igual al mínimo?
+Los parámetros efectivos se muestran en el texto y en la tabla; el nombre del
+archivo no decide qué corte se calculó.
+
+```{python}
+#| output: asis
+print(f"Corte {r['fecha']}; mínimo {r['minimo']} MXN. Universo: {r['universo_n']} créditos / {r['universo_mxn']} MXN. "
+      f"Selección: {r['seleccion_n']} créditos / {r['seleccion_mxn']} MXN. Proporción: {r['proporcion']}.")
+```
+
+## Indicadores conciliables {#resultados}
+
+```{python}
+#| label: tbl-resumen
+#| tbl-cap: "Universo y selección del corte; saldos en MXN."
+indicadores = [("Fecha de corte", r["fecha"]), ("Mínimo (MXN)", r["minimo"]),
+              ("Créditos del universo", r["universo_n"]), ("Saldo del universo (MXN)", r["universo_mxn"]),
+              ("Créditos seleccionados", r["seleccion_n"]), ("Saldo seleccionado (MXN)", r["seleccion_mxn"]),
+              ("Proporción de créditos", r["proporcion"])]
+display(Markdown("| Indicador | Valor |\n| --- | --- |\n" + "\n".join(f"| {k} | {v} |" for k, v in indicadores)))
+```
+
+## Detalle del universo {#detalle}
+
+La tabla conserva todos los créditos del corte y marca el cumplimiento; una
+selección vacía no elimina el universo. Si hace falta, enfoca el recuadro con
+Tab y usa las flechas para llegar a la última columna.
+
+::: {.detalle role="region" aria-label="Créditos del corte y condición de selección" tabindex="0"}
+
+```{python}
+#| label: tbl-detalle
+#| tbl-cap: "Detalle por ID y condición del umbral; saldo en MXN."
+display(Markdown("| Crédito | Saldo (MXN) | Seleccionado |\n| --- | ---: | --- |\n" +
+    "\n".join(f"| {i} | {s} | {'sí' if c else 'no'} |" for i, s, c in r["filas"])))
+```
+
+:::
+
+## Comparación visual {#figura}
+
+```{python}
+#| label: fig-corte
+#| fig-cap: "Saldo del universo y de su selección; categorías superpuestas, MXN."
+#| fig-alt: "Dos barras con base cero y etiquetas comparan el saldo del universo y de la selección. La tabla conserva los valores y cada crédito. La selección está contenida en el universo."
+#| fig-width: 6
+#| fig-height: 3.5
+totales = [r["universo_mxn"], r["seleccion_mxn"]]
+fig, ax = plt.subplots(figsize=(6, 3.5))
+barras = ax.bar(["Universo", "Selección"], totales, color="#245b78", width=.55)
+_ = ax.bar_label(barras, labels=[str(x) for x in totales], padding=4)
+_ = ax.set(ylabel="Saldo (MXN)", ylim=(0, max(1, max(totales)) * 1.2))
+ax.spines[["top", "right"]].set_visible(False)
+fig.tight_layout()
+escribir_csv("barras.csv", ["grupo", "altura", "etiqueta"],
+             [(g, p.get_height(), t.get_text()) for g, p, t in zip(["universo", "seleccion"], barras, ax.texts)])
+fig.savefig(salida / "figura.png", dpi=150)
+plt.close(fig)
+display(Image(filename=str(salida / "figura.png")))
+```
+
+La selección es un subconjunto: las barras no se suman. La @tbl-resumen y el
+detalle permiten recuperar las cifras sin depender del color o del tamaño de
+la imagen. No se atribuye a todos los créditos la misma condición.
+
+## Fuente, método y límites {#limites}
+
+Fuente: siete observaciones sintéticas de `cartera.csv`. Una fila es un crédito
+en una fecha exacta, con clave ID/fecha única y saldo entero de 0 a 1000000 MXN,
+sin ausencias. Se valida todo el archivo, incluso la otra fecha, antes del filtro.
+Septiembre tiene tres créditos y octubre cuatro; 004 solo aparece en octubre.
+
+El mínimo es inclusivo y la proporción divide el número seleccionado entre los
+créditos del corte. Un corte ausente es error; cero seleccionados es válido.
+Las diferencias entre variantes no son un cambio de los mismos IDs ni explican
+causas. No son datos reales ni pagos del período.
+
+## Reconstrucción y revisión {#reconstruccion}
+
+Conserva fuentes, parámetros, configuración del entorno y las salidas. El HTML
+incorpora recursos de lectura, no sustituye el paquete de reconstrucción.
+Las huellas ayudan a detectar cambios accidentales; no acreditan autenticidad.
+Contrasta con una referencia externa y abre el HTML final antes de entregar.

@@ -303,8 +303,11 @@ tablas y figura, con [lab](labs/11_reporting_quarto/07_formats_visual_review/REA
 [11.08 — Dashboard y distribución](curriculum/11_reporting_quarto/08_dashboard_distribution/README.md)
 añade ampliación opcional con indicadores/vistas conciliados y copia de lectura
 revisada sin conexión, con [lab](labs/11_reporting_quarto/08_dashboard_distribution/README.md).
-11.09 y los niveles 12–14 mantienen planes
-para reportes, una aplicación elegida y proyecto final. El
+[11.09 — Cierre del reporte reproducible](curriculum/11_reporting_quarto/09_reproducible_report_closure/README.md)
+integra fuentes, parámetros, entorno y reconstrucción con referencia externa,
+con [lab](labs/11_reporting_quarto/09_reproducible_report_closure/README.md).
+Las nueve secciones de Quarto tienen material. Los módulos 12–14 conservan
+planes de aplicaciones alternativas y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de
 Python aplicado, visualización y aplicaciones en Python y R en su orden de estudio. El

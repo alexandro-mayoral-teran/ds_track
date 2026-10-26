@@ -177,7 +177,10 @@ instalador, no generado por acceso a configuración MiKTeX; HTML esencial cerrad
 verificador y distribuidores. Misma fuente y valores entre tarjetas/tabla/figura;
 pestañas de navegador sin recálculo. Copias locales de lectura comprobadas sin
 conexión; no equivalen a reconstrucción ni a publicar en un servicio.
-Retomar con 11.09, todavía planificada: cierre del reporte reproducible.
+11.09 integra el [cierre del reporte reproducible](reporting-closure.md): entrega
+completa y reconstrucción con referencia externa. Las nueve secciones de Quarto
+tienen material; práctica personal y proyecto/checkpoints siguen pendientes.
+Siguiente trabajo acordado: delimitar el piloto sobre una lección existente.
 Mantener contexto/datos completos y separación entre preparar entorno y exigir
 entregas previas. Verificar requisitos reales antes de instalar, sin cambiar
 entornos globales. Conservar fuentes, lockfiles, evidencia cruda y distinción
@@ -229,5 +232,5 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 11.01–11.08 tienen material; 11.09 y 12–14 conservan sus planes. El material de 09/10 está
+quedan fuera de Git. 11.01–11.09 tienen material; 12–14 conservan sus planes. El material de 09/10 está
 disponible, con práctica/proyectos/checkpoints pendientes.

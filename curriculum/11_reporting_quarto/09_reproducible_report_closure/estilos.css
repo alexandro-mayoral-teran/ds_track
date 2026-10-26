@@ -1,0 +1,11 @@
+body { line-height: 1.6; }
+main > nav#TOC { display: block; }
+main p, main li { overflow-wrap: anywhere; }
+.detalle {
+  width: 100%; max-width: 100%; overflow-x: auto;
+  padding: .25rem; border: 1px solid #667085;
+}
+.detalle table { min-width: 32rem; }
+.detalle .cell-output-display { overflow: visible; }
+.detalle:focus-visible, a:focus-visible { outline: 3px solid #245b78; outline-offset: 2px; }
+figure img { max-width: 100%; height: auto; }
