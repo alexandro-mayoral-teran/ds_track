@@ -1,0 +1,49 @@
+---
+title: "De registros a una tabla"
+toc: false
+---
+
+<p class="eyebrow">SESIÓN 02.01 / PANDAS</p>
+<p class="lead">Tu objetivo: explicar qué representa una tabla y encontrar un dato sin confundir una etiqueta con una posición.</p>
+<div class="meta-row session-meta"><span>35–50 min · pueden dividirla</span><span>Una copia por persona</span><span>Sin CSV todavía</span></div>
+
+## Antes de empezar
+
+Necesitas las bases de Python y un editor de notebooks con el entorno de estudio
+preparado. La [lección](leccion.qmd#preparar-pandas-en-tu-entorno) explica cómo
+comprobar pandas. La práctica muestra Python y pandas al comenzar.
+
+<form id="prediccion-form" class="quick-check"><fieldset><legend>Primero, una predicción</legend><p>Tres ventas, con producto, unidades y precio. El índice aparece a la izquierda. ¿Qué forma tendrá el DataFrame?</p><label><input type="radio" name="forma" value="3x4" required> 3 filas × 4 columnas: también cuento el índice.</label><label><input type="radio" name="forma" value="3x3"> 3 filas × 3 columnas: el índice etiqueta las filas aparte.</label><label><input type="radio" name="forma" value="8x3"> 8 filas × 3 columnas: una fila por unidad.</label><button class="button secondary" type="submit">Contrastar mi predicción</button><p id="prediccion-respuesta" role="status" aria-live="polite">Elige una respuesta y explica tu razonamiento a tu compañero.</p></fieldset></form>
+
+<div class="download-panel"><div><p class="eyebrow">TU COPIA DE TRABAJO</p><h3>Todo junto, listo para abrir</h3><p>Notebook, script de apoyo, bitácora e instrucciones. Extrae la carpeta completa y abre <code>practica.ipynb</code> en tu editor.</p></div><a class="button primary" href="descargas/02.01.zip" download>Descargar práctica ↓</a></div>
+
+<p class="small-text">¿Prefieres archivos sueltos? <a href="descargas/02.01/practica.ipynb" download>Notebook</a> · <a href="descargas/02.01/series_dataframe.py" download>Script</a> · <a href="descargas/02.01/bitacora.md" download>Bitácora</a> · <a href="descargas/02.01/ABRIR.md" download>Cómo abrir</a>. Notebook y script deben quedar juntos. Python se ejecuta en tu editor, fuera del portal.</p>
+
+## El recorrido de hoy
+
+<div class="route-list"><a href="leccion.qmd" class="route-item"><span class="step-num">01</span><div><h3>Comprender la estructura</h3><p>Lee la lección. Predice filas, columnas, índice y total de unidades.</p></div><span aria-hidden="true">↗</span></a><a href="lab.qmd" class="route-item"><span class="step-num">02</span><div><h3>Practicar con una variante</h3><p>Ejecuta tu copia, agrega una venta y compara loc con iloc. Las soluciones están cerradas.</p></div><span aria-hidden="true">↗</span></a><a href="bitacora.qmd" class="route-item"><span class="step-num">03</span><div><h3>Comprobar y explicar</h3><p>Reinicia el kernel, ejecuta todo y guarda qué comprobaste y qué ayuda necesitaste.</p></div><span aria-hidden="true">↗</span></a></div>
+
+## Acuerdo de pareja
+
+En el primer bloque, una persona escribe y explica lo que cree que ocurrirá;
+la otra pregunta y compara el resultado. Al agregar la cuarta venta, cambien
+los papeles. Al final, cada persona propone una variante y explica una consulta
+sin que la otra escriba por ella. No editen el mismo notebook simultáneamente.
+
+<details><summary>Una pista antes de mirar la solución</summary><p><code>shape</code> indica filas y columnas; el índice se muestra aparte. Una selección con un nombre devuelve una Series; una lista de nombres mantiene un DataFrame. Prueba con la columna de unidades y compara sus formas.</p></details>
+
+## ¿Qué vamos a comprobar?
+
+| Momento | Forma de la tabla | Total de unidades |
+| --- | --- | --- |
+| Tres ventas iniciales | 3 × 3 | 8 |
+| Al agregar rotulador, 3 unidades | 4 × 3 | 11 |
+| Otra tabla sin registros | 0 × 3 | Sin filas; conserva columnas |
+
+Estos valores son referencias para contrastar. Además debes explicar qué
+representa una fila, por qué el índice no es una cuarta columna y cómo cambia
+una consulta cuando cambian las etiquetas.
+
+<div class="note-panel"><strong>Para retomar después</strong><p>Abre la misma carpeta personal y tu notebook guardado. No vuelvas a extraer la práctica sobre tus avances. La bitácora del navegador es un borrador separado; expórtala para conservarla junto al trabajo.</p></div>
+
+[Ir a la bitácora →](bitacora.qmd){.button .secondary}

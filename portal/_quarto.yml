@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - sesion.qmd
+    - leccion.qmd
+    - lab.qmd
+    - bitacora.qmd
+    - fuentes.qmd
+  resources:
+    - descargas/**
+    - procedencia.json
+    - portal.js
+website:
+  title: DS Track
+  search: false
+  sidebar:
+    style: docked
+    background: "#f1f3f0"
+    title: "DS Track <span class='brand-dot'>●</span>"
+    subtitle: "APRENDER EN COMPAÑÍA"
+    contents:
+      - text: "Inicio del piloto"
+        href: index.qmd
+      - section: "SESIÓN 02.01"
+        contents:
+          - text: "Tu recorrido"
+            href: sesion.qmd
+          - text: "01 · Comprender"
+            href: leccion.qmd
+          - text: "02 · Practicar"
+            href: lab.qmd
+          - text: "03 · Registrar y explicar"
+            href: bitacora.qmd
+      - text: "Material de consulta"
+        href: fuentes.qmd
+  page-footer:
+    left: "DS Track · Piloto local / 02.01"
+    right: "Leer → practicar → comprobar → explicar"
+lang: es
+format:
+  html:
+    theme: default
+    mainfont: "system-ui, -apple-system, Segoe UI, sans-serif"
+    css: estilos.css
+    toc: true
+    toc-title: En esta página
+    code-copy: true
+    include-after-body: scripts.html
+execute:
+  enabled: false
+  eval: false
+  freeze: false

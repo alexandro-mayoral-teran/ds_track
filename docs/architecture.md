@@ -945,6 +945,22 @@ Fuentes para desarrollar las herramientas:
 
 ## Registro de decisiones
 
+### Piloto local de experiencia 02.01
+
+[portal/](../portal/README.md) contiene una capa Quarto sobre lección/lab existentes.
+Un catálogo explícito selecciona fuentes y descargas; la generación adapta enlaces
+y escribe una copia nueva bajo output, excluida de Git. No ejecuta ejemplos ni
+instala paquetes. Las fuentes de consulta fuera del piloto se ofrecen con su
+ubicación en el clon y descarga, sin convertir todo el curriculum.
+
+El notebook vive junto a su lab y viaja con el script auxiliar. Una preparación
+protegida o el ZIP crea la copia personal. El servidor sirve únicamente el sitio
+generado en 127.0.0.1; no publica ni añade backend de aprendizaje. La bitácora
+usa guardado explícito en el navegador y exportación Markdown, sin sincronización.
+PROGRESS.md conserva estado editorial; la evidencia personal del piloto va en
+la copia de cada participante. El código se versiona; salidas y datos personales no.
+Prueba técnica disponible, observación de sesión real pendiente.
+
 Las decisiones importantes se documentarán en `docs/decisions/` usando notas
 breves: contexto, decisión, consecuencias y fecha. No se agregará infraestructura
 solo para anticipar necesidades hipotéticas.

@@ -101,7 +101,22 @@ PROGRESS.md
 
 ## Fuente de verdad del avance
 
-[`PROGRESS.md`](../PROGRESS.md) es el único lugar donde se mantiene el estado
-actual. El curriculum describe el orden y los proyectos describen sus propios
-checkpoints; ninguno debe duplicar la bitácora diaria.
+[`PROGRESS.md`](../PROGRESS.md) mantiene el estado actual del material y los puntos
+de reanudación del proyecto. El curriculum describe el orden y los proyectos sus
+checkpoints; ninguno debe duplicar la bitácora editorial diaria.
+
+## Bitácora personal en el piloto 02.01
+
+El [portal local](../portal/README.md) añade una copia personal del notebook y una
+[plantilla de bitácora](../templates/learning-session/bitacora.md). Para esta prueba,
+cada participante registra predicción, comprobaciones, explicación, ayudas y
+evidencia en su carpeta excluida de Git. El formulario del portal conserva un
+solo borrador por sesión en ese navegador; exportarlo no modifica automáticamente
+la nota del paquete ni PROGRESS.md.
+
+Esta separación está implementada para el piloto, sin migrar registros previos
+del resto del recorrido. La comprobación técnica del material y el estado
+declarado por la persona se registran por separado: no equivalen a aprendizaje
+observado. Una sesión real de pareja sigue siendo necesaria para evaluar la
+experiencia antes de extender el portal.
 

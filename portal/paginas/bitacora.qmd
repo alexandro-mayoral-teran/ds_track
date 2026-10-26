@@ -1,0 +1,32 @@
+---
+title: "Lo que probaste. Lo que puedes explicar."
+toc: false
+---
+
+<p class="eyebrow">SESIÓN 02.01 / EVIDENCIA PERSONAL</p>
+<p class="lead">Una pausa para registrar lo que observaste y acordar el siguiente paso con tu compañero.</p>
+
+<div class="note-panel"><strong>Tu borrador vive en este navegador.</strong><p>Se guarda únicamente al pulsar Guardar. Hay un solo borrador por sesión en este navegador: expórtalo antes de cambiar de participante. No se sincroniza con otra persona, con Git ni con el archivo del paquete. Puedes escribir directamente en <code>bitacora.md</code> si lo prefieres.</p></div>
+
+<form id="bitacora-form" class="journal" autocomplete="off">
+<div class="form-grid"><div><label for="participante">Tu nombre o alias</label><input id="participante" name="participante" maxlength="100" placeholder="¿De quién es esta evidencia?"></div><div><label for="pareja">Compañero/a</label><input id="pareja" name="pareja" maxlength="100" placeholder="¿Con quién trabajaste?"></div></div>
+<label for="estado">¿Cómo resolviste la práctica?</label><select id="estado" name="estado"><option value="pendiente">Pendiente de práctica</option><option value="revisado">Revisé el material</option><option value="con ayuda">La resolví con ayuda</option><option value="independiente">La resolví de forma independiente</option><option value="explicado y adaptado">La expliqué y adapté</option></select>
+<label for="prediccion">Mi predicción antes de ejecutar</label><textarea id="prediccion" name="prediccion" rows="3" maxlength="10000" placeholder="Filas, columnas, índice y unidades esperadas…"></textarea>
+<label for="observado">Qué observé y comprobé</label><textarea id="observado" name="observado" rows="4" maxlength="10000" placeholder="Formas, consultas, variante, versión de pandas y diferencias con mi predicción…"></textarea>
+<label for="explicacion">Mi explicación con mis palabras</label><textarea id="explicacion" name="explicacion" rows="4" maxlength="10000" placeholder="¿Qué representa una fila? ¿En qué se diferencian loc e iloc?"></textarea>
+<label for="evidencia">Dónde guardé mi evidencia</label><input id="evidencia" name="evidencia" maxlength="1000" placeholder="Ruta o nombre de tu notebook, nota o captura…">
+<label for="siguiente">Ayudas, dudas y siguiente paso</label><textarea id="siguiente" name="siguiente" rows="3" maxlength="10000" placeholder="¿Qué intentarás sin ayuda? ¿Qué costó abrir o retomar?"></textarea>
+<div class="journal-actions"><button type="submit" class="button primary">Guardar en este navegador</button><button type="button" id="exportar" class="button secondary">Descargar bitácora .md ↓</button></div>
+<p id="estado-guardado" class="save-status" role="status" aria-live="polite">Aún no has guardado un borrador aquí.</p>
+</form>
+
+## Conversación de cierre
+
+- Cada persona explica una decisión sin leer la solución.
+- Comparen la variante: ¿qué cambió y qué permaneció igual?
+- Anoten qué dificultó abrir la práctica o retomar los archivos.
+
+La revisión numérica no evalúa tu explicación. El proyecto integrador y sus
+checkpoints siguen pendientes. Si pueden explicar y adaptar esta práctica,
+el siguiente contenido del curso es **02.02 — Leer, inspeccionar y exportar**,
+disponible como [material de consulta](fuentes.qmd#fuente-7) fuera de este piloto.

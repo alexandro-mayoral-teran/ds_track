@@ -29,6 +29,15 @@ Si estudian juntos, quien acompaña puede explicar y dar pistas; quien aprende
 realiza la práctica y explica su resultado. Cada sesión puede cubrir solo una
 parte de la lección: no necesitas terminar un módulo de una vez.
 
+### Prueba del portal local
+
+Si ya llegaste a pandas, puedes probar [la sesión acompañada 02.01](portal/README.md):
+lección y lab del curso, notebook descargable y bitácora personal. Desde la raíz,
+`python portal/servir.py --abrir` abre la prueba local. El código del portal está
+versionado; las copias de práctica y la evidencia personal quedan fuera de Git.
+En este piloto registra tu evidencia en tu propia bitácora; PROGRESS.md conserva
+el estado del material. No sustituye las prácticas iniciales ni acredita aprendizaje.
+
 ### Tu primera sesión
 
 Tu primera meta es escribir tu presentación en Markdown y crear tu perfil en

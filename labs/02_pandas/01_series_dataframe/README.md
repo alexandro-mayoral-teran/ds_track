@@ -10,6 +10,17 @@
 Reserva 35 a 50 minutos. Usa el entorno elegido con pandas instalado. Intenta
 predecir antes de ejecutar y abrir soluciones. No necesitas escribir archivos CSV.
 
+### Alternativa de exploración en notebook
+
+Puedes usar [practica.ipynb](practica.ipynb), conservándolo junto al script
+series_dataframe.py de la lección. El piloto del portal los entrega juntos;
+el notebook acompaña estas mismas partes, sin sustituir la explicación del lab.
+Cada persona trabaja en su copia y guarda una
+[bitácora personal](../../../templates/learning-session/bitacora.md).
+Una persona escribe y explica su predicción; la otra contrasta y pregunta.
+Cambien de papeles al agregar el registro. La variante final se explica de forma
+individual. Abrir el material o ejecutar celdas pendientes no completa la práctica.
+
 ## Parte A — Leer la estructura
 
 1. Predice filas, columnas, índice y total de unidades del ejemplo.

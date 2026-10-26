@@ -1,0 +1,21 @@
+{
+  "id": "02.01",
+  "titulo": "De registros a una tabla",
+  "leccion": "curriculum/02_pandas/01_series_dataframe/README.md",
+  "lab": "labs/02_pandas/01_series_dataframe/README.md",
+  "practica": {
+    "practica.ipynb": "labs/02_pandas/01_series_dataframe/practica.ipynb",
+    "series_dataframe.py": "curriculum/02_pandas/01_series_dataframe/series_dataframe.py",
+    "bitacora.md": "templates/learning-session/bitacora.md",
+    "ABRIR.md": "portal/plantillas/ABRIR.md"
+  },
+  "consulta": [
+    "curriculum/01_python_foundations/README.md",
+    "pyproject.toml",
+    "uv.lock",
+    "curriculum/00_getting_started/05_environment/conda.md",
+    "curriculum/00_getting_started/05_environment/venv-pip.md",
+    "curriculum/00_getting_started/06_first_notebook/README.md",
+    "curriculum/02_pandas/02_read_inspect_export/README.md"
+  ]
+}

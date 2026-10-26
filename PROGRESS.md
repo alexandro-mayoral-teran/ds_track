@@ -6,15 +6,15 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet`, `10_polars_duckdb` y `11_reporting_quarto`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Siguiente trabajo:** delimitar un piloto pequeño de experiencia sobre material existente;
-  comenzar con 02.01 y una sesión acompañada. Los módulos 12–14 siguen planificados.
+- **Siguiente trabajo:** probar con una pareja el [portal local 02.01](portal/README.md)
+  y registrar fricción antes de ampliar. Los módulos 12–14 siguen planificados.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
   10.01–10.10 y 11.01–11.09 implementadas (09.08, 10.05 y 11.08 opcionales);
   12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-26, 11.09: entrega de cierre por motor,
-  reconstrucción sin resultados previos y conciliación contra referencia externa.
-- **Punto de reanudación:** diseño acotado del prototipo; lección/lab/comprobación
-  y evidencia sobre 02.01, antes de ampliar a otras secciones.
+- **Último desarrollo:** 2026-10-26, piloto local 02.01: Quarto sobre lección/lab,
+  notebook, copias protegidas y bitácora descargable; código versionado.
+- **Punto de reanudación:** sesión real de pareja con el prototipo; observar
+  orientación, apertura de práctica, cambio de papeles y reanudación.
 - **Foco actual:** probar la experiencia con una pareja; conservar práctica personal
   y proyectos/checkpoints como pendientes. Los [criterios de cierre](docs/reporting-closure.md)
   distinguen esas capas del material disponible.
@@ -46,6 +46,23 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-26, primer piloto local 02.01:** disponible
+[portal/README.md](portal/README.md), catálogo explícito, seis páginas Quarto,
+adaptador de enlaces y descargas. Reutiliza lección/lab sin duplicar su fuente
+editorial; las consultas fuera del piloto conservan ubicación y fuente descargable.
+Notebook junto al lab, script auxiliar, instrucciones y bitácora en paquete ZIP;
+preparación rechaza destinos ocupados. Render de lectura sin ejecución ni paquetes
+nuevos; Python 3.12.12/Quarto 1.9.38 existentes. Notebook limpio ejecutado desde
+kernel nuevo, muestra 3 × 3/ocho unidades, variante 4 × 3/once y vacío 0 × 3.
+Cuatro pruebas estándar del adaptador/copias; originales y lockfiles conservados.
+Seis páginas a 1440/768/390 px, navegación, soluciones cerradas, pregunta con
+feedback, ZIP y bitácora guardada/recuperada/exportada comprobados en navegador
+aislado sin solicitudes externas. El registro guarda un solo borrador por sesión
+y navegador, sin sincronización. Código del portal versionado; sitio generado,
+prácticas y registros personales excluidos. No se desplegó servicio en Internet.
+El material está comprobado técnicamente; la sesión real en pareja y la mejora
+de experiencia a partir de ella siguen pendientes antes de extender a 02.02/02.03.
 
 **Desarrollo — 2026-10-26, 11.09:** disponibles la
 [lección](curriculum/11_reporting_quarto/09_reproducible_report_closure/README.md) y el
