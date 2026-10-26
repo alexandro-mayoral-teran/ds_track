@@ -1,0 +1,136 @@
+---
+title: "Revisión del saldo por crédito"
+subtitle: "Mismos tres créditos en septiembre y octubre de 2026"
+lang: es
+jupyter: python3
+format:
+  html:
+    toc: true
+    toc-location: body
+    toc-title: "En este reporte"
+    number-sections: true
+    embed-resources: true
+    css: estilos.css
+execute:
+  daemon: false
+  cache: false
+  freeze: false
+  error: false
+  echo: false
+---
+
+```{python}
+#| label: preparar
+#| include: false
+import os
+import sys
+from pathlib import Path
+import matplotlib.pyplot as plt
+from IPython.display import Markdown, display
+from analisis import analizar
+
+assert Path(sys.executable).resolve() == Path(os.environ["QUARTO_PYTHON"]).resolve()
+r = analizar(Path("cartera.csv"))
+pares = [(i, a, b, b-a) for i, a, b in r["pares"]]
+totales = [r["septiembre"], r["octubre"]]
+assert sum(d for _, _, _, d in pares) == r["diferencia"]
+```
+
+## Pregunta y hallazgo {#hallazgo}
+
+¿Cómo cambió el saldo de los mismos tres créditos entre el 30 de septiembre
+y el 31 de octubre? El universo de comparación tiene tres créditos en cada
+fecha, sin entradas ni salidas de IDs.
+
+```{python}
+#| output: asis
+print(f"El saldo pasó de **{r['septiembre']} MXN** a **{r['octubre']} MXN**; "
+      f"la diferencia octubre menos septiembre es **{r['diferencia']} MXN**. "
+      f"Variación sobre septiembre: **{r['tasa']}**.")
+```
+
+La @tbl-resumen permite leer los valores sin interpretar una imagen.
+La @fig-saldos los representa con barras. El [detalle por crédito](#detalle)
+permite revisar movimientos que el agregado puede ocultar.
+
+## Resumen legible {#resumen}
+
+```{python}
+#| label: tbl-resumen
+#| tbl-cap: "Comparación del saldo total de tres créditos (MXN)."
+display(Markdown("| Septiembre | Octubre | Diferencia | Variación |\n"
+                 "| ---: | ---: | ---: | --- |\n"
+                 f"| {r['septiembre']} | {r['octubre']} | {r['diferencia']} | {r['tasa']} |"))
+```
+
+Fuente: CSV sintético `cartera.csv`, validado completo antes de calcular.
+La diferencia es octubre menos septiembre; el porcentaje usa septiembre como
+denominador. Con base inicial cero la tasa no está definida.
+
+## Detalle y tabla ancha {#detalle}
+
+La tabla siguiente conserva las fechas completas y todos los saldos por crédito.
+En una ventana estrecha, enfoca su recuadro con Tab y usa las flechas para
+desplazarte horizontalmente si hace falta. El resto del reporte debe continuar
+ajustándose al ancho disponible. Para leer el hallazgo basta el resumen anterior.
+
+::: {.tabla-ancha role="region" aria-label="Detalle de saldos por crédito, con desplazamiento horizontal" tabindex="0"}
+
+```{python}
+#| label: tbl-detalle
+#| tbl-cap: "Saldos y fechas por crédito; diferencia en MXN."
+display(Markdown("| Crédito | Fecha anterior | Saldo anterior | Fecha actual | Saldo actual | Diferencia |\n"
+                 "| --- | --- | ---: | --- | ---: | ---: |\n" +
+    "\n".join(f"| {i} | 2026-09-30 | {a} | 2026-10-31 | {b} | {d} |" for i, a, b, d in pares)))
+```
+
+:::
+
+Los ceros iniciales pertenecen al ID; no son una posición de fila.
+Esta tabla permite comprobar los tres créditos de @tbl-resumen, no añade
+otro universo ni otras observaciones.
+
+## Figura y alternativa textual {#figura}
+
+```{python}
+#| label: fig-saldos
+#| fig-cap: "Saldo de los mismos tres créditos en cada fecha (MXN)."
+#| fig-alt: "Dos barras con base cero comparan los totales de septiembre y octubre. La tabla de resumen ofrece los mismos valores y la diferencia en texto."
+#| fig-width: 6
+#| fig-height: 3.5
+#| out-width: 100%
+fig, ax = plt.subplots(figsize=(6, 3.5))
+barras = ax.bar(["Septiembre", "Octubre"], totales, color="#245b78", width=.55)
+ax.bar_label(barras, labels=[str(v) for v in totales], padding=4)
+ax.set(ylabel="Saldo total (MXN)", xlabel="Corte de 2026",
+       ylim=(0, max(1, max(totales)) * 1.2))
+ax.spines[["top", "right"]].set_visible(False)
+fig.tight_layout()
+plt.show()
+```
+
+Fuente: los mismos cálculos que @tbl-resumen. No necesitas distinguir colores:
+cada barra tiene una etiqueta de fecha y un valor. El texto alternativo describe
+la figura y la tabla conserva las cifras; no se presume que todos los créditos
+hayan cambiado en la misma dirección.
+
+## Método y límites {#limites}
+
+La entrada exige tres IDs en ambos cortes, una fila por clave ID/fecha y saldos
+enteros de 0 a 1000000 MXN, sin ausencias. Se valida el archivo completo.
+Una entrada incompleta o duplicada es error, no una tabla vacía válida.
+Las cifras en línea, tablas y barras se generan desde un mismo resultado.
+
+Los saldos a una fecha no son pagos del mes. Esta muestra no explica causas ni
+representa una cartera real. Cambiar el formato no modifica la población ni
+justifica recortar observaciones para que una tabla quepa.
+
+## Revisión y siguiente acción {#revision}
+
+Antes de entregar, recorre el índice y las referencias, revisa los dos extremos
+de la tabla ancha, amplía el navegador y contrasta las barras con el resumen.
+Una revisión automática de estructura no sustituye esa lectura.
+
+Este HTML incorpora sus recursos de lectura. Conserva también CSV, funciones,
+`.qmd` y CSS para poder reconstruirlo. La apariencia no certifica accesibilidad
+completa ni que se hayan vuelto a ejecutar los cálculos.

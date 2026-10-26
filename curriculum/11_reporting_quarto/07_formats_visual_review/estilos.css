@@ -1,0 +1,18 @@
+/* Solo presentación: las reglas de cálculo permanecen en las funciones. */
+body { line-height: 1.6; }
+main p, main li { overflow-wrap: anywhere; }
+.tabla-ancha {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-block: 1rem;
+  padding: .25rem;
+  border: 1px solid #667085;
+  border-radius: .25rem;
+}
+.tabla-ancha table { min-width: 46rem; }
+.tabla-ancha:focus-visible, a:focus-visible {
+  outline: 3px solid #245b78;
+  outline-offset: 3px;
+}
+figure img { max-width: 100%; height: auto; }
+/* No se recorta el contenido ni se reduce toda la tabla para hacerla caber. */

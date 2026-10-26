@@ -6,13 +6,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.06 disponibles; 11.07–11.09 planificadas.
+- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.06 disponibles; 11.07 en borrador; 11.08–11.09 planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
   10.01–10.10 y 11.01–11.06 implementadas (09.08 y 10.05 opcionales);
   11.07–11.09 y 12–14 conservan sus planes.
 - **Último desarrollo:** 2026-10-26, 11.06 con lección/lab, proyectos Quarto,
   caché/freeze y recuperación de resultados actuales en Python/R.
-- **Punto de reanudación:** 11.07, todavía planificada: formatos y revisión visual.
+- **Punto de reanudación:** completar el borrador de 11.07: formatos y revisión visual.
 - **Foco actual:** revisar el HTML completo y contrastar cifras/tablas/figuras.
   Próximo paso: desarrollar
   [11.07 — Formatos y revisión visual](curriculum/11_reporting_quarto/README.md#07-formatos-y-revision-visual).
@@ -46,6 +46,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Avance parcial — 2026-10-26, 11.07:** se conservan los
+[fuentes del borrador](curriculum/11_reporting_quarto/07_formats_visual_review/BORRADOR.md):
+CSV propio, CSS, mínimo estático, preparadores y reportes Python/R. Ambos
+reportes renderizaron a HTML con los entornos locales existentes, sin nuevas
+dependencias. Falta redactar la lección y el lab, completar el contraste de
+datos y las comprobaciones visuales, y actualizar la navegación al cerrarlos.
+La revisión en navegador se interrumpió por una limitación de la herramienta
+para verificar la URL de Chrome; no se acredita revisión visual del HTML.
+PDF opcional todavía no comprobado. Este avance no cuenta como sección
+terminada ni como evidencia de aprendizaje. Retomar aquí antes de 11.08.
 
 **Desarrollo — 2026-10-26, 11.06:** disponibles la
 [lección](curriculum/11_reporting_quarto/06_projects_cache_freeze/README.md) y el

@@ -1,0 +1,31 @@
+---
+title: "Revisar una salida"
+lang: es
+format:
+  html:
+    toc: true
+    toc-location: body
+    toc-title: "En este documento"
+    embed-resources: true
+  pdf:
+    pdf-engine: lualatex
+    keep-tex: true
+    latex-auto-install: false
+---
+
+## Pregunta
+
+¿Cómo se distribuyen 3500 MXN entre dos créditos ficticios?
+
+## Evidencia
+
+| Crédito | Saldo (MXN) |
+| --- | ---: |
+| 001 | 1000 |
+| 002 | 2500 |
+
+: Saldos ficticios de una sola fecha. {#tbl-minimo}
+
+La @tbl-minimo conserva los IDs y suma 3500 MXN. No son datos reales ni una
+serie temporal. El HTML y el PDF son salidas distintas del mismo documento:
+hay que abrir y revisar cada archivo que se vaya a entregar.

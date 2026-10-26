@@ -1,0 +1,136 @@
+---
+title: "Revisión del saldo por crédito"
+subtitle: "Mismos tres créditos en septiembre y octubre de 2026"
+lang: es
+engine: knitr
+format:
+  html:
+    toc: true
+    toc-location: body
+    toc-title: "En este reporte"
+    number-sections: true
+    embed-resources: true
+    css: estilos_1107.css
+execute:
+  cache: false
+  freeze: false
+  error: false
+  echo: false
+---
+
+```{r}
+#| label: preparar
+#| include: false
+stopifnot(requireNamespace("renv", quietly = TRUE))
+stopifnot(identical(normalizePath(renv::project()), normalizePath(getwd())))
+biblioteca <- normalizePath(.libPaths()[1], winslash = "/")
+stopifnot(startsWith(normalizePath(find.package("knitr"), winslash = "/"), paste0(biblioteca, "/")))
+source("R/analisis_1107.R", encoding = "UTF-8")
+r <- analizar("datos/cartera_1107.csv")
+pares <- r$pares
+pares$diferencia <- pares$octubre - pares$septiembre
+totales <- c(r$septiembre, r$octubre)
+stopifnot(sum(pares$diferencia) == r$diferencia)
+pesos <- function(x) formatC(x, format = "f", digits = 0)
+```
+
+## Pregunta y hallazgo {#hallazgo}
+
+¿Cómo cambió el saldo de los mismos tres créditos entre el 30 de septiembre
+y el 31 de octubre? El universo de comparación tiene tres créditos en cada
+fecha, sin entradas ni salidas de IDs.
+
+El saldo pasó de **`r pesos(r$septiembre)` MXN** a **`r pesos(r$octubre)` MXN**;
+la diferencia octubre menos septiembre es **`r pesos(r$diferencia)` MXN**.
+Variación sobre septiembre: **`r r$tasa`**.
+
+La @tbl-resumen permite leer los valores sin interpretar una imagen.
+La @fig-saldos los representa con barras. El [detalle por crédito](#detalle)
+permite revisar movimientos que el agregado puede ocultar.
+
+## Resumen legible {#resumen}
+
+```{r}
+#| label: tbl-resumen
+#| tbl-cap: "Comparación del saldo total de tres créditos (MXN)."
+tabla_resumen <- data.frame(Septiembre = pesos(r$septiembre), Octubre = pesos(r$octubre),
+                            Diferencia = pesos(r$diferencia), Variación = r$tasa,
+                            check.names = FALSE)
+knitr::kable(tabla_resumen, format = "pipe", row.names = FALSE)
+```
+
+Fuente: CSV sintético `datos/cartera_1107.csv`, validado completo antes de calcular.
+La diferencia es octubre menos septiembre; el porcentaje usa septiembre como
+denominador. Con base inicial cero la tasa no está definida.
+
+## Detalle y tabla ancha {#detalle}
+
+La tabla siguiente conserva las fechas completas y todos los saldos por crédito.
+En una ventana estrecha, enfoca su recuadro con Tab y usa las flechas para
+desplazarte horizontalmente si hace falta. El resto del reporte debe continuar
+ajustándose al ancho disponible. Para leer el hallazgo basta el resumen anterior.
+
+::: {.tabla-ancha role="region" aria-label="Detalle de saldos por crédito, con desplazamiento horizontal" tabindex="0"}
+
+```{r}
+#| label: tbl-detalle
+#| tbl-cap: "Saldos y fechas por crédito; diferencia en MXN."
+detalle <- data.frame(Crédito = pares$credito_id, "Fecha anterior" = "2026-09-30",
+                       "Saldo anterior" = pesos(pares$septiembre), "Fecha actual" = "2026-10-31",
+                       "Saldo actual" = pesos(pares$octubre), Diferencia = pesos(pares$diferencia),
+                       check.names = FALSE)
+knitr::kable(detalle, format = "pipe", row.names = FALSE)
+```
+
+:::
+
+Los ceros iniciales pertenecen al ID; no son una posición de fila.
+Esta tabla permite comprobar los tres créditos de @tbl-resumen, no añade
+otro universo ni otras observaciones.
+
+## Figura y alternativa textual {#figura}
+
+```{r}
+#| label: fig-saldos
+#| fig-cap: "Saldo de los mismos tres créditos en cada fecha (MXN)."
+#| fig-alt: "Dos barras con base cero comparan los totales de septiembre y octubre. La tabla de resumen ofrece los mismos valores y la diferencia en texto."
+#| fig-width: 6
+#| fig-height: 3.5
+#| out-width: 100%
+resumen <- data.frame(corte = factor(c("Septiembre", "Octubre"),
+                                    levels = c("Septiembre", "Octubre")), saldo = totales)
+figura <- ggplot2::ggplot(resumen, ggplot2::aes(x = corte, y = saldo)) +
+  ggplot2::geom_col(fill = "#245b78", width = .55) +
+  ggplot2::geom_text(ggplot2::aes(label = pesos(saldo)), vjust = -.5) +
+  ggplot2::scale_y_continuous(limits = c(0, max(1, totales) * 1.2),
+                            labels = pesos, expand = ggplot2::expansion(mult = c(0, 0))) +
+  ggplot2::labs(x = "Corte de 2026", y = "Saldo total (MXN)") +
+  ggplot2::theme_minimal(base_size = 11)
+figura
+```
+
+Fuente: los mismos cálculos que @tbl-resumen. No necesitas distinguir colores:
+cada barra tiene una etiqueta de fecha y un valor. El texto alternativo describe
+la figura y la tabla conserva las cifras; no se presume que todos los créditos
+hayan cambiado en la misma dirección.
+
+## Método y límites {#limites}
+
+La entrada exige tres IDs en ambos cortes, una fila por clave ID/fecha y saldos
+enteros de 0 a 1000000 MXN, sin ausencias. Se valida el archivo completo.
+Una entrada incompleta o duplicada es error, no una tabla vacía válida.
+Las cifras en línea, tablas y barras se generan desde un mismo resultado.
+
+Los saldos a una fecha no son pagos del mes. Esta muestra no explica causas ni
+representa una cartera real. Cambiar el formato no modifica la población ni
+justifica recortar observaciones para que una tabla quepa.
+
+## Revisión y siguiente acción {#revision}
+
+Antes de entregar, recorre el índice y las referencias, revisa los dos extremos
+de la tabla ancha, amplía el navegador y contrasta las barras con el resumen.
+Una revisión automática de estructura no sustituye esa lectura.
+
+Este HTML incorpora sus recursos de lectura. Conserva también CSV, funciones,
+`.qmd` y CSS para poder reconstruirlo. La apariencia no certifica accesibilidad
+completa ni que se hayan vuelto a ejecutar los cálculos.
