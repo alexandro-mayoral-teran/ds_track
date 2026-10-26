@@ -1,0 +1,21 @@
+/* Presentación local; ninguna regla modifica los datos. */
+.card-body p { overflow-wrap: anywhere; line-height: 1.6; }
+.bslib-grid[data-layout="flow"] {
+  grid-template-rows: none !important;
+  grid-auto-rows: max-content;
+  align-content: start;
+}
+.tabla-desplazable {
+  display: block; flex: 0 0 auto; width: 100%; min-width: 0;
+  max-width: 100%; overflow-x: auto; padding: .25rem;
+}
+.tabla-desplazable table { min-width: 34rem; }
+.tabla-desplazable caption { caption-side: top; }
+.tabla-desplazable .cell-output-display { overflow: visible; }
+.tabla-desplazable:focus-visible, a:focus-visible, button:focus-visible {
+  outline: 3px solid #245b78;
+  outline-offset: 2px;
+}
+.value-box-value { overflow-wrap: anywhere; }
+/* Reducir la imagen conserva su proporción; la tabla ofrece cifras exactas. */
+.card-body img { max-width: min(100%, 48rem); height: auto; }

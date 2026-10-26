@@ -1,0 +1,117 @@
+---
+title: "Saldos de tres créditos"
+lang: es
+jupyter: python3
+format:
+  dashboard:
+    scrolling: true
+    embed-resources: true
+    css: estilos.css
+execute:
+  daemon: false
+  cache: false
+  freeze: false
+  error: false
+  echo: false
+---
+
+```{python}
+#| include: false
+import os
+import sys
+from pathlib import Path
+import matplotlib.pyplot as plt
+from IPython.display import HTML, display
+from analisis import analizar
+assert Path(sys.executable).resolve() == Path(os.environ["QUARTO_PYTHON"]).resolve()
+r = analizar(Path("cartera.csv"))
+pares = [(i, a, b, b-a) for i, a, b in r["pares"]]
+totales = [r["septiembre"], r["octubre"]]
+```
+
+## Contexto {.flow}
+
+::: {.card title="Pregunta, cortes y universo"}
+¿Cómo cambió el saldo de los mismos **tres créditos** del 30 de septiembre al
+31 de octubre de 2026? Cada fila de la fuente es un saldo a una fecha exacta.
+
+```{python}
+#| output: asis
+print(f"Variación sobre septiembre: **{r['tasa']}**.")
+```
+
+El cambio del agregado
+no implica que todos los créditos se movieran en la misma dirección.
+No hay filtros ni recálculo al usar las pestañas: las vistas se calcularon
+durante el render de este archivo. La muestra es sintética.
+:::
+
+## Indicadores {.flow}
+
+```{python}
+#| label: saldo-septiembre
+#| content: valuebox
+#| title: Septiembre (MXN)
+#| color: light
+dict(value=str(r['septiembre']))
+```
+
+```{python}
+#| label: saldo-octubre
+#| content: valuebox
+#| title: Octubre (MXN)
+#| color: light
+dict(value=str(r['octubre']))
+```
+
+```{python}
+#| label: diferencia
+#| content: valuebox
+#| title: Diferencia octubre menos septiembre (MXN)
+#| color: light
+dict(value=str(r['diferencia']))
+```
+
+## Evidencia {.tabset .flow}
+
+```{python}
+#| title: Figura
+#| label: fig-saldos
+#| fig-cap: "Saldo de los mismos tres créditos en dos cortes de 2026 (MXN)."
+#| fig-alt: "Dos barras con base cero y etiquetas numéricas comparan los totales de septiembre y octubre. La pestaña Detalle conserva los saldos de cada crédito."
+#| fig-width: 6
+#| fig-height: 3.4
+fig, ax = plt.subplots(figsize=(6, 3.4))
+barras = ax.bar(["Septiembre", "Octubre"], totales, color="#245b78", width=.55)
+_ = ax.bar_label(barras, labels=[str(x) for x in totales], padding=4)
+_ = ax.set(xlabel="Corte de 2026", ylabel="Saldo total (MXN)",
+           ylim=(0, max(1, max(totales)) * 1.2))
+ax.spines[["top", "right"]].set_visible(False)
+fig.tight_layout()
+plt.show()
+```
+
+```{python}
+#| title: Detalle
+filas_html = "".join(f"<tr><td>{i}</td><td>{a}</td><td>{b}</td><td>{d}</td></tr>" for i, a, b, d in pares)
+display(HTML('<p>Mismos tres créditos, diferencia octubre menos septiembre. Enfoca el recuadro con Tab y usa las flechas para leer todas las columnas.</p>'
+    '<div class="tabla-desplazable" role="region" aria-label="Detalle de los tres créditos con desplazamiento horizontal" tabindex="0">'
+    '<table class="table"><caption>Saldos por crédito y diferencia (MXN).</caption><thead><tr><th scope="col">Crédito</th><th scope="col">Septiembre</th><th scope="col">Octubre</th><th scope="col">Diferencia</th></tr></thead>'
+    '<tbody>' + filas_html + '</tbody></table></div>'
+    '<p>Los IDs conservan ceros iniciales. Es la misma población de las tarjetas y la figura.</p>'))
+```
+
+## Método {.flow}
+
+::: {.card title="Fuente, límites y distribución"}
+Fuente: CSV sintético `cartera.csv`, validado completo al renderizar. Se exigen
+tres IDs en ambos cortes, claves ID/fecha únicas y saldos enteros de 0 a
+1000000 MXN, sin ausencias. Con base inicial cero la tasa no está definida.
+
+Los saldos no son pagos del mes; la muestra no permite explicar causas.
+El color no codifica una valoración del aumento: ambas barras tienen etiquetas.
+Conserva también el CSV, las funciones, este `.qmd` y el CSS para reconstruir.
+El HTML incorpora sus recursos de lectura y puede abrirse sin Python ni R.
+Abrirlo o cambiar de pestaña no actualiza los datos. No se certifica
+accesibilidad completa ni autenticidad por el nombre del archivo.
+:::

@@ -406,8 +406,8 @@ comprobaste y qué quedó fuera. Un motor y HTML bastan.
 
 Registra evidencia en [PROGRESS.md](../../../PROGRESS.md). El proyecto integrador
 de reporte y sus checkpoints siguen pendientes en [proyectos](../../../projects/README.md).
-Siguiente: [11.08 — Dashboard y distribución](../README.md#08-dashboard-y-distribucion),
-ampliación todavía planificada; también puedes retomar después el cierre 11.09
+Siguiente: [11.08 — Dashboard y distribución](../08_dashboard_distribution/README.md),
+ampliación disponible; también puedes retomar después el cierre 11.09
 cuando tenga material. No se presenta aprendizaje como dominio adquirido.
 
 ## Referencias primarias y alcance

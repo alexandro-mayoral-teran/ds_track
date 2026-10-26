@@ -6,17 +6,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.07 disponibles; 11.08–11.09 planificadas.
+- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.08 disponibles; 11.09 planificada.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
-  10.01–10.10 y 11.01–11.07 implementadas (09.08 y 10.05 opcionales);
-  11.08–11.09 y 12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-26, 11.07 con lección/lab, HTML legible,
-  tablas/figuras conciliadas y revisión visual/teclado en navegador de prueba.
-- **Punto de reanudación:** 11.08, opcional y todavía planificada: dashboard y distribución.
-- **Foco actual:** conservar una salida local con sus recursos y distinguirla de una app.
+  10.01–10.10 y 11.01–11.08 implementadas (09.08, 10.05 y 11.08 opcionales);
+  11.09 y 12–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-26, 11.08 con lección/lab opcionales, dashboards
+  Python/R conciliados y copia local de lectura revisada sin conexión.
+- **Punto de reanudación:** 11.09, todavía planificada: cierre del reporte reproducible.
+- **Foco actual:** integrar fuente, código, parámetros, dependencias y comprobaciones
+  en una entrega reconstruible; un motor y HTML bastan.
   Próximo paso: desarrollar
-  [11.08 — Dashboard y distribución](curriculum/11_reporting_quarto/README.md#08-dashboard-y-distribucion).
-  11.09 sigue previsto como cierre esencial; no se exige PDF ni publicación.
+  [11.09 — Cierre del reporte reproducible](curriculum/11_reporting_quarto/README.md#09-cierre-del-reporte-reproducible).
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -38,7 +38,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
   19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
-  con 11.01–11.07 disponibles y 30 previstas. La planificación de 02–14 está
+  con 11.01–11.08 disponibles y 29 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -46,6 +46,45 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-26, 11.08:** disponibles la
+[lección](curriculum/11_reporting_quarto/08_dashboard_distribution/README.md) y el
+[lab](labs/11_reporting_quarto/08_dashboard_distribution/README.md) opcionales,
+CSV propio de seis filas, mínimo, dashboards/preparadores Python/R, CSS,
+verificador estándar de solo lectura y distribuidores por lenguaje. Reutiliza
+funciones de 11.03 sin entregas previas. Tres tarjetas, tabla de tres créditos
+y figura conservan 6000/6300 MXN, diferencia 300 y 5.00%; misma población.
+
+**Comprobación:** ocho escenarios por motor (base, cambio a 6600/10%,
+compensación, base cero, todos cero, baja, máximos y fuente invertida), tarjetas,
+tasa y detalle por valor; alturas/etiquetas de barras contrastadas con CSV.
+Duplicados, fuentes incompletas y negativos rechazados; alternativas ausentes,
+enlaces rotos, tarjetas falsas, recursos no incorporados y HTML antiguo con
+datos compensados rechazados por el verificador. Comprobación sin modificar
+entradas/HTML. Mínimo estático renderizado; preparadores/distribuidores protegen
+destinos ocupados. Segundo entorno Python y segunda biblioteca R existentes
+con render real; metadatos R, pyproject y uv.lock conservados.
+
+**Entrega y revisión:** HTML y LEEME en carpetas nuevas; copia idéntica por
+bytes/MD5, sin atribuir autenticidad ni validación de datos a esa igualdad.
+Copias finales abiertas offline en Chrome headless aislado a 1280/640/390:
+figura cargada, tarjetas coherentes al cambiar vistas, pestañas con flechas,
+Tab hasta región nombrada y desplazamiento real hasta última columna con foco
+visible; sin solicitudes HTTP. Capturas de ambos motores inspeccionadas.
+Se corrigieron duplicación de tabla, títulos de tarjeta R, filas excesivamente
+altas y salidas auxiliares de Matplotlib. Python usa celdas calculadas porque
+refresco de Jupyter Cache no admite las expresiones en línea de esta variante.
+No certifica accesibilidad completa, zoom manual, IDE u otros sistemas.
+
+Quarto 1.9.38, Python 3.12.12/Matplotlib 3.10.7 y R 4.6.1/knitr 1.52/ggplot2
+4.0.3, sin nuevas dependencias. Distribuir la lectura no incluye todos los
+fuentes de reconstrucción ni implementa alojamiento, portal o app con servidor.
+Práctica del estudiante y proyectos/checkpoints pendientes. Retomar 11.09.
+
+**Cierre documental 11.08:** 2888 enlaces locales en 278 Markdown, fragmentos
+y bloques comprobados; `git diff --check` sin errores de espacios. Fuentes,
+entornos y entregas previas conservados. La publicación se consulta en Git.
+
 
 **Desarrollo — 2026-10-26, 11.07:** disponibles la
 [lección](curriculum/11_reporting_quarto/07_formats_visual_review/README.md) y el

@@ -173,7 +173,11 @@ al grupo notebooks, sin cambios de metadatos R.
 por valor. Navegación, tabla ancha y foco/desplazamiento comprobados en Chrome
 de prueba a tres anchos; sin nuevas dependencias. PDF opcional intentado sin
 instalador, no generado por acceso a configuración MiKTeX; HTML esencial cerrado.
-Retomar con 11.08, todavía planificada y opcional: dashboard y distribución.
+11.08 ya dispone de ampliación opcional con dashboards Python/R, mínimo,
+verificador y distribuidores. Misma fuente y valores entre tarjetas/tabla/figura;
+pestañas de navegador sin recálculo. Copias locales de lectura comprobadas sin
+conexión; no equivalen a reconstrucción ni a publicar en un servicio.
+Retomar con 11.09, todavía planificada: cierre del reporte reproducible.
 Mantener contexto/datos completos y separación entre preparar entorno y exigir
 entregas previas. Verificar requisitos reales antes de instalar, sin cambiar
 entornos globales. Conservar fuentes, lockfiles, evidencia cruda y distinción
@@ -225,5 +229,5 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 11.01–11.07 tienen material; 11.08–11.09 y 12–14 conservan sus planes. El material de 09/10 está
+quedan fuera de Git. 11.01–11.08 tienen material; 11.09 y 12–14 conservan sus planes. El material de 09/10 está
 disponible, con práctica/proyectos/checkpoints pendientes.

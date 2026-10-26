@@ -183,7 +183,10 @@ por fila, con [lab](../labs/11_reporting_quarto/06_projects_cache_freeze/README.
 [11.07 — Formatos y revisión visual](11_reporting_quarto/07_formats_visual_review/README.md)
 añade revisión HTML, tablas anchas, navegación/teclado y contraste de texto,
 tablas y figura, con [lab](../labs/11_reporting_quarto/07_formats_visual_review/README.md).
-11.08–11.09 y los módulos 12–14 conservan planes de reportes, aplicaciones
+[11.08 — Dashboard y distribución](11_reporting_quarto/08_dashboard_distribution/README.md)
+añade ampliación opcional con indicadores/vistas conciliados y copia de lectura
+revisada sin conexión, con [lab](../labs/11_reporting_quarto/08_dashboard_distribution/README.md).
+11.09 y los módulos 12–14 conservan planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
 la planificación pendiente se implementará lección por lección.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).

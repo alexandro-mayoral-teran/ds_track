@@ -1,0 +1,30 @@
+---
+title: "Dos vistas de una muestra"
+lang: es
+format:
+  dashboard:
+    scrolling: true
+    embed-resources: true
+---
+
+## Contexto {.flow}
+
+::: {.card title="Pregunta y universo"}
+¿Cómo se distribuyen 3500 MXN entre dos créditos ficticios a una sola fecha?
+Las dos vistas siguientes ya están incluidas en este HTML.
+:::
+
+## Vistas {.tabset .flow}
+
+::: {.card title="Resumen"}
+Dos créditos; saldo observado **3500 MXN**.
+:::
+
+::: {.card title="Detalle"}
+| Crédito | Saldo (MXN) |
+| --- | ---: |
+| 001 | 1000 |
+| 002 | 2500 |
+
+Cambiar de pestaña no ejecuta Python ni R. Este mínimo es texto estático.
+:::

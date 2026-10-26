@@ -135,6 +135,6 @@ Puedes avanzar al entregar un HTML legible con valores conciliados, navegación
 funcional y tabla de detalle alcanzable, explicando lo que quedó fuera.
 Registra la evidencia en [PROGRESS.md](../../../PROGRESS.md).
 
-Continúa con [11.08 — Dashboard y distribución](../../../curriculum/11_reporting_quarto/README.md#08-dashboard-y-distribucion),
-ampliación todavía planificada. El cierre esencial 11.09 también sigue previsto;
+Continúa con [11.08 — Dashboard y distribución](../../../curriculum/11_reporting_quarto/08_dashboard_distribution/README.md),
+ampliación disponible. El cierre esencial 11.09 sigue previsto;
 no hay otro lab disponible que sustituya la siguiente lección.
