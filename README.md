@@ -297,7 +297,10 @@ universos comprobados en Python o R, y su
 [11.06 — Proyectos, caché y freeze](curriculum/11_reporting_quarto/06_projects_cache_freeze/README.md)
 añade proyectos y rutas, experimentos de reutilización/recálculo y verificación
 por fila, con [lab](labs/11_reporting_quarto/06_projects_cache_freeze/README.md).
-11.07–11.09 y los niveles 12–14 mantienen planes
+[11.07 — Formatos y revisión visual](curriculum/11_reporting_quarto/07_formats_visual_review/README.md)
+añade revisión HTML, tablas anchas, navegación/teclado y contraste de texto,
+tablas y figura, con [lab](labs/11_reporting_quarto/07_formats_visual_review/README.md).
+11.08–11.09 y los niveles 12–14 mantienen planes
 para reportes, una aplicación elegida y proyecto final. El
 avance del material no acredita finalización de las prácticas del estudiante.
 El [índice del curriculum](curriculum/README.md) incluye las rutas previstas de

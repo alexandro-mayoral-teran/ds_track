@@ -123,3 +123,4 @@ lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B
 lab `00.05` (A/B) → lección 06 → lab `00.06`. Los enlaces al final de cada lab llevan al material
 de la siguiente lección.
 | [`11.06 — Proyectos, caché y freeze`](11_reporting_quarto/06_projects_cache_freeze/) | `11_reporting_quarto` | No aplica todavía |
+| [`11.07 — Formatos y revisión visual`](11_reporting_quarto/07_formats_visual_review/) | `11_reporting_quarto` | No aplica todavía |

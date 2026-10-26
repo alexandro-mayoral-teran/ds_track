@@ -459,8 +459,8 @@ expliques las rutas y distingas igualdad de cifras de nueva ejecución. Registra
 evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md). El proyecto de reporte
 y sus checkpoints siguen pendientes en [proyectos](../../../projects/README.md).
 
-Siguiente: [11.07 — Formatos y revisión visual](../README.md#07-formatos-y-revision-visual),
-todavía planificada. Tener este material no acredita aprendizaje del estudiante.
+Siguiente: [11.07 — Formatos y revisión visual](../07_formats_visual_review/README.md),
+con lección y lab disponibles. Tener este material no acredita aprendizaje del estudiante.
 
 ## Referencias primarias y alcance
 

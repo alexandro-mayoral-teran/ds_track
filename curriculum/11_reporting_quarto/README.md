@@ -7,8 +7,8 @@ figuras e interpretación, y que pueda regenerarse sin editar resultados a mano.
 Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequisito
 conceptual. Las lecciones incluyen datos completos y no exigen entregas personales previas.
 
-**Estado:** 11.01–11.06 disponibles con lecciones, datos, preparadores Python/R
-y labs. 11.07–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
+**Estado:** 11.01–11.07 disponibles con lecciones, datos, preparadores Python/R
+y labs. 11.08–11.09 conservan su alcance previsto; sus lecciones y labs siguen pendientes.
 
 La teoría del documento se explica una vez. Hay recorridos separados para
 Python/Jupyter y R/knitr: elige un motor para el reporte esencial y compara el
@@ -32,7 +32,7 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 | 4 | [Tablas, figuras y referencias](04_tables_figures_references/README.md) | Esencial disponible | Relacionar evidencia y narrativa |
 | 5 | [Parámetros y cortes](05_parameters_cutoffs/README.md) | Práctica disponible | Generar dos reportes desde una misma fuente |
 | 6 | [Proyectos, caché y freeze](06_projects_cache_freeze/README.md) | Práctica disponible | Controlar cuándo se recalculan resultados |
-| 7 | [Formatos y revisión visual](#07-formatos-y-revision-visual) | Práctica | Entregar HTML legible; PDF como ampliación |
+| 7 | [Formatos y revisión visual](07_formats_visual_review/README.md) | Práctica disponible | Entregar HTML legible; PDF como ampliación |
 | 8 | [Dashboard y distribución](#08-dashboard-y-distribucion) | Extensión | Organizar vistas sin exigir una app con servidor |
 | 9 | [Cierre del reporte reproducible](#09-cierre-del-reporte-reproducible) | Práctica de cierre | Reconstruir y comprobar un reporte por corte |
 
@@ -119,8 +119,12 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
 
 - HTML como formato esencial; navegación, tablas anchas, etiquetas y accesibilidad.
   PDF como extensión con su motor y dependencias adicionales explícitas.
-- Práctica prevista: revisar el archivo final, corregir cortes o desbordamientos
-  y comprobar que las cifras coinciden con las salidas verificadas.
+- [Lección disponible](07_formats_visual_review/README.md) y
+  [lab 11.07](../../labs/11_reporting_quarto/07_formats_visual_review/README.md),
+  mínimo estático, reportes Python/R, CSS y verificador de solo lectura.
+  Texto/tablas/barras conciliados; navegación, foco y tabla ancha comprobados
+  en navegador a tres anchos. HTML esencial; PDF opcional con límite del
+  entorno documentado, sin nuevas dependencias ni metadatos.
 
 <a id="08-dashboard-y-distribucion"></a>
 
@@ -146,9 +150,10 @@ Los labs [11.01](../../labs/11_reporting_quarto/01_report_source_render/README.m
 [11.02](../../labs/11_reporting_quarto/02_first_document/README.md),
 [11.03](../../labs/11_reporting_quarto/03_execution_python_r/README.md),
 [11.04](../../labs/11_reporting_quarto/04_tables_figures_references/README.md),
-[11.05](../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md) y
-[11.06](../../labs/11_reporting_quarto/06_projects_cache_freeze/README.md)
-están disponibles. Los labs 11.07–11.09 siguen previstos, con 11.08 opcional.
+[11.05](../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md),
+[11.06](../../labs/11_reporting_quarto/06_projects_cache_freeze/README.md) y
+[11.07](../../labs/11_reporting_quarto/07_formats_visual_review/README.md)
+están disponibles. Los labs 11.08–11.09 siguen previstos, con 11.08 opcional.
 El proyecto previsto 05_monthly_report figura en [proyectos](../../projects/README.md),
 sin carpeta ni checkpoints implementados.
 

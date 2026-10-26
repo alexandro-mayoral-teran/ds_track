@@ -169,7 +169,11 @@ sustituir parámetros Python; R conserva sus metadatos/dependencias.
 resultados actuales al cambiar datos, código o parámetros. Verifica HTML por
 fila contra el CSV actual, incluso compensaciones; jupyter-cache 1.0.1 añadido
 al grupo notebooks, sin cambios de metadatos R.
-Retomar con 11.07, todavía planificada: formatos y revisión visual.
+11.07 ya dispone de lección/lab, mínimo, reportes Python/R, CSS y verificador
+por valor. Navegación, tabla ancha y foco/desplazamiento comprobados en Chrome
+de prueba a tres anchos; sin nuevas dependencias. PDF opcional intentado sin
+instalador, no generado por acceso a configuración MiKTeX; HTML esencial cerrado.
+Retomar con 11.08, todavía planificada y opcional: dashboard y distribución.
 Mantener contexto/datos completos y separación entre preparar entorno y exigir
 entregas previas. Verificar requisitos reales antes de instalar, sin cambiar
 entornos globales. Conservar fuentes, lockfiles, evidencia cruda y distinción
@@ -221,5 +225,5 @@ Revisar enlaces y navegación lección → lab → comprobación → evidencia �
 lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
 dependencias, comprobar restauración desde otra biblioteca/entorno local sin
 modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 11.01–11.06 tienen material; 11.07–11.09 y 12–14 conservan sus planes. El material de 09/10 está
+quedan fuera de Git. 11.01–11.07 tienen material; 11.08–11.09 y 12–14 conservan sus planes. El material de 09/10 está
 disponible, con práctica/proyectos/checkpoints pendientes.

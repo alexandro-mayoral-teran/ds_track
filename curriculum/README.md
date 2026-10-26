@@ -180,7 +180,10 @@ con [lab](../labs/11_reporting_quarto/05_parameters_cutoffs/README.md).
 [11.06 — Proyectos, caché y freeze](11_reporting_quarto/06_projects_cache_freeze/README.md)
 añade proyectos y rutas, experimentos de reutilización/recálculo y verificación
 por fila, con [lab](../labs/11_reporting_quarto/06_projects_cache_freeze/README.md).
-11.07–11.09 y los módulos 12–14 conservan planes de reportes, aplicaciones
+[11.07 — Formatos y revisión visual](11_reporting_quarto/07_formats_visual_review/README.md)
+añade revisión HTML, tablas anchas, navegación/teclado y contraste de texto,
+tablas y figura, con [lab](../labs/11_reporting_quarto/07_formats_visual_review/README.md).
+11.08–11.09 y los módulos 12–14 conservan planes de reportes, aplicaciones
 alternativas y proyecto final. Todo el recorrido numerado tiene secciones definidas;
 la planificación pendiente se implementará lección por lección.
 El estado de desarrollo y las evidencias se registran en [PROGRESS.md](../PROGRESS.md).

@@ -133,5 +133,5 @@ La bitácora no autentica sesiones históricas y no sustituye la explicación.
 
 Puedes avanzar al demostrar un resultado antiguo, recuperarlo y explicar
 por qué funcionó. Registrar la evidencia no exige publicar el trabajo personal.
-Continúa con [11.07 — Formatos y revisión visual](../../../curriculum/11_reporting_quarto/README.md#07-formatos-y-revision-visual),
-todavía planificada; no con otro lab.
+Continúa con [11.07 — Formatos y revisión visual](../../../curriculum/11_reporting_quarto/07_formats_visual_review/README.md),
+ya disponible; no con otro lab.

@@ -1,5 +1,7 @@
 /* Solo presentación: las reglas de cálculo permanecen en las funciones. */
 body { line-height: 1.6; }
+/* El tema puede ocultar TOC a ancho estrecho incluso cuando está en el cuerpo. */
+main > nav#TOC { display: block; }
 main p, main li { overflow-wrap: anywhere; }
 .tabla-ancha {
   max-width: 100%;
@@ -10,6 +12,9 @@ main p, main li { overflow-wrap: anywhere; }
   border-radius: .25rem;
 }
 .tabla-ancha table { min-width: 46rem; }
+/* Quarto puede dar overflow:auto al resultado de la celda. Se deja visible
+   aquí para que el recuadro que recibe Tab sea quien se desplace. */
+.tabla-ancha .cell-output-display { overflow: visible; }
 .tabla-ancha:focus-visible, a:focus-visible {
   outline: 3px solid #245b78;
   outline-offset: 3px;

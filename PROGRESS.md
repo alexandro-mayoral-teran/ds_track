@@ -6,17 +6,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet` y `10_polars_duckdb`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.06 disponibles; 11.07 en borrador; 11.08–11.09 planificadas.
+- **Módulo en desarrollo:** `11_reporting_quarto`: 11.01–11.07 disponibles; 11.08–11.09 planificadas.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
-  10.01–10.10 y 11.01–11.06 implementadas (09.08 y 10.05 opcionales);
-  11.07–11.09 y 12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-26, 11.06 con lección/lab, proyectos Quarto,
-  caché/freeze y recuperación de resultados actuales en Python/R.
-- **Punto de reanudación:** completar el borrador de 11.07: formatos y revisión visual.
-- **Foco actual:** revisar el HTML completo y contrastar cifras/tablas/figuras.
+  10.01–10.10 y 11.01–11.07 implementadas (09.08 y 10.05 opcionales);
+  11.08–11.09 y 12–14 conservan sus planes.
+- **Último desarrollo:** 2026-10-26, 11.07 con lección/lab, HTML legible,
+  tablas/figuras conciliadas y revisión visual/teclado en navegador de prueba.
+- **Punto de reanudación:** 11.08, opcional y todavía planificada: dashboard y distribución.
+- **Foco actual:** conservar una salida local con sus recursos y distinguirla de una app.
   Próximo paso: desarrollar
-  [11.07 — Formatos y revisión visual](curriculum/11_reporting_quarto/README.md#07-formatos-y-revision-visual).
-  Mantener recorridos Python/R separados, copias nuevas y entornos globales intactos.
+  [11.08 — Dashboard y distribución](curriculum/11_reporting_quarto/README.md#08-dashboard-y-distribucion).
+  11.09 sigue previsto como cierre esencial; no se exige PDF ni publicación.
   Los [pendientes de cierre](docs/storage-closure.md) separan material, práctica e integración.
 - **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
   fundamental con sus labs. Esto no acredita finalización del estudiante.
@@ -38,7 +38,7 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
   también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
   19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
-  con 11.01–11.06 disponibles y 31 previstas. La planificación de 02–14 está
+  con 11.01–11.07 disponibles y 30 previstas. La planificación de 02–14 está
   detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
 - **Referencia de estudio, pendiente de evidencia:** leer la
   [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
@@ -46,6 +46,44 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-26, 11.07:** disponibles la
+[lección](curriculum/11_reporting_quarto/07_formats_visual_review/README.md) y el
+[lab](labs/11_reporting_quarto/07_formats_visual_review/README.md), muestra propia
+de seis filas, mínimo estático, reportes/preparadores Python/R, CSS y verificador
+de solo lectura. Reutiliza funciones de 11.03, sin entregas personales previas.
+Conserva tres créditos y 6000/6300 MXN, +300/5.00%; resumen, detalle y figura
+desde el mismo resultado. Sin nuevas dependencias ni cambios de lockfiles.
+
+**Comprobación:** ocho escenarios por motor (base, cambio a 6600/10%,
+compensación, base cero, todos cero, baja, máximos y fuente invertida), texto y
+celdas por valor; alturas/etiquetas de barras contrastadas con referencia CSV.
+Duplicados, fuentes incompletas y negativos rechazados; HTML sin alternativa
+textual, enlaces rotos y saldos desactualizados/compensados rechazados por el
+verificador, sin modificar entradas o HTML al comprobar. Segundo entorno Python
+y segunda biblioteca R existentes con render real; destinos ocupados protegidos
+y metadatos R intactos. Mínimo HTML y cambio estático 3500 → 4000 comprobados.
+
+**Revisión visual:** Chrome headless aislado en Windows, sin conexión, a
+1280/640/390 píxeles: capturas de ambos motores inspeccionadas, imagen cargada,
+cuerpo sin desbordamiento horizontal, índice y referencias funcionales.
+Tab alcanza el recuadro, contorno visible y flechas hasta la última columna y
+vuelta al ID. Se corrigió el overflow de la celda interior de Quarto y el índice
+oculto por el tema a ancho estrecho. No certifica zoom manual, lector de pantalla,
+otros navegadores/sistemas, IDE ni accesibilidad completa. Quarto 1.9.38,
+Python 3.12.12/Matplotlib 3.10.7, R 4.6.1/knitr 1.52/ggplot2 4.0.3.
+
+**PDF opcional:** intento con LuaLaTeX/MiKTeX existente e instalación automática
+deshabilitada. Falló el acceso del ejecutor a su configuración de usuario;
+no se generó un PDF comprobado ni se instalaron paquetes. No bloquea el cierre
+HTML. Las copias, capturas y salidas de revisión quedan fuera de Git; práctica
+del estudiante, portal y proyectos/checkpoints siguen pendientes. Retomar 11.08.
+
+**Cierre documental 11.07:** 2863 enlaces locales en 275 Markdown, fragmentos
+y bloques comprobados; `git diff --check` sin errores de espacios. Fuentes y
+lockfiles anteriores conservados. Implementación completa; la publicación se
+consulta en el historial Git.
+
 
 **Avance parcial — 2026-10-26, 11.07:** se conservan los
 [fuentes del borrador](curriculum/11_reporting_quarto/07_formats_visual_review/BORRADOR.md):
