@@ -181,7 +181,7 @@ ejecutar ni conciliar. Escribe también tu explicación y las versiones usadas.
 
 Entrega tu script, versiones, planes anotados, pares/resumen conciliados y el
 rechazo esperado de la copia. Registra evidencia y dudas en
-[PROGRESS.md](../../../PROGRESS.md). No publiques salidas ni entornos.
+tu bitácora personal junto a la práctica. No publiques salidas ni entornos.
 El proyecto `04_large_credit_dataset` y sus checkpoints siguen pendientes.
 
 Siguiente: [10.04 — Tipos, faltantes y uniones](../../../curriculum/10_polars_duckdb/04_types_missing_joins/README.md).

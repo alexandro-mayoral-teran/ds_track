@@ -1,10 +1,26 @@
 # 10.02 — Polars: tablas y expresiones
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Usar tablas y expresiones Polars con resultados comprobables |
+| **Necesitas** | Tablas, funciones y entorno Python elegido; muestra incluida |
+| **Evidencia** | Operaciones explicadas y selección/resumen conciliados desde cero |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.02](../../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Aprender a leer una tabla con Polars, elegir columnas, calcular otras, filtrar
 registros y resumir grupos. Cada operación tendrá una pregunta concreta y una
 respuesta que puedas comprobar a mano antes de confiar en el código.
+
+<a id="entorno-y-archivos"></a>
+
+## Antes de empezar
 
 Necesitas reconocer variables, llamadas a funciones y tablas, preparar un entorno
 Python según [00.05](../../00_getting_started/05_environment/README.md) y entender
@@ -19,17 +35,6 @@ no necesitas una entrega personal anterior ni recordar otra muestra.
 Lazy se desarrollará en 10.03; faltantes/uniones en 10.04. Esta introducción no
 mide tiempos ni demuestra que una herramienta sea más rápida.
 
-## Objetivos
-
-- Distinguir `DataFrame`, `Series` y expresión.
-- Relacionar `select`, `with_columns`, `filter` y `group_by().agg()` con cambios
-  de columnas, filas y unidad de observación.
-- Conservar IDs textuales, fechas y pesos enteros; ampliar el tipo de una suma.
-- Comprobar esquema y cada par crédito/importe contra una referencia independiente,
-  incluidos resultados vacíos.
-
-## Entorno y archivos
-
 Referencia comprobada: **Python 3.12.12 y Polars 2.0.0**, declarada en
 [`pyproject.toml`](../../../pyproject.toml) y [`uv.lock`](../../../uv.lock).
 Elige un gestor y sigue el [recorrido completo de tu shell](recorridos.md):
@@ -42,16 +47,32 @@ no directamente en PowerShell. Cuando se indica «desde la raíz», se trata de
 la carpeta que contiene `pyproject.toml`. La ejecución por terminal está explicada
 por separado en los recorridos.
 
-| Archivo | Función |
-| --- | --- |
-| [muestra.csv](muestra.csv) | Entrada completa de seis observaciones |
-| [tablas_polars.py](tablas_polars.py) | Lectura, operaciones nativas y comprobaciones reutilizables |
-| [recorridos.md](recorridos.md) | Entorno y ejecución completa desde otra sesión |
-| [Lab 10.02](../../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md) | Actividad, evidencia y soluciones razonadas |
-
 El script reutiliza reglas y referencia incluidas en el repositorio. No importa
 resultados guardados de tus prácticas. Importarlo no lee fuentes ni escribe
 archivos; ejecutar su programa principal solo lee y muestra resultados.
+
+<a id="objetivos"></a>
+
+## Qué vas a aprender
+
+- Distinguir `DataFrame`, `Series` y expresión.
+- Relacionar `select`, `with_columns`, `filter` y `group_by().agg()` con cambios
+  de columnas, filas y unidad de observación.
+- Conservar IDs textuales, fechas y pesos enteros; ampliar el tipo de una suma.
+- Comprobar esquema y cada par crédito/importe contra una referencia independiente,
+  incluidos resultados vacíos.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [muestra.csv](muestra.csv) | Entrada completa de seis observaciones | Para el recorrido |
+| [tablas_polars.py](tablas_polars.py) | Lectura, operaciones nativas y comprobaciones reutilizables | Para el recorrido |
+| [recorridos.md](recorridos.md) | Entorno y ejecución completa desde otra sesión | Para el recorrido |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## 1. Pregunta, datos y contrato completos
 
@@ -404,19 +425,36 @@ filas. Pasa esa ruta a `cargar_tabla`, `comprobar_seleccion` y `comprobar_resume
 ya no impongas 2600/4500/4600 como respuestas a otra fuente. El lab incluye el
 recorrido completo. No atribuyas ventajas de rendimiento a esta muestra pequeña.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 10.02](../../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md).
-Puedes explicar qué filas/columnas produce cada contexto, conservar las seis
-observaciones originales, comprobar pares y resumen desde una sesión nueva,
-y justificar el vacío y la ampliación de enteros antes de avanzar.
+## Práctica
 
-Proyecto `04_large_credit_dataset` y checkpoints siguen planificados; no hay
-checkpoint activo asociado. Desarrollar material no acredita práctica del estudiante.
-Siguiente: [10.03 — Polars lazy y planes de consulta](../03_polars_lazy_plans/README.md).
-Al retomar, consulta [PROGRESS.md](../../../PROGRESS.md).
+Realiza el [lab 10.02](../../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md) para
+relacionar cada operación con su pregunta y contrastar filas, columnas y pares.
 
-## Referencias y atribución
+Para contrastar tu práctica, consulta [tablas_polars.py](tablas_polars.py).
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y operaciones sobre seis filas | 003/2600 y resúmenes 4500/4600 MXN; originales conservados | DataFrame, Series y expresión; unidad antes y después de agrupar |
+| Esquema y casos frontera | ID textual, fechas, Int64 antes de sumar; vacío y pares | Por qué ampliar el entero y separar pesos de presentación en miles |
+
+Puedes avanzar cuando expliques qué filas/columnas produce cada contexto,
+conserves las seis observaciones originales, compruebes pares y resumen desde
+una sesión nueva y justifiques el vacío y la ampliación de enteros.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide predecir columnas y cantidad de filas antes de ejecutar select o group_by.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios con datos ficticios; consulta de fuentes oficiales: 2026-10-23.
 Los ejemplos se ejecutaron con Polars 2.0.0, no se presupone que la documentación
@@ -430,3 +468,12 @@ Los ejemplos se ejecutaron con Polars 2.0.0, no se presupone que la documentaci�
 - [Migración desde pandas](https://docs.pola.rs/user-guide/migration/pandas/).
 - [Instalación](https://docs.pola.rs/user-guide/installation/) y
   [distribución Polars 2.0.0](https://pypi.org/project/polars/2.0.0/).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[10.03 — Polars lazy y planes de consulta](../03_polars_lazy_plans/README.md).
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.02](../../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md) · [Siguiente →](../03_polars_lazy_plans/README.md)

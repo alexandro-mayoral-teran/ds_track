@@ -1,11 +1,25 @@
 # 10.10 — Cierre y elección de herramienta
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.10**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Resolver con tres motores y defender una decisión revisable |
+| **Necesitas** | Contratos, filtros, agrupaciones y costos; sin entregas anteriores |
+| **Evidencia** | Entrega reconstruida y elección argumentada con revisión humana |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.10](../../../labs/10_polars_duckdb/10_closure_tool_choice/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Resolver una pregunta con pandas, Polars y DuckDB, reconstruir las respuestas
 desde archivos y justificar una elección con evidencia y límites. Elegir exige
 relacionar la herramienta con quien revisará el trabajo, el entorno y los costos
 observados; una mediana menor no decide por sí sola.
+
+## Antes de empezar
 
 Necesitas reconocer tablas, tipos, filtros, agrupaciones y ejecución diferida.
 Puedes profundizar en [contratos](../01_question_contract_reference/README.md),
@@ -20,13 +34,28 @@ entregas personales anteriores ni instalar herramientas para el siguiente módul
 una referencia independiente opcional; streaming y Polars en R no bloquean
 este cierre. No hay proyecto/checkpoint activo ni acreditación automática.
 
-## Objetivos
+<a id="objetivos"></a>
+
+## Qué vas a aprender
 
 - Resolver la misma selección y resumen con tres motores.
 - Conservar claves, fechas, pesos enteros y resultados al escribir/releer.
 - Reconstruir la referencia externa y detectar errores aun con sumas iguales.
 - Justificar una herramienta por claridad, entorno y costos de alcance conocido.
 - Distinguir evidencia técnica, revisión humana y desarrollo del material.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Muestra de cierre](muestra.csv) | Examinar 40 filas: veinte créditos y dos cortes | Para el recorrido |
+| [Entrega y verificador](cierre.py) | Resolver, exportar y verificar sin reparar datos | Para el recorrido |
+| [Recorridos](recorridos.md) | Preparar y reconstruir la entrega desde procesos nuevos | Para el recorrido |
+| [Referencia R base](referencia.R) | Conciliar independientemente sin bibliotecas nuevas | Apoyo opcional |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## 1. Contexto y diccionario completos
 
@@ -315,16 +344,39 @@ El siguiente módulo es [11 — Reportes con Quarto](../../11_reporting_quarto/R
 con [11.01 — Reporte, fuente y renderizado](../../11_reporting_quarto/01_report_source_render/README.md)
 ya disponible. Esta entrega aporta pregunta, tablas, método, decisión y
 límites para una narrativa; no exige instalar Quarto ni copiar cifras manualmente.
-Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
+Registra evidencia y dudas en tu bitácora personal junto a la práctica.
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 10.10](../../../labs/10_polars_duckdb/10_closure_tool_choice/README.md).
-Puedes reconstruir cada resultado desde la fuente, explicar el agregado entero,
-detectar cambios que preservan sumas y defender tu elección con límites explícitos.
-La revisión humana de esa explicación pertenece al cierre de la práctica.
+## Práctica
 
-## Referencias primarias
+Realiza el [lab 10.10](../../../labs/10_polars_duckdb/10_closure_tool_choice/README.md) para
+reconstruir la entrega con tres motores y defender la elección usando evidencia y límites.
+
+Para contrastar tu práctica, consulta [cierre.py](cierre.py).
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuente, contrato y resultados de los tres motores | Seis seleccionados/14061 MXN; resúmenes 26030/27690 por clave tras relectura | Int64 antes de sumar y diferencia entre suma correcta y coincidencia de valores |
+| Mediciones, decisión y explicación | Mediciones nuevas de selección según 10.09; decisión en borrador revisada por otra persona | Claridad, entorno y costos; el verificador no sustituye el argumento humano |
+
+Puedes cerrar cuando reconstruyas cada resultado desde la fuente, expliques
+el agregado entero, detectes cambios que preservan sumas y defiendas tu
+elección con límites explícitos. La revisión humana de esa explicación
+pertenece al cierre de la práctica; una mediana menor no decide por sí sola.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia el requisito de quien revisará la entrega y pide reconsiderar la elección aunque las mediciones sean las mismas.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23; datos/ejemplos propios y APIs ejecutadas con las
 versiones fijadas. La documentación web Polars puede describir otra serie.
@@ -334,3 +386,14 @@ versiones fijadas. La documentación web Polars puede describir otra serie.
 - [DuckDB 2.0: conversiones y salida Arrow](https://duckdb.org/docs/2.0/clients/python/conversion).
 - Los [relojes, contadores y límites de las mediciones](../09_time_memory/README.md#referencias-primarias)
   tienen sus fuentes primarias en 10.09.
+
+## Siguiente paso
+
+Después de revisar la entrega y tu decisión, consulta
+[11 — Reportes con Quarto](../../11_reporting_quarto/README.md) y continúa con
+[11.01 — Reporte, fuente y renderizado](../../11_reporting_quarto/01_report_source_render/README.md).
+No necesitas preparar herramientas del siguiente módulo para cerrar esta práctica.
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.10](../../../labs/10_polars_duckdb/10_closure_tool_choice/README.md) · [Siguiente →](../../11_reporting_quarto/01_report_source_render/README.md)

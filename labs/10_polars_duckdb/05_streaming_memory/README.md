@@ -202,7 +202,7 @@ memoria, añade JSON/log y una interpretación de unidad/alcance, sin un ranking
 - ¿Qué diferencia hay entre plan físico, traza y pico residente?
 - ¿Qué parte de nuestro verificador sí materializa toda la entrada?
 
-Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
+Registra evidencia y dudas en tu bitácora personal junto a la práctica.
 El proyecto `04_large_credit_dataset` y sus checkpoints siguen pendientes.
 
 Siguiente: [10.06 — DuckDB: SQL sobre Parquet](../../../curriculum/10_polars_duckdb/06_duckdb_parquet/README.md).

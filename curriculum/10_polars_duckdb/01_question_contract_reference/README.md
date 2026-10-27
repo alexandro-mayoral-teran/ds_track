@@ -1,10 +1,24 @@
 # 10.01 — Pregunta, contrato y referencia
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Definir pregunta, contrato y referencia antes de comparar motores |
+| **Necesitas** | Filtros, fechas, funciones y contratos; Python estándar, R base opcional |
+| **Evidencia** | Respuesta manual y referencia independiente comprobada por pares |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.01](../../../labs/10_polars_duckdb/01_question_contract_reference/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Definir qué debe calcular una consulta antes de comparar motores.
 La pregunta de esta sección es: **¿cómo sabremos que dos implementaciones
 resuelven el mismo problema, aunque usen instrucciones diferentes?**
+
+## Antes de empezar
 
 Un **motor** ejecuta operaciones sobre datos. Polars ofrece expresiones sobre
 tablas y consultas diferidas; DuckDB ejecuta SQL analítico. Aprender sus APIs
@@ -18,7 +32,7 @@ retoma [contratos](../../09_arrow_parquet/02_schemas_types/README.md) y
 pero **no requiere recordar sus datos ni producir sus entregas**. La muestra,
 las reglas y los resultados de los primeros ejemplos están completos aquí.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Convertir una pregunta ambigua en una consulta con parámetros precisos.
 - Distinguir unidad de observación, clave, esquema y reglas del dominio.
@@ -26,6 +40,18 @@ Al terminar podrás:
 - Comparar cada ID/importe, además de conteo y suma.
 - Decidir cómo tratar orden, ausencia, vacío y tipos al comparar resultados.
 - Separar lectura, validación, transformación, materialización y exportación.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Muestra](muestra.csv) | Consultar seis observaciones completas | Para el recorrido |
+| [Referencia Python](referencia.py) | Calcular y comprobar sin motores; generar escalas si se elige | Para el recorrido |
+| [Referencia R](referencia.R) | Contrastar con R base | Apoyo opcional |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## 1. La pregunta necesita una población y una unidad
 
@@ -404,22 +430,48 @@ completa deberá indicar sus límites, versiones, hilos, caché y repeticiones.
 No se miden tiempos/RAM aquí ni se afirma que Polars o DuckDB sean más rápidos.
 Ese trabajo se desarrollará en [10.09](../README.md#09-comparar-tiempo-y-memoria).
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 10.01](../../../labs/10_polars_duckdb/01_question_contract_reference/README.md).
+## Práctica
+
+Realiza el [lab 10.01](../../../labs/10_polars_duckdb/01_question_contract_reference/README.md) para
+fijar la pregunta y comprobar una referencia antes de interpretar resultados de un motor.
+
+Para contrastar tu práctica, consulta [referencia.py](referencia.py).
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Pregunta, contrato y cálculo manual | Octubre ≥ 2000: 003/2600; septiembre: dos/4500 | Unidad, clave, tipos y parámetros explícitos |
+| Referencia y comprobación por pares | Mismos IDs/importes, no solo suma/conteo; vacío y fronteras | Orden, ausencias y fases que después podrían medirse |
+
 Puedes avanzar cuando escribas la pregunta/contrato, justifiques la respuesta
-manual, ejecutes la referencia desde sesión nueva y rechaces una salida que
-conserva suma/conteo pero cambia pares. R base y las escalas son apoyos opcionales.
+manual, ejecutes la referencia desde una sesión nueva y rechaces una salida
+que conserva suma/conteo pero cambia pares. R base y las escalas son opcionales.
 
-No hay proyecto/checkpoint implementado asociado: `04_large_credit_dataset`
-sigue planificado. Material disponible no acredita práctica del estudiante.
-Siguiente: [10.02 — Polars: tablas y expresiones](../02_polars_tables_expressions/README.md).
-Consulta los [pendientes de almacenamiento y procesamiento](../../../docs/storage-closure.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia dos importes conservando su suma y pide mostrar por qué la referencia rechaza la salida.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios y datos sintéticos. Fuentes primarias enlazadas por concepto:
 Python estándar, Polars y DuckDB. Consulta: 2026-10-22. Las páginas DuckDB
 consultadas redirigen a documentación 2.0; eso no declara una versión instalada
 ni añade dependencias al curso. Referencia ejecutada con Python 3.12.12 y
 R 4.6.1, sin paquetes externos; APIs/versiones de motores se fijarán al usarlos.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[10.02 — Polars: tablas y expresiones](../02_polars_tables_expressions/README.md).
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.01](../../../labs/10_polars_duckdb/01_question_contract_reference/README.md) · [Siguiente →](../02_polars_tables_expressions/README.md)

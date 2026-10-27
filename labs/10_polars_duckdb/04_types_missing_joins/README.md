@@ -219,7 +219,7 @@ de los rechazos. Explica qué riesgo detecta cada control:
 - ¿Qué cambia al elegir inner? ¿Qué demuestra y qué no demuestra la suma?
 - ¿Qué política aplicarías antes de unir claves ausentes entre motores?
 
-Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
+Registra evidencia y dudas en tu bitácora personal junto a la práctica.
 El proyecto `04_large_credit_dataset` y sus checkpoints siguen pendientes.
 
 Siguiente: [10.05 — Streaming y límites de memoria](../../../curriculum/10_polars_duckdb/05_streaming_memory/README.md),

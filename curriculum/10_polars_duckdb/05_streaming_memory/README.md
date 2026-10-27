@@ -1,11 +1,30 @@
 # 10.05 — Streaming y límites de memoria
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Explorar streaming, lotes y sink sin prometer memoria constante |
+| **Necesitas** | Tablas, expresiones y planes Polars; extensión opcional |
+| **Evidencia** | Lotes y salida releída; observaciones de memoria con alcance explícito si se eligen |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.05](../../../labs/10_polars_duckdb/05_streaming_memory/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+> **Extensión opcional:** puedes omitir esta práctica y continuar con
+> [10.06 — DuckDB: SQL sobre Parquet](../06_duckdb_parquet/README.md).
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Entender qué cambia cuando el motor procesa datos por lotes, qué memoria sigue
 siendo necesaria y cómo escribir una salida sin recoger primero toda la tabla
 final en Python. **Esta sección es una extensión opcional**: no bloquea
 [10.06 — DuckDB: SQL sobre Parquet](../06_duckdb_parquet/README.md).
+
+<a id="entorno-y-archivos"></a>
+
+## Antes de empezar
 
 Necesitas reconocer tablas, expresiones y planes. Puedes consultar
 [10.03](../03_polars_lazy_plans/README.md) y
@@ -19,17 +38,6 @@ memoria del proceso y probar otra escala pequeña. No exigimos archivos mayores
 que la RAM ni forzamos falta de memoria. Las mediciones comparativas de 10.09
 tienen otro alcance; esta sección no es un benchmark.
 
-## Objetivos
-
-- Distinguir lazy, ejecución streaming y materialización del resultado.
-- Consumir lotes sin acumularlos y escribir directamente a Parquet.
-- Reconocer estado de operaciones, buffers, concurrencia y tamaño de salida.
-- Inspeccionar un plan físico y registros de ejecución sin confundirlos con RAM.
-- Observar un pico residente con unidad y alcance explícitos.
-- Comprobar tipos y cada par obtenido, también en vacío y fronteras.
-
-## Entorno y archivos
-
 Referencia comprobada: **Python 3.12.12 / Polars 2.0.0**. No hay dependencias
 nuevas ni cambios de [`pyproject.toml`](../../../pyproject.toml) o
 [`uv.lock`](../../../uv.lock). Los [recorridos](recorridos.md) explican cómo
@@ -41,13 +49,29 @@ Python van en un script o consola Python, no en PowerShell. Dentro de cada
 recorrido, ejecuta los bloques en orden. Para repetir una escritura elige una
 carpeta nueva bajo `output/`; conserva las prácticas anteriores.
 
-| Archivo | Función |
-| --- | --- |
-| [muestra.csv](muestra.csv) | Fuente propia completa de seis filas |
-| [streaming_polars.py](streaming_polars.py) | Preparación, lotes, sink y verificación independiente |
-| [observar_memoria.py](observar_memoria.py) | Procesos separados, trazas y pico residente |
-| [recorridos.md](recorridos.md) | PowerShell, Bash/Zsh y CMD completos |
-| [Lab 10.05](../../../labs/10_polars_duckdb/05_streaming_memory/README.md) | Actividad, evidencia y soluciones |
+<a id="objetivos"></a>
+
+## Qué vas a aprender
+
+- Distinguir lazy, ejecución streaming y materialización del resultado.
+- Consumir lotes sin acumularlos y escribir directamente a Parquet.
+- Reconocer estado de operaciones, buffers, concurrencia y tamaño de salida.
+- Inspeccionar un plan físico y registros de ejecución sin confundirlos con RAM.
+- Observar un pico residente con unidad y alcance explícitos.
+- Comprobar tipos y cada par obtenido, también en vacío y fronteras.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [muestra.csv](muestra.csv) | Fuente propia completa de seis filas | Para el recorrido |
+| [streaming_polars.py](streaming_polars.py) | Preparación, lotes, sink y verificación independiente | Para el recorrido |
+| [observar_memoria.py](observar_memoria.py) | Procesos separados, trazas y pico residente | Exploración adicional opcional |
+| [recorridos.md](recorridos.md) | PowerShell, Bash/Zsh y CMD completos | Para el recorrido |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## 1. Pregunta, datos y contrato completos
 
@@ -397,23 +421,37 @@ IDs de tres dígitos y sin repetir claves. Puedes probar 40/400 filas; pasa
 la tabla para aumentar filas ni llames «gran volumen» a estas muestras. No
 hay que superar la RAM del equipo para completar la extensión.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 10.05](../../../labs/10_polars_duckdb/05_streaming_memory/README.md).
-Puedes explicar qué queda materializado en cada API, consumir todos los lotes,
-conciliar un sink desde otra sesión y distinguir plan/traza/memoria medida.
-Puedes justificar por qué estado, concurrencia, buffers y salida impiden
-prometer RAM constante solo por usar streaming.
+## Práctica
 
-No hay proyecto/checkpoint activo: `04_large_credit_dataset` sigue previsto
-en [proyectos](../../../projects/README.md). Registra evidencia, explicación
-y dudas según [PROGRESS.md](../../../PROGRESS.md); desarrollar el material no
-acredita aprendizaje del estudiante.
+Si eliges la ampliación, realiza el [lab 10.05](../../../labs/10_polars_duckdb/05_streaming_memory/README.md) para
+consumir lotes sin acumularlos, comprobar el sink y explicar qué queda materializado.
 
-Siguiente: [10.06 — DuckDB: SQL sobre Parquet](../06_duckdb_parquet/README.md).
-DuckDB se incorpora en esa sección; esta extensión conserva su alcance Polars.
+Para contrastar tu práctica, consulta [streaming_polars.py](streaming_polars.py).
 
-## Referencias primarias
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script, lotes y Parquet de salida | Uno/2600 o tres/4600 MXN por clave, según el umbral | Lazy, streaming, materialización y escritura directa |
+| Plan y traza; memoria si se explora | Plan físico DOT frente a pico residente con unidad y alcance | Estado, concurrencia, buffers y salida; por qué streaming no garantiza RAM constante |
+
+Puedes cerrar la extensión cuando expliques qué queda materializado en cada
+API, consumas todos los lotes, concilies un sink desde otra sesión y distingas
+plan/traza/memoria medida. Justifica por qué no puede prometerse RAM constante
+solo por usar streaming. La observación adicional de memoria es opcional.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero propone acumular todos los lotes en una lista y pide explicar qué cambia en la memoria.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23; APIs ejecutadas con Polars 2.0.0. Las páginas
 `stable` pueden cambiar. Ejemplos y datos propios.
@@ -428,3 +466,12 @@ Consultadas el 2026-10-23; APIs ejecutadas con Polars 2.0.0. Las páginas
   y [PROCESS_MEMORY_COUNTERS](https://learn.microsoft.com/en-us/windows/win32/api/psapi/ns-psapi-process_memory_counters).
 - Python: [resource](https://docs.python.org/3/library/resource.html) y
   [tracemalloc](https://docs.python.org/3/library/tracemalloc.html).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[10.06 — DuckDB: SQL sobre Parquet](../06_duckdb_parquet/README.md).
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.05](../../../labs/10_polars_duckdb/05_streaming_memory/README.md) · [Siguiente →](../06_duckdb_parquet/README.md)

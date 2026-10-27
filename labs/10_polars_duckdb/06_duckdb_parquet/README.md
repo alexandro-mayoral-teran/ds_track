@@ -177,7 +177,7 @@ Conserva script/SQL, versiones, planes anotados, pares/resumen y rechazos espera
 - ¿Qué no detectaría comprobar solo el saldo de octubre?
 - ¿Por qué la auditoría completa no es un benchmark de la consulta selectiva?
 
-Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
+Registra evidencia y dudas en tu bitácora personal junto a la práctica.
 El proyecto `04_large_credit_dataset` y sus checkpoints siguen pendientes.
 Siguiente: [10.07 — DuckDB desde Python y R](../../../curriculum/10_polars_duckdb/07_duckdb_python_r/README.md).
 Vuelve a la [lección](../../../curriculum/10_polars_duckdb/06_duckdb_parquet/README.md)

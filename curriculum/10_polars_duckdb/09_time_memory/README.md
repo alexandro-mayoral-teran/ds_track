@@ -1,10 +1,26 @@
 # 10.09 — Comparar tiempo y memoria
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Medir un trabajo equivalente y explicar alcance y variación |
+| **Necesitas** | Archivos, tablas, filtros y ejecución diferida; entorno Python existente |
+| **Evidencia** | Observaciones crudas, medianas/rangos reconstruidos y resultados conciliados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.09](../../../labs/10_polars_duckdb/09_time_memory/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Medir un trabajo definido, conservar observaciones repetidas y explicar qué
 incluye cada número. Una medición útil necesita datos, respuesta y límites
 equivalentes antes de comparar herramientas.
+
+<a id="entorno-y-alcance"></a>
+
+## Antes de empezar
 
 Necesitas reconocer archivos, tablas, funciones, filtros y ejecución diferida.
 Puedes profundizar en [planes](../03_polars_lazy_plans/README.md),
@@ -13,13 +29,39 @@ Puedes profundizar en [planes](../03_polars_lazy_plans/README.md),
 los datos y resultados; no exige entregas previas. El recorrido principal usa
 Python; la ampliación R realiza un experimento distinto y no mezcla sus tiempos.
 
-## Objetivos
+Referencias: Python 3.12.12, pandas 2.3.3, PyArrow 21.0.0, Polars 2.0.0 y
+DuckDB 2.0.0. Ya están en [pyproject.toml](../../../pyproject.toml)/[uv.lock](../../../uv.lock).
+No hay paquetes ni lockfiles nuevos. Usa un entorno local elegido según
+los [recorridos](recorridos.md); no reinstales si ya es adecuado.
+
+La práctica utiliza seis filas para entender el método. La ampliación permite
+40/400, hasta 1998 con IDs válidos; **no representa grandes volúmenes**.
+No establece un ganador general, un límite de RAM ni un estudio de I/O físico.
+Las mediciones dependen del equipo y no tienen un número de milisegundos esperado.
+
+<a id="objetivos"></a>
+
+## Qué vas a aprender
 
 - Definir unidad, entrada, salida, fases y respuesta equivalente.
 - Separar tiempo transcurrido, CPU, memoria de objetos y pico residente.
 - Repetir con orden documentado y conservar observaciones crudas.
 - Reconocer cachés, importaciones, hilos y conversión en los costos.
 - Conciliar antes de interpretar medianas y rangos; justificar límites.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Muestra](muestra.csv) | Revisar el trabajo de seis filas | Para el recorrido |
+| [Coordinador y verificador](comparar.py) | Preparar, medir y conciliar fuera del trabajador | Para el recorrido |
+| [Trabajador aislado](trabajador.py) | Examinar los límites de las fases medidas | Para el recorrido |
+| [Métricas del sistema](metricas.py) | Consultar unidad y alcance del contador residente | Consulta de implementación |
+| [Recorridos](recorridos.md) | Ejecutar el protocolo desde procesos nuevos | Para el recorrido |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## Datos, contrato y respuesta completos
 
@@ -45,18 +87,6 @@ Octubre ≥ 2000 deja `003/2600`, uno/2600; septiembre ≥ 2000 deja `002/2000`
 y `003/2500`, dos/4500; septiembre ≥ 2001 deja solo `003/2500`. Octubre ≥ 0
 deja tres/4600; noviembre, ninguno. Los cortes completos contienen tres filas
 y 4500/4600 MXN respectivamente; sumarlos no da saldo a una fecha única.
-
-## Entorno y alcance
-
-Referencias: Python 3.12.12, pandas 2.3.3, PyArrow 21.0.0, Polars 2.0.0 y
-DuckDB 2.0.0. Ya están en [pyproject.toml](../../../pyproject.toml)/[uv.lock](../../../uv.lock).
-No hay paquetes ni lockfiles nuevos. Usa un entorno local elegido según
-los [recorridos](recorridos.md); no reinstales si ya es adecuado.
-
-La práctica utiliza seis filas para entender el método. La ampliación permite
-40/400, hasta 1998 con IDs válidos; **no representa grandes volúmenes**.
-No establece un ganador general, un límite de RAM ni un estudio de I/O físico.
-Las mediciones dependen del equipo y no tienen un número de milisegundos esperado.
 
 ## 1. Antes del cronómetro: qué significa «el mismo trabajo»
 
@@ -325,17 +355,36 @@ nulo. object.size no sustituye el pico residente. Para reproducir en el IDE,
 reinicia R y ejecuta el script completo; autoría comprueba procesos R nuevos,
 no la interfaz del IDE. No hay paquetes ni cambios de renv nuevos.
 
-## Práctica, salida y continuidad
+<a id="práctica-salida-y-continuidad"></a>
 
-Realiza el [lab 10.09](../../../labs/10_polars_duckdb/09_time_memory/README.md).
-Avanza cuando puedas conciliar resultados, reconstruir medianas desde crudas
-y explicar alcance, caché y memoria sin convertir una observación en una regla
-universal. No hay checkpoint activo: el [proyecto integrador](../../../projects/README.md)
-sigue previsto. Registra evidencia en [PROGRESS.md](../../../PROGRESS.md);
-desarrollar material no acredita aprendizaje.
-Siguiente: [10.10 — Cierre y elección de herramienta](../10_closure_tool_choice/README.md).
+## Práctica
 
-## Referencias primarias
+Realiza el [lab 10.09](../../../labs/10_polars_duckdb/09_time_memory/README.md) para
+repetir el protocolo, reconstruir estadísticas desde las observaciones y justificar límites.
+
+Para contrastar tu práctica, consulta [comparar.py](comparar.py).
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Datos, protocolo y resultados conciliados | Mismo Parquet/pregunta/salida; 003/2600; tres repeticiones por motor y orden rotado | Fases de consulta, intervalo y proceso; validación fuera del trabajador |
+| Crudas, medianas, rangos y contexto | Tiempo transcurrido, CPU y pico residente absoluto con unidades | Caché sin vaciar, hilos, importaciones y límites; R usa otro protocolo |
+
+Puedes avanzar cuando concilies resultados, reconstruyas medianas desde
+crudas y expliques alcance, caché y memoria sin convertir una observación en
+una regla universal. Las métricas dependen del equipo; no hay un tiempo esperado.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero muestra una sola ejecución más rápida y pide justificar qué puede concluirse con ella.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23; ejemplos y datos propios, APIs verificadas con las
 versiones declaradas. La documentación web R/Polars puede describir otra serie.
@@ -352,3 +401,12 @@ versiones declaradas. La documentación web R/Polars puede describir otra serie.
 - [PyArrow 21: pool CPU](https://arrow.apache.org/docs/21.0/python/generated/pyarrow.set_cpu_count.html).
 - [pandas 2.3.3: memory_usage](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.memory_usage.html).
 - [R: system.time](https://stat.ethz.ch/R-manual/R-devel/library/base/html/system.time.html).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[10.10 — Cierre y elección de herramienta](../10_closure_tool_choice/README.md).
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.09](../../../labs/10_polars_duckdb/09_time_memory/README.md) · [Siguiente →](../10_closure_tool_choice/README.md)

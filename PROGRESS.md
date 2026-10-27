@@ -12,20 +12,45 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Presentación:** índices 00–14 y lecciones 00–09 adaptados; la
+- **Presentación:** índices 00–14 y lecciones 00–10 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
 - **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
   [Uso y comprobaciones](portal/README.md).
-- **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones de
-  Arrow y Parquet, con apoyos, cierre común y ruta opcional visible.
+- **Último trabajo:** 2026-10-27, adaptación de las diez lecciones de
+  Polars y DuckDB, con apoyos, cierre común y rutas opcionales conservadas.
 - **Siguiente paso:** continuar la revisión del contenido y la adaptación por
-  módulo (10 — Polars y DuckDB), y observar una sesión real de pareja con el portal local:
+  módulo (11 — Reportes con Quarto), y observar una sesión real de pareja con el portal local:
   orientación, apertura, reconstrucción de práctica, revisión y reanudación.
 - **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, plantilla en Polars y DuckDB:** adaptadas 10.01–10.10
+con ubicación, ficha, preparación, objetivos, apoyos, práctica, evidencia/criterio,
+referencias y continuidad. Tablas previas de entorno/archivos integradas al índice
+de apoyo; muestras, SQL, funciones, ejecutores, recorridos, métricas y metadatos
+existentes enlazados sin duplicación. Datos/contexto conservados en las páginas,
+con ejemplos autónomos y recorridos Python/R. 10.04 permite pasar a 10.06;
+10.05 muestra opcionalidad en la apertura y mantiene la observación adicional
+de memoria como exploración. 10.07 conserva controles entre clientes, recursos
+y límites de versiones. 10.09 mantiene fases, crudas, orden/caché e interpretación
+limitada de métricas; 10.10 exige revisión humana de la decisión y enlaza 11.01.
+Cuatro labs corrigieron solo evidencia personal fuera de PROGRESS; también se
+corrigió esa indicación dentro del cierre 10.10. Sin migración visual de labs.
+Cobertura central 00–10; siguiente módulo visual: 11. Proyecto/checkpoints y
+práctica del estudiante siguen pendientes.
+
+Comprobación: 4189 enlaces locales de Markdown sin incidencias; anclas anteriores,
+referencias, ejemplos y 82 bloques de código/comandos/diagramas conservados.
+Diez páginas GFM locales a 1280/390 px (20 vistas), con apoyos/cierre presentes,
+IDs únicos, sin desbordamiento de página y desplegables cerrados; salto esencial
+10.04/10.05 → 10.06 comprobado y muestra visual revisada. Programas, SQL, muestras,
+metadatos y dependencias sin cambios. No se ejecutaron motores, programas del
+curso, mediciones ni restauraciones/instalaciones por este ajuste documental.
+El render local no acredita el de GitHub remoto ni aprendizaje del estudiante;
+el portal sigue limitado a 00 y sesión 02.01.
 
 **Desarrollo — 2026-10-27, plantilla en Arrow y Parquet:** adaptadas 09.01–09.09
 con ubicación, ficha, preparación, objetivos, apoyos, práctica, evidencia/criterio,

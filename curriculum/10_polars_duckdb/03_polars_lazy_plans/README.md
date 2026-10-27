@@ -1,10 +1,26 @@
 # 10.03 — Polars lazy y planes de consulta
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Construir y leer un plan lazy antes de materializar el resultado |
+| **Necesitas** | Tablas, tipos y expresiones; entorno Polars ya preparado |
+| **Evidencia** | Consulta y planes explicados con salida conciliada por clave |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.03](../../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Construir una consulta diferida, leer su plan y ejecutarla para comprobar cada
 resultado. «Lazy» significa que describimos operaciones antes de pedir la tabla
 resultante. Esa separación permite que Polars examine juntas las operaciones.
+
+<a id="entorno-y-archivos"></a>
+
+## Antes de empezar
 
 Necesitas reconocer tablas, tipos, llamadas a funciones y expresiones. Puedes
 repasar [10.02](../02_polars_tables_expressions/README.md), pero **los ejemplos
@@ -18,16 +34,6 @@ explican aquí al aparecer. Para profundizar en archivos, consulta
 de selección. **Extensión:** otra escala y base común. No medimos rendimiento
 ni desarrollamos streaming; eso tiene su alcance posterior en 10.05/10.09.
 
-## Objetivos
-
-- Identificar qué contiene un plan y cuándo se materializa una tabla.
-- Distinguir lectura inmediata, conversión de una tabla a lazy y scan de archivo.
-- Explicar filtros/proyecciones en el plan, incluidas columnas que no salen.
-- Ejecutar consultas y comparar tipos y valores con una referencia independiente.
-- Reconocer límites: un plan no certifica datos, I/O físico ni RAM acotada.
-
-## Entorno y archivos
-
 Referencia ejecutada: **Python 3.12.12 / Polars 2.0.0**, ya declarada en
 [`pyproject.toml`](../../../pyproject.toml) y [`uv.lock`](../../../uv.lock).
 No se incorporan dependencias. Los [recorridos](recorridos.md) explican cómo
@@ -39,16 +45,33 @@ bloques Python van en un script o consola **Python**, no en PowerShell. Ejecuta
 los bloques en orden dentro de cada recorrido. Para repetirlos, elige una
 carpeta nueva bajo `output/`; no borres una práctica anterior para liberar el nombre.
 
-| Archivo | Función |
-| --- | --- |
-| [muestra.csv](muestra.csv) | Fuente propia de seis filas |
-| [consultas_lazy.py](consultas_lazy.py) | Preparador, consultas y verificador de solo lectura |
-| [recorridos.md](recorridos.md) | PowerShell, Bash/Zsh y CMD completos |
-| [Lab 10.03](../../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md) | Actividad, comprobación y soluciones |
+
 
 El primer recorrido utiliza directamente Polars y datos definidos abajo, sin
 importar funciones del curso. El recorrido integrado reutiliza validadores
 incluidos en el repositorio; no importa archivos producidos por el estudiante.
+
+<a id="objetivos"></a>
+
+## Qué vas a aprender
+
+- Identificar qué contiene un plan y cuándo se materializa una tabla.
+- Distinguir lectura inmediata, conversión de una tabla a lazy y scan de archivo.
+- Explicar filtros/proyecciones en el plan, incluidas columnas que no salen.
+- Ejecutar consultas y comparar tipos y valores con una referencia independiente.
+- Reconocer límites: un plan no certifica datos, I/O físico ni RAM acotada.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [muestra.csv](muestra.csv) | Fuente propia de seis filas | Para el recorrido |
+| [consultas_lazy.py](consultas_lazy.py) | Preparador, consultas y verificador de solo lectura | Para el recorrido |
+| [recorridos.md](recorridos.md) | PowerShell, Bash/Zsh y CMD completos | Para el recorrido |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## 1. Pregunta, datos y reglas
 
@@ -390,21 +413,37 @@ la [base común incluida](../../09_arrow_parquet/01_csv_parquet_arrow/datos/base
 No requiere exportaciones anteriores. No dupliques filas para aumentar escala:
 romperías la clave. Estos tamaños no demuestran comportamiento de grandes volúmenes.
 
-## Criterio de salida y continuidad
+<a id="criterio-de-salida-y-continuidad"></a>
 
-Puedes explicar tabla/plan, scan/lectura inmediata, esquema/valores y
-explain/ejecución; localizar filtros y columnas requeridas; conciliar cada par
-y resumen desde una sesión nueva, incluidos vacío y frontera. Puedes justificar
-por qué la auditoría completa y la consulta selectiva responden preguntas distintas.
+## Práctica
 
-No hay proyecto ni checkpoint activo: `04_large_credit_dataset` sigue previsto
-en [proyectos](../../../projects/README.md). Registra práctica, evidencia y dudas
-según [PROGRESS.md](../../../PROGRESS.md); disponibilidad del material no acredita
-aprendizaje del estudiante.
+Realiza el [lab 10.03](../../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md) para
+localizar filtros y columnas requeridas y conciliar la consulta ejecutada.
 
-Siguiente: [10.04 — Tipos, faltantes y uniones](../04_types_missing_joins/README.md).
+Para contrastar tu práctica, consulta [consultas_lazy.py](consultas_lazy.py).
 
-## Referencias primarias
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script, consulta y planes | Seis filas de entrada; 003/2600 y 4500/4600 MXN conciliados | Tabla frente a plan; scan frente a lectura inmediata |
+| Auditoría y salida desde sesión nueva | Esquema, valores, vacío y frontera; columnas necesarias aunque no salgan | explain frente a ejecución; selección frente a auditoría completa |
+
+Puedes avanzar cuando expliques tabla/plan, scan/lectura inmediata y
+esquema/valores; localices filtros y columnas requeridas y concilies cada par
+y resumen desde una sesión nueva. Justifica por qué la auditoría completa y
+la consulta selectiva responden preguntas distintas.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero quita de la salida una columna usada por el filtro y pide rastrearla en el plan.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23; las APIs usadas también se ejecutaron con Polars 2.0.0.
 La documentación `stable` puede cambiar; no se exige igualdad literal del plan.
@@ -420,3 +459,12 @@ La documentación `stable` puede cambiar; no se exige igualdad literal del plan.
 
 Los datos y ejemplos son propios. Las referencias aportan las definiciones y
 el comportamiento de las APIs; no se copian ejemplos de sus capítulos.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[10.04 — Tipos, faltantes y uniones](../04_types_missing_joins/README.md).
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.03](../../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md) · [Siguiente →](../04_types_missing_joins/README.md)

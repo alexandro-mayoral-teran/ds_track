@@ -1,9 +1,26 @@
 # 10.08 — Intercambio entre motores
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Intercambiar tablas entre motores conservando tipos, claves y ausencias |
+| **Necesitas** | Tablas, tipos y SELECT parametrizado; entorno Python del track |
+| **Evidencia** | Ocho etapas verificadas y materializaciones explicadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.08](../../../labs/10_polars_duckdb/08_engine_interchange/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Pasar una tabla entre pandas, Arrow, Polars y DuckDB, identificar cuándo se
 recupera el resultado y comprobar qué se conserva después de cada conversión.
+
+<a id="entorno"></a>
+
+## Antes de empezar
+
 Necesitas reconocer tablas, tipos, funciones y un SELECT parametrizado.
 Puedes profundizar en [Arrow](../../09_arrow_parquet/01_csv_parquet_arrow/README.md),
 [Polars](../02_polars_tables_expressions/README.md) y
@@ -15,13 +32,37 @@ proyecto. **Ampliaciones:** lector Arrow por lotes, enteros grandes y recorrido
 R Arrow/DBI. Polars en R queda como alternativa de profundización; esta sección
 no implementa ni exige su instalación. No hacemos mediciones de rendimiento.
 
-## Objetivos
+Referencias ejecutadas: Python 3.12.12, pandas 2.3.3, PyArrow 21.0.0,
+Polars 2.0.0 y DuckDB 2.0.0. Ya están declaradas en
+[pyproject.toml](../../../pyproject.toml)/[uv.lock](../../../uv.lock).
+No hay dependencias ni lockfiles nuevos. Comprueba tu intérprete según los
+[recorridos](recorridos.md); si el entorno ya es adecuado no lo reinstales.
+Conda, venv/pip y uv son alternativas; no mezcles gestores sobre un entorno.
+
+<a id="objetivos"></a>
+
+## Qué vas a aprender
 
 - Distinguir tabla en memoria, relación/consulta y lector de resultados.
 - Intercambiar en ambos sentidos e inspeccionar tipos antes de adaptar valores.
 - Conservar IDs, fechas, pesos enteros, claves y ausencia frente a cero.
 - Explicar por qué equivalencia lógica no exige igualdad física de esquemas.
 - Identificar materializaciones sin prometer ausencia de copias ni RAM acotada.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Muestra](muestra.csv) | Consultar el contrato autónomo de seis filas | Para el recorrido |
+| [Intercambio Python](intercambio.py) | Seguir pandas/Arrow/Polars/DuckDB y comprobar cada etapa | Para el recorrido |
+| [Recorridos](recorridos.md) | Comprobar entorno y ejecutar desde otra sesión | Para el recorrido |
+| [Intercambio R](intercambio.R) | Consultar ampliación Arrow/DBI | Ampliación opcional |
+| [Ejecutor R](ejecutar_intercambio.R) | Reconstruir la ampliación | Ampliación opcional |
+| [Preparador R](preparar_intercambio.R) | Añadir material sin dependencias nuevas | Para la ampliación R |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## Datos, reglas y resultado completos
 
@@ -48,15 +89,6 @@ Resultado: `003/2600`, uno/2600. Septiembre ≥ 2000 deja `002/2000` y
 Noviembre no tiene registros. Cada corte completo tiene tres filas y
 4500/4600 MXN respectivamente. Sumar fechas distintas no representa saldo
 a una fecha única.
-
-## Entorno
-
-Referencias ejecutadas: Python 3.12.12, pandas 2.3.3, PyArrow 21.0.0,
-Polars 2.0.0 y DuckDB 2.0.0. Ya están declaradas en
-[pyproject.toml](../../../pyproject.toml)/[uv.lock](../../../uv.lock).
-No hay dependencias ni lockfiles nuevos. Comprueba tu intérprete según los
-[recorridos](recorridos.md); si el entorno ya es adecuado no lo reinstales.
-Conda, venv/pip y uv son alternativas; no mezcles gestores sobre un entorno.
 
 ## 1. Qué cruza la frontera
 
@@ -335,19 +367,37 @@ probado la interfaz del IDE. Arrow facilita el registro, pero la recuperación
 por DBI introduce una frontera de representación: no atribuimos ausencia de
 copias a toda esta cadena.
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 10.08](../../../labs/10_polars_duckdb/08_engine_interchange/README.md).
-Puedes señalar dónde se materializa, justificar la equivalencia string/large_string,
-conservar tipos y pares después de cada conversión, explicar índice/ausencias y
-repetir desde otra sesión. No se exige demostrar cero copias o un ahorro de RAM.
+## Práctica
 
-La [integración prevista](../../../projects/README.md) aún no tiene proyecto ni
-checkpoints activos. Registra evidencia según [PROGRESS.md](../../../PROGRESS.md);
-disponibilidad del material no acredita aprendizaje.
-Siguiente: [10.09 — Comparar tiempo y memoria](../09_time_memory/README.md).
+Realiza el [lab 10.08](../../../labs/10_polars_duckdb/08_engine_interchange/README.md) para
+inspeccionar cada conversión y señalar dónde se recupera el resultado.
 
-## Referencias primarias
+Para contrastar tu práctica, consulta [intercambio.py](intercambio.py).
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y controles por etapa | Seis filas, 003/2600 y 4500/4600 MXN; esquema antes de adaptar | Relación/registro frente a tabla/lector y equivalencia string/large_string acotada |
+| Muestra de ausencias y explicación | Suma observada 10 y cobertura 2/3; fechas e IDs conservados | Índice y ausencia frente a cero; materializar sin afirmar cero copias |
+
+Puedes avanzar cuando señales dónde se materializa, justifiques la
+equivalencia string/large_string, conserves tipos y pares después de cada
+conversión, expliques índice/ausencias y repitas desde otra sesión. Las
+ampliaciones de lector por lotes y R no bloquean el recorrido principal.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide localizar cuándo una relación se convierte en una tabla materializada y qué se comprobó antes.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23. Datos y ejemplos propios, APIs ejecutadas con las
 versiones fijadas; la documentación web de Polars/R puede describir otra serie.
@@ -359,3 +409,12 @@ versiones fijadas; la documentación web de Polars/R puede describir otra serie.
   [to_arrow](https://docs.pola.rs/api/python/stable/reference/dataframe/api/polars.DataFrame.to_arrow.html)
   y [to_pandas](https://docs.pola.rs/api/python/stable/reference/dataframe/api/polars.DataFrame.to_pandas.html).
 - [R: registro Arrow en DuckDB](https://r.duckdb.org/reference/duckdb_register_arrow.html).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[10.09 — Comparar tiempo y memoria](../09_time_memory/README.md).
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.08](../../../labs/10_polars_duckdb/08_engine_interchange/README.md) · [Siguiente →](../09_time_memory/README.md)

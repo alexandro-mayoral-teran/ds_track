@@ -1,10 +1,24 @@
 # 10.07 — DuckDB desde Python y R
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Ejecutar el mismo SQL desde Python y R conservando tipos y recursos |
+| **Necesitas** | SQL, tablas y funciones; entornos Python/R, sin resultados previos |
+| **Evidencia** | Resultados de ambos clientes conciliados y recursos cerrados ante errores |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.07](../../../labs/10_polars_duckdb/07_duckdb_python_r/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Reutilizar una consulta parametrizada desde dos clientes, inspeccionar tipos y
 valores, y cerrar resultados/conexiones incluso ante errores. Python y R no
 devuelven necesariamente las mismas clases aunque ejecuten el mismo SQL.
+
+## Antes de empezar
 
 Necesitas reconocer tablas, funciones, SQL y archivos. Puedes consultar
 [10.06](../06_duckdb_parquet/README.md) para profundizar; aquí se presentan
@@ -16,13 +30,33 @@ consulta desde el otro y concilia. **Ampliación:** recuperación por páginas
 y enteros grandes. dbplyr/duckplyr son alternativas de interfaz, no conocimientos
 necesarios para resolver esta sección. No comparamos velocidad entre clientes.
 
-## Objetivos
+<a id="objetivos"></a>
+
+## Qué vas a aprender
 
 - Separar motor, cliente Python, interfaz DBI y backend R.
 - Pasar parámetros como valores, sin construir SQL concatenando entradas.
 - Recuperar resultados y distinguir paginación de una garantía de memoria.
 - Inspeccionar tipos SQL y clases nativas; conservar precisión al adaptar.
 - Liberar resultados y conexiones desde procesos nuevos y ante errores.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Muestra](muestra.csv) | Revisar seis observaciones del contrato | Para el recorrido |
+| [SQL de selección](seleccion.sql) | Consultar la misma pregunta parametrizada | Para el recorrido |
+| [SQL de resumen](resumen.sql) | Consultar los cortes completos | Para el recorrido |
+| [Cliente Python](clientes.py) | Preparar, consultar y verificar desde Python | Para el recorrido |
+| [Cliente R](clientes.R) | Leer tipos y liberar recursos desde DBI | Para el recorrido |
+| [Ejecutor R](ejecutar_clientes.R) | Reconstruir el recorrido completo desde R | Para el recorrido |
+| [Preparador R](preparar_clientes.R) | Respaldar metadatos y ampliar el proyecto existente | Para el recorrido |
+| [Lockfile R](renv.lock) | Consultar versiones fijadas del cliente R | Para el recorrido |
+| [Recorridos Python](recorridos.md) | Comprobar el intérprete y ejecutar desde otra sesión | Para el recorrido |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## Datos, pregunta y contrato completos
 
@@ -329,25 +363,43 @@ describe las diferencias; aquí además las ejecutamos con el cliente fijado.
 La referencia R base limita filas para que sus sumas de saldos Int32 permanezcan
 dentro de la cota exacta documentada; las muestras de estudio son muy inferiores.
 
-## Comprobación, práctica y continuidad
+<a id="comprobación-práctica-y-continuidad"></a>
 
-Realiza el [lab 10.07](../../../labs/10_polars_duckdb/07_duckdb_python_r/README.md).
-Los dos ejecutores auditan la entrada completa contra CSV externo, comparan
-cada par y resumen, y aceptan vacío conservando tipos. Detectan duplicados,
-incidentes fuera del filtro y valores compensados. Materializan registros para
-comprobar: no son un benchmark ni garantizan memoria acotada.
+## Comprobación del recorrido
 
 Conserva fuente/Parquet sin cambios entre lecturas; no se ofrece instantánea
 transaccional frente a modificaciones concurrentes. No se exige una base
 persistente compartida ni se presentan estas comprobaciones como equivalencia
 universal entre versiones.
 
-No hay proyecto/checkpoint activo: `04_large_credit_dataset` sigue previsto
-en [proyectos](../../../projects/README.md). Registra evidencia y dudas según
-[PROGRESS.md](../../../PROGRESS.md); material disponible no acredita aprendizaje.
-Siguiente: [10.08 — Intercambio entre motores](../08_engine_interchange/README.md).
+## Práctica
 
-## Referencias primarias
+Realiza el [lab 10.07](../../../labs/10_polars_duckdb/07_duckdb_python_r/README.md) para
+ejecutar la misma consulta desde ambos clientes y justificar tipos, parámetros y cierre de recursos.
+
+Para contrastar tu práctica, consulta [clientes.py](clientes.py). Revisa también [clientes.R](clientes.R) para el otro cliente.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| SQL compartido y salidas de ambos clientes | 003/2600 y 4500/4600 MXN por clave; tipos antes de adaptar | Motor frente a cliente; parámetros como valores |
+| Comprobaciones de precisión y recursos | HUGEINT adaptado sin pérdida; resultados/conexiones liberados incluso ante error | Páginas frente a garantía de memoria; límites de versiones e instantáneas |
+
+Puedes avanzar cuando ejecutes el SQL desde ambos clientes, concilies cada
+par y resumen, justifiques la adaptación de tipos y compruebes la liberación
+de resultados y conexiones. No se exige compartir una base persistente entre versiones.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero provoca una consulta inválida y pide comprobar que los recursos se liberan.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23; ejemplos/datos propios y APIs ejecutadas con las
 versiones indicadas. La documentación web del cliente R puede describir una
@@ -361,3 +413,12 @@ serie más nueva que el binario CRAN 1.5.6 usado aquí.
   [dbClearResult](https://dbi.r-dbi.org/reference/dbClearResult.html) y
   [dbGetQuery](https://dbi.r-dbi.org/reference/dbGetQuery.html).
 - [Dependencias inferidas por renv](https://rstudio.github.io/renv/reference/dependencies.html).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[10.08 — Intercambio entre motores](../08_engine_interchange/README.md).
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.07](../../../labs/10_polars_duckdb/07_duckdb_python_r/README.md) · [Siguiente →](../08_engine_interchange/README.md)

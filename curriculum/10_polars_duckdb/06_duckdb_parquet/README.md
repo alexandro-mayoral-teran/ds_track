@@ -1,10 +1,26 @@
 # 10.06 — DuckDB: SQL sobre Parquet
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Consultar Parquet con SQL y contrastar esquema, claves y valores |
+| **Necesitas** | SQL y archivos; DuckDB Python según su recorrido, sin entregas previas |
+| **Evidencia** | Selección/resumen conciliados y planes interpretados con sus límites |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.06](../../../labs/10_polars_duckdb/06_duckdb_parquet/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Consultar archivos Parquet directamente con SQL, conservar el contrato de datos
 y distinguir un plan previsto de una ejecución observada. DuckDB es un motor
 analítico que aquí se ejecuta dentro de Python; no necesitamos un servidor.
+
+<a id="entorno-y-archivos"></a>
+
+## Antes de empezar
 
 Necesitas reconocer tablas, claves y filtros. Puedes repasar
 [SQL](../../03_sql_databases/README.md) y
@@ -19,16 +35,6 @@ errores fuera del filtro. **Ampliación:** unión con un catálogo pequeño.
 Python sirve de ejecutor mínimo; los clientes Python/R se profundizan en 10.07.
 No hacemos un benchmark ni medimos RAM o I/O físico.
 
-## Objetivos
-
-- Diferenciar motor, conexión, archivo Parquet y base persistente.
-- Escribir SELECT/FROM/WHERE/GROUP BY/ORDER BY con una pregunta concreta.
-- Conservar ID textual, fecha e importe entero y comprobar tipos de agregación.
-- Explicar filtros/proyecciones y estimaciones frente a filas observadas.
-- Auditar todas las partes y comparar cada valor con CSV externo.
-
-## Entorno y archivos
-
 Referencia ejecutada: **Python 3.12.12 / DuckDB 2.0.0**. DuckDB se incorpora
 ahora como dependencia exacta en [`pyproject.toml`](../../../pyproject.toml) y
 [`uv.lock`](../../../uv.lock), conservando los registros anteriores salvo la
@@ -40,14 +46,29 @@ es distinto de necesitar entregas previas. Abre la raíz en el editor y elige
 ese intérprete. Los bloques Python van en un script/consola Python, no en
 PowerShell; SQL se envía como texto a la conexión, sin instalar una CLI aparte.
 
-| Archivo | Función |
-| --- | --- |
-| [muestra.csv](muestra.csv) | Fuente autónoma completa |
-| [seleccion.sql](seleccion.sql) | Consulta con parámetros de archivos, fecha y umbral |
-| [resumen.sql](resumen.sql) | Resumen por fecha |
-| [consultas_duckdb.py](consultas_duckdb.py) | Preparación, auditoría, ejecución y contraste estándar |
-| [recorridos.md](recorridos.md) | Instalación/comprobación y sesiones nuevas |
-| [Lab 10.06](../../../labs/10_polars_duckdb/06_duckdb_parquet/README.md) | Actividad, evidencia y soluciones |
+<a id="objetivos"></a>
+
+## Qué vas a aprender
+
+- Diferenciar motor, conexión, archivo Parquet y base persistente.
+- Escribir SELECT/FROM/WHERE/GROUP BY/ORDER BY con una pregunta concreta.
+- Conservar ID textual, fecha e importe entero y comprobar tipos de agregación.
+- Explicar filtros/proyecciones y estimaciones frente a filas observadas.
+- Auditar todas las partes y comparar cada valor con CSV externo.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [muestra.csv](muestra.csv) | Fuente autónoma completa | Para el recorrido |
+| [seleccion.sql](seleccion.sql) | Consulta con parámetros de archivos, fecha y umbral | Para el recorrido |
+| [resumen.sql](resumen.sql) | Resumen por fecha | Para el recorrido |
+| [consultas_duckdb.py](consultas_duckdb.py) | Preparación, auditoría, ejecución y contraste estándar | Para el recorrido |
+| [recorridos.md](recorridos.md) | Instalación/comprobación y sesiones nuevas | Para el recorrido |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## 1. Pregunta, datos y contrato completos
 
@@ -330,22 +351,37 @@ como se desarrolló en [10.04](../04_types_missing_joins/README.md). `IS NOT NUL
 marca correspondencia, sin inventar un producto para 003. No entra 004 como
 nuevo saldo. Esta unión no exige importar todo el Parquet primero a pandas.
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 10.06](../../../labs/10_polars_duckdb/06_duckdb_parquet/README.md).
-Puedes explicar archivo/base/motor, ejecutar y conciliar selección/resumen,
-identificar estimación frente a observación y detectar duplicados fuera del
-filtro. Puedes justificar por qué leer varios archivos no basta para acreditar
-claves únicas ni esquemas homogéneos.
+## Práctica
 
-No hay proyecto/checkpoint activo: `04_large_credit_dataset` sigue previsto
-en [proyectos](../../../projects/README.md). Registra evidencia y dudas según
-[PROGRESS.md](../../../PROGRESS.md); desarrollar material no acredita aprendizaje.
+Realiza el [lab 10.06](../../../labs/10_polars_duckdb/06_duckdb_parquet/README.md) para
+consultar archivos completos y partes y contrastar los resultados contra CSV externo.
 
-Siguiente: [10.07 — DuckDB desde Python y R](../07_duckdb_python_r/README.md).
-Esta sección 10.06 no incorpora paquetes R ni modifica renv.
+Para contrastar tu práctica, consulta [consultas_duckdb.py](consultas_duckdb.py).
 
-## Referencias primarias
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| SQL, script y resultados | Seis filas; 003/2600 y 4500/4600 MXN; tipos BIGINT/HUGEINT | Motor, conexión, archivo Parquet y base persistente |
+| Auditoría y planes | Esquema por archivo y duplicados fuera del filtro; valores por clave | EXPLAIN frente a EXPLAIN ANALYZE; estimación frente a observación |
+
+Puedes avanzar cuando expliques archivo/base/motor, ejecutes y concilies
+selección/resumen, identifiques estimación frente a observación y detectes
+duplicados fuera del filtro. Justifica por qué leer varios archivos no basta
+para acreditar claves únicas ni esquemas homogéneos.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero omite una parte y pide mostrar por qué una consulta que termina sin error puede seguir incompleta.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23 y APIs ejecutadas con DuckDB 2.0.0. Se enlaza la
 documentación de esa serie; los ejemplos y datos son propios.
@@ -358,3 +394,12 @@ documentación de esa serie; los ejemplos y datos son propios.
   [COPY](https://duckdb.org/docs/2.0/sql/statements/copy).
 - [EXPLAIN](https://duckdb.org/docs/2.0/guides/meta/explain) y
   [EXPLAIN ANALYZE](https://duckdb.org/docs/2.0/guides/meta/explain_analyze).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[10.07 — DuckDB desde Python y R](../07_duckdb_python_r/README.md).
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.06](../../../labs/10_polars_duckdb/06_duckdb_parquet/README.md) · [Siguiente →](../07_duckdb_python_r/README.md)

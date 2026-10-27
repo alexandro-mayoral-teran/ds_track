@@ -1,10 +1,26 @@
 # 10.04 — Tipos, faltantes y uniones
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 10](../README.md) / **Lección 10.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Conservar significado al convertir, resumir faltantes y unir tablas |
+| **Necesitas** | Tablas y expresiones Polars; saldos y catálogo incluidos |
+| **Evidencia** | Unión conciliada con originales, tipos y cobertura conservados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 10.04](../../../labs/10_polars_duckdb/04_types_missing_joins/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Conservar el significado de los datos al convertir tipos, resumir ausencias y
 combinar tablas. Que una operación termine sin error no demuestra que conserve
 la unidad, las claves, los importes o la cobertura que necesitamos.
+
+<a id="entorno-y-archivos"></a>
+
+## Antes de empezar
 
 Necesitas reconocer tablas y expresiones. Puedes repasar
 [10.02](../02_polars_tables_expressions/README.md) y
@@ -18,16 +34,6 @@ duplicados y claves sin correspondencia. **Extensión:** contraste pandas/SQL,
 unión completa y recorrido lazy equivalente. No medimos tiempo/RAM ni
 desarrollamos todavía streaming o DuckDB.
 
-## Objetivos
-
-- Separar tipo, regla de negocio y pérdida de información.
-- Identificar cero, texto vacío, ausencia y `NaN` sin intercambiarlos.
-- Contar registros y valores conocidos; explicar la suma de un grupo sin datos.
-- Elegir una unión y comprobar su cardinalidad, claves y cobertura.
-- Conciliar valores por clave, no solo conteos y sumas.
-
-## Entorno y archivos
-
 Referencia comprobada: **Python 3.12.12 / Polars 2.0.0**. La extensión utiliza
 pandas 2.3.3 y `sqlite3` estándar; las dependencias ya están declaradas en
 [`pyproject.toml`](../../../pyproject.toml)/[`uv.lock`](../../../uv.lock).
@@ -39,13 +45,28 @@ Abre la raíz del repositorio en tu editor. Los bloques Python se ejecutan en
 un script o consola Python con ese intérprete, no directamente en PowerShell.
 Cada apartado indica si empieza un ejemplo nuevo o continúa el anterior.
 
-| Archivo | Función |
-| --- | --- |
-| [muestra.csv](muestra.csv) | Seis observaciones completas de saldo |
-| [catalogo.csv](catalogo.csv) | Tres claves y una etiqueta ausente declarada |
-| [semantica_polars.py](semantica_polars.py) | Carga, validación, unión, cobertura y contraste |
-| [recorridos.md](recorridos.md) | Ejecución completa PowerShell, Bash/Zsh y CMD |
-| [Lab 10.04](../../../labs/10_polars_duckdb/04_types_missing_joins/README.md) | Actividades y soluciones razonadas |
+<a id="objetivos"></a>
+
+## Qué vas a aprender
+
+- Separar tipo, regla de negocio y pérdida de información.
+- Identificar cero, texto vacío, ausencia y `NaN` sin intercambiarlos.
+- Contar registros y valores conocidos; explicar la suma de un grupo sin datos.
+- Elegir una unión y comprobar su cardinalidad, claves y cobertura.
+- Conciliar valores por clave, no solo conteos y sumas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [muestra.csv](muestra.csv) | Seis observaciones completas de saldo | Para el recorrido |
+| [catalogo.csv](catalogo.csv) | Tres claves y una etiqueta ausente declarada | Para el recorrido |
+| [semantica_polars.py](semantica_polars.py) | Carga, validación, unión, cobertura y contraste | Para el recorrido |
+| [recorridos.md](recorridos.md) | Ejecución completa PowerShell, Bash/Zsh y CMD | Para el recorrido |
+
+Consulta los recursos donde se utilizan en el recorrido. Selecciona el
+intérprete indicado y conserva originales y entregas previas; para repetir
+una escritura, usa un destino nuevo. Las ampliaciones se identifican aparte.
 
 ## 1. Tipos y conversiones: poder convertir no basta
 
@@ -488,24 +509,37 @@ validación completa de entradas sigue siendo necesaria. Los
 [tipos de unión](https://docs.pola.rs/user-guide/transformations/joins/)
 describen las variantes del motor.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 10.04](../../../labs/10_polars_duckdb/04_types_missing_joins/README.md).
-Puedes explicar pérdidas de conversión, distinguir null/NaN/cero/vacío,
-justificar los denominadores y elegir una unión según su unidad y claves.
-Puedes detectar multiplicaciones, conservar filas sin catálogo y conciliar
-cada valor, incluidos fuente/catálogo vacíos y un catálogo duplicado sin uso.
+## Práctica
 
-No hay proyecto/checkpoint activo: `04_large_credit_dataset` sigue previsto
-en [proyectos](../../../projects/README.md). Registra evidencia, explicaciones
-y dudas según [PROGRESS.md](../../../PROGRESS.md). Material desarrollado no
-acredita aprendizaje del estudiante.
+Realiza el [lab 10.04](../../../labs/10_polars_duckdb/04_types_missing_joins/README.md) para
+justificar conversiones, denominadores y cardinalidad sin perder registros ni motivos.
 
-Siguiente: [10.05 — Streaming y límites de memoria](../05_streaming_memory/README.md),
-extensión disponible. Es opcional; el siguiente apartado esencial
-es [10.06 — DuckDB: SQL sobre Parquet](../06_duckdb_parquet/README.md), disponible.
+Para contrastar tu práctica, consulta [semantica_polars.py](semantica_polars.py).
 
-## Referencias primarias
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y resultados con origen | Seis saldos y catálogo de tres claves; 4500/4600 MXN conservados | Conversión frente a regla de negocio; null/NaN/cero/vacío |
+| Unión y controles de cobertura | Cuatro coincidencias, dos etiquetas conocidas; catálogo duplicado sin uso rechazado | Coincidir con una fila frente a conocer su etiqueta; cardinalidad y población |
+
+Puedes avanzar cuando expliques pérdidas de conversión, distingas null/NaN/
+cero/vacío, justifiques denominadores y elijas una unión según unidad y claves.
+Detecta multiplicaciones, conserva filas sin catálogo y concilia cada valor,
+incluidos fuente/catálogo vacíos y un catálogo duplicado sin uso.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero añade una clave duplicada sin uso al catálogo y pide explicar qué control debe fallar.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `04_large_credit_dataset` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23 y contrastadas con las versiones declaradas. Las
 páginas `stable` pueden cambiar. Datos, preguntas y ejemplos son propios.
@@ -520,3 +554,13 @@ páginas `stable` pueden cambiar. Datos, preguntas y ejemplos son propios.
 - [pandas merge 2.3.3](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.merge.html),
   [expresiones SQLite](https://www.sqlite.org/lang_expr.html) y
   [agregaciones SQLite](https://www.sqlite.org/lang_aggfunc.html).
+
+## Siguiente paso
+
+La continuación esencial es [10.06 — DuckDB: SQL sobre Parquet](../06_duckdb_parquet/README.md).
+Si eliges profundizar, realiza antes [10.05 — Streaming y límites de memoria](../05_streaming_memory/README.md),
+una extensión opcional que no bloquea el cierre.
+
+Consulta los [criterios de almacenamiento e integración](../../../docs/storage-closure.md).
+
+[← Módulo 10](../README.md) · [Lab 10.04](../../../labs/10_polars_duckdb/04_types_missing_joins/README.md) · [Siguiente →](../06_duckdb_parquet/README.md)
