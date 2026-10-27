@@ -25,8 +25,10 @@ temas estacionados del roadmap.
 - Los notebooks sirven para explorar; la lógica reutilizable debe migrar a
   funciones o módulos cuando el tema lo permita.
 
-Consulta [`docs/authoring-guide.md`](docs/authoring-guide.md) para usar la
-plantilla de módulos.
+Consulta el [índice de documentación](docs/README.md) para elegir la guía vigente
+y la [guía de autoría](docs/authoring-guide.md) para usar las plantillas de
+módulo, lección, lab y proyecto. Mantén decisiones en su guía responsable,
+estado/editorial en PROGRESS.md y evidencia del estudiante en su copia personal.
 
 Consulta [`docs/learning-workflow.md`](docs/learning-workflow.md) para conectar
 curriculum, labs, checkpoints de proyecto y evidencias sin duplicar contenido.

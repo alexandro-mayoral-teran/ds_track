@@ -20,12 +20,10 @@ sus planes y la numeración del recorrido se conserva.
 
 ## Siguiente trabajo: piloto de experiencia
 
-Con este cierre se puede comenzar un prototipo pequeño sobre el material
-existente: una lección, su lab, comprobación y evidencia, probados por una pareja.
-La primera candidata es [02.01](../curriculum/02_pandas/README.md), según su
-índice; ampliar después de observar una sesión real. El piloto no implementa
-por sí mismo Streamlit/Shiny ni los proyectos pendientes del track.
+El [portal local](../portal/README.md) ya integra el módulo 00 y la sesión 02.01.
+Queda observar una sesión real con una pareja antes de ampliarlo: orientación,
+apertura y reconstrucción de la práctica, revisión de evidencia y reanudación.
 
-El objetivo inicial es facilitar orientación, práctica local y revisión entre
-compañeros. La decisión de arquitectura y su implementación se revisarán en
-ese trabajo; aquí no se crea ni publica un portal.
+El piloto no implementa Streamlit/Shiny ni los proyectos pendientes del track.
+Su operación y sus comprobaciones se documentan en portal/; estos criterios
+conservan el cierre de reportes, sin duplicar la arquitectura ni el plan del sitio.

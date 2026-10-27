@@ -91,6 +91,7 @@ Su código está versionado; las prácticas y evidencias personales quedan fuera
 <summary><strong>Para quien crea o revisa material</strong></summary>
 
 - [Cómo contribuir](CONTRIBUTING.md).
+- [Índice de documentación](docs/README.md): guías vigentes y responsabilidad de cada una.
 - [Guía de autoría](docs/authoring-guide.md).
 - [Presentación y navegación en Markdown](docs/markdown-study-guide.md).
 - [Arquitectura del recorrido](docs/architecture.md).

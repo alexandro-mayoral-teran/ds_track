@@ -18,8 +18,8 @@ comprobar y explicar
 evidencia
   script, consulta, notebook, reporte o aplicación
         ↓
-PROGRESS.md
-  registra el resultado y el siguiente paso
+bitácora personal
+  registra comprobación, dudas y siguiente paso del estudiante
 
 cuando existe: lab → checkpoint de proyecto → evidencia integrada
 continuidad: lab → siguiente lección → siguiente lab
@@ -37,7 +37,8 @@ Los enlaces deben funcionar en ambas direcciones:
 2. Un lab enlaza la lección que refuerza.
 3. Cuando aplica, la lección y el lab enlazan un checkpoint de proyecto.
 4. El proyecto indica qué módulos y labs preparan cada checkpoint.
-5. `PROGRESS.md` enlaza la evidencia producida, no copia toda la explicación.
+5. La bitácora personal identifica la evidencia y las dudas del estudiante;
+   `PROGRESS.md` registra desarrollo y comprobaciones de autoría del material.
 
 Si todavía no existe proyecto asociado, se indica explícitamente. No se crea una
 carpeta vacía solo para completar el enlace.
@@ -96,7 +97,7 @@ projects/01_clean_credit_data — CP-02
         ↓
 projects/01_clean_credit_data/output/quality_summary
         ↓
-PROGRESS.md
+bitácora personal del estudiante
 ```
 
 ## Fuente de verdad del avance
@@ -105,7 +106,13 @@ PROGRESS.md
 de reanudación del proyecto. El curriculum describe el orden y los proyectos sus
 checkpoints; ninguno debe duplicar la bitácora editorial diaria.
 
-## Bitácora personal en el portal
+<a id="bitácora-personal-en-el-portal"></a>
+
+## Bitácora personal y portal
+
+Estudiar desde el repositorio también requiere conservar evidencia en la copia
+personal; no depende de utilizar el portal. PROGRESS.md no es el expediente del
+estudiante ni se modifica para registrar cada práctica individual.
 
 El [portal local](../portal/README.md) ofrece una
 [plantilla del módulo 00](../templates/learning-session/bitacora-00.md) y conserva

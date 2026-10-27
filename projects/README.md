@@ -16,34 +16,23 @@ implemente una práctica integradora con entradas, producto y criterios de salid
 El inicio o cierre del material de un módulo no activa por sí solo su proyecto.
 Así se evita mantener esqueletos vacíos.
 
-Las diez secciones de 07 ya tienen material y un cierre de práctica reproducible,
-pero 03_portfolio_analysis_r y sus checkpoints siguen pendientes. Consulta los
-[criterios y pendientes de 07](../docs/tidyverse-closure.md) antes de tratarlos
-como entregas disponibles.
+## Qué falta para implementarlos
 
-Las nueve secciones de 09 también tienen material, incluido un
-[cierre de práctica verificable](../curriculum/09_arrow_parquet/09_shared_contract_closure/README.md).
-Eso no implementa `04_large_credit_dataset` ni activa sus checkpoints; el módulo
-10.01 ya tiene material de contrato/referencia y 10.02 de tablas/expresiones
-Polars; 10.03 añade planes lazy y ejecución conciliada.
-10.04 añade tipos, faltantes y uniones conciliadas con cobertura.
-10.05 añade la extensión opcional de lotes/sink y memoria observada;
-10.06 añade SQL DuckDB sobre Parquet y fuentes múltiples conciliadas;
-10.07 añade SQL compartido y resultados conciliados desde Python y R;
-10.08 añade intercambio pandas/Arrow/Polars/DuckDB con tipos/valores conciliados;
-10.09 añade mediciones repetidas/fases y pico residente con respuesta conciliada;
-10.10 añade entrega reconstruible de cuarenta filas, selección/resumen en tres
-motores, mediciones nuevas y decisión con revisión humana. Las diez secciones
-de 10 tienen material; esto no implementa el proyecto ni acredita práctica.
-Consulta los [pendientes de almacenamiento](../docs/storage-closure.md).
+Los módulos 00–11 tienen material; disponer de sus lecciones y labs no activa
+los proyectos. Antes de crear uno, definir pregunta, producto, entradas,
+contrato, rúbrica y checkpoints vinculados al material que realmente requiere.
+No crear una carpeta vacía solo para representar el plan.
 
-Los módulos 04 y 05 amplían el análisis Python con figuras y código reutilizable;
-los módulos 07 y 08 alimentan el análisis en R y sus figuras. Quarto ocupa el
-nivel 11. La aplicación Shiny pertenece al 13; el nivel 12 ofrece Streamlit
-como elección alternativa. Su proyecto o checkpoint se definirá al desarrollar
-esa ruta, sin exigir construir dos aplicaciones para completar el nivel 14.
+Los criterios de integración pendientes están en
+[tidyverse](../docs/tidyverse-closure.md),
+[almacenamiento](../docs/storage-closure.md) y
+[reportes](../docs/reporting-closure.md). El inventario de lecciones vive en el
+[curriculum](../curriculum/README.md), no en este catálogo de proyectos.
 
-Los proyectos avanzarán mediante checkpoints enlazados a lecciones y labs. Las
-reglas están en
-[`docs/learning-workflow.md`](../docs/learning-workflow.md), y la estructura
-inicial está en [`templates/project/`](../templates/project/).
+Streamlit (12) y Shiny (13) son alternativas antes de 14. La ruta Streamlit
+podrá definir su proyecto al implementarse; no se exige construir dos
+aplicaciones para cerrar el recorrido.
+
+Los proyectos avanzan mediante checkpoints enlazados a lecciones y labs.
+Consulta el [flujo de aprendizaje](../docs/learning-workflow.md) y la
+[plantilla de proyecto](../templates/project/README.md).

@@ -6,20 +6,11 @@ Que el repositorio sirva como material de estudio sin necesitar el portal.
 Aplicar una jerarquía visual y una navegación repetibles, conservando las fuentes
 educativas y la lectura como texto. Acuerdo de trabajo: 2026-10-27.
 
-La muestra actual abarca [portada](../README.md), [índice del curriculum](../curriculum/README.md),
-[módulo 00](../curriculum/00_getting_started/README.md),
-[lección 00.01](../curriculum/00_getting_started/01_github_profile/README.md) y
-[lab 00.01](../labs/00_getting_started/01_github_profile/README.md).
-Los índices de los módulos 00–14 ya comparten la estructura de módulo. La
-plantilla de lección está aplicada en las seis lecciones de
-[00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md) y en las seis de
-[01 — Python fundamental](../curriculum/01_python_foundations/README.md), además
-de las diez de [02 — pandas](../curriculum/02_pandas/README.md).
-00.05 conserva su entrada, dos lecturas y tres recorridos alternativos con
-orientación, apoyos y cierre; se elige un solo camino.
-Los labs mantienen solo la muestra visual 00.01 adaptada; los labs de 01/02 se
-conservaron y se revisaron sus enlaces. El resto se revisa gradualmente.
-Los módulos 12–14 conservan su planificación.
+La portada, los índices y las lecciones aplican el patrón de forma gradual.
+Consulta la [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-portal)
+para distinguir páginas adaptadas, labs conservados y material integrado en el
+portal. La [lección/lab 00.01](../curriculum/00_getting_started/01_github_profile/README.md)
+sigue como referencia inicial; 12–14 conservan sus planes.
 
 ## Niveles de navegación
 

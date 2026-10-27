@@ -1,52 +1,50 @@
-# Progreso de aprendizaje
+# Estado del material y bitácora editorial
 
-Este archivo registra dónde estamos y qué sigue. El plan completo vive en
-[`ROADMAP.md`](ROADMAP.md); aquí solo se actualiza el avance real.
+<a id="progreso-de-aprendizaje"></a>
+
+Este archivo registra desarrollo del material, comprobaciones de autoría y
+siguiente trabajo. El plan vive en [ROADMAP.md](ROADMAP.md); la evidencia de
+quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ## En este momento
 
-- **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet`, `10_polars_duckdb` y `11_reporting_quarto`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Siguiente trabajo:** revisar contenido y probar con una pareja el
-  [portal local](portal/README.md), empezando por el módulo 00 y conservando la
-  prueba adicional 02.01. Los módulos 12–14 siguen planificados.
-- **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
-  10.01–10.10 y 11.01–11.09 implementadas (09.08, 10.05 y 11.08 opcionales);
-  12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-26, portal con portada, contenido 00–14 y módulo 00;
-  propuesta de publicación documentada, sin despliegue en Internet.
-- **Punto de reanudación:** revisión del contenido y sesión real de pareja; observar
-  orientación, apertura de práctica, cambio de papeles y reanudación.
-- **Foco actual:** probar la experiencia con una pareja; conservar práctica personal
-  y proyectos/checkpoints como pendientes. Los [criterios de cierre](docs/reporting-closure.md)
-  distinguen esas capas del material disponible.
-- **Estado del contenido:** nivel 0 disponible y las seis lecciones de Python
-  fundamental con sus labs. Esto no acredita finalización del estudiante.
-  Los módulos 02–05 tienen un plan de 39 secciones. Las diez de pandas y sus
-  labs están disponibles; también SQL 03.01–03.09 con base local y labs.
-  04.01–04.09 tienen lecciones y labs (04.08 opcional); 05.01 tiene lección,
-  paquete local, script, notebook y lab. 05.02 añade argumentos, configuración
-  JSON, logging y lab; 05.03 añade errores, recursos, JSON atómico y lab.
-  05.04 añade lección, 21 pruebas unittest y lab; 05.05 añade tipos, contratos,
-  revisión sin exportar, doce pruebas y lab. 05.06 añade clases/composición,
-  dataclasses, trece pruebas y lab opcionales. 05.07 añade generadores, lotes
-  conciliados, quince pruebas y lab de extensión. 05.08 añade funciones como
-  valores, decoradores, trece pruebas y lab de extensión. 05.09 añade mediciones
-  repetidas, memoria trazada, perfiles, trece pruebas y lab de extensión.
-  05.10 añade páginas simuladas, normalización conciliada, dieciocho pruebas
-  y lab de extensión. 05.11 integra ejecución y figura, verificación/reconstrucción,
-  diez pruebas nuevas y lab de cierre. Las once secciones tienen material.
-  Los módulos 06–08 tienen
-  28 secciones y lecturas abiertas; 06.01–06.09 disponen de lecciones, scripts y labs,
-  también 07.01–07.10 y 08.01–08.09. Los módulos 09–10 tienen
-  19 secciones: las nueve de 09 y las diez de 10 disponibles; 11–14 añaden 37,
-  con 11.01–11.09 disponibles y 28 previstas. La planificación de 02–14 está
-  detallada; 02.01–02.10 ya disponen de lección y lab dentro de esos módulos.
-- **Referencia de estudio, pendiente de evidencia:** leer la
-  [lección de modelo relacional y SQLite](curriculum/03_sql_databases/01_relational_sqlite/README.md) y realizar
-  el [lab 03.01](labs/03_sql_databases/01_relational_sqlite/README.md), después de
-  completar las prácticas previas.
+- **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
+  [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
+  12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
+  siguen pendientes; material desarrollado no acredita aprendizaje.
+- **Presentación:** índices 00–14 y lecciones 00/01/02 adaptados; la
+  [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
+  distingue lecciones, labs y portal.
+- **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
+  [Uso y comprobaciones](portal/README.md).
+- **Último trabajo:** 2026-10-27, depuración documental, separación de criterios
+  vigentes e historial y retirada de esqueletos sin uso.
+- **Siguiente paso:** continuar la revisión del contenido y la adaptación por
+  módulo (03 — SQL), y observar una sesión real de pareja con el portal local:
+  orientación, apertura, reconstrucción de práctica, revisión y reanudación.
+- **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
+  [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, depuración documental:** revisadas referencias Markdown,
+rutas en preparadores y catálogos. Retirados los esqueletos sin contenido activo
+docs/decisions/README.md, datasets/data_dictionary/README.md y
+datasets/generators/README.md; sus reglas útiles quedaron en arquitectura y
+política de datos. Conservados README de entregas y plantillas consumidos por
+código. Arquitectura y cierres condensados, sin repetir inventarios por sección;
+criterios y anclas vigentes conservados. Índice de documentación como acceso y
+fuente de cobertura de plantillas; resumen actual de esta bitácora simplificado,
+historial anterior conservado. Corregida separación entre evidencia personal y
+estado editorial y referencias antiguas al piloto/Quarto. Recursos educativos,
+programas y especificaciones privadas conservados. Próximo módulo visual: 03.
+
+Comprobación: 288 Markdown presentes y 3224 enlaces locales sin incidencias;
+anclas anteriores de arquitectura, cierres y guía de lección conservadas.
+Siete pruebas existentes del portal correctas. Seis documentos principales
+renderizados y comprobados a 1280/390 px (12 vistas locales). Sin cambios en
+curriculum, labs, código, notebooks, dependencias o muestras. El historial
+editorial anterior y la reorganización privada pendiente permanecen conservados.
 
 **Desarrollo — 2026-10-27, plantilla en pandas:** adaptadas 02.01–02.10 con
 ficha, preparación, objetivos, recursos, práctica, evidencia/criterio, referencias

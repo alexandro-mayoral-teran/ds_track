@@ -2,235 +2,75 @@
 
 ## Punto de reanudación
 
-[09.01 — CSV, Parquet y Arrow](../curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md)
-y su [lab](../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md) están disponibles.
-Incluyen la muestra CSV/Parquet de 28 observaciones, inventario, evidencia de
-lectura real y recorridos esenciales de solo lectura sin dependencias nuevas.
-La introducción explica filas/columnas, selección lógica frente a lectura física,
-codificación/compresión y condiciones del intercambio en memoria, con decisiones
-de uso sin anticipar la práctica de datasets ni la medición de rendimiento.
-El esencial distingue inspección de firma de decodificación Parquet; la opción
-PyArrow es una ampliación de autoría. Esta introducción no implementa el lector arrow de R.
+[09 — Arrow/Parquet](../curriculum/09_arrow_parquet/README.md) y
+[10 — Polars/DuckDB](../curriculum/10_polars_duckdb/README.md) tienen todas sus
+lecciones y labs. 09.08 y 10.05 son opcionales. El inventario por sección vive
+en esos índices; la bitácora de autoría está en [PROGRESS.md](../PROGRESS.md).
+Este documento reúne criterios de integración y límites de las comprobaciones.
 
-[09.02 — Esquemas y tipos entre lenguajes](../curriculum/09_arrow_parquet/02_schemas_types/README.md)
-y su [lab](../labs/09_arrow_parquet/02_schemas_types/README.md) también están
-disponibles: contrato de la base conocida, evaluadores Python estándar/R base
-y 23 casos separados, sin nuevas dependencias. Se conservan originales y motivos;
-se explican rango/precisión, dinero, fechas/instantes y categorías. Esta sección no realiza
-lectura cruzada Parquet en ambos lenguajes.
-
-[09.03 — Leer y escribir desde Python](../curriculum/09_arrow_parquet/03_python_read_write/README.md)
-dispone de lección, recorridos completos de entorno, funciones/ejecutor/verificador
-y [lab](../labs/09_arrow_parquet/03_python_read_write/README.md). PyArrow 21.0.0
-declarado con lockfile real; pandas 2.3.3 y registros previos conservados.
-Esquema no anulable, índice omitido, entrega nueva y relectura completa por clave
-contra el CSV reconstruido, sin cambiar la muestra de 09.01 ni el entorno R.
-
-[09.04 — Leer y escribir desde R](../curriculum/09_arrow_parquet/04_r_read_write/README.md)
-y su [lab](../labs/09_arrow_parquet/04_r_read_write/README.md) están disponibles.
-Ejemplo pequeño completo y base común; no se necesitan entregas personales Python
-ni objetos de 07–08. Arrow 25.0.1/assertthat 0.2.1 se incorporan al mismo proyecto
-renv con respaldo 08.09, 44 registros previos idénticos y segunda restauración
-local desde biblioteca vacía. Lectura del esquema real antes de convertir,
-valores por clave y entrega R verificada desde sesión nueva, conservando
-28 registros y 29000/31800 MXN. Se lee la referencia escrita por Python;
-la práctica completa del intercambio en ambas direcciones se desarrolla en 09.05.
-
-[09.05 — Intercambio Python y R](../curriculum/09_arrow_parquet/05_python_r_exchange/README.md)
-y su [lab](../labs/09_arrow_parquet/05_python_r_exchange/README.md) están disponibles.
-Python escribe/R lee y R escribe/Python lee, sin depender de entregas anteriores
-ni añadir paquetes. Conserva la base común y concilia esquema y valores por
-clave; muestra independiente de tres filas con acentos, vacío/ausencia/cero y
-otro contrato. Verificaciones desde procesos nuevos, fuentes/lockfiles intactos.
-
-[09.06 — Lectura selectiva y datasets](../curriculum/09_arrow_parquet/06_selective_datasets/README.md)
-y su [lab](../labs/09_arrow_parquet/06_selective_datasets/README.md) están disponibles.
-Partes Parquet, Dataset/Scanner y dplyr, filtros/proyección y materialización;
-auditoría completa separada de la selección. Mantiene la base común y concilia
-nueve IDs/24100 MXN para octubre ≥ 2000, contra CSV independiente en cada lenguaje.
-Ejemplo pequeño completo, sesiones nuevas y fuentes/lockfiles intactos; no
-acredita bytes omitidos, rendimiento ni RAM acotada.
-La ampliación didáctica presenta la tabla pequeña antes del código y ejemplos
-iniciales con APIs Arrow directas, sin funciones ni archivos de capítulos
-anteriores. El lab separa esa práctica de la integración con CSV; Python y R
-crean sus propias copias alteradas y pueden ejecutarse por separado.
-
-[09.07 — Metadatos, row groups y compresión](../curriculum/09_arrow_parquet/07_metadata_compression/README.md)
-y su [lab](../labs/09_arrow_parquet/07_metadata_compression/README.md) están
-disponibles: muestra autónoma de cuatro filas y base común con cuatro variantes
-y tres repeticiones. Una modificación respecto de la base por comparación,
-esquema/valores por clave conservados y tiempos separados de validación.
-PyArrow inspecciona estadísticas/codificaciones/códecs, también de archivos R;
-arrow R 25.0.1 expone esquema/conteos y lectura de grupos. Mediciones crudas,
-sesiones nuevas y fronteras comprobadas, sin cambios de dependencias/lockfiles.
-La muestra no acredita rendimiento general, I/O físico ni RAM acotada.
-
-[09.08 — Particionamiento justificado](../curriculum/09_arrow_parquet/08_justified_partitioning/README.md)
-y su [lab](../labs/09_arrow_parquet/08_justified_partitioning/README.md) están
-disponibles como ampliación opcional. Ejemplos autónomos y base común en
-organización plana/Hive; etiqueta auxiliar con tres columnas físicas conservadas.
-Auditoría de rutas/valores y referencia CSV por clave; 28 particiones por clave
-contrastadas con dos cortes. Repeticiones, etiquetas falsas, vacíos y lectura
-cruzada comprobados sin cambiar dependencias ni lockfiles. No acredita I/O,
-rendimiento ni RAM. Esta extensión no bloquea el cierre esencial.
-
-[09.09 — Cierre del contrato compartido](../curriculum/09_arrow_parquet/09_shared_contract_closure/README.md)
-y su [lab](../labs/09_arrow_parquet/09_shared_contract_closure/README.md) están
-disponibles. Ambos escritores producen fuente/contrato, Parquet completo/partes
-planas, resumen/selección y notas/huellas; ambos lectores reconstruyen la fuente
-externa y verifican archivos/valores desde procesos nuevos. Mantiene 28 registros,
-29000/31800 MXN y nueve seleccionados/24100 MXN. Copias con errores compensados
-se rechazan aun actualizando huellas. Sin dependencias nuevas, entregas previas
-ni requisito de particiones; no autentica sesiones históricas ni mide rendimiento.
-
-**El desarrollo de las nueve secciones de 09 está cerrado.**
-[10.01 — Pregunta, contrato y referencia](../curriculum/10_polars_duckdb/01_question_contract_reference/README.md)
-y su [lab](../labs/10_polars_duckdb/01_question_contract_reference/README.md)
-ya están disponibles: muestra autónoma, referencia Python estándar y contraste
-opcional R base, sin motores nuevos. Se comprueba cada ID/importe, vacíos,
-tipos, fronteras y escalas deterministas de 40/400 filas; no se mide rendimiento.
-[10.02 — Polars: tablas y expresiones](../curriculum/10_polars_duckdb/02_polars_tables_expressions/README.md)
-y su [lab](../labs/10_polars_duckdb/02_polars_tables_expressions/README.md)
-ya están disponibles: DataFrame, expresiones y operaciones inmediatas, muestra
-completa y conciliación independiente. Selección 003/2600 y resumen por corte
-4500/4600 MXN, tipos explícitos y suma Int64 antes de agregar. Polars 2.0.0
-declarado, instalación y segunda reconstrucción uv locales comprobadas;
-registros previos del lockfile conservados, sin modificar Conda, renv ni globales.
-[10.03 — Polars lazy y planes de consulta](../curriculum/10_polars_duckdb/03_polars_lazy_plans/README.md)
-y su [lab](../labs/10_polars_duckdb/03_polars_lazy_plans/README.md) están disponibles:
-ejemplos autónomos, Parquet nuevo, esquema, planes y ejecución real conciliada.
-Auditoría completa separada de la selección, dependencias de columnas y límites
-del plan; mismos seis registros y 4500/4600 MXN, sin dependencias nuevas.
-[10.04 — Tipos, faltantes y uniones](../curriculum/10_polars_duckdb/04_types_missing_joins/README.md)
-y su [lab](../labs/10_polars_duckdb/04_types_missing_joins/README.md) están disponibles:
-conversiones con originales, null/NaN, cobertura y catálogo propio. Left m:1
-conserva seis saldos y 4500/4600 MXN, separa coincidencia/etiqueta conocida;
-contraste Python/pandas/SQLite sin dependencias nuevas.
-[10.05 — Streaming y límites de memoria](../curriculum/10_polars_duckdb/05_streaming_memory/README.md)
-y su [lab](../labs/10_polars_duckdb/05_streaming_memory/README.md) están disponibles
-como extensión opcional: ejemplos autónomos de lotes/sink, plan físico y
-observación del pico residente en procesos nuevos Windows. Fuente/pares
-conciliados, vacío y fronteras; sin paquetes nuevos ni promesa de RAM acotada.
-[10.06 — DuckDB: SQL sobre Parquet](../curriculum/10_polars_duckdb/06_duckdb_parquet/README.md)
-y su [lab](../labs/10_polars_duckdb/06_duckdb_parquet/README.md) están disponibles:
-SQL directo sobre completo/partes, esquema y valores por clave conciliados;
-EXPLAIN/EXPLAIN ANALYZE, seis filas y 4500/4600 MXN. DuckDB 2.0.0 declarado,
-instalación/reconstrucción uv local comprobadas; registros anteriores conservados.
-[10.07 — DuckDB desde Python y R](../curriculum/10_polars_duckdb/07_duckdb_python_r/README.md)
-y su [lab](../labs/10_polars_duckdb/07_duckdb_python_r/README.md) están disponibles:
-misma consulta parametrizada, ejemplos autónomos y tipos/clases conciliados.
-Python DuckDB 2.0.0 y R DuckDB 1.5.6/DBI 1.3.0; lectura cruzada, vacío y
-recursos ante errores. renv con respaldo y segunda restauración local, 46
-registros previos conservados; dbplyr/blob registrados por inferencia de renv.
-[10.08 — Intercambio entre motores](../curriculum/10_polars_duckdb/08_engine_interchange/README.md)
-y su [lab](../labs/10_polars_duckdb/08_engine_interchange/README.md) están disponibles:
-ocho etapas pandas/Arrow/Polars/DuckDB, tipos lógicos/valores por clave y
-materialización explícita. Muestra anulable independiente y ampliación R
-Arrow/DBI, sin dependencias ni lockfiles nuevos. Vacíos, precisión y errores
-comprobados; no acredita ausencia de copias, RAM ni rendimiento.
-[10.09 — Comparar tiempo y memoria](../curriculum/10_polars_duckdb/09_time_memory/README.md)
-y su [lab](../labs/10_polars_duckdb/09_time_memory/README.md) están disponibles:
-Parquet/pregunta/salida JSON equivalentes, tres observaciones por motor en
-procesos nuevos, orden rotado, fases y crudas/medianas/rangos. Pico residente
-Windows con alcance explícito y fuente/exportaciones conciliadas; R opcional
-system.time con protocolo separado. Sin paquetes nuevos ni cambios globales;
-no autentica tiempos históricos ni generaliza rendimiento, I/O o RAM.
-[10.10 — Cierre y elección de herramienta](../curriculum/10_polars_duckdb/10_closure_tool_choice/README.md)
-y su [lab](../labs/10_polars_duckdb/10_closure_tool_choice/README.md) están disponibles:
-cuarenta filas propias, selección/resumen conciliados en pandas/Polars/DuckDB,
-fuente/contrato, escritura/relectura y reconstrucción por clave. Seis/14061 MXN
-y totales 26030/27690, referencia R base y mediciones nuevas de selección con
-alcance acotado. La decisión exige evidencia/estructura y revisión humana del
-argumento. No instala paquetes ni implementa el proyecto integrador.
-La [11.01 — Reporte, fuente y renderizado](../curriculum/11_reporting_quarto/01_report_source_render/README.md)
-ya inicia la preparación editorial con datos propios y lab;
-las diez secciones de 10 tienen material.
-El estado y verificaciones de la sesión se registran en [PROGRESS.md](../PROGRESS.md),
-sin duplicar aquí una bitácora. **El material disponible no acredita práctica
-del estudiante ni implementa el proyecto integrador.**
+El [cierre 09.09](../curriculum/09_arrow_parquet/09_shared_contract_closure/README.md)
+reconstruye una referencia externa y compara entregas completas/partes desde
+Python y R. El [cierre 10.10](../curriculum/10_polars_duckdb/10_closure_tool_choice/README.md)
+compara pandas, Polars y DuckDB con la misma fuente, selección y resumen,
+mediciones acotadas y una decisión que requiere revisión humana.
 
 ## Desarrollo del material y siguiente módulo
 
-09 y 10 no tienen secciones pendientes de autoría; 09.08 y 10.05 son opcionales.
-11.01 tiene preparación editorial Python estándar/R base: seis filas propias,
-tres créditos, 6000/6300 MXN, diferencia 300 y 5% sobre septiembre; fuente,
-pares, resumen y borrador calculado en carpeta nueva. No genera `.qmd`/HTML.
-11.02 ya tiene lección/lab y primer `.qmd`/HTML: preparación calculada Python/R,
-YAML/Markdown y render/preview con Quarto 1.9.38 existente, sin paquetes nuevos.
-11.03 ya ejecuta código dentro del documento con Python/Jupyter o R/knitr,
-funciones/CSV propios y dependencias locales declaradas y reconstruibles.
-11.04 ya presenta texto calculado, tabla y figura desde el mismo resultado,
-con referencias cruzadas, procedencia y bibliografía local; sin dependencias nuevas.
-11.05 ya genera variantes desde un mismo `.qmd` con YAML por corte, parámetros
-visibles, universo/selección y validación antes del filtro; CSV autónomo de siete
-filas y selección vacía válida. Papermill 2.7.0 añadido al grupo notebooks para
-sustituir parámetros Python; R conserva sus metadatos/dependencias.
-11.06 ya dispone de proyecto, caché/freeze, rutas y reporte por motor; recupera
-resultados actuales al cambiar datos, código o parámetros. Verifica HTML por
-fila contra el CSV actual, incluso compensaciones; jupyter-cache 1.0.1 añadido
-al grupo notebooks, sin cambios de metadatos R.
-11.07 ya dispone de lección/lab, mínimo, reportes Python/R, CSS y verificador
-por valor. Navegación, tabla ancha y foco/desplazamiento comprobados en Chrome
-de prueba a tres anchos; sin nuevas dependencias. PDF opcional intentado sin
-instalador, no generado por acceso a configuración MiKTeX; HTML esencial cerrado.
-11.08 ya dispone de ampliación opcional con dashboards Python/R, mínimo,
-verificador y distribuidores. Misma fuente y valores entre tarjetas/tabla/figura;
-pestañas de navegador sin recálculo. Copias locales de lectura comprobadas sin
-conexión; no equivalen a reconstrucción ni a publicar en un servicio.
-11.09 integra el [cierre del reporte reproducible](reporting-closure.md): entrega
-completa y reconstrucción con referencia externa. Las nueve secciones de Quarto
-tienen material; práctica personal y proyecto/checkpoints siguen pendientes.
-Siguiente trabajo acordado: delimitar el piloto sobre una lección existente.
-Mantener contexto/datos completos y separación entre preparar entorno y exigir
-entregas previas. Verificar requisitos reales antes de instalar, sin cambiar
-entornos globales. Conservar fuentes, lockfiles, evidencia cruda y distinción
-entre material, práctica e integración.
+Los contratos se introducen antes de elegir formato o motor. Leer un esquema
+antes de adaptar tipos; comparar valores por clave después de releer. Separar
+fuente, auditoría completa, consulta y entrega. Preparar una carpeta nueva sin
+exigir entregas personales de capítulos anteriores ni alterar los originales.
 
-Conservar contratos, fuentes, verificadores y entregas de 09. Distinguir
-preparación de entorno de exigir resultados personales anteriores. No modificar
-lockfiles ni instalar Polars/DuckDB solo para planificar. Al incorporarlos,
-comprobar entornos locales y resultados equivalentes. Mantener observaciones
-crudas de 09.07 sin generalizar rendimiento a partir de 28 registros ni inferir
-I/O físico o RAM de planes/candidatos.
+La introducción 09.01 permite inspección esencial sin decodificar Parquet;
+PyArrow pasa a dependencia declarada en 09.03 y Arrow R se incorpora en 09.04.
+Los requisitos efectivos viven en pyproject/uv.lock y los proyectos renv de
+práctica, con preparación específica en cada lección. No instalar motores por
+leer un plan ni modificar bibliotecas globales.
 
-PyArrow 21.0.0 se utilizó en un entorno de autoría ya existente para producir y
-releer el ejemplo 09.01; no se añadió como dependencia durante esa introducción.
-Desde 09.03 sí es dependencia declarada y comprobada del track, con instalación
-y segunda reconstrucción uv local. Arrow de R ya está incorporado desde 09.04. No instalar por adelantado
-Polars o DuckDB solo para planificar el recorrido.
+[11 — Quarto](../curriculum/11_reporting_quarto/README.md) también tiene material;
+12–14 siguen planificados. Sus criterios de reporte están en
+[cierre de reportes](reporting-closure.md). Desarrollar una lección no completa
+las prácticas ni activa proyectos o checkpoints.
 
 ## Qué falta para cerrar las prácticas y la integración
 
-- Reunir evidencia propia del estudiante de 09.01–09.07 y 09.09, de 09.08 si
-  se elige la ampliación y, más adelante, del proyecto. Material disponible no acredita aprendizaje.
-- Reunir evidencia propia de 10.01–10.04 y 10.06–10.10; 10.05 es extensión
-  opcional. Revisar respuesta por clave, costos de alcance explícito y argumento
-  de elección. La salida del verificador no sustituye explicación/revisión humana.
-- Revisar el cierre de [08](../curriculum/08_visualization_r/README.md): geometrías,
-  escalas, población, exportación desde sesión nueva y conciliación con Python.
-  Sus nueve secciones tienen material; no faltan lecciones de ese módulo.
-- Los criterios y pendientes del cierre de 07 siguen en
-  [tidyverse-closure.md](tidyverse-closure.md). El proyecto previsto
-  `03_portfolio_analysis_r` continúa sin carpeta ni checkpoints activos.
-- El proyecto previsto `04_large_credit_dataset` tampoco está implementado:
-  definir producto, fuentes, contrato, rúbrica y checkpoints antes de crear su
-  estructura o dar por cerrada la integración de 09/10. Consultar
-  [proyectos](../projects/README.md).
-- R aplicado, terminal avanzada y separación entre progreso del material y
-  bitácoras personales siguen como decisiones de diseño. No renumerar 00–14
-  ni presentar esas integraciones como realizadas.
+| Evidencia por reunir | Comprobación |
+| --- | --- |
+| Contrato y fuente explicados | Unidad de fila, clave, tipos, unidades, ausencias y reglas antes de operar |
+| Intercambio y entrega propios | Valores por clave, esquema y relectura; originales y motivos conservados |
+| Selección y resumen | Mismo universo, cobertura y referencia externa independiente del motor |
+| Medición con alcance explícito | Respuesta equivalente, protocolo, fases, repeticiones y métricas realmente observadas |
+| Elección argumentada | Relación entre necesidad, costos medidos, límites y reconstrucción |
+| Reconstrucción por otra persona | Copia nueva, entornos locales y explicación del resultado y sus límites |
+
+Reunir evidencia de las secciones esenciales de 09 y 10 y de las ampliaciones
+que se elijan. Los criterios de los módulos previos están en
+[cierre de tidyverse](tidyverse-closure.md) y el
+[índice de visualización R](../curriculum/08_visualization_r/README.md).
+
+Los proyectos `03_portfolio_analysis_r` y `04_large_credit_dataset` siguen en
+[planificación](../projects/README.md), sin carpetas ni checkpoints activos.
+Definir producto, entradas, contrato, rúbrica y enlaces antes de implementarlos.
+R aplicado y terminal avanzada siguen pendientes de diseño; no renumerar 00–14.
+Las bitácoras personales ya están separadas del estado editorial en las muestras
+00/02.01; no afirmar que se migraron todos los registros anteriores.
 
 ## Comprobaciones requeridas al desarrollar lo siguiente
 
-Conservar fuente y resultados anteriores; probar vacío, claves duplicadas,
-faltantes, límites de enteros/decimales y fechas. Comparar por clave, sin depender
-del orden accidental. Si se usa punto flotante, justificar tolerancias; no
-imputar ni truncar para conseguir igualdad. Distinguir equivalencia de valores,
-tipos lógicos, representación en cada lenguaje e igualdad binaria del archivo.
-
-Revisar enlaces y navegación lección → lab → comprobación → evidencia → siguiente
-lección; actualizar índices, arquitectura y progreso. Cuando se incorporen
-dependencias, comprobar restauración desde otra biblioteca/entorno local sin
-modificar los globales. Datos personales, bibliotecas y salidas de práctica
-quedan fuera de Git. 11.01–11.09 tienen material; 12–14 conservan sus planes. El material de 09/10 está
-disponible, con práctica/proyectos/checkpoints pendientes.
+- Conservar entradas y resultados previos; probar vacío, claves repetidas,
+  faltantes, límites de enteros/decimales y fechas.
+- Comparar detalle por clave y justificar tolerancias cuando haya punto flotante.
+  Una suma coincidente o una huella no validan cada registro ni autentican sesiones.
+- Distinguir tipos lógicos, representación de cada lenguaje e igualdad binaria.
+  No imputar ni truncar para conseguir equivalencia.
+- Separar auditoría de proyección/filtro y medición de validación/escritura.
+  Seguir el [protocolo 10.09](../curriculum/10_polars_duckdb/09_time_memory/README.md)
+  para interpretar sus fases y métricas: caché del SO sin vaciar, pico residente
+  absoluto y límites de plataforma; no atribuir esos tiempos a otra operación.
+- Lazy, streaming, planes o pocos registros no acreditan RAM acotada, I/O físico,
+  disco frío, ausencia de copias ni rendimiento general. Arrow R y PyArrow no
+  exponen necesariamente los mismos metadatos; declarar qué se observó.
+- Comprobar restauración local cuando cambien dependencias, sin modificar entornos
+  globales. Datos personales, bibliotecas y salidas de práctica quedan fuera de Git.
+- Revisar navegación y evidencia con el [flujo de aprendizaje](learning-workflow.md)
+  y registrar comprobaciones de autoría en PROGRESS.md.

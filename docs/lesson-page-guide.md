@@ -12,37 +12,12 @@ equivale a haber adaptado todas las lecciones ni a verificar su ejecución.
 
 ## Qué se revisó y qué encontramos
 
-Se revisaron la apertura, los apartados, ejemplos seleccionados y el cierre de
-nueve páginas de lección. Del módulo inicial se eligieron cuatro casos distintos;
-de Python, pandas, SQL, R y Quarto se tomó una lección al azar por módulo.
-También se consultaron las dos lecturas que organiza 00.05. Es una muestra
-exploratoria, no una evaluación completa del curriculum ni de sus labs.
-
-| Lección revisada | Qué conviene conservar | Qué mejoraría al aplicar el patrón |
-| --- | --- | --- |
-| [00.01 — Markdown y perfil](../curriculum/00_getting_started/01_github_profile/README.md) | Ubicación, ficha, accesos y comprobación visibles | Usarla como referencia de presentación; expresar objetivos como acciones observables |
-| [00.02 — Terminal y rutas](../curriculum/00_getting_started/02_terminal_paths/README.md) | Motivación, rutas completas por shell y errores habituales | Añadir ficha, acceso directo al recorrido elegido y evidencia explícita; localizar mejor el cierre |
-| [00.05 — Entornos](../curriculum/00_getting_started/05_environment/README.md) | Elección de un camino y división 05A/05B | Conservar su función de entrada; hacer visibles preparación, comprobación y regreso desde cada parte |
-| [00.06 — Notebook](../curriculum/00_getting_started/06_first_notebook/README.md) | Kernel, estado en memoria y reinicio con ejecución completa | Separar preparación de propósito y corregir la continuidad que aún llama pendientes a las lecciones de Python |
-| [01.06 — Validación](../curriculum/01_python_foundations/06_validation_summary/README.md) | Contrato, rechazos y conciliación | Separar las ayudas de orientación y actualizar la frase que presenta las siguientes lecciones de pandas como pendientes |
-| [02.08 — Combinar tablas](../curriculum/02_pandas/08_combine_tables/README.md) | Unidad de fila, claves, diagramas y cardinalidad | Añadir orientación inicial y reunir evidencia y comprobación en un cierre fácil de encontrar |
-| [03.05 — Joins](../curriculum/03_sql_databases/05_joins/README.md) | Pregunta antes de sintaxis, ejemplos y controles de multiplicidad | Descomponer la apertura densa en propósito, preparación y objetivos; facilitar volver al módulo |
-| [06.05 — Listas y tablas](../curriculum/06_r_foundations/05_lists_data_frames/README.md) | Ejemplos pequeños, tipos, formas y resultados manuales | Ofrecer primero el recorrido desde el IDE y sesión nueva; dejar Rscript como apoyo cuando corresponda |
-| [11.08 — Dashboard](../curriculum/11_reporting_quarto/08_dashboard_distribution/README.md) | Opcionalidad visible, datos completos, recorridos Python/R y revisión de la copia | Distinguir evidencia personal de PROGRESS editorial; actualizar la mención condicional al material de 11.09 |
-
-La principal diferencia está en la orientación, no en la falta general de
-contenido. Varias páginas reúnen propósito, requisitos y objetivos en un
-párrafo; otras mezclan práctica, evidencia, criterio y continuidad bajo títulos
-distintos. Los ejemplos suelen explicar resultados y límites con cuidado:
-conviene conservarlos, sin reemplazarlos por resúmenes decorativos.
-
-Los textos de continuidad desactualizados y los ajustes de R/evidencia personal
-quedan identificados para la adaptación. La primera prueba posterior adapta
-00.01. Después se adaptaron las seis lecciones de 01 y las restantes de 00,
-incluidas las continuidades desactualizadas de 01.06 y 00.06. También se
-adaptaron las diez de 02, incluida 02.08 de la muestra. Los hallazgos de los
-otros módulos siguen pendientes.
-Antes de actualizar un destino, comprobar su estado real.
+El patrón se definió contrastando lecciones iniciales y de Python, pandas, SQL,
+R y Quarto. La base didáctica compartía propósito, ejemplos y comprobación;
+variaban la ubicación de preparación, objetivos, evidencia y continuidad.
+La estructura hace esos elementos localizables sin fijar la cantidad de conceptos,
+formatos ni sesiones. La [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-portal)
+indica dónde se aplicó; el historial de adaptación pertenece a PROGRESS.md.
 
 ## Estructura propuesta
 
@@ -179,32 +154,8 @@ en líneas ni exigir notebooks, scripts, gráficos y CSV en todos los temas.
    integrada en el portal, comprobar también catálogo, generación y anclas;
    una plantilla no modifica automáticamente su composición.
 
-La primera prueba se aplicó a 00.01 a petición del usuario: cabecera, preparación,
-objetivos, material de apoyo, práctica y evidencia, con anclas anteriores
-conservadas. Después se aplicó la plantilla por módulo a
-[01 — Python fundamental](../curriculum/01_python_foundations/README.md):
-01.01–01.06 tienen ficha, preparación, objetivos observables, material de apoyo,
-práctica, evidencia/criterio, referencias y navegación final. Sus seis scripts
-y dos CSV se enlazan sin duplicarlos; ejemplos y comandos se conservaron.
-Los labs mantienen sus consignas y enlaces de continuidad, sin migración visual.
-
-Después se completó la adaptación de [00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md):
-00.01 se conservó, y 00.02–00.06 recibieron el patrón. 00.05 mantiene una entrada
-común, lecturas A/B y recorridos Conda, venv + pip o uv; sus páginas complementarias
-incluyen ubicación, preparación, apoyos, evidencia y continuidad sin repetir toda
-la teoría. Solo se completa un camino. 00.06 enlaza Python fundamental disponible.
-
-Ejemplos, comandos, archivos y anclas previas se conservaron. Las páginas de 00
-también se comprueban en el portal porque están integradas en su catálogo. Los
-labs no se migraron visualmente, salvo la muestra 00.01 ya existente.
-La adaptación se extendió a las diez lecciones de
-[02 — pandas](../curriculum/02_pandas/README.md), con scripts y muestras propias o
-compartidas enlazados sin duplicar archivos. 02.01 incluye el notebook opcional
-del lab; 02.10 conserva su notebook de cierre y gráfica, con preparación de
-entorno/kernel y comprobación desde sesión limpia. Diagnósticos antes mezclados
-con la práctica tienen su propio apartado. El cierre de 02.10 ya presenta SQL
-como material disponible. Solo 02.01 está integrada como sesión en el portal;
-el resto conserva su lectura en el repositorio y su estado de integración.
-
-La migración de los otros módulos y una sesión real de estudio siguen pendientes.
-Los hallazgos de la tabla inicial describen la revisión previa a estas adaptaciones.
+La [lección 00.01](../curriculum/00_getting_started/01_github_profile/README.md)
+es la referencia inicial. La cobertura por módulo y la integración real en el
+portal se mantienen en el [índice de documentación](README.md#cobertura-de-las-plantillas-y-del-portal).
+No dar por migradas otras páginas ni por acreditado aprendizaje al aplicar la
+plantilla. Registrar la revisión concreta y el siguiente paso en PROGRESS.md.
