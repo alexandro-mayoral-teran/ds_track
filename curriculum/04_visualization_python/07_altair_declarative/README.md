@@ -1,12 +1,26 @@
 # 04.07 — Altair: visualización declarativa
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 04](../README.md) / **Lección 04.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Expresar una figura con datos, marcas y canales comprobados |
+| **Necesitas** | Pandas y Altair según el recorrido; exportación ampliada opcional |
+| **Evidencia** | Especificación, tablas y HTML con valores contrastados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/04_visualization_python/07_altair_declarative/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Expresar una figura mediante datos, marcas y codificaciones visuales. Con Altair
 describes qué columna corresponde a una posición, color o forma; una biblioteca
 de renderizado interpreta esa descripción y dibuja el resultado. Conservaremos
 los indicadores ya comprobados en Matplotlib para comparar herramientas sobre
 la misma pregunta, población y unidad.
+
+## Antes de empezar
 
 Completa [04.06 — Composición y exportación](../06_composition_export/README.md)
 y su lab. Reutiliza [escalas y accesibilidad de 04.05](../05_scales_labels_accessibility/README.md),
@@ -19,9 +33,9 @@ composición y comprobación frente a Matplotlib. **Ampliación:** agregación d
 del gráfico, exportación sin conexión y PNG/SVG. Parámetros, selección y filtros
 interactivos se desarrollan en 04.08; no necesitas construirlos aquí.
 
-## Objetivos, datos y versiones de referencia
+<a id="objetivos-datos-y-versiones-de-referencia"></a>
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Explicar cómo una tabla, una marca y sus canales forman una especificación.
 - Elegir tipo nominal, ordinal, cuantitativo o temporal por su significado.
@@ -29,6 +43,20 @@ Al terminar podrás:
 - Conservar una categoría sin valor y comprobar coordenadas de pares conocidos.
 - Distinguir sintaxis válida de resultados analíticos correctos.
 - Exportar JSON/HTML y explicar sus requisitos de apertura; PNG/SVG son ampliación.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](declarative.py) | Construir y comprobar vistas declarativas | Para el recorrido |
+| [Fuentes de SQL](../../03_sql_databases/01_relational_sqlite/data/) | Consultar observaciones de origen | Entradas compartidas |
+| [Vista de referencia](assets/medianas.png) | Contrastar mediana y cobertura con Matplotlib | Para observar |
+
+Las figuras incluidas sirven para observar y contrastar. Abre el script cuando
+el recorrido lo indique para regenerar o practicar; conserva las fuentes y
+las entregas anteriores y utiliza los destinos de práctica indicados.
+
+## Contexto y datos del recorrido
 
 El [script declarative.py](declarative.py) reutiliza lectura y resumen de 04.06
 sobre los [CSV sintéticos de SQL 03.01](../../03_sql_databases/01_relational_sqlite/README.md).
@@ -467,21 +495,36 @@ revisar unidad; asumir que JSON validado significa análisis correcto; culpar
 a los datos cuando el visor bloquea JavaScript. Localiza qué etapa falló y
 conserva la tabla original al corregir.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 04.07](../../../labs/04_visualization_python/07_altair_declarative/README.md).
+## Práctica
+
+Realiza el [lab 04.07](../../../labs/04_visualization_python/07_altair_declarative/README.md) para
+construir y leer una figura declarativa desde indicadores preparados.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código, especificación y tablas | Valores, tipos visuales y agregación explícita | Qué hacen datos, marca y canales en la figura |
+| HTML y nota de contraste | Misma población y medida que la referencia; requisitos de apertura | Cómo se representan ausencias y por qué una especificación válida no valida el análisis |
+
 Puedes avanzar cuando expliques datos, marca, canal y tipo de una figura;
 compruebes sus valores frente al análisis anterior y reconstruyas una entrega
-que otra persona pueda abrir y leer. Debes justificar ausencias y agregación,
-no solo conseguir que aparezcan barras.
+que otra persona pueda abrir y leer. Justifica ausencias y agregación, no solo
+que aparezcan barras.
 
-No hay checkpoint de proyecto implementado. Continúa con el
-[04.08 — Interacción con Altair](../08_altair_interaction/README.md),
-disponible y opcional. Si omites esa ampliación, consulta el
-[04.09 — Cierre visual del análisis](../09_visual_closure/README.md),
-disponible sin exigir interacción.
+Quien aprende realiza y explica la práctica; su compañero revisa.
+Tu compañero señala un canal y pide rastrear su campo, tipo visual y valor de origen.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita
+por sí solo aprendizaje completado.
 
-## Referencias y atribución
+No hay proyecto ni checkpoint implementado asociado a esta lección.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos, datos de práctica, código y figuras propios de DS Track. La investigación
 se apoyó en fuentes primarias de Vega-Altair y Vega-Lite, cuyos equipos desarrollan
@@ -492,3 +535,12 @@ las herramientas; no se copiaron ejemplos de sus datasets ni imágenes de la gal
 - [Datos](https://altair-viz.github.io/user_guide/data.html), [agregación](https://altair-viz.github.io/user_guide/transform/aggregate.html) y [fechas](https://altair-viz.github.io/user_guide/times_and_dates.html).
 - [Guardar gráficos](https://altair-viz.github.io/user_guide/saving_charts.html) y [visores](https://altair-viz.github.io/user_guide/display_frontends.html).
 - [Vega-Lite: datos inválidos](https://vega.github.io/vega-lite/docs/invalid-data.html) y [vl-convert-python](https://pypi.org/project/vl-convert-python/1.9.0.post1/).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con [04.08 — Interacción con Altair](../08_altair_interaction/README.md).
+
+04.08 es opcional: puedes ir directamente a
+[04.09 — Cierre visual del análisis](../09_visual_closure/README.md).
+
+[← Módulo 04](../README.md) · [Lab 04.07](../../../labs/04_visualization_python/07_altair_declarative/README.md) · [Siguiente →](../08_altair_interaction/README.md)

@@ -1,11 +1,28 @@
 # 04.08 — Interacción con Altair
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 04](../README.md) / **Lección 04.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Explorar estados de una figura distinguiendo filtrar de resaltar |
+| **Necesitas** | Recorrido Altair de 04.07; extensión opcional |
+| **Evidencia** | HTML, tabla y evidencia reproducible de un estado de interacción |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/04_visualization_python/08_altair_interaction/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+> **Extensión opcional:** si no eliges interacción, continúa con
+> [04.09 — Cierre visual del análisis](../09_visual_closure/README.md).
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Explorar un indicador conocido mediante controles y selecciones, dejando claro
 qué población se muestra después de cada acción. Una interacción puede cambiar
 el aspecto de una marca o las filas que llegan a una vista: esas decisiones
 no son equivalentes y deben poder comprobarse.
+
+## Antes de empezar
 
 Esta sección es **extensión opcional**. Completa
 [04.07 — Visualización declarativa](../07_altair_declarative/README.md)
@@ -14,15 +31,30 @@ Reutiliza [bases de comparación de 04.03](../03_comparisons_evolution/README.md
 y [pares conocidos de 04.04](../04_distributions_relationships/README.md).
 No necesitas JavaScript, un servidor ni una aplicación Streamlit.
 
-## Objetivos, datos y versiones
+<a id="objetivos-datos-y-versiones"></a>
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Diferenciar un parámetro variable de una selección de puntos o intervalo.
 - Vincular un menú a un parámetro y filtrar una vista con una regla explícita.
 - Resaltar sin confundir atenuación con exclusión.
 - Explicar selección vacía, restablecimiento, población y denominadores.
 - Compartir un HTML interactivo y registrar evidencia de un estado concreto.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](interaction.py) | Construir filtros y selecciones sobre datos conocidos | Si eliges la extensión |
+| [Fuentes de SQL](../../03_sql_databases/01_relational_sqlite/data/) | Consultar las observaciones y sus bases | Entradas compartidas |
+| [Filtro de referencia](assets/filtro_consumo.png) | Contrastar la población tras elegir consumo | Para observar |
+| [Resaltado de referencia](assets/resaltado_consumo.png) | Distinguir atenuación de exclusión | Para observar |
+
+Las figuras incluidas sirven para observar y contrastar. Abre el script cuando
+el recorrido lo indique para regenerar o practicar; conserva las fuentes y
+las entregas anteriores y utiliza los destinos de práctica indicados.
+
+## Contexto y datos del recorrido
 
 El [script interaction.py](interaction.py) reutiliza prepare y read_detail de
 04.07. Conserva las fuentes sintéticas de SQL 03.01 y sus reglas de ausencia.
@@ -351,19 +383,35 @@ arrastre requieren otra forma de interacción. No se presupone accesibilidad
 completa por incorporar un control. Las tablas y la explicación textual
 permiten comprobar resultados sin depender del cursor, color o rectángulo.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 04.08](../../../labs/04_visualization_python/08_altair_interaction/README.md)
-si eliges esta extensión. Puedes cerrarla cuando distingas filtro y resaltado,
+## Práctica
+
+Solo si eliges esta extensión, realiza el [lab 04.08](../../../labs/04_visualization_python/08_altair_interaction/README.md) para
+reproducir un estado de interacción y comprobar su población.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| HTML, tabla y nota de una acción | Estado inicial, selección y restablecimiento | Qué cambia al filtrar y qué permanece al resaltar |
+| Evidencia reproducible de un estado | Población, saldos, pares, ausencias y denominador | Por qué seleccionar una dispersión no redefine automáticamente la base de otro indicador |
+
+Si eliges esta extensión, puedes cerrarla cuando distingas filtro y resaltado,
 compruebes bases y ausencias, expliques el estado inicial/restablecimiento
 y conserves una evidencia reproducible de una interacción.
 
-No hay checkpoint de proyecto implementado. Sigue con el
-[04.09 — Cierre visual del análisis](../09_visual_closure/README.md),
-disponible. Omitir interacción no bloquea ese cierre ni Python aplicado.
-La disponibilidad del material no acredita completar prácticas del estudiante.
+Quien aprende realiza y explica la práctica; su compañero revisa.
+Tu compañero repite la acción registrada y contrasta filas visibles, pares e indicador.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita
+por sí solo aprendizaje completado.
 
-## Referencias y atribución
+No hay proyecto ni checkpoint implementado asociado a esta lección.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos, datos, código y capturas propios de DS Track. Se consultaron fuentes
 primarias de los equipos Vega-Altair y Vega-Lite; no se copiaron sus datasets
@@ -374,3 +422,11 @@ compilación posterior a la referencia ejecutada.
 - [Altair: controles vinculados](https://altair-viz.github.io/user_guide/interactions/bindings_widgets.html).
 - [Altair: guardar gráficos](https://altair-viz.github.io/user_guide/saving_charts.html).
 - [Vega-Lite: selecciones](https://vega.github.io/vega-lite/docs/selection.html) y [filtros](https://vega.github.io/vega-lite/docs/filter.html).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con [04.09 — Cierre visual del análisis](../09_visual_closure/README.md).
+
+Omitir esta extensión no bloquea 04.09 ni Python aplicado.
+
+[← Módulo 04](../README.md) · [Lab 04.08](../../../labs/04_visualization_python/08_altair_interaction/README.md) · [Siguiente →](../09_visual_closure/README.md)

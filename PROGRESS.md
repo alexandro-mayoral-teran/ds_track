@@ -12,20 +12,39 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Presentación:** índices 00–14 y lecciones 00/01/02/03 adaptados; la
+- **Presentación:** índices 00–14 y lecciones 00–04 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
 - **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
   [Uso y comprobaciones](portal/README.md).
-- **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones SQL a la
-  plantilla y corrección del destino de evidencia personal en cinco labs.
+- **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones de visualización
+  Python y corrección del destino de evidencia personal en sus labs.
 - **Siguiente paso:** continuar la revisión del contenido y la adaptación por
-  módulo (04 — Visualización Python), y observar una sesión real de pareja con el portal local:
+  módulo (05 — Python aplicado), y observar una sesión real de pareja con el portal local:
   orientación, apertura, reconstrucción de práctica, revisión y reanudación.
 - **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, plantilla en Visualización Python:** adaptadas
+04.01–04.09 con ubicación, ficha, preparación, objetivos, apoyos,
+práctica/evidencia, referencias y continuidad. Conservados contratos, tablas,
+figuras, código, pausas y versiones de referencia; los datos y su contexto siguen
+en la propia lección. 04.01 conserva cierre con ficha/boceto y regeneración
+opcional. 04.08 muestra su opcionalidad antes del desarrollo; 04.07 permite
+saltar a 04.09 sin interacción. PNG/SVG de referencia y scripts existentes
+enlazados sin duplicar fuentes. Nueve labs corrigieron solo el destino de
+evidencia personal fuera de PROGRESS, sin migrar su presentación ni alterar
+ejercicios o soluciones. Cobertura central 00–04; próximo módulo visual: 05.
+
+Comprobación: 3446 enlaces locales de Markdown sin incidencias; anclas anteriores,
+desarrollo, 65 bloques de código/comandos/diagramas y 27 imágenes conservados.
+Nueve páginas GFM locales a 1280/390 px (18 vistas), con apoyos/cierre presentes,
+figuras cargadas, desplegables cerrados y saltos opcionales disponibles. Recursos,
+programas, CSV, PNG/SVG y dependencias sin cambios. No se ejecutaron scripts ni
+instalaciones ni se certificó accesibilidad o interacción por revisar el Markdown.
+La revisión local no acredita GitHub remoto ni aprendizaje; no se amplió el portal.
 
 **Desarrollo — 2026-10-27, plantilla en SQL:** adaptadas 03.01–03.09 con
 ubicación NN.LL, ficha, preparación, objetivos, recursos, práctica,

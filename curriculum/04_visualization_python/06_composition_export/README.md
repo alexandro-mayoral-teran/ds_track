@@ -1,11 +1,25 @@
 # 04.06 — Composición y exportación
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 04](../README.md) / **Lección 04.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Componer paneles y exportar una entrega legible con contexto |
+| **Necesitas** | Pandas/Matplotlib y fuentes compartidas; Altair no es necesario aquí |
+| **Evidencia** | Código, tablas, PNG/SVG y nota de lectura y dimensiones |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/04_visualization_python/06_composition_export/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Preparar una figura que otra persona pueda leer fuera de tu sesión de trabajo.
 Componer significa organizar varias vistas con una relación clara; exportar
 significa guardar una entrega con tamaño, formato y contexto adecuados para su
 destino. Una figura guardada sin errores todavía necesita revisión de lectura.
+
+## Antes de empezar
 
 Completa [04.05 — Escalas, etiquetas y accesibilidad](../05_scales_labels_accessibility/README.md)
 y su lab. Reutiliza [Figure y Axes de 04.02](../02_figure_axes/README.md),
@@ -17,9 +31,9 @@ No necesitas una herramienta de diseño ni aprender otra biblioteca de gráficos
 espacio, PNG/SVG y cierre de figuras. **Ampliación:** recorte ajustado, fondos
 transparentes y exportación para impresión. Las ampliaciones no bloquean avanzar.
 
-## Objetivos, entradas y entrega
+<a id="objetivos-entradas-y-entrega"></a>
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Elegir una composición según la comparación que necesita el público.
 - Compartir ejes cuando representan lo mismo y conservar unidades distintas.
@@ -28,6 +42,21 @@ Al terminar podrás:
 - Elegir entre PNG y SVG y revisar el archivo en su destino.
 - Exportar desde una Figure identificada, conservar entregas anteriores y cerrar recursos.
 - Compartir código, tablas y lectura textual junto con la imagen.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](composition.py) | Construir composiciones y exportaciones comprobadas | Para el recorrido |
+| [Fuentes de SQL](../../03_sql_databases/01_relational_sqlite/data/) | Consultar créditos y cortes utilizados | Entradas compartidas |
+| [Entrega PNG](assets/entrega.png) | Contrastar medianas y cobertura en dos paneles | Para observar |
+| [Entrega SVG](assets/entrega.svg) | Comparar formatos de la misma composición | Para observar |
+
+Las figuras incluidas sirven para observar y contrastar. Abre el script cuando
+el recorrido lo indique para regenerar o practicar; conserva las fuentes y
+las entregas anteriores y utiliza los destinos de práctica indicados.
+
+## Contexto y datos del recorrido
 
 El [script composition.py](composition.py) lee los
 [CSV sintéticos originales de SQL 03.01](../../03_sql_databases/01_relational_sqlite/README.md).
@@ -367,18 +396,35 @@ Comprobación gradual:
    junto con las imágenes y las tablas. Si falla una exportación, la existencia
    de una carpeta parcial no demuestra una entrega completa.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 04.06](../../../labs/04_visualization_python/06_composition_export/README.md).
+## Práctica
+
+Realiza el [lab 04.06](../../../labs/04_visualization_python/06_composition_export/README.md) para
+componer paneles y revisar una exportación fuera de la sesión original.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código, tablas y composición propia | Relación entre paneles, medidas, ejes y datos | Por qué cada panel existe y qué comparten sus escalas |
+| PNG/SVG y nota de lectura | Formatos, dimensiones y legibilidad en el destino | Cómo se relacionan tamaño, resolución y píxeles y qué contexto acompaña la figura |
+
 Puedes avanzar cuando expliques por qué cada panel existe, compruebes sus datos
 y ejes, exportes una entrega legible y cotejes formatos y dimensiones. Entrega
 código, tabla, imagen y comentario de población, medida, fuente y límites.
 
-No hay checkpoint de proyecto implementado. Continúa con el
-[04.07 — Altair: visualización declarativa](../07_altair_declarative/README.md). Interacción pertenece a 04.08 y sigue siendo
-opcional; no necesitas instalar Altair para completar esta sección.
+Quien aprende realiza y explica la práctica; su compañero revisa.
+Tu compañero abre la exportación y pregunta qué población y medida describe cada panel.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita
+por sí solo aprendizaje completado.
 
-## Referencias y atribución
+No hay proyecto ni checkpoint implementado asociado a esta lección.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Código, composiciones y explicaciones propios de DS Track. Se consultaron las
 fuentes primarias de Matplotlib; las páginas stable pueden mostrar versiones
@@ -388,3 +434,9 @@ posteriores a la referencia 3.10.7. No se copiaron imágenes ni ejemplos complet
 - [Matplotlib: guardar una Figure](https://matplotlib.org/stable/api/_as_gen/matplotlib.figure.Figure.savefig.html).
 - [Matplotlib: anotaciones y coordenadas](https://matplotlib.org/stable/users/explain/text/annotations.html).
 - [Matplotlib: unidades del tamaño de figura](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/figure_size_units.html).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con [04.07 — Altair: visualización declarativa](../07_altair_declarative/README.md).
+
+[← Módulo 04](../README.md) · [Lab 04.06](../../../labs/04_visualization_python/06_composition_export/README.md) · [Siguiente →](../07_altair_declarative/README.md)

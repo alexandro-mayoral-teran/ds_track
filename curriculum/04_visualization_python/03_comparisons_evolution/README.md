@@ -1,10 +1,24 @@
 # 04.03 — Comparaciones y evolución
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 04](../README.md) / **Lección 04.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Comparar categorías y fechas con unidades y bases explícitas |
+| **Necesitas** | Entorno con pandas/Matplotlib; fuentes compartidas y serie incluida |
+| **Evidencia** | Tablas, código e interpretación de una comparación y una evolución |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/04_visualization_python/03_comparisons_evolution/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Construir barras para comparar categorías y líneas para observar cambios en el
 tiempo. Antes de interpretar una altura o una pendiente, comprobar qué mide,
 qué unidad utiliza y qué observaciones entran en cada comparación.
+
+## Antes de empezar
 
 Completa [04.02 — Figure y Axes](../02_figure_axes/README.md) y su lab.
 Reutilizaremos [agregaciones e indicadores SQL](../../03_sql_databases/04_aggregations/README.md)
@@ -18,15 +32,29 @@ necesaria para los gráficos; no necesitas otra biblioteca.
 comparaciones con la misma base, ausencias y cero. **Ampliación:** variaciones
 relativas e índice base 100. No se requiere estadística inferencial.
 
-## Objetivos y contrato de los datos
+<a id="objetivos-y-contrato-de-los-datos"></a>
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Asociar cada marca a una fila del resumen y explicar su unidad.
 - Comparar dos cortes sin cambiar las posiciones de los segmentos.
 - Distinguir suma, promedio, tasa y cobertura; reconocer sus diferentes preguntas.
 - Dibujar fechas ordenadas y conservar huecos sin inventar observaciones.
 - Explicar el cambio observado y los límites de una comparación de dos fechas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](comparisons.py) | Preparar bases y construir barras y líneas | Para el recorrido |
+| [Serie mensual](serie_mensual.csv) | Explorar fechas, huecos y cero observado | Entrada incluida |
+| [Fuentes de SQL](../../03_sql_databases/01_relational_sqlite/data/) | Consultar créditos y cortes originales | Entradas compartidas |
+
+Las figuras incluidas sirven para observar y contrastar. Abre el script cuando
+el recorrido lo indique para regenerar o practicar; conserva las fuentes y
+las entregas anteriores y utiliza los destinos de práctica indicados.
+
+## Contexto y datos del recorrido
 
 Las fuentes son los CSV originales de
 [créditos y cortes](../../03_sql_databases/01_relational_sqlite/README.md):
@@ -335,12 +363,9 @@ es aproximadamente 77,78 %, otra medida. No escribir «subió 19,44 %» para la
 resta de porcentajes. Además cambia la base de atrasos conocidos: no atribuir
 esa diferencia únicamente al empeoramiento de los mismos casos.
 
-## Práctica, errores habituales y criterio de salida
+<a id="práctica-errores-habituales-y-criterio-de-salida"></a>
 
-Realiza el [lab 04.03](../../../labs/04_visualization_python/03_comparisons_evolution/README.md).
-Antes de avanzar, debes reconstruir y explicar al menos una comparación por
-segmento y una temporal, señalar unidades/bases y distinguir huecos de cero.
-Entrega tablas y código junto con una interpretación limitada a lo observado.
+## Errores habituales
 
 Si las barras cambian de categoría, revisa el orden común. Si una tasa es cero
 con denominador cero, revisa su cálculo. Si una línea atraviesa un período sin
@@ -348,11 +373,33 @@ datos, revisa calendario y ausencias. Si una pendiente parece enorme, revisa
 escala, intervalo y unidad. Si totales y pares discrepan, comprueba identidad
 de los créditos antes de sospechar que la gráfica es incorrecta.
 
-No hay checkpoint de proyecto implementado. La siguiente sección es
-[04.04 — Distribuciones y relaciones](../04_distributions_relationships/README.md),
-para explorar variabilidad detrás de estos resúmenes.
+## Práctica
 
-## Referencias y atribución
+Realiza el [lab 04.03](../../../labs/04_visualization_python/03_comparisons_evolution/README.md) para
+contrastar una comparación por segmento y una temporal.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tablas y código de ambas comparaciones | Categorías estables, fechas, unidades y bases | Qué pregunta responde una suma, una tasa o una comparación de pares |
+| Interpretación propia | Los huecos y ausencias no se convierten en ceros | Qué límites tiene comparar dos cortes y qué casos son comparables |
+
+Antes de avanzar, reconstruye y explica al menos una comparación por segmento
+y una temporal, señala unidades/bases y distingue huecos de cero. Entrega tablas
+y código junto con una interpretación limitada a lo observado.
+
+Quien aprende realiza y explica la práctica; su compañero revisa.
+Tu compañero elige dos puntos o barras y pregunta si representan la misma población y medida.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita
+por sí solo aprendizaje completado.
+
+No hay proyecto ni checkpoint implementado asociado a esta lección.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 La explicación se apoya en las fuentes primarias siguientes; el código, los
 ejemplos y las figuras se crearon para DS Track. La documentación estable puede
@@ -362,3 +409,9 @@ mostrar versiones posteriores a las referencias declaradas del proyecto.
 - [Matplotlib: valores NaN y líneas interrumpidas](https://matplotlib.org/stable/gallery/lines_bars_and_markers/masked_demo.html), para el comportamiento de los huecos.
 - [pandas: reindex](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reindex.html), para alinear una cuadrícula sin completar importes.
 - [Claus O. Wilke: series temporales, Fundamentals of Data Visualization](https://clauswilke.com/dataviz/time-series.html), libro abierto para razonar sobre secuencias y conexiones.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con [04.04 — Distribuciones y relaciones](../04_distributions_relationships/README.md).
+
+[← Módulo 04](../README.md) · [Lab 04.03](../../../labs/04_visualization_python/03_comparisons_evolution/README.md) · [Siguiente →](../04_distributions_relationships/README.md)

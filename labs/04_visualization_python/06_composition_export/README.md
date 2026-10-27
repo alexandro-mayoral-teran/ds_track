@@ -179,7 +179,7 @@ son ceros observados. Las tablas conservan las categorías y los mensajes lo exp
 
 Conserva código propio, tablas, PNG o SVG revisado, registro de tamaños y
 comentario de lectura. Escribe fuente, fecha, unidad, base conocida y límites;
-registra evidencia y preguntas en PROGRESS.md. La disponibilidad de esta sección
+registra evidencia y preguntas en tu bitácora personal junto a la práctica. La disponibilidad de esta sección
 no acredita que hayas terminado su práctica.
 
 Reflexiona: ¿por qué ver juntas esas dos vistas ayuda? ¿Cuándo sería incorrecto

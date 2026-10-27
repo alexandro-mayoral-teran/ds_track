@@ -171,7 +171,7 @@ no garantiza el mismo conjunto de créditos; la cobertura por grupo importa.
 
 Conserva código, tablas, figuras y una nota de interpretación para histograma,
 caja y dispersión. Explica base, unidad, variabilidad, exclusiones y límites;
-registra evidencia y dudas en PROGRESS.md sin confundir material disponible
+registra evidencia y dudas en tu bitácora personal junto a la práctica sin confundir material disponible
 con aprendizaje acreditado.
 
 Reflexiona: ¿qué perdía el promedio? ¿Qué parte de la figura depende de una

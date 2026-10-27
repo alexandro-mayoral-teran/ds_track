@@ -203,7 +203,7 @@ Conserva código propio, HTML/JSON, tablas, captura y comentario de al menos
 un filtro y un resaltado. Si realizas D, añade intervalo e IDs; si eliges
 exportación incorporada, registra la prueba sin conexión. Anota versiones,
 visor, estado inicial y forma de restablecer. Registra evidencias y dudas
-en PROGRESS.md sin atribuir aprendizaje por la disponibilidad del material.
+en tu bitácora personal junto a la práctica sin atribuir aprendizaje por la disponibilidad del material.
 
 Reflexiona: ¿cuándo conviene conservar puntos atenuados? ¿Qué significa
 una selección vacía? ¿Por qué contar solo puntos no describe todos los

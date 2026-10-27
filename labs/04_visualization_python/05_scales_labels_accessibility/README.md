@@ -149,7 +149,7 @@ no con el argumento --cut, como declara la lección.
 ## Evidencia, reflexión y siguiente paso
 
 Conserva código propio, tabla de conciliación, figura corregida, texto alternativo
-y párrafo de lectura con límites. Registra evidencia y dudas en PROGRESS.md;
+y párrafo de lectura con límites. Registra evidencia y dudas en tu bitácora personal junto a la práctica;
 desarrollar el material no acredita haber realizado esta práctica.
 
 Reflexiona: ¿qué conclusión cambiaba solo por el eje? ¿Qué pregunta justifica

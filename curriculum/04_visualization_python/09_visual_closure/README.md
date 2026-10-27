@@ -1,11 +1,25 @@
 # 04.09 — Cierre visual del análisis
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 04](../README.md) / **Lección 04.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Entregar y reconstruir figuras conciliadas con una interpretación propia |
+| **Necesitas** | Pandas, Matplotlib y Altair; interacción y exportación ampliada opcionales |
+| **Evidencia** | Tablas, figuras, interpretación e instrucciones comprobadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/04_visualization_python/09_visual_closure/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Entregar un resultado que otra persona pueda leer, comprobar y reconstruir:
 una pregunta concreta, indicadores conciliados, una figura estática, una vista
 declarativa y una interpretación que reconozca sus límites. El cierre conecta
 las decisiones de visualización con una entrega completa.
+
+## Antes de empezar
 
 Completa [04.01 — Pregunta y elección](../01_question_chart/README.md),
 las prácticas Matplotlib hasta [04.06](../06_composition_export/README.md)
@@ -18,15 +32,30 @@ web ni publicación en línea.
 HTML sin conexión y un explorador con estado explícito. Organizar paquetes,
 logging, pruebas formales y contratos corresponde a Python aplicado, módulo 05.
 
-## Objetivos y pregunta de la entrega
+<a id="objetivos-y-pregunta-de-la-entrega"></a>
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Relacionar pregunta, población, unidad, indicador y representación.
 - Conciliar valores y ausencias contra una referencia independiente.
 - Comparar Matplotlib y Altair sobre la misma tabla sin cambiar la medida.
 - Escribir un hallazgo con evidencia, cobertura y límites.
 - Reconstruir desde las fuentes y revisar una entrega fuera de la sesión original.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de cierre](closure.py) | Reconstruir tablas, figuras y nota de entrega | Para el cierre |
+| [Fuentes de SQL](../../03_sql_databases/01_relational_sqlite/data/) | Consultar créditos y cortes originales | Entradas compartidas |
+| [Figura Matplotlib](assets/matplotlib.png) | Leer la composición estática de referencia | Para observar |
+| [Figura Altair](assets/altair.png) | Contrastar la misma tabla en otra representación | Para observar |
+
+Las figuras incluidas sirven para observar y contrastar. Abre el script cuando
+el recorrido lo indique para regenerar o practicar; conserva las fuentes y
+las entregas anteriores y utiliza los destinos de práctica indicados.
+
+## Contexto y datos del recorrido
 
 Pregunta de ejemplo: **¿qué mediana de saldo conocido tiene cada segmento
 en octubre de 2026 y con qué cobertura?** Público: una persona que revisa
@@ -296,22 +325,35 @@ cualquier captura. Un menú cambia la vista en el navegador, no los CSV.
 Una imagen estática no conserva controles funcionales. Son criterios de
 04.08 y no requisitos de este cierre.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 04.09](../../../labs/04_visualization_python/09_visual_closure/README.md).
+## Práctica
+
+Realiza el [lab 04.09](../../../labs/04_visualization_python/09_visual_closure/README.md) para
+reconstruir una entrega visual y explicar hallazgo, cobertura y límites.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tablas, código y figuras de tu entrega | Indicadores, ausencias y representaciones conciliados | Cómo se conectan pregunta, población, unidad y figura |
+| Interpretación e instrucciones de reconstrucción | Otra persona puede reconstruir en un destino nuevo | Qué evidencia respalda el hallazgo y qué sigue limitado por la cobertura |
+
 Puedes cerrar el módulo cuando reconstruyas la entrega, concilies indicadores,
 justifiques representación y ausencias, y expliques hallazgo y límites.
-Quien acompaña revisa; quien aprende realiza y explica. Desarrollar el material
-no acredita haber completado estas prácticas.
+La interacción de 04.08 no es requisito de este cierre.
 
-No hay proyecto/checkpoint implementado asociado. Este cierre es una práctica
-de integración, no un nuevo proyecto obligatorio ni una entrega en showcase.
-Continúa con [05.01 — Del notebook a módulos](../../05_python_applied/01_notebook_to_modules/README.md):
-reutilizarás el análisis para separar responsabilidades
-y evitar importaciones mediante rutas manuales. No se requiere dominar clases
-o decoradores antes de continuar.
+Quien aprende realiza y explica la práctica; su compañero revisa.
+Tu compañero reconstruye la entrega y elige una marca para rastrearla hasta su tabla y fuente.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita
+por sí solo aprendizaje completado.
 
-## Referencias y atribución
+No hay proyecto ni checkpoint implementado asociado a esta lección.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos, datos, código y figuras propios de DS Track. Las APIs reutilizadas
 se comprobaron con las versiones del curso. Se consultaron fuentes primarias
@@ -322,3 +364,12 @@ ni figuras de sus galerías. Las páginas stable pueden mostrar otras versiones.
 - [Python: mediana y tratamiento de NaN](https://docs.python.org/3.11/library/statistics.html#statistics.median).
 - [Matplotlib: guardar una Figure](https://matplotlib.org/stable/api/_as_gen/matplotlib.figure.Figure.savefig.html).
 - [Altair: guardar gráficos y HTML incorporado](https://altair-viz.github.io/user_guide/saving_charts.html).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con [05.01 — Del notebook a módulos](../../05_python_applied/01_notebook_to_modules/README.md).
+
+El siguiente módulo organiza el análisis y sus responsabilidades; no necesitas
+dominar clases ni decoradores antes de comenzar.
+
+[← Módulo 04](../README.md) · [Lab 04.09](../../../labs/04_visualization_python/09_visual_closure/README.md) · [Siguiente →](../../05_python_applied/01_notebook_to_modules/README.md)

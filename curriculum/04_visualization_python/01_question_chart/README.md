@@ -1,15 +1,31 @@
-# 01 — Pregunta y elección de gráfico
+# 04.01 — Pregunta y elección de gráfico
 
-## Propósito, prerrequisitos y objetivos — esencial
+<a id="01--pregunta-y-elección-de-gráfico"></a>
+
+[Inicio](../../../README.md) / [Módulo 04](../README.md) / **Lección 04.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Elegir una representación desde una pregunta y sus bases |
+| **Necesitas** | Indicadores comprobados; lectura de figuras sin programarlas |
+| **Evidencia** | Ficha, boceto y justificación con observación y límite |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/04_visualization_python/01_question_chart/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos--esencial"></a>
+
+## Propósito
 
 Elegir una representación que permita responder una pregunta concreta y explicar
-qué muestran los datos. Completa el [cierre SQL 03.09](../../03_sql_databases/09_pandas_sql/README.md)
+qué muestran los datos.
+
+## Antes de empezar
+
+Completa el [cierre SQL 03.09](../../03_sql_databases/09_pandas_sql/README.md)
 y su lab; recupera la [primera gráfica de pandas](../../02_pandas/10_analysis_plot/README.md).
 Los indicadores deben estar comprobados antes de diseñar su representación.
 
-Al terminar podrás declarar público, pregunta, población, unidad, medida y
-cobertura; distinguir comparación, evolución, distribución y relación; y
-justificar un gráfico o una tabla. No necesitas escribir nuevas funciones
+No necesitas escribir nuevas funciones
 de Matplotlib para completar esta lección ni instalar otra biblioteca.
 Figure/Axes se desarrollan en 04.02; histogramas y dispersión se profundizan
 en 04.04. Aquí observas ejemplos y decides qué información comunica cada uno.
@@ -17,6 +33,24 @@ en 04.04. Aquí observas ejemplos y decides qué información comunica cada uno.
 Sesiones sugeridas: **A**, pregunta y contrato, secciones 1–3;
 **B**, lectura de ejemplos, secciones 4–6; **C**, propuesta y revisión, secciones
 7–9 y lab. La regeneración con Python y las ampliaciones son opcionales.
+
+## Qué vas a aprender
+
+- Declarar público, pregunta, población, unidad, medida y cobertura.
+- Distinguir comparación, evolución, distribución y relación.
+- Justificar una figura o tabla y contrastar una alternativa.
+- Escribir una observación limitada a lo que la muestra permite afirmar.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Cuatro preguntas](assets/cuatro_preguntas.png) | Leer vistas y bases sobre la misma muestra | Para observar |
+| [Script de regeneración](choice_examples.py) | Reproducir las vistas si eliges programarlas | Opcional |
+
+Las figuras incluidas sirven para observar y contrastar. Abre el script cuando
+el recorrido lo indique para regenerar o practicar; conserva las fuentes y
+las entregas anteriores y utiliza los destinos de práctica indicados.
 
 ## 1. Empezar por una pregunta que pueda comprobarse
 
@@ -269,16 +303,35 @@ revisión. Sin --output solo comprueba y muestra cantidades. Una fecha vacía
 produce vistas con mensajes de ausencia; septiembre no tiene un corte previo
 en esta muestra y no se inventa una comparación temporal.
 
-## 9. Práctica, criterio de salida y continuidad
+<a id="9-práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 04.01](../../../labs/04_visualization_python/01_question_chart/README.md).
+## Práctica
+
+Realiza el [lab 04.01](../../../labs/04_visualization_python/01_question_chart/README.md) para
+definir una ficha, proponer un boceto y justificar la representación.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Ficha y boceto propios | Público, pregunta, unidad, población, medida y cobertura | Por qué la representación responde esa pregunta y qué alternativa consideraste |
+| Observación y límite | La afirmación se respalda en los valores mostrados | Por qué observar un patrón no demuestra su causa |
+
 Puedes avanzar cuando redactes una ficha verificable, elijas una representación
 con sus bases, justifiques una alternativa y escribas una observación con su
 limitación. Un boceto y la ficha bastan; no necesitas programar cuatro gráficos.
-Los proyectos y checkpoints visuales siguen pendientes.
-Después consulta el [04.02 — Matplotlib: Figure y Axes](../02_figure_axes/README.md).
 
-## Referencias primarias y lecturas abiertas
+Quien aprende realiza y explica la práctica; su compañero revisa.
+Tu compañero propone otra representación y pide contrastar qué facilita o dificulta leer.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita
+por sí solo aprendizaje completado.
+
+No hay proyecto ni checkpoint implementado asociado a esta lección.
+
+<a id="referencias-primarias-y-lecturas-abiertas"></a>
+
+## Referencias
 
 Ejemplos y figuras propios sobre DS Track. La selección se apoya en las obras
 abiertas de sus autores; no se copiaron figuras ni muestras de esos libros:
@@ -286,3 +339,9 @@ abiertas de sus autores; no se copiaron figuras ni muestras de esos libros:
 - Claus O. Wilke, *Fundamentals of Data Visualization*: [cantidades](https://clauswilke.com/dataviz/visualizing-amounts.html), [histogramas](https://clauswilke.com/dataviz/histograms-density-plots.html), [tiempo](https://clauswilke.com/dataviz/time-series.html) y [asociaciones](https://clauswilke.com/dataviz/visualizing-associations.html).
 - Yan Holtz y Conor Healy, [From Data to Viz](https://www.data-to-viz.com/): formatos de datos, preguntas y precauciones de interpretación.
 - [Matplotlib: barras horizontales](https://matplotlib.org/3.10.7/api/_as_gen/matplotlib.axes.Axes.barh.html), para regenerar el ejemplo.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con [04.02 — Matplotlib: Figure y Axes](../02_figure_axes/README.md).
+
+[← Módulo 04](../README.md) · [Lab 04.01](../../../labs/04_visualization_python/01_question_chart/README.md) · [Siguiente →](../02_figure_axes/README.md)

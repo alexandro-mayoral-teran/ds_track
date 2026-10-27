@@ -1,16 +1,32 @@
-# 02 — Matplotlib: Figure y Axes
+# 04.02 — Matplotlib: Figure y Axes
 
-## Propósito, prerrequisitos y objetivos — esencial
+<a id="02--matplotlib-figure-y-axes"></a>
+
+[Inicio](../../../README.md) / [Módulo 04](../README.md) / **Lección 04.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Construir y guardar una Figure con Axes explícito |
+| **Necesitas** | Entorno con pandas y Matplotlib; resumen incluido |
+| **Evidencia** | Código, figura guardada y comprobación de datos y cierre |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/04_visualization_python/02_figure_axes/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos--esencial"></a>
+
+## Propósito
 
 Construir una figura desde datos comprobados y controlar dónde se dibuja,
-qué se etiqueta y qué archivo se guarda. Completa
+qué se etiqueta y qué archivo se guarda.
+
+## Antes de empezar
+
+Completa
 [04.01 — Pregunta y elección de gráfico](../01_question_chart/README.md) y su lab;
 recupera [funciones de Python](../../01_python_foundations/04_functions/README.md)
 y [el cierre pandas/SQL](../../03_sql_databases/09_pandas_sql/README.md).
 
-Al terminar podrás distinguir Figure, Axes y Axis; crear una figura con
-subplots; dibujar mediante métodos del Axes; guardar con fig.savefig y cerrar
-la figura que usaste. No necesitas aprender a diseñar clases para utilizar
+No necesitas aprender a diseñar clases para utilizar
 los objetos que entrega Matplotlib.
 
 Usamos pandas y Matplotlib del entorno elegido. Sus referencias declaradas
@@ -21,6 +37,25 @@ guía oficial de 3.10.7. No confundas «versión de referencia» con «más reci
 Sesiones sugeridas: **A**, secciones 1–4; **B**, secciones 5–7; **C**, guardado,
 comprobación y lab. La figura con dos Axes es una extensión; una figura sencilla
 guardada correctamente basta para el criterio esencial.
+
+## Qué vas a aprender
+
+- Distinguir Figure, Axes y Axis por su responsabilidad.
+- Crear una Figure con subplots y dibujar mediante el Axes correspondiente.
+- Etiquetar unidades y cobertura conservando las ausencias.
+- Guardar la Figure correcta, revisar el archivo y cerrar los recursos.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](figure_axes.py) | Construir la figura y comprobar sus datos | Para el recorrido |
+| [Resumen de octubre](resumen_octubre.csv) | Inspeccionar la tabla comprobada antes de dibujar | Entrada incluida |
+| [Vista de referencia](assets/saldo_conocido.png) | Contrastar medida, cobertura y ausencia | Para observar |
+
+Las figuras incluidas sirven para observar y contrastar. Abre el script cuando
+el recorrido lo indique para regenerar o practicar; conserva las fuentes y
+las entregas anteriores y utiliza los destinos de práctica indicados.
 
 ## 1. Datos antes que objetos gráficos
 
@@ -276,7 +311,9 @@ también saldo_y_cobertura.png. Las carpetas existentes se conservan: usa otro
 nombre para otra entrega o ejecuta sin --output para verificar. No se escriben
 cambios sobre el CSV de entrada ni sobre ninguna base SQLite.
 
-## 10. Errores habituales, lab y criterio de salida
+<a id="10-errores-habituales-lab-y-criterio-de-salida"></a>
+
+## 10. Errores habituales
 
 | Situación | Qué revisar |
 | --- | --- |
@@ -288,13 +325,32 @@ cambios sobre el CSV de entrada ni sobre ninguna base SQLite.
 | Ausencia aparece como cero | No rellenes la suma; comprueba cobertura |
 | Se acumulan figuras al repetir | Cierra cada fig creada por tu función |
 
-Realiza el [lab 04.02](../../../labs/04_visualization_python/02_figure_axes/README.md).
+## Práctica
+
+Realiza el [lab 04.02](../../../labs/04_visualization_python/02_figure_axes/README.md) para
+crear una figura desde el resumen y comprobar el archivo exportado.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código y figura de tu práctica | Datos, ausencias, etiquetas y archivo correcto | Qué responsabilidad tienen Figure, Axes y Axis |
+| Nota de guardado y cierre | La figura se lee completa y no quedan recursos acumulados | Por qué guardar, mostrar y cerrar son operaciones distintas |
+
 Puedes avanzar cuando construyas una Figure con Axes explícito, conserves
 contrato y ausencias, guardes el archivo correcto y cierres tus figuras.
-Los proyectos y checkpoints visuales siguen pendientes. Continúa con el
-[04.03 — Comparaciones y evolución](../03_comparisons_evolution/README.md).
 
-## Referencias primarias
+Quien aprende realiza y explica la práctica; su compañero revisa.
+Tu compañero elige un elemento de la figura y pide identificar el Axes y el dato que lo producen.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita
+por sí solo aprendizaje completado.
+
+No hay proyecto ni checkpoint implementado asociado a esta lección.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Ejemplos propios sobre el resumen comprobado del proyecto, contrastados con:
 
@@ -304,3 +360,9 @@ Ejemplos propios sobre el resumen comprobado del proyecto, contrastados con:
 - [Barras horizontales en 3.10.7](https://matplotlib.org/3.10.7/api/_as_gen/matplotlib.axes.Axes.barh.html).
 Las páginas stable pueden mostrar otra versión; la referencia de esta lección
 permanece en 3.10.7.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con [04.03 — Comparaciones y evolución](../03_comparisons_evolution/README.md).
+
+[← Módulo 04](../README.md) · [Lab 04.02](../../../labs/04_visualization_python/02_figure_axes/README.md) · [Siguiente →](../03_comparisons_evolution/README.md)

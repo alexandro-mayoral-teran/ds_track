@@ -212,7 +212,7 @@ Conserva código propio, tablas, JSON, HTML y comentario de lectura para las
 cuatro vistas. Registra gestor, versiones y cómo abrirlas; PNG/SVG y la prueba
 sin conexión son ampliaciones. Explica pregunta, unidad, base, ausencias y
 qué se comprobó frente a los CSV y Matplotlib. Registra tu evidencia y dudas
-en PROGRESS.md; disponer de este material no acredita completar el lab.
+en tu bitácora personal junto a la práctica; disponer de este material no acredita completar el lab.
 
 Reflexiona: ¿qué sabe el esquema sobre la corrección de una mediana? ¿Por qué
 un ID numérico puede ser nominal? ¿Qué cambia al añadir una agregación?

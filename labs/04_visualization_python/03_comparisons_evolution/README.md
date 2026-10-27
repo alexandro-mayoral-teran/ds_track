@@ -170,7 +170,7 @@ Conserva código, tablas exportadas, figuras y una interpretación por pregunta.
 Debes poder explicar orden, unidad, cobertura, base temporal y huecos sin leer
 la solución. Reflexiona: ¿qué afirmación dejó de ser válida al cambiar la base?
 ¿Qué información pedirías antes de interpretar un cambio como tendencia?
-Registra evidencia y dudas en PROGRESS.md; producir contenido no acredita aprendizaje.
+Registra evidencia y dudas en tu bitácora personal junto a la práctica; producir contenido no acredita aprendizaje.
 
 No hay checkpoint de proyecto implementado. Continúa con el
 [04.04 — Distribuciones y relaciones](../../../curriculum/04_visualization_python/04_distributions_relationships/README.md).

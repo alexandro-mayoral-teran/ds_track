@@ -147,7 +147,7 @@ El mensaje de ausencia de saldo y el punto de cobertura cero son compatibles.
 ## Evidencia, reflexión y siguiente paso
 
 Conserva script, PNG, resumen usado y una nota sobre Figure/Axes/Axis, valores,
-ausencias y cierre. Registra evidencia y dudas en PROGRESS.md. Explica:
+ausencias y cierre. Registra evidencia y dudas en tu bitácora personal junto a la práctica. Explica:
 ¿qué cambia guardar frente a mostrar? ¿Por qué un layout automático necesita
 revisión visual? ¿Cómo puedes dibujar sin depender del panel actual?
 ¿Qué representa la barra de longitud cero frente a una suma ausente?

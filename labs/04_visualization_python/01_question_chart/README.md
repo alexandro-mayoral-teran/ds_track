@@ -145,7 +145,7 @@ Esta extensión no requiere entender toda la sintaxis gráfica para avanzar.
 ## Evidencia, reflexión y siguiente paso
 
 Conserva ficha, boceto y tres frases de interpretación, junto con una alternativa
-y su justificación. Registra evidencia y dudas en PROGRESS.md; una imagen
+y su justificación. Registra evidencia y dudas en tu bitácora personal junto a la práctica; una imagen
 atractiva no demuestra por sí sola que la elección responde la pregunta.
 
 Explica: ¿qué dato perdiste al agrupar? ¿Por qué igualar conteos no garantiza

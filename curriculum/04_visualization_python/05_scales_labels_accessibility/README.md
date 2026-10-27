@@ -1,10 +1,24 @@
 # 04.05 — Escalas, etiquetas y accesibilidad
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 04](../README.md) / **Lección 04.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Revisar escalas, etiquetas y señales para comunicar datos sin ocultar límites |
+| **Necesitas** | Pandas/Matplotlib y fuentes compartidas; sin certificación de accesibilidad |
+| **Evidencia** | Figura corregida, tabla, descripción y decisiones justificadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/04_visualization_python/05_scales_labels_accessibility/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Revisar una figura antes de comunicarla: comprobar qué mide, qué parte de los
 datos muestra y cómo sus ejes, etiquetas y señales afectan la interpretación.
 Una figura puede usar valores correctos y aun así sugerir una conclusión incorrecta.
+
+## Antes de empezar
 
 Completa [04.04 — Distribuciones y relaciones](../04_distributions_relationships/README.md)
 y su lab. Reutiliza [Figure y Axes de 04.02](../02_figure_axes/README.md)
@@ -16,9 +30,9 @@ adicionales al color y descripción textual. **Práctica:** corregir una figura 
 justificar cada decisión. **Ampliación:** revisar contraste en un destino web;
 no se exige certificar accesibilidad ni construir una aplicación.
 
-## Objetivos, datos y resultados esperados
+<a id="objetivos-datos-y-resultados-esperados"></a>
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Detectar barras recortadas y distinguir un acercamiento legítimo de una
   comparación de longitudes engañosa.
@@ -27,6 +41,20 @@ Al terminar podrás:
 - Escribir títulos, unidades y etiquetas que identifiquen la medida y su base.
 - Comunicar categorías con formas, texto o tramas además de color.
 - Acompañar una figura con su tabla y una descripción comprensible sin verla.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](scales.py) | Contrastar escalas, exclusiones, etiquetas y señales | Para el recorrido |
+| [Fuentes de SQL](../../03_sql_databases/01_relational_sqlite/data/) | Consultar saldos y cortes originales | Entradas compartidas |
+| [Figura etiquetada](assets/etiquetas.png) | Leer mediana, unidad y cobertura explícitas | Para observar |
+
+Las figuras incluidas sirven para observar y contrastar. Abre el script cuando
+el recorrido lo indique para regenerar o practicar; conserva las fuentes y
+las entregas anteriores y utiliza los destinos de práctica indicados.
+
+## Contexto y datos del recorrido
 
 Usamos los [CSV sintéticos de SQL 03.01](../../03_sql_databases/01_relational_sqlite/README.md),
 con 24 créditos por corte. Para octubre, 21 saldos son conocidos: uno es cero
@@ -290,18 +318,35 @@ medianas ordenando los valores de cada segmento como en 04.04 y coteja las figur
 La carpeta debe ser nueva: si ya existe, el script se detiene para conservarla.
 No se escribe ni se reinicia la base SQLite.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 04.05](../../../labs/04_visualization_python/05_scales_labels_accessibility/README.md).
+## Práctica
+
+Realiza el [lab 04.05](../../../labs/04_visualization_python/05_scales_labels_accessibility/README.md) para
+corregir una figura y justificar escalas, cobertura y descripción.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Figura corregida y tabla de control | Valores, medida, escala y exclusiones conservados | Qué cambia entre distancias lineales y razones logarítmicas |
+| Descripción y señales adicionales al color | Unidades, cobertura y lectura textual recuperables | Qué revisaste para facilitar la lectura y qué no se ha certificado |
+
 Puedes avanzar cuando corrijas una representación problemática, compruebes que
 mantiene datos y medida, expliques la escala y conserves exclusiones. Entrega
 figura, tabla, descripción y justificación de cobertura y señales accesibles.
 
-No hay checkpoint de proyecto implementado. Continúa con el
-[04.06 — Composición y exportación](../06_composition_export/README.md).
-El módulo 04 dispone de sus nueve secciones; el aprendizaje requiere evidencia.
+Quien aprende realiza y explica la práctica; su compañero revisa.
+Tu compañero intenta explicar la figura desde su tabla y descripción y pide justificar una decisión de escala.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita
+por sí solo aprendizaje completado.
 
-## Referencias y atribución
+No hay proyecto ni checkpoint implementado asociado a esta lección.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos, código y figuras propios de DS Track. Se consultaron fuentes primarias
 para las APIs y las prácticas de comunicación; no se copiaron figuras ni capítulos.
@@ -311,3 +356,9 @@ para las APIs y las prácticas de comunicación; no se copiaron figuras ni capí
 - [W3C WAI: uso de color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html): comunicar información mediante señales adicionales.
 - [W3C WAI: imágenes complejas](https://www.w3.org/WAI/tutorials/images/complex/): descripción breve y equivalente textual detallado.
 - [Claus O. Wilke: sistemas de coordenadas y ejes](https://clauswilke.com/dataviz/coordinate-systems-axes.html), libro abierto Fundamentals of Data Visualization.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con [04.06 — Composición y exportación](../06_composition_export/README.md).
+
+[← Módulo 04](../README.md) · [Lab 04.05](../../../labs/04_visualization_python/05_scales_labels_accessibility/README.md) · [Siguiente →](../06_composition_export/README.md)

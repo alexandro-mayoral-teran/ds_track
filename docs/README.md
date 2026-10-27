@@ -34,7 +34,7 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 | Parte | Estado de presentación |
 | --- | --- |
 | Índices de módulo 00–14 | Estructura común aplicada; 12–14 siguen planificados |
-| Lecciones 00, 01, 02 y 03 | Plantilla de lección y material de apoyo aplicados |
+| Lecciones 00–04 | Plantilla de lección y material de apoyo aplicados |
 | Lecciones de otros módulos | Pendientes de adaptación visual; disponer de material no acredita revisión completa |
 | Labs | Muestra visual 00.01 adaptada; los demás conservan sus consignas y navegación |
 | Portal local | Módulo 00 y sesión 02.01 integrados; otros módulos ofrecen sus índices |

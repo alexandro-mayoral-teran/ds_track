@@ -1,10 +1,24 @@
 # 04.04 — Distribuciones y relaciones
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 04](../README.md) / **Lección 04.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Explorar variabilidad y relaciones conservando las bases de cada figura |
+| **Necesitas** | Pandas/Matplotlib y los CSV compartidos de SQL |
+| **Evidencia** | Histogramas, cajas y dispersión con tablas y límites explicados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/04_visualization_python/04_distributions_relationships/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Observar la variabilidad que ocultan una suma o un promedio y explorar cómo
 se relacionan dos variables del mismo registro. Construiremos histogramas,
 diagramas de caja y gráficos de dispersión, con unidades y cobertura explícitas.
+
+## Antes de empezar
 
 Completa [04.03 — Comparaciones y evolución](../03_comparisons_evolution/README.md)
 y su lab. Reutiliza [Figure y Axes](../02_figure_axes/README.md),
@@ -16,15 +30,29 @@ No necesitas modelos estadísticos ni experiencia con NumPy.
 valores extremos y asociación frente a causalidad. **Ampliación:** frecuencias
 relativas, densidad y comparación entre cortes. No se requiere ajustar una curva.
 
-## Objetivos y entradas
+<a id="objetivos-y-entradas"></a>
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Elegir una distribución para una variable o una dispersión para dos variables.
 - Conciliar las frecuencias de un histograma con los valores conocidos.
 - Explicar caja, mediana, bigotes y puntos exteriores sin llamarlos errores.
 - Mantener emparejadas las variables de cada crédito al dibujar una dispersión.
 - Describir patrones con sus límites, sin presentar asociación como causa.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](distributions.py) | Preparar distribuciones y pares con controles | Para el recorrido |
+| [Fuentes de SQL](../../03_sql_databases/01_relational_sqlite/data/) | Consultar créditos y cortes sin alterar SQLite | Entradas compartidas |
+| [Histogramas de referencia](assets/histogramas.png) | Comparar intervalos sobre los mismos saldos | Para observar |
+
+Las figuras incluidas sirven para observar y contrastar. Abre el script cuando
+el recorrido lo indique para regenerar o practicar; conserva las fuentes y
+las entregas anteriores y utiliza los destinos de práctica indicados.
+
+## Contexto y datos del recorrido
 
 Usaremos los [CSV sintéticos originales de SQL](../../03_sql_databases/01_relational_sqlite/README.md).
 Hay 24 créditos y dos cortes, 48 observaciones. En esta sección seleccionamos
@@ -375,20 +403,36 @@ vertical; declara las coberturas. Incluso con 21 saldos por fecha, no son
 todos los mismos créditos, como vimos en 04.03. Esta ampliación describe
 distribuciones disponibles; no estima automáticamente cambios individuales.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 04.04](../../../labs/04_visualization_python/04_distributions_relationships/README.md).
+## Práctica
+
+Realiza el [lab 04.04](../../../labs/04_visualization_python/04_distributions_relationships/README.md) para
+explicar una distribución y una relación desde sus tablas.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código, tablas y figuras de tu práctica | Frecuencias, cuartiles, pares y cobertura | Qué muestran un histograma, una caja y una dispersión |
+| Interpretación y exclusiones | Los puntos conservan las variables del mismo registro | Por qué un valor exterior puede ser válido y asociación no implica causa |
+
 Puedes avanzar cuando expliques al menos un histograma, una caja y una
 dispersión desde sus tablas: unidad, base, centro/variabilidad o relación,
-ausencias y límites. Debes poder conservar un valor exterior válido y justificar
-por qué las variables de dispersión permanecen emparejadas.
+ausencias y límites. Conserva un valor exterior válido y justifica por qué
+las variables de dispersión permanecen emparejadas.
 
-No hay checkpoint de proyecto implementado. Sigue el
-[04.05 — Escalas, etiquetas y accesibilidad](../05_scales_labels_accessibility/README.md).
-Consulta el [índice del módulo](../README.md) para continuar el recorrido;
-esta lección no representa su cierre completo.
+Quien aprende realiza y explica la práctica; su compañero revisa.
+Tu compañero señala un punto exterior y pide rastrearlo a su registro sin eliminarlo automáticamente.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita
+por sí solo aprendizaje completado.
 
-## Referencias y atribución
+No hay proyecto ni checkpoint implementado asociado a esta lección.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Código, muestras explicativas y figuras propios de DS Track. Las decisiones
 se contrastaron con estas fuentes primarias; no se copiaron capítulos ni figuras.
@@ -398,3 +442,9 @@ Las páginas stable pueden mostrar versiones posteriores a las declaradas.
 - [Matplotlib 3.10.7: boxplot](https://matplotlib.org/3.10.7/api/_as_gen/matplotlib.axes.Axes.boxplot.html), para orientación, bigotes y puntos exteriores.
 - [Matplotlib: scatter](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html), para coordenadas y marcas.
 - [Claus O. Wilke: histogramas y densidades](https://clauswilke.com/dataviz/histograms-density-plots.html) y [asociaciones](https://clauswilke.com/dataviz/visualizing-associations.html), capítulos del libro abierto Fundamentals of Data Visualization.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con [04.05 — Escalas, etiquetas y accesibilidad](../05_scales_labels_accessibility/README.md).
+
+[← Módulo 04](../README.md) · [Lab 04.04](../../../labs/04_visualization_python/04_distributions_relationships/README.md) · [Siguiente →](../05_scales_labels_accessibility/README.md)

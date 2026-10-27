@@ -141,7 +141,7 @@ del repositorio a quien te acompaña. Antes de explicar verbalmente:
 4. Registra dudas, correcciones, entorno/visor, comandos usados y archivos
    revisados en revision.md dentro de la entrega.
 5. Explica por qué cada panel existe y qué afirmación no podrías sostener.
-6. Registra la evidencia en PROGRESS.md sin marcar aprendizaje completado
+6. Registra la evidencia en tu bitácora personal junto a la práctica sin marcar aprendizaje completado
    solo por haber generado archivos.
 
 **Criterio de salida:** puedes reconstruir, conciliar, justificar figuras
@@ -190,7 +190,7 @@ alteran archivos ni filtran la figura principal del informe.
 
 Conserva fuentes, tablas conciliadas, figuras, informe, interpretación propia,
 instrucciones y registro de revisión/reconstrucción. Explica qué se comprobó
-y qué sigue limitado por la cobertura. Anota dudas y evidencias en PROGRESS.md.
+y qué sigue limitado por la cobertura. Anota dudas y evidencias en tu bitácora personal junto a la práctica.
 
 Reflexiona: ¿por qué una referencia independiente ayuda? ¿Qué no garantiza
 una conciliación correcta? ¿Qué se pierde al enviar solo un PNG? ¿Qué
