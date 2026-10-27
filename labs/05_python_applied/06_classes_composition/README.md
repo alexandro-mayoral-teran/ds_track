@@ -176,7 +176,7 @@ para guardar listas: compara los diseños en los ejemplos aislados.
 - ¿Por qué frozen no conserva una instantánea de los CSV?
 - ¿Qué aporta composición en este ejemplo y qué costo agrega frente a la función?
 
-Registra resultados, decisiones y dudas en PROGRESS.md. Completar material o
+Registra resultados, decisiones y dudas en tu bitácora personal junto a la práctica. Completar material o
 ejecutar ejemplos no acredita por sí solo el aprendizaje del estudiante.
 
 Si sigues las ampliaciones, continúa con el

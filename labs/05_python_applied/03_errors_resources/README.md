@@ -165,7 +165,7 @@ Excepciones propias/gestores personalizados no bloquean este cierre.
 - ¿Por qué guardar cierre.json no convierte una carpeta en transacción?
 - ¿Qué harías con una carpeta parcial antes de volver a intentar?
 
-Registra resultados, revisión visual, dudas y siguiente paso en PROGRESS.md.
+Registra resultados, revisión visual, dudas y siguiente paso en tu bitácora personal junto a la práctica.
 Puedes avanzar cuando demuestres conservación y cierre de recursos, interpretes
 las etapas y no confundas una falla con un resultado válido vacío.
 

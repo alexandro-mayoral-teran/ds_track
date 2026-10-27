@@ -189,7 +189,7 @@ falta comprobar antes de trasladar una mejora a la ejecución completa.
 - ¿Cuándo preferirías conservar la implementación actual?
 
 Puedes cerrar esta extensión cuando expliques la comparación y sus límites con
-tus palabras. Registra evidencia y dudas en PROGRESS.md sin confundir desarrollar
+tus palabras. Registra evidencia y dudas en tu bitácora personal junto a la práctica sin confundir desarrollar
 material con completar el aprendizaje.
 
 Si sigues las ampliaciones, continúa con la siguiente lección:

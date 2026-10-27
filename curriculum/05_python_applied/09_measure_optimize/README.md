@@ -1,12 +1,30 @@
 # 05.09 — Medir antes de optimizar
 
-## Propósito, alcance y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Comparar costos de un trabajo definido conservando su contrato |
+| **Necesitas** | Paquete, contratos y pruebas; ampliación opcional |
+| **Evidencia** | Repeticiones, perfil y decisión con frontera y límites explícitos |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/09_measure_optimize/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+> **Ampliación opcional:** si no eliges esta práctica, puedes ir al
+> [05.11 — Cierre del proyecto Python](../11_project_closure/README.md),
+> después de completar el núcleo 05.01–05.05.
+
+<a id="propósito-alcance-y-prerrequisitos"></a>
+
+## Propósito
 
 Una ejecución lenta plantea una pregunta: ¿qué trabajo está costando tiempo y
 qué cambiaría al hacerlo de otra manera? En esta **extensión** aprenderás a
 formular esa pregunta, conservar evidencia y decidir si una mejora compensa
 su costo. Reducir tiempo sin conservar resultados, errores y reglas del análisis
 no resuelve el mismo problema.
+
+## Antes de empezar
 
 Reutiliza el paquete de [05.01](../01_notebook_to_modules/README.md), las
 [pruebas de 05.04](../04_testing/README.md) y los
@@ -16,10 +34,27 @@ no necesitas escribir decoradores. Para medir consumo diferido, repasa
 [05.07](../07_iterators_generators/README.md). Clases y decoradores propios son
 opcionales. Esta sección tampoco bloquea el cierre esencial ni el paso a R.
 
-Al terminar podrás definir qué entra en una medición, repetir comparaciones
-equivalentes, leer un perfil de llamadas, distinguir memoria trazada de memoria
-total y justificar una decisión con sus límites. No se busca una marca de
+No se busca una marca de
 velocidad ni convertir esta muestra pequeña en un sistema de alto rendimiento.
+
+## Qué vas a aprender
+
+- Definir qué trabajo entra en una medición antes de usar el reloj.
+- Repetir comparaciones con resultados y errores equivalentes.
+- Interpretar un perfil de llamadas y distinguir memoria trazada de memoria total.
+- Justificar una decisión acotada sin prometer velocidad universal.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Medición compartida](../01_notebook_to_modules/analisis_cartera/medicion.py) | Leer fronteras e instrumentos | Para el recorrido |
+| [Ejecutor de medición](../01_notebook_to_modules/ejecutar_medicion.py) | Conservar repeticiones y fases separadas | Para el recorrido |
+| [Pruebas de medición](../01_notebook_to_modules/pruebas_0509/) | Comprobar contratos y límites | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Definir la pregunta antes del reloj
 
@@ -399,23 +434,47 @@ comparar resultados. No hace falta instalar otra herramienta.
 
 </details>
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 05.09](../../../labs/05_python_applied/09_measure_optimize/README.md).
+## Práctica
+
+Si eliges esta ampliación, realiza el [lab 05.09](../../../labs/05_python_applied/09_measure_optimize/README.md) para
+medir una comparación equivalente y justificar qué cambiarías.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Frontera y repeticiones de tu comparación | Mismo trabajo, resultados y errores antes de medir | Qué incluyen los tiempos y qué queda fuera |
+| Perfil, memoria observada y decisión | Instrumento, alcance y variación documentados | Por qué una muestra pequeña o un pico trazado no describen todo el rendimiento |
+
 Puedes cerrar esta extensión cuando delimites el trabajo, compruebes equivalencia,
 interpretes repeticiones/perfil/memoria y justifiques una decisión sin prometer
-velocidad universal. No hay proyecto/checkpoint implementado asociado. Registra
-evidencia y dudas en PROGRESS.md; disponer del material no acredita aprendizaje.
+velocidad universal.
 
-Si continúas las ampliaciones, sigue el
-[05.10 — Integración con APIs](../10_api_integration/README.md), disponible con lab.
-El [cierre 05.11](../11_project_closure/README.md) está disponible con lab.
-Volver al [índice de Python aplicado](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero elige una cifra y pide explicar qué fase e instrumento la produjeron.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track sobre el paquete y fuentes existentes; documentación
 primaria enlazada junto a cada instrumento. Consulta: 2026-10-15. Código con base
 Python 3.11 y detección condicional de monitoring desde 3.12; comprobación local
 con Python 3.12.12, pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0. No son
 afirmaciones de últimas versiones. Sin dependencias nuevas ni capítulos copiados.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.11 — Cierre del proyecto Python](../11_project_closure/README.md).
+
+Si eliges seguir las ampliaciones, continúa con
+[05.10 — Integración con APIs](../10_api_integration/README.md). Las ampliaciones 05.06–05.10 no bloquean el cierre ni R.
+
+[← Módulo 05](../README.md) · [Lab 05.09](../../../labs/05_python_applied/09_measure_optimize/README.md) · [Siguiente →](../11_project_closure/README.md)

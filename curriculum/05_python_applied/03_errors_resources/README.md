@@ -1,10 +1,24 @@
 # 05.03 — Errores y gestión de recursos
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Explicar fallas y liberar recursos sin inventar resultados válidos |
+| **Necesitas** | Paquete de 05.01–05.02; sin dependencias nuevas |
+| **Evidencia** | Comparación de entregas y nota de etapa, causa y conservación |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/03_errors_resources/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Detener un recorrido cuando ya no puede producir un resultado válido, explicar
 la falla y liberar los recursos utilizados. Conservar fuentes y entregas previas,
 y distinguir una carpeta parcial de una ejecución que alcanzó su cierre.
+
+## Antes de empezar
 
 Completa [05.02 — Configuración y registro](../02_configuration_logging/README.md)
 y su lab. Recupera [funciones de 01.04](../../01_python_foundations/04_functions/README.md),
@@ -18,7 +32,9 @@ recursos. **Práctica:** fallas controladas y escritura atómica de un archivo.
 **Extensión:** excepciones propias y gestores personalizados; no bloquean avanzar.
 La automatización de casos mediante unittest se desarrolla en 05.04.
 
-## Objetivos observables
+<a id="objetivos-observables"></a>
+
+## Qué vas a aprender
 
 - Interpretar tipo, mensaje y recorrido de una excepción.
 - Capturar solo errores para los que existe una respuesta definida.
@@ -26,6 +42,19 @@ La automatización de casos mediante unittest se desarrolla en 05.04.
 - Cerrar archivos, conexiones y figuras cuando una operación falla.
 - Conservar un JSON anterior si no se completa su reemplazo.
 - Reconocer los límites de un cierre por etapas y documentar una carpeta parcial.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Ejemplo de recursos](recursos_demo.py) | Observar cierre y fallas controladas | Para el recorrido |
+| [Ejecutor seguro](../01_notebook_to_modules/ejecutar_seguro.py) | Seguir el recorrido con errores explícitos | Para el recorrido |
+| [Recursos compartidos](../01_notebook_to_modules/analisis_cartera/recursos.py) | Leer responsables del cierre | Para el recorrido |
+| [Cierre de entrega](../01_notebook_to_modules/analisis_cartera/cierre.py) | Comprobar archivo final y conservación | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Una excepción no es una fila rechazada ni un saldo ausente
 
@@ -406,22 +435,34 @@ contextlib.contextmanager utiliza una función generadora y un decorador: esos
 conceptos se desarrollarán en 05.07/05.08. Reutilizar with y closing basta aquí.
 No crear gestores propios es una decisión de alcance, no un bloqueo para avanzar.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 05.03](../../../labs/05_python_applied/03_errors_resources/README.md).
-Conserva entregas normal/parciales/reconstruida, comparación de tablas y notas
-que identifiquen etapa, causa, recursos liberados y siguiente intento. Registra
-tu explicación y evidencia en PROGRESS.md; todavía no hay proyecto/checkpoint
-implementado asociado.
+## Práctica
+
+Realiza el [lab 05.03](../../../labs/05_python_applied/03_errors_resources/README.md) para
+provocar y explicar fallas controladas y comprobar recursos y salidas.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Entregas normal, parcial y reconstruida con notas | Etapa, causa, recursos liberados y siguiente intento | Qué error se captura y cuál se propaga |
+| Comprobación del JSON anterior y las tablas | Conservación al fallar el reemplazo y equivalencia tras reconstruir | Qué garantiza la escritura de un archivo y qué no garantiza para toda una carpeta |
 
 Puedes avanzar cuando distingas error de dato ausente, expliques qué se captura
 y qué se propaga, compruebes cierre de recursos y conservación del JSON anterior,
 y reconozcas los límites del marcador final y de la escritura atómica.
 
-Continúa con [05.04 — Pruebas de código y datos](../04_testing/README.md),
-con casos conocidos y una colección unittest sobre el mismo paquete. Volver al [índice de Python aplicado](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero señala una carpeta parcial y pide explicar qué se completó y qué falta comprobar.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track; análisis/figuras conservados de 05.01, configuración
 de 05.02 y referencia independiente de 04.09. Documentación consultada el
@@ -436,3 +477,10 @@ Matplotlib 3.10.7 y Altair 6.3.0; sin nuevas dependencias ni ejemplos copiados.
 - [Python: búferes y flush](https://docs.python.org/3.11/library/io.html#io.IOBase.flush).
 - [Python: closing y gestores de contexto](https://docs.python.org/3.11/library/contextlib.html).
 - [Python: gestor de conexión SQLite](https://docs.python.org/3.11/library/sqlite3.html#how-to-use-the-connection-context-manager).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.04 — Pruebas de código y datos](../04_testing/README.md).
+
+[← Módulo 05](../README.md) · [Lab 05.03](../../../labs/05_python_applied/03_errors_resources/README.md) · [Siguiente →](../04_testing/README.md)

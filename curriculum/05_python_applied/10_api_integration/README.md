@@ -1,12 +1,30 @@
 # 05.10 — Integración con APIs
 
-## Propósito, alcance y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.10**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Recorrer páginas y validar una extracción completa con límites |
+| **Necesitas** | Respuestas locales simuladas; ampliación opcional sin servicio real |
+| **Evidencia** | Extracción conciliada y nota de páginas, fallas y reintentos |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/10_api_integration/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+> **Ampliación opcional:** si no eliges esta práctica, puedes ir al
+> [05.11 — Cierre del proyecto Python](../11_project_closure/README.md),
+> después de completar el núcleo 05.01–05.05.
+
+<a id="propósito-alcance-y-prerrequisitos"></a>
+
+## Propósito
 
 Hasta ahora el análisis comienza en archivos locales. Una API puede ofrecer
 datos mediante solicitudes a otro sistema; esa frontera introduce disponibilidad,
 formatos y reglas que no controlamos. Esta **extensión** enseña a recibir páginas
 de datos, validarlas y comprobar que el resultado completo puede incorporarse al
 análisis conocido. Una respuesta recibida no equivale a una extracción completa.
+
+## Antes de empezar
 
 Reutiliza el paquete de [05.01](../01_notebook_to_modules/README.md),
 [configuración de 05.02](../02_configuration_logging/README.md),
@@ -17,11 +35,30 @@ como argumentos en [05.08](../08_functions_decorators/README.md) si lo necesitas
 no hace falta crear clases ni decoradores. Esta ampliación no bloquea el cierre
 esencial ni R.
 
-Al terminar podrás explicar una solicitud GET, distinguir estados HTTP de errores
-de contenido, recorrer páginas con límites, justificar reintentos y producir una
-tabla tipada conciliada. La práctica usa **respuestas locales simuladas**, sin
+La práctica usa **respuestas locales simuladas**, sin
 credenciales, conexión ni nuevas dependencias. El adaptador HTTPS es una ampliación
 comprobada con respuestas sustitutas; no se exige un servicio real.
+
+## Qué vas a aprender
+
+- Distinguir solicitud HTTP, contenido JSON y reglas de datos.
+- Recorrer páginas con límites y comprobar claves y completitud.
+- Justificar errores y reintentos con responsabilidades separadas.
+- Producir una tabla tipada conciliada desde respuestas locales simuladas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [API compartida](../01_notebook_to_modules/analisis_cartera/api.py) | Separar transporte, páginas y validación | Para el recorrido |
+| [Ejecutor de API](../01_notebook_to_modules/ejecutar_api.py) | Ejecutar la simulación conciliada | Para el recorrido |
+| [Configuración](config.json) | Consultar límites y reintentos | Para el recorrido |
+| [Muestras locales](muestras/README.md) | Elegir respuestas y errores simulados | Para el recorrido |
+| [Pruebas de API](../01_notebook_to_modules/pruebas_0510/) | Comprobar fronteras sin conexión real | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. De una función local a una solicitud HTTP
 
@@ -372,24 +409,44 @@ No se incluye un token de ejemplo ejecutable ni se guarda en Git, URL o registro
 Autenticación, paginación por cursor, reanudación persistente, snapshots remotos
 y planificación avanzada de reintentos quedan fuera de este cliente didáctico.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 05.10](../../../labs/05_python_applied/10_api_integration/README.md).
+## Práctica
+
+Si eliges esta ampliación, realiza el [lab 05.10](../../../labs/05_python_applied/10_api_integration/README.md) para
+reconstruir una extracción paginada con controles de completitud.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tabla y comprobaciones de extracción | Páginas, claves, tipos y conciliación | Por qué recibir una respuesta no demuestra una extracción completa |
+| Nota de errores y reintentos | Límites y resultado de cada escenario simulado | Qué diferencia transporte, JSON y datos y cuándo corresponde detenerse |
+
 Puedes cerrar la extensión cuando distingas transporte/JSON/datos, recorras
 páginas sin duplicar, compruebes equivalencia y expliques cuándo falla o se
-reintenta. No hay proyecto/checkpoint implementado asociado. Registra evidencia
-y dudas en PROGRESS.md; tener el material no demuestra haberlo aprendido.
+reintenta.
 
-La siguiente sección es el
-[05.11 — Cierre del proyecto Python](../11_project_closure/README.md),
-disponible con lab. Integra la reconstrucción de indicadores y figura sin
-exigir todas las ampliaciones opcionales.
-Volver al [índice de Python aplicado](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero propone un error tardío y pregunta qué evidencia impide presentar una extracción parcial como completa.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos y contrato propios de DS Track, con muestras derivadas de sus CSV
 sintéticos conservados. Referencias primarias enlazadas junto a cada concepto.
 Consulta: 2026-10-15. Biblioteca estándar con base Python 3.11; comprobación local
 en Python 3.12.12 y pandas 2.3.3, sin nuevas dependencias ni cambios al lockfile.
 El transporte HTTPS se verifica con sustitutos locales, no con un proveedor real.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.11 — Cierre del proyecto Python](../11_project_closure/README.md).
+
+[← Módulo 05](../README.md) · [Lab 05.10](../../../labs/05_python_applied/10_api_integration/README.md) · [Siguiente →](../11_project_closure/README.md)

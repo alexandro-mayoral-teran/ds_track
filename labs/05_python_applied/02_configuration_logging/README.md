@@ -180,7 +180,7 @@ representan etapas distintas. Aun con un registro final, revisa los archivos.
 - ¿Qué falta comprobar después de un código 0?
 
 Registra tus tablas comparadas, explicación, revisión visual y dudas en
-PROGRESS.md. Puedes avanzar cuando cambies corte/destino sin editar el cálculo,
+tu bitácora personal junto a la práctica. Puedes avanzar cuando cambies corte/destino sin editar el cálculo,
 justifiques la precedencia y distingas advertencias, configuración inválida y
 una entrega incompleta.
 

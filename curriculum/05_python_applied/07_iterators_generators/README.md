@@ -1,11 +1,29 @@
 # 05.07 — Iteradores y generadores
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Consumir registros por lotes conservando el último y sus indicadores |
+| **Necesitas** | Contratos y recursos anteriores; ampliación opcional |
+| **Evidencia** | Lotes conciliados y explicación de consumo, errores y memoria |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/07_iterators_generators/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+> **Ampliación opcional:** si no eliges esta práctica, puedes ir al
+> [05.11 — Cierre del proyecto Python](../11_project_closure/README.md),
+> después de completar el núcleo 05.01–05.05.
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Consumir una secuencia paso a paso, agrupar registros en lotes y comprobar que
 el cambio de recorrido conserva los indicadores. Aprenderemos qué se ejecuta
 al pedir el siguiente elemento, qué ocurre al agotar el recorrido y qué datos
 permanecen en memoria.
+
+## Antes de empezar
 
 Esta sección es una **extensión opcional**. Completa
 [05.05 — Tipos y contratos](../05_types_contracts/README.md) y recupera
@@ -21,7 +39,9 @@ diseñar clases para crear los generadores de esta lección.
 No añadimos dependencias, grandes datasets ni una medición de rendimiento;
 medir tiempo/memoria pertenece a 05.09.
 
-## Objetivos observables
+<a id="objetivos-observables"></a>
+
+## Qué vas a aprender
 
 - Distinguir un objeto iterable de un iterador que ya avanzó.
 - Usar iter, next y for sin perder ni volver a contar elementos.
@@ -29,6 +49,18 @@ medir tiempo/memoria pertenece a 05.09.
 - Procesar lotes incluyendo el último, aunque esté incompleto.
 - Conservar cero, ausencia, claves y resultados al recorrer los CSV por partes.
 - Identificar quién cierra el archivo y qué estructuras impiden prometer memoria constante.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Iteración compartida](../01_notebook_to_modules/analisis_cartera/iteracion.py) | Leer consumo y agrupación en lotes | Para el recorrido |
+| [Ejecutor por lotes](../01_notebook_to_modules/ejecutar_lotes.py) | Contrastar con lectura completa | Para el recorrido |
+| [Pruebas de iteración](../01_notebook_to_modules/pruebas_0507/) | Revisar agotamiento, fronteras y conciliación | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. for ya utiliza el protocolo de iteración
 
@@ -419,22 +451,34 @@ y uno de septiembre. Allí Todos es 5/3/1/60, distinto de la fuente original.
 Se prueban tamaños 1, 2, 4, 6 y 20, agotamiento, error tardío, duplicados entre
 lotes, valores inválidos fuera del corte, vacíos y fuentes intactas.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 05.07](../../../labs/05_python_applied/07_iterators_generators/README.md).
+## Práctica
+
+Si eliges esta ampliación, realiza el [lab 05.07](../../../labs/05_python_applied/07_iterators_generators/README.md) para
+comprobar consumo, último lote y conciliación sin prometer memoria constante.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Lotes y controles de indicadores | Ningún elemento perdido o contado dos veces | Cuándo avanza un iterador y qué ejecuta yield |
+| Nota de recursos y memoria | Último lote, errores diferidos y cierre del archivo | Qué estructuras siguen creciendo aunque la lectura sea por partes |
+
 Puedes cerrar esta extensión cuando expliques consumo y errores diferidos,
 conserves el último lote, concilies indicadores y describas quién cierra el
-archivo y qué memoria sigue creciendo. No hay proyecto/checkpoint implementado
-asociado. Registra evidencia y dudas en PROGRESS.md; no se acredita aprendizaje
-por disponer del material ni por ejecutar sus pruebas.
+archivo y qué memoria sigue creciendo.
 
-Si sigues las ampliaciones, continúa con el
-[05.08 — Funciones como valores y decoradores](../08_functions_decorators/README.md),
-disponible como extensión con reenvío, metadatos y registro de llamadas. El [cierre 05.11](../11_project_closure/README.md)
-está disponible con lab. Las extensiones 05.06–05.10 no bloquean el núcleo ni R.
-Volver al [índice de Python aplicado](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero interrumpe un recorrido y pide explicar qué se consumió y quién debe cerrar el archivo.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track; fuentes y análisis de 05.01–05.06 conservados.
 Documentación primaria consultada el 2026-10-15. Sintaxis compatible con Python
@@ -451,3 +495,13 @@ copiados de las fuentes.
 - [Python: lectura de CSV](https://docs.python.org/3.11/library/csv.html).
 - [Python: statistics.median](https://docs.python.org/3.11/library/statistics.html#statistics.median).
 - [PEP 479: StopIteration dentro de generadores](https://peps.python.org/pep-0479/).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.11 — Cierre del proyecto Python](../11_project_closure/README.md).
+
+Si eliges seguir las ampliaciones, continúa con
+[05.08 — Funciones como valores y decoradores](../08_functions_decorators/README.md). Las ampliaciones 05.06–05.10 no bloquean el cierre ni R.
+
+[← Módulo 05](../README.md) · [Lab 05.07](../../../labs/05_python_applied/07_iterators_generators/README.md) · [Siguiente →](../11_project_closure/README.md)

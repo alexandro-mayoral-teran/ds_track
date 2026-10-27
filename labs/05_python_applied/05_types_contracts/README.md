@@ -176,7 +176,7 @@ esperaría y qué reglas seguirían necesitando if/raise.
 - ¿Por qué list[str] no garantiza nombres únicos del catálogo?
 - ¿Qué sucedería con 0.0 si usaras if not coverage para detectar ausencia?
 
-Registra evidencia y dudas en PROGRESS.md. Puedes avanzar cuando expliques la
+Registra evidencia y dudas en tu bitácora personal junto a la práctica. Puedes avanzar cuando expliques la
 firma, el contrato y las comprobaciones con tus palabras, sin confundir pasar
 ejemplos con validación de cualquier archivo futuro.
 

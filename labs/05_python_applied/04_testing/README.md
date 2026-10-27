@@ -176,7 +176,7 @@ o un corte válido vacío; explica qué regresión descubriría antes de program
 - ¿Por qué no debe depender la aceptación de datos de una sentencia assert?
 
 Registra cuentas manuales, comandos, falla/corrección, método nuevo y dudas
-en PROGRESS.md sin cambiar el estado de aprendizaje por la mera disponibilidad
+en tu bitácora personal junto a la práctica sin cambiar el estado de aprendizaje por la mera disponibilidad
 del material. Avanza cuando puedas explicar esas evidencias con tus palabras.
 
 Continúa con [05.05 — Tipos y contratos](../../../curriculum/05_python_applied/05_types_contracts/README.md). Volver a la [lección 05.04](../../../curriculum/05_python_applied/04_testing/README.md).

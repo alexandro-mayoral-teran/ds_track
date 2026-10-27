@@ -1,10 +1,24 @@
 # 05.02 — Configuración y registro de ejecución
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Ejecutar con parámetros explícitos y conservar el contexto de cada entrega |
+| **Necesitas** | Paquete compartido de 05.01 y entorno de estudio |
+| **Evidencia** | Entregas comparadas y nota de configuración efectiva y mensajes |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/02_configuration_logging/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Ejecutar el análisis conocido para otra fecha o carpeta sin editar la mediana,
 la lectura ni el dibujo. También queremos explicar qué entrada, parámetros,
 reglas y versiones produjo cada entrega, y reconocer una ejecución incompleta.
+
+## Antes de empezar
 
 Completa [05.01 — Del notebook a módulos](../01_notebook_to_modules/README.md)
 y su lab. Recupera [terminal y rutas de 00.02](../../00_getting_started/02_terminal_paths/README.md),
@@ -20,7 +34,9 @@ notebook, otra instalación ni un paquete de configuración externo. Se utiliza
 la biblioteca estándar y el paquete del análisis de 05.01. Errores, recursos
 y escritura atómica se profundizarán en 05.03; pruebas formales, en 05.04.
 
-## Objetivos observables
+<a id="objetivos-observables"></a>
+
+## Qué vas a aprender
 
 - Distinguir un parámetro de función de una opción de terminal.
 - Utilizar la ayuda y reconocer valores, tipos y errores de argumentos.
@@ -28,6 +44,19 @@ y escritura atómica se profundizarán en 05.03; pruebas formales, en 05.04.
 - Combinar valores predeterminados, archivo JSON y terminal sin ambigüedad.
 - Distinguir mensaje de diagnóstico, tabla analítica y registro de ejecución.
 - Ejecutar dos cortes y comprobar qué configuración produjo cada resultado.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Ejemplo de argumentos](argumentos_demo.py) | Leer opciones, ayuda y errores | Para el recorrido |
+| [Ejecutor configurado](../01_notebook_to_modules/ejecutar_configurado.py) | Usar entradas y opciones explícitas | Para el recorrido |
+| [CLI compartida](../01_notebook_to_modules/analisis_cartera/cli.py) | Separar lectura de opciones y ejecución | Para el recorrido |
+| [Configuración de octubre](octubre.json) | Contrastar archivo y opciones de terminal | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Qué debe poder cambiar y qué debe permanecer estable
 
@@ -429,22 +458,34 @@ salida y archivos; no busques solo la palabra éxito. Excepciones inesperadas
 pueden producir un traceback: no las convertimos indiscriminadamente en una
 ejecución satisfactoria. Profundizaremos su manejo y conservación en 05.03.
 
-## Práctica, evidencia y criterio de salida
+<a id="práctica-evidencia-y-criterio-de-salida"></a>
 
-Realiza el [lab 05.02](../../../labs/05_python_applied/02_configuration_logging/README.md).
-Conserva las dos entregas, una tercera con opciones explícitas, tabla comparativa
-y explicación de parámetros/procedencia, mensajes y códigos de salida.
-Registra evidencia propia y dudas en PROGRESS.md; no hay proyecto/checkpoint
-implementado asociado todavía.
+## Práctica
+
+Realiza el [lab 05.02](../../../labs/05_python_applied/02_configuration_logging/README.md) para
+comparar cortes y demostrar la precedencia de configuración sin editar el cálculo.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Dos entregas y una variante con opciones explícitas | Cortes, rutas y configuración efectiva | Qué valor se utilizó y de qué origen salió |
+| Tabla comparativa y nota de ejecución | Mensajes, procedencia y códigos de salida | Diferencias entre cobertura parcial, configuración inválida y exportación incompleta |
 
 Puedes avanzar cuando ejecutes sin editar la transformación, expliques desde
 qué base se interpretó cada ruta, demuestres la precedencia con un registro
 y distingas cobertura parcial, configuración inválida y exportación incompleta.
 
-## Siguiente paso y referencias
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero elige una opción del JSON y pide mostrar qué ocurre al cambiarla desde la terminal.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-Continúa con [05.03 — Errores y gestión de recursos](../03_errors_resources/README.md).
-Volver al [índice de Python aplicado](../README.md).
+<a id="siguiente-paso-y-referencias"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track; análisis y figuras de 05.01, con referencia CSV
 independiente conservada de 04.09. Documentación consultada el 2026-10-14 para
@@ -459,3 +500,10 @@ de Tshepang Lekhonkhobe y la documentación del equipo Python.
 - [Python: lectura y escritura JSON](https://docs.python.org/3.11/library/json.html).
 - [Python: pathlib](https://docs.python.org/3.11/library/pathlib.html).
 - [Python: sys.exit y códigos de salida](https://docs.python.org/3.11/library/sys.html#sys.exit).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.03 — Errores y gestión de recursos](../03_errors_resources/README.md).
+
+[← Módulo 05](../README.md) · [Lab 05.02](../../../labs/05_python_applied/02_configuration_logging/README.md) · [Siguiente →](../03_errors_resources/README.md)

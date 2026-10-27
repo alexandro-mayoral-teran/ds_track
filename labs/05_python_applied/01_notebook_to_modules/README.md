@@ -201,7 +201,7 @@ crear una jerarquía de paquetes no aporta claridad por sí mismo.
 - ¿Por qué abrir otra carpeta y activar otro entorno resuelven problemas distintos?
 - ¿Qué podría seguir equivocado aunque las 20 conciliaciones coincidan?
 
-Registra resultados, revisión visual, dudas y siguiente paso en PROGRESS.md.
+Registra resultados, revisión visual, dudas y siguiente paso en tu bitácora personal junto a la práctica.
 Puedes avanzar cuando expliques esas decisiones y uses el mismo cálculo desde
 script/notebook sin editar sys.path ni depender de variables ocultas.
 

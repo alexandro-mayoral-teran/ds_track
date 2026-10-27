@@ -1,11 +1,25 @@
 # 05.05 — Tipos y contratos de funciones
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Explicar firmas y responsabilidades con contratos comprobables |
+| **Necesitas** | Paquete y pruebas anteriores; sin checker obligatorio |
+| **Evidencia** | Contrato documentado y casos válidos e inválidos explicados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/05_types_contracts/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Hacer explícito qué recibe una función, qué devuelve, qué condiciones exige y
 qué ocurre cuando no se cumplen. Usaremos anotaciones y documentación para
 leer el código, validaciones para proteger sus límites y pruebas para comprobar
 ejemplos. Cada herramienta responde a una pregunta distinta.
+
+## Antes de empezar
 
 Completa [05.04 — Pruebas de código y datos](../04_testing/README.md) y su lab.
 Recupera [funciones y argumentos de 01.04](../../01_python_foundations/04_functions/README.md),
@@ -20,7 +34,9 @@ ausentes y estructura tabular. **Extensión:** análisis estático; no exige ins
 un checker ni bibliotecas de esquemas. Clases/dataclasses siguen siendo opcionales
 en 05.06. Puedes dividir esta lección en varias sesiones.
 
-## Objetivos observables
+<a id="objetivos-observables"></a>
+
+## Qué vas a aprender
 
 - Leer `parametro: Tipo` y `-> Tipo` sin confundirlos con conversión o validación.
 - Distinguir omisión, valor predeterminado, None, cero y colección vacía.
@@ -28,6 +44,19 @@ en 05.06. Puedes dividir esta lección en varias sesiones.
 - Explicar qué comprueba cada límite del paquete y qué asume su interior.
 - Usar una función de revisión que conserva fuentes, ausencias y orden solicitado.
 - Ejecutar pruebas de contrato y reconocer los límites del análisis estático.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Ejecutor de contratos](../01_notebook_to_modules/ejecutar_contratos.py) | Revisar opciones y resultados | Para el recorrido |
+| [Contratos compartidos](../01_notebook_to_modules/analisis_cartera/contratos.py) | Identificar validaciones y responsabilidades | Para el recorrido |
+| [Revisión del análisis](../01_notebook_to_modules/analisis_cartera/revision.py) | Consultar sin alterar las fuentes | Para el recorrido |
+| [Pruebas de contratos](../01_notebook_to_modules/pruebas_0505/) | Contrastar fronteras y errores | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. El problema: una firma puede dejar preguntas abiertas
 
@@ -391,20 +420,33 @@ original de 24 registros. Las pruebas comprueban ambos lados de los contratos:
 casos permitidos y rechazos, selección vacía, orden, no modificación y errores
 de fuente. La cobertura compartida conserva los resultados anteriores.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 05.05](../../../labs/05_python_applied/05_types_contracts/README.md).
+## Práctica
+
+Realiza el [lab 05.05](../../../labs/05_python_applied/05_types_contracts/README.md) para
+documentar y comprobar contratos sin confundir anotación, conversión y validación.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Firma, documentación y nota de responsabilidades | Entradas, salida, errores y efectos descritos | Quién valida cada condición y qué asume el interior |
+| Casos válidos e inválidos de tu práctica | Omisión, None, cero, vacío y límites diferenciados | Qué aportan las anotaciones y qué requieren controles en ejecución |
+
 Puedes avanzar cuando expliques una firma y su contrato completo, distingas
 None/cero/vacío, identifiques quién valida y demuestres casos válidos e inválidos.
-No hay proyecto/checkpoint implementado asociado; conserva evidencia y dudas
-en PROGRESS.md sin acreditar aprendizaje por la disponibilidad del material.
 
-Después puedes estudiar [05.06 — Clases, composición y dataclasses](../06_classes_composition/README.md),
-disponible como práctica opcional con objetos pequeños y composición. El [cierre 05.11](../11_project_closure/README.md)
-está disponible con lab; las ampliaciones 05.06–05.10 no bloquean el cierre esencial.
-Volver al [índice de Python aplicado](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero propone un valor omitido y otro None y pide justificar si significan lo mismo.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track, con paquete y análisis de 05.01–05.04 conservados.
 Se consultaron fuentes primarias el 2026-10-15, con sintaxis compatible con
@@ -419,3 +461,13 @@ y Altair 6.3.0. No se copian ejemplos de las fuentes ni se agregan dependencias.
 - [pandas 2.3: DataFrame](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.html).
 - [pandas 2.3: datos ausentes](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/missing_data.html).
 - [mypy: ejecución y límites de importaciones](https://mypy.readthedocs.io/en/stable/running_mypy.html), ampliación opcional.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.11 — Cierre del proyecto Python](../11_project_closure/README.md).
+
+Si eliges seguir las ampliaciones, continúa con
+[05.06 — Clases, composición y dataclasses](../06_classes_composition/README.md). Las ampliaciones 05.06–05.10 no bloquean el cierre ni R.
+
+[← Módulo 05](../README.md) · [Lab 05.05](../../../labs/05_python_applied/05_types_contracts/README.md) · [Siguiente →](../11_project_closure/README.md)

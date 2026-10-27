@@ -1,10 +1,28 @@
 # 05.06 — Clases, composición y dataclasses
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Elegir y comprobar objetos pequeños cuando aporten claridad |
+| **Necesitas** | Contratos de 05.05; ampliación opcional |
+| **Evidencia** | Decisión de representación y comprobación de composición y estado |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/06_classes_composition/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+> **Ampliación opcional:** si no eliges esta práctica, puedes ir al
+> [05.11 — Cierre del proyecto Python](../11_project_closure/README.md),
+> después de completar el núcleo 05.01–05.05.
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Representar datos relacionados y sus operaciones cuando una estructura propia
 ayude a entender el programa. Aprenderemos a leer y crear objetos pequeños;
 también a justificar cuándo una función o un diccionario bastan.
+
+## Antes de empezar
 
 Esta sección es **práctica opcional**. Completa primero
 [05.05 — Tipos y contratos](../05_types_contracts/README.md) y su lab.
@@ -19,7 +37,9 @@ Recupera [diccionarios de 01.02](../../01_python_foundations/02_lists_dicts/READ
 propiedades, metaclases o patrones avanzados queda para una necesidad posterior.
 No exige paquetes nuevos ni bloquea el cierre esencial de Python aplicado.
 
-## Objetivos observables
+<a id="objetivos-observables"></a>
+
+## Qué vas a aprender
 
 - Comparar una función, un diccionario y un objeto para una necesidad concreta.
 - Explicar cómo se inicializa una instancia y cómo un método recibe self.
@@ -27,6 +47,18 @@ No exige paquetes nuevos ni bloquea el cierre esencial de Python aplicado.
 - Crear una dataclass con campos y validaciones explícitas.
 - Componer una solicitud con sus opciones sin copiar el algoritmo del análisis.
 - Comprobar conservación de fuentes, resultados, ausencias y configuración.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Objetos compartidos](../01_notebook_to_modules/analisis_cartera/objetos.py) | Leer instancias, opciones y composición | Para el recorrido |
+| [Ejecutor de objetos](../01_notebook_to_modules/ejecutar_objetos.py) | Contrastar objetos y funciones | Para el recorrido |
+| [Pruebas de objetos](../01_notebook_to_modules/pruebas_0506/) | Revisar estado, alias y conservación | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Elegir una representación antes de escribir class
 
@@ -456,21 +488,34 @@ Comprueban alias, estado inválido, opciones, replace, composición, fuentes
 intactas, relectura, vacíos y equivalencia con review_summary. El lab incorpora
 otro caso de variación para comparar septiembre y octubre.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 05.06](../../../labs/05_python_applied/06_classes_composition/README.md).
+## Práctica
+
+Si eliges esta ampliación, realiza el [lab 05.06](../../../labs/05_python_applied/06_classes_composition/README.md) para
+justificar una representación y contrastar estado, copias y composición.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Decisión entre función, diccionario y objeto | La estructura responde una necesidad concreta | Qué significan instancia, self y estado compartido |
+| Código y comprobaciones de composición | Resultados, fuentes y opciones conservados | Por qué componer no exige copiar el algoritmo ni construir una jerarquía |
+
 Puedes cerrar esta ampliación cuando expliques self/estado, elijas una
 representación con una razón concreta y compruebes que la composición conserva
-resultados. No hay proyecto/checkpoint implementado asociado. Registra evidencia
-y dudas en PROGRESS.md; material disponible no acredita aprendizaje.
+resultados.
 
-Si sigues las ampliaciones, continúa con el
-[05.07 — Iteradores y generadores](../07_iterators_generators/README.md),
-disponible como extensión con consumo, lotes y conciliación. El [cierre 05.11](../11_project_closure/README.md)
-está disponible con lab. Las ampliaciones 05.06–05.10 no bloquean el núcleo ni R.
-Volver al [índice de Python aplicado](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero señala dos nombres y pide demostrar si representan dos instancias o el mismo objeto.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track sobre las funciones y datos de 05.01–05.05.
 Consulta de documentación primaria: 2026-10-15. Sintaxis compatible con Python
@@ -485,3 +530,13 @@ copiados de las fuentes.
 - [Python: fábricas de valores](https://docs.python.org/3.11/library/dataclasses.html#default-factory-functions).
 - [Python: dataclasses.replace](https://docs.python.org/3.11/library/dataclasses.html#dataclasses.replace).
 - [Python: isinstance](https://docs.python.org/3.11/library/functions.html#isinstance).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.11 — Cierre del proyecto Python](../11_project_closure/README.md).
+
+Si eliges seguir las ampliaciones, continúa con
+[05.07 — Iteradores y generadores](../07_iterators_generators/README.md). Las ampliaciones 05.06–05.10 no bloquean el cierre ni R.
+
+[← Módulo 05](../README.md) · [Lab 05.06](../../../labs/05_python_applied/06_classes_composition/README.md) · [Siguiente →](../11_project_closure/README.md)

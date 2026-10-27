@@ -169,7 +169,7 @@ conteos conciliados y límites de la simulación.
 - ¿Qué parte del adaptador HTTPS se comprobó y qué requeriría un proveedor real?
 
 Puedes cerrar esta extensión cuando expliques esas decisiones y compruebes
-éxito/falla con tus palabras. Registra evidencia y dudas en PROGRESS.md; el
+éxito/falla con tus palabras. Registra evidencia y dudas en tu bitácora personal junto a la práctica; el
 desarrollo del material no acredita aprendizaje del estudiante.
 
 Continúa con la siguiente lección prevista:

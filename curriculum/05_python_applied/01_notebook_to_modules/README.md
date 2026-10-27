@@ -1,11 +1,25 @@
 # 05.01 — Del notebook a módulos
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reutilizar el análisis desde módulos, un script y un notebook |
+| **Necesitas** | Entorno de pandas/visualización; kernel del notebook comprobado |
+| **Evidencia** | Mapa de responsabilidades y comparación de ambos consumidores |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/01_notebook_to_modules/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Reutilizar un análisis sin copiar sus funciones entre celdas y scripts. Vamos a
 separar lectura, transformación, comprobación y presentación en archivos que
 puedas importar, y a ejecutar el mismo recorrido desde un script y un notebook.
 La reorganización debe conservar los resultados conocidos.
+
+## Antes de empezar
 
 Completa [04.09 — Cierre visual del análisis](../../04_visualization_python/09_visual_closure/README.md)
 y su lab, con los prerrequisitos de pandas/SQL. Recupera
@@ -21,7 +35,9 @@ entrada protegida. **Práctica:** mismo análisis en script y notebook.
 Argumentos de terminal, logging y configuración se desarrollarán en 05.02;
 pruebas formales, en 05.04. No agregamos dependencias al proyecto.
 
-## Objetivos observables
+<a id="objetivos-observables"></a>
+
+## Qué vas a aprender
 
 - Explicar la diferencia entre archivo, módulo, paquete y script.
 - Importar una función y reconocer de qué archivo proviene.
@@ -29,6 +45,20 @@ pruebas formales, en 05.04. No agregamos dependencias al proyecto.
 - Ejecutar una entrada explícita sin exportar al importar el paquete.
 - Usar las mismas funciones en notebook/script sin modificar `sys.path`.
 - Conciliar registros, medianas, cobertura y ausencias con 04.09.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Módulo pequeño](medidas_demo.py) | Contrastar ejecutar e importar | Para el recorrido |
+| [Transformación](analisis_cartera/transformacion.py) | Leer el cálculo reutilizable | Para el recorrido |
+| [Flujo](analisis_cartera/flujo.py) | Seguir preparación y comprobaciones | Para el recorrido |
+| [Script](ejecutar.py) | Ejecutar el análisis como consumidor | Para el recorrido |
+| [Notebook](exploracion.ipynb) | Reutilizar el paquete con el mismo kernel; reiniciar y ejecutar todo | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Por qué reorganizar un análisis que ya funciona
 
@@ -419,25 +449,34 @@ pueden ocultar bibliotecas del entorno. `print(medidas_demo.__file__)` muestra
 la procedencia del módulo importado. Cambiar de entorno y cambiar de carpeta
 resuelven problemas distintos; diagnostica antes de instalar paquetes.
 
-## Práctica, evidencia y criterio de salida
+<a id="práctica-evidencia-y-criterio-de-salida"></a>
 
-Realiza el [lab 05.01](../../../labs/05_python_applied/01_notebook_to_modules/README.md).
-Guarda un mapa de responsabilidades, explicación propia de import/main,
-comparación de tablas y evidencia de ejecución completa del notebook. Registra
-tu resultado y dudas en PROGRESS.md; disponer de esta lección no acredita su práctica.
+## Práctica
+
+Realiza el [lab 05.01](../../../labs/05_python_applied/01_notebook_to_modules/README.md) para
+separar responsabilidades y comprobar el mismo análisis desde ambos consumidores.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Mapa de módulos y explicación de import/main | Qué archivo aporta cada función y qué se ejecuta al importar | Por qué separar cálculo, lectura y presentación |
+| Script y notebook de tu práctica | Mismas tablas, bases y ausencias tras ejecución completa | Cómo evitaste copiar funciones y depender del estado del notebook |
 
 Puedes avanzar cuando expliques qué se ejecuta al importar, identifiques las
 entradas/salidas de una transformación, uses la misma función desde ambos
 consumidores y demuestres que la reorganización conserva bases y ausencias.
-No hay todavía proyecto/checkpoint implementado asociado.
 
-## Siguiente paso
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide rastrear una función del notebook hasta su módulo y comprobarla tras reiniciar el kernel.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-Continúa con [05.02 — Configuración y registro de ejecución](../02_configuration_logging/README.md),
-que hace explícitas rutas/parámetros y registro sobre el mismo paquete.
-Volver al [índice de Python aplicado](../README.md).
+<a id="referencias-y-atribución"></a>
 
-## Referencias y atribución
+## Referencias
 
 Ejemplos propios de DS Track. Lectura extraída de 04.04; figuras de 04.06/04.07
 y referencia/informe de 04.09, conservando las muestras anteriores. La nueva
@@ -452,3 +491,10 @@ del curso. No se copian capítulos ni ejemplos de las fuentes.
 - [Python: sistema de importación y paquetes](https://docs.python.org/3.11/reference/import.html).
 - [Python: pathlib y directorio de trabajo](https://docs.python.org/3.11/library/pathlib.html).
 - [Python: funciones locales y espacios de nombres](https://docs.python.org/3.11/tutorial/classes.html#python-scopes-and-namespaces).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.02 — Configuración y registro de ejecución](../02_configuration_logging/README.md).
+
+[← Módulo 05](../README.md) · [Lab 05.01](../../../labs/05_python_applied/01_notebook_to_modules/README.md) · [Siguiente →](../02_configuration_logging/README.md)

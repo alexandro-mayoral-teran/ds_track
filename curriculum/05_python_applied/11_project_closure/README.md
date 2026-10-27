@@ -1,12 +1,26 @@
 # 05.11 — Cierre del proyecto Python
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.11**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reconstruir indicadores y figura y revisar una entrega completa |
+| **Necesitas** | Núcleo 05.01–05.05; ampliaciones 05.06–05.10 no obligatorias |
+| **Evidencia** | Entrega reconstruida, revisión visual y regresión demostrada |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/11_project_closure/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Cerrar el módulo significa reunir las piezas que ya funcionan: entradas conocidas,
 configuración, funciones, comprobaciones y figura. Otra persona debe poder ejecutar
 el análisis, identificar sus resultados y reconstruirlos en una carpeta nueva.
 Esta práctica integra el material; completar su desarrollo no acredita que el
 estudiante haya alcanzado todavía ese criterio.
+
+## Antes de empezar
 
 Completa el núcleo [05.01](../01_notebook_to_modules/README.md),
 [05.02](../02_configuration_logging/README.md),
@@ -17,10 +31,29 @@ figura del [cierre 04.09](../../04_visualization_python/09_visual_closure/README
 Clases, lotes, decoradores, medición y APIs de 05.06–05.10 son ampliaciones: no
 tienes que incorporarlas a esta entrega ni consultar un servicio real.
 
-Al terminar podrás reconstruir indicadores y figura con una ejecución, comprobar
-los archivos guardados, reconocer una entrega incompleta y explicar qué evidencia
-demuestra equivalencia. No se agregan dependencias ni un segundo cálculo de la
+No se agregan dependencias ni un segundo cálculo de la
 mediana para el producto final.
+
+## Qué vas a aprender
+
+- Reconstruir indicadores y figura con una ejecución y configuración explícitas.
+- Comprobar archivos guardados y reconocer entregas incompletas.
+- Explicar qué se verifica automáticamente y qué requiere revisión humana.
+- Demostrar una regresión relevante y reconstrucción por otra persona.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Configuración de cierre](config.json) | Declarar fuente, corte y destino | Para el recorrido |
+| [Ejecutor seguro](../01_notebook_to_modules/ejecutar_seguro.py) | Integrar mediante la entrada existente | Para el recorrido |
+| [Verificador de entrega](../01_notebook_to_modules/verificar_entrega.py) | Releer y auditar sin rehacer la entrega | Para el recorrido |
+| [Auditoría compartida](../01_notebook_to_modules/analisis_cartera/auditoria.py) | Entender comprobaciones y límites | Para el recorrido |
+| [Pruebas del cierre](../01_notebook_to_modules/pruebas_0511/) | Detectar alteraciones y reconstruir | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Qué estamos cerrando
 
@@ -250,30 +283,46 @@ que una tabla editada, otra fecha, una fuente modificada o una figura truncada
 son detectadas. Incluyen una reconstrucción y un corte sin observaciones. Una
 prueba que siempre pasa no demuestra que pudiera encontrar una regresión.
 
+<a id="criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
+
 Realiza el [lab 05.11](../../../labs/05_python_applied/11_project_closure/README.md):
 incluye revisión visual, reconstrucción, falla controlada y prueba propia. Conserva
 la explicación de qué se comprobó automáticamente y qué revisó una persona.
-No existe todavía un proyecto/checkpoint implementado asociado en projects/;
-esta práctica integra el paquete educativo existente, sin inventar uno completado.
 
-## Criterio de salida y siguiente paso
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Entrega e instrucciones propias | Otra persona reconstruye y obtiene indicadores equivalentes | Qué demuestra cada control y qué requiere inspección humana |
+| Revisión visual y prueba de regresión | Figuras legibles y un error relevante efectivamente detectado | Por qué un marcador final o una prueba que siempre pasa no bastan |
 
 Puedes cerrar tu aprendizaje de este módulo cuando otra persona reconstruya la
 entrega siguiendo tus instrucciones, los indicadores coincidan, las figuras sean
-legibles y puedas demostrar que una prueba detecta una falla relevante. Registra
-la evidencia en PROGRESS.md cuando esa práctica se haya revisado. Desarrollar estas
-once secciones cierra la disponibilidad del material del módulo, no su aprendizaje.
+legibles y puedas demostrar que una prueba detecta una falla relevante.
 
-El siguiente módulo es [06 — R fundamental](../../06_r_foundations/README.md).
-Su [primera lección](../../06_r_foundations/01_r_session/README.md)
-está disponible con script y lab. Se retoman preguntas conocidas aprendiendo el modelo
-propio de R; no se exige traducir Python línea por línea ni instalar R por anticipado.
-Volver al [índice de Python aplicado](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero reconstruye en otra carpeta y pide rastrear un indicador y una figura hasta sus fuentes.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Integración y ejemplos propios de DS Track sobre 05.01–05.05 y las fuentes previas.
 Documentación primaria consultada: 2026-10-15, enlazada en cada comprobación y en
 [guardado de Altair](https://altair-viz.github.io/user_guide/saving_charts.html).
 Comprobación local con Python 3.12.12, pandas 2.3.3, Matplotlib 3.10.7 y Altair 6.3.0,
 sin nuevas dependencias ni cambios al lockfile. Base de Python 3.11 conservada.
+
+## Siguiente paso
+
+Después del cierre, consulta [06 — R fundamental](../../06_r_foundations/README.md)
+y continúa con [06.01 — R, editor, scripts y paquetes](../../06_r_foundations/01_r_session/README.md). No se exige traducir Python línea por línea
+ni instalar R por anticipado para completar este módulo.
+
+[← Módulo 05](../README.md) · [Lab 05.11](../../../labs/05_python_applied/11_project_closure/README.md) · [Siguiente →](../../06_r_foundations/01_r_session/README.md)

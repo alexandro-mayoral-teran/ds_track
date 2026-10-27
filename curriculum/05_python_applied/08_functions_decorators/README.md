@@ -1,10 +1,28 @@
 # 05.08 — Funciones como valores y decoradores
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Envolver funciones conservando argumentos, resultados y errores |
+| **Necesitas** | Funciones, registro y contratos; ampliación opcional |
+| **Evidencia** | Envoltura comprobada y nota de momentos, metadatos y límites |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/08_functions_decorators/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+> **Ampliación opcional:** si no eliges esta práctica, puedes ir al
+> [05.11 — Cierre del proyecto Python](../11_project_closure/README.md),
+> después de completar el núcleo 05.01–05.05.
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Reutilizar un comportamiento alrededor de una función sin copiar su cálculo.
 Primero distinguiremos una función de su resultado; después construiremos
 una envoltura y leeremos la sintaxis @. Comprobaremos qué conserva y qué cambia.
+
+## Antes de empezar
 
 Esta sección es una **extensión opcional**. Completa
 [05.05 — Tipos y contratos](../05_types_contracts/README.md) y recupera
@@ -21,7 +39,9 @@ y entender el límite de los generadores. No necesitas diseñar clases de 05.06.
 No añadimos mediciones de tiempo, reintentos ni una infraestructura de plugins;
 05.09 desarrollará medición. No se requieren dependencias nuevas.
 
-## Objetivos observables
+<a id="objetivos-observables"></a>
+
+## Qué vas a aprender
 
 - Diferenciar `function` de `function(...)` al asignar o pasar un argumento.
 - Leer una función que recibe otra y explicar quién la ejecuta.
@@ -29,6 +49,18 @@ No añadimos mediciones de tiempo, reintentos ni una infraestructura de plugins;
 - Explicar cuándo se aplica @ y cuándo se ejecuta la función envuelta.
 - Conservar metadatos con wraps y propagar errores sin inventar resultados.
 - Conciliar el análisis instrumentado y reconocer qué significa su mensaje de fin.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Instrumentación compartida](../01_notebook_to_modules/analisis_cartera/instrumentacion.py) | Leer la envoltura y sus responsabilidades | Para el recorrido |
+| [Ejecutor instrumentado](../01_notebook_to_modules/ejecutar_decoradores.py) | Contrastar análisis y mensajes | Para el recorrido |
+| [Pruebas de decoradores](../01_notebook_to_modules/pruebas_0508/) | Comprobar reenvío, metadatos y errores | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. El nombre de una función también es un valor
 
@@ -435,21 +467,34 @@ identidad del resultado/error, causa conservada y metadatos, no solo valores
 numéricos. Las cifras de la fixture pequeña siguen siendo 5/3/1/60 para Todos;
 no las confundas con la fuente original de 24 registros.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 05.08](../../../labs/05_python_applied/08_functions_decorators/README.md).
+## Práctica
+
+Si eliges esta ampliación, realiza el [lab 05.08](../../../labs/05_python_applied/08_functions_decorators/README.md) para
+construir y explicar una envoltura sin cambiar el contrato del cálculo.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Envoltura y casos comprobados | Argumentos, resultados y excepciones conservados | Función frente a llamada y aplicación frente a ejecución |
+| Nota de metadatos y registro | Información de wraps y alcance de los mensajes | Por qué devolver un generador no demuestra haber consumido sus datos |
+
 Puedes cerrar esta extensión cuando expliques función frente a llamada, los dos
 momentos del decorador y la envoltura, reenvíes parámetros y compruebes resultados,
-errores y límites. No hay proyecto/checkpoint implementado asociado. Registra
-evidencia y dudas en PROGRESS.md; el material disponible no acredita aprendizaje.
+errores y límites.
 
-Si sigues las ampliaciones, continúa con el
-[05.09 — Medir antes de optimizar](../09_measure_optimize/README.md),
-disponible con lab de extensión. El [cierre 05.11](../11_project_closure/README.md)
-está disponible con lab. Las extensiones 05.06–05.10 no bloquean el núcleo ni R.
-Volver al [índice de Python aplicado](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero elige un mensaje de fin y pregunta qué trabajo terminó realmente.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track sobre las funciones y fuentes de 05.01–05.07.
 Consulta de documentación primaria: 2026-10-15. Sintaxis compatible con Python
@@ -463,3 +508,13 @@ y Altair 6.3.0, sin dependencias nuevas ni ejemplos copiados de las fuentes.
 - [Python: inspect.signature](https://docs.python.org/3.11/library/inspect.html#inspect.signature).
 - [Python: logging](https://docs.python.org/3.11/library/logging.html).
 - [Python: assertLogs](https://docs.python.org/3.11/library/unittest.html#unittest.TestCase.assertLogs).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.11 — Cierre del proyecto Python](../11_project_closure/README.md).
+
+Si eliges seguir las ampliaciones, continúa con
+[05.09 — Medir antes de optimizar](../09_measure_optimize/README.md). Las ampliaciones 05.06–05.10 no bloquean el cierre ni R.
+
+[← Módulo 05](../README.md) · [Lab 05.08](../../../labs/05_python_applied/08_functions_decorators/README.md) · [Siguiente →](../11_project_closure/README.md)

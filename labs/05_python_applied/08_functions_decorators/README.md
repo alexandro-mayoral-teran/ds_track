@@ -196,7 +196,7 @@ Propón cuándo bastaría registrar explícitamente una llamada sin crear un dec
 - ¿Por qué retornar None normalmente difiere de ocultar una excepción con None?
 - ¿Qué observación faltaría para declarar terminado el consumo de un generador?
 
-Registra resultados y dudas en PROGRESS.md. Puedes cerrar esta extensión cuando
+Registra resultados y dudas en tu bitácora personal junto a la práctica. Puedes cerrar esta extensión cuando
 expliques el flujo y compruebes argumentos, retorno, errores y límites con tus
 palabras. Desarrollar o ejecutar el material no acredita aprendizaje.
 

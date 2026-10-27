@@ -195,7 +195,7 @@ Trabaja con archivos temporales, conservando las fuentes del curso.
 - ¿Qué estados impiden afirmar que todo el análisis usa memoria constante?
 - ¿Qué garantiza terminar la conciliación y qué seguiría requiriendo revisión?
 
-Registra resultados y dudas en PROGRESS.md. Puedes cerrar esta extensión cuando
+Registra resultados y dudas en tu bitácora personal junto a la práctica. Puedes cerrar esta extensión cuando
 expliques el consumo, concilies el resultado y justifiques recursos/memoria con
 tus palabras. La disponibilidad del material no acredita aprendizaje.
 

@@ -1,10 +1,24 @@
 # 05.04 — Pruebas de código y datos
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 05](../README.md) / **Lección 05.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Detectar regresiones con casos conocidos y respuestas justificadas |
+| **Necesitas** | Paquete de 05.01 y unittest de la biblioteca estándar |
+| **Evidencia** | Prueba propia, falla demostrada y explicación de los resultados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/05_python_applied/04_testing/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Detectar cambios que alteran resultados o rompen una regla del análisis. Una
 prueba conserva una pregunta concreta, una entrada y una respuesta esperada
 para poder repetir la comprobación después de modificar el código.
+
+## Antes de empezar
 
 Completa [05.03 — Errores y recursos](../03_errors_resources/README.md) y su lab.
 Recupera [funciones de 01.04](../../01_python_foundations/04_functions/README.md),
@@ -18,7 +32,9 @@ del resultado. **Práctica:** tablas, archivos temporales e integración real.
 **Extensión:** orden de ejecución y diseño de nuevas pruebas; cobertura automática,
 mocking y CI pueden estudiarse después. No necesitas terminar todo en una sesión.
 
-## Objetivos observables
+<a id="objetivos-observables"></a>
+
+## Qué vas a aprender
 
 - Escribir una comprobación cuyo resultado esperado puedas justificar a mano.
 - Ejecutar una prueba y una colección, comprobar cuántas se descubrieron y leer fallas.
@@ -26,6 +42,19 @@ mocking y CI pueden estudiarse después. No necesitas terminar todo en una sesi�
 - Conservar claves, tipos, ausencias y entradas al comparar tablas.
 - Comprobar rechazos y escrituras fallidas sin tocar fuentes o entregas anteriores.
 - Demostrar que un cambio incorrecto produce una falla y que corregirlo recupera el éxito.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Colección de pruebas](../01_notebook_to_modules/pruebas_0504/) | Consultar casos de función e integración | Para el recorrido |
+| [Muestras de prueba](../01_notebook_to_modules/pruebas_0504/muestras.py) | Justificar resultados conocidos | Para el recorrido |
+| [Pruebas de transformación](../01_notebook_to_modules/pruebas_0504/test_transformacion.py) | Contrastar claves, tipos y ausencias | Para el recorrido |
+| [Pruebas de integración](../01_notebook_to_modules/pruebas_0504/test_integracion.py) | Seguir una ejecución completa comprobada | Para el recorrido |
+
+Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive
+en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas
+anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Que termine sin error no demuestra que calcule bien
 
@@ -317,17 +346,33 @@ que sustituir mediana por promedio, cambiar el denominador o excluir ceros
 provoca fallas. El paquete original y sus consumidores permanecen conservados.
 Estas comprobaciones acotan ejemplos de regresión, no demuestran ausencia de todos los defectos.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 05.04](../../../labs/05_python_applied/04_testing/README.md).
+## Práctica
+
+Realiza el [lab 05.04](../../../labs/05_python_applied/04_testing/README.md) para
+añadir un caso con respuesta manual y demostrar una regresión y su corrección.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Caso propio y respuesta esperada razonada | Descubrimiento de pruebas, fallo relevante y recuperación | Por qué el caso puede detectar un error |
+| Nota sobre colección y datos | Entradas, claves, tipos y ausencias conservados | Diferencia entre pruebas del programa y validación de cada entrada |
+
 Puedes avanzar cuando ejecutes y expliques la colección, interpretes una falla,
 agregues un caso con respuesta manual y distingas validación de datos y pruebas.
-Conserva tu evidencia y dudas en PROGRESS.md; no hay proyecto/checkpoint implementado asociado.
 
-Continúa con [05.05 — Tipos y contratos](../05_types_contracts/README.md),
-con anotaciones, documentación y límites comprobables sobre el mismo paquete. Volver al [índice de Python aplicado](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pregunta qué modificación incorrecta detectaría tu caso y por qué.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica
+reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track sobre el análisis compartido de 05.01–05.03;
 referencia CSV/statistics procedente de 04.09. Consulta: 2026-10-15.
@@ -343,3 +388,10 @@ La sentencia Python `assert condicion` puede omitirse con `python -O`.
 Por eso la validación necesaria para aceptar datos usa comprobaciones y `raise`
 explícitos. Los métodos de TestCase como assertEqual son llamadas normales,
 distintas de esa sentencia. Pasar una suite tampoco reemplaza validaciones al usar el programa.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, la continuación del núcleo es
+[05.05 — Tipos y contratos de funciones](../05_types_contracts/README.md).
+
+[← Módulo 05](../README.md) · [Lab 05.04](../../../labs/05_python_applied/04_testing/README.md) · [Siguiente →](../05_types_contracts/README.md)

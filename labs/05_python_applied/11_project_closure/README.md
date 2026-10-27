@@ -159,7 +159,7 @@ revisión visual y de lo que aún falta comprobar con otra persona.
 - ¿Qué protege una prueba de estructura que no protege contar filas?
 - ¿Qué demuestra el cierre, qué recalcula el verificador y qué revisa una persona?
 
-Registra en PROGRESS.md evidencia real y dudas. Puedes cerrar el módulo cuando
+Registra en tu bitácora personal junto a la práctica evidencia real y dudas. Puedes cerrar el módulo cuando
 la entrega se reconstruya, los resultados concilien, la figura sea legible y
 expliques una prueba que detecta una falla relevante. El material completo no
 acredita automáticamente haber completado estas prácticas.
