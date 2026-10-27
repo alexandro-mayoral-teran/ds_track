@@ -1,4 +1,4 @@
-# DS Track
+# ![](docs/assets/ds-track-icon.svg)DS Track
 
 **Aprende a trabajar con datos, paso a paso y en compañía.**
 

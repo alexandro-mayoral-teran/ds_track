@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="36" viewBox="0 0 80 64" role="img" aria-labelledby="title desc">
+  <title id="title">DS Track</title>
+  <desc id="desc">Tres puntos conectados por una ruta ascendente representan datos y aprendizaje por etapas.</desc>
+  <rect x="1" y="1" width="62" height="62" rx="16" fill="#132c33" stroke="#4f9f99" stroke-width="2"/>
+  <path d="M16 46h15V31h15V16" fill="none" stroke="#79e2c3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#f4fffb" stroke="#132c33" stroke-width="2">
+    <circle cx="16" cy="46" r="5"/>
+    <circle cx="31" cy="31" r="5"/>
+    <circle cx="46" cy="16" r="5"/>
+  </g>
+</svg>
