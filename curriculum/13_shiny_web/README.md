@@ -1,35 +1,53 @@
 # 13 — Shiny y fundamentos web
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **13 — Shiny y fundamentos web**
 
-Convertir el análisis R conocido en un explorador reactivo con resultados
-comprobables. Completa [11 — Reportes con Quarto](../11_reporting_quarto/README.md)
-y las bases de R/tidyverse/ggplot2. El nivel 12 no es un prerrequisito: Streamlit
-es la ruta alternativa Python y basta elegir una aplicación.
+**Ruta de aplicación R: un explorador reactivo con resultados conciliados.**
 
-**Estado:** diez secciones planificadas; lecciones y labs por desarrollar.
-Los enlaces internos describen el alcance previsto.
+[Ver primera sección prevista →](#01-web-basica-y-primera-app) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-Trabajaremos con Shiny para R y datos sintéticos locales. Mastering Shiny,
-de Hadley Wickham, será la lectura abierta de apoyo. Shiny para Python se
-reconoce como otra opción, pero no añade una tercera ruta obligatoria al track.
+> **Planificado:** 10 secciones previstas; sus lecciones y labs aún no están implementados.
+> Los enlaces de esta tabla describen el alcance del plan, no una práctica lista para ejecutar.
 
-## Orden de desarrollo
+<a id="propósito-y-prerrequisitos"></a>
 
-| Orden | Sección prevista | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [Web básica y primera app](#01-web-basica-y-primera-app) | Esencial | Explicar navegador, UI, servidor y ejecución local |
-| 2 | [Entradas y salidas](#02-entradas-y-salidas) | Esencial | Vincular un control con una salida |
-| 3 | [Modelo de reactividad](#03-modelo-de-reactividad) | Esencial | Explicar dependencias e invalidación |
-| 4 | [Filtros e indicadores compartidos](#04-filtros-e-indicadores-compartidos) | Esencial | Reutilizar un conjunto filtrado entre salidas |
-| 5 | [Eventos y estado de sesión](#05-eventos-y-estado-de-sesion) | Práctica | Controlar acciones sin mezclar sesiones |
-| 6 | [Validación y mensajes](#06-validacion-y-mensajes) | Esencial | Atender datos ausentes e interacciones inválidas |
-| 7 | [Gráficos, tablas y descargas](#07-graficos-tablas-y-descargas) | Práctica | Entregar evidencia correspondiente a los filtros |
-| 8 | [Organización y módulos](#08-organizacion-y-modulos) | Práctica | Reutilizar una parte de UI y servidor |
-| 9 | [Pruebas y observación del flujo](#09-pruebas-y-observacion-del-flujo) | Esencial | Comprobar cálculos reactivos y casos límite |
-| 10 | [Cierre y entrega local](#10-cierre-y-entrega-local) | Práctica de cierre | Reconstruir una app R con indicadores conciliados |
+## Propósito
 
-## Alcance de cada sección
+Convertir el análisis R conocido en una aplicación Shiny con resultados comprobables y dependencias reactivas explícitas. Las secciones y labs siguen planificados.
+
+## Antes de empezar
+
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases de R/tidyverse/ggplot2. [12 — Streamlit](../12_streamlit/README.md) es alternativa, no requisito. Usa el IDE y entorno R elegidos cuando se implemente; la planificación no instala paquetes.
+
+## Qué vas a aprender
+
+Objetivos previstos para cuando se implemente:
+
+- Separar interfaz, cálculo y dependencias reactivas.
+- Usar entradas, filtros y estado sin mezclar sesiones.
+- Conciliar tabla, figura y descarga.
+- Comprobar lógica y entregar una app local reproducible.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección prevista | Práctica | Resultado previsto |
+| --- | --- | --- |
+| **13.01** · [Web básica y primera app](#01-web-basica-y-primera-app) | Pendiente | Explicar navegador, UI, servidor y ejecución local |
+| **13.02** · [Entradas y salidas](#02-entradas-y-salidas) | Pendiente | Vincular un control con una salida |
+| **13.03** · [Modelo de reactividad](#03-modelo-de-reactividad) | Pendiente | Explicar dependencias e invalidación |
+| **13.04** · [Filtros e indicadores compartidos](#04-filtros-e-indicadores-compartidos) | Pendiente | Reutilizar un conjunto filtrado entre salidas |
+| **13.05** · [Eventos y estado de sesión](#05-eventos-y-estado-de-sesion) | Pendiente | Controlar acciones sin mezclar sesiones |
+| **13.06** · [Validación y mensajes](#06-validacion-y-mensajes) | Pendiente | Atender datos ausentes e interacciones inválidas |
+| **13.07** · [Gráficos, tablas y descargas](#07-graficos-tablas-y-descargas) | Pendiente | Entregar evidencia correspondiente a los filtros |
+| **13.08** · [Organización y módulos](#08-organizacion-y-modulos) | Pendiente | Reutilizar una parte de UI y servidor |
+| **13.09** · [Pruebas y observación del flujo](#09-pruebas-y-observacion-del-flujo) | Pendiente | Comprobar cálculos reactivos y casos límite |
+| **13.10** · [Cierre y entrega local](#10-cierre-y-entrega-local) | Pendiente | Reconstruir una app R con indicadores conciliados |
+
+<a id="alcance-de-cada-sección"></a>
+
+### Alcance previsto por sección
 
 <a id="01-web-basica-y-primera-app"></a>
 
@@ -120,27 +138,59 @@ reconoce como otra opción, pero no añade una tercera ruta obligatoria al track
   Despliegue, autenticación, CSS avanzado y escalabilidad son extensiones; no
   se requiere un servicio de pago para cerrar el módulo.
 
-## Prácticas, proyecto y criterio de salida
+## Cómo trabajar este módulo
 
-Se prevén labs 13.01–13.10; todavía no existen. El proyecto previsto
-06_shiny_portfolio_app está en [proyectos](../../projects/README.md), sin carpeta implementada.
+Se prevé avanzar desde UI/reactividad a filtros, validación, organización y pruebas. RStudio o el IDE elegido será el recorrido de trabajo principal. Mastering Shiny de Hadley Wickham es la lectura abierta de apoyo. Shiny para Python no añade otra ruta obligatoria; despliegue y autenticación son extensiones.
+
+Las actividades anteriores son una propuesta. No hay instrucciones ejecutables ni comprobaciones de aprendizaje disponibles todavía para estas secciones.
+
+## Qué conservar
+
+| Evidencia prevista | Qué permite revisar |
+| --- | --- |
+| Código y dependencias previstas | Responsabilidades y reactividad |
+| Casos de prueba | Filtros, errores y sesiones |
+| Entrega local futura | Reconstrucción de tabla, figura y descarga |
+
+Cuando exista la práctica, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+<a id="prácticas-proyecto-y-criterio-de-salida"></a>
+
+## Criterio de salida
+
+Cuando se implemente, deberás explicar las dependencias reactivas y demostrar que tabla, figura y descarga reflejan los mismos filtros. Una app local comprobada bastará; hoy no hay una entrega ejecutable ni práctica completada por disponer del plan.
+
+06_shiny_portfolio_app está previsto en [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
+
+<details>
+<summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
 Checkpoints propuestos: CP-01, UI y reactividad (01–03); CP-02, filtros, estado
 y validación (04–06); CP-03, presentación y organización (07–08); CP-04, pruebas
 y entrega (09–10). Sus nombres se concretarán al desarrollar el proyecto.
 
-Para avanzar debes explicar las dependencias reactivas y demostrar que tabla,
-figura y descarga reflejan los mismos filtros. La app local comprobada es suficiente;
-no hace falta crear también Streamlit ni dominar objetos avanzados de R.
+</details>
 
-## Continuidad y referencias
+<a id="continuidad-y-referencias"></a>
 
-Continúa con [14 — Proyecto reproducible](../14_reproducible_projects/README.md).
-Puedes estudiar [12 — Streamlit](../12_streamlit/README.md) después como comparación.
+## Siguiente paso
+
+Por ahora puedes [consultar el primer alcance previsto](#01-web-basica-y-primera-app). No hay lecciones ni labs listos en este módulo.
+
+Cuando esta ruta esté implementada y cierres la práctica, sigue con [14 — Proyecto reproducible](../14_reproducible_projects/README.md), también planificado. La otra aplicación queda como comparación opcional.
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 Lecturas: [Mastering Shiny](https://mastering-shiny.org/) y su capítulo de
 [reactividad básica](https://mastering-shiny.org/basic-reactivity.html).
 Documentación oficial: [primeros pasos](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/),
 [módulos](https://shiny.posit.co/r/articles/improve/modules/) y
 [testServer](https://shiny.posit.co/r/reference/shiny/latest/testserver.html).
-La planificación no instala paquetes ni servicios.
+No se instalan paquetes ni servicios por planificar este módulo.
+
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Volver al plan de secciones ↑](#lecciones-y-labs)

@@ -1,63 +1,51 @@
 # 09 — Arrow y Parquet
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **09 — Arrow y Parquet**
 
-Guardar, leer e intercambiar tablas entre Python y R con un contrato explícito.
-Completa [08 — Visualización en R](../08_visualization_r/README.md) y reutiliza
-los datos e indicadores conocidos del análisis anterior.
+**Intercambia tablas entre Python y R conservando su contrato.**
 
-**Estado:** [09.01](01_csv_parquet_arrow/README.md) dispone de lección, scripts
-de inspección, muestra CSV/Parquet y lab. [09.02](02_schemas_types/README.md)
-añade contrato, evaluadores Python/R, casos de frontera y lab.
-[09.03](03_python_read_write/README.md) incorpora PyArrow, conversión/relectura
-Python, recorridos de entorno y lab. [09.04](04_r_read_write/README.md) añade
-arrow en renv, ejemplos completos y escritura/relectura R con lab.
-[09.05](05_python_r_exchange/README.md) añade intercambio en ambas direcciones,
-muestra independiente y lab sin dependencias nuevas. [09.06](06_selective_datasets/README.md)
-añade consultas sobre varios Parquet y auditoría separada con lab.
-[09.07](07_metadata_compression/README.md) añade metadatos, grupos y comparación
-controlada de compresión/codificación con lab, sin paquetes nuevos.
-[09.08](08_justified_partitioning/README.md) añade particiones Hive y auditoría
-de etiquetas/valores con lab como extensión opcional, sin paquetes nuevos.
-[09.09](09_shared_contract_closure/README.md) añade entrega reconstruible,
-verificadores de solo lectura y lab con lectura cruzada. Las nueve secciones
-tienen material; eso no acredita práctica del estudiante ni proyecto integrado.
-El [estado y pendientes de cierre](../../docs/storage-closure.md)
-distingue material, práctica del estudiante e integración todavía pendiente.
+[**Empezar por 09.01 →**](01_csv_parquet_arrow/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-El módulo es un puente entre lenguajes. La teoría se explica una vez; las prácticas
-Python y R se presentan en apartados completos, seguidos de una comparación.
-No se exige reticulate ni ejecutar ambos intérpretes en un mismo proceso.
+> **Material disponible:** 9 lecciones y sus labs. Esto no acredita aprendizaje ni proyecto completado.
 
-## Qué problema resuelve cada componente
+<a id="propósito-y-prerrequisitos"></a>
 
-| Componente | Papel en el recorrido |
-| --- | --- |
-| CSV | Texto de intercambio sencillo; interpretar tipos forma parte de la lectura |
-| Parquet | Formato de archivo columnar con esquema y opciones de compresión |
-| Arrow | Representación columnar en memoria y bibliotecas para trabajar e intercambiar datos |
-| PyArrow / arrow de R | Interfaces utilizadas en las prácticas Python y R |
+## Propósito
 
-Parquet y Arrow no son sinónimos. Un archivo Parquet puede leerse con distintos
-motores; eso no garantiza que todos expongan idénticas clases o admitan todas
-las características del formato. Conservaremos un contrato de tipos y unidades.
-Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos.
+Guardar, leer y comprobar tablas con Arrow y Parquet. Distingue representación en memoria, archivo y tipos, y verifica cada valor antes de dar por válido el intercambio.
 
-## Orden de desarrollo
+## Antes de empezar
 
-| Orden | Sección prevista | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [CSV, Parquet y Arrow](01_csv_parquet_arrow/README.md) | Esencial | Distinguir archivo, representación y biblioteca |
-| 2 | [Esquemas y tipos entre lenguajes](02_schemas_types/README.md) | Esencial | Definir el contrato de una tabla compartida |
-| 3 | [Leer y escribir desde Python](03_python_read_write/README.md) | Esencial | Convertir una muestra y comprobar su lectura |
-| 4 | [Leer y escribir desde R](04_r_read_write/README.md) | Esencial | Repetir el recorrido con el mismo contrato |
-| 5 | [Intercambio Python y R](05_python_r_exchange/README.md) | Práctica | Conciliar archivos escritos por el otro lenguaje |
-| 6 | [Lectura selectiva y datasets](06_selective_datasets/README.md) | Esencial | Consultar columnas y filas de varios archivos |
-| 7 | [Metadatos, row groups y compresión](07_metadata_compression/README.md) | Práctica | Explicar y medir una decisión de almacenamiento |
-| 8 | [Particionamiento justificado](08_justified_partitioning/README.md) | Extensión | Elegir particiones según una consulta y comprobarlas |
-| 9 | [Cierre del contrato compartido](09_shared_contract_closure/README.md) | Práctica de cierre | Reconstruir datos e indicadores desde ambos lenguajes |
+Completa [08 — Visualización en R](../08_visualization_r/README.md). Reutiliza contratos e indicadores conocidos; los ejemplos presentan sus entradas y no exigen entregas personales anteriores. Las primeras secciones explican conceptos antes de introducir las dependencias de lectura/escritura.
 
-## Alcance de cada sección
+## Qué vas a aprender
+
+- Distinguir CSV, Parquet y Arrow y sus responsabilidades.
+- Definir tipos, claves, unidades y reglas de ausencia.
+- Escribir y releer datos en Python y R, comparando por clave.
+- Separar auditoría completa y selección de datos.
+- Reconstruir una entrega con referencia externa.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección | Práctica | Resultado que comprobarás |
+| --- | --- | --- |
+| **09.01** · [CSV, Parquet y Arrow](01_csv_parquet_arrow/README.md) | [Lab 09.01](../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md) | Distinguir archivo, representación y biblioteca |
+| **09.02** · [Esquemas y tipos entre lenguajes](02_schemas_types/README.md) | [Lab 09.02](../../labs/09_arrow_parquet/02_schemas_types/README.md) | Definir el contrato de una tabla compartida |
+| **09.03** · [Leer y escribir desde Python](03_python_read_write/README.md) | [Lab 09.03](../../labs/09_arrow_parquet/03_python_read_write/README.md) | Convertir una muestra y comprobar su lectura |
+| **09.04** · [Leer y escribir desde R](04_r_read_write/README.md) | [Lab 09.04](../../labs/09_arrow_parquet/04_r_read_write/README.md) | Repetir el recorrido con el mismo contrato |
+| **09.05** · [Intercambio Python y R](05_python_r_exchange/README.md) | [Lab 09.05](../../labs/09_arrow_parquet/05_python_r_exchange/README.md) | Conciliar archivos escritos por el otro lenguaje |
+| **09.06** · [Lectura selectiva y datasets](06_selective_datasets/README.md) | [Lab 09.06](../../labs/09_arrow_parquet/06_selective_datasets/README.md) | Consultar columnas y filas de varios archivos |
+| **09.07** · [Metadatos, row groups y compresión](07_metadata_compression/README.md) | [Lab 09.07](../../labs/09_arrow_parquet/07_metadata_compression/README.md) | Explicar y medir una decisión de almacenamiento |
+| **09.08** · [Particionamiento justificado](08_justified_partitioning/README.md) — opcional | [Lab 09.08](../../labs/09_arrow_parquet/08_justified_partitioning/README.md) | Elegir particiones según una consulta y comprobarlas |
+| **09.09** · [Cierre del contrato compartido](09_shared_contract_closure/README.md) | [Lab 09.09](../../labs/09_arrow_parquet/09_shared_contract_closure/README.md) | Reconstruir datos e indicadores desde ambos lenguajes |
+
+<a id="alcance-de-cada-sección"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
 
 <a id="01-csv-parquet-y-arrow"></a>
 
@@ -180,35 +168,71 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
   seleccionados/24100 MXN. Ejemplo autónomo, sesiones nuevas y alteraciones
   compensadas comprobadas; no exige entregas previas ni particiones.
 
-## Prácticas, proyecto y criterio de salida
+</details>
 
-Están disponibles los [labs 09.01](../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md),
-[09.02](../../labs/09_arrow_parquet/02_schemas_types/README.md),
-[09.03](../../labs/09_arrow_parquet/03_python_read_write/README.md),
-[09.04](../../labs/09_arrow_parquet/04_r_read_write/README.md),
-[09.05](../../labs/09_arrow_parquet/05_python_r_exchange/README.md),
-[09.06](../../labs/09_arrow_parquet/06_selective_datasets/README.md),
-[09.07](../../labs/09_arrow_parquet/07_metadata_compression/README.md),
-[09.08](../../labs/09_arrow_parquet/08_justified_partitioning/README.md), opcional, y
-[09.09](../../labs/09_arrow_parquet/09_shared_contract_closure/README.md).
-Las nueve secciones tienen material; el aprendizaje requiere evidencias propias.
-El cierre enlazará el análisis R con el proyecto previsto 04_large_credit_dataset,
-registrado en [proyectos](../../projects/README.md), aún sin carpeta implementada.
+## Cómo trabajar este módulo
+
+La teoría es común y los recorridos Python/R se realizan por separado. No necesitas reticulate ni ambos intérpretes en un proceso. 09.08, particiones, es opcional; nube, Flight y formatos transaccionales no son requisitos. Un esquema válido no garantiza claves únicas o valores correctos.
+
+Lee, predice, practica en tu copia, comprueba y explica. En pareja, una persona escribe y la otra contrasta; cambien de papeles por bloques. Conserva los originales y vuelve a ejecutar desde una sesión nueva antes del cierre.
+
+<a id="qué-problema-resuelve-cada-componente"></a>
+
+<details>
+<summary><strong>Qué problema resuelve cada componente</strong></summary>
+
+| Componente | Papel en el recorrido |
+| --- | --- |
+| CSV | Texto de intercambio sencillo; interpretar tipos forma parte de la lectura |
+| Parquet | Formato de archivo columnar con esquema y opciones de compresión |
+| Arrow | Representación columnar en memoria y bibliotecas para trabajar e intercambiar datos |
+| PyArrow / arrow de R | Interfaces utilizadas en las prácticas Python y R |
+
+Parquet y Arrow no son sinónimos. Un archivo Parquet puede leerse con distintos
+motores; eso no garantiza que todos expongan idénticas clases o admitan todas
+las características del formato. Conservaremos un contrato de tipos y unidades.
+Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos.
+
+</details>
+
+## Qué conservar
+
+| Evidencia personal | Qué permite revisar |
+| --- | --- |
+| Fuente y contrato | Tipos, claves, unidades y ausencias |
+| Archivos completos y partes | Relectura e intercambio entre lenguajes |
+| Resultados y verificadores | Comparación por clave y reconstrucción desde referencia externa |
+
+Guarda los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+<a id="prácticas-proyecto-y-criterio-de-salida"></a>
+
+## Criterio de salida
+
+Demuestra escritura y lectura en ambos lenguajes, explica el contrato y concilia valores e indicadores. Distingue una validación de esquema de la comprobación de cada registro y conserva las entradas.
+
+04_large_credit_dataset figura en [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados. Los [pendientes de almacenamiento](../../docs/storage-closure.md) separan material, práctica e integración.
+
+<details>
+<summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
 Checkpoint de almacenamiento propuesto: CSV tipado, Parquet, contrato y comparación
 Python/R (02–05 y 09). El checkpoint de lectura selectiva prepara el módulo 10
 (06–07); particionamiento se añade solo con una pregunta que lo justifique.
 Sus nombres se concretarán al desarrollar el proyecto.
 
-Para avanzar, demuestra lectura y escritura en ambos lenguajes, explica el contrato
-y concilia el resultado. Un esquema válido no comprueba claves únicas o cantidades
-válidas por sí solo. Datasets distribuidos, almacenamiento en nube, Flight y
-formatos de tablas con transacciones no son requisitos de este módulo.
+</details>
 
-## Continuidad y fuentes
+<a id="continuidad-y-fuentes"></a>
 
-Continúa con [10 — Polars y DuckDB](../10_polars_duckdb/README.md), reutilizando
-los mismos archivos. Se conserva la numeración del track; R aplicado sigue pendiente.
+## Siguiente paso
+
+**Para empezar:** [lee 09.01](01_csv_parquet_arrow/README.md) y realiza su lab.
+
+**Al cerrar:** continúa con [10 — Polars y DuckDB](../10_polars_duckdb/README.md).
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 - [Parquet: visión general](https://parquet.apache.org/docs/overview/) y
   [estructura del archivo](https://parquet.apache.org/docs/file-format/).
@@ -218,21 +242,8 @@ los mismos archivos. Se conserva la numeración del track; R aplicado sigue pend
   [datasets en R](https://arrow.apache.org/docs/r/articles/dataset.html).
 - [Arrow en R for Data Science](https://r4ds.hadley.nz/arrow.html), como lectura abierta de apoyo.
 
-09.01–09.02 se comprobaron con Python 3.12.12/R 4.6.1; la muestra y lectura de autoría de 09.01
-utilizan PyArrow 21.0.0 ya existente, sin añadirlo durante esa introducción.
-09.03 declara PyArrow 21.0.0 y conserva pandas 2.3.3; instalación y segunda
-reconstrucción uv local con Python 3.12.12 comprobadas, sin cambios globales.
-09.04 se comprueba con R 4.6.1/arrow 25.0.1 y renv 1.3.1, con segunda restauración
-local; conserva 44 registros anteriores y añade arrow/assertthat.
-09.05 comprueba ambas direcciones con esas versiones, conservando entornos,
-fuentes y lockfiles; no incorpora dependencias.
-09.06 usa las mismas versiones, con dplyr 1.2.1 en R; no modifica requisitos
-ni lockfiles. Consultas y auditoría comprobadas desde procesos nuevos.
-Versiones y capacidades de los recorridos por desarrollar se comprobarán al
-implementarlos. Esta planificación no instala paquetes.
-09.07 conserva esas versiones y lockfiles; compara archivos completos con
-PyArrow 21.0.0/arrow 25.0.1, con sesiones nuevas y mediciones crudas locales.
-09.08 conserva también esas versiones y contrasta datasets Hive en ambos
-lenguajes, con fechas físicas/etiquetas conciliadas y sin cambios de dependencias.
-09.09 conserva versiones y lockfiles; verifica entregas completas de ambos
-escritores en ambos lectores desde procesos nuevos, sin dependencias nuevas.
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Primera lección →](01_csv_parquet_arrow/README.md)

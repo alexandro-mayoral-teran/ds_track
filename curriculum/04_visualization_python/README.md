@@ -1,42 +1,50 @@
 # 04 — Visualización en Python
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **04 — Visualización en Python**
 
-Comunicar resultados ya comprobados: elegir una representación, construirla,
-interpretarla y conservar el código que la produce. Reutilizar datos e indicadores
-de [pandas](../02_pandas/README.md) y [SQL](../03_sql_databases/README.md).
+**Convierte resultados comprobados en gráficas que puedas explicar.**
 
-**Estado:** [01 — Pregunta y elección de gráfico](01_question_chart/README.md)
-y su lab están disponibles, con vistas comprobadas y práctica de justificación.
-[02 — Matplotlib: Figure y Axes](02_figure_axes/README.md) y su lab también están disponibles.
-[03 — Comparaciones y evolución](03_comparisons_evolution/README.md) y su lab están disponibles.
-[04 — Distribuciones y relaciones](04_distributions_relationships/README.md) y su lab están disponibles.
-[05 — Escalas, etiquetas y accesibilidad](05_scales_labels_accessibility/README.md) y su lab están disponibles.
-[06 — Composición y exportación](06_composition_export/README.md) y su lab están disponibles.
-[07 — Altair: visualización declarativa](07_altair_declarative/README.md) y su lab están disponibles.
-[08 — Interacción con Altair](08_altair_interaction/README.md) y su lab opcional están disponibles.
-[09 — Cierre visual del análisis](09_visual_closure/README.md) y su lab están disponibles.
-Las nueve secciones tienen material; el aprendizaje requiere evidencia.
+[**Empezar por 04.01 →**](01_question_chart/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-Pandas ya introduce una primera gráfica. Aquí trabajamos primero con
-Matplotlib y después con Altair. No repetiremos la limpieza para cada biblioteca.
-Entorno y versiones se explican en las lecciones de cada herramienta.
+> **Material disponible:** 9 lecciones y sus labs. Esto no acredita aprendizaje ni proyecto completado.
 
-## Orden de desarrollo
+<a id="propósito-y-prerrequisitos"></a>
 
-| Orden | Sección prevista | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [Pregunta y elección de gráfico](01_question_chart/README.md) | Esencial | Justificar una representación según la pregunta |
-| 2 | [Matplotlib: Figure y Axes](02_figure_axes/README.md) | Esencial | Crear y guardar una figura desde código |
-| 3 | [Comparaciones y evolución](03_comparisons_evolution/README.md) | Esencial | Construir barras y líneas con unidades |
-| 4 | [Distribuciones y relaciones](04_distributions_relationships/README.md) | Esencial | Interpretar dispersión y variabilidad |
-| 5 | [Escalas, etiquetas y accesibilidad](05_scales_labels_accessibility/README.md) | Esencial | Revisar una figura que puede inducir a error |
-| 6 | [Composición y exportación](06_composition_export/README.md) | Práctica | Comparar vistas y producir una figura legible |
-| 7 | [Altair: visualización declarativa](07_altair_declarative/README.md) | Práctica | Expresar datos, marcas y codificaciones |
-| 8 | [Interacción con Altair](08_altair_interaction/README.md) | Extensión | Explorar un indicador con filtros o selección |
-| 9 | [Cierre visual del análisis](09_visual_closure/README.md) | Práctica de cierre | Entregar figuras reconstruibles e interpretación |
+## Propósito
 
-## Alcance de cada sección
+Elegir, construir, revisar e interpretar representaciones visuales sobre datos ya comprobados. Primero trabaja con Matplotlib y después con Altair, conservando la pregunta y los indicadores.
+
+## Antes de empezar
+
+Completa [03 — SQL](../03_sql_databases/README.md) y conserva las bases de [pandas](../02_pandas/README.md). Las lecciones explican las herramientas gráficas; no repitas toda la limpieza para cambiar de biblioteca.
+
+## Qué vas a aprender
+
+- Elegir una representación según pregunta, audiencia y unidad.
+- Construir figuras con ejes, escalas y etiquetas coherentes.
+- Contrastar la gráfica con tablas y datos de referencia.
+- Exportar una figura y explicar sus límites.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección | Práctica | Resultado que comprobarás |
+| --- | --- | --- |
+| **04.01** · [Pregunta y elección de gráfico](01_question_chart/README.md) | [Lab 04.01](../../labs/04_visualization_python/01_question_chart/README.md) | Justificar una representación según la pregunta |
+| **04.02** · [Matplotlib: Figure y Axes](02_figure_axes/README.md) | [Lab 04.02](../../labs/04_visualization_python/02_figure_axes/README.md) | Crear y guardar una figura desde código |
+| **04.03** · [Comparaciones y evolución](03_comparisons_evolution/README.md) | [Lab 04.03](../../labs/04_visualization_python/03_comparisons_evolution/README.md) | Construir barras y líneas con unidades |
+| **04.04** · [Distribuciones y relaciones](04_distributions_relationships/README.md) | [Lab 04.04](../../labs/04_visualization_python/04_distributions_relationships/README.md) | Interpretar dispersión y variabilidad |
+| **04.05** · [Escalas, etiquetas y accesibilidad](05_scales_labels_accessibility/README.md) | [Lab 04.05](../../labs/04_visualization_python/05_scales_labels_accessibility/README.md) | Revisar una figura que puede inducir a error |
+| **04.06** · [Composición y exportación](06_composition_export/README.md) | [Lab 04.06](../../labs/04_visualization_python/06_composition_export/README.md) | Comparar vistas y producir una figura legible |
+| **04.07** · [Altair: visualización declarativa](07_altair_declarative/README.md) | [Lab 04.07](../../labs/04_visualization_python/07_altair_declarative/README.md) | Expresar datos, marcas y codificaciones |
+| **04.08** · [Interacción con Altair](08_altair_interaction/README.md) — opcional | [Lab 04.08](../../labs/04_visualization_python/08_altair_interaction/README.md) | Explorar un indicador con filtros o selección |
+| **04.09** · [Cierre visual del análisis](09_visual_closure/README.md) | [Lab 04.09](../../labs/04_visualization_python/09_visual_closure/README.md) | Entregar figuras reconstruibles e interpretación |
+
+<a id="alcance-de-cada-sección"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
 
 <a id="01-pregunta-y-eleccion-de-grafico"></a>
 
@@ -114,38 +122,54 @@ Entorno y versiones se explican en las lecciones de cada herramienta.
 - Práctica disponible: reconstruir al menos una figura estática, comparar una vista
   Altair y explicar hallazgo, población y límites. Interacción opcional.
 
-## Prácticas, integración y criterio de salida
+</details>
 
-Los labs 04.01–04.09 están disponibles; el 04.08 es opcional.
-El [lab 04.01](../../labs/04_visualization_python/01_question_chart/README.md)
-y el [lab 04.02](../../labs/04_visualization_python/02_figure_axes/README.md)
-y el [lab 04.03](../../labs/04_visualization_python/03_comparisons_evolution/README.md)
-y el [lab 04.04](../../labs/04_visualization_python/04_distributions_relationships/README.md)
-y el [lab 04.05](../../labs/04_visualization_python/05_scales_labels_accessibility/README.md)
-y el [lab 04.06](../../labs/04_visualization_python/06_composition_export/README.md)
-y el [lab 04.07](../../labs/04_visualization_python/07_altair_declarative/README.md)
-y el [lab 04.08 opcional](../../labs/04_visualization_python/08_altair_interaction/README.md)
-y el [lab 04.09](../../labs/04_visualization_python/09_visual_closure/README.md)
-están disponibles.
-Se ampliarán los productos previstos en [proyectos](../../projects/README.md)
-01_clean_credit_data y 02_credit_database, sin crear un proyecto adicional obligatorio.
+## Cómo trabajar este módulo
 
-El cierre visual de 04.09 conserva indicadores conciliados, una figura
-estática, una vista declarativa, interpretación e instrucciones de
-reconstrucción. No hay checkpoint de proyecto implementado: esos proyectos
-siguen pendientes y no se exige crear otro para cerrar el módulo.
+Predice qué relación debe verse y contrasta valores, escalas y unidades después de dibujar. 04.08 es una ampliación opcional de interacción. Una app, inferencia estadística o modelado no son requisitos para describir la muestra.
 
-Para avanzar debes justificar la representación, revisar escalas y unidades y
-reconstruir la figura desde los datos. Diseñar interacción avanzada no es requisito.
-Streamlit pertenece al módulo 12; estadística inferencial y modelado no se
-presuponen para describir una muestra.
+Lee, predice, practica en tu copia, comprueba y explica. En pareja, una persona escribe y la otra contrasta; cambien de papeles por bloques. Conserva los originales y vuelve a ejecutar desde una sesión nueva antes del cierre.
 
-## Continuidad y referencias
+## Qué conservar
 
-Continúa con [05 — Python aplicado](../05_python_applied/README.md), reutilizando
-este análisis para organizar su código.
+| Evidencia personal | Qué permite revisar |
+| --- | --- |
+| Código y tablas de referencia | Datos y medidas efectivamente representados |
+| Figuras y exportaciones | Escalas, leyendas, unidades y archivos legibles |
+| Interpretación y revisión | Mensaje, decisiones visuales y límites |
+
+Guarda los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+<a id="prácticas-integración-y-criterio-de-salida"></a>
+
+## Criterio de salida
+
+Puedes justificar la representación, comprobar sus medidas y reconstruir una figura exportada desde los datos. El cierre 04.09 incluye figura estática, vista declarativa e interpretación; no exige interacción avanzada.
+
+Se reutilizarán 01_clean_credit_data y 02_credit_database. No hay checkpoint de proyecto implementado ni se exige un proyecto adicional para cerrar las prácticas.
+
+<a id="continuidad-y-referencias"></a>
+
+## Siguiente paso
+
+**Para empezar:** [lee 04.01](01_question_chart/README.md) y realiza su lab.
+
+**Al cerrar:** continúa con [05 — Python aplicado](../05_python_applied/README.md).
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 La progresión se apoya en [Figure/Axes e interfaces de Matplotlib](https://matplotlib.org/stable/users/explain/quick_start.html)
 y en [parámetros e interacción de Altair](https://altair-viz.github.io/user_guide/interactions/parameters.html).
 Consultar también [los canales de Altair](https://altair-viz.github.io/user_guide/encodings/index.html)
 al desarrollar la representación declarativa.
+
+### Apoyos relacionados
+
+- [proyectos](../../projects/README.md)
+
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Primera lección →](01_question_chart/README.md)

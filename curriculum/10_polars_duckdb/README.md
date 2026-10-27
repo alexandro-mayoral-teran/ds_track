@@ -1,70 +1,52 @@
 # 10 — Polars y DuckDB
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **10 — Polars y DuckDB**
 
-Procesar los datos conocidos con otros motores, comprender sus formas de
-ejecución y elegir con evidencia. Retoma los conceptos de
-[09 — Arrow y Parquet](../09_arrow_parquet/README.md), contratos y referencias.
-Las nuevas lecciones presentan su contexto, datos y resultados completos;
-no exigen entregas personales anteriores para comprender los ejemplos.
+**Compara motores con la misma pregunta y resultados conciliados.**
 
-**Estado:** [10.01 — Pregunta, contrato y referencia](01_question_contract_reference/README.md)
-dispone de lección, muestra propia, referencias Python estándar/R base,
-generador opcional y lab. [10.02 — Polars: tablas y expresiones](02_polars_tables_expressions/README.md)
-añade lección, CSV autónomo, funciones, recorridos y lab con Polars 2.0.0.
-[10.03 — Polars lazy y planes de consulta](03_polars_lazy_plans/README.md)
-añade ejemplos autónomos, preparación Parquet, planes, ejecución conciliada y lab.
-[10.04 — Tipos, faltantes y uniones](04_types_missing_joins/README.md)
-añade ejemplos completos, catálogo propio, cobertura y cardinalidad con lab.
-[10.05 — Streaming y límites de memoria](05_streaming_memory/README.md)
-añade la extensión opcional de lotes, sink, plan físico y pico residente observado.
-[10.06 — DuckDB: SQL sobre Parquet](06_duckdb_parquet/README.md)
-añade DuckDB 2.0.0, SQL, planes y ejecución conciliada con lección/lab.
-[10.07 — DuckDB desde Python y R](07_duckdb_python_r/README.md)
-añade SQL compartido, parámetros, tipos/clases y recursos con lección/lab.
-[10.08 — Intercambio entre motores](08_engine_interchange/README.md)
-añade conversiones, ausencias, tipos y materialización con lección/lab.
-[10.09 — Comparar tiempo y memoria](09_time_memory/README.md)
-añade protocolo repetido, fases, crudas y pico residente con lección/lab.
-[10.10 — Cierre y elección de herramienta](10_closure_tool_choice/README.md)
-añade entrega reconstruible, referencia R base, mediciones nuevas y decisión con lab.
-Las diez secciones tienen material (10.05 opcional); práctica y proyecto siguen pendientes.
+[**Empezar por 10.01 →**](01_question_contract_reference/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-Polars se enseña principalmente desde Python, con su interfaz R como comparación
-opcional. DuckDB se enseña desde SQL, con recorridos separados para Python y R.
-El objetivo no es repetir toda la teoría en cada lenguaje ni elegir un ganador
-universal: verificaremos el resultado antes de comparar costos.
+> **Material disponible:** 10 lecciones y sus labs. Esto no acredita aprendizaje ni proyecto completado.
 
-## Qué se compara
+<a id="propósito-y-prerrequisitos"></a>
 
-| Herramienta | Papel previsto |
-| --- | --- |
-| pandas / tidyverse | Análisis conocido y resultados de referencia |
-| Polars | Expresiones sobre tablas, ejecución inmediata y consultas diferidas |
-| DuckDB | Motor SQL analítico que se utiliza desde Python y R |
-| Arrow / Parquet | Intercambio y almacenamiento comunes, introducidos en 09 |
+## Propósito
 
-Polars no es exclusivo de Python: existe una interfaz para R. No exigiremos
-aprender ambas APIs para cerrar el módulo. DuckDB reutiliza conocimientos SQL;
-DBI y el cliente R se explican en [10.07](07_duckdb_python_r/README.md)
-antes de pedir una consulta desde ese lenguaje.
+Procesar datos conocidos con Polars y DuckDB, comprender cuándo se ejecutan las consultas y elegir herramientas con evidencia, conservando un contrato común.
 
-## Orden de desarrollo
+## Antes de empezar
 
-| Orden | Sección | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [Pregunta, contrato y referencia](01_question_contract_reference/README.md) | Esencial | Definir resultados equivalentes para comparar |
-| 2 | [Polars: tablas y expresiones](02_polars_tables_expressions/README.md) | Esencial | Seleccionar, transformar y resumir una muestra |
-| 3 | [Polars lazy y planes de consulta](03_polars_lazy_plans/README.md) | Esencial | Explicar scan, collect y un plan optimizado |
-| 4 | [Tipos, faltantes y uniones](04_types_missing_joins/README.md) | Esencial | Conservar semántica e indicadores al cambiar de motor |
-| 5 | [Streaming y límites de memoria](05_streaming_memory/README.md) | Extensión | Comprobar cómo se ejecuta una consulta por lotes |
-| 6 | [DuckDB: SQL sobre Parquet](06_duckdb_parquet/README.md) | Esencial | Consultar archivos sin cargar primero todo en pandas |
-| 7 | [DuckDB desde Python y R](07_duckdb_python_r/README.md) | Práctica | Reutilizar una consulta desde ambos lenguajes |
-| 8 | [Intercambio entre motores](08_engine_interchange/README.md) | Práctica | Verificar conversiones y materialización de resultados |
-| 9 | [Comparar tiempo y memoria](09_time_memory/README.md) | Práctica | Producir mediciones interpretables y repetibles |
-| 10 | [Cierre y elección de herramienta](10_closure_tool_choice/README.md) | Práctica de cierre | Resolver una pregunta y justificar el motor elegido |
+Completa [09 — Arrow y Parquet](../09_arrow_parquet/README.md) y conserva bases de pandas/SQL. Cada lección presenta sus datos y reglas; los ejemplos no exigen entregas anteriores. Las dependencias se incorporan con su recorrido, sin cambiar entornos globales.
 
-## Alcance de cada sección
+## Qué vas a aprender
+
+- Construir transformaciones y consultas con tipos explícitos.
+- Distinguir ejecución inmediata, diferida y planes de consulta.
+- Intercambiar resultados y comparar por clave.
+- Separar validación, medición y escritura.
+- Justificar una elección con límites y observaciones reproducibles.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección | Práctica | Resultado que comprobarás |
+| --- | --- | --- |
+| **10.01** · [Pregunta, contrato y referencia](01_question_contract_reference/README.md) | [Lab 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md) | Definir resultados equivalentes para comparar |
+| **10.02** · [Polars: tablas y expresiones](02_polars_tables_expressions/README.md) | [Lab 10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md) | Seleccionar, transformar y resumir una muestra |
+| **10.03** · [Polars lazy y planes de consulta](03_polars_lazy_plans/README.md) | [Lab 10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md) | Explicar scan, collect y un plan optimizado |
+| **10.04** · [Tipos, faltantes y uniones](04_types_missing_joins/README.md) | [Lab 10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md) | Conservar semántica e indicadores al cambiar de motor |
+| **10.05** · [Streaming y límites de memoria](05_streaming_memory/README.md) — opcional | [Lab 10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md) | Comprobar cómo se ejecuta una consulta por lotes |
+| **10.06** · [DuckDB: SQL sobre Parquet](06_duckdb_parquet/README.md) | [Lab 10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md) | Consultar archivos sin cargar primero todo en pandas |
+| **10.07** · [DuckDB desde Python y R](07_duckdb_python_r/README.md) | [Lab 10.07](../../labs/10_polars_duckdb/07_duckdb_python_r/README.md) | Reutilizar una consulta desde ambos lenguajes |
+| **10.08** · [Intercambio entre motores](08_engine_interchange/README.md) | [Lab 10.08](../../labs/10_polars_duckdb/08_engine_interchange/README.md) | Verificar conversiones y materialización de resultados |
+| **10.09** · [Comparar tiempo y memoria](09_time_memory/README.md) | [Lab 10.09](../../labs/10_polars_duckdb/09_time_memory/README.md) | Producir mediciones interpretables y repetibles |
+| **10.10** · [Cierre y elección de herramienta](10_closure_tool_choice/README.md) | [Lab 10.10](../../labs/10_polars_duckdb/10_closure_tool_choice/README.md) | Resolver una pregunta y justificar el motor elegido |
+
+<a id="alcance-de-cada-sección"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
 
 <a id="01-pregunta-contrato-y-referencia"></a>
 
@@ -221,38 +203,71 @@ antes de pedir una consulta desde ese lenguaje.
   Verificador comprueba estructura/evidencia; el argumento requiere revisión humana.
   Vacíos, fronteras, compensaciones y referencia R base comprobados; sin paquetes nuevos.
 
-## Prácticas, proyecto y criterio de salida
+</details>
 
-Están disponibles los [labs 10.01](../../labs/10_polars_duckdb/01_question_contract_reference/README.md),
-[10.02](../../labs/10_polars_duckdb/02_polars_tables_expressions/README.md),
-[10.03](../../labs/10_polars_duckdb/03_polars_lazy_plans/README.md),
-[10.04](../../labs/10_polars_duckdb/04_types_missing_joins/README.md),
-[10.05](../../labs/10_polars_duckdb/05_streaming_memory/README.md),
-[10.06](../../labs/10_polars_duckdb/06_duckdb_parquet/README.md),
-[10.07](../../labs/10_polars_duckdb/07_duckdb_python_r/README.md),
-[10.08](../../labs/10_polars_duckdb/08_engine_interchange/README.md),
-[10.09](../../labs/10_polars_duckdb/09_time_memory/README.md)
-y [10.10](../../labs/10_polars_duckdb/10_closure_tool_choice/README.md).
-Las diez secciones disponen de lección/lab; 10.05 y Polars en R son opcionales.
-El proyecto previsto 04_large_credit_dataset aparece en
-[proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
+## Cómo trabajar este módulo
+
+Polars se trabaja principalmente en Python; su interfaz R queda como ampliación, sin una ruta práctica implementada. DuckDB tiene recorridos Python/R separados y reutiliza SQL. 10.05 es opcional. Lazy o streaming no garantizan memoria acotada; las mediciones didácticas no demuestran un ganador universal ni grandes volúmenes.
+
+Lee, predice, practica en tu copia, comprueba y explica. En pareja, una persona escribe y la otra contrasta; cambien de papeles por bloques. Conserva los originales y vuelve a ejecutar desde una sesión nueva antes del cierre.
+
+<a id="qué-se-compara"></a>
+
+<details>
+<summary><strong>Qué se compara</strong></summary>
+
+| Herramienta | Papel previsto |
+| --- | --- |
+| pandas / tidyverse | Análisis conocido y resultados de referencia |
+| Polars | Expresiones sobre tablas, ejecución inmediata y consultas diferidas |
+| DuckDB | Motor SQL analítico que se utiliza desde Python y R |
+| Arrow / Parquet | Intercambio y almacenamiento comunes, introducidos en 09 |
+
+Polars no es exclusivo de Python: existe una interfaz para R. No exigiremos
+aprender ambas APIs para cerrar el módulo. DuckDB reutiliza conocimientos SQL;
+DBI y el cliente R se explican en [10.07](07_duckdb_python_r/README.md)
+antes de pedir una consulta desde ese lenguaje.
+
+</details>
+
+## Qué conservar
+
+| Evidencia personal | Qué permite revisar |
+| --- | --- |
+| Código, SQL y contrato | La misma pregunta y referencia |
+| Tablas y exportaciones | Tipos y valores conciliados por clave |
+| Mediciones y decisión | Procesos, fases, observaciones y límites documentados |
+
+Guarda los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+<a id="prácticas-proyecto-y-criterio-de-salida"></a>
+
+## Criterio de salida
+
+Explica cuándo se ejecuta cada consulta, conserva resultados equivalentes y justifica una comparación reproducible. No se exige instalar servidores, desbordar la memoria del equipo o demostrar superioridad general de un motor.
+
+04_large_credit_dataset sigue previsto, sin carpeta o checkpoints implementados. El material de [11 — Quarto](../11_reporting_quarto/README.md) ya está disponible; no es una sección pendiente de desarrollo.
+
+<details>
+<summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
 Checkpoints propuestos: CP-01, contrato y referencia (01); CP-02, consulta Polars
 conciliada (02–04); CP-03, consulta DuckDB y lectura desde ambos lenguajes (06–08);
 CP-04, mediciones y decisión documentada (09–10). Procesamiento mayor que memoria
 ampliará CP-02/CP-03 solo con una necesidad y recursos adecuados.
 
-Para avanzar debes explicar cuándo se ejecutan las consultas, conservar resultados
-y justificar una comparación reproducible. No se exige demostrar que un motor
-siempre gana, instalar servidores ni procesar un volumen que desborde tu equipo.
-SQL avanzado, ajuste fino de hilos y particiones no bloquean el cierre esencial.
+</details>
 
-## Continuidad y referencias
+<a id="continuidad-y-referencias"></a>
 
-Continúa con [11 — Reportes con Quarto](../11_reporting_quarto/README.md),
-reutilizando tablas y figuras verificadas en lugar de recalcular sin controles.
-Su [11.01](../11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado)
-todavía está planificada; no se instala Quarto solo por cerrar este módulo.
+## Siguiente paso
+
+**Para empezar:** [lee 10.01](01_question_contract_reference/README.md) y realiza su lab.
+
+**Al cerrar:** continúa con [11 — Reportes con Quarto](../11_reporting_quarto/README.md).
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 - Polars: [ejecución lazy](https://docs.pola.rs/user-guide/lazy/using/),
   [optimizaciones](https://docs.pola.rs/user-guide/lazy/optimizations/),
@@ -264,37 +279,13 @@ todavía está planificada; no se instala Quarto solo por cerrar este módulo.
   [cliente R](https://duckdb.org/docs/current/clients/r) y
   [consideraciones de rendimiento](https://duckdb.org/docs/current/guides/performance/how_to_tune_workloads).
 
-Las versiones, capacidades y dependencias se comprobarán al implementar cada
-práctica; la investigación y planificación no instalan herramientas adicionales.
-10.01 se comprueba con Python 3.12.12 y R 4.6.1 usando solo sus bibliotecas
-estándar/base. 10.02 incorpora Polars 2.0.0 a pyproject/uv.lock y se comprueba
-con Python 3.12.12 en dos entornos uv locales. Los registros previos del lockfile
-se conservan; no cambia renv, Conda ni bibliotecas globales.
-10.03 usa esos mismos entornos para comprobar planes y ejecución desde procesos
-nuevos, sin añadir dependencias ni cambiar lockfiles.
-10.04 conserva esos entornos, añade contraste con pandas 2.3.3/SQLite estándar
-y verifica valores/tipos/cobertura sin nuevas dependencias ni archivos de entorno.
-10.05 usa Polars 2.0.0 y biblioteca estándar para lotes, sink y observación
-exploratoria del pico residente en procesos nuevos Windows; sin paquetes nuevos
-ni cambios de configuración global. No mide rendimiento ni acredita RAM acotada.
-10.06 incorpora DuckDB 2.0.0 a pyproject/uv.lock sin alterar otros registros
-salvo la dependencia del proyecto; instalación y segunda reconstrucción local
-desde caché comprobadas. No cambia entornos globales, Conda, renv ni venv raíz.
-10.07 conserva Python y amplía el mismo proyecto renv con respaldo: DBI 1.3.0,
-duckdb 1.5.6 y dbplyr 2.6.0/blob 1.3.0 por inferencia de dependencias. Los
-46 registros anteriores permanecen idénticos; segunda biblioteca restaurada
-y consulta desde procesos nuevos comprobadas. Sin cambios globales ni benchmark.
-10.08 conserva todas las versiones/lockfiles. Comprueba cruces en memoria,
-esquemas antes de adaptar y valores por clave, incluidos vacío y precisión.
-Recorrido Python en dos entornos existentes y R Arrow/DBI en ambas bibliotecas
-locales; sin instalaciones nuevas ni certificación de copias, RAM o rendimiento.
-10.09 conserva entornos/versiones y añade mediciones locales con perf_counter_ns,
-CPU del proceso y PeakWorkingSetSize en Windows. Datos/pares/exportaciones
-conciliados fuera del trabajador, tres observaciones por motor y crudas verificables.
-No certifica tiempos históricos, RAM acotada ni rendimiento general. R opcional
-ejecuta otro protocolo con system.time, sin mezclar sus observaciones con Python.
-10.10 conserva entornos/lockfiles y usa cuarenta filas propias, seis Parquet de
-resultados y comparación reconstruida por clave con Python estándar/R base.
-Mediciones de selección se generan nuevas con 10.09; no miden resumen o entrega
-completa. Manifestar una decisión exige evidencia/estructura, con revisión humana
-del argumento. Límite didáctico de 1998 filas, sin acreditar grandes volúmenes.
+### Apoyos relacionados
+
+- [proyectos](../../projects/README.md)
+- [11.01](../11_reporting_quarto/README.md#01-reporte-fuente-y-renderizado)
+
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Primera lección →](01_question_contract_reference/README.md)

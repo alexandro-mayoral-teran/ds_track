@@ -1,44 +1,51 @@
 # 03 — SQL y bases de datos
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **03 — SQL y bases de datos**
 
-Pasar de archivos a tablas relacionadas, consultar indicadores y comprobar
-escrituras. Reutilizar el análisis de [pandas](../02_pandas/README.md), separando
-qué se pregunta de cómo se expresa la consulta.
+**Organiza tablas relacionadas y responde preguntas con SQL.**
 
-**Estado:** [01 — Modelo relacional y SQLite](01_relational_sqlite/README.md) y su
-lab están disponibles, junto con [02 — Primeras consultas](02_first_queries/README.md)
-y el lab 03.02. También están disponibles [03 — Crear tablas y cargar datos](03_create_load/README.md)
-y el lab 03.03. [04 — Agregaciones e indicadores](04_aggregations/README.md)
-y el lab 03.04 también están disponibles, junto con
-[05 — Relacionar tablas con joins](05_joins/README.md) y su lab.
-[06 — Subconsultas y CTE](06_subqueries_cte/README.md) y su lab también están disponibles.
-[07 — Ventanas para comparar registros](07_windows/README.md) y su lab también están disponibles.
-[08 — Escrituras y transacciones](08_transactions/README.md) y su lab también están disponibles.
-[09 — Integración pandas y SQL](09_pandas_sql/README.md) y su lab cierran el material
-disponible de las nueve secciones; el aprendizaje requiere evidencia.
-Usamos SQLite y el módulo sqlite3 de Python; un
-servidor PostgreSQL y una aplicación gráfica no son requisitos.
+[**Empezar por 03.01 →**](01_relational_sqlite/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-Se utilizan tablas sintéticas de clientes, créditos y cortes. Antes de consultar
-se explica qué representa una fila: un crédito no es lo mismo que un registro
-crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
+> **Material disponible:** 9 lecciones y sus labs. Esto no acredita aprendizaje ni proyecto completado.
 
-## Orden de desarrollo
+<a id="propósito-y-prerrequisitos"></a>
 
-| Orden | Sección prevista | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [Modelo relacional y SQLite](01_relational_sqlite/README.md) | Esencial | Explicar tablas, relaciones y unidad de registro |
-| 2 | [Primeras consultas](02_first_queries/README.md) | Esencial | Seleccionar, filtrar y ordenar datos |
-| 3 | [Crear tablas y cargar datos](03_create_load/README.md) | Esencial | Construir una base con restricciones comprobadas |
-| 4 | [Agregaciones e indicadores](04_aggregations/README.md) | Esencial | Obtener un resumen con denominadores claros |
-| 5 | [Relacionar tablas con joins](05_joins/README.md) | Esencial | Unir datos conservando su cardinalidad |
-| 6 | [Subconsultas y CTE](06_subqueries_cte/README.md) | Práctica | Dividir una consulta en pasos legibles |
-| 7 | [Ventanas para comparar registros](07_windows/README.md) | Práctica | Comparar cortes sin perder el detalle |
-| 8 | [Escrituras y transacciones](08_transactions/README.md) | Esencial | Confirmar o revertir cambios de forma explícita |
-| 9 | [Integración pandas y SQL](09_pandas_sql/README.md) | Práctica de cierre | Conciliar un indicador entre herramientas |
+## Propósito
 
-## Alcance de cada sección
+Pasar de archivos a tablas relacionadas, consultar indicadores y comprobar escrituras. Reutiliza un análisis conocido y distingue la pregunta de la consulta que la expresa.
+
+## Antes de empezar
+
+Completa [02 — pandas](../02_pandas/README.md). Se usa SQLite con sqlite3 de Python; no hace falta un servidor PostgreSQL ni una aplicación gráfica. Cada muestra distingue cliente, crédito y registro de crédito/corte.
+
+## Qué vas a aprender
+
+- Reconocer entidades, claves y relaciones.
+- Seleccionar, agrupar y relacionar tablas con consultas.
+- Construir indicadores y comparaciones con cobertura explícita.
+- Controlar escrituras y transacciones.
+- Conciliar resultados entre pandas y SQLite.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección | Práctica | Resultado que comprobarás |
+| --- | --- | --- |
+| **03.01** · [Modelo relacional y SQLite](01_relational_sqlite/README.md) | [Lab 03.01](../../labs/03_sql_databases/01_relational_sqlite/README.md) | Explicar tablas, relaciones y unidad de registro |
+| **03.02** · [Primeras consultas](02_first_queries/README.md) | [Lab 03.02](../../labs/03_sql_databases/02_first_queries/README.md) | Seleccionar, filtrar y ordenar datos |
+| **03.03** · [Crear tablas y cargar datos](03_create_load/README.md) | [Lab 03.03](../../labs/03_sql_databases/03_create_load/README.md) | Construir una base con restricciones comprobadas |
+| **03.04** · [Agregaciones e indicadores](04_aggregations/README.md) | [Lab 03.04](../../labs/03_sql_databases/04_aggregations/README.md) | Obtener un resumen con denominadores claros |
+| **03.05** · [Relacionar tablas con joins](05_joins/README.md) | [Lab 03.05](../../labs/03_sql_databases/05_joins/README.md) | Unir datos conservando su cardinalidad |
+| **03.06** · [Subconsultas y CTE](06_subqueries_cte/README.md) | [Lab 03.06](../../labs/03_sql_databases/06_subqueries_cte/README.md) | Dividir una consulta en pasos legibles |
+| **03.07** · [Ventanas para comparar registros](07_windows/README.md) | [Lab 03.07](../../labs/03_sql_databases/07_windows/README.md) | Comparar cortes sin perder el detalle |
+| **03.08** · [Escrituras y transacciones](08_transactions/README.md) | [Lab 03.08](../../labs/03_sql_databases/08_transactions/README.md) | Confirmar o revertir cambios de forma explícita |
+| **03.09** · [Integración pandas y SQL](09_pandas_sql/README.md) | [Lab 03.09](../../labs/03_sql_databases/09_pandas_sql/README.md) | Conciliar un indicador entre herramientas |
+
+<a id="alcance-de-cada-sección"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
 
 <a id="01-modelo-relacional-y-sqlite"></a>
 
@@ -117,39 +124,59 @@ crédito/corte. Dinero en unidades explícitas y fechas con un formato acordado.
 - Reconstruir una base sintética, conciliar al menos un indicador con pandas y
   reutilizar una gráfica. Conservar SQL, entradas y pasos de ejecución.
 
-## Prácticas, proyecto y criterio de salida
+</details>
 
-Se prevén labs 03.01–03.09. El [lab 03.01](../../labs/03_sql_databases/01_relational_sqlite/README.md)
-y el [lab 03.02](../../labs/03_sql_databases/02_first_queries/README.md)
-y el [lab 03.03](../../labs/03_sql_databases/03_create_load/README.md)
-y el [lab 03.04](../../labs/03_sql_databases/04_aggregations/README.md)
-y el [lab 03.05](../../labs/03_sql_databases/05_joins/README.md)
-y el [lab 03.06](../../labs/03_sql_databases/06_subqueries_cte/README.md)
-y el [lab 03.07](../../labs/03_sql_databases/07_windows/README.md)
-y el [lab 03.08](../../labs/03_sql_databases/08_transactions/README.md)
-y el [lab 03.09](../../labs/03_sql_databases/09_pandas_sql/README.md)
-están disponibles. El material de las nueve secciones está implementado;
-la finalización del aprendizaje requiere demostrar los criterios de salida.
-El proyecto previsto 02_credit_database aparece en [proyectos](../../projects/README.md);
-su carpeta y checkpoints están por implementar.
+## Cómo trabajar este módulo
+
+Empieza por la unidad de cada tabla y sus claves. Comprueba uniones y agregaciones con ejemplos pequeños antes de escribir datos. CTE y ventanas se practican gradualmente; administración de servidores, PostgreSQL e índices avanzados son extensiones.
+
+Lee, predice, practica en tu copia, comprueba y explica. En pareja, una persona escribe y la otra contrasta; cambien de papeles por bloques. Conserva los originales y vuelve a ejecutar desde una sesión nueva antes del cierre.
+
+## Qué conservar
+
+| Evidencia personal | Qué permite revisar |
+| --- | --- |
+| Esquema y consultas | Claves, relaciones y pregunta respondida |
+| Resultados conciliados | Conteos e indicadores frente a la referencia |
+| Registro de transacciones | Escrituras y recuperación ante una operación fallida |
+
+Guarda los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+<a id="prácticas-proyecto-y-criterio-de-salida"></a>
+
+## Criterio de salida
+
+Puedes explicar un diseño relacional básico, consultar y unir sin duplicar indicadores y demostrar escrituras controladas. Reconstruye la referencia pandas/SQL y explica una discrepancia deliberada.
+
+02_credit_database está previsto en [proyectos](../../projects/README.md); su carpeta y checkpoints siguen pendientes.
+
+<details>
+<summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
 Checkpoints propuestos: CP-01, esquema y carga (01–03); CP-02, indicadores y
 relaciones (04–05); CP-03, consultas por pasos y comparación entre cortes (06–07);
 CP-04, transacciones e integración reproducible (08–09).
 
-Para avanzar necesitas demostrar diseño básico, consultas, uniones correctas,
-escrituras controladas y conciliación pandas/SQL. CTE y ventanas se practican
-con preguntas pequeñas; su profundización no bloquea el cierre esencial.
-Índices y EXPLAIN QUERY PLAN se estudiarán ante una limitación medible.
-PostgreSQL, administración de servidores y optimización avanzada quedan como extensiones.
+</details>
 
-## Continuidad y referencias
+<a id="continuidad-y-referencias"></a>
 
-Comienza por [01 — Modelo relacional y SQLite](01_relational_sqlite/README.md)
-y su lab. Después del cierre, continúa con
-[04 — Visualización en Python](../04_visualization_python/README.md).
+## Siguiente paso
+
+**Para empezar:** [lee 03.01](01_relational_sqlite/README.md) y realiza su lab.
+
+**Al cerrar:** continúa con [04 — Visualización en Python](../04_visualization_python/README.md).
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 El diseño toma como referencia [el lenguaje SQL de SQLite](https://www.sqlite.org/lang.html),
 [claves foráneas](https://www.sqlite.org/foreignkeys.html),
 [funciones de ventana](https://www.sqlite.org/windowfunctions.html) y
 [sqlite3 de Python](https://docs.python.org/3.12/library/sqlite3.html).
+
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Primera lección →](01_relational_sqlite/README.md)

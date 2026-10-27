@@ -10,7 +10,9 @@ La muestra actual abarca [portada](../README.md), [índice del curriculum](../cu
 [módulo 00](../curriculum/00_getting_started/README.md),
 [lección 00.01](../curriculum/00_getting_started/01_github_profile/README.md) y
 [lab 00.01](../labs/00_getting_started/01_github_profile/README.md).
-El resto del material se adapta gradualmente al revisarlo; no se da por uniformado.
+Los índices de los módulos 00–14 ya comparten la estructura de módulo. Las
+lecciones y labs mantienen solo la muestra 00.01 adaptada; el resto de esas
+páginas se revisa gradualmente. Los módulos 12–14 conservan su planificación.
 
 ## Niveles de navegación
 

@@ -1,42 +1,50 @@
 # 11 — Reportes con Quarto
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **11 — Reportes con Quarto**
 
-Convertir el análisis conocido en un reporte que reúna contexto, tablas,
-figuras e interpretación, y que pueda regenerarse sin editar resultados a mano.
-Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequisito
-conceptual. Las lecciones incluyen datos completos y no exigen entregas personales previas.
+**Reúne análisis y narrativa en un reporte que otra persona reconstruya.**
 
-**Estado:** las nueve secciones 11.01–11.09 tienen lecciones y labs; 11.08 es
-opcional. El proyecto integrador, checkpoints y práctica personal siguen pendientes.
+[**Empezar por 11.01 →**](01_report_source_render/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-La teoría del documento se explica una vez. Hay recorridos separados para
-Python/Jupyter y R/knitr: elige un motor para el reporte esencial y compara el
-otro como ampliación. No se exige mezclar ambos intérpretes en un documento.
-Quarto se instala como herramienta; no sustituye Python, R o sus dependencias.
-El [cierre 10.10](../10_polars_duckdb/10_closure_tool_choice/README.md) ya ofrece
-tablas verificables, pregunta, método y límites como posible entrada del reporte.
-La 11.01 empieza con una muestra propia pequeña y una preparación editorial;
-no instala Quarto ni genera todavía un `.qmd` o HTML.
-La 11.02 crea/renderiza HTML con Quarto 1.9.38 y conserva una secuencia de dos
-pasos: preparación calculada Python/R y render de texto. Ejecución dentro del
-documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobados.
+> **Material disponible:** 9 lecciones y sus labs. Esto no acredita aprendizaje ni proyecto completado.
 
-## Orden de desarrollo
+<a id="propósito-y-prerrequisitos"></a>
 
-| Orden | Sección | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [Reporte, fuente y renderizado](01_report_source_render/README.md) | Esencial disponible | Distinguir documento fuente y resultado generado |
-| 2 | [Primer documento Quarto](02_first_document/README.md) | Esencial disponible | Crear un .qmd y renderizar HTML |
-| 3 | [Ejecución con Python o R](03_execution_python_r/README.md) | Esencial disponible | Regenerar datos y resultados en el entorno correcto |
-| 4 | [Tablas, figuras y referencias](04_tables_figures_references/README.md) | Esencial disponible | Relacionar evidencia y narrativa |
-| 5 | [Parámetros y cortes](05_parameters_cutoffs/README.md) | Práctica disponible | Generar dos reportes desde una misma fuente |
-| 6 | [Proyectos, caché y freeze](06_projects_cache_freeze/README.md) | Práctica disponible | Controlar cuándo se recalculan resultados |
-| 7 | [Formatos y revisión visual](07_formats_visual_review/README.md) | Práctica disponible | Entregar HTML legible; PDF como ampliación |
-| 8 | [Dashboard y distribución](08_dashboard_distribution/README.md) | Extensión opcional disponible | Organizar vistas sin exigir una app con servidor |
-| 9 | [Cierre del reporte reproducible](09_reproducible_report_closure/README.md) | Práctica de cierre disponible | Reconstruir y comprobar un reporte por corte |
+## Propósito
 
-## Alcance de cada sección
+Convertir un análisis conocido en un reporte con contexto, tablas, figuras, interpretación y límites, regenerado desde fuentes y parámetros explícitos.
+
+## Antes de empezar
+
+Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequisito conceptual. Los ejemplos incluyen entradas completas sin exigir entregas personales previas. Quarto es una herramienta adicional; no sustituye Python o R ni sus dependencias.
+
+## Qué vas a aprender
+
+- Distinguir fuentes, ejecución y resultados generados.
+- Combinar cifras, tablas, figuras y referencias del mismo análisis.
+- Controlar parámetros, rutas, caché y recálculo.
+- Revisar un HTML y reconstruir una entrega contra referencia externa.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección | Práctica | Resultado que comprobarás |
+| --- | --- | --- |
+| **11.01** · [Reporte, fuente y renderizado](01_report_source_render/README.md) | [Lab 11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md) | Distinguir documento fuente y resultado generado |
+| **11.02** · [Primer documento Quarto](02_first_document/README.md) | [Lab 11.02](../../labs/11_reporting_quarto/02_first_document/README.md) | Crear un .qmd y renderizar HTML |
+| **11.03** · [Ejecución con Python o R](03_execution_python_r/README.md) | [Lab 11.03](../../labs/11_reporting_quarto/03_execution_python_r/README.md) | Regenerar datos y resultados en el entorno correcto |
+| **11.04** · [Tablas, figuras y referencias](04_tables_figures_references/README.md) | [Lab 11.04](../../labs/11_reporting_quarto/04_tables_figures_references/README.md) | Relacionar evidencia y narrativa |
+| **11.05** · [Parámetros y cortes](05_parameters_cutoffs/README.md) | [Lab 11.05](../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md) | Generar dos reportes desde una misma fuente |
+| **11.06** · [Proyectos, caché y freeze](06_projects_cache_freeze/README.md) | [Lab 11.06](../../labs/11_reporting_quarto/06_projects_cache_freeze/README.md) | Controlar cuándo se recalculan resultados |
+| **11.07** · [Formatos y revisión visual](07_formats_visual_review/README.md) | [Lab 11.07](../../labs/11_reporting_quarto/07_formats_visual_review/README.md) | Entregar HTML legible; PDF como ampliación |
+| **11.08** · [Dashboard y distribución](08_dashboard_distribution/README.md) — opcional | [Lab 11.08](../../labs/11_reporting_quarto/08_dashboard_distribution/README.md) | Organizar vistas sin exigir una app con servidor |
+| **11.09** · [Cierre del reporte reproducible](09_reproducible_report_closure/README.md) | [Lab 11.09](../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md) | Reconstruir y comprobar un reporte por corte |
+
+<a id="alcance-de-cada-sección"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
 
 <a id="01-reporte-fuente-y-renderizado"></a>
 
@@ -152,35 +160,51 @@ documento con Jupyter/knitr ya está disponible en 11.03, con entornos comprobad
   por clave, parámetros explícitos y texto/tablas/barras conciliados. Un motor
   y HTML bastan. Sin dependencias nuevas ni cambios de lockfiles.
 
-## Prácticas, proyecto y criterio de salida
+</details>
 
-Los labs [11.01](../../labs/11_reporting_quarto/01_report_source_render/README.md),
-[11.02](../../labs/11_reporting_quarto/02_first_document/README.md),
-[11.03](../../labs/11_reporting_quarto/03_execution_python_r/README.md),
-[11.04](../../labs/11_reporting_quarto/04_tables_figures_references/README.md),
-[11.05](../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md),
-[11.06](../../labs/11_reporting_quarto/06_projects_cache_freeze/README.md),
-[11.07](../../labs/11_reporting_quarto/07_formats_visual_review/README.md),
-[11.08](../../labs/11_reporting_quarto/08_dashboard_distribution/README.md) y
-[11.09](../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md)
-están disponibles; 11.08 es opcional. Consulta los
-[criterios de cierre](../../docs/reporting-closure.md).
-El proyecto previsto 05_monthly_report figura en [proyectos](../../projects/README.md),
-sin carpeta ni checkpoints implementados.
+## Cómo trabajar este módulo
+
+Elige Python/Jupyter o R/knitr para el reporte esencial; el otro motor es ampliación. Un motor y HTML bastan. 11.08 es opcional; PDF, dashboards y publicación no bloquean el cierre. La ejecución se comprueba además desde una sesión nueva y con cambios deliberados de datos/parámetros.
+
+Lee, predice, practica en tu copia, comprueba y explica. En pareja, una persona escribe y la otra contrasta; cambien de papeles por bloques. Conserva los originales y vuelve a ejecutar desde una sesión nueva antes del cierre.
+
+## Qué conservar
+
+| Evidencia personal | Qué permite revisar |
+| --- | --- |
+| Fuentes y parámetros | Qué entrada y corte se solicitaron |
+| HTML, tablas y figuras | Coherencia de narrativa y valores |
+| Entorno, instrucciones y referencia | Reconstrucción por otra persona y límites de las huellas |
+
+Guarda los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+<a id="prácticas-proyecto-y-criterio-de-salida"></a>
+
+## Criterio de salida
+
+Otra persona puede reconstruir el HTML con las mismas entradas y contrastar sus cifras y referencias. Explica los parámetros efectivos y detecta una discrepancia sin editar resultados manualmente.
+
+05_monthly_report está previsto en [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados. Consulta [los criterios de cierre](../../docs/reporting-closure.md).
+
+<details>
+<summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
 Checkpoints propuestos: CP-01, documento y ejecución (01–03); CP-02, evidencia y
 parámetros (04–05); CP-03, render actualizado y revisión final (06–07 y 09).
 PDF, dashboards y publicación ampliarán el producto sin bloquear su cierre.
 
-Podrás avanzar cuando otra persona pueda reconstruir el HTML con las mismas
-entradas, y cuando sus cifras y referencias correspondan al corte declarado.
-La comunicación comenzó en módulos anteriores; aquí se formaliza la entrega.
+</details>
 
-## Continuidad y referencias
+<a id="continuidad-y-referencias"></a>
 
-Después elige [12 — Streamlit](../12_streamlit/README.md) para Python o
-[13 — Shiny](../13_shiny_web/README.md) para R. Basta completar una aplicación
-antes de [14 — Proyecto reproducible](../14_reproducible_projects/README.md).
+## Siguiente paso
+
+**Para empezar:** [lee 11.01](01_report_source_render/README.md) y realiza su lab.
+
+Al cerrar, elige [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md). Ambas rutas están planificadas; basta una antes de 14.
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 Fuentes oficiales: [inicio](https://quarto.org/docs/get-started/),
 [Python](https://quarto.org/docs/computations/python.html),
@@ -191,3 +215,14 @@ Fuentes oficiales: [inicio](https://quarto.org/docs/get-started/),
 [PDF](https://quarto.org/docs/output-formats/pdf-basics.html) y
 [dashboards](https://quarto.org/docs/dashboards/).
 Las versiones y requisitos se elegirán al implementar cada recorrido.
+
+### Apoyos relacionados
+
+- [cierre 10.10](../10_polars_duckdb/10_closure_tool_choice/README.md)
+- [14 — Proyecto reproducible](../14_reproducible_projects/README.md)
+
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Primera lección →](01_report_source_render/README.md)

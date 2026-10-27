@@ -1,43 +1,50 @@
 # 08 — Visualización en R
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **08 — Visualización en R**
 
-Profundizar en ggplot2 sobre tablas e indicadores ya comprobados en
-[07 — tidyverse](../07_tidyverse/README.md), cuyas diez secciones tienen material.
-Se reutiliza la primera figura disponible en
-[07.10](../07_tidyverse/10_first_plot_closure/README.md) y se
-compara con el análisis Python; no se repite toda la limpieza para aprender gráficos.
+**Diseña figuras en R y verifica qué representan.**
 
-**Estado:** [08.01](01_question_grammar/README.md),
-[08.02](02_geometries_stats/README.md),
-[08.03](03_aesthetic_mapping/README.md),
-[08.04](04_scales_coordinates/README.md),
-[08.05](05_facets_groups/README.md),
-[08.06](06_labels_themes_accessibility/README.md),
-[08.07](07_compose_figures/README.md),
-[08.08](08_reproducible_export/README.md) y
-[08.09](09_visual_comparison/README.md) disponen de lección, scripts y lab.
-Las nueve secciones tienen material; el proyecto y sus checkpoints siguen pendientes.
+[**Empezar por 08.01 →**](01_question_grammar/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-La pregunta, la representación y la interpretación guían el recorrido. El libro
-abierto de ggplot2 aporta la gramática de gráficos; su tercera edición en línea
-está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lección.
+> **Material disponible:** 9 lecciones y sus labs. Esto no acredita aprendizaje ni proyecto completado.
 
-## Orden de desarrollo
+<a id="propósito-y-prerrequisitos"></a>
 
-| Orden | Sección prevista | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [Pregunta y gramática de gráficos](01_question_grammar/README.md) | Esencial | Explicar datos, estéticas y capas de una figura |
-| 2 | [Geometrías y transformaciones estadísticas](02_geometries_stats/README.md) | Esencial | Elegir una geometría y verificar qué agrega |
-| 3 | [Mapear y fijar estéticas](03_aesthetic_mapping/README.md) | Esencial | Distinguir variables de estilos constantes |
-| 4 | [Escalas y coordenadas](04_scales_coordinates/README.md) | Esencial | Justificar límites, transformaciones y unidades |
-| 5 | [Facetas y comparación entre grupos](05_facets_groups/README.md) | Práctica | Comparar segmentos con escalas explícitas |
-| 6 | [Etiquetas, temas y accesibilidad](06_labels_themes_accessibility/README.md) | Esencial | Comunicar población, hallazgo y límites |
-| 7 | [Componer figuras](07_compose_figures/README.md) | Práctica | Reunir vistas sin perder contexto |
-| 8 | [Exportación reproducible](08_reproducible_export/README.md) | Esencial | Producir archivos legibles desde código |
-| 9 | [Cierre visual y comparación con Python](09_visual_comparison/README.md) | Práctica de cierre | Explicar indicadores equivalentes en dos ecosistemas |
+## Propósito
 
-## Alcance de cada sección
+Profundizar en ggplot2 sobre tablas e indicadores comprobados, conectando pregunta, representación e interpretación sin repetir la limpieza en cada figura.
+
+## Antes de empezar
+
+Completa [07 — tidyverse](../07_tidyverse/README.md), incluida [su primera figura](../07_tidyverse/10_first_plot_closure/README.md). Usa las bibliotecas locales y los preparadores indicados, conservando entregas anteriores.
+
+## Qué vas a aprender
+
+- Relacionar datos, mapeos, capas y estadísticas.
+- Elegir geometrías, escalas, facetas y composición.
+- Revisar etiquetas, color y alternativas textuales.
+- Exportar figuras y contrastarlas con su referencia numérica.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección | Práctica | Resultado que comprobarás |
+| --- | --- | --- |
+| **08.01** · [Pregunta y gramática de gráficos](01_question_grammar/README.md) | [Lab 08.01](../../labs/08_visualization_r/01_question_grammar/README.md) | Explicar datos, estéticas y capas de una figura |
+| **08.02** · [Geometrías y transformaciones estadísticas](02_geometries_stats/README.md) | [Lab 08.02](../../labs/08_visualization_r/02_geometries_stats/README.md) | Elegir una geometría y verificar qué agrega |
+| **08.03** · [Mapear y fijar estéticas](03_aesthetic_mapping/README.md) | [Lab 08.03](../../labs/08_visualization_r/03_aesthetic_mapping/README.md) | Distinguir variables de estilos constantes |
+| **08.04** · [Escalas y coordenadas](04_scales_coordinates/README.md) | [Lab 08.04](../../labs/08_visualization_r/04_scales_coordinates/README.md) | Justificar límites, transformaciones y unidades |
+| **08.05** · [Facetas y comparación entre grupos](05_facets_groups/README.md) | [Lab 08.05](../../labs/08_visualization_r/05_facets_groups/README.md) | Comparar segmentos con escalas explícitas |
+| **08.06** · [Etiquetas, temas y accesibilidad](06_labels_themes_accessibility/README.md) | [Lab 08.06](../../labs/08_visualization_r/06_labels_themes_accessibility/README.md) | Comunicar población, hallazgo y límites |
+| **08.07** · [Componer figuras](07_compose_figures/README.md) | [Lab 08.07](../../labs/08_visualization_r/07_compose_figures/README.md) | Reunir vistas sin perder contexto |
+| **08.08** · [Exportación reproducible](08_reproducible_export/README.md) — opcional | [Lab 08.08](../../labs/08_visualization_r/08_reproducible_export/README.md) | Producir archivos legibles desde código |
+| **08.09** · [Cierre visual y comparación con Python](09_visual_comparison/README.md) | [Lab 08.09](../../labs/08_visualization_r/09_visual_comparison/README.md) | Explicar indicadores equivalentes en dos ecosistemas |
+
+<a id="alcance-de-cada-sección"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
 
 <a id="01-pregunta-y-gramatica-de-graficos"></a>
 
@@ -140,35 +147,52 @@ está en desarrollo. Las APIs y dependencias se comprobarán al crear cada lecci
   cambio relativo y cobertura. Reutiliza la entrega de 07.10, sin nuevas
   dependencias; el proyecto integrador no se acredita.
 
-## Prácticas, integración y criterio de salida
+</details>
 
-Los labs [08.01](../../labs/08_visualization_r/01_question_grammar/README.md),
-[08.02](../../labs/08_visualization_r/02_geometries_stats/README.md),
-[08.03](../../labs/08_visualization_r/03_aesthetic_mapping/README.md),
-[08.04](../../labs/08_visualization_r/04_scales_coordinates/README.md),
-[08.05](../../labs/08_visualization_r/05_facets_groups/README.md),
-[08.06](../../labs/08_visualization_r/06_labels_themes_accessibility/README.md),
-[08.07](../../labs/08_visualization_r/07_compose_figures/README.md),
-[08.08](../../labs/08_visualization_r/08_reproducible_export/README.md) y
-[08.09](../../labs/08_visualization_r/09_visual_comparison/README.md) están
-disponibles. Las nueve secciones tienen material. Se ampliará el proyecto previsto
-03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
-con un checkpoint visual cuyo nombre se definirá al implementarlo.
+## Cómo trabajar este módulo
 
-Puedes avanzar cuando justifiques geometría y escalas, compruebes las medidas
-representadas y reconstruyas una figura exportada con interpretación. Diseñar
-extensiones de ggplot2 o una app interactiva no es requisito; Shiny ocupa el 13.
+Trabaja en scripts dentro del IDE y compara las figuras con sus tablas. Después verifica desde una sesión nueva. 08.08 es ampliación de exportación; diseñar extensiones de ggplot2 o una app no es requisito. R aplicado sigue siendo una consideración de diseño: no añade un módulo ni renumera 09–14.
+
+Lee, predice, practica en tu copia, comprueba y explica. En pareja, una persona escribe y la otra contrasta; cambien de papeles por bloques. Conserva los originales y vuelve a ejecutar desde una sesión nueva antes del cierre.
+
+## Qué conservar
+
+| Evidencia personal | Qué permite revisar |
+| --- | --- |
+| Código y tablas | Datos y estadísticas representados |
+| Figuras y exportaciones | Unidades, escalas, etiquetas y legibilidad |
+| Interpretación y contraste | Diferencias y límites frente a la referencia |
+
+Guarda los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+<a id="prácticas-integración-y-criterio-de-salida"></a>
+
+## Criterio de salida
+
+Justifica geometría y escalas, comprueba medidas y reconstruye una figura exportada con interpretación. Los controles numéricos acompañan la revisión visual; no la sustituyen ni certifican accesibilidad completa.
+
+Se ampliará 03_portfolio_analysis_r con un checkpoint visual, aún sin implementar. La integración numerada de R aplicado continúa pendiente.
+
+<details>
+<summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
 Se sigue considerando **R aplicado** después de este módulo, para organizar
 código, pruebas y dependencias antes de Parquet. Su integración y numeración
 continúan pendientes: la planificación actual no añade un nivel ni renumera 09–14.
 Los objetos avanzados y desarrollo de paquetes quedan como profundización.
 
-## Continuidad y referencias
+</details>
 
-Por ahora, el siguiente módulo numerado es [09 — Arrow y Parquet](../09_arrow_parquet/README.md).
-Consulta la [arquitectura de R aplicado](../../docs/architecture.md#r-aplicado-consideración-para-el-próximo-ajuste)
-para la consideración pendiente.
+<a id="continuidad-y-referencias"></a>
+
+## Siguiente paso
+
+**Para empezar:** [lee 08.01](01_question_grammar/README.md) y realiza su lab.
+
+**Al cerrar:** continúa con [09 — Arrow y Parquet](../09_arrow_parquet/README.md).
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 Para iniciar: [Data visualization de R4DS segunda edición](https://r4ds.hadley.nz/data-visualize.html)
 y [documentación de ggplot2](https://ggplot2.tidyverse.org/reference/).
@@ -178,3 +202,14 @@ lectura obligatoria. La lección 08.01 enlaza las funciones comprobadas.
 La lección 08.08 contrasta [la referencia de ggsave](https://ggplot2.tidyverse.org/reference/ggsave.html).
 Consulta la [guía de libros abiertos](../../docs/r-reading-guide.md) para las
 lecturas iniciales y de profundización.
+
+### Apoyos relacionados
+
+- [proyectos](../../projects/README.md)
+- [arquitectura de R aplicado](../../docs/architecture.md#r-aplicado-consideración-para-el-próximo-ajuste)
+
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Primera lección →](01_question_grammar/README.md)

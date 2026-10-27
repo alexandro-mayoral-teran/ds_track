@@ -49,6 +49,18 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 
+**Desarrollo — 2026-10-27, estructura aplicada a todos los módulos:** los índices
+00–14 comparten cabecera y ocho secciones, con objetivos, tabla lección/lab,
+evidencia, criterio y continuidad propios de cada módulo. Se conservaron anclas,
+alcances y referencias; 12–14 siguen como planes y sus labs no se crearon.
+Opciones de Python aplicado, exportación/particiones/streaming y Quarto visibles;
+Streamlit/Shiny siguen como alternativas. Estados antiguos de 01 y 10 corregidos.
+La adaptación es de índices, no de toda la teoría o las pantallas del portal.
+Quince índices con ocho secciones y anclas conservadas; enlaces del corpus
+comprobados. Treinta vistas GFM locales a 1280/390 px, cierre, apoyos y planes
+navegables revisados, sin ejecutar lecciones o modificar entornos.
+
+
 **Desarrollo — 2026-10-27, estructura de página de módulo:** acuerdo educativo
 con cabecera y ocho secciones, documentado en
 [guía de módulo](docs/module-page-guide.md), plantilla y autoría. Referencia

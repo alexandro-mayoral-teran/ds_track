@@ -1,35 +1,52 @@
 # 14 — Proyecto reproducible
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **14 — Proyecto reproducible**
 
-Integrar el recorrido en un producto que otra persona pueda reconstruir:
-datos, código, indicadores, reporte y una aplicación elegida. Completa
-[11 — Quarto](../11_reporting_quarto/README.md) y
-[12 — Streamlit](../12_streamlit/README.md) **o**
-[13 — Shiny](../13_shiny_web/README.md). No es obligatorio construir ambas apps.
+**Integra datos, código, reporte y una aplicación en un producto reconstruible.**
 
-**Estado:** nueve secciones planificadas; lecciones y labs por desarrollar.
-Los enlaces internos describen el alcance previsto.
+[Ver primera sección prevista →](#01-pregunta-y-contrato-del-producto) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-Se reutilizarán los proyectos anteriores. No comenzaremos un problema o una pila
-nueva de herramientas para demostrar integración. Calidad, documentación y
-comprobaciones ya se practican desde Python; aquí se consolidan y automatizan.
+> **Planificado:** 9 secciones previstas; sus lecciones y labs aún no están implementados.
+> Los enlaces de esta tabla describen el alcance del plan, no una práctica lista para ejecutar.
 
-## Orden de desarrollo
+<a id="propósito-y-prerrequisitos"></a>
 
-| Orden | Sección prevista | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [Pregunta y contrato del producto](#01-pregunta-y-contrato-del-producto) | Esencial | Definir entradas, resultados y aceptación |
-| 2 | [Estructura y configuración](#02-estructura-y-configuracion) | Esencial | Localizar responsabilidades y parámetros |
-| 3 | [Entornos y ejecución reconstruible](#03-entornos-y-ejecucion-reconstruible) | Esencial | Preparar y ejecutar desde instrucciones explícitas |
-| 4 | [Pipeline y reprocesamiento](#04-pipeline-y-reprocesamiento) | Esencial | Repetir un corte sin duplicar o mezclar resultados |
-| 5 | [Pruebas y calidad de datos](#05-pruebas-y-calidad-de-datos) | Esencial | Detectar fallas relevantes antes de entregar |
-| 6 | [Trazabilidad y recuperación de fallas](#06-trazabilidad-y-recuperacion-de-fallas) | Esencial | Explicar qué se ejecutó y qué resultados son válidos |
-| 7 | [Integración de reporte y app](#07-integracion-de-reporte-y-app) | Práctica | Conciliar el mismo corte en todos los productos |
-| 8 | [Entrega y automatización opcional](#08-entrega-y-automatizacion-opcional) | Práctica / Extensión | Compartir una entrega reconstruible; CI opcional |
-| 9 | [Revisión final y defensa de decisiones](#09-revision-final-y-defensa-de-decisiones) | Práctica de cierre | Demostrar reconstrucción y justificar límites |
+## Propósito
 
-## Alcance de cada sección
+Consolidar el recorrido en un producto que otra persona pueda reconstruir y evaluar. La planificación reutiliza preguntas y herramientas conocidas; aún no hay proyecto final ejecutable.
+
+## Antes de empezar
+
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md). Basta una aplicación. Esas rutas y este módulo siguen planificados; no instales orquestadores o paquetes solo por leer el plan.
+
+## Qué vas a aprender
+
+Objetivos previstos para cuando se implemente:
+
+- Declarar contrato, fuentes, configuración y criterios de aceptación.
+- Reconstruir entornos y reprocesar sin mezclar resultados.
+- Detectar fallas de datos y explicar trazabilidad y recuperación.
+- Conciliar reporte y aplicación y defender decisiones y límites.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección prevista | Práctica | Resultado previsto |
+| --- | --- | --- |
+| **14.01** · [Pregunta y contrato del producto](#01-pregunta-y-contrato-del-producto) | Pendiente | Definir entradas, resultados y aceptación |
+| **14.02** · [Estructura y configuración](#02-estructura-y-configuracion) | Pendiente | Localizar responsabilidades y parámetros |
+| **14.03** · [Entornos y ejecución reconstruible](#03-entornos-y-ejecucion-reconstruible) | Pendiente | Preparar y ejecutar desde instrucciones explícitas |
+| **14.04** · [Pipeline y reprocesamiento](#04-pipeline-y-reprocesamiento) | Pendiente | Repetir un corte sin duplicar o mezclar resultados |
+| **14.05** · [Pruebas y calidad de datos](#05-pruebas-y-calidad-de-datos) | Pendiente | Detectar fallas relevantes antes de entregar |
+| **14.06** · [Trazabilidad y recuperación de fallas](#06-trazabilidad-y-recuperacion-de-fallas) | Pendiente | Explicar qué se ejecutó y qué resultados son válidos |
+| **14.07** · [Integración de reporte y app](#07-integracion-de-reporte-y-app) | Pendiente | Conciliar el mismo corte en todos los productos |
+| **14.08** · [Entrega y automatización opcional](#08-entrega-y-automatizacion-opcional) — opcional | Pendiente | Compartir una entrega reconstruible; CI opcional |
+| **14.09** · [Revisión final y defensa de decisiones](#09-revision-final-y-defensa-de-decisiones) | Pendiente | Demostrar reconstrucción y justificar límites |
+
+<a id="alcance-de-cada-sección"></a>
+
+### Alcance previsto por sección
 
 <a id="01-pregunta-y-contrato-del-producto"></a>
 
@@ -116,27 +133,49 @@ comprobaciones ya se practican desde Python; aquí se consolidan y automatizan.
 - Práctica prevista: otra persona sigue el README y reconstruye los productos;
   registrar evidencia y pendientes, evitando confundir implementación con aprendizaje.
 
-## Prácticas y checkpoints de integración
+## Cómo trabajar este módulo
 
-Se prevén labs 14.01–14.09 y revisión final; todavía no existen. La integración
-amplía los proyectos previstos en [proyectos](../../projects/README.md).
-No se ha creado un proyecto final ni sus checkpoints ejecutables.
+La práctica prevista integra el análisis, un reporte y una aplicación elegida. Calidad y documentación se consolidan, no se introducen por primera vez. Se comprobarán fallas, reconstrucción independiente y revisión del producto. CI, publicación y automatización real serán extensiones, no requisitos del cierre local.
+
+Las actividades anteriores son una propuesta. No hay instrucciones ejecutables ni comprobaciones de aprendizaje disponibles todavía para estas secciones.
+
+## Qué conservar
+
+| Evidencia prevista | Qué permite revisar |
+| --- | --- |
+| Contrato y fuentes previstas | Pregunta, unidades, claves y reglas |
+| Pruebas y registros | Detección de fallas y trazabilidad |
+| Reporte, app e instrucciones futuras | Reconstrucción independiente y decisiones defendidas |
+
+Cuando exista la práctica, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+<a id="prácticas-y-checkpoints-de-integración"></a>
+
+## Criterio de salida
+
+Cuando se implemente, otra persona deberá regenerar datos, ejecutar controles que detecten una falla y reconstruir un reporte HTML y una app local. Deberás justificar herramientas, contratos y límites. El plan no acredita esa integración ni el aprendizaje.
+
+No se ha creado un proyecto final ni sus checkpoints ejecutables. La integración ampliará los proyectos previstos, cuya disponibilidad debe revisarse antes de exigirlos.
+
+<details>
+<summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
 Checkpoints propuestos: CP-01, contrato y estructura (01–02); CP-02, ejecución y
 reprocesamiento (03–04); CP-03, pruebas y trazabilidad (05–06); CP-04, productos
 conciliados y entrega (07–08); CP-05, reconstrucción independiente (09).
 
-El cierre requiere datos regenerables, controles que detecten una falla relevante,
-reporte HTML y una app local comprobada, con instrucciones reproducibles.
-No exige completar todas las extensiones, dominar ambos frameworks, instalar
-orquestadores o publicar el producto en Internet.
+</details>
 
-## Cierre y referencias
+<a id="cierre-y-referencias"></a>
 
-Este módulo cierra el recorrido. Registra las evidencias en
-[PROGRESS.md](../../PROGRESS.md) y los productos terminados apropiados en
-[showcase](../../showcase/README.md). Un módulo se marca completado cuando se
-alcanza su criterio de salida, no por tener un plan o material desarrollado.
+## Siguiente paso
+
+Por ahora puedes [consultar el primer alcance previsto](#01-pregunta-y-contrato-del-producto). No hay lecciones ni labs listos en este módulo.
+
+Este plan cierra el recorrido. No hay un módulo 15 definido. Cuando exista una entrega verificada, conserva evidencia y revisa qué resultados son apropiados para [showcase](../../showcase/README.md).
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 Fuentes para preparar las prácticas: [entornos uv](https://docs.astral.sh/uv/concepts/projects/sync/),
 [renv](https://rstudio.github.io/renv/articles/renv.html),
@@ -145,3 +184,14 @@ Fuentes para preparar las prácticas: [entornos uv](https://docs.astral.sh/uv/co
 [ejecución de Quarto](https://quarto.org/docs/projects/code-execution.html) y
 [GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions).
 Las dependencias se elegirán al implementar, conservando el gestor del estudiante.
+
+### Apoyos relacionados
+
+- [proyectos](../../projects/README.md)
+- [Estado editorial del material](../../PROGRESS.md)
+
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Volver al plan de secciones ↑](#lecciones-y-labs)

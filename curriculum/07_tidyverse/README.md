@@ -1,42 +1,52 @@
 # 07 — tidyverse
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **07 — tidyverse**
 
-Transformar tablas de manera expresiva y comprobable con dplyr, tidyr y paquetes
-relacionados. Completa [R fundamental](../06_r_foundations/README.md) y reutiliza
-sus datos y proyecto renv; no se crea un entorno independiente por cada ejercicio.
-El [cierre 06.09](../06_r_foundations/09_known_result/README.md) está disponible
-con conciliación Python/R.
+**Transforma tablas en R sin perder sus claves, cobertura o significado.**
 
-**Estado:** 07.01–07.10 disponen de lecciones, scripts y labs; 07.01–07.02
-tienen lockfiles y 07.03–07.06 reutilizan el de 07.02; 07.07 añade tidyr con
-su lockfile y respaldo; 07.08 declara stringr y añade forcats con otro respaldo.
-07.09 incorpora lubridate con respaldo y lockfile; 07.10 añade ggplot2, primera
-figura y entrega reconstruible. Las diez secciones tienen material. El proyecto
-integrador y la evidencia de aprendizaje siguen pendientes; consulta el
-[cierre del módulo](../../docs/tidyverse-closure.md).
+[**Empezar por 07.01 →**](01_tibbles_import_pipes/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-Usaremos la misma cartera sintética e indicadores conocidos de pandas/SQL.
-La primera figura con ggplot2 aparece aquí; el módulo 08 profundiza su diseño.
-R for Data Science inspira contenidos, pero adaptamos su orden a los prerrequisitos
-ya trabajados en DS Track, sin exigir leer el libro completo.
+> **Material disponible:** 10 lecciones y sus labs. Esto no acredita aprendizaje ni proyecto completado.
 
-## Orden de desarrollo
+<a id="propósito-y-prerrequisitos"></a>
 
-| Orden | Sección | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [Tibbles, importación y pipes](01_tibbles_import_pipes/README.md) | Esencial | Cargar una tabla y leer una secuencia de pasos |
-| 2 | [Seleccionar, filtrar y ordenar](02_select_filter_sort/README.md) | Esencial | Obtener un subconjunto verificable |
-| 3 | [Transformar columnas](03_transform_columns/README.md) | Esencial | Calcular indicadores con reglas explícitas |
-| 4 | [Faltantes, duplicados y calidad](04_missing_duplicates_quality/README.md) | Esencial | Conservar aceptados y rechazos con motivos |
-| 5 | [Agrupar y resumir](05_group_summarize/README.md) | Esencial | Conciliar medidas y denominadores |
-| 6 | [Unir tablas](06_join_tables/README.md) | Esencial | Detectar relaciones que multiplican registros |
-| 7 | [Datos ordenados y reshape](07_tidy_reshape/README.md) | Práctica | Cambiar formato preservando indicadores |
-| 8 | [Texto, categorías y factores](08_text_categories_factors/README.md) | Esencial | Normalizar categorías y controlar su orden |
-| 9 | [Fechas y cortes](09_dates_cutoffs/README.md) | Esencial | Comparar períodos con fechas interpretadas |
-| 10 | [Primera figura y cierre del análisis](10_first_plot_closure/README.md) | Práctica de cierre | Reconstruir tablas e interpretar un gráfico |
+## Propósito
 
-## Alcance de cada sección
+Preparar, transformar y combinar tablas con dplyr, tidyr y paquetes relacionados, contrastando reglas e indicadores con resultados conocidos.
+
+## Antes de empezar
+
+Completa [06 — R fundamental](../06_r_foundations/README.md), incluido [06.09](../06_r_foundations/09_known_result/README.md). Reutiliza su proyecto renv y sigue los preparadores con respaldos; no crees un entorno nuevo por cada ejercicio.
+
+## Qué vas a aprender
+
+- Importar e inspeccionar tablas preservando tipos y unidades.
+- Seleccionar, transformar y validar registros.
+- Resumir, unir y cambiar la forma sin alterar indicadores.
+- Trabajar con categorías y fechas explícitas.
+- Reconstruir un resultado y explicar una primera figura.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección | Práctica | Resultado que comprobarás |
+| --- | --- | --- |
+| **07.01** · [Tibbles, importación y pipes](01_tibbles_import_pipes/README.md) | [Lab 07.01](../../labs/07_tidyverse/01_tibbles_import_pipes/README.md) | Cargar una tabla y leer una secuencia de pasos |
+| **07.02** · [Seleccionar, filtrar y ordenar](02_select_filter_sort/README.md) | [Lab 07.02](../../labs/07_tidyverse/02_select_filter_sort/README.md) | Obtener un subconjunto verificable |
+| **07.03** · [Transformar columnas](03_transform_columns/README.md) | [Lab 07.03](../../labs/07_tidyverse/03_transform_columns/README.md) | Calcular indicadores con reglas explícitas |
+| **07.04** · [Faltantes, duplicados y calidad](04_missing_duplicates_quality/README.md) | [Lab 07.04](../../labs/07_tidyverse/04_missing_duplicates_quality/README.md) | Conservar aceptados y rechazos con motivos |
+| **07.05** · [Agrupar y resumir](05_group_summarize/README.md) | [Lab 07.05](../../labs/07_tidyverse/05_group_summarize/README.md) | Conciliar medidas y denominadores |
+| **07.06** · [Unir tablas](06_join_tables/README.md) | [Lab 07.06](../../labs/07_tidyverse/06_join_tables/README.md) | Detectar relaciones que multiplican registros |
+| **07.07** · [Datos ordenados y reshape](07_tidy_reshape/README.md) | [Lab 07.07](../../labs/07_tidyverse/07_tidy_reshape/README.md) | Cambiar formato preservando indicadores |
+| **07.08** · [Texto, categorías y factores](08_text_categories_factors/README.md) | [Lab 07.08](../../labs/07_tidyverse/08_text_categories_factors/README.md) | Normalizar categorías y controlar su orden |
+| **07.09** · [Fechas y cortes](09_dates_cutoffs/README.md) | [Lab 07.09](../../labs/07_tidyverse/09_dates_cutoffs/README.md) | Comparar períodos con fechas interpretadas |
+| **07.10** · [Primera figura y cierre del análisis](10_first_plot_closure/README.md) | [Lab 07.10](../../labs/07_tidyverse/10_first_plot_closure/README.md) | Reconstruir tablas e interpretar un gráfico |
+
+<a id="alcance-de-cada-sección"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
 
 <a id="01-tibbles-importacion-y-pipes"></a>
 
@@ -158,26 +168,51 @@ unidades y exportación explícita. Tablas, RDS y PNG en destino nuevo; verifica
 de entrega desde sesión nueva y contraste pandas/SQLite. ggplot2 4.0.3 con
 lockfile y respaldo 07.09, restauración local y límites descriptivos explícitos.
 
-## Prácticas, proyecto y criterio de salida
+</details>
 
-Los diez labs 07.01–07.10 están disponibles. El proyecto previsto
-03_portfolio_analysis_r, registrado en [proyectos](../../projects/README.md),
-todavía no tiene carpeta ni checkpoints implementados.
+## Cómo trabajar este módulo
+
+En el IDE, abre el proyecto, edita scripts y compara resultados por bloques; después comprueba una sesión nueva. Las dependencias se incorporan por sección. No instales todo tidyverse por anticipado. SQL remoto con dbplyr y DBI/RSQLite son ampliaciones; Arrow y Quarto se estudian después.
+
+Lee, predice, practica en tu copia, comprueba y explica. En pareja, una persona escribe y la otra contrasta; cambien de papeles por bloques. Conserva los originales y vuelve a ejecutar desde una sesión nueva antes del cierre.
+
+## Qué conservar
+
+| Evidencia personal | Qué permite revisar |
+| --- | --- |
+| Tablas y reglas | Tipos, particiones, claves y cobertura |
+| Código y resúmenes | Filas e indicadores conciliados |
+| Figura y entrega | Reconstrucción e interpretación del cierre |
+
+Guarda los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+<a id="prácticas-proyecto-y-criterio-de-salida"></a>
+
+## Criterio de salida
+
+Puedes reconstruir tablas con reglas justificadas, conciliar conteos e indicadores y explicar una gráfica. Otra persona debe poder seguir las instrucciones del cierre con las entradas declaradas.
+
+03_portfolio_analysis_r está previsto en [proyectos](../../projects/README.md); carpeta y checkpoints siguen pendientes. Consulta también [el cierre tidyverse](../../docs/tidyverse-closure.md).
+
+<details>
+<summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
 Checkpoints propuestos: CP-01, importación y contrato (01–03); CP-02, calidad
 (04); CP-03, indicadores y relaciones (05–07); CP-04, categorías, cortes y
 primera figura (08–10). Se concretarán al desarrollar el proyecto.
 
-El cierre requiere tablas reproducibles, reglas justificadas, conteos e indicadores
-conciliados y una gráfica explicada. DBI/RSQLite y consultas remotas con dbplyr
-son extensiones para reutilizar el conocimiento SQL, no requisitos de instalación
-inicial. Arrow y Parquet se desarrollan en 09; Quarto en 11 y Shiny en 13.
+</details>
 
-## Continuidad y referencias
+<a id="continuidad-y-referencias"></a>
 
-Después del cierre, continúa con [08.01 — Pregunta y gramática de gráficos](../08_visualization_r/01_question_grammar/README.md),
-disponible con lección, script y lab. Los criterios y pendientes están en
-[el documento de cierre](../../docs/tidyverse-closure.md).
+## Siguiente paso
+
+**Para empezar:** [lee 07.01](01_tibbles_import_pipes/README.md) y realiza su lab.
+
+**Al cerrar:** continúa con [08 — Visualización en R](../08_visualization_r/README.md).
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 Lecturas de R for Data Science: [transformación](https://r4ds.hadley.nz/data-transform.html),
 [datos ordenados](https://r4ds.hadley.nz/data-tidy.html),
@@ -186,3 +221,13 @@ Lecturas de R for Data Science: [transformación](https://r4ds.hadley.nz/data-tr
 [fechas](https://r4ds.hadley.nz/datetimes.html).
 Para controles vigentes se consultará [la referencia de joins de dplyr](https://dplyr.tidyverse.org/reference/mutate-joins.html).
 Los libros y su uso por nivel están en la [guía de lecturas](../../docs/r-reading-guide.md).
+
+### Apoyos relacionados
+
+- [08.01 — Pregunta y gramática de gráficos](../08_visualization_r/01_question_grammar/README.md)
+
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Primera lección →](01_tibbles_import_pipes/README.md)

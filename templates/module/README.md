@@ -74,3 +74,7 @@ Si no existe el módulo siguiente o está planificado, escribirlo con claridad.
 Los apoyos o referencias adicionales pueden añadirse al final si aportan valor;
 las referencias técnicas detalladas viven principalmente en sus lecciones.
 La plantilla define contenido educativo, no genera automáticamente páginas del portal.
+
+Para un módulo planificado, marca los objetivos, evidencias y criterio como
+previstos; enlaza el alcance real del plan y muestra los labs como pendientes.
+No uses «Empezar la lección» si no existe ni crees archivos para rellenar la tabla.

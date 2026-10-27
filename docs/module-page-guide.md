@@ -3,7 +3,9 @@
 Acuerdo de presentación educativa: 2026-10-27. Se aplica al índice README de un
 módulo y orienta su futura representación en el portal. La referencia aplicada
 es [00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md).
-El resto de índices se adapta gradualmente; no se da por revisado todo el track.
+La estructura está aplicada a los índices 00–14. En 12–14 se presenta como
+planificación, con labs pendientes; no implica desarrollar esas lecciones ni
+revisar toda la teoría del track.
 
 ## Qué debe resolver esta página
 
@@ -39,6 +41,14 @@ porcentaje de progreso o nivel adquirido para llenar una ficha.
 Los nombres pueden adaptarse si resulta necesario para un módulo, manteniendo
 su función y orden. No multiplicar encabezados o tablas si una sección breve
 resuelve la pregunta. La estructura es común; el contenido depende del módulo.
+
+## Módulos que todavía son planes
+
+Conservar las mismas ocho preguntas, marcando objetivos, evidencia y criterio
+como previstos. La tabla enlaza solo los apartados reales del plan y muestra
+los labs como pendientes; la acción inicial invita a consultar el alcance, no
+a ejecutar una lección inexistente. No crear carpetas, instalar dependencias o
+acreditar aprendizaje para completar la presentación.
 
 ## Cómo escribir cada parte
 

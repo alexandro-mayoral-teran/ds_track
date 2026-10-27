@@ -1,66 +1,52 @@
 # 05 — Python aplicado
 
-## Propósito y prerrequisitos
+[Inicio](../../README.md) / [Módulos](../README.md) / **05 — Python aplicado**
 
-Convertir el análisis conocido de pandas, SQL y visualización en código
-reutilizable, comprobable y reconstruible. Completar primero
-[04 — Visualización en Python](../04_visualization_python/README.md), incluido
-su [cierre 04.09](../04_visualization_python/09_visual_closure/README.md).
-La interacción de 04.08 es opcional. Conserva la entrega reconstruible para
-reorganizar ese mismo análisis. Las once secciones tienen material disponible; 05.06–05.10 son opcionales.
+**Organiza un análisis para que pueda ejecutarse, comprobarse y retomarse.**
 
-**Estado:** [05.01 — Del notebook a módulos](01_notebook_to_modules/README.md)
-dispone de lección, paquete local, script, notebook y lab;
-[05.02 — Configuración y registro de ejecución](02_configuration_logging/README.md)
-añade argumentos, JSON y logging;
-[05.03 — Errores y gestión de recursos](03_errors_resources/README.md)
-añade cierre por etapas y demostraciones de recursos sobre el mismo paquete.
-[05.04 — Pruebas de código y datos](04_testing/README.md) añade una colección
-unittest, casos conocidos, fronteras, vacíos e integración, con lab.
-[05.05 — Tipos y contratos](05_types_contracts/README.md) incorpora anotaciones,
-docstrings, validación de conteos, parámetros opcionales y revisión del resumen,
-con pruebas y lab.
-[05.06 — Clases, composición y dataclasses](06_classes_composition/README.md)
-añade objetos pequeños, configuración y revisión por composición, con pruebas
-y lab opcionales.
-[05.07 — Iteradores y generadores](07_iterators_generators/README.md) incorpora
-consumo, yield, CSV por lotes y conciliación con memoria/recursos explícitos,
-con pruebas y lab de extensión.
-[05.08 — Funciones como valores y decoradores](08_functions_decorators/README.md)
-añade funciones como argumentos/retorno, envolturas, wraps y registro del análisis,
-con pruebas y lab de extensión.
-[05.09 — Medir antes de optimizar](09_measure_optimize/README.md) incorpora
-tiempos repetidos, memoria trazada, perfiles y comparación de contratos,
-con pruebas y lab de extensión.
-[05.10 — Integración con APIs](10_api_integration/README.md) añade respuestas
-locales, paginación, reintentos y tablas conciliadas, con pruebas y lab de extensión.
-[05.11 — Cierre del proyecto Python](11_project_closure/README.md) integra la
-ejecución existente, verificación de archivos guardados y reconstrucción desde
-copias de fuentes, con pruebas y lab de cierre.
-La disponibilidad del material no acredita aprendizaje del estudiante.
+[**Empezar por 05.01 →**](01_notebook_to_modules/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-El núcleo es organización, configuración, errores y pruebas. Clases, generadores,
-decoradores, rendimiento y APIs amplían esa base; no son requisitos para poder
-limpiar datos ni para iniciar pandas. El mismo análisis permite evaluar si una
-abstracción aporta claridad en lugar de introducirla por costumbre.
+> **Material disponible:** 11 lecciones y sus labs. Esto no acredita aprendizaje ni proyecto completado.
 
-## Orden de desarrollo
+<a id="propósito-y-prerrequisitos"></a>
 
-| Orden | Sección prevista | Alcance | Resultado observable |
-| --- | --- | --- | --- |
-| 1 | [Del notebook a módulos](01_notebook_to_modules/README.md) | Esencial | Importar y reutilizar transformaciones |
-| 2 | [Configuración y registro de ejecución](02_configuration_logging/README.md) | Esencial | Ejecutar con entradas y parámetros explícitos |
-| 3 | [Errores y gestión de recursos](03_errors_resources/README.md) | Esencial | Comunicar fallas sin dejar resultados engañosos |
-| 4 | [Pruebas de código y datos](04_testing/README.md) | Esencial | Detectar regresiones con casos significativos |
-| 5 | [Tipos y contratos de funciones](05_types_contracts/README.md) | Práctica | Hacer explícitas entradas y salidas |
-| 6 | [Clases, composición y dataclasses](06_classes_composition/README.md) | Práctica opcional | Representar estructuras cuando resulte útil |
-| 7 | [Iteradores y generadores](07_iterators_generators/README.md) | Extensión | Procesar lotes sin reunir toda la entrada |
-| 8 | [Funciones como valores y decoradores](08_functions_decorators/README.md) | Extensión | Reutilizar un comportamiento transversal |
-| 9 | [Medir antes de optimizar](09_measure_optimize/README.md) | Extensión | Localizar un costo y comprobar una mejora |
-| 10 | [Integración con APIs](10_api_integration/README.md) | Extensión | Obtener datos externos con controles explícitos |
-| 11 | [Cierre del proyecto Python](11_project_closure/README.md) | Práctica de cierre | Reconstruir indicadores y figura con una ejecución |
+## Propósito
 
-## Alcance de cada sección
+Convertir el análisis conocido de pandas, SQL y visualización en código reutilizable, comprobable y reconstruible, conservando sus indicadores y figura.
+
+## Antes de empezar
+
+Completa [04 — Visualización en Python](../04_visualization_python/README.md), incluido [04.09](../04_visualization_python/09_visual_closure/README.md). Conserva la entrega para reorganizar ese mismo análisis; 04.08 es opcional.
+
+## Qué vas a aprender
+
+- Separar cálculo reutilizable, entrada y ejecución.
+- Usar configuración, logging y gestión de errores.
+- Comprobar contratos con pruebas relevantes.
+- Reconstruir una entrega y justificar las abstracciones elegidas.
+
+<a id="orden-de-desarrollo"></a>
+
+## Lecciones y labs
+
+| Lección | Práctica | Resultado que comprobarás |
+| --- | --- | --- |
+| **05.01** · [Del notebook a módulos](01_notebook_to_modules/README.md) | [Lab 05.01](../../labs/05_python_applied/01_notebook_to_modules/README.md) | Importar y reutilizar transformaciones |
+| **05.02** · [Configuración y registro de ejecución](02_configuration_logging/README.md) | [Lab 05.02](../../labs/05_python_applied/02_configuration_logging/README.md) | Ejecutar con entradas y parámetros explícitos |
+| **05.03** · [Errores y gestión de recursos](03_errors_resources/README.md) | [Lab 05.03](../../labs/05_python_applied/03_errors_resources/README.md) | Comunicar fallas sin dejar resultados engañosos |
+| **05.04** · [Pruebas de código y datos](04_testing/README.md) | [Lab 05.04](../../labs/05_python_applied/04_testing/README.md) | Detectar regresiones con casos significativos |
+| **05.05** · [Tipos y contratos de funciones](05_types_contracts/README.md) | [Lab 05.05](../../labs/05_python_applied/05_types_contracts/README.md) | Hacer explícitas entradas y salidas |
+| **05.06** · [Clases, composición y dataclasses](06_classes_composition/README.md) — opcional | [Lab 05.06](../../labs/05_python_applied/06_classes_composition/README.md) | Representar estructuras cuando resulte útil |
+| **05.07** · [Iteradores y generadores](07_iterators_generators/README.md) — opcional | [Lab 05.07](../../labs/05_python_applied/07_iterators_generators/README.md) | Procesar lotes sin reunir toda la entrada |
+| **05.08** · [Funciones como valores y decoradores](08_functions_decorators/README.md) — opcional | [Lab 05.08](../../labs/05_python_applied/08_functions_decorators/README.md) | Reutilizar un comportamiento transversal |
+| **05.09** · [Medir antes de optimizar](09_measure_optimize/README.md) — opcional | [Lab 05.09](../../labs/05_python_applied/09_measure_optimize/README.md) | Localizar un costo y comprobar una mejora |
+| **05.10** · [Integración con APIs](10_api_integration/README.md) — opcional | [Lab 05.10](../../labs/05_python_applied/10_api_integration/README.md) | Obtener datos externos con controles explícitos |
+| **05.11** · [Cierre del proyecto Python](11_project_closure/README.md) | [Lab 05.11](../../labs/05_python_applied/11_project_closure/README.md) | Reconstruir indicadores y figura con una ejecución |
+
+<a id="alcance-de-cada-sección"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
 
 <a id="01-del-notebook-a-modulos"></a>
 
@@ -193,12 +179,34 @@ abstracción aporta claridad en lugar de introducirla por costumbre.
   demostrar una falla. Revisión visual y comparación con el recorrido anterior;
   no se exigen APIs reales ni todas las ampliaciones opcionales.
 
-## Recorrido esencial y profundización
+</details>
 
-Para el cierre esencial, realiza 01–04, aplica los contratos de 05 y pasa a 11.
-Las secciones 06–10 pueden estudiarse en orden cuando se quiera profundizar;
-no bloquean el paso a R. Herencia avanzada, concurrencia, asincronía y
-metaprogramación quedan estacionadas hasta que exista una necesidad verificable.
+<a id="recorrido-esencial-y-profundización"></a>
+
+## Cómo trabajar este módulo
+
+Para el recorrido esencial realiza 05.01–05.04, aplica los contratos de 05.05 y pasa al cierre 05.11. Las secciones 05.06–05.10 son ampliaciones opcionales. No hace falta usar todas las abstracciones ni estudiar herencia avanzada, asincronía o metaprogramación para continuar a R.
+
+Lee, predice, practica en tu copia, comprueba y explica. En pareja, una persona escribe y la otra contrasta; cambien de papeles por bloques. Conserva los originales y vuelve a ejecutar desde una sesión nueva antes del cierre.
+
+## Qué conservar
+
+| Evidencia personal | Qué permite revisar |
+| --- | --- |
+| Paquete, scripts y configuración | Responsabilidades y ejecución explícitas |
+| Pruebas y casos de frontera | Fallos relevantes detectados, no solo ejecución exitosa |
+| Entrega e instrucciones | Resultado y figura reconstruidos con las mismas entradas |
+
+Guarda los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+
+## Criterio de salida
+
+Otra persona puede ejecutar el análisis con las mismas entradas y reconstruir su resultado. Demuestra que los controles detectan una falla relevante y explica qué organización elegiste y por qué.
+
+Se reutilizarán los proyectos previstos de limpieza y base de datos; el checkpoint de organización se concretará al implementarlos. No hay checkpoint activo para acreditar aquí.
+
+<details>
+<summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
 Los labs 05.01–05.11 están disponibles (05.06–05.10 opcionales).
 Se reutilizarán los proyectos previstos 01_clean_credit_data y 02_credit_database,
@@ -207,14 +215,18 @@ Checkpoint de organización propuesto: ejecución reconstruible, controles,
 configuración e instrucciones, conservando indicadores y figura. Se concretará
 al implementar los proyectos.
 
-Podrás cerrar el módulo cuando otra persona ejecute el análisis con las mismas
-entradas y reconstruya el resultado, y cuando puedas demostrar que las pruebas
-encuentran una falla relevante. No se exige aplicar todas las abstracciones.
+</details>
 
-## Continuidad y referencias
+<a id="continuidad-y-referencias"></a>
 
-Después del cierre esencial, continúa con
-[06 — R fundamental](../06_r_foundations/README.md) sobre un problema ya conocido.
+## Siguiente paso
+
+**Para empezar:** [lee 05.01](01_notebook_to_modules/README.md) y realiza su lab.
+
+**Al cerrar:** continúa con [06 — R fundamental](../06_r_foundations/README.md).
+
+<details>
+<summary><strong>Referencias y apoyos</strong></summary>
 
 El diseño se apoya en [módulos de Python](https://docs.python.org/3/tutorial/modules.html),
 [logging](https://docs.python.org/3/howto/logging.html),
@@ -222,3 +234,9 @@ El diseño se apoya en [módulos de Python](https://docs.python.org/3/tutorial/m
 [dataclasses](https://docs.python.org/3/library/dataclasses.html).
 Para las ampliaciones se consultarán las referencias específicas al implementar
 cada ejemplo y se registrarán las dependencias que realmente se utilicen.
+
+</details>
+
+---
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Primera lección →](01_notebook_to_modules/README.md)
