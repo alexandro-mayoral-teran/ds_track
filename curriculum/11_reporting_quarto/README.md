@@ -43,6 +43,8 @@ Completa [10 — Polars y DuckDB](../10_polars_duckdb/README.md) como prerrequis
 
 <a id="alcance-de-cada-sección"></a>
 
+<a id="alcance-de-las-secciones"></a>
+
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 

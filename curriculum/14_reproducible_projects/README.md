@@ -46,7 +46,12 @@ Objetivos previstos para cuando se implemente:
 
 <a id="alcance-de-cada-sección"></a>
 
-### Alcance previsto por sección
+<a id="alcance-de-las-secciones"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
+
+**Alcance planificado:** lo siguiente describe contenidos y prácticas por desarrollar; no son lecciones o labs implementados.
 
 <a id="01-pregunta-y-contrato-del-producto"></a>
 
@@ -132,6 +137,8 @@ Objetivos previstos para cuando se implemente:
   conocido y explicar elección de motor, formatos, reglas y limitaciones.
 - Práctica prevista: otra persona sigue el README y reconstruye los productos;
   registrar evidencia y pendientes, evitando confundir implementación con aprendizaje.
+
+</details>
 
 ## Cómo trabajar este módulo
 

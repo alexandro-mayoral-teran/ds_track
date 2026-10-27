@@ -36,6 +36,43 @@ Completa [00 — Entorno de aprendizaje](../00_getting_started/README.md). Usa e
 | **01.05** · [Archivos CSV](05_csv_files/README.md) | [Lab 01.05](../../labs/01_python_foundations/05_csv_files/README.md) | Leer, transformar y escribir con la biblioteca estándar |
 | **01.06** · [Validación y resumen](06_validation_summary/README.md) | [Lab 01.06](../../labs/01_python_foundations/06_validation_summary/README.md) | Comprobar entradas y totales, documentar reglas |
 
+<a id="alcance-de-las-secciones"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
+
+### 01.01 — Variables, tipos y operaciones
+
+- Representar una venta con valores y operaciones, reconociendo tipos y unidades.
+- Predecir y comprobar un cálculo antes de introducir varias observaciones.
+
+### 01.02 — Listas y diccionarios
+
+- Representar, consultar y modificar registros con colecciones.
+- Reconocer mutabilidad y referencias; una estructura no valida por sí sola los datos.
+
+### 01.03 — Condiciones y ciclos
+
+- Expresar reglas, recorrer registros y construir conteos o resúmenes.
+- Contrastar fronteras y selección vacía, conservando el significado de cada registro.
+
+### 01.04 — Funciones
+
+- Separar transformaciones mediante parámetros y valores de retorno.
+- Reutilizar y comprobar el resultado; clases y decoradores no son necesarios aquí.
+
+### 01.05 — Archivos CSV
+
+- Leer y escribir con csv/pathlib y la biblioteca estándar, explicando rutas y formato.
+- Conservar la entrada y comprobar una salida; no requiere pandas.
+
+### 01.06 — Validación y resumen
+
+- Aplicar reglas explícitas y separar aceptados/rechazos, preservando los originales.
+- Conciliar conteos y resultados y documentar qué se rechazó y por qué.
+
+</details>
+
 <a id="bases-y-profundización-posterior"></a>
 
 ## Cómo trabajar este módulo

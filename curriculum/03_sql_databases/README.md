@@ -44,6 +44,8 @@ Completa [02 — pandas](../02_pandas/README.md). Se usa SQLite con sqlite3 de P
 
 <a id="alcance-de-cada-sección"></a>
 
+<a id="alcance-de-las-secciones"></a>
+
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 

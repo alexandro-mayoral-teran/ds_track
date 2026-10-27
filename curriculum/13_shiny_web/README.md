@@ -47,7 +47,12 @@ Objetivos previstos para cuando se implemente:
 
 <a id="alcance-de-cada-sección"></a>
 
-### Alcance previsto por sección
+<a id="alcance-de-las-secciones"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
+
+**Alcance planificado:** lo siguiente describe contenidos y prácticas por desarrollar; no son lecciones o labs implementados.
 
 <a id="01-web-basica-y-primera-app"></a>
 
@@ -137,6 +142,8 @@ Objetivos previstos para cuando se implemente:
 - Práctica prevista: ejecutar desde una sesión limpia y conciliar un caso conocido.
   Despliegue, autenticación, CSS avanzado y escalabilidad son extensiones; no
   se requiere un servicio de pago para cerrar el módulo.
+
+</details>
 
 ## Cómo trabajar este módulo
 

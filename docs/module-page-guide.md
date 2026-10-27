@@ -78,6 +78,29 @@ Si un material está planificado, marcarlo como tal sin enlace a una lección o 
 inexistente. Señalar partes, prerrequisitos internos y ampliaciones opcionales sin
 convertirlas en condiciones obligatorias de avance.
 
+### Desplegable común de alcance
+
+Todos los índices 00–14 incluyen **Ver el alcance de las secciones**, una sola
+vez dentro de «Lecciones y labs», después de la tabla y las notas de orden,
+y antes de «Cómo trabajar este módulo». Se presenta cerrado por defecto.
+Su ancla común es `alcance-de-las-secciones`; conservar además las anclas
+anteriores de alcance y de sus apartados.
+
+La tabla permite elegir y navegar; el desplegable aclara qué incluye y qué deja
+fuera cada sección. Para contenidos breves, usar dos notas concretas por lección;
+para alcances más amplios, conservar sus apartados y referencias sin copiar la
+teoría completa ni el historial de desarrollo.
+
+En módulos planificados, la etiqueta del desplegable se conserva para que sea
+reconocible. La advertencia de planificación y los labs pendientes permanecen
+visibles fuera; dentro se repite que el alcance es previsto. Comprobar que los
+enlaces a apartados del plan revelen el contenido cerrado al navegar por ancla.
+Si un visor no lo revela, se puede abrir mediante el resumen; no trasladar allí
+preparación, actividad obligatoria, evidencia o criterio de salida.
+
+Esta regla se aplicó a los quince índices; la composición específica del portal
+no cambia automáticamente por incluir el bloque en los Markdown originales.
+
 ### Evidencia frente a criterio de salida
 
 La evidencia es un archivo, salida o explicación conservada. El criterio de

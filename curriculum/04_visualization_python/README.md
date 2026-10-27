@@ -43,6 +43,8 @@ Completa [03 — SQL](../03_sql_databases/README.md) y conserva las bases de [pa
 
 <a id="alcance-de-cada-sección"></a>
 
+<a id="alcance-de-las-secciones"></a>
+
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 

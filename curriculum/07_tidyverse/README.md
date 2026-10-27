@@ -45,6 +45,8 @@ Completa [06 — R fundamental](../06_r_foundations/README.md), incluido [06.09]
 
 <a id="alcance-de-cada-sección"></a>
 
+<a id="alcance-de-las-secciones"></a>
+
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 

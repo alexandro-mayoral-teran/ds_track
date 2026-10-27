@@ -46,6 +46,43 @@ El orden es 00.01 → 00.02 → 00.03 → 00.04 → 00.05 A/B → 00.06.
 La publicación del perfil y Git son prácticas recomendadas; también puedes
 estudiar con una copia descargada del material.
 
+<a id="alcance-de-las-secciones"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
+
+### 00.01 — Markdown y tu perfil
+
+- Git y GitHub, copia local/remota y presentación con Markdown.
+- Vista previa, enlaces y perfil recomendado; no requiere terminal ni instalar una IA.
+
+### 00.02 — Terminal y rutas
+
+- Editor, shell e intérprete; rutas, archivos y ubicación de la copia del curso.
+- Recorridos completos de PowerShell y Bash/Zsh para localizar y comprobar archivos.
+
+### 00.03 — Git e historial
+
+- Identidad, clonación, diferencias, commits, historial, push y reanudación.
+- Práctica recomendada sobre una copia; ramas y conflictos son profundización.
+
+### 00.04 — Primer script Python
+
+- Ejecutar un resumen pequeño, modificar una entrada y predecir la salida.
+- Distinguir el archivo de código del intérprete y contrastar el resultado.
+
+### 00.05 — Entornos y dependencias
+
+- Parte A: preparar y reconocer el Python del entorno. Parte B: instalar y registrar dependencias.
+- Elegir un único recorrido Conda, venv/pip o uv; no mezclar gestores sobre un mismo entorno.
+
+### 00.06 — Primer notebook
+
+- Celdas, kernel, entorno y diferencia entre explorar y ejecutar un script.
+- Reiniciar y ejecutar todo; guardar el archivo no equivale a reproducir sus resultados.
+
+</details>
+
 ## Cómo trabajar este módulo
 
 1. Lee una lección y escribe tu predicción antes de ejecutar.

@@ -44,6 +44,8 @@ Completa el cierre esencial de [05 — Python aplicado](../05_python_applied/REA
 
 <a id="alcance-de-cada-sección"></a>
 
+<a id="alcance-de-las-secciones"></a>
+
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 

@@ -49,6 +49,16 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 
+**Desarrollo — 2026-10-27, alcance común de módulos:** desplegable «Ver el alcance
+de las secciones» unificado en los índices 00–14, cerrado por defecto después
+de la tabla. Se añadió alcance propio a 00/01 y se plegó el previsto de 12–14,
+con estado de planificación visible y anclas anteriores conservadas. La tabla,
+preparación, evidencia y cierre siguen accesibles fuera del desplegable.
+Regla documentada en guía de módulo, presentación Markdown y plantilla.
+Quince desplegables a dos anchos, apertura/cierre y revelado del plan por
+fragmentos comprobados en GFM local; anclas y enlaces del corpus conservados.
+
+
 **Desarrollo — 2026-10-27, estructura aplicada a todos los módulos:** los índices
 00–14 comparten cabecera y ocho secciones, con objetivos, tabla lección/lab,
 evidencia, criterio y continuidad propios de cada módulo. Se conservaron anclas,

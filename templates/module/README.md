@@ -42,6 +42,20 @@ CAMPO_PARA_QUE_SIRVE_Y_POR_QUE_APARECE_AQUI
 
 CAMPO_ORDEN_PARTES_Y_OPCIONALES_SI_APLICAN
 
+<a id="alcance-de-las-secciones"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
+
+CAMPO_ESTADO_DEL_ALCANCE_SI_ES_PLANIFICADO
+
+### NN.01 — CAMPO_TITULO
+
+- CAMPO_CONCEPTOS_Y_OPERACIONES_DE_ESTA_SECCION
+- CAMPO_LIMITES_OPCIONES_Y_COMPROBACION
+
+</details>
+
 ## Cómo trabajar este módulo
 
 CAMPO_ORIENTACION_DE_LECTURA_PRACTICA_COMPROBACION_Y_EXPLICACION
@@ -78,3 +92,5 @@ La plantilla define contenido educativo, no genera automáticamente páginas del
 Para un módulo planificado, marca los objetivos, evidencias y criterio como
 previstos; enlaza el alcance real del plan y muestra los labs como pendientes.
 No uses «Empezar la lección» si no existe ni crees archivos para rellenar la tabla.
+Conserva el desplegable de alcance cerrado y repite sus apartados para las
+secciones reales o planificadas, con estado explícito y anclas válidas.

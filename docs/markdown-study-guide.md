@@ -35,6 +35,11 @@ secciones comunes, con su propósito, contenido y límites. Usa la
 [plantilla](../templates/module/README.md) y el índice 00 como referencia aplicada.
 Esa estructura organiza el módulo; no sustituye la explicación de cada lección.
 
+Los índices 00–14 incluyen el desplegable común **Ver el alcance de las secciones**
+después de su tabla. Está cerrado por defecto y complementa la elección de
+lecciones; no oculta preparación ni cierre. En 12–14, la planificación se indica
+también fuera del desplegable. Los detalles de esta regla están en la guía de módulo.
+
 ## Patrón de lección
 
 1. Título y ubicación con módulo/número de lección.

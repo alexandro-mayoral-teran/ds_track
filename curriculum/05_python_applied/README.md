@@ -45,6 +45,8 @@ Completa [04 — Visualización en Python](../04_visualization_python/README.md)
 
 <a id="alcance-de-cada-sección"></a>
 
+<a id="alcance-de-las-secciones"></a>
+
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 

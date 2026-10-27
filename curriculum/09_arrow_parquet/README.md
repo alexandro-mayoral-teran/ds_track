@@ -44,6 +44,8 @@ Completa [08 — Visualización en R](../08_visualization_r/README.md). Reutiliz
 
 <a id="alcance-de-cada-sección"></a>
 
+<a id="alcance-de-las-secciones"></a>
+
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 

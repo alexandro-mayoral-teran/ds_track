@@ -46,7 +46,12 @@ Objetivos previstos para cuando se implemente:
 
 <a id="alcance-de-cada-sección"></a>
 
-### Alcance previsto por sección
+<a id="alcance-de-las-secciones"></a>
+
+<details>
+<summary><strong>Ver el alcance de las secciones</strong></summary>
+
+**Alcance planificado:** lo siguiente describe contenidos y prácticas por desarrollar; no son lecciones o labs implementados.
 
 <a id="01-primera-app-y-modelo-de-ejecucion"></a>
 
@@ -128,6 +133,8 @@ Objetivos previstos para cuando se implemente:
 - Práctica prevista: iniciar desde un entorno limpio, reproducir un caso conocido
   y entregar una demostración. Multipágina, fragments, autenticación y despliegue
   en línea quedan como extensiones según una necesidad concreta.
+
+</details>
 
 ## Cómo trabajar este módulo
 
