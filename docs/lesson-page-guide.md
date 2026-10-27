@@ -37,13 +37,15 @@ distintos. Los ejemplos suelen explicar resultados y límites con cuidado:
 conviene conservarlos, sin reemplazarlos por resúmenes decorativos.
 
 Los textos de continuidad desactualizados y los ajustes de R/evidencia personal
-quedan identificados para la adaptación. No se han corregido las lecciones en
-esta revisión. Antes de actualizar un destino, comprobar su estado real.
+quedan identificados para la adaptación. La primera prueba posterior adapta
+00.01; los hallazgos de las otras páginas siguen pendientes. Antes de actualizar
+un destino, comprobar su estado real.
 
 ## Estructura propuesta
 
-Cabecera breve → propósito → preparación → objetivos → desarrollo adaptable →
-lab → evidencia y comprobación → referencias → continuidad.
+Cabecera breve → propósito → preparación → objetivos → material de apoyo cuando
+exista → desarrollo adaptable → lab → evidencia y comprobación → referencias →
+continuidad.
 
 | Parte | Elementos comunes | Qué puede cambiar |
 | --- | --- | --- |
@@ -51,6 +53,7 @@ lab → evidencia y comprobación → referencias → continuidad.
 | Propósito | Para qué sirve y qué problema ayuda a resolver | Contexto de trabajo y conexión con el recorrido |
 | Antes de empezar | Conceptos previos enlazados, herramientas y archivos necesarios; dónde trabajar | IDE, entorno, shell o preparación específica; decir si no hay instalación ni archivo de entrada |
 | Qué vas a aprender | Pocos objetivos observables que se recuperan en la comprobación | Acciones y número de objetivos según el alcance |
+| Material de apoyo | Índice breve con enlaces, finalidad y uso necesario u opcional; enlaces también donde se utilizan | Notebooks, scripts, datos, diccionarios, plantillas o guías que realmente ayuden; omitir si no existen recursos adicionales |
 | Desarrollo | Explicación gradual, ejemplo comprensible, resultado esperado y forma de comprobarlo | Títulos, cantidad de secciones, formatos y recorridos |
 | Práctica | Enlace al lab y tarea central en una frase | Variantes esenciales u opcionales; no repetir la consigna completa |
 | Evidencia y criterio de salida | Qué conservar, qué comprobar y qué explicar; siguiente duda o límite | Archivo, nota, consulta, notebook o resultado de otra naturaleza |
@@ -72,6 +75,31 @@ encerrar toda la explicación bajo un único encabezado «Desarrollo».
 - Mostrar alcance opcional antes de comenzar. Una ampliación no bloquea avanzar.
 - Añadir accesos a los recorridos solo si ayudan a elegir. No fijar tiempos ni
   progreso sin evidencia, ni usar casillas compartidas como registro de dominio.
+
+### Material de apoyo localizable y explicado
+
+Combinar dos accesos: una sección «Material de apoyo» después de los objetivos
+y un enlace en el punto concreto del recorrido donde se usa cada recurso.
+El índice permite encontrarlo de nuevo; el enlace contextual explica qué abrir,
+para qué, qué preparación requiere y qué observar o comprobar.
+
+Usar la tabla «Recurso / Para qué sirve / Uso». Distinguir lo necesario para
+una actividad de la consulta opcional; publicar un enlace no convierte el recurso
+en requisito. En notebooks indicar kernel/entorno y reinicio cuando corresponda;
+en código, dónde ejecutarlo y qué resultado revisar. No añadir esas instrucciones
+si el recurso solo se lee. El lab conserva su apartado propio.
+
+Enlazar archivos existentes junto a la lección o en su ubicación compartida, sin
+duplicarlos para llenar la tabla. No exigir un notebook, script o dataset por
+lección ni crear carpetas vacías. Si el ejemplo completo está en la propia
+página y no necesita archivos adicionales, se puede omitir este apartado.
+Las fuentes teóricas y documentación primaria permanecen en «Referencias»;
+una guía usada durante la actividad puede aparecer también como apoyo.
+
+Primera prueba aplicada en [00.01 — Markdown y perfil](../curriculum/00_getting_started/01_github_profile/README.md):
+plantilla de perfil, guía de adaptación y bitácora personal. La plantilla se
+enlaza al crear el perfil; la bitácora, al conservar evidencia. Esta actividad
+trabaja con Markdown y no necesita notebooks ni scripts.
 
 ### Desarrollo que se adapte al tema
 
@@ -148,6 +176,9 @@ en líneas ni exigir notebooks, scripts, gráficos y CSV en todos los temas.
    integrada en el portal, comprobar también catálogo, generación y anclas;
    una plantilla no modifica automáticamente su composición.
 
-El siguiente paso propuesto es adaptar 00.02 con estos criterios y revisarla
-antes de extender el patrón. La plantilla queda disponible; la migración del
-contenido y una sesión real de estudio siguen pendientes.
+La primera prueba se aplicó a 00.01 a petición del usuario: cabecera, preparación,
+objetivos, material de apoyo, práctica y evidencia, con anclas anteriores
+conservadas. El siguiente caso propuesto es 00.02 para contrastar una lección
+larga con varios recorridos. La migración del resto y una sesión real de estudio
+siguen pendientes. Los hallazgos de la tabla inicial describen la revisión previa
+a esta prueba; no se han corregido las otras lecciones de la muestra.

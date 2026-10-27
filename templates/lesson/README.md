@@ -4,7 +4,7 @@ Base para crear o adaptar una lección de DS Track. Consulta la
 [estructura propuesta y su evaluación](../../docs/lesson-page-guide.md) y la
 [guía de autoría](../../docs/authoring-guide.md). La
 [lección 00.01](../../curriculum/00_getting_started/01_github_profile/README.md)
-es una referencia visual, todavía no una aplicación exacta de esta plantilla.
+es la primera prueba aplicada, con material de apoyo enlazado también donde se usa.
 
 Copia el bloque y sustituye todos los campos CAMPO/RUTA. Sus rutas son
 marcadores, no archivos existentes. Ajusta el desarrollo al tema, elimina las
@@ -46,9 +46,23 @@ Indicar qué recorrido elegir si hay alternativas. No exigirlos todos. -->
 - CAMPO_ACCION_OBSERVABLE_2
 - CAMPO_ACCION_OBSERVABLE_3_SI_APLICA
 
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [CAMPO_ARCHIVO_EXISTENTE](RUTA_RECURSO) | CAMPO_PROPOSITO_CONCRETO | CAMPO_NECESARIO_PARA_ACTIVIDAD_O_CONSULTA_OPCIONAL |
+
+<!-- Incluir solo recursos útiles y existentes: notebook, script, datos,
+diccionario, plantilla o guía. No exigir todos los formatos. Enlazar de nuevo
+justo antes de usarlos, explicando qué abrir y qué observar. Si no hay apoyos
+adicionales, omitir este apartado. Referencias conserva las fuentes teóricas. -->
+
 ## 1. CAMPO_PRIMER_CONCEPTO_O_PROBLEMA
 
 CAMPO_CONTEXTO_Y_EXPLICACION_ANTES_DE_LA_SINTAXIS
+
+<!-- Cuando se use un archivo: "Abre [NOMBRE](RUTA_RECURSO) para OBJETIVO;
+CAMPO_PREPARACION_Y_QUE_OBSERVAR". No dejar este comentario en la lección final. -->
 
 CAMPO_EJEMPLO_PEQUENO_COMPLETO_TEXTO_CODIGO_TABLA_O_CARPETAS
 

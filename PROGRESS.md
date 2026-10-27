@@ -48,6 +48,22 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
+**Desarrollo — 2026-10-27, apoyo y primera lección de prueba:** criterio de
+recursos documentado en guía y plantilla de lección: índice después de objetivos
+con finalidad/uso y enlaces en el lugar donde se utilizan. Primera aplicación
+en [00.01](curriculum/00_getting_started/01_github_profile/README.md), con plantilla
+de perfil, guía y bitácora existentes; sin añadir notebooks ni código innecesarios.
+Cabecera 00.01, preparación, objetivos observables, práctica, evidencia/criterio
+y continuidad ajustados; anclas anteriores conservadas. El resto de lecciones
+no se migró. Pendiente observar uso real con pareja; 00.02 sigue como siguiente
+caso propuesto para revisar varios recorridos.
+
+Comprobación de esta prueba: enlaces del Markdown sin incidencias, portal local
+generado sin ejecutar ejemplos y 1236 enlaces locales en 27 páginas HTML
+verificados. Lectura en Chrome aislado a 1280/390 px para GFM local y portal;
+anclas de continuidad conservadas y pista cerrada. No acredita revisión visual
+del GitHub remoto ni una sesión de aprendizaje.
+
 **Desarrollo — 2026-10-27, propuesta de estructura de lección:** revisión
 estructural de nueve páginas (cuatro iniciales y una de Python, pandas, SQL, R
 y Quarto), con consulta de las dos partes de 00.05. Evaluación, elementos

@@ -34,8 +34,15 @@ cuando contengan material útil.
 Usa la [plantilla de lección](../templates/lesson/README.md) y la
 [guía de sus elementos comunes](lesson-page-guide.md). La guía documenta una
 evaluación de muestra y propone cabecera, propósito, preparación, objetivos,
-desarrollo adaptable, práctica, evidencia/comprobación, referencias y continuidad.
+material de apoyo cuando exista, desarrollo adaptable, práctica,
+evidencia/comprobación, referencias y continuidad.
 Las lecciones existentes se adaptarán gradualmente; no están todas migradas.
+
+Cuando haya recursos de apoyo, reunirlos después de los objetivos en una tabla
+«Recurso / Para qué sirve / Uso» y enlazarlos también justo antes de usarlos.
+Identificar lo necesario y lo opcional; incluir solo archivos útiles y existentes,
+sin exigir notebooks, scripts ni datos en todas las lecciones. Primera prueba
+aplicada en [00.01](../curriculum/00_getting_started/01_github_profile/README.md).
 
 ### Contenido mínimo del README de lección
 

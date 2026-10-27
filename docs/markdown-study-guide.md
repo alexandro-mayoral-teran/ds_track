@@ -56,6 +56,11 @@ Su existencia no significa que todas las lecciones ya estén adaptadas.
 7. Acceso al lab y criterio de salida explícito.
 8. Navegación final: módulo, lab y siguiente lección.
 
+Si hay archivos de apoyo, añadir «Material de apoyo» después de los objetivos:
+recurso, finalidad y uso necesario u opcional. Repetir el enlace donde se utiliza
+con una instrucción concreta. La primera prueba 00.01 aplica ya el patrón de
+lección y reúne sus plantillas; otras lecciones se adaptan gradualmente.
+
 Antes de la primera lección, el enlace de regreso lleva al módulo. En lecciones
 posteriores puede añadirse la anterior. No confundir el módulo 00 con la lección
 01 ni cambiar identificadores para ajustar la presentación.
