@@ -1,23 +1,64 @@
-# 08 — Escrituras y transacciones
+# 03.08 — Escrituras y transacciones
 
-## Propósito, prerrequisitos y objetivos — esencial
+<a id="08--escrituras-y-transacciones"></a>
+
+[Inicio](../../../README.md) / [Módulo 03](../README.md) / **Lección 03.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Confirmar o revertir escrituras con alcance y persistencia comprobados |
+| **Necesitas** | Python con sqlite3; fuentes incluidas |
+| **Evidencia** | SQL y nota de selección previa, transacción y verificación al reconectar |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/03_sql_databases/08_transactions/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos--esencial"></a>
+
+## Propósito
 
 Cambiar datos de forma deliberada, comprobar el alcance de cada escritura y
-decidir qué se confirma o se revierte. Completa
+decidir qué se confirma o se revierte.
+
+## Antes de empezar
+
+Completa
 [03.07 — Ventanas para comparar registros](../07_windows/README.md) y su lab;
 recupera [restricciones y carga de 03.03](../03_create_load/README.md),
 [filtros de 03.02](../02_first_queries/README.md) y
 [claves y relaciones de 03.05](../05_joins/README.md).
 Usamos sqlite3 estándar: no necesitas instalar paquetes.
 
-Al terminar podrás usar UPDATE y DELETE con una selección previa, agrupar
-escrituras en una transacción, manejar errores, comprobar persistencia y
-repetir una carga con una regla explícita. El cierre requiere explicar las
-decisiones, además de obtener el resultado esperado.
+La fuente permanece en lectura y se escribe sobre una copia nueva. Usa las
+rutas y comprobaciones del apartado 1: no cambies el modo de una conexión
+anterior para escribir sobre la base original. Una copia existente se comprueba
+y conserva; una sesión nueva usa un destino nuevo.
+
+### Cómo organizar la sesión
 
 La lección puede dividirse en tres sesiones: **A**, secciones 1–4; **B**,
 secciones 5–7; **C**, secciones 8–10 y lab. SAVEPOINT, UPSERT y concurrencia
 son ampliaciones; no necesitas dominarlas para completar el criterio esencial.
+
+## Qué vas a aprender
+
+- Seleccionar y comprobar el alcance antes de UPDATE o DELETE.
+- Agrupar escrituras con control explícito y justificar commit o rollback.
+- Distinguir error de una sentencia de reversión completa del lote.
+- Demostrar carga repetible y persistencia conservando la fuente y las copias previas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](transactions.py) | Crear la copia protegida y contrastar escritura, reversión y carga repetible | Para el recorrido |
+| [Preparador de la muestra](../01_relational_sqlite/relational_sqlite.py) | Preparar o comprobar la base si hace falta | Preparación |
+| [Fuentes CSV](../01_relational_sqlite/data/) | Consultar clientes, créditos y cortes originales | Consulta compartida |
+
+Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes
+de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos.
+Las bases y entregas se preparan en las rutas indicadas, conservando los
+originales y los destinos existentes. No copies ni publiques bases de práctica
+como parte del material del curso.
 
 ## 1. Preparar un lugar de práctica separado
 
@@ -442,13 +483,33 @@ en tiempo real. Reconectar permite comprobar el estado confirmado actualizado.
 | with no agrupa operaciones | Revisa configuración y BEGIN explícito |
 | Copia existente no coincide con estado final | Consérvala para revisar; no reinicies ni sobrescribas |
 
-Realiza el [lab 03.08](../../../labs/03_sql_databases/08_transactions/README.md).
+## Práctica
+
+Realiza el [lab 03.08](../../../labs/03_sql_databases/08_transactions/README.md) para
+seleccionar antes de escribir y comprobar cambios confirmados y revertidos.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Consultas y nota de selección antes/después | Filas afectadas, condiciones y fuentes intactas | Qué se decide confirmar o revertir y por qué |
+| Comprobaciones tras reconectar y repetir la carga | Persistencia, repetición exacta y rechazo de conflicto | Por qué fallar una sentencia o cerrar la conexión no demuestra atomicidad |
+
 Puedes continuar cuando demuestres selección previa, alcance comprobado,
 confirmación/reversión, carga repetible y persistencia con las fuentes intactas.
-No hay checkpoint de proyecto implementado. Después consulta el
-[03.09 — Integración pandas y SQL](../09_pandas_sql/README.md).
 
-## Referencias primarias
+Quien aprende realiza la práctica en su copia y explica las decisiones.
+Tu compañero plantea un error a mitad del lote y pide explicar qué cambios deben quedar al revertir.
+Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una
+entrega adicional de proyecto implementada para esta lección.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Ejemplos propios del proyecto, contrastados con:
 
@@ -458,3 +519,10 @@ Ejemplos propios del proyecto, contrastados con:
 - [SQLite: conflictos y ABORT](https://www.sqlite.org/lang_conflict.html).
 - [SQLite: claves foráneas](https://www.sqlite.org/foreignkeys.html).
 - [SQLite: SAVEPOINT](https://www.sqlite.org/lang_savepoint.html) y [UPSERT](https://www.sqlite.org/lang_upsert.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [03.09 — Integración pandas y SQL](../09_pandas_sql/README.md)
+antes de realizar su lab.
+
+[← Módulo 03](../README.md) · [Lab 03.08](../../../labs/03_sql_databases/08_transactions/README.md) · [Siguiente →](../09_pandas_sql/README.md)

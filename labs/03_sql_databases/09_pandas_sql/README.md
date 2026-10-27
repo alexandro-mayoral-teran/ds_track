@@ -192,7 +192,7 @@ Debes poder reconstruir otra base, explicar las claves y relaciones, conservar
 datos desconocidos y resolver casos vacíos. Incluye la evidencia de escrituras
 controladas de 03.08: este análisis de lectura no sustituye esa habilidad.
 
-Registra evidencia y dudas en PROGRESS.md. El módulo puede cerrarse como
+Registra evidencia y dudas en tu bitácora personal junto a la práctica. El módulo puede cerrarse como
 aprendizaje solo cuando demuestres sus criterios, no porque haya nueve lecciones
 disponibles. No hay checkpoint de 02_credit_database implementado.
 Continúa con el [04.01 — Pregunta y elección de gráfico](../../../curriculum/04_visualization_python/01_question_chart/README.md).

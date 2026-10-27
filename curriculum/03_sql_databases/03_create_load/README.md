@@ -1,19 +1,56 @@
-# 03 — Crear tablas y cargar datos
+# 03.03 — Crear tablas y cargar datos
 
-## Propósito, prerrequisitos y objetivos — esencial
+<a id="03--crear-tablas-y-cargar-datos"></a>
 
-Construir una base cuyo contenido respete reglas explícitas. Completa
+[Inicio](../../../README.md) / [Módulo 03](../README.md) / **Lección 03.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Construir una base nueva con restricciones y carga comprobada |
+| **Necesitas** | Python con sqlite3; fuentes incluidas |
+| **Evidencia** | SQL, código y nota de carga, rechazos y persistencia |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/03_sql_databases/03_create_load/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos--esencial"></a>
+
+## Propósito
+
+Construir una base cuyo contenido respete reglas explícitas.
+
+## Antes de empezar
+
+Completa
 [03.01 — Modelo relacional y SQLite](../01_relational_sqlite/README.md) y
 [03.02 — Primeras consultas](../02_first_queries/README.md), con sus labs.
 Recupera también [lectura CSV](../../01_python_foundations/05_csv_files/README.md)
 y [validación](../../01_python_foundations/06_validation_summary/README.md).
 Usamos sqlite3 de la biblioteca estándar; no hay dependencias nuevas.
 
-Al terminar podrás escribir CREATE TABLE, explicar tipos y restricciones,
-cargar valores mediante parámetros, comprobar relaciones y comparar los datos
-guardados con sus fuentes. Trabajarás con una base nueva de práctica, separada
-de la base de 03.01. Las entradas siguen siendo los mismos CSV ficticios:
-16 clientes, 24 créditos y 48 observaciones crédito/fecha.
+Trabaja con una base nueva de práctica, separada de la de 03.01. Las entradas
+son los mismos CSV ficticios: 16 clientes, 24 créditos y 48 observaciones
+crédito/fecha. El preparador comprueba destinos existentes y los conserva.
+
+## Qué vas a aprender
+
+- Traducir parte del contrato a CREATE TABLE y restricciones explícitas.
+- Distinguir tipos declarados, afinidad y valores almacenados.
+- Cargar desde CSV con parámetros y relaciones habilitadas.
+- Comprobar persistencia, rechazos y equivalencia con las fuentes conservadas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](create_load.py) | Crear y comprobar la base de práctica contra los CSV de origen | Para el recorrido |
+| [Esquema de carga](schema.sql) | Leer CREATE TABLE y restricciones de esta práctica | Para el recorrido |
+| [Fuentes CSV](../01_relational_sqlite/data/) | Consultar las tres tablas originales | Entradas compartidas |
+
+Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes
+de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos.
+Las bases y entregas se preparan en las rutas indicadas, conservando los
+originales y los destinos existentes. No copies ni publiques bases de práctica
+como parte del material del curso.
 
 ## 1. Del contrato al esquema
 
@@ -240,7 +277,9 @@ ni reinstales paquetes. Se muestran seis rechazos comprobados y 16/24/48 filas
 conciliadas. La primera ejecución informa creación y persistencia; la segunda,
 base existente sin cambios. La salida local queda en output, excluido de Git.
 
-## Errores habituales, lab y criterio de salida
+<a id="errores-habituales-lab-y-criterio-de-salida"></a>
+
+## Errores habituales
 
 | Situación | Acción |
 | --- | --- |
@@ -251,13 +290,33 @@ base existente sin cambios. La salida local queda en output, excluido de Git.
 | La base existe pero difiere | Conserva el archivo y usa otra ruta |
 | Un entero acepta '10' | Recuerda afinidad; valida el formato original aparte |
 
-Realiza el [lab 03.03](../../../labs/03_sql_databases/03_create_load/README.md).
-Puedes continuar cuando expliques las restricciones, demuestres carga y
-persistencia, justifiques los rechazos y conserves las entradas. El proyecto
-02_credit_database y sus checkpoints siguen pendientes.
-Después consulta el [03.04 — Agregaciones e indicadores](../04_aggregations/README.md).
+## Práctica
 
-## Referencias primarias
+Realiza el [lab 03.03](../../../labs/03_sql_databases/03_create_load/README.md) para
+cargar una base separada y comprobar restricciones y persistencia.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| SQL, script y nota de carga | Filas guardadas contra fuentes y restricciones rechazadas | Qué garantiza cada restricción y qué validación queda fuera del esquema |
+| Evidencia textual al reconectar | Persistencia y conservación de entradas y destinos previos | Por qué cargar, confirmar, cerrar y verificar son pasos distintos |
+
+Puedes continuar cuando expliques las restricciones, demuestres carga y
+persistencia, justifiques los rechazos y conserves las entradas.
+
+Quien aprende realiza la práctica en su copia y explica las decisiones.
+Tu compañero propone una referencia inexistente y pide explicar en qué comprobación debe detectarse.
+Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una
+entrega adicional de proyecto implementada para esta lección.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Ejemplos propios sobre los datos ficticios del proyecto, contrastados con:
 
@@ -266,3 +325,10 @@ Ejemplos propios sobre los datos ficticios del proyecto, contrastados con:
 - [Activación y comprobación de claves foráneas](https://www.sqlite.org/foreignkeys.html).
 - [INSERT de SQLite](https://www.sqlite.org/lang_insert.html).
 - [sqlite3 de Python 3.11: parámetros y transacciones](https://docs.python.org/3.11/library/sqlite3.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [03.04 — Agregaciones e indicadores](../04_aggregations/README.md)
+antes de realizar su lab.
+
+[← Módulo 03](../README.md) · [Lab 03.03](../../../labs/03_sql_databases/03_create_load/README.md) · [Siguiente →](../04_aggregations/README.md)

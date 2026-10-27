@@ -1,18 +1,51 @@
-# 04 — Agregaciones e indicadores
+# 03.04 — Agregaciones e indicadores
 
-## Propósito, prerrequisitos y objetivos — esencial
+<a id="04--agregaciones-e-indicadores"></a>
+
+[Inicio](../../../README.md) / [Módulo 03](../README.md) / **Lección 03.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Resumir con universo, denominadores y cobertura explícitos |
+| **Necesitas** | Python con sqlite3; fuentes incluidas |
+| **Evidencia** | SQL y nota de indicadores conciliados con el detalle |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/03_sql_databases/04_aggregations/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos--esencial"></a>
+
+## Propósito
 
 Pasar del detalle a un resumen sin cambiar el significado de la pregunta.
+
+## Antes de empezar
+
 Completa [03.03 — Crear tablas y cargar datos](../03_create_load/README.md) y
 su lab; recupera [filtros y NULL de 03.02](../02_first_queries/README.md) y
 [agrupación en pandas](../../02_pandas/07_group_summarize/README.md).
 Usamos sqlite3 estándar y la misma cartera ficticia: 24 créditos observados en
 dos fechas, 48 filas en cortes. No necesitas instalar paquetes.
 
-Al terminar podrás contar filas y valores conocidos, sumar y promediar,
-agrupar, filtrar grupos y construir una tasa con numerador, denominador y
-cobertura explícitos. Conservarás los datos originales y comprobarás resultados
-contra cálculos independientes en Python.
+## Qué vas a aprender
+
+- Distinguir COUNT de filas, valores conocidos y claves distintas.
+- Agrupar y contrastar SUM, AVG, MIN y MAX con NULL.
+- Separar selección de filas con WHERE y de grupos con HAVING.
+- Construir tasas con numerador, denominador y cobertura y conciliarlas con el detalle.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](aggregations.py) | Contrastar agregaciones y tasas con referencias independientes | Para el recorrido |
+| [Preparador de la muestra](../01_relational_sqlite/relational_sqlite.py) | Preparar o comprobar la base si hace falta | Preparación |
+| [Fuentes CSV](../01_relational_sqlite/data/) | Consultar clientes, créditos y cortes originales | Consulta compartida |
+
+Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes
+de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos.
+Las bases y entregas se preparan en las rutas indicadas, conservando los
+originales y los destinos existentes. No copies ni publiques bases de práctica
+como parte del material del curso.
 
 ## 1. Formular el indicador antes de calcular
 
@@ -313,7 +346,9 @@ casos de frontera comprobados. Los indicadores impresos se identifican por
 nombre; cursor.description recupera los encabezados del resultado, como en 03.02.
 La base, CSV y dependencias raíz se conservan intactos.
 
-## Errores habituales, lab y criterio de salida
+<a id="errores-habituales-lab-y-criterio-de-salida"></a>
+
+## Errores habituales
 
 | Situación | Qué revisar |
 | --- | --- |
@@ -324,13 +359,33 @@ La base, CSV y dependencias raíz se conservan intactos.
 | Aparece un ID junto a un grupo | No selecciones columnas sin agrupar ni agregar |
 | Los grupos no suman todo el detalle | Revisa filtros y conciliación antes de presentar |
 
-Realiza el [lab 03.04](../../../labs/03_sql_databases/04_aggregations/README.md).
-Puedes avanzar cuando justifiques unidad, universo y denominadores, concilies
-los grupos y distingas cero, vacío y desconocido. El proyecto y sus checkpoints
-siguen pendientes. Continúa con el
-[03.05 — Relacionar tablas con joins](../05_joins/README.md).
+## Práctica
 
-## Referencias primarias
+Realiza el [lab 03.04](../../../labs/03_sql_databases/04_aggregations/README.md) para
+reconstruir indicadores y explicar sus bases conocidas y desconocidas.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Consultas, parámetros y definición de indicadores | Grupos, conteos y sumas contra el detalle | Unidad, universo, numerador y denominador |
+| Nota de cero, vacío y desconocido | Cobertura y resultados con NULL y sin filas | Por qué contar filas no equivale a contar saldos conocidos |
+
+Puedes avanzar cuando justifiques unidad, universo y denominadores, concilies
+los grupos y distingas cero, vacío y desconocido.
+
+Quien aprende realiza la práctica en su copia y explica las decisiones.
+Tu compañero elige una tasa y pide reconstruir su numerador, denominador y cobertura.
+Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una
+entrega adicional de proyecto implementada para esta lección.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Ejemplos propios sobre las muestras de DS Track, contrastados con:
 
@@ -339,3 +394,10 @@ Ejemplos propios sobre las muestras de DS Track, contrastados con:
 - [SQLite: CASE, operadores y NULL](https://www.sqlite.org/lang_expr.html).
 - [SQLite: NULLIF y COALESCE](https://www.sqlite.org/lang_corefunc.html).
 - [sqlite3 de Python 3.12: consultas y cierre](https://docs.python.org/3.12/library/sqlite3.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [03.05 — Relacionar tablas con joins](../05_joins/README.md)
+antes de realizar su lab.
+
+[← Módulo 03](../README.md) · [Lab 03.04](../../../labs/03_sql_databases/04_aggregations/README.md) · [Siguiente →](../05_joins/README.md)

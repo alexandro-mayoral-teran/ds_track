@@ -12,20 +12,38 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Presentación:** índices 00–14 y lecciones 00/01/02 adaptados; la
+- **Presentación:** índices 00–14 y lecciones 00/01/02/03 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
 - **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
   [Uso y comprobaciones](portal/README.md).
-- **Último trabajo:** 2026-10-27, depuración documental, separación de criterios
-  vigentes e historial y retirada de esqueletos sin uso.
+- **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones SQL a la
+  plantilla y corrección del destino de evidencia personal en cinco labs.
 - **Siguiente paso:** continuar la revisión del contenido y la adaptación por
-  módulo (03 — SQL), y observar una sesión real de pareja con el portal local:
+  módulo (04 — Visualización Python), y observar una sesión real de pareja con el portal local:
   orientación, apertura, reconstrucción de práctica, revisión y reanudación.
 - **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, plantilla en SQL:** adaptadas 03.01–03.09 con
+ubicación NN.LL, ficha, preparación, objetivos, recursos, práctica,
+evidencia/criterio, referencias y navegación final. Scripts, esquemas, consultas
+SQL y CSV compartidos enlazados sin duplicarlos. Conservadas pausas por sesión,
+extensiones opcionales, lectura de las fuentes y escrituras sobre copias nuevas.
+Corregido el destino de evidencia personal en cinco labs (03.04/06/07/08/09),
+sin cambiar ejercicios, soluciones ni su presentación general. Cobertura vigente
+actualizada solo en el índice de documentación. Próximo módulo visual: 04;
+proyectos/checkpoints y observación de una sesión real siguen pendientes.
+
+Comprobación: 3336 enlaces locales de Markdown sin incidencias; anclas previas,
+desarrollo principal y 100 bloques de código/comandos/diagramas conservados.
+Nueve páginas GFM locales a 1280/390 px (18 vistas), con apoyos/cierre presentes,
+desplegables cerrados e imágenes disponibles. Scripts, SQL guardado, CSV y figura
+sin cambios; ejercicios y soluciones de labs intactos. No se ejecutaron consultas,
+escrituras ni instalaciones por este ajuste de presentación. No acredita revisión
+del GitHub remoto ni aprendizaje; SQL no se integró como lecciones del portal.
 
 **Desarrollo — 2026-10-27, depuración documental:** revisadas referencias Markdown,
 rutas en preparadores y catálogos. Retirados los esqueletos sin contenido activo

@@ -271,6 +271,6 @@ Explica: ¿cuándo prefieres EXISTS a un join? ¿Por qué una CTE no es una tabl
 guardada? ¿Cómo puede una coincidencia en conteos esconder resultados distintos?
 ¿Qué dato necesitarías para clasificar a alguien sin atraso conocido?
 
-Registra evidencia y dudas en PROGRESS.md; ejecutar el ejemplo no acredita por
+Registra evidencia y dudas en tu bitácora personal junto a la práctica; ejecutar el ejemplo no acredita por
 sí solo el criterio de aprendizaje. No hay checkpoint de proyecto implementado.
 Continúa con el [03.07 — Ventanas para comparar registros](../../../curriculum/03_sql_databases/07_windows/README.md).

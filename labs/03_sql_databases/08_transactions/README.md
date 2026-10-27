@@ -285,7 +285,7 @@ el lote: en ese caso revierte la transacción completa.
 Conserva script, consultas y una nota con filas seleccionadas antes/después,
 alcance, errores esperados, decisión de commit/rollback y comprobación al
 reconectar. No publiques las bases locales de output. Registra evidencia y
-dudas en PROGRESS.md; ejecutar la demostración no acredita aprendizaje por sí solo.
+dudas en tu bitácora personal junto a la práctica; ejecutar la demostración no acredita aprendizaje por sí solo.
 
 Explica: ¿por qué el fallo de una sentencia no garantiza revertir las anteriores?
 ¿Qué diferencia hay entre repetir un lote y sobrescribir una clave conflictiva?

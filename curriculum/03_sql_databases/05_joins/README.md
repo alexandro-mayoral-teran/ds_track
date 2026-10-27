@@ -1,20 +1,58 @@
-# 05 — Relacionar tablas con joins
+# 03.05 — Relacionar tablas con joins
 
-## Propósito, prerrequisitos y objetivos — esencial
+<a id="05--relacionar-tablas-con-joins"></a>
+
+[Inicio](../../../README.md) / [Módulo 03](../README.md) / **Lección 03.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Relacionar tablas con claves y cardinalidad comprobadas |
+| **Necesitas** | Python con sqlite3; fuentes incluidas |
+| **Evidencia** | Consultas y conciliación de filas, claves y saldos |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/03_sql_databases/05_joins/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos--esencial"></a>
+
+## Propósito
 
 Responder preguntas que requieren columnas de varias tablas sin perder registros
-ni multiplicar importes por accidente. Completa
+ni multiplicar importes por accidente.
+
+## Antes de empezar
+
+Completa
 [03.01 — Modelo relacional](../01_relational_sqlite/README.md),
 [03.02 — Primeras consultas](../02_first_queries/README.md) y
 [03.03 — Crear tablas y cargar datos](../03_create_load/README.md) y
 [03.04 — Agregaciones e indicadores](../04_aggregations/README.md), con sus labs.
 Recupera [las uniones de pandas](../../02_pandas/08_combine_tables/README.md).
 
-Al terminar podrás elegir INNER JOIN o LEFT JOIN, escribir condiciones completas,
-identificar registros sin correspondencia, distinguir NULL de una falta de unión
-y conciliar claves, filas y saldos. Usamos sqlite3 estándar y la base ficticia de
-03.01: 16 clientes, 24 créditos y 48 observaciones de dos fechas. Las consultas
-abren esa base en solo lectura; los casos adicionales se construyen en memoria.
+Se usa sqlite3 estándar y la base de 03.01: 16 clientes, 24 créditos y
+48 observaciones de dos fechas. Las consultas abren esa base en solo lectura;
+los casos adicionales se construyen en memoria. INNER y LEFT cubren el núcleo
+del lab; las comparaciones con otros tipos de unión son ampliaciones.
+
+## Qué vas a aprender
+
+- Elegir INNER o LEFT JOIN según la población que debe conservarse.
+- Definir condiciones completas y justificar ON frente a WHERE.
+- Distinguir ausencia de coincidencia de un valor NULL en una fila relacionada.
+- Comprobar cardinalidad, claves, filas e importes sin ocultar multiplicaciones.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](joins.py) | Ejecutar uniones y contrastar claves e importes contra los CSV | Para el recorrido |
+| [Preparador de la muestra](../01_relational_sqlite/relational_sqlite.py) | Preparar o comprobar la base si hace falta | Preparación |
+| [Fuentes CSV](../01_relational_sqlite/data/) | Consultar clientes, créditos y cortes originales | Consulta compartida |
+
+Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes
+de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos.
+Las bases y entregas se preparan en las rutas indicadas, conservando los
+originales y los destinos existentes. No copies ni publiques bases de práctica
+como parte del material del curso.
 
 ## 1. Antes del join: pregunta, unidad y cardinalidad
 
@@ -352,17 +390,36 @@ esa diferencia antes de trasladar una unión entre herramientas.
 | No se distingue saldo ausente de registro ausente | Selecciona una clave derecha obligatoria |
 | El saldo crece después del join | Revisa multiplicidad y clave completa |
 
-## Lab, criterio de salida y continuidad
+<a id="lab-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 03.05](../../../labs/03_sql_databases/05_joins/README.md).
+## Práctica
+
+Realiza el [lab 03.05](../../../labs/03_sql_databases/05_joins/README.md) para
+predecir filas y comprobar una unión con claves y cobertura justificadas.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| SQL y nota de unidad y claves | Universo conservado y cardinalidad por clave | Por qué INNER/LEFT y ON/WHERE cambian la pregunta |
+| Controles de detalle y referencias sin pareja | Filas, valores y saldos conciliados | Cómo detectar falta de coincidencia sin confundirla con saldo desconocido |
+
 Puedes continuar cuando expliques unidad y cardinalidad, conserves el universo
 elegido, detectes ausencia con una clave derecha y demuestres conciliación sin
-DISTINCT para esconder errores. No hay checkpoint de proyecto implementado.
-Después, el
-[03.06 — Subconsultas y CTE](../06_subqueries_cte/README.md)
-continúa el recorrido con consultas por pasos.
+DISTINCT para esconder errores.
 
-## Referencias primarias
+Quien aprende realiza la práctica en su copia y explica las decisiones.
+Tu compañero retira parte de una clave de unión y te pide anticipar qué filas podrían multiplicarse.
+Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una
+entrega adicional de proyecto implementada para esta lección.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Ejemplos propios sobre las muestras de DS Track, contrastados con:
 
@@ -370,3 +427,10 @@ Ejemplos propios sobre las muestras de DS Track, contrastados con:
 - [SQLite: COUNT y SUM](https://www.sqlite.org/lang_aggfunc.html).
 - [sqlite3 de Python: parámetros, URI y cierre](https://docs.python.org/3.12/library/sqlite3.html).
 - [pandas.merge: validación y claves nulas](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.merge.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [03.06 — Subconsultas y CTE](../06_subqueries_cte/README.md)
+antes de realizar su lab.
+
+[← Módulo 03](../README.md) · [Lab 03.05](../../../labs/03_sql_databases/05_joins/README.md) · [Siguiente →](../06_subqueries_cte/README.md)

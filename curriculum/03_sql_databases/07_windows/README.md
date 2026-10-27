@@ -1,23 +1,64 @@
-# 07 — Ventanas para comparar registros
+# 03.07 — Ventanas para comparar registros
 
-## Propósito, prerrequisitos y objetivos — práctica
+<a id="07--ventanas-para-comparar-registros"></a>
+
+[Inicio](../../../README.md) / [Módulo 03](../README.md) / **Lección 03.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Comparar registros con ventanas sin perder el detalle ni su cobertura |
+| **Necesitas** | Python con sqlite3; fuentes incluidas |
+| **Evidencia** | SQL y filas ordenadas con partición, orden y marco explicados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/03_sql_databases/07_windows/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos--práctica"></a>
+
+## Propósito
 
 Comparar filas relacionadas sin perder el detalle que necesitas para explicar
-el resultado. Completa [03.06 — Subconsultas y CTE](../06_subqueries_cte/README.md)
+el resultado.
+
+## Antes de empezar
+
+Completa [03.06 — Subconsultas y CTE](../06_subqueries_cte/README.md)
 y su lab; recupera [agregación de 03.04](../04_aggregations/README.md) y
 [cardinalidad de 03.05](../05_joins/README.md).
 Debes reconocer claves, fechas, NULL, alias, GROUP BY y consultas por etapas.
 Usamos sqlite3 estándar y la base ficticia de 03.01, sin dependencias nuevas.
 
-Al terminar podrás leer OVER, definir particiones y orden, numerar registros,
-recuperar la observación anterior y declarar el marco de un acumulado.
-Comprobarás claves, valores, ausencias y cobertura; no solo cantidades.
+Las ventanas existen en SQLite desde 3.25.0; el script comprueba el motor
+integrado en Python. Su versión no es la versión de Python. No necesitas
+dominar todos los marcos ni las extensiones de ranking para continuar.
+
+### Cómo organizar la sesión
 
 La lección puede dividirse en tres sesiones: **A**, secciones 1–4; **B**,
 secciones 5–7; **C**, secciones 8–10 y lab. Ranking con empates y otras funciones
 quedan como extensiones; no necesitas dominar todos los marcos para continuar.
 Las ventanas existen en SQLite desde 3.25.0; el script comprueba la versión
 del motor integrado en Python. No confundas esa versión con la de Python.
+
+## Qué vas a aprender
+
+- Leer OVER y distinguir partición, orden y marco de ventana.
+- Numerar registros con desempates y recuperar la observación anterior con LAG.
+- Calcular diferencias conservando desconocidos y cobertura de comparación.
+- Contrastar marcos y empates sin sumar referencias repetidas como medidas aditivas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](windows.py) | Comprobar ventanas, filas anteriores, cambios y marcos con empates | Para el recorrido |
+| [Preparador de la muestra](../01_relational_sqlite/relational_sqlite.py) | Preparar o comprobar la base si hace falta | Preparación |
+| [Fuentes CSV](../01_relational_sqlite/data/) | Consultar clientes, créditos y cortes originales | Consulta compartida |
+
+Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes
+de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos.
+Las bases y entregas se preparan en las rutas indicadas, conservando los
+originales y los destinos existentes. No copies ni publiques bases de práctica
+como parte del material del curso.
 
 ## 1. GROUP BY resume; una ventana añade información al detalle
 
@@ -461,14 +502,34 @@ atención al marco. No son requisitos para completar este lab.
 | El total es muchas veces mayor | ¿Sumaste una referencia repetida por ventana? |
 | Error de ventana en WHERE | Calcula en CTE y filtra en una capa exterior |
 
-Realiza el [lab 03.07](../../../labs/03_sql_databases/07_windows/README.md).
+## Práctica
+
+Realiza el [lab 03.07](../../../labs/03_sql_databases/07_windows/README.md) para
+comparar filas conservando claves, desconocidos y base de comparación.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Consultas y filas ordenadas | Previos, posiciones, empates y detalle original | Qué significa anterior según partición y orden |
+| Nota de marco y cobertura | Cambios comparables y límites de la suma | Por qué un NULL o un hueco temporal no se convierte automáticamente en cero |
+
 Puedes avanzar cuando expliques partición, orden y marco, conserves detalle y
 justifiques filas anteriores, empates y cambios sin imputar cero. La cobertura
-de comparación debe acompañar a los resultados. No hay checkpoint de proyecto
-implementado. Continúa con el
-[03.08 — Escrituras y transacciones](../08_transactions/README.md).
+de comparación debe acompañar a los resultados.
 
-## Referencias primarias
+Quien aprende realiza la práctica en su copia y explica las decisiones.
+Tu compañero propone un empate o un período ausente y pide anticipar el resultado de la ventana.
+Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una
+entrega adicional de proyecto implementada para esta lección.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Ejemplos propios sobre las muestras ficticias del proyecto, contrastados con:
 
@@ -477,3 +538,10 @@ Ejemplos propios sobre las muestras ficticias del proyecto, contrastados con:
 - [SQLite: SUM, COUNT y valores desconocidos](https://www.sqlite.org/lang_aggfunc.html).
 - [SQLite: CASE y operadores](https://www.sqlite.org/lang_expr.html).
 - [sqlite3 de Python 3.12: versión del motor, URI y cierre](https://docs.python.org/3.12/library/sqlite3.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [03.08 — Escrituras y transacciones](../08_transactions/README.md)
+antes de realizar su lab.
+
+[← Módulo 03](../README.md) · [Lab 03.07](../../../labs/03_sql_databases/07_windows/README.md) · [Siguiente →](../08_transactions/README.md)

@@ -181,7 +181,7 @@ Esta extensión no bloquea el siguiente tema.
 ## Evidencia, reflexión y siguiente paso
 
 Conserva SQL y parámetros, tablas de resultados, reglas de indicadores y
-conciliación contra detalle. Registra dudas y evidencia en PROGRESS.md sin
+conciliación contra detalle. Registra dudas y evidencia en tu bitácora personal junto a la práctica sin
 marcar aprendizaje completado solo porque ejecutaste el ejemplo.
 Explica: ¿qué cambia COUNT(columna) frente a COUNT(*)? ¿Qué población cambia
 si filtras los NULL antes de agrupar? ¿Qué demuestra cobertura cero?

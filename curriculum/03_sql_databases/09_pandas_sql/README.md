@@ -1,24 +1,66 @@
-# 09 — Integración pandas y SQL
+# 03.09 — Integración pandas y SQL
 
-## Propósito, prerrequisitos y objetivos — práctica de cierre
+<a id="09--integración-pandas-y-sql"></a>
+
+[Inicio](../../../README.md) / [Módulo 03](../README.md) / **Lección 03.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reconstruir y conciliar una respuesta desde SQL y pandas |
+| **Necesitas** | Entorno con sqlite3, pandas y Matplotlib; fuentes compartidas |
+| **Evidencia** | SQL, código, tablas y figura con interpretación y conciliación propias |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/03_sql_databases/09_pandas_sql/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos--práctica-de-cierre"></a>
+
+## Propósito
 
 Reconstruir una base ficticia, consultar desde pandas y demostrar que dos
-recorridos independientes responden la misma pregunta. Completa
+recorridos independientes responden la misma pregunta.
+
+## Antes de empezar
+
+Completa
 [03.08 — Escrituras y transacciones](../08_transactions/README.md) y sus
 prerrequisitos; recupera [el cierre de pandas](../../02_pandas/10_analysis_plot/README.md).
 La muestra de este cierre es la de SQL, no el CSV de 02.10: preguntas y métodos
 se reutilizan, pero no suponemos que muestras distintas tengan idénticos totales.
 
-Al terminar podrás pasar parámetros a read_sql_query, declarar tipos, comparar
-claves y valores, conciliar un indicador y comunicarlo con una figura.
-Usamos sqlite3, pandas 2.3.3 y Matplotlib 3.10.7 como referencias declaradas en
-la configuración raíz. No hay nuevas dependencias ni servidor de base de datos.
-El notebook es opcional: el cierre esencial se realiza con scripts y SQL guardado.
+Se utilizan sqlite3, pandas 2.3.3 y Matplotlib 3.10.7 como referencias
+declaradas en la configuración raíz, sin dependencias nuevas ni servidor.
+El cierre esencial usa scripts y SQL guardado; un notebook es opcional y no
+se exige crear uno. La muestra es la de SQL, no una entrega modificada de 03.08.
+
+### Cómo organizar la sesión
 
 Puedes distribuir la actividad en tres sesiones: **A**, preparar y leer;
 **B**, calcular y conciliar; **C**, exportar, representar y explicar.
 Desarrollar estas nueve lecciones no acredita que el estudiante haya completado
 el módulo: hacen falta sus prácticas y evidencias.
+
+## Qué vas a aprender
+
+- Leer SQL parametrizado desde pandas y declarar tipos y claves.
+- Construir una referencia independiente desde CSV para detalle e indicadores.
+- Comparar valores por clave y conciliar resumen y cobertura.
+- Exportar y explicar una figura calculada desde el resumen ya comprobado.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](integration.py) | Consultar en lectura y conciliar contra una referencia pandas desde CSV | Para el recorrido |
+| [Consulta de detalle](detail.sql) | Leer la consulta parametrizada que conserva registros | Para el recorrido |
+| [Consulta de resumen](summary.sql) | Leer indicadores con las mismas reglas | Para el recorrido |
+| [Preparador de la base](../03_create_load/create_load.py) | Reconstruir la base en una ruta separada | Preparación |
+| [Fuentes CSV](../01_relational_sqlite/data/) | Consultar las tres tablas originales de SQL | Entradas compartidas |
+
+Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes
+de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos.
+Las bases y entregas se preparan en las rutas indicadas, conservando los
+originales y los destinos existentes. No copies ni publiques bases de práctica
+como parte del material del curso.
 
 ## 1. Una pregunta y dos recorridos comprobables
 
@@ -289,14 +331,34 @@ pequeña se lee completa; particiones y motores se profundizan en 09–10.
 | La gráfica contradice la tabla | Usa el resumen conciliado, sin repetir el cálculo |
 | Ya existe la entrega | Conserva la carpeta; verifica sin exportar o elige otra nueva |
 
-Realiza el [lab 03.09](../../../labs/03_sql_databases/09_pandas_sql/README.md).
+## Práctica
+
+Realiza el [lab 03.09](../../../labs/03_sql_databases/09_pandas_sql/README.md) para
+reconstruir, consultar y explicar una entrega con figura conciliada.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| SQL, script, parámetros y tablas de tu entrega | Detalle por clave, tipos y grupos equivalentes | Por qué el CSV aporta una referencia independiente de la consulta SQL |
+| Figura e interpretación propias | Barras contra el resumen y reconstrucción en otra carpeta | Qué universo y cobertura describe y cómo conservaste las fuentes |
+
 Puedes cerrar el aprendizaje del módulo cuando reconstruyas, consultes,
 concilies, expliques la figura y demuestres también las escrituras controladas
-de 03.08. El proyecto 02_credit_database y sus checkpoints siguen pendientes;
-esta práctica integrada no los presenta como implementados.
-Después continúa con el [04.01 — Pregunta y elección de gráfico](../../04_visualization_python/01_question_chart/README.md).
+de 03.08. La práctica integrada no implementa por sí sola el proyecto pendiente.
 
-## Referencias primarias
+Quien aprende realiza la práctica en su copia y explica las decisiones.
+Tu compañero elige una barra y pide rastrear su valor al resumen y al detalle por clave.
+Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una
+entrega adicional de proyecto implementada para esta lección.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Ejemplos propios sobre las muestras del proyecto, contrastados con:
 
@@ -306,3 +368,10 @@ Ejemplos propios sobre las muestras del proyecto, contrastados con:
 - [DataFrame.to_sql y sus límites](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.to_sql.html).
 - [Matplotlib 3.10.7: barras horizontales](https://matplotlib.org/3.10.7/api/_as_gen/matplotlib.axes.Axes.barh.html).
 - [sqlite3 de Python](https://docs.python.org/3.12/library/sqlite3.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [04.01 — Pregunta y elección de gráfico](../../04_visualization_python/01_question_chart/README.md)
+antes de realizar su lab.
+
+[← Módulo 03](../README.md) · [Lab 03.09](../../../labs/03_sql_databases/09_pandas_sql/README.md) · [Siguiente →](../../04_visualization_python/01_question_chart/README.md)

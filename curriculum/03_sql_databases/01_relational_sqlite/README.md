@@ -1,16 +1,56 @@
-# 01 — Modelo relacional y SQLite
+# 03.01 — Modelo relacional y SQLite
 
-## Propósito, prerrequisitos y objetivos
+<a id="01--modelo-relacional-y-sqlite"></a>
+
+[Inicio](../../../README.md) / [Módulo 03](../README.md) / **Lección 03.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reconocer tablas, claves y relaciones en una base preparada |
+| **Necesitas** | Python con sqlite3; fuentes incluidas |
+| **Evidencia** | Nota de unidades y relaciones con exploración comprobada |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/03_sql_databases/01_relational_sqlite/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Entender qué representa una tabla, cómo se identifica una fila y cómo se relacionan
-tablas antes de escribir consultas. Completa el [cierre de pandas](../../02_pandas/10_analysis_plot/README.md)
+tablas antes de escribir consultas.
+
+## Antes de empezar
+
+Completa el [cierre de pandas](../../02_pandas/10_analysis_plot/README.md)
 y su lab; conserva tu entorno de Python. Esta práctica usa **sqlite3 de la biblioteca
 estándar**: no requiere pandas, paquetes nuevos, un servidor ni una aplicación gráfica.
 
-Al terminar podrás distinguir SQL, SQLite y sqlite3; identificar claves primarias
-y foráneas; explicar una relación uno a muchos y explorar una base preparada.
-SELECT y filtros se desarrollarán en 02; construir el esquema y cargar datos,
-en 03; las uniones, en 05. No necesitas memorizar el script de preparación hoy.
+SELECT y filtros se desarrollan en 03.02; crear el esquema y cargar datos,
+en 03.03; las uniones, en 03.05. No necesitas memorizar el preparador para
+explicar el modelo. Los CSV y el esquema están incluidos en esta lección.
+
+## Qué vas a aprender
+
+- Distinguir SQL, SQLite y sqlite3 y explicar el papel de cada uno.
+- Identificar la unidad de fila de clientes, créditos y cortes.
+- Justificar claves primarias, foráneas y una relación uno a muchos.
+- Explorar una base preparada y distinguir NULL de cero.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](relational_sqlite.py) | Preparar y explorar la muestra conservando una base existente | Para el recorrido |
+| [Esquema](schema.sql) | Consultar tablas y restricciones del ejemplo | Consulta guiada |
+| [Clientes](data/clientes.csv) | Leer los 16 clientes ficticios | Fuente incluida |
+| [Créditos](data/creditos.csv) | Relacionar los 24 créditos con clientes | Fuente incluida |
+| [Cortes](data/cortes.csv) | Inspeccionar 48 observaciones crédito/fecha | Fuente incluida |
+
+Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes
+de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos.
+Las bases y entregas se preparan en las rutas indicadas, conservando los
+originales y los destinos existentes. No copies ni publiques bases de práctica
+como parte del material del curso.
 
 ## 1. ¿Por qué pasar de archivos a una base de datos?
 
@@ -290,7 +330,9 @@ parámetros se practicarán con más detalle en la lección 02.
 La salida tiene dos filas: 001/2026-09-30/1100 y 001/2026-10-31/1300. Sin un
 ORDER BY no debes depender del orden de lectura. Todavía no escribimos joins.
 
-## Errores frecuentes, práctica y siguiente paso
+<a id="errores-frecuentes-práctica-y-siguiente-paso"></a>
+
+## Errores frecuentes
 
 | Situación | Qué revisar |
 | --- | --- |
@@ -301,17 +343,42 @@ ORDER BY no debes depender del orden de lectura. Todavía no escribimos joins.
 | Base vacía inesperada | Ruta utilizada y modo de apertura |
 | Conexión que queda abierta | Cierre explícito; with de Connection no sustituye close |
 
-Realiza el [lab 03.01](../../../labs/03_sql_databases/01_relational_sqlite/README.md).
-Puedes avanzar cuando expliques las tres unidades, claves y relaciones, ejecutes
-la base preparada y distingas NULL de cero. No hay checkpoint implementado;
-el proyecto de base crediticia sigue previsto.
+## Práctica
 
-Continúa con la [lección 03.02 — Primeras consultas](../02_first_queries/README.md)
-y después realiza su lab asociado.
+Realiza el [lab 03.01](../../../labs/03_sql_databases/01_relational_sqlite/README.md) para
+explicar el modelo y comprobar las unidades y relaciones de la muestra.
 
-## Referencias oficiales
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Nota o esquema propio de las tres tablas | Unidades y claves de clientes, créditos y cortes | Por qué un crédito puede aparecer en dos fechas sin ser un duplicado |
+| Registro de exploración de la base | Contenido de la muestra preparada y conexiones cerradas | Qué significan NULL, cero y las relaciones declaradas |
+
+Puedes avanzar cuando expliques las tres unidades, claves y relaciones,
+explores la base preparada y distingas NULL de cero.
+
+Quien aprende realiza la práctica en su copia y explica las decisiones.
+Tu compañero señala una fila de cortes y pide identificar su crédito, su cliente y su clave completa.
+Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una
+entrega adicional de proyecto implementada para esta lección.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Usos y límites de SQLite](https://www.sqlite.org/whentouse.html).
 - [Claves foráneas y su activación](https://www.sqlite.org/foreignkeys.html).
 - [Tipos y almacenamiento](https://www.sqlite.org/datatype3.html).
 - [sqlite3 de Python 3.12](https://docs.python.org/3.12/library/sqlite3.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [03.02 — Primeras consultas](../02_first_queries/README.md)
+antes de realizar su lab.
+
+[← Módulo 03](../README.md) · [Lab 03.01](../../../labs/03_sql_databases/01_relational_sqlite/README.md) · [Siguiente →](../02_first_queries/README.md)

@@ -1,22 +1,57 @@
-# 06 — Subconsultas y CTE
+# 03.06 — Subconsultas y CTE
 
-## Propósito, prerrequisitos y objetivos — práctica
+<a id="06--subconsultas-y-cte"></a>
+
+[Inicio](../../../README.md) / [Módulo 03](../README.md) / **Lección 03.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Dividir una pregunta en consultas que puedas comprobar por etapas |
+| **Necesitas** | Python con sqlite3; fuentes incluidas |
+| **Evidencia** | SQL por etapas y comparación de alternativas equivalentes |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/03_sql_databases/06_subqueries_cte/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos--práctica"></a>
+
+## Propósito
 
 Dividir una pregunta SQL en partes que puedas leer, comprobar y explicar.
+
+## Antes de empezar
+
 Completa [03.05 — Relacionar tablas con joins](../05_joins/README.md) y su lab;
 recupera [agregados y denominadores de 03.04](../04_aggregations/README.md).
 Necesitas reconocer SELECT, WHERE, alias, NULL, GROUP BY y claves de unión.
 Usamos sqlite3 estándar y la base ficticia de 03.01; no hay dependencias nuevas.
 
-Al terminar podrás distinguir una subconsulta que devuelve un valor, una lista
-o una tabla; usar EXISTS para preguntar por presencia; reconocer una referencia
-correlacionada; y organizar selección, agrupación e indicadores mediante WITH.
-Compararás alternativas contra los mismos registros, sin modificar las entradas.
+### Cómo organizar la sesión
 
 Esta lección es más extensa porque introduce varias formas de composición.
 Puedes estudiarla en tres sesiones: **A**, secciones 1–5; **B**, secciones 6–8;
 **C**, secciones 9–11 y lab. Las extensiones no bloquean el siguiente módulo.
 CTE recursivas y optimización avanzada quedan fuera del criterio de salida.
+
+## Qué vas a aprender
+
+- Distinguir subconsultas que devuelven un valor, una lista o una tabla.
+- Justificar presencia y correlación con EXISTS y contrastar NOT IN con NULL.
+- Organizar selección, relaciones e indicadores mediante WITH y CTE.
+- Comprobar cada etapa y demostrar equivalencia de valores, claves y universo.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](queries.py) | Comparar subconsultas y CTE con los mismos registros y referencias | Para el recorrido |
+| [Preparador de la muestra](../01_relational_sqlite/relational_sqlite.py) | Preparar o comprobar la base si hace falta | Preparación |
+| [Fuentes CSV](../01_relational_sqlite/data/) | Consultar clientes, créditos y cortes originales | Consulta compartida |
+
+Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes
+de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos.
+Las bases y entregas se preparan en las rutas indicadas, conservando los
+originales y los destinos existentes. No copies ni publiques bases de práctica
+como parte del material del curso.
 
 ## 1. Una pregunta puede necesitar otra pregunta
 
@@ -480,7 +515,9 @@ de una base y una regla repetida. No son necesarias para los ejemplos actuales.
 Se profundizarán con una pregunta que justifique la repetición y su criterio
 de terminación; escribir WITH no implica usar recursión.
 
-## 11. Errores habituales, lab y criterio de salida
+<a id="11-errores-habituales-lab-y-criterio-de-salida"></a>
+
+## 11. Errores habituales
 
 | Situación | Qué revisar |
 | --- | --- |
@@ -492,14 +529,34 @@ de terminación; escribir WITH no implica usar recursión.
 | El indicador cambia al reorganizar SQL | Compara filtros, claves, multiplicidad y denominadores |
 | CTE parece correcta pero saldo se duplica | Inspecciona el detalle antes de resumir |
 
-Realiza el [lab 03.06](../../../labs/03_sql_databases/06_subqueries_cte/README.md).
+## Práctica
+
+Realiza el [lab 03.06](../../../labs/03_sql_databases/06_subqueries_cte/README.md) para
+componer consultas por etapas y contrastar sus resultados.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| SQL de alternativas y parámetros | Claves, valores y resultados intermedios | Qué forma devuelve la subconsulta y cómo se relaciona con la consulta exterior |
+| Nota de comparación y casos con NULL | Equivalencia sin ocultar multiplicidad ni desconocidos | Por qué reescribir SQL no demuestra por sí solo equivalencia ni rendimiento |
+
 Puedes continuar cuando identifiques la forma de cada subconsulta, justifiques
 presencia y correlación, compruebes cada etapa y demuestres equivalencia sin
-ocultar duplicados ni NULL. El proyecto y sus checkpoints siguen pendientes.
-Después consulta el [03.07 — Ventanas para comparar registros](../07_windows/README.md). Su idea central será comparar
-filas conservando el detalle, en contraste con agrupar.
+ocultar duplicados ni NULL.
 
-## Referencias primarias
+Quien aprende realiza la práctica en su copia y explica las decisiones.
+Tu compañero elige una CTE y pide explicar su entrada, su resultado y la comprobación que la respalda.
+Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una
+entrega adicional de proyecto implementada para esta lección.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Ejemplos propios del proyecto, contrastados con:
 
@@ -508,3 +565,10 @@ Ejemplos propios del proyecto, contrastados con:
 - [SQLite SELECT: entradas derivadas, agregación y joins](https://www.sqlite.org/lang_select.html).
 - [SQLite: comportamiento de AVG, SUM y COUNT](https://www.sqlite.org/lang_aggfunc.html).
 - [sqlite3 de Python 3.12: parámetros nombrados y cierre](https://docs.python.org/3.12/library/sqlite3.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [03.07 — Ventanas para comparar registros](../07_windows/README.md)
+antes de realizar su lab.
+
+[← Módulo 03](../README.md) · [Lab 03.06](../../../labs/03_sql_databases/06_subqueries_cte/README.md) · [Siguiente →](../07_windows/README.md)

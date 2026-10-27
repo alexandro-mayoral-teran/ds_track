@@ -255,7 +255,7 @@ con dos saldos conocidos. Esta extensión no bloquea el siguiente tema.
 
 Conserva SQL, parámetros, filas ordenadas y comprobaciones de cada consulta.
 Tu nota debe declarar unidad, partición, orden, marco cuando corresponda y
-cobertura de comparación. Registra evidencia y dudas en PROGRESS.md: ejecutar
+cobertura de comparación. Registra evidencia y dudas en tu bitácora personal junto a la práctica: ejecutar
 el ejemplo no acredita por sí solo el aprendizaje.
 
 Explica: ¿por qué dos consultas con 24 filas pueden recuperar previos diferentes?
