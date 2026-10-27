@@ -29,7 +29,15 @@ labs/NN_modulo/
 No es necesario crear todas las carpetas desde el primer momento. Deben aparecer
 cuando contengan material útil.
 
-## Contenido mínimo del README
+## Estructura de una lección
+
+Usa la [plantilla de lección](../templates/lesson/README.md) y la
+[guía de sus elementos comunes](lesson-page-guide.md). La guía documenta una
+evaluación de muestra y propone cabecera, propósito, preparación, objetivos,
+desarrollo adaptable, práctica, evidencia/comprobación, referencias y continuidad.
+Las lecciones existentes se adaptarán gradualmente; no están todas migradas.
+
+### Contenido mínimo del README de lección
 
 - Propósito.
 - Prerrequisitos.

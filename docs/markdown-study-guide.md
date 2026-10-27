@@ -42,6 +42,11 @@ también fuera del desplegable. Los detalles de esta regla están en la guía de
 
 ## Patrón de lección
 
+La [guía de lección](lesson-page-guide.md) desarrolla este patrón con una
+evaluación de muestra, elementos comunes y variantes por actividad. La
+[plantilla de lección](../templates/lesson/README.md) permite reutilizarlo.
+Su existencia no significa que todas las lecciones ya estén adaptadas.
+
 1. Título y ubicación con módulo/número de lección.
 2. Ficha breve: meta, preparación y evidencia esperada.
 3. Accesos a conceptos, práctica y comprobación; índice si la página lo necesita.

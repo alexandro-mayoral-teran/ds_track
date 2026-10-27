@@ -48,6 +48,15 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
+**Desarrollo — 2026-10-27, propuesta de estructura de lección:** revisión
+estructural de nueve páginas (cuatro iniciales y una de Python, pandas, SQL, R
+y Quarto), con consulta de las dos partes de 00.05. Evaluación, elementos
+comunes y variantes en [la guía de lección](docs/lesson-page-guide.md), con
+[plantilla reutilizable](templates/lesson/README.md). Apertura y cierre estables;
+desarrollo adaptable al tema. Se identificaron continuidades antiguas y ajustes
+de evidencia personal/recorrido R, sin migrar ni ejecutar las lecciones.
+Siguiente prueba propuesta: adaptar 00.02 y revisarla antes de extender el patrón.
+
 
 **Desarrollo — 2026-10-27, alcance común de módulos:** desplegable «Ver el alcance
 de las secciones» unificado en los índices 00–14, cerrado por defecto después
