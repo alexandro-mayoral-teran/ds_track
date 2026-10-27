@@ -1,7 +1,49 @@
-# Recorrido — Conda
+# 00.05 — Recorrido con Conda
+
+<a id="recorrido--conda"></a>
+
+[Inicio](../../../README.md) / [Módulo 00](../README.md) / [00.05](README.md) / **Conda**
+
+> **Camino alternativo:** completa este recorrido solo si elegiste Conda.
+> Conserva el mismo entorno en A y B; no necesitas completar los otros caminos.
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Preparar, utilizar y registrar el entorno con Conda |
+| **Necesitas** | Anaconda y el shell del recorrido; preparación indicada más abajo |
+| **Evidencia** | Ruta de Python, tabla comprobada y configuración revisada |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+## Propósito
+
+Aplicar las dos sesiones de 00.05 con Conda, comprobando intérprete,
+importación y registro de dependencias.
+
+## Antes de empezar
 
 Lee [05A](environment.md) antes de la parte A y [05B](dependencies.md) antes de la parte B.
 Sigue solo el bloque de tu shell.
+
+## Qué vas a aprender
+
+- Preparar y reconocer el intérprete de este camino en la parte A.
+- Instalar y comprobar la biblioteca en la parte B.
+- Registrar y explicar los archivos que permiten reconstruir el entorno.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Teoría de entornos](environment.md) | Comprender qué preparas antes de la parte A | Sesión A |
+| [Teoría de dependencias](dependencies.md) | Comprender instalación y registro antes de la parte B | Sesión B |
+| [Primer script](../04_first_script/first_summary.py) | Comprobar ejecución sin paquetes externos | Sesión A |
+| [Demostración con biblioteca](library_demo.py) | Contrastar la importación y la tabla de ventas | Sesión B |
+
+Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
+trabaja las modificaciones en tu copia personal.
+
+[Parte A: teoría](environment.md) · [Parte B: teoría](dependencies.md) · [Lab 00.05](../../../labs/00_getting_started/05_environment/README.md)
 
 ## Parte A — Preparar y usar el entorno
 
@@ -146,5 +188,33 @@ permitida por los requisitos; conda remove tabulate propone retirarlo y puede
 afectar dependencias. No ejecutes estos cambios antes de terminar el lab.
 El export desde historial no es un lockfile exacto y no registra paquetes de pip.
 
-Continúa con el [lab 00.05](../../../labs/00_getting_started/05_environment/README.md).
+## Práctica
+
+Realiza el [lab 00.05](../../../labs/00_getting_started/05_environment/README.md) para completar las sesiones A y B con Conda.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Nota y configuración del camino elegido | Ruta de Python, versión importada y tabla de ventas | Qué archivos conservar y cómo reconstruir sin copiar el entorno |
+
+Completa la sesión A antes de B. Al cerrar ambas, contrasta la evidencia con
+el [criterio común de 00.05](README.md#evidencia-y-criterio-de-salida).
+
+Quien aprende realiza la práctica y explica el resultado. Tu compañero pide identificar qué entorno ejecutó cada comprobación.
+Guarda evidencia y dudas en tu copia de la
+[bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
+o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
+Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
+
+## Referencias
+
 Fuente: [Conda](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [00.06 — Tu primer notebook](../06_first_notebook/README.md).
+
+[← Módulo 00](../README.md) · [Lab 00.05](../../../labs/00_getting_started/05_environment/README.md) · [Siguiente →](../06_first_notebook/README.md)
+
+[Volver a la entrada de 00.05](README.md) · [Revisar 05A](environment.md) · [Revisar 05B](dependencies.md).

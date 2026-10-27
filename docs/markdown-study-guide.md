@@ -11,8 +11,11 @@ La muestra actual abarca [portada](../README.md), [índice del curriculum](../cu
 [lección 00.01](../curriculum/00_getting_started/01_github_profile/README.md) y
 [lab 00.01](../labs/00_getting_started/01_github_profile/README.md).
 Los índices de los módulos 00–14 ya comparten la estructura de módulo. La
-plantilla de lección está aplicada en 00.01 y en las seis lecciones del
-[módulo 01 — Python fundamental](../curriculum/01_python_foundations/README.md).
+plantilla de lección está aplicada en las seis lecciones de
+[00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md) y en las seis de
+[01 — Python fundamental](../curriculum/01_python_foundations/README.md).
+00.05 conserva su entrada, dos lecturas y tres recorridos alternativos con
+orientación, apoyos y cierre; se elige un solo camino.
 Los labs mantienen solo la muestra visual 00.01 adaptada; los labs de 01 se
 conservaron y se revisaron sus enlaces. El resto se revisa gradualmente.
 Los módulos 12–14 conservan su planificación.

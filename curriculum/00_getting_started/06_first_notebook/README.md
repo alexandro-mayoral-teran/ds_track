@@ -1,15 +1,49 @@
-# 06 — Tu primer notebook
+# 00.06 — Tu primer notebook
 
-## Propósito y objetivos
+<a id="06--tu-primer-notebook"></a>
+
+[Inicio](../../../README.md) / [Módulo 00](../README.md) / **Lección 00.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Relacionar explicación, código y resultados con un kernel comprobado |
+| **Necesitas** | Entorno de 00.05, editor de notebooks y soporte de kernel del recorrido |
+| **Evidencia** | Notebook modificado, reiniciado y ejecutado completo; nota de comprobación |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/06_first_notebook/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-objetivos"></a>
+
+## Propósito
 
 Combinar explicación, código y resultados en un documento que puedas ejecutar
-y comprender. Aprenderás a elegir el kernel, trabajar con celdas y comprobar
-que el notebook funciona desde una sesión limpia.
+y comprender, con el kernel correcto y resultados reconstruidos desde cero.
 
-Completa [05 — Entornos y dependencias](../05_environment/README.md) y conserva
+## Antes de empezar
+
+Completa [00.05 — Entornos y dependencias](../05_environment/README.md) y conserva
 el entorno elegido. Esta lección usa VS Code con las extensiones **Python** y
-**Jupyter**, publicadas por Microsoft. Consulta la [guía del editor](../../../docs/vscode-guide.md).
-No necesitas pandas ni conocimientos avanzados de Python.
+**Jupyter**, publicadas por Microsoft. Consulta la
+[guía del editor](../../../docs/vscode-guide.md). No necesitas pandas ni
+conocimientos avanzados de Python. Prepara solo el soporte de kernel que
+corresponde a tu entorno siguiendo el apartado 2; no repitas los tres caminos.
+
+## Qué vas a aprender
+
+- Distinguir celdas de texto y código y explicar el papel del kernel.
+- Seleccionar el entorno y comprobarlo desde el notebook.
+- Agregar una predicción y un cálculo con entradas explícitas.
+- Reiniciar y ejecutar todo para contrastar los resultados sin estado previo.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Notebook de ejemplo](first_notebook.ipynb) | Abrir celdas de texto y código y comprobar el intérprete | Para el recorrido |
+| [Guía de VS Code](../../../docs/vscode-guide.md) | Consultar paneles y atajos del editor utilizado | Apoyo opcional |
+
+Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
+trabaja las modificaciones en tu copia personal.
 
 ## 1. Qué es un notebook
 
@@ -174,22 +208,42 @@ dependencias desde el recorrido elegido para conservar su configuración.
 | Falta una biblioteca ya instalada | sys.executable y el entorno del kernel |
 | Funciona manualmente pero no con Run All | Dependencias entre celdas o estado de ejecuciones anteriores |
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 00.06](../../../labs/00_getting_started/06_first_notebook/README.md).
+## Práctica
+
+Realiza el [lab 00.06](../../../labs/00_getting_started/06_first_notebook/README.md) para crear celdas y reconstruir sus resultados desde una sesión limpia.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu notebook con una predicción y el cálculo nuevo | Kernel correcto y resultados tras reiniciar y ejecutar todo | Por qué el estado en memoria puede ocultar celdas pendientes |
+| Nota con ruta del intérprete y resultados | Coincidencia con el entorno elegido en 00.05 | Diferencia entre seleccionar intérprete para scripts y kernel del notebook |
+
 Puedes avanzar cuando selecciones el kernel correcto, modifiques una celda,
 expliques el estado en memoria y reconstruyas los resultados con reinicio y Run All.
-Todavía no hay proyecto de datos asociado; la evidencia es el notebook revisado.
+Revisa también las evidencias de scripts, entorno y documentación del módulo.
 
-## Siguiente paso
+Quien aprende realiza la práctica y explica el resultado. Tu compañero pide reiniciar y ejecutar todo y contrastar la predicción con la salida obtenida.
+Guarda evidencia y dudas en tu copia de la
+[bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
+o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
+Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
 
-Consulta [01 — Python fundamental](../../01_python_foundations/README.md), el
-siguiente módulo del roadmap; sus lecciones detalladas están por desarrollar.
-Completar este lab no acredita por sí solo todo el nivel 0: revisa sus evidencias
-de scripts, entorno y documentación.
+<a id="referencias-oficiales"></a>
 
-## Referencias oficiales
+## Referencias
 
 - [Notebooks en VS Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks).
 - [Selección de kernels](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management).
 - [uv con Jupyter](https://docs.astral.sh/uv/guides/integration/jupyter/).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [01 — Python fundamental](../../01_python_foundations/README.md).
+
+[← Módulo 00](../README.md) · [Lab 00.06](../../../labs/00_getting_started/06_first_notebook/README.md) · [Siguiente →](../../01_python_foundations/README.md)
+
+Python fundamental ya dispone de sus seis lecciones y labs; empieza por 01.01
+desde su índice. El material disponible no acredita prácticas completadas.

@@ -1,8 +1,46 @@
-# 05A — Preparar y usar un entorno
+# 00.05A — Preparar y usar un entorno
 
-Lee esta parte antes de instalar bibliotecas. La meta es elegir un camino,
-crear su entorno, comprobar el intérprete y ejecutar el script de la lección 04.
-Necesitas Python 3.11 o posterior, o una herramienta que lo prepare.
+<a id="05a--preparar-y-usar-un-entorno"></a>
+
+[Inicio](../../../README.md) / [Módulo 00](../README.md) / **Lección 00.05A**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Preparar un entorno y comprobar su intérprete |
+| **Necesitas** | Camino elegido en 00.05 y shell correspondiente |
+| **Evidencia** | Comprobación y nota personal de la sesión A |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/05_environment/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+[← Entrada de 00.05](README.md) · [Sesión A](environment.md) · [Sesión B](dependencies.md)
+
+## Propósito
+
+Elegir un camino, preparar su entorno y comprobar qué intérprete ejecuta el primer script antes de instalar bibliotecas.
+
+## Antes de empezar
+
+Lee la [entrada de 00.05](README.md) y retoma el [primer script](../04_first_script/README.md).
+Necesitas Python 3.11 o posterior, o una herramienta que lo prepare. Sigue solo
+la parte A de un recorrido. La instalación de bibliotecas corresponde a 05B.
+
+## Qué vas a aprender
+
+- Distinguir intérprete, biblioteca, dependencia y entorno.
+- Elegir Conda, venv + pip o uv según tu preparación.
+- Comprobar la ruta de Python y ejecutar el primer script en ese entorno.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Conda](conda.md) | Preparar el entorno si eliges Anaconda | Elegir un camino |
+| [venv + pip](venv-pip.md) | Preparar un entorno con Python disponible | Elegir un camino |
+| [uv](uv.md) | Preparar el mini proyecto de práctica | Elegir un camino |
+| [Primer script](../04_first_script/first_summary.py) | Ejecutar un cálculo sin bibliotecas externas | Sesión A |
+
+Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
+trabaja las modificaciones en tu copia personal.
 
 ## 1. Intérprete, bibliotecas y dependencias
 
@@ -332,14 +370,30 @@ seleccionar un intérprete en VS Code no cambia ese proyecto.
 En la próxima lección elegiremos además el kernel de un notebook. Consulta la
 [guía de VS Code](../../../docs/vscode-guide.md) para sus paneles y atajos.
 
-## Práctica y siguiente paso
+<a id="práctica-y-siguiente-paso"></a>
 
-Completa únicamente la **parte A** del recorrido elegido y la **sesión A** del
-[lab 00.05](../../../labs/00_getting_started/05_environment/README.md).
-Puedes continuar cuando identifiques la ruta del intérprete y ejecutes el primer
-script en ese entorno. Después lee [05B — Instalar y conservar dependencias](dependencies.md).
+## Práctica
 
-## Referencias oficiales
+Realiza el [lab 00.05](../../../labs/00_getting_started/05_environment/README.md) para realizar la sesión A y la parte A del recorrido elegido.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Nota con gestor y ruta del intérprete | El primer script corre con el Python elegido | Qué separa el entorno y cómo identificaste su ejecutable |
+
+Puedes continuar a 05B cuando identifiques la ruta del intérprete y ejecutes
+el primer script en ese entorno. Conserva el mismo camino para la segunda sesión.
+
+Quien aprende realiza la práctica y explica el resultado. Tu compañero contrasta la comprobación con el camino que elegiste.
+Guarda evidencia y dudas en tu copia de la
+[bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
+o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
+Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Entornos de Python](https://docs.python.org/3/library/venv.html).
 - [pip y entornos](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/).
@@ -348,3 +402,11 @@ script en ese entorno. Después lee [05B — Instalar y conservar dependencias](
 - [Sincronización y lockfiles](https://docs.astral.sh/uv/concepts/projects/sync/).
 - [Entornos Python en VS Code](https://code.visualstudio.com/docs/python/environments).
 - [De pip a proyectos uv](https://docs.astral.sh/uv/guides/migration/pip-to-project/).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [00.05B — Instalar y conservar dependencias](dependencies.md).
+
+[← Módulo 00](../README.md) · [Lab 00.05](../../../labs/00_getting_started/05_environment/README.md) · [Siguiente →](dependencies.md)
+
+[Volver a la entrada de 00.05](README.md).

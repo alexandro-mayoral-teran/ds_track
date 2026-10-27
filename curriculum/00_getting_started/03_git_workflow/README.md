@@ -1,4 +1,16 @@
-# 03 — Git: historial y actualización del perfil
+# 00.03 — Git: historial y actualización del perfil
+
+<a id="03--git-historial-y-actualización-del-perfil"></a>
+
+[Inicio](../../../README.md) / [Módulo 00](../README.md) / **Lección 00.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Conservar una actualización y distinguir archivo guardado, commit y publicación |
+| **Necesitas** | Git y acceso al repositorio de tu perfil; práctica opcional desde ZIP |
+| **Evidencia** | Commit del perfil, diff revisado y nota de comprobación |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/03_git_workflow/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 ## Propósito
 
@@ -6,19 +18,33 @@ Conservar y publicar una actualización del README comprendiendo cada paso.
 Esta base servirá después para guardar tus scripts, consultas y documentación
 junto con una explicación de sus cambios.
 
-## Prerrequisitos
+<a id="prerrequisitos"></a>
+
+## Antes de empezar
 
 Completa [Markdown y perfil](../01_github_profile/README.md) y
 [terminal y rutas](../02_terminal_paths/README.md). Necesitas Git instalado y
 acceso al repositorio de tu perfil. Esta práctica es opcional si estudias desde ZIP.
 No necesitas Python, pip ni uv para realizarla.
 
-## Objetivos
+<a id="objetivos"></a>
+
+## Qué vas a aprender
 
 - Distinguir guardar un archivo, preparar cambios, hacer commit y publicar.
 - Clonar el perfil y registrar una modificación de su README.
 - Revisar los cambios antes de confirmarlos y comprobar el resultado en GitHub.
 - Retomar una sesión reconociendo el estado del repositorio.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Plantilla del perfil](../../../templates/github-profile/PROFILE.md) | Consultar la presentación que adaptaste en 00.01 | Consulta opcional |
+| [Lección de Markdown](../01_github_profile/README.md) | Retomar cómo editar y previsualizar el README | Apoyo previo |
+
+Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
+trabaja las modificaciones en tu copia personal.
 
 ## 1. Entender el recorrido de un cambio
 
@@ -197,20 +223,40 @@ Si la actualización no puede avanzar, revisa el mensaje con quien te acompaña.
 No uses `--force` para resolverlo. Ramas de trabajo, conflictos y pull requests
 se estudiarán después; esta lección se centra en una actualización sencilla.
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 00.03](../../../labs/00_getting_started/03_git_workflow/README.md).
-Puedes avanzar cuando registres y publiques una modificación, expliques guardar
-frente a commit y push, y compruebes la selección preparada y el último commit.
-La evidencia es el commit del perfil; todavía no hay proyecto de datos asociado.
+## Práctica
 
-## Siguiente lección
+Realiza el [lab 00.03](../../../labs/00_getting_started/03_git_workflow/README.md) para editar el README de tu perfil y revisar su historial.
 
-[04 — Primer script Python](../04_first_script/README.md). Usarás la terminal para ejecutar un
-programa y Git para conservar sus cambios conforme avances.
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| README actualizado y commit del perfil | Diff preparado, último commit y versión publicada | Por qué guardar, preparar, registrar y publicar son pasos distintos |
+| Nota para retomar la sesión | Ubicación, estado del repositorio y remoto correcto | Cómo reconocer lo pendiente antes de actualizar |
+
+Si realizas este recorrido, puedes cerrarlo cuando registres y publiques una
+modificación, expliques guardar frente a commit y push, y compruebes la selección
+preparada y el último commit. Si estudias desde ZIP y no eliges esta práctica,
+regístrala como pendiente y continúa; no declares un commit que no realizaste.
+
+Quien aprende realiza la práctica y explica el resultado. Tu compañero pide identificar en qué copia está un cambio antes y después de publicarlo.
+Guarda evidencia y dudas en tu copia de la
+[bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
+o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
+Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
 
 ## Referencias
 
 - [Fundamentos de Git](https://git-scm.com/book/es/v2/Fundamentos-de-Git-Obteniendo-un-repositorio-Git).
 - [Configuración inicial de Git](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configuraci%C3%B3n-inicial-de-Git).
 - [Autenticación con GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github).
+
+<a id="siguiente-lección"></a>
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [00.04 — Tu primer script Python](../04_first_script/README.md).
+
+[← Módulo 00](../README.md) · [Lab 00.03](../../../labs/00_getting_started/03_git_workflow/README.md) · [Siguiente →](../04_first_script/README.md)

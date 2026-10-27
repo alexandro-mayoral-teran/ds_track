@@ -38,8 +38,9 @@ conviene conservarlos, sin reemplazarlos por resúmenes decorativos.
 
 Los textos de continuidad desactualizados y los ajustes de R/evidencia personal
 quedan identificados para la adaptación. La primera prueba posterior adapta
-00.01. Después se adaptaron las seis lecciones de 01, incluida la continuidad
-desactualizada de 01.06. Los hallazgos de los otros módulos siguen pendientes.
+00.01. Después se adaptaron las seis lecciones de 01 y las restantes de 00,
+incluidas las continuidades desactualizadas de 01.06 y 00.06. Los hallazgos de
+los otros módulos siguen pendientes.
 Antes de actualizar un destino, comprobar su estado real.
 
 ## Estructura propuesta
@@ -186,6 +187,14 @@ práctica, evidencia/criterio, referencias y navegación final. Sus seis scripts
 y dos CSV se enlazan sin duplicarlos; ejemplos y comandos se conservaron.
 Los labs mantienen sus consignas y enlaces de continuidad, sin migración visual.
 
-00.02 sigue como caso propuesto para contrastar varios recorridos. La migración
-del resto y una sesión real de estudio siguen pendientes. Los hallazgos de la
-tabla inicial describen la revisión previa a estas adaptaciones.
+Después se completó la adaptación de [00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md):
+00.01 se conservó, y 00.02–00.06 recibieron el patrón. 00.05 mantiene una entrada
+común, lecturas A/B y recorridos Conda, venv + pip o uv; sus páginas complementarias
+incluyen ubicación, preparación, apoyos, evidencia y continuidad sin repetir toda
+la teoría. Solo se completa un camino. 00.06 enlaza Python fundamental disponible.
+
+Ejemplos, comandos, archivos y anclas previas se conservaron. Las páginas de 00
+también se comprueban en el portal porque están integradas en su catálogo. Los
+labs no se migraron visualmente, salvo la muestra 00.01 ya existente.
+La migración de los otros módulos y una sesión real de estudio siguen pendientes.
+Los hallazgos de la tabla inicial describen la revisión previa a estas adaptaciones.

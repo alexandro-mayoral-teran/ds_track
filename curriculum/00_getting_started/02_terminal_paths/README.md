@@ -1,4 +1,16 @@
-# 02 — Terminal, rutas y verificación del entorno
+# 00.02 — Terminal, rutas y verificación del entorno
+
+<a id="02--terminal-rutas-y-verificación-del-entorno"></a>
+
+[Inicio](../../../README.md) / [Módulo 00](../README.md) / **Lección 00.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Ubicarte en el proyecto, interpretar rutas y comprobar herramientas |
+| **Necesitas** | Copia de DS Track y un shell: PowerShell o Bash/Zsh |
+| **Evidencia** | Nota con ubicación, rutas y comprobaciones del shell elegido |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/02_terminal_paths/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 ## Propósito
 
@@ -7,19 +19,36 @@ disponibles. Usaremos PowerShell en Windows y mostraremos el equivalente en un
 shell Unix, como Bash o Zsh. El objetivo no es memorizar dos listas de comandos,
 sino reconocer las operaciones comunes.
 
-## Objetivos
+## Antes de empezar
 
-Al terminar podrás:
+Retoma [00.01 — Markdown y perfil](../01_github_profile/README.md). Necesitas
+una copia descargada o clonada de DS Track y acceso a una terminal. Elige
+PowerShell o Bash/Zsh; no necesitas completar los dos recorridos.
 
-- identificar el directorio actual;
-- distinguir una ruta absoluta de una relativa;
-- listar y localizar archivos sin depender del explorador gráfico;
-- realizar esas operaciones en PowerShell y en un shell Unix;
-- distinguir los comandos del shell de los comandos de programas como Git;
-- comprobar las versiones de Python, `uv` y Git;
-- ejecutar el verificador incluido en el proyecto.
-- explicar cómo la terminal ayuda a repetir y verificar tareas con datos;
-- localizar un CSV e inspeccionar sus primeras líneas.
+Comienza identificando la carpeta raíz del proyecto. Las comprobaciones de
+versiones permiten detectar herramientas disponibles o faltantes: registra
+lo que falta para preparar el entorno en 00.05. El verificador requiere Python;
+si aún no está disponible, conserva esa comprobación pendiente.
+
+<a id="objetivos"></a>
+
+## Qué vas a aprender
+
+- Identificar el directorio actual y distinguir rutas absolutas y relativas.
+- Localizar archivos e inspeccionar un CSV con tu shell, reconociendo equivalencias con el otro recorrido.
+- Distinguir shell de programa y consultar las versiones de las herramientas disponibles.
+- Ejecutar el verificador, interpretar sus resultados y explicar qué ayuda a repetir y comprobar la terminal.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Tabla de equivalencias](shell-cheatsheet.md) | Consultar operaciones al cambiar de shell | Consulta opcional |
+| [CSV de ventas](ventas_demo.csv) | Localizar e inspeccionar tres ventas ficticias | Entrada del recorrido |
+| [Verificador](check_environment.py) | Consultar qué herramientas y rutas detecta el programa | Requiere Python |
+
+Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
+trabaja las modificaciones en tu copia personal.
 
 ## Por qué aprender a trabajar en terminal
 
@@ -543,26 +572,41 @@ Vuelve a `Get-Location` o `pwd`, comprueba la ruta y lee el mensaje completo
 antes de cambiar comandos al azar. Las herramientas pueden mostrar resultados
 correctos aunque tu versión difiera de la del ejemplo.
 
+<a id="aplicación"></a>
+
+<a id="criterio-de-salida"></a>
+
 ## Práctica
 
-Continúa con el
-[lab de terminal y rutas](../../../labs/00_getting_started/02_terminal_paths/README.md).
+Realiza el [lab 00.02](../../../labs/00_getting_started/02_terminal_paths/README.md) para practicar ubicación, rutas e inspección con tu shell.
 
-## Aplicación
+## Evidencia y criterio de salida
 
-Todavía no hay un proyecto asociado. Esta lección prepara el entorno desde el
-que se ejecutarán todos los proyectos posteriores.
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu nota con directorio y rutas | Los archivos se localizan desde la carpeta indicada | Desde dónde se interpreta una ruta relativa |
+| Salida del verificador o comprobaciones pendientes | Herramientas detectadas y faltantes, sin confundir ambos estados | Qué debes preparar y cómo distinguir shell, terminal y programa |
 
-## Criterio de salida
+Puedes cerrar esta práctica cuando localices los archivos del proyecto,
+expliques rutas relativas y absolutas, reconozcas equivalencias entre shells y
+ejecutes el mismo verificador sin cambiar su código. Si Python aún no está
+disponible, registra esa comprobación pendiente y retómala al preparar el entorno.
 
-Puedes explicar desde qué carpeta se interpreta una ruta relativa, localizar
-los archivos principales del proyecto, reconocer las equivalencias básicas
-entre PowerShell y Unix y ejecutar el mismo verificador sin cambiar su código.
+Quien aprende realiza la práctica y explica el resultado. Tu compañero propone otra carpeta y te pide explicar cómo cambiaría una ruta relativa.
+Guarda evidencia y dudas en tu copia de la
+[bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
+o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
+Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
 
-## Referencia rápida
+<a id="referencia-rápida"></a>
 
-Después de completar el lab, continúa con
-[03 — Git: historial y actualización del perfil](../03_git_workflow/README.md).
+## Referencias
 
-Consulta la [tabla de equivalencias](shell-cheatsheet.md) cuando necesites cambiar
-de un shell a otro. No es necesario memorizarla completa.
+Consulta la [tabla de equivalencias](shell-cheatsheet.md) para contrastar
+PowerShell y Bash/Zsh; no necesitas memorizarla completa.
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [00.03 — Git: historial y actualización del perfil](../03_git_workflow/README.md).
+
+[← Módulo 00](../README.md) · [Lab 00.02](../../../labs/00_getting_started/02_terminal_paths/README.md) · [Siguiente →](../03_git_workflow/README.md)

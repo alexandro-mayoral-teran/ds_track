@@ -1,13 +1,27 @@
-# 04 — Tu primer script Python
+# 00.04 — Tu primer script Python
+
+<a id="04--tu-primer-script-python"></a>
+
+[Inicio](../../../README.md) / [Módulo 00](../README.md) / **Lección 00.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Ejecutar, modificar y comprobar un cálculo pequeño |
+| **Necesitas** | Editor, terminal y Python 3; sin paquetes externos |
+| **Evidencia** | Script modificado y nota con predicción, salida y error corregido |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/04_first_script/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 ## Propósito
 
 Ejecutar un programa pequeño, comprender qué hace y modificarlo para obtener
 otro resultado. Conectaremos la terminal con un cálculo de datos ficticios.
 
-## Prerrequisitos
+<a id="prerrequisitos"></a>
 
-- Haber practicado rutas y comandos en la lección 02.
+## Antes de empezar
+
+- Haber practicado rutas y comandos en [00.02 — Terminal y rutas](../02_terminal_paths/README.md).
 - Tener un editor de texto y Python 3 instalado.
 - Git es opcional para conservar la modificación, como aprendiste en la lección 03.
 
@@ -17,15 +31,27 @@ hasta preparar Python. Consulta la [descarga oficial](https://www.python.org/dow
 con quien te acompaña. La instalación y los entornos se desarrollarán en la
 lección 05. Este ejemplo no necesita pip, uv ni paquetes adicionales.
 
-## Objetivos
-
 Si usarás VS Code, consulta la [guía del editor](../../../docs/vscode-guide.md)
 para abrir el proyecto, guardar archivos y utilizar la terminal integrada.
+
+<a id="objetivos"></a>
+
+## Qué vas a aprender
 
 - Distinguir un archivo `.py`, el editor y el intérprete de Python.
 - Ejecutar un script desde la raíz del proyecto.
 - Reconocer datos de entrada, un cálculo y la salida.
 - Cambiar un valor, predecir el resultado y comprobarlo.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](first_summary.py) | Leer entradas, cálculo e impresión del importe | Para el ejemplo |
+| [Guía de VS Code](../../../docs/vscode-guide.md) | Abrir el proyecto, guardar y utilizar la terminal integrada | Apoyo opcional |
+
+Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
+trabaja las modificaciones en tu copia personal.
 
 ## 1. Qué es Python y qué es un script
 
@@ -152,19 +178,38 @@ El verificador de la lección 02 es otro script, pero incorpora funciones,
 importaciones y búsqueda de rutas. Por ahora observa que también termina
 mostrando información; estudiaremos esos conceptos en Python fundamental.
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 00.04 — Primer script](../../../labs/00_getting_started/04_first_script/README.md).
+## Práctica
+
+Realiza el [lab 00.04](../../../labs/00_getting_started/04_first_script/README.md) para cambiar entradas, anticipar importes y reconocer un error.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu copia del script modificado | Resultado calculado manualmente y ejecución de la copia guardada | Qué son entrada, transformación y salida |
+| Una nota sobre el error provocado y corregido | La nueva ejecución recupera el resultado esperado | Diferencia entre editor, archivo, terminal e intérprete |
+
 Puedes avanzar cuando ejecutes el script, modifiques sus entradas, compruebes
 el cálculo y expliques entrada, transformación y salida con tus palabras.
-La evidencia es tu script modificado; todavía no hay proyecto asociado.
+Leer la explicación sin ejecutar no sustituye esa comprobación.
 
-## Siguiente lección
-
-[05 — Entorno y dependencias](../05_environment/README.md): instalación de Python, entornos,
-pip y uv. Consulta el [índice del nivel 0](../README.md).
+Quien aprende realiza la práctica y explica el resultado. Tu compañero cambia una cantidad y te pide anticipar el importe y comprobar qué archivo ejecutaste.
+Guarda evidencia y dudas en tu copia de la
+[bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
+o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
+Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
 
 ## Referencias
 
 - [Introducción a Python](https://docs.python.org/es/3/tutorial/introduction.html).
 - [Uso del intérprete](https://docs.python.org/es/3/tutorial/interpreter.html).
+
+<a id="siguiente-lección"></a>
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [00.05 — Entornos y dependencias](../05_environment/README.md).
+
+[← Módulo 00](../README.md) · [Lab 00.04](../../../labs/00_getting_started/04_first_script/README.md) · [Siguiente →](../05_environment/README.md)

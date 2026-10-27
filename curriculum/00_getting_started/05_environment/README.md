@@ -1,8 +1,52 @@
-# 05 — Entornos y dependencias
+# 00.05 — Entornos y dependencias
 
-Estudia esta lección en dos sesiones. Primero preparas un entorno y compruebas
-su Python; después instalas una biblioteca y conservas su configuración.
-Completa **un solo camino** durante ambas sesiones.
+<a id="05--entornos-y-dependencias"></a>
+
+[Inicio](../../../README.md) / [Módulo 00](../README.md) / **Lección 00.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Elegir un entorno, comprobar su Python y conservar sus dependencias |
+| **Necesitas** | Un camino: Conda, venv + pip o uv; preparación según tu instalación |
+| **Evidencia** | Ruta del intérprete, demostración y configuración revisada del camino elegido |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/05_environment/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+## Propósito
+
+Separar las dependencias de tu práctica de otros proyectos y conservar una
+configuración que permita reconstruirlas. Estudia esta lección en dos sesiones:
+primero entorno e intérprete; después instalación y registro de una biblioteca.
+
+## Antes de empezar
+
+Retoma [00.02 — Terminal y rutas](../02_terminal_paths/README.md) y
+[00.04 — Primer script](../04_first_script/README.md). Necesitas el editor y el
+shell de tu práctica. Los recorridos explican qué preparar si falta Python o
+el gestor; no instales las tres alternativas. Las descargas requieren Internet.
+
+Completa **un solo camino** en ambas sesiones. Si ya usas Anaconda, consulta
+Conda; las otras opciones son venv + pip y uv. Trabaja en los espacios de
+práctica que indica tu camino y conserva la configuración del repositorio.
+
+## Qué vas a aprender
+
+- Distinguir intérprete, entorno, biblioteca y gestor de dependencias.
+- Elegir un camino y comprobar qué Python ejecuta la práctica.
+- Instalar e importar una biblioteca en ese mismo entorno.
+- Conservar la configuración pertinente y explicar cómo reconstruirla y sus límites.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Primer script](../04_first_script/first_summary.py) | Comprobar el entorno sin bibliotecas externas en la sesión A | Sesión A |
+| [Demostración con biblioteca](library_demo.py) | Revisar la tabla de ventas con tabulate en la sesión B | Sesión B |
+
+Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
+trabaja las modificaciones en tu copia personal.
+
+## Lecturas y recorridos
 
 | Sesión | Material | Resultado |
 | --- | --- | --- |
@@ -21,10 +65,36 @@ Los recorridos tienen instrucciones por shell:
 - [venv + pip](venv-pip.md), herramientas estándar de Python.
 - [uv](uv.md), gestión integrada de proyectos y lockfiles.
 
-El [lab 00.05](../../../labs/00_getting_started/05_environment/README.md) contiene
-actividades y soluciones desplegables para las dos sesiones. Puedes consultar
-los otros caminos después; no son ejercicios adicionales obligatorios.
+## Práctica
 
-## Siguiente lección
+Realiza el [lab 00.05](../../../labs/00_getting_started/05_environment/README.md) para completar las sesiones A y B del camino elegido.
 
-[06 — Primer notebook](../06_first_notebook/README.md): celdas, kernel y ejecución desde cero.
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Nota de la sesión A con ruta de Python | El intérprete pertenece al entorno elegido y ejecuta el primer script | Qué separa el entorno y qué no garantiza |
+| Configuración revisada y resultado de la sesión B | Importación de tabulate 0.9.0 y tabla con importes 80, 50 y 35 MXN | Qué archivos compartirías para reconstruir y por qué no compartir el entorno completo |
+
+Puedes continuar cuando completes las dos sesiones con el mismo camino,
+identifiques su intérprete, ejecutes ambos ejemplos y expliques qué conserva
+su configuración. No necesitas practicar también los otros gestores.
+
+Quien aprende realiza la práctica y explica el resultado. Tu compañero pregunta qué Python importó la biblioteca y qué archivos necesitaría otra persona para reconstruirlo.
+Guarda evidencia y dudas en tu copia de la
+[bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
+o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
+Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
+
+## Referencias
+
+Las fuentes oficiales se incluyen en [05A](environment.md#referencias) y
+[05B](dependencies.md#referencias), junto a los conceptos que respaldan.
+
+<a id="siguiente-lección"></a>
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [00.06 — Tu primer notebook](../06_first_notebook/README.md).
+
+[← Módulo 00](../README.md) · [Lab 00.05](../../../labs/00_getting_started/05_environment/README.md) · [Siguiente →](../06_first_notebook/README.md)

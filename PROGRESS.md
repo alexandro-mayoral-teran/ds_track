@@ -48,6 +48,24 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
+**Desarrollo — 2026-10-27, plantilla en Entorno de aprendizaje:** completada la
+adaptación de 00.02–00.06, conservando 00.01 ya adaptada. Cabecera, preparación,
+objetivos, apoyos, práctica, evidencia/criterio, referencias y continuidad; 00.05
+mantiene entrada, lecturas A/B y recorridos Conda/venv/uv con orientación y cierre.
+Solo un camino obligatorio. Recursos existentes enlazados y bitácora personal;
+comandos y ejemplos conservados, sin instalaciones ni cambios de scripts/datos.
+Corregida continuidad de 00.06 hacia las seis lecciones disponibles de Python.
+Labs conservados y guías actualizadas con cobertura 00/01. Otros módulos y
+la sesión real de estudio siguen pendientes.
+
+Comprobación: 3139 enlaces locales de Markdown y 1459 enlaces de las 27 páginas
+HTML del portal sin incidencias. Once páginas de lección/apoyo comprobadas en
+GFM local y portal a 1280/390 px (44 vistas), con apoyos y cierre presentes y
+desplegables cerrados. Anclas previas y 79 bloques de código/comandos contrastados
+con las fuentes anteriores. Scripts, notebook, datos y labs sin cambios; no se
+ejecutaron instalaciones ni ejemplos. La revisión local no acredita inspección
+del GitHub remoto ni una sesión de aprendizaje.
+
 **Desarrollo — 2026-10-27, plantilla en Python fundamental:** las seis lecciones
 01.01–01.06 aplican cabecera NN.LL, preparación, objetivos, apoyo, práctica,
 evidencia/criterio, referencias y continuidad. Recursos existentes enlazados en

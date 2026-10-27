@@ -7,8 +7,10 @@ Esta guía orienta la autoría de contenido dentro del recorrido ya diseñado.
 Para presentación y navegación, aplica la
 [guía de estudio desde Markdown](markdown-study-guide.md). La muestra inicial
 está en la portada, el módulo 00 y la lección/lab 00.01. Las seis lecciones de
-Python fundamental (01.01–01.06) ya aplican la plantilla con material de apoyo;
-sus labs conservan las consignas originales. Extiéndela al revisar otros módulos,
+Entorno de aprendizaje (00.01–00.06) y las seis de Python fundamental
+(01.01–01.06) ya aplican la plantilla con material de apoyo. 00.05 conserva dos
+partes y tres caminos alternativos, sin exigirlos todos. Sus labs conservan las
+consignas originales. Extiéndela al revisar otros módulos,
 sin dar por revisada toda la teoría. Los índices de módulo 00–14 ya aplican el
 patrón común; 12–14 siguen planificados.
 
