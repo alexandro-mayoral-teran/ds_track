@@ -49,6 +49,15 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 
+**Desarrollo — 2026-10-27, estructura de página de módulo:** acuerdo educativo
+con cabecera y ocho secciones, documentado en
+[guía de módulo](docs/module-page-guide.md), plantilla y autoría. Referencia
+aplicada al índice 00 con preparación, objetivos, ruta, evidencia, criterio y
+continuidad. No se han uniformado otros módulos ni la composición del portal.
+Hallazgo para revisar al adaptar 01: su índice aún describe Python aplicado
+como planificado, pese al material disponible de 05.
+
+
 **Desarrollo — 2026-10-27, índice visual del curriculum:** entrada breve con
 ruta inicial y módulos 00–14 agrupados en tres etapas. Enlaces a cada índice,
 separación de material disponible/planes, alternativa Streamlit/Shiny y guía

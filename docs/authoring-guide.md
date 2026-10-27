@@ -11,15 +11,18 @@ otros materiales, sin dar por adaptado todo el track.
 
 ## Estructura de un módulo
 
-Usa [`templates/module/`](../templates/module/) como punto de partida.
+Usa la [plantilla de página de módulo](../templates/module/README.md) y la
+[guía de sus ocho secciones](module-page-guide.md). El README del módulo orienta
+el recorrido; las lecciones explican y los labs plantean la práctica.
 
 ```text
-module_name/
-├── README.md
-├── examples/
-├── exercises/
-├── challenge/
-└── solutions/
+curriculum/NN_modulo/
+  README.md              # Página de módulo
+  01_tema/
+    README.md            # Lección y ejemplos
+labs/NN_modulo/
+  01_tema/
+    README.md            # Lab asociado
 ```
 
 No es necesario crear todas las carpetas desde el primer momento. Deben aparecer

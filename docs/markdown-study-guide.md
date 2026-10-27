@@ -26,6 +26,13 @@ pueden quedar en desplegables. No esconder preparación necesaria, actividad,
 criterio de salida ni siguiente lección. El estado editorial vive en PROGRESS.md;
 evitar volver a enumerar cada avance de desarrollo en la portada.
 
+## Patrón de página de módulo
+
+La [guía de página de módulo](module-page-guide.md) define la cabecera y ocho
+secciones comunes, con su propósito, contenido y límites. Usa la
+[plantilla](../templates/module/README.md) y el índice 00 como referencia aplicada.
+Esa estructura organiza el módulo; no sustituye la explicación de cada lección.
+
 ## Patrón de lección
 
 1. Título y ubicación con módulo/número de lección.
