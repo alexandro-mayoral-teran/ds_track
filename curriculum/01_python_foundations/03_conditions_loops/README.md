@@ -1,11 +1,51 @@
-# 03 — Condiciones y ciclos
+# 01.03 — Condiciones y ciclos
 
-## Propósito y objetivos
+<a id="03--condiciones-y-ciclos"></a>
 
-Pasar de consultar registros individuales a recorrer una colección, seleccionar
-los que cumplen una regla y calcular un resumen. Completa
-[listas y diccionarios](../02_lists_dicts/README.md) y conserva tu entorno.
-Esta lección no requiere bibliotecas externas ni funciones propias.
+[Inicio](../../../README.md) / [Módulo 01](../README.md) / **Lección 01.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Recorrer registros, aplicar una regla y distinguir totales generales y filtrados |
+| **Necesitas** | Entorno de Python del módulo 00; biblioteca estándar |
+| **Evidencia** | Script con la variante del lab y nota con conteos, importes y fronteras |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/01_python_foundations/03_conditions_loops/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-objetivos"></a>
+
+## Propósito
+
+Pasar de consultar registros individuales a recorrer una colección,
+seleccionar los que cumplen una regla y calcular un resumen que puedas
+contrastar con las ventas de origen.
+
+## Antes de empezar
+
+Completa [01.02 — Listas y diccionarios](../02_lists_dicts/README.md) y su lab.
+Conserva tu entorno de Python y trabaja desde la raíz de DS Track con el editor
+y terminal que elegiste. La página y el script incluyen las ventas completas;
+no necesitas bibliotecas externas ni definir funciones propias.
+
+El recorrido esencial utiliza `if`, `elif`, `else` y `for`. La ampliación con
+`while`, `continue` y `break` es opcional y no bloquea la siguiente lección.
+
+## Qué vas a aprender
+
+- Explicar una condición y el orden de sus alternativas con la sangría adecuada.
+- Recorrer una colección con `for` e inicializar sus contadores y acumuladores.
+- Filtrar sin modificar los registros originales y conciliar conteos e importes.
+- Contrastar `>=` con `>` y explicar el resultado cuando no hay coincidencias.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](conditions_loops.py) | Seguir la clasificación y selección de las mismas tres ventas con sus acumuladores | Para el ejemplo |
+
+Abre los archivos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y compara la salida con los resultados esperados. Para practicar,
+modifica tu copia y conserva los originales.
 
 ## 1. Una condición decide qué ejecutar
 
@@ -236,17 +276,41 @@ colección: dejarías registros sin revisar.
 | Cambian los datos de entrada | Si modificaste el diccionario original |
 | Total aumenta al repetir una celda | Si ejecutaste la inicialización antes del ciclo |
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 01.03](../../../labs/01_python_foundations/03_conditions_loops/README.md).
+## Práctica
+
+Realiza el [lab 01.03](../../../labs/01_python_foundations/03_conditions_loops/README.md) para
+cambiar umbrales, agregar una venta y comprobar el resumen general y el filtrado.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu script con los cuatro registros del lab | Conteos y totales general y seleccionado calculados manualmente | Qué instrucciones se repiten siempre y cuáles dependen del filtro |
+| Una nota con umbrales y casos de frontera | Diferencia entre `>=` y `>`; selección vacía | Por qué cero sin coincidencias no describe el total de todas las ventas |
+
 Puedes avanzar cuando recorras registros, expliques una condición, construyas
-un total y distingas el resumen general del filtrado. La extensión no bloquea
-el avance. Todavía no hay checkpoint de proyecto asociado.
+un total y distingas el resumen general del filtrado. La extensión opcional
+no es necesaria para cerrar el recorrido esencial.
+
+Quien aprende modifica y ejecuta su copia, y explica lo que comprobó.
+Tu compañero propone un valor igual al umbral y te pide predecir si se selecciona antes de ejecutar.
+Guarda la evidencia, las ayudas y las dudas en una nota personal junto a tu
+práctica; PROGRESS.md registra el desarrollo editorial del curso.
+
+Todavía no hay proyecto ni checkpoint asociado a esta lección. El material
+disponible no acredita por sí solo la finalización de tus prácticas.
+
+<a id="referencia"></a>
+
+## Referencias
+
+- [Control de flujo en Python](https://docs.python.org/es/3/tutorial/controlflow.html).
 
 ## Siguiente paso
 
-Continúa con [04 — Funciones](../04_functions/README.md) antes de su lab.
+Después del lab y su comprobación, continúa con
+[01.04 — Funciones](../04_functions/README.md) antes de realizar su lab.
 
-## Referencia
-
-- [Control de flujo en Python](https://docs.python.org/es/3/tutorial/controlflow.html).
+[← Módulo 01](../README.md) · [Lab 01.03](../../../labs/01_python_foundations/03_conditions_loops/README.md) · [Siguiente →](../04_functions/README.md)

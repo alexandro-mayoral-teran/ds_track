@@ -1,15 +1,54 @@
-# 06 — Validación y resumen
+# 01.06 — Validación y resumen
 
-## Propósito y prerrequisitos
+<a id="06--validación-y-resumen"></a>
+
+[Inicio](../../../README.md) / [Módulo 01](../README.md) / **Lección 01.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Validar entradas, conservar rechazos y conciliar el resumen de las ventas aceptadas |
+| **Necesitas** | Entorno de Python del módulo 00; biblioteca estándar |
+| **Evidencia** | Código, salidas válidos/rechazos/resumen y nota con reglas y conciliación |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/01_python_foundations/06_validation_summary/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Cerrar Python fundamental con un proceso que puedas explicar y comprobar:
 leer una entrada, aplicar reglas, conservar rechazos y resumir solo los datos
-aceptados. Completa [05 — Archivos CSV](../05_csv_files/README.md) y su lab.
-Utiliza tu entorno habitual; el ejemplo solo necesita la biblioteca estándar.
+aceptados. El resumen describe las ventas válidas, sin ocultar los problemas
+de la entrada.
 
-Al terminar podrás justificar qué registros aceptaste, explicar por qué otros
-quedaron fuera y comprobar que el resumen corresponde a los registros válidos.
-Puedes dividir la lección en dos sesiones: validación y conciliación.
+## Antes de empezar
+
+Completa [01.05 — Archivos CSV](../05_csv_files/README.md) y su lab. Usa tu
+entorno habitual, con la biblioteca estándar y sin paquetes nuevos. Edita y
+ejecuta desde la raíz de DS Track. La entrada de ocho registros está incluida;
+no se necesitan salidas personales de lecciones anteriores.
+
+Puedes dividir la lección en dos sesiones: primero validación y separación;
+después resumen y conciliación. Al retomar, revisa la misma entrada y las reglas
+antes de volver a ejecutar. Conserva el original y trabaja las variantes en copias.
+
+## Qué vas a aprender
+
+- Distinguir errores de estructura, conversión y reglas de la muestra.
+- Separar aceptados y rechazados conservando los valores originales y sus motivos.
+- Resumir únicamente las ventas válidas y conciliar registros, unidades e importe.
+- Comprobar casos límite y explicar qué errores no demuestra detectar un total coincidente.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](validation_summary.py) | Seguir validación, separación, resumen y controles antes de escribir las salidas | Para el ejemplo |
+| [CSV de entrada](ventas_revision.csv) | Contrastar ocho registros con las reglas y anticipar aceptaciones y rechazos | Entrada incluida |
+
+Abre los archivos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y compara la salida con los resultados esperados. Para practicar,
+modifica tu copia y conserva los originales.
 
 ## 1. Leer un dato no demuestra que sea válido
 
@@ -246,24 +285,46 @@ Una falla durante la escritura puede dejar archivos incompletos o de distintas
 ejecuciones. Revisa el resultado del proceso; escribir un conjunto de salidas
 de forma atómica será una profundización posterior.
 
-## Práctica, evidencia y criterio de salida
+<a id="práctica-evidencia-y-criterio-de-salida"></a>
 
-Realiza el [lab 01.06](../../../labs/01_python_foundations/06_validation_summary/README.md).
-Conserva código y una nota con reglas, conteos, motivos y total. Puedes cerrar
-este módulo cuando expliques el recorrido completo, compruebes casos límite y
-demuestres que no se modificó la entrada. El desarrollo de la lección no acredita
-por sí mismo la finalización de tus prácticas. Todavía no hay checkpoint asociado.
+## Práctica
 
-## Siguiente paso
+Realiza el [lab 01.06](../../../labs/01_python_foundations/06_validation_summary/README.md) para
+clasificar entradas, adaptar una copia y contrastar válidos, rechazos y resumen.
 
-Consulta [02 — pandas](../../02_pandas/README.md), el siguiente módulo del track.
-Ya está disponible la [primera lección — Series y DataFrame](../../02_pandas/01_series_dataframe/README.md);
-las siguientes están por desarrollar.
-DataFrame permitirá expresar operaciones tabulares, conservando estas mismas
-preguntas sobre tipos, reglas, registros y totales.
+## Evidencia y criterio de salida
 
-## Referencias oficiales
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu código y copias de entrada con los casos del lab | Reglas, aceptaciones, rechazos y motivos por registro; original intacto | Por qué convertir no valida y rechazar no significa borrar ni corregir |
+| Los tres CSV de salida y una nota de conciliación | Entrada = válidos + rechazados; conteos, unidades e importe del resumen | Por qué solo se resumen válidos y qué errores pueden conservar un total igual |
+
+Puedes cerrar el módulo cuando expliques el recorrido completo, compruebes
+casos límite y demuestres que no se modificó la entrada. Para la muestra original
+deben conciliar 8 registros = 4 válidos + 4 rechazados, 10 unidades y 165 MXN.
+
+Quien aprende modifica y ejecuta su copia, y explica lo que comprobó.
+Tu compañero elige un rechazo y un registro válido; pide justificar ambos y contrastar el resumen con el detalle.
+Guarda la evidencia, las ayudas y las dudas en una nota personal junto a tu
+práctica; PROGRESS.md registra el desarrollo editorial del curso.
+
+Todavía no hay proyecto ni checkpoint asociado a esta lección. El material
+disponible no acredita por sí solo la finalización de tus prácticas.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Errores y excepciones](https://docs.python.org/es/3/tutorial/errors.html).
 - [Lectura y escritura CSV](https://docs.python.org/es/3/library/csv.html).
 - [enumerate](https://docs.python.org/es/3/library/functions.html#enumerate).
+
+## Siguiente paso
+
+Después del lab y su comprobación, consulta el [módulo 02 — pandas](../../02_pandas/README.md)
+y continúa con [02.01 — Series y DataFrame](../../02_pandas/01_series_dataframe/README.md).
+Las diez lecciones de pandas y sus labs están disponibles. DataFrame permitirá
+expresar operaciones tabulares conservando estas preguntas sobre tipos, reglas,
+registros y totales.
+
+[← Módulo 01](../README.md) · [Lab 01.06](../../../labs/01_python_foundations/06_validation_summary/README.md) · [Siguiente →](../../02_pandas/01_series_dataframe/README.md)

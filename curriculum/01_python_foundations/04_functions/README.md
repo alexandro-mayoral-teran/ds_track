@@ -1,13 +1,49 @@
-# 04 — Funciones
+# 01.04 — Funciones
 
-## Propósito y objetivos
+<a id="04--funciones"></a>
+
+[Inicio](../../../README.md) / [Módulo 01](../README.md) / **Lección 01.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Separar y reutilizar transformaciones mediante entradas y resultados explícitos |
+| **Necesitas** | Entorno de Python del módulo 00; biblioteca estándar |
+| **Evidencia** | Script con la función del lab y nota de casos comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/01_python_foundations/04_functions/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-objetivos"></a>
+
+## Propósito
 
 Separar cálculos, selección y presentación para reutilizar transformaciones
-sin copiar bloques enteros. Completa [condiciones y ciclos](../03_conditions_loops/README.md).
-Utiliza el mismo entorno: no necesitas instalar bibliotecas.
+sin copiar bloques enteros. Una misma función podrá resumir la colección
+completa o una selección y devolver datos para seguir trabajando.
 
-Al terminar podrás definir y llamar funciones, distinguir parámetros de argumentos,
-devolver resultados y explicar qué datos recibe o modifica una transformación.
+## Antes de empezar
+
+Completa [01.03 — Condiciones y ciclos](../03_conditions_loops/README.md) y su
+lab. Usa el mismo entorno de Python sin instalar bibliotecas. Edita y ejecuta
+desde la raíz de DS Track; las ventas están incluidas en la página y el script.
+Retoma las [referencias y copias de 01.02](../02_lists_dicts/README.md#5-referencias-y-copias-qué-estás-modificando)
+para explicar qué ocurre al pasar una colección a una función.
+
+## Qué vas a aprender
+
+- Distinguir definir una función de llamarla y parámetros de argumentos.
+- Usar `return` para entregar datos y diferenciarlo de `print`.
+- Separar cálculo, selección y resumen con entradas explícitas y nombres locales.
+- Reutilizar funciones con otra colección, incluida una vacía, y comprobar que conservan las entradas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](functions_demo.py) | Leer funciones separadas y seguir cómo main prepara, transforma y presenta datos | Para el ejemplo |
+
+Abre los archivos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y compara la salida con los resultados esperados. Para practicar,
+modifica tu copia y conserva los originales.
 
 ## 1. De un cálculo repetido a una función
 
@@ -206,17 +242,41 @@ la lectura y transformación de archivos. No necesitas memorizarla para calcular
 | Solo se resume el primer registro | Sangría y ubicación de return |
 | Cambian las entradas después de llamar | Modificaciones sobre objetos mutables compartidos |
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 01.04](../../../labs/01_python_foundations/04_functions/README.md).
+## Práctica
+
+Realiza el [lab 01.04](../../../labs/01_python_foundations/04_functions/README.md) para
+reutilizar funciones con otras entradas y agregar una transformación con su comprobación.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu script con la función nueva del lab | Resultados para distintas entradas y para una colección vacía | Qué recibe y devuelve cada función y qué presenta `main` |
+| Una nota con argumentos y resultados | Las entradas no cambian después de transformar | Por qué `return` no equivale a `print` ni pasar una lista equivale a copiarla |
+
 Puedes avanzar cuando reutilices el resumen con entradas diferentes, expliques
-parámetros frente a argumentos y return frente a print, y compruebes que las
-entradas no fueron modificadas. Todavía no hay checkpoint de proyecto asociado.
+parámetros frente a argumentos y `return` frente a `print`, y compruebes que las
+entradas no fueron modificadas.
+
+Quien aprende modifica y ejecuta su copia, y explica lo que comprobó.
+Tu compañero propone otros argumentos y te pide anticipar el resultado sin cambiar la definición de la función.
+Guarda la evidencia, las ayudas y las dudas en una nota personal junto a tu
+práctica; PROGRESS.md registra el desarrollo editorial del curso.
+
+Todavía no hay proyecto ni checkpoint asociado a esta lección. El material
+disponible no acredita por sí solo la finalización de tus prácticas.
+
+<a id="referencia"></a>
+
+## Referencias
+
+- [Definir funciones y sus argumentos](https://docs.python.org/es/3/tutorial/controlflow.html#defining-functions).
 
 ## Siguiente paso
 
-Continúa con [05 — Archivos CSV](../05_csv_files/README.md).
+Después del lab y su comprobación, continúa con
+[01.05 — Archivos CSV](../05_csv_files/README.md) antes de realizar su lab.
 
-## Referencia
-
-- [Definir funciones y sus argumentos](https://docs.python.org/es/3/tutorial/controlflow.html#defining-functions).
+[← Módulo 01](../README.md) · [Lab 01.04](../../../labs/01_python_foundations/04_functions/README.md) · [Siguiente →](../05_csv_files/README.md)

@@ -1,17 +1,49 @@
-# 01 — Variables, tipos y operaciones
+# 01.01 — Variables, tipos y operaciones
+
+<a id="01--variables-tipos-y-operaciones"></a>
+
+[Inicio](../../../README.md) / [Módulo 01](../README.md) / **Lección 01.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Interpretar valores y comprobar un cálculo con tipos y unidades claros |
+| **Necesitas** | Entorno de Python del módulo 00; biblioteca estándar |
+| **Evidencia** | Script adaptado y nota con entradas, tipos, predicción y resultado |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/01_python_foundations/01_variables_types/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 ## Propósito
 
 Comprender cómo Python representa un dato y por qué su tipo cambia las
-operaciones que puedes realizar. Pasaremos del primer cálculo del nivel 0
+operaciones que puedes realizar. Pasaremos del primer cálculo del módulo 00
 a interpretar valores que podrían venir de un archivo.
 
-## Prerrequisitos y objetivos
+<a id="prerrequisitos-y-objetivos"></a>
 
-Utiliza el entorno elegido en el nivel 0. Solo necesitas Python, sin paquetes
-externos. Puedes trabajar en VS Code y ejecutar desde tu terminal.
-Al terminar podrás asignar variables, reconocer tipos, convertir texto numérico,
-calcular un resultado y comprobarlo con una predicción.
+## Antes de empezar
+
+Retoma el [primer script](../../00_getting_started/04_first_script/README.md) y
+los [entornos del módulo 00](../../00_getting_started/05_environment/README.md).
+Usa el entorno que elegiste, con Python y sin paquetes externos. Puedes editar
+en tu editor habitual y ejecutar desde la terminal. El ejemplo define sus
+entradas en el propio script: todavía no necesitas un CSV.
+
+## Qué vas a aprender
+
+- Asignar y reasignar variables, distinguiendo asignación de comparación.
+- Reconocer texto, enteros, decimales, booleanos y ausencia mediante su tipo.
+- Convertir una entrada numérica válida y explicar un error de conversión.
+- Calcular un importe en MXN y contrastarlo con una predicción manual.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](variables_types.py) | Simular campos de texto de una venta, convertirlos y calcular su importe | Para el ejemplo |
+
+Abre los archivos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y compara la salida con los resultados esperados. Para practicar,
+modifica tu copia y conserva los originales.
 
 ## 1. Variables: dar nombres a los valores
 
@@ -42,7 +74,8 @@ print(importe_mxn)  # Sigue siendo 120
 ```
 
 Para obtener 200, ejecuta otra vez el cálculo con el nuevo valor. Esto se conecta
-con el estado del kernel que observaste en la lección de notebooks.
+con el estado del kernel que observaste en la
+[lección 00.06 — Primer notebook](../../00_getting_started/06_first_notebook/README.md).
 
 ## 2. Tipos: qué clase de dato estás usando
 
@@ -175,17 +208,40 @@ conocer solo uno de ellos puede ocultar un error.
 En el script, `type(valor).__name__` muestra el nombre del tipo de forma breve;
 `type(valor)` permite consultar ese mismo tipo sin abreviar la presentación.
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 01.01](../../../labs/01_python_foundations/01_variables_types/README.md).
+## Práctica
+
+Realiza el [lab 01.01](../../../labs/01_python_foundations/01_variables_types/README.md) para
+adaptar una venta, contrastar tipos y valores y explicar una conversión que falla.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu copia del script con las variantes del lab | Tipo y valor de las entradas; importe y comparación esperados | Por qué texto y número permiten operaciones diferentes |
+| Una nota con predicciones y resultados | La diferencia entre reasignar unidades y volver a calcular el importe | Qué hacen `=`, `==` y la conversión; por qué convertir no valida la venta |
+
 Puedes avanzar cuando distingas texto de número, conviertas una entrada válida,
 expliques asignación frente a comparación y compruebes el cálculo modificado.
-Todavía no hay checkpoint de proyecto asociado.
+
+Quien aprende modifica y ejecuta su copia, y explica lo que comprobó.
+Tu compañero cambia una entrada y te pide predecir el tipo y el importe antes de ejecutar.
+Guarda la evidencia, las ayudas y las dudas en una nota personal junto a tu
+práctica; PROGRESS.md registra el desarrollo editorial del curso.
+
+Todavía no hay proyecto ni checkpoint asociado a esta lección. El material
+disponible no acredita por sí solo la finalización de tus prácticas.
+
+<a id="referencia"></a>
+
+## Referencias
+
+- [Introducción a Python: números, texto y variables](https://docs.python.org/es/3/tutorial/introduction.html).
 
 ## Siguiente paso
 
-Continúa con [02 — Listas y diccionarios](../02_lists_dicts/README.md) antes de su lab.
+Después del lab y su comprobación, continúa con
+[01.02 — Listas y diccionarios](../02_lists_dicts/README.md) antes de realizar su lab.
 
-## Referencia
-
-- [Introducción a Python: números, texto y variables](https://docs.python.org/es/3/tutorial/introduction.html).
+[← Módulo 01](../README.md) · [Lab 01.01](../../../labs/01_python_foundations/01_variables_types/README.md) · [Siguiente →](../02_lists_dicts/README.md)

@@ -1,11 +1,49 @@
-# 02 — Listas y diccionarios
+# 01.02 — Listas y diccionarios
 
-## Propósito y objetivos
+<a id="02--listas-y-diccionarios"></a>
+
+[Inicio](../../../README.md) / [Módulo 01](../README.md) / **Lección 01.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Representar varios registros y distinguir consultar, modificar y copiar |
+| **Necesitas** | Entorno de Python del módulo 00; biblioteca estándar |
+| **Evidencia** | Script con registros propios y nota sobre posiciones, campos y copias |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/01_python_foundations/02_lists_dicts/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-objetivos"></a>
+
+## Propósito
 
 Representar varios datos sin crear una variable distinta para cada uno.
-Después de [variables y tipos](../01_variables_types/README.md), aprenderás a
-acceder a posiciones y campos, modificar registros y distinguir compartir de copiar.
-Usa el mismo entorno: esta lección no necesita paquetes externos.
+Las listas organizan elementos y los diccionarios nombran los campos de un
+registro; comprender sus referencias permite explicar qué estás modificando.
+
+## Antes de empezar
+
+Completa [01.01 — Variables, tipos y operaciones](../01_variables_types/README.md)
+y su lab. Conserva el entorno de Python del módulo 00, sin paquetes externos.
+Edita en tu editor habitual y ejecuta desde la terminal. Las ventas de ejemplo
+están definidas en la página y en el script; no necesitas archivos de datos
+ni ciclos todavía.
+
+## Qué vas a aprender
+
+- Consultar elementos por posición y campos por clave sin confundirlos.
+- Agregar y modificar registros y explicar qué cuenta `len` en cada estructura.
+- Distinguir una clave ausente de un campo que contiene `None`.
+- Comparar una referencia compartida, una copia de un registro y una copia superficial de lista.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](lists_dicts.py) | Inspeccionar ventas ficticias y contrastar original y copia de un registro | Para el ejemplo |
+
+Abre los archivos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y compara la salida con los resultados esperados. Para practicar,
+modifica tu copia y conserva los originales.
 
 ## 1. Listas: agrupar elementos en orden
 
@@ -235,18 +273,39 @@ Región del primer registro: sin dato
 | La lista se vuelve None | Si asignaste el resultado de append a su nombre |
 | Cambió el original | Si compartiste una referencia o hiciste una copia superficial |
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 01.02](../../../labs/01_python_foundations/02_lists_dicts/README.md).
+## Práctica
+
+Realiza el [lab 01.02](../../../labs/01_python_foundations/02_lists_dicts/README.md) para
+representar varios registros, agregar uno y comprobar qué cambia al modificar una copia.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu script con los cinco registros pedidos en el lab | Posiciones, claves e importe calculado del último registro | Por qué el número de registros y el número de campos cuentan cosas distintas |
+| Una nota o salida comparando original y copia | Qué objeto cambia en cada caso | Por qué copiar la lista exterior no independiza sus diccionarios |
+
 Puedes avanzar cuando representes varios registros, accedas a posiciones y
-campos, agregues uno y expliques qué cambios afectan al original. Todavía no
-hay checkpoint de proyecto asociado.
+campos, agregues uno y expliques qué cambios afectan al original.
 
-## Siguiente paso
+Quien aprende modifica y ejecuta su copia, y explica lo que comprobó.
+Tu compañero señala un acceso por posición o clave y te pide explicar qué valor devuelve y qué ocurriría si no existiera.
+Guarda la evidencia, las ayudas y las dudas en una nota personal junto a tu
+práctica; PROGRESS.md registra el desarrollo editorial del curso.
 
-Continúa con [03 — Condiciones y ciclos](../03_conditions_loops/README.md) antes de su lab.
+Todavía no hay proyecto ni checkpoint asociado a esta lección. El material
+disponible no acredita por sí solo la finalización de tus prácticas.
 
 ## Referencias
 
 - [Estructuras de datos de Python](https://docs.python.org/es/3/tutorial/datastructures.html).
 - [Copias superficiales y profundas](https://docs.python.org/es/3/library/copy.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con
+[01.03 — Condiciones y ciclos](../03_conditions_loops/README.md) antes de realizar su lab.
+
+[← Módulo 01](../README.md) · [Lab 01.02](../../../labs/01_python_foundations/02_lists_dicts/README.md) · [Siguiente →](../03_conditions_loops/README.md)

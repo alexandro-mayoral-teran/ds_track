@@ -48,6 +48,24 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
+**Desarrollo — 2026-10-27, plantilla en Python fundamental:** las seis lecciones
+01.01–01.06 aplican cabecera NN.LL, preparación, objetivos, apoyo, práctica,
+evidencia/criterio, referencias y continuidad. Recursos existentes enlazados en
+tabla y contexto: seis scripts y dos CSV; sin copias ni dependencias nuevas.
+Ejemplos y comandos conservados; preparación y cierre específicos de cada tema,
+con evidencia personal y revisión en pareja. Corregida la continuidad antigua de
+01.06: pandas ya tiene diez lecciones/labs. Labs conservados, con enlaces de
+ida/vuelta y siguiente lección revisados. Guías actualizadas con cobertura real;
+otros módulos y una sesión real de estudio siguen pendientes.
+
+Comprobación: 2967 enlaces locales de Markdown sin incidencias; anclas previas,
+desarrollo didáctico y bloques de código/comandos contrastados con las fuentes
+anteriores (solo se añadió un enlace conceptual a 00.06 en el desarrollo de
+01.01). Render GFM local de las seis páginas a 1280/390 px, apoyos enlazados y
+desplegables cerrados. Scripts, datos y labs sin cambios; no se volvieron a
+ejecutar ejemplos ni se amplió su integración en el portal. La revisión local
+no acredita inspección del GitHub remoto ni aprendizaje completado.
+
 **Desarrollo — 2026-10-27, apoyo y primera lección de prueba:** criterio de
 recursos documentado en guía y plantilla de lección: índice después de objetivos
 con finalidad/uso y enlaces en el lugar donde se utilizan. Primera aplicación

@@ -1,14 +1,52 @@
-# 05 — Leer y escribir archivos CSV
+# 01.05 — Leer y escribir archivos CSV
 
-## Propósito y objetivos
+<a id="05--leer-y-escribir-archivos-csv"></a>
 
-Utilizar datos guardados en un archivo, transformarlos con Python y conservar
-el resultado en otro archivo. Completa [funciones](../04_functions/README.md)
-y utiliza tu entorno habitual. `csv` y `pathlib` son parte de la biblioteca
-estándar: no necesitas instalar pandas ni otros paquetes.
+[Inicio](../../../README.md) / [Módulo 01](../README.md) / **Lección 01.05**
 
-Al terminar podrás interpretar un CSV, leer registros como diccionarios,
-convertir campos y escribir una salida verificable conservando la entrada.
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Leer, transformar y escribir un CSV sin alterar la entrada |
+| **Necesitas** | Entorno de Python del módulo 00; biblioteca estándar |
+| **Evidencia** | Script, copias de práctica y salida CSV con conteos e importes comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/01_python_foundations/05_csv_files/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-objetivos"></a>
+
+## Propósito
+
+Utilizar datos guardados en un archivo, transformarlos con Python y
+conservar el resultado en otro archivo. La entrada y la salida permiten
+revisar qué se leyó, qué se convirtió y qué se escribió.
+
+## Antes de empezar
+
+Completa [01.04 — Funciones](../04_functions/README.md) y su lab. Usa tu entorno
+habitual: `csv` y `pathlib` pertenecen a la biblioteca estándar, sin pandas
+ni paquetes nuevos. Abre DS Track en tu editor y ejecuta desde su raíz.
+
+La entrada está incluida en esta lección; no necesitas generar archivos con
+prácticas anteriores. Conserva el CSV original y realiza los cambios del lab
+en una copia dentro de `output`, como indica su consigna.
+
+## Qué vas a aprender
+
+- Interpretar encabezado, registros, separador y comillas de un CSV.
+- Leer campos como texto con `DictReader` y convertirlos antes de calcular.
+- Explicar rutas y apertura con `with` y escribir columnas con `DictWriter`.
+- Revisar la salida con sus conteos, unidades e importes conservando la entrada original.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](csv_pipeline.py) | Seguir la lectura, conversión y escritura separadas en funciones | Para el ejemplo |
+| [CSV de entrada](ventas_entrada.csv) | Inspeccionar las tres ventas, incluido el nombre que contiene una coma | Entrada incluida |
+
+Abre los archivos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y compara la salida con los resultados esperados. Para practicar,
+modifica tu copia y conserva los originales.
 
 ## 1. Qué contiene un CSV
 
@@ -260,19 +298,42 @@ Si el CSV utiliza `;`, ajusta delimiter en el lector y escritor según el format
 que quieras conservar. Eso no cambia automáticamente los decimales: `"12,50"`
 requiere otra regla de interpretación que no utiliza nuestro ejemplo con enteros.
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 01.05](../../../labs/01_python_foundations/05_csv_files/README.md).
+## Práctica
+
+Realiza el [lab 01.05](../../../labs/01_python_foundations/05_csv_files/README.md) para
+leer la muestra, trabajar con otra entrada en una copia y revisar el CSV producido.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu script y las copias de entrada/salida del lab | Conteo de registros, encabezado e importes; original intacto | Cómo se interpretan campos con comas y cuándo se convierten los tipos |
+| Una nota con rutas y controles | La salida corresponde a la ejecución revisada y conserva el producto completo | Qué hace `with`, qué escribe `DictWriter` y qué validaciones aún faltan |
+
 Puedes avanzar cuando leas y escribas registros, expliques las conversiones,
 verifiques cantidades y total, y conserves intacta la entrada original.
-Todavía no hay checkpoint de proyecto asociado.
 
-## Siguiente paso
+Quien aprende modifica y ejecuta su copia, y explica lo que comprobó.
+Tu compañero contrasta una fila de salida con la entrada y te pide justificar el importe y las columnas conservadas.
+Guarda la evidencia, las ayudas y las dudas en una nota personal junto a tu
+práctica; PROGRESS.md registra el desarrollo editorial del curso.
 
-Continúa con [06 — Validación y resumen](../06_validation_summary/README.md).
+Todavía no hay proyecto ni checkpoint asociado a esta lección. El material
+disponible no acredita por sí solo la finalización de tus prácticas.
 
-## Referencias oficiales
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Lectura y escritura CSV](https://docs.python.org/es/3/library/csv.html).
 - [Archivos y with](https://docs.python.org/es/3/tutorial/inputoutput.html#reading-and-writing-files).
 - [Rutas con pathlib](https://docs.python.org/es/3/library/pathlib.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con
+[01.06 — Validación y resumen](../06_validation_summary/README.md) antes de realizar su lab.
+
+[← Módulo 01](../README.md) · [Lab 01.05](../../../labs/01_python_foundations/05_csv_files/README.md) · [Siguiente →](../06_validation_summary/README.md)

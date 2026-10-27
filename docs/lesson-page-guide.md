@@ -38,8 +38,9 @@ conviene conservarlos, sin reemplazarlos por resúmenes decorativos.
 
 Los textos de continuidad desactualizados y los ajustes de R/evidencia personal
 quedan identificados para la adaptación. La primera prueba posterior adapta
-00.01; los hallazgos de las otras páginas siguen pendientes. Antes de actualizar
-un destino, comprobar su estado real.
+00.01. Después se adaptaron las seis lecciones de 01, incluida la continuidad
+desactualizada de 01.06. Los hallazgos de los otros módulos siguen pendientes.
+Antes de actualizar un destino, comprobar su estado real.
 
 ## Estructura propuesta
 
@@ -178,7 +179,13 @@ en líneas ni exigir notebooks, scripts, gráficos y CSV en todos los temas.
 
 La primera prueba se aplicó a 00.01 a petición del usuario: cabecera, preparación,
 objetivos, material de apoyo, práctica y evidencia, con anclas anteriores
-conservadas. El siguiente caso propuesto es 00.02 para contrastar una lección
-larga con varios recorridos. La migración del resto y una sesión real de estudio
-siguen pendientes. Los hallazgos de la tabla inicial describen la revisión previa
-a esta prueba; no se han corregido las otras lecciones de la muestra.
+conservadas. Después se aplicó la plantilla por módulo a
+[01 — Python fundamental](../curriculum/01_python_foundations/README.md):
+01.01–01.06 tienen ficha, preparación, objetivos observables, material de apoyo,
+práctica, evidencia/criterio, referencias y navegación final. Sus seis scripts
+y dos CSV se enlazan sin duplicarlos; ejemplos y comandos se conservaron.
+Los labs mantienen sus consignas y enlaces de continuidad, sin migración visual.
+
+00.02 sigue como caso propuesto para contrastar varios recorridos. La migración
+del resto y una sesión real de estudio siguen pendientes. Los hallazgos de la
+tabla inicial describen la revisión previa a estas adaptaciones.

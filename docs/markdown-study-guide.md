@@ -10,9 +10,12 @@ La muestra actual abarca [portada](../README.md), [índice del curriculum](../cu
 [módulo 00](../curriculum/00_getting_started/README.md),
 [lección 00.01](../curriculum/00_getting_started/01_github_profile/README.md) y
 [lab 00.01](../labs/00_getting_started/01_github_profile/README.md).
-Los índices de los módulos 00–14 ya comparten la estructura de módulo. Las
-lecciones y labs mantienen solo la muestra 00.01 adaptada; el resto de esas
-páginas se revisa gradualmente. Los módulos 12–14 conservan su planificación.
+Los índices de los módulos 00–14 ya comparten la estructura de módulo. La
+plantilla de lección está aplicada en 00.01 y en las seis lecciones del
+[módulo 01 — Python fundamental](../curriculum/01_python_foundations/README.md).
+Los labs mantienen solo la muestra visual 00.01 adaptada; los labs de 01 se
+conservaron y se revisaron sus enlaces. El resto se revisa gradualmente.
+Los módulos 12–14 conservan su planificación.
 
 ## Niveles de navegación
 
