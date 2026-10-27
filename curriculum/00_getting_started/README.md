@@ -1,51 +1,75 @@
 # 00 — Entorno de aprendizaje
 
+[Inicio](../../README.md) / [Módulos](../README.md) / **00 — Entorno de aprendizaje**
+
+**Prepara tus herramientas, conserva tu trabajo y ejecuta tu primera práctica.**
+
+| Para empezar | Al terminar |
+| --- | --- |
+| Un editor de texto; cuenta de GitHub si eliges publicar tu perfil | Presentación, práctica de rutas, script, entorno y notebook comprobados |
+| Sin experiencia previa con terminal o programación | Poder reproducir y explicar los resultados de tus prácticas |
+
+[**Empezar por 00.01 →**](01_github_profile/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Evidencia](#qué-conservar)
+
+> **A tu ritmo:** una sesión puede cubrir solo un bloque. En 00.05 trabaja
+> primero la parte A y después la B; elige un único recorrido de entorno.
+
 ## Propósito
 
-Preparar un entorno desde el que se puedan ejecutar los siguientes módulos sin
-convertir la instalación de herramientas en el tema principal.
+Preparar un entorno desde el que puedas ejecutar los siguientes módulos sin
+convertir la instalación de herramientas en el tema principal. Primero documentas,
+después te ubicas en la terminal, conservas cambios y ejecutas Python.
 
-## Objetivos
+## Lecciones y labs
 
-- Distinguir Git de GitHub y un repositorio local de uno remoto.
-- Escribir y previsualizar Markdown para documentar el aprendizaje.
-- Crear y actualizar un perfil de GitHub como práctica recomendada.
-- Reconocer el uso de Markdown en documentación e instrucciones para IA.
-- Reconocer rutas, archivos y directorios.
-- Ejecutar Python desde la terminal.
-- Comprender qué problema resuelve un entorno virtual.
-- Crear y ejecutar un notebook.
-- Diferenciar instalación con `pip` y gestión de proyecto con `uv`.
-- Usar Git de manera opcional para conservar cambios.
-
-## Próximo contenido
-
-| Orden | Tema | Resultado |
+| Lección | Práctica | Resultado que comprobarás |
 | --- | --- | --- |
-| 1 | [Markdown y tu perfil en GitHub](01_github_profile/) | Entender Git y GitHub; escribir y publicar el README desde la web |
-| 2 | [Terminal, rutas y entorno](02_terminal_paths/) | Navegar en PowerShell y Unix |
-| 3 | [Git: historial y actualización del perfil](03_git_workflow/) | Clonar, revisar cambios, crear un commit y hacer push |
-| 4 | [Primer script Python](04_first_script/) | Ejecutar, modificar y comprobar un cálculo |
-| 5 | [Entorno y dependencias: partes A y B](05_environment/) | Preparar un entorno y después instalar y registrar bibliotecas |
-| 6 | [Primer notebook](06_first_notebook/) | Elegir kernel, explorar celdas y reproducir resultados desde cero |
+| **00.01** · [Markdown y tu perfil](01_github_profile/README.md) | [Lab 00.01](../../labs/00_getting_started/01_github_profile/README.md) | Presentación legible; Git y GitHub distinguidos |
+| **00.02** · [Terminal y rutas](02_terminal_paths/README.md) | [Lab 00.02](../../labs/00_getting_started/02_terminal_paths/README.md) | Ubicación de archivos y comandos en el shell elegido |
+| **00.03** · [Git e historial](03_git_workflow/README.md) | [Lab 00.03](../../labs/00_getting_started/03_git_workflow/README.md) | Clonar, revisar cambios, guardar un commit y hacer push |
+| **00.04** · [Primer script Python](04_first_script/README.md) | [Lab 00.04](../../labs/00_getting_started/04_first_script/README.md) | Modificación de un cálculo y contraste del resultado |
+| **00.05** · [Entorno y dependencias: A/B](05_environment/README.md) | [Lab 00.05](../../labs/00_getting_started/05_environment/README.md) | Intérprete correcto y dependencias registradas |
+| **00.06** · [Primer notebook](06_first_notebook/README.md) | [Lab 00.06](../../labs/00_getting_started/06_first_notebook/README.md) | Kernel elegido y ejecución desde una sesión limpia |
 
-Cada lección tiene su propio lab y criterio de salida: `00.01` → `00.02` →
-`00.03` → `00.04`. Primero documentas desde la web, después aprendes a navegar
-en la terminal, conservas cambios con Git y ejecutas tu primer programa Python.
-El avance se registra en `PROGRESS.md`.
+El orden es 00.01 → 00.02 → 00.03 → 00.04 → 00.05 A/B → 00.06.
+La publicación del perfil y Git son prácticas recomendadas; también puedes
+estudiar con una copia descargada del material.
 
-## Evidencias del módulo
+<details>
+<summary><strong>Qué aprenderás a distinguir</strong></summary>
 
-- README de presentación; perfil publicado y actualización con Git si se elige
-  la práctica de GitHub.
+- Git, GitHub y repositorios locales/remotos.
+- Texto Markdown y vista previa; documentación e instrucciones para IA.
+- Rutas, archivos, directorios y terminal del sistema.
+- Script Python, notebook y kernel.
+- Preparación de entorno e instalación/conservación de dependencias.
+- Los recorridos Conda, venv/pip y uv, eligiendo uno para la práctica.
+
+</details>
+
+## Qué conservar
+
+- Tu README de presentación; perfil publicado y actualizado si eliges GitHub/Git.
 - Resultado del lab de terminal y rutas.
-- Primer script modificado por el estudiante.
-- Entorno reconstruido desde las instrucciones.
+- Primer script modificado por ti.
+- Instrucciones para reconstruir tu entorno.
 - Notebook ejecutado de principio a fin.
-- Nota breve escrita en Markdown.
+- Una nota Markdown con predicción, comprobación, explicación y dudas.
+
+Puedes copiar la [bitácora de 00](../../templates/learning-session/bitacora-00.md)
+a tu carpeta personal. No reemplaza tus archivos de práctica ni demuestra por sí
+sola aprendizaje. PROGRESS.md conserva el estado editorial del curso.
 
 ## Criterio de salida
 
-El estudiante puede escribir y previsualizar Markdown, descargar el material en
-otra carpeta, preparar el entorno
-y ejecutar un script y un notebook siguiendo únicamente las instrucciones.
+Puedes escribir y previsualizar Markdown, ubicar una copia del material,
+preparar el entorno y ejecutar un script y notebook siguiendo instrucciones.
+Explica qué comprobaste y qué harías si el resultado fuera distinto.
+Este módulo no tiene un checkpoint de proyecto implementado.
+
+---
+
+**Tu siguiente acción:** [leer 00.01](01_github_profile/README.md) y realizar su lab.
+Cuando cierres el módulo, sigue con [01 — Python fundamental](../01_python_foundations/README.md).
+
+[← Inicio](../../README.md) · [Todos los módulos](../README.md) · [Primera lección →](01_github_profile/README.md)

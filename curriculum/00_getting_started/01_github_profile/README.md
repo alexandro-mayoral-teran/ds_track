@@ -1,5 +1,18 @@
 # 01 — Markdown y tu perfil en GitHub
 
+[Inicio](../../../README.md) / [Módulo 00](../README.md) / **Lección 00.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Presentarte con Markdown y distinguir Git de GitHub |
+| **Necesitas** | Editor de texto; cuenta de GitHub solo si publicas |
+| **Evidencia** | README previsualizado y una explicación con tus palabras |
+
+[Conceptos](#en-esta-lección) · [Crear el perfil](#crear-el-perfil-desde-la-web) · [Ir al lab](../../../labs/00_getting_started/01_github_profile/README.md) · [Comprobar](#práctica-y-criterio-de-salida)
+
+> **Antes de empezar:** esta es la lección 00.01, dentro de Entorno de aprendizaje.
+> Los comandos de Git llegan en 00.03. Puedes realizar la práctica sin publicar un perfil.
+
 ## Propósito
 
 Escribir y previsualizar Markdown, distinguir Git de GitHub y crear una
@@ -60,6 +73,15 @@ repositorio remoto. En la lección 03 harás el proceso desde tu computadora.
 
 > **Para conversar:** si editas un archivo en tu computadora, ¿cambia
 > automáticamente la copia de GitHub? Explica tu respuesta.
+
+<details>
+<summary>Pista para contrastar tu explicación</summary>
+
+Piensa dónde se guardó el cambio: en tu computadora o en el repositorio remoto.
+Guardar un archivo local no modifica automáticamente GitHub. Más adelante
+aprenderás a registrar y enviar cambios; aquí basta distinguir ambas copias.
+
+</details>
 
 ## 2. Markdown: escribir y dar estructura
 
@@ -201,6 +223,13 @@ Puedes avanzar cuando expliques Git frente a GitHub y fuente frente a vista prev
 y tu README muestre la presentación y los objetivos con formato correcto.
 Si eliges publicarlo, comprueba que aparece en tu perfil.
 
+| Comprueba | Cómo lo reconoces |
+| --- | --- |
+| Fuente y vista previa | Identificas las marcas Markdown y su presentación |
+| Git y GitHub | Explicas herramienta, plataforma y copia local/remota |
+| Presentación propia | Sustituiste los ejemplos por objetivos reales de aprendizaje |
+| Enlaces | Abren el destino que esperabas |
+
 No hay proyecto de datos asociado todavía; el README es la primera evidencia.
 
 ## Siguiente lección
@@ -214,3 +243,7 @@ Después aprenderás a actualizar el perfil con Git en la lección 03.
 - [README de perfil de GitHub](https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme).
 - [Sintaxis de Markdown en GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 - [Instrucciones de repositorio para Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions).
+
+---
+
+[← Módulo 00](../README.md) · [Practicar: lab 00.01](../../../labs/00_getting_started/01_github_profile/README.md) · [Siguiente: 00.02 →](../02_terminal_paths/README.md)

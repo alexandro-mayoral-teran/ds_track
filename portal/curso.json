@@ -188,5 +188,9 @@
   "consulta_00": [
     "docs/vscode-guide.md",
     "templates/github-profile/README.md"
-  ]
+  ],
+  "navegacion": {
+    "README.md": "index.qmd",
+    "curriculum/README.md": "contenido.qmd"
+  }
 }

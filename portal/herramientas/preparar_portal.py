@@ -57,6 +57,10 @@ def construir(destino, quarto="quarto"):
     fuentes_curso = [m["fuente"] for m in curso["modulos"]]
     fuentes_curso += [f[k] for f in curso["lecciones_00"] for k in ["leccion", "lab"]]
     fuentes_curso += [p["fuente"] for p in curso["paginas_00"]] + curso["archivos_00"] + curso["consulta_00"]
+    navegacion = curso.get("navegacion", {})
+    fuentes_curso += list(navegacion)
+    if any(ruta not in {"index.qmd", "contenido.qmd"} for ruta in navegacion.values()):
+        raise ValueError("La navegación del repo debe apuntar a portada o contenido")
     for n in fuentes_curso:
         path = (REPO / n).resolve()
         if not path.is_relative_to(REPO) or not path.is_file():
@@ -89,6 +93,7 @@ def construir(destino, quarto="quarto"):
             paquete.write(archivo, "02.01/" + archivo.name)
     destinos = {(REPO / datos["leccion"]).resolve(): "leccion.qmd",
                 (REPO / datos["lab"]).resolve(): "lab.qmd"}
+    destinos.update({(REPO / fuente).resolve(): ruta for fuente, ruta in navegacion.items()})
     destinos[REPO / "PROGRESS.md"] = "registro.qmd"
     paginas_curso = []
     for leccion in curso["lecciones_00"]:

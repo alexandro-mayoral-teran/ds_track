@@ -48,6 +48,17 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
+
+**Desarrollo — 2026-10-27, muestra de estudio visual en Markdown:** portada
+con accesos y mapa temprano, índice 00 con lección/lab/resultado y muestra
+00.01 con ubicación, ficha inicial, pistas y tabla de comprobación. Evidencia
+personal distinguida del estado editorial. Patrón documentado en
+[guía de presentación](docs/markdown-study-guide.md) y enlazado desde autoría;
+resto del track pendiente de adaptación gradual. La navegación a portada/índice
+se declara en el catálogo del portal, conservando las fuentes compartidas.
+Se revisó la muestra GFM local a dos anchos, con pistas y navegación entre
+portada/lección/lab. No equivale a inspección visual del GitHub remoto.
+
 **Desarrollo — 2026-10-26, estructura del portal:** portada general, contenido
 00–14 y página del primer módulo 00, conservando la prueba adicional 02.01.
 Catálogo del curso, seis lecciones/labs originales y seis páginas de apoyo de
