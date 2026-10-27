@@ -1,11 +1,25 @@
 # 06.09 — Reproducir un resultado conocido
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 06](../README.md) / **Lección 06.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Conciliar el mismo contrato y resultado entre Python y R |
+| **Necesitas** | 06.06–06.08, validación Python y el entorno R fijado; sin paquetes nuevos |
+| **Evidencia** | Referencias y entrega R con comparación en memoria y tras relectura |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 06.09](../../../labs/06_r_foundations/09_known_result/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 El cierre de R fundamental reúne lectura, tipos, faltantes, funciones y
 reconstrucción. Resolveremos la misma pregunta en Python y R: ¿qué ventas
 cumplen nuestras reglas, qué registros requieren revisión y qué importes
 conocemos? Compararemos el detalle y las reglas, además de una suma.
+
+## Antes de empezar
 
 **Alcance de cierre.** Necesitas [06.06 — Funciones](../06_functions_control/README.md),
 [06.07 — Archivos y validación](../07_files_validation/README.md) y
@@ -19,7 +33,7 @@ fijado en 06.08. No hay dependencias nuevas ni gráficos en este cierre; la
 primera figura R llegará en el módulo 07. RStudio sigue siendo opcional.
 No hay proyecto/checkpoint integrador implementado asociado.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Declarar una pregunta, población y contrato común antes de comparar lenguajes.
 - Calcular en R desde datos y funciones explícitos, en una sesión nueva.
@@ -27,6 +41,20 @@ Al terminar podrás:
 - Explicar una diferencia de representación sin confundirla con cambio de valor.
 - Detectar una referencia antigua y una exportación alterada sin repararlas silenciosamente.
 - Justificar qué evidencia permite continuar a tidyverse.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador del cierre](preparar_cierre.R) | Crear una copia nueva con datos, funciones y metadatos | Para el recorrido |
+| [Guía de la copia](README_copia.md) | Seguir los pasos desde la carpeta preparada | Para el recorrido |
+| [Referencia Python](referencia_python.py) | Reconstruir tablas y contexto con biblioteca estándar | Para el recorrido |
+| [Ejecutor R](ejecutar_cierre.R) | Calcular, comparar y exportar solo tras conciliar | Para el recorrido |
+| [Comparador](comparar_resultados.R) | Examinar controles de esquema, faltantes y valores | Para el recorrido |
+| [Verificador](verificar_cierre.R) | Releer y comprobar sin reparar la entrega | Para el recorrido |
+
+Abre los archivos donde se indican en el recorrido; conserva las fuentes y
+guarda tus variantes y entregas en tu copia personal. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. La misma pregunta requiere el mismo contrato
 
@@ -153,6 +181,26 @@ Los seis rechazos no participan en esa suma. Informa también 8/14 registros
 aceptados; aceptación y cobertura responden preguntas diferentes.
 
 ## 5. Calcular, comparar, exportar y releer
+
+### Trabajar desde el IDE y comparar ambos lenguajes
+
+Prepara una copia nueva y genera la referencia Python con el recorrido de
+terminal de la sección 6. Después abre esa carpeta preparada en el IDE, inicia
+una sesión R nueva y confirma con `getwd()` que estás en la raíz de la copia.
+Restaura y comprueba el entorno como en [06.08](../08_projects_renv/README.md);
+no trabajes directamente en la plantilla ni inicialices renv en DS Track.
+
+Abre `ejecutar_cierre.R` de la copia. Lee y ejecuta bloques para inspeccionar
+`revision`, `resumen` y las comparaciones antes de exportar. Para repetir,
+cambia `destino` a otra carpeta nueva en ese archivo de la copia, guarda,
+reinicia R y ejecuta el archivo completo. La referencia Python debe corresponder
+a la misma fuente y contrato. Conserva la entrega previa; no ajustes tablas para
+forzar coincidencia. Al verificar otra carpeta, ajusta `entrega` en la copia de
+`verificar_cierre.R` a ese destino, sin modificar los archivos verificados.
+
+Python se ejecuta en la terminal del sistema con los comandos indicados; las
+instrucciones de R se ejecutan en la consola R. Comparar ambos resultados es
+parte del cierre, aunque explores R desde el editor.
 
 [ejecutar_cierre.R](ejecutar_cierre.R) activa explícitamente el perfil local
 porque `--vanilla` omite perfiles automáticos. Exige un entorno sincronizado,
@@ -293,23 +341,34 @@ conservamos las cuentas manuales y justificamos población, clave, faltantes
 y denominadores. La comparación es evidencia de equivalencia bajo un contrato,
 no una demostración de calidad para cualquier problema.
 
-## Práctica, cierre del módulo y continuidad
+<a id="práctica-cierre-del-módulo-y-continuidad"></a>
 
-Realiza el [lab 06.09](../../../labs/06_r_foundations/09_known_result/README.md).
-El criterio de salida del módulo es ejecutar desde una sesión nueva, explicar
-el modelo de vectores/tablas y faltantes, conciliar conteos e indicadores con
-Python y conservar instrucciones que permitan reconstruirlo.
+## Práctica
 
-Las nueve secciones de R fundamental tienen material, pero esa disponibilidad
-no acredita aprendizaje ni completa proyectos pendientes. Conserva evidencia
-y dudas en PROGRESS.md solo después de realizar y explicar las prácticas.
+Realiza el [lab 06.09](../../../labs/06_r_foundations/09_known_result/README.md) para
+reconstruir en ambos lenguajes y justificar coincidencias y diferencias de representación.
 
-Continúa con [07.01 — Tibbles, importación y pipes](../../07_tidyverse/01_tibbles_import_pipes/README.md),
-ya disponible con lab. Extiende el mismo proyecto renv y retoma la cartera
-ficticia conocida; la primera figura llegará en 07.10.
-Volver al [índice de R fundamental](../README.md).
+## Evidencia y criterio de salida
 
-## Referencias y atribución
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuente, referencia Python y entrega R | Filas, rechazos, faltantes, conteos e indicadores; 72 controles | Contrato común y tolerancia numérica frente a coincidencia exacta |
+| Instrucciones y registro de sesión | Reconstrucción desde cero y detección de una entrega alterada | Diferencias de representación, referencia antigua y límites de las huellas |
+
+Puedes cerrar el módulo cuando ejecutes desde una sesión nueva, expliques
+vectores/tablas y faltantes, concilies conteos e indicadores con Python y
+conserves instrucciones que permitan reconstruir el resultado.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia un valor de una copia de la entrega y pide demostrar que el verificador lo detecta.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto integrador ni checkpoint implementado asociado; las copias de
+práctica no acreditan los proyectos pendientes del catálogo.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track; consulta: 2026-10-17. Comprobados con R 4.6.1,
 Python 3.12.12 y el lockfile renv/withr de 06.08.
@@ -328,3 +387,12 @@ Python 3.12.12 y el lockfile renv/withr de 06.08.
   Consulta puntual de APIs incluidas; no se requieren paquetes externos Python.
 
 La [guía de lecturas R](../../../docs/r-reading-guide.md) ubica libros y ediciones.
+
+## Siguiente paso
+
+Continúa con [07.01 — Tibbles, importación y pipes](../../07_tidyverse/01_tibbles_import_pipes/README.md),
+ya disponible con lab. Extiende el mismo proyecto renv y retoma la cartera
+ficticia conocida; la primera figura llegará en 07.10. La disponibilidad de
+las nueve lecciones no acredita aprendizaje ni completa proyectos pendientes.
+
+[← Módulo 06](../README.md) · [Lab 06.09](../../../labs/06_r_foundations/09_known_result/README.md) · [Siguiente →](../../07_tidyverse/01_tibbles_import_pipes/README.md)

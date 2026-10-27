@@ -213,5 +213,5 @@ Explica con tus palabras:
 
 Cierra cuando puedas justificar formas, correspondencias y resultados sin
 depender de la solución. Registra evidencia real y dudas en
-[PROGRESS.md](../../../PROGRESS.md). Después continúa con el
+tu bitácora personal junto a la práctica. Después continúa con el
 [06.06 — Funciones y control de flujo](../../../curriculum/06_r_foundations/06_functions_control/README.md). Volver a la [lección 06.05](../../../curriculum/06_r_foundations/05_lists_data_frames/README.md).

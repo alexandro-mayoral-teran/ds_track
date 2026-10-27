@@ -1,21 +1,51 @@
 # 06.02 — Objetos, vectores y tipos
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 06](../README.md) / **Lección 06.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Calcular con vectores y reconocer coerción y reciclaje |
+| **Necesitas** | Asignación, llamadas y ejecución completa de 06.01; R sin paquetes nuevos |
+| **Evidencia** | Cálculo de cuatro ventas y diagnóstico de resultados incompatibles |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 06.02](../../../labs/06_r_foundations/02_objects_vectors/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 En [06.01](../01_r_session/README.md) calculaste una venta de cuatro unidades a
 75 MXN. Ahora representaremos cuatro ventas y preguntaremos qué hace R cuando
 combina valores de tipos distintos o multiplica vectores de longitudes diferentes.
 El objetivo es explicar el resultado, no solo conseguir que el programa termine.
 
+## Antes de empezar
+
 Esta lección es esencial y utiliza únicamente R con sus paquetes incluidos.
 Necesitas asignación, llamadas a funciones, print y ejecución de un archivo
 completo en una sesión nueva. Reutiliza el entorno elegido en 06.01. No se instala
 tidyverse ni se adelanta renv.
 
-Al terminar podrás construir vectores atómicos con c, consultar longitud/tipo/clase,
-calcular por posición y reconocer coerción y reciclaje. La selección de elementos
+La selección de elementos
 se desarrolla en 06.03; comparaciones/faltantes en 06.04; listas/tablas en 06.05.
 No hacen falta bucles ni funciones propias para estos ejemplos.
+
+## Qué vas a aprender
+
+- Construir vectores con `c` e inspeccionar longitud, tipo y clase.
+- Calcular importes por posición y conciliarlos con el total.
+- Reconocer coerción y pérdida de información.
+- Detectar reciclaje con aviso y reciclaje silencioso.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Ventas vectorizadas](ventas_vectores.R) | Revisar el cálculo correcto y sus tipos | Para el recorrido |
+| [Riesgos de vectores](riesgos_vectores.R) | Observar resultados deliberadamente incompatibles y sus avisos | Para el recorrido |
+
+Abre los archivos donde se indican en el recorrido; conserva las fuentes y
+guarda tus variantes y entregas en tu copia personal. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Un nombre permite utilizar un valor
 
@@ -254,6 +284,20 @@ de 06.01 y no escriben fuentes ni salidas.
 Parte de la raíz del repositorio y utiliza tu R elegido. La ruta Windows es la
 instalación comprobada en 06.01; adáptala si es distinta. Elige solo tu shell.
 
+### Desde RStudio o el IDE elegido
+
+Abre la carpeta del repositorio y [ventas_vectores.R](ventas_vectores.R) y después [riesgos_vectores.R](riesgos_vectores.R).
+Comprueba con `getwd()` que R trabaja desde la raíz de DS Track, como en
+[06.01](../01_r_session/README.md#4-pasar-de-la-consola-a-un-archivo-que-se-pueda-repetir).
+Lee y ejecuta bloques del archivo desde el editor; inspecciona los objetos y
+contrasta lo impreso con las predicciones. Guarda tus variantes en una copia
+personal. Para comprobarlas, guarda el archivo, reinicia la sesión R y ejecuta
+el script completo sin recuperar objetos anteriores.
+
+La consola R recibe instrucciones de R. Los comandos `Rscript` siguientes
+pertenecen a la terminal del sistema; elige uno de los recorridos completos
+como apoyo para comprobar el mismo archivo.
+
 ### PowerShell
 
 ```powershell
@@ -317,18 +361,33 @@ No resuelvas esa limitación convirtiendo todo a integer y perdiendo centavos.
 Los ejemplos de control manual usan importes enteros pequeños; el redondeo y las
 reglas de precisión deben definirse según la pregunta, no para esconder diferencias.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 06.02](../../../labs/06_r_foundations/02_objects_vectors/README.md).
-Puedes cerrar la lección cuando expliques longitud/tipo/clase, calcules 660 desde
-las cuatro ventas y detectes tanto el aviso como el reciclaje silencioso. Conserva
-evidencia y dudas en PROGRESS.md; disponer del material no acredita aprendizaje.
-No hay proyecto/checkpoint implementado asociado.
+## Práctica
 
-Continúa con [06.03 — Seleccionar elementos](../03_subsetting/README.md),
-disponible con script y lab. Volver al [índice de R fundamental](../README.md).
+Realiza el [lab 06.02](../../../labs/06_r_foundations/02_objects_vectors/README.md) para
+predecir tipos y longitudes, conciliar las ventas e investigar coerción y reciclaje.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Predicciones y cálculo de ventas | Cuatro importes y total 660 MXN; tipos y longitudes | Cuándo una operación usa valores correspondientes |
+| Nota de avisos y variante propia | Reciclaje parcial y silencioso, coerción y caso vacío | Por qué terminar sin error no valida el cálculo |
+
+Puedes avanzar cuando expliques longitud/tipo/clase, reconstruyas 660 MXN
+desde las cuatro ventas y detectes tanto el aviso como el reciclaje silencioso.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia la longitud de un precio y pide predecir el resultado antes de ejecutarlo.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto integrador ni checkpoint implementado asociado; las copias de
+práctica no acreditan los proyectos pendientes del catálogo.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Muestras, scripts y actividades propios de DS Track; consulta de libros y
 documentación: 2026-10-15. Advanced R, segunda edición, de Hadley Wickham se usa
@@ -337,3 +396,10 @@ oficial y ayuda instalada. La [guía de lecturas](../../../docs/r-reading-guide.
 conserva el papel de R4DS y sus coautores dentro del recorrido.
 Ejemplos comprobados con R 4.6.1 en Windows y paquetes incluidos, sin instalaciones.
 Las páginas R-patched pueden mostrar otra versión: registra siempre la utilizada.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[06.03 — Seleccionar elementos](../03_subsetting/README.md).
+
+[← Módulo 06](../README.md) · [Lab 06.02](../../../labs/06_r_foundations/02_objects_vectors/README.md) · [Siguiente →](../03_subsetting/README.md)

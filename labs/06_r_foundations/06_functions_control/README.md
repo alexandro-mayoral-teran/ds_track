@@ -278,6 +278,6 @@ Reflexiona:
 5. ¿Qué error detecta la igualdad de longitudes y cuál no puede detectar?
 
 Cierra cuando puedas justificar esas decisiones y reproducir los resultados.
-Registra evidencia real y dudas en [PROGRESS.md](../../../PROGRESS.md), sin
+Registra evidencia real y dudas en tu bitácora personal junto a la práctica, sin
 confundir material disponible con aprendizaje acreditado. Después continúa
 con el [06.07 — Archivos y validación básica](../../../curriculum/06_r_foundations/07_files_validation/README.md). Volver a la [lección 06.06](../../../curriculum/06_r_foundations/06_functions_control/README.md).

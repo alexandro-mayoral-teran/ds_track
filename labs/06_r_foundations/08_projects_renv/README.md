@@ -242,6 +242,6 @@ Responde con tus palabras:
 5. ¿Qué cosas pueden impedir reproducir aunque las versiones estén registradas?
 
 Cierra cuando puedas reconstruir y justificar los resultados en una sesión
-nueva. Registra evidencia real y dudas en [PROGRESS.md](../../../PROGRESS.md).
+nueva. Registra evidencia real y dudas en tu bitácora personal junto a la práctica.
 No hay proyecto/checkpoint integrador implementado asociado. Continúa con el
 [06.09 — Reproducir un resultado conocido](../../../curriculum/06_r_foundations/09_known_result/README.md). Volver a la [lección 06.08](../../../curriculum/06_r_foundations/08_projects_renv/README.md).

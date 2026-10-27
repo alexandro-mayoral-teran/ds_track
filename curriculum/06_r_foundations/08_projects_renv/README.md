@@ -1,11 +1,25 @@
 # 06.08 — Proyectos y dependencias con renv
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 06](../README.md) / **Lección 06.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reconstruir un análisis con dependencias locales y versiones registradas |
+| **Necesitas** | Funciones, archivos y sesiones nuevas de 06.06–06.07 |
+| **Evidencia** | Dos copias conciliadas con rutas, versiones y sesión comprobadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 06.08](../../../labs/06_r_foundations/08_projects_renv/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 En 06.07 conservamos datos, código y resultados. Para repetir el análisis en
 otra carpeta o computadora también necesitamos saber qué paquetes utilizó.
 `renv` registra versiones de paquetes y ayuda a restaurarlas en una biblioteca
 del proyecto. Después comprobaremos que el análisis conserva sus resultados.
+
+## Antes de empezar
 
 **Alcance de práctica.** Necesitas [06.06 — Funciones](../06_functions_control/README.md)
 y [06.07 — Archivos y validación](../07_files_validation/README.md), rutas,
@@ -15,7 +29,7 @@ sesiones nuevas y las diferencias entre instalar y usar un paquete de
 El resultado es una copia autocontenida de práctica, no el proyecto integrador
 03_portfolio_analysis_r ni un checkpoint acreditado.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Distinguir proyecto, intérprete R, biblioteca, paquete y estado de sesión.
 - Preparar una carpeta con datos, código y archivos de dependencias.
@@ -23,6 +37,20 @@ Al terminar podrás:
 - Explicar la dirección de `snapshot` y `restore`.
 - Reconstruir en otra copia sin transferir paquetes instalados ni `.RData`.
 - Comprobar resultados y reconocer límites de reproducibilidad.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_proyecto.R) | Copiar fuentes y metadatos a una carpeta nueva | Para el recorrido |
+| [Guía de la copia](plantilla/README.md) | Consultar la estructura que completa el preparador | Para el recorrido |
+| [Lockfile](plantilla/renv.lock) | Leer versiones fijadas; se copia con el proyecto | Para el recorrido |
+| [Restauración](plantilla/restaurar.R) | Restaurar desde la copia preparada, nunca desde la plantilla | Para el recorrido |
+| [Ejecutor](plantilla/ejecutar.R) | Activar y comprobar el análisis en la copia preparada | Para el recorrido |
+| [Análisis](plantilla/analisis.R) | Seguir cálculo, exportación y registro de sesión en la copia | Para el recorrido |
+
+Abre los archivos donde se indican en el recorrido; conserva las fuentes y
+guarda tus variantes y entregas en tu copia personal. Los archivos de la plantilla se consultan aquí y se ejecutan solo después de preparar la copia.
 
 ## 1. Qué conserva cada pieza
 
@@ -169,6 +197,22 @@ en algunas repeticiones, pero este proyecto no promete restauración sin red.
 
 ## 5. Ejecutar y conservar resultados
 
+### Trabajar desde el IDE
+
+Prepara la copia con uno de los recorridos completos de terminal de la sección 6;
+el preparador se ejecuta desde la raíz de DS Track. Después abre **la carpeta
+preparada** en RStudio o el IDE elegido, inicia una sesión R nueva y comprueba
+con `getwd()` que estás en ella. No ejecutes los archivos directamente dentro
+de `plantilla/`: el preparador completa datos y funciones que esa carpeta no contiene.
+
+Realiza la activación y restauración de la sección 4 en la consola R de esa
+copia; inspecciona rutas y versiones antes de analizar. Abre `analisis.R` para
+leer y ejecutar bloques, y usa `ejecutar.R` para la comprobación completa.
+Si ya generaste una entrega, cambia `destino` en el `analisis.R` de tu copia a
+otra carpeta nueva. Guarda, reinicia R en la misma carpeta y ejecuta completo
+`ejecutar.R`; comprueba la relectura y la sesión guardada. La modificación es
+local a la copia, sin inicializar renv en la raíz del repositorio.
+
 `ejecutar.R` activa el perfil, exige un estado sincronizado y carga el análisis.
 `analisis.R` valida el mismo CSV de 14 registros y exporta una carpeta nueva.
 Antes comprueba con `renv::project()` que esta carpeta es el proyecto activo:
@@ -310,18 +354,34 @@ sí solo reproducibilidad completa ni resultados correctos.
 la evidencia en `output/` y revisa su contenido antes de compartirla; la
 plantilla y el lockfile no contienen rutas personales.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 06.08](../../../labs/06_r_foundations/08_projects_renv/README.md).
-Puedes cerrar al restaurar una copia sin bibliotecas, verificar sus rutas y
-versiones, ejecutar desde una sesión nueva y conciliar resultados con otra
-copia. Explica también cuándo usar snapshot y qué no conserva renv.
-No hay proyecto/checkpoint integrador implementado asociado. Registra evidencia
-real: preparar material no acredita aprendizaje del estudiante.
+## Práctica
 
-Sigue [06.09 — Reproducir un resultado conocido](../09_known_result/README.md). Volver al [índice de R](../README.md).
+Realiza el [lab 06.08](../../../labs/06_r_foundations/08_projects_renv/README.md) para
+restaurar y comprobar una copia y reconstruir en otra sin transferir bibliotecas.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuentes, metadatos y nota de entorno | Proyecto activo, rutas locales, versiones y estado sincronizado | Intérprete frente a biblioteca; dirección de snapshot y restore |
+| Resultados de dos copias y sesiones | Mismos conteos, cobertura e indicadores desde sesiones nuevas | Qué conserva renv y qué depende de datos, código y sistema |
+
+Puedes avanzar cuando restaures una copia sin bibliotecas transferidas,
+verifiques rutas y versiones, ejecutes desde una sesión nueva y concilies
+resultados con otra copia. Explica cuándo usar snapshot y los límites de renv.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide reconstruir desde fuentes y lockfile y revisar dónde se cargó withr.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto integrador ni checkpoint implementado asociado; las copias de
+práctica no acreditan los proyectos pendientes del catálogo.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track; consulta: 2026-10-17. Verificados con R 4.6.1,
 renv 1.3.1 y withr 3.0.3 en Windows, sin instalar en bibliotecas globales.
@@ -342,3 +402,10 @@ renv 1.3.1 y withr 3.0.3 en Windows, sin instalar en bibliotecas globales.
 
 El activador incluido es código generado por renv. La
 [guía de lecturas R](../../../docs/r-reading-guide.md) ubica libros y ediciones.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[06.09 — Reproducir un resultado conocido](../09_known_result/README.md).
+
+[← Módulo 06](../README.md) · [Lab 06.08](../../../labs/06_r_foundations/08_projects_renv/README.md) · [Siguiente →](../09_known_result/README.md)

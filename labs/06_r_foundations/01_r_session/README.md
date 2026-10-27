@@ -141,7 +141,7 @@ la corrección. Las rutas pueden contener datos personales: revisa qué comparte
 - ¿Qué diferencia hay entre biblioteca de paquetes y objetos de tu sesión?
 
 Puedes cerrar la práctica cuando ejecutes y expliques el resultado desde una
-sesión nueva. Registra evidencia real y dudas en PROGRESS.md; tener esta lección
+sesión nueva. Registra evidencia real y dudas en tu bitácora personal junto a la práctica; tener esta lección
 no acredita haberla completado.
 
 Continúa con la siguiente lección:

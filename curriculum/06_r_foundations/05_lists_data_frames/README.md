@@ -1,11 +1,25 @@
 # 06.05 — Listas y data frames
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 06](../README.md) / **Lección 06.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reunir datos en listas y tablas sin perder identidad ni forma |
+| **Necesitas** | Vectores, selección y lógica de 06.02–06.04; R base y utils |
+| **Evidencia** | Tabla inspeccionada y copia modificada con importes recalculados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 06.05](../../../labs/06_r_foundations/05_lists_data_frames/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Hasta ahora una venta ocupa la misma posición en varios vectores. Una tabla
 permite consultar esa venta con sus unidades, precio e importe juntos. Antes
 conoceremos las listas: pueden reunir componentes distintos sin convertirlos
 todos al mismo tipo.
+
+## Antes de empezar
 
 **Alcance esencial.** Retoma [06.02 — Vectores y tipos](../02_objects_vectors/README.md),
 [06.03 — Selección](../03_subsetting/README.md) y
@@ -14,7 +28,7 @@ Necesitas R y una sesión nueva; RStudio es opcional. Usamos R base y utils,
 incluidos con R, sin instalar paquetes. Funciones y control de flujo llegan
 en 06.06; archivos, en 06.07; tibble y dplyr, en el módulo 07.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Construir una lista y explicar sus componentes, nombres y longitudes.
 - Construir una tabla con una venta por fila y tipos por columna.
@@ -22,6 +36,15 @@ Al terminar podrás:
 - Extraer una columna como vector o conservarla como tabla.
 - Seleccionar filas completas sin perder la identidad ni los pendientes.
 - Modificar una copia y recalcular una columna dependiente.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Listas y tablas](listas_tablas.R) | Construir, inspeccionar y seleccionar sin confundir vector y tabla | Para el recorrido |
+
+Abre los archivos donde se indican en el recorrido; conserva las fuentes y
+guarda tus variantes y entregas en tu copia personal. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Una lista reúne componentes diferentes
 
@@ -321,6 +344,20 @@ demostración separada de reciclaje, sin errores deliberados ni escrituras.
 Desde la raíz, elige un recorrido completo. Adapta las rutas a tu instalación;
 no necesitas instalar otra versión ni modificar un entorno adecuado.
 
+### Desde RStudio o el IDE elegido
+
+Abre la carpeta del repositorio y [listas_tablas.R](listas_tablas.R).
+Comprueba con `getwd()` que R trabaja desde la raíz de DS Track, como en
+[06.01](../01_r_session/README.md#4-pasar-de-la-consola-a-un-archivo-que-se-pueda-repetir).
+Lee y ejecuta bloques del archivo desde el editor; inspecciona los objetos y
+contrasta lo impreso con las predicciones. Guarda tus variantes en una copia
+personal. Para comprobarlas, guarda el archivo, reinicia la sesión R y ejecuta
+el script completo sin recuperar objetos anteriores.
+
+La consola R recibe instrucciones de R. Los comandos `Rscript` siguientes
+pertenecen a la terminal del sistema; elige uno de los recorridos completos
+como apoyo para comprobar el mismo archivo.
+
 ### PowerShell
 
 ```powershell
@@ -351,17 +388,33 @@ Se espera código 0, tabla 6 × 4, grupos 2/2/2, tabla vacía 0 × 4,
 suma observada original 660 y variante 760. Registra versión y sesión;
 los faltantes impresos forman parte de la muestra.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 06.05](../../../labs/06_r_foundations/05_lists_data_frames/README.md).
-Puedes cerrar cuando construyas la tabla, expliques las formas obtenidas por
-selección, conserves los pendientes y compruebes original y copia con resultados
-manuales. No hay proyecto/checkpoint implementado asociado. Registra evidencia
-real y dudas: el material disponible no acredita aprendizaje.
+## Práctica
 
-Sigue [06.06 — Funciones y control de flujo](../06_functions_control/README.md). Volver al [índice de R](../README.md).
+Realiza el [lab 06.05](../../../labs/06_r_foundations/05_lists_data_frames/README.md) para
+construir la tabla, conservar los pendientes y confirmar un dato en una copia.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Lista, tabla y selecciones | Nombres, tipos, dimensiones y forma del resultado | Diferencias entre componente, columna vector y tabla de una columna |
+| Original y copia recalculada | Identidad de filas, pendientes y resultados manuales | Por qué cambiar una entrada exige recalcular su importe |
+
+Puedes avanzar cuando construyas la tabla, expliques las formas de selección,
+conserves los pendientes y compruebes original y copia con resultados manuales.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero solicita la misma columna como vector y como tabla y pide justificar la diferencia.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto integrador ni checkpoint implementado asociado; las copias de
+práctica no acreditan los proyectos pendientes del catálogo.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track. Consulta: 2026-10-17.
 
@@ -379,3 +432,10 @@ Ejemplos propios de DS Track. Consulta: 2026-10-17.
 
 La [guía de lecturas R](../../../docs/r-reading-guide.md) reconoce las coautorías
 de otros libros del recorrido y distingue sus ediciones.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[06.06 — Funciones y control de flujo](../06_functions_control/README.md).
+
+[← Módulo 06](../README.md) · [Lab 06.05](../../../labs/06_r_foundations/05_lists_data_frames/README.md) · [Siguiente →](../06_functions_control/README.md)

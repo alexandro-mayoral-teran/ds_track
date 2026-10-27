@@ -1,21 +1,46 @@
 # 06.03 — Seleccionar elementos
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 06](../README.md) / **Lección 06.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Seleccionar elementos conservando correspondencia y estructura |
+| **Necesitas** | Vectores y tipos de 06.02; sesión R nueva, sin instalaciones |
+| **Evidencia** | Selecciones justificadas y comparación del original con una copia |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 06.03](../../../labs/06_r_foundations/03_subsetting/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 En [06.02 — Objetos, vectores y tipos](../02_objects_vectors/README.md) calculaste
 cuatro ventas con total 660 MXN. Ahora seleccionaremos algunas de esas ventas
 por posición, nombre y una máscara lógica. También preguntaremos qué estructura
 devuelve cada operador, no solo qué número aparece en pantalla.
 
+## Antes de empezar
+
 Esta lección es esencial. Reutiliza c, asignación, length, typeof, class y ejecución
 desde una sesión nueva de [06.01](../01_r_session/README.md). No se instalan paquetes.
 Introduciremos una comparación simple y una lista mínima para entender la selección;
 sus reglas completas pertenecen a 06.04–06.05. Las tablas se desarrollan en 06.05.
 
-Al terminar podrás seleccionar posiciones desde 1, excluir/reordenar elementos,
-usar nombres completos y mantener alineados los vectores de una selección.
-Podrás distinguir `[` de `[[` y `$`, reconocer vacíos/faltantes/errores y explicar
-por qué una selección no valida por sí sola la pregunta del análisis.
+## Qué vas a aprender
+
+- Seleccionar, excluir y reordenar desde la posición 1.
+- Usar nombres completos y máscaras manteniendo la correspondencia.
+- Distinguir `[` de `[[` y `$` por valor y estructura.
+- Reconocer resultados vacíos, faltantes y errores.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Selección de ventas](seleccionar_ventas.R) | Contrastar posiciones, nombres, máscaras y estructuras | Para el recorrido |
+
+Abre los archivos donde se indican en el recorrido; conserva las fuentes y
+guarda tus variantes y entregas en tu copia personal. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. La posición inicial es 1
 
@@ -252,6 +277,20 @@ selecciones por posición/nombre/máscara, la lista mínima y la variante. No es
 archivos ni depende del estado de 06.02. Parte de la raíz del repositorio y usa
 el R elegido en 06.01, sin cambiar instalaciones. Elige el recorrido de tu shell.
 
+### Desde RStudio o el IDE elegido
+
+Abre la carpeta del repositorio y [seleccionar_ventas.R](seleccionar_ventas.R).
+Comprueba con `getwd()` que R trabaja desde la raíz de DS Track, como en
+[06.01](../01_r_session/README.md#4-pasar-de-la-consola-a-un-archivo-que-se-pueda-repetir).
+Lee y ejecuta bloques del archivo desde el editor; inspecciona los objetos y
+contrasta lo impreso con las predicciones. Guarda tus variantes en una copia
+personal. Para comprobarlas, guarda el archivo, reinicia la sesión R y ejecuta
+el script completo sin recuperar objetos anteriores.
+
+La consola R recibe instrucciones de R. Los comandos `Rscript` siguientes
+pertenecen a la terminal del sistema; elige uno de los recorridos completos
+como apoyo para comprobar el mismo archivo.
+
 ### PowerShell
 
 ```powershell
@@ -314,18 +353,33 @@ retomarán en 06.05. No se exige dominar matrices para continuar.
 
 </details>
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 06.03](../../../labs/06_r_foundations/03_subsetting/README.md).
-Puedes cerrar la lección cuando predigas valores/tipos/longitudes, mantengas la
-correspondencia y distingas subconjunto de contenido. No hay proyecto/checkpoint
-implementado asociado. Conserva evidencia real y dudas en PROGRESS.md; disponer
-del material no acredita aprendizaje.
+## Práctica
 
-Continúa con [06.04 — Lógica y valores faltantes](../04_logic_missing/README.md).
-Volver al [índice de R fundamental](../README.md).
+Realiza el [lab 06.03](../../../labs/06_r_foundations/03_subsetting/README.md) para
+predecir selecciones y comprobar identidad, tipo y longitud sin modificar la fuente.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Predicciones y selecciones | Valores, tipos, longitudes y orden obtenidos | Subconjunto frente a contenido de un elemento |
+| Original, copia y nota de fronteras | Correspondencia entre vectores, vacío, faltante y error | Por qué una selección válida no prueba que la pregunta sea correcta |
+
+Puedes avanzar cuando predigas valores/tipos/longitudes, mantengas la
+correspondencia de las entradas y distingas subconjunto de contenido.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide seleccionar las mismas ventas por nombre y por posición y explicar sus formas.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto integrador ni checkpoint implementado asociado; las copias de
+práctica no acreditan los proyectos pendientes del catálogo.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track sobre las cuatro ventas de 06.02. Consulta:
 2026-10-15. [Selección en Advanced R, segunda edición](https://adv-r.hadley.nz/subsetting.html),
@@ -334,3 +388,10 @@ Se contrastan casos concretos con documentación oficial y R 4.6.1 local, sin
 paquetes externos. Las páginas R-patched pueden describir otra versión: consulta
 la ayuda instalada para el objeto y versión que utilices. La
 [guía de lecturas](../../../docs/r-reading-guide.md) ubica libros y coautorías.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[06.04 — Lógica y valores faltantes](../04_logic_missing/README.md).
+
+[← Módulo 06](../README.md) · [Lab 06.03](../../../labs/06_r_foundations/03_subsetting/README.md) · [Siguiente →](../04_logic_missing/README.md)

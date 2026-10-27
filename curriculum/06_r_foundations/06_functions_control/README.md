@@ -1,11 +1,25 @@
 # 06.06 — Funciones y control de flujo
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 06](../README.md) / **Lección 06.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reutilizar cálculos con funciones y decidir ante entradas límite |
+| **Necesitas** | Vectores, faltantes y tablas de 06.02/04/05; sin instalaciones |
+| **Evidencia** | Funciones comprobadas con casos válidos, vacíos y errores explícitos |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 06.06](../../../labs/06_r_foundations/06_functions_control/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Cuando confirmamos un dato en 06.05 tuvimos que recalcular el importe y volver
 a resumirlo. Una función permite dar un nombre a ese trabajo y reutilizarlo con
 otras entradas. El control de flujo permite decidir qué hacer ante una entrada
 vacía o incompleta y repetir un procedimiento para varias preguntas.
+
+## Antes de empezar
 
 **Alcance esencial:** `function`, argumentos, retorno, alcance local, `if`,
 validación con `stop` y repetición con `for`. `tryCatch` es una extensión breve
@@ -15,7 +29,7 @@ para una falla esperada. Necesitas [vectores y tipos, 06.02](../02_objects_vecto
 Usamos R y sus paquetes incluidos, sin instalaciones. RStudio es opcional.
 Archivos y validación de registros completos quedan en 06.07.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Definir y llamar una función, identificando parámetros, argumentos y resultado.
 - Pasar los datos necesarios sin depender de objetos ocultos de otra sesión.
@@ -23,6 +37,16 @@ Al terminar podrás:
 - Elegir una rama con una condición escalar conocida.
 - Rechazar entradas incompatibles y conservar los `NA` permitidos.
 - Usar `for` con una secuencia segura ante el vacío y reconocer cálculos vectorizados.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Funciones de ventas](funciones_ventas.R) | Leer entradas, retornos, validación y resumen | Para el recorrido |
+| [Ejecutor](ejecutar_funciones.R) | Reconstruir datos y comprobar funciones desde cero | Para el recorrido |
+
+Abre los archivos donde se indican en el recorrido; conserva las fuentes y
+guarda tus variantes y entregas en tu copia personal. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. De una expresión a una función
 
@@ -437,6 +461,20 @@ Desde la raíz, elige un recorrido completo y adapta las rutas a tu instalación
 `--vanilla` se explica en [06.01](../01_r_session/README.md); no necesitas
 otra instalación ni cambiar un entorno adecuado.
 
+### Desde RStudio o el IDE elegido
+
+Abre la carpeta del repositorio y [ejecutar_funciones.R](ejecutar_funciones.R) y consulta [funciones_ventas.R](funciones_ventas.R).
+Comprueba con `getwd()` que R trabaja desde la raíz de DS Track, como en
+[06.01](../01_r_session/README.md#4-pasar-de-la-consola-a-un-archivo-que-se-pueda-repetir).
+Lee y ejecuta bloques del archivo desde el editor; inspecciona los objetos y
+contrasta lo impreso con las predicciones. Guarda tus variantes en una copia
+personal. Para comprobarlas, guarda el archivo, reinicia la sesión R y ejecuta
+el script completo sin recuperar objetos anteriores.
+
+La consola R recibe instrucciones de R. Los comandos `Rscript` siguientes
+pertenecen a la terminal del sistema; elige uno de los recorridos completos
+como apoyo para comprobar el mismo archivo.
+
 ### PowerShell
 
 ```powershell
@@ -468,17 +506,34 @@ explicadas y variante V005 con suma 760 y media 152. El intento de la extensión
 se informa como fallido y se maneja deliberadamente; los errores sueltos de la
 lección deben fallar si se ejecutan por separado. No los añadas al script correcto.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 06.06](../../../labs/06_r_foundations/06_functions_control/README.md).
-Cierra cuando puedas explicar parámetros/argumentos/retorno, separar presentación,
-justificar las ramas con vacío/faltantes y comprobar cálculos, errores y fuentes
-intactas en una sesión nueva. No hay proyecto/checkpoint implementado asociado.
-Registra evidencia real y dudas; disponer del material no acredita aprendizaje.
+## Práctica
 
-Sigue [06.07 — Archivos y validación básica](../07_files_validation/README.md). Volver al [índice de R](../README.md).
+Realiza el [lab 06.06](../../../labs/06_r_foundations/06_functions_control/README.md) para
+explicar argumentos y retorno y comprobar ramas, errores y reutilización del cálculo.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Funciones y llamadas de tu práctica | Entradas explícitas, retornos y fuentes conservadas | Alcance local y diferencia entre devolver e imprimir |
+| Comprobaciones y nota de fallas | Vacío, faltantes, errores y secuencia segura de repetición | Qué rama corresponde a cada entrada y por qué se rechaza una incompatible |
+
+Puedes avanzar cuando expliques parámetros/argumentos/retorno, separes
+presentación y cálculo, justifiques ramas con vacío/faltantes y compruebes
+cálculos y errores desde una sesión nueva con fuentes intactas.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero elige una entrada vacía y una incompatible y pide predecir retorno o error.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto integrador ni checkpoint implementado asociado; las copias de
+práctica no acreditan los proyectos pendientes del catálogo.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track. Consulta: 2026-10-17; comprobados con R 4.6.1.
 
@@ -499,3 +554,10 @@ Ejemplos propios de DS Track. Consulta: 2026-10-17; comprobados con R 4.6.1.
   `help("if")`, `?stop`, `?seq_along` y `?tryCatch` en la ayuda instalada.
 
 Consulta también la [guía de lecturas R](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[06.07 — Archivos y validación básica](../07_files_validation/README.md).
+
+[← Módulo 06](../README.md) · [Lab 06.06](../../../labs/06_r_foundations/06_functions_control/README.md) · [Siguiente →](../07_files_validation/README.md)

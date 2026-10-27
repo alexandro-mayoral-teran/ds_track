@@ -1,21 +1,50 @@
 # 06.01 — R, editor, scripts y paquetes
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 06](../README.md) / **Lección 06.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reconocer la sesión R y repetir un primer cálculo desde un script |
+| **Necesitas** | Cierre esencial de Python aplicado y una instalación de R |
+| **Evidencia** | Script propio y registro de sesión con una comprobación manual |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 06.01](../../../labs/06_r_foundations/01_r_session/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Vamos a ejecutar R y reconocer qué sesión está haciendo el trabajo. El resultado
 será un script pequeño que vuelve a calcular una venta ficticia desde cero y
 muestra versión, directorio y paquetes. La pregunta es familiar; aprenderemos
 la forma de trabajar de R sin traducir Python línea por línea.
 
+## Antes de empezar
+
 Completa el [cierre esencial de Python aplicado](../../05_python_applied/11_project_closure/README.md)
 y conserva sus reglas de reconstrucción. Las ampliaciones 05.06–05.10 no son
 prerrequisitos. Revisa [terminal y rutas 00.02](../../00_getting_started/02_terminal_paths/README.md)
 si necesitas distinguir un comando del sistema de una instrucción del lenguaje.
 
-Al terminar podrás distinguir R de su editor, ejecutar un archivo .R por completo,
-identificar la sesión y explicar instalación frente a uso de paquetes. Esta
-lección es esencial; RStudio es opcional. Solo utilizamos R y sus paquetes
+Esta lección es esencial; RStudio es opcional. Solo utilizamos R y sus paquetes
 incluidos: no necesitas instalar tidyverse ni configurar renv todavía.
+
+## Qué vas a aprender
+
+- Distinguir R, consola, terminal y editor.
+- Ejecutar un archivo `.R` completo desde una sesión nueva.
+- Identificar versión, directorio y paquetes de la sesión.
+- Explicar la diferencia entre instalar y utilizar un paquete.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Primer script](primer_script.R) | Calcular la venta y leer el contexto de la sesión | Para el recorrido |
+| [Lecturas de R](../../../docs/r-reading-guide.md) | Ubicar libros y ediciones | Consulta opcional |
+
+Abre los archivos donde se indican en el recorrido; conserva las fuentes y
+guarda tus variantes y entregas en tu copia personal. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. R, consola, terminal y editor
 
@@ -298,18 +327,33 @@ Los [capítulos sobre scripts/proyectos](https://r4ds.hadley.nz/workflow-scripts
 y [cómo pedir ayuda](https://r4ds.hadley.nz/workflow-help.html) de R4DS apoyan este
 flujo. No es necesario leer Advanced R ni crear un paquete para continuar.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 06.01](../../../labs/06_r_foundations/01_r_session/README.md).
-Puedes cerrar la lección cuando ejecutes el script desde una sesión nueva,
-expliques total y sesión, distingas R/editor/terminal y sepas dónde consultar
-la ayuda de un paquete. No hay proyecto/checkpoint implementado asociado.
-Registra evidencia real y dudas; desarrollar material no acredita aprendizaje.
+## Práctica
 
-Continúa con [06.02 — Objetos, vectores y tipos](../02_objects_vectors/README.md),
-disponible con scripts y lab. Volver al [índice de R fundamental](../README.md).
+Realiza el [lab 06.01](../../../labs/06_r_foundations/01_r_session/README.md) para
+predecir el cálculo, preparar una variante propia y reconocer una dependencia escondida.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script guardado y variante propia | Total contrastado manualmente y ejecución completa tras reiniciar R | Por qué guardar o ejecutar líneas sueltas no demuestra reconstrucción |
+| Nota de sesión y consulta de ayuda | Versión, directorio y paquetes realmente utilizados | Diferencias entre R, editor, terminal, instalar y adjuntar |
+
+Puedes avanzar cuando ejecutes el script desde una sesión nueva, expliques
+el total y el contexto, distingas R/editor/terminal y encuentres la ayuda de un paquete.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide reiniciar R y explicar de dónde sale cada objeto que usa el script.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto integrador ni checkpoint implementado asociado; las copias de
+práctica no acreditan los proyectos pendientes del catálogo.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplo y práctica propios de DS Track; consulta de libros y documentación:
 2026-10-15. R4DS segunda edición reconoce a Wickham, Çetinkaya-Rundel y Grolemund;
@@ -317,3 +361,10 @@ la guía general de libros está en [lecturas de R](../../../docs/r-reading-guid
 Las referencias oficiales complementan sus ideas; no se copiaron ejercicios ni
 se trata un libro o página en desarrollo como documentación de la versión local.
 Script comprobado con R 4.6.1 en Windows, sin paquetes externos ni cambios a Conda.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[06.02 — Objetos, vectores y tipos](../02_objects_vectors/README.md).
+
+[← Módulo 06](../README.md) · [Lab 06.01](../../../labs/06_r_foundations/01_r_session/README.md) · [Siguiente →](../02_objects_vectors/README.md)

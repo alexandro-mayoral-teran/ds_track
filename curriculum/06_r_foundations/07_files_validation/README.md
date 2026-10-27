@@ -1,11 +1,25 @@
 # 06.07 — Archivos y validación básica
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 06](../README.md) / **Lección 06.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Validar un CSV conservando originales, rechazos y cobertura |
+| **Necesitas** | Tablas y funciones de 06.05–06.06; R base y utils |
+| **Evidencia** | Entrega releída con aceptados, rechazos y conteos conciliados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 06.07](../../../labs/06_r_foundations/07_files_validation/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Una tabla escrita dentro de un script ya tiene tipos elegidos por quien la
 construyó. Un CSV contiene texto: leerlo no demuestra que sus identificadores,
 números o faltantes cumplan nuestras reglas. En esta lección conservaremos la
 entrada, separaremos aceptados y rechazos y comprobaremos lo que exportamos.
+
+## Antes de empezar
 
 **Alcance esencial.** Retoma [06.05 — Tablas](../05_lists_data_frames/README.md)
 y [06.06 — Funciones y control](../06_functions_control/README.md): selección,
@@ -13,7 +27,7 @@ copias, argumentos, `if`, ciclos y errores. Usamos R base, utils y las funciones
 del curso, sin paquetes externos. RStudio es opcional; renv llega en 06.08 y
 readr en el módulo 07. Esta práctica utiliza ventas ficticias, no datos reales.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Resolver rutas relativas desde la raíz del repositorio.
 - Declarar separador, decimal, codificación, columnas y marcadores de faltantes.
@@ -21,6 +35,18 @@ Al terminar podrás:
 - Separar registros aceptados y rechazados con posición y motivos.
 - Conciliar conteos e indicadores y exportar CSV sin nombres de fila accidentales.
 - Volver a leer una entrega y conservar la fuente y las entregas previas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [CSV de ventas ficticias](ventas_entrada.csv) | Examinar textos y contrato antes de convertir | Para el recorrido |
+| [Funciones de archivos](funciones_archivos.R) | Leer, validar y exportar con motivos | Para el recorrido |
+| [Funciones de ventas](../06_functions_control/funciones_ventas.R) | Reutilizar cálculo y resumen con cobertura | Para el recorrido |
+| [Ejecutor de archivos](ejecutar_archivos.R) | Seguir el flujo completo con salida en carpeta nueva | Para el recorrido |
+
+Abre los archivos donde se indican en el recorrido; conserva las fuentes y
+guarda tus variantes y entregas en tu copia personal. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Rutas: desde dónde busca R
 
@@ -323,6 +349,21 @@ validación y exportación. [ejecutar_archivos.R](ejecutar_archivos.R) carga las
 funciones 06.06/06.07, lee, valida, resume, exporta y comprueba. No se lee ni
 escribe nada al cargar solo las definiciones. Desde la raíz, elige un recorrido.
 
+### Desde RStudio o el IDE elegido
+
+Trabaja con la carpeta del repositorio abierta y comprueba con `getwd()` la
+raíz de DS Track. Abre [ejecutar_archivos.R](ejecutar_archivos.R) y consulta
+las funciones enlazadas. Ejecuta bloques para inspeccionar `crudos`, `revision`
+y `resumen` antes de exportar. Para tus variantes guarda una copia personal del
+ejecutor: conserva la entrada original y ajusta en esa copia `destino` a una
+carpeta que todavía no exista. Las rutas se resuelven desde la raíz comprobada,
+no desde donde guardaste la copia del script.
+
+Para la comprobación final guarda la copia, reinicia R y ejecuta todo el archivo.
+Si ya exportaste al explorar, elige otro destino antes de repetir: no borres ni
+sobrescribas la entrega anterior. Relee y concilia como indica el recorrido.
+Los comandos siguientes van en la terminal del sistema, no en la consola R.
+
 ### PowerShell
 
 ```powershell
@@ -382,17 +423,34 @@ Pon entre comillas cualquier ruta que contenga espacios. Los scripts registran
 versión y sesión, sin cambiar locale ni bibliotecas. `output/` está ignorado
 por Git: conserva tu evidencia local sin agregarla por la fuerza al repositorio.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 06.07](../../../labs/06_r_foundations/07_files_validation/README.md).
-Cierra cuando puedas justificar el contrato, recuperar los textos rechazados,
-conciliar conteos, interpretar la cobertura y comprobar la exportación sin
-alterar fuentes ni entregas previas. No hay proyecto/checkpoint implementado
-asociado. Registra evidencia real; este material no acredita aprendizaje.
+## Práctica
 
-Sigue [06.08 — Proyectos y dependencias con renv](../08_projects_renv/README.md). Volver al [índice de R](../README.md).
+Realiza el [lab 06.07](../../../labs/06_r_foundations/07_files_validation/README.md) para
+validar textos, conciliar aceptados y rechazos y releer la entrega sin sobrescribir.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuente y entrega con aceptados/rechazos | Conteos conciliados, textos y motivos recuperables | Contrato, marcadores y separación entre ausencia e invalidez |
+| Resumen y comprobación tras relectura | Cobertura e indicadores; fuente y entregas previas intactas | Por qué exportar no demuestra que el archivo guardado sea correcto |
+
+Puedes avanzar cuando justifiques el contrato, recuperes textos rechazados,
+concilies conteos, interpretes cobertura y compruebes la exportación sin alterar
+fuentes ni entregas previas.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero elige un rechazo y pide rastrearlo hasta el texto original y su motivo.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto integrador ni checkpoint implementado asociado; las copias de
+práctica no acreditan los proyectos pendientes del catálogo.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track. Consulta: 2026-10-17; comprobados con R 4.6.1.
 
@@ -410,3 +468,10 @@ Ejemplos propios de DS Track. Consulta: 2026-10-17; comprobados con R 4.6.1.
   `?count.fields`, `?duplicated` y `?grepl` en la ayuda instalada.
 
 La [guía de lecturas R](../../../docs/r-reading-guide.md) ubica libros y ediciones.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[06.08 — Proyectos y dependencias con renv](../08_projects_renv/README.md).
+
+[← Módulo 06](../README.md) · [Lab 06.07](../../../labs/06_r_foundations/07_files_validation/README.md) · [Siguiente →](../08_projects_renv/README.md)

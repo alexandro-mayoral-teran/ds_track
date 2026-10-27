@@ -12,20 +12,43 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Presentación:** índices 00–14 y lecciones 00–05 adaptados; la
+- **Presentación:** índices 00–14 y lecciones 00–06 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
 - **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
   [Uso y comprobaciones](portal/README.md).
-- **Último trabajo:** 2026-10-27, adaptación de las once lecciones de Python
-  aplicado y corrección del destino de evidencia personal en sus labs.
+- **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones de R
+  fundamental, con apoyos y orientación desde el IDE.
 - **Siguiente paso:** continuar la revisión del contenido y la adaptación por
-  módulo (06 — R fundamental), y observar una sesión real de pareja con el portal local:
+  módulo (07 — Tidyverse), y observar una sesión real de pareja con el portal local:
   orientación, apertura, reconstrucción de práctica, revisión y reanudación.
 - **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, plantilla en R fundamental:** adaptadas 06.01–06.09
+con ubicación, ficha, preparación, objetivos, material de apoyo, práctica,
+evidencia/criterio, referencias y continuidad. Scripts, CSV, preparadores,
+plantilla/lockfile y comparadores existentes enlazados sin duplicación. Se
+conservó el desarrollo conceptual y se añadió orientación desde el IDE en
+06.02–06.09: inspección por bloques y comprobación completa tras reiniciar R.
+06.01 ya tenía ese recorrido. Consola R y terminal diferenciadas; recorridos
+PowerShell/Bash/CMD conservados. Copias preparadas para renv y cierre, con
+rutas locales y destinos nuevos para repetir sin sobrescribir entregas.
+Ocho labs corrigieron solo el destino de evidencia personal fuera de PROGRESS,
+sin migración visual ni cambios de actividades/soluciones. Cobertura central
+00–06; siguiente módulo de presentación: 07. Proyectos/checkpoints y práctica
+del estudiante siguen pendientes.
+
+Comprobación: 3688 enlaces locales de Markdown sin incidencias; anclas anteriores,
+desarrollo y 118 bloques de código/comandos/diagramas conservados. Nueve páginas
+GFM locales a 1280/390 px (18 vistas), con apoyos/cierre presentes, IDs únicos,
+sin desbordamiento de página y desplegables cerrados; muestra visual revisada.
+Scripts, muestras, lockfiles y dependencias sin cambios. No se ejecutaron
+programas del curso ni restauraciones/instalaciones por este ajuste documental.
+La vista GFM local no acredita el renderizado remoto ni aprendizaje del estudiante;
+el portal sigue limitado a 00 y sesión 02.01.
 
 **Desarrollo — 2026-10-27, plantilla en Python aplicado:** adaptadas 05.01–05.11
 con ficha, preparación, objetivos, apoyos, práctica, evidencia/criterio,

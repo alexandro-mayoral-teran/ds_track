@@ -1,11 +1,25 @@
 # 06.04 — Lógica y valores faltantes
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 06](../README.md) / **Lección 06.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Construir condiciones sin perder incertidumbre ni cobertura |
+| **Necesitas** | Vectores de 06.02 y selección de 06.03; R sin paquetes nuevos |
+| **Evidencia** | Tres grupos conciliados y resumen con conocidos y pendientes |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 06.04](../../../labs/06_r_foundations/04_logic_missing/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Una pregunta como «¿qué ventas alcanzan 200 pesos?» necesita una regla y datos
 para evaluarla. Si falta un importe, todavía no sabemos si esa venta cumple.
 En esta lección construiremos condiciones conservando esa incertidumbre y
 calcularemos un resumen que declare cuántos valores pudo utilizar.
+
+## Antes de empezar
 
 **Alcance esencial.** Retoma [vectores y tipos, 06.02](../02_objects_vectors/README.md)
 y [selección, 06.03](../03_subsetting/README.md): operaciones por posición,
@@ -13,13 +27,22 @@ longitudes, máscaras y modificación de una copia. Necesitas R y una sesión nu
 RStudio es opcional. Usamos funciones incluidas con R, sin instalar paquetes.
 Tablas completas se desarrollan en 06.05; funciones e `if`, en 06.06.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Construir comparaciones y combinarlas con `&`, `|` y `!`.
 - Distinguir una condición por registro de una respuesta sobre todo el vector.
 - Reconocer `NA`, `NaN`, `NULL` y cero, sin intercambiarlos.
 - Separar cumplimiento, incumplimiento conocido y casos pendientes.
 - Justificar `na.rm` con conteos y cobertura, también ante entradas vacías.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Lógica y faltantes](logica_faltantes.R) | Evaluar condiciones y resúmenes conservando pendientes | Para el recorrido |
+
+Abre los archivos donde se indican en el recorrido; conserva las fuentes y
+guarda tus variantes y entregas en tu copia personal. Lee las comprobaciones y los resultados esperados antes de ejecutar.
 
 ## 1. Una muestra nueva que conserva las cuatro ventas anteriores
 
@@ -289,6 +312,20 @@ del repositorio, elige un solo recorrido. Ajusta la ruta de R a tu instalación;
 no instales otra versión si tu entorno ya es adecuado. `--vanilla` inicia sin
 restaurar una sesión guardada, como se explica en [06.01](../01_r_session/README.md).
 
+### Desde RStudio o el IDE elegido
+
+Abre la carpeta del repositorio y [logica_faltantes.R](logica_faltantes.R).
+Comprueba con `getwd()` que R trabaja desde la raíz de DS Track, como en
+[06.01](../01_r_session/README.md#4-pasar-de-la-consola-a-un-archivo-que-se-pueda-repetir).
+Lee y ejecuta bloques del archivo desde el editor; inspecciona los objetos y
+contrasta lo impreso con las predicciones. Guarda tus variantes en una copia
+personal. Para comprobarlas, guarda el archivo, reinicia la sesión R y ejecuta
+el script completo sin recuperar objetos anteriores.
+
+La consola R recibe instrucciones de R. Los comandos `Rscript` siguientes
+pertenecen a la terminal del sistema; elige uno de los recorridos completos
+como apoyo para comprobar el mismo archivo.
+
 ### PowerShell
 
 ```powershell
@@ -323,17 +360,33 @@ observada 660 y media observada 165. Los `NA` y `NaN` mostrados son resultados
 explicados, no errores de ejecución. Registra también versión y sesión.
 No ocultes avisos inesperados: identifica su causa con ayuda de 06.01.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 06.04](../../../labs/06_r_foundations/04_logic_missing/README.md).
-Puedes cerrar la lección cuando expliques una condición desconocida, conserves
-sus registros, concilies los grupos y describas correctamente un resumen parcial
-y un caso sin observaciones. No hay proyecto/checkpoint implementado asociado.
-Registra evidencia real y dudas; disponer del material no acredita aprendizaje.
+## Práctica
 
-Continúa con [06.05 — Listas y data frames](../05_lists_data_frames/README.md). Volver al [índice de R fundamental](../README.md).
+Realiza el [lab 06.04](../../../labs/06_r_foundations/04_logic_missing/README.md) para
+separar cumplimiento, incumplimiento conocido y pendientes y justificar el resumen.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Máscaras y tres grupos | Filas conservadas y partición completa de la entrada | Por qué una condición desconocida no equivale a FALSE |
+| Resumen y casos frontera | Conocidos, pendientes, cobertura y entrada vacía | Diferencias entre NA, NaN, NULL y cero; alcance de na.rm |
+
+Puedes avanzar cuando expliques una condición desconocida, conserves sus
+registros, concilies los grupos e interpretes un resumen parcial y un caso sin observaciones.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero deja un importe pendiente y pide explicar qué puede afirmarse del total.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+No hay proyecto integrador ni checkpoint implementado asociado; las copias de
+práctica no acreditan los proyectos pendientes del catálogo.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios de DS Track; consulta: 2026-10-16. El capítulo
 [Logical vectors de R for Data Science, segunda edición](https://r4ds.hadley.nz/logicals.html),
@@ -344,3 +397,10 @@ Las referencias oficiales enlazadas sustentan las reglas; los ejemplos se
 comprobaron con R 4.6.1. R-patched puede describir otra versión: contrasta con
 la ayuda instalada (`?NA`, `?sum`, `?any`, `?all`) y registra tu sesión.
 La [guía de lecturas](../../../docs/r-reading-guide.md) ubica libros y ediciones.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[06.05 — Listas y data frames](../05_lists_data_frames/README.md).
+
+[← Módulo 06](../README.md) · [Lab 06.04](../../../labs/06_r_foundations/04_logic_missing/README.md) · [Siguiente →](../05_lists_data_frames/README.md)

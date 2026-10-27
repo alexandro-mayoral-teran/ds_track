@@ -272,7 +272,7 @@ Responde con tus palabras:
 
 Puedes continuar cuando reconstruyas desde una sesión nueva y justifiques
 vectores/tablas, faltantes, reglas, conteos e indicadores con evidencia.
-Registra lo realizado y las dudas en [PROGRESS.md](../../../PROGRESS.md), sin
+Registra lo realizado y las dudas en tu bitácora personal junto a la práctica, sin
 confundir el cierre del material con finalización automática del estudiante.
 No hay proyecto/checkpoint integrador implementado asociado.
 

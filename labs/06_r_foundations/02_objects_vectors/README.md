@@ -182,7 +182,7 @@ avisos; revisa rutas personales antes de compartirlos.
 - ¿Qué distingue total cero observado de ausencia de observaciones?
 
 Puedes cerrar la práctica cuando reconstruyas los resultados y expliques los
-errores con tus palabras. Registra evidencia real y dudas en PROGRESS.md;
+errores con tus palabras. Registra evidencia real y dudas en tu bitácora personal junto a la práctica;
 desarrollar este material no acredita aprendizaje.
 
 Continúa con [06.03 — Seleccionar elementos](../../../curriculum/06_r_foundations/03_subsetting/README.md),

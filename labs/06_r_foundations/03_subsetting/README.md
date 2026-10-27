@@ -176,7 +176,7 @@ observados, contraste de operadores y variante de 620. Anota versión y dudas.
 - ¿Qué demuestra y qué no demuestra que dos selecciones sumen 660?
 - ¿Por qué extraer un componente puede devolver un vector de longitud 4?
 
-Registra evidencia real y dudas en PROGRESS.md. Puedes cerrar la práctica cuando
+Registra evidencia real y dudas en tu bitácora personal junto a la práctica. Puedes cerrar la práctica cuando
 predigas valores/estructuras y mantengas la correspondencia al seleccionar.
 Desarrollar el material no acredita aprendizaje ni completa un proyecto.
 

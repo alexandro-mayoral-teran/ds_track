@@ -262,5 +262,5 @@ Explica con tus palabras:
 4. ¿Qué denominador utiliza cada porcentaje que informaste?
 5. ¿Cómo sabes que el CSV conserva campos y resultados, aunque no clases R?
 
-Registra evidencia real y dudas en [PROGRESS.md](../../../PROGRESS.md).
+Registra evidencia real y dudas en tu bitácora personal junto a la práctica.
 Después sigue el [06.08 — Proyectos y dependencias con renv](../../../curriculum/06_r_foundations/08_projects_renv/README.md). Volver a la [lección 06.07](../../../curriculum/06_r_foundations/07_files_validation/README.md).
