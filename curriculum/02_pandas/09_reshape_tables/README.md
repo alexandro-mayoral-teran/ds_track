@@ -1,15 +1,52 @@
-# 09 — Cambiar la forma de una tabla
+# 02.09 — Cambiar la forma de una tabla
 
-## Propósito, prerrequisitos y objetivos
+<a id="09--cambiar-la-forma-de-una-tabla"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reorganizar largo y ancho distinguiendo valores ausentes de combinaciones ausentes |
+| **Necesitas** | Entorno de estudio con pandas; entrada incluida o compartida según la lección |
+| **Evidencia** | Código y comprobación de la vuelta largo–ancho–largo |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/09_reshape_tables/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Pasar de formato largo a ancho y volver, conservando el significado de filas,
-claves y faltantes. Completa [Combinar tablas](../08_combine_tables/README.md)
-y su lab; utiliza el mismo entorno con pandas 2.3.3.
+claves y faltantes.
 
-Esta sección es práctica: integra selección, tipos, agrupación y uniones. Al
-terminar podrás usar pivot y melt, explicar cuándo pivot_table agrega valores y
-comprobar una vuelta largo → ancho → largo. MultiIndex, stack y unstack quedan
-como profundización; no son requisitos para el cierre del módulo.
+## Antes de empezar
+
+Completa [02.08 — Combinar tablas](../08_combine_tables/README.md) y su lab.
+Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz
+de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo;
+no necesitas producir archivos de lecciones anteriores para leer esta muestra.
+
+MultiIndex, stack y unstack quedan como profundización; no son requisitos
+para el cierre del módulo.
+
+## Qué vas a aprender
+
+- Definir la clave única de cada celda antes de usar pivot.
+- Elegir identificadores y medidas para melt.
+- Distinguir reorganización de agregación con pivot_table.
+- Comprobar la vuelta largo–ancho–largo con valores, faltantes y marcas de presencia.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](reshape_tables.py) | Proyectar tres campos y comprobar la vuelta con inventario de presencia | Para el ejemplo |
+| [CSV de entrada](../07_group_summarize/cartera_resumen.csv) | Reutilizar la muestra de 02.07; no se requieren exportaciones anteriores | Entrada incluida |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
 
 ## 1. Largo y ancho describen cómo se organizan las variables
 
@@ -286,7 +323,9 @@ No hay nuevas dependencias. La fuente permanece intacta; output está ignorado p
 Git. Las salidas se reemplazan: si falla una ejecución, podrían quedar resultados
 anteriores o parciales. Espera la confirmación de comprobaciones antes de usarlos.
 
-## Errores frecuentes, práctica y siguiente paso
+<a id="errores-frecuentes-práctica-y-siguiente-paso"></a>
+
+## Errores frecuentes
 
 | Situación | Qué revisar |
 | --- | --- |
@@ -297,16 +336,41 @@ anteriores o parciales. Espera la confirmación de comprobaciones antes de usarl
 | Se inventaron ceros | fill_value/fillna y significado de ausencia |
 | Se mezclaron medidas con unidades distintas | value_vars, etiqueta de variable y contrato |
 
-Realiza el [lab 02.09](../../../labs/02_pandas/09_reshape_tables/README.md).
+## Práctica
+
+Realiza el [lab 02.09](../../../labs/02_pandas/09_reshape_tables/README.md) para
+contrastar formas, claves y la recuperación de observaciones tras reorganizar.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código y nota de unidad, claves y medidas | Filas, valores y desconocidos en la vuelta | Qué campos conserva la proyección y cuáles quedan fuera |
+| Marcas de presencia y casos de frontera | Distinción entre NA explícito y combinación sin registro | Por qué rellenar con cero o agregar cambiaría el significado |
+
 Puedes avanzar cuando justifiques claves de celdas, distingas reorganización de
 agregación y compruebes la vuelta con valores conocidos y desconocidos.
-No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
 
-Continúa con [10 — Análisis y primera gráfica](../10_analysis_plot/README.md)
-antes de realizar su lab.
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero señala una celda vacía y pide justificar si representa ausencia de valor o de observación.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
 
-## Referencias oficiales
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [DataFrame.pivot](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.pivot.html).
 - [melt y sus identificadores](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.melt.html).
 - [pivot_table y agregación](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.pivot_table.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [02.10 — Análisis y primera gráfica](../10_analysis_plot/README.md)
+antes de realizar su lab.
+
+[← Módulo 02](../README.md) · [Lab 02.09](../../../labs/02_pandas/09_reshape_tables/README.md) · [Siguiente →](../10_analysis_plot/README.md)

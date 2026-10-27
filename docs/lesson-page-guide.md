@@ -39,8 +39,9 @@ conviene conservarlos, sin reemplazarlos por resúmenes decorativos.
 Los textos de continuidad desactualizados y los ajustes de R/evidencia personal
 quedan identificados para la adaptación. La primera prueba posterior adapta
 00.01. Después se adaptaron las seis lecciones de 01 y las restantes de 00,
-incluidas las continuidades desactualizadas de 01.06 y 00.06. Los hallazgos de
-los otros módulos siguen pendientes.
+incluidas las continuidades desactualizadas de 01.06 y 00.06. También se
+adaptaron las diez de 02, incluida 02.08 de la muestra. Los hallazgos de los
+otros módulos siguen pendientes.
 Antes de actualizar un destino, comprobar su estado real.
 
 ## Estructura propuesta
@@ -196,5 +197,14 @@ la teoría. Solo se completa un camino. 00.06 enlaza Python fundamental disponib
 Ejemplos, comandos, archivos y anclas previas se conservaron. Las páginas de 00
 también se comprueban en el portal porque están integradas en su catálogo. Los
 labs no se migraron visualmente, salvo la muestra 00.01 ya existente.
+La adaptación se extendió a las diez lecciones de
+[02 — pandas](../curriculum/02_pandas/README.md), con scripts y muestras propias o
+compartidas enlazados sin duplicar archivos. 02.01 incluye el notebook opcional
+del lab; 02.10 conserva su notebook de cierre y gráfica, con preparación de
+entorno/kernel y comprobación desde sesión limpia. Diagnósticos antes mezclados
+con la práctica tienen su propio apartado. El cierre de 02.10 ya presenta SQL
+como material disponible. Solo 02.01 está integrada como sesión en el portal;
+el resto conserva su lectura en el repositorio y su estado de integración.
+
 La migración de los otros módulos y una sesión real de estudio siguen pendientes.
 Los hallazgos de la tabla inicial describen la revisión previa a estas adaptaciones.

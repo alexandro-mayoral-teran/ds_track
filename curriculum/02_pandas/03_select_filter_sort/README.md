@@ -1,18 +1,49 @@
-# 03 — Seleccionar, filtrar y ordenar
+# 02.03 — Seleccionar, filtrar y ordenar
 
-## Propósito y prerrequisitos
+<a id="03--seleccionar-filtrar-y-ordenar"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Responder una pregunta con selección, condiciones y orden explícitos |
+| **Necesitas** | Entorno de estudio con pandas; entrada incluida o compartida según la lección |
+| **Evidencia** | Selección con IDs, orden y subtotal comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/03_select_filter_sort/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Responder una pregunta con parte de una tabla, conservando la fuente y explicando
-qué filas se incluyen. Completa [Leer, inspeccionar y exportar](../02_read_inspect_export/README.md)
-y su lab; utiliza el mismo entorno con pandas 2.3.3.
+qué filas se incluyen.
 
-Trabajaremos con [cartera_demo.csv](../02_read_inspect_export/cartera_demo.csv),
-sus seis créditos ficticios y el diccionario de la lección anterior. No duplicamos
-la muestra. Esta lección enseña selección y orden; convertir, crear columnas y
-limpiar datos se desarrollará después.
+## Antes de empezar
 
-Al terminar podrás elegir columnas, usar loc/iloc, construir condiciones,
-combinar máscaras, ordenar con desempate y comprobar una selección vacía.
+Completa [02.02 — Leer, inspeccionar y exportar](../02_read_inspect_export/README.md) y su lab.
+Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz
+de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo;
+no necesitas producir archivos de lecciones anteriores para leer esta muestra.
+
+## Qué vas a aprender
+
+- Elegir columnas y filas con loc/iloc respetando etiquetas y posiciones.
+- Combinar máscaras con paréntesis y tratar condiciones desconocidas de forma explícita.
+- Ordenar con un criterio de desempate definido.
+- Comprobar IDs, orden y subtotal, incluida una selección vacía.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](select_filter_sort.py) | Seleccionar y ordenar las seis observaciones con controles de resultado | Para el ejemplo |
+| [CSV de entrada](../02_read_inspect_export/cartera_demo.csv) | Reutilizar las seis observaciones de 02.02; no se necesita su exportación | Entrada incluida |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
 
 ## 1. Primero definir la pregunta
 
@@ -269,17 +300,35 @@ la copia generada está en output de esta lección y queda ignorada por Git.
 | Subtotal inesperado | >= frente a >, & frente a \| y política de NA |
 | Orden inesperado | Claves, dirección y desempate explícitos |
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 02.03](../../../labs/02_pandas/03_select_filter_sort/README.md).
+## Práctica
+
+Realiza el [lab 02.03](../../../labs/02_pandas/03_select_filter_sort/README.md) para
+variar umbrales, combinar máscaras y contrastar el resultado filtrado.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu código y selección exportada | IDs, orden y subtotal esperados según la fuente utilizada | Por qué la máscara responde la pregunta y cómo trata lo desconocido |
+| Nota de fronteras y caso vacío | Diferencias entre >= y >, y salida sin coincidencias | Por qué etiqueta y posición siguen siendo diferentes tras filtrar |
+
 Puedes avanzar cuando predigas y compruebes IDs, orden y subtotal, expliques
 el tratamiento de lo desconocido y resuelvas un filtro vacío sin modificar la fuente.
-No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
 
-Continúa con [04 — Tipos y columnas calculadas](../04_types_calculated_columns/README.md)
-antes de realizar su lab.
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero propone un valor de frontera y te pide justificar si entra en la selección.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
 
-## Referencias oficiales
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Selección e índices](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/indexing.html).
 - [Máscaras con valores desconocidos](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/boolean.html).
@@ -288,3 +337,10 @@ antes de realizar su lab.
   [iloc](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.iloc.html).
 - [isin](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.Series.isin.html) y
   [reset_index](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.reset_index.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [02.04 — Tipos y columnas calculadas](../04_types_calculated_columns/README.md)
+antes de realizar su lab.
+
+[← Módulo 02](../README.md) · [Lab 02.03](../../../labs/02_pandas/03_select_filter_sort/README.md) · [Siguiente →](../04_types_calculated_columns/README.md)

@@ -1,15 +1,53 @@
-# 04 — Tipos y columnas calculadas
+# 02.04 — Tipos y columnas calculadas
 
-## Propósito, prerrequisitos y objetivos
+<a id="04--tipos-y-columnas-calculadas"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Interpretar tipos y calcular columnas conservando los valores de origen |
+| **Necesitas** | Entorno de estudio con pandas; entrada incluida o compartida según la lección |
+| **Evidencia** | Código y nota de tipos, marcas y cálculos conciliados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/04_types_calculated_columns/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Convertir columnas de texto en cantidades y calcular sobre una tabla completa,
-sin escribir un ciclo por registro. Completa [Seleccionar, filtrar y ordenar](../03_select_filter_sort/README.md)
-y su lab; conserva el entorno con pandas 2.3.3. Las funciones y el ciclo sobre
-nombres de columnas retoman [Python fundamental](../../01_python_foundations/README.md).
+sin escribir un ciclo por registro.
 
-Al terminar podrás explicar un dtype, distinguir ausencia de conversión fallida,
-crear columnas por operaciones entre Series y modificar una copia con loc.
-El detalle de limpieza, duplicados y reglas de aceptación corresponde a la lección 05.
+## Antes de empezar
+
+Completa [02.03 — Seleccionar, filtrar y ordenar](../03_select_filter_sort/README.md) y su lab.
+Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz
+de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo;
+no necesitas producir archivos de lecciones anteriores para leer esta muestra.
+
+Las funciones y los ciclos sobre nombres de columnas retoman
+[Python fundamental](../../01_python_foundations/README.md). La limpieza y las
+reglas de aceptación se desarrollan en 02.05.
+
+## Qué vas a aprender
+
+- Explicar los tipos de las columnas y distinguir ausencia de conversión fallida.
+- Interpretar números con reglas explícitas sin ocultar fracciones o incompatibilidades.
+- Calcular entre Series y definir el denominador de un porcentaje.
+- Modificar una copia con loc y conciliar sobre la misma base de filas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](types_calculated_columns.py) | Convertir y calcular sobre 40 filas con marcas de interpretación | Para el ejemplo |
+| [CSV de entrada](cartera_conversion.csv) | Explorar 40 registros sintéticos; diccionario y casos en el apartado 1 | Entrada incluida |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
 
 ## 1. Una muestra más amplia para explorar
 
@@ -269,21 +307,41 @@ Resultado: entrada/salida 40 filas; saldo con 1 ausente y 1 incompatible;
 pago con 1 ausente y 1 incompatible; atraso con 1 ausente y 2 incompatibles.
 No necesitas preparar otro entorno ni instalar paquetes adicionales.
 
-## Práctica, errores frecuentes y siguiente paso
+<a id="práctica-errores-frecuentes-y-siguiente-paso"></a>
 
-Realiza el [lab 02.04](../../../labs/02_pandas/04_types_calculated_columns/README.md).
-Puedes avanzar cuando compruebes conversiones y cálculos, expliques un cero frente
-a NA y concilies totales sobre las mismas filas conservando la fuente.
+## Errores frecuentes
 
 Si astype falla, revisa textos, fracciones y rango requerido. Si una resta concatena
 o falla, revisa dtypes. Si aparecen NA inesperados, revisa operandos e índices.
 Un programa que termina no demuestra por sí solo que todas las filas sean válidas.
 
-No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
-Continúa con [05 — Faltantes, duplicados y reglas](../05_missing_duplicates_rules/README.md)
-antes de realizar su lab.
+## Práctica
 
-## Referencias oficiales
+Realiza el [lab 02.04](../../../labs/02_pandas/04_types_calculated_columns/README.md) para
+comprobar conversiones y modificar cálculos sobre una copia.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código y nota con valores originales, tipos y marcas | Ausencias e incompatibilidades conservadas por separado | Por qué conversión numérica y regla de negocio son distintas |
+| Resultados antes/después de la variante | Cálculos y totales sobre las mismas filas; fuente intacta | Qué significa cero frente a NA y qué denominador utiliza el porcentaje |
+
+Puedes avanzar cuando compruebes conversiones y cálculos, expliques un cero frente
+a NA y concilies totales sobre las mismas filas conservando la fuente.
+
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero elige un dato incompatible y pregunta cómo lo identificaste sin perder el texto original.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [to_numeric](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.to_numeric.html) y
   [astype](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.astype.html).
@@ -291,3 +349,10 @@ antes de realizar su lab.
 - [Series.where](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.Series.where.html).
 - [Asignación e índices](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/indexing.html) y
   [Copy-on-Write](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/copy_on_write.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [02.05 — Faltantes, duplicados y reglas](../05_missing_duplicates_rules/README.md)
+antes de realizar su lab.
+
+[← Módulo 02](../README.md) · [Lab 02.04](../../../labs/02_pandas/04_types_calculated_columns/README.md) · [Siguiente →](../05_missing_duplicates_rules/README.md)

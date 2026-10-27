@@ -1,15 +1,53 @@
-# 08 — Combinar tablas
+# 02.08 — Combinar tablas
 
-## Propósito, prerrequisitos y objetivos
+<a id="08--combinar-tablas"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Combinar tablas sin perder observaciones ni multiplicar importes inadvertidamente |
+| **Necesitas** | Entorno de estudio con pandas; entrada incluida o compartida según la lección |
+| **Evidencia** | Uniones con claves, cardinalidad y cobertura justificadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/08_combine_tables/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Combinar registros y agregar información de otra tabla sin multiplicar filas ni
-perder importes inadvertidamente. Completa [Agrupar y resumir](../07_group_summarize/README.md)
-y su lab; usa el mismo entorno con pandas 2.3.3.
+perder importes inadvertidamente.
 
-Al terminar podrás distinguir concat de merge, elegir claves y tipo de unión,
-validar cardinalidad y conservar registros sin coincidencia. Los diagramas Mermaid
-se muestran en GitHub; en un editor sin soporte también puedes leer las tablas
-y explicaciones que los acompañan.
+## Antes de empezar
+
+Completa [02.07 — Agrupar y resumir](../07_group_summarize/README.md) y su lab.
+Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz
+de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo;
+no necesitas producir archivos de lecciones anteriores para leer esta muestra.
+
+## Qué vas a aprender
+
+- Distinguir apilar registros con concat de relacionar claves con merge.
+- Justificar unidad de fila, claves y tipo de unión.
+- Validar cardinalidad y conservar evidencia de coincidencias ausentes.
+- Contrastar filas, valores y saldos antes y después de unir.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](combine_tables.py) | Comparar apilado, uniones y controles de cardinalidad y cobertura | Para el ejemplo |
+| [CSV de entrada](../07_group_summarize/cartera_resumen.csv) | Reutilizar el detalle de 02.07 sin necesitar sus salidas personales | Entrada incluida |
+| [Catálogo de segmentos](catalogo_segmentos.csv) | Relacionar segmentos con equipos ficticios y revisar claves sin uso | Para la unión |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
+
+Los diagramas Mermaid se acompañan de tablas y explicaciones para poder
+seguir el ejemplo también sin un renderizador de diagramas.
 
 ## 1. Dos necesidades diferentes
 
@@ -320,17 +358,42 @@ join por índices, cross y merge_asof quedan para profundización posterior.
 | Un catálogo incompleto pasó validate | validate verifica multiplicidad, no cobertura |
 | NA encontró otro NA | Política de claves ausentes antes de la unión |
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 02.08](../../../labs/02_pandas/08_combine_tables/README.md). Puedes
-avanzar cuando predigas filas, justifiques claves/cardinalidad, identifiques
+## Práctica
+
+Realiza el [lab 02.08](../../../labs/02_pandas/08_combine_tables/README.md) para
+predecir filas y justificar claves, cardinalidad y cobertura de una unión.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código y nota con claves, unión y validate | Filas y valores conservados según la operación | Por qué la cardinalidad puede multiplicar registros |
+| Controles de coincidencia y saldos conocidos | Registros sin catálogo y detalle preservado por el left | Por qué una suma igual o validate no demuestran cobertura completa |
+
+Puedes avanzar cuando predigas filas, justifiques claves/cardinalidad, identifiques
 coincidencias faltantes y pruebes que el left conserva el detalle.
-No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
 
-Continúa con [09 — Cambiar la forma de una tabla](../09_reshape_tables/README.md)
-antes de realizar su lab.
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero propone una clave repetida del catálogo y pide anticipar su efecto en filas e importes.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
 
-## Referencias oficiales
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Merge, validate, indicator y claves nulas](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.merge.html).
 - [Concat y alineación de ejes](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.concat.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [02.09 — Cambiar la forma de una tabla](../09_reshape_tables/README.md)
+antes de realizar su lab.
+
+[← Módulo 02](../README.md) · [Lab 02.08](../../../labs/02_pandas/08_combine_tables/README.md) · [Siguiente →](../09_reshape_tables/README.md)

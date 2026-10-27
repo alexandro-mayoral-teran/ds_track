@@ -1,16 +1,52 @@
-# 05 — Faltantes, duplicados y reglas
+# 02.05 — Faltantes, duplicados y reglas
 
-## Propósito, prerrequisitos y objetivos
+<a id="05--faltantes-duplicados-y-reglas"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Aplicar reglas y conservar aceptados, rechazos y motivos conciliados |
+| **Necesitas** | Entorno de estudio con pandas; entrada incluida o compartida según la lección |
+| **Evidencia** | Aceptados, rechazos y nota de reglas y motivos |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/05_missing_duplicates_rules/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Separar registros utilizables de registros que requieren revisión, sin perder
-la fuente ni el motivo de cada decisión. Completa [Tipos y columnas calculadas](../04_types_calculated_columns/README.md)
-y su lab; usa el mismo entorno con pandas 2.3.3. Retomamos las
-[reglas y rechazos de Python fundamental](../../01_python_foundations/06_validation_summary/README.md).
+la fuente ni el motivo de cada decisión.
 
-Al terminar podrás detectar ausencias, definir una clave, identificar repeticiones,
-aplicar reglas por columna y conservar aceptados/rechazados con conteos conciliados.
-La normalización de texto y la interpretación de fechas se desarrollarán en 06;
-las agrupaciones, en 07.
+## Antes de empezar
+
+Completa [02.04 — Tipos y columnas calculadas](../04_types_calculated_columns/README.md) y su lab.
+Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz
+de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo;
+no necesitas producir archivos de lecciones anteriores para leer esta muestra.
+
+Retoma las [reglas y rechazos de Python fundamental](../../01_python_foundations/06_validation_summary/README.md).
+La normalización de texto y la interpretación de fechas llegan en 02.06.
+
+## Qué vas a aprender
+
+- Definir la clave y distinguir repeticiones exactas de conflictos por clave.
+- Detectar ausencias y aplicar reglas explícitas sin imputar ni borrar automáticamente.
+- Conservar todos los motivos y los valores de origen de cada rechazo.
+- Conciliar la partición y distinguir los saldos conocidos de los pendientes.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](quality_rules.py) | Evaluar reglas, apartar registros y comprobar la reconstrucción de la partición | Para el ejemplo |
+| [CSV de entrada](cartera_calidad.csv) | Explorar 44 registros con conflictos deliberados y fuente conservada | Entrada incluida |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
 
 ## 1. Antes de limpiar: acordar qué significa una fila válida
 
@@ -257,19 +293,44 @@ es fijo y versionado. La función evaluar conserva la tabla fuente sin modificar
 | Más motivos que rechazados | Varias reglas pueden afectar al mismo registro |
 | Totales que parecen completos | Conteo de saldos sin interpretar y presencia de repeticiones |
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 02.05](../../../labs/02_pandas/05_missing_duplicates_rules/README.md).
+## Práctica
+
+Realiza el [lab 02.05](../../../labs/02_pandas/05_missing_duplicates_rules/README.md) para
+justificar reglas y rastrear decisiones, motivos y conteos.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código, reglas y nota de decisiones | Clave, política de duplicados y motivos por registro | Qué evidencia haría falta para resolver un conflicto |
+| Partición aceptados/rechazos y controles | Conteos conciliados y valores originales conservados | Por qué puede haber más motivos que rechazos y qué cantidades siguen desconocidas |
+
 Puedes avanzar cuando expliques la clave y la política de duplicados, rastrees
 varios motivos, concilies la partición y distingas lo conocido de lo ausente.
-No hay checkpoint implementado; el proyecto de limpieza sigue previsto.
 
-Continúa con [06 — Texto y fechas](../06_text_dates/README.md)
-antes de realizar su lab.
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero selecciona un registro con varios motivos y pide reconstruir su decisión.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
 
-## Referencias oficiales
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Faltantes, detección y tratamiento](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/missing_data.html).
 - [duplicated](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.duplicated.html) y
   [drop_duplicates](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.drop_duplicates.html).
 - [dropna](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.dropna.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [02.06 — Texto y fechas](../06_text_dates/README.md)
+antes de realizar su lab.
+
+[← Módulo 02](../README.md) · [Lab 02.05](../../../labs/02_pandas/05_missing_duplicates_rules/README.md) · [Siguiente →](../06_text_dates/README.md)

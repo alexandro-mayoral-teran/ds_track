@@ -1,15 +1,52 @@
-# 07 — Agrupar y resumir
+# 02.07 — Agrupar y resumir
 
-## Propósito, prerrequisitos y objetivos
+<a id="07--agrupar-y-resumir"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Construir indicadores por grupo con cobertura y conciliación contra el detalle |
+| **Necesitas** | Entorno de estudio con pandas; entrada incluida o compartida según la lección |
+| **Evidencia** | Resumen con cobertura y denominadores comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/07_group_summarize/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Convertir una tabla de observaciones en indicadores por grupo, comprobando que
-el resumen conserve lo conocido del detalle. Completa [Texto y fechas](../06_text_dates/README.md)
-y su lab; usa el mismo entorno con pandas 2.3.3.
+el resumen conserve lo conocido del detalle.
 
-Al terminar podrás agrupar por una o varias claves, nombrar agregaciones, distinguir
-filas de valores conocidos, calcular tasas con una base explícita y conciliar
-conteos/sumas. transform será una ampliación breve; ventanas y acumulados quedan
-para profundización posterior. No necesitas apply para los indicadores de esta lección.
+## Antes de empezar
+
+Completa [02.06 — Texto y fechas](../06_text_dates/README.md) y su lab.
+Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz
+de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo;
+no necesitas producir archivos de lecciones anteriores para leer esta muestra.
+
+Transform es una ampliación breve; ventanas, acumulados y apply quedan para
+profundización. No son requisitos para los indicadores esenciales.
+
+## Qué vas a aprender
+
+- Elegir las claves de agrupación y nombrar las agregaciones.
+- Distinguir filas, valores conocidos e identificadores distintos.
+- Explicar cobertura y denominador de tasas y promedios.
+- Conciliar conteos y sumas del resumen con el detalle, conservando los grupos con faltantes.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](group_summarize.py) | Agrupar y contrastar indicadores, cobertura y bases de comparación | Para el ejemplo |
+| [CSV de entrada](cartera_resumen.csv) | Explorar 48 observaciones sintéticas de 24 créditos en dos cortes | Entrada incluida |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
 
 ## 1. Definir primero la unidad del indicador
 
@@ -278,7 +315,9 @@ esta transformación; combinar otras tablas se estudiará en 08.
 Ventanas rolling, acumulados cumsum y groupby.apply se reservan para profundización.
 Primero comprueba resúmenes básicos, cobertura y bases de comparación.
 
-## Errores frecuentes, práctica y siguiente paso
+<a id="errores-frecuentes-práctica-y-siguiente-paso"></a>
+
+## Errores frecuentes
 
 | Situación | Qué revisar |
 | --- | --- |
@@ -289,16 +328,41 @@ Primero comprueba resúmenes básicos, cobertura y bases de comparación.
 | Más IDs contados que créditos distintos | Repetición legítima entre cortes |
 | Columnas no encontradas en la salida | as_index y nombres de agregación |
 
-Realiza el [lab 02.07](../../../labs/02_pandas/07_group_summarize/README.md).
+## Práctica
+
+Realiza el [lab 02.07](../../../labs/02_pandas/07_group_summarize/README.md) para
+reconstruir indicadores y contrastar sus numeradores, denominadores y cobertura.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código y nota con claves e indicadores | Conteos y sumas contra el detalle | Por qué size, count y nunique responden preguntas distintas |
+| Cobertura, numeradores y denominadores | Tratamiento de claves y medidas faltantes | Por qué tasas y promedios no se suman como importes |
+
 Puedes avanzar cuando reconstruyas indicadores desde el detalle, expliques grupos
-con NA y distingas suma, promedio, cobertura y tasa. No hay checkpoint implementado;
-el proyecto de limpieza sigue previsto.
+con NA y distingas suma, promedio, cobertura y tasa.
 
-Continúa con [08 — Combinar tablas](../08_combine_tables/README.md)
-antes de realizar su lab.
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero elige un indicador y pide reconstruir su numerador y denominador desde el detalle.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
 
-## Referencias oficiales
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Agrupación y agregación nombrada](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/groupby.html).
 - [Opciones de DataFrame.groupby](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.groupby.html).
 - [Sumas y min_count](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.core.groupby.DataFrameGroupBy.sum.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [02.08 — Combinar tablas](../08_combine_tables/README.md)
+antes de realizar su lab.
+
+[← Módulo 02](../README.md) · [Lab 02.07](../../../labs/02_pandas/07_group_summarize/README.md) · [Siguiente →](../08_combine_tables/README.md)

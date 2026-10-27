@@ -1,14 +1,55 @@
-# 10 — Análisis y primera gráfica
+# 02.10 — Análisis y primera gráfica
 
-## Propósito, prerrequisitos y objetivos
+<a id="10--análisis-y-primera-gráfica"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.10**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reconstruir un análisis y comunicar un hallazgo con una gráfica conciliada |
+| **Necesitas** | Entorno con pandas y Matplotlib; soporte de kernel para el notebook |
+| **Evidencia** | Notebook, figura e interpretación propia comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/10_analysis_plot/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Cerrar pandas con una pregunta, un proceso comprobado y un hallazgo que puedas
-explicar. Completa [Cambiar la forma de una tabla](../09_reshape_tables/README.md)
-y las prácticas anteriores. Retoma también [Tu primer notebook](../../00_getting_started/06_first_notebook/README.md).
+explicar.
 
-Al terminar podrás ejecutar un análisis desde una sesión limpia, conservar rechazos,
-conciliar un resumen y presentar una gráfica con unidades y límites. Esta primera
-figura utiliza Matplotlib; el diseño de visualizaciones se profundiza en el módulo 04.
+## Antes de empezar
+
+Completa [02.09 — Cambiar la forma de una tabla](../09_reshape_tables/README.md) y su lab.
+Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz
+de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo;
+no necesitas producir archivos de lecciones anteriores para leer esta muestra.
+
+Retoma [00.06 — Tu primer notebook](../../00_getting_started/06_first_notebook/README.md).
+El apartado 2 prepara pandas, Matplotlib y el kernel según tu gestor. Conserva
+el mismo entorno al elegir kernel y comprueba sus versiones; no instales las
+alternativas juntas. El diseño visual se profundiza en el módulo 04.
+
+## Qué vas a aprender
+
+- Definir pregunta, corte, universo y reglas antes de calcular.
+- Conservar rechazos y conciliar el resumen con las observaciones aceptadas.
+- Construir una figura desde el mismo resumen, con unidades y límites.
+- Ejecutar desde una sesión limpia y escribir una interpretación propia con evidencia.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](analysis.py) | Reconstruir lectura, reglas, resumen, figura y exportaciones | Para el ejemplo |
+| [CSV de entrada](../06_text_dates/cartera_texto_fechas.csv) | Reutilizar las 48 observaciones de 02.06 sin alterar su fuente | Entrada incluida |
+| [Notebook del análisis](first_analysis.ipynb) | Explorar con el kernel del entorno del apartado 2, reiniciar y ejecutar todo | Para el cierre y su lab |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
 
 ## 1. La pregunta antes del código
 
@@ -277,22 +318,46 @@ Las salidas se reemplazan: un fallo puede dejar resultados previos o parciales.
 Espera la confirmación final antes de utilizarlos. No hay publicación automática
 de datos ni resultados; la fuente permanece intacta y output queda ignorado.
 
-## Práctica y cierre del módulo
+<a id="práctica-y-cierre-del-módulo"></a>
 
-Realiza el [lab 02.10](../../../labs/02_pandas/10_analysis_plot/README.md).
-El material de pandas tiene diez lecciones y labs disponibles; completar su
-aprendizaje requiere evidencia, no solo que los archivos existan.
+## Práctica
+
+Realiza el [lab 02.10](../../../labs/02_pandas/10_analysis_plot/README.md) para
+reconstruir el análisis en notebook y explicar tu propia figura y hallazgo.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Notebook con pregunta e interpretación propia | Ejecución desde kernel limpio y entorno identificado | Qué responde la figura, con qué corte y universo |
+| Tablas, figura y nota de reglas/procedencia | Aceptados, rechazos, resumen y barras conciliados | Qué queda fuera y por qué una imagen o una huella no validan el análisis |
 
 Puedes cerrar el módulo cuando reconstruyas la ejecución, justifiques las reglas,
 conserves rechazos, concilies el resumen y expliques la figura con sus límites.
-El proyecto de limpieza y sus checkpoints siguen previstos; no existe aún una
-carpeta implementada ni una práctica de proyecto adicional obligatoria.
 
-Después continúa con [03.01 — Modelo relacional y SQLite](../../03_sql_databases/01_relational_sqlite/README.md)
-antes de su lab. El resto del módulo SQL conserva su plan de desarrollo.
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero elige una barra y pide rastrear su valor hasta el resumen y los registros aceptados.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
 
-## Referencias oficiales
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Barras horizontales](https://matplotlib.org/3.10.7/api/_as_gen/matplotlib.axes.Axes.barh.html).
 - [Figuras y ejes con subplots](https://matplotlib.org/3.10.7/api/_as_gen/matplotlib.pyplot.subplots.html).
 - [Guardar figuras](https://matplotlib.org/3.10.7/api/_as_gen/matplotlib.pyplot.savefig.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [03.01 — Modelo relacional y SQLite](../../03_sql_databases/01_relational_sqlite/README.md)
+antes de realizar su lab.
+
+SQL ya dispone de sus nueve lecciones y labs; el proyecto y sus checkpoints
+siguen pendientes.
+
+[← Módulo 02](../README.md) · [Lab 02.10](../../../labs/02_pandas/10_analysis_plot/README.md) · [Siguiente →](../../03_sql_databases/01_relational_sqlite/README.md)

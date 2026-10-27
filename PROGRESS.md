@@ -48,6 +48,23 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 
 ### Para retomar el desarrollo
 
+**Desarrollo — 2026-10-27, plantilla en pandas:** adaptadas 02.01–02.10 con
+ficha, preparación, objetivos, recursos, práctica, evidencia/criterio, referencias
+y continuidad. Diez scripts, CSV propios/compartidos y notebooks existentes
+enlazados sin duplicarlos: notebook opcional de lab 02.01 y cierre 02.10.
+Diagnósticos separados de la práctica en 02.04/06/07/09; ejemplos, comandos,
+datos y reglas conservados. Corregido el estado antiguo de SQL en el cierre;
+sus nueve lecciones/labs están disponibles. Labs sin migración visual; guías
+actualizadas con cobertura 00/01/02. Resto de módulos y sesión real pendientes.
+
+Comprobación: 3254 enlaces locales de Markdown y 1477 enlaces en las 27 páginas
+del portal sin incidencias. Diez lecciones GFM local y sesión 02.01 del portal
+a 1280/390 px (22 vistas); apoyos/cierre presentes y desplegables cerrados.
+Anclas anteriores, desarrollo principal y 110 bloques de código/comandos/diagramas
+contrastados con las fuentes previas. Scripts, CSV, notebooks, figura y labs
+sin cambios; no se ejecutaron ejemplos ni instalaciones. No acredita revisión
+del GitHub remoto ni aprendizaje completado; 02.02–02.10 no se integraron al portal.
+
 **Desarrollo — 2026-10-27, plantilla en Entorno de aprendizaje:** completada la
 adaptación de 00.02–00.06, conservando 00.01 ya adaptada. Cabecera, preparación,
 objetivos, apoyos, práctica, evidencia/criterio, referencias y continuidad; 00.05

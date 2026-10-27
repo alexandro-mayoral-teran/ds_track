@@ -1,15 +1,52 @@
-# 06 — Texto y fechas
+# 02.06 — Texto y fechas
 
-## Propósito, prerrequisitos y objetivos
+<a id="06--texto-y-fechas"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Normalizar categorías e interpretar fechas con reglas y originales conservados |
+| **Necesitas** | Entorno de estudio con pandas; entrada incluida o compartida según la lección |
+| **Evidencia** | Código y nota de categorías, fechas y conflictos |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/06_text_dates/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Interpretar categorías y fechas con reglas explícitas, conservando la entrada y
-los casos que no se pudieron interpretar. Completa [Faltantes, duplicados y reglas](../05_missing_duplicates_rules/README.md)
-y su lab; utiliza el mismo entorno con pandas 2.3.3.
+los casos que no se pudieron interpretar.
 
-Al terminar podrás usar métodos str, acordar equivalencias de categorías, convertir
-fechas con formato declarado, extraer componentes con dt y seleccionar un período.
-La agrupación se desarrolla en 07; comparar crédito por crédito mediante uniones,
-en 08. No necesitas dominar expresiones regulares ni zonas horarias para avanzar.
+## Antes de empezar
+
+Completa [02.05 — Faltantes, duplicados y reglas](../05_missing_duplicates_rules/README.md) y su lab.
+Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz
+de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo;
+no necesitas producir archivos de lecciones anteriores para leer esta muestra.
+
+No necesitas dominar expresiones regulares ni zonas horarias; la ampliación
+sobre horas y zonas es opcional. Los cruces crédito a crédito se desarrollan en 02.08.
+
+## Qué vas a aprender
+
+- Usar métodos str y justificar equivalencias sin fusionar categorías por accidente.
+- Interpretar fechas con formato declarado y conservar las causas de NaT.
+- Extraer componentes con dt y seleccionar un período con límites explícitos.
+- Comprobar conflictos de clave y explicar los límites de comparar cortes.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](text_dates.py) | Seguir normalización, interpretación de fechas y controles de cada corte | Para el ejemplo |
+| [CSV de entrada](cartera_texto_fechas.csv) | Explorar 48 registros ficticios con excepciones deliberadas en texto y fechas | Entrada incluida |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
 
 ## 1. Una muestra de dos cortes
 
@@ -279,7 +316,9 @@ y cómo manejar cambios de horario. utc=True puede convertir instantes con offse
 a UTC; un dato sin zona no revela automáticamente en qué lugar ocurrió.
 No agregamos zonas a estas fechas calendario ni adelantamos esa complejidad al núcleo.
 
-## Errores frecuentes, práctica y siguiente paso
+<a id="errores-frecuentes-práctica-y-siguiente-paso"></a>
+
+## Errores frecuentes
 
 | Situación | Qué revisar |
 | --- | --- |
@@ -290,17 +329,43 @@ No agregamos zonas a estas fechas calendario ni adelantamos esa complejidad al n
 | Catálogo fusionado incorrectamente | Equivalencias y reemplazos demasiado amplios |
 | Duplicados después de limpiar | Clave sobre los campos normalizados |
 
-Realiza el [lab 02.06](../../../labs/02_pandas/06_text_dates/README.md). Puedes avanzar
-cuando expliques normalizaciones, causas de NaT, conflictos de clave y límites de
-la comparación entre cortes. No hay checkpoint implementado; el proyecto sigue previsto.
+## Práctica
 
-Continúa con [07 — Agrupar y resumir](../07_group_summarize/README.md)
-antes de realizar su lab.
+Realiza el [lab 02.06](../../../labs/02_pandas/06_text_dates/README.md) para
+contrastar categorías, fechas y conflictos antes y después de una corrección.
 
-## Referencias oficiales
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código y nota con catálogo, formato y casos originales | Motivos, conteos y totales de las variantes | Qué normalizaciones justificas y cuáles requieren información externa |
+| Comprobaciones por corte y clave | Ausencias, fechas incompatibles y conflictos conservados | Por qué una fecha interpretable aún puede incumplir una regla |
+
+Puedes avanzar cuando expliques normalizaciones, causas de NaT, conflictos de
+clave y límites de la comparación entre cortes.
+
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero propone una fecha o categoría problemática y pide explicar su tratamiento.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
+
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="referencias-oficiales"></a>
+
+## Referencias
 
 - [Trabajo con texto](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/text.html),
   [str.strip](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.Series.str.strip.html) y
   [str.contains](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.Series.str.contains.html).
 - [to_datetime](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.to_datetime.html).
 - [Fechas, duraciones y zonas horarias](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/timeseries.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [02.07 — Agrupar y resumir](../07_group_summarize/README.md)
+antes de realizar su lab.
+
+[← Módulo 02](../README.md) · [Lab 02.06](../../../labs/02_pandas/06_text_dates/README.md) · [Siguiente →](../07_group_summarize/README.md)

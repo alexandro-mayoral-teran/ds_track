@@ -1,14 +1,51 @@
-# 01 — Series y DataFrame
+# 02.01 — Series y DataFrame
 
-## Propósito y prerrequisitos
+<a id="01--series-y-dataframe"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Representar registros como una tabla y reconocer su estructura |
+| **Necesitas** | Python del módulo 00; preparación de pandas en el apartado 2 |
+| **Evidencia** | Script adaptado o notebook alternativo, con formas y consultas comprobadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/01_series_dataframe/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Representar registros como una tabla y explicar sus partes antes de leer archivos
-o hacer limpieza. Completa [Python fundamental](../../01_python_foundations/README.md)
-y utiliza el entorno que preparaste en el nivel 0.
+o hacer limpieza.
 
-Al terminar distinguirás Series y DataFrame, interpretarás filas, columnas,
-índice y tipos, y podrás localizar un valor por etiqueta o posición.
-Trabajaremos con tres ventas conocidas; todavía no necesitamos vocabulario crediticio.
+## Antes de empezar
+
+Completa [01 — Python fundamental](../../01_python_foundations/README.md).
+Usa el entorno que elegiste en [00.05](../../00_getting_started/05_environment/README.md).
+El apartado 2 explica cómo preparar y comprobar pandas con tu gestor; la versión
+de referencia es 2.3.3. No necesitas otro entorno ni instalar todos los gestores.
+Las tres ventas están definidas en la página y el script, sin archivos CSV
+ni vocabulario crediticio todavía.
+
+## Qué vas a aprender
+
+- Distinguir Series y DataFrame por su forma y significado.
+- Leer filas, columnas, índice y tipos con los atributos y métodos del ejemplo.
+- Localizar un valor por etiqueta o posición sin confundir ambas consultas.
+- Predecir cómo cambia la estructura al agregar un registro.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script](series_dataframe.py) | Inspeccionar formas, tipos y consultas de tres ventas | Ejemplo |
+| [Notebook](../../../labs/02_pandas/01_series_dataframe/practica.ipynb) | Explorar y modificar las ventas por celdas | Opcional |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
 
 ## 1. Para qué sirve pandas
 
@@ -249,20 +286,51 @@ El espaciado al imprimir puede variar; contrasta valores y estructura.
 | Error al asignar index | Cantidad de etiquetas igual a cantidad de filas |
 | Tipos inesperados | Valores de origen y versión; una tabla no valida por sí sola |
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 02.01](../../../labs/02_pandas/01_series_dataframe/README.md).
+## Práctica
+
+Realiza el [lab 02.01](../../../labs/02_pandas/01_series_dataframe/README.md) para
+adaptar una tabla y comprobar formas, tipos y consultas.
+
+Si eliges explorar por celdas, abre el
+[notebook del lab](../../../labs/02_pandas/01_series_dataframe/practica.ipynb)
+junto al script y selecciona el kernel del mismo entorno. Reinicia y ejecuta
+todas las celdas al comprobar; esta alternativa no añade otro lab obligatorio.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu script modificado o el notebook alternativo junto al script | Formas y tipos de la tabla y de las selecciones | Cómo distinguir una Series de un DataFrame |
+| Nota con consultas y resultados | El mismo valor al consultar la etiqueta y posición correctas | Por qué el índice no es automáticamente el identificador del registro |
+
 Puedes avanzar cuando expliques la estructura, distingas Series/DataFrame y
 localices un valor sin confundir etiqueta y posición. No necesitas leer un CSV
-ni hacer limpieza para demostrar esta primera habilidad. Todavía no hay checkpoint
-implementado; el proyecto de limpieza sigue en planificación.
+ni hacer limpieza para demostrar esta primera habilidad.
 
-## Siguiente paso y referencias
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero señala una columna y una etiqueta y te pide anticipar la forma y el valor de la consulta.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
 
-Continúa con [02 — Leer, inspeccionar y exportar](../02_read_inspect_export/README.md).
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="siguiente-paso-y-referencias"></a>
+
+## Referencias
 
 - [Primeras estructuras tabulares](https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html).
 - [DataFrame, pandas 2.3](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.html).
 - [loc](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.loc.html) e
   [iloc](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.iloc.html).
 - [Instalación oficial](https://pandas.pydata.org/docs/getting_started/install.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [02.02 — Leer, inspeccionar y exportar](../02_read_inspect_export/README.md)
+antes de realizar su lab.
+
+[← Módulo 02](../README.md) · [Lab 02.01](../../../labs/02_pandas/01_series_dataframe/README.md) · [Siguiente →](../02_read_inspect_export/README.md)

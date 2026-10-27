@@ -13,10 +13,11 @@ La muestra actual abarca [portada](../README.md), [índice del curriculum](../cu
 Los índices de los módulos 00–14 ya comparten la estructura de módulo. La
 plantilla de lección está aplicada en las seis lecciones de
 [00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md) y en las seis de
-[01 — Python fundamental](../curriculum/01_python_foundations/README.md).
+[01 — Python fundamental](../curriculum/01_python_foundations/README.md), además
+de las diez de [02 — pandas](../curriculum/02_pandas/README.md).
 00.05 conserva su entrada, dos lecturas y tres recorridos alternativos con
 orientación, apoyos y cierre; se elige un solo camino.
-Los labs mantienen solo la muestra visual 00.01 adaptada; los labs de 01 se
+Los labs mantienen solo la muestra visual 00.01 adaptada; los labs de 01/02 se
 conservaron y se revisaron sus enlaces. El resto se revisa gradualmente.
 Los módulos 12–14 conservan su planificación.
 

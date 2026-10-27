@@ -1,14 +1,49 @@
-# 02 — Leer, inspeccionar y exportar
+# 02.02 — Leer, inspeccionar y exportar
 
-## Propósito y prerrequisitos
+<a id="02--leer-inspeccionar-y-exportar"></a>
+
+[Inicio](../../../README.md) / [Módulo 02](../README.md) / **Lección 02.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Cargar e inspeccionar un CSV y comprobar su exportación |
+| **Necesitas** | Entorno de estudio con pandas; entrada incluida o compartida según la lección |
+| **Evidencia** | Código, exportación y nota de relectura comprobada |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/02_pandas/02_read_inspect_export/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Cargar un CSV con pandas, entender qué se leyó y verificar una salida sin alterar
-la fuente. Completa [Series y DataFrame](../01_series_dataframe/README.md) y su lab.
-Usa el entorno con pandas 2.3.3 preparado allí; no necesitas instalar otro paquete.
+la fuente.
 
-Al terminar podrás interpretar head, info y describe, preservar identificadores
-de texto y volver a leer una exportación para comprobarla. Todavía no haremos
-filtros, limpieza ni cálculos entre columnas: se desarrollan en las siguientes lecciones.
+## Antes de empezar
+
+Completa [02.01 — Series y DataFrame](../01_series_dataframe/README.md) y su lab.
+Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz
+de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo;
+no necesitas producir archivos de lecciones anteriores para leer esta muestra.
+
+## Qué vas a aprender
+
+- Explicar qué representa una fila con el diccionario de la muestra.
+- Declarar tipos al leer para conservar identificadores de texto y ausencias.
+- Interpretar head, info y describe sin confundir vista previa y validación.
+- Exportar a otra ruta y releer para demostrar equivalencia.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de ejemplo](read_inspect_export.py) | Seguir lectura, inspección, exportación y relectura de la misma muestra | Para el ejemplo |
+| [CSV de entrada](cartera_demo.csv) | Leer seis observaciones ficticias con su diccionario en el apartado 1 | Entrada incluida |
+
+Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de
+ejecutarlo y contrasta sus resultados esperados. Conserva los originales y
+trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde
+su ubicación actual, sin duplicarlos.
 
 ## 1. Una muestra nueva y su diccionario
 
@@ -232,19 +267,45 @@ Otros formatos CSV pueden usar `;` o decimales con coma. Configurar sep y decima
 según la fuente es distinto de limpiar registros; no hace falta instalarlos como
 otra biblioteca. Primero comprobar el contrato y una muestra pequeña.
 
-## Práctica y criterio de salida
+<a id="práctica-y-criterio-de-salida"></a>
 
-Realiza el [lab 02.02](../../../labs/02_pandas/02_read_inspect_export/README.md).
+## Práctica
+
+Realiza el [lab 02.02](../../../labs/02_pandas/02_read_inspect_export/README.md) para
+interpretar la muestra, exportar y contrastar una relectura.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Tu código y copia exportada | IDs con ceros, ausencias y encabezado sin índice adicional | Qué informa cada inspección y qué no demuestra |
+| Nota de comprobación y referencia a la fuente | Relectura equivalente y original intacto | Por qué guardar el CSV no conserva automáticamente los tipos de pandas |
+
 Puedes avanzar al explicar qué muestra cada inspección, conservar los ID y
-faltantes, exportar a otra ruta y demostrar una lectura equivalente. El proyecto
-de limpieza sigue previsto: no hay checkpoint implementado todavía.
+faltantes, exportar a otra ruta y demostrar una lectura equivalente.
 
-## Siguiente paso y referencias
+Quien aprende modifica y ejecuta su copia y explica lo que comprobó.
+Tu compañero elige un ID con ceros iniciales y pide contrastarlo en la fuente y la relectura.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica;
+PROGRESS.md registra el desarrollo editorial del curso. El material disponible
+no acredita por sí solo aprendizaje completado.
 
-Continúa con [03 — Seleccionar, filtrar y ordenar](../03_select_filter_sort/README.md).
+El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto
+asociado implementado ni práctica adicional de proyecto obligatoria.
+
+<a id="siguiente-paso-y-referencias"></a>
+
+## Referencias
 
 - [read_csv](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.read_csv.html).
 - [info](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.info.html) y
   [describe](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.describe.html).
 - [to_csv](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.to_csv.html).
 - [equals](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.equals.html).
+
+## Siguiente paso
+
+Después del lab y su comprobación, continúa con [02.03 — Seleccionar, filtrar y ordenar](../03_select_filter_sort/README.md)
+antes de realizar su lab.
+
+[← Módulo 02](../README.md) · [Lab 02.02](../../../labs/02_pandas/02_read_inspect_export/README.md) · [Siguiente →](../03_select_filter_sort/README.md)
