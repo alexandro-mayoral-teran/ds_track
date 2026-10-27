@@ -6,16 +6,18 @@ Que el repositorio sirva como material de estudio sin necesitar el portal.
 Aplicar una jerarquía visual y una navegación repetibles, conservando las fuentes
 educativas y la lectura como texto. Acuerdo de trabajo: 2026-10-27.
 
-La muestra actual abarca [portada](../README.md), [módulo 00](../curriculum/00_getting_started/README.md),
+La muestra actual abarca [portada](../README.md), [índice del curriculum](../curriculum/README.md),
+[módulo 00](../curriculum/00_getting_started/README.md),
 [lección 00.01](../curriculum/00_getting_started/01_github_profile/README.md) y
 [lab 00.01](../labs/00_getting_started/01_github_profile/README.md).
 El resto del material se adapta gradualmente al revisarlo; no se da por uniformado.
 
-## Tres niveles
+## Niveles de navegación
 
 | Nivel | Debe resolver | Presentación |
 | --- | --- | --- |
 | Portada del repo | Qué es, por dónde empezar y dónde encontrar el material | Descripción breve, accesos directos, mapa y ruta inicial |
+| Índice del curriculum | Encontrar módulos y elegir la siguiente etapa | Tablas por etapas, ruta inicial y estado breve; detalle editorial fuera de la introducción |
 | Índice de módulo | Prerrequisitos, orden y producto de cada práctica | Ficha breve y tabla lección/lab/resultado |
 | Lección y lab | Ubicación, tarea, comprobación y continuidad | Navegación, ficha, índice y cierre reconocibles |
 

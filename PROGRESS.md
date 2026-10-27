@@ -49,6 +49,13 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ### Para retomar el desarrollo
 
 
+**Desarrollo — 2026-10-27, índice visual del curriculum:** entrada breve con
+ruta inicial y módulos 00–14 agrupados en tres etapas. Enlaces a cada índice,
+separación de material disponible/planes, alternativa Streamlit/Shiny y guía
+para avanzar. El inventario editorial deja de ocupar la introducción; se conserva
+en sus fuentes de referencia. Patrón añadido a la guía Markdown y reglas locales.
+
+
 **Desarrollo — 2026-10-27, muestra de estudio visual en Markdown:** portada
 con accesos y mapa temprano, índice 00 con lección/lab/resultado y muestra
 00.01 con ubicación, ficha inicial, pistas y tabla de comprobación. Evidencia
