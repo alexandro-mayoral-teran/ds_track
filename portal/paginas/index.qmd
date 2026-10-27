@@ -5,23 +5,19 @@ page-layout: full
 ---
 
 <div class="hero">
-<p class="eyebrow">DS TRACK / LABORATORIO DE APRENDIZAJE</p>
-<span class="pill">Primera prueba · una sesión</span>
-<h2>Las tablas se entienden<br>mejor en compañía.</h2>
-<p class="hero-copy">Un espacio para ir del concepto a la práctica, contrastar lo que encuentras y explicarlo con tus propias palabras.</p>
-<div class="hero-actions"><a class="button primary" href="sesion.qmd">Empezar la sesión <span aria-hidden="true">↗</span></a><a class="text-link" href="#como-funciona">Ver cómo trabajaremos ↓</a></div>
-<div class="hero-data" aria-label="Ejemplo de ventas: tres registros, ocho unidades">
-<div class="data-top"><span>VENTAS FICTICIAS</span><span class="mono">tabla.shape → (3, 3)</span></div>
-<table><caption class="visually-hidden">Las tres ventas de la sesión</caption><thead><tr><th scope="col">producto</th><th scope="col">unidades</th><th scope="col">precio, MXN</th></tr></thead><tbody><tr><td>cuaderno</td><td>2</td><td>40</td></tr><tr><td>lápiz, azul</td><td>5</td><td>10</td></tr><tr><td>carpeta</td><td>1</td><td>35</td></tr></tbody></table>
-<div class="data-bottom"><span><span class="small-dot"></span> Una fila, una venta</span><strong>8 unidades</strong></div>
-</div>
+<p class="eyebrow">DS TRACK / DATOS PASO A PASO</p>
+<span class="pill">Un recorrido para aprender acompañado</span>
+<h2>De tu primer archivo<br>a un análisis que puedas explicar.</h2>
+<p class="hero-copy">Aprende a manipular, analizar, almacenar y comunicar datos. Parte de los fundamentos, practica con ejemplos concretos y contrasta tus decisiones con un compañero.</p>
+<div class="hero-actions"><a class="button primary" href="modulo-00.qmd">Empezar desde el principio <span aria-hidden="true">↗</span></a><a class="text-link" href="contenido.qmd">Explorar el contenido →</a></div>
+<div class="journey-strip" aria-label="El método del curso"><span>Comprender</span><span aria-hidden="true">→</span><span>Practicar</span><span aria-hidden="true">→</span><span>Comprobar</span><span aria-hidden="true">→</span><span>Explicar</span></div>
 </div>
 
-<div class="section-top"><p class="eyebrow">TU PUNTO DE PARTIDA</p><span>Python → pandas</span></div>
-<div class="session-card"><div class="session-number">02<span>.01</span></div><div><span class="pill subtle">Disponible para probar</span><h2><a href="sesion.qmd" class="session-link">De registros a una tabla</a></h2><p>Series, DataFrame, filas, columnas y etiquetas. Parte de tres ventas y descubre qué cambia al agregar una más.</p><div class="meta-row"><span>35–50 min · orientativo</span><span>En pareja</span><span>Notebook local</span></div></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+<div class="section-top"><p class="eyebrow">TU PUNTO DE PARTIDA</p><span>Módulo 00 / Fundamentos</span></div>
+<div class="session-card"><div class="session-number">00</div><div><span class="pill subtle">Primer módulo · 6 lecciones y labs</span><h2><a href="modulo-00.qmd" class="session-link">Prepara tu entorno de aprendizaje</a></h2><p>Escribe tu presentación, ubica archivos, conserva cambios y ejecuta tu primer script y notebook. Cada paso tiene una práctica y un resultado que puedes comprobar.</p><div class="meta-row"><span>Sin experiencia previa con terminal</span><span>A tu ritmo</span><span>Con acompañamiento</span></div></div><span class="card-arrow" aria-hidden="true">↗</span></div>
 
 ## Un recorrido, dos perspectivas {#como-funciona}
 
 <div class="steps-grid"><article><span class="step-num">01</span><h3>Comprende</h3><p>Lee el ejemplo y escribe tu predicción antes de ejecutar.</p></article><article><span class="step-num">02</span><h3>Experimenta</h3><p>Una persona escribe; la otra pregunta y contrasta. Luego cambien.</p></article><article><span class="step-num">03</span><h3>Explica</h3><p>Comprueba valores, adapta el ejemplo y conserva tu evidencia.</p></article></div>
 
-<div class="note-panel"><strong>Esta es una prueba pequeña.</strong><p>La lección y el lab ya pertenecen al curso. Aquí probamos otra forma de recorrerlos. Abrir una página o marcar una casilla no acredita aprendizaje.</p></div>
+<div class="note-panel"><strong>¿Ya tienes preparados los fundamentos?</strong><p>Puedes <a href="sesion.qmd">probar la sesión acompañada 02.01 de pandas</a>, con notebook y bitácora. El <a href="contenido.qmd">índice completo</a> distingue el material del repositorio de las páginas integradas en este portal. Abrir una página no acredita aprendizaje.</p></div>

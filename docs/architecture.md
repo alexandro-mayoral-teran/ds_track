@@ -945,10 +945,13 @@ Fuentes para desarrollar las herramientas:
 
 ## Registro de decisiones
 
-### Piloto local de experiencia 02.01
+### Portal local: entrada, módulo inicial y prueba 02.01
 
-[portal/](../portal/README.md) contiene una capa Quarto sobre lección/lab existentes.
-Un catálogo explícito selecciona fuentes y descargas; la generación adapta enlaces
+[portal/](../portal/README.md) contiene una capa Quarto sobre curriculum/labs existentes.
+La navegación distingue portada, contenido 00–14 y primer módulo 00. Sus seis
+lecciones/labs y apoyos se generan desde los originales; 00.05 conserva A/B y
+recorridos por gestor. La sesión acompañada 02.01 permanece como prueba adicional.
+Catálogos explícitos seleccionan fuentes y descargas; la generación adapta enlaces
 y escribe una copia nueva bajo output, excluida de Git. No ejecuta ejemplos ni
 instala paquetes. Las fuentes de consulta fuera del piloto se ofrecen con su
 ubicación en el clon y descarga, sin convertir todo el curriculum.
@@ -957,9 +960,12 @@ El notebook vive junto a su lab y viaja con el script auxiliar. Una preparación
 protegida o el ZIP crea la copia personal. El servidor sirve únicamente el sitio
 generado en 127.0.0.1; no publica ni añade backend de aprendizaje. La bitácora
 usa guardado explícito en el navegador y exportación Markdown, sin sincronización.
-PROGRESS.md conserva estado editorial; la evidencia personal del piloto va en
+PROGRESS.md conserva estado editorial; la evidencia personal del portal va en
 la copia de cada participante. El código se versiona; salidas y datos personales no.
-Prueba técnica disponible, observación de sesión real pendiente.
+El arranque detecta fuentes cambiadas y selecciona o prepara una copia actualizada,
+conservando las anteriores. Prueba técnica disponible, revisión del contenido y
+observación de sesión real pendientes. La [propuesta de publicación](portal-publication.md)
+documenta etapas y decisiones; no se ha desplegado un servicio en Internet.
 
 Las decisiones importantes se documentarán en `docs/decisions/` usando notas
 breves: contexto, decisión, consecuencias y fecha. No se agregará infraestructura

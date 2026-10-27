@@ -1,0 +1,48 @@
+---
+title: "Tu entorno de aprendizaje"
+toc: false
+---
+
+<p class="eyebrow">CONTENIDO / MÓDULO 00</p>
+<p class="lead">Prepara un lugar desde el que puedas practicar, conservar tu trabajo y explicar lo que hiciste. No necesitas experiencia previa con terminal o programación.</p>
+<div class="meta-row session-meta"><span>6 lecciones con lab</span><span>00.05 se trabaja en dos partes</span><span>Una sesión puede cubrir solo un bloque</span></div>
+
+[← Ver todo el contenido](contenido.qmd){.back-link}
+
+## Antes de empezar
+
+Para la primera lección basta un editor de texto y el navegador; si eliges la
+práctica recomendada del perfil, necesitarás una cuenta de GitHub. Las herramientas
+se introducen cuando hacen falta. Git puede ayudarte a conservar cambios, pero
+no es un requisito general para estudiar el curso.
+
+Las instrucciones de archivos y comandos usan una copia local de DS Track.
+Si aún no tienes los archivos, pide a quien te acompaña acceso al repositorio
+o una copia del curso. En 00.02 aprendes a ubicar esa copia; en 00.03, a clonar.
+El portal facilita la lectura y ofrece archivos de apoyo, pero no ejecuta los
+programas ni reemplaza la copia del curso. Trabaja sobre tu propia carpeta.
+
+## Tu camino, paso a paso
+
+<div class="lesson-list">
+<!-- LECCIONES_00 -->
+</div>
+
+## Cómo trabajar con tu compañero
+
+Una persona hace la práctica y explica su predicción; la otra observa, pregunta
+y contrasta el resultado. Cambien de papeles en otro bloque. Conserva tu propia
+copia y una nota de lo que comprobaste. Las soluciones del lab son ayuda
+voluntaria y permanecen cerradas hasta que decidas abrirlas.
+
+## Qué conservar al cerrar
+
+Tu presentación, resultado del lab de rutas, script modificado, instrucciones del
+entorno y notebook ejecutado desde cero. Además, una nota con dudas y siguiente
+paso. Puedes continuar cuando puedas reproducir esos resultados y explicar
+tus decisiones; disponer del material no acredita haberlo aprendido.
+
+[Preparar mi registro de evidencia →](registro.qmd){.button .secondary}
+
+El siguiente módulo es [01 — Python fundamental](contenido.qmd#modulo-01).
+Su material está en el repositorio; aún no está integrado como páginas del portal.

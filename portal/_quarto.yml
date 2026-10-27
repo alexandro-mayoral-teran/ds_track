@@ -8,6 +8,10 @@ project:
     - lab.qmd
     - bitacora.qmd
     - fuentes.qmd
+    - contenido.qmd
+    - modulo-00.qmd
+    - registro.qmd
+    - "00-*.qmd"
   resources:
     - descargas/**
     - procedencia.json
@@ -21,8 +25,28 @@ website:
     title: "DS Track <span class='brand-dot'>●</span>"
     subtitle: "APRENDER EN COMPAÑÍA"
     contents:
-      - text: "Inicio del piloto"
+      - text: "Portada"
         href: index.qmd
+      - text: "Contenido del curso"
+        href: contenido.qmd
+      - section: "00 · ENTORNO DE APRENDIZAJE"
+        contents:
+          - text: "Presentación del módulo"
+            href: modulo-00.qmd
+          - text: "00.01 · Markdown y perfil"
+            href: 00-01-leccion.qmd
+          - text: "00.02 · Terminal y rutas"
+            href: 00-02-leccion.qmd
+          - text: "00.03 · Git e historial"
+            href: 00-03-leccion.qmd
+          - text: "00.04 · Primer script"
+            href: 00-04-leccion.qmd
+          - text: "00.05 · Entornos"
+            href: 00-05-leccion.qmd
+          - text: "00.06 · Primer notebook"
+            href: 00-06-leccion.qmd
+          - text: "Comprobación y evidencia"
+            href: registro.qmd
       - section: "SESIÓN 02.01"
         contents:
           - text: "Tu recorrido"
@@ -36,7 +60,7 @@ website:
       - text: "Material de consulta"
         href: fuentes.qmd
   page-footer:
-    left: "DS Track · Piloto local / 02.01"
+    left: "DS Track · Aprendizaje acompañado"
     right: "Leer → practicar → comprobar → explicar"
 lang: es
 format:

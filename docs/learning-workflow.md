@@ -105,16 +105,19 @@ PROGRESS.md
 de reanudación del proyecto. El curriculum describe el orden y los proyectos sus
 checkpoints; ninguno debe duplicar la bitácora editorial diaria.
 
-## Bitácora personal en el piloto 02.01
+## Bitácora personal en el portal
 
-El [portal local](../portal/README.md) añade una copia personal del notebook y una
-[plantilla de bitácora](../templates/learning-session/bitacora.md). Para esta prueba,
+El [portal local](../portal/README.md) ofrece una
+[plantilla del módulo 00](../templates/learning-session/bitacora-00.md) y conserva
+la copia del notebook y la [bitácora de 02.01](../templates/learning-session/bitacora.md).
+En estas prácticas,
 cada participante registra predicción, comprobaciones, explicación, ayudas y
 evidencia en su carpeta excluida de Git. El formulario del portal conserva un
-solo borrador por sesión en ese navegador; exportarlo no modifica automáticamente
+solo borrador para 02.01 en ese navegador; el módulo 00 usa un archivo Markdown.
+Exportar no modifica automáticamente
 la nota del paquete ni PROGRESS.md.
 
-Esta separación está implementada para el piloto, sin migrar registros previos
+Esta separación está implementada para 00 y 02.01, sin migrar registros previos
 del resto del recorrido. La comprobación técnica del material y el estado
 declarado por la persona se registran por separado: no equivalen a aprendizaje
 observado. Una sesión real de pareja sigue siendo necesaria para evaluar la

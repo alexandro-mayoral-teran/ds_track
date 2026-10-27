@@ -1,0 +1,29 @@
+---
+title: "Comprobar y conservar tu evidencia"
+toc: false
+---
+
+<p class="eyebrow">MÓDULO 00 / REGISTRO PERSONAL</p>
+
+Al terminar un bloque, guarda tu trabajo y explica qué cambió, qué esperabas y
+qué observaste. Tu compañero puede ayudarte a contrastar, pero cada persona
+conserva su propia evidencia. Abrir una página o ejecutar un ejemplo no completa
+por sí solo una lección.
+
+[Descargar plantilla de bitácora del módulo 00](descargas/templates/learning-session/bitacora-00.md){.button .primary download="bitacora-00.md"}
+
+1. Guarda la nota en una carpeta personal junto a tus archivos de práctica.
+2. Indica el identificador de lección, por ejemplo 00.04, y quién la realizó.
+3. Registra predicción, resultado, archivo de evidencia, ayudas y explicación.
+4. Acuerda qué falta antes de avanzar a la siguiente lección.
+
+Las lecciones originales mencionan PROGRESS.md como registro del recorrido.
+En este portal el registro personal del módulo 00 se conserva en tu propia
+carpeta: no se escribe automáticamente en el repositorio ni en PROGRESS.md,
+que mantiene el estado editorial del proyecto. No hay sincronización entre
+personas o dispositivos. Esta página ofrece la plantilla; no guarda un formulario.
+
+Para la prueba adicional de pandas, la [bitácora 02.01](bitacora.qmd) sí incluye
+el borrador del navegador. Ese borrador pertenece exclusivamente a esa sesión.
+
+[Volver al módulo 00 →](modulo-00.qmd)

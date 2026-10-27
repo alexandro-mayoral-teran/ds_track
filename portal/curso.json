@@ -1,0 +1,192 @@
+{
+  "modulos": [
+    {
+      "id": "00",
+      "titulo": "Entorno de aprendizaje",
+      "resumen": "Prepara tus herramientas, documenta y ejecuta tus primeras prácticas.",
+      "fuente": "curriculum/00_getting_started/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "01",
+      "titulo": "Python fundamental",
+      "resumen": "Construye programas con variables, funciones, archivos y comprobaciones.",
+      "fuente": "curriculum/01_python_foundations/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "02",
+      "titulo": "pandas",
+      "resumen": "Explora, transforma y comprueba tablas.",
+      "fuente": "curriculum/02_pandas/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "03",
+      "titulo": "SQL y bases de datos",
+      "resumen": "Organiza datos y responde preguntas con consultas.",
+      "fuente": "curriculum/03_sql_databases/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "04",
+      "titulo": "Visualización en Python",
+      "resumen": "Elige y construye gráficas para comunicar resultados.",
+      "fuente": "curriculum/04_visualization_python/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "05",
+      "titulo": "Python aplicado",
+      "resumen": "Organiza código reutilizable y comprueba sus contratos.",
+      "fuente": "curriculum/05_python_applied/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "06",
+      "titulo": "R fundamental",
+      "resumen": "Aprende el modelo de R y trabaja en un proyecto local.",
+      "fuente": "curriculum/06_r_foundations/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "07",
+      "titulo": "Tidyverse",
+      "resumen": "Transforma, resume y combina tablas con reglas explícitas.",
+      "fuente": "curriculum/07_tidyverse/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "08",
+      "titulo": "Visualización en R",
+      "resumen": "Construye y revisa figuras con ggplot2.",
+      "fuente": "curriculum/08_visualization_r/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "09",
+      "titulo": "Arrow y Parquet",
+      "resumen": "Conserva tipos y valores al intercambiar datos.",
+      "fuente": "curriculum/09_arrow_parquet/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "10",
+      "titulo": "Polars y DuckDB",
+      "resumen": "Compara formas de consultar y procesar tablas.",
+      "fuente": "curriculum/10_polars_duckdb/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "11",
+      "titulo": "Reportes con Quarto",
+      "resumen": "Reúne código, datos y narrativa en reportes reconstruibles.",
+      "fuente": "curriculum/11_reporting_quarto/README.md",
+      "estado": "material"
+    },
+    {
+      "id": "12",
+      "titulo": "Aplicaciones con Streamlit",
+      "resumen": "Construye una aplicación en Python.",
+      "fuente": "curriculum/12_streamlit/README.md",
+      "estado": "plan"
+    },
+    {
+      "id": "13",
+      "titulo": "Aplicaciones con Shiny",
+      "resumen": "Construye una aplicación reactiva en R.",
+      "fuente": "curriculum/13_shiny_web/README.md",
+      "estado": "plan"
+    },
+    {
+      "id": "14",
+      "titulo": "Proyecto reproducible",
+      "resumen": "Integra análisis, comunicación y reproducibilidad.",
+      "fuente": "curriculum/14_reproducible_projects/README.md",
+      "estado": "plan"
+    }
+  ],
+  "lecciones_00": [
+    {
+      "id": "00.01",
+      "titulo": "Markdown y tu perfil en GitHub",
+      "resultado": "Escribe una presentación y comprueba su vista previa.",
+      "leccion": "curriculum/00_getting_started/01_github_profile/README.md",
+      "lab": "labs/00_getting_started/01_github_profile/README.md"
+    },
+    {
+      "id": "00.02",
+      "titulo": "Terminal y rutas",
+      "resultado": "Ubica archivos y ejecuta comandos en tu shell.",
+      "leccion": "curriculum/00_getting_started/02_terminal_paths/README.md",
+      "lab": "labs/00_getting_started/02_terminal_paths/README.md"
+    },
+    {
+      "id": "00.03",
+      "titulo": "Git: historial y actualización",
+      "resultado": "Conserva cambios y retoma una copia del repositorio.",
+      "leccion": "curriculum/00_getting_started/03_git_workflow/README.md",
+      "lab": "labs/00_getting_started/03_git_workflow/README.md"
+    },
+    {
+      "id": "00.04",
+      "titulo": "Tu primer script Python",
+      "resultado": "Modifica un cálculo y contrasta su resultado.",
+      "leccion": "curriculum/00_getting_started/04_first_script/README.md",
+      "lab": "labs/00_getting_started/04_first_script/README.md"
+    },
+    {
+      "id": "00.05",
+      "titulo": "Entornos y dependencias",
+      "resultado": "Prepara un entorno y registra dependencias: partes A y B.",
+      "leccion": "curriculum/00_getting_started/05_environment/README.md",
+      "lab": "labs/00_getting_started/05_environment/README.md"
+    },
+    {
+      "id": "00.06",
+      "titulo": "Tu primer notebook",
+      "resultado": "Elige kernel y ejecuta desde una sesión limpia.",
+      "leccion": "curriculum/00_getting_started/06_first_notebook/README.md",
+      "lab": "labs/00_getting_started/06_first_notebook/README.md"
+    }
+  ],
+  "paginas_00": [
+    {
+      "fuente": "curriculum/00_getting_started/05_environment/environment.md",
+      "ruta": "00-05-entorno.qmd"
+    },
+    {
+      "fuente": "curriculum/00_getting_started/05_environment/dependencies.md",
+      "ruta": "00-05-dependencias.qmd"
+    },
+    {
+      "fuente": "curriculum/00_getting_started/05_environment/conda.md",
+      "ruta": "00-05-conda.qmd"
+    },
+    {
+      "fuente": "curriculum/00_getting_started/05_environment/venv-pip.md",
+      "ruta": "00-05-venv-pip.qmd"
+    },
+    {
+      "fuente": "curriculum/00_getting_started/05_environment/uv.md",
+      "ruta": "00-05-uv.qmd"
+    },
+    {
+      "fuente": "curriculum/00_getting_started/02_terminal_paths/shell-cheatsheet.md",
+      "ruta": "00-02-referencia.qmd"
+    }
+  ],
+  "archivos_00": [
+    "curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv",
+    "curriculum/00_getting_started/02_terminal_paths/check_environment.py",
+    "curriculum/00_getting_started/04_first_script/first_summary.py",
+    "curriculum/00_getting_started/05_environment/library_demo.py",
+    "curriculum/00_getting_started/06_first_notebook/first_notebook.ipynb",
+    "templates/github-profile/PROFILE.md",
+    "templates/learning-session/bitacora-00.md"
+  ],
+  "consulta_00": [
+    "docs/vscode-guide.md",
+    "templates/github-profile/README.md"
+  ]
+}

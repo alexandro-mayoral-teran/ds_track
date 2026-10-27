@@ -6,14 +6,15 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
 ## En este momento
 
 - **Módulos con desarrollo de sus secciones cerrado:** `06_r_foundations`, `07_tidyverse`, `08_visualization_r`, `09_arrow_parquet`, `10_polars_duckdb` y `11_reporting_quarto`; proyectos/checkpoints y práctica del estudiante pendientes.
-- **Siguiente trabajo:** probar con una pareja el [portal local 02.01](portal/README.md)
-  y registrar fricción antes de ampliar. Los módulos 12–14 siguen planificados.
+- **Siguiente trabajo:** revisar contenido y probar con una pareja el
+  [portal local](portal/README.md), empezando por el módulo 00 y conservando la
+  prueba adicional 02.01. Los módulos 12–14 siguen planificados.
 - **Estado de desarrollo:** 06.01–06.09, 07.01–07.10, 08.01–08.09, 09.01–09.09,
   10.01–10.10 y 11.01–11.09 implementadas (09.08, 10.05 y 11.08 opcionales);
   12–14 conservan sus planes.
-- **Último desarrollo:** 2026-10-26, piloto local 02.01: Quarto sobre lección/lab,
-  notebook, copias protegidas y bitácora descargable; código versionado.
-- **Punto de reanudación:** sesión real de pareja con el prototipo; observar
+- **Último desarrollo:** 2026-10-26, portal con portada, contenido 00–14 y módulo 00;
+  propuesta de publicación documentada, sin despliegue en Internet.
+- **Punto de reanudación:** revisión del contenido y sesión real de pareja; observar
   orientación, apertura de práctica, cambio de papeles y reanudación.
 - **Foco actual:** probar la experiencia con una pareja; conservar práctica personal
   y proyectos/checkpoints como pendientes. Los [criterios de cierre](docs/reporting-closure.md)
@@ -46,6 +47,23 @@ Este archivo registra dónde estamos y qué sigue. El plan completo vive en
   completar las prácticas previas.
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-26, estructura del portal:** portada general, contenido
+00–14 y página del primer módulo 00, conservando la prueba adicional 02.01.
+Catálogo del curso, seis lecciones/labs originales y seis páginas de apoyo de
+00; 00.05 conserva A/B y Conda/venv/uv. Registro Markdown personal para 00,
+sin mezclarlo con el borrador de pandas ni exportar PROGRESS.md completo.
+Los índices restantes se ofrecen como descarga: 01–11 con material en el repo,
+12–14 planificados; no se presentan como módulos integrados en el portal.
+La [propuesta de publicación](docs/portal-publication.md) registra alternativas,
+audiencia pendiente, revisión de archivos y publicación explícita de versiones.
+No se contrató alojamiento ni se desplegó servicio. Render de lectura sin ejecutar
+programas o instalar entornos; fuentes educativas y lockfiles conservados.
+El arranque comprueba fuentes y conserva las copias anteriores al actualizar.
+Veintisiete páginas y 1616 enlaces/recursos locales comprobados; siete pruebas
+estándar y 81 vistas a 1440/768/390 px, junto con pregunta/descarga/borrador de
+02.01. Las referencias numeradas y enlaces a directorios se adaptan a Quarto.
+Revisión del contenido y observación de una pareja siguen pendientes.
 
 **Desarrollo — 2026-10-26, primer piloto local 02.01:** disponible
 [portal/README.md](portal/README.md), catálogo explícito, seis páginas Quarto,

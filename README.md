@@ -31,11 +31,12 @@ parte de la lección: no necesitas terminar un módulo de una vez.
 
 ### Prueba del portal local
 
-Si ya llegaste a pandas, puedes probar [la sesión acompañada 02.01](portal/README.md):
-lección y lab del curso, notebook descargable y bitácora personal. Desde la raíz,
+Puedes probar el [portal local](portal/README.md): portada, contenido 00–14 y
+el primer módulo 00 con sus seis lecciones y labs. Si ya llegaste a pandas,
+conserva además la sesión acompañada 02.01, con notebook y bitácora. Desde la raíz,
 `python portal/servir.py --abrir` abre la prueba local. El código del portal está
 versionado; las copias de práctica y la evidencia personal quedan fuera de Git.
-En este piloto registra tu evidencia en tu propia bitácora; PROGRESS.md conserva
+En el portal registra tu evidencia en tu propia bitácora; PROGRESS.md conserva
 el estado del material. No sustituye las prácticas iniciales ni acredita aprendizaje.
 
 ### Tu primera sesión

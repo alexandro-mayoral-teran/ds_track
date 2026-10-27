@@ -1,15 +1,51 @@
 """Fronteras del adaptador y conservación de copias; no necesita Quarto ni pandas."""
 from pathlib import Path
+import hashlib
+import json
 import sys
 import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "herramientas"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from preparar_portal import adaptar
 from preparar_practica import REPO, catalogo, preparar
+from servir import fuentes_cambiaron
 
 
 class AdaptadorTest(unittest.TestCase):
+    def test_detecta_copia_anterior_o_fuentes_cambiadas_sin_escribir(self):
+        salida = REPO / 'output'
+        salida.mkdir(exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=salida) as tmp:
+            sitio = Path(tmp)
+            self.assertTrue(fuentes_cambiaron(sitio))
+            archivo = sitio / 'procedencia.json'
+            fuente = 'portal/curso.json'
+            huella = hashlib.sha256((REPO/fuente).read_bytes()).hexdigest()
+            archivo.write_text(json.dumps({'sha256_fuentes': {fuente: huella}}), encoding='utf-8')
+            antes = archivo.read_bytes()
+            self.assertFalse(fuentes_cambiaron(sitio))
+            self.assertEqual(antes, archivo.read_bytes())
+            archivo.write_text(json.dumps({'sha256_fuentes': {fuente: '0'*64}}), encoding='utf-8')
+            self.assertTrue(fuentes_cambiaron(sitio))
+            archivo.write_text('[]', encoding='utf-8')
+            self.assertTrue(fuentes_cambiaron(sitio))
+
+    def test_indice_numerado_y_anclas_explicitas(self):
+        origen = REPO / 'curriculum/00_getting_started/01_github_profile/README.md'
+        texto = '[Ir](#1-mi-tema)\n## 1. Mi tema\n[Otro](#2-especial)\n## Otro {#2-especial}\n'
+        res = adaptar(texto, origen, {})
+        self.assertIn('[Ir](#mi-tema)', res)
+        self.assertIn('[Otro](#2-especial)', res)
+
+    def test_enlace_a_directorio_usa_su_indice(self):
+        origen = REPO / 'curriculum/00_getting_started/README.md'
+        destino = origen.parent / '01_github_profile/README.md'
+        self.assertEqual(adaptar('[Primera](01_github_profile/)', origen,
+                                 {destino.resolve(): '00-01-leccion.qmd'}),
+                         '[Primera](00-01-leccion.qmd)\n')
+
     def test_enlaces_fragmentos_externos_y_codigo(self):
         origen = REPO / "curriculum/02_pandas/01_series_dataframe/README.md"
         destino = (origen.parent / "series_dataframe.py").resolve()
