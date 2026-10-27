@@ -1,17 +1,28 @@
 # 07.10 — Primera figura y cierre del análisis
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 07](../README.md) / **Lección 07.10**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reconstruir tablas y explicar una primera figura con población comprobada |
+| **Necesitas** | 07.09 preparada; resúmenes, uniones y factores en el mismo proyecto |
+| **Evidencia** | Entrega releída, figura legible y explicación de alcance y diferencia |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 07.10](../../../labs/07_tidyverse/10_first_plot_closure/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Práctica de cierre.** Reconstruir un análisis desde el archivo original y
 explicar una primera figura cuyos valores y población podamos comprobar.
+
+## Antes de empezar
+
 Completa [07.09 — Fechas y cortes](../09_dates_cutoffs/README.md) y su lab.
 Retoma [resúmenes y denominadores](../05_group_summarize/README.md),
 [uniones y cardinalidad](../06_join_tables/README.md) y
 [niveles de factores](../08_text_categories_factors/README.md).
-
-Al terminar podrás identificar datos, estéticas y capas de ggplot2; distinguir
-conteos de importes agregados; exportar explícitamente una figura y sus tablas;
-y reconstruir el resultado desde una sesión nueva conservando los rechazos.
 
 Trabaja en RStudio o tu IDE, en **el mismo proyecto renv de 07.09**. Añadimos
 ggplot2 **4.0.3** y sus dependencias necesarias mediante un lockfile generado
@@ -20,6 +31,29 @@ instala todo tidyverse ni se cambia Conda o una biblioteca global.
 Las diez secciones de 07 tienen material; la práctica
 y la explicación del estudiante requieren evidencia propia. El proyecto
 integrador y sus checkpoints siguen pendientes.
+
+## Qué vas a aprender
+
+- Identificar datos, estéticas y capas de ggplot2.
+- Distinguir conteos de importes ya agregados.
+- Exportar explícitamente una figura y sus tablas.
+- Reconstruir el resultado desde una sesión nueva conservando los rechazos.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_cierre.R) | Respaldar 07.09 y añadir material y metadatos de ggplot2 | Para el recorrido |
+| [Lockfile](renv.lock) | Consultar el entorno registrado para restaurar | Para el recorrido |
+| [Funciones de cierre](funciones_cierre.R) | Reconstruir tablas, figura, exportación y controles | Para el recorrido |
+| [Recorrido completo](cerrar_analisis.R) | Calcular y dibujar desde la práctica; source no exporta | Para el recorrido |
+| [Verificador](verificar_cierre.R) | Definir la revisión de una entrega contra el CSV actual | Para el recorrido |
+| [Criterios de cierre](../../../docs/tidyverse-closure.md) | Distinguir material, práctica y proyecto pendiente | Consulta para el cierre |
+
+Los enlaces permiten consultar las fuentes. Sigue el preparador una sola vez
+para incorporar el material al mismo proyecto de práctica; después abre allí
+los scripts desde el IDE. La sección de preparación distingue la raíz de DS Track
+de la raíz de esa práctica y explica cuándo restaurar dependencias.
 
 ## 1. Empezar por una pregunta y una población
 
@@ -281,20 +315,37 @@ con pandas 2.3.3 y una consulta SQLite sobre la misma población. Comparar con
 las cifras de otro CSV o con las reglas distintas de pandas 02.06 no sería una
 validación. El lab pide documentar contrato y denominador antes de comparar.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 07.10](../../../labs/07_tidyverse/10_first_plot_closure/README.md).
-Puedes cerrar tu práctica cuando reconstruyas desde sesión nueva, concilies las
-tablas, muestres el PNG legible y expliques población, diferencia y límites sin
-depender de objetos de otra sesión. Guarda evidencia y dudas en tu bitácora;
-no marques aprendizaje como concluido solo por existir este material.
 
-El [documento de cierre y pendientes](../../../docs/tidyverse-closure.md) distingue
-material, evidencia y proyecto integrador. Continúa con
-[08.01 — Pregunta y gramática de gráficos](../../08_visualization_r/01_question_grammar/README.md),
-ya disponible con lección, script y lab. Volver al [índice de 07](../README.md).
+Consulta [cerrar_analisis.R](cerrar_analisis.R) como referencia del recorrido completo;
+trabaja con su copia preparada dentro del proyecto, manteniendo su raíz como
+directorio al ejecutar.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y entrega con tablas y PNG | 14 IDs comunes; 29000/31800 MXN, diferencia 2800 y cobertura 14/18 | Barras de importes agregados frente a conteos y población completa |
+| Relectura y nota de interpretación | Tablas y RDS conciliados; PNG abierto y contrastado con datos_figura | Límites de la figura y de la verificación automática de sus píxeles |
+
+Puedes cerrar la práctica cuando reconstruyas desde una sesión nueva,
+concilies las tablas, muestres el PNG legible y expliques población, diferencia
+y límites sin depender de objetos de otra sesión.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide rastrear la altura de una barra hasta datos_figura y los IDs incluidos.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios y datos sintéticos DS Track. Consulta: 2026-10-20; APIs y
 ejemplos comprobados con R 4.6.1 y ggplot2 4.0.3.
@@ -310,3 +361,11 @@ ejemplos comprobados con R 4.6.1 y ggplot2 4.0.3.
   [ggplot2: Elegant Graphics for Data Analysis, tercera edición en desarrollo](https://ggplot2-book.org/).
 - R oficial: [saveRDS y readRDS](https://stat.ethz.ch/R-manual/R-devel/library/base/html/readRDS.html).
   Más contexto en la [guía de lecturas](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Consulta el [documento de cierre y pendientes](../../../docs/tidyverse-closure.md)
+y continúa con [08.01 — Pregunta y gramática de gráficos](../../08_visualization_r/01_question_grammar/README.md),
+ya disponible con lección, script y lab.
+
+[← Módulo 07](../README.md) · [Lab 07.10](../../../labs/07_tidyverse/10_first_plot_closure/README.md) · [Siguiente →](../../08_visualization_r/01_question_grammar/README.md)

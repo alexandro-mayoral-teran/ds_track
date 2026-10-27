@@ -1,20 +1,28 @@
 # 07.03 — Transformar columnas
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 07](../README.md) / **Lección 07.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Crear columnas con reglas, tipos y denominadores explícitos |
+| **Necesitas** | 07.02 y mismo lockfile; vectores, faltantes y funciones |
+| **Evidencia** | Columnas derivadas con originales y marcas de conversión conservados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 07.03](../../../labs/07_tidyverse/03_transform_columns/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Alcance esencial.** Crear cantidades y etiquetas cuya regla puedas explicar,
-sin perder los datos que las originaron. Completa [07.02 — Seleccionar, filtrar
+sin perder los datos que las originaron.
+
+## Antes de empezar
+
+Completa [07.02 — Seleccionar, filtrar
 y ordenar](../02_select_filter_sort/README.md). Retoma [vectores y coerción de
 06.02](../../06_r_foundations/02_objects_vectors/README.md), [NA de 06.04](../../06_r_foundations/04_logic_missing/README.md)
 y [funciones de 06.06](../../06_r_foundations/06_functions_control/README.md).
-
-Al terminar podrás:
-
-- Crear columnas con mutate y operaciones sobre vectores completos.
-- Usar if_else y case_when con tipos, faltantes y prioridades explícitos.
-- Conservar el texto original y distinguir ausencia de conversión incompatible.
-- Calcular una resta y un porcentaje sin inventar datos ni dividir entre cero.
-- Comprobar filas, tipos e indicadores sobre la misma base de observaciones.
 
 Usa **RStudio o tu IDE**, el mismo proyecto renv y las versiones de 07.02:
 R 4.6.1, dplyr 1.2.1, readr 2.2.0 y tibble 3.3.1 comprobados. **No hay paquetes
@@ -24,6 +32,28 @@ El proyecto/checkpoints integradores siguen pendientes.
 
 Puedes dividir la lección en dos sesiones: ejemplos pequeños (3–5) y aplicación
 de conversiones e indicadores (6–9). No hace falta memorizar todo el script.
+
+## Qué vas a aprender
+
+- Crear columnas con mutate y operaciones sobre vectores completos.
+- Usar if_else y case_when con tipos, faltantes y prioridades explícitos.
+- Conservar el texto original y distinguir ausencia de conversión incompatible.
+- Calcular una resta y un porcentaje sin inventar datos ni dividir entre cero.
+- Comprobar filas, tipos e indicadores sobre la misma base de observaciones.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_transformacion.R) | Copiar funciones, ejecutor y muestra sin cambiar dependencias | Para el recorrido |
+| [CSV de 40 registros](../../02_pandas/04_types_calculated_columns/cartera_conversion.csv) | Examinar textos, ausencias y conversiones de la muestra | Para el recorrido |
+| [Funciones](funciones_transformacion.R) | Seguir conversiones con marcas y cálculo de indicadores | Para el recorrido |
+| [Ejecutor](transformar_cartera.R) | Reconstruir tipos, claves y controles | Para el recorrido |
+
+Los enlaces permiten consultar las fuentes. Sigue el preparador una sola vez
+para incorporar el material al mismo proyecto de práctica; después abre allí
+los scripts desde el IDE. La sección de preparación distingue la raíz de DS Track
+de la raíz de esa práctica y explica cuándo restaurar dependencias.
 
 ## 1. Dos muestras con propósitos distintos
 
@@ -357,7 +387,9 @@ representación numérica; no admite cambiar un faltante por cero. Retoma la
 [comparación de 06.09](../../06_r_foundations/09_known_result/README.md).
 No necesitas ejecutar Python para completar la lección.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 07.03](../../../labs/07_tidyverse/03_transform_columns/README.md).
 Guarda tu script y el ensayo de error en archivos separados. Usa Session >
@@ -366,16 +398,31 @@ Restart R y ejecuta desde Console, en la raíz de la práctica,
 por error/pendiente/no_dato son esperadas; revisa las marcas, no las ocultes.
 El script comprueba cifras, claves y huella de fuente; no exporta.
 
+Consulta [transformar_cartera.R](transformar_cartera.R) como referencia del recorrido completo;
+trabaja con su copia preparada dentro del proyecto, manteniendo su raíz como
+directorio al ejecutar.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y columnas con origen | 40 × 15; 36 restas y 35 porcentajes válidos | Prioridad de reglas, tipos y diferencia entre ausencia e invalidez |
+| Nota de denominadores y controles | Misma base de filas; 211150 MXN conciliados | Por qué no imputar, truncar ni dividir entre cero |
+
 Puedes avanzar cuando expliques unidades, tipos, prioridad, NA y denominador,
 reconstruyas los cálculos y concilies la misma base sin alterar entradas.
-across para repetir una transformación sobre varias columnas queda como
-ampliación posterior; no bloquea avanzar. No hay checkpoint integrador activo.
-La disponibilidad del material no acredita aprendizaje.
+across queda como ampliación posterior y no bloquea avanzar.
 
-Siguiente: [07.04 — Faltantes, duplicados y calidad](../04_missing_duplicates_quality/README.md),
-con lección y lab disponibles. Volver al [índice del módulo](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero elige un porcentaje pendiente y pide explicar qué condición impidió calcularlo.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios sobre datos de DS Track; consulta: 2026-10-17. Funciones
 contrastadas con la ayuda instalada de R 4.6.1/dplyr 1.2.1/readr 2.2.0.
@@ -389,3 +436,10 @@ contrastadas con la ayuda instalada de R 4.6.1/dplyr 1.2.1/readr 2.2.0.
 - readr: [parse_double y otros parsers](https://readr.tidyverse.org/reference/parse_atomic.html)
   y [problems](https://readr.tidyverse.org/reference/problems.html).
 - [Guía de lecturas y coautorías](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[07.04 — Faltantes, duplicados y calidad](../04_missing_duplicates_quality/README.md).
+
+[← Módulo 07](../README.md) · [Lab 07.03](../../../labs/07_tidyverse/03_transform_columns/README.md) · [Siguiente →](../04_missing_duplicates_quality/README.md)

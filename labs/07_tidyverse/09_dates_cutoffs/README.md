@@ -177,7 +177,7 @@ Responde con tus palabras:
 6. ¿Por qué 18 registros en ambos cortes no significa que sean comparables uno a uno?
 
 Puedes avanzar cuando reconstruyas y expliques fechas, motivos, unidades y
-población comparable. Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md);
+población comparable. Registra evidencia y dudas en tu bitácora personal junto a la práctica;
 disponer del material no acredita aprendizaje. No hay checkpoint integrador
 implementado asociado.
 

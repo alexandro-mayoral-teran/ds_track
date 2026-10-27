@@ -242,7 +242,7 @@ Responde con tus palabras:
 
 Puedes avanzar cuando expliques las decisiones, conserves cada registro y
 sus motivos y compruebes desde una sesión nueva. Registra evidencia y dudas
-en [PROGRESS.md](../../../PROGRESS.md); material disponible no acredita aprendizaje.
+en tu bitácora personal junto a la práctica; material disponible no acredita aprendizaje.
 No hay checkpoint integrador implementado asociado.
 
 Siguiente: [07.05 — Agrupar y resumir](../../../curriculum/07_tidyverse/05_group_summarize/README.md). Volver a la [lección 07.04](../../../curriculum/07_tidyverse/04_missing_duplicates_quality/README.md).

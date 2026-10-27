@@ -1,13 +1,35 @@
 # 07.01 — Tibbles, importación y pipes
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 07](../README.md) / **Lección 07.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Importar una tabla y explicar sus tipos y la secuencia de llamadas |
+| **Necesitas** | Cierre 06.09 y su proyecto renv; tablas y archivos de R fundamental |
+| **Evidencia** | Script de importación con tipos, faltante y controles explicados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 07.01](../../../labs/07_tidyverse/01_tibbles_import_pipes/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 **Alcance esencial.** Cargar una tabla, explicar sus tipos y leer una secuencia
-de llamadas antes de transformarla. Completa el [cierre 06.09](../../06_r_foundations/09_known_result/README.md)
+de llamadas antes de transformarla.
+
+## Antes de empezar
+
+Completa el [cierre 06.09](../../06_r_foundations/09_known_result/README.md)
 y conserva la carpeta de práctica con renv. Retoma [tablas y extracción 06.05](../../06_r_foundations/05_lists_data_frames/README.md)
 y [archivos 06.07](../../06_r_foundations/07_files_validation/README.md).
 
-Al terminar podrás:
+tidyverse es una familia de paquetes relacionados. Hoy usamos **readr 2.2.0**
+para lectura y **tibble 3.3.1** para tablas; son las versiones comprobadas con
+R 4.6.1, no una promesa de ser las más recientes. No necesitas instalar el
+metapaquete tidyverse. dplyr empieza en 07.02; la primera figura llegará en
+07.10. Esta práctica no tiene proyecto/checkpoint integrador implementado.
+
+## Qué vas a aprender
 
 - Distinguir una tibble, sus columnas y su representación impresa.
 - Importar un CSV con readr declarando identificadores, números y faltantes.
@@ -15,11 +37,21 @@ Al terminar podrás:
 - Explicar un pipe nativo y escribir su llamada equivalente sin pipe.
 - Comprobar filas, tipos y valores conocidos conservando la fuente.
 
-tidyverse es una familia de paquetes relacionados. Hoy usamos **readr 2.2.0**
-para lectura y **tibble 3.3.1** para tablas; son las versiones comprobadas con
-R 4.6.1, no una promesa de ser las más recientes. No necesitas instalar el
-metapaquete tidyverse. dplyr empieza en 07.02; la primera figura llegará en
-07.10. Esta práctica no tiene proyecto/checkpoint integrador implementado.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_tidyverse.R) | Añadir material y respaldar metadatos de 06.09 | Para el recorrido |
+| [Dependencias](DESCRIPTION) | Leer los paquetes declarados | Para el recorrido |
+| [Lockfile](renv.lock) | Consultar versiones fijadas para restaurar la práctica | Para el recorrido |
+| [CSV conocido](../../02_pandas/02_read_inspect_export/cartera_demo.csv) | Reutilizar las seis observaciones de pandas | Para el recorrido |
+| [Funciones de importación](funciones_importacion.R) | Leer e inspeccionar tipos y problemas | Para el recorrido |
+| [Ejecutor](importar_cartera.R) | Reconstruir la carga desde la práctica preparada | Para el recorrido |
+
+Los enlaces permiten consultar las fuentes. Sigue el preparador una sola vez
+para incorporar el material al mismo proyecto de práctica; después abre allí
+los scripts desde el IDE. La sección de preparación distingue la raíz de DS Track
+de la raíz de esa práctica y explica cuándo restaurar dependencias.
 
 ## 1. Volver a una tabla conocida
 
@@ -291,14 +323,11 @@ para una clave, silenciar advertencias, confundir NA permitido con parseo fallid
 o llamar al script desde una carpeta distinta. Revisa ruta, tipos y problemas
 antes de cambiar datos. Si modificas una entrada para probar, crea otra copia.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 07.01](../../../labs/07_tidyverse/01_tibbles_import_pipes/README.md).
-Puedes avanzar cuando reconstruyas la carga desde una sesión nueva, expliques
-los tipos y la forma de la tabla, traduzcas el pipe a llamadas y justifiques el
-faltante sin alterar la fuente. Conserva script y explicación como evidencia;
-la existencia del material no acredita el aprendizaje.
-
 <a id="comprobacion-opcional-desde-terminal"></a>
 
 ### Comprobación opcional desde terminal
@@ -333,10 +362,31 @@ Rscript --vanilla importar_cartera.R
 
 </details>
 
-Siguiente: [07.02 — Seleccionar, filtrar y ordenar](../02_select_filter_sort/README.md),
-con lección y lab disponibles. Volver al [índice del módulo](../README.md).
+Consulta [importar_cartera.R](importar_cartera.R) como referencia del recorrido completo;
+trabaja con su copia preparada dentro del proyecto, manteniendo su raíz como
+directorio al ejecutar.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y explicación del pipe | 6 × 5, tipos declarados y 6000 MXN conocidos | Representación impresa frente a tabla completa; llamadas con y sin pipe |
+| Nota de lectura y sesión | Problemas de interpretación, faltante y fuente conservada | Por qué importar sin error no basta para validar los datos |
+
+Puedes avanzar cuando reconstruyas la carga desde una sesión nueva, expliques
+los tipos y la forma de la tabla, traduzcas el pipe a llamadas y justifiques
+el faltante sin alterar la fuente.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide escribir una llamada sin pipe y rastrear el tipo de una columna hasta la lectura.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios sobre la muestra de DS Track. Consulta: 2026-10-17;
 R 4.6.1, readr 2.2.0 y tibble 3.3.1 comprobados localmente.
@@ -355,3 +405,10 @@ R 4.6.1, readr 2.2.0 y tibble 3.3.1 comprobados localmente.
   [ejecución de scripts](https://support.posit.co/hc/en-us/articles/200484448-Editing-and-Executing-Code-in-the-RStudio-IDE)
   y [directorio de trabajo](https://support.posit.co/hc/en-us/articles/200711843-Working-Directories-and-Workspaces-in-the-RStudio-IDE).
   Menús y atajos contrastados con su documentación; otros IDE pueden variar.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[07.02 — Seleccionar, filtrar y ordenar](../02_select_filter_sort/README.md).
+
+[← Módulo 07](../README.md) · [Lab 07.01](../../../labs/07_tidyverse/01_tibbles_import_pipes/README.md) · [Siguiente →](../02_select_filter_sort/README.md)

@@ -1,15 +1,37 @@
 # 07.04 — Faltantes, duplicados y calidad
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 07](../README.md) / **Lección 07.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Separar registros válidos y rechazados conservando todos los motivos |
+| **Necesitas** | 07.03 preparada; condiciones, claves y validación de registros |
+| **Evidencia** | Partición completa con originales, banderas e incidencias conciliados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 07.04](../../../labs/07_tidyverse/04_missing_duplicates_quality/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Alcance esencial.** Separar registros que cumplen un contrato de los que
-requieren revisión, conservando origen y motivos. Completa
+requieren revisión, conservando origen y motivos.
+
+## Antes de empezar
+
+Completa
 [07.03 — Transformar columnas](../03_transform_columns/README.md) y retoma
 [condiciones con NA de 07.02](../02_select_filter_sort/README.md). La práctica
 amplía el método de [validación 06.07](../../06_r_foundations/07_files_validation/README.md)
 y lo compara con [pandas 02.05](../../02_pandas/05_missing_duplicates_rules/README.md).
 
-Al terminar podrás:
+Trabaja en RStudio o tu IDE, con el mismo proyecto y lockfile de 07.02:
+R 4.6.1, dplyr 1.2.1, readr 2.2.0 y tibble 3.3.1 comprobados. No hay paquetes
+nuevos. Esta lección produce tablas en memoria y un script reproducible;
+no exige exportarlas. Agrupar y resumir por segmento llegará en 07.05.
+El proyecto/checkpoints integradores siguen pendientes.
+
+## Qué vas a aprender
 
 - Distinguir ausencia, cero y conversión incompatible, además de una fila ausente.
 - Definir una clave y diferenciar repetición exacta de repetición por clave.
@@ -17,11 +39,19 @@ Al terminar podrás:
 - Aplicar reglas por registro y conservar **todos** sus motivos de rechazo.
 - Comprobar la partición completa y conciliar lo interpretable sin imputar cero.
 
-Trabaja en RStudio o tu IDE, con el mismo proyecto y lockfile de 07.02:
-R 4.6.1, dplyr 1.2.1, readr 2.2.0 y tibble 3.3.1 comprobados. No hay paquetes
-nuevos. Esta lección produce tablas en memoria y un script reproducible;
-no exige exportarlas. Agrupar y resumir por segmento llegará en 07.05.
-El proyecto/checkpoints integradores siguen pendientes.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_calidad.R) | Añadir funciones y muestra al mismo proyecto | Para el recorrido |
+| [CSV de calidad](../../02_pandas/05_missing_duplicates_rules/cartera_calidad.csv) | Inspeccionar las 44 entradas antes de validar | Para el recorrido |
+| [Funciones](funciones_calidad.R) | Revisar reglas, banderas y conservación de motivos | Para el recorrido |
+| [Ejecutor](revisar_calidad.R) | Reconstruir y conciliar la partición | Para el recorrido |
+
+Los enlaces permiten consultar las fuentes. Sigue el preparador una sola vez
+para incorporar el material al mismo proyecto de práctica; después abre allí
+los scripts desde el IDE. La sección de preparación distingue la raíz de DS Track
+de la raíz de esa práctica y explica cuándo restaurar dependencias.
 
 ## 1. Acordar reglas antes de «limpiar»
 
@@ -329,7 +359,9 @@ Sin renderizador: fuente intacta, evaluación de todas las filas, dos partes
 con evidencia y reconstrucción completa. Los rechazos se conservan para
 investigar o corregir con evidencia; no se consideran basura que deba borrarse.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 07.04](../../../labs/07_tidyverse/04_missing_duplicates_quality/README.md).
 Guarda el script propio y, tras Session > Restart R, ejecuta desde Console
@@ -337,14 +369,30 @@ Guarda el script propio y, tras Session > Restart R, ejecuta desde Console
 Las advertencias de conversión se leen y justifican. El ejecutor comprueba
 fuente/huella, cifras y motivos; no exporta ni modifica los CSV anteriores.
 
+Consulta [revisar_calidad.R](revisar_calidad.R) como referencia del recorrido completo;
+trabaja con su copia preparada dentro del proyecto, manteniendo su raíz como
+directorio al ejecutar.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y partes reconstruidas | 44 entradas = 29 aceptadas + 15 rechazadas; 19 incidencias | Por qué un registro puede tener varios motivos |
+| Originales, banderas y resumen | Todas las apariciones de claves repetidas apartadas; cobertura explícita | Ausencia frente a cero, conversión incompatible y registro ausente |
+
 Puedes avanzar cuando expliques el contrato, distingas ausencia y duplicidad,
-conserves todos los motivos y reconstruyas aceptados/rechazados sin perder
-registros. Guarda evidencia; material disponible no acredita aprendizaje.
-No hay checkpoint integrador implementado asociado.
+conserves todos los motivos y reconstruyas aceptados/rechazados sin perder registros.
 
-Siguiente: [07.05 — Agrupar y resumir](../05_group_summarize/README.md). Volver al [índice del módulo](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero señala una clave repetida y pide mostrar todas sus apariciones y motivos.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios con datos sintéticos de DS Track. Revisión: 2026-10-18;
 R 4.6.1/dplyr 1.2.1 comprobados con ayuda instalada y ejecución local.
@@ -357,3 +405,10 @@ R 4.6.1/dplyr 1.2.1 comprobados con ayuda instalada y ejecución local.
 - R oficial: [duplicated](https://stat.ethz.ch/R-manual/R-devel/library/base/html/duplicated.html)
   y [rowSums](https://stat.ethz.ch/R-manual/R-devel/library/base/html/colSums.html).
 - [Guía de lecturas y coautorías](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[07.05 — Agrupar y resumir](../05_group_summarize/README.md).
+
+[← Módulo 07](../README.md) · [Lab 07.04](../../../labs/07_tidyverse/04_missing_duplicates_quality/README.md) · [Siguiente →](../05_group_summarize/README.md)

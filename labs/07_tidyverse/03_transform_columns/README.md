@@ -260,7 +260,7 @@ Responde con tus palabras:
 
 Puedes avanzar cuando reconstruyas, expliques unidades/tipos/faltantes y
 denominador, pruebes fronteras y conserves fuente y textos de origen. Registra
-evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md); no se acredita aprendizaje
+evidencia y dudas en tu bitácora personal junto a la práctica; no se acredita aprendizaje
 por estar disponible el material. No hay checkpoint integrador implementado.
 
 Siguiente: [07.04 — Faltantes, duplicados y calidad](../../../curriculum/07_tidyverse/04_missing_duplicates_quality/README.md),

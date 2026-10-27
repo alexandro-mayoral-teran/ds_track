@@ -1,14 +1,36 @@
 # 07.09 — Fechas y cortes
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 07](../README.md) / **Lección 07.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Validar fechas y comparar períodos sobre una población explícita |
+| **Necesitas** | 07.08 preparada; claves/uniones y denominadores |
+| **Evidencia** | Fechas con motivos y comparación de cortes sobre IDs comunes |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 07.09](../../../labs/07_tidyverse/09_dates_cutoffs/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Alcance esencial.** Interpretar fechas bajo un contrato, conservar sus fallas
-y comparar períodos sobre una población explícita. Completa
+y comparar períodos sobre una población explícita.
+
+## Antes de empezar
+
+Completa
 [07.08 — Texto, categorías y factores](../08_text_categories_factors/README.md)
 y su lab. Retoma [claves y uniones de 07.06](../06_join_tables/README.md) y
 [denominadores de 07.05](../05_group_summarize/README.md).
 
-Al terminar podrás:
+Trabaja en el mismo proyecto RStudio/IDE. Incorporamos **lubridate 1.9.5** y
+timechange 0.4.0 mediante un lockfile generado y restaurado, conservando todos
+los registros anteriores. R 4.6.1, dplyr 1.2.1 y los paquetes de 07.08 se mantienen.
+No se requieren paquetes SQL ni otra fuente de datos. La primera figura sigue
+en 07.10 y el proyecto/checkpoint integrador permanece pendiente.
+
+## Qué vas a aprender
 
 - Distinguir texto, fecha calendario e instante.
 - Separar ausencia, formato incompatible, día imposible y relación temporal inválida.
@@ -16,11 +38,20 @@ Al terminar podrás:
 - Seleccionar intervalos con límites que no dupliquen observaciones.
 - Conciliar aceptados/rechazados y comparar cortes en una base común de IDs.
 
-Trabaja en el mismo proyecto RStudio/IDE. Incorporamos **lubridate 1.9.5** y
-timechange 0.4.0 mediante un lockfile generado y restaurado, conservando todos
-los registros anteriores. R 4.6.1, dplyr 1.2.1 y los paquetes de 07.08 se mantienen.
-No se requieren paquetes SQL ni otra fuente de datos. La primera figura sigue
-en 07.10 y el proyecto/checkpoint integrador permanece pendiente.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_fechas.R) | Respaldar 07.08 y añadir funciones y metadatos de lubridate | Para el recorrido |
+| [Lockfile](renv.lock) | Revisar versiones fijadas sin reemplazar registros previos | Para el recorrido |
+| [CSV compartido](../../02_pandas/06_text_dates/cartera_texto_fechas.csv) | Reutilizar la fuente de 07.08, sin otro CSV | Para el recorrido |
+| [Funciones](funciones_fechas.R) | Validar formato, calendario, relaciones y claves | Para el recorrido |
+| [Ejecutor](revisar_fechas.R) | Reconstruir partición e indicadores sobre base común | Para el recorrido |
+
+Los enlaces permiten consultar las fuentes. Sigue el preparador una sola vez
+para incorporar el material al mismo proyecto de práctica; después abre allí
+los scripts desde el IDE. La sección de preparación distingue la raíz de DS Track
+de la raíz de esa práctica y explica cuándo restaurar dependencias.
 
 ## 1. Una fecha escrita todavía puede no ser una fecha válida
 
@@ -308,7 +339,9 @@ flowchart LR
 Sin renderizador: primero se conservan las partes de calidad; después se eligen
 los períodos y, si la pregunta lo exige, se comparan solo los IDs presentes en ambos.
 
-## Comprobación, práctica y siguiente paso
+<a id="comprobación-práctica-y-siguiente-paso"></a>
+
+## Comprobación del recorrido
 
 ```r
 comprobar_fechas(fuente, resultado)
@@ -326,6 +359,8 @@ no se declaran clases idénticas, se compara su significado calendario bajo
 este contrato. La comparación independiente complementa los controles de
 coherencia R. No necesitas ejecutar Python para completar la lección.
 
+## Práctica
+
 Realiza el [lab 07.09](../../../labs/07_tidyverse/09_dates_cutoffs/README.md).
 Puedes dividir la sesión en interpretación/calidad (1–3) y períodos/comparación
 (4–6). Guarda output/mis_fechas.R con el error esperado aparte. Usa Session >
@@ -337,16 +372,32 @@ source("revisar_fechas.R", encoding = "UTF-8")
 ```
 
 También puedes usar Source desde el editor manteniendo ese directorio. No
-necesitas Terminal ni recuperar un workspace. Puedes avanzar cuando justifiques
-formato, calendario, relaciones y claves, conserves rechazos y compares períodos
-con una base explícita desde una sesión nueva. Registra evidencia y dudas;
-material disponible no acredita aprendizaje. No hay checkpoint integrador
-implementado asociado.
+necesitas Terminal ni recuperar un workspace.
 
-Siguiente: [07.10 — Primera figura y cierre del análisis](../10_first_plot_closure/README.md).
-Volver al [índice del módulo](../README.md).
+Consulta [revisar_fechas.R](revisar_fechas.R) como referencia del recorrido completo;
+trabaja con su copia preparada dentro del proyecto, manteniendo su raíz como
+directorio al ejecutar.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script, fechas y motivos | 48 entradas = 36 aceptados + 12 rechazados; Date y originales conservados | Formato, calendario y relación alta/corte frente a parseo |
+| Cortes, pares y no coincidentes | 14 IDs comunes, 29000/31800 MXN y diferencia 2800 | Población comparable y límites sin doble conteo |
+
+Puedes avanzar cuando justifiques formato, calendario, relaciones y claves,
+conserves rechazos y compares períodos con una base explícita desde una sesión nueva.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero muestra dos cortes de igual tamaño y pide comprobar si contienen los mismos IDs.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios con datos sintéticos DS Track. Consulta: 2026-10-19;
 documentación contrastada con ayuda instalada y ejecución R 4.6.1/lubridate 1.9.5.
@@ -359,3 +410,10 @@ documentación contrastada con ayuda instalada y ejecución R 4.6.1/lubridate 1.
   [períodos como ampliación](https://lubridate.tidyverse.org/reference/period.html).
 - R oficial: [difftime y unidades](https://stat.ethz.ch/R-manual/R-devel/library/base/html/difftime.html).
 - [Guía de lecturas y coautorías](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[07.10 — Primera figura y cierre del análisis](../10_first_plot_closure/README.md).
+
+[← Módulo 07](../README.md) · [Lab 07.09](../../../labs/07_tidyverse/09_dates_cutoffs/README.md) · [Siguiente →](../10_first_plot_closure/README.md)

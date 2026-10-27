@@ -139,7 +139,7 @@ comprobar_cierre(fuente, alterado)
 
 Conserva script propio, entrega, comprobación desde sesión nueva y explicación
 de tres a cinco frases. Incluye una duda o corrección encontrada. Anota evidencia
-y lo que aún necesitas practicar en [PROGRESS.md](../../../PROGRESS.md) sin
+y lo que aún necesitas practicar en tu bitácora personal junto a la práctica sin
 marcar por adelantado competencias como adquiridas. Los archivos de práctica
 permanecen locales; el proyecto integrador no tiene carpeta ni checkpoint activo.
 

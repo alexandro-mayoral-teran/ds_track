@@ -1,12 +1,34 @@
 # 07.07 — Datos ordenados y reshape
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 07](../README.md) / **Lección 07.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Cambiar entre largo y ancho preservando claves, valores y ausencias |
+| **Necesitas** | 07.06 preparada; cobertura, claves y mismo proyecto renv |
+| **Evidencia** | Vuelta de tres campos conciliada y claves presentes conservadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 07.07](../../../labs/07_tidyverse/07_tidy_reshape/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Alcance de práctica.** Cambiar entre formato largo y ancho sin confundir
-reorganización con agregación. Completa [07.06 — Unir tablas](../06_join_tables/README.md)
+reorganización con agregación.
+
+## Antes de empezar
+
+Completa [07.06 — Unir tablas](../06_join_tables/README.md)
 y su lab; retoma [cobertura y denominadores de 07.05](../05_group_summarize/README.md).
 
-Al terminar podrás:
+El recorrido principal usa RStudio/IDE y el mismo proyecto renv. Incorporamos
+**tidyr 1.3.2** mediante un lockfile generado y restaurado: añade purrr 1.2.2,
+stringr 1.6.0 y stringi 1.8.9 como dependencias; conserva las versiones previas.
+R 4.6.1, dplyr 1.2.1 y readr 2.2.0 se mantienen. No se instala todo tidyverse.
+La primera figura permanece en 07.10; el proyecto integrador sigue pendiente.
+
+## Qué vas a aprender
 
 - Definir qué representa una fila antes y después de un cambio de forma.
 - Elegir claves y columnas para pivot_wider y pivot_longer.
@@ -14,11 +36,20 @@ Al terminar podrás:
 - Distinguir un saldo NA registrado de una combinación sin observación.
 - Comprobar una vuelta largo → ancho → largo por claves, tipos, valores y cobertura.
 
-El recorrido principal usa RStudio/IDE y el mismo proyecto renv. Incorporamos
-**tidyr 1.3.2** mediante un lockfile generado y restaurado: añade purrr 1.2.2,
-stringr 1.6.0 y stringi 1.8.9 como dependencias; conserva las versiones previas.
-R 4.6.1, dplyr 1.2.1 y readr 2.2.0 se mantienen. No se instala todo tidyverse.
-La primera figura permanece en 07.10; el proyecto integrador sigue pendiente.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_formas.R) | Respaldar 07.06 y añadir material y metadatos de tidyr | Para el recorrido |
+| [Lockfile](renv.lock) | Consultar versiones fijadas del mismo proyecto | Para el recorrido |
+| [CSV de origen](../../02_pandas/07_group_summarize/cartera_resumen.csv) | Examinar observaciones por crédito/corte y saldos NA | Para el recorrido |
+| [Funciones](funciones_formas.R) | Revisar claves y comprobación del cambio de forma | Para el recorrido |
+| [Ejecutor](cambiar_forma.R) | Reconstruir largo, ancho y vuelta sin agregar | Para el recorrido |
+
+Los enlaces permiten consultar las fuentes. Sigue el preparador una sola vez
+para incorporar el material al mismo proyecto de práctica; después abre allí
+los scripts desde el IDE. La sección de preparación distingue la raíz de DS Track
+de la raíz de esa práctica y explica cuándo restaurar dependencias.
 
 ## 1. «Ordenados» habla de estructura, no de ordenar filas
 
@@ -338,7 +369,9 @@ con los 177250 MXN de otra muestra. Los controles R son de coherencia y vuelta;
 la implementación pandas aporta una comprobación independiente. No necesitas
 ejecutar Python para cerrar esta práctica.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 07.07](../../../labs/07_tidyverse/07_tidy_reshape/README.md).
 Puedes dividir la sesión en cambio de forma (1–3) y ausencias/comprobación (4–6).
@@ -354,14 +387,30 @@ También puedes usar Source desde el editor manteniendo ese directorio. Debe
 funcionar sin objetos anteriores ni un workspace recuperado. No hace falta
 Terminal ni exportar CSV para demostrar el cambio de forma.
 
+Consulta [cambiar_forma.R](cambiar_forma.R) como referencia del recorrido completo;
+trabaja con su copia preparada dentro del proyecto, manteniendo su raíz como
+directorio al ejecutar.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y tres formas de la proyección | 48 × 3 → 24 × 3 → vuelta exacta; seis NA | Qué tres campos se reconstruyen y qué campos no se incluyeron |
+| Claves presentes e indicadores por corte | 47200/46700 MXN y cobertura 21/24 por corte | NA explícito frente a combinación ausente; pivotar frente a agregar |
+
 Puedes avanzar cuando justifiques las claves, conserves NA y combinaciones
-presentes y reconstruyas los tres campos con indicadores conciliados desde
-una sesión nueva. Registra evidencia y dudas; material disponible no acredita
-aprendizaje. No hay checkpoint integrador implementado asociado.
+presentes y reconstruyas los tres campos con indicadores conciliados desde una sesión nueva.
 
-Siguiente: [07.08 — Texto, categorías y factores](../08_text_categories_factors/README.md). Volver al [índice del módulo](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero retira una combinación y pide distinguirla de una observación cuyo saldo es NA.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios adaptados al recorrido DS Track. Consulta: 2026-10-19;
 documentación contrastada con ayuda instalada y ejecución R 4.6.1/tidyr 1.3.2.
@@ -373,3 +422,10 @@ documentación contrastada con ayuda instalada y ejecución R 4.6.1/tidyr 1.3.2.
   [Pivoting](https://tidyr.tidyverse.org/articles/pivot.html).
 - renv: [introducción y restauración](https://rstudio.github.io/renv/articles/renv.html).
 - [Guía de lecturas y coautorías](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[07.08 — Texto, categorías y factores](../08_text_categories_factors/README.md).
+
+[← Módulo 07](../README.md) · [Lab 07.07](../../../labs/07_tidyverse/07_tidy_reshape/README.md) · [Siguiente →](../08_text_categories_factors/README.md)

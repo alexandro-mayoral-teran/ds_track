@@ -1,14 +1,35 @@
 # 07.08 — Texto, categorías y factores
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 07](../README.md) / **Lección 07.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Normalizar categorías y ordenar factores conservando el origen |
+| **Necesitas** | 07.07 preparada; agrupación y correspondencias |
+| **Evidencia** | Reconocidos y pendientes con etiquetas, niveles e importes comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 07.08](../../../labs/07_tidyverse/08_text_categories_factors/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Alcance esencial.** Interpretar categorías con reglas explícitas y controlar
 su orden de presentación conservando el texto original y los casos pendientes.
+
+## Antes de empezar
+
 Completa [07.07 — Datos ordenados y reshape](../07_tidy_reshape/README.md) y su
 lab; retoma [agrupación de 07.05](../05_group_summarize/README.md) y
 [claves y correspondencias de 07.06](../06_join_tables/README.md).
 
-Al terminar podrás:
+Trabaja en RStudio/IDE, en el mismo proyecto renv. stringr 1.6.0 ya estaba
+instalado por tidyr; ahora se declara como dependencia directa. Se añade
+**forcats 1.0.1** con un lockfile generado y restaurado, conservando todos los
+registros anteriores. R 4.6.1/dplyr 1.2.1/readr 2.2.0 se mantienen. No se instala
+todo tidyverse ni se produce una figura: la primera permanece en 07.10.
+
+## Qué vas a aprender
 
 - Separar normalización de texto, reconocimiento de categoría y presentación.
 - Usar stringr para espacios, minúsculas y búsquedas sencillas.
@@ -16,11 +37,20 @@ Al terminar podrás:
 - Declarar niveles y modificar su orden con forcats sin cambiar las etiquetas.
 - Conciliar filas e importes después de separar reconocidos y pendientes.
 
-Trabaja en RStudio/IDE, en el mismo proyecto renv. stringr 1.6.0 ya estaba
-instalado por tidyr; ahora se declara como dependencia directa. Se añade
-**forcats 1.0.1** con un lockfile generado y restaurado, conservando todos los
-registros anteriores. R 4.6.1/dplyr 1.2.1/readr 2.2.0 se mantienen. No se instala
-todo tidyverse ni se produce una figura: la primera permanece en 07.10.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_texto.R) | Respaldar 07.07 y añadir material y metadatos de forcats | Para el recorrido |
+| [Lockfile](renv.lock) | Consultar dependencias y versiones de la práctica | Para el recorrido |
+| [CSV de texto](../../02_pandas/06_text_dates/cartera_texto_fechas.csv) | Inspeccionar textos originales y casos pendientes | Para el recorrido |
+| [Funciones](funciones_texto.R) | Seguir normalización, reconocimiento y factores estrictos | Para el recorrido |
+| [Ejecutor](revisar_texto.R) | Reconstruir partición y niveles sin alterar indicadores | Para el recorrido |
+
+Los enlaces permiten consultar las fuentes. Sigue el preparador una sola vez
+para incorporar el material al mismo proyecto de práctica; después abre allí
+los scripts desde el IDE. La sección de preparación distingue la raíz de DS Track
+de la raíz de esa práctica y explica cuándo restaurar dependencias.
 
 ## 1. Tres decisiones que conviene separar
 
@@ -320,7 +350,9 @@ observadas. Un registro con saldo cero sería otra situación. fct_drop elimina
 niveles no utilizados; no borra filas ni corrige categorías desconocidas.
 Esta sección completa la ampliación de factores introducida en 07.05.
 
-## Comprobación, práctica y siguiente paso
+<a id="comprobación-práctica-y-siguiente-paso"></a>
+
+## Comprobación del recorrido
 
 ```r
 comprobar_segmentos(fuente, resultado)
@@ -338,6 +370,8 @@ la misma función es un control de coherencia. La revisión de autoría compara
 independientemente con pandas sobre esta misma fuente y estas reglas de texto;
 no equipara su validación completa de fechas con nuestro reconocimiento de segmento.
 
+## Práctica
+
 Realiza el [lab 07.08](../../../labs/07_tidyverse/08_text_categories_factors/README.md).
 Puedes dividir la sesión en normalización (1–3) y factores/comprobación (4–6).
 Guarda output/mi_texto.R con los bloques correctos y el error esperado aparte.
@@ -349,16 +383,32 @@ source("revisar_texto.R", encoding = "UTF-8")
 ```
 
 También puedes usar Source desde el editor manteniendo ese directorio. No
-necesitas Terminal ni recuperar un workspace. Puedes avanzar cuando conserves
-origen y pendientes, justifiques equivalencias y niveles y reconstruyas las
-tablas sin alterar sus indicadores desde una sesión nueva. Registra evidencia
-y dudas; material disponible no acredita aprendizaje. El proyecto/checkpoint
-integrador sigue pendiente.
+necesitas Terminal ni recuperar un workspace.
 
-Siguiente: [07.09 — Fechas y cortes](../09_dates_cutoffs/README.md).
-Volver al [índice del módulo](../README.md).
+Consulta [revisar_texto.R](revisar_texto.R) como referencia del recorrido completo;
+trabaja con su copia preparada dentro del proyecto, manteniendo su raíz como
+directorio al ejecutar.
 
-## Referencias y atribución
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script, origen y partes | 48 registros = 45 reconocidos + 3 pendientes; 112800 MXN conservados | Normalizar escritura frente a reconocer una categoría |
+| Factor y resumen | Etiquetas y niveles; dos ausencias y microcredito fuera de catálogo | Orden de presentación sin cambiar indicadores; límites de esta validación |
+
+Puedes avanzar cuando conserves origen y pendientes, justifiques equivalencias
+y niveles y reconstruyas las tablas sin alterar sus indicadores desde una sesión nueva.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia el orden de niveles y pide demostrar qué cambia en la presentación y qué cifras permanecen iguales.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios con datos sintéticos de DS Track. Consulta: 2026-10-19;
 ayuda instalada y ejecución en R 4.6.1/stringr 1.6.0/forcats 1.0.1.
@@ -376,3 +426,10 @@ ayuda instalada y ejecución en R 4.6.1/stringr 1.6.0/forcats 1.0.1.
   [fct_drop](https://forcats.tidyverse.org/reference/fct_drop.html).
 - R oficial: [factor, niveles y códigos](https://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html).
 - [Guía de lecturas y coautorías](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[07.09 — Fechas y cortes](../09_dates_cutoffs/README.md).
+
+[← Módulo 07](../README.md) · [Lab 07.08](../../../labs/07_tidyverse/08_text_categories_factors/README.md) · [Siguiente →](../09_dates_cutoffs/README.md)

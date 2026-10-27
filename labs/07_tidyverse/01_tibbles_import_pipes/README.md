@@ -215,7 +215,7 @@ distintos?, ¿qué aporta renv y qué comprobaste sobre los datos?
 Puedes avanzar cuando ejecutes desde una sesión nueva, justifiques los cinco
 tipos, conserves 001 y el faltante, compruebes 6 × 5 y 6000 MXN y expliques un
 pipe sin depender de objetos previos. Registra evidencia y dudas en
-[PROGRESS.md](../../../PROGRESS.md); no se acredita aprendizaje por existir la lección.
+tu bitácora personal junto a la práctica; no se acredita aprendizaje por existir la lección.
 
 Siguiente: [07.02 — Seleccionar, filtrar y ordenar](../../../curriculum/07_tidyverse/02_select_filter_sort/README.md),
 con lección y lab disponibles. Volver a la [lección 07.01](../../../curriculum/07_tidyverse/01_tibbles_import_pipes/README.md).

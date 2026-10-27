@@ -1,14 +1,35 @@
 # 07.06 — Unir tablas
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 07](../README.md) / **Lección 07.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Agregar etiquetas sin multiplicar registros ni perder población |
+| **Necesitas** | 07.05 preparada y aceptados de 07.04; claves y relaciones |
+| **Evidencia** | Unión con identidad, cardinalidad y cobertura verificadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 07.06](../../../labs/07_tidyverse/06_join_tables/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Alcance esencial.** Agregar información de un catálogo sin multiplicar
-registros ni perder saldos inadvertidamente. Completa
+registros ni perder saldos inadvertidamente.
+
+## Antes de empezar
+
+Completa
 [07.05 — Agrupar y resumir](../05_group_summarize/README.md) y su lab; conserva
 los aceptados y rechazos de [07.04](../04_missing_duplicates_quality/README.md).
 Retoma el significado relacional de las [uniones SQL de 03.05](../../03_sql_databases/05_joins/README.md).
 
-Al terminar podrás:
+Trabaja en el mismo proyecto RStudio/IDE con el lockfile de 07.02: R 4.6.1,
+dplyr 1.2.1, readr 2.2.0 y tibble 3.3.1. No hay paquetes nuevos. Añadimos
+un CSV sintético pequeño; las fuentes anteriores y sus resultados se conservan.
+No se pide exportar ni graficar. El proyecto/checkpoint integrador sigue pendiente.
+
+## Qué vas a aprender
 
 - Distinguir la clave de cada tabla de las columnas utilizadas para unirlas.
 - Elegir left_join o inner_join según qué población necesitas conservar.
@@ -16,10 +37,19 @@ Al terminar podrás:
 - Declarar la cardinalidad y una política para claves ausentes.
 - Detectar multiplicaciones y comprobar identidad, importes y cobertura.
 
-Trabaja en el mismo proyecto RStudio/IDE con el lockfile de 07.02: R 4.6.1,
-dplyr 1.2.1, readr 2.2.0 y tibble 3.3.1. No hay paquetes nuevos. Añadimos
-un CSV sintético pequeño; las fuentes anteriores y sus resultados se conservan.
-No se pide exportar ni graficar. El proyecto/checkpoint integrador sigue pendiente.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_uniones.R) | Añadir funciones, ejecutor y catálogo sin dependencias nuevas | Para el recorrido |
+| [Catálogo](catalogo_etiquetas.csv) | Inspeccionar claves, etiquetas ausentes y filas sin uso | Para el recorrido |
+| [Funciones de unión](funciones_uniones.R) | Leer validación de catálogo y controles de cardinalidad | Para el recorrido |
+| [Ejecutor](unir_cartera.R) | Reconstruir coincidencias y no coincidentes | Para el recorrido |
+
+Los enlaces permiten consultar las fuentes. Sigue el preparador una sola vez
+para incorporar el material al mismo proyecto de práctica; después abre allí
+los scripts desde el IDE. La sección de preparación distingue la raíz de DS Track
+de la raíz de esa práctica y explica cuándo restaurar dependencias.
 
 ## 1. Relacionar por clave, no por posición
 
@@ -379,7 +409,9 @@ No necesitas instalar clientes SQL de R ni ejecutar Python para cerrar la secci�
 La [lección pandas 02.08](../../02_pandas/08_combine_tables/README.md) explica una
 pregunta similar con otra muestra: no intercambies sus cifras con estas.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 07.06](../../../labs/07_tidyverse/06_join_tables/README.md).
 Puedes dividir la sesión en claves/coincidencias (1–3) y cardinalidad/controles (4–6).
@@ -395,14 +427,30 @@ También puedes usar Source desde el editor manteniendo ese directorio. Las
 tablas deben reconstruirse sin objetos previos; las advertencias didácticas
 se explican. No hace falta Terminal ni recuperar un workspace guardado.
 
+Consulta [unir_cartera.R](unir_cartera.R) como referencia del recorrido completo;
+trabaja con su copia preparada dentro del proyecto, manteniendo su raíz como
+directorio al ejecutar.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script, detalle y unión | 29 filas y 177250 MXN conservados; 19 coincidencias y 10 sin catálogo | Elección de left/inner y población que conserva cada unión |
+| Controles de claves y etiquetas | Seis etiquetas desconocidas aun con coincidencia; política NA | Cardinalidad frente a cobertura; duplicados incluso sin uso |
+
 Puedes avanzar cuando justifiques las claves, controles la cardinalidad,
-conserves los no coincidentes y compruebes filas, importes y etiquetas desde
-una sesión nueva. Registra evidencia y dudas; material disponible no acredita
-aprendizaje. No hay checkpoint integrador implementado asociado.
+conserves los no coincidentes y compruebes filas, importes y etiquetas desde una sesión nueva.
 
-Siguiente: [07.07 — Datos ordenados y reshape](../07_tidy_reshape/README.md). Volver al [índice del módulo](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero añade una clave repetida sin uso al catálogo y pide explicar por qué también debe revisarse.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios con datos sintéticos de DS Track. Consulta: 2026-10-19;
 documentación contrastada con ayuda instalada y ejecución en R 4.6.1/dplyr 1.2.1.
@@ -415,3 +463,10 @@ documentación contrastada con ayuda instalada y ejecución en R 4.6.1/dplyr 1.2
   [operaciones entre dos tablas](https://dplyr.tidyverse.org/articles/two-table.html).
 - SQLite: [SELECT y procesamiento de joins](https://www.sqlite.org/lang_select.html).
 - [Guía de lecturas y coautorías](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[07.07 — Datos ordenados y reshape](../07_tidy_reshape/README.md).
+
+[← Módulo 07](../README.md) · [Lab 07.06](../../../labs/07_tidyverse/06_join_tables/README.md) · [Siguiente →](../07_tidy_reshape/README.md)

@@ -213,7 +213,7 @@ Responde con tus palabras:
 
 Puedes avanzar cuando reconstruyas los tres campos, conserves claves/NA/tipos
 y expliques cobertura y límites desde una sesión nueva. Registra evidencia y
-dudas en [PROGRESS.md](../../../PROGRESS.md); disponer del material no acredita
+dudas en tu bitácora personal junto a la práctica; disponer del material no acredita
 aprendizaje. No hay checkpoint integrador implementado asociado.
 
 Siguiente: [07.08 — Texto, categorías y factores](../../../curriculum/07_tidyverse/08_text_categories_factors/README.md). Volver a la [lección 07.07](../../../curriculum/07_tidyverse/07_tidy_reshape/README.md).

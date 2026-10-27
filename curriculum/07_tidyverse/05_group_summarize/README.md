@@ -1,16 +1,37 @@
 # 07.05 — Agrupar y resumir
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 07](../README.md) / **Lección 07.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Resumir por grupos con población, cobertura y denominadores claros |
+| **Necesitas** | 07.04 y su lab; columnas y resúmenes con cobertura |
+| **Evidencia** | Resumen conciliado con el detalle y casos mínimos de NA/cero/vacío |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 07.05](../../../labs/07_tidyverse/05_group_summarize/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Alcance esencial.** Pasar de registros a indicadores por grupo y demostrar
-qué población y denominador describe cada cifra. Completa
+qué población y denominador describe cada cifra.
+
+## Antes de empezar
+
+Completa
 [07.04 — Faltantes, duplicados y calidad](../04_missing_duplicates_quality/README.md)
 y su lab. Retoma [mutate de 07.03](../03_transform_columns/README.md) y
 [resúmenes con cobertura de 06.04](../../06_r_foundations/04_logic_missing/README.md).
 La comparación conceptual es con [pandas 02.07](../../02_pandas/07_group_summarize/README.md);
 su CSV de 48 filas pertenece a otra muestra y no se usa en este ejercicio.
 
-Al terminar podrás:
+Trabaja en el mismo proyecto RStudio/IDE con el lockfile de 07.02: R 4.6.1,
+dplyr 1.2.1, readr 2.2.0 y tibble 3.3.1. No se añaden paquetes ni CSV.
+Las tablas se calculan en memoria; el resultado reproducible es tu script.
+La primera figura permanece en 07.10; el proyecto integrador sigue pendiente.
+
+## Qué vas a aprender
 
 - Definir la unidad del detalle y la del resumen.
 - Usar group_by, summarise y n para obtener una fila por grupo.
@@ -18,10 +39,19 @@ Al terminar podrás:
 - Distinguir registros, datos conocidos, casos confirmados y grupos vacíos.
 - Conciliar sumas, conteos, tasas y promedios con sus denominadores.
 
-Trabaja en el mismo proyecto RStudio/IDE con el lockfile de 07.02: R 4.6.1,
-dplyr 1.2.1, readr 2.2.0 y tibble 3.3.1. No se añaden paquetes ni CSV.
-Las tablas se calculan en memoria; el resultado reproducible es tu script.
-La primera figura permanece en 07.10; el proyecto integrador sigue pendiente.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_resumen.R) | Añadir dos archivos sin paquetes ni CSV nuevos | Para el recorrido |
+| [Funciones de resumen](funciones_resumen.R) | Inspeccionar agrupación, cobertura y denominadores | Para el recorrido |
+| [Ejecutor](resumir_cartera.R) | Reconstruir aceptados y comprobar indicadores | Para el recorrido |
+| [Calidad compartida](../04_missing_duplicates_quality/funciones_calidad.R) | Recuperar la partición de la misma fuente | Para el recorrido |
+
+Los enlaces permiten consultar las fuentes. Sigue el preparador una sola vez
+para incorporar el material al mismo proyecto de práctica; después abre allí
+los scripts desde el IDE. La sección de preparación distingue la raíz de DS Track
+de la raíz de esa práctica y explica cuándo restaurar dependencias.
 
 ## 1. Una pregunta y dos unidades
 
@@ -360,7 +390,9 @@ Un resumen correcto conserva los conteos e importes observados de su base.
 No recupera los 15 rechazos, no prueba que no falten créditos en la fuente y
 no demuestra causalidad entre segmento y atraso.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 07.05](../../../labs/07_tidyverse/05_group_summarize/README.md).
 Puedes dividir la sesión en agrupación (1–3) y denominadores/comprobación (4–6).
@@ -375,15 +407,30 @@ También puedes usar Source en el archivo abierto manteniendo la raíz de la
 práctica como directorio. No se necesita Terminal. El script completo debe
 reconstruir las tablas y controles sin objetos de una sesión anterior.
 
+Consulta [resumir_cartera.R](resumir_cartera.R) como referencia del recorrido completo;
+trabaja con su copia preparada dentro del proyecto, manteniendo su raíz como
+directorio al ejecutar.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y resumen por segmento | 29 aceptados, cuatro grupos, 177250 MXN y 18 atrasos ≥ 30 | Unidad del detalle frente a unidad del resumen |
+| Casos mínimos y nota de denominadores | Estado de agrupación; conocidos, pendientes y grupos vacíos | Diferencias entre cero, NA y ausencia de registros |
+
 Puedes avanzar cuando expliques la unidad del resumen, justifiques cada
-denominador, distingas cero/NA/vacío y concilies con el detalle desde una sesión
-nueva. Registra evidencia y dudas; disponer del material no acredita aprendizaje.
-No hay checkpoint integrador implementado asociado.
+denominador, distingas cero/NA/vacío y concilies con el detalle desde una sesión nueva.
 
-Siguiente: [07.06 — Unir tablas](../06_join_tables/README.md).
-Volver al [índice del módulo](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide rastrear el denominador de una tasa hasta las filas que lo componen.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios con datos sintéticos de DS Track. Consulta: 2026-10-19;
 referencias contrastadas con ayuda instalada y ejecución en R 4.6.1/dplyr 1.2.1.
@@ -397,3 +444,10 @@ referencias contrastadas con ayuda instalada y ejecución en R 4.6.1/dplyr 1.2.1
   [n_distinct](https://dplyr.tidyverse.org/reference/n_distinct.html).
 - R oficial: [sum y conjunto vacío](https://stat.ethz.ch/R-manual/R-devel/library/base/html/sum.html).
 - [Lecturas y coautorías del recorrido](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[07.06 — Unir tablas](../06_join_tables/README.md).
+
+[← Módulo 07](../README.md) · [Lab 07.05](../../../labs/07_tidyverse/05_group_summarize/README.md) · [Siguiente →](../06_join_tables/README.md)

@@ -12,20 +12,42 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Presentación:** índices 00–14 y lecciones 00–06 adaptados; la
+- **Presentación:** índices 00–14 y lecciones 00–07 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
 - **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
   [Uso y comprobaciones](portal/README.md).
-- **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones de R
-  fundamental, con apoyos y orientación desde el IDE.
+- **Último trabajo:** 2026-10-27, adaptación de las diez lecciones de
+  tidyverse, con apoyos y cierre común; evidencia personal corregida en sus labs.
 - **Siguiente paso:** continuar la revisión del contenido y la adaptación por
-  módulo (07 — Tidyverse), y observar una sesión real de pareja con el portal local:
+  módulo (08 — Visualización con R), y observar una sesión real de pareja con el portal local:
   orientación, apertura, reconstrucción de práctica, revisión y reanudación.
 - **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, plantilla en tidyverse:** adaptadas 07.01–07.10
+con ubicación, ficha, preparación, objetivos, apoyos, práctica, evidencia/criterio,
+referencias y continuidad. Preparadores, funciones, ejecutores, CSV compartidos,
+metadatos/lockfiles y verificador existentes enlazados sin duplicación. Se
+conservaron el desarrollo conceptual, reglas, muestras, cifras, pausas y límites,
+así como los recorridos IDE/sesión nueva del mismo proyecto renv y sus respaldos.
+07.01 mantiene la comprobación opcional desde terminal cerrada; 07.08/07.09
+separan la comprobación del recorrido antes de la práctica. 07.10 conserva la
+relectura, revisión visual del PNG y límites del verificador. Diez labs corrigieron
+solo el destino de evidencia personal fuera de PROGRESS, sin migración visual ni
+cambios de actividades/soluciones. Cobertura central 00–07; siguiente módulo de
+presentación: 08. Proyecto/checkpoints y práctica del estudiante siguen pendientes.
+
+Comprobación: 3816 enlaces locales de Markdown sin incidencias; anclas anteriores,
+desarrollo, referencias y 122 bloques de código/comandos/diagramas conservados.
+Diez páginas GFM locales a 1280/390 px (20 vistas), con apoyos/cierre presentes,
+IDs únicos, sin desbordamiento de página y desplegables cerrados; muestra visual
+revisada. Scripts, muestras, metadatos y dependencias sin cambios. No se ejecutaron
+programas del curso ni restauraciones/instalaciones por este ajuste documental.
+El render local no acredita el de GitHub remoto ni aprendizaje del estudiante;
+el portal sigue limitado a 00 y sesión 02.01.
 
 **Desarrollo — 2026-10-27, plantilla en R fundamental:** adaptadas 06.01–06.09
 con ubicación, ficha, preparación, objetivos, material de apoyo, práctica,

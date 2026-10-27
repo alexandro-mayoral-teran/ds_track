@@ -190,7 +190,7 @@ Responde con tus palabras:
 
 Puedes avanzar cuando expliques esas decisiones y reconstruyas el resultado
 sin perder origen, pendientes ni indicadores. Registra evidencia y dudas en
-[PROGRESS.md](../../../PROGRESS.md); disponer del material no acredita aprendizaje.
+tu bitácora personal junto a la práctica; disponer del material no acredita aprendizaje.
 No hay checkpoint integrador implementado asociado.
 
 Siguiente: [07.09 — Fechas y cortes](../../../curriculum/07_tidyverse/09_dates_cutoffs/README.md). Volver a la [lección 07.08](../../../curriculum/07_tidyverse/08_text_categories_factors/README.md).

@@ -214,7 +214,7 @@ Preguntas de reflexión:
 
 Puedes avanzar cuando reconstruyas desde una sesión nueva, justifiques las
 filas, distingas NA de cero y compruebes el vacío sin alterar la fuente.
-Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md); la disponibilidad
+Registra evidencia y dudas en tu bitácora personal junto a la práctica; la disponibilidad
 del material no acredita el aprendizaje. No hay checkpoint integrador implementado.
 
 Siguiente: [07.03 — Transformar columnas](../../../curriculum/07_tidyverse/03_transform_columns/README.md),
