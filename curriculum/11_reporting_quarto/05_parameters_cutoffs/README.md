@@ -1,6 +1,18 @@
 # 11.05 — Parámetros y cortes
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 11](../README.md) / **Lección 11.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Generar variantes desde una fuente con parámetros efectivos visibles |
+| **Necesitas** | 11.03–11.04; un motor Python/Jupyter o R/knitr |
+| **Evidencia** | Dos reportes con universos, selecciones y fronteras comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 11.05](../../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Un reporte parametrizado conserva las reglas de cálculo y permite elegir valores
 de entrada al ejecutarlo. En lugar de mantener una copia del análisis para cada
@@ -8,16 +20,38 @@ mes, usarás **el mismo documento fuente** para producir dos HTML con cortes
 distintos. Cada reporte mostrará los parámetros efectivamente utilizados, su
 universo, su selección y las limitaciones de compararlos.
 
+## Antes de empezar
+
 Lee [11.03](../03_execution_python_r/README.md) y
 [11.04](../04_tables_figures_references/README.md) como prerrequisitos conceptuales:
 ejecución desde archivos, entornos y evidencia enlazada. Elige Python/Jupyter o
 R/knitr; un motor basta. Esta sección incluye datos, reglas, parámetros y
 preparadores completos; no necesita tus entregas anteriores.
 
-Al terminar podrás distinguir parámetro, filtro y salida; definir parámetros con
-la sintaxis de cada motor; generar dos reportes; comprobar tipos y fronteras;
-y explicar cuándo cambia la población comparada. No se activa caché/freeze ni
-se publica un sitio. El HTML es suficiente para esta práctica.
+No se activa caché/freeze ni se publica un sitio. El HTML es suficiente para esta práctica.
+
+## Qué vas a aprender
+
+- Distinguir parámetro, filtro y salida.
+- Definir parámetros con la sintaxis de cada motor.
+- Generar dos reportes desde el mismo documento fuente.
+- Comprobar tipos, fronteras y parámetros efectivos.
+- Explicar cuándo cambia la población comparada.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [CSV de la práctica](cartera.csv) | Consultar la entrada completa y conservar el original | Para el recorrido |
+| [Preparador py](preparar.py) / [Preparador R](preparar.R) | Crear una copia nueva con las fuentes necesarias | Elige el lenguaje de tu recorrido |
+| [Análisis py](analisis.py) / [Análisis R](analisis.R) | Validar parámetros y calcular desde la entrada completa | Elige el lenguaje de tu recorrido |
+| [Reporte python.qmd](reporte_python.qmd) / [Reporte r.qmd](reporte_r.qmd) | Renderizar con el motor elegido | Elige el lenguaje de tu recorrido |
+| [Septiembre](septiembre.yml) | Consultar corte y mínimo explícitos | Para el recorrido |
+| [Octubre](octubre.yml) | Contrastar otra variante sin editar el cálculo | Para el recorrido |
+
+Consulta las fuentes aquí y trabaja en la copia nueva que prepara el recorrido.
+Elige el lenguaje indicado para tu práctica; preparar el entorno y renderizar
+son pasos distintos. Conserva datos, fuentes y salidas anteriores.
 
 ## 1. Qué cambia y qué permanece
 
@@ -390,18 +424,38 @@ valores visibles y el registro de render, además de la salida del comando.
 | Error de recursos al cambiar salida | Entrar en la carpeta del documento y utilizar el nombre de salida allí |
 | Un HTML previo sigue abriendo después de fallar | No atribuirlo a un render nuevo exitoso |
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 11.05](../../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md).
-Puedes generar las dos variantes sin editar el cálculo, comprobar sus universos,
-explicar la frontera inclusiva y conservar evidencia suficiente para repetirlas.
-Registra resultados y dudas en [PROGRESS.md](../../../PROGRESS.md).
-`05_monthly_report` y sus checkpoints siguen pendientes en
-[proyectos](../../../projects/README.md); el material no acredita aprendizaje.
-Siguiente: [11.06 — Proyectos, caché y freeze](../06_projects_cache_freeze/README.md),
-con lección, preparadores y lab disponibles.
+## Práctica
 
-## Referencias primarias y alcance
+Realiza el [lab 11.05](../../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md) para
+generar dos variantes y justificar parámetros, universos y selecciones.
+
+Como apoyo para preparar la actividad, consulta [preparar.py](preparar.py) o
+[preparar.R](preparar.R) según el lenguaje elegido; sigue las rutas y los pasos
+del recorrido completo antes de renderizar o reconstruir.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuente y dos reportes parametrizados | Septiembre: universo 3/6000 y selección 2/5000; octubre: 4/7000 y 1/3300 con mínimo 2000 | Parámetro frente a filtro; población y denominador |
+| Fronteras y registro de render | Parámetros efectivos visibles, vacío válido y entradas inválidas | Mismo cálculo con otra entrada; clave extra sin uso según el motor |
+
+Puedes avanzar cuando generes ambas variantes sin editar el cálculo,
+compruebes sus universos, expliques la frontera inclusiva y conserves evidencia
+suficiente para repetirlas. No se activa caché/freeze ni se publica un sitio.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia el mínimo en la frontera y pide predecir qué créditos permanecen en la selección.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `05_monthly_report` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias-y-alcance"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23: [Quarto Parameters](https://quarto.org/docs/computations/parameters.html),
 [Papermill Parameterize](https://papermill.readthedocs.io/en/latest/usage-parameterize.html),
@@ -411,3 +465,10 @@ Datos y ejemplos propios. Autoría: Quarto 1.9.38/Pandoc 3.8.3, Python 3.12.12,
 Papermill 2.7.0 y R 4.6.1/knitr 1.52. Son versiones comprobadas, no una afirmación
 de actualidad universal. Bash/Zsh son recorridos de apoyo; no se certifican otros
 sistemas, la interfaz del IDE ni accesibilidad completa del HTML.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[11.06 — Proyectos, caché y freeze](../06_projects_cache_freeze/README.md).
+
+[← Módulo 11](../README.md) · [Lab 11.05](../../../labs/11_reporting_quarto/05_parameters_cutoffs/README.md) · [Siguiente →](../06_projects_cache_freeze/README.md)

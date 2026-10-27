@@ -12,20 +12,48 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Presentación:** índices 00–14 y lecciones 00–10 adaptados; la
+- **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
 - **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
   [Uso y comprobaciones](portal/README.md).
-- **Último trabajo:** 2026-10-27, adaptación de las diez lecciones de
-  Polars y DuckDB, con apoyos, cierre común y rutas opcionales conservadas.
-- **Siguiente paso:** continuar la revisión del contenido y la adaptación por
-  módulo (11 — Reportes con Quarto), y observar una sesión real de pareja con el portal local:
+- **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones de
+  Reportes con Quarto, con apoyos y cierre común; cobertura visual 00–11.
+- **Siguiente paso:** revisar el contenido y observar una sesión real de pareja
+  con el portal local:
   orientación, apertura, reconstrucción de práctica, revisión y reanudación.
 - **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, plantilla en Reportes con Quarto:** adaptadas
+11.01–11.09 con ubicación, ficha, preparación, objetivos, apoyos, práctica,
+evidencia/criterio, referencias y continuidad. CSV, preparadores, .qmd, análisis,
+parámetros, configuración, bibliografía, CSS, verificadores y guías existentes
+enlazados sin duplicación. Desarrollo, ejemplos de documentos completos,
+recorridos Python/R, reglas y cifras conservados. Un motor y HTML bastan para
+el recorrido esencial; 11.01 conserva preparación editorial sin Quarto, 11.02
+separa preparar cifras/renderizar texto y 11.03 ejecuta dentro del render.
+11.06 conserva los experimentos de caché/freeze; 11.07 mantiene revisión humana
+y PDF opcional. 11.07 permite pasar directamente a 11.09, ya disponible;
+11.08 muestra ampliación opcional y distribución local sin despliegue. El cierre
+conserva reconstrucción desde fuentes y referencia externa. Siete labs solo
+corrigieron evidencia personal fuera de PROGRESS. Cobertura central 00–11:
+las lecciones disponibles usan la plantilla; 12–14 conservan sus planes.
+Labs sin migración visual adicional; proyectos/checkpoints y práctica del
+estudiante siguen pendientes. Retomar revisión de contenido y sesión real.
+
+Comprobación: 4338 enlaces locales de Markdown sin incidencias; anclas anteriores,
+desarrollo, referencias y 109 bloques conservados, incluidos documentos .qmd con
+cercas anidadas. Nueve páginas GFM locales a 1280/390 px (18 vistas), con apoyos/
+cierre presentes, IDs únicos, sin desbordamiento de página y desplegables cerrados;
+salto esencial 11.07/11.08 → 11.09 comprobado y muestra visual revisada. Programas,
+fuentes Quarto, datos, configuración, metadatos y dependencias sin cambios.
+No se ejecutaron reportes, programas del curso, motores ni instalaciones por
+este ajuste documental. El render revisado es el Markdown de las lecciones,
+no una nueva comprobación de los reportes ni del GitHub remoto. El portal sigue
+limitado a 00 y sesión 02.01; no hay publicación ni acreditación de aprendizaje.
 
 **Desarrollo — 2026-10-27, plantilla en Polars y DuckDB:** adaptadas 10.01–10.10
 con ubicación, ficha, preparación, objetivos, apoyos, práctica, evidencia/criterio,

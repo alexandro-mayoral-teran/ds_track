@@ -1,12 +1,26 @@
 # 11.01 — Reporte, fuente y renderizado
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 11](../README.md) / **Lección 11.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Preparar una narrativa verificable y distinguir lectura de reconstrucción |
+| **Necesitas** | CSV, scripts y Markdown; Python estándar o R base, sin Quarto todavía |
+| **Evidencia** | Borrador y tablas con cada afirmación rastreable hasta sus datos |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 11.01](../../../labs/11_reporting_quarto/01_report_source_render/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 Un análisis puede calcular bien y aun así dejar preguntas abiertas: ¿qué se
 comparó?, ¿para quién importa?, ¿de dónde sale una cifra? Un reporte reúne una
 respuesta, su evidencia y sus límites para una persona que no estuvo presente
 durante la exploración. Aquí prepararás esa historia y distinguirás los archivos
 necesarios para reconstruirla.
+
+## Antes de empezar
 
 El [módulo 10](../../10_polars_duckdb/README.md) aporta los conceptos de pregunta,
 contrato y comprobación. Esta sección incluye todos sus datos y reglas; no exige
@@ -17,9 +31,23 @@ Quarto ni paquetes para esta preparación editorial: la creación y el primer
 render del `.qmd` se explican en
 [11.02](../02_first_document/README.md), ya disponible.
 
-Al terminar podrás distinguir entrada, código, documento fuente y salida;
-redactar una pregunta para un público; relacionar una afirmación con su tabla;
-y explicar por qué abrir un HTML no demuestra que los cálculos estén actualizados.
+## Qué vas a aprender
+
+- Distinguir entrada, código, documento fuente y salida.
+- Redactar una pregunta para un público concreto.
+- Relacionar cada afirmación con su tabla y sus límites.
+- Demostrar por qué abrir una salida no actualiza sus cálculos.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [CSV de la práctica](cartera.csv) | Consultar la entrada completa y conservar el original | Para el recorrido |
+| [Preparador py](preparar.py) / [Preparador R](preparar.R) | Crear una copia nueva con las fuentes necesarias | Elige el lenguaje de tu recorrido |
+
+Consulta las fuentes aquí y trabaja en la copia nueva que prepara el recorrido.
+Elige el lenguaje indicado para tu práctica; preparar el entorno y renderizar
+son pasos distintos. Conserva datos, fuentes y salidas anteriores.
 
 ## 1. Qué necesita saber quien recibe el reporte
 
@@ -244,20 +272,37 @@ Un CSV vacío o un crédito ausente incumple el contrato: no se redacta una
 comparación con cobertura fingida. Un nombre de archivo o su fecha de modificación
 tampoco prueban qué observaciones se usaron.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 11.01](../../../labs/11_reporting_quarto/01_report_source_render/README.md).
-Puedes explicar el hallazgo sin atribuir causas, rastrear cada cifra a los pares,
-clasificar los archivos y demostrar la diferencia entre abrir y regenerar.
-Registra evidencia y reflexión en [PROGRESS.md](../../../PROGRESS.md).
+## Práctica
 
-`05_monthly_report` y sus checkpoints siguen previstos en
-[proyectos](../../../projects/README.md); este material no los implementa ni
-acredita aprendizaje. Sigue con
-[11.02 — Primer documento Quarto](../02_first_document/README.md),
-ya disponible. Allí se comprueba la herramienta y se genera el primer HTML.
+Realiza el [lab 11.01](../../../labs/11_reporting_quarto/01_report_source_render/README.md) para
+preparar el borrador y contrastar qué cambia al regenerarlo con otra entrada.
 
-## Referencias primarias
+Como apoyo, consulta [preparar.py](preparar.py) o [preparar.R](preparar.R)
+según el lenguaje elegido; aquí se genera el borrador, sin renderizar Quarto.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Borrador, pares y resumen | 6000/6300 MXN, diferencia 300 y 5% sobre septiembre | Hallazgo descriptivo, público y evidencia de cada cifra |
+| Copia cambiada y nota de reconstrucción | Octubre 6600, diferencia 600 y 10%; base cero sin porcentaje inventado | Abrir frente a regenerar; fuente de datos frente a documento fuente |
+
+Puedes avanzar cuando expliques el hallazgo sin atribuir causas, rastrees
+cada cifra a los pares, clasifiques los archivos y demuestres la diferencia
+entre abrir y regenerar. Esta preparación editorial no exige renderizar Quarto.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero señala una cifra del borrador y pide mostrar el cálculo y la entrada que la sostienen.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `05_monthly_report` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23. Los datos y la narrativa son ejemplos propios;
 el alcance de esta sección no requiere ejecutar Quarto ni fija su versión.
@@ -266,3 +311,10 @@ el alcance de esta sección no requiere ejecutar Quarto ni fija su versión.
 - [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html).
 - [Using Python: fuentes `.qmd`, notebooks y ejecución](https://quarto.org/docs/computations/python.html).
 - [Using R: ejecución con knitr](https://quarto.org/docs/computations/r.html).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[11.02 — Primer documento Quarto](../02_first_document/README.md).
+
+[← Módulo 11](../README.md) · [Lab 11.01](../../../labs/11_reporting_quarto/01_report_source_render/README.md) · [Siguiente →](../02_first_document/README.md)

@@ -1,11 +1,25 @@
 # 11.07 — Formatos y revisión visual
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 11](../README.md) / **Lección 11.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Revisar el HTML final como entrega legible y contrastable |
+| **Necesitas** | 11.04–11.06; un motor y HTML bastan, PDF opcional |
+| **Evidencia** | Revisión amplia/estrecha y de teclado con valores y referencias comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 11.07](../../../labs/11_reporting_quarto/07_formats_visual_review/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Convertir un render correcto en una entrega que otra persona pueda leer,
 recorrer y contrastar. Revisaremos el **HTML final**: encabezados, navegación,
 tablas, figura, texto alternativo y comportamiento en una ventana estrecha.
 PDF es una ampliación y no bloquea el cierre esencial.
+
+## Antes de empezar
 
 Completa [11.04](../04_tables_figures_references/README.md),
 [11.05](../05_parameters_cutoffs/README.md) y
@@ -13,10 +27,31 @@ Completa [11.04](../04_tables_figures_references/README.md),
 Elige Python/Jupyter o R/knitr. Esta sección incluye datos completos y copia
 las funciones de 11.03: preparar el entorno no exige entregas personales anteriores.
 
-Al terminar podrás elegir el formato según el uso, comprobar referencias y
-valores, detectar desbordamientos y contrastar una figura con su tabla. También
-podrás distinguir una comprobación automática de una revisión visual y explicar
-sus límites. No construiremos todavía un dashboard ni el portal del curso.
+El dashboard se trabaja como ampliación en 11.08; aquí se revisa el HTML del reporte.
+
+## Qué vas a aprender
+
+- Elegir el formato según el uso de la entrega.
+- Comprobar referencias y valores en el archivo final.
+- Detectar desbordamientos en ventanas estrechas.
+- Contrastar la figura con su tabla y recuperar alternativas textuales.
+- Distinguir comprobación automática, revisión visual y sus límites.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Ejemplo mínimo](minimo.qmd) | Revisar navegación y tabla antes del reporte completo | Para el recorrido |
+| [CSV de la práctica](cartera.csv) | Consultar la entrada completa y conservar el original | Para el recorrido |
+| [Preparador py](preparar.py) / [Preparador R](preparar.R) | Crear una copia nueva con las fuentes necesarias | Elige el lenguaje de tu recorrido |
+| [Reporte python.qmd](reporte_python.qmd) / [Reporte r.qmd](reporte_r.qmd) | Generar la salida del motor elegido | Elige el lenguaje de tu recorrido |
+| [Estilos](estilos.css) | Consultar el contenedor desplazable y presentación | Para el recorrido |
+| [Verificador](verificar.py) | Contrastar estructura y valores; complementar con revisión humana | Para el recorrido |
+| [Borrador de revisión](BORRADOR.md) | Consultar la nota que completa la evidencia visual | Para el recorrido |
+
+Consulta las fuentes aquí y trabaja en la copia nueva que prepara el recorrido.
+Elige el lenguaje indicado para tu práctica; preparar el entorno y renderizar
+son pasos distintos. Conserva datos, fuentes y salidas anteriores.
 
 ## 1. Formato, cálculo y lectura son decisiones distintas
 
@@ -397,20 +432,38 @@ los datos ni una prueba de teclado. El historial no acredita aprendizaje.
 No cambies el HTML generado directamente. Corrige `.qmd`, datos o CSS según
 corresponda, renderiza de nuevo y conserva la salida que finalmente revisaste.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 11.07](../../../labs/11_reporting_quarto/07_formats_visual_review/README.md).
+## Práctica
+
+Realiza el [lab 11.07](../../../labs/11_reporting_quarto/07_formats_visual_review/README.md) para
+leer el HTML fuera de preview y registrar revisión visual, teclado y límites.
+
+Como apoyo para preparar la actividad, consulta [preparar.py](preparar.py) o
+[preparar.R](preparar.R) según el lenguaje elegido; sigue las rutas y los pasos
+del recorrido completo antes de renderizar o reconstruir.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| HTML y nota de revisión | Título, tabla, figura, referencias y valores al tamaño de uso | Éxito del render frente a lectura real |
+| Revisión amplia/estrecha y de teclado | Detalle desplazable, foco y alternativas recuperables | Qué se comprobó y qué queda fuera; PDF es ampliación |
+
 Puedes avanzar cuando otra persona pueda leer el HTML, encontrar el detalle,
-recuperar cada valor y entender las limitaciones; debes poder explicar qué
-comprobaste y qué quedó fuera. Un motor y HTML bastan.
+recuperar cada valor y entender las limitaciones. Explica qué comprobaste y qué
+quedó fuera. Un motor y HTML bastan; PDF no bloquea el cierre.
 
-Registra evidencia en [PROGRESS.md](../../../PROGRESS.md). El proyecto integrador
-de reporte y sus checkpoints siguen pendientes en [proyectos](../../../projects/README.md).
-Siguiente: [11.08 — Dashboard y distribución](../08_dashboard_distribution/README.md),
-ampliación disponible; también puedes retomar después el cierre 11.09
-cuando tenga material. No se presenta aprendizaje como dominio adquirido.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero intenta llegar a la última columna solo con teclado y pide mostrar qué contenedor recibe el foco.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `05_monthly_report` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
 
-## Referencias primarias y alcance
+<a id="referencias-primarias-y-alcance"></a>
+
+## Referencias
 
 Consultadas el 2026-10-26: [HTML y navegación Quarto](https://quarto.org/docs/output-formats/html-basics.html),
 [tablas](https://quarto.org/docs/authoring/tables.html),
@@ -420,3 +473,11 @@ Ejemplos propios; bibliotecas ya declaradas. Autoría: Quarto 1.9.38,
 Python 3.12.12/Matplotlib 3.10.7 y R 4.6.1/knitr 1.52/ggplot2 4.0.3.
 Chrome de prueba en Windows, sin certificar el IDE, otros sistemas, tecnologías
 de asistencia o accesibilidad completa. Bash/Zsh son recorridos de apoyo.
+
+## Siguiente paso
+
+La continuación esencial es [11.09 — Cierre del reporte reproducible](../09_reproducible_report_closure/README.md), ya disponible.
+Si eliges profundizar, realiza antes [11.08 — Dashboard y distribución](../08_dashboard_distribution/README.md),
+una ampliación opcional que no bloquea el cierre.
+
+[← Módulo 11](../README.md) · [Lab 11.07](../../../labs/11_reporting_quarto/07_formats_visual_review/README.md) · [Siguiente →](../09_reproducible_report_closure/README.md)

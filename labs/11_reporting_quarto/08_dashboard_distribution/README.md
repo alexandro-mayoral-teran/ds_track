@@ -120,6 +120,6 @@ aprendizaje por sí solo.
 Puedes cerrar la ampliación al conservar valores coherentes entre vistas,
 explicar su funcionamiento y entregar una copia local revisada sin conexión.
 No se exige desplegar ni construir una app. Registra evidencia en
-[PROGRESS.md](../../../PROGRESS.md).
+tu bitácora personal junto a la práctica.
 
 Continúa con la [lección 11.09 — Cierre del reporte reproducible](../../../curriculum/11_reporting_quarto/09_reproducible_report_closure/README.md).

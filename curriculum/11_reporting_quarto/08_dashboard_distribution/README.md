@@ -1,21 +1,58 @@
 # 11.08 — Dashboard y distribución
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 11](../README.md) / **Lección 11.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Organizar vistas y revisar una copia local después de distribuirla |
+| **Necesitas** | 11.04/06/07; un motor y HTML, ampliación opcional |
+| **Evidencia** | Dashboard y copia local contrastados con la misma fuente |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 11.08](../../../labs/11_reporting_quarto/08_dashboard_distribution/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+> **Ampliación opcional:** puedes omitir esta práctica y continuar con
+> [11.09 — Cierre del reporte reproducible](../09_reproducible_report_closure/README.md), ya disponible.
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Ampliación opcional.** Organizar un análisis en tarjetas, figura y detalle,
 y preparar una copia local que otra persona pueda abrir. Un motor y una salida
 HTML bastan; no se exige cuenta, alojamiento ni servidor. Si no eliges esta
-ampliación, el cierre esencial corresponde a 11.09 cuando tenga material.
+ampliación, el cierre esencial corresponde a [11.09](../09_reproducible_report_closure/README.md), ya disponible.
+
+## Antes de empezar
 
 Lee [11.04](../04_tables_figures_references/README.md),
 [11.06](../06_projects_cache_freeze/README.md) y
 [11.07](../07_formats_visual_review/README.md). Hay datos completos propios;
 se reutilizan funciones de 11.03 sin exigir entregas personales anteriores.
 
-Al terminar podrás construir una disposición sencilla, distinguir interacción
-del navegador y recálculo del análisis, contrastar todas las vistas con la misma
-fuente y revisar el HTML **después de copiarlo**. No implementamos el portal,
-Streamlit, Shiny ni el proyecto integrador de reportes en esta sección.
+Esta sección no implementa el portal, Streamlit, Shiny ni el proyecto integrador de reportes.
+
+## Qué vas a aprender
+
+- Construir una disposición sencilla con tarjetas, figura y detalle.
+- Distinguir interacción del navegador y recálculo del análisis.
+- Contrastar todas las vistas con la misma fuente.
+- Revisar el HTML después de copiarlo al destino local.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Dashboard mínimo](minimo.qmd) | Consultar disposición básica antes de la práctica | Para el recorrido |
+| [CSV de la práctica](cartera.csv) | Consultar la entrada completa y conservar el original | Para el recorrido |
+| [Preparador py](preparar.py) / [Preparador R](preparar.R) | Crear una copia nueva con las fuentes necesarias | Elige el lenguaje de tu recorrido |
+| [Dashboard python.qmd](dashboard_python.qmd) / [Dashboard r.qmd](dashboard_r.qmd) | Elegir el motor y generar las vistas | Elige el lenguaje de tu recorrido |
+| [Distribución py](distribuir.py) / [Distribución R](distribuir.R) | Crear una entrega local nueva | Elige el lenguaje de tu recorrido |
+| [Verificador](verificar.py) | Contrastar la copia que efectivamente se entrega | Para el recorrido |
+| [Guía de entrega](LEEME_entrega.md) | Consultar lectura local y límites de reconstrucción | Para el recorrido |
+
+Consulta las fuentes aquí y trabaja en la copia nueva que prepara el recorrido.
+Elige el lenguaje indicado para tu práctica; preparar el entorno y renderizar
+son pasos distintos. Conserva datos, fuentes y salidas anteriores.
 
 ## 1. Un dashboard no requiere una app con servidor
 
@@ -399,18 +436,38 @@ Una captura no prueba que los cálculos se ejecutaran de nuevo. No se certifica
 accesibilidad completa, zoom manual, lectores de pantalla u otros sistemas por
 haber inspeccionado un navegador de prueba.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 11.08](../../../labs/11_reporting_quarto/08_dashboard_distribution/README.md).
-Puedes cerrar esta ampliación cuando las vistas conserven el mismo universo y
-valores, puedas explicar qué ocurre sin servidor y otra persona pueda leer la
-copia local revisada. Registra evidencia en [PROGRESS.md](../../../PROGRESS.md).
+## Práctica
 
-El proyecto integrador y sus checkpoints siguen pendientes en
-[proyectos](../../../projects/README.md). El portal del curso no se implementa
-aquí. Continúa con [11.09 — Cierre del reporte reproducible](../09_reproducible_report_closure/README.md). Tener material disponible no acredita aprendizaje.
+Si eliges la ampliación, realiza el [lab 11.08](../../../labs/11_reporting_quarto/08_dashboard_distribution/README.md) para
+organizar las vistas, crear una entrega nueva y revisar la copia de destino.
 
-## Referencias primarias y alcance
+Como apoyo para preparar la actividad, consulta [preparar.py](preparar.py) o
+[preparar.R](preparar.R) según el lenguaje elegido; sigue las rutas y los pasos
+del recorrido completo antes de renderizar o reconstruir.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuentes, dashboard y copia local | Mismo universo y valores en tarjetas, figura y detalle | Interacción de pestañas frente a recálculo; distribución frente a reconstrucción |
+| Nota de revisión del destino | Lectura local sin conexión, recursos y cambio a 6000/6600 y 10% tras render nuevo | Qué se distribuyó y revisó; una captura no prueba recálculo |
+
+Puedes cerrar esta ampliación cuando las vistas conserven el mismo universo
+y valores, expliques qué ocurre sin servidor y otra persona pueda leer la
+copia local revisada. Omitirla no bloquea 11.09; no se exige publicación ni alojamiento.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia de pestaña después de editar el CSV y pide explicar por qué eso no actualiza los resultados.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `05_monthly_report` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias-y-alcance"></a>
+
+## Referencias
 
 Consultadas el 2026-10-26: [dashboards Quarto](https://quarto.org/docs/dashboards/),
 [disposición](https://quarto.org/docs/dashboards/layout.html),
@@ -419,3 +476,10 @@ y [recursos HTML](https://quarto.org/docs/output-formats/html-basics.html#self-c
 Ejemplos propios. Quarto 1.9.38, Python 3.12.12/Matplotlib 3.10.7 y
 R 4.6.1/knitr 1.52/ggplot2 4.0.3 en entornos locales existentes; sin dependencias
 nuevas ni cambios de lockfiles. Navegador de prueba en Windows; Bash/Zsh de apoyo.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[11.09 — Cierre del reporte reproducible](../09_reproducible_report_closure/README.md).
+
+[← Módulo 11](../README.md) · [Lab 11.08](../../../labs/11_reporting_quarto/08_dashboard_distribution/README.md) · [Siguiente →](../09_reproducible_report_closure/README.md)

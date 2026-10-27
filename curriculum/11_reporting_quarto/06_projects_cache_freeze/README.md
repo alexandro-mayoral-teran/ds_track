@@ -1,21 +1,54 @@
 # 11.06 — Proyectos, caché y freeze
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 11](../README.md) / **Lección 11.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Detectar resultados reutilizados y recuperar un reporte actualizado |
+| **Necesitas** | 11.03 y 11.05; un motor, datos y preparadores incluidos |
+| **Evidencia** | Experimentos separados de caché/freeze con contraste contra entradas actuales |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 11.06](../../../labs/11_reporting_quarto/06_projects_cache_freeze/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Organizar un reporte en un proyecto y comprobar cuándo se vuelven a calcular
 sus resultados. Un HTML puede generarse sin errores y conservar cifras de una
 entrada anterior: aprenderás a detectar esa situación y recuperar un resultado
 actualizado sin editar las cifras a mano.
 
+## Antes de empezar
+
 Lee [11.03 — Ejecución](../03_execution_python_r/README.md) y
 [11.05 — Parámetros](../05_parameters_cutoffs/README.md). Elige Python/Jupyter
 o R/knitr; un motor basta. Hay datos completos propios y preparadores que
 reutilizan las funciones de 11.05, sin exigir entregas personales anteriores.
 
-Al terminar podrás reconocer la raíz de un proyecto Quarto, controlar las rutas,
-distinguir caché y freeze, contrastar HTML con entradas actuales y justificar
-una nueva ejecución al cambiar datos, código o parámetros. No construiremos
-todavía el portal ni el proyecto integrador `05_monthly_report`.
+Esta práctica no construye el portal ni el proyecto integrador `05_monthly_report`.
+
+## Qué vas a aprender
+
+- Reconocer la raíz del proyecto Quarto y controlar las rutas.
+- Distinguir caché y freeze de una nueva ejecución.
+- Contrastar HTML con entradas actuales.
+- Justificar el recálculo al cambiar datos, código o parámetros.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [CSV de la práctica](cartera.csv) | Consultar la entrada completa y conservar el original | Para el recorrido |
+| [Preparador py](preparar.py) / [Preparador R](preparar.R) | Crear una copia nueva con las fuentes necesarias | Elige el lenguaje de tu recorrido |
+| [Proyecto Quarto](_quarto.yml) | Consultar raíz, rutas y configuración de ejecución | Para el recorrido |
+| [Reporte python.qmd](reporte_python.qmd) / [Reporte r.qmd](reporte_r.qmd) | Consultar el documento de cada motor | Elige el lenguaje de tu recorrido |
+| [Parámetros](octubre.yml) | Cambiar el corte de manera explícita | Para el recorrido |
+| [Verificador](verificar.py) | Contrastar HTML y resultados con los archivos actuales | Para el recorrido |
+
+Consulta las fuentes aquí y trabaja en la copia nueva que prepara el recorrido.
+Elige el lenguaje indicado para tu práctica; preparar el entorno y renderizar
+son pasos distintos. Conserva datos, fuentes y salidas anteriores.
 
 ## 1. Cuatro acciones diferentes
 
@@ -451,18 +484,38 @@ No se miden tiempos ni se demuestra una mejora de rendimiento. Estos reportes
 pequeños sirven para estudiar vigencia de resultados, no para justificar caché
 por ahorro medido.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 11.06](../../../labs/11_reporting_quarto/06_projects_cache_freeze/README.md).
+## Práctica
+
+Realiza el [lab 11.06](../../../labs/11_reporting_quarto/06_projects_cache_freeze/README.md) para
+mostrar una reutilización deliberada y su recuperación en copias separadas.
+
+Como apoyo para preparar la actividad, consulta [preparar.py](preparar.py) o
+[preparar.R](preparar.R) según el lenguaje elegido; sigue las rutas y los pasos
+del recorrido completo antes de renderizar o reconstruir.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Proyecto, fuentes, parámetros y salidas | Entrada actual frente a resultado guardado; rutas y execute-dir | Proyecto frente a entorno; render global frente a documento |
+| Experimentos y registro de recuperación | Cambios de datos, código y parámetros contrastados tras ejecución explícita | Cifras iguales frente a ejecución nueva; caché/freeze no sustituyen fuentes ni validación |
+
 Puedes avanzar cuando demuestres un resultado reutilizado y su recuperación,
-expliques las rutas y distingas igualdad de cifras de nueva ejecución. Registra
-evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md). El proyecto de reporte
-y sus checkpoints siguen pendientes en [proyectos](../../../projects/README.md).
+expliques las rutas y distingas igualdad de cifras de nueva ejecución. Esta
+práctica estudia vigencia de resultados; no mide ahorro de tiempo.
 
-Siguiente: [11.07 — Formatos y revisión visual](../07_formats_visual_review/README.md),
-con lección y lab disponibles. Tener este material no acredita aprendizaje del estudiante.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia solo el CSV y pide demostrar si se recalculó o se reutilizó un resultado.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `05_monthly_report` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
 
-## Referencias primarias y alcance
+<a id="referencias-primarias-y-alcance"></a>
+
+## Referencias
 
 Consultadas el 2026-10-26: [proyectos Quarto](https://quarto.org/docs/projects/quarto-projects.html),
 [gestión de ejecución](https://quarto.org/docs/projects/code-execution.html),
@@ -471,3 +524,10 @@ Consultadas el 2026-10-26: [proyectos Quarto](https://quarto.org/docs/projects/q
 Ejemplos y experimentos propios. Autoría: Quarto 1.9.38, Python 3.12.12,
 jupyter-cache 1.0.1 y R 4.6.1/knitr 1.52. Recorridos Bash/Zsh de apoyo;
 comprobaciones reales en Windows, sin acreditar otros sistemas ni revisión del IDE.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[11.07 — Formatos y revisión visual](../07_formats_visual_review/README.md).
+
+[← Módulo 11](../README.md) · [Lab 11.06](../../../labs/11_reporting_quarto/06_projects_cache_freeze/README.md) · [Siguiente →](../07_formats_visual_review/README.md)

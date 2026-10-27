@@ -1,11 +1,25 @@
 # 11.02 — Primer documento Quarto
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 11](../README.md) / **Lección 11.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Crear un .qmd y renderizar un HTML local con cifras comprobadas |
+| **Necesitas** | 11.01, editor, navegador y Quarto; Python estándar o R base para preparar cifras |
+| **Evidencia** | Fuente y HTML revisados con sus dos fases explicadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 11.02](../../../labs/11_reporting_quarto/02_first_document/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Vas a crear un documento fuente `.qmd`, convertirlo a HTML y revisar qué archivos
 se necesitan para leerlo y reconstruirlo. Después prepararás una comparación
 con cifras calculadas, eligiendo Python o R. Un render satisfactorio debe dejar
 un documento legible y coherente con su evidencia.
+
+## Antes de empezar
 
 Lee [11.01 — Reporte, fuente y renderizado](../01_report_source_render/README.md)
 como base conceptual. Esta sección trae su propia entrada y todos los resultados
@@ -14,9 +28,26 @@ un navegador y Quarto. Para la comparación elige Python estándar o R base ya
 preparados según [00.05](../../00_getting_started/05_environment/README.md).
 No se añade ningún paquete a los entornos del curso.
 
-Al terminar podrás reconocer YAML y Markdown, crear un `.qmd` sin extensión
-oculta `.txt`, usar `render` y `preview`, distinguir un bloque mostrado de uno
-ejecutable y comprobar una entrega HTML local.
+## Qué vas a aprender
+
+- Reconocer YAML y Markdown en un documento .qmd.
+- Guardar la fuente sin una extensión oculta .txt.
+- Usar render y preview distinguiendo sus efectos.
+- Separar un bloque mostrado de uno ejecutable.
+- Comprobar cifras, lectura y recursos de una entrega HTML local.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Primer documento](hola.qmd) | Crear y renderizar un mínimo sin ejecución de código | Para el recorrido |
+| [Comparación preparada](inicio.qmd) | Consultar la fuente que completa el preparador | Para el recorrido |
+| [CSV de la práctica](cartera.csv) | Consultar la entrada completa y conservar el original | Para el recorrido |
+| [Preparador py](preparar.py) / [Preparador R](preparar.R) | Crear una copia nueva con las fuentes necesarias | Elige el lenguaje de tu recorrido |
+
+Consulta las fuentes aquí y trabaja en la copia nueva que prepara el recorrido.
+Elige el lenguaje indicado para tu práctica; preparar el entorno y renderizar
+son pasos distintos. Conserva datos, fuentes y salidas anteriores.
 
 ## 1. Comprobar la herramienta antes de instalar
 
@@ -329,20 +360,37 @@ no confundas un HTML anterior que quedó en disco con una salida nueva válida.
 | HTML separado pierde estilos | Revisar `embed-resources` o conservar la carpeta de recursos que realmente requiera esa salida |
 | Preparación incompleta | Conservarla para diagnóstico; corregir y usar otro destino. No se promete escritura atómica |
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 11.02](../../../labs/11_reporting_quarto/02_first_document/README.md).
-Puedes crear y renderizar el documento, explicar sus dos fases y comprobar
-lectura y cifras sin editar el HTML. Registra evidencia en
-[PROGRESS.md](../../../PROGRESS.md).
+## Práctica
 
-`05_monthly_report` y sus checkpoints siguen previstos en
-[proyectos](../../../projects/README.md); este lab no los implementa ni acredita
-aprendizaje. El siguiente desarrollo es
-[11.03 — Ejecución con Python o R](../03_execution_python_r/README.md),
-ya disponible: cálculo dentro del `.qmd`, motor y entorno correctos.
+Realiza el [lab 11.02](../../../labs/11_reporting_quarto/02_first_document/README.md) para
+renderizar el mínimo y explicar la preparación de cifras y su conversión a HTML.
 
-## Referencias primarias
+Como apoyo para preparar la actividad, consulta [preparar.py](preparar.py) o
+[preparar.R](preparar.R) según el lenguaje elegido; sigue las rutas y los pasos
+del recorrido completo antes de renderizar o reconstruir.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuentes .qmd y HTML final | Nombre/extensión, YAML y recursos necesarios para leerlo | Preparar cifras frente a renderizar texto; bloque mostrado frente a ejecutable |
+| Comparación y revisión local | 6000/6300 MXN y cambio a 6600/10% tras preparar de nuevo | render frente a preview; abrir un HTML previo tras fallar no prueba éxito |
+
+Puedes avanzar cuando crees y renderices el documento, expliques sus dos
+fases y compruebes lectura y cifras sin editar el HTML generado.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia la entrada y pide explicar qué fase debe repetirse antes del render.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `05_monthly_report` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23; ejemplos propios, documentación web que puede avanzar
 respecto de la versión comprobada. La lectura y los comandos mínimos de Quarto
@@ -352,3 +400,10 @@ Consulta [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.htm
 [HTML Basics](https://quarto.org/docs/output-formats/html-basics.html),
 [Using Python](https://quarto.org/docs/computations/python.html) y
 [Using R](https://quarto.org/docs/computations/r.html) para sus comportamientos específicos.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[11.03 — Ejecución con Python o R](../03_execution_python_r/README.md).
+
+[← Módulo 11](../README.md) · [Lab 11.02](../../../labs/11_reporting_quarto/02_first_document/README.md) · [Siguiente →](../03_execution_python_r/README.md)

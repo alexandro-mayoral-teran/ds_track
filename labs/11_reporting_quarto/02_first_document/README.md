@@ -139,7 +139,7 @@ que una página abra, ni se necesita publicar un sitio para entregar HTML local.
 
 Puedes reconstruir una comparación y su HTML desde archivos guardados, explicar
 qué se calculó y qué se renderizó, y revisar el resultado fuera de preview.
-Registra evidencia y dudas en [PROGRESS.md](../../../PROGRESS.md).
+Registra evidencia y dudas en tu bitácora personal junto a la práctica.
 `05_monthly_report` y checkpoints siguen pendientes en
 [proyectos](../../../projects/README.md); el material disponible no acredita tu práctica.
 

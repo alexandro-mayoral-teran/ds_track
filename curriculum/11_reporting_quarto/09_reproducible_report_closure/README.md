@@ -1,11 +1,25 @@
 # 11.09 — Cierre del reporte reproducible
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 11](../README.md) / **Lección 11.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Entregar lectura y reconstrucción con parámetros y evidencia comprobables |
+| **Necesitas** | 11.03/05/06/07; un motor y HTML, sin entregas previas |
+| **Evidencia** | Fuentes reconstruidas por otra persona y reporte contrastado con referencia externa |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 11.09](../../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Entregar un HTML legible es una parte del trabajo. Aquí entregarás también lo
 necesario para volver a calcularlo en una carpeta nueva y contrastarlo con una
 referencia independiente. Otra persona debe saber qué ejecutar, qué esperar y
 qué revisar si algo falla.
+
+## Antes de empezar
 
 Requiere [ejecución](../03_execution_python_r/README.md),
 [parámetros](../05_parameters_cutoffs/README.md),
@@ -15,8 +29,30 @@ Requiere [ejecución](../03_execution_python_r/README.md),
 No necesitas entregas anteriores: el preparador copia datos, funciones y
 metadatos desde el curso. Basta **un motor y HTML**; comparar motores es ampliación.
 
-Al terminar podrás distinguir lectura y reconstrucción, declarar parámetros,
-conciliar texto/tablas/figura y explicar el alcance de huellas y registros.
+## Qué vas a aprender
+
+- Distinguir entrega para leer y fuentes para reconstruir.
+- Declarar parámetros y sus denominadores.
+- Conciliar texto, tablas y figura con una referencia independiente.
+- Explicar alcance y límites de huellas y registros.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [CSV de la práctica](cartera.csv) | Consultar la entrada completa y conservar el original | Para el recorrido |
+| [Preparador py](preparar.py) / [Preparador R](preparar.R) | Crear una copia nueva con las fuentes necesarias | Elige el lenguaje de tu recorrido |
+| [Reporte python.qmd](reporte_python.qmd) / [Reporte r.qmd](reporte_r.qmd) | Consultar texto, tablas y figura del motor elegido | Elige el lenguaje de tu recorrido |
+| [Construcción py](construir.py) / [Construcción R](construir.R) | Ejecutar la reconstrucción completa | Elige el lenguaje de tu recorrido |
+| [Configuración](_quarto.yml) | Consultar proyecto y ejecución | Para el recorrido |
+| [Parámetros](parametros.json) | Declarar corte y mínimo de la entrega | Para el recorrido |
+| [Verificador](verificar.py) | Contrastar salida y referencia externa sin reparar | Para el recorrido |
+| [Copiador de fuentes](copiar_fuentes.py) | Preparar una reconstrucción sin resultados previos | Para el recorrido |
+| [Guía de fuentes](LEEME_fuentes.md) | Consultar archivos y pasos que recibe otra persona | Para el recorrido |
+
+Consulta las fuentes aquí y trabaja en la copia nueva que prepara el recorrido.
+Elige el lenguaje indicado para tu práctica; preparar el entorno y renderizar
+son pasos distintos. Conserva datos, fuentes y salidas anteriores.
 
 ## Una entrega mínima, antes de ejecutar
 
@@ -225,21 +261,38 @@ el que se ejecutó históricamente, ni interpreta todos los píxeles o el argume
 La reconstrucción y la revisión humana siguen siendo necesarias. Tampoco se
 certifica accesibilidad completa por superar estas comprobaciones.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 11.09](../../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md).
-Puedes cerrar cuando tu compañero reconstruya un reporte sin resultados previos,
-explique el denominador y detecte una discrepancia sin corregir cifras a mano.
-Registra evidencia personal; disponer de esta lección no acredita ese aprendizaje.
+## Práctica
 
-Las nueve secciones de Quarto tienen material. El proyecto integrador y sus
-checkpoints siguen pendientes: consulta [criterios de cierre](../../../docs/reporting-closure.md).
-En el recorrido numerado siguen [12 — Streamlit](../../12_streamlit/README.md)
-o [13 — Shiny](../../13_shiny_web/README.md), ambos planificados. El piloto del
-portal es un trabajo separado: puede probar una lección existente con una
-pareja sin esperar a desarrollar todas las aplicaciones.
+Realiza el [lab 11.09](../../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md) para
+entregar fuentes, reconstruir en otra carpeta y detectar una discrepancia.
 
-## Referencias primarias
+Como apoyo para preparar la actividad, consulta [preparar.py](preparar.py) o
+[preparar.R](preparar.R) según el lenguaje elegido; sigue las rutas y los pasos
+del recorrido completo antes de renderizar o reconstruir.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuentes, parámetros, HTML y resultados | Septiembre: 3/6000 y selección 2/5000; octubre: 4/7000 y 1/3300 con mínimo 2000 | Denominador de créditos del corte frente al de todo el archivo |
+| Reconstrucción y nota de revisión | Otra carpeta sin resultados previos; texto, tablas y barras contra referencia externa | Huellas y registros frente a recálculo real y revisión humana |
+
+Puedes cerrar cuando tu compañero reconstruya un reporte sin resultados
+previos, explique el denominador y detecte una discrepancia sin corregir cifras
+a mano. Basta un motor y HTML; comparar motores y dashboard son ampliaciones.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia una cifra y su huella en una copia y pide comprobar qué contradicción aún detecta el verificador.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `05_monthly_report` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 [Ejecución de proyectos Quarto](https://quarto.org/docs/projects/code-execution.html),
 [parámetros por motor](https://quarto.org/docs/computations/parameters.html),
@@ -247,3 +300,13 @@ pareja sin esperar a desarrollar todas las aplicaciones.
 [compatibilidad JSON/YAML 1.2](https://yaml.org/spec/1.2.2/).
 Ejemplos propios; comprobación de autoría en Windows con Quarto 1.9.38,
 Python 3.12.12 y R 4.6.1. No se añaden dependencias ni se modifican lockfiles.
+
+## Siguiente paso
+
+Las nueve secciones de Quarto tienen material. Después del cierre, revisa los
+[criterios de integración](../../../docs/reporting-closure.md). En el recorrido
+numerado siguen [12 — Streamlit](../../12_streamlit/README.md) o
+[13 — Shiny](../../13_shiny_web/README.md), ambos planificados. El piloto del portal
+es un trabajo separado y puede probar una lección existente con una pareja.
+
+[← Módulo 11](../README.md) · [Lab 11.09](../../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md) · [Revisar el cierre del módulo →](../README.md#criterio-de-salida)

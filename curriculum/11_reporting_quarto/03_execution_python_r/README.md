@@ -1,11 +1,25 @@
 # 11.03 — Ejecución con Python o R
 
-## Propósito y prerrequisitos
+[Inicio](../../../README.md) / [Módulo 11](../README.md) / **Lección 11.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Ejecutar el cálculo dentro del render con motor y entorno comprobados |
+| **Necesitas** | YAML, Markdown, render y funciones; elige Python/Jupyter o R/knitr |
+| **Evidencia** | Reporte regenerado al cambiar datos y fallas diagnosticadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 11.03](../../../labs/11_reporting_quarto/03_execution_python_r/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-y-prerrequisitos"></a>
+
+## Propósito
 
 En [11.02](../02_first_document/README.md) Python o R preparaba cifras como texto
 y Quarto las convertía a HTML. Aquí **el render ejecuta el cálculo desde el CSV**.
 Cambiar una entrada válida y renderizar de nuevo debe cambiar el resultado sin
 editar el total en el documento.
+
+## Antes de empezar
 
 Necesitas reconocer YAML, Markdown y render, tener Quarto disponible y saber
 ejecutar funciones en el lenguaje elegido. Elige **Python/Jupyter o R/knitr**:
@@ -13,9 +27,27 @@ un recorrido basta para la práctica esencial. Cada uno trae datos y código
 completos; no necesita entregas previas. Preparar dependencias no equivale a
 necesitar resultados personales de otra lección.
 
-Al terminar podrás identificar motor, intérprete y biblioteca; leer un bloque
-ejecutable; reconstruir un resultado desde archivos y diagnosticar una entrada,
-función o dependencia faltante. Los recorridos usan HTML local, sin publicación.
+Los recorridos usan HTML local, sin publicación.
+
+## Qué vas a aprender
+
+- Identificar motor, intérprete y biblioteca usados en el render.
+- Leer un bloque ejecutable y su resultado.
+- Reconstruir las cifras desde archivos guardados.
+- Diagnosticar datos, funciones o dependencias faltantes.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [CSV de la práctica](cartera.csv) | Consultar la entrada completa y conservar el original | Para el recorrido |
+| [Preparador py](preparar.py) / [Preparador R](preparar.R) | Crear una copia nueva con las fuentes necesarias | Elige el lenguaje de tu recorrido |
+| [Análisis py](analisis.py) / [Análisis R](analisis.R) | Leer reglas y cálculos que ejecuta el documento | Elige el lenguaje de tu recorrido |
+| [Reporte python.qmd](reporte_python.qmd) / [Reporte r.qmd](reporte_r.qmd) | Elegir el documento ejecutable del motor | Elige el lenguaje de tu recorrido |
+
+Consulta las fuentes aquí y trabaja en la copia nueva que prepara el recorrido.
+Elige el lenguaje indicado para tu práctica; preparar el entorno y renderizar
+son pasos distintos. Conserva datos, fuentes y salidas anteriores.
 
 ## 1. Editor, Quarto, motor y entorno
 
@@ -326,20 +358,38 @@ nuevo. Caché/freeze se estudiarán en 11.06; aquí no se activan. Un render sin
 error tampoco sustituye comprobar cada valor: dos errores pueden compensarse
 en el total. Los pares y la referencia independiente permiten detectarlo.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 11.03](../../../labs/11_reporting_quarto/03_execution_python_r/README.md).
-Puedes reconstruir desde archivos guardados, demostrar el cambio de entrada,
-explicar qué entorno ejecutó y reconocer una ejecución fallida.
-Registra evidencia en [PROGRESS.md](../../../PROGRESS.md).
-`05_monthly_report` y sus checkpoints siguen previstos en
-[proyectos](../../../projects/README.md); desarrollar material no acredita aprendizaje.
+## Práctica
 
-Siguiente: [11.04 — Tablas, figuras y referencias](../04_tables_figures_references/README.md),
-ya disponible. Allí se relacionan resultados y narrativa con presentación
-y referencias; esta lección mantiene salidas de texto sencillas para centrarse en ejecución.
+Realiza el [lab 11.03](../../../labs/11_reporting_quarto/03_execution_python_r/README.md) para
+renderizar con un motor y demostrar recálculo, error y recuperación.
 
-## Referencias primarias y alcance comprobado
+Como apoyo para preparar la actividad, consulta [preparar.py](preparar.py) o
+[preparar.R](preparar.R) según el lenguaje elegido; sigue las rutas y los pasos
+del recorrido completo antes de renderizar o reconstruir.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Datos, funciones, .qmd y salida | 6000/6300 MXN, +300/5%; cambio a 6600/+600/10% desde el render | Qué motor e intérprete ejecutaron realmente |
+| Registro de fallo y recuperación | Entrada/función ausentes producen error; recuperar y renderizar de nuevo | HTML anterior frente a nueva ejecución; preparación de entorno frente a entregas previas |
+
+Puedes avanzar cuando reconstruyas desde archivos guardados, demuestres
+el cambio de entrada, expliques qué entorno ejecutó y reconozcas una ejecución
+fallida. Un recorrido y HTML local bastan; aquí no se activa caché ni freeze.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero retira temporalmente una función y pide identificar el fallo sin confundir el HTML anterior con uno nuevo.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `05_monthly_report` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias-y-alcance-comprobado"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23: [Python y Jupyter](https://quarto.org/docs/computations/python.html),
 [R y knitr](https://quarto.org/docs/computations/r.html),
@@ -349,3 +399,10 @@ Datos y código propios. Autoría: Windows, Quarto 1.9.38/Pandoc 3.8.3,
 Python 3.12.12 y R 4.6.1. Las versiones fijadas describen el recorrido comprobado,
 no las últimas disponibles. Los comandos Bash/Zsh son apoyo, no certificación
 de Linux/macOS. No se acredita revisión visual completa ni accesibilidad del HTML.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[11.04 — Tablas, figuras y referencias](../04_tables_figures_references/README.md).
+
+[← Módulo 11](../README.md) · [Lab 11.03](../../../labs/11_reporting_quarto/03_execution_python_r/README.md) · [Siguiente →](../04_tables_figures_references/README.md)

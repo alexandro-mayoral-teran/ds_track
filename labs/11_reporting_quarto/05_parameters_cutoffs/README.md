@@ -151,7 +151,7 @@ derivados se hacen después. Un nombre de HTML no sustituye esos mecanismos.
 
 ## Reflexión, criterio de salida y siguiente paso
 
-Registra evidencia en [PROGRESS.md](../../../PROGRESS.md). Responde: ¿qué es
+Registra evidencia en tu bitácora personal junto a la práctica. Responde: ¿qué es
 parámetro y qué es resultado?, ¿por qué el denominador cambia entre reportes?,
 ¿qué distingue un corte ausente de una selección vacía?, ¿qué archivos y
 valores tendría que conocer otra persona para repetir exactamente tu ejecución?

@@ -133,7 +133,7 @@ el reporte ejecutable completo ni instalar paquetes para terminar este lab.
 
 Puedes avanzar al entregar un HTML legible con valores conciliados, navegación
 funcional y tabla de detalle alcanzable, explicando lo que quedó fuera.
-Registra la evidencia en [PROGRESS.md](../../../PROGRESS.md).
+Registra la evidencia en tu bitácora personal junto a la práctica.
 
 Continúa con [11.08 — Dashboard y distribución](../../../curriculum/11_reporting_quarto/08_dashboard_distribution/README.md),
 ampliación disponible. El cierre esencial 11.09 sigue previsto;

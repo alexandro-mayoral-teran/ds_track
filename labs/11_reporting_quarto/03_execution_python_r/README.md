@@ -143,7 +143,7 @@ ocultar dos cambios compensados detrás de una suma idéntica.
 
 ## Reflexión y siguiente paso
 
-En [PROGRESS.md](../../../PROGRESS.md) registra evidencia y responde: ¿qué
+En tu bitácora personal junto a la práctica registra evidencia y responde: ¿qué
 proceso ejecutó los cálculos?, ¿qué archivos necesita una sesión nueva?, ¿cómo
 distingues un render fallido de un HTML anterior?, ¿qué cambió frente a 11.02?
 

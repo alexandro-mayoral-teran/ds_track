@@ -1,21 +1,53 @@
 # 11.04 — Tablas, figuras y referencias
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 11](../README.md) / **Lección 11.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Relacionar texto, tabla y figura con referencias y cifras coherentes |
+| **Necesitas** | 11.03; elige Python/Jupyter o R/knitr, sin entregas anteriores |
+| **Evidencia** | Tres representaciones actualizadas juntas y referencias resueltas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 11.04](../../../labs/11_reporting_quarto/04_tables_figures_references/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 Un reporte necesita que quien lo lee pueda localizar la evidencia de cada
 afirmación. Aquí crearás una tabla y una figura identificables, las enlazarás
 desde el texto y generarás las cifras del párrafo desde los mismos resultados.
 Si cambia una entrada, las tres representaciones deben actualizarse juntas.
 
+## Antes de empezar
+
 El prerrequisito conceptual es [11.03 — Ejecución con Python o R](../03_execution_python_r/README.md):
 bloques ejecutables, motor, entorno y render desde archivos. Elige Python/Jupyter
 o R/knitr. Esta sección incluye datos completos y preparadores: no necesita tus
 entregas anteriores. Basta un recorrido para la práctica esencial.
 
-Al terminar podrás diferenciar identificador, título descriptivo, texto
-alternativo, referencia cruzada, procedencia y cita bibliográfica; generar
-tabla/figura/texto coherentes y detectar una referencia que no se resolvió.
 No se incorporan dependencias ni se modifican lockfiles en esta sección.
+
+## Qué vas a aprender
+
+- Distinguir identificador, caption, texto alternativo y referencia cruzada.
+- Separar procedencia de datos y cita bibliográfica.
+- Generar párrafo, tabla y figura desde los mismos resultados.
+- Detectar referencias o citas sin resolver.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Ejemplo mínimo](minimo.qmd) | Consultar una tabla y su referencia cruzada | Para el recorrido |
+| [CSV de la práctica](cartera.csv) | Consultar la entrada completa y conservar el original | Para el recorrido |
+| [Preparador py](preparar.py) / [Preparador R](preparar.R) | Crear una copia nueva con las fuentes necesarias | Elige el lenguaje de tu recorrido |
+| [Reporte python.qmd](reporte_python.qmd) / [Reporte r.qmd](reporte_r.qmd) | Generar texto, tabla y figura desde el mismo resultado | Elige el lenguaje de tu recorrido |
+| [Bibliografía](referencias.bib) | Resolver la cita técnica y distinguirla de la fuente de datos | Para el recorrido |
+
+Consulta las fuentes aquí y trabaja en la copia nueva que prepara el recorrido.
+Elige el lenguaje indicado para tu práctica; preparar el entorno y renderizar
+son pasos distintos. Conserva datos, fuentes y salidas anteriores.
 
 ## 1. Una tabla pequeña y su referencia
 
@@ -361,17 +393,38 @@ Conserva datos, funciones, `.qmd` y `.bib` para reconstruir. El HTML completo
 incorpora su imagen y recursos de presentación; eso permite leer la evidencia,
 pero no incluye automáticamente todos los fuentes para repetir los cálculos.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 11.04](../../../labs/11_reporting_quarto/04_tables_figures_references/README.md).
-Puedes rastrear cada cifra, explicar qué aporta cada representación y distinguir
-una referencia a evidencia de una cita bibliográfica. Registra evidencia y dudas
-en [PROGRESS.md](../../../PROGRESS.md).
-El proyecto `05_monthly_report` y sus checkpoints siguen previstos en
-[proyectos](../../../projects/README.md); el desarrollo no acredita aprendizaje.
-Siguiente: [11.05 — Parámetros y cortes](../05_parameters_cutoffs/README.md).
+## Práctica
 
-## Referencias primarias y alcance
+Realiza el [lab 11.04](../../../labs/11_reporting_quarto/04_tables_figures_references/README.md) para
+rastrear cada cifra y comprobar que texto, tabla y figura se actualizan juntos.
+
+Como apoyo para preparar la actividad, consulta [preparar.py](preparar.py) o
+[preparar.R](preparar.R) según el lenguaje elegido; sigue las rutas y los pasos
+del recorrido completo antes de renderizar o reconstruir.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuentes, bibliografía y HTML | 6000/6300 MXN; cambios por crédito +200/-200/+300; barras y texto coherentes | Referencia a evidencia frente a cita bibliográfica y procedencia |
+| Cambio de entrada y revisión | Octubre 6600, +600/10% y fila de 003 actualizados juntos | Caption, alternativa textual y enlaces resueltos; límites de la revisión automática |
+
+Puedes avanzar cuando rastrees cada cifra, expliques qué aporta cada
+representación y distingas una referencia a evidencia de una cita bibliográfica.
+Comprueba destinos y advertencias además del éxito del render.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero renumera una figura y pide comprobar que el texto sigue apuntando al objeto correcto.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto `05_monthly_report` y sus checkpoints siguen planificados;
+las comprobaciones técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-primarias-y-alcance"></a>
+
+## Referencias
 
 Consultadas el 2026-10-23: [tablas](https://quarto.org/docs/authoring/tables.html),
 [figuras](https://quarto.org/docs/authoring/figures.html),
@@ -381,3 +434,10 @@ Consultadas el 2026-10-23: [tablas](https://quarto.org/docs/authoring/tables.htm
 Datos y narrativa propios; versiones de autoría fijadas, sin afirmar que sean
 las más recientes. Revisión de figuras y contenido HTML no equivale a certificar
 toda la interfaz del IDE, otros sistemas operativos o accesibilidad completa.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[11.05 — Parámetros y cortes](../05_parameters_cutoffs/README.md).
+
+[← Módulo 11](../README.md) · [Lab 11.04](../../../labs/11_reporting_quarto/04_tables_figures_references/README.md) · [Siguiente →](../05_parameters_cutoffs/README.md)

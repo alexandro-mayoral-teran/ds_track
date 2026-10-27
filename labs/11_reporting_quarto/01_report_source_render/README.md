@@ -114,7 +114,7 @@ La calidad de esta redacción requiere revisión humana; cifras iguales no la ce
 
 ## Evidencia, reflexión y siguiente paso
 
-En [PROGRESS.md](../../../PROGRESS.md) registra enlaces a tus archivos locales,
+En tu bitácora personal junto a la práctica registra enlaces a tus archivos locales,
 lenguaje elegido y qué comprobaste. Responde: ¿qué puede quedar desactualizado
 aunque el archivo se vea bien?, ¿qué significa «fuente» en cada caso?, ¿qué
 afirmación no permiten sostener estos datos?

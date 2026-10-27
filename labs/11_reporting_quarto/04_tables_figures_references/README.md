@@ -145,7 +145,7 @@ junto a cada objeto. Debe conservarse el `.bib` para reconstruir la bibliografí
 
 ## Reflexión, criterio de salida y siguiente paso
 
-Registra evidencia en [PROGRESS.md](../../../PROGRESS.md). Explica: ¿qué responde
+Registra evidencia en tu bitácora personal junto a la práctica. Explica: ¿qué responde
 la tabla y qué responde la figura?, ¿cuál es el denominador de la tasa?, ¿qué
 demuestra la cita técnica y qué no?, ¿por qué una referencia puede quedar mal
 aunque el render termine?
