@@ -1,11 +1,25 @@
 # 08.01 — Pregunta y gramática de gráficos
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 08](../README.md) / **Lección 08.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Convertir una pregunta y una tabla comprobada en capas de ggplot2 |
+| **Necesitas** | 07.10 y su lab; mismo proyecto renv, sin dependencias nuevas |
+| **Evidencia** | Script reconstruible, revisión de la figura y explicación de sus componentes |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 08.01](../../../labs/08_visualization_r/01_question_grammar/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Entender cómo una pregunta y una tabla comprobada se convierten en
 una figura de ggplot2. En [07.10](../../07_tidyverse/10_first_plot_closure/README.md)
 produjimos la primera gráfica; ahora la desarmaremos y construiremos por partes.
 No hace falta memorizar una receta completa para explicar cada decisión.
+
+## Antes de empezar
 
 Completa esa lección y su lab. Reutiliza **el mismo proyecto renv**, el CSV
 original y sus funciones. Consulta [tablas ordenadas](../../07_tidyverse/07_tidy_reshape/README.md),
@@ -15,7 +29,10 @@ Se conserva el lockfile de 07.10: referencia comprobada R 4.6.1/ggplot2 4.0.3.
 Esta sección no añade dependencias ni requiere volver a restaurar una biblioteca
 ya sincronizada. Tampoco requiere otra entrega exportada.
 
-Al terminar podrás:
+Puedes trabajar en varias sesiones: primero pregunta/tabla; después construcción;
+por último lab y explicación propia.
+
+## Qué vas a aprender
 
 - Formular la pregunta con población, unidad, fechas y medida explícitas.
 - Diferenciar registro original, fila resumida y marca gráfica.
@@ -24,8 +41,17 @@ Al terminar podrás:
 - Reconocer escalas, etiquetas y tema sin confundirlos con capas de datos.
 - Comprobar los valores e interpretar el cambio sin inventar causas.
 
-Puedes trabajar en varias sesiones: primero pregunta/tabla; después construcción;
-por último lab y explicación propia.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de gramática](explorar_gramatica.R) | Reconstruir y construir la figura por partes | Para el recorrido |
+| [Base y reglas compartidas](../../07_tidyverse/10_first_plot_closure/README.md) | Ubicar el proyecto, la fuente y las funciones de reconstrucción | Para el recorrido |
+| [Figura de referencia](assets/figura_gramatica.png) | Contrastar alturas, población y contexto | Consulta visual |
+
+Consulta las fuentes aquí y trabaja con el script propio dentro del proyecto
+de práctica, manteniendo su raíz como directorio. Las imágenes de referencia
+acompañan la lectura; contrasta también tablas y comprobaciones numéricas.
 
 ## 1. La pregunta determina qué debemos representar
 
@@ -365,7 +391,9 @@ dos saldos cero. Un cero observado con créditos presentes es otro caso.
 | Funciona al ejecutar bloques, falla con `source` | Faltan pasos previos en el script o el directorio de trabajo no es la raíz de la práctica |
 | Figura correcta, conclusión sobre otra población | Comparar título, tabla y selección de IDs antes de interpretar |
 
-## Práctica, evidencia y siguiente paso
+<a id="práctica-evidencia-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 08.01](../../../labs/08_visualization_r/01_question_grammar/README.md).
 El [script de referencia](explorar_gramatica.R) reúne la reconstrucción y los
@@ -385,15 +413,27 @@ ejecutarlo. Si necesitas conservar una imagen como evidencia, utiliza el
 procedimiento ya estudiado en 07.10 con una carpeta nueva. La exportación se
 profundizará en 08.08; aquí basta script, revisión visual y explicación.
 
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y lectura de componentes | Dos barras con 29000/31800 MXN; mismos 14 IDs y cobertura 14/18 | Registro original, fila resumida y marca gráfica |
+| Predicciones y revisión visual | Herencia de mapeos, etiquetas y reconstrucción tras reiniciar R | Datos, estéticas, capas, escalas y tema; límites de la interpretación |
+
 Puedes avanzar cuando expliques cada componente, anticipes las alturas de
-ambas geometrías, reconstruyas desde sesión nueva y justifiques población,
-unidades y límites. El proyecto integrador y sus checkpoints siguen pendientes.
-Registrar material disponible no acredita aprendizaje del estudiante.
+ambas geometrías, reconstruyas desde una sesión nueva y justifiques población,
+unidades y límites.
 
-Siguiente: [08.02 — Geometrías y transformaciones estadísticas](../02_geometries_stats/README.md),
-disponible con lección, script y lab. Volver al [índice de 08](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero señala una marca y pide rastrearla hasta su capa y su fila de datos.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos y preguntas propios con datos sintéticos DS Track. Consulta:
 2026-10-20. APIs comprobadas con R 4.6.1 y ggplot2 4.0.3; no se afirma que sean
@@ -410,3 +450,10 @@ apartado para consultar una duda concreta sin leerlas completas.
   la página advierte que es un borrador y desaconseja su lectura actual.
   No es lectura obligatoria: prioriza las referencias oficiales y esta práctica.
 - [Guía de lecturas del recorrido R](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[08.02 — Geometrías y transformaciones estadísticas](../02_geometries_stats/README.md).
+
+[← Módulo 08](../README.md) · [Lab 08.01](../../../labs/08_visualization_r/01_question_grammar/README.md) · [Siguiente →](../02_geometries_stats/README.md)

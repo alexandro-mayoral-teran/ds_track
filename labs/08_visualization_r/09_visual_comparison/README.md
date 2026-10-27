@@ -134,5 +134,6 @@ Registra evidencia y dudas. Regresa a la
 [lección 08.09](../../../curriculum/08_visualization_r/09_visual_comparison/README.md)
 y revisa el criterio global de [08](../../../curriculum/08_visualization_r/README.md).
 El siguiente módulo es [09 — Arrow y Parquet](../../../curriculum/09_arrow_parquet/README.md),
-con [09.01 disponible](../../../curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md).
-Las otras ocho secciones, el proyecto y los checkpoints integradores siguen pendientes.
+con nueve lecciones y labs, empezando por
+[09.01 — CSV, Parquet y Arrow](../../../curriculum/09_arrow_parquet/01_csv_parquet_arrow/README.md).
+El proyecto y los checkpoints integradores siguen pendientes.

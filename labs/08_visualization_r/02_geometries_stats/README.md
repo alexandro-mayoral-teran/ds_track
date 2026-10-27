@@ -224,7 +224,7 @@ la ausencia de advertencias no demuestra completitud.
 
 Conserva script, tabla de elección por pregunta, comprobaciones numéricas y
 notas de revisión visual. Registra dudas y evidencia real según
-[PROGRESS.md](../../../PROGRESS.md). No hay checkpoint ni proyecto integrador
+tu bitácora personal junto a la práctica. No hay checkpoint ni proyecto integrador
 activo; ejecutar la referencia no acredita por sí solo aprendizaje.
 
 - ¿Qué cambia entre contar el resumen y contar el detalle?

@@ -1,11 +1,25 @@
 # 08.03 — Mapear y fijar estéticas
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 08](../README.md) / **Lección 08.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Separar propiedades constantes de mapeos y grupos de dibujo |
+| **Necesitas** | 08.01–08.02 y sus labs; mismo proyecto de práctica |
+| **Evidencia** | Mapeos y leyendas justificados con una trayectoria por ID |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 08.03](../../../labs/08_visualization_r/03_aesthetic_mapping/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Decidir qué propiedades visuales representan datos y cuáles son
 estilos constantes. En ggplot2, una estética es una propiedad de las marcas:
 posición, color, relleno, forma o tamaño. No significa solamente «hacer bonito».
 Una elección equivocada puede inventar categorías o unir créditos distintos.
+
+## Antes de empezar
 
 Completa [08.01](../01_question_grammar/README.md),
 [08.02](../02_geometries_stats/README.md) y sus labs. Reutiliza el proyecto renv
@@ -14,7 +28,11 @@ fuente y lockfile. Referencia: R 4.6.1/ggplot2 4.0.3. No añadimos dependencias.
 Repasa [factores](../../07_tidyverse/08_text_categories_factors/README.md) y
 [fechas y base común](../../07_tidyverse/09_dates_cutoffs/README.md) si hace falta.
 
-Al terminar podrás:
+Puedes dividir el trabajo en sesiones: barras y leyenda; puntos y propiedades;
+después líneas, comprobación y lab. Las escalas se profundizan en 08.04; aquí
+introducimos únicamente las necesarias para entender el mapeo.
+
+## Qué vas a aprender
 
 - Leer `aes(propiedad = columna)` y distinguirlo de una propiedad constante.
 - Predecir cuándo aparece una leyenda y corregir una categoría accidental.
@@ -23,9 +41,17 @@ Al terminar podrás:
 - Separar la identidad de una línea de su color: una trayectoria por crédito.
 - Comprobar posiciones, grupos y población, además de inspeccionar el dibujo.
 
-Puedes dividir el trabajo en sesiones: barras y leyenda; puntos y propiedades;
-después líneas, comprobación y lab. Las escalas se profundizan en 08.04; aquí
-introducimos únicamente las necesarias para entender el mapeo.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de estéticas](explorar_esteticas.R) | Contrastar mapeos, constantes, herencia y agrupación | Para el recorrido |
+| [Base y reglas compartidas](../../07_tidyverse/10_first_plot_closure/README.md) | Ubicar el proyecto, la fuente y las funciones de reconstrucción | Para el recorrido |
+| [Trayectorias](assets/trayectorias.png) | Revisar identidad de las líneas y señal por fecha | Consulta visual |
+
+Consulta las fuentes aquí y trabaja con el script propio dentro del proyecto
+de práctica, manteniendo su raíz como directorio. Las imágenes de referencia
+acompañan la lectura; contrasta también tablas y comprobaciones numéricas.
 
 ## 1. Una decisión antes de escribir `aes()`
 
@@ -407,7 +433,9 @@ pertenecen a [08.04](../04_scales_coordinates/README.md), facetas a 08.05 y acce
 siguen en el [índice](../README.md). No es requisito usar simultáneamente todas
 las estéticas, representar 14 IDs con 14 colores ni exportar otra entrega.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 08.03](../../../labs/08_visualization_r/03_aesthetic_mapping/README.md).
 El [script de referencia](explorar_esteticas.R) reúne los bloques esenciales;
@@ -418,16 +446,27 @@ Restart R y ejecuta en Console desde la raíz del proyecto:
 source("output/mi_esteticas.R", encoding = "UTF-8")
 ```
 
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script con variantes de mapeo y constantes | Leyendas, propiedades y herencia de cada capa | Categoría accidental frente a estilo constante |
+| Trayectorias y comprobaciones | 14 pares, 28 observaciones y 29000/31800 MXN conservados | Una línea por crédito; color y forma por fecha frente a identidad del grupo |
+
 Puedes avanzar cuando anticipes mapeos y leyendas, corrijas una constante mal
 ubicada, justifiques propiedades según la geometría y compruebes una línea por
-ID sin alterar población ni saldos. Conserva comprobaciones y explicación propia;
-el desarrollo del material no acredita aprendizaje. No existe aún proyecto
-integrador ni checkpoint activo.
+ID sin alterar población ni saldos.
 
-Siguiente: [08.04 — Escalas y coordenadas](../04_scales_coordinates/README.md),
-ya disponible. Volver al [índice de 08](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide explicar por qué mapear el color a la fecha no identifica la trayectoria de cada crédito.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos y datos sintéticos propios de DS Track. Consulta: 2026-10-20.
 Referencias de API oficiales de ggplot2 4.0.3 enlazadas junto a cada concepto:
@@ -439,3 +478,10 @@ Como lectura de apoyo: Hadley Wickham, Mine Çetinkaya-Rundel y Garrett Grolemun
 La [guía de lecturas R](../../../docs/r-reading-guide.md) distingue ese recorrido
 del libro ggplot2 de Hadley Wickham, Danielle Navarro y Thomas Lin Pedersen,
 cuya tercera edición en línea continúa en desarrollo.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[08.04 — Escalas y coordenadas](../04_scales_coordinates/README.md).
+
+[← Módulo 08](../README.md) · [Lab 08.03](../../../labs/08_visualization_r/03_aesthetic_mapping/README.md) · [Siguiente →](../04_scales_coordinates/README.md)

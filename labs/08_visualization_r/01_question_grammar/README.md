@@ -161,7 +161,7 @@ población que cambia; no debes presentar esa cifra como la de los mismos IDs.
 
 Conserva script, contrato escrito, revisión visual y explicación de cuatro a
 seis frases. Registra la evidencia y dudas reales según
-[PROGRESS.md](../../../PROGRESS.md), sin marcar aprendizaje por la existencia
+tu bitácora personal junto a la práctica, sin marcar aprendizaje por la existencia
 de una solución. No hay proyecto integrador ni checkpoint activo todavía.
 
 Continúa cuando puedas reconstruir y explicar tus decisiones. Siguiente:

@@ -12,20 +12,45 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Presentación:** índices 00–14 y lecciones 00–07 adaptados; la
+- **Presentación:** índices 00–14 y lecciones 00–08 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
 - **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
   [Uso y comprobaciones](portal/README.md).
-- **Último trabajo:** 2026-10-27, adaptación de las diez lecciones de
-  tidyverse, con apoyos y cierre común; evidencia personal corregida en sus labs.
+- **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones de
+  Visualización con R, con apoyos, cierre común y continuidad actualizada.
 - **Siguiente paso:** continuar la revisión del contenido y la adaptación por
-  módulo (08 — Visualización con R), y observar una sesión real de pareja con el portal local:
+  módulo (09 — Arrow y Parquet), y observar una sesión real de pareja con el portal local:
   orientación, apertura, reconstrucción de práctica, revisión y reanudación.
 - **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, plantilla en Visualización con R:** adaptadas
+08.01–08.09 con ubicación, ficha, preparación, objetivos, apoyos, práctica,
+evidencia/criterio, referencias y continuidad. Scripts, figuras de referencia,
+preparador/lockfile de patchwork y base/reglas compartidas de 07.10 enlazados
+sin duplicación. Desarrollo, muestras, cifras, pausas y recorridos IDE/sesión
+nueva conservados. Exploración sin exportación obligatoria en 08.01–08.07;
+08.07 mantiene la ampliación anidada opcional. 08.08 conserva PNG esencial y
+SVG/PDF/doble resolución como ampliaciones; separa diagnóstico de práctica.
+08.09 conserva reconstrucción independiente y seis conciliaciones R/Python.
+Siete labs corrigieron solo el destino de evidencia personal fuera de PROGRESS;
+el lab 08.09 y su lección actualizaron la nota antigua de continuidad: las nueve
+secciones de 09 ya tienen material. Sin migración visual de labs ni cambios de
+actividades/soluciones. Cobertura central 00–08; siguiente módulo visual: 09.
+Proyecto/checkpoints y práctica del estudiante siguen pendientes.
+
+Comprobación: 3923 enlaces locales de Markdown sin incidencias; anclas anteriores,
+desarrollo, referencias, 83 bloques de código/comandos/diagramas y 20 imágenes
+conservados. Nueve páginas GFM locales a 1280/390 px (18 vistas), con imágenes
+cargadas, apoyos/cierre presentes, IDs únicos, sin desbordamiento de página y
+desplegables cerrados; muestra visual revisada. Programas, muestras, figuras,
+metadatos y dependencias sin cambios. No se ejecutaron programas del curso ni
+restauraciones/instalaciones por este ajuste documental. El render local no
+acredita el de GitHub remoto ni aprendizaje del estudiante; el portal sigue
+limitado a 00 y sesión 02.01.
 
 **Desarrollo — 2026-10-27, plantilla en tidyverse:** adaptadas 07.01–07.10
 con ubicación, ficha, preparación, objetivos, apoyos, práctica, evidencia/criterio,

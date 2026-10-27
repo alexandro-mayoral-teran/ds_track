@@ -175,7 +175,7 @@ le diste en un párrafo anterior. No es requisito añadir otra vista para cerrar
 ## Evidencia, reflexión y salida
 
 Conserva script, tablas conciliadas, descripción del conjunto y notas de
-revisión visual. Registra evidencia real y dudas según [PROGRESS.md](../../../PROGRESS.md).
+revisión visual. Registra evidencia real y dudas en tu bitácora personal junto a la práctica.
 No hay proyecto integrador ni checkpoint activo; ejecutar la referencia no
 demuestra aprendizaje por sí solo.
 

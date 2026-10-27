@@ -173,7 +173,7 @@ Para facetas, aplica la regla de claves de 08.05 antes de anotar un panel espec�
 ## Evidencia, reflexión y salida
 
 Conserva script, tabla, alternativa textual, interpretación y notas de revisión
-visual. Registra evidencia real y dudas según [PROGRESS.md](../../../PROGRESS.md).
+visual. Registra evidencia real y dudas en tu bitácora personal junto a la práctica.
 No hay proyecto integrador ni checkpoint activo; desarrollar o ejecutar el
 material no acredita aprendizaje por sí solo.
 

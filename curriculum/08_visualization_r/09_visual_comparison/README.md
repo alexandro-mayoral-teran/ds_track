@@ -1,10 +1,24 @@
 # 08.09 — Cierre visual y comparación con Python
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 08](../README.md) / **Lección 08.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Comprobar que R y Python representan el mismo análisis |
+| **Necesitas** | 07.09–07.10 y 08.01–08.08; proyecto R y entorno Python del track |
+| **Evidencia** | Entrega R y comparación Python con seis tablas conciliadas y comentario |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 08.09](../../../labs/08_visualization_r/09_visual_comparison/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Práctica de cierre.** Entregar una figura reconstruible y explicar por qué
 dos implementaciones representan el mismo análisis. La apariencia ayuda a
 comunicar; la equivalencia se comprueba en población, claves, fechas y valores.
+
+## Antes de empezar
 
 Retoma [07.09 — Fechas y cortes](../../07_tidyverse/09_dates_cutoffs/README.md),
 [07.10 — Primera figura y cierre](../../07_tidyverse/10_first_plot_closure/README.md)
@@ -21,7 +35,11 @@ Aquí reutilizamos la entrega PNG/CSV de 07.10 para centrar el cierre en la
 conciliación R/Python. Las nueve secciones tienen material; completar su
 desarrollo no acredita las prácticas del estudiante ni el proyecto integrador.
 
-Al terminar podrás:
+Puedes trabajar en tres sesiones: reconstrucción R; conciliación Python;
+interpretación y evidencia. No necesitas traducir toda la sintaxis de un
+lenguaje al otro ni dominar el código interno del verificador.
+
+## Qué vas a aprender
 
 - Especificar qué significa «el mismo análisis» en dos lenguajes.
 - Reconstruir una entrega R desde la fuente y contrastarla con Python.
@@ -29,9 +47,19 @@ Al terminar podrás:
 - Localizar discrepancias antes de interpretar gráficos.
 - Entregar tablas, código y un comentario con hallazgo y límites.
 
-Puedes trabajar en tres sesiones: reconstrucción R; conciliación Python;
-interpretación y evidencia. No necesitas traducir toda la sintaxis de un
-lenguaje al otro ni dominar el código interno del verificador.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Cierre R](cerrar_visual.R) | Reconstruir y exportar una entrega nueva desde el proyecto | Para el recorrido |
+| [Referencia Python](comparar_python.py) | Reconstruir el CSV independientemente y conciliar antes de dibujar | Para el recorrido |
+| [Base y reglas compartidas](../../07_tidyverse/10_first_plot_closure/README.md) | Ubicar el proyecto, la fuente y las funciones de reconstrucción | Para el recorrido |
+| [Figura R](assets/saldo_comun_r.png) | Revisar población, unidades y lectura | Consulta visual |
+| [Figura Python](assets/saldo_comun_python.png) | Contrastar representación sobre la misma base | Consulta visual |
+
+Consulta las fuentes aquí y trabaja con el script propio dentro del proyecto
+de práctica, manteniendo su raíz como directorio. Las imágenes de referencia
+acompañan la lectura; contrasta también tablas y comprobaciones numéricas.
 
 ## 1. Fijar el contrato antes de comparar
 
@@ -262,21 +290,35 @@ Sigue el recorrido fuente → reglas → registros → pares → resumen → fig
 - **Carpeta ocupada:** conserva la entrega y usa otro nombre. No borres evidencia
   para que una ejecución parezca nueva.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 08.09](../../../labs/08_visualization_r/09_visual_comparison/README.md).
+## Práctica
+
+Realiza el [lab 08.09](../../../labs/08_visualization_r/09_visual_comparison/README.md) para
+reconstruir ambas rutas y conciliar tablas antes de interpretar sus figuras.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código, tablas y figuras de ambos lenguajes | Seis tablas conciliadas; 14 IDs, 29000/31800 MXN y cambio 9.66% | Diferencia monetaria, cambio relativo y cobertura con sus bases |
+| Tabla de pares y comentario con límites | Reconstrucción independiente y detección de una alteración compensada | Equivalencia de población y valores frente a parecido visual |
+
 Puedes avanzar en este cierre cuando reconstruyas ambas rutas, expliques las
 seis conciliaciones, detectes una alteración compensada y redactes el hallazgo
-con denominadores y límites. Entrega la tabla de pares junto al resumen: las
-barras no permiten auditar por sí solas la selección de la población.
+con denominadores y límites. Entrega los pares junto al resumen: las barras
+no permiten auditar por sí solas la selección de la población.
 
-Después del lab, revisa el criterio global del [módulo 08](../README.md).
-El siguiente módulo numerado es [09 — Arrow y Parquet](../../09_arrow_parquet/README.md),
-cuya [primera sección](../../09_arrow_parquet/01_csv_parquet_arrow/README.md) está disponible.
-09.02–09.09, el proyecto y sus checkpoints integradores siguen pendientes.
-Escribir el material no acredita aprendizaje del estudiante.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero propone dos cambios que conservan el total y pide mostrar por qué la comparación por clave los detecta.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias primarias
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 - [ggsave: objeto, dimensiones y dispositivo](https://ggplot2.tidyverse.org/reference/ggsave.html).
 - [Matplotlib: Figure.savefig](https://matplotlib.org/3.10.7/api/_as_gen/matplotlib.figure.Figure.savefig.html)
@@ -290,3 +332,13 @@ Escribir el material no acredita aprendizaje del estudiante.
 Las páginas oficiales pueden describir versiones posteriores; las funciones
 de estos ejemplos se comprobaron con las versiones declaradas al inicio.
 Los ejemplos y la conciliación de esta muestra son propios del track.
+
+## Siguiente paso
+
+Después del lab, revisa el criterio global del [módulo 08](../README.md).
+Continúa con [09 — Arrow y Parquet](../../09_arrow_parquet/README.md),
+que dispone de nueve lecciones y labs, empezando por
+[09.01 — CSV, Parquet y Arrow](../../09_arrow_parquet/01_csv_parquet_arrow/README.md). Proyecto y checkpoints
+integradores siguen pendientes.
+
+[← Módulo 08](../README.md) · [Lab 08.09](../../../labs/08_visualization_r/09_visual_comparison/README.md) · [Siguiente →](../../09_arrow_parquet/01_csv_parquet_arrow/README.md)

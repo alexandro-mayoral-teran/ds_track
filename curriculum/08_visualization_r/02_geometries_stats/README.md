@@ -1,6 +1,18 @@
 # 08.02 — Geometrías y transformaciones estadísticas
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 08](../README.md) / **Lección 08.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Elegir geometrías y comprobar las estadísticas que representan |
+| **Necesitas** | 08.01 y su lab; mismo proyecto, fuente y lockfile de 07.10 |
+| **Evidencia** | Figuras contrastadas con tablas, frecuencias, cuartiles y explicación |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 08.02](../../../labs/08_visualization_r/02_geometries_stats/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Elegir una geometría según la pregunta y comprobar qué calcula
 su capa. En [08.01](../01_question_grammar/README.md) distinguimos datos, mapeos
@@ -8,13 +20,20 @@ y capas. Ahora compararemos cinco familias: barras, líneas, puntos, histogramas
 y diagramas de caja. Cambiar la geometría puede cambiar la medida representada,
 no solamente su apariencia.
 
+## Antes de empezar
+
 Completa 08.01 y su lab. Trabaja en el mismo proyecto renv preparado para
 [07.10](../../07_tidyverse/10_first_plot_closure/README.md). Reutilizamos su CSV,
 funciones y lockfile: R 4.6.1 y ggplot2 4.0.3 comprobados. No hay dependencias,
 fuentes ni reglas de aceptación nuevas. No necesitas otra instalación ni una
 nueva exportación para completar esta práctica.
 
-Al terminar podrás:
+El recorrido principal usa RStudio o tu IDE: editor, Run, Console de R y Plots.
+Mantén la raíz del proyecto de práctica como directorio; Console de R y Terminal
+del sistema son herramientas distintas. Puedes repartir la lección entre
+comparación/relación y distribuciones antes de realizar el lab.
+
+## Qué vas a aprender
 
 - Relacionar una pregunta con la tabla y geometría que necesita.
 - Diferenciar identidad, conteo, intervalos y resumen estadístico.
@@ -22,10 +41,18 @@ Al terminar podrás:
 - Comprobar frecuencias de un histograma y cuartiles/bigotes de una caja.
 - Reconocer qué información pierde cada resumen y qué no demuestra una figura.
 
-El recorrido principal usa RStudio o tu IDE: editor, Run, Console de R y Plots.
-Mantén la raíz del proyecto de práctica como directorio; Console de R y Terminal
-del sistema son herramientas distintas. Puedes repartir la lección entre
-comparación/relación y distribuciones antes de realizar el lab.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de geometrías](explorar_geometrias.R) | Reconstruir resumen, pares y detalle y contrastar las capas | Para el recorrido |
+| [Base y reglas compartidas](../../07_tidyverse/10_first_plot_closure/README.md) | Ubicar el proyecto, la fuente y las funciones de reconstrucción | Para el recorrido |
+| [Histograma](assets/histograma.png) | Contrastar intervalos y frecuencias | Consulta visual |
+| [Cajas y puntos](assets/cajas.png) | Leer estadística resumida y observaciones | Consulta visual |
+
+Consulta las fuentes aquí y trabaja con el script propio dentro del proyecto
+de práctica, manteniendo su raíz como directorio. Las imágenes de referencia
+acompañan la lectura; contrasta también tablas y comprobaciones numéricas.
 
 ## 1. Geometría, estadística y pregunta
 
@@ -416,7 +443,9 @@ dividiendo una diferencia de medianas por la cantidad de créditos.
   Si se incorpora después, habrá que justificar el modelo y su incertidumbre.
   [Referencia](https://ggplot2.tidyverse.org/reference/geom_smooth.html).
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 08.02](../../../labs/08_visualization_r/02_geometries_stats/README.md).
 Conserva script propio y una explicación de qué recibe, calcula y dibuja cada
@@ -436,12 +465,26 @@ cierre bastan reconstrucción, inspección de figuras y explicación; una nueva
 entrega de archivos no es obligatoria. El proyecto integrador y sus checkpoints
 siguen pendientes; la existencia de material no acredita aprendizaje.
 
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y tabla para cada geometría | 2 filas resumidas, 28 observaciones y 14 pares según la pregunta | Identidad, conteo, intervalos y resumen estadístico |
+| Controles y lectura de figuras | Frecuencias 4/3/3/2/2; cuartiles y bigotes contrastados | Qué pierde cada resumen y por qué dos fechas no prueban tendencia |
+
 Puedes avanzar cuando justifiques tabla/geometría, anticipes conteos y sumas,
 compruebes intervalos y cuartiles y expliques lo que cada figura pierde.
-Siguiente: [08.03 — Mapear y fijar estéticas](../03_aesthetic_mapping/README.md),
-ya disponible. Volver al [índice de 08](../README.md).
 
-## Referencias y atribución
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia una barra de identidad por una de conteo y pide predecir qué mediría.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos, comprobaciones y datos sintéticos propios de DS Track. Consulta:
 2026-10-20. Funciones comprobadas con R 4.6.1/ggplot2 4.0.3; las páginas
@@ -458,3 +501,10 @@ Las referencias por función aparecen junto al concepto que sustentan.
   tercera edición en desarrollo. Las referencias de API verificadas guían esta
   práctica; no se copian ejemplos de capítulos en borrador.
 - [Guía de lecturas R](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[08.03 — Mapear y fijar estéticas](../03_aesthetic_mapping/README.md).
+
+[← Módulo 08](../README.md) · [Lab 08.02](../../../labs/08_visualization_r/02_geometries_stats/README.md) · [Siguiente →](../03_aesthetic_mapping/README.md)

@@ -1,11 +1,25 @@
 # 08.07 — Componer figuras
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 08](../README.md) / **Lección 08.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reunir vistas complementarias con orden de lectura y contexto común |
+| **Necesitas** | 08.03–08.06 y sus labs; mismo proyecto con preparación de patchwork |
+| **Evidencia** | Composición de resumen y detalle con tablas y guías justificadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 08.07](../../../labs/08_visualization_r/07_compose_figures/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Práctica.** Reunir vistas complementarias en una figura con orden de lectura,
 contexto común y medidas explícitas. Un buen conjunto no es simplemente poner
 gráficos uno al lado del otro: cada vista debe responder una parte de la pregunta
 y conservar su población, unidad, escala y explicación.
+
+## Antes de empezar
 
 Completa [08.03](../03_aesthetic_mapping/README.md),
 [08.04](../04_scales_coordinates/README.md), [08.05](../05_facets_groups/README.md),
@@ -14,7 +28,11 @@ proyecto renv de [07.10](../../07_tidyverse/10_first_plot_closure/README.md).
 Esta sección incorpora **patchwork 1.3.2**, con R 4.6.1/ggplot2 4.0.3. El
 lockfile conserva los 43 registros anteriores y añade solo patchwork.
 
-Al terminar podrás:
+Puedes dividir el trabajo en preparación, vistas individuales y composición;
+después realiza el lab. No necesitas memorizar todos los operadores de patchwork
+ni exportar otra entrega: la exportación se profundizará en 08.08.
+
+## Qué vas a aprender
 
 - Diferenciar una faceta de una composición de gráficos distintos.
 - Preparar objetos verificables antes de reunirlos.
@@ -23,9 +41,21 @@ Al terminar podrás:
 - Recoger leyendas compatibles sin asumir que se unifican datos o escalas.
 - Explicar el conjunto sin la imagen y comprobarlo desde una sesión nueva.
 
-Puedes dividir el trabajo en preparación, vistas individuales y composición;
-después realiza el lab. No necesitas memorizar todos los operadores de patchwork
-ni exportar otra entrega: la exportación se profundizará en 08.08.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador](preparar_composicion.R) | Respaldar 08.06 y añadir material y metadatos al mismo proyecto | Para el recorrido |
+| [Lockfile](renv.lock) | Consultar versiones fijadas, incluida patchwork | Para el recorrido |
+| [Script de composición](componer_figuras.R) | Reconstruir vistas, composición y ampliación señalada | Para el recorrido |
+| [Base y reglas compartidas](../../07_tidyverse/10_first_plot_closure/README.md) | Ubicar el proyecto, la fuente y las funciones de reconstrucción | Para el recorrido |
+| [Resumen y detalle](assets/resumen_detalle.png) | Leer las dos vistas principales | Consulta visual |
+| [Disposición vertical](assets/vertical.png) | Contrastar el orden de lectura | Consulta visual |
+| [Composición anidada](assets/anidada.png) | Consultar la tercera vista | Ampliación opcional |
+
+Consulta las fuentes aquí y trabaja con el script propio dentro del proyecto
+de práctica, manteniendo su raíz como directorio. Las imágenes de referencia
+acompañan la lectura; contrasta también tablas y comprobaciones numéricas.
 
 ## 1. Diseñar la lectura antes de elegir la disposición
 
@@ -383,7 +413,9 @@ presentes sigue siendo otro caso. Para datos distintos, reconstruye cada vista
 y revisa también el título del conjunto; el texto «aumenta 2800» es específico
 de esta muestra.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 08.07](../../../labs/08_visualization_r/07_compose_figures/README.md).
 El [script de referencia](componer_figuras.R) reúne la reconstrucción, las dos
@@ -394,14 +426,27 @@ Restart R y ejecuta en Console desde la raíz del proyecto:
 source("output/mi_composicion.R", encoding = "UTF-8")
 ```
 
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y vistas individuales | 14 IDs, 28 observaciones y 29000/31800 MXN conciliados | Qué pregunta responde cada vista antes de reunirlas |
+| Composición y descripción textual | Disposición, rangos, rótulos y guías compatibles | Faceta frente a composición; recoger guías no unifica datos ni escalas |
+
 Puedes avanzar cuando concilies resumen/detalle, justifiques disposición,
-rangos y guías, y describas el conjunto sin depender de la imagen. Conserva
-script propio, controles y revisión visual. El proyecto integrador y sus
-checkpoints siguen pendientes; desarrollar material no acredita aprendizaje.
+rangos y guías, y describas el conjunto sin depender de la imagen. La vista
+anidada es una ampliación opcional.
 
-Siguiente: [08.08 — Exportación reproducible](../08_reproducible_export/README.md). Volver al [índice de 08](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia de fila a columna y pide explicar qué cambia en la lectura y qué datos se conservan.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos y datos sintéticos propios de DS Track. Consulta: 2026-10-20.
 Patchwork, de Thomas Lin Pedersen y sus colaboradores: documentación oficial
@@ -409,3 +454,10 @@ de composición, diseño, guías y anotación enlazada arriba. El sitio consulta
 se identifica como versión de desarrollo; ejemplos contrastados con patchwork
 1.3.2/ggplot2 4.0.3. Metadatos generados con renv 1.3.1, sin editar a mano
 registros del lockfile. Consulta también la [guía de lecturas R](../../../docs/r-reading-guide.md).
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[08.08 — Exportación reproducible](../08_reproducible_export/README.md).
+
+[← Módulo 08](../README.md) · [Lab 08.07](../../../labs/08_visualization_r/07_compose_figures/README.md) · [Siguiente →](../08_reproducible_export/README.md)

@@ -212,7 +212,7 @@ presentes todas esas combinaciones para formar paneles.
 
 Conserva script propio, predicciones, comprobaciones por claves y notas de
 inspección visual. Registra evidencia real y dudas según
-[PROGRESS.md](../../../PROGRESS.md). No hay proyecto integrador ni checkpoint
+tu bitácora personal junto a la práctica. No hay proyecto integrador ni checkpoint
 activo; ejecutar una referencia no acredita aprendizaje.
 
 - ¿Por qué cuatro paneles pueden contener solo dos capas y ocho barras?

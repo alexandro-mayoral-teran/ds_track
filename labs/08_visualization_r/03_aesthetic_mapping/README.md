@@ -182,7 +182,7 @@ esa figura ni sustituir el gráfico corregido por ella.
 ## Evidencia, reflexión y salida
 
 Conserva script propio, predicciones, comprobaciones y notas de inspección visual.
-Registra evidencia y dudas reales según [PROGRESS.md](../../../PROGRESS.md).
+Registra evidencia y dudas reales en tu bitácora personal junto a la práctica.
 No hay proyecto integrador ni checkpoint activo; ejecutar la solución no
 acredita por sí solo aprendizaje.
 

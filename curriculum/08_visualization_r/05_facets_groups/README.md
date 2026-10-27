@@ -1,11 +1,25 @@
 # 08.05 — Facetas y comparación entre grupos
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 08](../README.md) / **Lección 08.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Comparar grupos con paneles, escalas y denominadores explícitos |
+| **Necesitas** | 08.02–08.04 y sus labs; mismo proyecto y base común |
+| **Evidencia** | Paneles con integrantes, ocho sumas y ausencias comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 08.05](../../../labs/08_visualization_r/05_facets_groups/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Práctica.** Comparar grupos mediante paneles que conservan una pregunta, una
 medida y reglas explícitas de lectura. Las facetas separan una figura según
 columnas de datos; no son una colección de imágenes independientes ni una
 validación automática de que los grupos sean comparables.
+
+## Antes de empezar
 
 Completa [08.02](../02_geometries_stats/README.md),
 [08.03](../03_aesthetic_mapping/README.md), [08.04](../04_scales_coordinates/README.md)
@@ -16,7 +30,11 @@ Repasa [resúmenes](../../07_tidyverse/05_group_summarize/README.md),
 [uniones](../../07_tidyverse/06_join_tables/README.md) y
 [factores](../../07_tidyverse/08_text_categories_factors/README.md) si lo necesitas.
 
-Al terminar podrás:
+Puedes dividir la sección en tres sesiones: tabla y paneles; escalas y capas;
+ausencias y lab. El cierre exige explicar qué compara cada panel, además de
+conseguir que la figura se dibuje.
+
+## Qué vas a aprender
 
 - Elegir `facet_wrap` para distribuir grupos y `facet_grid` para cruzar dimensiones.
 - Distinguir panel, capa, grupo de dibujo y grupo de resumen.
@@ -25,9 +43,20 @@ Al terminar podrás:
 - Conservar categorías sin registros sin inventar saldos cero.
 - Detectar que una capa sin las variables de faceta puede repetirse en varios paneles.
 
-Puedes dividir la sección en tres sesiones: tabla y paneles; escalas y capas;
-ausencias y lab. El cierre exige explicar qué compara cada panel, además de
-conseguir que la figura se dibuje.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de facetas](explorar_facetas.R) | Reconstruir grupos y comparar paneles y capas | Para el recorrido |
+| [Base y reglas compartidas](../../07_tidyverse/10_first_plot_closure/README.md) | Ubicar el proyecto, la fuente y las funciones de reconstrucción | Para el recorrido |
+| [Escalas compartidas](assets/segmentos_fijos.png) | Comparar importes entre segmentos | Consulta visual |
+| [Escalas libres](assets/segmentos_libres.png) | Revisar rangos diferentes entre paneles | Consulta visual |
+| [Cuadrícula](assets/cuadricula.png) | Examinar el cruce segmento/corte | Consulta visual |
+| [Ausencias](assets/ausencias.png) | Distinguir cero, NA y combinación sin registro | Consulta visual |
+
+Consulta las fuentes aquí y trabaja con el script propio dentro del proyecto
+de práctica, manteniendo su raíz como directorio. Las imágenes de referencia
+acompañan la lectura; contrasta también tablas y comprobaciones numéricas.
 
 ## 1. La pregunta y la tabla van antes que los paneles
 
@@ -443,7 +472,9 @@ interiores quedan fuera del cierre. Componer gráficos diferentes pertenece a
 08.07; aquí repetimos una especificación sobre subconjuntos de datos.
 [Etiquetas de facetas](https://ggplot2.tidyverse.org/reference/labellers.html).
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 08.05](../../../labs/08_visualization_r/05_facets_groups/README.md).
 El [script de referencia](explorar_facetas.R) reúne los bloques esenciales para
@@ -454,17 +485,27 @@ ejecuta en Console desde la raíz del proyecto:
 source("output/mi_facetas.R", encoding = "UTF-8")
 ```
 
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y tablas por panel | Ocho sumas conciliadas, totales 29000/31800 MXN y denominador 14 | Panel frente a capa, grupo de dibujo y grupo de resumen |
+| Variantes de escalas y ausencias | Integrantes 4/4/3/3 por corte y claves de faceta en cada capa | Escalas compartidas/libres y diferencia entre cero, NA y sin registro |
+
 Puedes avanzar cuando expliques paneles, población, medida y denominador;
 justifiques las escalas y distingas cero/NA/sin registro. Comprueba las ocho
-sumas y corrige una capa repetida por falta de clave. Conserva script propio,
-controles y notas de revisión visual. No exigimos nuevas exportaciones ni
-restaurar otra biblioteca. El proyecto integrador y sus checkpoints siguen
-pendientes; desarrollar material no acredita aprendizaje del estudiante.
+sumas y corrige una capa repetida por falta de clave.
 
-Siguiente: [08.06 — Etiquetas, temas y accesibilidad](../06_labels_themes_accessibility/README.md),
-ya disponible. Volver al [índice de 08](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero añade una capa sin segmento y pide predecir en qué paneles aparecerá.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos y muestras sintéticas propios de DS Track. Consulta: 2026-10-20.
 Referencias oficiales de ggplot2 4.0.3 enlazadas junto a los conceptos: facetas,
@@ -477,3 +518,10 @@ Science, segunda edición, de Hadley Wickham, Mine Çetinkaya-Rundel y Garrett
 Grolemund; y ggplot2: Elegant Graphics for Data Analysis, de Hadley Wickham,
 Danielle Navarro y Thomas Lin Pedersen, cuya tercera edición en línea continúa
 en desarrollo. No se copian ejemplos de capítulos.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[08.06 — Etiquetas, temas y accesibilidad](../06_labels_themes_accessibility/README.md).
+
+[← Módulo 08](../README.md) · [Lab 08.05](../../../labs/08_visualization_r/05_facets_groups/README.md) · [Siguiente →](../06_labels_themes_accessibility/README.md)

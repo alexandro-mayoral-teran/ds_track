@@ -1,10 +1,24 @@
 # 08.08 — Exportación reproducible
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 08](../README.md) / **Lección 08.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Exportar un objeto explícito y reconstruir su archivo final |
+| **Necesitas** | 08.06–08.07 y proyecto renv existente; sin dependencias nuevas |
+| **Evidencia** | PNG, tablas, configuración y descripción releídos en una sesión nueva |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 08.08](../../../labs/08_visualization_r/08_reproducible_export/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Producir un archivo legible desde código y poder reconstruirlo
 desde una sesión nueva. Guardar una captura del panel Plots no conserva las
 decisiones necesarias para repetir la figura: objeto, datos, tamaño y formato.
+
+## Antes de empezar
 
 Completa [08.06 — Etiquetas, temas y accesibilidad](../06_labels_themes_accessibility/README.md)
 y [08.07 — Componer figuras](../07_compose_figures/README.md). Retoma la
@@ -12,7 +26,11 @@ y [08.07 — Componer figuras](../07_compose_figures/README.md). Retoma la
 Usa el mismo proyecto renv en RStudio o tu IDE; referencias: R 4.6.1 y ggplot2
 4.0.3. No hay dependencias nuevas, preparador ni cambios de lockfile.
 
-Al terminar podrás:
+**Recorrido esencial:** PNG, tablas, configuración y comprobación. **Ampliación:**
+SVG/PDF y doble resolución. No se exige publicación, Quarto, impresión profesional
+ni que todos los equipos generen archivos idénticos byte por byte.
+
+## Qué vas a aprender
 
 - Elegir un formato según el destino de lectura.
 - Distinguir tamaño físico, número de píxeles y resolución.
@@ -21,9 +39,17 @@ Al terminar podrás:
 - Separar comprobación de valores e integridad de la revisión de legibilidad.
 - Reconstruir y comprobar la entrega desde una sesión nueva.
 
-**Recorrido esencial:** PNG, tablas, configuración y comprobación. **Ampliación:**
-SVG/PDF y doble resolución. No se exige publicación, Quarto, impresión profesional
-ni que todos los equipos generen archivos idénticos byte por byte.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de exportación](exportar_figuras.R) | Definir preparación, exportación y verificación; source no exporta | Para el recorrido |
+| [Base y reglas compartidas](../../07_tidyverse/10_first_plot_closure/README.md) | Ubicar el proyecto, la fuente y las funciones de reconstrucción | Para el recorrido |
+| [PNG de referencia](assets/saldo_exportado.png) | Contrastar tamaño, notas y lectura al tamaño de uso | Consulta visual |
+
+Consulta las fuentes aquí y trabaja con el script propio dentro del proyecto
+de práctica, manteniendo su raíz como directorio. Las imágenes de referencia
+acompañan la lectura; contrasta también tablas y comprobaciones numéricas.
 
 ## 1. Empezar por el lugar donde se leerá
 
@@ -264,7 +290,9 @@ pulgadas, equivalentes a 648 × 432 puntos PDF, con 72 puntos por pulgada. Revis
 el resultado en el programa donde lo utilizarás; convertir el texto a trazos
 o variar las fuentes puede cambiar su selección y presentación.
 
-## Errores habituales, práctica y criterio de salida
+<a id="errores-habituales-práctica-y-criterio-de-salida"></a>
+
+## Errores habituales
 
 | Síntoma | Qué revisar |
 | --- | --- |
@@ -275,16 +303,32 @@ o variar las fuentes puede cambiar su selección y presentación.
 | PNG correcto en Plots, ilegible en documento | Revisar el archivo exportado al tamaño final |
 | El verificador detecta cambios | Revisar fuente/archivos y reconstruir en otro destino |
 
-Realiza el [lab 08.08](../../../labs/08_visualization_r/08_reproducible_export/README.md).
+## Práctica
+
+Realiza el [lab 08.08](../../../labs/08_visualization_r/08_reproducible_export/README.md) para
+exportar a una carpeta nueva y comprobar tanto los datos como el archivo final.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| PNG, tablas, configuración y descripción | 9 × 6 pulgadas a 144 dpi = 1296 × 864 píxeles; mismos datos y base común | Formato, tamaño físico, píxeles y resolución |
+| Reconstrucción y revisión del archivo final | Objeto explícito, destino nuevo, relectura e integridad | Valores e integridad frente a legibilidad; límites de las huellas |
+
 Puedes avanzar cuando expliques tu elección de formato, predigas los píxeles,
 reconstruyas desde una sesión nueva y compruebes datos y lectura final.
-Conserva evidencia propia; material disponible no equivale a práctica completada.
+PNG es el recorrido esencial; SVG/PDF y doble resolución son ampliaciones.
 
-Siguiente: [08.09 — Cierre visual y comparación con Python](../09_visual_comparison/README.md).
-Volver al [índice de 08](../README.md). El proyecto y los checkpoints integradores
-siguen pendientes; no se acreditan por exportar esta figura.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero muestra otro gráfico antes de guardar y pide demostrar qué objeto se exportó.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias primarias
+<a id="referencias-primarias"></a>
+
+## Referencias
 
 - [ggsave: objeto, dispositivos, dimensiones y resolución](https://ggplot2.tidyverse.org/reference/ggsave.html).
 - [R: dispositivos PNG](https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/png.html).
@@ -294,3 +338,10 @@ siguen pendientes; no se acreditan por exportar esta figura.
 
 Las páginas de R-devel pueden describir otra versión. APIs y exportaciones
 contrastadas con R 4.6.1 y ggplot2 4.0.3; ejemplos propios del track.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[08.09 — Cierre visual y comparación con Python](../09_visual_comparison/README.md).
+
+[← Módulo 08](../README.md) · [Lab 08.08](../../../labs/08_visualization_r/08_reproducible_export/README.md) · [Siguiente →](../09_visual_comparison/README.md)

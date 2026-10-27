@@ -1,11 +1,25 @@
 # 08.06 — Etiquetas, temas y accesibilidad
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 08](../README.md) / **Lección 08.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Comunicar el hallazgo con contexto y alternativas a la imagen |
+| **Necesitas** | 08.03–08.05 y sus labs; mismo proyecto sin paquetes nuevos |
+| **Evidencia** | Figura, tabla y descripción con mensaje y límites comprobados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 08.06](../../../labs/08_visualization_r/06_labels_themes_accessibility/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Comunicar qué se midió, en quiénes, cuándo y con qué límites.
 Una figura legible necesita más que una paleta: títulos fieles, unidades,
 etiquetas comprensibles, contraste y una explicación disponible sin la imagen.
 La presentación debe conservar los datos y ayudar a interpretar su alcance.
+
+## Antes de empezar
 
 Completa [08.03](../03_aesthetic_mapping/README.md),
 [08.04](../04_scales_coordinates/README.md), [08.05](../05_facets_groups/README.md)
@@ -13,7 +27,11 @@ y sus labs. Reutiliza el proyecto renv de
 [07.10](../../07_tidyverse/10_first_plot_closure/README.md), sus funciones,
 fuente y lockfile. Referencia: R 4.6.1/ggplot2 4.0.3; sin paquetes nuevos.
 
-Al terminar podrás:
+Puedes trabajar en tres sesiones: mensaje y etiquetas; tema y anotaciones;
+señales adicionales al color, descripción y lab. No se requiere publicar una
+página ni exportar otra entrega para cerrar esta sección.
+
+## Qué vas a aprender
 
 - Escribir un título que comunique el hallazgo sin inventar causas.
 - Separar títulos/guías, elementos del tema y capas de texto.
@@ -22,9 +40,19 @@ Al terminar podrás:
 - Complementar el color con formas, posiciones, etiquetas y tabla.
 - Producir una descripción alternativa y comprobar que el destino la utilice.
 
-Puedes trabajar en tres sesiones: mensaje y etiquetas; tema y anotaciones;
-señales adicionales al color, descripción y lab. No se requiere publicar una
-página ni exportar otra entrega para cerrar esta sección.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de comunicación](comunicar_resultados.R) | Revisar etiquetas, anotaciones, temas locales y alternativas | Para el recorrido |
+| [Base y reglas compartidas](../../07_tidyverse/10_first_plot_closure/README.md) | Ubicar el proyecto, la fuente y las funciones de reconstrucción | Para el recorrido |
+| [Figura comunicada](assets/saldo_comunicado.png) | Leer importes, cambio, población y límites | Consulta visual |
+| [Color y forma](assets/senales_color.png) | Comparar señales complementarias | Consulta visual |
+| [Señales sin color](assets/senales_sin_color.png) | Revisar fecha e importe sin depender de colores distintos | Consulta visual |
+
+Consulta las fuentes aquí y trabaja con el script propio dentro del proyecto
+de práctica, manteniendo su raíz como directorio. Las imágenes de referencia
+acompañan la lectura; contrasta también tablas y comprobaciones numéricas.
 
 ## 1. Decidir qué podemos afirmar
 
@@ -396,7 +424,9 @@ intacta valida la verdad del título: hay que confrontarlo con el resultado.
 | Quité la leyenda y perdí la identificación | Títulos de ejes, etiquetas directas o guía necesaria para interpretar |
 | El texto declara porcentaje pero los valores son MXN | Unidades y denominador; `labs` no convierte datos |
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 08.06](../../../labs/08_visualization_r/06_labels_themes_accessibility/README.md).
 El [script de referencia](comunicar_resultados.R) reúne los bloques esenciales;
@@ -407,17 +437,27 @@ R y ejecuta en Console desde la raíz del proyecto:
 source("output/mi_comunicacion.R", encoding = "UTF-8")
 ```
 
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script, tabla y mensaje | 29000/31800 MXN, +2800 y aproximadamente 9.66%; cobertura 14/18 | Hallazgo descriptivo sin atribuir causas |
+| Descripción y revisión visual | Etiquetas, tema local y señales además del color | Qué se entiende sin la imagen y qué falta comprobar en el destino |
+
 Puedes avanzar cuando justifiques mensaje, población, unidades, tema y señales;
 reconstruyas los mismos valores y produzcas una explicación utilizable sin la
-imagen. Conserva script propio, tabla, descripción y revisión visual. No se
-requiere otra exportación, publicación web ni una auditoría completa de
-accesibilidad. Proyecto integrador y checkpoints siguen pendientes; desarrollar
-material no acredita aprendizaje del estudiante.
+imagen. No se exige publicación web ni una auditoría completa de accesibilidad.
 
-Siguiente: [08.07 — Componer figuras](../07_compose_figures/README.md), ya
-disponible. Volver al [índice de 08](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero lee solo la descripción y la tabla y pide identificar población, cambio y límites.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos y datos sintéticos propios de DS Track. Consulta: 2026-10-20.
 APIs contrastadas con ggplot2 4.0.3 y referencias oficiales enlazadas junto a
@@ -429,3 +469,10 @@ Science, segunda edición, de Hadley Wickham, Mine Çetinkaya-Rundel y Garrett
 Grolemund; y ggplot2: Elegant Graphics for Data Analysis, de Hadley Wickham,
 Danielle Navarro y Thomas Lin Pedersen, cuya tercera edición en línea continúa
 en desarrollo. No se copian ejemplos de capítulos.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[08.07 — Componer figuras](../07_compose_figures/README.md).
+
+[← Módulo 08](../README.md) · [Lab 08.06](../../../labs/08_visualization_r/06_labels_themes_accessibility/README.md) · [Siguiente →](../07_compose_figures/README.md)

@@ -1,11 +1,25 @@
 # 08.04 — Escalas y coordenadas
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 08](../README.md) / **Lección 08.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Justificar escalas, unidades y ventana sin confundir sus efectos |
+| **Necesitas** | 08.02–08.03 y sus labs; mismo proyecto sin paquetes nuevos |
+| **Evidencia** | Comparación de límites y zoom con estadísticas y unidades comprobadas |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 08.04](../../../labs/08_visualization_r/04_scales_coordinates/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Justificar cómo se traducen los datos a posiciones y qué parte de
 la figura se muestra. Una escala puede cambiar las posiciones, las etiquetas e
 incluso los datos disponibles para una estadística; acercar la vista con
 coordenadas tiene otro efecto. No basta conseguir que «el eje se vea bien».
+
+## Antes de empezar
 
 Completa [08.02 — Geometrías y estadísticas](../02_geometries_stats/README.md),
 [08.03 — Mapear y fijar estéticas](../03_aesthetic_mapping/README.md) y sus labs.
@@ -13,7 +27,10 @@ Reutiliza el proyecto renv de [07.10](../../07_tidyverse/10_first_plot_closure/R
 su fuente, funciones y lockfile. Referencia comprobada: R 4.6.1/ggplot2 4.0.3.
 No añadimos paquetes ni necesitamos restaurar una biblioteca ya sincronizada.
 
-Al terminar podrás:
+Puedes estudiar por partes: vocabulario/unidades; después límites/cajas; al
+final fechas, transformación y lab. No necesitas memorizar todas las funciones.
+
+## Qué vas a aprender
 
 - Elegir escalas continuas, discretas o temporales según el significado del dato.
 - Distinguir título, marcas, etiquetas, límites y margen del eje.
@@ -23,8 +40,19 @@ Al terminar podrás:
 - Explicar una escala logarítmica y sus restricciones con cero y negativos.
 - Justificar origen cero para barras y proporción de unidades en una dispersión.
 
-Puedes estudiar por partes: vocabulario/unidades; después límites/cajas; al
-final fechas, transformación y lab. No necesitas memorizar todas las funciones.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Script de escalas](explorar_escalas.R) | Comparar límites, zoom, transformaciones y proporción | Para el recorrido |
+| [Base y reglas compartidas](../../07_tidyverse/10_first_plot_closure/README.md) | Ubicar el proyecto, la fuente y las funciones de reconstrucción | Para el recorrido |
+| [Caja con límite](assets/caja_limite.png) | Leer la estadística tras apartar datos por escala | Consulta visual |
+| [Caja con zoom](assets/caja_zoom.png) | Contrastar la ventana con la estadística conservada | Consulta visual |
+| [Dispersión](assets/comparacion.png) | Examinar unidades iguales y referencia de igualdad | Consulta visual |
+
+Consulta las fuentes aquí y trabaja con el script propio dentro del proyecto
+de práctica, manteniendo su raíz como directorio. Las imágenes de referencia
+acompañan la lectura; contrasta también tablas y comprobaciones numéricas.
 
 ## 1. Qué controla cada componente
 
@@ -435,7 +463,9 @@ segundo eje para aparentar relación entre medidas diferentes.
 [Orientación](https://ggplot2.tidyverse.org/reference/coord_flip.html),
 [transformación de coordenadas](https://ggplot2.tidyverse.org/reference/coord_transform.html).
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
+
+## Práctica
 
 Realiza el [lab 08.04](../../../labs/08_visualization_r/04_scales_coordinates/README.md).
 El [script de referencia](explorar_escalas.R) reúne el recorrido esencial para
@@ -446,16 +476,26 @@ y ejecuta en Console desde la raíz del proyecto:
 source("output/mi_escalas.R", encoding = "UTF-8")
 ```
 
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y comparación de cajas | 14 saldos y mediana 2050 frente a 10 y 1750 al limitar; zoom conserva cálculo | Límite de escala frente a ventana de coordenadas |
+| Ejes y nota de transformaciones | Unidades, etiquetas, fechas y restricciones de log10 | Formato frente a transformación; origen cero y proporción de unidades |
+
 Puedes avanzar cuando justifiques tipo de escala, unidades, límites y ventana;
 demuestres la diferencia entre las dos cajas y reconstruyas sus comprobaciones.
-Conserva script propio, inspección visual y explicación. No exigimos otra
-exportación ni una biblioteca nueva. El proyecto integrador y sus checkpoints
-siguen pendientes; desarrollar material no acredita aprendizaje del estudiante.
 
-Siguiente: [08.05 — Facetas y comparación entre grupos](../05_facets_groups/README.md),
-ya disponible. Volver al [índice de 08](../README.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide acercar la vista sin cambiar la mediana y explicar cómo lo comprobaste.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; disponer de
+lecciones y scripts no acredita haber completado el aprendizaje.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos y muestras didácticas propios de DS Track. Consulta: 2026-10-20.
 APIs contrastadas con ggplot2 4.0.3: escalas continuas/discretas/temporales,
@@ -468,3 +508,10 @@ R for Data Science, segunda edición, de Hadley Wickham, Mine Çetinkaya-Rundel 
 Garrett Grolemund; y ggplot2: Elegant Graphics for Data Analysis, de Hadley
 Wickham, Danielle Navarro y Thomas Lin Pedersen, cuya tercera edición en línea
 continúa en desarrollo. Los ejemplos no copian capítulos del libro.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[08.05 — Facetas y comparación entre grupos](../05_facets_groups/README.md).
+
+[← Módulo 08](../README.md) · [Lab 08.04](../../../labs/08_visualization_r/04_scales_coordinates/README.md) · [Siguiente →](../05_facets_groups/README.md)

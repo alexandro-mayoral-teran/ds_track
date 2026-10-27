@@ -184,7 +184,7 @@ de salida; no hace falta usar `coord_transform` ni ajustar modelos.
 
 Conserva script propio, tabla de predicciones, controles de unidades/cuartiles/
 partición y notas de inspección visual. Registra evidencia real y dudas según
-[PROGRESS.md](../../../PROGRESS.md). No hay proyecto integrador ni checkpoint
+tu bitácora personal junto a la práctica. No hay proyecto integrador ni checkpoint
 activo; consultar la solución no demuestra aprendizaje.
 
 - ¿Cómo puede cambiar la mediana de una caja sin cambiar el CSV?
