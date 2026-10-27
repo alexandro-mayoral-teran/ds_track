@@ -1,10 +1,24 @@
 # 09.03 — Leer y escribir desde Python
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 09](../README.md) / **Lección 09.03**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Escribir y releer Parquet desde Python con esquema explícito |
+| **Necesitas** | 09.02 y entorno Python del track con pandas/PyArrow |
+| **Evidencia** | Entrega releída desde otro proceso y comparación por clave |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 09.03](../../../labs/09_arrow_parquet/03_python_read_write/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Convertir una tabla conocida a Parquet y demostrar, al releerla,
 que conserva el contrato, las claves y cada valor. Abrir el archivo y comparar
 dos sumas no basta para detectar importes intercambiados entre créditos.
+
+## Antes de empezar
 
 Completa [09.02 — Esquemas y tipos entre lenguajes](../02_schemas_types/README.md).
 Retoma [lectura CSV](../../02_pandas/02_read_inspect_export/README.md),
@@ -14,7 +28,12 @@ La práctica reutiliza el [CSV de 09.01](../01_csv_parquet_arrow/datos/base_comu
 28 observaciones de los mismos 14 IDs, dos cortes de 14 registros y
 29000/31800 MXN. No se generan otros datos de cartera ni se reemplaza su Parquet.
 
-Al terminar podrás:
+Aquí se escribe y lee **desde Python**. La lectura desde R y el intercambio en
+ambas direcciones se trabajan en [09.04](../04_r_read_write/README.md) y
+[09.05](../05_python_r_exchange/README.md); para esta sección no necesitas instalar arrow
+de R, Polars ni DuckDB. Tampoco necesitas notebook ni repetir la limpieza de 07.
+
+## Qué vas a aprender
 
 - Preparar PyArrow en el entorno elegido y registrar versiones.
 - Pasar de DataFrame a tabla Arrow con un esquema explícito.
@@ -22,9 +41,19 @@ Al terminar podrás:
 - Escribir y cerrar un Parquet, releerlo desde otro proceso y conciliar por clave.
 - Reconocer una pérdida de tipo o de información aunque los totales coincidan.
 
-Aquí se escribe y lee **desde Python**. La lectura desde R y el intercambio en
-ambas direcciones siguen pendientes de 09.04–09.05; no necesitas instalar arrow
-de R, Polars ni DuckDB. Tampoco necesitas notebook ni repetir la limpieza de 07.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [CSV de base común](../01_csv_parquet_arrow/datos/base_comun.csv) | Consultar la referencia de 28 observaciones con claves y valores conocidos | Para el recorrido |
+| [Recorridos de entorno](recorridos.md) | Elegir un shell y gestor y comprobar el intérprete | Para el recorrido |
+| [Dependencias Python](../../../pyproject.toml) | Consultar requisitos declarados del proyecto | Para el recorrido |
+| [Lockfile Python](../../../uv.lock) | Consultar resolución registrada | Consulta de entorno |
+| [Intercambio Python](intercambio_python.py) | Convertir, escribir, releer y verificar sin alterar la referencia | Para el recorrido |
+
+Consulta los archivos aquí y ábrelos donde indica el recorrido. Python y R
+tienen instrucciones de preparación y ejecución propias; conserva los
+originales y utiliza carpetas nuevas cuando la actividad escriba resultados.
 
 ## 1. Qué hace cada paso
 
@@ -301,22 +330,49 @@ No rellenes con cero para comparar. Esa tabla tiene otro esquema y no debe
 pasar nuestro verificador de cartera. No confundas tener un tipo que admite
 ausencias con haber autorizado ausencias en cualquier contrato.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 09.03](../../../labs/09_arrow_parquet/03_python_read_write/README.md).
-Puedes avanzar si reconstruyes una entrega desde sesión nueva, justificas el
-índice y el esquema, y detectas una alteración que conserve los totales.
+## Práctica
+
+Realiza el [lab 09.03](../../../labs/09_arrow_parquet/03_python_read_write/README.md) para
+reconstruir una entrega, comprobarla por clave y detectar una alteración con totales conservados.
+
+Como referencia de la actividad, consulta [Intercambio Python](intercambio_python.py).
+Sigue las rutas y el directorio de trabajo indicados para cada lenguaje.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código y entrega nueva | 28 registros, esquema no anulable y 29000/31800 MXN tras relectura | DataFrame, tabla Arrow y archivo; decisión sobre el índice |
+| Comparación y nota de sesión | Cada valor por clave desde otro proceso; original y entregas previas intactos | Por qué una nota de ejecución no sustituye volver a verificar |
+
+Puedes avanzar si reconstruyes una entrega desde una sesión nueva, justificas
+el índice y el esquema, y detectas una alteración que conserve los totales.
 Una sesión puede cubrir solo parte de la lección.
 
-Siguiente: [09.04 — Leer y escribir desde R](../04_r_read_write/README.md),
-con lección y lab disponibles. No existe proyecto ni checkpoint implementado asociado;
-consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
-La disponibilidad de material no acredita la práctica del estudiante.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero intercambia dos saldos y pide demostrar que la relectura detecta el cambio.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; las comprobaciones
+técnicas del material no acreditan haber completado la práctica.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Fuentes primarias de Apache Arrow y del equipo pandas enlazadas por concepto;
 los recorridos también citan a Conda, pip y uv. Ejemplos y funciones propios
 del track sobre sus datos sintéticos. Consulta: 2026-10-21. Práctica comprobada
 con Python 3.12.12/pandas 2.3.3/PyArrow 21.0.0. No se exige identidad binaria
 entre equipos; versiones y capacidades de R se verificarán en su sección.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[09.04 — Leer y escribir desde R](../04_r_read_write/README.md).
+
+Consulta los [criterios de cierre e integración](../../../docs/storage-closure.md).
+
+[← Módulo 09](../README.md) · [Lab 09.03](../../../labs/09_arrow_parquet/03_python_read_write/README.md) · [Siguiente →](../04_r_read_write/README.md)

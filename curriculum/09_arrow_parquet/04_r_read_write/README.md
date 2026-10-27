@@ -1,10 +1,24 @@
 # 09.04 — Leer y escribir desde R
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 09](../README.md) / **Lección 09.04**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Escribir y recuperar desde R una tabla con tipos y claves conservados |
+| **Necesitas** | Contrato 09.02 y proyecto renv; no exige una entrega Python personal |
+| **Evidencia** | Parquet escrito/releído y contraste del esquema real antes de convertir |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 09.04](../../../labs/09_arrow_parquet/04_r_read_write/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Guardar una tabla en Parquet desde R, abrir el archivo escrito y
 demostrar que conserva tipos, claves y valores. La pregunta es: **¿lo que otra
 sesión puede recuperar del archivo coincide con lo que queríamos guardar?**
+
+## Antes de empezar
 
 Retoma los conceptos de [09.01](../01_csv_parquet_arrow/README.md), el contrato
 de [09.02](../02_schemas_types/README.md) y los proyectos locales de
@@ -15,13 +29,27 @@ presentan otra vez los datos, las reglas y los resultados necesarios. El primer
 ejemplo se construye completo dentro de esta página; la práctica común lee
 archivos incluidos en el repositorio, sin reconstruir el análisis de 07–08.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Diferenciar `data.frame`/tibble, tabla Arrow y archivo Parquet.
 - Elegir `character`, `Date` e `integer` sin perder ceros iniciales ni fechas.
 - Declarar tipos y nulabilidad antes de escribir; inspeccionar el esquema real al leer.
 - Releer y comparar cada registro por clave desde una sesión nueva.
 - Detectar errores de contrato aunque las sumas coincidan.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador R](preparar_parquet.R) | Respaldar 08.09 y añadir entradas y metadatos al mismo proyecto | Para el recorrido |
+| [Lockfile R](renv.lock) | Consultar versiones fijadas de arrow y dependencias | Para el recorrido |
+| [Funciones R](intercambio_parquet.R) | Construir, leer y comparar esquema y valores | Para el recorrido |
+| [Ejecutor R](ejecutar_parquet.R) | Reconstruir la práctica desde una sesión nueva | Para el recorrido |
+| [CSV de base común](../01_csv_parquet_arrow/datos/base_comun.csv) | Consultar la referencia de 28 observaciones con claves y valores conocidos | Para el recorrido |
+
+Consulta los archivos aquí y ábrelos donde indica el recorrido. Python y R
+tienen instrucciones de preparación y ejecución propias; conserva los
+originales y utiliza carpetas nuevas cuando la actividad escriba resultados.
 
 ## 1. Tres representaciones y una comprobación
 
@@ -340,21 +368,37 @@ no autoriza ausencias en cualquier contrato.
 | Destino ocupado | Conservarlo y elegir otra carpeta nueva |
 | Error al resolver paquetes base renv en Windows | Revisar permisos de lectura y enlaces del ejecutor; no desactivar controles para ocultarlo |
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 09.04](../../../labs/09_arrow_parquet/04_r_read_write/README.md).
+## Práctica
+
+Realiza el [lab 09.04](../../../labs/09_arrow_parquet/04_r_read_write/README.md) para
+construir el ejemplo completo, escribir una entrega nueva y releer todos sus valores.
+
+Como referencia de la actividad, consulta [Preparador R](preparar_parquet.R), [Funciones R](intercambio_parquet.R), [Ejecutor R](ejecutar_parquet.R).
+Sigue las rutas y el directorio de trabajo indicados para cada lenguaje.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Script y entrega propia | 28 registros y 29000/31800 MXN; esquema real antes de adaptar a R | data.frame/tibble, tabla Arrow y Parquet |
+| Comparación y fronteras | Tipos, nulabilidad y claves; alteración compensada rechazada | Compatibilidad lógica frente a clases y bytes idénticos |
+
 Puedes avanzar si explicas las tres representaciones, justificas tipos y
-nulabilidad, reconstruyes desde sesión nueva y detectas una alteración con
+nulabilidad, reconstruyes desde una sesión nueva y detectas una alteración con
 totales conservados. Puedes dividir la lección en varias sesiones.
 
-Siguiente: [09.05 — Intercambio Python y R](../05_python_r_exchange/README.md),
-con lección y lab disponibles. Aquí se ha leído en R una referencia escrita
-por Python y se ha escrito/releído desde R; 09.05 desarrolla la práctica
-de intercambio en ambas direcciones. No hay proyecto/checkpoint implementado asociado.
-Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
-Material disponible no acredita práctica del estudiante.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide localizar dónde se inspecciona la nulabilidad antes de convertir la tabla a R.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; las comprobaciones
+técnicas del material no acreditan haber completado la práctica.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Documentación primaria de Apache Arrow y renv enlazada en cada concepto.
 Ejemplos, funciones y explicaciones propios sobre datos sintéticos del track.
@@ -363,3 +407,12 @@ utilizadas se contrastan con arrow 25.0.1 instalado y su ayuda local
 (`help("read_parquet", package = "arrow")`, por ejemplo). Se comprueban sesiones
 nuevas y restauración local; no se acredita prueba de la interfaz del IDE ni
 instalación en otros sistemas. No se exige identidad binaria entre escritores.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[09.05 — Intercambio Python y R](../05_python_r_exchange/README.md).
+
+Consulta los [criterios de cierre e integración](../../../docs/storage-closure.md).
+
+[← Módulo 09](../README.md) · [Lab 09.04](../../../labs/09_arrow_parquet/04_r_read_write/README.md) · [Siguiente →](../05_python_r_exchange/README.md)

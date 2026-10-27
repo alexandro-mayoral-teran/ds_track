@@ -1,11 +1,25 @@
 # 09.05 — Intercambio Python y R
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 09](../README.md) / **Lección 09.05**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Comprobar archivos de ambos escritores con el otro lenguaje |
+| **Necesitas** | Conceptos y entornos 09.02–09.04; sin entregas personales anteriores |
+| **Evidencia** | Lecturas cruzadas con claves, valores y ausencias conciliados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 09.05](../../../labs/09_arrow_parquet/05_python_r_exchange/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Práctica.** Escribir una tabla con un lenguaje y comprobarla con el otro.
 La pregunta es: **¿el otro lector recupera el contrato y cada valor que queremos
 compartir?** Que Python pueda releer su archivo, o R el suyo, todavía no
 responde esa pregunta.
+
+## Antes de empezar
 
 Retoma [09.02 — Contratos](../02_schemas_types/README.md),
 [09.03 — Python](../03_python_read_write/README.md) y
@@ -15,13 +29,26 @@ presentan todas las entradas y los resultados esperados. Se reutilizan las
 funciones verificadas, sin repetir sus algoritmos ni reconstruir el análisis
 de cartera de otros módulos.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Completar Python escribe/R lee y R escribe/Python lee con archivos nuevos.
 - Comparar esquema, presencia, claves y todos los valores antes de resumir.
 - Explicar por qué tipos lógicos compatibles no implican clases o bytes idénticos.
 - Conservar fechas, ceros iniciales, acentos, vacíos y ausencias según cada contrato.
 - Repetir las verificaciones desde sesiones nuevas sin modificar los archivos.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador R](preparar_intercambio.R) | Añadir funciones al proyecto sin dependencias nuevas | Para el recorrido |
+| [Intercambio Python](intercambio_cruzado.py) | Escribir y verificar la lectura del otro escritor | Para el recorrido |
+| [Intercambio R](intercambio_cruzado.R) | Leer Python y escribir para Python | Para el recorrido |
+| [CSV de base común](../01_csv_parquet_arrow/datos/base_comun.csv) | Consultar la referencia de 28 observaciones con claves y valores conocidos | Para el recorrido |
+
+Consulta los archivos aquí y ábrelos donde indica el recorrido. Python y R
+tienen instrucciones de preparación y ejecución propias; conserva los
+originales y utiliza carpetas nuevas cuando la actividad escriba resultados.
 
 ## 1. Qué significa que el intercambio funcione
 
@@ -331,18 +358,37 @@ muestra también debe fallar. Las salidas y la configuración local quedan fuera
 de Git. Las dos verificaciones satisfactorias, con sus autores y versiones,
 son la evidencia técnica; la comprensión se comprueba explicando decisiones.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 09.05](../../../labs/09_arrow_parquet/05_python_r_exchange/README.md).
+## Práctica
+
+Realiza el [lab 09.05](../../../labs/09_arrow_parquet/05_python_r_exchange/README.md) para
+completar ambas direcciones y contrastar la base común y la muestra de ausencias.
+
+Como referencia de la actividad, consulta [Preparador R](preparar_intercambio.R), [Intercambio Python](intercambio_cruzado.py), [Intercambio R](intercambio_cruzado.R).
+Sigue las rutas y el directorio de trabajo indicados para cada lenguaje.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Archivos y lecturas cruzadas | 28 registros y 29000/31800 MXN por clave; esquemas antes de adaptar | Escritor frente a lector y compatibilidad entre lenguajes |
+| Muestra independiente y comprobaciones | Acentos, vacío/ausente/cero; suma observada 10 y cobertura 2/3 | Por qué el total completo sigue desconocido y los bytes pueden diferir |
+
 Puedes avanzar cuando otro proceso haya leído cada escritor, expliques la
 cobertura 2/3 y detectes una alteración que conserve los totales. Puedes dividir
-la práctica en varias sesiones. No hay proyecto/checkpoint implementado asociado.
+la práctica en varias sesiones.
 
-Siguiente: [09.06 — Lectura selectiva y datasets](../06_selective_datasets/README.md),
-con lección y lab disponibles. Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
-Material disponible y verificaciones técnicas no acreditan práctica del estudiante.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero elige una cadena vacía y un importe ausente y pide rastrearlos en ambos lectores.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; las comprobaciones
+técnicas del material no acreditan haber completado la práctica.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Fuentes primarias de Apache Arrow enlazadas en los conceptos y APIs utilizados;
 ejemplos y código propios del track. Consulta: 2026-10-21. Las páginas R pueden
@@ -350,3 +396,12 @@ describir una versión posterior; APIs contrastadas con la ayuda local de arrow
 25.0.1. Se comprueban procesos nuevos y lecturas cruzadas con las versiones
 de referencia, sin instalar paquetes nuevos. No se acredita prueba de la
 interfaz del IDE, de otros sistemas ni intercambio en memoria sin copia.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[09.06 — Lectura selectiva y datasets](../06_selective_datasets/README.md).
+
+Consulta los [criterios de cierre e integración](../../../docs/storage-closure.md).
+
+[← Módulo 09](../README.md) · [Lab 09.05](../../../labs/09_arrow_parquet/05_python_r_exchange/README.md) · [Siguiente →](../06_selective_datasets/README.md)

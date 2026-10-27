@@ -12,20 +12,45 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Presentación:** índices 00–14 y lecciones 00–08 adaptados; la
+- **Presentación:** índices 00–14 y lecciones 00–09 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
 - **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
   [Uso y comprobaciones](portal/README.md).
 - **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones de
-  Visualización con R, con apoyos, cierre común y continuidad actualizada.
+  Arrow y Parquet, con apoyos, cierre común y ruta opcional visible.
 - **Siguiente paso:** continuar la revisión del contenido y la adaptación por
-  módulo (09 — Arrow y Parquet), y observar una sesión real de pareja con el portal local:
+  módulo (10 — Polars y DuckDB), y observar una sesión real de pareja con el portal local:
   orientación, apertura, reconstrucción de práctica, revisión y reanudación.
 - **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, plantilla en Arrow y Parquet:** adaptadas 09.01–09.09
+con ubicación, ficha, preparación, objetivos, apoyos, práctica, evidencia/criterio,
+referencias y continuidad. Inspectores, evaluadores, CSV/Parquet/inventario,
+recorridos, módulos Python/R, preparadores y lockfiles existentes enlazados sin
+duplicación. Se conservaron desarrollo, contratos, cifras, ejemplos autónomos,
+recorridos por lenguaje/IDE, sesiones nuevas y límites de memoria/medición.
+09.01 distingue inspección esencial y decodificación opcional; 09.03 mantiene
+su alcance Python. Notas antiguas de estado en esas aperturas se actualizaron
+hacia 09.04/09.05 disponibles. 09.07 permite pasar directamente al cierre 09.09;
+09.08 muestra opcionalidad antes del desarrollo. El cierre conserva las cuatro
+combinaciones escritor/lector y la verificación contra fuente externa, sin
+exigir particiones ni entregas previas. Labs conservados sin cambios. Cobertura
+central 00–09; siguiente módulo visual: 10. Proyecto/checkpoints y práctica del
+estudiante siguen pendientes.
+
+Comprobación: 4073 enlaces locales de Markdown sin incidencias; anclas anteriores,
+desarrollo, referencias y 75 bloques de código/comandos/diagramas conservados.
+Nueve páginas GFM locales a 1280/390 px (18 vistas), con apoyos/cierre presentes,
+IDs únicos, sin desbordamiento de página y desplegables cerrados; acceso al cierre
+desde 09.07/09.08 comprobado y muestra visual revisada. Programas, muestras,
+metadatos, dependencias y labs sin cambios. No se ejecutaron programas del curso,
+mediciones ni restauraciones/instalaciones por este ajuste documental. El render
+local no acredita el de GitHub remoto ni aprendizaje del estudiante; el portal
+sigue limitado a 00 y sesión 02.01.
 
 **Desarrollo — 2026-10-27, plantilla en Visualización con R:** adaptadas
 08.01–08.09 con ubicación, ficha, preparación, objetivos, apoyos, práctica,

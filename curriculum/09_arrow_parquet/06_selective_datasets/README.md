@@ -1,10 +1,24 @@
 # 09.06 — Lectura selectiva y datasets
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 09](../README.md) / **Lección 09.06**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Consultar un dataset separando plan, resultado y auditoría completa |
+| **Necesitas** | Conceptos y entornos 09.02–09.05; sin entregas previas |
+| **Evidencia** | Selección comparada por clave y explicación de la materialización |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 09.06](../../../labs/09_arrow_parquet/06_selective_datasets/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Consultar filas y columnas de una tabla distribuida entre varios
 archivos Parquet. La pregunta es: **¿cómo expresar qué datos necesitamos antes
 de cargar el resultado completo en memoria?**
+
+## Antes de empezar
 
 Retoma [09.02 — Contratos](../02_schemas_types/README.md),
 [09.03 — Python](../03_python_read_write/README.md),
@@ -15,7 +29,7 @@ datos y los resultados necesarios; el primer ejemplo se define completo en
 la sección y usa directamente Arrow, sin importar código de otros capítulos.
 Después, la base común reutiliza los validadores del recorrido.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Distinguir un archivo, un dataset y una consulta sobre él.
 - Seleccionar columnas y filtrar filas con Dataset/Scanner y con dplyr sobre Arrow.
@@ -23,6 +37,19 @@ Al terminar podrás:
 - Comparar la selección por clave con una referencia independiente desde CSV.
 - Separar comprobación de esquemas, auditoría completa y validación de una consulta.
 - Explicar por qué una API diferida no garantiza memoria acotada ni lectura física mínima.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador R](preparar_dataset.R) | Añadir funciones al proyecto existente | Para el recorrido |
+| [Dataset Python](consultas_dataset.py) | Construir, auditar y consultar con Dataset/Scanner | Para el recorrido |
+| [Dataset R](consultas_dataset.R) | Preparar consultas dplyr sobre Arrow y comprobarlas | Para el recorrido |
+| [CSV de base común](../01_csv_parquet_arrow/datos/base_comun.csv) | Consultar la referencia de 28 observaciones con claves y valores conocidos | Para el recorrido |
+
+Consulta los archivos aquí y ábrelos donde indica el recorrido. Python y R
+tienen instrucciones de preparación y ejecución propias; conserva los
+originales y utiliza carpetas nuevas cuando la actividad escriba resultados.
 
 ## 1. Archivo, dataset, fragmento y resultado
 
@@ -505,18 +532,37 @@ notas, subcarpetas o archivos ajenos: nuestra apertura los rechaza en lugar de
 ignorarlos silenciosamente. Particiones, metadatos detallados y mediciones
 quedan para las secciones correspondientes.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 09.06](../../../labs/09_arrow_parquet/06_selective_datasets/README.md).
-Puedes avanzar cuando reconstruyas una consulta desde sesión nueva, identifiques
-la materialización, concilies cada valor y expliques qué filas no validó esa
-selección. La ampliación por lotes no bloquea avanzar. No hay proyecto/checkpoint
-implementado asociado; el material no acredita práctica del estudiante.
+## Práctica
 
-Siguiente: [09.07 — Metadatos, row groups y compresión](../07_metadata_compression/README.md).
-Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
+Realiza el [lab 09.06](../../../labs/09_arrow_parquet/06_selective_datasets/README.md) para
+reconstruir la consulta y distinguir lo que valida de la auditoría de todos los archivos.
 
-## Referencias y atribución
+Como referencia de la actividad, consulta [Preparador R](preparar_dataset.R), [Dataset Python](consultas_dataset.py), [Dataset R](consultas_dataset.R).
+Sigue las rutas y el directorio de trabajo indicados para cada lenguaje.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código, dataset y selección | Octubre ≥ 2000: nueve IDs y 24100 MXN contra CSV independiente | Proyección, filtro y momento de materialización |
+| Auditoría y nota de alcance | Esquemas de todos los archivos e incidentes fuera del filtro | Una selección correcta no valida todo el dataset ni prueba I/O o RAM acotada |
+
+Puedes avanzar cuando reconstruyas una consulta desde una sesión nueva,
+identifiques la materialización, concilies cada valor y expliques qué filas
+no validó esa selección. La ampliación por lotes no bloquea avanzar.
+
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero coloca una clave duplicada fuera del filtro y pide explicar qué control la detecta.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; las comprobaciones
+técnicas del material no acreditan haber completado la práctica.
+
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Fuentes primarias de Apache Arrow enlazadas por concepto. Código y ejemplos
 propios sobre datos sintéticos del track. Consulta: 2026-10-21; páginas R
@@ -529,3 +575,12 @@ de nuevo; la documentación R publicada muestra 26.0.0, mientras el entorno
 de referencia del track conserva arrow 25.0.1.
 No se acredita prueba de la interfaz del IDE, de otros sistemas, rendimiento,
 bytes omitidos físicamente ni límites de RAM.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[09.07 — Metadatos, row groups y compresión](../07_metadata_compression/README.md).
+
+Consulta los [criterios de cierre e integración](../../../docs/storage-closure.md).
+
+[← Módulo 09](../README.md) · [Lab 09.06](../../../labs/09_arrow_parquet/06_selective_datasets/README.md) · [Siguiente →](../07_metadata_compression/README.md)

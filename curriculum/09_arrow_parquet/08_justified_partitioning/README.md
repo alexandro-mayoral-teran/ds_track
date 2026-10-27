@@ -1,10 +1,27 @@
 # 09.08 — Particionamiento justificado
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 09](../README.md) / **Lección 09.08**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Justificar particiones por una consulta sin cambiar el contrato |
+| **Necesitas** | 09.06–09.07 y sus bibliotecas; ampliación opcional |
+| **Evidencia** | Plano/Hive conciliados con auditoría de etiquetas y consulta |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 09.08](../../../labs/09_arrow_parquet/08_justified_partitioning/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+> **Extensión opcional:** puedes omitir esta práctica y continuar con
+> [09.09 — Cierre del contrato compartido](../09_shared_contract_closure/README.md).
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Extensión opcional.** Organizar un dataset por valores que aparecen en una
 consulta y comprobar que sus archivos siguen representando la misma tabla.
 La pregunta es: **si consultamos un corte, ¿qué aporta separar los datos por corte?**
+
+## Antes de empezar
 
 Retoma Dataset/filtro/materialización de [09.06](../06_selective_datasets/README.md)
 y archivos/grupos/estadísticas de [09.07](../07_metadata_compression/README.md).
@@ -12,7 +29,7 @@ Necesitas sus conceptos y bibliotecas, no sus entregas. Los primeros ejemplos
 incluyen todos sus datos; después se reconstruye un CSV incluido en el track.
 Esta ampliación no bloquea [09.09](../09_shared_contract_closure/README.md).
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Justificar una columna de partición por una consulta concreta.
 - Distinguir carpeta de partición, archivo y grupo de filas.
@@ -20,6 +37,19 @@ Al terminar podrás:
 - Consultar una partición y contrastarla con una referencia independiente.
 - Detectar etiquetas incorrectas, claves repetidas y archivos omitidos.
 - Explicar costos de muchas particiones pequeñas y políticas de escritura.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador R](preparar_particiones.R) | Añadir funciones de la extensión al proyecto | Para el recorrido |
+| [Particiones Python](particiones.py) | Comparar organización plana/Hive y auditar etiquetas | Para el recorrido |
+| [Particiones R](particiones.R) | Reconstruir y comprobar el mismo contrato desde R | Para el recorrido |
+| [CSV de base común](../01_csv_parquet_arrow/datos/base_comun.csv) | Consultar la referencia de 28 observaciones con claves y valores conocidos | Para el recorrido |
+
+Consulta los archivos aquí y ábrelos donde indica el recorrido. Python y R
+tienen instrucciones de preparación y ejecución propias; conserva los
+originales y utiliza carpetas nuevas cuando la actividad escriba resultados.
 
 ## 1. La pregunta antes de las carpetas
 
@@ -431,18 +461,37 @@ escrituras ni dependas de objetos del panel Environment. Los lectores pueden
 abrir también la entrega del otro lenguaje, usando la misma carpeta absoluta
 que señala el TXT local; no exigen reticulate ni un proceso compartido.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 09.08](../../../labs/09_arrow_parquet/08_justified_partitioning/README.md).
+## Práctica
+
+Si eliges la ampliación, realiza el [lab 09.08](../../../labs/09_arrow_parquet/08_justified_partitioning/README.md) para
+justificar la columna de partición y contrastar etiquetas, archivos y selección.
+
+Como referencia de la actividad, consulta [Preparador R](preparar_particiones.R), [Particiones Python](particiones.py), [Particiones R](particiones.R).
+Sigue las rutas y el directorio de trabajo indicados para cada lenguaje.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Código y variantes plana/particionada | 28 filas y 29000/31800 MXN; tres columnas físicas conservadas | Etiqueta auxiliar Hive frente a columna física y grupo de filas |
+| Consulta y auditoría completa | Nueve IDs/24100 MXN; etiquetas falsas y duplicados rechazados | Dos cortes frente a 28 particiones por clave; costos de archivos pequeños |
+
 Puedes cerrar esta ampliación cuando justifiques la partición por la pregunta,
 reconstruyas el contrato, concilies la consulta y rechaces duplicados/etiquetas
-incorrectas. No hay proyecto/checkpoint implementado asociado. El material no
-acredita práctica del estudiante; omitir esta extensión no bloquea el cierre.
+incorrectas. Omitir esta extensión no bloquea el cierre esencial.
 
-Siguiente: [09.09 — Cierre del contrato compartido](../09_shared_contract_closure/README.md).
-Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia una etiqueta de carpeta y pide detectar que ya no corresponde al contenido.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; las comprobaciones
+técnicas del material no acreditan haber completado la práctica.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios con datos sintéticos. Fuentes primarias enlazadas por concepto:
 HivePartitioning, write_dataset Python/R y open_dataset de R; apoyo conceptual
@@ -450,3 +499,12 @@ en [datasets Python](https://arrow.apache.org/docs/21.0/python/dataset.html) y
 [datasets R](https://arrow.apache.org/docs/r/articles/dataset.html).
 Consulta: 2026-10-22. La documentación R publicada indica 26.0.0; parámetros
 y ejemplos se contrastan con arrow 25.0.1 del proyecto, sin cambiar paquetes.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[09.09 — Cierre del contrato compartido](../09_shared_contract_closure/README.md).
+
+Consulta los [criterios de cierre e integración](../../../docs/storage-closure.md).
+
+[← Módulo 09](../README.md) · [Lab 09.08](../../../labs/09_arrow_parquet/08_justified_partitioning/README.md) · [Siguiente →](../09_shared_contract_closure/README.md)

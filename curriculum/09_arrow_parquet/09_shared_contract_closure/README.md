@@ -1,11 +1,25 @@
 # 09.09 — Cierre del contrato compartido
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 09](../README.md) / **Lección 09.09**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Reconstruir y verificar una entrega compartida desde ambos lenguajes |
+| **Necesitas** | Conceptos y bibliotecas 09.02–09.07; no exige 09.08 ni entregas anteriores |
+| **Evidencia** | Entrega y cuatro combinaciones escritor/lector verificadas desde cero |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 09.09](../../../labs/09_arrow_parquet/09_shared_contract_closure/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Práctica de cierre.** Reconstruir una entrega de datos y demostrar desde
 Python y R que otra sesión recupera el mismo contrato, las mismas claves y
 los mismos valores. La pregunta es: **¿qué puede comprobar otra persona sin
 confiar en los objetos que tengo abiertos ni en mi resumen escrito?**
+
+## Antes de empezar
 
 Retoma [09.02 — Contratos](../02_schemas_types/README.md),
 [09.03 — Python](../03_python_read_write/README.md),
@@ -16,7 +30,7 @@ Retoma [09.02 — Contratos](../02_schemas_types/README.md),
 Necesitas sus conceptos y bibliotecas, **no entregas personales anteriores**.
 No exige [09.08](../08_justified_partitioning/README.md): particionar es opcional.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Reconstruir fuente y resultados con reglas explícitas y una carpeta nueva.
 - Separar contrato, datos, resumen, selección y notas de ejecución.
@@ -24,6 +38,20 @@ Al terminar podrás:
 - Leer una entrega Python desde R y una R desde Python, en procesos separados.
 - Explicar igualdad por clave, igualdad binaria y límites de las huellas.
 - Repetir la verificación de solo lectura tras reiniciar la sesión.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador R](preparar_cierre.R) | Añadir funciones del cierre al mismo proyecto | Para el recorrido |
+| [Cierre Python](cierre_contrato.py) | Reconstruir y verificar archivos, dataset y exportaciones | Para el recorrido |
+| [Cierre R](cierre_contrato.R) | Reconstruir y leer ambas entregas contra la fuente externa | Para el recorrido |
+| [CSV de base común](../01_csv_parquet_arrow/datos/base_comun.csv) | Consultar la referencia de 28 observaciones con claves y valores conocidos | Para el recorrido |
+| [Criterios de integración](../../../docs/storage-closure.md) | Distinguir material, práctica y proyecto pendiente | Consulta para el cierre |
+
+Consulta los archivos aquí y ábrelos donde indica el recorrido. Python y R
+tienen instrucciones de preparación y ejecución propias; conserva los
+originales y utiliza carpetas nuevas cuando la actividad escriba resultados.
 
 ## 1. Un ejemplo pequeño con todos sus datos
 
@@ -376,25 +404,54 @@ Si una fuente válida no tiene filas, se conserva un Parquet vacío con esquema
 y una parte vacía; los CSV de resumen/selección conservan encabezados sin
 inventar cortes. No hay un saldo observado de cero donde no existen registros.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 09.09](../../../labs/09_arrow_parquet/09_shared_contract_closure/README.md).
+## Práctica
+
+Realiza el [lab 09.09](../../../labs/09_arrow_parquet/09_shared_contract_closure/README.md) para
+reconstruir ambas entregas, cruzar lectores y justificar cada comprobación.
+
+Como referencia de la actividad, consulta [Preparador R](preparar_cierre.R), [Cierre Python](cierre_contrato.py), [Cierre R](cierre_contrato.R).
+Sigue las rutas y el directorio de trabajo indicados para cada lenguaje.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Fuente, contrato, datos, resumen y selección | 28 registros, 29000/31800 MXN y nueve seleccionados/24100 MXN | Comparación de cada valor por clave contra una referencia externa |
+| Código, verificaciones y explicación | Cuatro combinaciones escritor/lector; alteración compensada rechazada | Igualdad por clave frente a binaria; límites de huellas y notas de sesión |
+
 El cierre requiere evidencia propia de reconstrucción, ambas lecturas cruzadas,
-verificación desde sesiones nuevas y una explicación razonada. No exige
-particiones, nube, archivos grandes, CI ni publicación.
+verificación de solo lectura desde sesiones nuevas y una explicación razonada.
+No exige particiones ni entregas personales anteriores. Conserva fuentes y
+resultados previos al reconstruir en carpetas nuevas.
 
-Con esta sección, **las nueve secciones de Arrow/Parquet tienen material**.
-Eso cierra el desarrollo de las lecciones, no acredita que el estudiante haya
-completado las prácticas. El proyecto `04_large_credit_dataset` y sus checkpoints
-siguen pendientes; no hay un checkpoint activo asociado a este lab.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero actualiza las huellas de una copia alterada y pide comprobar por qué eso no corrige los valores.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; las comprobaciones
+técnicas del material no acreditan haber completado la práctica.
 
-Siguiente: [10.01 — Pregunta, contrato y referencia](../../10_polars_duckdb/01_question_contract_reference/README.md),
-disponible sin motores nuevos. No instales Polars/DuckDB por anticipado. Consulta los
-[pendientes de almacenamiento e integración](../../../docs/storage-closure.md).
+El proyecto `04_large_credit_dataset` sigue planificado; esta entrega de
+cierre no equivale a completarlo.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios sobre datos sintéticos. Fuentes primarias enlazadas por
 concepto: Parquet/PyArrow, lectura R y huellas de biblioteca estándar/base.
 Consulta: 2026-10-22. La documentación R publicada muestra 26.0.0; las APIs se
 contrastan con arrow 25.0.1. No se añaden dependencias ni se cambian entornos globales.
+
+## Siguiente paso
+
+Continúa con [10.01 — Pregunta, contrato y referencia](../../10_polars_duckdb/01_question_contract_reference/README.md),
+disponible sin motores nuevos. La preparación de Polars/DuckDB corresponde a
+sus lecciones posteriores. Las nueve secciones de 09 tienen material; el
+proyecto integrador y la práctica del estudiante requieren evidencia propia.
+
+Consulta los [criterios de cierre e integración](../../../docs/storage-closure.md).
+
+[← Módulo 09](../README.md) · [Lab 09.09](../../../labs/09_arrow_parquet/09_shared_contract_closure/README.md) · [Siguiente →](../../10_polars_duckdb/01_question_contract_reference/README.md)

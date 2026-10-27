@@ -1,10 +1,24 @@
 # 09.02 — Esquemas y tipos entre lenguajes
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 09](../README.md) / **Lección 09.02**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Definir el contrato que debe conservar una tabla al cambiar de representación |
+| **Necesitas** | 09.01, validación, tipos, faltantes y fechas; Python estándar y R base |
+| **Evidencia** | Contrato redactado y casos aceptados/rechazados con motivos |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 09.02](../../../labs/09_arrow_parquet/02_schemas_types/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Acordar qué significa una tabla antes de convertirla entre Python,
 R, Arrow y Parquet. Un archivo puede abrirse sin errores y haber perdido ceros
 del ID, precisión o el significado de una fecha.
+
+## Antes de empezar
 
 Retoma [09.01 — CSV, Parquet y Arrow](../01_csv_parquet_arrow/README.md).
 Necesitas la [validación Python](../../01_python_foundations/06_validation_summary/README.md),
@@ -12,15 +26,32 @@ los [tipos y contratos](../../05_python_applied/05_types_contracts/README.md),
 los [faltantes de R](../../06_r_foundations/04_logic_missing/README.md) y las
 [fechas de 07.09](../../07_tidyverse/09_dates_cutoffs/README.md).
 
-Al terminar podrás definir nombres, tipos y nulabilidad; separar esquema de
-reglas de negocio; distinguir ausente, vacío y cero; elegir unidad y rango
-del dinero y explicar qué comparar al intercambiar una tabla.
-
 El recorrido usa **Python estándar y R base**, sin instalar paquetes, cambiar
 lockfiles ni inicializar renv en la raíz. Los nombres Arrow/Parquet describen
 el destino acordado; aquí comprobamos valores desde CSV, **sin decodificar
 Parquet ni demostrar todavía una lectura cruzada**. Eso corresponde a 09.03–09.05.
 Los casos de frontera son propios y están separados de la muestra anterior.
+
+## Qué vas a aprender
+
+- Definir nombres, tipos y nulabilidad.
+- Separar esquema de reglas de negocio.
+- Distinguir ausente, vacío y cero.
+- Elegir unidad y rango del dinero.
+- Explicar qué comparar al intercambiar una tabla.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Casos de contrato](casos_contrato.csv) | Examinar 23 casos independientes de la base común | Para el recorrido |
+| [Evaluador Python](contrato_tabla.py) | Comprobar valores y conservar motivos con biblioteca estándar | Para el recorrido |
+| [Evaluador R](contrato_tabla.R) | Contrastar el mismo contrato desde R base | Para el recorrido |
+| [Muestra conocida](../01_csv_parquet_arrow/datos/README.md) | Relacionar el acuerdo con la tabla de intercambio | Para el recorrido |
+
+Consulta los archivos aquí y ábrelos donde indica el recorrido. Python y R
+tienen instrucciones de preparación y ejecución propias; conserva los
+originales y utiliza carpetas nuevas cuando la actividad escriba resultados.
 
 ## 1. Esquema y contrato: dos niveles de acuerdo
 
@@ -312,20 +343,38 @@ pasos para limpiar datos. Guarda tu script, reinicia la sesión R y ejecútalo
 completo, incluido `source()` y `comprobar_contrato()`. Debe reproducir los
 controles sin escribir archivos. No se requiere terminal del sistema.
 
-## Práctica, criterio de salida y continuidad
+<a id="práctica-criterio-de-salida-y-continuidad"></a>
 
-Realiza el [lab 09.02](../../../labs/09_arrow_parquet/02_schemas_types/README.md).
+## Práctica
+
+Realiza el [lab 09.02](../../../labs/09_arrow_parquet/02_schemas_types/README.md) para
+redactar el contrato y justificar las fronteras de tipos, ausencias, unidades y fechas.
+
+Como referencia de la actividad, consulta [Evaluador Python](contrato_tabla.py), [Evaluador R](contrato_tabla.R).
+Sigue las rutas y el directorio de trabajo indicados para cada lenguaje.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Contrato y evaluación de los casos | 23 casos: cinco aceptados y dieciocho rechazados con texto y motivos | Esquema frente a reglas de negocio; nulabilidad y rangos |
+| Nota de fronteras | Ausente/vacío/cero, precisión, calendario e instantes | Qué comparar por clave y por qué sumar o igualar clases no demuestra igualdad |
+
 Puedes avanzar si redactas el contrato, justificas los rechazos, conservas
 ceros/ausencias y explicas por qué igualar sumas o clases no demuestra igualdad.
-La comprobación futura debe comparar esquema, claves, valores, ausencia y
-cobertura por corte; la igualdad de bytes es otra propiedad.
+La comprobación debe incluir esquema, claves, valores, ausencia y cobertura
+por corte; la igualdad de bytes es otra propiedad.
 
-Siguiente: [09.03 — Leer y escribir desde Python](../03_python_read_write/README.md).
-No hay proyecto ni checkpoint asociado implementado.
-El [cierre de almacenamiento](../../../docs/storage-closure.md) mantiene los
-pendientes: esta sección no acredita lectura Parquet en R ni práctica del estudiante.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero presenta dos tablas con igual suma y pide una comprobación que detecte valores intercambiados.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; las comprobaciones
+técnicas del material no acreditan haber completado la práctica.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Fuentes primarias enlazadas junto a cada concepto: equipos de Apache Arrow y
 Parquet, Python Software Foundation, R Core y comunidad pandas. Los ejemplos
@@ -333,3 +382,12 @@ y casos son propios; no se copian capítulos. Consulta: 2026-10-21. Documentaci�
 en línea puede avanzar; se comprueba la práctica con Python 3.12.12 y R 4.6.1,
 sin dependencias externas ni cambios de lockfile. Los tipos de destino se
 verificarán con lectores reales al desarrollar 09.03–09.05.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[09.03 — Leer y escribir desde Python](../03_python_read_write/README.md).
+
+Consulta los [criterios de cierre e integración](../../../docs/storage-closure.md).
+
+[← Módulo 09](../README.md) · [Lab 09.02](../../../labs/09_arrow_parquet/02_schemas_types/README.md) · [Siguiente →](../03_python_read_write/README.md)

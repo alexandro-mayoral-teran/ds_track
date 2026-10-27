@@ -1,10 +1,24 @@
 # 09.01 — CSV, Parquet y Arrow
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 09](../README.md) / **Lección 09.01**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Distinguir archivo, representación en memoria y biblioteca |
+| **Necesitas** | 08.08–08.09; Python estándar y R base para la inspección esencial |
+| **Evidencia** | Controles de la muestra y explicación de formatos y medidas de tamaño |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 09.01](../../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Esencial.** Distinguir qué se guarda en disco, cómo se representa una tabla
 en memoria y qué biblioteca permite trabajar con ella. Este vocabulario evita
 confundir «cambiar de formato» con «cambiar de análisis».
+
+## Antes de empezar
 
 Retoma [08.09 — Cierre visual y comparación con Python](../../08_visualization_r/09_visual_comparison/README.md)
 y la [exportación reproducible de 08.08](../../08_visualization_r/08_reproducible_export/README.md).
@@ -12,7 +26,15 @@ La pregunta y los saldos ya son conocidos; aquí no se repite la limpieza ni se
 introduce otro dominio. Necesitas poder abrir un archivo, ejecutar un script y
 explicar una clave de registros.
 
-Al terminar podrás:
+El recorrido esencial usa Python estándar y R base, sin instalar paquetes ni
+modificar entornos o lockfiles. La lectura real de Parquet se proporciona como
+evidencia de autoría y ampliación opcional con PyArrow **ya disponible**.
+El recorrido Python de instalación/conversión ya está disponible en
+[09.03](../03_python_read_write/README.md); el recorrido R está disponible en [09.04](../04_r_read_write/README.md),
+después del contrato de [09.02](../02_schemas_types/README.md).
+No necesitas completar esa ampliación para explicar los conceptos de esta primera sección.
+
+## Qué vas a aprender
 
 - Clasificar CSV y Parquet como formatos de archivo, y reconocer el papel de Arrow.
 - Explicar filas, columnas, esquema y dataset con un ejemplo concreto.
@@ -21,13 +43,21 @@ Al terminar podrás:
 - Inspeccionar una muestra sin confundir una firma de archivo con una lectura completa.
 - Mantener claves e indicadores al cambiar de representación.
 
-El recorrido esencial usa Python estándar y R base, sin instalar paquetes ni
-modificar entornos o lockfiles. La lectura real de Parquet se proporciona como
-evidencia de autoría y ampliación opcional con PyArrow **ya disponible**.
-El recorrido Python de instalación/conversión ya está disponible en
-[09.03](../03_python_read_write/README.md); el recorrido R corresponde a 09.04,
-todavía planificada, después del contrato de [09.02](../02_schemas_types/README.md).
-No necesitas completar esa ampliación para explicar los conceptos de esta primera sección.
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Procedencia y contrato](datos/README.md) | Ubicar la base común y cómo se prepararon los archivos | Para el recorrido |
+| [CSV](datos/base_comun.csv) | Inspeccionar texto, columnas y claves | Para el recorrido |
+| [Parquet](datos/base_comun.parquet) | Inspeccionar firma; decodificar solo con un lector compatible | Para el recorrido |
+| [Inventario](datos/inventario.csv) | Contrastar tamaño y huellas de la muestra | Para el recorrido |
+| [Inspector Python](inspeccionar_formatos.py) | Reconstruir controles con biblioteca estándar | Para el recorrido |
+| [Inspector R](inspeccionar_formatos.R) | Inspeccionar con R base | Para el recorrido |
+| [Lectura de autoría](datos/lectura_parquet.txt) | Consultar evidencia de lectura real | Consulta; repetir la decodificación es opcional |
+
+Consulta los archivos aquí y ábrelos donde indica el recorrido. Python y R
+tienen instrucciones de preparación y ejecución propias; conserva los
+originales y utiliza carpetas nuevas cuando la actividad escriba resultados.
 
 ## 1. La misma tabla puede tener distintas representaciones
 
@@ -362,22 +392,49 @@ hay que definir archivos, esquema y reglas, no simplemente tomar «todo lo que
 hay en una carpeta». No debe confundirse un directorio, un archivo Parquet, un
 grupo de filas interno y una partición. Se profundizará en 09.06–09.08.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 09.01](../../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md).
+## Práctica
+
+Realiza el [lab 09.01](../../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md) para
+clasificar las representaciones y contrastar los controles sin confundir firma con lectura completa.
+
+Como referencia de la actividad, consulta [Inspector Python](inspeccionar_formatos.py), [Inspector R](inspeccionar_formatos.R).
+Sigue las rutas y el directorio de trabajo indicados para cada lenguaje.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Nota de clasificación y controles | 28 filas, 14 IDs y 29000/31800 MXN; archivos fuente conservados | CSV/Parquet frente a Arrow y sus bibliotecas |
+| Inventario contrastado y explicación | CSV 593 bytes, Parquet 1668; buffers lógicos 420 bytes | Disco, buffers y memoria del proceso; inspección frente a decodificación |
+
 Puedes avanzar cuando clasifiques archivo/formato/representación/biblioteca,
-expliques codificación/compresión y las tres medidas de tamaño, y reconstruyas los controles esenciales
-sin afirmar que leíste Parquet cuando solo inspeccionaste su firma.
+expliques codificación/compresión y las tres medidas de tamaño, y reconstruyas
+los controles esenciales sin afirmar que leíste Parquet al inspeccionar su firma.
 
-Siguiente: [09.02 — Esquemas y tipos entre lenguajes](../02_schemas_types/README.md).
-Consulta [cierre y pendientes](../../../docs/storage-closure.md)
-para retomar el trabajo. El módulo completo, la lectura cruzada R/Python y sus
-checkpoints no quedan terminados por implementar esta introducción.
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero pide identificar qué evidencia demuestra una lectura real y cuál solo reconoce el archivo.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; las comprobaciones
+técnicas del material no acreditan haber completado la práctica.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Referencias primarias de Apache Arrow, Apache Parquet y RFC Editor enlazadas
 junto a los conceptos. La documentación en línea puede mostrar versiones más
 recientes; la ampliación se contrastó con PyArrow 21.0.0 existente, y el esencial
 con Python 3.12.12/R 4.6.1. Datos sintéticos y ejemplos propios del track.
 Consulta: 2026-10-21. No se cambian dependencias por planificar el módulo.
+
+## Siguiente paso
+
+Después de la práctica y su comprobación, continúa con
+[09.02 — Esquemas y tipos entre lenguajes](../02_schemas_types/README.md).
+
+Consulta los [criterios de cierre e integración](../../../docs/storage-closure.md).
+
+[← Módulo 09](../README.md) · [Lab 09.01](../../../labs/09_arrow_parquet/01_csv_parquet_arrow/README.md) · [Siguiente →](../02_schemas_types/README.md)

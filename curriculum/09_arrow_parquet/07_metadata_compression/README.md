@@ -1,10 +1,24 @@
 # 09.07 — Metadatos, row groups y compresión
 
-## Propósito, prerrequisitos y objetivos
+[Inicio](../../../README.md) / [Módulo 09](../README.md) / **Lección 09.07**
+
+| Tu sesión | Qué prepararás o comprobarás |
+| --- | --- |
+| **Meta** | Comparar organización y compresión con evidencia de datos equivalentes |
+| **Necesitas** | Archivo/esquema, contrato y lectura selectiva de 09.01/02/06 |
+| **Evidencia** | Variantes releídas con metadatos, tamaño y tiempos crudos separados |
+
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Lab 09.07](../../../labs/09_arrow_parquet/07_metadata_compression/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+
+<a id="propósito-prerrequisitos-y-objetivos"></a>
+
+## Propósito
 
 **Práctica.** Explicar cómo está organizado un Parquet y comparar decisiones
 de almacenamiento conservando los mismos datos. La pregunta es:
 **¿qué cambió dentro del archivo y qué evidencia tenemos de su efecto?**
+
+## Antes de empezar
 
 Retoma archivo/esquema de [09.01](../01_csv_parquet_arrow/README.md),
 contratos de [09.02](../02_schemas_types/README.md) y lectura selectiva de
@@ -12,7 +26,7 @@ contratos de [09.02](../02_schemas_types/README.md) y lectura selectiva de
 bibliotecas, no sus entregas. Los primeros ejemplos definen todos sus datos,
 esquema y archivos aquí. Después conectamos con un CSV incluido en el track.
 
-Al terminar podrás:
+## Qué vas a aprender
 
 - Distinguir archivo, grupo de filas, bloque de columna y página.
 - Leer esquema, conteos y metadatos; reconocer estadísticas ausentes.
@@ -20,6 +34,19 @@ Al terminar podrás:
 - Comparar una modificación por vez con esquema y valores equivalentes.
 - Conservar tiempos crudos separados de tamaño y de validación.
 - Justificar los límites de una comparación sobre 28 filas.
+
+## Material de apoyo
+
+| Recurso | Para qué sirve | Uso |
+| --- | --- | --- |
+| [Preparador R](preparar_metadatos.R) | Añadir funciones sin cambiar paquetes ni lockfiles | Para el recorrido |
+| [Metadatos Python](metadatos_parquet.py) | Inspeccionar estadísticas, códecs y codificaciones y comparar variantes | Para el recorrido |
+| [Metadatos R](metadatos_parquet.R) | Escribir variantes y leer esquema, conteos y grupos | Para el recorrido |
+| [CSV de base común](../01_csv_parquet_arrow/datos/base_comun.csv) | Consultar la referencia de 28 observaciones con claves y valores conocidos | Para el recorrido |
+
+Consulta los archivos aquí y ábrelos donde indica el recorrido. Python y R
+tienen instrucciones de preparación y ejecución propias; conserva los
+originales y utiliza carpetas nuevas cuando la actividad escriba resultados.
 
 ## 1. Una tabla pequeña que cabe completa en esta página
 
@@ -404,20 +431,37 @@ Python para ese detalle. Una carpeta parcial se conserva para diagnosticar.
 - No prometas ahorro de I/O por ver grupos candidatos: aquí no medimos lecturas físicas.
 - No cambies filas, orden, esquema, códec y grupos a la vez para atribuir una mejora.
 
-## Práctica, criterio de salida y siguiente paso
+<a id="práctica-criterio-de-salida-y-siguiente-paso"></a>
 
-Realiza el [lab 09.07](../../../labs/09_arrow_parquet/07_metadata_compression/README.md).
+## Práctica
+
+Realiza el [lab 09.07](../../../labs/09_arrow_parquet/07_metadata_compression/README.md) para
+comparar una modificación por vez y justificar qué muestran metadatos y mediciones.
+
+Como referencia de la actividad, consulta [Preparador R](preparar_metadatos.R), [Metadatos Python](metadatos_parquet.py), [Metadatos R](metadatos_parquet.R).
+Sigue las rutas y el directorio de trabajo indicados para cada lenguaje.
+
+## Evidencia y criterio de salida
+
+| Conserva | Comprueba | Explica |
+| --- | --- | --- |
+| Variantes y comparación de datos | 28 filas, 29000/31800 MXN y mismo esquema/valores por clave | Grupo de filas, bloque de columna, codificación y compresión |
+| Metadatos y tres repeticiones crudas | Escritura/lectura separadas de validación; tamaño separado del tiempo | Estadísticas presentes/ausentes y límites de una muestra pequeña |
+
 Puedes avanzar cuando expliques la estructura, interpretes estadísticas reales,
 contrastes dos variantes equivalentes y documentes tamaño/tiempo por separado,
-con límites de la muestra y relectura desde sesión nueva. No hay proyecto ni
-checkpoint implementado asociado; crear material no acredita aprendizaje.
+con límites de la muestra y relectura desde una sesión nueva.
 
-Siguiente: [09.08 — Particionamiento justificado](../08_justified_partitioning/README.md),
-extensión disponible. Puede omitirse para el cierre esencial
-[09.09](../09_shared_contract_closure/README.md), disponible.
-Consulta los [pendientes de almacenamiento](../../../docs/storage-closure.md).
+Quien aprende realiza la práctica y explica las decisiones; su compañero revisa.
+Tu compañero cambia un códec y el tamaño de grupo a la vez y pide explicar por qué esa comparación no aísla una decisión.
+Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica.
+PROGRESS.md registra desarrollo editorial, no tu expediente de aprendizaje.
+El proyecto integrador y sus checkpoints siguen pendientes; las comprobaciones
+técnicas del material no acreditan haber completado la práctica.
 
-## Referencias y atribución
+<a id="referencias-y-atribución"></a>
+
+## Referencias
 
 Ejemplos propios sobre datos sintéticos. Fuentes primarias enlazadas por concepto:
 formato Parquet, compresión/codificación, Statistics y ColumnChunkMetaData.
@@ -425,3 +469,13 @@ Parámetros de escritura: [PyArrow 21](https://arrow.apache.org/docs/21.0/python
 y [arrow R](https://arrow.apache.org/docs/r/reference/write_parquet.html).
 Consulta: 2026-10-22. La documentación R publicada indica 26.0.0; los métodos
 se contrastan con arrow 25.0.1 del proyecto. No se añaden dependencias.
+
+## Siguiente paso
+
+La continuación esencial es [09.09 — Cierre del contrato compartido](../09_shared_contract_closure/README.md).
+Si eliges profundizar, realiza antes [09.08 — Particionamiento justificado](../08_justified_partitioning/README.md),
+una extensión opcional que no bloquea el cierre.
+
+Consulta los [criterios de cierre e integración](../../../docs/storage-closure.md).
+
+[← Módulo 09](../README.md) · [Lab 09.07](../../../labs/09_arrow_parquet/07_metadata_compression/README.md) · [Siguiente →](../09_shared_contract_closure/README.md)
