@@ -79,6 +79,21 @@ plantilla de perfil, guía de adaptación y bitácora personal. La plantilla se
 enlaza al crear el perfil; la bitácora, al conservar evidencia. Esta actividad
 trabaja con Markdown y no necesita notebooks ni scripts.
 
+### Prueba con material nuevo: 12.01
+
+[12.01 — Primera app y modelo de ejecución](../curriculum/12_streamlit/01_first_app_execution/README.md)
+aplica la plantilla desde el inicio: mínimo completo, datos propios, predicciones,
+observación de interacciones, variante y reconstrucción. La preparación extensa
+por gestor/shell vive en un apoyo enlazado; la lección mantiene el arranque y su
+explicación. El lab practica sin duplicar la teoría y cierra con una solución
+razonada oculta. El índice distingue la sección disponible de las ocho previstas.
+
+No fue necesario añadir apartados obligatorios a la plantilla. El desarrollo se
+amplió para explicar servidor/navegador/script y ejecución de arriba abajo antes
+de exigir interacciones. Una imagen y un diagrama acompañan alternativas textuales.
+Las comprobaciones de autoría no sustituyen la evidencia de quien estudia ni
+obligan a incluir AppTest en todas las lecciones; ese tema tiene su sección posterior.
+
 ### Desarrollo que se adapte al tema
 
 Cada bloque importante debe permitir responder: ¿qué problema resuelve?,

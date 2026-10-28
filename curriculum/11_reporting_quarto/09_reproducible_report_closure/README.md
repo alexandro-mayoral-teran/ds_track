@@ -306,7 +306,8 @@ Python 3.12.12 y R 4.6.1. No se añaden dependencias ni se modifican lockfiles.
 Las nueve secciones de Quarto tienen material. Después del cierre, revisa los
 [criterios de integración](../../../docs/reporting-closure.md). En el recorrido
 numerado siguen [12 — Streamlit](../../12_streamlit/README.md) o
-[13 — Shiny](../../13_shiny_web/README.md), ambos planificados. El piloto del portal
+[13 — Shiny](../../13_shiny_web/README.md). [12.01](../../12_streamlit/01_first_app_execution/README.md)
+ya está disponible; el resto de Streamlit y la ruta Shiny conservan sus planes. El piloto del portal
 es un trabajo separado y puede probar una lección existente con una pareja.
 
 [← Módulo 11](../README.md) · [Lab 11.09](../../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md) · [Revisar el cierre del módulo →](../README.md#criterio-de-salida)

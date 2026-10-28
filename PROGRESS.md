@@ -10,7 +10,8 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  12–14 siguen planificados. Proyectos/checkpoints y práctica del estudiante
+  12.01 está disponible; 12.02–12.09 y 13–14 siguen planificados.
+  Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
@@ -26,6 +27,33 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, primera app Streamlit 12.01:** lección con la plantilla,
+recorridos por gestor/shell, mínimo de 300 MXN, app autónoma y lab. Cuatro ventas
+sintéticas: importes 300/240/0/120 y total 660; casilla de visibilidad, botón,
+marca de ejecución y variable local reinicializada. Variante con precio 50 para
+V004: 150 y total 690. Navegador/servidor/script, pasada completa, widget frente
+a variable, nuevo arranque y sesiones explicados antes de exigirlos. No añade
+filtros de negocio, estado propio, caché, lectura CSV, exportaciones o despliegue.
+12.02–12.09 siguen planificadas, sin carpetas vacías ni enlaces ficticios. Índices,
+roadmap y continuidad de 11.09 actualizados; guía de lección documenta la prueba
+de la plantilla con material nuevo. Retomar 12.02 — Entradas, filtros y presentación.
+
+Entorno: grupo opcional streamlit con 1.66.1; los 87 registros previos del lockfile
+permanecen idénticos salvo metadatos del proyecto; once paquetes nuevos (98 registros de paquetes). Dos entornos uv locales Python 3.12.12 comprobados;
+el segundo se reconstruyó desde caché con --locked y comprobación de dependencias.
+Sin modificar Conda, venv raíz, bibliotecas globales ni entornos previos. La prueba
+AppTest del mínimo y de interacciones pasó en ambos entornos; variante 690 y cuatro
+importes contrastados desde sesiones nuevas con original intacto. AppTest se ofrece
+como apoyo de autoría opcional; se enseñará en 12.08. Navegador real: casilla/botón,
+marca, total 660, variable 1 y dos pestañas independientes; vistas a 1280/390 px
+sin desbordamiento de página. Captura local y alternativa textual en la lección.
+Conda/Bash son recorridos documentados, no instalaciones/plataformas acreditadas.
+Revisión documental: 4390 enlaces locales sin incidencias y ocho vistas GFM
+(1280/390) de lección, lab, índice y recorridos: sin desbordamiento, IDs únicos,
+imagen cargada y soluciones cerradas.
+No acredita aprendizaje ni checkpoints. Los cambios simultáneos del portal quedan
+fuera de esta implementación; no se amplía su catálogo con Streamlit.
 
 **Desarrollo — 2026-10-27, plantilla en Reportes con Quarto:** adaptadas
 11.01–11.09 con ubicación, ficha, preparación, objetivos, apoyos, práctica,

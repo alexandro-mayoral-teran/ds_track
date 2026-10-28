@@ -4,24 +4,24 @@
 
 **Ruta de aplicación Python: un explorador verificable con Streamlit.**
 
-[Ver primera sección prevista →](#01-primera-app-y-modelo-de-ejecucion) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
+[**Empezar por 12.01 →**](01_first_app_execution/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Planificado:** 9 secciones previstas; sus lecciones y labs aún no están implementados.
-> Los enlaces de esta tabla describen el alcance del plan, no una práctica lista para ejecutar.
+> **Disponible:** 12.01 con lección, dos apps locales y lab. 12.02–12.09 siguen planificadas.
+> Disponer de material no acredita aprendizaje ni un proyecto de aplicación completado.
 
 <a id="propósito-y-prerrequisitos"></a>
 
 ## Propósito
 
-Crear un explorador de datos con filtros, indicadores y figuras comprobables, reutilizando funciones del análisis conocido. Este módulo conserva su planificación; no contiene todavía lecciones o labs implementados.
+Crear un explorador de datos con filtros, indicadores y figuras comprobables, reutilizando funciones del análisis conocido. 12.01 inicia con ejecución y reejecución; los filtros y demás capacidades se desarrollarán después.
 
 ## Antes de empezar
 
-Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. La instalación y versiones se definirán al implementar; no instales paquetes por este plan.
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. Para 12.01, sigue su preparación con Streamlit 1.66.1 en un entorno local; el resto del módulo conserva su plan.
 
 ## Qué vas a aprender
 
-Objetivos previstos para cuando se implemente:
+12.01 permite iniciar/detener una app y observar sus pasadas. El recorrido completo prevé:
 
 - Explicar reejecución, estado de sesión y caché.
 - Separar cálculo comprobable e interfaz.
@@ -32,9 +32,9 @@ Objetivos previstos para cuando se implemente:
 
 ## Lecciones y labs
 
-| Lección prevista | Práctica | Resultado previsto |
+| Lección o alcance | Práctica | Resultado que se comprobará |
 | --- | --- | --- |
-| **12.01** · [Primera app y modelo de ejecución](#01-primera-app-y-modelo-de-ejecucion) | Pendiente | Ejecutar una app y explicar sus reejecuciones |
+| **12.01** · [Primera app y modelo de ejecución](01_first_app_execution/README.md) | [Lab 12.01](../../labs/12_streamlit/01_first_app_execution/README.md) | Ejecutar una app y explicar sus reejecuciones |
 | **12.02** · [Entradas, filtros y presentación](#02-entradas-filtros-y-presentacion) | Pendiente | Conectar widgets con un subconjunto verificable |
 | **12.03** · [Separar datos e interfaz](#03-separar-datos-e-interfaz) | Pendiente | Reutilizar transformaciones fuera de la app |
 | **12.04** · [Estado de sesión y formularios](#04-estado-de-sesion-y-formularios) | Pendiente | Conservar elecciones y controlar cuándo aplicarlas |
@@ -51,16 +51,18 @@ Objetivos previstos para cuando se implemente:
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Alcance planificado:** lo siguiente describe contenidos y prácticas por desarrollar; no son lecciones o labs implementados.
+**Estado por sección:** 12.01 está disponible. 12.02–12.09 describen el alcance previsto; no son lecciones o labs listos.
 
 <a id="01-primera-app-y-modelo-de-ejecucion"></a>
 
 ### 01 — Primera app y modelo de ejecución
 
-- Navegador, servidor Streamlit y script; arranque con streamlit run.
-  Modelo de reejecución ante interacciones y diferencia con ejecutar un script una vez.
-- Práctica prevista: una app mínima y observar qué cambia al interactuar. Instalación
-  y versión se incorporarán al entorno elegido al implementar esta sección.
+Disponible: [lección 12.01](01_first_app_execution/README.md) y
+[lab 12.01](../../labs/12_streamlit/01_first_app_execution/README.md). Mínimo de
+300 MXN y cuatro ventas ficticias con total 660; casilla, botón, variable local
+y marcas de pasada. Entorno/comandos por gestor y shell; Streamlit 1.66.1 en
+grupo propio, sin instalar globalmente. Variante 690 y nuevo arranque; no exige
+CSV, estado propio, caché, filtros de negocio ni despliegue.
 
 <a id="02-entradas-filtros-y-presentacion"></a>
 
@@ -140,7 +142,7 @@ Objetivos previstos para cuando se implemente:
 
 Recorrido previsto: empezar con una app local pequeña, incorporar entradas y estado, comprobar caché y casos vacíos, y cerrar con pruebas y entrega. No exige login, alojamiento ni conocimientos avanzados de HTML/CSS/JavaScript. Basta elegir esta ruta o Shiny.
 
-Las actividades anteriores son una propuesta. No hay instrucciones ejecutables ni comprobaciones de aprendizaje disponibles todavía para estas secciones.
+Empieza por 12.01 y su lab. Las actividades de 12.02–12.09 siguen siendo una propuesta; no intentes ejecutar todavía esos alcances.
 
 ## Qué conservar
 
@@ -150,7 +152,7 @@ Las actividades anteriores son una propuesta. No hay instrucciones ejecutables n
 | Casos y resultados esperados | Coherencia de filtros y manejo de vacío |
 | Instrucciones y app local futura | Reconstrucción y explicación del comportamiento |
 
-Cuando exista la práctica, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+En 12.01 conserva tu copia de la app, predicciones y observaciones. Para el recorrido completo, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
 
 <a id="prácticas-proyecto-y-criterio-de-salida"></a>
 
@@ -158,7 +160,7 @@ Cuando exista la práctica, conserva los archivos y una nota con predicción, co
 
 Cuando se implemente, el cierre requerirá explicar reejecución, estado y caché y demostrar indicadores verificables con filtros. Publicar en Internet no será requisito; hoy este criterio es previsto, no una práctica acreditable.
 
-No existe carpeta ni checkpoint de aplicación Streamlit implementado. Sus hitos se definirán como alternativa a la ruta Shiny.
+No hay proyecto integrador ni checkpoint de aplicación Streamlit implementado; 12.01 es una práctica introductoria. Sus hitos se definirán como alternativa a la ruta Shiny.
 
 <details>
 <summary><strong>Notas de integración y alcance del cierre</strong></summary>
@@ -172,7 +174,7 @@ casos límite (05–06), presentación verificada (07), pruebas y entrega (08–
 
 ## Siguiente paso
 
-Por ahora puedes [consultar el primer alcance previsto](#01-primera-app-y-modelo-de-ejecucion). No hay lecciones ni labs listos en este módulo.
+Empieza por [12.01 — Primera app y modelo de ejecución](01_first_app_execution/README.md). Después del lab, consulta el [alcance de 12.02](#02-entradas-filtros-y-presentacion), aún planificado.
 
 Cuando esta ruta esté implementada y cierres la práctica, sigue con [14 — Proyecto reproducible](../14_reproducible_projects/README.md), también planificado. La otra aplicación queda como comparación opcional.
 
@@ -183,7 +185,7 @@ Documentación oficial: [modelo de ejecución](https://docs.streamlit.io/develop
 [estado de sesión](https://docs.streamlit.io/develop/concepts/architecture/session-state),
 [caché](https://docs.streamlit.io/develop/concepts/architecture/caching) y
 [pruebas de apps](https://docs.streamlit.io/develop/concepts/app-testing).
-No se instalan dependencias por esta planificación.
+12.01 registra su grupo de dependencias; las secciones restantes no añaden paquetes solo por planificar.
 
 ### Apoyos relacionados
 

@@ -126,3 +126,5 @@ de la siguiente lección.
 | [`11.07 — Formatos y revisión visual`](11_reporting_quarto/07_formats_visual_review/) | `11_reporting_quarto` | No aplica todavía |
 | [`11.08 — Dashboard y distribución (opcional)`](11_reporting_quarto/08_dashboard_distribution/) | `11_reporting_quarto` | No aplica todavía |
 | [`11.09 — Cierre del reporte reproducible`](11_reporting_quarto/09_reproducible_report_closure/) | `11_reporting_quarto` | No aplica todavía |
+
+| [`12.01 — Primera app y modelo de ejecución`](12_streamlit/01_first_app_execution/) | `12_streamlit` | No aplica todavía |

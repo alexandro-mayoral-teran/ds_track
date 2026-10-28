@@ -81,4 +81,6 @@ reproducirlo, registra qué parte de las instrucciones debe mejorar.
 Consulta [cierre del módulo](../../../docs/reporting-closure.md): el proyecto y
 checkpoints siguen pendientes; completar material no acredita práctica personal.
 La siguiente ruta numerada es [12 — Streamlit](../../../curriculum/12_streamlit/README.md)
-o [13 — Shiny](../../../curriculum/13_shiny_web/README.md), todavía planificadas.
+o [13 — Shiny](../../../curriculum/13_shiny_web/README.md). Ya puedes empezar por
+[12.01 — Primera app y modelo de ejecución](../../../curriculum/12_streamlit/01_first_app_execution/README.md);
+el resto de Streamlit y Shiny conservan sus planes.

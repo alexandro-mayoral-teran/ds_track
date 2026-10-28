@@ -15,8 +15,8 @@ no autentican una ejecución histórica.
 
 El proyecto `05_monthly_report` y sus checkpoints figuran en
 [proyectos](../projects/README.md), pero todavía no están implementados. No
-marcarlos completos por disponer de nueve labs. Los módulos 12–14 mantienen
-sus planes y la numeración del recorrido se conserva.
+marcarlos completos por disponer de nueve labs. [12.01 — Primera app Streamlit](../curriculum/12_streamlit/01_first_app_execution/README.md)
+inicia la ruta Python; 12.02–12.09 y 13–14 conservan sus planes y la numeración.
 
 ## Siguiente trabajo: piloto de experiencia
 
