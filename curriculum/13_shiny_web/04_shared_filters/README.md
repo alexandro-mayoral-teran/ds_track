@@ -284,8 +284,7 @@ ejercicios propios de DS Track; no requiere dplyr, ggplot2 ni estudiar Streamlit
 
 ## Siguiente paso
 
-Tras el lab, consulta el alcance de
-[13.05 — Eventos y estado de sesión](../README.md#05-eventos-y-estado-de-sesion),
-todavía planificado. No hay botón de aplicar ni persistencia implementados aquí.
+Tras el lab, continúa con
+[13.05 — Eventos y estado de sesión](../05_events_session/README.md), ya disponible. No hay botón de aplicar ni persistencia implementados aquí.
 
 [← 13.03](../03_reactivity/README.md) · [Módulo 13](../README.md) · [Lab 13.04](../../../labs/13_shiny_web/04_shared_filters/README.md)

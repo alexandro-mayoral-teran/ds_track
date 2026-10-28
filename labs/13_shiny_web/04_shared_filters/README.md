@@ -133,7 +133,7 @@ Quien acompaña propone un umbral distinto y revisa la explicación antes de pro
 
 ## Siguiente paso
 
-Consulta [13.05 — Eventos y estado de sesión](../../../curriculum/13_shiny_web/README.md#05-eventos-y-estado-de-sesion),
-todavía planificado. No hay formulario, botón de aplicar ni proyecto completado por este lab.
+Continúa con [13.05 — Eventos y estado de sesión](../../../curriculum/13_shiny_web/05_events_session/README.md),
+ya disponible. No hay formulario, botón de aplicar ni proyecto completado por este lab.
 
 [← Lección 13.04](../../../curriculum/13_shiny_web/04_shared_filters/README.md) · [Módulo 13](../../../curriculum/13_shiny_web/README.md)

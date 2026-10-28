@@ -10,13 +10,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.04 de Shiny están disponibles; 13.05–13.10 y 14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01–13.05 de Shiny están disponibles; 13.06–13.10 y 14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [13.05 — Eventos y estado de sesión](curriculum/13_shiny_web/README.md#05-eventos-y-estado-de-sesion).
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.04 de la alternativa Shiny están disponibles; 13.05–13.10 y 14 conservan planes.
+- **Siguiente desarrollo educativo:** [13.06 — Validación y mensajes](curriculum/13_shiny_web/README.md#06-validacion-y-mensajes).
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.05 de la alternativa Shiny están disponibles; 13.06–13.10 y 14 conservan planes.
   [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.04 — Filtros e indicadores compartidos: universo/selección, tabla y medidas conciliadas por clave; retomar 13.05.
+- **Último desarrollo educativo:** 2026-10-28, 13.05 — Eventos y estado de sesión: borrador/aplicación, consulta completa y sesiones independientes; retomar 13.06.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +31,44 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, eventos y estado de sesión Shiny 13.05:**
+lección/lab, mínimo número editado/guardado y app de cartera con borrador y
+consulta aplicada. actionButton, bindEvent con observe, ignoreNULL/ignoreInit,
+reactiveVal por sesión y diferencias respecto de reactive/reactiveValues.
+Estado inicial NULL sin consulta; aplicar construye filtros/universo/selección/
+indicadores antes de escribir una lista completa. Contexto y resultados leen
+solo consulta aplicada; pendientes compara borrador, casilla no envía. tryCatch
+rechaza intento sin reemplazar consulta anterior; el primer rechazo sigue sin
+consulta. Cero y ningún segmento conservan las reglas previas. No hay archivos
+de estado, autenticación, operaciones externas ni persistencia tras recarga.
+
+Preparador exclusivo de catorce archivos, nuevo consulta.R y cartera.R de 13.04
+reutilizado byte por byte, mismo CSV de seis observaciones de 12.03. Metadatos/
+iniciador/restaurador de 13.01 intactos; proyecto shiny_1305.Rproj con contenido
+anterior y nombre nuevo. Restauración real en biblioteca local nueva, mismos
+31 registros: R 4.6.1, Shiny 1.14.0 y renv 1.3.1, sin paquetes nuevos ni cambios
+globales, Conda o metadatos Python. Recorrido IDE y PowerShell/Bash opcionales;
+operación completa de la interfaz del IDE sigue pendiente y no se acredita con Rscript.
+
+Funciones/testServer: siete consultas por clave y cada campo, contexto aplicado,
+cantidad/saldo/porcentaje, edición sin envío, rechazo sin reemplazo, repetición,
+nueva sesión y mínimo. Seis regresiones detectadas en copias: aplicación al
+editar, aplicación al inicio, estado global, contexto del borrador, rechazo que
+borra consulta y ningún segmento convertido a todos. Original restaurado y
+comprobado; fronteras del preparador y fuentes/metadatos previos intactos.
+
+Chrome headless a 1280/390: inicio sin consulta, mínimo, siete consultas,
+pendientes y regreso al borrador aplicado, contexto/celdas/medidas, rechazo
+primero y posterior, recuperación explícita, cero/vacío, repetición, ocultación,
+Enter en campo sin envío y Space en botón con envío. Dos sesiones simultáneas
+con consultas/borradores distintos; recargar A pierde su estado y conserva B.
+Diez vistas GFM a dos anchos, IDs únicos, sin desbordamiento y soluciones
+cerradas; capturas seleccionadas revisadas. Esquema de acción/estado Mermaid
+parseado/renderizado y revisado con biblioteca incluida en Quarto. Enlaces
+locales/diff --check comprobados. Servidores propios detenidos. Portal y
+reorganización privada fuera del alcance. Retomar 13.06 — Validación y mensajes,
+todavía planificado; proyecto/checkpoints y práctica del estudiante pendientes.
 
 **Desarrollo — 2026-10-28, filtros e indicadores compartidos Shiny 13.04:**
 lección/lab, mínimo autónomo de tres créditos y app de cartera con corte,
