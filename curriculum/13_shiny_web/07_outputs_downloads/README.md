@@ -19,7 +19,7 @@ la **consulta aplicada**, aunque haya otro borrador en los controles.
 
 No añadimos filtros de presentación que cambien silenciosamente el universo,
 ni generamos un reporte completo o una entrega reproducible de cierre. Eso
-requiere otros materiales y comprobaciones; 13.10 sigue planificado.
+requiere otros materiales y comprobaciones, disponibles en [13.10](../10_local_delivery/README.md).
 
 ## Antes de empezar
 

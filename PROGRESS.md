@@ -8,15 +8,15 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ## En este momento
 
-- **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
+- **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.09 de Shiny están disponibles; 13.10 y 14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14 sigue planificado.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [13.10 — Cierre y entrega local](curriculum/13_shiny_web/README.md#10-cierre-y-entrega-local).
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.09 de la alternativa Shiny están disponibles; 13.10 y 14 conservan planes.
-  [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.09 — Pruebas y observación del flujo: funciones, testServer, regresión y revisión de navegador; retomar 13.10.
+- **Siguiente desarrollo educativo:** [14 — Proyectos reproducibles](curriculum/14_reproducible_projects/README.md), todavía planificado; revisar su diseño después de la práctica de cierre.
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.10 de la alternativa Shiny están disponibles; 14 conserva su plan.
+  [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
+- **Último desarrollo educativo:** 2026-10-28, 13.10 — Cierre y entrega local: fuentes, entorno, seis casos, verificación externa y reconstrucción; las diez secciones de Shiny tienen material.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +31,46 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, cierre y entrega local Shiny 13.10:**
+Lección/lab, contrato, seis preguntas, instrucciones autocontenidas, preparador
+de 24 fuentes y constructor/verificador R. Entrega base de 41 archivos:
+fuentes, resumen/nota/huellas, cinco selecciones y cinco contextos CSV y cuatro
+PNG 960 × 600. Cero/frontera conservan 2500 MXN con distinta cantidad; vacío
+exporta encabezado y contexto, sin universo conserva indicadores ausentes y no
+genera exportaciones de vista. Lote y descargas HTTP diferenciados.
+
+App/módulo de 13.08, pruebas de 13.09, funciones/CSV/metadatos previos intactos
+por copia. Mismo lockfile de 42 registros: R 4.6.1/Shiny 1.14.0/ggplot2 4.0.3/
+renv 1.3.1, sin dependencias nuevas ni cambios globales. Dos bibliotecas locales
+restauradas desde vacías; reconstrucción solo desde fuentes recibidas, en ruta
+con espacios, pruebas completas y seis casos recalculados. Tablas de ambas
+entregas conciliadas independientemente con Python estándar por clave/campo;
+cuatro figuras reconstruidas revisadas visualmente.
+
+Verificador de solo lectura con CSV externo y cálculo R base independiente;
+fuente, preguntas, tablas, ausencias, inventario/huellas y cabecera/dimensiones
+PNG. Ocho alteraciones rechazadas aun con huellas renovadas: valores compensados
+en selección/fuente, porcentaje, ausencia cambiada por cero, casos reducidos,
+PNG, código ausente y exportación no prevista. Archivos/fechas de modificación
+intactos al verificar; código/app/perfil deliberadamente alterados no se ejecutan.
+Por tanto, verificar no certifica toda la lógica recibida ni la sesión histórica.
+Destinos existentes/internos y referencias internas rechazados; fuentes vacía
+y de un crédito con cero comprobadas, originales conservados.
+
+Chrome headless 1280/390 sobre la reconstrucción: estado por panel/sesión,
+borrador/aplicada, tabla oculta, rechazo, cero/vacío/sin universo, bloqueo y
+recuperación; cuarenta descargas actuales releídas contra CSV independiente.
+IDE/consola R principal, terminales separadas; operación completa de la interfaz
+del IDE y Bash/Linux no acreditadas con Rscript Windows. Huellas sin autenticidad,
+nota generada sin certificar demostración humana y lockfile sin garantía de
+disponibilidad futura. Portal y especificaciones privadas fuera de esta entrega.
+
+Ocho páginas renderizadas en dieciséis vistas 1280/390, soluciones cerradas,
+sin desbordamiento de página y con IDs únicos; 349 Markdown y 5292 enlaces
+locales sin incidencias. Las diez secciones de Shiny tienen material. Criterios y reanudación en
+docs/shiny-closure.md; práctica personal, proyecto/checkpoints y módulo 14 siguen
+pendientes. Retomar revisión de práctica/cierre y diseño de 14, sin darlo por implementado.
 
 **Desarrollo — 2026-10-28, pruebas y observación del flujo Shiny 13.09:**
 Lección/lab, mínimo autónomo número/doble/nota y pruebas con R base y testServer.

@@ -139,6 +139,7 @@ reglas de enlace están en
 | [`13.07 — Conciliar gráfica, tabla y descargas`](13_shiny_web/07_outputs_downloads/) | `13_shiny_web` | No aplica todavía |
 | [`13.08 — Reutilizar UI y servidor sin mezclar instancias`](13_shiny_web/08_organization_modules/) | `13_shiny_web` | No aplica todavía |
 | [`13.09 — Detectar regresiones y comprobar el flujo`](13_shiny_web/09_tests_flow/) | `13_shiny_web` | No aplica todavía |
+| [`13.10 — Reconstruir y demostrar una entrega Shiny`](13_shiny_web/10_local_delivery/) | `13_shiny_web` | No aplica todavía |
 
 ## Cómo continuar
 

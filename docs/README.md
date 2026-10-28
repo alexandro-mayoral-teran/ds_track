@@ -20,6 +20,7 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 | Revisar almacenamiento, intercambio y mediciones | [Criterios de almacenamiento](storage-closure.md) |
 | Revisar reporte reproducible y práctica pendiente | [Criterios de reportes](reporting-closure.md) |
 | Retomar Streamlit, revisar descargas y cierre pendiente | [Criterios de Streamlit](streamlit-closure.md) |
+| Revisar entrega local, reconstrucción y práctica Shiny | [Criterios de Shiny](shiny-closure.md) |
 | Abrir y comprobar el portal local | [Uso del portal](../portal/README.md) |
 
 ## Dónde mantener cada información
@@ -34,12 +35,12 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 
 | Parte | Estado de presentación |
 | --- | --- |
-| Índices de módulo 00–14 | Estructura común aplicada; 12 incluye cierre local; 13 está iniciado; 14 sigue planificado |
+| Índices de módulo 00–14 | Estructura común aplicada; 12 incluye cierre local; 13 incluye cierre local; 14 sigue planificado |
 | Lecciones 00–11 | Plantilla de lección y material de apoyo aplicados |
 | Lecciones 12.01–12.09 | Material con plantilla, apoyos y labs; cierre local disponible |
-| Lecciones 13.01–13.09 | Material con plantilla, apoyos y labs; apps, módulos reutilizables y pruebas del flujo disponibles |
-| Secciones 13.10 y módulo 14 | Conservan planes; no tienen lecciones implementadas que migrar |
-| Labs | Muestra visual 00.01 y nuevos 12.01–12.09/13.01–13.09 con estructura común; los demás conservan consignas y navegación |
+| Lecciones 13.01–13.10 | Material con plantilla, apoyos y labs; apps, pruebas y entrega local reconstruible disponibles |
+| Módulo 14 | Conserva su plan; no tiene lecciones implementadas que migrar |
+| Labs | Muestra visual 00.01 y nuevos 12.01–12.09/13.01–13.10 con estructura común; los demás conservan consignas y navegación |
 | Portal local | Módulo 00 y sesión 02.01 integrados; otros módulos ofrecen sus índices |
 
 El estado de las plantillas describe presentación, no aprendizaje del estudiante.

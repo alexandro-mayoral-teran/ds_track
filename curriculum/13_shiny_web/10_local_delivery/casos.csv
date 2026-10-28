@@ -1,0 +1,7 @@
+caso,corte,segmentos,minimo_mxn
+septiembre,2026-09-30,comercio|servicios,2000
+octubre,2026-10-31,comercio|servicios,2000
+cero,2026-09-30,comercio,0
+frontera,2026-09-30,comercio,1
+vacio,2026-09-30,ninguno,0
+sin_universo,2026-11-30,comercio|servicios,2000

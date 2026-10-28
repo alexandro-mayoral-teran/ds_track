@@ -261,8 +261,8 @@ ausencia de todos los errores ni acredita automáticamente aprendizaje.
 
 ## Siguiente paso
 
-Después del lab consulta [13.10 — Cierre y entrega local](../README.md#10-cierre-y-entrega-local),
-todavía planificado. Proyecto/checkpoints y entrega final del módulo siguen pendientes.
+Después del lab continúa con [13.10 — Cierre y entrega local](../10_local_delivery/README.md),
+disponible con lección y lab. Proyecto/checkpoints y práctica personal siguen pendientes.
 
 ## Referencias primarias
 

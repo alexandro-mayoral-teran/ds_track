@@ -155,5 +155,5 @@ todo el módulo completado por ver un OK: faltan la entrega y su reconstrucción
 
 ## Siguiente paso
 
-Consulta [13.10 — Cierre y entrega local](../../../curriculum/13_shiny_web/README.md#10-cierre-y-entrega-local),
-todavía planificado. El proyecto y sus checkpoints siguen pendientes.
+Continúa con [13.10 — Cierre y entrega local](../../../curriculum/13_shiny_web/10_local_delivery/README.md),
+disponible con lección y lab. El proyecto y sus checkpoints siguen pendientes.

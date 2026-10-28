@@ -467,7 +467,7 @@ ya tienen lecciones y labs: recálculo, revisión HTML, distribución y entrega
 reconstruible. Las nueve secciones del módulo tienen material; práctica personal,
 proyecto integrador y checkpoints siguen pendientes. Consulta los
 [criterios de cierre](docs/reporting-closure.md). Streamlit dispone de 12.01–12.09;
-13.01–13.09 de Shiny están disponibles; 13.10 y 14 conservan planes. Consulta la
+13.01–13.10 de Shiny están disponibles; 14 conserva su plan. Consulta la
 [reanudación de Streamlit](docs/streamlit-closure.md).
 
 **Objetivo:** transformar análisis en productos consumibles.
@@ -535,7 +535,9 @@ concilia barras ggplot2, tabla y CSV de selección/contexto con la consulta apli
 reutiliza UI/servidor con namespaces, dos instancias y API reactiva del padre, conservando datos y dependencias.
 [13.09 — Pruebas y observación del flujo](curriculum/13_shiny_web/09_tests_flow/README.md)
 incorpora expectativas independientes, testServer, regresión y revisión complementaria en navegador.
-13.10 sigue planificada.
+[13.10 — Cierre y entrega local](curriculum/13_shiny_web/10_local_delivery/README.md)
+reúne fuentes, contrato, entorno y seis casos; contraste externo y reconstrucción independiente.
+Las diez secciones tienen material; práctica personal, proyecto y checkpoints siguen pendientes.
 
 **Objetivo:** convertir un análisis estable en una aplicación interactiva.
 
