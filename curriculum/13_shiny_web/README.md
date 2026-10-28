@@ -6,22 +6,22 @@
 
 [**Empezar por 13.01 →**](01_web_first_app/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 13.01–13.02 con lecciones, apps locales y labs. 13.03–13.10 siguen planificadas.
+> **Disponible:** 13.01–13.03 con lecciones, apps locales y labs. 13.04–13.10 siguen planificadas.
 > Material disponible no acredita aprendizaje ni un proyecto de aplicación completado.
 
 <a id="propósito-y-prerrequisitos"></a>
 
 ## Propósito
 
-Convertir el análisis R conocido en una aplicación Shiny con resultados comprobables y dependencias reactivas explícitas. 13.01 introduce navegador, interfaz, servidor y primera ejecución; 13.02 conecta entradas con salidas. El resto conserva su plan.
+Convertir el análisis R conocido en una aplicación Shiny con resultados comprobables y dependencias reactivas explícitas. 13.01 introduce navegador, interfaz, servidor y primera ejecución; 13.02 conecta entradas con salidas y 13.03 explica dependencias, invalidación y demanda. El resto conserva su plan.
 
 ## Antes de empezar
 
-Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases de R/tidyverse/ggplot2. [12 — Streamlit](../12_streamlit/README.md) es alternativa, no requisito. 13.01 usa el IDE de R elegido y prepara un proyecto renv independiente con Shiny 1.14.0; 13.02 conserva sus metadatos. No exige entregas anteriores ni modifica bibliotecas globales. La planificación restante no instala paquetes.
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases de R/tidyverse/ggplot2. [12 — Streamlit](../12_streamlit/README.md) es alternativa, no requisito. 13.01 usa el IDE de R elegido y prepara un proyecto renv independiente con Shiny 1.14.0; 13.02–13.03 conservan sus metadatos. No exige entregas anteriores ni modifica bibliotecas globales. La planificación restante no instala paquetes.
 
 ## Qué vas a aprender
 
-Las secciones disponibles permiten iniciar/detener una app y conectar texto, selector y casilla con salidas comprobables. El recorrido completo prevé:
+Las secciones disponibles permiten iniciar/detener una app y conectar texto, selector y casilla con salidas comprobables y explicar el flujo reactivo. El recorrido completo prevé:
 
 - Separar interfaz, cálculo y dependencias reactivas.
 - Usar entradas, filtros y estado sin mezclar sesiones.
@@ -36,7 +36,7 @@ Las secciones disponibles permiten iniciar/detener una app y conectar texto, sel
 | --- | --- | --- |
 | **13.01** · [Web básica y primera app](01_web_first_app/README.md) | [Lab 13.01](../../labs/13_shiny_web/01_web_first_app/README.md) | Explicar navegador, UI, servidor y ejecución local |
 | **13.02** · [Entradas y salidas](02_inputs_outputs/README.md) | [Lab 13.02](../../labs/13_shiny_web/02_inputs_outputs/README.md) | Vincular un control con una salida |
-| **13.03** · [Modelo de reactividad](#03-modelo-de-reactividad) | Pendiente | Explicar dependencias e invalidación |
+| **13.03** · [Modelo de reactividad](03_reactivity/README.md) | [Lab 13.03](../../labs/13_shiny_web/03_reactivity/README.md) | Explicar dependencias e invalidación |
 | **13.04** · [Filtros e indicadores compartidos](#04-filtros-e-indicadores-compartidos) | Pendiente | Reutilizar un conjunto filtrado entre salidas |
 | **13.05** · [Eventos y estado de sesión](#05-eventos-y-estado-de-sesion) | Pendiente | Controlar acciones sin mezclar sesiones |
 | **13.06** · [Validación y mensajes](#06-validacion-y-mensajes) | Pendiente | Atender datos ausentes e interacciones inválidas |
@@ -52,7 +52,7 @@ Las secciones disponibles permiten iniciar/detener una app y conectar texto, sel
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado por sección:** 13.01–13.02 están disponibles. 13.03–13.10 describen el alcance previsto; no tienen lecciones o labs listos.
+**Estado por sección:** 13.01–13.03 están disponibles. 13.04–13.10 describen el alcance previsto; no tienen lecciones o labs listos.
 
 <a id="01-web-basica-y-primera-app"></a>
 
@@ -82,10 +82,12 @@ compartido, eventos propios, persistencia ni validación general de fuentes.
 
 ### 03 — Modelo de reactividad
 
-- Expresiones reactivas, consumidores, dependencias e invalidación; diferenciar
-  reactive, render y observe. No tratar la app como un script lineal de una sola ejecución.
-- Práctica prevista: dibujar un flujo pequeño y verificar qué resultados cambian
-  al modificar una entrada. Las APIs se comprobarán para la versión elegida.
+Disponible: [lección 13.03](03_reactivity/README.md) y
+[lab 13.03](../../labs/13_shiny_web/03_reactivity/README.md). Número/doble y nota
+independiente, grafo por lecturas, invalidación frente a demanda, cache y ramas.
+Consulta compartida con las mismas cuatro ventas/660 MXN; observe de diagnóstico,
+sin estado propio. Preparador nuevo con funciones/metadatos previos intactos y
+sin paquetes nuevos. Filtros e indicadores de cartera corresponden a 13.04.
 
 <a id="04-filtros-e-indicadores-compartidos"></a>
 
@@ -155,7 +157,7 @@ compartido, eventos propios, persistencia ni validación general de fuentes.
 
 Se avanza desde UI/reactividad a filtros, validación, organización y pruebas. RStudio o el IDE elegido es el recorrido de trabajo principal. Mastering Shiny de Hadley Wickham es la lectura abierta de apoyo. Shiny para Python no añade otra ruta obligatoria; despliegue y autenticación son extensiones.
 
-Empieza por 13.01 y su lab, después continúa con 13.02. Las actividades de 13.03–13.10 siguen como propuesta; no intentes ejecutar todavía esos alcances.
+Empieza por 13.01 y su lab, después continúa con 13.02 y 13.03. Las actividades de 13.04–13.10 siguen como propuesta; no intentes ejecutar todavía esos alcances.
 
 ## Qué conservar
 
@@ -163,16 +165,17 @@ Empieza por 13.01 y su lab, después continúa con 13.02. Las actividades de 13.
 | --- | --- |
 | App/proyecto/metadatos de 13.01 | Navegador, UI, servidor y reconstrucción de la primera ejecución |
 | Consultas y variantes de 13.02 | ID/etiqueta/valor, salidas y visibilidad sin cambiar datos |
-| Casos de prueba | Filtros, errores y sesiones |
+| Grafos y predicciones de 13.03 | Dependencias, ramas, cache y demanda |
+| Casos de prueba futuros | Filtros, errores y sesiones |
 | Entrega local futura | Reconstrucción de tabla, figura y descarga |
 
-En 13.01–13.02 conserva archivos, cálculo por venta, variantes, consultas y observaciones de consola/reinicio. Guarda una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje. La evidencia de filtros compartidos y entrega completa corresponde a secciones pendientes.
+En 13.01–13.03 conserva archivos, cálculo por venta, variantes, consultas, grafos y observaciones de consola/reinicio. Guarda una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje. La evidencia de filtros compartidos y entrega completa corresponde a secciones pendientes.
 
 <a id="prácticas-proyecto-y-criterio-de-salida"></a>
 
 ## Criterio de salida
 
-El cierre completo requerirá explicar las dependencias reactivas y demostrar que tabla, figura y descarga reflejan los mismos filtros. Una app local comprobada bastará. Hoy 13.01–13.02 ofrecen primeras apps ejecutables, pero el cierre del módulo sigue previsto y no acredita práctica completada.
+El cierre completo requerirá explicar las dependencias reactivas y demostrar que tabla, figura y descarga reflejan los mismos filtros. Una app local comprobada bastará. Hoy 13.01–13.03 ofrecen primeras apps ejecutables, pero el cierre del módulo sigue previsto y no acredita práctica completada.
 
 06_shiny_portfolio_app está previsto en [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -189,7 +192,7 @@ y entrega (09–10). Sus nombres se concretarán al desarrollar el proyecto.
 
 ## Siguiente paso
 
-Empieza por [13.01 — Web básica y primera app](01_web_first_app/README.md), continúa con [13.02 — Entradas y salidas](02_inputs_outputs/README.md) y consulta después [13.03 — Modelo de reactividad](#03-modelo-de-reactividad), todavía planificado.
+Empieza por [13.01 — Web básica y primera app](01_web_first_app/README.md), continúa con [13.02 — Entradas y salidas](02_inputs_outputs/README.md) y consulta después [13.03 — Modelo de reactividad](03_reactivity/README.md). Después, consulta el alcance de [13.04](#04-filtros-e-indicadores-compartidos), todavía planificado.
 
 Cuando esta ruta esté implementada y cierres la práctica, sigue con [14 — Proyecto reproducible](../14_reproducible_projects/README.md), también planificado. La otra aplicación queda como comparación opcional.
 

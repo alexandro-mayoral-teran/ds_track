@@ -21,8 +21,8 @@ valores del tipo esperado y definir cómo se presenta cada resultado.
 
 Comenzaremos con un texto que se devuelve a la pantalla. Después conectaremos
 un selector y una casilla con las ventas conocidas. El modelo de dependencias
-reactivas se desarrolla en [13.03](../README.md#03-modelo-de-reactividad), todavía
-planificado. Aquí usamos sus salidas básicas sin exigir `reactive()` u observadores.
+reactivas se desarrolla en [13.03](../03_reactivity/README.md), ya
+disponible. Aquí usamos sus salidas básicas sin exigir `reactive()` u observadores.
 
 ## Antes de empezar
 
@@ -330,8 +330,8 @@ puede describir otras versiones.
 
 ## Siguiente paso
 
-Después del lab, consulta [13.03 — Modelo de reactividad](../README.md#03-modelo-de-reactividad),
-todavía planificado. 13.04–13.10 también conservan su plan; esta app no los
+Después del lab, consulta [13.03 — Modelo de reactividad](../03_reactivity/README.md),
+ya disponible. 13.04–13.10 también conservan su plan; esta app no los
 da por implementados por utilizar salidas que responden a entradas.
 
 ---

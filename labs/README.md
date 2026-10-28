@@ -132,6 +132,7 @@ reglas de enlace están en
 | [`12.09 — Reconstruir y demostrar una entrega local`](12_streamlit/09_local_delivery/) | `12_streamlit` | No aplica todavía |
 | [`13.01 — Ubicar, iniciar y reconstruir la primera app`](13_shiny_web/01_web_first_app/) | `13_shiny_web` | No aplica todavía |
 | [`13.02 — Conectar una elección con texto y tabla`](13_shiny_web/02_inputs_outputs/) | `13_shiny_web` | No aplica todavía |
+| [`13.03 — Predecir dependencias, invalidación y demanda`](13_shiny_web/03_reactivity/) | `13_shiny_web` | No aplica todavía |
 
 ## Cómo continuar
 

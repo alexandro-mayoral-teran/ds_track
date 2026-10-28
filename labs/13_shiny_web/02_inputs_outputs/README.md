@@ -149,5 +149,5 @@ PROGRESS.md registra autoría, no tus respuestas ni aprendizaje.
 ## Siguiente paso
 
 Revisa el [criterio de salida](../../../curriculum/13_shiny_web/02_inputs_outputs/README.md#evidencia-y-criterio-de-salida)
-y consulta [13.03 — Modelo de reactividad](../../../curriculum/13_shiny_web/README.md#03-modelo-de-reactividad),
-todavía planificado.
+y consulta [13.03 — Modelo de reactividad](../../../curriculum/13_shiny_web/03_reactivity/README.md),
+ya disponible.

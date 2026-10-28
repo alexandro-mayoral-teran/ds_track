@@ -10,13 +10,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.02 de Shiny están disponibles; 13.03–13.10 y 14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01–13.03 de Shiny están disponibles; 13.04–13.10 y 14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [13.03 — Modelo de reactividad](curriculum/13_shiny_web/README.md#03-modelo-de-reactividad).
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.02 de la alternativa Shiny están disponibles; 13.03–13.10 y 14 conservan planes.
+- **Siguiente desarrollo educativo:** [13.04 — Filtros e indicadores compartidos](curriculum/13_shiny_web/README.md#04-filtros-e-indicadores-compartidos).
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.03 de la alternativa Shiny están disponibles; 13.04–13.10 y 14 conservan planes.
   [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.02 — Entradas y salidas: texto/selector/casilla, consultas y variantes de UI con los metadatos previos; retomar 13.03.
+- **Último desarrollo educativo:** 2026-10-28, 13.03 — Modelo de reactividad: dependencias, invalidación, demanda, cache y ramas; retomar 13.04 después del descanso.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +31,43 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, modelo de reactividad Shiny 13.03:**
+lección/lab, mínimo número/doble con nota independiente y rama de demanda;
+app de ventas con consulta reactive compartida entre resumen y tabla, y observe
+solo de diagnóstico. Productores/consumidores, grafo por lecturas, invalidación
+frente a ejecución, caché por expresión/sesión y conexiones condicionales. Dos
+diagramas Mermaid y alternativa textual; diferencias reactive/render/observe,
+contexto reactivo y errores habituales. Fuentes primarias Posit y Mastering Shiny
+consultadas; ejemplos propios. No promete orden de mensajes ni ejecutar todo
+app.R ante un cambio. No adelanta cartera/filtros de 13.04, eventos o persistencia.
+
+Preparador exclusivo de doce archivos; funciones ventas.R de 13.02 copiadas sin
+cambios, proyecto shiny_1303.Rproj y metadatos/iniciador/restaurador de 13.01
+conservados byte por byte. Restauración real en biblioteca local nueva: R 4.6.1,
+Shiny 1.14.0, renv 1.3.1 y mismo lockfile de 31 registros, sin nuevas dependencias
+ni cambios globales, Conda o metadatos Python. Recorrido principal en IDE y
+alternativas completas PowerShell/Bash. La operación completa de la interfaz
+del IDE sigue pendiente; no se atribuyen las ejecuciones Rscript a esa revisión.
+
+testServer contrasta cada campo de cinco consultas y las cifras 4/660, 1/300,
+1/240, 1/0 y 1/120 MXN; nota/casilla, reutilización y sesión nueva. Sonda sin
+outputs comprueba invalidación sin demanda y ramas; isolate/contadores son
+instrumentación de autoría. Chrome real headless a 1280/390 contrasta UI inicial,
+celdas, marcas de ejecución, mínimo 2/4, 3/6, pausa y 7/14, cero, nota, casilla,
+consulta con tabla desactivada, dos sesiones, recarga y teclado. Variante de
+lectura antes del if y retirada de observe comprobadas en procesos nuevos;
+las cifras permanecen y cambian las trazas previstas. Servidores propios detenidos.
+
+Fronteras del preparador y cinco regresiones detectadas en copias: eliminar
+caché, dependencia accidental de nota, doble incorrecto, precios compensados
+con total 660 y eliminación del cero. Control original restaurado y comprobado.
+Diez vistas GFM a dos anchos, soluciones cerradas, IDs únicos y sin desbordamiento;
+capturas seleccionadas revisadas. Dos grafos parseados/renderizados con Mermaid
+incluido en Quarto y revisados visualmente, sin instalar. Enlaces locales y
+git diff --check comprobados. Portal/reorganización privada fuera del alcance.
+Pausa solicitada: retomar 13.04 — Filtros e indicadores compartidos, todavía
+planificado; proyecto/checkpoints y práctica del estudiante siguen pendientes.
 
 **Desarrollo — 2026-10-28, entradas y salidas Shiny 13.02:**
 lección/lab, mínimo textInput/eco y app con selector nativo de venta/todas y
