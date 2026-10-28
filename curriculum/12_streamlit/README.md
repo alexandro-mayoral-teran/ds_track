@@ -6,22 +6,22 @@
 
 [**Empezar por 12.01 →**](01_first_app_execution/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 12.01–12.02 con lecciones, apps locales y labs. 12.03–12.09 siguen planificadas.
+> **Disponible:** 12.01–12.03 con lecciones, apps locales y labs. 12.04–12.09 siguen planificadas.
 > Disponer de material no acredita aprendizaje ni un proyecto de aplicación completado.
 
 <a id="propósito-y-prerrequisitos"></a>
 
 ## Propósito
 
-Crear un explorador de datos con filtros, indicadores y figuras comprobables, reutilizando funciones del análisis conocido. 12.01 inicia con ejecución y reejecución; 12.02 incorpora entradas, filtros y presentación. Las demás capacidades se desarrollarán después.
+Crear un explorador de datos con filtros, indicadores y figuras comprobables, reutilizando funciones del análisis conocido. 12.01 inicia con ejecución y reejecución; 12.02 incorpora entradas, filtros y presentación. 12.03 separa lectura, validación y cálculo para reutilizarlos en app y script. Las demás capacidades se desarrollarán después.
 
 ## Antes de empezar
 
-Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. Para 12.01, sigue su preparación con Streamlit 1.66.1 en un entorno local; el resto del módulo conserva su plan.
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. Para 12.01, sigue su preparación con Streamlit 1.66.1 en un entorno local; 12.02–12.03 reutilizan ese entorno; 12.04–12.09 conservan su plan.
 
 ## Qué vas a aprender
 
-12.01 permite iniciar/detener una app y observar sus pasadas; 12.02 conecta entradas con un subconjunto verificable. El recorrido completo prevé:
+12.01 permite iniciar/detener una app y observar sus pasadas; 12.02 conecta entradas con un subconjunto verificable y 12.03 reutiliza el análisis en app y script. El recorrido completo prevé:
 
 - Explicar reejecución, estado de sesión y caché.
 - Separar cálculo comprobable e interfaz.
@@ -36,7 +36,7 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python de
 | --- | --- | --- |
 | **12.01** · [Primera app y modelo de ejecución](01_first_app_execution/README.md) | [Lab 12.01](../../labs/12_streamlit/01_first_app_execution/README.md) | Ejecutar una app y explicar sus reejecuciones |
 | **12.02** · [Entradas, filtros y presentación](02_inputs_filters_presentation/README.md) | [Lab 12.02](../../labs/12_streamlit/02_inputs_filters_presentation/README.md) | Conectar widgets con un subconjunto verificable |
-| **12.03** · [Separar datos e interfaz](#03-separar-datos-e-interfaz) | Pendiente | Reutilizar transformaciones fuera de la app |
+| **12.03** · [Separar datos e interfaz](03_data_interface/README.md) | [Lab 12.03](../../labs/12_streamlit/03_data_interface/README.md) | Reutilizar transformaciones fuera de la app |
 | **12.04** · [Estado de sesión y formularios](#04-estado-de-sesion-y-formularios) | Pendiente | Conservar elecciones y controlar cuándo aplicarlas |
 | **12.05** · [Caché de datos y recursos](#05-cache-de-datos-y-recursos) | Pendiente | Evitar trabajo repetido sin mostrar resultados obsoletos |
 | **12.06** · [Mensajes y casos sin datos](#06-mensajes-y-casos-sin-datos) | Pendiente | Explicar entradas inválidas y filtros vacíos |
@@ -51,7 +51,7 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python de
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado por sección:** 12.01–12.02 están disponibles. 12.03–12.09 describen el alcance previsto; no son lecciones o labs listos.
+**Estado por sección:** 12.01–12.03 están disponibles. 12.04–12.09 describen el alcance previsto; no son lecciones o labs listos.
 
 <a id="01-primera-app-y-modelo-de-ejecucion"></a>
 
@@ -74,17 +74,20 @@ Seis observaciones propias de créditos/cortes: selectbox, multiselect y mínimo
 entero en sidebar; universo antes de segmento/mínimo, pares y métricas desde
 la misma selección. Octubre ≥ 2000: 003/2600, 1 de 3 (33.33%); septiembre: dos/4500.
 Frontera 2000/2001, ningún segmento, vacío y recuperación, sin dependencias nuevas.
-La separación en funciones importables se desarrolla en 12.03; no se dan por
+La separación en funciones importables está disponible en [12.03](03_data_interface/README.md); no se dan por
 implementados estado, caché, descarga o validación general de fuentes externas.
 
 <a id="03-separar-datos-e-interfaz"></a>
 
 ### 03 — Separar datos e interfaz
 
-- Lectura, validación y cálculo en funciones importables; la app coordina y presenta.
-  Configuración y rutas sin depender de la ubicación accidental de la terminal.
-- Práctica prevista: utilizar la misma transformación en app y script y demostrar
-  que devuelve el mismo resultado.
+Disponible: [lección 12.03](03_data_interface/README.md) y
+[lab 12.03](../../labs/12_streamlit/03_data_interface/README.md). CSV autónomo de
+seis filas; módulo sin Streamlit para lectura/validación/análisis, configuración
+con ruta propia y consumidores app/JSON. Misma selección e indicadores; variante
+2600 → 2800 y universo 4600 → 4800, validación completa antes del filtro,
+importación sin lectura y ejecución desde otra carpeta. Sin paquetes nuevos,
+estado propio ni caché; no exige entregas anteriores.
 
 <a id="04-estado-de-sesion-y-formularios"></a>
 
@@ -146,7 +149,7 @@ implementados estado, caché, descarga o validación general de fuentes externas
 
 Recorrido previsto: empezar con una app local pequeña, incorporar entradas y estado, comprobar caché y casos vacíos, y cerrar con pruebas y entrega. No exige login, alojamiento ni conocimientos avanzados de HTML/CSS/JavaScript. Basta elegir esta ruta o Shiny.
 
-Empieza por 12.01 y su lab. Las actividades de 12.03–12.09 siguen siendo una propuesta; no intentes ejecutar todavía esos alcances.
+Empieza por 12.01 y su lab. Las actividades de 12.04–12.09 siguen siendo una propuesta; no intentes ejecutar todavía esos alcances.
 
 ## Qué conservar
 
@@ -156,7 +159,7 @@ Empieza por 12.01 y su lab. Las actividades de 12.03–12.09 siguen siendo una p
 | Casos y resultados esperados | Coherencia de filtros y manejo de vacío |
 | Instrucciones y app local futura | Reconstrucción y explicación del comportamiento |
 
-En 12.01–12.02 conserva tu copia de la app, predicciones y observaciones; en 12.02 añade filtros efectivos, pares e indicadores. Para el recorrido completo, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+En 12.01–12.03 conserva tu copia de la app, predicciones y observaciones; en 12.02 añade filtros efectivos, pares e indicadores; en 12.03, app/JSON conciliados y variante del CSV. Para el recorrido completo, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
 
 <a id="prácticas-proyecto-y-criterio-de-salida"></a>
 
@@ -178,7 +181,7 @@ casos límite (05–06), presentación verificada (07), pruebas y entrega (08–
 
 ## Siguiente paso
 
-Empieza por [12.01 — Primera app y modelo de ejecución](01_first_app_execution/README.md). Después del lab continúa con [12.02](02_inputs_filters_presentation/README.md). 12.03 conserva su [alcance previsto](#03-separar-datos-e-interfaz).
+Empieza por [12.01 — Primera app y modelo de ejecución](01_first_app_execution/README.md). Después del lab continúa con [12.02](02_inputs_filters_presentation/README.md). Continúa con [12.03 — Separar datos e interfaz](03_data_interface/README.md).
 
 Cuando esta ruta esté implementada y cierres la práctica, sigue con [14 — Proyecto reproducible](../14_reproducible_projects/README.md), también planificado. La otra aplicación queda como comparación opcional.
 

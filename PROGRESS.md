@@ -10,7 +10,7 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  12.01–12.02 están disponibles; 12.03–12.09 y 13–14 siguen planificados.
+  12.01–12.03 están disponibles; 12.04–12.09 y 13–14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -27,6 +27,30 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, separar datos e interfaz Streamlit 12.03:** lección,
+lab, recorridos y CSV autónomo con los seis valores de 12.02. Lectura/validación/
+análisis en cartera.py sin Streamlit, configuración con ruta propia y consumidores
+app/JSON. Sin lectura ni salida al importar; cálculo con entradas explícitas y
+salida sin modificar registros. Contrato completo antes de filtrar, IDs/cortes
+únicos, enteros conocidos, selección ordenada y mismo denominador del corte.
+Octubre ≥ 2000 conserva 003/2600, universo 3/4600 y 33.33%; variante 2800/4800
+mantiene uno de tres. Ningún segmento es ninguno; sin universo el porcentaje es
+None/null/N/D. Ruta predeterminada anclada al módulo; --fuente relativa pertenece
+a la terminal. Importación de módulos no equivale a caché de datos.
+
+Comprobación: ocho pruebas de modelo/CLI y tres de AppTest en los dos entornos
+locales existentes de 12.01, Python 3.12.12/Streamlit 1.66.1. Referencias manuales,
+fronteras, vacío, recuperación, copias independientes, variante de saldo, fuente
+ausente, duplicado fuera del filtro, no mutación, nuevo proceso y otra carpeta.
+Navegador real 1280/390: corte, mínimo, segmentos vacíos, sesiones independientes
+y sidebar móvil, sin desbordamiento; captura propia revisada con alternativa
+textual. Ocho vistas GFM de lección/lab/índice/recorridos sin desbordamiento,
+IDs únicos, imagen cargada y soluciones cerradas; 4484 enlaces locales sin
+incidencias. Índices y continuidad actualizados. Sin paquetes ni lockfiles nuevos;
+fuentes anteriores, entornos globales y portal conservados. No acredita práctica
+del estudiante ni proyecto/checkpoint. Retomar 12.04 — Estado de sesión y
+formularios; 12.04–12.09 siguen planificadas.
 
 **Desarrollo — 2026-10-27, entradas y filtros Streamlit 12.02:** lección, app,
 recorridos y lab con plantilla. Muestra autónoma de seis observaciones de tres

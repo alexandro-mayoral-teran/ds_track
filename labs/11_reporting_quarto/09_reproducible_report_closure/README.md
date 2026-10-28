@@ -83,5 +83,6 @@ checkpoints siguen pendientes; completar material no acredita práctica personal
 La siguiente ruta numerada es [12 — Streamlit](../../../curriculum/12_streamlit/README.md)
 o [13 — Shiny](../../../curriculum/13_shiny_web/README.md). Ya puedes empezar por
 [12.01 — Primera app y modelo de ejecución](../../../curriculum/12_streamlit/01_first_app_execution/README.md)
-y continuar con [12.02 — Entradas, filtros y presentación](../../../curriculum/12_streamlit/02_inputs_filters_presentation/README.md);
-12.03–12.09 de Streamlit y Shiny conservan sus planes.
+y continuar con [12.02 — Entradas, filtros y presentación](../../../curriculum/12_streamlit/02_inputs_filters_presentation/README.md) y
+[12.03 — Separar datos e interfaz](../../../curriculum/12_streamlit/03_data_interface/README.md);
+12.04–12.09 de Streamlit y Shiny conservan sus planes.

@@ -305,8 +305,7 @@ en línea pueden avanzar respecto de la versión del entorno de referencia.
 
 ## Siguiente paso
 
-12.03 — Separar datos e interfaz sigue **planificada**. Después del lab, consulta
-su [alcance previsto](../README.md#03-separar-datos-e-interfaz); no hay todavía
-una lección/lab de esa sección que ejecutar.
+Continúa con [12.03 — Separar datos e interfaz](../03_data_interface/README.md):
+reutilizar lectura, validación y cálculo desde una app y un ejecutor de terminal.
 
-[← Módulo 12](../README.md) · [Lab 12.02](../../../labs/12_streamlit/02_inputs_filters_presentation/README.md) · [Alcance de 12.03 →](../README.md#03-separar-datos-e-interfaz)
+[← Módulo 12](../README.md) · [Lab 12.02](../../../labs/12_streamlit/02_inputs_filters_presentation/README.md) · [12.03 →](../03_data_interface/README.md)

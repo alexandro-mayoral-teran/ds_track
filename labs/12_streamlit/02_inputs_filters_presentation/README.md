@@ -120,4 +120,4 @@ Cierra cuando puedas trazar cada entrada hasta su filtro, recuperar los pares
 correctos y justificar los casos vacíos y la frontera. El material y las pruebas
 de autoría no acreditan por sí solos tu práctica.
 
-[← Lección 12.02](../../../curriculum/12_streamlit/02_inputs_filters_presentation/README.md) · [Módulo 12](../../../curriculum/12_streamlit/README.md) · [Siguiente: alcance de 12.03, aún planificado →](../../../curriculum/12_streamlit/README.md#03-separar-datos-e-interfaz)
+[← Lección 12.02](../../../curriculum/12_streamlit/02_inputs_filters_presentation/README.md) · [Módulo 12](../../../curriculum/12_streamlit/README.md) · [Siguiente: 12.03 — Separar datos e interfaz →](../../../curriculum/12_streamlit/03_data_interface/README.md)
