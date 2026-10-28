@@ -130,6 +130,7 @@ reglas de enlace están en
 | [`12.07 — Conciliar pantalla y archivos`](12_streamlit/07_tables_charts_download/) | `12_streamlit` | No aplica todavía |
 | [`12.08 — Detectar y explicar una regresión`](12_streamlit/08_app_testing/) | `12_streamlit` | No aplica todavía |
 | [`12.09 — Reconstruir y demostrar una entrega local`](12_streamlit/09_local_delivery/) | `12_streamlit` | No aplica todavía |
+| [`13.01 — Ubicar, iniciar y reconstruir la primera app`](13_shiny_web/01_web_first_app/) | `13_shiny_web` | No aplica todavía |
 
 ## Cómo continuar
 

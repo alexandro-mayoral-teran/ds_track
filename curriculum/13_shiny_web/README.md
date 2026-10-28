@@ -4,24 +4,24 @@
 
 **Ruta de aplicación R: un explorador reactivo con resultados conciliados.**
 
-[Ver primera sección prevista →](#01-web-basica-y-primera-app) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
+[**Empezar por 13.01 →**](01_web_first_app/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Planificado:** 10 secciones previstas; sus lecciones y labs aún no están implementados.
-> Los enlaces de esta tabla describen el alcance del plan, no una práctica lista para ejecutar.
+> **Disponible:** 13.01 con lección, proyecto local y lab. 13.02–13.10 siguen planificadas.
+> Material disponible no acredita aprendizaje ni un proyecto de aplicación completado.
 
 <a id="propósito-y-prerrequisitos"></a>
 
 ## Propósito
 
-Convertir el análisis R conocido en una aplicación Shiny con resultados comprobables y dependencias reactivas explícitas. Las secciones y labs siguen planificados.
+Convertir el análisis R conocido en una aplicación Shiny con resultados comprobables y dependencias reactivas explícitas. 13.01 introduce navegador, interfaz, servidor y primera ejecución; el resto conserva su plan.
 
 ## Antes de empezar
 
-Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases de R/tidyverse/ggplot2. [12 — Streamlit](../12_streamlit/README.md) es alternativa, no requisito. Usa el IDE y entorno R elegidos cuando se implemente; la planificación no instala paquetes.
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases de R/tidyverse/ggplot2. [12 — Streamlit](../12_streamlit/README.md) es alternativa, no requisito. 13.01 usa el IDE de R elegido y prepara un proyecto renv independiente con Shiny 1.14.0; no exige entregas anteriores ni modifica bibliotecas globales. La planificación restante no instala paquetes.
 
 ## Qué vas a aprender
 
-Objetivos previstos para cuando se implemente:
+La primera sección permite iniciar/detener una app y comprobar salidas de R. El recorrido completo prevé:
 
 - Separar interfaz, cálculo y dependencias reactivas.
 - Usar entradas, filtros y estado sin mezclar sesiones.
@@ -32,9 +32,9 @@ Objetivos previstos para cuando se implemente:
 
 ## Lecciones y labs
 
-| Lección prevista | Práctica | Resultado previsto |
+| Lección o alcance | Práctica | Resultado que se comprobará |
 | --- | --- | --- |
-| **13.01** · [Web básica y primera app](#01-web-basica-y-primera-app) | Pendiente | Explicar navegador, UI, servidor y ejecución local |
+| **13.01** · [Web básica y primera app](01_web_first_app/README.md) | [Lab 13.01](../../labs/13_shiny_web/01_web_first_app/README.md) | Explicar navegador, UI, servidor y ejecución local |
 | **13.02** · [Entradas y salidas](#02-entradas-y-salidas) | Pendiente | Vincular un control con una salida |
 | **13.03** · [Modelo de reactividad](#03-modelo-de-reactividad) | Pendiente | Explicar dependencias e invalidación |
 | **13.04** · [Filtros e indicadores compartidos](#04-filtros-e-indicadores-compartidos) | Pendiente | Reutilizar un conjunto filtrado entre salidas |
@@ -52,16 +52,19 @@ Objetivos previstos para cuando se implemente:
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Alcance planificado:** lo siguiente describe contenidos y prácticas por desarrollar; no son lecciones o labs implementados.
+**Estado por sección:** 13.01 está disponible. 13.02–13.10 describen el alcance previsto; no tienen lecciones o labs listos.
 
 <a id="01-web-basica-y-primera-app"></a>
 
 ### 01 — Web básica y primera app
 
-- Cliente/navegador y proceso R servidor; HTML/CSS como contexto de presentación.
-  UI, server y app.R; distinguir código que prepara datos y código por sesión.
-- Práctica prevista: iniciar una app mínima y reconocer sus piezas. No se exige
-  construir un servidor web, aprender JavaScript ni diseñar una API.
+Disponible: [lección 13.01](01_web_first_app/README.md) y
+[lab 13.01](../../labs/13_shiny_web/01_web_first_app/README.md). Navegador/proceso R,
+HTML/CSS/JavaScript como contexto; mínimo y cuatro ventas ficticias, 660 MXN y
+variante 690. UI/server/objeto app, preparación/sesión/salida, inicio/detención
+y reinicio. Proyecto independiente con renv/lockfile real, biblioteca local y
+recorrido principal en IDE. No implementa controles, filtros, estado propio,
+descargas ni pruebas como tema; no exige construir un servidor web o una API.
 
 <a id="02-entradas-y-salidas"></a>
 
@@ -147,25 +150,25 @@ Objetivos previstos para cuando se implemente:
 
 ## Cómo trabajar este módulo
 
-Se prevé avanzar desde UI/reactividad a filtros, validación, organización y pruebas. RStudio o el IDE elegido será el recorrido de trabajo principal. Mastering Shiny de Hadley Wickham es la lectura abierta de apoyo. Shiny para Python no añade otra ruta obligatoria; despliegue y autenticación son extensiones.
+Se avanza desde UI/reactividad a filtros, validación, organización y pruebas. RStudio o el IDE elegido es el recorrido de trabajo principal. Mastering Shiny de Hadley Wickham es la lectura abierta de apoyo. Shiny para Python no añade otra ruta obligatoria; despliegue y autenticación son extensiones.
 
-Las actividades anteriores son una propuesta. No hay instrucciones ejecutables ni comprobaciones de aprendizaje disponibles todavía para estas secciones.
+Empieza por 13.01 y su lab. Las actividades de 13.02–13.10 siguen como propuesta; no intentes ejecutar todavía esos alcances.
 
 ## Qué conservar
 
-| Evidencia prevista | Qué permite revisar |
+| Evidencia de 13.01 y prevista para el recorrido | Qué permite revisar |
 | --- | --- |
-| Código y dependencias previstas | Responsabilidades y reactividad |
+| App/proyecto/metadatos de 13.01 | Navegador, UI, servidor y reconstrucción de la primera ejecución |
 | Casos de prueba | Filtros, errores y sesiones |
 | Entrega local futura | Reconstrucción de tabla, figura y descarga |
 
-Cuando exista la práctica, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+En 13.01 conserva archivos, cálculo por venta, variante y observaciones de consola/reinicio. Guarda una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje. La evidencia de filtros y entrega completa corresponde a secciones pendientes.
 
 <a id="prácticas-proyecto-y-criterio-de-salida"></a>
 
 ## Criterio de salida
 
-Cuando se implemente, deberás explicar las dependencias reactivas y demostrar que tabla, figura y descarga reflejan los mismos filtros. Una app local comprobada bastará; hoy no hay una entrega ejecutable ni práctica completada por disponer del plan.
+El cierre completo requerirá explicar las dependencias reactivas y demostrar que tabla, figura y descarga reflejan los mismos filtros. Una app local comprobada bastará. Hoy 13.01 ofrece la primera app ejecutable, pero el cierre del módulo sigue previsto y no acredita práctica completada.
 
 06_shiny_portfolio_app está previsto en [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -182,7 +185,7 @@ y entrega (09–10). Sus nombres se concretarán al desarrollar el proyecto.
 
 ## Siguiente paso
 
-Por ahora puedes [consultar el primer alcance previsto](#01-web-basica-y-primera-app). No hay lecciones ni labs listos en este módulo.
+Empieza por [13.01 — Web básica y primera app](01_web_first_app/README.md). Después consulta [13.02 — Entradas y salidas](#02-entradas-y-salidas), todavía planificado.
 
 Cuando esta ruta esté implementada y cierres la práctica, sigue con [14 — Proyecto reproducible](../14_reproducible_projects/README.md), también planificado. La otra aplicación queda como comparación opcional.
 

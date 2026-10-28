@@ -1,0 +1,5 @@
+Type: Project
+Title: Primera app local de Shiny para DS Track
+Version: 0.1.0
+Imports:
+    shiny

@@ -10,12 +10,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit están disponibles; 13–14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01 — Primera app Shiny están disponibles; 13.02–13.10 y 14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13 (alternativa) y 14 conservan planes.
+- **Siguiente desarrollo educativo:** [13.02 — Entradas y salidas](curriculum/13_shiny_web/README.md#02-entradas-y-salidas).
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01 de la alternativa Shiny está disponible; 13.02–13.10 y 14 conservan planes.
   [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 12.09 — Cierre y entrega local: fuentes, seis casos, verificador externo y reconstrucción; las nueve secciones de Streamlit tienen material.
+- **Último desarrollo educativo:** 2026-10-28, 13.01 — Web básica y primera app: mínimo/ventas, proyecto Shiny/renv local, variante y sesiones; retomar 13.02.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -30,6 +31,44 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, web básica y primera app Shiny 13.01:**
+lección/lab, mínimo y app de cuatro ventas sintéticas. Navegador/UI/proceso R,
+HTML/CSS/JavaScript de contexto, objeto app y runApp, preparación/sesión/salida,
+inicio/detención y reconstrucción. Ejemplos completos, diagrama con alternativa
+textual y captura propia. Sin controles todavía: 13.02 y modelo reactivo 13.03
+siguen planificados; no se implementan filtros, estado propio o descargas.
+
+Preparador exclusivo de once fuentes, proyecto renv independiente sin entregas
+anteriores, perfil/activador/ajustes de 06.08 reutilizados y biblioteca local.
+Shiny 1.14.0/renv 1.3.1/R 4.6.1: lockfile real de 31 registros, dos restauraciones
+desde bibliotecas vacías y estado sincronizado comprobados. No se inicializa renv
+en raíz ni se alteran proyectos R previos, bibliotecas globales, Conda o metadatos
+Python. Preparar solo copia; restaurar instala localmente; iniciar escucha 127.0.0.1.
+
+Controles de objetos app, resumen y 16 celdas contra expectativas explícitas;
+base 300/240/0/120, total 660. Variante V004/150, total 690 desde proceso nuevo.
+Siete ejecuciones adicionales: fronteras/destinos ocupados, base restaurada,
+regresión de total, compensación con total conservado, ID de salida incorrecto,
+variante y rechazo de esperado base en variante. Fallos detectados, fuentes y
+metadatos conservados. El control usa testServer como apoyo opcional de autoría,
+sin presentar pruebas reactivas como lección ya desarrollada.
+
+Chrome headless Windows: mínimo, cuatro filas/660 a 1280/390, idioma y ancho;
+recarga y tres sesiones con una preparación observadas. Variante 690 con todos
+los campos conciliados. Al detener el servidor propio, texto retenido/conexión
+cerrada y recarga rechazada sin servidor comprobados; servidores temporales detenidos.
+RStudio abrió con R 4.6.1; no se acredita la revisión completa del IDE: el control
+de escritorio no permitió verificar foco fiable para ejecutar en consola. No se
+escribieron comandos allí; restauración y reinicios se comprobaron en Rscript.
+El recorrido principal del estudiante permanece en su IDE con sesión nueva.
+
+Diez vistas GFM de lección/lab/índice/recorridos/cobertura a 1280/390: imagen
+cargada, IDs únicos, sin desbordamiento y soluciones cerradas; capturas revisadas.
+4867 enlaces locales/fragmentos sin incidencias; git diff --check correcto.
+13.01 disponible; retomar 13.02 — Entradas y salidas. 13.02–13.10 y 14 mantienen
+planes; proyectos/checkpoints y aprendizaje requieren evidencia propia. Portal,
+especificaciones privadas y cambios locales previos conservan su alcance.
 
 **Desarrollo — 2026-10-28, cierre y entrega local Streamlit 12.09:**
 lección/lab, preparador, instrucciones autocontenidas y entrega.py con acciones
