@@ -10,7 +10,7 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  12.01 está disponible; 12.02–12.09 y 13–14 siguen planificados.
+  12.01–12.02 están disponibles; 12.03–12.09 y 13–14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -27,6 +27,34 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, entradas y filtros Streamlit 12.02:** lección, app,
+recorridos y lab con plantilla. Muestra autónoma de seis observaciones de tres
+créditos/dos cortes, segmentos comercio/servicios e importes conocidos: 4500/4600
+MXN por fecha. Selectbox, multiselect y mínimo entero en sidebar; fecha → universo,
+segmento/mínimo → selección. Tabla y métricas desde la misma selección; proporción
+de créditos sobre los tres del corte, no proporción de saldo. Octubre ≥ 2000:
+003/2600 y 33.33%; septiembre: 002/2000, 003/2500 y 66.67%. Frontera 2000/2001,
+ningún segmento (selecciona ninguno), vacío válido y recuperación explicados.
+Los controles muestran opciones/valores iniciales y filtros efectivos; no hay
+estado/caché propios, CSV arbitrario, descarga ni funciones importables como tema
+implementado. 12.03–12.09 siguen planificadas. Continuidad de 12.01 y catálogos
+actualizados; retomar 12.03 — Separar datos e interfaz.
+
+Comprobación: doce combinaciones manuales por ID/segmento/fecha/importe y tres
+indicadores; recuperación tras vacío y arranque nuevo. AppTest pasó en los dos
+entornos uv existentes de 12.01 con Python 3.12.12/Streamlit 1.66.1. Variante de
+lab estricta > 2000 comprobada: septiembre 003/2500, 33.33%, texto corregido.
+Navegador real: cambio de corte/mínimo, lista de segmentos vacía, dos sesiones
+independientes y sidebar móvil; vistas 1280/390 revisadas con detalle recuperable
+y sin desbordamiento de página. Captura local y alternativa textual en la lección.
+Revisión documental: 4435 enlaces locales sin incidencias y ocho vistas GFM
+(1280/390) de lección/lab/índice/recorridos, imagen cargada, IDs únicos y
+soluciones cerradas, sin desbordamiento de página.
+Programas y muestras previos, pyproject/uv.lock y entornos sin cambios; no se
+instalaron paquetes ni se cambiaron globales. No acredita aprendizaje ni proyecto/
+checkpoint implementado. Los cambios simultáneos del portal se conservan aparte;
+no se integra esta app a su catálogo ni se despliega.
 
 **Desarrollo — 2026-10-27, primera app Streamlit 12.01:** lección con la plantilla,
 recorridos por gestor/shell, mínimo de 300 MXN, app autónoma y lab. Cuatro ventas

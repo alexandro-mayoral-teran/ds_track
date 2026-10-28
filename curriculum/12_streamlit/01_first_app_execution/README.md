@@ -303,9 +303,8 @@ a cambiar un entorno por existir una edición más reciente.
 
 ## Siguiente paso
 
-12.02 — Entradas, filtros y presentación sigue **planificada**. Consulta su
-[alcance previsto](../README.md#02-entradas-filtros-y-presentacion) después del lab;
-no hay todavía un archivo de lección/lab que ejecutar. Estado, caché y los demás
-temas mantienen su orden; no los damos por implementados con esta primera app.
+Después del lab continúa con [12.02 — Entradas, filtros y presentación](../02_inputs_filters_presentation/README.md),
+ya disponible con app y lab. Estado, caché y los demás temas mantienen su orden;
+no se dan por implementados con estas primeras apps.
 
-[← Módulo 12](../README.md) · [Lab 12.01](../../../labs/12_streamlit/01_first_app_execution/README.md) · [Alcance de 12.02 →](../README.md#02-entradas-filtros-y-presentacion)
+[← Módulo 12](../README.md) · [Lab 12.01](../../../labs/12_streamlit/01_first_app_execution/README.md) · [Siguiente: 12.02 →](../02_inputs_filters_presentation/README.md)

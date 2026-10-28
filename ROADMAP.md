@@ -489,7 +489,8 @@ El [plan de nueve secciones](curriculum/12_streamlit/README.md#orden-de-desarrol
 introduce reejecución, widgets, funciones de datos, estado, caché, validación,
 presentación, pruebas y entrega local.
 [12.01 — Primera app y modelo de ejecución](curriculum/12_streamlit/01_first_app_execution/README.md)
-y su lab están disponibles; 12.02–12.09 conservan el plan.
+y [12.02 — Entradas, filtros y presentación](curriculum/12_streamlit/02_inputs_filters_presentation/README.md)
+tienen lección/app/lab disponibles; 12.03–12.09 conservan el plan.
 
 **Objetivo:** convertir un análisis estable en una aplicación de datos Python.
 

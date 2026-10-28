@@ -11,7 +11,7 @@ Consulta la [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-port
 para distinguir páginas adaptadas, labs conservados y material integrado en el
 portal. La [lección/lab 00.01](../curriculum/00_getting_started/01_github_profile/README.md)
 sigue como referencia inicial; 12.01 aplica la plantilla a material nuevo y
-12.02–12.09/13–14 conservan sus planes.
+12.03–12.09/13–14 conservan sus planes.
 
 ## Niveles de navegación
 

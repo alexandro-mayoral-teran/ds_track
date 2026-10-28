@@ -86,7 +86,7 @@ aplica la plantilla desde el inicio: mínimo completo, datos propios, prediccion
 observación de interacciones, variante y reconstrucción. La preparación extensa
 por gestor/shell vive en un apoyo enlazado; la lección mantiene el arranque y su
 explicación. El lab practica sin duplicar la teoría y cierra con una solución
-razonada oculta. El índice distingue la sección disponible de las ocho previstas.
+razonada oculta. El índice distingue el material disponible de los alcances previstos.
 
 No fue necesario añadir apartados obligatorios a la plantilla. El desarrollo se
 amplió para explicar servidor/navegador/script y ejecución de arriba abajo antes

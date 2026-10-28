@@ -128,3 +128,4 @@ de la siguiente lección.
 | [`11.09 — Cierre del reporte reproducible`](11_reporting_quarto/09_reproducible_report_closure/) | `11_reporting_quarto` | No aplica todavía |
 
 | [`12.01 — Primera app y modelo de ejecución`](12_streamlit/01_first_app_execution/) | `12_streamlit` | No aplica todavía |
+| [`12.02 — Entradas, filtros y presentación`](12_streamlit/02_inputs_filters_presentation/) | `12_streamlit` | No aplica todavía |

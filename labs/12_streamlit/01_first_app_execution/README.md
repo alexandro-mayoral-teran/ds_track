@@ -110,4 +110,4 @@ personales al repositorio del curso ni uses PROGRESS.md como expediente personal
 Cierra cuando puedas explicar esas diferencias y reconstruir la variante con
 su resultado correcto. El material y sus pruebas de autoría no acreditan tu práctica.
 
-[← Lección 12.01](../../../curriculum/12_streamlit/01_first_app_execution/README.md) · [Módulo 12](../../../curriculum/12_streamlit/README.md) · [Siguiente: alcance de 12.02, aún planificado →](../../../curriculum/12_streamlit/README.md#02-entradas-filtros-y-presentacion)
+[← Lección 12.01](../../../curriculum/12_streamlit/01_first_app_execution/README.md) · [Módulo 12](../../../curriculum/12_streamlit/README.md) · [Siguiente: lección 12.02 →](../../../curriculum/12_streamlit/02_inputs_filters_presentation/README.md)
