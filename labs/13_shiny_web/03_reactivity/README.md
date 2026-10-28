@@ -137,8 +137,7 @@ Quien acompaña elige un cambio y pide explicarlo antes de probarlo.
 
 ## Siguiente paso
 
-Haz una pausa. Al retomar, consulta
-[13.04 — Filtros e indicadores compartidos](../../../curriculum/13_shiny_web/README.md#04-filtros-e-indicadores-compartidos),
-todavía planificado. Esta práctica no completa el proyecto del módulo.
+Después de comprobar el lab, continúa con
+[13.04 — Filtros e indicadores compartidos](../../../curriculum/13_shiny_web/04_shared_filters/README.md), ya disponible. Esta práctica no completa el proyecto del módulo.
 
 [← Lección 13.03](../../../curriculum/13_shiny_web/03_reactivity/README.md) · [Módulo 13](../../../curriculum/13_shiny_web/README.md)

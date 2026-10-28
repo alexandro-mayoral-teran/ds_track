@@ -10,13 +10,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.03 de Shiny están disponibles; 13.04–13.10 y 14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01–13.04 de Shiny están disponibles; 13.05–13.10 y 14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [13.04 — Filtros e indicadores compartidos](curriculum/13_shiny_web/README.md#04-filtros-e-indicadores-compartidos).
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.03 de la alternativa Shiny están disponibles; 13.04–13.10 y 14 conservan planes.
+- **Siguiente desarrollo educativo:** [13.05 — Eventos y estado de sesión](curriculum/13_shiny_web/README.md#05-eventos-y-estado-de-sesion).
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.04 de la alternativa Shiny están disponibles; 13.05–13.10 y 14 conservan planes.
   [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.03 — Modelo de reactividad: dependencias, invalidación, demanda, cache y ramas; retomar 13.04 después del descanso.
+- **Último desarrollo educativo:** 2026-10-28, 13.04 — Filtros e indicadores compartidos: universo/selección, tabla y medidas conciliadas por clave; retomar 13.05.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +31,50 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, filtros e indicadores compartidos Shiny 13.04:**
+lección/lab, mínimo autónomo de tres créditos y app de cartera con corte,
+segmentos, saldo mínimo inclusivo y casilla de tabla. Fuente completa, universo
+del corte, selección e indicadores separados; tabla y medidas comparten la
+selección. Cantidad/saldo y porcentaje de créditos sobre el universo anterior
+a segmento/mínimo, con contexto vigente. Seis observaciones del CSV de 12.03
+conservadas: tres créditos por corte, septiembre 4500/octubre 4600 MXN; mínimo
+2000 selecciona 002/003 y 4500 en septiembre, 003 y 2600 en octubre. Cero
+conocido, vacío y ausencia de universo diferenciados; ningún segmento selecciona
+cero filas, no todos. Umbral/redondeo/denominador y conciliación por clave
+explicados con grafo Mermaid y lectura textual; referencias primarias consultadas.
+
+cartera.R contiene lectura/contrato/filtros/resumen sin Shiny ni lectura al
+hacer source; valida toda la fuente antes del filtro. ID/corte único, categorías,
+fechas reales, saldo entero conocido 0–1000000 y límite didáctico de 10000
+observaciones. Preparador exclusivo de trece archivos con CSV copiado sin
+cambios y proyecto shiny_1304.Rproj. DESCRIPTION/lockfile/iniciador/restaurador
+de 13.01 conservados byte por byte. Restauración real en biblioteca local nueva:
+R 4.6.1, Shiny 1.14.0, renv 1.3.1 y mismos 31 registros; sin dependencias nuevas,
+cambios globales, Conda o metadatos Python. IDE como recorrido principal,
+PowerShell/Bash opcionales. Operación completa de la interfaz del IDE sigue
+pendiente; las ejecuciones Rscript/navegador no se atribuyen a esa revisión.
+
+Doce escenarios explícitos de funciones/testServer por ID y campo; controles
+de vacío, cero, 1900/1901 y 2500/2501, caché y ocultación. Cruce independiente
+de 96 combinaciones con el modelo Python existente: IDs, cantidad, saldo y
+porcentaje conciliados. Orden inverso, fuente vacía, fechas/valores inválidos,
+límite de registros y suma de 1000 créditos a 1000000 comprobados. Seis
+regresiones detectadas en copias: frontera exclusiva, denominador seis, tabla
+sin filtro, vacío convertido a todos, cero eliminado y saldos compensados.
+Siete CSV inválidos rechazados, incluso incidentes fuera del corte solicitado;
+control original restaurado y comprobado. No es un lector general de limpieza.
+
+Chrome headless a 1280/390: mínimo, diez escenarios, contexto, celdas completas,
+cantidad/saldo/cobertura, tabla oculta con cambio de filtros, reutilización,
+dos sesiones, recarga y teclado. Variante exclusiva con etiquetas/contexto
+coherentes comprobada en procesos nuevos; copia restaurada y servidores propios
+detenidos. Diez vistas GFM, soluciones cerradas, IDs únicos y sin desbordamiento;
+capturas seleccionadas revisadas. Grafo parseado/renderizado con Mermaid de
+Quarto y revisado visualmente, sin instalar. Enlaces locales y diff --check
+comprobados. Portal y reorganización privada conservados fuera del alcance.
+Retomar 13.05 — Eventos y estado de sesión, todavía planificado; proyecto,
+checkpoints y práctica del estudiante siguen pendientes.
 
 **Desarrollo — 2026-10-28, modelo de reactividad Shiny 13.03:**
 lección/lab, mínimo número/doble con nota independiente y rama de demanda;

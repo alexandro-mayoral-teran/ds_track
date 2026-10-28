@@ -313,8 +313,7 @@ propios de DS Track; no reproducen los ejercicios del libro. No se requiere reac
 
 ## Siguiente paso
 
-Después del lab, toma un descanso y retoma el alcance de
-[13.04 — Filtros e indicadores compartidos](../README.md#04-filtros-e-indicadores-compartidos),
-todavía planificado. No hay una lección ejecutable 13.04 por ahora.
+Después del lab, continúa con
+[13.04 — Filtros e indicadores compartidos](../04_shared_filters/README.md), ya disponible.
 
 [← 13.02](../02_inputs_outputs/README.md) · [Módulo 13](../README.md) · [Lab 13.03](../../../labs/13_shiny_web/03_reactivity/README.md)

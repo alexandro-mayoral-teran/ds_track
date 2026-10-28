@@ -129,4 +129,4 @@ no el aprendizaje ni las respuestas de cada participante.
 
 Revisa el [criterio de salida](../../../curriculum/13_shiny_web/01_web_first_app/README.md#evidencia-y-criterio-de-salida)
 y continúa después con [13.02 — Entradas y salidas](../../../curriculum/13_shiny_web/02_inputs_outputs/README.md).
-13.03 también está disponible; 13.04–13.10 conservan su plan.
+13.03–13.04 también están disponibles; 13.05–13.10 conservan su plan.
