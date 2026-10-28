@@ -10,7 +10,7 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  12.01–12.04 están disponibles; 12.05–12.09 y 13–14 siguen planificados.
+  12.01–12.05 están disponibles; 12.06–12.09 y 13–14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -27,6 +27,33 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, caché Streamlit 12.05:** lección/lab con mínimo de
+cache_data frente a cache_resource y app sobre filtros aplicados de 12.04.
+Preparador nuevo reutiliza modelo/CSV/configuración/ejecutor de 12.03 sin cambios.
+La fuente completa se lee y valida antes de caché; el análisis se identifica por
+registros completos, filtros y versión de reglas. TTL 60 segundos, ocho entradas,
+limpieza por función y memoria sin persistencia en disco. UUID observa ejecución,
+no corrección ni velocidad. Conserva 003/2600 y universo 4600; variante 2800/4800
+sin nuevo envío. Fuente inválida fuera del filtro detiene cifras aun con una
+entrada guardada. Mínimo con copias independientes y catálogo simulado de lectura:
+misma identidad de recurso, sin conexión/modelo pesado ni mutaciones compartidas.
+
+Comprobación: ocho pruebas en ambos entornos locales existentes Python 3.12.12/
+Streamlit 1.66.1, incluyendo aciertos, cambio de corte/segmentos/mínimo/versión,
+contenido compensado con iguales indicadores, no mutación, fuente ausente,
+rechazo y recuperación. Límite de ocho entradas y TTL breve en proceso nuevo
+comprobados. Navegador real 1440/390: formulario, reutilización, limpieza, sesiones
+con caché global/filtros independientes, CSV actualizado, rechazo y recuperación.
+Mínimo y limpiezas independientes revisados en servidor temporal propio; variante
+TTL de cinco segundos comprobada en navegador, sin actualizar antes de otra pasada.
+Ocho vistas GFM de lección/lab/índice/recorridos sin desbordamiento, imagen cargada,
+IDs únicos y soluciones cerradas; 4576 enlaces locales sin incidencias.
+Sin paquetes ni lockfiles nuevos, sin cambios en entornos globales ni fuentes
+anteriores. No acredita evitar lectura, rendimiento general ni RAM acotada.
+Retomar 12.06 — Mensajes y casos sin datos; 12.06–12.09 siguen planificadas.
+Proyecto/checkpoints y práctica del estudiante pendientes; portal y documentación
+privada se conservan fuera de este trabajo.
 
 **Desarrollo — 2026-10-27, estado y formularios Streamlit 12.04:** lección/lab,
 contador mínimo y app con formulario. Claves explícitas, inicialización solo si

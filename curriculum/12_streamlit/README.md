@@ -6,18 +6,18 @@
 
 [**Empezar por 12.01 →**](01_first_app_execution/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 12.01–12.04 con lecciones, apps locales y labs. 12.05–12.09 siguen planificadas.
+> **Disponible:** 12.01–12.05 con lecciones, apps locales y labs. 12.06–12.09 siguen planificadas.
 > Disponer de material no acredita aprendizaje ni un proyecto de aplicación completado.
 
 <a id="propósito-y-prerrequisitos"></a>
 
 ## Propósito
 
-Crear un explorador de datos con filtros, indicadores y figuras comprobables, reutilizando funciones del análisis conocido. 12.01 inicia con ejecución y reejecución; 12.02 incorpora entradas, filtros y presentación. 12.03 separa lectura, validación y cálculo para reutilizarlos en app y script. 12.04 añade estado de sesión y envío de filtros por formulario. Las demás capacidades se desarrollarán después.
+Crear un explorador de datos con filtros, indicadores y figuras comprobables, reutilizando funciones del análisis conocido. 12.01 inicia con ejecución y reejecución; 12.02 incorpora entradas, filtros y presentación. 12.03 separa lectura, validación y cálculo para reutilizarlos en app y script. 12.04 añade estado de sesión y envío de filtros por formulario. 12.05 incorpora caché con datos y parámetros explícitos. Las demás capacidades se desarrollarán después.
 
 ## Antes de empezar
 
-Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. Para 12.01, sigue su preparación con Streamlit 1.66.1 en un entorno local; 12.02–12.04 reutilizan ese entorno; 12.05–12.09 conservan su plan.
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. Para 12.01, sigue su preparación con Streamlit 1.66.1 en un entorno local; 12.02–12.05 reutilizan ese entorno; 12.06–12.09 conservan su plan.
 
 ## Qué vas a aprender
 
@@ -38,7 +38,7 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python de
 | **12.02** · [Entradas, filtros y presentación](02_inputs_filters_presentation/README.md) | [Lab 12.02](../../labs/12_streamlit/02_inputs_filters_presentation/README.md) | Conectar widgets con un subconjunto verificable |
 | **12.03** · [Separar datos e interfaz](03_data_interface/README.md) | [Lab 12.03](../../labs/12_streamlit/03_data_interface/README.md) | Reutilizar transformaciones fuera de la app |
 | **12.04** · [Estado de sesión y formularios](04_session_state_forms/README.md) | [Lab 12.04](../../labs/12_streamlit/04_session_state_forms/README.md) | Conservar elecciones y controlar cuándo aplicarlas |
-| **12.05** · [Caché de datos y recursos](#05-cache-de-datos-y-recursos) | Pendiente | Evitar trabajo repetido sin mostrar resultados obsoletos |
+| **12.05** · [Caché de datos y recursos](05_data_resource_cache/README.md) | [Lab 12.05](../../labs/12_streamlit/05_data_resource_cache/README.md) | Evitar trabajo repetido sin mostrar resultados obsoletos |
 | **12.06** · [Mensajes y casos sin datos](#06-mensajes-y-casos-sin-datos) | Pendiente | Explicar entradas inválidas y filtros vacíos |
 | **12.07** · [Tablas, gráficos y descarga](#07-tablas-graficos-y-descarga) | Pendiente | Presentar y exportar el mismo universo filtrado |
 | **12.08** · [Pruebas de la aplicación](#08-pruebas-de-la-aplicacion) | Pendiente | Comprobar indicadores y comportamiento de widgets |
@@ -51,7 +51,7 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python de
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado por sección:** 12.01–12.04 están disponibles. 12.05–12.09 describen el alcance previsto; no son lecciones o labs listos.
+**Estado por sección:** 12.01–12.05 están disponibles. 12.06–12.09 describen el alcance previsto; no son lecciones o labs listos.
 
 <a id="01-primera-app-y-modelo-de-ejecucion"></a>
 
@@ -105,10 +105,13 @@ sin nuevo envío. Sin caché, persistencia en disco ni dependencias nuevas.
 
 ### 05 — Caché de datos y recursos
 
-- cache_data frente a cache_resource; parámetros, vigencia e invalidación cuando
-  cambia la fuente. Los recursos compartidos requieren revisar uso concurrente.
-- Práctica prevista: evitar una lectura repetida y comprobar que un cambio de corte
-  o versión de datos actualiza el resultado. Caché no equivale a estado privado de sesión.
+Disponible: [lección 12.05](05_data_resource_cache/README.md) y
+[lab 12.05](../../labs/12_streamlit/05_data_resource_cache/README.md). Cache_data
+para el análisis, con registros completos, filtros y versión; lectura/validación
+antes de caché. TTL 60, ocho entradas y limpieza por función, sin persistencia
+en disco. Variante 2800/4800, rechazo fuera del filtro, caducidad y copias; mínimo
+cache_resource de lectura distingue identidad compartida de estado de sesión.
+No acredita evitar la lectura, acelerar seis filas ni acotar RAM; sin paquetes nuevos.
 
 <a id="06-mensajes-y-casos-sin-datos"></a>
 
@@ -152,7 +155,7 @@ sin nuevo envío. Sin caché, persistencia en disco ni dependencias nuevas.
 
 Recorrido previsto: empezar con una app local pequeña, incorporar entradas y estado, comprobar caché y casos vacíos, y cerrar con pruebas y entrega. No exige login, alojamiento ni conocimientos avanzados de HTML/CSS/JavaScript. Basta elegir esta ruta o Shiny.
 
-Empieza por 12.01 y su lab. Las actividades de 12.05–12.09 siguen siendo una propuesta; no intentes ejecutar todavía esos alcances.
+Empieza por 12.01 y su lab. Las actividades de 12.06–12.09 siguen siendo una propuesta; no intentes ejecutar todavía esos alcances.
 
 ## Qué conservar
 
@@ -162,7 +165,7 @@ Empieza por 12.01 y su lab. Las actividades de 12.05–12.09 siguen siendo una p
 | Casos y resultados esperados | Coherencia de filtros y manejo de vacío |
 | Instrucciones y app local futura | Reconstrucción y explicación del comportamiento |
 
-En 12.01–12.04 conserva tu copia de la app, predicciones y observaciones; en 12.02 añade filtros efectivos, pares e indicadores; en 12.03, app/JSON conciliados y variante del CSV; en 12.04, edición/envío, otra pasada y sesión nueva. Para el recorrido completo, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+En 12.01–12.05 conserva tu copia de la app, predicciones y observaciones; en 12.02 añade filtros efectivos, pares e indicadores; en 12.03, app/JSON conciliados y variante del CSV; en 12.04, edición/envío, otra pasada y sesión nueva; en 12.05, clave, vigencia y limpieza de caché. Para el recorrido completo, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
 
 <a id="prácticas-proyecto-y-criterio-de-salida"></a>
 
@@ -184,7 +187,7 @@ casos límite (05–06), presentación verificada (07), pruebas y entrega (08–
 
 ## Siguiente paso
 
-Empieza por [12.01 — Primera app y modelo de ejecución](01_first_app_execution/README.md). Después del lab continúa con [12.02](02_inputs_filters_presentation/README.md). Continúa con [12.03 — Separar datos e interfaz](03_data_interface/README.md) y [12.04 — Estado de sesión y formularios](04_session_state_forms/README.md).
+Empieza por [12.01 — Primera app y modelo de ejecución](01_first_app_execution/README.md). Después del lab continúa con [12.02](02_inputs_filters_presentation/README.md). Continúa con [12.03 — Separar datos e interfaz](03_data_interface/README.md) y [12.04 — Estado de sesión y formularios](04_session_state_forms/README.md). Después, [12.05 — Caché de datos y recursos](05_data_resource_cache/README.md).
 
 Cuando esta ruta esté implementada y cierres la práctica, sigue con [14 — Proyecto reproducible](../14_reproducible_projects/README.md), también planificado. La otra aplicación queda como comparación opcional.
 

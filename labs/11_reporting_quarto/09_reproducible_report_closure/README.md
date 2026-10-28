@@ -82,6 +82,6 @@ Consulta [cierre del módulo](../../../docs/reporting-closure.md): el proyecto y
 checkpoints siguen pendientes; completar material no acredita práctica personal.
 La siguiente ruta numerada es [12 — Streamlit](../../../curriculum/12_streamlit/README.md)
 o [13 — Shiny](../../../curriculum/13_shiny_web/README.md). Las secciones
-[12.01–12.04](../../../curriculum/12_streamlit/README.md#lecciones-y-labs)
+[12.01–12.05](../../../curriculum/12_streamlit/README.md#lecciones-y-labs)
 están disponibles;
-12.05–12.09 de Streamlit y Shiny conservan sus planes.
+12.06–12.09 de Streamlit y Shiny conservan sus planes.

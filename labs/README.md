@@ -131,3 +131,4 @@ de la siguiente lección.
 | [`12.02 — Entradas, filtros y presentación`](12_streamlit/02_inputs_filters_presentation/) | `12_streamlit` | No aplica todavía |
 | [`12.03 — Un análisis, dos consumidores`](12_streamlit/03_data_interface/) | `12_streamlit` | No aplica todavía |
 | [`12.04 — Preparar, aplicar y conservar`](12_streamlit/04_session_state_forms/) | `12_streamlit` | No aplica todavía |
+| [`12.05 — Reutilizar sin perder vigencia`](12_streamlit/05_data_resource_cache/) | `12_streamlit` | No aplica todavía |

@@ -320,10 +320,9 @@ Python 3.12.12 y Streamlit 1.66.1. La documentación en línea puede avanzar.
 
 ## Siguiente paso
 
-Después del lab, continúa con el alcance de
-[12.05 — Caché de datos y recursos](../README.md#05-cache-de-datos-y-recursos),
-todavía planificado: evitar trabajo repetido y revisar cuándo un resultado deja
-de estar vigente.
+Después del lab, continúa con
+[12.05 — Caché de datos y recursos](../05_data_resource_cache/README.md):
+reutilizar el cálculo y revisar cuándo un resultado deja de estar vigente.
 
 ---
 

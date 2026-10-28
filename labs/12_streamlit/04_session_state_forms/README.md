@@ -111,5 +111,4 @@ proyecto ni checkpoint asociado todavía.
 ## Siguiente paso
 
 Vuelve al [criterio de salida de la lección](../../../curriculum/12_streamlit/04_session_state_forms/README.md#evidencia-y-criterio-de-salida).
-Después consulta [12.05 — Caché de datos y recursos](../../../curriculum/12_streamlit/README.md#05-cache-de-datos-y-recursos),
-todavía planificado.
+Después consulta [12.05 — Caché de datos y recursos](../../../curriculum/12_streamlit/05_data_resource_cache/README.md).

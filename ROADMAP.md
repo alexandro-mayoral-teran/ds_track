@@ -492,7 +492,8 @@ presentación, pruebas y entrega local.
 y [12.02 — Entradas, filtros y presentación](curriculum/12_streamlit/02_inputs_filters_presentation/README.md)
 y [12.03 — Separar datos e interfaz](curriculum/12_streamlit/03_data_interface/README.md)
 y [12.04 — Estado de sesión y formularios](curriculum/12_streamlit/04_session_state_forms/README.md)
-tienen lección/app/lab disponibles; 12.05–12.09 conservan el plan.
+y [12.05 — Caché de datos y recursos](curriculum/12_streamlit/05_data_resource_cache/README.md)
+tienen lección/app/lab disponibles; 12.06–12.09 conservan el plan.
 
 **Objetivo:** convertir un análisis estable en una aplicación de datos Python.
 
