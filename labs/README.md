@@ -2,8 +2,8 @@
 
 Ejercicios breves vinculados a un módulo del curriculum.
 
-Cada lab debe declarar el módulo que refuerza, el tiempo orientativo, sus
-entradas, el resultado esperado y una forma objetiva de validarlo. Se crearán
+Cada lab debe declarar el módulo que refuerza, sus entradas, el resultado esperado
+y una forma objetiva de validarlo. Se crearán
 subdirectorios por tema únicamente cuando exista el primer ejercicio real.
 
 Usa [`templates/lab/`](../templates/lab/) para crear uno nuevo. El flujo y las
@@ -117,16 +117,10 @@ reglas de enlace están en
 | [`11.03 — Ejecución con Python o R`](11_reporting_quarto/03_execution_python_r/) | `11_reporting_quarto` | No aplica todavía |
 | [`11.04 — Tablas, figuras y referencias`](11_reporting_quarto/04_tables_figures_references/) | `11_reporting_quarto` | No aplica todavía |
 | [`11.05 — Parámetros y cortes`](11_reporting_quarto/05_parameters_cutoffs/) | `11_reporting_quarto` | No aplica todavía |
-
-Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
-lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
-lab `00.05` (A/B) → lección 06 → lab `00.06`. Los enlaces al final de cada lab llevan al material
-de la siguiente lección.
 | [`11.06 — Proyectos, caché y freeze`](11_reporting_quarto/06_projects_cache_freeze/) | `11_reporting_quarto` | No aplica todavía |
 | [`11.07 — Formatos y revisión visual`](11_reporting_quarto/07_formats_visual_review/) | `11_reporting_quarto` | No aplica todavía |
 | [`11.08 — Dashboard y distribución (opcional)`](11_reporting_quarto/08_dashboard_distribution/) | `11_reporting_quarto` | No aplica todavía |
 | [`11.09 — Cierre del reporte reproducible`](11_reporting_quarto/09_reproducible_report_closure/) | `11_reporting_quarto` | No aplica todavía |
-
 | [`12.01 — Primera app y modelo de ejecución`](12_streamlit/01_first_app_execution/) | `12_streamlit` | No aplica todavía |
 | [`12.02 — Entradas, filtros y presentación`](12_streamlit/02_inputs_filters_presentation/) | `12_streamlit` | No aplica todavía |
 | [`12.03 — Un análisis, dos consumidores`](12_streamlit/03_data_interface/) | `12_streamlit` | No aplica todavía |
@@ -134,3 +128,10 @@ de la siguiente lección.
 | [`12.05 — Reutilizar sin perder vigencia`](12_streamlit/05_data_resource_cache/) | `12_streamlit` | No aplica todavía |
 | [`12.06 — Explicar el vacío y recuperar la lectura`](12_streamlit/06_messages_empty_cases/) | `12_streamlit` | No aplica todavía |
 | [`12.07 — Conciliar pantalla y archivos`](12_streamlit/07_tables_charts_download/) | `12_streamlit` | No aplica todavía |
+
+## Cómo continuar
+
+Orden de estudio: lección 01 → lab `00.01` → lección 02 → lab `00.02` →
+lección 03 → lab `00.03` → lección 04 → lab `00.04` → lección 05 (A/B) →
+lab `00.05` (A/B) → lección 06 → lab `00.06`. Los enlaces al final de cada lab llevan al material
+de la siguiente lección.

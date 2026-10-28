@@ -30,6 +30,18 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Revisión documental — 2026-10-27, antes de cerrar:** arquitectura, roadmap y
+criterios de almacenamiento/tidyverse distinguen 12.01–12.07 disponibles de
+12.08–12.09/13–14 pendientes. Guías de autoría/presentación actualizadas sin
+confundir plantilla con revisión teórica; índice de labs reunido en una tabla
+continua, con navegación fuera de ella. Módulo 12 describe evidencias existentes,
+incluidos CSV/contexto, sin presentar la app como futura. Notas locales de
+agentes consolidadas en decisiones vigentes y reanudación 12.08; siguen excluidas.
+Sin cambios de programas, dependencias ni integración del portal. Comprobación:
+4691 enlaces locales sin incidencias y seis vistas GFM 1280/390, con IDs únicos,
+sin desbordamiento; las 114 filas del catálogo se conservan en el mismo orden.
+El historial anterior permanece como registro de autoría, no como estado vigente.
+
 **Desarrollo — 2026-10-27, tabla/gráfico/descarga Streamlit 12.07 y cierre de sesión:**
 lección/lab, mínimo completo, Altair y exportación CSV/JSON desde el mismo
 resultado. IDs nominales, pesos enteros, barras/etiquetas, eje desde cero y

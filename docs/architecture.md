@@ -124,10 +124,11 @@ del mismo análisis: población, medida, agregación, escalas, etiquetas, altern
 al color, composición y exportación. Cambiar de biblioteca no exige repetir toda
 la limpieza ni altera por sí solo el universo del indicador.
 
-Matplotlib/Altair y ggplot2 son las rutas de gráficos. Las aplicaciones de los
-niveles 12/13 se planifican después: reejecución/estado en Streamlit y reactividad
-en Shiny, con transformación y validación separadas de la interfaz. Elegir una
-aplicación es suficiente; la otra es una comparación posterior.
+Matplotlib/Altair y ggplot2 son las rutas de gráficos. Después se elige una
+aplicación: Streamlit cuenta con 12.01–12.07; sus secciones 12.08–12.09 y la ruta
+Shiny siguen previstas. Ambas separan transformación y validación de la interfaz;
+elegir una aplicación es suficiente. El [estado de Streamlit](streamlit-closure.md)
+distingue material disponible, práctica y cierre pendiente.
 
 ### Recorrido de los módulos 06–08
 
@@ -162,7 +163,8 @@ medición y criterios de integración están en [cierre de almacenamiento](stora
 [11 — Quarto](../curriculum/11_reporting_quarto/README.md) dispone de reportes con
 texto, código, tablas y figuras reconstruibles; un motor y HTML bastan para el
 cierre esencial. PDF, publicación y autenticación son ampliaciones.
-[12 — Streamlit](../curriculum/12_streamlit/README.md),
+[12 — Streamlit](../curriculum/12_streamlit/README.md) dispone de 12.01–12.07;
+sus pruebas como tema (12.08) y entrega local (12.09) siguen pendientes.
 [13 — Shiny](../curriculum/13_shiny_web/README.md) y
 [14 — Proyectos reproducibles](../curriculum/14_reproducible_projects/README.md)
 conservan planes. Elegir 12 o 13 antes de integrar 14, sin exigir dos aplicaciones.

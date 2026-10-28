@@ -3,9 +3,9 @@
 Acuerdo de presentación educativa: 2026-10-27. Se aplica al índice README de un
 módulo y orienta su futura representación en el portal. La referencia aplicada
 es [00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md).
-La estructura está aplicada a los índices 00–14. En 12–14 se presenta como
-planificación, con labs pendientes; no implica desarrollar esas lecciones ni
-revisar toda la teoría del track.
+La estructura está aplicada a los índices 00–14. El módulo 12 combina material
+disponible y secciones pendientes; 13–14 conservan planes. La tabla distingue
+cada estado: aplicar la estructura no desarrolla una lección ni revisa toda la teoría.
 
 ## Qué debe resolver esta página
 
@@ -135,10 +135,10 @@ la referencia 00. Revisar fuentes y estado real antes de adaptar otro índice.
 Comprobar enlaces, fragmentos, orden, opciones, evidencias y criterio de salida;
 después revisar la presentación renderizada en escritorio y ventana estrecha.
 
-El portal puede reutilizar este contrato educativo. Su módulo 00 tiene hoy una
-composición específica y no consume automáticamente todas estas secciones del
-README. Alinear esa composición y generalizar su plantilla siguen siendo trabajos
-separados; definir la estructura aquí no los implementa.
+El portal puede reutilizar este contrato educativo. Cada integración requiere
+revisar fuentes, composición, catálogo y enlaces; definir esta estructura no la
+implementa automáticamente. El estado operativo del sitio vive en su
+[documentación de uso](../portal/README.md), separado de este contrato de contenido.
 
 La [guía Markdown](markdown-study-guide.md) define el estilo general; la
 [guía de autoría](authoring-guide.md) mantiene los criterios educativos del track.

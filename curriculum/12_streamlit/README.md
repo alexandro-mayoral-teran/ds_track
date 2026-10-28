@@ -25,7 +25,7 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python de
 ## Qué vas a aprender
 
 Las secciones disponibles permiten iniciar una app, filtrar, reutilizar funciones,
-controlar estado y caché, y explicar errores y vacíos. El recorrido completo prevé:
+controlar estado y caché, explicar errores y vacíos, y conciliar tabla, gráfico y descarga. El recorrido completo prevé:
 
 - Explicar reejecución, estado de sesión y caché.
 - Separar cálculo comprobable e interfaz.
@@ -170,11 +170,12 @@ Empieza por 12.01 y su lab. Las actividades de 12.08–12.09 siguen siendo una p
 
 ## Qué conservar
 
-| Evidencia prevista | Qué permite revisar |
+| Evidencia de las secciones disponibles | Qué permite revisar |
 | --- | --- |
-| Fuentes y funciones previstas | Separación de datos e interfaz |
-| Casos y resultados esperados | Coherencia de filtros y manejo de vacío |
-| Instrucciones y app local futura | Reconstrucción y explicación del comportamiento |
+| Copia preparada y funciones reutilizadas | Separación de datos e interfaz |
+| Casos, parámetros y resultados | Coherencia de filtros, estado, caché y vacío |
+| CSV y contexto JSON descargados | Correspondencia entre filas, gráfico e indicadores |
+| Instrucciones y app local | Reconstrucción y explicación del comportamiento |
 
 En 12.01–12.07 conserva tu copia, parámetros efectivos, predicciones y resultados:
 filas, indicadores, estado, reutilización, mensajes y descargas deben poder explicarse.

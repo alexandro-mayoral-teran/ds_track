@@ -36,7 +36,8 @@ Usa la [plantilla de lección](../templates/lesson/README.md) y la
 evaluación de muestra y propone cabecera, propósito, preparación, objetivos,
 material de apoyo cuando exista, desarrollo adaptable, práctica,
 evidencia/comprobación, referencias y continuidad.
-Las lecciones existentes se adaptarán gradualmente; no están todas migradas.
+Las lecciones disponibles aplican la plantilla según la [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-portal).
+El material nuevo debe partir de ella; adaptar la presentación no acredita una revisión completa de la teoría.
 
 Cuando haya recursos de apoyo, reunirlos después de los objetivos en una tabla
 «Recurso / Para qué sirve / Uso» y enlazarlos también justo antes de usarlos.

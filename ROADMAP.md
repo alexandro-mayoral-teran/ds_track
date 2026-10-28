@@ -466,7 +466,9 @@ la sustitución Python; R sin paquetes nuevos.
 ya tienen lecciones y labs: recálculo, revisión HTML, distribución y entrega
 reconstruible. Las nueve secciones del módulo tienen material; práctica personal,
 proyecto integrador y checkpoints siguen pendientes. Consulta los
-[criterios de cierre](docs/reporting-closure.md). Los módulos 12–14 conservan planes.
+[criterios de cierre](docs/reporting-closure.md). Streamlit dispone de 12.01–12.07;
+12.08–12.09 y los módulos 13–14 conservan planes. Consulta la
+[reanudación de Streamlit](docs/streamlit-closure.md).
 
 **Objetivo:** transformar análisis en productos consumibles.
 

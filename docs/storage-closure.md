@@ -28,7 +28,9 @@ práctica, con preparación específica en cada lección. No instalar motores po
 leer un plan ni modificar bibliotecas globales.
 
 [11 — Quarto](../curriculum/11_reporting_quarto/README.md) también tiene material;
-12–14 siguen planificados. Sus criterios de reporte están en
+Streamlit dispone de 12.01–12.07; 12.08–12.09 y 13–14 siguen planificados.
+La reanudación de la app está en [criterios de Streamlit](streamlit-closure.md).
+Los criterios de reporte están en
 [cierre de reportes](reporting-closure.md). Desarrollar una lección no completa
 las prácticas ni activa proyectos o checkpoints.
 

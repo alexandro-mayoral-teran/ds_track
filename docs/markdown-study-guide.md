@@ -6,7 +6,7 @@ Que el repositorio sirva como material de estudio sin necesitar el portal.
 Aplicar una jerarquía visual y una navegación repetibles, conservando las fuentes
 educativas y la lectura como texto. Acuerdo de trabajo: 2026-10-27.
 
-La portada, los índices y las lecciones aplican el patrón de forma gradual.
+La portada, los índices y las lecciones disponibles aplican el patrón documentado.
 Consulta la [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-portal)
 para distinguir páginas adaptadas, labs conservados y material integrado en el
 portal. La [lección/lab 00.01](../curriculum/00_getting_started/01_github_profile/README.md)
@@ -36,7 +36,7 @@ Esa estructura organiza el módulo; no sustituye la explicación de cada lecció
 
 Los índices 00–14 incluyen el desplegable común **Ver el alcance de las secciones**
 después de su tabla. Está cerrado por defecto y complementa la elección de
-lecciones; no oculta preparación ni cierre. En 12–14, la planificación se indica
+lecciones; no oculta preparación ni cierre. En las secciones pendientes de 12 y en 13–14, la planificación se indica
 también fuera del desplegable. Los detalles de esta regla están en la guía de módulo.
 
 ## Patrón de lección
@@ -44,7 +44,8 @@ también fuera del desplegable. Los detalles de esta regla están en la guía de
 La [guía de lección](lesson-page-guide.md) desarrolla este patrón con una
 evaluación de muestra, elementos comunes y variantes por actividad. La
 [plantilla de lección](../templates/lesson/README.md) permite reutilizarlo.
-Su existencia no significa que todas las lecciones ya estén adaptadas.
+La cobertura de lecciones y labs se mantiene en el índice de documentación;
+no se deduce solo de la existencia de una plantilla.
 
 1. Título y ubicación con módulo/número de lección.
 2. Ficha breve: meta, preparación y evidencia esperada.
@@ -58,7 +59,7 @@ Su existencia no significa que todas las lecciones ya estén adaptadas.
 Si hay archivos de apoyo, añadir «Material de apoyo» después de los objetivos:
 recurso, finalidad y uso necesario u opcional. Repetir el enlace donde se utiliza
 con una instrucción concreta. La primera prueba 00.01 aplica ya el patrón de
-lección y reúne sus plantillas; otras lecciones se adaptan gradualmente.
+lección y reúne sus plantillas; el material nuevo conserva esos elementos comunes.
 
 Antes de la primera lección, el enlace de regreso lleva al módulo. En lecciones
 posteriores puede añadirse la anterior. No confundir el módulo 00 con la lección
