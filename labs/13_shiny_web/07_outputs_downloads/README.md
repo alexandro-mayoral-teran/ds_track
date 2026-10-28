@@ -146,6 +146,6 @@ Quien acompaña elige un archivo y pide reconstruir sus filtros y valores.
 
 ## Siguiente paso
 
-Consulta [13.08 — Organización y módulos](../../../curriculum/13_shiny_web/README.md#08-organizacion-y-modulos), todavía planificado.
+Continúa con [13.08 — Organización y módulos](../../../curriculum/13_shiny_web/08_organization_modules/README.md), ya disponible.
 
 [← Lección 13.07](../../../curriculum/13_shiny_web/07_outputs_downloads/README.md) · [Módulo 13](../../../curriculum/13_shiny_web/README.md)

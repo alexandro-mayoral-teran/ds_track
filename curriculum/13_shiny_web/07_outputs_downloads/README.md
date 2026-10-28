@@ -280,6 +280,6 @@ tablas avanzadas, uploads, descarga PNG ni publicación de servicios.
 
 ## Siguiente paso
 
-Tras comprobar el lab consulta [13.08 — Organización y módulos](../README.md#08-organizacion-y-modulos), todavía planificado.
+Tras comprobar el lab continúa con [13.08 — Organización y módulos](../08_organization_modules/README.md), ya disponible.
 
 [← 13.06](../06_validation_messages/README.md) · [Módulo 13](../README.md) · [Lab 13.07](../../../labs/13_shiny_web/07_outputs_downloads/README.md)

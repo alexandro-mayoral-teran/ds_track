@@ -10,13 +10,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.07 de Shiny están disponibles; 13.08–13.10 y 14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01–13.08 de Shiny están disponibles; 13.09–13.10 y 14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [13.08 — Organización y módulos](curriculum/13_shiny_web/README.md#08-organizacion-y-modulos).
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.07 de la alternativa Shiny están disponibles; 13.08–13.10 y 14 conservan planes.
+- **Siguiente desarrollo educativo:** [13.09 — Pruebas y observación del flujo](curriculum/13_shiny_web/README.md#09-pruebas-y-observacion-del-flujo).
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.08 de la alternativa Shiny están disponibles; 13.09–13.10 y 14 conservan planes.
   [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.07 — Gráficos, tablas y descargas: ggplot2, selección/contexto CSV y consulta aplicada conciliados; retomar 13.08.
+- **Último desarrollo educativo:** 2026-10-28, 13.08 — Organización y módulos: UI/servidor reutilizables, namespaces, dos instancias y API reactiva; retomar 13.09.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +31,35 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, organización y módulos Shiny 13.08:**
+Lección/lab, mínimo autónomo y módulo de consulta reutilizado dos veces. NS
+separa controles/salidas estáticos; session$ns identifica botones dinámicos.
+moduleServer conserva estado dentro de cada instancia y devuelve una API
+reactiva de lectura que el padre utiliza para comparar consultas. Ruta de fuente
+explícita; funciones de datos, validación y presentación anteriores conservadas.
+Se distinguen instancia, sesión y archivo compartido, sin confundir aislamiento
+del estado con una copia privada de la fuente.
+
+Preparador de diecisiete archivos, recorrido IDE y alternativas PowerShell/Bash.
+DESCRIPTION y lockfile de 13.07 idénticos: 42 registros, sin paquetes nuevos.
+Restauración local desde biblioteca vacía con R 4.6.1, Shiny 1.14.0 y renv 1.3.1;
+sin modificar Conda ni bibliotecas globales. Operación completa de la interfaz
+del IDE pendiente; Rscript y navegador real no la acreditan.
+
+Controles testServer del mínimo, módulo y app padre: siete consultas, API,
+rechazo, duplicado fuera del filtro, ausencia de fuente y recuperación independiente.
+Chrome headless a 1280/390 comprueba controles, namespaces dinámicos, borrador,
+tabla oculta, cero/vacío/sin universo, sesiones nuevas y recarga. Cuarenta CSV
+base y cuatro de la variante principal descargados realmente y releídos contra
+referencia independiente; cambiar el ID exige solo las dos llamadas del padre.
+Seis regresiones deliberadas detectadas: namespaces estático/dinámico, prefijo
+incorrecto en servidor, estado compartido, ID disparejo y API no reactiva.
+
+Lección/lab y apoyos revisados a dos anchos, diagrama Mermaid comprobado;
+340 Markdown y 5197 enlaces locales sin incidencias. Captura propia de ambas
+consultas incorporada. Portal y especificaciones privadas fuera de esta entrega.
+Retomar 13.09; proyectos/checkpoints y práctica personal siguen pendientes.
 
 **Desarrollo — 2026-10-28, gráficos, tablas y descargas Shiny 13.07:**
 lección/lab, mínimo tabla/CSV y app con barras ggplot2, tabla y CSV de selección/

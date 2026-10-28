@@ -11,7 +11,7 @@ el lab asociado.
 [**Empezar por 00.01 →**](00_getting_started/01_github_profile/README.md) · [Módulos por etapa](#módulos-por-etapa) · [Cómo avanzar](#cómo-avanzar) · [Buscar un lab](../labs/README.md)
 
 > **Estado del material:** 00–11 y [12.01–12.09](12_streamlit/README.md) están disponibles;
-> [13.01–13.07](13_shiny_web/README.md) están disponibles; 13.08–13.10 y 14 conservan sus planes. Esto describe el contenido, no el aprendizaje de cada
+> [13.01–13.08](13_shiny_web/README.md) están disponibles; 13.09–13.10 y 14 conservan sus planes. Esto describe el contenido, no el aprendizaje de cada
 > participante. Consulta el estado de proyectos y checkpoints por separado.
 
 ## Módulos por etapa
@@ -49,7 +49,7 @@ Entrega un reporte, elige una ruta de aplicación y después integra el trabajo.
 | --- | --- | --- |
 | **11** · [Reportes con Quarto](11_reporting_quarto/README.md) | Reporte reconstruible con datos, código y narrativa | Disponible |
 | **12** · [Streamlit](12_streamlit/README.md) | Aplicación de datos en Python | 12.01–12.09 disponibles |
-| **13** · [Shiny y fundamentos web](13_shiny_web/README.md) | Aplicación de datos en R | 13.01–13.07 disponibles; resto planificado |
+| **13** · [Shiny y fundamentos web](13_shiny_web/README.md) | Aplicación de datos en R | 13.01–13.08 disponibles; resto planificado |
 | **14** · [Proyecto reproducible](14_reproducible_projects/README.md) | Integración de datos, código, pruebas y producto final | Planificado |
 
 > **Elige una aplicación:** Streamlit (12) y Shiny (13) son alternativas.

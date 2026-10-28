@@ -1,0 +1,115 @@
+# Solo define funciones; las dependencias corrientes se cargan en app.R.
+consultaUI <- function(id, titulo = "Consulta") {
+  ns <- shiny::NS(id)
+  shiny::tagList(
+    shiny::h2(titulo),
+    selectInput(ns("corte"), "Fecha de corte (borrador)", choices = c("Septiembre" = "2026-09-30", "Octubre" = "2026-10-31", "Noviembre (sin registros de referencia)" = "2026-11-30"), selected = "2026-09-30", selectize = FALSE),
+    checkboxGroupInput(ns("segmentos"), "Segmentos del borrador", choices = c("Comercio" = "comercio", "Servicios" = "servicios"), selected = c("comercio", "servicios")),
+    textInput(ns("minimo_texto"), "Saldo minimo del borrador (texto en MXN)", value = "2000"),
+    actionButton(ns("aplicar"), "Aplicar filtros"),
+    textOutput(ns("aviso")), textOutput(ns("pendiente")),
+    checkboxInput(ns("mostrar_tabla"), "Mostrar tabla", value = TRUE),
+    h3("Ultima consulta aplicada"), textOutput(ns("contexto")),
+    textOutput(ns("resumen")), textOutput(ns("cobertura")), tableOutput(ns("tabla")), plotOutput(ns("grafica"), height = "340px"), uiOutput(ns("descargas")),
+    p("Ningun segmento selecciona cero filas. Fuente ausente o invalida retira cifras al aplicar; cambiar archivos sin aplicar no actualiza la pagina.")
+  )
+}
+
+consultaServer <- function(id, ruta = "cartera.csv") {
+  if (!is.character(ruta) || length(ruta) != 1L || is.na(ruta) || !nzchar(ruta)) stop("Indica una ruta de fuente.")
+  shiny::moduleServer(id, function(input, output, session) {
+
+    estado <- reactiveVal(list(tipo = "inicio", consulta = NULL, mensaje = "Pulsa Aplicar filtros para consultar."))
+    borrador <- reactive({ revisar_filtros(input$corte, input$segmentos, input$minimo_texto) })
+    bindEvent(observe({
+      fuente <- leer_fuente_segura(ruta)
+      if (!fuente$ok) {
+        message("[fuente] ", fuente$diagnostico)
+        mensaje_fuente <- sub("cartera.csv", basename(ruta), fuente$mensaje, fixed = TRUE)
+        estado(list(tipo = "fuente", consulta = NULL, mensaje = mensaje_fuente))
+        return(invisible(NULL))
+      }
+      revisado <- borrador()
+      if (!revisado$ok) {
+        estado(list(tipo = "rechazo", consulta = estado()$consulta,
+          mensaje = paste0("No se aplico. ", revisado$mensaje, " Corrige y vuelve a aplicar. La consulta anterior, si existe, se conserva.")))
+        return(invisible(NULL))
+      }
+      nueva <- tryCatch(crear_consulta(fuente$datos, revisado$filtros), error = function(error) {
+        message("[calculo inesperado] ", conditionMessage(error)); NULL
+      })
+      if (is.null(nueva)) {
+        estado(list(tipo = "error", consulta = NULL, mensaje = "Error inesperado al calcular. Se retiraron las cifras; revisa la consola R antes de volver a aplicar."))
+        return(invisible(NULL))
+      }
+      if (nrow(nueva$universo) == 0L) {
+        tipo <- "sin_universo"
+        mensaje <- "Sin universo: el corte aplicado no tiene registros en la fuente validada. Elige otro corte y aplica; no se publica porcentaje."
+      } else if (nrow(nueva$seleccion) == 0L) {
+        tipo <- "vacio"
+        mensaje <- "Seleccion vacia sobre un universo existente. Puedes incluir segmentos o bajar el minimo y volver a aplicar."
+      } else {
+        tipo <- "ok"; mensaje <- "Consulta aplicada con fuente validada."
+      }
+      estado(list(tipo = tipo, consulta = nueva, mensaje = mensaje))
+    }), input$aplicar, ignoreNULL = TRUE, ignoreInit = TRUE)
+
+    disponible <- reactive({
+      actual <- estado()
+      # El aviso general ya explica la causa; FALSE evita repetirla en cada salida.
+      validate(need(!is.null(actual$consulta), FALSE))
+      validate(need(nrow(actual$consulta$universo) > 0L, FALSE))
+      actual$consulta
+    })
+    output$aviso <- renderText({ estado()$mensaje })
+    output$pendiente <- renderText({
+      actual <- estado()$consulta; editado <- borrador()
+      if (is.null(actual)) return("Borrador: sin consulta aplicada disponible.")
+      if (editado$ok && identical(editado$filtros, actual$filtros)) "Borrador: coincide con la consulta aplicada." else "Borrador: cambios pendientes de aplicar."
+    })
+    output$contexto <- renderText({
+      actual <- estado()$consulta
+      if (is.null(actual)) return("Consulta aplicada disponible: ninguna.")
+      f <- actual$filtros; segmentos <- if (length(f$segmentos) == 0L) "ninguno" else paste(f$segmentos, collapse = ", ")
+      paste0("Corte aplicado: ", f$corte, ". Segmentos: ", segmentos, ". Saldo minimo: ", f$minimo_mxn, " MXN (>=).")
+    })
+    output$resumen <- renderText({
+      m <- disponible()$indicadores
+      paste0("Creditos seleccionados: ", m$cantidad, "; saldo seleccionado: ", m$saldo_mxn, " MXN.")
+    })
+    output$cobertura <- renderText({
+      actual <- disponible(); m <- actual$indicadores
+      paste0("Cobertura: ", m$cantidad, " de ", nrow(actual$universo), " creditos del corte (",
+        formatC(m$porcentaje_creditos, format = "f", digits = 2, decimal.mark = "."), "%).")
+    })
+    output$tabla <- renderTable({
+      req(isTRUE(input$mostrar_tabla)) # Solo controla presentacion; no valida datos.
+      datos <- disponible()$seleccion
+      validate(need(nrow(datos) > 0L, "No hay filas seleccionadas. Incluye segmentos o baja el minimo y aplica."))
+      setNames(datos, c("Credito", "Segmento", "Corte", "Saldo (MXN)"))
+    }, rownames = FALSE, digits = 0, striped = TRUE)
+    output$grafica <- renderPlot({
+      actual <- disponible()
+      validate(need(nrow(actual$seleccion) > 0L, "Seleccion vacia: no hay barras para mostrar."))
+      crear_grafica(actual)
+    }, alt = function() { descripcion_grafica(disponible()) })
+    output$descargas <- renderUI({
+      actual <- estado()$consulta
+      if (is.null(actual) || nrow(actual$universo) == 0L) return(p("Descargas no disponibles: aplica una consulta con universo valido."))
+      tagList(downloadButton(session$ns("csv_seleccion"), "Descargar seleccion CSV"),
+              downloadButton(session$ns("csv_contexto"), "Descargar contexto CSV"),
+              p("Descarga ambos archivos antes de aplicar otra consulta. Un borrador pendiente no modifica estos archivos."))
+    })
+    output$csv_seleccion <- downloadHandler(
+      filename = function() { paste0("seleccion_", disponible()$filtros$corte, ".csv") },
+      content = function(file) { escribir_seleccion(disponible(), file) },
+      contentType = "text/csv; charset=utf-8")
+    output$csv_contexto <- downloadHandler(
+      filename = function() { paste0("contexto_", disponible()$filtros$corte, ".csv") },
+      content = function(file) { escribir_contexto(disponible(), file) },
+      contentType = "text/csv; charset=utf-8")
+
+    # API de lectura: no devolvemos el setter reactiveVal ni input/output/session.
+    list(estado = shiny::reactive(estado()))
+  })
+}
