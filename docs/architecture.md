@@ -125,7 +125,7 @@ al color, composición y exportación. Cambiar de biblioteca no exige repetir to
 la limpieza ni altera por sí solo el universo del indicador.
 
 Matplotlib/Altair y ggplot2 son las rutas de gráficos. Después se elige una
-aplicación: Streamlit cuenta con 12.01–12.07; sus secciones 12.08–12.09 y la ruta
+aplicación: Streamlit cuenta con 12.01–12.08; su sección 12.09 y la ruta
 Shiny siguen previstas. Ambas separan transformación y validación de la interfaz;
 elegir una aplicación es suficiente. El [estado de Streamlit](streamlit-closure.md)
 distingue material disponible, práctica y cierre pendiente.
@@ -163,8 +163,8 @@ medición y criterios de integración están en [cierre de almacenamiento](stora
 [11 — Quarto](../curriculum/11_reporting_quarto/README.md) dispone de reportes con
 texto, código, tablas y figuras reconstruibles; un motor y HTML bastan para el
 cierre esencial. PDF, publicación y autenticación son ampliaciones.
-[12 — Streamlit](../curriculum/12_streamlit/README.md) dispone de 12.01–12.07;
-sus pruebas como tema (12.08) y entrega local (12.09) siguen pendientes.
+[12 — Streamlit](../curriculum/12_streamlit/README.md) dispone de 12.01–12.08;
+incluye pruebas de funciones e integración AppTest; la entrega local (12.09) sigue pendiente.
 [13 — Shiny](../curriculum/13_shiny_web/README.md) y
 [14 — Proyectos reproducibles](../curriculum/14_reproducible_projects/README.md)
 conservan planes. Elegir 12 o 13 antes de integrar 14, sin exigir dos aplicaciones.

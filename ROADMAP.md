@@ -466,8 +466,8 @@ la sustitución Python; R sin paquetes nuevos.
 ya tienen lecciones y labs: recálculo, revisión HTML, distribución y entrega
 reconstruible. Las nueve secciones del módulo tienen material; práctica personal,
 proyecto integrador y checkpoints siguen pendientes. Consulta los
-[criterios de cierre](docs/reporting-closure.md). Streamlit dispone de 12.01–12.07;
-12.08–12.09 y los módulos 13–14 conservan planes. Consulta la
+[criterios de cierre](docs/reporting-closure.md). Streamlit dispone de 12.01–12.08;
+12.09 y los módulos 13–14 conservan planes. Consulta la
 [reanudación de Streamlit](docs/streamlit-closure.md).
 
 **Objetivo:** transformar análisis en productos consumibles.
@@ -497,7 +497,8 @@ y [12.04 — Estado de sesión y formularios](curriculum/12_streamlit/04_session
 y [12.05 — Caché de datos y recursos](curriculum/12_streamlit/05_data_resource_cache/README.md)
 y [12.06 — Mensajes y casos sin datos](curriculum/12_streamlit/06_messages_empty_cases/README.md)
 y [12.07 — Tablas, gráficos y descarga](curriculum/12_streamlit/07_tables_charts_download/README.md)
-tienen lección/app/lab disponibles; 12.08–12.09 conservan el plan.
+y [12.08 — Pruebas de la aplicación](curriculum/12_streamlit/08_app_testing/README.md)
+tienen lección/app/lab disponibles; 12.09 conserva el plan.
 
 **Objetivo:** convertir un análisis estable en una aplicación de datos Python.
 

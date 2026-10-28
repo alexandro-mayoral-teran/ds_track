@@ -10,11 +10,12 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  12.01–12.07 están disponibles; 12.08–12.09 y 13–14 siguen planificados.
+  12.01–12.08 están disponibles; 12.09 y 13–14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [12.08 — Pruebas de la aplicación](curriculum/12_streamlit/README.md#08-pruebas-de-la-aplicacion),
+- **Siguiente desarrollo educativo:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/README.md#09-cierre-y-entrega-local),
   con [estado y reanudación de Streamlit](docs/streamlit-closure.md).
+- **Último desarrollo educativo:** 2026-10-28, 12.08 — Pruebas de la aplicación: lección/lab, mínimo, pruebas de funciones y AppTest; siguiente desarrollo 12.09.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -29,6 +30,40 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, pruebas de la aplicación Streamlit 12.08:**
+lección/lab, mínimo autónomo de dos ventas, preparador a destino nuevo y
+recorridos PowerShell/Bash-Zsh/CMD. Reutiliza app/modelo/caché/entradas/gráfico/
+salidas de 12.07 sin cambiar algoritmos ni exigir entregas previas. Expectativas
+explícitas por clave, frontera, vacío/cero/corte ausente, errores tratados,
+relectura, recuperación y sesión nueva. CSV temporal por caso, patch de ruta
+restaurado y limpieza de caché incluso al fallar; ejecución secuencial.
+
+Comprobación: 19 métodos originales (1 mínimo, 7 modelo, 11 AppTest) aprobados
+en ambos entornos locales existentes Python 3.12.12/Streamlit 1.66.1/Altair 6.3.0.
+Soluciones del lab extraídas del texto y ejecutadas: servicios/1900–1901,
+8 métodos de modelo y 12 AppTest aprobados en ambos entornos. Regresión 4600
+frente a 2600 detectada y corregida; intercambio compensado de saldos de
+septiembre rechazado por función e interfaz pese a mantener 4500 MXN.
+Destinos ocupados rechazados; programas anteriores y pyproject/uv.lock intactos.
+El ejecutor restringido impidió temporales/AppTest; comprobado con permisos
+adecuados, sin desactivar controles ni cambiar dependencias.
+
+Chrome headless Windows a 1440/390: nueve pares CSV/JSON descargados realmente,
+campos por clave/contexto/huellas conciliados y esos archivos releídos con el
+revisor de Python estándar. Incluye servicios/1900 y vacío/1901, borrador/Enter
+sin envío, tabla oculta, rechazo/recuperación, corte ausente, fuente cambiada/
+inválida y recarga. Teclado hasta envío y descargas comprobado en ambos anchos;
+barras de septiembre separadas y etiquetas recuperables. Inspección Arrow/proto
+en AppTest es ampliación dependiente de versión y no acredita descarga real.
+Diez vistas GFM de lección/lab/índice/recorridos/guía a 1280/390 sin desbordamiento,
+IDs únicos y soluciones cerradas; revisión visual de capturas de autoría.
+Enlaces locales y fragmentos comprobados sin incidencias; git diff --check correcto.
+
+Índices, continuidad, cobertura y reanudación actualizados: 12.01–12.08 disponibles;
+retomar 12.09 — Cierre y entrega local. Proyecto/checkpoints y aprendizaje
+siguen pendientes. Portal y reorganización privada conservan su alcance y
+cambios locales; no se integra Streamlit ni se despliega el sitio por esta sección.
 
 **Revisión documental — 2026-10-27, antes de cerrar:** arquitectura, roadmap y
 criterios de almacenamiento/tidyverse distinguen 12.01–12.07 disponibles de

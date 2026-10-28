@@ -101,5 +101,5 @@ PROGRESS.md registra desarrollo, no aprendizaje; proyecto/checkpoints pendientes
 ## Siguiente paso
 
 Revisa el [criterio de salida](../../../curriculum/12_streamlit/07_tables_charts_download/README.md#evidencia-y-criterio-de-salida).
-Retoma después [12.08 — Pruebas de la aplicación](../../../curriculum/12_streamlit/README.md#08-pruebas-de-la-aplicacion),
-todavía planificado. El [punto de reanudación](../../../docs/streamlit-closure.md) distingue material disponible de trabajo pendiente.
+Continúa después con [12.08 — Pruebas de la aplicación](../../../curriculum/12_streamlit/08_app_testing/README.md).
+El [punto de reanudación](../../../docs/streamlit-closure.md) distingue material disponible de trabajo pendiente.

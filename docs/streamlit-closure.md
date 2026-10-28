@@ -2,8 +2,8 @@
 
 ## Alcance vigente
 
-El [módulo 12](../curriculum/12_streamlit/README.md) dispone de **12.01–12.07**
-con lecciones y labs. 12.08 y 12.09 conservan planes. Este documento define el
+El [módulo 12](../curriculum/12_streamlit/README.md) dispone de **12.01–12.08**
+con lecciones y labs. 12.09 conserva su plan. Este documento define el
 punto de reanudación y criterios pendientes; la bitácora de autoría vive en
 [PROGRESS.md](../PROGRESS.md). Material disponible no acredita práctica del estudiante.
 
@@ -15,6 +15,7 @@ punto de reanudación y criterios pendientes; la bitácora de autoría vive en
 | 12.05 | Clave con registros/filtros/versión, TTL, limpieza y copias frente a recursos |
 | 12.06 | Rechazar intentos, explicar vacíos y recuperar fuentes sin cifras engañosas |
 | 12.07 | Conciliar tabla/gráfico/CSV/contexto y conservar archivos de la misma vista |
+| 12.08 | Probar funciones y AppTest con expectativas explícitas, detectar una regresión y revisar límites en navegador |
 
 No hay proyecto integrador ni checkpoints Streamlit implementados. El cierre
 local del recorrido completo sigue pendiente; desplegar en Internet no es requisito.
@@ -22,8 +23,8 @@ El portal es otro trabajo y no integra estas apps por disponer de fuentes nuevas
 
 ## Cómo retomar la práctica
 
-1. Abre la [lección 12.07](../curriculum/12_streamlit/07_tables_charts_download/README.md)
-   y sus [recorridos](../curriculum/12_streamlit/07_tables_charts_download/recorridos.md).
+1. Abre la [lección 12.08](../curriculum/12_streamlit/08_app_testing/README.md)
+   y sus [recorridos](../curriculum/12_streamlit/08_app_testing/recorridos.md).
 2. Reutiliza el entorno local elegido en 12.01. Versiones comprobadas: Python
    3.12.12, Streamlit 1.66.1 y Altair 6.3.0 declarados en el proyecto. No reinstales
    globalmente ni cambies Conda/base o el entorno raíz para retomar.
@@ -62,24 +63,25 @@ no constituye alojamiento permanente.
 - La huella relaciona un CSV con su contexto; no autentica al autor ni prueba que
   todos los valores sean correctos frente a una fuente histórica. Revisar por clave.
 
-## Siguiente desarrollo: 12.08
+## Pruebas disponibles: 12.08
 
-Convertir los controles de autoría en una explicación gradual de pruebas de app:
+La sección distingue prueba de funciones, integración AppTest y revisión real
+de navegador. Incluye mínimo de dos ventas, suites con expectativas por clave,
+frontera, errores tratados, vacío, recuperación y sesión nueva. Un experimento
+independiente cambia saldo seleccionado por saldo del universo para observar
+un fallo aunque la app abra sin excepciones. El lab añade servicios/1900–1901.
 
-- Distinguir prueba de funciones, integración AppTest y revisión real de navegador.
-- Enseñar primero un caso pequeño y después indicadores, valores por clave,
-  transiciones de formulario, errores, vacío, recuperación y sesión nueva.
-- Verificar descarga real además de datos preparados. En Streamlit 1.66.1,
-  AppTest expone gráfico/descarga como elementos sin una API de interacción
-  equivalente a todos los widgets; los datos del gráfico viajan en Arrow aparte
-  de su especificación. Son detalles de la versión comprobada, no una API estable propia.
-- Mostrar una regresión concreta que una comprobación detecte, sin limitarse
-  a comparar una función con otra llamada a sí misma.
+Cada caso de integración usa CSV temporal y ruta configurada durante la prueba;
+limpia la caché y restaura configuración aun al fallar. AppTest nuevo no implica
+caché independiente. Las suites se ejecutan secuencialmente y en procesos propios.
 
-Los archivos comprobar_app.py existentes son apoyos opcionales de autoría;
-su existencia no da por impartida ni implementada la lección 12.08.
+En Streamlit 1.66.1, gráfico/descarga se inspeccionan como elementos de protocolo;
+la lectura Arrow del gráfico es ampliación de versión. Datos preparados y botones
+habilitados no demuestran una descarga en navegador. La lección incluye un
+protocolo de descarga real, borrador sin enviar, rechazo, vacío, teclado y ventana
+estrecha. Los comprobar_app.py previos siguen como apoyos opcionales de autoría.
 
-## Después: 12.09 y cierre real
+## Siguiente desarrollo: 12.09 y cierre real
 
 12.09 deberá reunir fuente/contrato, instrucciones y versiones, reconstrucción en
 carpeta nueva, ejemplos comprobables y una entrega local. Tendrá que conciliar
@@ -103,3 +105,14 @@ visual comprobó barras separadas, etiquetas y valores recuperables.
 Esto describe la evidencia de autoría de esa sección. No certifica todos los
 navegadores, sistemas operativos, accesibilidad completa, autenticidad de entregas
 ni una ejecución futura. Los detalles y resultados concretos quedan en PROGRESS.md.
+
+## Comprobación disponible al cerrar 12.08
+
+Las suites de referencia y las soluciones del lab se comprobaron en dos entornos
+locales existentes. Se detectaron la métrica de universo usada como selección y
+un intercambio de saldos con total conservado. En Chrome headless se recuperaron
+nueve pares CSV/JSON reales, incluidos servicios/1900–1901, y se releyeron con el
+revisor estándar y referencias por clave. Borrador/Enter, rechazo, recuperación,
+recarga, móvil y recorrido con teclado se comprobaron por separado de AppTest.
+Las páginas nuevas se revisaron como GFM a dos anchos. Detalles en PROGRESS.md;
+no acredita aprendizaje, accesibilidad completa ni otros navegadores.

@@ -59,7 +59,7 @@ vista; no constituyen todavía la entrega final del módulo.
 | [Modelo](../03_data_interface/cartera.py), [CSV](../03_data_interface/cartera.csv), [configuración](../03_data_interface/configuracion.py) y [ejecutor](../03_data_interface/ejecutar.py) | Conservar reglas y referencia de terminal | Copiados sin cambios |
 | [Caché](../05_data_resource_cache/cache_analisis.py) y [entradas](../06_messages_empty_cases/entradas.py) | Conservar vigencia y validación | Copiados sin cambios |
 | [Recorridos](recorridos.md) | Preparación, ejecución y descarga | Elige un gestor y un shell |
-| [Controles de autoría](comprobar_app.py) | Conciliar filas, datos del gráfico y archivos | Opcional; pruebas de apps como tema en 12.08 |
+| [Controles de autoría](comprobar_app.py) | Conciliar filas, datos del gráfico y archivos | Opcional; pruebas como tema en [12.08](../08_app_testing/README.md) |
 
 ## 1. Dos filas antes de la app completa
 
@@ -277,8 +277,8 @@ Python 3.12.12, Streamlit 1.66.1 y Altair 6.3.0. La documentación en línea pue
 
 ## Siguiente paso
 
-Después del lab, consulta [12.08 — Pruebas de la aplicación](../README.md#08-pruebas-de-la-aplicacion),
-todavía planificado. El [estado y punto de reanudación de Streamlit](../../../docs/streamlit-closure.md)
+Después del lab, continúa con [12.08 — Pruebas de la aplicación](../08_app_testing/README.md).
+El [estado y punto de reanudación de Streamlit](../../../docs/streamlit-closure.md)
 recoge lo disponible y lo pendiente para retomar sin dar por cerrado el módulo.
 
 ---

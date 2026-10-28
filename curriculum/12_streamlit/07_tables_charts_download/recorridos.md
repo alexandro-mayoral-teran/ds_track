@@ -177,7 +177,8 @@ En el mismo shell, ejecuta
 Si elegiste uv, antepón `uv run --locked --group streamlit` al comando.
 Revisa correspondencia tabla/gráfico/CSV/contexto y casos límite. Utiliza
 copias temporales y necesita Streamlit; no modifica tu práctica ni las
-fuentes de 12.03. AppTest se desarrollará como tema en 12.08.
+fuentes de 12.03. AppTest se desarrolla como tema en
+[12.08 — Pruebas de la aplicación](../08_app_testing/README.md).
 
 AppTest revisa estados y envíos, pero no sustituye el navegador para comprobar
 las ediciones que todavía no se enviaron al servidor. Haz también el lab.
