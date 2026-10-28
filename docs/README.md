@@ -19,6 +19,7 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 | Revisar el cierre de R/tidyverse | [Criterios de tidyverse](tidyverse-closure.md) |
 | Revisar almacenamiento, intercambio y mediciones | [Criterios de almacenamiento](storage-closure.md) |
 | Revisar reporte reproducible y práctica pendiente | [Criterios de reportes](reporting-closure.md) |
+| Retomar Streamlit, revisar descargas y cierre pendiente | [Criterios de Streamlit](streamlit-closure.md) |
 | Abrir y comprobar el portal local | [Uso del portal](../portal/README.md) |
 
 ## Dónde mantener cada información
@@ -35,9 +36,9 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 | --- | --- |
 | Índices de módulo 00–14 | Estructura común aplicada; 12 está iniciado; 13–14 siguen planificados |
 | Lecciones 00–11 | Plantilla de lección y material de apoyo aplicados |
-| Lecciones 12.01–12.06 | Material nuevo con plantilla, apoyos y labs; 12.07–12.09 siguen planificados |
+| Lecciones 12.01–12.07 | Material nuevo con plantilla, apoyos y labs; 12.08–12.09 siguen planificados |
 | Módulos 13–14 | Conservan planes; no tienen lecciones implementadas que migrar |
-| Labs | Muestra visual 00.01 y nuevos 12.01–12.06 con estructura común; los demás conservan consignas y navegación |
+| Labs | Muestra visual 00.01 y nuevos 12.01–12.07 con estructura común; los demás conservan consignas y navegación |
 | Portal local | Módulo 00 y sesión 02.01 integrados; otros módulos ofrecen sus índices |
 
 El estado de las plantillas describe presentación, no aprendizaje del estudiante.

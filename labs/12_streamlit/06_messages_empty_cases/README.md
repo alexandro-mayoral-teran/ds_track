@@ -105,5 +105,4 @@ proyecto ni checkpoint asociado todavía.
 ## Siguiente paso
 
 Vuelve al [criterio de salida](../../../curriculum/12_streamlit/06_messages_empty_cases/README.md#evidencia-y-criterio-de-salida)
-y después consulta [12.07 — Tablas, gráficos y descarga](../../../curriculum/12_streamlit/README.md#07-tablas-graficos-y-descarga),
-todavía planificado.
+y después consulta [12.07 — Tablas, gráficos y descarga](../../../curriculum/12_streamlit/07_tables_charts_download/README.md).

@@ -277,8 +277,8 @@ Python 3.12.12 y Streamlit 1.66.1. La documentación en línea puede avanzar.
 
 ## Siguiente paso
 
-Después del lab, consulta [12.07 — Tablas, gráficos y descarga](../README.md#07-tablas-graficos-y-descarga),
-todavía planificado: presentar y exportar el mismo universo filtrado.
+Después del lab, continúa con [12.07 — Tablas, gráficos y descarga](../07_tables_charts_download/README.md):
+presentar y exportar la misma selección aplicada con su contexto.
 
 ---
 

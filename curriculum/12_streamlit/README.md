@@ -6,7 +6,7 @@
 
 [**Empezar por 12.01 →**](01_first_app_execution/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 12.01–12.06 con lecciones, apps locales y labs. 12.07–12.09 siguen planificadas.
+> **Disponible:** 12.01–12.07 con lecciones, apps locales y labs. 12.08–12.09 siguen planificadas.
 > Disponer de material no acredita aprendizaje ni un proyecto de aplicación completado.
 
 <a id="propósito-y-prerrequisitos"></a>
@@ -15,11 +15,12 @@
 
 Crear un explorador de datos con filtros, indicadores y figuras comprobables,
 reutilizando funciones del análisis conocido. El recorrido conecta entradas,
-estado, caché y mensajes; después incorporará presentación y entrega verificadas.
+estado, caché, mensajes y presentación conciliada; después incorporará pruebas
+y entrega local como temas de cierre.
 
 ## Antes de empezar
 
-Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. Para 12.01, sigue su preparación con Streamlit 1.66.1 en un entorno local; 12.02–12.06 reutilizan ese entorno; 12.07–12.09 conservan su plan.
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. Para 12.01, sigue su preparación con Streamlit 1.66.1 en un entorno local; 12.02–12.07 reutilizan ese entorno; 12.08–12.09 conservan su plan.
 
 ## Qué vas a aprender
 
@@ -43,7 +44,7 @@ controlar estado y caché, y explicar errores y vacíos. El recorrido completo p
 | **12.04** · [Estado de sesión y formularios](04_session_state_forms/README.md) | [Lab 12.04](../../labs/12_streamlit/04_session_state_forms/README.md) | Conservar elecciones y controlar cuándo aplicarlas |
 | **12.05** · [Caché de datos y recursos](05_data_resource_cache/README.md) | [Lab 12.05](../../labs/12_streamlit/05_data_resource_cache/README.md) | Evitar trabajo repetido sin mostrar resultados obsoletos |
 | **12.06** · [Mensajes y casos sin datos](06_messages_empty_cases/README.md) | [Lab 12.06](../../labs/12_streamlit/06_messages_empty_cases/README.md) | Explicar entradas inválidas y filtros vacíos |
-| **12.07** · [Tablas, gráficos y descarga](#07-tablas-graficos-y-descarga) | Pendiente | Presentar y exportar el mismo universo filtrado |
+| **12.07** · [Tablas, gráficos y descarga](07_tables_charts_download/README.md) | [Lab 12.07](../../labs/12_streamlit/07_tables_charts_download/README.md) | Presentar y exportar el mismo universo filtrado |
 | **12.08** · [Pruebas de la aplicación](#08-pruebas-de-la-aplicacion) | Pendiente | Comprobar indicadores y comportamiento de widgets |
 | **12.09** · [Cierre y entrega local](#09-cierre-y-entrega-local) | Pendiente | Reconstruir y usar un explorador comprobado |
 
@@ -54,7 +55,7 @@ controlar estado y caché, y explicar errores y vacíos. El recorrido completo p
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado por sección:** 12.01–12.06 están disponibles. 12.07–12.09 describen el alcance previsto; no son lecciones o labs listos.
+**Estado por sección:** 12.01–12.07 están disponibles. 12.08–12.09 describen el alcance previsto; no son lecciones o labs listos.
 
 <a id="01-primera-app-y-modelo-de-ejecucion"></a>
 
@@ -133,10 +134,13 @@ Reutiliza funciones/caché de 12.03/12.05; sin dependencias nuevas.
 
 ### 07 — Tablas, gráficos y descarga
 
-- Tabla, métricas y Matplotlib/Altair sobre la misma selección; leyendas y unidades.
-  Descarga de una salida con nombre/corte explícitos y contenido comprobado.
-- Práctica prevista: comparar lo mostrado con lo descargado y con el indicador
-  de referencia. Archivos arbitrarios del usuario serán una ampliación, no el inicio.
+Disponible: [lección 12.07](07_tables_charts_download/README.md) y
+[lab 12.07](../../labs/12_streamlit/07_tables_charts_download/README.md). Tabla,
+Altair y CSV desde la misma selección; IDs nominales, pesos, etiquetas y alternativa
+textual. Contexto JSON con filtros/universo/indicadores y huella del CSV; descargas
+preparadas en memoria y revisor de solo lectura. Vacío válido exporta encabezado;
+intento rechazado bloquea botones y fuente/corte ausente no ofrece archivos.
+Descarga real, borrador, variante y móvil conciliados; sin dependencias nuevas.
 
 <a id="08-pruebas-de-la-aplicacion"></a>
 
@@ -162,7 +166,7 @@ Reutiliza funciones/caché de 12.03/12.05; sin dependencias nuevas.
 
 Recorrido previsto: empezar con una app local pequeña, incorporar entradas y estado, comprobar caché y casos vacíos, y cerrar con pruebas y entrega. No exige login, alojamiento ni conocimientos avanzados de HTML/CSS/JavaScript. Basta elegir esta ruta o Shiny.
 
-Empieza por 12.01 y su lab. Las actividades de 12.07–12.09 siguen siendo una propuesta; no intentes ejecutar todavía esos alcances.
+Empieza por 12.01 y su lab. Las actividades de 12.08–12.09 siguen siendo una propuesta; no intentes ejecutar todavía esos alcances.
 
 ## Qué conservar
 
@@ -172,8 +176,8 @@ Empieza por 12.01 y su lab. Las actividades de 12.07–12.09 siguen siendo una p
 | Casos y resultados esperados | Coherencia de filtros y manejo de vacío |
 | Instrucciones y app local futura | Reconstrucción y explicación del comportamiento |
 
-En 12.01–12.06 conserva tu copia, parámetros efectivos, predicciones y resultados:
-filas, indicadores, estado, reutilización y mensajes deben poder explicarse.
+En 12.01–12.07 conserva tu copia, parámetros efectivos, predicciones y resultados:
+filas, indicadores, estado, reutilización, mensajes y descargas deben poder explicarse.
 Guarda una nota con comprobaciones, ayudas, dudas y siguiente paso en tu copia
 personal. PROGRESS.md registra desarrollo del material, no porcentaje de aprendizaje.
 
@@ -182,6 +186,9 @@ personal. PROGRESS.md registra desarrollo del material, no porcentaje de aprendi
 ## Criterio de salida
 
 Cuando se implemente, el cierre requerirá explicar reejecución, estado y caché y demostrar indicadores verificables con filtros. Publicar en Internet no será requisito; hoy este criterio es previsto, no una práctica acreditable.
+
+Consulta el [estado y punto de reanudación](../../docs/streamlit-closure.md) para
+retomar 12.08 y distinguir controles de autoría de aprendizaje.
 
 No hay proyecto integrador ni checkpoint de aplicación Streamlit implementado; 12.01 es una práctica introductoria. Sus hitos se definirán como alternativa a la ruta Shiny.
 
@@ -199,7 +206,7 @@ casos límite (05–06), presentación verificada (07), pruebas y entrega (08–
 
 Empieza por [12.01 — Primera app y modelo de ejecución](01_first_app_execution/README.md)
 y sigue el orden de [lecciones y labs](#lecciones-y-labs). El último material
-disponible es [12.06 — Mensajes y casos sin datos](06_messages_empty_cases/README.md).
+disponible es [12.07 — Tablas, gráficos y descarga](07_tables_charts_download/README.md).
 
 Cuando esta ruta esté implementada y cierres la práctica, sigue con [14 — Proyecto reproducible](../14_reproducible_projects/README.md), también planificado. La otra aplicación queda como comparación opcional.
 

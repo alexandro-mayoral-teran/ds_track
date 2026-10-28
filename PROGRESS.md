@@ -10,9 +10,11 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  12.01–12.06 están disponibles; 12.07–12.09 y 13–14 siguen planificados.
+  12.01–12.07 están disponibles; 12.08–12.09 y 13–14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
+- **Siguiente desarrollo educativo:** [12.08 — Pruebas de la aplicación](curriculum/12_streamlit/README.md#08-pruebas-de-la-aplicacion),
+  con [estado y reanudación de Streamlit](docs/streamlit-closure.md).
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -27,6 +29,43 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, tabla/gráfico/descarga Streamlit 12.07 y cierre de sesión:**
+lección/lab, mínimo completo, Altair y exportación CSV/JSON desde el mismo
+resultado. IDs nominales, pesos enteros, barras/etiquetas, eje desde cero y
+alternativa textual. Altura explícita 320: navegador confirmó barras separadas,
+no comprimidas por el contenedor. Tabla opcional no cambia filas descargadas.
+CSV UTF-8 sin índice; contexto con filtros/universo/indicadores/versión y SHA-256
+del CSV. Nombres con corte/mínimo/segmentos; bytes en memoria, on_click ignore.
+Descarga representa la vista calculada, no una relectura al hacer clic.
+
+Vacío válido exporta encabezado y contexto; intento rechazado deshabilita botones
+hasta confirmar filtros válidos. Fuente inválida/sin registros y corte ausente
+no ofrecen archivos actuales. Revisor de solo lectura para par CSV/JSON: huella,
+filas y suma, sin autenticar ni sustituir revisión por clave frente a referencia.
+Preparador exclusivo con once archivos reutiliza modelo 03/caché 05/entradas 06
+sin cambios y sin exigir salidas previas. No hay paquetes ni lockfiles nuevos.
+
+Comprobación: nueve pruebas de funciones/AppTest en ambos entornos existentes
+Python 3.12.12/Streamlit 1.66.1/Altair 6.3.0. Datos Arrow enviados al gráfico
+conciliados con tabla; CSV/contexto releídos, casos manuales, vacío, cero, rechazo,
+fuente cambiada/inválida, recuperación y preservación comprobados. Navegador
+Windows/Chrome 1440/390: siete pares descargados realmente (base, borrador,
+septiembre, tabla oculta, vacío, variante y móvil), campos/filas/sumas y huellas
+conciliados; revisor estándar comprobó esos mismos archivos. Borrador sin enviar
+conserva descarga aplicada, otra pasada actualiza variante 2800/4800, fallo de
+fuente retira controles. Gráfico SVG con dos barras visibles separadas y etiquetas.
+
+Documentación de cierre en docs/streamlit-closure.md: material 12.01–12.07,
+preparación/reanudación, decisiones de estado/caché/descarga y límites de evidencia.
+Retomar 12.08 — Pruebas de la aplicación; después 12.09 — Cierre y entrega local.
+Ambas siguen planificadas; controles de autoría no acreditan lección impartida,
+práctica del estudiante ni proyecto/checkpoints. Índices y continuidad actualizados.
+Diez vistas GFM 1280/390 de lección/lab/índice/recorridos/guía de reanudación,
+sin desbordamiento, imagen cargada, IDs únicos y soluciones cerradas; 4685 enlaces
+locales sin incidencias.
+Portal y documentos privados pendientes conservados fuera del commit educativo;
+no se integran estas apps al portal ni se despliega en Internet.
 
 **Desarrollo — 2026-10-27, mensajes y vacíos Streamlit 12.06:** lección/lab,
 mínimo de cuatro situaciones y app con mensajes de situación/efecto/acción.
