@@ -271,7 +271,7 @@ paquetes nuevos, autenticación, persistencia, concurrencia distribuida ni escri
 
 ## Siguiente paso
 
-Tras comprobar el lab, consulta [13.06 — Validación y mensajes](../README.md#06-validacion-y-mensajes),
-todavía planificado.
+Tras comprobar el lab, continúa con [13.06 — Validación y mensajes](../06_validation_messages/README.md),
+ya disponible.
 
 [← 13.04](../04_shared_filters/README.md) · [Módulo 13](../README.md) · [Lab 13.05](../../../labs/13_shiny_web/05_events_session/README.md)

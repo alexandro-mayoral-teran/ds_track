@@ -126,7 +126,7 @@ la limpieza ni altera por sí solo el universo del indicador.
 
 Matplotlib/Altair y ggplot2 son las rutas de gráficos. Después se elige una
 aplicación: Streamlit cuenta con 12.01–12.09; la ruta
-Shiny dispone de 13.01–13.05; el resto conserva planes. Ambas separan transformación y validación de la interfaz;
+Shiny dispone de 13.01–13.06; el resto conserva planes. Ambas separan transformación y validación de la interfaz;
 elegir una aplicación es suficiente. El [estado de Streamlit](streamlit-closure.md)
 distingue material disponible, práctica y evidencia de cierre.
 
@@ -165,9 +165,9 @@ texto, código, tablas y figuras reconstruibles; un motor y HTML bastan para el
 cierre esencial. PDF, publicación y autenticación son ampliaciones.
 [12 — Streamlit](../curriculum/12_streamlit/README.md) dispone de 12.01–12.09;
 incluye pruebas de funciones/AppTest y entrega local reconstruible (12.09), con referencia externa por clave.
-[13 — Shiny](../curriculum/13_shiny_web/README.md) dispone de 13.01–13.05: primeras apps
+[13 — Shiny](../curriculum/13_shiny_web/README.md) dispone de 13.01–13.06: primeras apps
 con proyecto renv independiente y biblioteca local, sin exigir entregas del
-proyecto de análisis previo. 13.02 conecta entradas/salidas y 13.03 introduce dependencias, invalidación y demanda. 13.04 comparte selección/indicadores sobre una cartera de seis observaciones, con los mismos metadatos de app. 13.05 incorpora aplicación por evento y estado por sesión. 13.06–13.10 y
+proyecto de análisis previo. 13.02 conecta entradas/salidas y 13.03 introduce dependencias, invalidación y demanda. 13.04 comparte selección/indicadores sobre una cartera de seis observaciones, con los mismos metadatos de app. 13.05 incorpora aplicación por evento y estado por sesión; 13.06 distingue rechazo, vacío, falta de universo y fallas de fuente con recuperación. 13.07–13.10 y
 [14 — Proyectos reproducibles](../curriculum/14_reproducible_projects/README.md)
 conservan planes. Elegir 12 o 13 antes de integrar 14, sin exigir dos aplicaciones.
 

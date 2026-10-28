@@ -143,7 +143,7 @@ predecirlo antes de probarlo.
 
 ## Siguiente paso
 
-Consulta [13.06 — Validación y mensajes](../../../curriculum/13_shiny_web/README.md#06-validacion-y-mensajes),
-todavía planificado.
+Continúa con [13.06 — Validación y mensajes](../../../curriculum/13_shiny_web/06_validation_messages/README.md),
+ya disponible.
 
 [← Lección 13.05](../../../curriculum/13_shiny_web/05_events_session/README.md) · [Módulo 13](../../../curriculum/13_shiny_web/README.md)

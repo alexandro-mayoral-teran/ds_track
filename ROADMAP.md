@@ -467,7 +467,7 @@ ya tienen lecciones y labs: recálculo, revisión HTML, distribución y entrega
 reconstruible. Las nueve secciones del módulo tienen material; práctica personal,
 proyecto integrador y checkpoints siguen pendientes. Consulta los
 [criterios de cierre](docs/reporting-closure.md). Streamlit dispone de 12.01–12.09;
-13.01–13.05 de Shiny están disponibles; 13.06–13.10 y 14 conservan planes. Consulta la
+13.01–13.06 de Shiny están disponibles; 13.07–13.10 y 14 conservan planes. Consulta la
 [reanudación de Streamlit](docs/streamlit-closure.md).
 
 **Objetivo:** transformar análisis en productos consumibles.
@@ -527,7 +527,9 @@ explica dependencias, invalidación, demanda, cache y ramas con un mínimo y una
 comparte universo, selección e indicadores en una cartera de seis observaciones; tabla y medidas conciliadas.
 [13.05 — Eventos y estado de sesión](curriculum/13_shiny_web/05_events_session/README.md)
 separa borrador y consulta aplicada por botón, con estado propio por sesión y rechazo sin reemplazo.
-13.06–13.10 siguen planificadas.
+[13.06 — Validación y mensajes](curriculum/13_shiny_web/06_validation_messages/README.md)
+separa entradas inválidas, vacío y falta de universo; relee la fuente al aplicar y comprueba recuperación.
+13.07–13.10 siguen planificadas.
 
 **Objetivo:** convertir un análisis estable en una aplicación interactiva.
 

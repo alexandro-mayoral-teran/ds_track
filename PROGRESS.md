@@ -10,13 +10,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.05 de Shiny están disponibles; 13.06–13.10 y 14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01–13.06 de Shiny están disponibles; 13.07–13.10 y 14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [13.06 — Validación y mensajes](curriculum/13_shiny_web/README.md#06-validacion-y-mensajes).
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.05 de la alternativa Shiny están disponibles; 13.06–13.10 y 14 conservan planes.
+- **Siguiente desarrollo educativo:** [13.07 — Gráficos, tablas y descargas](curriculum/13_shiny_web/README.md#07-graficos-tablas-y-descargas).
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.06 de la alternativa Shiny están disponibles; 13.07–13.10 y 14 conservan planes.
   [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.05 — Eventos y estado de sesión: borrador/aplicación, consulta completa y sesiones independientes; retomar 13.06.
+- **Último desarrollo educativo:** 2026-10-28, 13.06 — Validación y mensajes: entradas textuales, req/validate/need, estados sin datos y recuperación de fuente; retomar 13.07.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +31,51 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, validación y mensajes Shiny 13.06:**
+lección/lab, mínimo req/validate/need y app de cartera con saldo mínimo textual.
+Contrato léxico explícito antes de convertir, sin truncar ni imputar: vacío,
+signos, espacios, decimales, notación científica, ceros iniciales y exceso de
+rango rechazados. Cero conocido y ningún segmento siguen siendo válidos.
+Espera, rechazo, selección vacía, corte sin universo, fuente fallida y error
+inesperado diferenciados. req silencioso, propagación de validate/need y
+cancelOutput frente a estado explícito explicados con referencias primarias.
+
+Cada Aplicar relee/valida toda la fuente antes del borrador. Rechazo conserva
+consulta anterior identificada; fuente ausente/inválida o fallo inesperado
+retira consulta disponible y cifras. Selección vacía sobre tres créditos conserva
+0/0/0%; sin universo no hay indicadores. Noviembre es opción sin filas nuevas.
+Aviso general independiente de casilla; validación silenciosa en consumidores
+evita repetir el mismo bloqueo. El mínimo sí demuestra propagación visible.
+No hay monitor de archivos ni invalidación global de otras sesiones: cada una
+comprueba al aplicar. Corrección de fuente requiere aplicar, no reiniciar.
+
+Preparador exclusivo de quince archivos, validacion.R nuevo; cartera.R de 13.04,
+consulta.R de 13.05 y CSV de seis observaciones de 12.03 intactos byte por byte.
+Metadatos/iniciador/restaurador de 13.01 conservados y proyecto shiny_1306.Rproj.
+Restauración real en biblioteca local nueva: mismos 31 registros, R 4.6.1,
+Shiny 1.14.0 y renv 1.3.1. Sin paquetes nuevos ni cambios globales, Conda o
+metadatos Python. Recorrido principal IDE y terminal PowerShell/Bash opcional;
+revisión completa de la interfaz del IDE pendiente, sin acreditarla con Rscript.
+
+Funciones/testServer: entradas, condiciones de salida, rechazo, cero/vacío,
+noviembre, fuente ausente/inválida/solo encabezado, recuperación y fallo de cálculo
+inyectado. CSV temporal con limpieza, sin escribir la fuente de práctica. Seis
+regresiones detectadas en copias: fuente fallida conserva cifras, rechazo borra
+consulta, falta de universo publica indicadores, léxico admite 01, ninguno pasa
+a todos y umbral exclusivo. Original restaurado, fronteras y metadatos comprobados.
+
+Chrome headless a 1280/390: mínimo y propagación de mensajes, entradas rechazadas,
+contexto/celdas/medidas, cero/vacío/sin universo, avisos con tabla oculta, ausencia
+de fuente desde apertura y tras consulta válida, duplicado de octubre consultando
+septiembre, encabezado solo y recuperación completa. Dos sesiones conservan
+instantáneas hasta nueva aplicación; recarga y teclado comprobados. Mejora visual
+de aviso único verificada de nuevo en navegador. Diez vistas GFM, IDs únicos,
+sin desbordamiento y soluciones cerradas; capturas seleccionadas revisadas.
+Diagrama de decisiones Mermaid parseado/renderizado con biblioteca de Quarto y
+revisado visualmente. Enlaces/diff --check comprobados. Servidores propios
+detenidos; portal y reorganización privada fuera del alcance. Retomar 13.07 —
+Gráficos, tablas y descargas, todavía planificado; proyecto y práctica pendientes.
 
 **Desarrollo — 2026-10-28, eventos y estado de sesión Shiny 13.05:**
 lección/lab, mínimo número editado/guardado y app de cartera con borrador y

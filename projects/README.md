@@ -19,7 +19,7 @@ Así se evita mantener esqueletos vacíos.
 ## Qué falta para implementarlos
 
 Los módulos 00–12 tienen material; disponer de sus lecciones y labs no activa
-los proyectos. 13.01–13.05 de Shiny también disponen de material, sin activar su proyecto. Antes de crear uno, definir pregunta, producto, entradas,
+los proyectos. 13.01–13.06 de Shiny también disponen de material, sin activar su proyecto. Antes de crear uno, definir pregunta, producto, entradas,
 contrato, rúbrica y checkpoints vinculados al material que realmente requiere.
 No crear una carpeta vacía solo para representar el plan.
 
