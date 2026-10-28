@@ -146,6 +146,6 @@ Quien acompaña propone un cambio de un panel y pide explicar el otro antes de p
 
 ## Siguiente paso
 
-Consulta [13.09 — Pruebas y observación del flujo](../../../curriculum/13_shiny_web/README.md#09-pruebas-y-observacion-del-flujo), todavía planificado.
+Consulta [13.09 — Pruebas y observación del flujo](../../../curriculum/13_shiny_web/09_tests_flow/README.md), disponible con lección y lab.
 
 [← Lección 13.08](../../../curriculum/13_shiny_web/08_organization_modules/README.md) · [Módulo 13](../../../curriculum/13_shiny_web/README.md)

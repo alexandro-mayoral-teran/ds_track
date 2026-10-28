@@ -294,6 +294,6 @@ nuevos, módulos dinámicamente insertados/eliminados, paquete R o despliegue.
 
 ## Siguiente paso
 
-Consulta [13.09 — Pruebas y observación del flujo](../README.md#09-pruebas-y-observacion-del-flujo), todavía planificado.
+Consulta [13.09 — Pruebas y observación del flujo](../09_tests_flow/README.md), disponible con lección y lab.
 
 [← 13.07](../07_outputs_downloads/README.md) · [Módulo 13](../README.md) · [Lab 13.08](../../../labs/13_shiny_web/08_organization_modules/README.md)

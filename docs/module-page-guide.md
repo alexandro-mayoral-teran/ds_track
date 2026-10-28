@@ -3,8 +3,8 @@
 Acuerdo de presentación educativa: 2026-10-27. Se aplica al índice README de un
 módulo y orienta su futura representación en el portal. La referencia aplicada
 es [00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md).
-La estructura está aplicada a los índices 00–14. El módulo 12 dispone de sus nueve secciones; 13 combina 13.01–13.08 disponibles
-y secciones pendientes 13.09–13.10; 14 conserva su plan. La tabla distingue
+La estructura está aplicada a los índices 00–14. El módulo 12 dispone de sus nueve secciones; 13 combina 13.01–13.09 disponibles
+y secciones pendientes 13.10; 14 conserva su plan. La tabla distingue
 cada estado: aplicar la estructura no desarrolla una lección ni revisa toda la teoría.
 
 ## Qué debe resolver esta página

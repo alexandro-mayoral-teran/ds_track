@@ -368,8 +368,7 @@ Las páginas web pueden describir otras versiones.
 ## Siguiente paso
 
 Después del lab, continúa con [13.02 — Entradas y salidas](../02_inputs_outputs/README.md).
-13.03–13.08 también están disponibles; 13.09–13.10 conservan su plan, sin dar por implementados filtros compartidos,
-estado o entrega final.
+13.03–13.09 también están disponibles; 13.10 conserva el plan de entrega final.
 
 ---
 

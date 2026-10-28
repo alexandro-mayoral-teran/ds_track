@@ -6,22 +6,22 @@
 
 [**Empezar por 13.01 →**](01_web_first_app/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 13.01–13.08 con lecciones, apps locales y labs. 13.09–13.10 siguen planificadas.
+> **Disponible:** 13.01–13.09 con lecciones, apps locales y labs. 13.10 sigue planificada.
 > Material disponible no acredita aprendizaje ni un proyecto de aplicación completado.
 
 <a id="propósito-y-prerrequisitos"></a>
 
 ## Propósito
 
-Convertir el análisis R conocido en una aplicación Shiny con resultados comprobables y dependencias reactivas explícitas. 13.01 introduce navegador, interfaz, servidor y primera ejecución; 13.02 conecta entradas con salidas y 13.03 explica dependencias, invalidación y demanda; 13.04 comparte filtros e indicadores y 13.05 controla eventos/estado de sesión; 13.06 valida y explica casos sin datos; 13.07 concilia gráfica y descargas; 13.08 reutiliza UI/servidor en módulos. El resto conserva su plan.
+Convertir el análisis R conocido en una aplicación Shiny con resultados comprobables y dependencias reactivas explícitas. 13.01 introduce navegador, interfaz, servidor y primera ejecución; 13.02 conecta entradas con salidas y 13.03 explica dependencias, invalidación y demanda; 13.04 comparte filtros e indicadores y 13.05 controla eventos/estado de sesión; 13.06 valida y explica casos sin datos; 13.07 concilia gráfica y descargas; 13.08 reutiliza UI/servidor en módulos y 13.09 comprueba cálculos/transiciones y detecta regresiones. El cierre conserva su plan.
 
 ## Antes de empezar
 
-Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases de R/tidyverse/ggplot2. [12 — Streamlit](../12_streamlit/README.md) es alternativa, no requisito. 13.01 usa el IDE de R elegido y prepara un proyecto renv independiente con Shiny 1.14.0; 13.02–13.06 conservan sus metadatos; 13.07 añade ggplot2 en su propio lockfile y 13.08 lo conserva sin cambios. No exige entregas anteriores ni modifica bibliotecas globales. La planificación restante no instala paquetes.
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases de R/tidyverse/ggplot2. [12 — Streamlit](../12_streamlit/README.md) es alternativa, no requisito. 13.01 usa el IDE de R elegido y prepara un proyecto renv independiente con Shiny 1.14.0; 13.02–13.06 conservan sus metadatos; 13.07 añade ggplot2 en su propio lockfile y 13.08–13.09 lo conservan sin cambios. No exige entregas anteriores ni modifica bibliotecas globales. La planificación restante no instala paquetes.
 
 ## Qué vas a aprender
 
-Las secciones disponibles permiten construir consultas reactivas, aplicarlas por sesión y conciliar mensajes, tabla, gráfica y descargas, y reutilizar UI/servidor sin mezclar instancias. El recorrido completo prevé:
+Las secciones disponibles permiten construir consultas reactivas, aplicarlas por sesión y conciliar mensajes, tabla, gráfica y descargas, reutilizar UI/servidor sin mezclar instancias y comprobar el flujo con pruebas. El recorrido completo prevé:
 
 - Separar interfaz, cálculo y dependencias reactivas.
 - Usar entradas, filtros y estado sin mezclar sesiones.
@@ -42,7 +42,7 @@ Las secciones disponibles permiten construir consultas reactivas, aplicarlas por
 | **13.06** · [Validación y mensajes](06_validation_messages/README.md) | [Lab 13.06](../../labs/13_shiny_web/06_validation_messages/README.md) | Atender datos ausentes e interacciones inválidas |
 | **13.07** · [Gráficos, tablas y descargas](07_outputs_downloads/README.md) | [Lab 13.07](../../labs/13_shiny_web/07_outputs_downloads/README.md) | Entregar evidencia correspondiente a los filtros |
 | **13.08** · [Organización y módulos](08_organization_modules/README.md) | [Lab 13.08](../../labs/13_shiny_web/08_organization_modules/README.md) | Reutilizar una parte de UI y servidor |
-| **13.09** · [Pruebas y observación del flujo](#09-pruebas-y-observacion-del-flujo) | Pendiente | Comprobar cálculos reactivos y casos límite |
+| **13.09** · [Pruebas y observación del flujo](09_tests_flow/README.md) | [Lab 13.09](../../labs/13_shiny_web/09_tests_flow/README.md) | Comprobar cálculos reactivos y casos límite |
 | **13.10** · [Cierre y entrega local](#10-cierre-y-entrega-local) | Pendiente | Reconstruir una app R con indicadores conciliados |
 
 <a id="alcance-de-cada-sección"></a>
@@ -52,7 +52,7 @@ Las secciones disponibles permiten construir consultas reactivas, aplicarlas por
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado por sección:** 13.01–13.08 están disponibles. 13.09–13.10 describen el alcance previsto; no tienen lecciones o labs listos.
+**Estado por sección:** 13.01–13.09 están disponibles. 13.10 describe el alcance previsto; no tiene lección o lab listo.
 
 <a id="01-web-basica-y-primera-app"></a>
 
@@ -149,10 +149,11 @@ nuevos. Instancia, sesión y fuente compartida diferenciadas.
 
 ### 09 — Pruebas y observación del flujo
 
-- Casos de funciones y testServer para lógica reactiva; cambios de entradas,
-  resultados vacíos y fallas esperadas. Observación del flujo cuando ayude a depurar.
-- Práctica prevista: detectar un indicador desactualizado; complementar con revisión
-  en navegador. Pruebas completas de navegador son una ampliación posterior.
+[Lección 13.09](09_tests_flow/README.md) y [lab](../../labs/13_shiny_web/09_tests_flow/README.md)
+disponibles. Expectativas independientes, funciones R y testServer, transiciones
+de consulta y casos límite; mínimo con mensajes y regresión de salida antigua.
+App modular anterior conservada, catorce CSV temporales releídos y revisión
+complementaria en navegador. Sin paquetes nuevos; reactlog es ampliación opcional.
 
 <a id="10-cierre-y-entrega-local"></a>
 
@@ -169,7 +170,7 @@ nuevos. Instancia, sesión y fuente compartida diferenciadas.
 
 Se avanza desde UI/reactividad a filtros, validación, organización y pruebas. RStudio o el IDE elegido es el recorrido de trabajo principal. Mastering Shiny de Hadley Wickham es la lectura abierta de apoyo. Shiny para Python no añade otra ruta obligatoria; despliegue y autenticación son extensiones.
 
-Empieza por 13.01 y su lab, después continúa con 13.02–13.08. Las actividades de 13.09–13.10 siguen como propuesta; no intentes ejecutar todavía esos alcances.
+Empieza por 13.01 y su lab, después continúa con 13.02–13.09. La actividad de 13.10 sigue como propuesta; no intentes ejecutar todavía ese alcance.
 
 ## Qué conservar
 
@@ -183,16 +184,16 @@ Empieza por 13.01 y su lab, después continúa con 13.02–13.08. Las actividade
 | Mensajes y recuperación de 13.06 | Entradas, vacío, fuente y retirada de cifras |
 | Gráfica y CSV de 13.07 | Alturas, filas, filtros y medidas de la consulta aplicada |
 | Instancias y API de 13.08 | UI/servidor, namespaces y estado independiente |
-| Casos de prueba futuros | Filtros, errores y sesiones |
+| Pruebas y regresión de 13.09 | Funciones, transiciones, salida desactualizada y límites de cada capa |
 | Entrega local futura | Reconstrucción de tabla, figura y descarga |
 
-En 13.01–13.08 conserva archivos, cálculo por venta, variantes, consultas, grafos y observaciones de consola/reinicio. Guarda una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje. Los filtros compartidos se practican en 13.04; la entrega completa corresponde a secciones pendientes.
+En 13.01–13.09 conserva archivos, cálculo por venta, variantes, consultas, grafos y observaciones de consola/reinicio. Guarda una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje. Los filtros compartidos se practican en 13.04; la entrega completa corresponde a secciones pendientes.
 
 <a id="prácticas-proyecto-y-criterio-de-salida"></a>
 
 ## Criterio de salida
 
-El cierre completo requerirá explicar las dependencias reactivas y demostrar que tabla, figura y descarga reflejan los mismos filtros. Una app local comprobada bastará. Hoy 13.01–13.08 ofrecen primeras apps ejecutables, pero el cierre del módulo sigue previsto y no acredita práctica completada.
+El cierre completo requerirá explicar las dependencias reactivas y demostrar que tabla, figura y descarga reflejan los mismos filtros. Una app local comprobada bastará. Hoy 13.01–13.09 ofrecen primeras apps ejecutables, pero el cierre del módulo sigue previsto y no acredita práctica completada.
 
 06_shiny_portfolio_app está previsto en [proyectos](../../projects/README.md), sin carpeta ni checkpoints implementados.
 
@@ -209,7 +210,7 @@ y entrega (09–10). Sus nombres se concretarán al desarrollar el proyecto.
 
 ## Siguiente paso
 
-Empieza por [13.01 — Web básica y primera app](01_web_first_app/README.md), continúa con [13.02 — Entradas y salidas](02_inputs_outputs/README.md) y consulta después [13.03 — Modelo de reactividad](03_reactivity/README.md). Sigue con [13.04 — Filtros e indicadores compartidos](04_shared_filters/README.md); continúa con [13.05 — Eventos y estado de sesión](05_events_session/README.md). Sigue con [13.06 — Validación y mensajes](06_validation_messages/README.md). Continúa con [13.07 — Gráficos, tablas y descargas](07_outputs_downloads/README.md). Continúa con [13.08 — Organización y módulos](08_organization_modules/README.md). [13.09](#09-pruebas-y-observacion-del-flujo) sigue planificado.
+Empieza por [13.01 — Web básica y primera app](01_web_first_app/README.md), continúa con [13.02 — Entradas y salidas](02_inputs_outputs/README.md) y consulta después [13.03 — Modelo de reactividad](03_reactivity/README.md). Sigue con [13.04 — Filtros e indicadores compartidos](04_shared_filters/README.md); continúa con [13.05 — Eventos y estado de sesión](05_events_session/README.md). Sigue con [13.06 — Validación y mensajes](06_validation_messages/README.md). Continúa con [13.07 — Gráficos, tablas y descargas](07_outputs_downloads/README.md). Continúa con [13.08 — Organización y módulos](08_organization_modules/README.md). Continúa con [13.09 — Pruebas y observación del flujo](09_tests_flow/README.md). [13.10](#10-cierre-y-entrega-local) sigue planificado.
 
 Cuando esta ruta esté implementada y cierres la práctica, sigue con [14 — Proyecto reproducible](../14_reproducible_projects/README.md), también planificado. La otra aplicación queda como comparación opcional.
 

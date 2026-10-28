@@ -11,7 +11,7 @@ Consulta la [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-port
 para distinguir páginas adaptadas, labs conservados y material integrado en el
 portal. La [lección/lab 00.01](../curriculum/00_getting_started/01_github_profile/README.md)
 sigue como referencia inicial; 12.01–12.09 aplican la plantilla a material nuevo y
-13.01–13.08 también tienen material nuevo; 13.09–13.10 y 14 conservan sus planes.
+13.01–13.09 también tienen material nuevo; 13.10 y 14 conservan sus planes.
 
 ## Niveles de navegación
 
@@ -36,7 +36,7 @@ Esa estructura organiza el módulo; no sustituye la explicación de cada lecció
 
 Los índices 00–14 incluyen el desplegable común **Ver el alcance de las secciones**
 después de su tabla. Está cerrado por defecto y complementa la elección de
-lecciones; no oculta preparación ni cierre. En las secciones pendientes 13.09–13.10 y en 14, la planificación se indica
+lecciones; no oculta preparación ni cierre. En las secciones pendientes 13.10 y en 14, la planificación se indica
 también fuera del desplegable. Los detalles de esta regla están en la guía de módulo.
 
 ## Patrón de lección

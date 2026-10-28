@@ -146,7 +146,7 @@ Comprueba funciones, cinco consultas, campos de tabla, ocultar/recuperar y eco
 de texto. Usa testServer como apoyo opcional: no monta la UI, por lo que sus
 entradas se fijan expresamente. Las opciones iniciales/etiquetas/teclado/HTML
 real y sesiones se comprueban en navegador; no las acredita ese control.
-Las pruebas reactivas como tema corresponden a 13.09, todavía planificado.
+Las pruebas reactivas como tema corresponden a [13.09](../09_tests_flow/README.md), disponible con lección y lab.
 
 El control tiene expectativas de la muestra conocida. Cambiar datos o la regla
 sin revisar esas expectativas debe producir un fallo. Las variantes del lab

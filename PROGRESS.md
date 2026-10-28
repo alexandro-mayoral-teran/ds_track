@@ -10,13 +10,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.08 de Shiny están disponibles; 13.09–13.10 y 14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01–13.09 de Shiny están disponibles; 13.10 y 14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [13.09 — Pruebas y observación del flujo](curriculum/13_shiny_web/README.md#09-pruebas-y-observacion-del-flujo).
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.08 de la alternativa Shiny están disponibles; 13.09–13.10 y 14 conservan planes.
+- **Siguiente desarrollo educativo:** [13.10 — Cierre y entrega local](curriculum/13_shiny_web/README.md#10-cierre-y-entrega-local).
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.09 de la alternativa Shiny están disponibles; 13.10 y 14 conservan planes.
   [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.08 — Organización y módulos: UI/servidor reutilizables, namespaces, dos instancias y API reactiva; retomar 13.09.
+- **Último desarrollo educativo:** 2026-10-28, 13.09 — Pruebas y observación del flujo: funciones, testServer, regresión y revisión de navegador; retomar 13.10.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +31,40 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, pruebas y observación del flujo Shiny 13.09:**
+Lección/lab, mínimo autónomo número/doble/nota y pruebas con R base y testServer.
+Expectativas literales, identical frente a all.equal, inicialización de entradas/
+botón antes del primer evento, rondas reactivas y límites de la simulación.
+Funciones: seis observaciones completas, siete consultas por crédito, frontera
+inclusiva, cero/vacío/sin universo, rechazo y fuente completa antes del filtro;
+catorce CSV temporales escritos/releídos, contexto y capas ggplot comprobados.
+Servidor: borrador/aplicada, rechazo, bloqueo por duplicado fuera del corte,
+ausencia y recuperación; sesión nueva, dos instancias, API del padre y namespaces.
+
+App/módulo de 13.08 y funciones/fuente/metadatos anteriores conservados por copia.
+Preparador exclusivo de veinte archivos; biblioteca local restaurada desde vacía,
+R 4.6.1/Shiny 1.14.0/ggplot2 4.0.3/renv 1.3.1 y mismos 42 registros del lockfile
+13.07. Sin dependencias nuevas ni cambios de Conda o bibliotecas globales.
+IDE/consola R es recorrido principal; PowerShell y Bash separados. La operación
+completa de la interfaz del IDE sigue pendiente, sin acreditarla con Rscript.
+
+Chrome headless a 1280/390: mínimo y mensajes por número, nota sin recálculo;
+app con aplicada/borrador, tabla oculta, cero/vacío, rechazo, bloqueo/recuperación,
+sesión nueva/recarga y cuarenta descargas reales releídas por Python por clave/
+campo/contexto. Se distinguen de los catorce CSV temporales de las pruebas R.
+Seis regresiones deliberadas detectadas con fallo concreto: texto aislado,
+frontera exclusiva, denominador de selección, resumen fijo, índice CSV y saldos
+erróneos compensados. Frontera adicional del lab comprobada; originales
+restaurados y conjunto esencial final correcto en proceso nuevo.
+
+Lección/lab, índice, recorridos y cobertura renderizados en diez vistas a dos
+anchos: sin desbordamiento de página, IDs únicos y soluciones cerradas.
+343 Markdown y 5237 enlaces locales sin incidencias; diff sin errores de espacios.
+Trazas de consola esenciales; reactlog opcional, sin instalarlo ni acreditar
+su visor. No se infiere rendimiento ni ausencia de todos los errores. Portal
+y especificaciones privadas fuera de esta entrega. Retomar 13.10; entrega,
+proyecto/checkpoints y práctica personal siguen pendientes.
 
 **Desarrollo — 2026-10-28, organización y módulos Shiny 13.08:**
 Lección/lab, mínimo autónomo y módulo de consulta reutilizado dos veces. NS
