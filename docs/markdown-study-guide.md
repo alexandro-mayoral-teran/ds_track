@@ -10,8 +10,8 @@ La portada, los índices y las lecciones disponibles aplican el patrón document
 Consulta la [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-portal)
 para distinguir páginas adaptadas, labs conservados y material integrado en el
 portal. La [lección/lab 00.01](../curriculum/00_getting_started/01_github_profile/README.md)
-sigue como referencia inicial; 12.01–12.08 aplican la plantilla a material nuevo y
-12.09/13–14 conservan sus planes.
+sigue como referencia inicial; 12.01–12.09 aplican la plantilla a material nuevo y
+13–14 conservan sus planes.
 
 ## Niveles de navegación
 

@@ -150,5 +150,4 @@ no el aprendizaje ni los resultados personales.
 ## Siguiente paso
 
 Revisa el [criterio de salida](../../../curriculum/12_streamlit/08_app_testing/README.md#evidencia-y-criterio-de-salida)
-y continúa con [12.09 — Cierre y entrega local](../../../curriculum/12_streamlit/README.md#09-cierre-y-entrega-local),
-todavía planificado.
+y continúa con [12.09 — Cierre y entrega local](../../../curriculum/12_streamlit/09_local_delivery/README.md).

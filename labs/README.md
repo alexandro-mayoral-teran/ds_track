@@ -129,6 +129,7 @@ reglas de enlace están en
 | [`12.06 — Explicar el vacío y recuperar la lectura`](12_streamlit/06_messages_empty_cases/) | `12_streamlit` | No aplica todavía |
 | [`12.07 — Conciliar pantalla y archivos`](12_streamlit/07_tables_charts_download/) | `12_streamlit` | No aplica todavía |
 | [`12.08 — Detectar y explicar una regresión`](12_streamlit/08_app_testing/) | `12_streamlit` | No aplica todavía |
+| [`12.09 — Reconstruir y demostrar una entrega local`](12_streamlit/09_local_delivery/) | `12_streamlit` | No aplica todavía |
 
 ## Cómo continuar
 

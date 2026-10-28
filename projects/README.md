@@ -18,7 +18,7 @@ Así se evita mantener esqueletos vacíos.
 
 ## Qué falta para implementarlos
 
-Los módulos 00–11 tienen material; disponer de sus lecciones y labs no activa
+Los módulos 00–12 tienen material; disponer de sus lecciones y labs no activa
 los proyectos. Antes de crear uno, definir pregunta, producto, entradas,
 contrato, rúbrica y checkpoints vinculados al material que realmente requiere.
 No crear una carpeta vacía solo para representar el plan.
@@ -30,7 +30,7 @@ Los criterios de integración pendientes están en
 [curriculum](../curriculum/README.md), no en este catálogo de proyectos.
 
 Streamlit (12) y Shiny (13) son alternativas antes de 14. La ruta Streamlit
-podrá definir su proyecto al implementarse; no se exige construir dos
+tiene nueve lecciones/labs y cierre local; su proyecto integrador sigue pendiente. No se exige construir dos
 aplicaciones para cerrar el recorrido.
 
 Los proyectos avanzan mediante checkpoints enlazados a lecciones y labs.

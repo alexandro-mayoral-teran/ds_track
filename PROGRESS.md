@@ -8,14 +8,14 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ## En este momento
 
-- **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
+- **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  12.01–12.08 están disponibles; 12.09 y 13–14 siguen planificados.
+  Las nueve secciones de Streamlit están disponibles; 13–14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/README.md#09-cierre-y-entrega-local),
-  con [estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 12.08 — Pruebas de la aplicación: lección/lab, mínimo, pruebas de funciones y AppTest; siguiente desarrollo 12.09.
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13 (alternativa) y 14 conservan planes.
+  [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
+- **Último desarrollo educativo:** 2026-10-28, 12.09 — Cierre y entrega local: fuentes, seis casos, verificador externo y reconstrucción; las nueve secciones de Streamlit tienen material.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -30,6 +30,45 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, cierre y entrega local Streamlit 12.09:**
+lección/lab, preparador, instrucciones autocontenidas y entrega.py con acciones
+exclusivas crear/verificar. Reutiliza las fuentes de 12.03/05/06/07/08 sin cambiar
+algoritmos ni exigir entregas previas. Entrega de 36 archivos: código/pruebas,
+fuente/contrato, metadatos bloqueados, seis análisis y cinco pares CSV/JSON de
+terminal, con manifiesto SHA-256. Noviembre sin universo no ofrece CSV/contexto;
+vacío válido conserva encabezado y universo. Destinos nuevos fuera de la fuente.
+
+Verificador de solo lectura sin importar código de la carpeta revisada: inventario,
+huellas, fuente completa por ID/corte y todos los campos de filtros/resultados/
+CSV/contexto contra referencia externa. Rechaza referencia interna; no autentica
+origen ni historial. Contrato de cierre requiere septiembre/octubre presentes y
+noviembre ausente. Prueba de archivos no sustituye comportamiento ni demostración.
+
+Comprobación: doce métodos de autoría aprobados en ambos entornos existentes;
+reconstrucción desde carpeta distinta sin acceder a fuentes del repositorio,
+dos entornos .venv nuevos restaurados con uv --locked --offline desde caché local
+y 19 métodos de referencia de 12.08 aprobados en cada copia. Python 3.12.12,
+Streamlit 1.66.1/Altair 6.3.0; metadatos idénticos a raíz y programas previos intactos.
+Seis casos conciliados y verificación sin cambios de bytes. Fuente invertida,
+variante 2800/4800, fuentes inválidas/vacías, duplicados fuera del filtro, archivos
+extra/faltantes, CLI exclusiva y destinos ocupados comprobados. Alteraciones
+compensadas de fuente/análisis/CSV rechazadas aun con huellas/contexto actualizados;
+solución literal del lab comprobada en dos fases: huella y luego valores.
+
+Chrome headless sobre la app reconstruida a 1440/390: nueve pares descargados
+realmente, columnas por clave/contexto/huellas conciliados y revisor estándar
+ejecutado sobre esos archivos. Borrador/Enter, tabla oculta, servicios/1900–1901,
+rechazo, vacío, corte ausente, cambio/fallo/recuperación de fuente, recarga y
+teclado hasta envío/descargas comprobados. Doce vistas GFM de lección/lab/índice/
+recorridos/README entregable/guía a 1280/390, sin desbordamiento, IDs únicos y
+soluciones cerradas; capturas revisadas. Enlaces locales/fragmentos y diff --check
+sin incidencias. No certifica accesibilidad completa ni otros navegadores.
+
+Las nueve secciones de 12 tienen material; retomar práctica/demostración de cierre.
+13 es alternativa y 14 conserva su plan. Proyecto/checkpoints y aprendizaje del
+estudiante siguen pendientes. Portal y reorganización privada no se integran ni
+publican por este trabajo; no hay despliegue ni cambios de dependencias globales.
 
 **Desarrollo — 2026-10-28, pruebas de la aplicación Streamlit 12.08:**
 lección/lab, mínimo autónomo de dos ventas, preparador a destino nuevo y

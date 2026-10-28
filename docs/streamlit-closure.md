@@ -2,8 +2,8 @@
 
 ## Alcance vigente
 
-El [módulo 12](../curriculum/12_streamlit/README.md) dispone de **12.01–12.08**
-con lecciones y labs. 12.09 conserva su plan. Este documento define el
+El [módulo 12](../curriculum/12_streamlit/README.md) dispone de **12.01–12.09**
+con lecciones y labs. Las nueve secciones tienen material de cierre local. Este documento define el
 punto de reanudación y criterios pendientes; la bitácora de autoría vive en
 [PROGRESS.md](../PROGRESS.md). Material disponible no acredita práctica del estudiante.
 
@@ -16,15 +16,16 @@ punto de reanudación y criterios pendientes; la bitácora de autoría vive en
 | 12.06 | Rechazar intentos, explicar vacíos y recuperar fuentes sin cifras engañosas |
 | 12.07 | Conciliar tabla/gráfico/CSV/contexto y conservar archivos de la misma vista |
 | 12.08 | Probar funciones y AppTest con expectativas explícitas, detectar una regresión y revisar límites en navegador |
+| 12.09 | Crear una entrega, contrastarla contra referencia externa y reconstruirla desde sus fuentes |
 
-No hay proyecto integrador ni checkpoints Streamlit implementados. El cierre
-local del recorrido completo sigue pendiente; desplegar en Internet no es requisito.
+No hay proyecto integrador ni checkpoints Streamlit implementados. La práctica de cierre
+local debe demostrarse individualmente; desplegar en Internet no es requisito.
 El portal es otro trabajo y no integra estas apps por disponer de fuentes nuevas.
 
 ## Cómo retomar la práctica
 
-1. Abre la [lección 12.08](../curriculum/12_streamlit/08_app_testing/README.md)
-   y sus [recorridos](../curriculum/12_streamlit/08_app_testing/recorridos.md).
+1. Abre la [lección 12.09](../curriculum/12_streamlit/09_local_delivery/README.md)
+   y sus [recorridos](../curriculum/12_streamlit/09_local_delivery/recorridos.md).
 2. Reutiliza el entorno local elegido en 12.01. Versiones comprobadas: Python
    3.12.12, Streamlit 1.66.1 y Altair 6.3.0 declarados en el proyecto. No reinstales
    globalmente ni cambies Conda/base o el entorno raíz para retomar.
@@ -81,17 +82,38 @@ habilitados no demuestran una descarga en navegador. La lección incluye un
 protocolo de descarga real, borrador sin enviar, rechazo, vacío, teclado y ventana
 estrecha. Los comprobar_app.py previos siguen como apoyos opcionales de autoría.
 
-## Siguiente desarrollo: 12.09 y cierre real
+## Entrega disponible y práctica de cierre: 12.09
 
-12.09 deberá reunir fuente/contrato, instrucciones y versiones, reconstrucción en
-carpeta nueva, ejemplos comprobables y una entrega local. Tendrá que conciliar
-los valores con una referencia, conservar contexto de filtros y justificar
-límites de estado/caché/descarga. No marcar proyecto/checkpoints completos por
-tener nueve labs; sus archivos y criterios deben implementarse explícitamente.
+El preparador reúne las fuentes de 12.08 y añade constructor/verificador,
+instrucciones autocontenidas y copias de pyproject.toml/uv.lock sin cambios.
+La entrega tiene 36 archivos: fuente/contrato, código/pruebas, seis análisis,
+cinco pares CSV/JSON calculados en terminal y manifiesto SHA-256. Noviembre
+conserva diagnóstico sin descarga; vacío válido conserva encabezado/contexto.
 
-La revisión humana deberá comprobar explicación, decisiones, ayudas recibidas y
-capacidad de recuperar la práctica. Desarrollar y ejecutar material no demuestra
-que una persona ya aprendió o completó el recorrido.
+El constructor exige destino nuevo fuera de su fuente y recalcula desde el CSV;
+no utiliza resultados anteriores como entrada ni transporta entornos/caché.
+El verificador solo lee y no importa código de la carpeta revisada: valida
+inventario/huellas, fuente completa por ID/corte, filtros y todos los valores
+contra una referencia CSV externa. La referencia y el revisor deben conservarse
+fuera de la entrega; el contraste no autentica su procedencia. La muestra de
+cierre requiere septiembre y octubre presentes y noviembre sin registros.
+
+La reconstrucción funciona desde los archivos entregados, sin el repositorio
+original; el README explica reconstruir el entorno local con el lockfile completo.
+Las suites de 12.08 conservan expectativas de las seis filas del curso. Para una
+variante legítima se revisan casos y documentación en una copia de trabajo;
+el verificador de valores usa la referencia externa elegida.
+
+Retomar la práctica exige otra carpeta, pruebas actuales, demostración de filtros/
+vacíos/rechazo/recuperación y dos pares descargados realmente. Resultados de
+terminal, huellas o AppTest no acreditan una descarga ni revisión humana.
+Conservar entorno, filtros, claves, ayudas, navegador/ancho y pendientes en
+la evidencia personal. La sesión y la caché no guardan aprendizaje.
+
+El material de Streamlit está desarrollado; práctica personal y proyectos/
+checkpoints siguen pendientes. 13 — Shiny es alternativa; 14 — Proyecto
+reproducible conserva su plan. No iniciar otro módulo, ampliar el portal ni
+instalar herramientas solo por dar por disponible el cierre.
 
 ## Comprobación disponible al cerrar 12.07
 
@@ -116,3 +138,18 @@ revisor estándar y referencias por clave. Borrador/Enter, rechazo, recuperació
 recarga, móvil y recorrido con teclado se comprobaron por separado de AppTest.
 Las páginas nuevas se revisaron como GFM a dos anchos. Detalles en PROGRESS.md;
 no acredita aprendizaje, accesibilidad completa ni otros navegadores.
+
+## Comprobación disponible al cerrar 12.09
+
+Doce controles de entrega pasaron en los dos entornos existentes. Se reconstruyó
+desde los archivos entregados y se restauraron dos entornos locales nuevos con
+el lockfile, desde caché y sin red; las 19 pruebas de referencia pasaron en cada
+copia. Se conciliaron los seis casos con referencia externa y se rechazaron
+alteraciones compensadas aun con huellas actualizadas. Verificación de solo
+lectura y programas/metadatos anteriores preservados.
+
+La app reconstruida se revisó en Chrome headless a 1440/390: nueve pares reales
+recuperados, relectura estándar y contraste por clave; estados, recuperación,
+recarga y teclado comprobados. Se revisaron seis páginas como GFM a dos anchos.
+Esto describe evidencia de autoría: no certifica aprendizaje, accesibilidad
+completa ni otros navegadores. Detalles en PROGRESS.md.

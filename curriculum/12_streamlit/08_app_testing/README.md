@@ -369,8 +369,8 @@ otra versión; la referencia de AppTest consultada presenta v1.66.0.
 
 ## Siguiente paso
 
-Después del lab, consulta [12.09 — Cierre y entrega local](../README.md#09-cierre-y-entrega-local),
-todavía planificado. El [estado y reanudación](../../../docs/streamlit-closure.md)
+Después del lab, continúa con [12.09 — Cierre y entrega local](../09_local_delivery/README.md).
+El [estado y reanudación](../../../docs/streamlit-closure.md)
 reúne los criterios pendientes sin dar por terminado el módulo.
 
 ---

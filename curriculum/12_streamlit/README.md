@@ -6,7 +6,7 @@
 
 [**Empezar por 12.01 →**](01_first_app_execution/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 12.01–12.08 con lecciones, apps locales y labs. 12.09 sigue planificada.
+> **Disponible:** las nueve secciones 12.01–12.09, con lecciones, apps locales y labs.
 > Disponer de material no acredita aprendizaje ni un proyecto de aplicación completado.
 
 <a id="propósito-y-prerrequisitos"></a>
@@ -15,17 +15,16 @@
 
 Crear un explorador de datos con filtros, indicadores y figuras comprobables,
 reutilizando funciones del análisis conocido. El recorrido conecta entradas,
-estado, caché, mensajes, presentación conciliada y pruebas; después incorporará
-la entrega local como cierre.
+estado, caché, mensajes, presentación conciliada, pruebas y entrega local.
 
 ## Antes de empezar
 
-Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. Para 12.01, sigue su preparación con Streamlit 1.66.1 en un entorno local; 12.02–12.08 reutilizan ese entorno; 12.09 conserva su plan.
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y las bases Python del recorrido. [13 — Shiny](../13_shiny_web/README.md) es alternativa, no prerrequisito. Para 12.01, sigue su preparación con Streamlit 1.66.1 en un entorno local; 12.02–12.09 reutilizan ese entorno. El cierre también explica cómo reconstruirlo en otra copia.
 
 ## Qué vas a aprender
 
 Las secciones disponibles permiten iniciar una app, filtrar, reutilizar funciones,
-controlar estado y caché, explicar errores y vacíos, conciliar tabla, gráfico y descarga, y probar cálculos y transiciones. El recorrido completo prevé:
+controlar estado y caché, explicar errores y vacíos, conciliar tabla, gráfico y descarga, probar cálculos y transiciones, y entregar una copia reconstruible. El recorrido permite practicar:
 
 - Explicar reejecución, estado de sesión y caché.
 - Separar cálculo comprobable e interfaz.
@@ -46,7 +45,7 @@ controlar estado y caché, explicar errores y vacíos, conciliar tabla, gráfico
 | **12.06** · [Mensajes y casos sin datos](06_messages_empty_cases/README.md) | [Lab 12.06](../../labs/12_streamlit/06_messages_empty_cases/README.md) | Explicar entradas inválidas y filtros vacíos |
 | **12.07** · [Tablas, gráficos y descarga](07_tables_charts_download/README.md) | [Lab 12.07](../../labs/12_streamlit/07_tables_charts_download/README.md) | Presentar y exportar el mismo universo filtrado |
 | **12.08** · [Pruebas de la aplicación](08_app_testing/README.md) | [Lab 12.08](../../labs/12_streamlit/08_app_testing/README.md) | Comprobar indicadores y comportamiento de widgets |
-| **12.09** · [Cierre y entrega local](#09-cierre-y-entrega-local) | Pendiente | Reconstruir y usar un explorador comprobado |
+| **12.09** · [Cierre y entrega local](09_local_delivery/README.md) | [Lab 12.09](../../labs/12_streamlit/09_local_delivery/README.md) | Reconstruir y usar un explorador comprobado |
 
 <a id="alcance-de-cada-sección"></a>
 
@@ -55,7 +54,7 @@ controlar estado y caché, explicar errores y vacíos, conciliar tabla, gráfico
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado por sección:** 12.01–12.08 están disponibles. 12.09 describe el alcance previsto; todavía no tiene lección o lab listo.
+**Estado por sección:** las nueve secciones 12.01–12.09 están disponibles. La práctica personal y los proyectos/checkpoints se revisan por separado.
 
 <a id="01-primera-app-y-modelo-de-ejecucion"></a>
 
@@ -158,18 +157,21 @@ del protocolo del gráfico como ampliación ligada a Streamlit 1.66.1.
 
 ### 09 — Cierre y entrega local
 
-- Instrucciones, versiones, datos regenerables y catálogo de filtros/indicadores.
-- Práctica prevista: iniciar desde un entorno limpio, reproducir un caso conocido
-  y entregar una demostración. Multipágina, fragments, autenticación y despliegue
-  en línea quedan como extensiones según una necesidad concreta.
+Disponible: [lección 12.09](09_local_delivery/README.md) y
+[lab 12.09](../../labs/12_streamlit/09_local_delivery/README.md). Entrega local
+con fuente/contrato, código/pruebas, metadatos bloqueados, seis análisis y cinco
+pares CSV/JSON calculados. Constructor exclusivo y revisor de solo lectura
+contra CSV externo por ID/corte; reconstrucción y demostración real separadas
+de las huellas. No requiere entregas previas ni dependencias nuevas. Multipágina,
+fragments, autenticación y despliegue son ampliaciones; no activa proyectos/checkpoints.
 
 </details>
 
 ## Cómo trabajar este módulo
 
-Recorrido previsto: empezar con una app local pequeña, incorporar entradas y estado, comprobar caché y casos vacíos, y cerrar con pruebas y entrega. No exige login, alojamiento ni conocimientos avanzados de HTML/CSS/JavaScript. Basta elegir esta ruta o Shiny.
+Recorrido: empezar con una app local pequeña, incorporar entradas y estado, comprobar caché y casos vacíos, y cerrar con pruebas y entrega. No exige login, alojamiento ni conocimientos avanzados de HTML/CSS/JavaScript. Basta elegir esta ruta o Shiny.
 
-Empieza por 12.01 y su lab. Las actividades de 12.09 siguen siendo una propuesta; no intentes ejecutar todavía ese alcance.
+Empieza por 12.01 y su lab. En 12.09 reconstruye una entrega en otra carpeta y contrástala con una referencia externa antes de demostrarla.
 
 ## Qué conservar
 
@@ -180,7 +182,7 @@ Empieza por 12.01 y su lab. Las actividades de 12.09 siguen siendo una propuesta
 | CSV y contexto JSON descargados | Correspondencia entre filas, gráfico e indicadores |
 | Instrucciones y app local | Reconstrucción y explicación del comportamiento |
 
-En 12.01–12.08 conserva tu copia, parámetros efectivos, predicciones y resultados:
+En 12.01–12.09 conserva tu copia, parámetros efectivos, predicciones y resultados:
 filas, indicadores, estado, reutilización, mensajes, descargas y pruebas deben poder explicarse.
 Guarda una nota con comprobaciones, ayudas, dudas y siguiente paso en tu copia
 personal. PROGRESS.md registra desarrollo del material, no porcentaje de aprendizaje.
@@ -189,17 +191,17 @@ personal. PROGRESS.md registra desarrollo del material, no porcentaje de aprendi
 
 ## Criterio de salida
 
-Cuando se implemente, el cierre requerirá explicar reejecución, estado y caché y demostrar indicadores verificables con filtros. Publicar en Internet no será requisito; hoy este criterio es previsto, no una práctica acreditable.
+Reconstruye la entrega de 12.09 en otra carpeta, verifica datos por ID/corte contra una referencia externa, ejecuta pruebas y demuestra filtros, errores, vacío, recuperación y descargas reales. Explica reejecución, estado, caché y límites de las huellas; conserva evidencia y ayudas recibidas. Publicar en Internet no es requisito. El criterio se evalúa en la práctica personal, no por disponer del material.
 
 Consulta el [estado y punto de reanudación](../../docs/streamlit-closure.md) para
-retomar 12.09 y distinguir controles de autoría de aprendizaje.
+retomar la práctica de cierre y distinguir controles de autoría de aprendizaje.
 
 No hay proyecto integrador ni checkpoint de aplicación Streamlit implementado; 12.01 es una práctica introductoria. Sus hitos se definirán como alternativa a la ruta Shiny.
 
 <details>
 <summary><strong>Notas de integración y alcance del cierre</strong></summary>
 
-Hitos propuestos: app mínima (01–02), lógica y estado (03–04), actualización y
+Tramos del material: app mínima (01–02), lógica y estado (03–04), actualización y
 casos límite (05–06), presentación verificada (07), pruebas y entrega (08–09).
 
 </details>
@@ -210,9 +212,9 @@ casos límite (05–06), presentación verificada (07), pruebas y entrega (08–
 
 Empieza por [12.01 — Primera app y modelo de ejecución](01_first_app_execution/README.md)
 y sigue el orden de [lecciones y labs](#lecciones-y-labs). El último material
-disponible es [12.08 — Pruebas de la aplicación](08_app_testing/README.md).
+disponible es [12.09 — Cierre y entrega local](09_local_delivery/README.md).
 
-Cuando esta ruta esté implementada y cierres la práctica, sigue con [14 — Proyecto reproducible](../14_reproducible_projects/README.md), también planificado. La otra aplicación queda como comparación opcional.
+Cuando cierres tu práctica, consulta el alcance de [14 — Proyecto reproducible](../14_reproducible_projects/README.md), todavía planificado. La otra aplicación queda como comparación opcional; no es requisito completar ambas.
 
 <details>
 <summary><strong>Referencias y apoyos</strong></summary>
