@@ -23,7 +23,7 @@ Cada lección conecta explicación, práctica, comprobación y evidencia.
 | **Comunica e integra** | Reportes, una aplicación y proyecto reproducible | [11–14](curriculum/README.md) |
 
 **Material:** las secciones de 00–11 y [12.01–12.09](curriculum/12_streamlit/README.md) están disponibles;
-[13.01 — Primera app Shiny](curriculum/13_shiny_web/01_web_first_app/README.md) está disponible; 13.02–13.10 y 14 conservan sus planes. Streamlit (12) y Shiny (13) son alternativas: basta una antes de 14.
+[13.01–13.02 de Shiny](curriculum/13_shiny_web/README.md) están disponibles; 13.03–13.10 y 14 conservan sus planes. Streamlit (12) y Shiny (13) son alternativas: basta una antes de 14.
 Los proyectos y checkpoints requieren consultar su estado en
 [proyectos](projects/README.md). Material disponible no significa práctica completada.
 

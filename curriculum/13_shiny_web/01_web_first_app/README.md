@@ -20,9 +20,9 @@ la usas. Antes de agregar filtros necesitamos ubicar esas piezas: abrir una
 página no significa que el navegador ejecute R, y guardar app.R no publica una app.
 
 Primero iniciaremos una página mínima; después mostraremos cuatro ventas y su
-total calculado en R. No hay filtros todavía. En [13.02](../README.md#02-entradas-y-salidas)
-conectaremos controles con salidas, y en [13.03](../README.md#03-modelo-de-reactividad)
-profundizaremos las dependencias reactivas; ambas secciones siguen planificadas.
+total calculado en R. No hay filtros todavía. [13.02](../02_inputs_outputs/README.md)
+conecta controles con salidas; [13.03](../README.md#03-modelo-de-reactividad)
+profundizará las dependencias reactivas y sigue planificada.
 
 ## Antes de empezar
 
@@ -367,9 +367,9 @@ Las páginas web pueden describir otras versiones.
 
 ## Siguiente paso
 
-Después del lab, consulta [13.02 — Entradas y salidas](../README.md#02-entradas-y-salidas),
-todavía planificado. La primera app ya está disponible; el resto del módulo
-conserva su plan, sin dar por implementados filtros, estado o entrega final.
+Después del lab, continúa con [13.02 — Entradas y salidas](../02_inputs_outputs/README.md).
+13.03–13.10 conservan su plan, sin dar por implementados filtros compartidos,
+estado o entrega final.
 
 ---
 

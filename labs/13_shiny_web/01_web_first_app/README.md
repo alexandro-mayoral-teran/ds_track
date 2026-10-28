@@ -128,5 +128,5 @@ no el aprendizaje ni las respuestas de cada participante.
 ## Siguiente paso
 
 Revisa el [criterio de salida](../../../curriculum/13_shiny_web/01_web_first_app/README.md#evidencia-y-criterio-de-salida)
-y consulta después [13.02 — Entradas y salidas](../../../curriculum/13_shiny_web/README.md#02-entradas-y-salidas),
-todavía planificado. El resto de las secciones de Shiny conserva su plan.
+y continúa después con [13.02 — Entradas y salidas](../../../curriculum/13_shiny_web/02_inputs_outputs/README.md).
+13.03–13.10 conservan su plan.

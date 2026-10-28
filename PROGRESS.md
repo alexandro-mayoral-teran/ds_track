@@ -10,13 +10,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01 — Primera app Shiny están disponibles; 13.02–13.10 y 14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01–13.02 de Shiny están disponibles; 13.03–13.10 y 14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [13.02 — Entradas y salidas](curriculum/13_shiny_web/README.md#02-entradas-y-salidas).
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01 de la alternativa Shiny está disponible; 13.02–13.10 y 14 conservan planes.
+- **Siguiente desarrollo educativo:** [13.03 — Modelo de reactividad](curriculum/13_shiny_web/README.md#03-modelo-de-reactividad).
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.02 de la alternativa Shiny están disponibles; 13.03–13.10 y 14 conservan planes.
   [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.01 — Web básica y primera app: mínimo/ventas, proyecto Shiny/renv local, variante y sesiones; retomar 13.02.
+- **Último desarrollo educativo:** 2026-10-28, 13.02 — Entradas y salidas: texto/selector/casilla, consultas y variantes de UI con los metadatos previos; retomar 13.03.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +31,44 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, entradas y salidas Shiny 13.02:**
+lección/lab, mínimo textInput/eco y app con selector nativo de venta/todas y
+casilla de detalle. ID/etiqueta/valor, entradas character/logical, parejas
+textOutput/renderText y tableOutput/renderTable, guarda de inicio NULL y
+texto escapado. Misma muestra de cuatro ventas/660 MXN; V003 conserva una
+fila/0. Ocultar el detalle no cambia consulta; recuperación y cambio mientras
+está oculto muestran la consulta vigente. Sin reactive() compartido, eventos
+propios, persistencia, descarga ni validación general de fuentes.
+
+ventas.R contiene funciones R corrientes sin Shiny. Preparador exclusivo de
+doce fuentes, proyecto de copia shiny_1302.Rproj y configuración local reutilizada.
+DESCRIPTION/renv.lock, contenido Rproj, restaurador e iniciador de 13.01 idénticos;
+31 registros, R 4.6.1/Shiny 1.14.0/renv 1.3.1. Restauración local desde biblioteca
+vacía comprobada, sin dependencias nuevas ni cambios en fuentes/entornos previos,
+Conda, metadatos Python o bibliotecas globales. No exige entregas anteriores.
+
+Controles de funciones, cinco consultas por campos completos, ocultar/recuperar,
+NULL inicial y texto/vacío/HTML pasaron. testServer fija entradas y no monta UI;
+no acredita opciones iniciales/etiquetas. Siete ejecuciones adicionales:
+control con UI variante, fronteras del preparador y cinco regresiones detectadas
+(ID de entrada, ID de salida, casilla invertida, importes compensados con total
+660 y cero eliminado). Fuentes de revisión restauradas tras cada experimento.
+
+Chrome headless Windows a 1280/390: cinco consultas, todos los campos, texto
+vacío y HTML literal, ocultar/cambiar/recuperar, sesiones nuevas, recarga y teclado
+comprobados. Variantes del lab desde procesos R nuevos: etiqueta Conjunto
+completo conserva valor todas/660; selected V004 inicia una fila/120 y recarga
+reinicia selección/casilla. Captura propia con alternativa textual. No acredita
+revisión completa del IDE; el recorrido principal del estudiante mantiene
+proyecto/sesión nueva en RStudio o IDE elegido y terminal como apoyo opcional.
+
+Diez vistas GFM de lección/lab/índice/recorridos/cobertura a 1280/390: imagen
+cargada, IDs únicos, sin desbordamiento y soluciones cerradas; capturas revisadas.
+4917 enlaces locales/fragmentos sin incidencias y git diff --check correcto.
+13.01–13.02 disponibles; retomar 13.03 — Modelo de reactividad. 13.03–13.10 y 14
+mantienen planes; proyectos/checkpoints y aprendizaje requieren evidencia propia.
+Portal y reorganización privada conservados fuera de este alcance educativo.
 
 **Desarrollo — 2026-10-28, web básica y primera app Shiny 13.01:**
 lección/lab, mínimo y app de cuatro ventas sintéticas. Navegador/UI/proceso R,
