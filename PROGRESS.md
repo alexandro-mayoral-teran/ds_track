@@ -10,7 +10,7 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  12.01–12.05 están disponibles; 12.06–12.09 y 13–14 siguen planificados.
+  12.01–12.06 están disponibles; 12.07–12.09 y 13–14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -27,6 +27,36 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, mensajes y vacíos Streamlit 12.06:** lección/lab,
+mínimo de cuatro situaciones y app con mensajes de situación/efecto/acción.
+Campo de mínimo textual validado antes de aplicar: enteros 0–1000000, espacios
+exteriores permitidos solo en interfaz; vacío, signos, decimales y comas se
+rechazan sin truncar ni imputar. El intento inválido conserva últimos filtros
+válidos claramente identificados y no cuenta otro envío. Error de intento persiste
+hasta confirmar corrección; se recalcula con la fuente actual, no una foto pasada.
+
+Lectura/validación antes de caché, spinner breve sin espera artificial, excepciones
+esperadas, diagnóstico desplegable y stop. Controles disponibles para reintentar.
+Fuente inválida/ausente no presenta cifras guardadas; encabezado sin filas y corte
+noviembre sin registros muestran avisos sin métricas. Selección vacía con universo
+válido conserva ceros de selección; un crédito con saldo conocido cero se distingue.
+Avisos independientes de ocultar detalle. Preparador exclusivo reutiliza fuentes
+03 y capa de caché 05 sin cambios; no exige entregas ni añade dependencias.
+
+Comprobación: nueve pruebas en ambos entornos locales Python 3.12.12/Streamlit
+1.66.1: forma/rango, fronteras, intentos rechazados, corrección, sesión independiente,
+cero observado, fuente ausente, encabezado/UTF-8/duplicados/saldo faltante y
+recuperación aun tras caché. Permisos/OSError comprobados mediante lector inyectado,
+sin alterar permisos del sistema. Navegador real 1440/390: rechazo con filtros
+identificados, corte ausente, segmentos vacíos, aviso sin tabla, fuente inválida,
+encabezado solo y recuperación. Captura propia con alternativa textual. Ocho vistas
+GFM sin desbordamiento, imagen cargada, IDs únicos y soluciones cerradas; 4622
+enlaces locales sin incidencias.
+Originales, pyproject/uv.lock y entornos globales intactos; portal y documentos
+privados pendientes se conservan fuera del trabajo educativo. Material disponible
+no acredita práctica ni proyecto/checkpoint. Retomar 12.07 — Tablas, gráficos y
+descarga; 12.07–12.09 siguen planificadas.
 
 **Desarrollo — 2026-10-27, caché Streamlit 12.05:** lección/lab con mínimo de
 cache_data frente a cache_resource y app sobre filtros aplicados de 12.04.

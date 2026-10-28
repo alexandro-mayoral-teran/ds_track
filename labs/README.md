@@ -132,3 +132,4 @@ de la siguiente lección.
 | [`12.03 — Un análisis, dos consumidores`](12_streamlit/03_data_interface/) | `12_streamlit` | No aplica todavía |
 | [`12.04 — Preparar, aplicar y conservar`](12_streamlit/04_session_state_forms/) | `12_streamlit` | No aplica todavía |
 | [`12.05 — Reutilizar sin perder vigencia`](12_streamlit/05_data_resource_cache/) | `12_streamlit` | No aplica todavía |
+| [`12.06 — Explicar el vacío y recuperar la lectura`](12_streamlit/06_messages_empty_cases/) | `12_streamlit` | No aplica todavía |

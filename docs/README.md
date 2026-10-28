@@ -35,9 +35,9 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 | --- | --- |
 | Índices de módulo 00–14 | Estructura común aplicada; 12 está iniciado; 13–14 siguen planificados |
 | Lecciones 00–11 | Plantilla de lección y material de apoyo aplicados |
-| Lecciones 12.01–12.05 | Material nuevo con plantilla, apoyos y labs; 12.06–12.09 siguen planificados |
+| Lecciones 12.01–12.06 | Material nuevo con plantilla, apoyos y labs; 12.07–12.09 siguen planificados |
 | Módulos 13–14 | Conservan planes; no tienen lecciones implementadas que migrar |
-| Labs | Muestra visual 00.01 y nuevos 12.01–12.05 con estructura común; los demás conservan consignas y navegación |
+| Labs | Muestra visual 00.01 y nuevos 12.01–12.06 con estructura común; los demás conservan consignas y navegación |
 | Portal local | Módulo 00 y sesión 02.01 integrados; otros módulos ofrecen sus índices |
 
 El estado de las plantillas describe presentación, no aprendizaje del estudiante.

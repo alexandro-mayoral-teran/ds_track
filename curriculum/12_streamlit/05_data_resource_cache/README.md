@@ -317,9 +317,8 @@ con Python 3.12.12 y Streamlit 1.66.1. La documentación en línea puede avanzar
 
 ## Siguiente paso
 
-Después del lab, consulta [12.06 — Mensajes y casos sin datos](../README.md#06-mensajes-y-casos-sin-datos),
-todavía planificado: explicar fallos de entrada y selecciones vacías con una
-experiencia consistente.
+Después del lab, continúa con [12.06 — Mensajes y casos sin datos](../06_messages_empty_cases/README.md):
+explicar fallos de entrada y selecciones vacías con una experiencia consistente.
 
 ---
 

@@ -105,5 +105,4 @@ checkpoint asociado todavía.
 ## Siguiente paso
 
 Vuelve al [criterio de salida](../../../curriculum/12_streamlit/05_data_resource_cache/README.md#evidencia-y-criterio-de-salida)
-y después consulta [12.06 — Mensajes y casos sin datos](../../../curriculum/12_streamlit/README.md#06-mensajes-y-casos-sin-datos),
-todavía planificado.
+y después consulta [12.06 — Mensajes y casos sin datos](../../../curriculum/12_streamlit/06_messages_empty_cases/README.md).
