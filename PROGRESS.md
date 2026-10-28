@@ -10,7 +10,7 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–11 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  12.01–12.03 están disponibles; 12.04–12.09 y 13–14 siguen planificados.
+  12.01–12.04 están disponibles; 12.05–12.09 y 13–14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -27,6 +27,35 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-27, estado y formularios Streamlit 12.04:** lección/lab,
+contador mínimo y app con formulario. Claves explícitas, inicialización solo si
+faltan, filtros aplicados separados de los widgets, copia de segmentos y contador
+de envíos. Editar prepara un lote; confirmar cambia la selección. Otra pasada
+conserva parámetros; otra pestaña/recarga/reinicio vuelve al inicio. Enter no envía
+en esta app y el formulario conserva sus campos tras confirmar. No se promete
+conservar borradores sin enviar después de otras interacciones.
+
+Preparador crea una carpeta nueva con interfaces de 12.04 y funciones/CSV/
+configuración/ejecutor de 12.03, idénticos a sus fuentes; no exige salidas previas,
+no duplica algoritmos ni sobrescribe prácticas. Octubre 003/2600 y universo 4600;
+septiembre >= 2001, 003/2500 y universo 4500, ambos uno de tres. Variante del CSV
+2800/4800 se relee en la siguiente pasada sin contar otro envío: conserva filtros,
+no resultados ni una fuente congelada. Sin caché, persistencia de elecciones en
+disco, paquetes ni lockfiles nuevos. Recorridos completos PowerShell/Bash-Zsh/CMD.
+
+Comprobación: ocho pruebas AppTest en los dos entornos locales existentes,
+Python 3.12.12/Streamlit 1.66.1. Contador, inicialización, envíos, frontera, vacío,
+recuperación, copia de segmentos, sesiones independientes, relectura, error de
+fuente fuera del filtro y preparación exclusiva. Navegador real 1440/390: borrador
+sin aplicar, Enter, envío conjunto, detalle recuperable, dos pestañas, recarga y
+vacío. Servidor temporal propio detenido/reiniciado realmente: memoria reiniciada,
+variante en disco conservada; lectura del CSV sin nuevo envío comprobada también
+en navegador. Captura propia con alternativa textual, ocho vistas GFM de lección,
+lab, índice y recorridos, enlaces locales revisados. Originales y entornos globales
+intactos; portal y documentación privada pendientes fuera de este trabajo.
+No acredita aprendizaje ni proyecto/checkpoint. Retomar 12.05 — Caché de datos y
+recursos; 12.05–12.09 siguen planificadas.
 
 **Desarrollo — 2026-10-27, separar datos e interfaz Streamlit 12.03:** lección,
 lab, recorridos y CSV autónomo con los seis valores de 12.02. Lectura/validación/

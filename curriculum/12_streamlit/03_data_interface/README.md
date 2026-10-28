@@ -306,9 +306,9 @@ indicadas en la preparación. Los ejemplos de esta sección son propios.
 
 ## Siguiente paso
 
-Después del lab, continúa con el alcance de
-[12.04 — Estado de sesión y formularios](../README.md#04-estado-de-sesion-y-formularios),
-todavía planificado: conservar elecciones y controlar cuándo aplicarlas.
+Después del lab, continúa con
+[12.04 — Estado de sesión y formularios](../04_session_state_forms/README.md):
+conservar elecciones y controlar cuándo aplicarlas mediante un formulario.
 
 ---
 

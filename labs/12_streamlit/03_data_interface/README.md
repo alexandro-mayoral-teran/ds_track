@@ -100,5 +100,4 @@ registra autoría del material, no tu avance. No hay proyecto/checkpoint asociad
 
 Vuelve a la [lección](../../../curriculum/12_streamlit/03_data_interface/README.md)
 y revisa el criterio de salida. Después consulta
-[12.04 — Estado de sesión y formularios](../../../curriculum/12_streamlit/README.md#04-estado-de-sesion-y-formularios),
-todavía planificado.
+[12.04 — Estado de sesión y formularios](../../../curriculum/12_streamlit/04_session_state_forms/README.md).
