@@ -136,6 +136,7 @@ reglas de enlace están en
 | [`13.04 — Conciliar filtros, tabla e indicadores`](13_shiny_web/04_shared_filters/) | `13_shiny_web` | No aplica todavía |
 | [`13.05 — Editar, aplicar y separar sesiones`](13_shiny_web/05_events_session/) | `13_shiny_web` | No aplica todavía |
 | [`13.06 — Explicar y recuperar casos sin datos`](13_shiny_web/06_validation_messages/) | `13_shiny_web` | No aplica todavía |
+| [`13.07 — Conciliar gráfica, tabla y descargas`](13_shiny_web/07_outputs_downloads/) | `13_shiny_web` | No aplica todavía |
 
 ## Cómo continuar
 

@@ -1,0 +1,6 @@
+Type: Project
+Title: Presentacion y descargas de consultas Shiny para DS Track
+Version: 0.1.0
+Imports:
+    shiny,
+    ggplot2

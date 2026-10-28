@@ -139,7 +139,7 @@ PROGRESS.md. Quien acompaña revisa una predicción y una recuperación completa
 
 ## Siguiente paso
 
-Consulta [13.07 — Gráficos, tablas y descargas](../../../curriculum/13_shiny_web/README.md#07-graficos-tablas-y-descargas),
-todavía planificado.
+Continúa con [13.07 — Gráficos, tablas y descargas](../../../curriculum/13_shiny_web/07_outputs_downloads/README.md),
+ya disponible.
 
 [← Lección 13.06](../../../curriculum/13_shiny_web/06_validation_messages/README.md) · [Módulo 13](../../../curriculum/13_shiny_web/README.md)

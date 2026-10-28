@@ -10,13 +10,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–12 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.06 de Shiny están disponibles; 13.07–13.10 y 14 siguen planificados.
+  Las nueve secciones de Streamlit y 13.01–13.07 de Shiny están disponibles; 13.08–13.10 y 14 siguen planificados.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [13.07 — Gráficos, tablas y descargas](curriculum/13_shiny_web/README.md#07-graficos-tablas-y-descargas).
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.06 de la alternativa Shiny están disponibles; 13.07–13.10 y 14 conservan planes.
+- **Siguiente desarrollo educativo:** [13.08 — Organización y módulos](curriculum/13_shiny_web/README.md#08-organizacion-y-modulos).
+- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.07 de la alternativa Shiny están disponibles; 13.08–13.10 y 14 conservan planes.
   [Estado y reanudación de Streamlit](docs/streamlit-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.06 — Validación y mensajes: entradas textuales, req/validate/need, estados sin datos y recuperación de fuente; retomar 13.07.
+- **Último desarrollo educativo:** 2026-10-28, 13.07 — Gráficos, tablas y descargas: ggplot2, selección/contexto CSV y consulta aplicada conciliados; retomar 13.08.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +31,53 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, gráficos, tablas y descargas Shiny 13.07:**
+lección/lab, mínimo tabla/CSV y app con barras ggplot2, tabla y CSV de selección/
+contexto desde la misma consulta aplicada. geom_col conserva saldos por crédito,
+etiquetas, base cero, unidades y subtítulo del corte; alt reactivo incluye IDs/
+saldos. Sin filtros nuevos de presentación ni datos recalculados desde borrador.
+CSV selección conserva cuatro columnas, sin índice; contexto registra filtros,
+universo, medidas y porcentaje sin redondeo de presentación. Dos solicitudes
+independientes: descargar ambas antes de aplicar otra consulta; no constituyen
+una entrega reconstruible completa ni autentican ejecuciones anteriores.
+
+Vacío sobre universo exporta encabezado de selección y una fila de contexto,
+sin barras inventadas. Inicio/sin universo/bloqueo no ofrece descargas, y cada
+handler vuelve a exigir consulta utilizable al ejecutarse. Rechazo con consulta
+anterior válida y borrador pendiente exportan esa instantánea identificada.
+Ocultar tabla no cambia gráfica ni descargas; cambiar fuente sin aplicar no
+actualiza la instantánea. Archivo temporal de Shiny y destino del navegador
+diferenciados, relectura con IDs textuales y precisión/unidades explicadas.
+
+DESCRIPTION directo shiny/ggplot2 y lockfile real propio: ggplot2 4.0.3, 42
+registros con los 31 anteriores idénticos. Once paquetes añadidos; dos bibliotecas
+locales comprobadas, la segunda restaurada desde vacía, con R 4.6.1, Shiny 1.14.0 y renv 1.3.1.
+Preparador exclusivo de dieciséis archivos. cartera.R/consulta.R/validacion.R,
+CSV, iniciador/restaurador y contenido Rproj anteriores intactos; proyecto
+shiny_1307.Rproj. Sin cambios de Conda, bibliotecas globales, metadatos Python
+o lockfiles previos. Recorrido principal IDE, PowerShell/Bash opcionales;
+operación completa de la interfaz del IDE pendiente, sin acreditarla con Rscript.
+
+Siete consultas por clave/campo: ggplot_build contrasta datos, alturas, categorías
+y etiquetas; alt, fila cero única y vacío. CSV temporales releídos con encabezado
+estricto para no inferir un índice como row.names; contexto y bloqueo de falta
+de universo comprobados. Mismos controles en ambas bibliotecas. Seis regresiones
+detectadas en copias: conteo en vez de saldo, exportar universo, índice extra,
+contexto con mínimo falso, vacío con fila inventada y exportación sin universo.
+Original restaurado, fronteras del preparador y fuentes/metadatos comprobados.
+
+Chrome headless a 1280/390: descargas reales del mínimo, selección/contexto,
+borrador pendiente, tabla oculta, octubre, cero, vacío, rechazo y dos sesiones.
+Treinta y seis archivos releídos con csv de Python y referencia externa: columnas,
+IDs/cortes/saldos, filtros, indicadores, porcentaje y nombres conciliados. Figura/
+alt, recuperación de fuente ausente/inválida, sin universo, recarga y URL antigua
+de descarga sin servir datos bloqueados comprobados. Capturas de figura/cero y
+consulta seleccionadas revisadas; captura propia incorporada como apoyo.
+Diez vistas GFM a dos anchos, imagen cargada, IDs únicos, sin desbordamiento y
+soluciones cerradas; grafo Mermaid parseado/renderizado y enlaces/diff --check
+comprobados. Servidores propios detenidos. Portal/reorganización privada fuera.
+Retomar 13.08 — Organización y módulos; cierre/proyecto y práctica pendientes.
 
 **Desarrollo — 2026-10-28, validación y mensajes Shiny 13.06:**
 lección/lab, mínimo req/validate/need y app de cartera con saldo mínimo textual.

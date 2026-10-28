@@ -269,7 +269,7 @@ ni un sistema general de limpieza o monitoreo de fuentes.
 
 ## Siguiente paso
 
-Después del lab consulta [13.07 — Gráficos, tablas y descargas](../README.md#07-graficos-tablas-y-descargas),
-todavía planificado.
+Después del lab continúa con [13.07 — Gráficos, tablas y descargas](../07_outputs_downloads/README.md),
+ya disponible.
 
 [← 13.05](../05_events_session/README.md) · [Módulo 13](../README.md) · [Lab 13.06](../../../labs/13_shiny_web/06_validation_messages/README.md)

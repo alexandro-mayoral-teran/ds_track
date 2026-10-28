@@ -331,7 +331,7 @@ puede describir otras versiones.
 ## Siguiente paso
 
 Después del lab, consulta [13.03 — Modelo de reactividad](../03_reactivity/README.md),
-ya disponible. 13.07–13.10 también conservan su plan; esta app no los
+ya disponible. 13.08–13.10 también conservan su plan; esta app no los
 da por implementados por utilizar salidas que responden a entradas.
 
 ---
