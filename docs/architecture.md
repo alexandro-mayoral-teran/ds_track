@@ -128,7 +128,7 @@ la limpieza ni altera por sí solo el universo del indicador.
 
 Matplotlib/Altair y ggplot2 son las rutas de gráficos. Después se elige una
 aplicación: Streamlit cuenta con 12.01–12.09; la ruta
-Shiny dispone de 13.01–13.10; las lecciones 14.01–14.08 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; 14.09 conserva su plan. Ambas separan transformación y validación de la interfaz;
+Shiny dispone de 13.01–13.10; las lecciones 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible. Ambas separan transformación y validación de la interfaz;
 elegir una aplicación es suficiente. Los criterios de [Streamlit](streamlit-closure.md)
 y [Shiny](shiny-closure.md) distinguen material disponible, práctica y evidencia de cierre.
 
@@ -175,7 +175,7 @@ externo y reconstruye en otra carpeta. Véase [cierre de Shiny](shiny-closure.md
 para límites y práctica pendiente. Las entregas locales de ambas rutas no
 implementan por sí solas la integración de reporte y app del módulo 14.
 [14 — Proyectos reproducibles](../curriculum/14_reproducible_projects/README.md)
-dispone de [14.01 — Pregunta y contrato](../curriculum/14_reproducible_projects/01_product_question_contract/README.md); [14.02 — Estructura y configuración](../curriculum/14_reproducible_projects/02_structure_configuration/README.md), [14.03 — Entornos](../curriculum/14_reproducible_projects/03_reconstructible_environments/README.md), [14.04 — Pipeline](../curriculum/14_reproducible_projects/04_pipeline_reprocessing/README.md), [14.05 — Pruebas](../curriculum/14_reproducible_projects/05_tests_data_quality/README.md), [14.06 — Trazabilidad](../curriculum/14_reproducible_projects/06_traceability_recovery/README.md), [14.07 — Integración](../curriculum/14_reproducible_projects/07_report_app_integration/README.md) y [14.08 — Entrega opcional](../curriculum/14_reproducible_projects/08_delivery_optional_automation/README.md) están disponibles; 14.09 sigue planificada. Elegir 12 o 13 antes de integrar el producto final, sin exigir dos aplicaciones.
+dispone de [14.01 — Pregunta y contrato](../curriculum/14_reproducible_projects/01_product_question_contract/README.md); [14.02 — Estructura y configuración](../curriculum/14_reproducible_projects/02_structure_configuration/README.md), [14.03 — Entornos](../curriculum/14_reproducible_projects/03_reconstructible_environments/README.md), [14.04 — Pipeline](../curriculum/14_reproducible_projects/04_pipeline_reprocessing/README.md), [14.05 — Pruebas](../curriculum/14_reproducible_projects/05_tests_data_quality/README.md), [14.06 — Trazabilidad](../curriculum/14_reproducible_projects/06_traceability_recovery/README.md), [14.07 — Integración](../curriculum/14_reproducible_projects/07_report_app_integration/README.md), [14.08 — Entrega opcional](../curriculum/14_reproducible_projects/08_delivery_optional_automation/README.md) y [14.09 — Revisión final](../curriculum/14_reproducible_projects/09_final_review_defense/README.md) están disponibles; la base de material del recorrido está disponible. Elegir 12 o 13 antes de integrar el producto final, sin exigir dos aplicaciones.
 
 El [cierre de reportes](reporting-closure.md) separa material, práctica y proyecto.
 El portal local facilita lectura y práctica acompañada; no implementa esos
@@ -228,3 +228,8 @@ Registrar las decisiones vigentes en esta arquitectura o en su guía responsable
 con contexto y consecuencias cuando aporten información. El historial de cambios
 y comprobaciones permanece en PROGRESS.md y Git; no mantener otro registro vacío
 ni agregar infraestructura por anticipación.
+
+La [revisión de cierre de 14.09](reproducible-projects-closure.md) reutiliza las
+53 fuentes de 14.07 sin exigir 14.08: copia nueva, contraste externo humano,
+casos, falla controlada y defensa. No añade algoritmos, entornos ni dependencias.
+Completa la base de lecciones/labs; proyectos/checkpoints y depuración siguen aparte.

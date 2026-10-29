@@ -38,4 +38,4 @@ R 4.6.1/Python 3.12.12 siguen siendo las versiones de esta práctica.
 Conserva fuentes, intentos, entregas y reportes. Un solo escritor; sin cambios
 de archivos durante una operación, bloqueo ni transacción de todo el producto.
 Pruebas 14.05 heredadas siguen disponibles. No hay paquete final distribuible,
-CI, despliegue, autenticación ni checkpoints de proyecto; 14.08/14.09 pendientes.
+CI, despliegue, autenticación ni checkpoints de proyecto; 14.08 aporta entrega opcional y 14.09 revisión final en el recorrido.

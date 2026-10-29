@@ -205,7 +205,7 @@ PDF, dashboards y publicación ampliarán el producto sin bloquear su cierre.
 
 Al cerrar, elige [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
 Ambas rutas tienen lecciones, labs y entrega local disponibles; basta una antes
-de 14. 14.01–14.08 tienen lecciones y labs disponibles; 14.09 sigue planificada. Revisa los criterios de cierre de
+de 14. 14.01–14.09 tienen lecciones y labs disponibles; la base de material del recorrido está disponible. Revisa los criterios de cierre de
 [Streamlit](../../docs/streamlit-closure.md) o [Shiny](../../docs/shiny-closure.md).
 
 <details>

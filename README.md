@@ -22,8 +22,10 @@ Cada lección conecta explicación, práctica, comprobación y evidencia.
 | **Amplía tus herramientas** | Análisis en R e intercambio/procesamiento de datos | [06–10](curriculum/README.md) |
 | **Comunica e integra** | Reportes, una aplicación y proyecto reproducible | [11–14](curriculum/README.md) |
 
-**Material:** las secciones de 00–11 y [12.01–12.09](curriculum/12_streamlit/README.md) están disponibles;
-[13.01–13.10 de Shiny](curriculum/13_shiny_web/README.md) están disponibles; 14.01–14.08 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; 14.09 conserva su plan. Streamlit (12) y Shiny (13) son alternativas: basta una antes de 14.
+**Material:** la base de lecciones y labs de 00–14 está disponible, incluida la
+[revisión final de 14.09](curriculum/14_reproducible_projects/09_final_review_defense/README.md).
+Streamlit (12) y Shiny (13) son alternativas: basta una antes de 14. La práctica
+y la [depuración transversal](docs/reproducible-projects-closure.md) continúan.
 Los proyectos y checkpoints requieren consultar su estado en
 [proyectos](projects/README.md). Material disponible no significa práctica completada.
 

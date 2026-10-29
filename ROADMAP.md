@@ -467,7 +467,7 @@ ya tienen lecciones y labs: recálculo, revisión HTML, distribución y entrega
 reconstruible. Las nueve secciones del módulo tienen material; práctica personal,
 proyecto integrador y checkpoints siguen pendientes. Consulta los
 [criterios de cierre](docs/reporting-closure.md). Streamlit dispone de 12.01–12.09;
-13.01–13.10 de Shiny están disponibles; 14.01–14.08 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; 14.09 conserva su plan. Consulta la
+13.01–13.10 de Shiny están disponibles; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible. Consulta la
 [reanudación de Streamlit](docs/streamlit-closure.md).
 
 **Objetivo:** transformar análisis en productos consumibles.
@@ -569,7 +569,8 @@ organiza trece archivos y revisa parámetros/rutas explícitos en Python o R;
 [14.06 — Trazabilidad y recuperación de fallas](curriculum/14_reproducible_projects/06_traceability_recovery/README.md) registra intentos y contrasta fallos antes/después de publicar, con recuperación comprobada y sin paquetes nuevos.
 [14.07 — Integración de reporte y app](curriculum/14_reproducible_projects/07_report_app_integration/README.md) concilia entregas, reportes Quarto preparados y una interfaz local elegida con entornos separados.
 [14.08 — Entrega y automatización opcional](curriculum/14_reproducible_projects/08_delivery_optional_automation/README.md) añade paquete local, verificación externa y reconstrucción desde fuentes; CI es un ejemplo inactivo.
-14.09 sigue planificada, sin dependencias nuevas en 14.08.
+[14.09 — Revisión final y defensa](curriculum/14_reproducible_projects/09_final_review_defense/README.md) añade reconstrucción desde 14.07, registro de revisión, decisiones y acta.
+Las nueve secciones de 14 y la base de material 00–14 están disponibles; depuración, práctica y proyectos/checkpoints conservan trabajo pendiente. Sin dependencias nuevas en 14.08/14.09.
 
 **Objetivo:** integrar el recorrido con prácticas de ingeniería.
 

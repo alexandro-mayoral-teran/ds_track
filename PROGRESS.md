@@ -8,18 +8,18 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ## En este momento
 
-- **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
+- **Material disponible:** base de módulos 00–14 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.08 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; 14.09 sigue planificada.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [14.09 — Revisión final y defensa de decisiones](curriculum/14_reproducible_projects/README.md#09-revision-final-y-defensa-de-decisiones), todavía planificado.
+- **Siguiente trabajo educativo:** práctica de cierre y [depuración transversal acordada](docs/reproducible-projects-closure.md#trabajo-posterior-depurar-y-observar). No hay módulo 15 definido.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.08 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; 14.09 conserva su plan.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-29, 14.08 — Entrega y automatización opcional: paquete local, verificación y reconstrucción desde fuentes; retomar 14.09.
-- **Última revisión documental:** 2026-10-29, desarrollo de 14.08; guías de
+- **Último desarrollo educativo:** 2026-10-29, 14.09 — Revisión final y defensa: reconstrucción, revisión por casos, decisiones y acta; base de lecciones/labs disponible.
+- **Última revisión documental:** 2026-10-29, cierre de la base con 14.09; guías de
   navegación y cierres Quarto/Streamlit/Shiny conciliados con el estado real del módulo 14.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
@@ -35,6 +35,29 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-29, revisión final y defensa 14.09:**
+Lección/lab, recorridos completos R/IDE, PowerShell y Bash, tres plantillas
+personales pendientes por defecto: revisión, decisiones y acta. Ruta esencial
+desde las 53 fuentes de 14.07; 14.08 conserva su carácter opcional. Sin modelos,
+dependencias, lockfiles ni entornos globales nuevos. Predicción/observación y
+explicación diferenciadas; comparación manual de las seis filas con CSV externo.
+Siete grupos heredados, tres consultas trazadas/reportes y una app elegida.
+Ensayo de reporte separado con 2600→2700, rechazo específico y original intacto.
+Decisiones con alternativas/evidencia/consecuencias, límites y siguiente acción.
+Acta humana, sin calificación ni certificación automática del aprendizaje.
+Comprobación de autoría en copias nuevas Python 3.12.12/R 4.6.1 con renv 1.3.1:
+siete grupos y tres consultas/HTML/verificaciones por ruta, ensayo de importe
+rechazado específicamente y reporte original intacto; CSV externo conciliado.
+Restauración local sin modificar bibliotecas globales ni metadatos raíz.
+5699 enlaces locales de 392 Markdown sin incidencias; ocho páginas renderizadas
+con Pandoc y dieciséis vistas Chrome 1280/390 sin desbordes ni IDs duplicados.
+Lección móvil y acta de escritorio revisadas visualmente. Las apps se conservan
+de 14.07, con sus comprobaciones previas; no se repitió su revisión UI en 14.09.
+Rscript/Windows comprobados; operación completa del IDE y Bash/Linux pendientes.
+Las nueve secciones de 14 completan la base de lecciones/labs 00–14; práctica,
+proyectos/checkpoints, depuración transversal y cobertura del portal siguen aparte.
+Estado y próximos criterios en docs/reproducible-projects-closure.md.
 
 **Desarrollo — 2026-10-29, entrega y automatización opcional 14.08:**
 Lección/lab opcionales, recorridos R/IDE, PowerShell y Bash, preparadores de

@@ -6,8 +6,8 @@
 
 [**Empezar por 14.01 →**](01_product_question_contract/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 14.01–14.08 con lecciones/labs, contrato, configuración, entornos, pipeline, pruebas, trazabilidad, integración local y entrega opcional.
-> 14.09 sigue planificada; 14.08 es opcional; revisión final y checkpoints siguen pendientes.
+> **Disponible:** 14.01–14.09 con lecciones/labs, contrato, configuración, entornos, pipeline, pruebas, trazabilidad, integración local y entrega opcional.
+> 14.09 aporta revisión final y defensa; 14.08 es opcional. Práctica personal, proyectos/checkpoints y depuración siguen pendientes.
 
 <a id="propósito-y-prerrequisitos"></a>
 
@@ -18,7 +18,7 @@ Consolidar el recorrido en un producto que otra persona pueda reconstruir y eval
 14.03 reconstruye entornos locales, 14.04 produce/reutiliza entregas, 14.05 prueba reglas y calidad de datos;
 14.06 registra intentos y practica recuperación con evidencia conservada, y 14.07
 concilia la consulta, un reporte y una app local. 14.08 añade entrega local
-opcional y reconstrucción desde fuentes. 14.09 conserva su plan de revisión final.
+opcional y reconstrucción desde fuentes. 14.09 añade revisión final y defensa con evidencia propia.
 
 ## Antes de empezar
 
@@ -26,15 +26,15 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y una ruta de aplicac
 [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
 Las tres rutas tienen lecciones, labs y cierre local disponibles; basta una
 aplicación. Revisa la práctica de cierre de [Streamlit](../../docs/streamlit-closure.md)
-o [Shiny](../../docs/shiny-closure.md). 14.01–14.08 permiten trabajar diseño,
+o [Shiny](../../docs/shiny-closure.md). 14.01–14.09 permiten trabajar diseño,
 configuración, entornos, reprocesamiento, pruebas, trazabilidad, integración
-y entrega opcional con una interfaz local declarada, sin exigir entregas anteriores. No instales orquestadores por las secciones pendientes.
+y entrega opcional con una interfaz local declarada, sin exigir entregas anteriores. No se requieren orquestadores para este cierre local.
 
 ## Qué vas a aprender
 
-14.01–14.08 permiten definir el contrato, configurar una consulta, reconstruir
+14.01–14.09 permiten definir el contrato, configurar una consulta, reconstruir
 su entorno local, producir entregas separadas, repetir sin duplicados, detectar
-fallas con pruebas, decidir cómo recuperar una ejecución conciliar sus productos y compartir una entrega reconstruible opcional. El recorrido completo prevé:
+fallas con pruebas, decidir cómo recuperar una ejecución, conciliar sus productos, compartir una entrega opcional y defender decisiones. El recorrido permite:
 
 - Declarar contrato, fuentes, configuración y criterios de aceptación.
 - Reconstruir entornos y reprocesar sin mezclar resultados.
@@ -55,7 +55,7 @@ fallas con pruebas, decidir cómo recuperar una ejecución conciliar sus product
 | **14.06** · [Trazabilidad y recuperación de fallas](06_traceability_recovery/README.md) | [Lab 14.06](../../labs/14_reproducible_projects/06_traceability_recovery/README.md) | Explicar qué se ejecutó y qué resultados son válidos |
 | **14.07** · [Integración de reporte y app](07_report_app_integration/README.md) | [Lab 14.07](../../labs/14_reproducible_projects/07_report_app_integration/README.md) | Conciliar el mismo corte en todos los productos |
 | **14.08** · [Entrega y automatización opcional](08_delivery_optional_automation/README.md) — opcional | [Lab 14.08](../../labs/14_reproducible_projects/08_delivery_optional_automation/README.md) | Compartir una entrega reconstruible; CI opcional |
-| **14.09** · [Revisión final y defensa de decisiones](#09-revision-final-y-defensa-de-decisiones) | Pendiente | Demostrar reconstrucción y justificar límites |
+| **14.09** · [Revisión final y defensa de decisiones](09_final_review_defense/README.md) | [Lab 14.09](../../labs/14_reproducible_projects/09_final_review_defense/README.md) | Demostrar reconstrucción y justificar límites |
 
 <a id="alcance-de-cada-sección"></a>
 
@@ -64,7 +64,7 @@ fallas con pruebas, decidir cómo recuperar una ejecución conciliar sus product
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado:** 14.01–14.08 están disponibles. La sección 14.09 describe una práctica por desarrollar.
+**Estado:** 14.01–14.09 están disponibles. 14.08 es opcional; material desarrollado no acredita aprendizaje.
 
 <a id="01-pregunta-y-contrato-del-producto"></a>
 
@@ -150,10 +150,11 @@ CI manual como plantilla inactiva, sin despliegue ni dependencias nuevas.
 
 ### 09 — Revisión final y defensa de decisiones
 
-- Ejecutar desde cero, revisar pruebas y abrir reporte y app; comprobar un corte
-  conocido y explicar elección de motor, formatos, reglas y limitaciones.
-- Práctica prevista: otra persona sigue el README y reconstruye los productos;
-  registrar evidencia y pendientes, evitando confundir implementación con aprendizaje.
+[Lección 14.09](09_final_review_defense/README.md) y [lab](../../labs/14_reproducible_projects/09_final_review_defense/README.md)
+disponibles: reconstrucción desde las 53 fuentes de 14.07, sin exigir 14.08.
+Tres casos y rechazo sin universo, contraste externo, falla controlada, revisión
+personal, decisiones argumentadas y acta con pendientes. Sin paquetes nuevos ni
+activación de proyectos/checkpoints. Completa la base de material del recorrido.
 
 </details>
 
@@ -166,7 +167,7 @@ límites. Continúa con 14.02 para configurar, 14.03 para reconstruir el entorno
 14.04 para ejecutar el pipeline, 14.05 para comprobar sus reglas y 14.06 para
 registrar y recuperar intentos fallidos; continúa con 14.07 para conciliar
 reporte y app. 14.08 añade entrega opcional y reconstrucción desde fuentes.
-14.09 conserva la propuesta de revisión final y defensa.
+14.09 permite demostrar la reconstrucción y defender decisiones con otra persona.
 
 ## Qué conservar
 
@@ -176,9 +177,9 @@ reporte y app. 14.08 añade entrega opcional y reconstrucción desde fuentes.
 | Estructura/configuración de 14.02 | Responsabilidades, raíz explícita y parámetros conciliados |
 | Entornos y evidencia de 14.03 | Dos copias reconstruidas, versiones y resultados comparados |
 | Pruebas y registros | Detección de fallas y trazabilidad |
-| Reportes/app de 14.07 y entrega opcional de 14.08 | Valores conciliados y reconstrucción; defensa final pendiente |
+| Reportes/app de 14.07 y entrega opcional de 14.08 | Valores conciliados, reconstrucción y defensa con evidencia personal en 14.09 |
 
-En 14.01–14.08 conserva contrato, configuraciones, resultados por crédito,
+En 14.01–14.09 conserva contrato, configuraciones, resultados por crédito,
 resúmenes de pruebas y revisión humana. Añade una nota con comprobación, ayudas, dudas y siguiente paso en tu
 copia personal. PROGRESS.md registra material; no es un porcentaje de aprendizaje.
 
@@ -188,7 +189,7 @@ copia personal. PROGRESS.md registra material; no es un porcentaje de aprendizaj
 
 Para cerrar el recorrido, otra persona deberá regenerar datos, ejecutar controles que detecten una falla y reconstruir un reporte HTML y una app local. Deberás justificar herramientas, contratos y límites. 14.07 aporta integración local y 14.08 entrega opcional; la revisión de cierre y el aprendizaje necesitan evidencia propia.
 
-La práctica integrada de 14.07 está disponible; no se han activado proyectos de projects/ ni sus checkpoints. La entrega opcional de 14.08 está disponible; la revisión final se desarrollará en 14.09.
+La práctica integrada de 14.07 está disponible; no se han activado proyectos de projects/ ni sus checkpoints. La entrega opcional de 14.08 está disponible; la revisión final y sus plantillas están disponibles en 14.09. La práctica requiere evidencia propia.
 
 <details>
 <summary><strong>Notas de integración y alcance del cierre</strong></summary>
@@ -211,10 +212,10 @@ Después realiza [14.04 — Pipeline y reprocesamiento](04_pipeline_reprocessing
 [14.06 — Trazabilidad y recuperación de fallas](06_traceability_recovery/README.md) y
 [14.07 — Integración de reporte y app](07_report_app_integration/README.md), disponibles con sus labs.
 Puedes ampliar con [14.08 — Entrega y automatización opcional](08_delivery_optional_automation/README.md) y su lab.
-El siguiente desarrollo es [14.09 — Revisión final y defensa de decisiones](#09-revision-final-y-defensa-de-decisiones),
-aún planificado. Revisión final y checkpoints siguen pendientes.
+Cierra con [14.09 — Revisión final y defensa de decisiones](09_final_review_defense/README.md) y su lab.
+La base de material está disponible; retoma práctica y [depuración transversal](../../docs/reproducible-projects-closure.md). Proyectos/checkpoints siguen pendientes.
 
-Este plan cierra el recorrido. No hay un módulo 15 definido. Cuando exista una entrega verificada, conserva evidencia y revisa qué resultados son apropiados para [showcase](../../showcase/README.md).
+Esta base de material cierra el recorrido numerado. No hay un módulo 15 definido. Cuando exista una entrega verificada, conserva evidencia y revisa qué resultados son apropiados para [showcase](../../showcase/README.md).
 
 <details>
 <summary><strong>Referencias y apoyos</strong></summary>
@@ -226,8 +227,8 @@ Fuentes para preparar las prácticas: [entornos uv](https://docs.astral.sh/uv/co
 [ejecución de Quarto](https://quarto.org/docs/projects/code-execution.html) y
 [GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions).
 14.01–14.06 conservan los entornos de cálculo mínimos; 14.07 añade interfaces
-locales con versiones ya usadas en el curso. 14.08 conserva esos metadatos. Se usa unittest o R base para pruebas. pytest/testthat son ampliaciones opcionales. Las dependencias
-de las secciones pendientes se decidirán al implementarlas, conservando el gestor elegido.
+locales con versiones ya usadas en el curso. 14.08 conserva esos metadatos. Se usa unittest o R base para pruebas. pytest/testthat son ampliaciones opcionales. 14.09 reutiliza esa integración sin nuevas dependencias; futuras ampliaciones
+requieren una decisión de alcance, conservando el gestor elegido.
 
 ### Apoyos relacionados
 

@@ -124,7 +124,7 @@ el código recibido: el revisor usa sus propias funciones y no lo ejecuta.
 La copia reconstruida comienza con 60 fuentes y un entorno local nuevo.
 Produce resultados que concilian 003/2600, 002/2000 + 003/2500 y vacío válido.
 CI solo ejecuta siete grupos Python en un venv; no restaura uv/renv, renderiza,
-sirve interfaces ni construye la entrega. La revisión final sigue pendiente.
+sirve interfaces ni construye la entrega. La revisión final se realiza en 14.09.
 
 </details>
 
@@ -139,5 +139,5 @@ copiar la muestra como si fuera una salida nueva.
 Guarda evidencia y dudas en tu copia personal. PROGRESS.md registra material;
 este lab no certifica aprendizaje, autenticidad ni un proyecto/checkpoint.
 
-Siguiente lección: [14.09 — Revisión final y defensa de decisiones](../../../curriculum/14_reproducible_projects/README.md#09-revision-final-y-defensa-de-decisiones),
-todavía planificada. [Volver a 14.08](../../../curriculum/14_reproducible_projects/08_delivery_optional_automation/README.md).
+Siguiente lección: [14.09 — Revisión final y defensa de decisiones](../../../curriculum/14_reproducible_projects/09_final_review_defense/README.md),
+disponible con su lab. [Volver a 14.08](../../../curriculum/14_reproducible_projects/08_delivery_optional_automation/README.md).

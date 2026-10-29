@@ -9,7 +9,7 @@
 | **Evidencia** | Paquete verificado, copia reconstruida desde fuentes y límites explicados |
 
 > **Opcional:** esta sección amplía la entrega local. La ruta esencial puede
-> continuar a 14.09 cuando esté disponible. La extensión de CI también es
+> continuar directamente a 14.09. La extensión de CI también es
 > opcional y no requiere activar un servicio para estudiar el material.
 
 [**Hacer el lab 14.08 →**](../../../labs/14_reproducible_projects/08_delivery_optional_automation/README.md) · [Recorridos completos](recorridos.md)
@@ -257,8 +257,8 @@ aprobó el verificador y qué revisaste al ejecutar el producto.
 Quien acompaña debe poder localizar las fuentes necesarias y reconstruir sin
 copiar muestra/ ni un entorno instalado. Guarda tu práctica en tu copia personal;
 PROGRESS.md documenta autoría. La entrega de referencia no acredita aprendizaje
-ni activa proyectos/checkpoints. La revisión final y defensa de decisiones de
-14.09 siguen pendientes.
+ni activa proyectos/checkpoints. La revisión final y defensa de decisiones se trabajan en
+14.09, disponible con su lab.
 
 ## Referencias primarias
 
@@ -271,4 +271,4 @@ ni activa proyectos/checkpoints. La revisión final y defensa de decisiones de
 ## Siguiente paso
 
 [Volver al módulo](../README.md) · [Lab 14.08](../../../labs/14_reproducible_projects/08_delivery_optional_automation/README.md) ·
-[14.09 — Revisión final y defensa de decisiones](../README.md#09-revision-final-y-defensa-de-decisiones), todavía planificada.
+[14.09 — Revisión final y defensa de decisiones](../09_final_review_defense/README.md), disponible con su lab.
