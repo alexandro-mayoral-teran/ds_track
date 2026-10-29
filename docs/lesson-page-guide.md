@@ -25,7 +25,7 @@ indica dónde se aplicó; el historial de adaptación pertenece a PROGRESS.md.
 ## Estructura común
 
 Cabecera breve → propósito → preparación → objetivos → material de apoyo cuando
-exista → desarrollo adaptable → lab → evidencia y comprobación → referencias →
+exista → desarrollo adaptable → lab → evidencia y comprobación → glosario → referencias →
 continuidad.
 
 | Parte | Elementos comunes | Qué puede cambiar |
@@ -38,6 +38,7 @@ continuidad.
 | Desarrollo | Explicación gradual, ejemplo comprensible, resultado esperado y forma de comprobarlo | Títulos, cantidad de secciones, formatos y recorridos |
 | Práctica | Enlace al lab y tarea central en una frase | Variantes esenciales u opcionales; no repetir la consigna completa |
 | Evidencia y criterio de salida | Qué conservar, qué comprobar y qué explicar; siguiente duda o límite | Archivo, nota, consulta, notebook o resultado de otra naturaleza |
+| Glosario | Términos nuevos o que puedan causar confusión, con definiciones breves en el contexto de la lección | Ejemplo pequeño si ayuda; enlazar un glosario previo si no hay términos nuevos |
 | Referencias | Fuentes primarias o libros abiertos pertinentes, atribuciones | Versiones y límites de lo contrastado cuando sean relevantes |
 | Siguiente paso | Navegación al módulo, lab y siguiente lección disponible | Anterior opcional; al cerrar módulo puede llevar al índice siguiente para elegir ruta |
 
@@ -122,6 +123,18 @@ Las ampliaciones se marcan donde comienzan. Pistas y soluciones pueden usar
 `details` cerrado; requisitos, pasos esenciales y criterio de salida permanecen
 visibles. Tablas, imágenes y Mermaid se usan cuando aclaran algo, con explicación
 que también funcione sin renderizador. No se exige un diagrama por lección.
+
+### Glosario para consultar términos
+
+Incluir «Glosario» antes de las referencias. Explicar los términos al aparecer
+por primera vez y reunir al final los que convenga consultar, sin introducir
+temas nuevos. Usar «Término / Qué significa en esta lección» y definiciones
+breves, sin depender de otra palabra técnica sin explicar. Un ejemplo concreto
+puede aclarar la definición; no es necesario convertirla en otra lección.
+
+Si no hay términos nuevos, enlazar el glosario previo pertinente en vez de
+repetirlo. La primera aplicación es 00.01; las demás lecciones incorporarán
+este ajuste durante su revisión, sin dar por actualizado todo el recorrido.
 
 ### Cierre que permita revisar con otra persona
 

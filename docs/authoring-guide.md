@@ -35,7 +35,7 @@ Usa la [plantilla de lección](../templates/lesson/README.md) y la
 [guía de sus elementos comunes](lesson-page-guide.md). La guía documenta una
 evaluación de muestra y propone cabecera, propósito, preparación, objetivos,
 material de apoyo cuando exista, desarrollo adaptable, práctica,
-evidencia/comprobación, referencias y continuidad.
+evidencia/comprobación, glosario, referencias y continuidad.
 Las lecciones disponibles aplican la plantilla según la [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-portal).
 El material nuevo debe partir de ella; adaptar la presentación no acredita una revisión completa de la teoría.
 
@@ -53,6 +53,7 @@ aplicada en [00.01](../curriculum/00_getting_started/01_github_profile/README.md
 - Conceptos.
 - Actividades.
 - Criterio de salida.
+- Glosario breve de términos de la lección, explicados también en su primera aparición.
 - Referencias primarias.
 
 ## Ejemplos comprensibles por sección

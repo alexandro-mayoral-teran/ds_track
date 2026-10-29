@@ -10,7 +10,7 @@
 | **Necesitas** | Editor de texto; cuenta de GitHub solo si publicas |
 | **Evidencia** | README previsualizado y una explicación con tus palabras |
 
-[Material de apoyo](#material-de-apoyo) · [Conceptos](#en-esta-lección) · [Ir al lab](../../../labs/00_getting_started/01_github_profile/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+[Material de apoyo](#material-de-apoyo) · [Conceptos](#en-esta-lección) · [Glosario](#glosario) · [Ir al lab](../../../labs/00_getting_started/01_github_profile/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 > **Antes de empezar:** esta es la lección 00.01, dentro de Entorno de aprendizaje.
 > Los comandos de Git llegan en 00.03. Puedes realizar la práctica sin publicar un perfil.
@@ -222,7 +222,9 @@ construye documentación a partir de archivos Markdown y
 permite plantillas Markdown para proponer cambios. Son casos para reconocer;
 no necesitas preparar esas herramientas en esta lección.
 
-#### Organizar contexto e instrucciones para IA
+<a id="organizar-contexto-e-instrucciones-para-ia"></a>
+
+#### Caso de uso: organizar contexto e instrucciones para IA
 
 Un **prompt** es la petición que pasas a una herramienta de IA. Puede incluir
 qué necesitas, el contexto y cómo quieres comprobar el resultado. Markdown
@@ -358,6 +360,26 @@ o escribir una nota propia junto al README. La evidencia personal no se guarda
 en la bitácora editorial del curso.
 
 No hay proyecto de datos asociado todavía; el README es la primera evidencia.
+
+## Glosario
+
+Consulta estos términos cuando los necesites; ya aparecen explicados en el recorrido.
+
+| Término | Qué significa en esta lección |
+| --- | --- |
+| Markdown | Forma de estructurar texto con marcas sencillas, como `#` para un título |
+| Texto plano | Texto sin formato incorporado como el de Word; puede contener marcas que otra herramienta interprete |
+| Texto fuente | Lo que escribes, incluidas las marcas; por ejemplo, `**Python**` |
+| Vista previa | Presentación del texto con las marcas interpretadas; por ejemplo, **Python** |
+| README | Documento de entrada que explica un proyecto o presenta tu perfil; suele llamarse `README.md` |
+| Repositorio | Conjunto de archivos cuyo historial de cambios se registra con Git; por ejemplo, tu README y sus versiones |
+| Commit | Registro de cambios seleccionados, acompañado de un mensaje que explica su intención |
+| Local | En tu computadora; aquí, la copia del repositorio que editas en ella |
+| Remoto | Accesible mediante una conexión; aquí, el repositorio alojado en GitHub |
+| Prompt | Petición que pasas a una IA, con el contexto y las indicaciones que necesite |
+| Skill | Conjunto reutilizable de instrucciones y, si hacen falta, recursos para una tarea en una herramienta compatible |
+
+Para distinguir las herramientas, vuelve a [Git y GitHub](#2-git-y-github-conservar-y-compartir).
 
 ## Referencias
 

@@ -36,6 +36,17 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.01 — 2026-10-29, glosario y caso de IA:**
+Plantilla de lección y guías de autoría incorporan un glosario breve antes de
+referencias, con términos explicados también al aparecer. Primera aplicación
+en 00.01: once términos, incluido repositorio, y acceso desde la cabecera.
+El ejemplo de IA se titula «Caso de uso: organizar contexto e instrucciones
+para IA»; conserva el ancla anterior. Aplicación a otras lecciones pendiente
+de su revisión gradual. Portal y cambios locales previos fuera del alcance.
+Verificación: 5716 enlaces locales sin incidencias; render 1280/390 sin
+desbordes ni IDs repetidos, ancla antigua de IA conservada y glosario móvil
+revisado visualmente. Comprobación de formato y publicación selectiva.
+
 **Depuración 00.01 — 2026-10-29, propósito y casos de Markdown:**
 La parte de Markdown inicia con definición, utilidad y problemas que ayuda a
 resolver; después conserva la prueba de cinco líneas y fuente/resultado.

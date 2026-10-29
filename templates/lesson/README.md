@@ -112,6 +112,18 @@ en tu copia o bitácora personal.
 
 CAMPO_PROYECTO_CHECKPOINT_EXISTENTE_O_INDICAR_QUE_NO_HAY_ASOCIADO
 
+## Glosario
+
+| Término | Qué significa en esta lección |
+| --- | --- |
+| CAMPO_TERMINO_PRESENTADO | CAMPO_DEFINICION_BREVE_CON_EJEMPLO_SI_AYUDA |
+
+<!-- Recoger términos nuevos o que puedan causar confusión. Explicarlos también
+al aparecer por primera vez; el glosario permite consultarlos después. Evitar
+definiciones circulares, conceptos nuevos y listas extensas. Si todos son
+conocidos, enlazar el glosario previo pertinente en lugar de duplicarlo.
+Añadir un acceso #glosario en la cabecera cuando facilite la consulta. -->
+
 ## Referencias
 
 - [CAMPO_FUENTE_PRIMARIA_O_LIBRO_ABIERTO](RUTA_FUENTE)
