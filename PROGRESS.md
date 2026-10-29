@@ -36,6 +36,24 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.02 — 2026-10-29, glosario y notebook para Colab:**
+Lección con glosario contextual y notebook opcional `.ipynb` autocontenido:
+preparación temporal, comandos Bash reales, rutas, CSV de tres ventas,
+herramientas y ampliación de filtros/suma. Explicaciones, predicciones y
+evidencia; no instala paquetes ni exige acceso al repositorio desde Colab.
+Uso remoto separado de comprobación personal; cada celda Bash recupera su
+ubicación y la preparación permite reconstruir tras reiniciar. Lab alineado
+con ensayo opcional y pendientes explícitos. Verificador con Python existente;
+se retira uv run de ese paso para no adelantar preparación del entorno.
+Fuentes oficiales de Colab/IPython consultadas. Portal y privados previos fuera.
+Verificación: notebook válido y ocho celdas ejecutadas en dos kernels nuevos
+con Python/IPython y Git Bash existentes en Windows. Muestra CSV idéntica,
+rutas y resultados contrastados; salidas de prueba solo en output. Archivo
+publicado sin salidas ni contadores. Interfaz y ejecución alojada de Colab
+pendientes de observación; no se modifican entornos ni lockfiles.
+5722 enlaces locales sin incidencias; HTML de lección y notebook a 1280/390
+sin desbordes ni IDs repetidos, con lectura móvil revisada visualmente.
+
 **Depuración 00.01 — 2026-10-29, glosario y caso de IA:**
 Plantilla de lección y guías de autoría incorporan un glosario breve antes de
 referencias, con términos explicados también al aparecer. Primera aplicación

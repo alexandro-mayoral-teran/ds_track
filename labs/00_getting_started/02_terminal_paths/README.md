@@ -17,6 +17,15 @@ están expresadas por intención; consulta la
 [tabla de equivalencias](../../../curriculum/00_getting_started/02_terminal_paths/shell-cheatsheet.md)
 para PowerShell y Bash/Zsh.
 
+Si aún no tienes un entorno local, puedes hacer primero el ensayo del
+[notebook para Colab](../../../curriculum/00_getting_started/02_terminal_paths/practica_terminal_colab.ipynb).
+Incluye sus propias instrucciones, carpeta temporal y CSV. Allí practicas los
+conceptos de ubicación, navegación e inspección de las partes A, B y E con una
+muestra distinta de la copia del repositorio. No busques `ROADMAP.md` ni
+`pyproject.toml` en esa muestra. Las partes C y D del entorno personal quedan
+pendientes: las herramientas de Colab corresponden a la máquina remota.
+Conserva tu cuaderno con respuestas y retoma la copia real en tu equipo después.
+
 Intenta cada parte antes de abrir su solución. Los apartados desplegables muestran
 una forma de resolverla y explican el resultado; otras respuestas pueden ser válidas.
 
@@ -188,10 +197,10 @@ herramientas, deja esta parte pendiente y continúa con las rutas y el CSV.
 En PowerShell ejecuta:
 
 ```powershell
-uv run python curriculum\00_getting_started\02_terminal_paths\check_environment.py
+python curriculum\00_getting_started\02_terminal_paths\check_environment.py
 ```
 
-Resultado esperado al final:
+Si las herramientas y la ubicación están preparadas, el resultado final será:
 
 ```text
 Resultado: entorno minimo disponible.
@@ -200,21 +209,22 @@ Resultado: entorno minimo disponible.
 En Bash o Zsh, el comando equivalente es:
 
 ```bash
-uv run python curriculum/00_getting_started/02_terminal_paths/check_environment.py
+python curriculum/00_getting_started/02_terminal_paths/check_environment.py
 ```
 
 <details>
 <summary>Ver solución y explicación de la parte D</summary>
 
-Desde la raíz, el comando dado ejecuta el script dentro del entorno de `uv`.
+Desde la raíz, el comando dado ejecuta el script con el Python disponible.
 El script comprueba la ubicación y si están disponibles `python`, `uv` y `git`.
 Si todo está preparado, termina con `Resultado: entorno minimo disponible.`
 
 Si no aparece ese resultado, lee qué herramienta falta o si la raíz no fue
-encontrada. Puedes ejecutar el script directamente con Python si ya lo tienes,
-como muestra la lección; eso no elimina las comprobaciones internas del script.
+encontrada. Si tu comando es `python3`, úsalo en lugar de `python`, como indica
+la lección. Eso no elimina las comprobaciones internas del script.
 Que falte una herramienta es una observación del entorno, no una respuesta
 incorrecta al ejercicio. Registra el pendiente y retómalo en la lección de entorno.
+No instales herramientas para forzar una salida positiva en este paso.
 
 </details>
 

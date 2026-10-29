@@ -7,10 +7,10 @@
 | Tu sesión | Qué prepararás o comprobarás |
 | --- | --- |
 | **Meta** | Ubicarte en el proyecto, interpretar rutas y comprobar herramientas |
-| **Necesitas** | Copia de DS Track y un shell: PowerShell o Bash/Zsh |
+| **Necesitas** | Copia de DS Track y PowerShell o Bash/Zsh; para un primer ensayo, notebook opcional en Colab |
 | **Evidencia** | Nota con ubicación, rutas y comprobaciones del shell elegido |
 
-[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/02_terminal_paths/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Glosario](#glosario) · [Ir al lab](../../../labs/00_getting_started/02_terminal_paths/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 ## Propósito
 
@@ -30,6 +30,11 @@ versiones permiten detectar herramientas disponibles o faltantes: registra
 lo que falta para preparar el entorno en 00.05. El verificador requiere Python;
 si aún no está disponible, conserva esa comprobación pendiente.
 
+Si quieres probar sin instalar Python localmente, puedes empezar con el
+[notebook para Colab](practica_terminal_colab.ipynb). Prepara su propia carpeta
+de ejemplo y permite ensayar Bash. La copia real del proyecto y la comprobación
+de tu entorno personal se retoman después; el notebook no las acredita.
+
 <a id="objetivos"></a>
 
 ## Qué vas a aprender
@@ -46,6 +51,7 @@ si aún no está disponible, conserva esa comprobación pendiente.
 | [Tabla de equivalencias](shell-cheatsheet.md) | Consultar operaciones al cambiar de shell | Consulta opcional |
 | [CSV de ventas](ventas_demo.csv) | Localizar e inspeccionar tres ventas ficticias | Entrada del recorrido |
 | [Verificador](check_environment.py) | Consultar qué herramientas y rutas detecta el programa | Requiere Python |
+| [Notebook de práctica para Colab](practica_terminal_colab.ipynb) | Ejecutar comandos Bash con explicaciones y una muestra autocontenida | Ensayo opcional en navegador, sin instalación local de Python |
 
 Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
 trabaja las modificaciones en tu copia personal.
@@ -85,6 +91,34 @@ ejecutarlo. Primero aprenderás a ubicarte, leer rutas y reconocer un comando.
 > ¿qué información necesitaría además del comando?
 
 ## Cómo seguir esta lección
+
+### Opción en navegador: cargar el archivo `.ipynb`
+
+Un **notebook** reúne explicaciones y celdas ejecutables. Para esta opción,
+descarga [practica_terminal_colab.ipynb](practica_terminal_colab.ipynb) desde el
+repositorio y súbelo en [Google Colab](https://colab.research.google.com/), mediante
+la opción de subir un cuaderno del menú Archivo. Inicia sesión, conecta un entorno
+alojado de Python con CPU y ejecuta las celdas de arriba abajo. No necesitas GPU,
+instalar Python en tu equipo, clonar el repositorio ni cargar otros archivos.
+
+La primera celda ejecutable prepara una carpeta temporal y las tres ventas del
+CSV. Después, cada celda `%%bash` ejecuta comandos reales de Bash. El **kernel**
+es el proceso que ejecuta las celdas; aquí Python/IPython permite enviarlas a Bash.
+No necesitas estudiar el código de preparación ni configurar kernels todavía;
+el trabajo con notebooks se desarrolla en 00.06.
+
+Colab ejecuta en una máquina remota: las rutas y herramientas detectadas son
+las de esa sesión, aunque tu computadora use Windows. No ejecuta PowerShell ni
+comprueba tu instalación personal. Cada celda Bash inicia un proceso nuevo;
+por eso el notebook vuelve a entrar en la carpeta de práctica en cada celda.
+En una terminal interactiva el cambio de carpeta sí persiste entre comandos.
+
+Predice, ejecuta y explica cada salida. Guarda tus respuestas en una copia del
+cuaderno y descárgala: los archivos temporales pueden desaparecer al finalizar
+la sesión. Reiniciar y ejecutar todo debe reconstruir la muestra. El funcionamiento
+y los límites se describen en las [preguntas frecuentes de Colab](https://research.google.com/colaboratory/intl/es/faq.html).
+
+### Recorrido con la terminal de tu equipo
 
 Ejecuta los ejemplos del shell que uses, un comando a la vez. Comprueba el
 resultado antes de continuar. Elige el [recorrido en PowerShell](#recorrido-en-powershell)
@@ -256,7 +290,7 @@ Get-Command git
 > `pip` ni `uv`. Los veremos en las lecciones de Primer script y Entorno y
 > dependencias. Aquí solo mostramos cómo ejecutar un programa desde la terminal
 > y leer su resultado; no necesitas comprender el código ni preparar un entorno
-> nuevo. `pip` no se utiliza en este paso y `uv` es una alternativa si ya lo tienes.
+> nuevo. No se utiliza `pip`; la preparación con `uv` corresponde a 00.05.
 > Si faltan herramientas, anótalo y deja esta verificación pendiente. Puedes
 > continuar con la práctica de rutas y CSV y volver después de preparar el entorno.
 
@@ -265,11 +299,8 @@ Get-Command git
 python curriculum\00_getting_started\02_terminal_paths\check_environment.py
 ```
 
-También puede ejecutarse mediante el proyecto de `uv`:
-
-```powershell
-uv run python curriculum\00_getting_started\02_terminal_paths\check_environment.py
-```
+Aquí utiliza Python solo si ya está disponible. La ejecución administrada por
+`uv` se prepara en 00.05; no es necesario crear un entorno para este paso.
 
 Todavía no necesitas entender el código del script. Lo revisaremos en la lección
 de Primer script Python; antes sigue la lección 03 de Git e historial.
@@ -490,7 +521,7 @@ en los comandos directos. Anota cualquier herramienta faltante para preparar el 
 > `pip` ni `uv`. Los veremos en las lecciones de Primer script y Entorno y
 > dependencias. Aquí solo mostramos cómo ejecutar un programa desde la terminal
 > y leer su resultado; no necesitas comprender el código ni preparar un entorno
-> nuevo. `pip` no se utiliza en este paso y `uv` es una alternativa si ya lo tienes.
+> nuevo. No se utiliza `pip`; la preparación con `uv` corresponde a 00.05.
 > Si faltan herramientas, anótalo y deja esta verificación pendiente. Puedes
 > continuar con la práctica de rutas y CSV y volver después de preparar el entorno.
 
@@ -500,12 +531,8 @@ en los comandos directos. Anota cualquier herramienta faltante para preparar el 
 python curriculum/00_getting_started/02_terminal_paths/check_environment.py
 ```
 
-Si usas el entorno del proyecto con `uv`, esta es la alternativa:
-
-```bash
-# Ejecuta Python mediante el entorno administrado por uv
-uv run python curriculum/00_getting_started/02_terminal_paths/check_environment.py
-```
+Aquí utiliza Python solo si ya está disponible. La ejecución administrada por
+`uv` se prepara en 00.05; no es necesario crear un entorno para este paso.
 
 El verificador actual busca los comandos `python`, `uv` y `git`. Si solo existe
 `python3`, puede informar que falta `python` aunque hayas podido ejecutar el script.
@@ -586,11 +613,14 @@ Realiza el [lab 00.02](../../../labs/00_getting_started/02_terminal_paths/README
 | --- | --- | --- |
 | Tu nota con directorio y rutas | Los archivos se localizan desde la carpeta indicada | Desde dónde se interpreta una ruta relativa |
 | Salida del verificador o comprobaciones pendientes | Herramientas detectadas y faltantes, sin confundir ambos estados | Qué debes preparar y cómo distinguir shell, terminal y programa |
+| Si usaste el notebook: copia con respuestas | Ubicación, rutas y CSV en la carpeta de ejemplo | Qué se ejecutó remotamente y qué falta comprobar en tu equipo |
 
 Puedes cerrar esta práctica cuando localices los archivos del proyecto,
 expliques rutas relativas y absolutas, reconozcas equivalencias entre shells y
 ejecutes el mismo verificador sin cambiar su código. Si Python aún no está
 disponible, registra esa comprobación pendiente y retómala al preparar el entorno.
+Si practicaste en Colab, conserva el ensayo como evidencia de esos conceptos y
+anota como pendiente la comprobación de la copia real y del entorno personal.
 
 Quien aprende realiza la práctica y explica el resultado. Tu compañero propone otra carpeta y te pide explicar cómo cambiaría una ruta relativa.
 Guarda evidencia y dudas en tu copia de la
@@ -600,10 +630,40 @@ Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
 
 <a id="referencia-rápida"></a>
 
+## Glosario
+
+| Término | Qué significa en esta lección |
+| --- | --- |
+| Sistema operativo | Software que administra el equipo, como Windows, Linux o macOS |
+| Terminal | Interfaz de texto donde escribes comandos y lees sus resultados |
+| Shell | Programa que interpreta comandos; aquí PowerShell, Bash o Zsh |
+| Comando | Instrucción que pides ejecutar al shell |
+| Argumento | Dato que recibe un comando; por ejemplo, la ruta en `Test-Path README.md` |
+| Opción | Indicación que modifica lo que hace una herramienta, como `--version` |
+| Directorio | Carpeta que contiene archivos u otras carpetas |
+| Directorio actual | Carpeta desde la que se interpretan las rutas relativas |
+| Raíz del proyecto | Carpeta principal de DS Track; no es necesariamente la raíz de la unidad |
+| Ruta absoluta | Ubicación completa de un archivo o carpeta desde una raíz, como `C:\aprendizaje\ds_track\README.md` en Windows |
+| Ruta relativa | Ubicación que parte del directorio actual, como `datos/ventas_demo.csv` |
+| Ejecutable | Programa que puede iniciarse; su ubicación permite saber qué instalación se usa |
+| CSV | Archivo de texto que representa una tabla; en la muestra separa columnas con comas |
+| Encabezado del CSV | Primera línea de la muestra, con los nombres de las columnas |
+| Registro | Una fila de datos; cada venta es un registro en esta muestra |
+| Variable | Nombre que conserva un valor, como una ruta, para reutilizarlo |
+| Pipe (`\|`) | Conexión que pasa la salida de un comando al siguiente |
+| Notebook (`.ipynb`) | Documento con explicaciones y celdas ejecutables |
+| Kernel | Proceso que ejecuta las celdas de un notebook |
+| Entorno remoto | Máquina accesible a través de un servicio; sus archivos y herramientas son distintos de los de tu equipo |
+
+Para términos como repositorio, consulta el [glosario de 00.01](../01_github_profile/README.md#glosario).
+
 ## Referencias
 
 Consulta la [tabla de equivalencias](shell-cheatsheet.md) para contrastar
 PowerShell y Bash/Zsh; no necesitas memorizarla completa.
+
+- [Colab: funcionamiento y límites](https://research.google.com/colaboratory/intl/es/faq.html).
+- [IPython: ejecución de celdas Bash](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-bash).
 
 ## Siguiente paso
 
