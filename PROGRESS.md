@@ -19,8 +19,8 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.05 tienen material de diseño, estructura, entornos, reprocesamiento y pruebas; 14.06–14.09 conservan su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
 - **Último desarrollo educativo:** 2026-10-28, 14.05 — Pruebas y calidad de datos: suites Python/R, reglas de datos y defectos controlados detectados; retomar 14.06.
-- **Última revisión documental:** 2026-10-28, continuidad Quarto → una app → módulo 14,
-  criterios de cierre y arquitectura de los proyectos R actualizados tras completar Shiny.
+- **Última revisión documental:** 2026-10-29, cierre de sesión tras 14.05; guías de
+  navegación y cierres Quarto/Streamlit/Shiny conciliados con el estado real del módulo 14.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -35,6 +35,19 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Cierre documental — 2026-10-29:**
+Revisados portada, roadmap, índices, guías y continuidades entre módulos.
+Corregidas referencias antiguas que aún presentaban 14.04/14.05 como planes:
+14.01–14.05 tienen lecciones/labs; 14.06–14.09 siguen pendientes. La siguiente
+sesión de desarrollo comienza con 14.06 — Trazabilidad y recuperación de fallas,
+sobre el pipeline comprobado de 14.04 y las suites de 14.05, sin exigir entregas
+personales previas. Modelos, datos, paquetes y pruebas no se modifican en este
+cierre; se conservan las comprobaciones de autoría registradas para 14.05.
+Proyectos/checkpoints, práctica del estudiante e integración final siguen pendientes.
+Verificados 5497 enlaces locales de 372 archivos Markdown sin incidencias y
+git diff --check sin errores. Los cambios locales del portal y los archivos
+privados se conservan por separado.
 
 **Desarrollo — 2026-10-28, pruebas y calidad de datos 14.05:**
 Lección/lab, recorridos R/IDE, PowerShell y Bash, preparadores de 31 fuentes.

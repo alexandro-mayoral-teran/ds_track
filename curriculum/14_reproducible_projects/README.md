@@ -198,7 +198,10 @@ conciliados y entrega (07–08); CP-05, reconstrucción independiente (09).
 Empieza por [14.01 — Pregunta y contrato del producto](01_product_question_contract/README.md).
 Continúa con [14.02 — Estructura y configuración](02_structure_configuration/README.md).
 Sigue con [14.03 — Entornos y ejecución reconstruible](03_reconstructible_environments/README.md).
-Después consulta [14.04 — Pipeline y reprocesamiento](#04-pipeline-y-reprocesamiento), todavía planificado. No hay integración final ni checkpoints listos.
+Después realiza [14.04 — Pipeline y reprocesamiento](04_pipeline_reprocessing/README.md) y
+[14.05 — Pruebas y calidad de datos](05_tests_data_quality/README.md), disponibles con sus labs.
+El siguiente desarrollo es [14.06 — Trazabilidad y recuperación de fallas](#06-trazabilidad-y-recuperacion-de-fallas),
+aún planificado. No hay integración final ni checkpoints listos.
 
 Este plan cierra el recorrido. No hay un módulo 15 definido. Cuando exista una entrega verificada, conserva evidencia y revisa qué resultados son apropiados para [showcase](../../showcase/README.md).
 
@@ -211,7 +214,9 @@ Fuentes para preparar las prácticas: [entornos uv](https://docs.astral.sh/uv/co
 [pruebas R](https://r-pkgs.org/testing-basics.html),
 [ejecución de Quarto](https://quarto.org/docs/projects/code-execution.html) y
 [GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions).
-Las dependencias se elegirán al implementar, conservando el gestor del estudiante.
+14.01–14.05 conservan los entornos locales ya declarados y usan unittest o R base
+para las pruebas. pytest/testthat son ampliaciones opcionales. Las dependencias
+de las secciones pendientes se decidirán al implementarlas, conservando el gestor elegido.
 
 ### Apoyos relacionados
 

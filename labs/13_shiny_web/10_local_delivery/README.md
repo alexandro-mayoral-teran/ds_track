@@ -146,4 +146,4 @@ su resultado requiere tu evidencia. Proyecto/checkpoints siguen pendientes.
 
 Revisa los [criterios de cierre de Shiny](../../../docs/shiny-closure.md).
 Después de completar la práctica consulta [14.01 — Pregunta y contrato del producto](../../../curriculum/14_reproducible_projects/01_product_question_contract/README.md),
-disponible con lección y lab; 14.02–14.09 siguen planificadas. Streamlit es alternativa, sin exigir otra app completa.
+disponible con lección y lab; 14.02–14.05 también tienen lecciones/labs y 14.06–14.09 siguen planificadas. Streamlit es alternativa, sin exigir otra app completa.

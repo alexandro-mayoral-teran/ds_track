@@ -84,4 +84,4 @@ La siguiente ruta numerada es [12 — Streamlit](../../../curriculum/12_streamli
 o [13 — Shiny](../../../curriculum/13_shiny_web/README.md). Ambas tienen
 lecciones, labs y entrega local disponibles; basta una aplicación. Consulta
 su cierre de [Streamlit](../../../docs/streamlit-closure.md) o
-[Shiny](../../../docs/shiny-closure.md). La lección 14.01 tiene material de diseño; 14.02–14.09 siguen planificadas.
+[Shiny](../../../docs/shiny-closure.md). 14.01–14.05 tienen material de diseño, estructura, entornos, reprocesamiento y pruebas; 14.06–14.09 siguen planificadas.

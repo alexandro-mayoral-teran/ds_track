@@ -309,6 +309,6 @@ numerado siguen [12 — Streamlit](../../12_streamlit/README.md) o
 [13 — Shiny](../../13_shiny_web/README.md). Ambas rutas tienen sus lecciones,
 labs y entrega local disponibles; basta elegir una. Revisa su cierre de
 [Streamlit](../../../docs/streamlit-closure.md) o [Shiny](../../../docs/shiny-closure.md).
-La lección 14.01 tiene material de diseño; 14.02–14.09 siguen planificadas; la integración del portal es un trabajo separado.
+14.01–14.05 tienen material de diseño, estructura, entornos, reprocesamiento y pruebas; 14.06–14.09 siguen planificadas; la integración del portal es un trabajo separado.
 
 [← Módulo 11](../README.md) · [Lab 11.09](../../../labs/11_reporting_quarto/09_reproducible_report_closure/README.md) · [Revisar el cierre del módulo →](../README.md#criterio-de-salida)
