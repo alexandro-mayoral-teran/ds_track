@@ -108,5 +108,5 @@ producir resultados reconstruibles. No marques integraciones/checkpoints como li
 
 ## Siguiente paso
 
-Consulta [14.03 — Entornos y ejecución reconstruible](../../../curriculum/14_reproducible_projects/README.md#03-entornos-y-ejecucion-reconstruible),
-todavía planificado. No se requieren nuevas herramientas por leer ese plan.
+Continúa con [14.03 — Entornos y ejecución reconstruible](../../../curriculum/14_reproducible_projects/03_reconstructible_environments/README.md),
+disponible con lección y lab. El producto integrado sigue pendiente.

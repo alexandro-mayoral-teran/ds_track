@@ -142,6 +142,7 @@ reglas de enlace están en
 | [`13.10 — Reconstruir y demostrar una entrega Shiny`](13_shiny_web/10_local_delivery/) | `13_shiny_web` | No aplica todavía |
 | [`14.01 — Definir la pregunta y la aceptación del producto`](14_reproducible_projects/01_product_question_contract/) | `14_reproducible_projects` | No aplica todavía |
 | [`14.02 — Organizar responsabilidades y parámetros`](14_reproducible_projects/02_structure_configuration/) | `14_reproducible_projects` | No aplica todavía |
+| [`14.03 — Reconstruir el entorno y repetir la consulta`](14_reproducible_projects/03_reconstructible_environments/) | `14_reproducible_projects` | No aplica todavía |
 
 ## Cómo continuar
 

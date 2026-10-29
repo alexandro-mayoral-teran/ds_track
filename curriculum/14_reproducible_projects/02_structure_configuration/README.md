@@ -31,7 +31,7 @@ permite variar una consulta conservando el significado de sus resultados.
   o [06.06 — Funciones R](../../06_r_foundations/06_functions_control/README.md).
 - Sigue [recorridos.md](recorridos.md) en un destino nuevo. Python estándar o
   R base bastan; no hay paquetes, lockfiles, entornos, reporte/app o pipeline nuevos.
-  La reconstrucción de entornos corresponde a 14.03, todavía planificada.
+  La reconstrucción de entornos se practica en [14.03](../03_reconstructible_environments/README.md), ya disponible.
 
 ## Qué vas a aprender
 
@@ -195,8 +195,8 @@ entrada/resultados sin adivinar rutas ni modificar reglas para cada consulta.
 
 ## Siguiente paso
 
-Consulta [14.03 — Entornos y ejecución reconstruible](../README.md#03-entornos-y-ejecucion-reconstruible),
-todavía planificado. Tener estructura/configuración no acredita haber integrado
+Continúa con [14.03 — Entornos y ejecución reconstruible](../03_reconstructible_environments/README.md),
+disponible con lección y lab. Tener estructura/configuración no acredita haber integrado
 el producto, restaurado entornos nuevos o completado proyectos/checkpoints.
 
 ## Referencias primarias

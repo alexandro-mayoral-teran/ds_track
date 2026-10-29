@@ -1,0 +1,6 @@
+Package: dstrack1403
+Type: Project
+Title: Consulta local reconstruible
+Version: 0.1.0
+Description: Funciones R de la distribucion y renv para aislar su biblioteca.
+Imports: renv

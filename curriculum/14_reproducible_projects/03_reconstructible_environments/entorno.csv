@@ -1,0 +1,6 @@
+clave,valor
+esquema,1403-v1
+python,3.12.12
+r,4.6.1
+dependencias_python,ninguna_externa
+dependencias_r,distribucion_R_y_renv

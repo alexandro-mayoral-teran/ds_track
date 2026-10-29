@@ -10,15 +10,15 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.02 tienen material de diseño y estructura; 14.03–14.09 siguen planificadas.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.03 tienen material de diseño, estructura y entornos; 14.04–14.09 siguen planificadas.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [14.03 — Entornos y ejecución reconstruible](curriculum/14_reproducible_projects/README.md#03-entornos-y-ejecucion-reconstruible), todavía planificado.
+- **Siguiente desarrollo educativo:** [14.04 — Pipeline y reprocesamiento](curriculum/14_reproducible_projects/README.md#04-pipeline-y-reprocesamiento), todavía planificado.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.02 tienen material de diseño y estructura; 14.03–14.09 conservan su plan.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.03 tienen material de diseño, estructura y entornos; 14.04–14.09 conservan su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 14.02 — Estructura y configuración: responsabilidades, raíz explícita y parámetros validados; retomar 14.03.
+- **Último desarrollo educativo:** 2026-10-28, 14.03 — Entornos y ejecución reconstruible: metadatos mínimos, entornos locales y evidencia de consulta; retomar 14.04.
 - **Última revisión documental:** 2026-10-28, continuidad Quarto → una app → módulo 14,
   criterios de cierre y arquitectura de los proyectos R actualizados tras completar Shiny.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -35,6 +35,36 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, entornos y ejecución reconstruible 14.03:**
+Lección/lab, preparadores equivalentes de 26 fuentes, metadatos mínimos reales
+y ejecutores con registro nuevo de entorno/parámetros/resultado. Conserva las
+fuentes de 14.02; entorno.csv declara Python 3.12.12/R 4.6.1. uv.lock generado
+con uv contiene solo el proyecto sin dependencias externas; renv.lock generado
+con renv 1.3.1 contiene solo renv, herramienta de biblioteca local. Sin paquetes
+de análisis añadidos ni cambios de metadatos/entornos globales o previos.
+
+Dos copias desde fuentes, con .venv y biblioteca R inicialmente vacíos, fueron
+construidas/restauradas y ejecutadas en procesos nuevos, con rutas con espacios.
+Doce registros: octubre en ambas copias, septiembre desde otra carpeta,
+Quarto presente en PATH, vacío/sin universo; parámetros, resultados por crédito,
+porcentajes y huellas de entrada/configuración conciliados con Python estándar.
+Quarto 1.9.38 existente se detectó sin render/instalación; su ausencia en PATH
+también se registra. No acredita preparación de reporte/app integrados.
+
+Entorno base/sin activar, evidencia existente, metadatos uv/renv desalineados y
+versión declarada distinta rechazados sin generar evidencia válida ni modificar
+la previa. Lockfiles originales restaurados tras alteraciones; preparadores
+rechazan destino ocupado. renv regenera espacios del activador; contenido
+funcional contrastado y fuentes de modelo/configuración conservadas.
+
+Recorridos IDE, PowerShell y Bash completos; operación completa del IDE y
+Bash/Linux no acreditadas con Rscript Windows. Registros contienen rutas locales,
+no autentican ejecuciones históricas y no garantizan escritura transaccional.
+Seis páginas revisadas en doce vistas 1280/390, sin desbordamiento de página
+ni IDs duplicados y soluciones cerradas; 363 Markdown y 5423 enlaces locales
+sin incidencias. No hay pipeline, productos renderizados ni checkpoints implementados. Portal
+y especificaciones privadas fuera de esta entrega; retomar 14.04.
 
 **Desarrollo — 2026-10-28, estructura y configuración 14.02:**
 Lección/lab, preparadores Python/R y copia organizada de trece archivos:

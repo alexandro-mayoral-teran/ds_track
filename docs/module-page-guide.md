@@ -4,7 +4,7 @@ Acuerdo de presentación educativa: 2026-10-27. Se aplica al índice README de u
 módulo y orienta su futura representación en el portal. La referencia aplicada
 es [00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md).
 La estructura está aplicada a los índices 00–14. El módulo 12 dispone de sus nueve secciones; 13 dispone de sus diez secciones
-con cierre local; 14.01–14.02 tienen material de diseño y estructura; 14.03–14.09 conservan su plan. La tabla distingue
+con cierre local; 14.01–14.03 tienen material de diseño, estructura y entornos; 14.04–14.09 conservan su plan. La tabla distingue
 cada estado: aplicar la estructura no desarrolla una lección ni revisa toda la teoría.
 
 ## Qué debe resolver esta página

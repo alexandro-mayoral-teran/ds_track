@@ -1,0 +1,9 @@
+[project]
+name = "ds-track-1403"
+version = "0.1.0"
+description = "Consulta de biblioteca estandar para practicar reconstruccion local"
+requires-python = "==3.12.12"
+dependencies = []
+
+[tool.uv]
+package = false

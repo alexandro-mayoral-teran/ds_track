@@ -39,7 +39,7 @@ El lockfile tampoco incluye R, sistema, navegador o disponibilidad futura de paq
 
 [14 — Proyectos reproducibles](../curriculum/14_reproducible_projects/README.md)
 dispone de [14.01 — Pregunta y contrato](../curriculum/14_reproducible_projects/01_product_question_contract/README.md);
-[14.02 — Estructura y configuración](../curriculum/14_reproducible_projects/02_structure_configuration/README.md) también está disponible; 14.03–14.09 siguen planificadas. 06_shiny_portfolio_app y sus checkpoints figuran en
+[14.02 — Estructura y configuración](../curriculum/14_reproducible_projects/02_structure_configuration/README.md) y [14.03 — Entornos](../curriculum/14_reproducible_projects/03_reconstructible_environments/README.md) están disponibles; 14.04–14.09 siguen planificadas. 06_shiny_portfolio_app y sus checkpoints figuran en
 [proyectos](../projects/README.md), sin implementación asociada. Elegir una app
 (Shiny o Streamlit) es suficiente; no se exige completar ambas alternativas.
 
