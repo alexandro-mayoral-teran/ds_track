@@ -6,15 +6,15 @@
 
 [**Empezar por 14.01 →**](01_product_question_contract/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 14.01 con lección, lab, contrato de ejemplo y referencias numéricas.
-> 14.02–14.09 siguen planificadas; no hay producto integrado final ni checkpoints implementados.
+> **Disponible:** 14.01–14.02 con lecciones/labs, contrato, referencias y estructura/configuración.
+> 14.03–14.09 siguen planificadas; no hay producto integrado final ni checkpoints implementados.
 
 <a id="propósito-y-prerrequisitos"></a>
 
 ## Propósito
 
 Consolidar el recorrido en un producto que otra persona pueda reconstruir y evaluar.
-14.01 define pregunta, contrato y aceptación con una muestra conocida; las secciones
+14.01 define pregunta/contrato y 14.02 organiza responsabilidades/parámetros con una muestra conocida; las secciones
 posteriores conservan su plan. Aún no hay proyecto final ejecutable.
 
 ## Antes de empezar
@@ -23,12 +23,12 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y una ruta de aplicac
 [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
 Las tres rutas tienen lecciones, labs y cierre local disponibles; basta una
 aplicación. Revisa la práctica de cierre de [Streamlit](../../docs/streamlit-closure.md)
-o [Shiny](../../docs/shiny-closure.md). La 14.01 permite trabajar el diseño sin
+o [Shiny](../../docs/shiny-closure.md). 14.01–14.02 permiten trabajar diseño y estructura sin
 paquetes nuevos ni entregas anteriores. No instales orquestadores por las secciones pendientes.
 
 ## Qué vas a aprender
 
-14.01 permite definir pregunta, contrato y criterios de aceptación. El recorrido completo prevé:
+14.01–14.02 permiten definir el contrato, organizar responsabilidades y configurar una consulta. El recorrido completo prevé:
 
 - Declarar contrato, fuentes, configuración y criterios de aceptación.
 - Reconstruir entornos y reprocesar sin mezclar resultados.
@@ -42,7 +42,7 @@ paquetes nuevos ni entregas anteriores. No instales orquestadores por las seccio
 | Lección o alcance | Práctica | Resultado que se comprobará |
 | --- | --- | --- |
 | **14.01** · [Pregunta y contrato del producto](01_product_question_contract/README.md) | [Lab 14.01](../../labs/14_reproducible_projects/01_product_question_contract/README.md) | Definir entradas, resultados y aceptación |
-| **14.02** · [Estructura y configuración](#02-estructura-y-configuracion) | Pendiente | Localizar responsabilidades y parámetros |
+| **14.02** · [Estructura y configuración](02_structure_configuration/README.md) | [Lab 14.02](../../labs/14_reproducible_projects/02_structure_configuration/README.md) | Localizar responsabilidades y parámetros |
 | **14.03** · [Entornos y ejecución reconstruible](#03-entornos-y-ejecucion-reconstruible) | Pendiente | Preparar y ejecutar desde instrucciones explícitas |
 | **14.04** · [Pipeline y reprocesamiento](#04-pipeline-y-reprocesamiento) | Pendiente | Repetir un corte sin duplicar o mezclar resultados |
 | **14.05** · [Pruebas y calidad de datos](#05-pruebas-y-calidad-de-datos) | Pendiente | Detectar fallas relevantes antes de entregar |
@@ -58,7 +58,7 @@ paquetes nuevos ni entregas anteriores. No instales orquestadores por las seccio
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado:** 14.01 está disponible. Las secciones 14.02–14.09 describen prácticas por desarrollar.
+**Estado:** 14.01–14.02 están disponibles. Las secciones 14.03–14.09 describen prácticas por desarrollar.
 
 <a id="01-pregunta-y-contrato-del-producto"></a>
 
@@ -73,10 +73,10 @@ diseño y aritmética no acreditan integración de reporte/app. Sin paquetes nue
 
 ### 02 — Estructura y configuración
 
-- Separar entrada preservada, transformaciones y salidas regenerables;
-  módulos/funciones, parámetros y documentación del recorrido.
-- Práctica prevista: organizar el código existente y eliminar dependencias de
-  rutas personales o estado oculto sin modificar los indicadores.
+[Lección 14.02](02_structure_configuration/README.md) y [lab](../../labs/14_reproducible_projects/02_structure_configuration/README.md)
+disponibles: copia organizada de trece archivos, raíz explícita, configuración
+CSV validada y consulta Python/R sin escribir resultados. Datos, reglas e
+indicadores conservados; app/reporte y entornos quedan para secciones posteriores.
 
 <a id="03-entornos-y-ejecucion-reconstruible"></a>
 
@@ -152,7 +152,7 @@ diseño y aritmética no acreditan integración de reporte/app. Sin paquetes nue
 La práctica prevista integra el análisis, un reporte y una aplicación elegida. Calidad y documentación se consolidan, no se introducen por primera vez. Se comprobarán fallas, reconstrucción independiente y revisión del producto. CI, publicación y automatización real serán extensiones, no requisitos del cierre local.
 
 Empieza con 14.01 y su lab: redacta el contrato, predice los casos y revisa sus
-límites. Las actividades 14.02–14.09 siguen como propuesta; no intentes ejecutar
+límites. Continúa con 14.02 para organizar y configurar la consulta. Las actividades 14.03–14.09 siguen como propuesta; no intentes ejecutar
 todavía un pipeline o producto final inexistente.
 
 ## Qué conservar
@@ -160,10 +160,11 @@ todavía un pipeline o producto final inexistente.
 | Evidencia prevista | Qué permite revisar |
 | --- | --- |
 | Contrato y casos de 14.01 | Pregunta, unidades, claves, reglas y aceptación revisables |
+| Estructura/configuración de 14.02 | Responsabilidades, raíz explícita y parámetros conciliados |
 | Pruebas y registros | Detección de fallas y trazabilidad |
 | Reporte, app e instrucciones futuras | Reconstrucción independiente y decisiones defendidas |
 
-En 14.01 conserva tu contrato, elección de app, predicciones/casos y revisión
+En 14.01–14.02 conserva contrato, configuraciones, resultados por crédito y revisión
 humana. Añade una nota con comprobación, ayudas, dudas y siguiente paso en tu
 copia personal. PROGRESS.md registra material; no es un porcentaje de aprendizaje.
 
@@ -189,8 +190,8 @@ conciliados y entrega (07–08); CP-05, reconstrucción independiente (09).
 ## Siguiente paso
 
 Empieza por [14.01 — Pregunta y contrato del producto](01_product_question_contract/README.md).
-Después consulta [14.02 — Estructura y configuración](#02-estructura-y-configuracion),
-todavía planificado. No hay integración final ni checkpoints listos.
+Continúa con [14.02 — Estructura y configuración](02_structure_configuration/README.md).
+Después consulta [14.03 — Entornos y ejecución reconstruible](#03-entornos-y-ejecucion-reconstruible), todavía planificado. No hay integración final ni checkpoints listos.
 
 Este plan cierra el recorrido. No hay un módulo 15 definido. Cuando exista una entrega verificada, conserva evidencia y revisa qué resultados son apropiados para [showcase](../../showcase/README.md).
 

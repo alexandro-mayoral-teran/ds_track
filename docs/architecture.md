@@ -128,7 +128,7 @@ la limpieza ni altera por sí solo el universo del indicador.
 
 Matplotlib/Altair y ggplot2 son las rutas de gráficos. Después se elige una
 aplicación: Streamlit cuenta con 12.01–12.09; la ruta
-Shiny dispone de 13.01–13.10; la lección 14.01 tiene material de diseño; 14.02–14.09 conservan su plan. Ambas separan transformación y validación de la interfaz;
+Shiny dispone de 13.01–13.10; las lecciones 14.01–14.02 tienen material de diseño y estructura; 14.03–14.09 conservan su plan. Ambas separan transformación y validación de la interfaz;
 elegir una aplicación es suficiente. Los criterios de [Streamlit](streamlit-closure.md)
 y [Shiny](shiny-closure.md) distinguen material disponible, práctica y evidencia de cierre.
 
@@ -175,7 +175,7 @@ externo y reconstruye en otra carpeta. Véase [cierre de Shiny](shiny-closure.md
 para límites y práctica pendiente. Las entregas locales de ambas rutas no
 implementan por sí solas la integración de reporte y app del módulo 14.
 [14 — Proyectos reproducibles](../curriculum/14_reproducible_projects/README.md)
-dispone de [14.01 — Pregunta y contrato](../curriculum/14_reproducible_projects/01_product_question_contract/README.md); 14.02–14.09 siguen planificadas. Elegir 12 o 13 antes de integrar el producto final, sin exigir dos aplicaciones.
+dispone de [14.01 — Pregunta y contrato](../curriculum/14_reproducible_projects/01_product_question_contract/README.md); [14.02 — Estructura y configuración](../curriculum/14_reproducible_projects/02_structure_configuration/README.md) también está disponible; 14.03–14.09 siguen planificadas. Elegir 12 o 13 antes de integrar el producto final, sin exigir dos aplicaciones.
 
 El [cierre de reportes](reporting-closure.md) separa material, práctica y proyecto.
 El portal local facilita lectura y práctica acompañada; no implementa esos

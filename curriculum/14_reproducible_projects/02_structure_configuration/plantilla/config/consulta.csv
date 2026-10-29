@@ -1,0 +1,8 @@
+clave,valor
+version_reglas,1401-v1
+entrada,datos/entrada/cartera.csv
+corte,2026-10-31
+segmentos,comercio|servicios
+minimo_texto,2000
+app,shiny
+salida,salidas/octubre

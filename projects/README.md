@@ -19,7 +19,7 @@ Así se evita mantener esqueletos vacíos.
 ## Qué falta para implementarlos
 
 Los módulos 00–13 tienen material; disponer de sus lecciones y labs no activa
-los proyectos. La lección 14.01 tiene material de diseño; 14.02–14.09 siguen planificadas. Antes de crear un proyecto,
+los proyectos. Las lecciones 14.01–14.02 tienen material de diseño y estructura; 14.03–14.09 siguen planificadas. Antes de crear un proyecto,
 definir pregunta, producto, entradas,
 contrato, rúbrica y checkpoints vinculados al material que realmente requiere.
 No crear una carpeta vacía solo para representar el plan.

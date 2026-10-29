@@ -189,8 +189,8 @@ adivinarlos del código. Distingue criterios comprobados hoy y compromisos futur
 
 ## Siguiente paso
 
-Consulta [14.02 — Estructura y configuración](../README.md#02-estructura-y-configuracion),
-todavía planificado. El contrato se revisará al implementar; no acredita una
+Continúa con [14.02 — Estructura y configuración](../02_structure_configuration/README.md),
+disponible con lección y lab. El contrato se revisará al implementar; no acredita una
 integración de reporte/app ni el aprendizaje por disponer del ejemplo.
 
 ## Referencias primarias

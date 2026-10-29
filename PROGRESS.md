@@ -10,15 +10,15 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01 tiene material de diseño; 14.02–14.09 siguen planificadas.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.02 tienen material de diseño y estructura; 14.03–14.09 siguen planificadas.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [14.02 — Estructura y configuración](curriculum/14_reproducible_projects/README.md#02-estructura-y-configuracion), todavía planificado.
+- **Siguiente desarrollo educativo:** [14.03 — Entornos y ejecución reconstruible](curriculum/14_reproducible_projects/README.md#03-entornos-y-ejecucion-reconstruible), todavía planificado.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01 tiene material de diseño; 14.02–14.09 conservan su plan.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.02 tienen material de diseño y estructura; 14.03–14.09 conservan su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 14.01 — Pregunta y contrato del producto: especificación, nueve casos y referencia Python/R base; retomar 14.02.
+- **Último desarrollo educativo:** 2026-10-28, 14.02 — Estructura y configuración: responsabilidades, raíz explícita y parámetros validados; retomar 14.03.
 - **Última revisión documental:** 2026-10-28, continuidad Quarto → una app → módulo 14,
   criterios de cierre y arquitectura de los proyectos R actualizados tras completar Shiny.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -35,6 +35,31 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, estructura y configuración 14.02:**
+Lección/lab, preparadores Python/R y copia organizada de trece archivos:
+contrato/plantilla, entrada preservada, criterios de referencia, modelos,
+configuración, revisores y guía de salidas. Modelo derivado de las referencias
+14.01 conserva contrato/indicadores; configuración CSV con siete claves exactas,
+valores textuales validados, raíz explícita y destinos nuevos previstos.
+Los revisores leen e imprimen, sin crear/reservar salida, iniciar app/reporte,
+instalar paquetes o simular un pipeline. App elegida no altera los indicadores.
+
+Python 3.12.12/R 4.6.1: nueve casos del contrato (entrada inválida rechazada
+antes del cálculo), dos elecciones de app y 22 configuraciones inválidas más
+fuente duplicada contrastados. Claves ausentes/repetidas/extra, versión, calendario,
+segmentos, mínimo, rutas y destinos ocupados comprobados. Ejecución desde otra
+carpeta y copia movida con espacios; hash/fechas/archivos intactos al revisar.
+Ambos preparadores producen trece archivos equivalentes y rechazan destinos
+existentes. Fuente original intacta, sin paquetes/entornos/lockfiles nuevos.
+Recorrido principal IDE/consola R y alternativas PowerShell/Bash separadas;
+operación completa del IDE y Bash/Linux no acreditadas por Rscript Windows.
+
+Seis páginas renderizadas en doce vistas 1280/390, sin desbordamiento de página
+ni IDs duplicados y soluciones cerradas; 359 Markdown y 5382 enlaces locales
+sin incidencias. Solo 14.01–14.02 disponibles; retomar 14.03. Integración final, pipeline,
+entornos reconstruibles y checkpoints siguen pendientes. Portal y documentos
+privados fuera de esta entrega.
 
 **Desarrollo — 2026-10-28, pregunta y contrato del producto 14.01:**
 Lección/lab, especificación resuelta, plantilla personal y nueve criterios de

@@ -118,5 +118,5 @@ depender de recordar cómo estaba configurada una app anterior.
 
 ## Siguiente paso
 
-Consulta [14.02 — Estructura y configuración](../../../curriculum/14_reproducible_projects/README.md#02-estructura-y-configuracion),
-todavía planificado. No hay proyecto final ni checkpoints implementados.
+Continúa con [14.02 — Estructura y configuración](../../../curriculum/14_reproducible_projects/02_structure_configuration/README.md),
+disponible con lección y lab. No hay proyecto final ni checkpoints implementados.
