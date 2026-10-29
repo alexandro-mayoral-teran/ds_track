@@ -244,8 +244,8 @@ Explica qué regla protegió cada prueba elegida y qué datos podrían seguir ma
 sin que esa prueba lo detecte. Material disponible no acredita tu práctica.
 No hay proyecto asociado ni checkpoint implementado.
 
-Siguiente: [14.06 — Trazabilidad y recuperación de fallas](../README.md#06-trazabilidad-y-recuperacion-de-fallas),
-aún planificada.
+Siguiente: [14.06 — Trazabilidad y recuperación de fallas](../06_traceability_recovery/README.md),
+disponible con su lab.
 
 ## Referencias primarias
 

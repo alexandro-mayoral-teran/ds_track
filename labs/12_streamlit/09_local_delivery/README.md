@@ -160,5 +160,5 @@ por esta actividad. PROGRESS.md conserva autoría, no tu bitácora personal.
 
 Revisa el [criterio de salida](../../../curriculum/12_streamlit/09_local_delivery/README.md#evidencia-y-criterio-de-salida).
 El siguiente tramo es [14.01 — Pregunta y contrato del producto](../../../curriculum/14_reproducible_projects/01_product_question_contract/README.md),
-disponible con lección y lab; 14.02–14.05 también tienen lecciones/labs y 14.06–14.09 siguen planificadas. [13 — Shiny](../../../curriculum/13_shiny_web/README.md) es
+disponible con lección y lab; 14.02–14.06 también tienen lecciones/labs y 14.07–14.09 siguen planificadas. [13 — Shiny](../../../curriculum/13_shiny_web/README.md) es
 una alternativa a Streamlit, no un requisito adicional para continuar.

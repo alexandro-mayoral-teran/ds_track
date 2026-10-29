@@ -6,8 +6,8 @@
 
 [**Empezar por 14.01 →**](01_product_question_contract/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 14.01–14.05 con lecciones/labs, contrato, configuración, entornos, pipeline y pruebas locales.
-> 14.06–14.09 siguen planificadas; no hay producto integrado final ni checkpoints implementados.
+> **Disponible:** 14.01–14.06 con lecciones/labs, contrato, configuración, entornos, pipeline, pruebas y trazabilidad locales.
+> 14.07–14.09 siguen planificadas; no hay producto integrado final ni checkpoints implementados.
 
 <a id="propósito-y-prerrequisitos"></a>
 
@@ -15,8 +15,9 @@
 
 Consolidar el recorrido en un producto que otra persona pueda reconstruir y evaluar.
 14.01 define pregunta/contrato, 14.02 organiza responsabilidades/parámetros,
-14.03 reconstruye entornos locales, 14.04 produce/reutiliza entregas y 14.05 prueba reglas y calidad de datos. Las secciones
-14.06–14.09 conservan su plan. Aún no hay proyecto final ejecutable.
+14.03 reconstruye entornos locales, 14.04 produce/reutiliza entregas, 14.05 prueba reglas y calidad de datos
+y 14.06 registra intentos y practica recuperación con evidencia conservada. Las secciones
+14.07–14.09 conservan su plan. Aún no hay proyecto final ejecutable.
 
 ## Antes de empezar
 
@@ -24,15 +25,15 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y una ruta de aplicac
 [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
 Las tres rutas tienen lecciones, labs y cierre local disponibles; basta una
 aplicación. Revisa la práctica de cierre de [Streamlit](../../docs/streamlit-closure.md)
-o [Shiny](../../docs/shiny-closure.md). 14.01–14.05 permiten trabajar diseño,
-configuración, entornos, reprocesamiento y pruebas sin paquetes de análisis nuevos ni entregas
+o [Shiny](../../docs/shiny-closure.md). 14.01–14.06 permiten trabajar diseño,
+configuración, entornos, reprocesamiento, pruebas y trazabilidad sin paquetes de análisis nuevos ni entregas
 anteriores. No instales orquestadores por las secciones pendientes.
 
 ## Qué vas a aprender
 
-14.01–14.05 permiten definir el contrato, configurar una consulta, reconstruir
-su entorno local, producir entregas separadas, repetir sin duplicados y detectar
-fallas con pruebas. El recorrido completo prevé:
+14.01–14.06 permiten definir el contrato, configurar una consulta, reconstruir
+su entorno local, producir entregas separadas, repetir sin duplicados, detectar
+fallas con pruebas y decidir cómo recuperar una ejecución. El recorrido completo prevé:
 
 - Declarar contrato, fuentes, configuración y criterios de aceptación.
 - Reconstruir entornos y reprocesar sin mezclar resultados.
@@ -50,7 +51,7 @@ fallas con pruebas. El recorrido completo prevé:
 | **14.03** · [Entornos y ejecución reconstruible](03_reconstructible_environments/README.md) | [Lab 14.03](../../labs/14_reproducible_projects/03_reconstructible_environments/README.md) | Preparar y ejecutar desde instrucciones explícitas |
 | **14.04** · [Pipeline y reprocesamiento](04_pipeline_reprocessing/README.md) | [Lab 14.04](../../labs/14_reproducible_projects/04_pipeline_reprocessing/README.md) | Repetir un corte sin duplicar o mezclar resultados |
 | **14.05** · [Pruebas y calidad de datos](05_tests_data_quality/README.md) | [Lab 14.05](../../labs/14_reproducible_projects/05_tests_data_quality/README.md) | Detectar fallas relevantes antes de entregar |
-| **14.06** · [Trazabilidad y recuperación de fallas](#06-trazabilidad-y-recuperacion-de-fallas) | Pendiente | Explicar qué se ejecutó y qué resultados son válidos |
+| **14.06** · [Trazabilidad y recuperación de fallas](06_traceability_recovery/README.md) | [Lab 14.06](../../labs/14_reproducible_projects/06_traceability_recovery/README.md) | Explicar qué se ejecutó y qué resultados son válidos |
 | **14.07** · [Integración de reporte y app](#07-integracion-de-reporte-y-app) | Pendiente | Conciliar el mismo corte en todos los productos |
 | **14.08** · [Entrega y automatización opcional](#08-entrega-y-automatizacion-opcional) — opcional | Pendiente | Compartir una entrega reconstruible; CI opcional |
 | **14.09** · [Revisión final y defensa de decisiones](#09-revision-final-y-defensa-de-decisiones) | Pendiente | Demostrar reconstrucción y justificar límites |
@@ -62,7 +63,7 @@ fallas con pruebas. El recorrido completo prevé:
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado:** 14.01–14.05 están disponibles. Las secciones 14.06–14.09 describen prácticas por desarrollar.
+**Estado:** 14.01–14.06 están disponibles. Las secciones 14.07–14.09 describen prácticas por desarrollar.
 
 <a id="01-pregunta-y-contrato-del-producto"></a>
 
@@ -116,10 +117,11 @@ falla y restauración; sin paquetes nuevos ni afirmación de cobertura completa.
 
 ### 06 — Trazabilidad y recuperación de fallas
 
-- Identificar entrada, corte, configuración, versión, resultado y etapa fallida.
-  Logs y estado de ejecución; diferenciar resultado anterior de ejecución actual.
-- Práctica prevista: interrumpir un paso y revisar qué se puede reutilizar y qué
-  debe regenerarse. No prometer recuperación automática o reintentar cualquier operación.
+[Lección 14.06](06_traceability_recovery/README.md) y [lab](../../labs/14_reproducible_projects/06_traceability_recovery/README.md)
+disponibles: 33 fuentes, registros exclusivos por intento, etapas, configuración,
+huellas y diagnóstico Python/R. Fallos antes y después de publicar, recuperación
+por recálculo y reutilización comprobada; estado incompleto indeterminado.
+Conserva parciales y pipeline; sin recuperación automática ni paquetes nuevos.
 
 <a id="07-integracion-de-reporte-y-app"></a>
 
@@ -157,8 +159,9 @@ La práctica prevista integra el análisis, un reporte y una aplicación elegida
 
 Empieza con 14.01 y su lab: redacta el contrato, predice los casos y revisa sus
 límites. Continúa con 14.02 para configurar, 14.03 para reconstruir el entorno,
-14.04 para ejecutar el pipeline y 14.05 para comprobar sus reglas. Las actividades
-14.06–14.09 siguen como propuesta; el producto final integrado continúa pendiente.
+14.04 para ejecutar el pipeline, 14.05 para comprobar sus reglas y 14.06 para
+registrar y recuperar intentos fallidos. Las actividades
+14.07–14.09 siguen como propuesta; el producto final integrado continúa pendiente.
 
 ## Qué conservar
 
@@ -170,7 +173,7 @@ límites. Continúa con 14.02 para configurar, 14.03 para reconstruir el entorno
 | Pruebas y registros | Detección de fallas y trazabilidad |
 | Reporte, app e instrucciones futuras | Reconstrucción independiente y decisiones defendidas |
 
-En 14.01–14.05 conserva contrato, configuraciones, resultados por crédito,
+En 14.01–14.06 conserva contrato, configuraciones, resultados por crédito,
 resúmenes de pruebas y revisión humana. Añade una nota con comprobación, ayudas, dudas y siguiente paso en tu
 copia personal. PROGRESS.md registra material; no es un porcentaje de aprendizaje.
 
@@ -198,9 +201,10 @@ conciliados y entrega (07–08); CP-05, reconstrucción independiente (09).
 Empieza por [14.01 — Pregunta y contrato del producto](01_product_question_contract/README.md).
 Continúa con [14.02 — Estructura y configuración](02_structure_configuration/README.md).
 Sigue con [14.03 — Entornos y ejecución reconstruible](03_reconstructible_environments/README.md).
-Después realiza [14.04 — Pipeline y reprocesamiento](04_pipeline_reprocessing/README.md) y
-[14.05 — Pruebas y calidad de datos](05_tests_data_quality/README.md), disponibles con sus labs.
-El siguiente desarrollo es [14.06 — Trazabilidad y recuperación de fallas](#06-trazabilidad-y-recuperacion-de-fallas),
+Después realiza [14.04 — Pipeline y reprocesamiento](04_pipeline_reprocessing/README.md),
+[14.05 — Pruebas y calidad de datos](05_tests_data_quality/README.md) y
+[14.06 — Trazabilidad y recuperación de fallas](06_traceability_recovery/README.md), disponibles con sus labs.
+El siguiente desarrollo es [14.07 — Integración de reporte y app](#07-integracion-de-reporte-y-app),
 aún planificado. No hay integración final ni checkpoints listos.
 
 Este plan cierra el recorrido. No hay un módulo 15 definido. Cuando exista una entrega verificada, conserva evidencia y revisa qué resultados son apropiados para [showcase](../../showcase/README.md).
@@ -214,7 +218,7 @@ Fuentes para preparar las prácticas: [entornos uv](https://docs.astral.sh/uv/co
 [pruebas R](https://r-pkgs.org/testing-basics.html),
 [ejecución de Quarto](https://quarto.org/docs/projects/code-execution.html) y
 [GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions).
-14.01–14.05 conservan los entornos locales ya declarados y usan unittest o R base
+14.01–14.06 conservan los entornos locales ya declarados y usan unittest o R base
 para las pruebas. pytest/testthat son ampliaciones opcionales. Las dependencias
 de las secciones pendientes se decidirán al implementarlas, conservando el gestor elegido.
 

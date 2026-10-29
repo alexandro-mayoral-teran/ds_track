@@ -10,16 +10,16 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.05 tienen material de diseño, estructura, entornos, reprocesamiento y pruebas; 14.06–14.09 siguen planificadas.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.06 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas y trazabilidad; 14.07–14.09 siguen planificadas.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [14.06 — Trazabilidad y recuperación de fallas](curriculum/14_reproducible_projects/README.md#06-trazabilidad-y-recuperacion-de-fallas), todavía planificado.
+- **Siguiente desarrollo educativo:** [14.07 — Integración de reporte y app](curriculum/14_reproducible_projects/README.md#07-integracion-de-reporte-y-app), todavía planificado.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.05 tienen material de diseño, estructura, entornos, reprocesamiento y pruebas; 14.06–14.09 conservan su plan.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.06 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas y trazabilidad; 14.07–14.09 conservan su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 14.05 — Pruebas y calidad de datos: suites Python/R, reglas de datos y defectos controlados detectados; retomar 14.06.
-- **Última revisión documental:** 2026-10-29, cierre de sesión tras 14.05; guías de
+- **Último desarrollo educativo:** 2026-10-29, 14.06 — Trazabilidad y recuperación de fallas: registros por intento y recuperación comprobada en Python/R; retomar 14.07.
+- **Última revisión documental:** 2026-10-29, desarrollo de 14.06; guías de
   navegación y cierres Quarto/Streamlit/Shiny conciliados con el estado real del módulo 14.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
@@ -36,7 +36,35 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
-**Cierre documental — 2026-10-29:**
+**Desarrollo — 2026-10-29, trazabilidad y recuperación 14.06:**
+Lección/lab y recorridos R/IDE, PowerShell y Bash; preparadores equivalentes
+de 33 fuentes. Nuevos trazadores alrededor del pipeline 14.04, sin cambiar
+modelos, datos, suites 14.05 ni lockfiles. Eventos CSV por intento exclusivo,
+consulta, huellas y diagnóstico; fallos antes/después de publicar y recálculo
+con reutilización comprobada. Parciales y registros anteriores conservados;
+sin reanudación de temporales ni recuperación automática.
+Python 3.12.12/uv y R 4.6.1/renv 1.3.1 locales: secuencia principal y siete
+grupos heredados aprobados en ambos motores. Diez comprobaciones adicionales
+por ruta: cierre fallido y reutilización sin escritura, intento ocupado intacto,
+septiembre por clave, vacío válido, sin universo, duplicado fuera del corte,
+configuración inválida/ausente, compensación con huellas actualizadas y corte
+abrupto sin evento terminal seguido de nuevo intento. Octubre 003/2600 y
+universo 3/4600; septiembre 002/2000 y 003/2500 sobre 3/4500.
+R restaurado desde tarball local existente; inconsistencia inicial de paquetes
+base en ejecutor restringido resuelta comprobando con permisos de lectura
+adecuados, sin desactivar sandbox ni controles. Rscript/Windows comprobados;
+interfaz completa del IDE y Bash/Linux no acreditados. Los logs/MD5 no autentican
+sesiones ni recuperan fuentes; la ausencia de cierre deja estado indeterminado.
+Preparadores Python/R: 33 fuentes idénticas. Seis tablas selección/contexto
+conciliadas; ejemplos mínimos ejecutados y conexiones R restauradas tras error.
+5536 enlaces locales de 376 Markdown sin incidencias; diez vistas a 1280/390
+y diagrama renderizado revisados, sin desbordamiento ni IDs duplicados.
+git diff --check sin errores; dependencias y lockfiles anteriores intactos.
+Retomar 14.07 — Integración de reporte y app, todavía planificada. No hay
+proyecto/checkpoints ni aprendizaje acreditado. Portal y reorganización privada
+previa conservan su alcance y cambios locales.
+
+**Cierre documental — 2026-10-29 (antes de desarrollar 14.06):**
 Revisados portada, roadmap, índices, guías y continuidades entre módulos.
 Corregidas referencias antiguas que aún presentaban 14.04/14.05 como planes:
 14.01–14.05 tienen lecciones/labs; 14.06–14.09 siguen pendientes. La siguiente

@@ -87,5 +87,5 @@ caso nuevo y una explicación de su resultado. No es necesario publicar todas la
 fixtures ni rutas de tu equipo. La persona que acompaña debe poder reconstruir
 qué cambió y por qué la prueba lo detectó.
 
-Siguiente lección: [14.06 — Trazabilidad y recuperación de fallas](../../../curriculum/14_reproducible_projects/README.md#06-trazabilidad-y-recuperacion-de-fallas),
-aún planificada. Vuelve a la [lección](../../../curriculum/14_reproducible_projects/05_tests_data_quality/README.md) para repasar.
+Siguiente lección: [14.06 — Trazabilidad y recuperación de fallas](../../../curriculum/14_reproducible_projects/06_traceability_recovery/README.md),
+disponible con su lab. Vuelve a la [lección](../../../curriculum/14_reproducible_projects/05_tests_data_quality/README.md) para repasar.
