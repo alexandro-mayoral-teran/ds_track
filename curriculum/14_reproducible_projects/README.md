@@ -6,8 +6,8 @@
 
 [**Empezar por 14.01 →**](01_product_question_contract/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 14.01–14.03 con lecciones/labs, contrato, configuración y reconstrucción de entornos locales.
-> 14.04–14.09 siguen planificadas; no hay producto integrado final ni checkpoints implementados.
+> **Disponible:** 14.01–14.04 con lecciones/labs, contrato, configuración, entornos y pipeline local comprobable.
+> 14.05–14.09 siguen planificadas; no hay producto integrado final ni checkpoints implementados.
 
 <a id="propósito-y-prerrequisitos"></a>
 
@@ -15,8 +15,8 @@
 
 Consolidar el recorrido en un producto que otra persona pueda reconstruir y evaluar.
 14.01 define pregunta/contrato, 14.02 organiza responsabilidades/parámetros y
-14.03 reconstruye entornos locales de una consulta conocida. Las secciones
-14.04–14.09 conservan su plan. Aún no hay proyecto final ejecutable.
+14.03 reconstruye entornos locales y 14.04 produce/reutiliza entregas de una consulta conocida. Las secciones
+14.05–14.09 conservan su plan. Aún no hay proyecto final ejecutable.
 
 ## Antes de empezar
 
@@ -24,14 +24,14 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y una ruta de aplicac
 [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
 Las tres rutas tienen lecciones, labs y cierre local disponibles; basta una
 aplicación. Revisa la práctica de cierre de [Streamlit](../../docs/streamlit-closure.md)
-o [Shiny](../../docs/shiny-closure.md). 14.01–14.03 permiten trabajar diseño,
-configuración y entornos locales sin paquetes de análisis nuevos ni entregas
+o [Shiny](../../docs/shiny-closure.md). 14.01–14.04 permiten trabajar diseño,
+configuración, entornos y reprocesamiento sin paquetes de análisis nuevos ni entregas
 anteriores. No instales orquestadores por las secciones pendientes.
 
 ## Qué vas a aprender
 
-14.01–14.03 permiten definir el contrato, configurar una consulta y reconstruir
-su entorno local. El recorrido completo prevé:
+14.01–14.04 permiten definir el contrato, configurar una consulta y reconstruir
+su entorno local, producir entregas separadas y repetir una consulta sin duplicados. El recorrido completo prevé:
 
 - Declarar contrato, fuentes, configuración y criterios de aceptación.
 - Reconstruir entornos y reprocesar sin mezclar resultados.
@@ -47,7 +47,7 @@ su entorno local. El recorrido completo prevé:
 | **14.01** · [Pregunta y contrato del producto](01_product_question_contract/README.md) | [Lab 14.01](../../labs/14_reproducible_projects/01_product_question_contract/README.md) | Definir entradas, resultados y aceptación |
 | **14.02** · [Estructura y configuración](02_structure_configuration/README.md) | [Lab 14.02](../../labs/14_reproducible_projects/02_structure_configuration/README.md) | Localizar responsabilidades y parámetros |
 | **14.03** · [Entornos y ejecución reconstruible](03_reconstructible_environments/README.md) | [Lab 14.03](../../labs/14_reproducible_projects/03_reconstructible_environments/README.md) | Preparar y ejecutar desde instrucciones explícitas |
-| **14.04** · [Pipeline y reprocesamiento](#04-pipeline-y-reprocesamiento) | Pendiente | Repetir un corte sin duplicar o mezclar resultados |
+| **14.04** · [Pipeline y reprocesamiento](04_pipeline_reprocessing/README.md) | [Lab 14.04](../../labs/14_reproducible_projects/04_pipeline_reprocessing/README.md) | Repetir un corte sin duplicar o mezclar resultados |
 | **14.05** · [Pruebas y calidad de datos](#05-pruebas-y-calidad-de-datos) | Pendiente | Detectar fallas relevantes antes de entregar |
 | **14.06** · [Trazabilidad y recuperación de fallas](#06-trazabilidad-y-recuperacion-de-fallas) | Pendiente | Explicar qué se ejecutó y qué resultados son válidos |
 | **14.07** · [Integración de reporte y app](#07-integracion-de-reporte-y-app) | Pendiente | Conciliar el mismo corte en todos los productos |
@@ -61,7 +61,7 @@ su entorno local. El recorrido completo prevé:
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado:** 14.01–14.03 están disponibles. Las secciones 14.04–14.09 describen prácticas por desarrollar.
+**Estado:** 14.01–14.04 están disponibles. Las secciones 14.05–14.09 describen prácticas por desarrollar.
 
 <a id="01-pregunta-y-contrato-del-producto"></a>
 
@@ -95,11 +95,11 @@ No añade paquetes de análisis ni implementa todavía pipeline/reporte/app.
 
 ### 04 — Pipeline y reprocesamiento
 
-- Orden de pasos, dependencias de datos, corte y destinos de salida.
-  Repetición sin duplicados y comprobación antes de dar un resultado por terminado.
-- Práctica prevista: ejecutar dos veces el mismo corte y después otro corte;
-  verificar indicadores y salidas. Escrituras temporales y reemplazo controlado
-  según necesidad; atomicidad de un archivo no garantiza una transacción de todo el pipeline.
+[Lección 14.04](04_pipeline_reprocessing/README.md) y [lab](../../labs/14_reproducible_projects/04_pipeline_reprocessing/README.md)
+disponibles: 28 fuentes, pipeline Python/R sin paquetes nuevos, selección/contexto,
+insumos y marca comprobados. Repetición sin escribir, otro corte en destino nuevo,
+fallo temporal conservado y reintento. No reemplaza entregas ni garantiza una
+transacción completa; integración de reporte/app y recuperación amplia siguen pendientes.
 
 <a id="05-pruebas-y-calidad-de-datos"></a>
 
@@ -155,7 +155,7 @@ No añade paquetes de análisis ni implementa todavía pipeline/reporte/app.
 La práctica prevista integra el análisis, un reporte y una aplicación elegida. Calidad y documentación se consolidan, no se introducen por primera vez. Se comprobarán fallas, reconstrucción independiente y revisión del producto. CI, publicación y automatización real serán extensiones, no requisitos del cierre local.
 
 Empieza con 14.01 y su lab: redacta el contrato, predice los casos y revisa sus
-límites. Continúa con 14.02 para configurar y 14.03 para reconstruir el entorno de la consulta. Las actividades 14.04–14.09 siguen como propuesta; no intentes ejecutar
+límites. Continúa con 14.02 para configurar y 14.03 para reconstruir el entorno de la consulta. Las actividades 14.05–14.09 siguen como propuesta; no intentes ejecutar
 todavía un pipeline o producto final inexistente.
 
 ## Qué conservar
@@ -168,7 +168,7 @@ todavía un pipeline o producto final inexistente.
 | Pruebas y registros | Detección de fallas y trazabilidad |
 | Reporte, app e instrucciones futuras | Reconstrucción independiente y decisiones defendidas |
 
-En 14.01–14.03 conserva contrato, configuraciones, resultados por crédito y revisión
+En 14.01–14.04 conserva contrato, configuraciones, resultados por crédito y revisión
 humana. Añade una nota con comprobación, ayudas, dudas y siguiente paso en tu
 copia personal. PROGRESS.md registra material; no es un porcentaje de aprendizaje.
 

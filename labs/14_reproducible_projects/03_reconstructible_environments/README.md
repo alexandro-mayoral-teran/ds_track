@@ -114,5 +114,5 @@ consulta correcta y producto integrado aún pendiente.
 
 ## Siguiente paso
 
-Consulta [14.04 — Pipeline y reprocesamiento](../../../curriculum/14_reproducible_projects/README.md#04-pipeline-y-reprocesamiento),
-todavía planificado. Los proyectos y checkpoints requieren implementación propia.
+Consulta [14.04 — Pipeline y reprocesamiento](../../../curriculum/14_reproducible_projects/04_pipeline_reprocessing/README.md),
+ya disponible. Los proyectos y checkpoints requieren implementación propia.

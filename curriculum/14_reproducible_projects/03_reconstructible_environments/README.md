@@ -184,8 +184,8 @@ consulta ejecutada y producto final todavía sin integrar.
 
 ## Siguiente paso
 
-Consulta [14.04 — Pipeline y reprocesamiento](../README.md#04-pipeline-y-reprocesamiento),
-todavía planificado. Los registros de esta sección no implementan el pipeline,
+Consulta [14.04 — Pipeline y reprocesamiento](../04_pipeline_reprocessing/README.md),
+ya disponible. Los registros de esta sección no implementan el pipeline,
 el reporte/app ni sus checkpoints de aceptación final.
 
 ## Referencias primarias

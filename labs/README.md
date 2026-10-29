@@ -143,6 +143,7 @@ reglas de enlace están en
 | [`14.01 — Definir la pregunta y la aceptación del producto`](14_reproducible_projects/01_product_question_contract/) | `14_reproducible_projects` | No aplica todavía |
 | [`14.02 — Organizar responsabilidades y parámetros`](14_reproducible_projects/02_structure_configuration/) | `14_reproducible_projects` | No aplica todavía |
 | [`14.03 — Reconstruir el entorno y repetir la consulta`](14_reproducible_projects/03_reconstructible_environments/) | `14_reproducible_projects` | No aplica todavía |
+| [`14.04 — Repetir un corte sin mezclar resultados`](14_reproducible_projects/04_pipeline_reprocessing/) | `14_reproducible_projects` | No aplica todavía |
 
 ## Cómo continuar
 

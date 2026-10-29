@@ -10,15 +10,15 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.03 tienen material de diseño, estructura y entornos; 14.04–14.09 siguen planificadas.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.04 tienen material de diseño, estructura, entornos y reprocesamiento; 14.05–14.09 siguen planificadas.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [14.04 — Pipeline y reprocesamiento](curriculum/14_reproducible_projects/README.md#04-pipeline-y-reprocesamiento), todavía planificado.
+- **Siguiente desarrollo educativo:** [14.05 — Pruebas y calidad de datos](curriculum/14_reproducible_projects/README.md#05-pruebas-y-calidad-de-datos), todavía planificado.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.03 tienen material de diseño, estructura y entornos; 14.04–14.09 conservan su plan.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.04 tienen material de diseño, estructura, entornos y reprocesamiento; 14.05–14.09 conservan su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 14.03 — Entornos y ejecución reconstruible: metadatos mínimos, entornos locales y evidencia de consulta; retomar 14.04.
+- **Último desarrollo educativo:** 2026-10-28, 14.04 — Pipeline y reprocesamiento: entregas comprobadas, repetición sin escribir y cortes separados; retomar 14.05.
 - **Última revisión documental:** 2026-10-28, continuidad Quarto → una app → módulo 14,
   criterios de cierre y arquitectura de los proyectos R actualizados tras completar Shiny.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -35,6 +35,28 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, pipeline y reprocesamiento 14.04:**
+Lección/lab, recorridos R/IDE, PowerShell y Bash; preparadores de 28 fuentes en
+carpeta nueva. Python/R conservan modelos, datos y metadatos 14.03 sin paquetes
+nuevos. Entrega de cuatro CSV: selección, contexto, insumos y COMPLETO; temporal
+hermano, relectura por valor y publicación mediante renombrado a destino libre.
+Repetir comprueba de nuevo y no escribe; cambios de fuente/configuración/código
+registrados requieren otro destino. Sin append, reemplazo, escritores simultáneos
+ni garantía de transacción/durabilidad completas. Fuente completa antes del filtro.
+Octubre 003/2600, universo 3/4600; septiembre 002/2000 y 003/2500, universo 3/4500.
+Siete consultas válidas y dos inválidas del contrato, 21 comprobaciones por ruta,
+conciliación Python/R por campo; bytes/mtime al repetir, vacío, sin universo,
+fuente vacía, duplicado fuera del corte, cambios de entrada/configuración,
+entregas alteradas con suma/huellas conservadas, inventario/marca y fallo/reintento
+comprobados en procesos nuevos. R 4.6.1/renv 1.3.1 local y Python 3.12.12/uv;
+restauración real en copias con espacios. Bash/Linux y operación completa del
+IDE no acreditados. Reporte/app, proyecto/checkpoints y práctica siguen pendientes.
+Preparadores R/Python: 28 fuentes idénticas; destino ocupado rechazado. Guías
+PowerShell/uv y helper R ejecutados. Doce vistas Markdown a 1280/390 sin
+desbordamiento/IDs duplicados, solución cerrada y revisión visual de muestra;
+5457 enlaces locales comprobados sin incidencias.
+Solo 14.01–14.04 disponibles; retomar 14.05. Portal y privados fuera de esta entrega.
 
 **Desarrollo — 2026-10-28, entornos y ejecución reconstruible 14.03:**
 Lección/lab, preparadores equivalentes de 26 fuentes, metadatos mínimos reales
