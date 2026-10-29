@@ -59,6 +59,10 @@ calificación.
 
 ## Qué pertenece en cada lugar
 
+La preparación, la práctica y la revisión pueden ocupar sesiones distintas.
+Consulta [cómo pausar y retomar](#pausar-y-retomar-una-práctica) antes de repetir
+una operación que genera archivos.
+
 ### Curriculum
 
 - Explicación de conceptos.
@@ -88,6 +92,27 @@ convertirse por eso en un proyecto o checkpoint implementado.
 
 Un proyecto no tiene que esperar a que termine todo el módulo. Puede crecer un
 checkpoint a la vez.
+
+## Pausar y retomar una práctica
+
+Una lección extensa no tiene que terminarse en una sesión. Divide el trabajo
+por resultados comprobables, sin fijar tiempos que no se hayan observado:
+
+1. **Preparar y predecir:** identifica la pregunta, el contrato, la carpeta y el
+   entorno elegido. Distingue restaurar dependencias de ejecutar el análisis.
+2. **Ejecutar un caso:** produce un resultado y compáralo con la referencia antes
+   de añadir variantes. Conserva fuentes y resultados previos.
+3. **Revisar y explicar:** prueba una frontera o falla y justifica el resultado.
+   Abre el lab para comprobar qué evidencia falta.
+
+Antes de pausar, anota en tu copia personal la ruta de trabajo, el intérprete o
+proyecto del IDE, el último paso comprobado, los archivos creados y el siguiente
+paso. Al retomar, comprueba esa ubicación y el entorno; no repitas a ciegas un
+comando de creación sobre un destino ocupado. Si la práctica exige un destino
+nuevo, usa otro nombre y conserva el anterior. Detén servidores cuando termines.
+
+Una sesión puede finalizar con una duda o un error identificado. Guarda el
+diagnóstico y la comparación pendiente, sin marcar la práctica como completada.
 
 ## Ejemplo futuro
 

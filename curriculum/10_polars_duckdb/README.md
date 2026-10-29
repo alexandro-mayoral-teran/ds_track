@@ -232,6 +232,11 @@ antes de pedir una consulta desde ese lenguaje.
 
 </details>
 
+Separa la consulta de un motor, su contraste con la referencia y la comparación
+entre motores. En las prácticas de costos, comprueba primero que las respuestas
+coincidan y después interpreta las mediciones. Guarda el estado según la
+[pauta de reanudación](../../docs/learning-workflow.md#pausar-y-retomar-una-práctica).
+
 ## Qué conservar
 
 | Evidencia personal | Qué permite revisar |

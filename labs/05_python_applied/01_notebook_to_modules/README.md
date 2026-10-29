@@ -12,9 +12,11 @@ de 04.09, compara sus tablas sobre las mismas fuentes. **Resultado:** mapa de
 responsabilidades, entrega modular, notebook ejecutado y explicación propia.
 No hay proyecto/checkpoint implementado asociado todavía.
 
-Tres sesiones orientativas de 45–75 minutos: A/B, C y D/E. Usa el shell y
+Puedes repartir el trabajo en tres bloques: A/B, C y D/E, sin duración fija.
+No necesitas conservar una entrega personal de 04.09: están incluidos los CSV
+fuente y los resultados esperados de referencia. Usa el shell y
 entorno elegidos según los recorridos completos de la lección. Trabaja desde
-curriculum/05_python_applied/01_notebook_to_modules; conserva todos los
+`curriculum/05_python_applied/01_notebook_to_modules`; conserva todos los
 ejemplos, fuentes y entregas anteriores. Guarda notas y variantes en una carpeta
 nueva dentro de output, que está ignorada. No copies rutas personales al notebook.
 

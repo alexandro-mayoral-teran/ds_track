@@ -173,6 +173,11 @@ Recorrido: empezar con una app local pequeña, incorporar entradas y estado, com
 
 Empieza por 12.01 y su lab. En 12.09 reconstruye una entrega en otra carpeta y contrástala con una referencia externa antes de demostrarla.
 
+Comprueba primero el cálculo y después una interacción de la app. Deja la
+comparación de pantalla, archivos y estados para un bloque de revisión propio;
+detén el servidor al terminar. Conserva el último caso comprobado con la
+[pauta de reanudación](../../docs/learning-workflow.md#pausar-y-retomar-una-práctica).
+
 ## Qué conservar
 
 | Evidencia de las secciones disponibles | Qué permite revisar |

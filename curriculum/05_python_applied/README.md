@@ -16,7 +16,12 @@ Convertir el análisis conocido de pandas, SQL y visualización en código reuti
 
 ## Antes de empezar
 
-Completa [04 — Visualización en Python](../04_visualization_python/README.md), incluido [04.09](../04_visualization_python/09_visual_closure/README.md). Conserva la entrega para reorganizar ese mismo análisis; 04.08 es opcional.
+Retoma los conceptos de [04 — Visualización en Python](../04_visualization_python/README.md),
+incluido [04.09](../04_visualization_python/09_visual_closure/README.md); 04.08 es opcional.
+El paquete utiliza los CSV sintéticos incluidos en SQL 03.01 y puede producir
+una entrega nueva sin archivos personales de capítulos anteriores. Si conservas
+tu entrega de 04.09, úsala para comparar el mismo análisis sobre iguales fuentes
+y fecha. Necesitas el entorno de pandas/visualización ya preparado.
 
 ## Qué vas a aprender
 

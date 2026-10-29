@@ -170,6 +170,11 @@ Elige Python/Jupyter o R/knitr para el reporte esencial; el otro motor es amplia
 
 Lee, predice, practica en tu copia, comprueba y explica. En pareja, una persona escribe y la otra contrasta; cambien de papeles por bloques. Conserva los originales y vuelve a ejecutar desde una sesión nueva antes del cierre.
 
+Puedes dedicar bloques distintos a calcular/preparar cifras, renderizar y
+revisar el HTML. Al retomar, distingue el resultado preparado de un cálculo
+nuevo y conserva la configuración usada. Consulta la
+[pauta de reanudación](../../docs/learning-workflow.md#pausar-y-retomar-una-práctica).
+
 ## Qué conservar
 
 | Evidencia personal | Qué permite revisar |

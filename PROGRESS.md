@@ -19,8 +19,8 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   del [cierre integrado de 14](docs/reproducible-projects-closure.md).
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
 - **Último desarrollo educativo:** 2026-10-29, 14.09 — Revisión final y defensa: reconstrucción, revisión por casos, decisiones y acta; base de lecciones/labs disponible.
-- **Última revisión documental:** 2026-10-29, depuración de guías, cierres e índices;
-  inventario enlazado desde el curriculum y pendientes de práctica separados del material.
+- **Última revisión documental:** 2026-10-29, cierre de ajustes de preparación y
+  reanudación; revisión visual de 14.08 completada y entorno local reconstruido.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -35,6 +35,35 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Cierre de la ronda de revisión — 2026-10-29:**
+Preparación de 05 aclarada en índice, lección y lab: conceptos previos necesarios,
+pero la ejecución inicial usa CSV incluidos; una entrega personal de 04.09 sirve
+para comparar y no bloquea empezar. Resultados esperados explícitos y bloques
+de trabajo sin duración inventada. Pauta de pausa/reanudación en el flujo de
+aprendizaje y aplicación concreta en 09–14: preparación, caso y revisión separados.
+La .venv raíz no arrancaba por un intérprete local inexistente; se conservó en
+una carpeta de respaldo excluida y se reconstruyó desde uv.lock con Python
+3.12.12 existente, sin descargas ni cambios de pyproject/lockfile o bibliotecas
+globales. Dependencias esenciales restauradas; grupos opcionales conservan sus
+instrucciones por lección. Las 115 pruebas de 05 pasan desde la .venv reconstruida.
+Revisión pendiente de 14.08 completada en las copias reconstruidas: dos apps,
+seis HTML y muestras conciliados en doce comparaciones DOM a 1280/390.
+Borrador, vacío, rechazo y sesiones independientes comprobados; HTML offline.
+Doce vistas de material y dos diagramas revisados sin desbordes, IDs duplicados
+ni soluciones abiertas. El control espera el fin del render de Streamlit antes
+de comparar, sin filtrar elementos. Apps y cálculos sin cambios.
+Registro de cierre actualizado; observación con estudiantes, IDE completo,
+otras plataformas y proyectos/checkpoints mantienen su alcance posterior.
+No se afirma reejecución de las 135 prácticas ni certificación del aprendizaje.
+Portal y reorganización privada previos conservados fuera de esta publicación.
+Verificación final: 15 módulos y 135 parejas lección/lab con navegación coherente;
+5710 enlaces de 392 Markdown locales y 5714 de 394 en la copia publicable sin
+incidencias. Once páginas finales a 1280/390, 22 vistas sin desbordes, IDs
+duplicados ni soluciones abiertas. Corregida una ruta larga del lab 05.01 que
+desbordaba en móvil. Preparación de 05 y pauta de reanudación revisadas en formato
+renderizado. Los cambios publicados son documentales; entorno y respaldo quedan
+locales y excluidos de Git.
 
 **Revisión documental — 2026-10-29, base 00–14:**
 Revisión de índices, guías, cierres y plantillas. Inventarios repetidos de 14

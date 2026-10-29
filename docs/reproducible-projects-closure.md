@@ -51,16 +51,19 @@ ni porcentajes personales de aprendizaje.
 
 ## Trabajo posterior: depurar y observar
 
-La base completa permite una revisión transversal; no afirma que toda la teoría
-haya sido auditada. Priorizar con el usuario, sin dar estas tareas por hechas:
+Las comprobaciones de revisión documental y técnica se registran en
+[PROGRESS.md](../PROGRESS.md). Los ajustes de preparación y reanudación y la
+revisión visual de 14.08 quedaron resueltos en esa ronda. La ejecución de casos
+de referencia no sustituye la observación de personas que aprenden. Mantener
+separadas estas validaciones y ampliaciones posteriores:
 
 1. Observar sesiones de principiantes: instrucciones ambiguas, prerrequisitos
    ocultos y lugares donde se requiere ayuda; conservar el caso concreto.
-2. Continuar la revisión de explicaciones y ejemplos después de la depuración
-   documental: conceptos, cifras y distinción esencial/opcional. Comprobar los
-   ejemplos que cambien; consultar PROGRESS.md para el alcance ya revisado.
-3. Completar revisión visual de 14.08 y contrastar la nueva práctica de cierre
-   con el uso real del IDE. Rscript Windows no acredita toda la interfaz del IDE.
+2. Cuando se modifiquen explicaciones o ejemplos, comprobar sus conceptos,
+   cifras, contratos y distinción esencial/opcional. Conservar casos de regresión
+   y consultar PROGRESS.md para el alcance ya revisado.
+3. Contrastar la práctica de cierre con el uso real del IDE. Rscript Windows y
+   la revisión en navegador no acreditan toda la interfaz del IDE.
 4. Revisar Bash/Linux/macOS si se decide ofrecer soporte comprobado; conservar
    qué plataforma y versiones se probaron, sin prometer cobertura universal.
 5. Diseñar e implementar proyectos/checkpoints cuando se acuerde su alcance;

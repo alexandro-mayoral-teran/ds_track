@@ -173,6 +173,11 @@ Se avanza desde UI/reactividad a filtros, validación, organización y pruebas. 
 
 Empieza por 13.01 y su lab, después continúa con 13.02–13.10. Cierra la práctica con reconstrucción y demostración; consulta los [criterios de Shiny](../../docs/shiny-closure.md).
 
+En el IDE, separa preparación del proyecto, cálculo de un caso y observación
+de la reactividad. Guarda el script y registra qué quedó comprobado antes de
+reiniciar la sesión o detener la app. Retoma con la
+[pauta de reanudación](../../docs/learning-workflow.md#pausar-y-retomar-una-práctica).
+
 ## Qué conservar
 
 | Evidencia disponible y prevista para el recorrido | Qué permite revisar |

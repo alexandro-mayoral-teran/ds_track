@@ -197,6 +197,11 @@ Arrow IPC/Feather y el intercambio en memoria serán ampliaciones, no requisitos
 
 </details>
 
+Puedes separar cada práctica en contrato/predicción, lectura o escritura de
+un caso y contraste por clave. Revisa el primer resultado antes de pasar al
+intercambio o al dataset completo. Para pausar sin perder el estado, usa la
+[pauta de reanudación](../../docs/learning-workflow.md#pausar-y-retomar-una-práctica).
+
 ## Qué conservar
 
 | Evidencia personal | Qué permite revisar |

@@ -171,6 +171,12 @@ registrar y recuperar intentos fallidos; continúa con 14.07 para conciliar
 reporte y app. 14.08 añade entrega opcional y reconstrucción desde fuentes.
 14.09 permite demostrar la reconstrucción y defender decisiones con otra persona.
 
+Divide la revisión en preparación de una copia nueva, ejecución y conciliación,
+y defensa con quien acompaña. Las fuentes, los resultados y las notas personales
+son evidencias diferentes; no hace falta producirlas todas en una sesión. Usa la
+[pauta de reanudación](../../docs/learning-workflow.md#pausar-y-retomar-una-práctica)
+para evitar repetir una creación sobre resultados anteriores.
+
 ## Qué conservar
 
 | Evidencia prevista | Qué permite revisar |

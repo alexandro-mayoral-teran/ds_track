@@ -29,6 +29,11 @@ y su lab, con los prerrequisitos de pandas/SQL. Recupera
 Puedes dividir esta sección en tres sesiones: módulo pequeño, paquete del análisis
 y reutilización/comprobación. No necesitas dominar clases ni decoradores.
 
+La ejecución inicial usa los CSV sintéticos incluidos en SQL 03.01; no requiere
+una entrega personal de 04.09. Si la conservas, podrás compararla sobre las
+mismas fuentes y fecha. La tabla de comprobación de esta lección también ofrece
+los resultados esperados para reconstruir esa comparación.
+
 **Esencial:** módulos, importaciones, paquetes regulares, responsabilidades y
 entrada protegida. **Práctica:** mismo análisis en script y notebook.
 **Extensión:** diagnosticar búsqueda de módulos y caché de importaciones.
@@ -405,8 +410,9 @@ importadas con `from`; para esta práctica elegimos reiniciar.
 
 ## 8. Qué se conserva y cómo comprobarlo
 
-Usa las tablas de 04.09 y las nuevas sobre las mismas fuentes y fecha. Deben
-coincidir por valores y ausencias, no solo por aspecto visual:
+Contrasta las tablas nuevas con estos resultados esperados. Si tienes tu entrega
+de 04.09, compárala también sobre las mismas fuentes y fecha. Deben coincidir
+por valores y ausencias, no solo por aspecto visual:
 
 | Segmento | Registros | Conocidos | Mediana (MXN) | Cobertura |
 | --- | ---: | ---: | ---: | ---: |
