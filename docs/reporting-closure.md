@@ -20,7 +20,7 @@ marcarlos completos por disponer de nueve labs. El siguiente paso es elegir
 [13 — Shiny](../curriculum/13_shiny_web/README.md): ambas rutas tienen lecciones,
 labs y entrega local disponibles. Revisa los criterios de práctica de
 [Streamlit](streamlit-closure.md) o [Shiny](shiny-closure.md). Basta una app;
-14.01–14.04 tienen material de diseño, estructura, entornos y reprocesamiento; 14.05–14.09 conservan su plan de integración y la numeración.
+14.01–14.05 tienen material de diseño, estructura, entornos, reprocesamiento y pruebas; 14.06–14.09 conservan su plan de integración y la numeración.
 
 ## Siguiente trabajo: piloto de experiencia
 

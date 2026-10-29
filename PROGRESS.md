@@ -10,15 +10,15 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.04 tienen material de diseño, estructura, entornos y reprocesamiento; 14.05–14.09 siguen planificadas.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.05 tienen material de diseño, estructura, entornos, reprocesamiento y pruebas; 14.06–14.09 siguen planificadas.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [14.05 — Pruebas y calidad de datos](curriculum/14_reproducible_projects/README.md#05-pruebas-y-calidad-de-datos), todavía planificado.
+- **Siguiente desarrollo educativo:** [14.06 — Trazabilidad y recuperación de fallas](curriculum/14_reproducible_projects/README.md#06-trazabilidad-y-recuperacion-de-fallas), todavía planificado.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.04 tienen material de diseño, estructura, entornos y reprocesamiento; 14.05–14.09 conservan su plan.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.05 tienen material de diseño, estructura, entornos, reprocesamiento y pruebas; 14.06–14.09 conservan su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 14.04 — Pipeline y reprocesamiento: entregas comprobadas, repetición sin escribir y cortes separados; retomar 14.05.
+- **Último desarrollo educativo:** 2026-10-28, 14.05 — Pruebas y calidad de datos: suites Python/R, reglas de datos y defectos controlados detectados; retomar 14.06.
 - **Última revisión documental:** 2026-10-28, continuidad Quarto → una app → módulo 14,
   criterios de cierre y arquitectura de los proyectos R actualizados tras completar Shiny.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -35,6 +35,30 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, pruebas y calidad de datos 14.05:**
+Lección/lab, recorridos R/IDE, PowerShell y Bash, preparadores de 31 fuentes.
+Sin paquetes nuevos: modelos/pipeline/datos/metadatos 14.04 reutilizados,
+unittest en Python y ejecutor R base con errores acumulados por grupo.
+Siete grupos por ruta: nueve criterios literales, catorce fuentes inválidas,
+orden/cero, integración/repetición de dos cortes, vacío/sin universo,
+duplicado fuera del corte y alteración compensada con huellas actualizadas.
+Comparaciones por ID/saldo, contexto, denominador y tolerancia explícita para
+porcentajes; las suites no certifican cobertura completa ni datos futuros.
+Fixtures nuevas conservadas en cada tanda; fuente/configuración originales
+intactas, sin borrar ensayos ni reemplazar entregas anteriores. La entrega
+alterada de prueba queda deliberadamente inválida. R 4.6.1/renv 1.3.1 local y
+Python 3.12.12/uv, siete grupos aprobados en ambas rutas. Dos defectos controlados
+por motor (>= a > y unicidad desactivada) producen fallas/código no cero;
+restaurar recupera aprobación. Práctica del estudiante, proyecto/checkpoints,
+CI y producto final integrado pendientes. Solo 14.01–14.05 disponibles;
+Preparadores R/Python: 31 fuentes idénticas y rechazo de destino ocupado.
+Ejemplos mínimos ejecutados; seis tablas selección/contexto conciliadas entre
+motores. Fuentes conservadas tras los ensayos; activador renv solo cambia
+espacios finales. Doce vistas Markdown a 1280/390 comprobadas y revisión visual
+de muestra, sin desbordamiento/IDs duplicados, solución cerrada. Bash/Linux y
+operación completa del IDE no acreditados. 5495 enlaces locales sin incidencias;
+retomar 14.06. Portal y archivos privados fuera de esta entrega.
 
 **Desarrollo — 2026-10-28, pipeline y reprocesamiento 14.04:**
 Lección/lab, recorridos R/IDE, PowerShell y Bash; preparadores de 28 fuentes en

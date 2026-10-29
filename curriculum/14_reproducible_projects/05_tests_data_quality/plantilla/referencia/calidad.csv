@@ -1,0 +1,15 @@
+caso,accion,campo,valor
+id_ausente,valor,id_credito,
+id_sin_ceros,valor,id_credito,1
+segmento_desconocido,valor,segmento,salud
+fecha_imposible,valor,fecha_corte,2026-02-30
+fecha_no_iso,valor,fecha_corte,30/09/2026
+fecha_fuera_rango,valor,fecha_corte,1899-12-31
+saldo_ausente,valor,saldo_mxn,
+saldo_negativo,valor,saldo_mxn,-1
+saldo_decimal,valor,saldo_mxn,1.5
+saldo_excesivo,valor,saldo_mxn,1000001
+saldo_texto_na,valor,saldo_mxn,NA
+clave_repetida,duplicar,,
+columna_ausente,quitar_columna,segmento,
+columna_extra,columna_extra,extra,x

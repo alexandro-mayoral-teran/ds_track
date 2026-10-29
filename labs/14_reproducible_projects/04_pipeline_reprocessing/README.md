@@ -84,5 +84,5 @@ La revisión acompañada debe poder contestar:
 - ¿Qué riesgo queda si dos procesos escriben a la vez o el sistema se apaga?
 
 No hay proyecto asociado ni checkpoint implementado. Puedes cerrar la sesión
-tras revisar este lab. Siguiente lección: [14.05 — Pruebas y calidad de datos](../../../curriculum/14_reproducible_projects/README.md#05-pruebas-y-calidad-de-datos),
-aún planificada. Para repasar vuelve a la [lección](../../../curriculum/14_reproducible_projects/04_pipeline_reprocessing/README.md).
+tras revisar este lab. Siguiente lección: [14.05 — Pruebas y calidad de datos](../../../curriculum/14_reproducible_projects/05_tests_data_quality/README.md),
+ya disponible. Para repasar vuelve a la [lección](../../../curriculum/14_reproducible_projects/04_pipeline_reprocessing/README.md).

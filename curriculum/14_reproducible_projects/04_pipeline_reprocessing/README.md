@@ -172,8 +172,8 @@ Guarda evidencia de tu propia práctica; el material disponible no acredita habe
 No hay proyecto asociado ni checkpoint implementado.
 
 Puedes detener la sesión aquí después de revisar esa evidencia. La siguiente
-sección es [14.05 — Pruebas y calidad de datos](../README.md#05-pruebas-y-calidad-de-datos),
-aún planificada.
+sección es [14.05 — Pruebas y calidad de datos](../05_tests_data_quality/README.md),
+ya disponible.
 
 ## Referencias primarias
 
