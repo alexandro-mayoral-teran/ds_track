@@ -34,7 +34,9 @@ la explicación con quien acompaña y registrar evidencia real. Una sesión pued
 cubrir parte del cierre. Consultar material o ejecutar el script de referencia
 no basta para marcar una competencia como adquirida.
 
-## Qué falta desarrollar después
+<a id="qué-falta-desarrollar-después"></a>
+
+## Continuidad y pendientes de integración
 
 | Pendiente | Condición de cierre |
 | --- | --- |
@@ -45,9 +47,9 @@ no basta para marcar una competencia como adquirida.
 | Estructura del track | Resolver integración de R aplicado y terminal avanzada antes de renumerar; bitácoras personales y estado editorial se mantienen separados |
 
 Continúa con [08 — Visualización R](../curriculum/08_visualization_r/README.md).
-Sus secciones y alcance viven en ese índice, sin repetirlos aquí. Los módulos
-09, 10 y 11 también tienen material. Streamlit dispone de 12.01–12.09;
-13.01–13.10 de Shiny están disponibles; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible. Los criterios de
+Sus secciones y alcance viven en ese índice, sin repetirlos aquí. El
+[curriculum](../curriculum/README.md) orienta la continuidad hasta la
+[revisión final](reproducible-projects-closure.md). Los criterios de
 [Streamlit](streamlit-closure.md) y [Shiny](shiny-closure.md) distinguen
 material disponible y práctica de cierre pendiente. Los
 [criterios de almacenamiento](storage-closure.md) y

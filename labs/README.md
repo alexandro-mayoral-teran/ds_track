@@ -1,10 +1,11 @@
 # Labs
 
-Ejercicios breves vinculados a un módulo del curriculum.
+Prácticas vinculadas a una lección: ejercicios enfocados y cierres integradores
+acotados, que pueden ocupar varias sesiones.
 
 Cada lab debe declarar el módulo que refuerza, sus entradas, el resultado esperado
-y una forma objetiva de validarlo. Se crearán
-subdirectorios por tema únicamente cuando exista el primer ejercicio real.
+y cómo comprobarlo y explicarlo. Los subdirectorios se crean únicamente cuando
+contienen una práctica real. Tener un lab no activa un proyecto o checkpoint.
 
 Usa [`templates/lab/`](../templates/lab/) para crear uno nuevo. El flujo y las
 reglas de enlace están en

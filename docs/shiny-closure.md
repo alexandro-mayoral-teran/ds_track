@@ -37,9 +37,10 @@ El lockfile tampoco incluye R, sistema, navegador o disponibilidad futura de paq
 
 ## Qué sigue
 
-[14 — Proyectos reproducibles](../curriculum/14_reproducible_projects/README.md)
-dispone de [14.01 — Pregunta y contrato](../curriculum/14_reproducible_projects/01_product_question_contract/README.md);
-[14.02 — Estructura y configuración](../curriculum/14_reproducible_projects/02_structure_configuration/README.md), [14.03 — Entornos](../curriculum/14_reproducible_projects/03_reconstructible_environments/README.md), [14.04 — Pipeline](../curriculum/14_reproducible_projects/04_pipeline_reprocessing/README.md), [14.05 — Pruebas](../curriculum/14_reproducible_projects/05_tests_data_quality/README.md), [14.06 — Trazabilidad](../curriculum/14_reproducible_projects/06_traceability_recovery/README.md), [14.07 — Integración](../curriculum/14_reproducible_projects/07_report_app_integration/README.md), [14.08 — Entrega opcional](../curriculum/14_reproducible_projects/08_delivery_optional_automation/README.md) y [14.09 — Revisión final](../curriculum/14_reproducible_projects/09_final_review_defense/README.md) están disponibles; la base de material del recorrido está disponible. 06_shiny_portfolio_app y sus checkpoints figuran en
+Continúa con [14 — Proyecto reproducible](../curriculum/14_reproducible_projects/README.md),
+que dispone de sus nueve secciones, y su
+[revisión final](reproducible-projects-closure.md). El proyecto
+06_shiny_portfolio_app y sus checkpoints figuran en
 [proyectos](../projects/README.md), sin implementación asociada. Elegir una app
 (Shiny o Streamlit) es suficiente; no se exige completar ambas alternativas.
 

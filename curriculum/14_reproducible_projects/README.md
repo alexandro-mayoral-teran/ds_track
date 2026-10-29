@@ -102,7 +102,9 @@ No añade paquetes de análisis ni implementa todavía pipeline/reporte/app.
 disponibles: 28 fuentes, pipeline Python/R sin paquetes nuevos, selección/contexto,
 insumos y marca comprobados. Repetición sin escribir, otro corte en destino nuevo,
 fallo temporal conservado y reintento. No reemplaza entregas ni garantiza una
-transacción completa; integración de reporte/app y recuperación amplia siguen pendientes.
+transacción completa. La recuperación se trabaja en
+[14.06](06_traceability_recovery/README.md) y la integración de productos en
+[14.07](07_report_app_integration/README.md).
 
 <a id="05-pruebas-y-calidad-de-datos"></a>
 

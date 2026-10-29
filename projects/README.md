@@ -18,9 +18,10 @@ Así se evita mantener esqueletos vacíos.
 
 ## Qué falta para implementarlos
 
-Los módulos 00–13 tienen material; disponer de sus lecciones y labs no activa
-los proyectos. Las lecciones 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible. Antes de crear un proyecto,
-definir pregunta, producto, entradas,
+La base de lecciones y labs 00–14 está disponible; eso no activa estos proyectos.
+La práctica integrada del módulo 14 tiene su propio
+[cierre](../docs/reproducible-projects-closure.md). Antes de implementar cada
+proyecto de este catálogo, definir pregunta, producto, entradas,
 contrato, rúbrica y checkpoints vinculados al material que realmente requiere.
 No crear una carpeta vacía solo para representar el plan.
 

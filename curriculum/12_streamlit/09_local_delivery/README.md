@@ -332,7 +332,7 @@ Revisa el [cierre del módulo](../README.md#criterio-de-salida) y conserva tus
 pendientes personales. Streamlit y [Shiny (13)](../../13_shiny_web/README.md)
 son alternativas; no necesitas ambas aplicaciones. El siguiente tramo de
 integración es [14.01 — Pregunta y contrato del producto](../../14_reproducible_projects/01_product_question_contract/README.md),
-disponible con lección y lab; 14.02–14.09 también tienen lecciones/labs. La base de material del recorrido está disponible. Las nueve secciones tienen labs; la práctica personal sigue necesitando evidencia.
+disponible con su lab. El índice del módulo reúne el recorrido completo. Las nueve secciones tienen labs; la práctica personal sigue necesitando evidencia.
 
 ---
 

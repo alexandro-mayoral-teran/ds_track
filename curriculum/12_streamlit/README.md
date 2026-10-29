@@ -214,7 +214,7 @@ Empieza por [12.01 — Primera app y modelo de ejecución](01_first_app_executio
 y sigue el orden de [lecciones y labs](#lecciones-y-labs). El último material
 disponible es [12.09 — Cierre y entrega local](09_local_delivery/README.md).
 
-Cuando cierres tu práctica, consulta el alcance de [14 — Proyecto reproducible](../14_reproducible_projects/README.md): 14.01–14.09 tienen lecciones/labs disponibles. La base de material del recorrido está disponible. La otra aplicación queda como comparación opcional; no es requisito completar ambas.
+Cuando cierres tu práctica, consulta el alcance de [14 — Proyecto reproducible](../14_reproducible_projects/README.md), con lecciones y labs disponibles. La otra aplicación queda como comparación opcional; no es requisito completar ambas.
 
 <details>
 <summary><strong>Referencias y apoyos</strong></summary>

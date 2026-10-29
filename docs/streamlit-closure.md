@@ -111,9 +111,10 @@ Conservar entorno, filtros, claves, ayudas, navegador/ancho y pendientes en
 la evidencia personal. La sesión y la caché no guardan aprendizaje.
 
 El material de Streamlit está desarrollado; práctica personal y proyectos/
-checkpoints siguen pendientes. 13 — Shiny es alternativa; 14 — Proyecto
-reproducible conserva su plan. No iniciar otro módulo, ampliar el portal ni
-instalar herramientas solo por dar por disponible el cierre.
+checkpoints siguen pendientes. Shiny es una alternativa. Continúa con
+[14 — Proyecto reproducible](../curriculum/14_reproducible_projects/README.md) y
+su [revisión final disponible](reproducible-projects-closure.md). No se requiere
+una segunda app, despliegue ni ampliación del portal para este cierre local.
 
 ## Comprobación disponible al cerrar 12.07
 

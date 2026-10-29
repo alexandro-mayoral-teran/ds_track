@@ -234,8 +234,8 @@ El diseño se apoya en [módulos de Python](https://docs.python.org/3/tutorial/m
 [logging](https://docs.python.org/3/howto/logging.html),
 [unittest](https://docs.python.org/3/library/unittest.html) y
 [dataclasses](https://docs.python.org/3/library/dataclasses.html).
-Para las ampliaciones se consultarán las referencias específicas al implementar
-cada ejemplo y se registrarán las dependencias que realmente se utilicen.
+Cada ampliación enlaza sus referencias específicas e indica los requisitos
+que utiliza. No se instalan paquetes por consultar una ampliación opcional.
 
 </details>
 

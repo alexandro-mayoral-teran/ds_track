@@ -466,9 +466,10 @@ la sustitución Python; R sin paquetes nuevos.
 ya tienen lecciones y labs: recálculo, revisión HTML, distribución y entrega
 reconstruible. Las nueve secciones del módulo tienen material; práctica personal,
 proyecto integrador y checkpoints siguen pendientes. Consulta los
-[criterios de cierre](docs/reporting-closure.md). Streamlit dispone de 12.01–12.09;
-13.01–13.10 de Shiny están disponibles; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible. Consulta la
-[reanudación de Streamlit](docs/streamlit-closure.md).
+[criterios de cierre de reportes](docs/reporting-closure.md). Después se elige
+Streamlit o Shiny y se integra el producto en 14. Consulta el
+[curriculum](curriculum/README.md) para disponibilidad y los
+[criterios del cierre integrado](docs/reproducible-projects-closure.md).
 
 **Objetivo:** transformar análisis en productos consumibles.
 

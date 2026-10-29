@@ -19,8 +19,8 @@ marcarlos completos por disponer de nueve labs. El siguiente paso es elegir
 [12 — Streamlit](../curriculum/12_streamlit/README.md) o
 [13 — Shiny](../curriculum/13_shiny_web/README.md): ambas rutas tienen lecciones,
 labs y entrega local disponibles. Revisa los criterios de práctica de
-[Streamlit](streamlit-closure.md) o [Shiny](shiny-closure.md). Basta una app;
-14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material está disponible y conserva la numeración.
+[Streamlit](streamlit-closure.md) o [Shiny](shiny-closure.md). Basta una app
+antes del [proyecto reproducible y su revisión final](reproducible-projects-closure.md).
 
 ## Siguiente trabajo: piloto de experiencia
 

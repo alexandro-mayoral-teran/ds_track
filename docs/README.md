@@ -21,6 +21,7 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 | Revisar reporte reproducible y práctica pendiente | [Criterios de reportes](reporting-closure.md) |
 | Revisar entrega local, reconstrucción y práctica Streamlit | [Criterios de Streamlit](streamlit-closure.md) |
 | Revisar entrega local, reconstrucción y práctica Shiny | [Criterios de Shiny](shiny-closure.md) |
+| Revisar el cierre integrado y el trabajo posterior | [Cierre del proyecto reproducible](reproducible-projects-closure.md) |
 | Abrir y comprobar el portal local | [Uso del portal](../portal/README.md) |
 
 ## Dónde mantener cada información
@@ -35,13 +36,9 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 
 | Parte | Estado de presentación |
 | --- | --- |
-| Índices de módulo 00–14 | Estructura común aplicada; 12 y 13 incluyen cierre local; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración, entrega opcional y revisión final |
-| Lecciones 00–11 | Plantilla de lección y material de apoyo aplicados |
-| Lecciones 12.01–12.09 | Material con plantilla, apoyos y labs; cierre local disponible |
-| Lecciones 13.01–13.10 | Material con plantilla, apoyos y labs; apps, pruebas y entrega local reconstruible disponibles |
-| Lecciones 14.01–14.09 | Contrato, configuración, entornos, pipeline, pruebas, trazabilidad, integración local y entrega opcional con labs disponibles |
-| Cierre 14.09 | Reconstrucción, defensa y plantillas de revisión; práctica y depuración posteriores |
-| Labs | Muestra visual 00.01 y nuevos 12.01–12.09/13.01–13.10/14.01–14.09 con estructura común; los demás conservan consignas y navegación |
+| Índices de módulo 00–14 | Estructura común aplicada para orientar preparación, orden y salida |
+| Lecciones 00–14 | Patrón de lección y apoyos aplicados; el alcance concreto está en cada índice |
+| Labs | 00.01 y módulos 12–14 con estructura común; los demás conservan consignas y navegación |
 | Portal local | Módulo 00 y sesión 02.01 integrados; otros módulos ofrecen sus índices |
 
 El estado de las plantillas describe presentación, no aprendizaje del estudiante.
@@ -53,6 +50,3 @@ enlaces Markdown entrantes. Antes de retirar documentación, revisar también
 código, catálogos, plantillas, referencias por ruta y objetivos de estudio.
 Conservar planes útiles con su estado explícito; eliminar esqueletos sin uso
 sin crear otro archivo histórico para sustituirlos.
-
-[Cierre de la base del recorrido y trabajo posterior](reproducible-projects-closure.md):
-14.01–14.09 disponibles; evidencia personal, depuración y proyectos pendientes.

@@ -1,14 +1,15 @@
 # Estructura común de una lección
 
-Propuesta inicial a partir de una revisión de muestra, 2026-10-27. Define lo que
+Patrón acordado a partir de una revisión de muestra, 2026-10-27. Define lo que
 el estudiante debe poder encontrar en cada lección, con un inicio y un cierre
 reconocibles. El desarrollo cambia según la actividad: explicar Markdown,
 preparar un entorno, consultar datos o construir un reporte.
 
 Usa la [plantilla de lección](../templates/lesson/README.md), junto con la
 [guía de autoría](authoring-guide.md) y la
-[guía de presentación Markdown](markdown-study-guide.md). Esta revisión no
-equivale a haber adaptado todas las lecciones ni a verificar su ejecución.
+[guía de presentación Markdown](markdown-study-guide.md). La cobertura aplicada
+está en el [índice de documentación](README.md#cobertura-de-las-plantillas-y-del-portal);
+la estructura de una página no acredita que sus ejemplos se hayan ejecutado.
 
 ## Qué se revisó y qué encontramos
 
@@ -19,7 +20,9 @@ La estructura hace esos elementos localizables sin fijar la cantidad de concepto
 formatos ni sesiones. La [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-portal)
 indica dónde se aplicó; el historial de adaptación pertenece a PROGRESS.md.
 
-## Estructura propuesta
+<a id="estructura-propuesta"></a>
+
+## Estructura común
 
 Cabecera breve → propósito → preparación → objetivos → material de apoyo cuando
 exista → desarrollo adaptable → lab → evidencia y comprobación → referencias →

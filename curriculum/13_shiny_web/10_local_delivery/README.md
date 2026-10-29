@@ -235,7 +235,7 @@ son estados distintos; no se marca automáticamente un proyecto/checkpoint.
 
 Revisa el [cierre de Shiny](../../../docs/shiny-closure.md). Cuando completes
 la práctica, consulta [14.01 — Pregunta y contrato del producto](../../14_reproducible_projects/01_product_question_contract/README.md),
-disponible con lección y lab; 14.02–14.09 también tienen lecciones/labs. La base de material del recorrido está disponible. Streamlit es una alternativa; no es obligatorio construir
+disponible con su lab. El índice del módulo reúne el recorrido completo. Streamlit es una alternativa; no es obligatorio construir
 ambas apps antes de avanzar. Las diez secciones de Shiny tienen material.
 
 ## Referencias primarias

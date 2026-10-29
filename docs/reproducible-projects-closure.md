@@ -56,8 +56,9 @@ haya sido auditada. Priorizar con el usuario, sin dar estas tareas por hechas:
 
 1. Observar sesiones de principiantes: instrucciones ambiguas, prerrequisitos
    ocultos y lugares donde se requiere ayuda; conservar el caso concreto.
-2. Revisar coherencia de conceptos, nombres, cifras, navegación y distinción
-   esencial/opcional; comprobar ejemplos que cambien por la depuración.
+2. Continuar la revisión de explicaciones y ejemplos después de la depuración
+   documental: conceptos, cifras y distinción esencial/opcional. Comprobar los
+   ejemplos que cambien; consultar PROGRESS.md para el alcance ya revisado.
 3. Completar revisión visual de 14.08 y contrastar la nueva práctica de cierre
    con el uso real del IDE. Rscript Windows no acredita toda la interfaz del IDE.
 4. Revisar Bash/Linux/macOS si se decide ofrecer soporte comprobado; conservar

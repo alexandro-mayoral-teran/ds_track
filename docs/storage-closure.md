@@ -27,8 +27,9 @@ Los requisitos efectivos viven en pyproject/uv.lock y los proyectos renv de
 práctica, con preparación específica en cada lección. No instalar motores por
 leer un plan ni modificar bibliotecas globales.
 
-[11 — Quarto](../curriculum/11_reporting_quarto/README.md) también tiene material;
-Streamlit dispone de 12.01–12.09; 13.01–13.10 de Shiny están disponibles; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible.
+Continúa con [11 — Quarto](../curriculum/11_reporting_quarto/README.md), una
+aplicación elegida y el [proyecto reproducible](reproducible-projects-closure.md).
+El [curriculum](../curriculum/README.md) mantiene el inventario disponible.
 La práctica de cierre de la app elegida está en los criterios de
 [Streamlit](streamlit-closure.md) o [Shiny](shiny-closure.md).
 Los criterios de reporte están en
@@ -55,8 +56,9 @@ Los proyectos `03_portfolio_analysis_r` y `04_large_credit_dataset` siguen en
 [planificación](../projects/README.md), sin carpetas ni checkpoints activos.
 Definir producto, entradas, contrato, rúbrica y enlaces antes de implementarlos.
 R aplicado y terminal avanzada siguen pendientes de diseño; no renumerar 00–14.
-Las bitácoras personales ya están separadas del estado editorial en las muestras
-00/02.01; no afirmar que se migraron todos los registros anteriores.
+La evidencia personal se conserva separada del estado editorial según el
+[flujo de aprendizaje](learning-workflow.md). La cobertura del portal se consulta
+en su documentación; no implica una migración de registros personales.
 
 ## Comprobaciones requeridas al desarrollar lo siguiente
 

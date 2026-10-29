@@ -10,17 +10,17 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** base de módulos 00–14 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
 - **Siguiente trabajo educativo:** práctica de cierre y [depuración transversal acordada](docs/reproducible-projects-closure.md#trabajo-posterior-depurar-y-observar). No hay módulo 15 definido.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración antes
+  del [cierre integrado de 14](docs/reproducible-projects-closure.md).
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
 - **Último desarrollo educativo:** 2026-10-29, 14.09 — Revisión final y defensa: reconstrucción, revisión por casos, decisiones y acta; base de lecciones/labs disponible.
-- **Última revisión documental:** 2026-10-29, cierre de la base con 14.09; guías de
-  navegación y cierres Quarto/Streamlit/Shiny conciliados con el estado real del módulo 14.
+- **Última revisión documental:** 2026-10-29, depuración de guías, cierres e índices;
+  inventario enlazado desde el curriculum y pendientes de práctica separados del material.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -35,6 +35,29 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Revisión documental — 2026-10-29, base 00–14:**
+Revisión de índices, guías, cierres y plantillas. Inventarios repetidos de 14
+sustituidos por enlaces al módulo responsable; cierre integrado incorporado a
+la tabla de consulta de docs/. Corregidos el plan obsoleto de 14 en Streamlit,
+la elección futura de requisitos en Quarto y referencias futuras en pandas/Python.
+Arquitectura sin duplicar el inventario por sección ni el párrafo de cierre.
+Guías de módulo/lección alineadas con el patrón aplicado, con anclas anteriores
+conservadas. Labs enfocados y cierres de varias sesiones diferenciados de
+proyectos/checkpoints; plantilla de lab con evidencia, criterio de salida y
+continuidad a la siguiente lección. Retirada referencia obsoleta a muestras
+00/02.01 de bitácora desde almacenamiento; flujo vigente enlazado sin cambiar portal.
+Sin cambios de código, datos, entornos, lockfiles ni evidencias de práctica.
+Reorganización local previa y cambios del portal conservados fuera del commit.
+La revisión de explicaciones/ejemplos y la observación de sesiones continúan;
+no acredita auditoría teórica completa ni práctica del estudiante.
+Comprobaciones: 15 módulos y 135 parejas lección/lab con enlaces recíprocos e
+índices coherentes. 5702 enlaces de 392 Markdown locales y 5706 de 394 Markdown
+en la copia exacta publicable sin incidencias; se distingue del estado local
+del portal, cuyos cambios previos no se publican. 29 páginas renderizadas con
+Pandoc y 58 vistas Chrome 1280/390 sin desbordes, IDs duplicados ni soluciones
+abiertas. Índice documental móvil y arquitectura de escritorio revisados visualmente.
+Solo documentación: no se repitieron pruebas de cálculo o apps sin cambios.
 
 **Desarrollo — 2026-10-29, revisión final y defensa 14.09:**
 Lección/lab, recorridos completos R/IDE, PowerShell y Bash, tres plantillas

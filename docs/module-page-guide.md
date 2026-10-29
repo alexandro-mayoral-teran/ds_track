@@ -3,9 +3,11 @@
 Acuerdo de presentación educativa: 2026-10-27. Se aplica al índice README de un
 módulo y orienta su futura representación en el portal. La referencia aplicada
 es [00 — Entorno de aprendizaje](../curriculum/00_getting_started/README.md).
-La estructura está aplicada a los índices 00–14. El módulo 12 dispone de sus nueve secciones; 13 dispone de sus diez secciones
-con cierre local; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible. La tabla distingue
-cada estado: aplicar la estructura no desarrolla una lección ni revisa toda la teoría.
+La estructura está aplicada a los índices 00–14. El inventario de material vive
+en el [curriculum](../curriculum/README.md) y la
+[cobertura de presentación](README.md#cobertura-de-las-plantillas-y-del-portal)
+se mantiene por separado. Aplicar la estructura no desarrolla una lección ni
+acredita una revisión completa de la teoría.
 
 ## Qué debe resolver esta página
 
@@ -42,9 +44,11 @@ Los nombres pueden adaptarse si resulta necesario para un módulo, manteniendo
 su función y orden. No multiplicar encabezados o tablas si una sección breve
 resuelve la pregunta. La estructura es común; el contenido depende del módulo.
 
-## Módulos que todavía son planes
+<a id="módulos-que-todavía-son-planes"></a>
 
-Conservar las mismas ocho preguntas, marcando objetivos, evidencia y criterio
+## Si se propone un módulo nuevo
+
+La base actual 00–14 tiene material. Para una propuesta futura, conservar las mismas ocho preguntas, marcando objetivos, evidencia y criterio
 como previstos. La tabla enlaza solo los apartados reales del plan y muestra
 los labs como pendientes; la acción inicial invita a consultar el alcance, no
 a ejecutar una lección inexistente. No crear carpetas, instalar dependencias o

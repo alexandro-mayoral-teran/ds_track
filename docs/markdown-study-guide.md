@@ -10,8 +10,9 @@ La portada, los índices y las lecciones disponibles aplican el patrón document
 Consulta la [cobertura vigente](README.md#cobertura-de-las-plantillas-y-del-portal)
 para distinguir páginas adaptadas, labs conservados y material integrado en el
 portal. La [lección/lab 00.01](../curriculum/00_getting_started/01_github_profile/README.md)
-sigue como referencia inicial; 12.01–12.09 aplican la plantilla a material nuevo y
-13.01–13.10 también tienen material nuevo; 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible.
+sigue como referencia inicial. La base de lecciones y labs está disponible;
+la aplicación del patrón no equivale a haber auditado toda la teoría ni a
+completar la práctica de cada participante.
 
 ## Niveles de navegación
 

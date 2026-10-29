@@ -1,7 +1,7 @@
 # Flujo de aprendizaje
 
 Este documento define cómo se conectan el curriculum, los labs, los proyectos y
-el registro de progreso.
+la evidencia personal y el estado editorial.
 
 ## Ciclo de trabajo
 
@@ -10,7 +10,7 @@ curriculum
   explica y demuestra
         ↓
 lab
-  practica una habilidad aislada
+  practica una capacidad o un cierre acotado
         ↓
 comprobar y explicar
   verificar resultados y justificar decisiones
@@ -25,8 +25,9 @@ cuando existe: lab → checkpoint de proyecto → evidencia integrada
 continuidad: lab → siguiente lección → siguiente lab
 ```
 
-Las muestras de lección y los datasets apoyan el recorrido. El checkpoint es
-opcional hasta que exista un proyecto asociado. `showcase/` recibe únicamente
+Las muestras de lección y los datasets apoyan el recorrido. Solo se enlaza un
+checkpoint cuando existe el proyecto y el checkpoint está implementado; los
+planes se identifican como tales. `showcase/` recibe únicamente
 resultados terminados y seguros para compartir.
 
 ## Reglas de enlace
@@ -48,8 +49,8 @@ carpeta vacía solo para completar el enlace.
 Usaremos identificadores predecibles:
 
 - Módulo: `00_getting_started`.
-- Lección: `02_terminal_paths`.
-- Lab: `00.01` en el título y una carpeta descriptiva.
+- Lección: `00.02`, en la carpeta `02_terminal_paths` del módulo 00.
+- Lab: el mismo identificador `00.02` y carpeta de la lección asociada.
 - Proyecto: `01_clean_credit_data`.
 - Checkpoint: `CP-01`, `CP-02`, etc., dentro del README del proyecto.
 
@@ -68,13 +69,15 @@ calificación.
 
 ### Lab
 
-- Una habilidad principal.
+- Una capacidad principal o un cierre acotado de capacidades ya enseñadas.
 - Entrada y resultado esperados.
 - Instrucciones o restricciones.
 - Preguntas de reflexión.
 - Forma objetiva de validación.
 
 Un lab no debe introducir teoría esencial que no exista en el curriculum.
+Un cierre puede reunir varias comprobaciones y ocupar varias sesiones sin
+convertirse por eso en un proyecto o checkpoint implementado.
 
 ### Proyecto
 

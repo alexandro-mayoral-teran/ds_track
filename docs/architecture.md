@@ -31,8 +31,9 @@ módulos están numerados porque tienen prerrequisitos deliberados.
 
 ### `labs/`
 
-Práctica breve. Un lab debe poder terminarse sin construir un proyecto entero y
-debe declarar qué módulo refuerza.
+Práctica enfocada o cierre integrador acotado. Un lab declara la lección que
+refuerza y cómo comprobarla; puede ocupar varias sesiones sin requerir un
+proyecto implementado.
 
 ### `projects/`
 
@@ -83,14 +84,18 @@ duplicados sin una regla. Separar observaciones aceptadas, cobertura y resultado
 conocidos. Las reglas para fuentes y generadores están en la
 [política de datos](data-policy.md).
 
-## Rutas de profundización previstas
+<a id="rutas-de-profundización-previstas"></a>
+
+## Organización del recorrido
 
 El orden vigente es 00–14. [ROADMAP.md](../ROADMAP.md) define capacidades y
 prerrequisitos; los [índices de módulo](../curriculum/README.md) contienen el
 alcance por sección. La disponibilidad y la bitácora de comprobaciones están en
 [PROGRESS.md](../PROGRESS.md), sin repetir aquí el inventario de cada desarrollo.
 
-### Desarrollo previsto de los módulos 02–05
+<a id="desarrollo-previsto-de-los-módulos-0205"></a>
+
+### Análisis y código reutilizable: 02–05
 
 - [02 — pandas](../curriculum/02_pandas/README.md): tablas, contratos, selección,
   transformación y resumen; cierre con notebook y primera gráfica.
@@ -126,11 +131,12 @@ del mismo análisis: población, medida, agregación, escalas, etiquetas, altern
 al color, composición y exportación. Cambiar de biblioteca no exige repetir toda
 la limpieza ni altera por sí solo el universo del indicador.
 
-Matplotlib/Altair y ggplot2 son las rutas de gráficos. Después se elige una
-aplicación: Streamlit cuenta con 12.01–12.09; la ruta
-Shiny dispone de 13.01–13.10; las lecciones 14.01–14.09 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; la base de material del recorrido está disponible. Ambas separan transformación y validación de la interfaz;
-elegir una aplicación es suficiente. Los criterios de [Streamlit](streamlit-closure.md)
-y [Shiny](shiny-closure.md) distinguen material disponible, práctica y evidencia de cierre.
+Matplotlib/Altair y ggplot2 son las rutas de gráficos. Después se elige
+[Streamlit](../curriculum/12_streamlit/README.md) o
+[Shiny](../curriculum/13_shiny_web/README.md): ambas separan transformación y
+validación de la interfaz. Basta una antes de integrar el producto. Sus
+[criterios Streamlit](streamlit-closure.md) y [Shiny](shiny-closure.md)
+distinguen material disponible, práctica y evidencia de cierre.
 
 ### Recorrido de los módulos 06–08
 
@@ -160,7 +166,9 @@ de consulta de validación/escritura. Lazy, streaming, un plan o una muestra peq
 no demuestran RAM acotada, I/O físico ni rendimiento general. Los límites de
 medición y criterios de integración están en [cierre de almacenamiento](storage-closure.md).
 
-### Entrega prevista del producto: 11–14
+<a id="entrega-prevista-del-producto-1114"></a>
+
+### Reporte, aplicación y cierre: 11–14
 
 [11 — Quarto](../curriculum/11_reporting_quarto/README.md) dispone de reportes con
 texto, código, tablas y figuras reconstruibles; un motor y HTML bastan para el
@@ -174,8 +182,13 @@ El cierre 13.10 reúne fuentes, contrato, entorno y casos; verifica con un CSV
 externo y reconstruye en otra carpeta. Véase [cierre de Shiny](shiny-closure.md)
 para límites y práctica pendiente. Las entregas locales de ambas rutas no
 implementan por sí solas la integración de reporte y app del módulo 14.
-[14 — Proyectos reproducibles](../curriculum/14_reproducible_projects/README.md)
-dispone de [14.01 — Pregunta y contrato](../curriculum/14_reproducible_projects/01_product_question_contract/README.md); [14.02 — Estructura y configuración](../curriculum/14_reproducible_projects/02_structure_configuration/README.md), [14.03 — Entornos](../curriculum/14_reproducible_projects/03_reconstructible_environments/README.md), [14.04 — Pipeline](../curriculum/14_reproducible_projects/04_pipeline_reprocessing/README.md), [14.05 — Pruebas](../curriculum/14_reproducible_projects/05_tests_data_quality/README.md), [14.06 — Trazabilidad](../curriculum/14_reproducible_projects/06_traceability_recovery/README.md), [14.07 — Integración](../curriculum/14_reproducible_projects/07_report_app_integration/README.md), [14.08 — Entrega opcional](../curriculum/14_reproducible_projects/08_delivery_optional_automation/README.md) y [14.09 — Revisión final](../curriculum/14_reproducible_projects/09_final_review_defense/README.md) están disponibles; la base de material del recorrido está disponible. Elegir 12 o 13 antes de integrar el producto final, sin exigir dos aplicaciones.
+[14 — Proyecto reproducible](../curriculum/14_reproducible_projects/README.md)
+integra contrato, estructura, entornos, pipeline, pruebas, recuperación y
+conciliación de productos. La entrega de 14.08 es opcional; el cierre 14.09
+reutiliza las 53 fuentes de 14.07 sin exigirla. Añade contraste externo humano,
+falla controlada y defensa de decisiones, sin algoritmos o dependencias nuevos.
+El [documento de cierre](reproducible-projects-closure.md) reúne límites y
+trabajo posterior; el índice del módulo mantiene el detalle por sección.
 
 El [cierre de reportes](reporting-closure.md) separa material, práctica y proyecto.
 El portal local facilita lectura y práctica acompañada; no implementa esos
@@ -228,8 +241,3 @@ Registrar las decisiones vigentes en esta arquitectura o en su guía responsable
 con contexto y consecuencias cuando aporten información. El historial de cambios
 y comprobaciones permanece en PROGRESS.md y Git; no mantener otro registro vacío
 ni agregar infraestructura por anticipación.
-
-La [revisión de cierre de 14.09](reproducible-projects-closure.md) reutiliza las
-53 fuentes de 14.07 sin exigir 14.08: copia nueva, contraste externo humano,
-casos, falla controlada y defensa. No añade algoritmos, entornos ni dependencias.
-Completa la base de lecciones/labs; proyectos/checkpoints y depuración siguen aparte.

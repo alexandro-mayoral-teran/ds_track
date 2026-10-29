@@ -205,7 +205,7 @@ PDF, dashboards y publicación ampliarán el producto sin bloquear su cierre.
 
 Al cerrar, elige [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
 Ambas rutas tienen lecciones, labs y entrega local disponibles; basta una antes
-de 14. 14.01–14.09 tienen lecciones y labs disponibles; la base de material del recorrido está disponible. Revisa los criterios de cierre de
+del [módulo 14](../14_reproducible_projects/README.md). Revisa los criterios de cierre de
 [Streamlit](../../docs/streamlit-closure.md) o [Shiny](../../docs/shiny-closure.md).
 
 <details>
@@ -219,7 +219,9 @@ Fuentes oficiales: [inicio](https://quarto.org/docs/get-started/),
 [gestión de ejecución](https://quarto.org/docs/projects/code-execution.html),
 [PDF](https://quarto.org/docs/output-formats/pdf-basics.html) y
 [dashboards](https://quarto.org/docs/dashboards/).
-Las versiones y requisitos se elegirán al implementar cada recorrido.
+Las versiones comprobadas y los requisitos de cada motor se indican en las
+lecciones y sus recorridos. Los lockfiles y la configuración de entorno se
+conservan con las fuentes correspondientes.
 
 ### Apoyos relacionados
 

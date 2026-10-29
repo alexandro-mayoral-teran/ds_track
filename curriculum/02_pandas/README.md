@@ -184,7 +184,7 @@ se concretarán al desarrollar el proyecto, sin crear otra práctica obligatoria
 <summary><strong>Referencias y apoyos</strong></summary>
 
 La estructura adapta los [tutoriales introductorios de pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html)
-al proyecto y a sus comprobaciones. Para desarrollar las secciones se consultarán
+a los ejemplos y sus comprobaciones. Consulta también
 [las uniones](https://pandas.pydata.org/docs/user_guide/merging.html),
 [Copy-on-Write](https://pandas.pydata.org/docs/user_guide/copy_on_write.html) y
 [los faltantes](https://pandas.pydata.org/docs/user_guide/missing_data.html).
