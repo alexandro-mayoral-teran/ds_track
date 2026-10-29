@@ -36,6 +36,21 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.01 — 2026-10-29, primera prueba de Markdown:**
+Markdown precede a Git/GitHub dentro de la lección. Prueba inicial de cinco
+líneas, fuente y resultado visible; el ejemplo de perfil también muestra su
+versión presentada. Sintaxis literal del código en línea aclarada. Vista previa
+de VS Code enlazada como apoyo; archivo .md suficiente, sin Python/kernel.
+Se conservan los contenidos posteriores, el lab y la numeración del módulo.
+Anclas anteriores de los apartados preservadas para mantener enlaces existentes.
+Edición acotada a los puntos 1/2 acordados; portal y privados previos fuera.
+Verificados fuente de cinco líneas, dos resultados presentados, sintaxis literal
+de código en línea y anclas anteriores/nuevas. Render 1280/390 sin desbordes ni
+IDs repetidos; primera prueba móvil revisada visualmente. Enlaces locales sin
+incidencias. Instrucción de vista previa contrastada con documentación oficial
+de VS Code; no se acredita operación de la interfaz del editor por este render.
+
+
 **Cierre de la ronda de revisión — 2026-10-29:**
 Preparación de 05 aclarada en índice, lección y lab: conceptos previos necesarios,
 pero la ejecución inicial usa CSV incluidos; una entrega personal de 04.09 sirve

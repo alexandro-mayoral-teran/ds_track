@@ -45,6 +45,7 @@ desde esta tabla; no necesitas descargar todo para comenzar.
 
 | Recurso | Para qué sirve | Uso |
 | --- | --- | --- |
+| [Vista previa de Markdown](../../../docs/vscode-guide.md#4-leer-markdown-con-vista-previa) | Comparar fuente y resultado en VS Code | Apoyo si eliges ese editor |
 | [Plantilla de perfil](../../../templates/github-profile/PROFILE.md) | Copiar una base y adaptarla en tu README | Para la actividad del perfil |
 | [Cómo adaptar la plantilla](../../../templates/github-profile/README.md) | Revisar qué sustituir y cómo presentar tus aprendizajes | Consulta opcional |
 | [Bitácora personal de 00](../../../templates/learning-session/bitacora-00.md) | Anotar evidencia, dudas y revisión con tu compañero | Formato opcional; también sirve una nota propia |
@@ -55,12 +56,131 @@ las lecciones que los necesitan. Las fuentes para profundizar están en
 
 ## En esta lección
 
-1. [Git y GitHub: conservar y compartir](#1-git-y-github-conservar-y-compartir).
-2. [Markdown: escribir y dar estructura](#2-markdown-escribir-y-dar-estructura).
+1. [Markdown: escribir y dar estructura](#1-markdown-escribir-y-dar-estructura).
+2. [Git y GitHub: conservar y compartir](#2-git-y-github-conservar-y-compartir).
 3. [Otros usos: del perfil a tus proyectos](#3-otros-usos-del-perfil-a-tus-proyectos).
 4. [Crear tu perfil desde la web](#crear-el-perfil-desde-la-web).
 
-## 1. Git y GitHub: conservar y compartir
+<a id="2-markdown-escribir-y-dar-estructura"></a>
+
+## 1. Markdown: escribir y dar estructura
+
+### Primera prueba: escribir y previsualizar
+
+Antes de aprender los nombres de las herramientas, prueba qué hace Markdown.
+Crea tu propio archivo README.md y copia estas cinco líneas:
+
+```markdown
+# Mi presentación
+
+Estoy aprendiendo Markdown.
+
+- Quiero documentar mis prácticas.
+```
+
+Si usas VS Code, abre la paleta de comandos y busca **Markdown: Open Preview
+to the Side** para mantener fuente y vista previa juntas. La
+[guía de vista previa](../../../docs/vscode-guide.md#4-leer-markdown-con-vista-previa)
+explica cómo abrirla. Si ya elegiste el editor web de GitHub, usa su vista previa.
+Elige una opción: para este ejercicio basta un archivo .md; el notebook llega
+en 00.06 y no es necesario preparar Python ni un kernel aquí.
+
+**Resultado de esas mismas líneas:**
+
+> # Mi presentación
+>
+> Estoy aprendiendo Markdown.
+>
+> - Quiero documentar mis prácticas.
+
+Compara ambos: el signo # produce el título y el guion produce una viñeta.
+Cambia una palabra, guarda y observa la vista previa. Después cambia # por ##:
+¿qué diferencia ves? Conserva el texto y explica qué marca produce cada cambio.
+
+### Un archivo de texto que puedes leer sin herramientas especiales
+
+**Markdown** es una forma de estructurar texto plano con marcas sencillas. `.md`
+es la extensión habitual del archivo. El editor muestra el texto fuente y la
+vista previa lo presenta con formato. `README.md` suele explicar qué contiene un
+repositorio y cómo usarlo.
+
+Puedes abrirlo con un editor de texto y leerlo incluso sin vista previa. Las
+marcas describen la estructura: `#` introduce un título, `-` una lista y los
+corchetes con paréntesis un enlace. Cambiar la extensión de un documento de Word
+a `.md` no lo convierte en Markdown: su contenido debe ser texto plano.
+
+Markdown es un lenguaje de marcado ligero. Te permite estructurar un documento;
+no ejecuta programas. Un bloque con comandos los muestra como ejemplo, pero
+debes ejecutarlos por separado si la actividad lo pide.
+
+### Las marcas que usarás primero
+
+| Quieres escribir | Texto fuente | Qué verás en la vista previa |
+| --- | --- | --- |
+| Título principal | `# Mi perfil` | Un encabezado de primer nivel |
+| Sección | `## Mis objetivos` | Un encabezado de segundo nivel |
+| Énfasis | `**Python**` | **Python** |
+| Lista | `- Aprender SQL` | Un elemento con viñeta |
+| Enlace | `[GitHub](https://github.com)` | [GitHub](https://github.com) |
+| Código en línea | `` `README.md` `` | `README.md` |
+
+Deja líneas en blanco entre párrafos, encabezados y listas. Para mostrar varias
+líneas de código, enciérralas entre dos líneas de tres acentos graves, como el
+ejemplo siguiente.
+
+### Texto fuente y resultado
+
+Copia este ejemplo en un archivo `.md` o en el editor de GitHub. Alterna entre
+edición y vista previa: identifica qué marca produce cada parte del resultado.
+
+```markdown
+# Hola, soy Tu Nombre
+
+Estoy aprendiendo análisis de datos.
+
+## Lo que quiero aprender
+
+- Python y SQL.
+- Documentar y reproducir mis análisis.
+
+## Mi recorrido
+
+Puedes visitar [DS Track](https://github.com/alexandro-mayoral-teran/ds_track).
+
+Mi primer comando será `git status`.
+```
+
+**Así se presenta el ejemplo anterior:**
+
+> # Hola, soy Tu Nombre
+>
+> Estoy aprendiendo análisis de datos.
+>
+> ## Lo que quiero aprender
+>
+> - Python y SQL.
+> - Documentar y reproducir mis análisis.
+>
+> ## Mi recorrido
+>
+> Puedes visitar [DS Track](https://github.com/alexandro-mayoral-teran/ds_track).
+>
+> Mi primer comando será `git status`.
+
+Comprueba que el título, las dos viñetas, el enlace y el código en línea
+corresponden al texto fuente. git status se muestra como texto: no hay que
+ejecutarlo en esta práctica. Los colores y tamaños pueden variar según el editor.
+
+El nombre `README.md` es una convención: indica el documento que conviene leer
+primero. En un proyecto suele explicar su propósito, cómo ejecutarlo y dónde
+encontrar ejemplos; en tu perfil, sirve para presentarte.
+
+> **Para comprobar:** cambia un título de `#` a `##` y observa la vista previa.
+> Después explica qué cambió en la estructura del documento.
+
+<a id="1-git-y-github-conservar-y-compartir"></a>
+
+## 2. Git y GitHub: conservar y compartir
 
 ### Git: entender cómo cambió un archivo
 
@@ -112,68 +232,6 @@ Guardar un archivo local no modifica automáticamente GitHub. Más adelante
 aprenderás a registrar y enviar cambios; aquí basta distinguir ambas copias.
 
 </details>
-
-## 2. Markdown: escribir y dar estructura
-
-### Un archivo de texto que puedes leer sin herramientas especiales
-
-**Markdown** es una forma de estructurar texto plano con marcas sencillas. `.md`
-es la extensión habitual del archivo. El editor muestra el texto fuente y la
-vista previa lo presenta con formato. `README.md` suele explicar qué contiene un
-repositorio y cómo usarlo.
-
-Puedes abrirlo con un editor de texto y leerlo incluso sin vista previa. Las
-marcas describen la estructura: `#` introduce un título, `-` una lista y los
-corchetes con paréntesis un enlace. Cambiar la extensión de un documento de Word
-a `.md` no lo convierte en Markdown: su contenido debe ser texto plano.
-
-Markdown es un lenguaje de marcado ligero. Te permite estructurar un documento;
-no ejecuta programas. Un bloque con comandos los muestra como ejemplo, pero
-debes ejecutarlos por separado si la actividad lo pide.
-
-### Las marcas que usarás primero
-
-| Quieres escribir | Texto fuente | Qué verás en la vista previa |
-| --- | --- | --- |
-| Título principal | `# Mi perfil` | Un encabezado de primer nivel |
-| Sección | `## Mis objetivos` | Un encabezado de segundo nivel |
-| Énfasis | `**Python**` | **Python** |
-| Lista | `- Aprender SQL` | Un elemento con viñeta |
-| Enlace | `[GitHub](https://github.com)` | [GitHub](https://github.com) |
-| Código en línea | Una palabra entre acentos graves | `README.md` |
-
-Deja líneas en blanco entre párrafos, encabezados y listas. Para mostrar varias
-líneas de código, enciérralas entre dos líneas de tres acentos graves, como el
-ejemplo siguiente.
-
-### Texto fuente y resultado
-
-Copia este ejemplo en un archivo `.md` o en el editor de GitHub. Alterna entre
-edición y vista previa: identifica qué marca produce cada parte del resultado.
-
-```markdown
-# Hola, soy Tu Nombre
-
-Estoy aprendiendo análisis de datos.
-
-## Lo que quiero aprender
-
-- Python y SQL.
-- Documentar y reproducir mis análisis.
-
-## Mi recorrido
-
-Puedes visitar [DS Track](https://github.com/alexandro-mayoral-teran/ds_track).
-
-Mi primer comando será `git status`.
-```
-
-El nombre `README.md` es una convención: indica el documento que conviene leer
-primero. En un proyecto suele explicar su propósito, cómo ejecutarlo y dónde
-encontrar ejemplos; en tu perfil, sirve para presentarte.
-
-> **Para comprobar:** cambia un título de `#` a `##` y observa la vista previa.
-> Después explica qué cambió en la estructura del documento.
 
 ## 3. Otros usos: del perfil a tus proyectos
 
