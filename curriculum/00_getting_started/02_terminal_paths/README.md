@@ -42,7 +42,8 @@ de tu entorno personal se retoman después; el notebook no las acredita.
 - Identificar el directorio actual y distinguir rutas absolutas y relativas.
 - Localizar archivos e inspeccionar un CSV con tu shell, reconociendo equivalencias con el otro recorrido.
 - Distinguir shell de programa y consultar las versiones de las herramientas disponibles.
-- Ejecutar el verificador, interpretar sus resultados y explicar qué ayuda a repetir y comprobar la terminal.
+- Registrar herramientas disponibles y pendientes; si tienes Python, ejecutar el verificador e interpretar su resultado.
+- Explicar qué información permite repetir una secuencia de comandos y comprobarla.
 
 ## Material de apoyo
 
@@ -91,6 +92,21 @@ ejecutarlo. Primero aprenderás a ubicarte, leer rutas y reconocer un comando.
 > ¿qué información necesitaría además del comando?
 
 ## Cómo seguir esta lección
+
+Elige **un recorrido**: terminal de tu equipo o ensayo opcional en Colab.
+El núcleo es **ubicarte → listar → navegar → comprobar rutas → leer el CSV**.
+Puedes completarlo sin Python, Git ni uv instalados.
+
+| Parte | Qué hacer | Cuándo |
+| --- | --- | --- |
+| Núcleo con tu terminal | Abrirla y seguir los pasos 1–4 del shell elegido; después ir al paso 7, lectura del CSV | Recorrido esencial |
+| Consulta de herramientas, paso 5 | Anotar versiones o comandos no disponibles | Diagnóstico; no necesitas instalar lo que falta |
+| Verificador, paso 6 | Ejecutarlo con Python si ya está disponible; en caso contrario, anotar el pendiente para 00.05 | Condicional a disponer de Python |
+| Filtros y sumas, paso 8 | Explorar la muestra con comandos combinados | Ampliación opcional, después del núcleo |
+| Ensayo en Colab | Seguir el cuaderno preparado y explicar ubicación, rutas y lectura del CSV | Alternativa de práctica guiada; comprobación personal pendiente |
+
+Los pasos conservan su numeración para consultarlos. Si es tu primer contacto,
+puedes saltar directamente del paso 4 al 7 y volver después al diagnóstico.
 
 ### Opción en navegador: cargar el archivo `.ipynb`
 
@@ -171,6 +187,35 @@ Un bloque Markdown solo muestra el comando: debes ejecutarlo en la terminal.
 
 Sigue esta sección si usas PowerShell. Las líneas que empiezan con # son
 comentarios: explican el paso y no se ejecutan como comandos.
+
+### Abrir PowerShell y situarte en el proyecto
+
+1. En el Explorador de archivos, abre la carpeta de tu copia de DS Track.
+   Si descargaste un ZIP, extráelo primero. Busca la carpeta que contiene juntos
+   `README.md`, `ROADMAP.md` y `pyproject.toml`; puede llamarse `ds_track-main`.
+2. Haz clic en la barra de direcciones del Explorador y copia la ruta completa
+   de esa carpeta.
+3. En Inicio, busca **Windows PowerShell** o **PowerShell** y ábrelo normalmente.
+   No necesitas permisos de administrador para esta práctica.
+4. En la terminal, escribe `Set-Location`, un espacio y la ruta copiada entre
+   comillas. Pulsa **Enter**. Por ejemplo, si esa fuera tu ruta real:
+
+   ```powershell
+   Set-Location "C:\Mis proyectos\ds_track-main"
+   ```
+
+5. Escribe `Get-Location` y pulsa Enter. Debe mostrar la carpeta que elegiste.
+   En el paso 2 listarás su contenido para confirmar que es la raíz del proyecto.
+
+La ruta del ejemplo no se crea al escribirla: sustitúyela por la tuya.
+Escribe solo el comando, sin copiar el indicador de la terminal, como `PS C:\...>`.
+Si estás en CMD, abre PowerShell antes de seguir este recorrido.
+
+**Si ya usas VS Code:** abre esa carpeta con **Archivo → Abrir carpeta** y crea
+una terminal con **Terminal → Nueva terminal**. Selecciona PowerShell en el
+menú de perfiles y comprueba la ubicación con `Get-Location`; abrir un archivo
+suelto no equivale a abrir la carpeta del proyecto. Es una alternativa, no
+necesitas instalar este editor para completar la lección.
 
 ### 1. El directorio actual
 
@@ -272,6 +317,9 @@ errores de ubicación.
 
 ### 5. Comprobar herramientas
 
+**Diagnóstico:** después del núcleo de rutas y lectura puedes volver aquí.
+Un comando no disponible se registra como pendiente; no necesitas instalarlo.
+
 Desde la raíz del proyecto:
 
 ```powershell
@@ -292,6 +340,10 @@ Get-Command git
 ```
 
 ### 6. Ejecutar el verificador
+
+**Solo si Python ya está disponible.** Si no lo tienes, anota «verificador
+pendiente para 00.05» y continúa con el CSV. No impide completar el núcleo.
+
 > **Nota sobre el orden de aprendizaje:** todavía no hemos estudiado Python,
 > `pip` ni `uv`. Los veremos en las lecciones de Primer script y Entorno y
 > dependencias. Aquí solo mostramos cómo ejecutar un programa desde la terminal
@@ -312,6 +364,8 @@ Todavía no necesitas entender el código del script. Lo revisaremos en la lecci
 de Primer script Python; antes sigue la lección 03 de Git e historial.
 
 ### 7. Primer contacto con un archivo de datos
+
+**Parte del núcleo:** puedes llegar aquí directamente desde el paso 4.
 
 Incluimos [ventas_demo.csv](ventas_demo.csv), una muestra ficticia de tres ventas.
 Un CSV es un archivo de texto que representa una tabla; en este ejemplo las
@@ -447,6 +501,31 @@ sigue siendo parte del análisis.
 Sigue este apartado si usas Bash o Zsh. Parte de la raíz de ds_track y
 ejecuta un comando a la vez. Las líneas con # explican cada paso.
 
+### Abrir la terminal y situarte en el proyecto
+
+1. Localiza tu copia extraída de DS Track en el administrador de archivos.
+   Busca la carpeta que contiene juntos `README.md`, `ROADMAP.md` y
+   `pyproject.toml`; puede llamarse `ds_track-main`.
+2. Abre la aplicación **Terminal** de tu sistema y utiliza una sesión Bash o
+   Zsh. La terminal puede comenzar en tu carpeta personal, no en el proyecto.
+3. Escribe `cd`, un espacio y la ruta absoluta real de la carpeta entre
+   comillas. Pulsa **Enter**. Ejemplo ilustrativo para una copia en Linux:
+
+   ```bash
+   cd "/home/ana/Mis proyectos/ds_track-main"
+   ```
+
+4. Ejecuta `pwd` para comprobar la ubicación. En el paso 2 listarás el contenido.
+
+Sustituye toda la ruta por la tuya: en macOS podría comenzar por `/Users/`.
+Si el administrador de archivos ofrece abrir una terminal en la carpeta,
+también puedes usar esa opción y confirmar con `pwd`. Escribe solo el comando,
+sin copiar el indicador de la terminal (`$` o `%`).
+
+**Si ya usas VS Code:** abre la carpeta del proyecto y usa
+**Terminal → Nueva terminal**, con Bash o Zsh como perfil. Comprueba igualmente
+la ubicación con `pwd`; no necesitas instalar el editor para esta práctica.
+
 ### 1. Identificar tu ubicación
 
 ```bash
@@ -507,6 +586,9 @@ pwd
 
 ### 5. Comprobar herramientas
 
+**Diagnóstico:** después del núcleo de rutas y lectura puedes volver aquí.
+Un comando no disponible se registra como pendiente; no necesitas instalarlo.
+
 ```bash
 # Muestra las versiones instaladas
 python --version
@@ -523,6 +605,10 @@ Si tu sistema tiene Python como `python3`, usa `python3` en lugar de `python`
 en los comandos directos. Anota cualquier herramienta faltante para preparar el entorno.
 
 ### 6. Ejecutar el verificador
+
+**Solo si Python ya está disponible.** Si no lo tienes, anota «verificador
+pendiente para 00.05» y continúa con el CSV. No impide completar el núcleo.
+
 > **Nota sobre el orden de aprendizaje:** todavía no hemos estudiado Python,
 > `pip` ni `uv`. Los veremos en las lecciones de Primer script y Entorno y
 > dependencias. Aquí solo mostramos cómo ejecutar un programa desde la terminal
@@ -544,6 +630,8 @@ El verificador actual busca los comandos `python`, `uv` y `git`. Si solo existe
 `python3`, puede informar que falta `python` aunque hayas podido ejecutar el script.
 
 ### 7. Inspeccionar el CSV
+
+**Parte del núcleo:** puedes llegar aquí directamente desde el paso 4.
 
 ```bash
 # Lista los archivos con extensión CSV dentro de la lección
@@ -621,10 +709,17 @@ Realiza el [lab 00.02](../../../labs/00_getting_started/02_terminal_paths/README
 | Salida del verificador o comprobaciones pendientes | Herramientas detectadas y faltantes, sin confundir ambos estados | Qué debes preparar y cómo distinguir shell, terminal y programa |
 | Si usaste el notebook: copia con respuestas | Ubicación, rutas y CSV en la carpeta de ejemplo | Qué se ejecutó remotamente y qué falta comprobar en tu equipo |
 
-Puedes cerrar esta práctica cuando localices los archivos del proyecto,
-expliques rutas relativas y absolutas, reconozcas equivalencias entre shells y
-ejecutes el mismo verificador sin cambiar su código. Si Python aún no está
-disponible, registra esa comprobación pendiente y retómala al preparar el entorno.
+Puedes cerrar el núcleo cuando localices los archivos del proyecto, expliques
+rutas relativas y absolutas y distingas el encabezado de los registros al leer
+el CSV con tu shell. Usa la tabla de equivalencias como consulta; no necesitas
+memorizar el otro recorrido.
+
+En el diagnóstico, registra qué herramientas encontraste y cuáles faltan.
+Si Python está disponible, ejecuta el verificador sin cambiar su código y
+explica lo que informa, aunque detecte herramientas faltantes. Si Python aún
+no está disponible, registrar esa comprobación pendiente y cuándo retomarla
+es un resultado válido. Vuelve a ella en 00.05, al preparar el entorno.
+No necesitas obtener «entorno mínimo disponible» para avanzar a 00.03.
 Si practicaste en Colab, conserva el ensayo como evidencia de esos conceptos y
 anota como pendiente la comprobación de la copia real y del entorno personal.
 
@@ -670,6 +765,8 @@ PowerShell y Bash/Zsh; no necesitas memorizarla completa.
 
 - [Colab: funcionamiento y límites](https://research.google.com/colaboratory/intl/es/faq.html).
 - [IPython: ejecución de celdas Bash](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-bash).
+- [Microsoft: abrir Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell).
+- [VS Code: primeros pasos con la terminal integrada](https://code.visualstudio.com/docs/terminal/getting-started).
 
 ## Siguiente paso
 

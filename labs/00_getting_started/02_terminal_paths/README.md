@@ -29,6 +29,18 @@ Conserva tu cuaderno con respuestas y retoma la copia real en tu equipo después
 Intenta cada parte antes de abrir su solución. Los apartados desplegables muestran
 una forma de resolverla y explican el resultado; otras respuestas pueden ser válidas.
 
+## Recorrido esencial y diagnóstico
+
+Para comenzar, sigue **A → B → E**: ubicación, navegación y lectura del CSV.
+Después vuelve a **C** para registrar herramientas disponibles o faltantes y
+a **D** si Python ya está disponible. Dejar el verificador pendiente con una
+nota para retomarlo en 00.05 es un resultado válido. La extensión de filtros
+y sumas es opcional y no bloquea avanzar.
+
+Si no sabes abrir la terminal en la carpeta del proyecto, sigue primero el
+inicio del [recorrido PowerShell](../../../curriculum/00_getting_started/02_terminal_paths/README.md#abrir-powershell-y-situarte-en-el-proyecto)
+o del [recorrido Bash/Zsh](../../../curriculum/00_getting_started/02_terminal_paths/README.md#abrir-la-terminal-y-situarte-en-el-proyecto).
+
 ## Parte A — Ubicación
 
 1. Ve a la raíz de `ds_track`.
@@ -141,7 +153,8 @@ La primera subida llega a `curriculum` y la segunda a `ds_track`.
 
 ## Parte C — Herramientas
 
-Obtén la versión y ubicación de:
+Consulta la versión y ubicación de las herramientas disponibles. Anota cuáles
+no se encuentran en tu sesión, sin instalarlas como parte de este lab:
 
 - Python;
 - `uv`;
@@ -191,8 +204,10 @@ Si Python está instalado como `python3`, comprueba `python3 --version` y
 
 ## Parte D — Verificación
 
-Python, pip y uv se explicarán más adelante. Si todavía no tienes las
-herramientas, deja esta parte pendiente y continúa con las rutas y el CSV.
+Python, pip y uv se explicarán más adelante. Ejecuta esta parte si Python ya
+está disponible; las demás herramientas pueden faltar y el script lo informará.
+Si no tienes Python, anota «verificador pendiente; retomar en 00.05» y continúa
+con las rutas y el CSV. No necesitas una salida positiva para avanzar.
 
 En PowerShell ejecuta:
 
@@ -343,12 +358,19 @@ campos entre comillas o registros de varias líneas.
 
 ## Evidencia
 
-Da por terminado el lab cuando puedas responder sin probar al azar:
+Para el núcleo, conserva una nota con tu ubicación, una ruta absoluta, una
+relativa y los nombres de columnas y registros que viste al leer tres líneas.
+Para el diagnóstico, registra versiones/rutas encontradas y herramientas
+faltantes. Si no ejecutaste el verificador, indica el motivo y retómalo en 00.05.
+Los filtros y sumas no son requisitos de cierre.
+
+Da por terminado el lab cuando puedas responder sobre lo que comprobaste,
+distinguiendo los pendientes, sin probar al azar:
 
 - ¿Cuál es la raíz del proyecto?
 - ¿Desde dónde se interpreta una ruta relativa?
 - ¿Cómo compruebas si un archivo existe?
-- ¿Cómo sabes qué ejecutable corresponde al comando `python`?
+- Si Python está disponible, ¿cómo sabes qué ejecutable corresponde al comando `python`? Si falta, ¿qué registraste para retomarlo?
 - ¿Qué comandos anteriores pertenecen al shell y cuáles son programas externos?
 - ¿Qué cambiaría si realizaras el lab en Bash o Zsh?
 - ¿Qué aporta la terminal al repetir un análisis?

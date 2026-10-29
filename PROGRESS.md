@@ -36,6 +36,20 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.02 — 2026-10-29, arranque y recorrido esencial:**
+PowerShell y Bash/Zsh incluyen apertura de terminal, ubicación en la copia
+extraída, ruta real entre comillas y confirmación; VS Code como alternativa
+si ya se usa. Núcleo visible: ubicación, listado, navegación, rutas y CSV;
+consulta de herramientas separada del verificador condicional y de la extensión.
+Objetivos, evidencia y lab alineados: Python ausente implica pendiente explícito
+para 00.05; herramientas faltantes no impiden avanzar ni exigen instalar.
+Fuentes oficiales Microsoft/VS Code contrastadas. Numeración, anclas, código,
+CSV y notebook conservados. Portal y cambios locales previos fuera del alcance.
+Verificación: 5726 enlaces locales sin incidencias; HTML de lección/lab a
+1280/390 sin desbordes ni IDs repetidos, apertura PowerShell revisada visualmente.
+Comprobación de formato correcta. Instrucciones de interfaz contrastadas con
+documentación oficial; apertura manual de aplicaciones no acreditada.
+
 **Depuración 00.02 — 2026-10-29, alcance del cuaderno guiado:**
 Nota visible en lección y notebook: apoyo opcional para terminal; el aprendizaje
 formal de notebooks, kernel y ejecución desde cero corresponde a 00.06.
