@@ -27,8 +27,8 @@ reglas, entorno e instrucciones, además de evidencia de resultados.
 
 Con esta sección quedan disponibles las **diez lecciones y labs de Shiny**.
 Esto describe material educativo: la práctica personal y los proyectos/checkpoints
-requieren evidencia propia. El módulo 14 conserva su plan; no se implementa
-por terminar esta lección. Publicar un servidor en Internet es una ampliación.
+requieren evidencia propia. 14.01 ya ofrece material de diseño; la integración
+final de 14.02–14.09 sigue planificada. Publicar un servidor en Internet es una ampliación.
 
 ## Antes de empezar
 
@@ -234,8 +234,8 @@ son estados distintos; no se marca automáticamente un proyecto/checkpoint.
 ## Siguiente paso
 
 Revisa el [cierre de Shiny](../../../docs/shiny-closure.md). Cuando completes
-la práctica, consulta [14 — Proyectos reproducibles](../../14_reproducible_projects/README.md),
-todavía planificado. Streamlit es una alternativa; no es obligatorio construir
+la práctica, consulta [14.01 — Pregunta y contrato del producto](../../14_reproducible_projects/01_product_question_contract/README.md),
+disponible con lección y lab; 14.02–14.09 siguen planificadas. Streamlit es una alternativa; no es obligatorio construir
 ambas apps antes de avanzar. Las diez secciones de Shiny tienen material.
 
 ## Referencias primarias

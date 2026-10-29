@@ -331,8 +331,8 @@ Streamlit 1.66.1 y Altair 6.3.0. La documentación web puede mostrar versiones d
 Revisa el [cierre del módulo](../README.md#criterio-de-salida) y conserva tus
 pendientes personales. Streamlit y [Shiny (13)](../../13_shiny_web/README.md)
 son alternativas; no necesitas ambas aplicaciones. El siguiente tramo de
-integración es [14 — Proyecto reproducible](../../14_reproducible_projects/README.md),
-todavía planificado. Consulta su alcance sin presentarlo como práctica disponible.
+integración es [14.01 — Pregunta y contrato del producto](../../14_reproducible_projects/01_product_question_contract/README.md),
+disponible con lección y lab; 14.02–14.09 siguen planificadas. Consulta su alcance sin presentarlo como práctica disponible.
 
 ---
 

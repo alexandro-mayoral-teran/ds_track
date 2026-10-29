@@ -467,7 +467,7 @@ ya tienen lecciones y labs: recálculo, revisión HTML, distribución y entrega
 reconstruible. Las nueve secciones del módulo tienen material; práctica personal,
 proyecto integrador y checkpoints siguen pendientes. Consulta los
 [criterios de cierre](docs/reporting-closure.md). Streamlit dispone de 12.01–12.09;
-13.01–13.10 de Shiny están disponibles; 14 conserva su plan. Consulta la
+13.01–13.10 de Shiny están disponibles; 14.01 tiene material de diseño; 14.02–14.09 conservan su plan. Consulta la
 [reanudación de Streamlit](docs/streamlit-closure.md).
 
 **Objetivo:** transformar análisis en productos consumibles.
@@ -558,7 +558,10 @@ mensajes de error comprensibles, sin mezclar la UI con las transformaciones.
 El [plan de nueve secciones](curriculum/14_reproducible_projects/README.md#orden-de-desarrollo)
 consolida contrato, estructura, entornos, reprocesamiento, pruebas, trazabilidad,
 productos y reconstrucción independiente. CI y despliegue son extensiones.
-Las lecciones y labs están por desarrollar.
+[14.01 — Pregunta y contrato del producto](curriculum/14_reproducible_projects/01_product_question_contract/README.md)
+tiene lección/lab, contrato revisable, muestra de seis observaciones y nueve
+criterios contrastados con Python estándar/R base. No implementa aún el producto
+integrado; 14.02–14.09 siguen planificadas, sin dependencias nuevas.
 
 **Objetivo:** integrar el recorrido con prácticas de ingeniería.
 

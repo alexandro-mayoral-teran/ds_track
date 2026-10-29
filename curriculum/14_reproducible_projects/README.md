@@ -4,16 +4,18 @@
 
 **Integra datos, código, reporte y una aplicación en un producto reconstruible.**
 
-[Ver primera sección prevista →](#01-pregunta-y-contrato-del-producto) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
+[**Empezar por 14.01 →**](01_product_question_contract/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Planificado:** 9 secciones previstas; sus lecciones y labs aún no están implementados.
-> Los enlaces de esta tabla describen el alcance del plan, no una práctica lista para ejecutar.
+> **Disponible:** 14.01 con lección, lab, contrato de ejemplo y referencias numéricas.
+> 14.02–14.09 siguen planificadas; no hay producto integrado final ni checkpoints implementados.
 
 <a id="propósito-y-prerrequisitos"></a>
 
 ## Propósito
 
-Consolidar el recorrido en un producto que otra persona pueda reconstruir y evaluar. La planificación reutiliza preguntas y herramientas conocidas; aún no hay proyecto final ejecutable.
+Consolidar el recorrido en un producto que otra persona pueda reconstruir y evaluar.
+14.01 define pregunta, contrato y aceptación con una muestra conocida; las secciones
+posteriores conservan su plan. Aún no hay proyecto final ejecutable.
 
 ## Antes de empezar
 
@@ -21,12 +23,12 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y una ruta de aplicac
 [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
 Las tres rutas tienen lecciones, labs y cierre local disponibles; basta una
 aplicación. Revisa la práctica de cierre de [Streamlit](../../docs/streamlit-closure.md)
-o [Shiny](../../docs/shiny-closure.md). Este módulo 14 sigue planificado;
-no instales orquestadores o paquetes solo por leer su plan.
+o [Shiny](../../docs/shiny-closure.md). La 14.01 permite trabajar el diseño sin
+paquetes nuevos ni entregas anteriores. No instales orquestadores por las secciones pendientes.
 
 ## Qué vas a aprender
 
-Objetivos previstos para cuando se implemente:
+14.01 permite definir pregunta, contrato y criterios de aceptación. El recorrido completo prevé:
 
 - Declarar contrato, fuentes, configuración y criterios de aceptación.
 - Reconstruir entornos y reprocesar sin mezclar resultados.
@@ -37,9 +39,9 @@ Objetivos previstos para cuando se implemente:
 
 ## Lecciones y labs
 
-| Lección prevista | Práctica | Resultado previsto |
+| Lección o alcance | Práctica | Resultado que se comprobará |
 | --- | --- | --- |
-| **14.01** · [Pregunta y contrato del producto](#01-pregunta-y-contrato-del-producto) | Pendiente | Definir entradas, resultados y aceptación |
+| **14.01** · [Pregunta y contrato del producto](01_product_question_contract/README.md) | [Lab 14.01](../../labs/14_reproducible_projects/01_product_question_contract/README.md) | Definir entradas, resultados y aceptación |
 | **14.02** · [Estructura y configuración](#02-estructura-y-configuracion) | Pendiente | Localizar responsabilidades y parámetros |
 | **14.03** · [Entornos y ejecución reconstruible](#03-entornos-y-ejecucion-reconstruible) | Pendiente | Preparar y ejecutar desde instrucciones explícitas |
 | **14.04** · [Pipeline y reprocesamiento](#04-pipeline-y-reprocesamiento) | Pendiente | Repetir un corte sin duplicar o mezclar resultados |
@@ -56,16 +58,16 @@ Objetivos previstos para cuando se implemente:
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Alcance planificado:** lo siguiente describe contenidos y prácticas por desarrollar; no son lecciones o labs implementados.
+**Estado:** 14.01 está disponible. Las secciones 14.02–14.09 describen prácticas por desarrollar.
 
 <a id="01-pregunta-y-contrato-del-producto"></a>
 
 ### 01 — Pregunta y contrato del producto
 
-- Público, pregunta, fuentes sintéticas, corte, llaves, unidades, reglas y productos.
-  Definir qué significa éxito, incluyendo conteos y resultados esperados.
-- Práctica prevista: una especificación breve que reutilice preguntas anteriores;
-  no añadir modelado o infraestructura que no se haya aprendido.
+[Lección 14.01](01_product_question_contract/README.md) y [lab](../../labs/14_reproducible_projects/01_product_question_contract/README.md)
+disponibles: pregunta/público, contrato de datos/cálculo/producto, estados y
+aceptación. Seis observaciones, nueve casos y referencias Python estándar/R base;
+diseño y aritmética no acreditan integración de reporte/app. Sin paquetes nuevos.
 
 <a id="02-estructura-y-configuracion"></a>
 
@@ -149,17 +151,21 @@ Objetivos previstos para cuando se implemente:
 
 La práctica prevista integra el análisis, un reporte y una aplicación elegida. Calidad y documentación se consolidan, no se introducen por primera vez. Se comprobarán fallas, reconstrucción independiente y revisión del producto. CI, publicación y automatización real serán extensiones, no requisitos del cierre local.
 
-Las actividades anteriores son una propuesta. No hay instrucciones ejecutables ni comprobaciones de aprendizaje disponibles todavía para estas secciones.
+Empieza con 14.01 y su lab: redacta el contrato, predice los casos y revisa sus
+límites. Las actividades 14.02–14.09 siguen como propuesta; no intentes ejecutar
+todavía un pipeline o producto final inexistente.
 
 ## Qué conservar
 
 | Evidencia prevista | Qué permite revisar |
 | --- | --- |
-| Contrato y fuentes previstas | Pregunta, unidades, claves y reglas |
+| Contrato y casos de 14.01 | Pregunta, unidades, claves, reglas y aceptación revisables |
 | Pruebas y registros | Detección de fallas y trazabilidad |
 | Reporte, app e instrucciones futuras | Reconstrucción independiente y decisiones defendidas |
 
-Cuando exista la práctica, conserva los archivos y una nota con predicción, comprobación, ayudas, dudas y siguiente paso en tu copia personal. PROGRESS.md registra el desarrollo del material; no es un porcentaje de aprendizaje.
+En 14.01 conserva tu contrato, elección de app, predicciones/casos y revisión
+humana. Añade una nota con comprobación, ayudas, dudas y siguiente paso en tu
+copia personal. PROGRESS.md registra material; no es un porcentaje de aprendizaje.
 
 <a id="prácticas-y-checkpoints-de-integración"></a>
 
@@ -182,7 +188,9 @@ conciliados y entrega (07–08); CP-05, reconstrucción independiente (09).
 
 ## Siguiente paso
 
-Por ahora puedes [consultar el primer alcance previsto](#01-pregunta-y-contrato-del-producto). No hay lecciones ni labs listos en este módulo.
+Empieza por [14.01 — Pregunta y contrato del producto](01_product_question_contract/README.md).
+Después consulta [14.02 — Estructura y configuración](#02-estructura-y-configuracion),
+todavía planificado. No hay integración final ni checkpoints listos.
 
 Este plan cierra el recorrido. No hay un módulo 15 definido. Cuando exista una entrega verificada, conserva evidencia y revisa qué resultados son apropiados para [showcase](../../showcase/README.md).
 

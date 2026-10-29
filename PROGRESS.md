@@ -10,15 +10,15 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14 sigue planificado.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01 tiene material de diseño; 14.02–14.09 siguen planificadas.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [14 — Proyectos reproducibles](curriculum/14_reproducible_projects/README.md), todavía planificado; revisar su diseño después de la práctica de cierre.
+- **Siguiente desarrollo educativo:** [14.02 — Estructura y configuración](curriculum/14_reproducible_projects/README.md#02-estructura-y-configuracion), todavía planificado.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14 conserva su plan.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01 tiene material de diseño; 14.02–14.09 conservan su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-28, 13.10 — Cierre y entrega local: fuentes, entorno, seis casos, verificación externa y reconstrucción; las diez secciones de Shiny tienen material.
+- **Último desarrollo educativo:** 2026-10-28, 14.01 — Pregunta y contrato del producto: especificación, nueve casos y referencia Python/R base; retomar 14.02.
 - **Última revisión documental:** 2026-10-28, continuidad Quarto → una app → módulo 14,
   criterios de cierre y arquitectura de los proyectos R actualizados tras completar Shiny.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
@@ -35,6 +35,26 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-28, pregunta y contrato del producto 14.01:**
+Lección/lab, especificación resuelta, plantilla personal y nueve criterios de
+aceptación con IDs/saldos por crédito, universo, medidas y estados. Seis filas
+sintéticas de 12.03 copiadas sin alterar la fuente. Pregunta/público, contrato
+de datos/cálculo/producto, denominadores y cero/vacío/sin universo/rechazo;
+aceptación futura separada de comprobación aritmética actual. Un reporte HTML
+y una app elegida; sin implementar pipeline, integración o checkpoints.
+
+Referencias Python estándar/R base de solo lectura: nueve casos literales y
+360 combinaciones conciliados. Seis alteraciones rechazadas en ambas rutas:
+porcentaje, saldos compensados, duplicado fuera del corte, fecha inválida,
+saldo ausente y fila vacía. Frontera adicional del lab comprobada; copia en ruta
+con espacios y originales conservados. Python 3.12.12/R 4.6.1 de revisión;
+sin paquetes nuevos, restauraciones, cambios de entornos o lockfiles.
+
+Índices, roadmap y continuidades de cierres actualizados: solo 14.01 disponible;
+14.02–14.09 conservan su plan. Portal y documentación privada fuera de la entrega.
+Retomar 14.02; la integración final, proyectos/checkpoints y práctica personal
+requieren implementación y evidencia propias.
 
 **Revisión documental — 2026-10-28, continuidad después del cierre de Shiny:**
 Inventario contrastado: 126 parejas lección/lab en 00–13; 14 sin lecciones/labs

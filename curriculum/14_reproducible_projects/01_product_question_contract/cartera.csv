@@ -1,0 +1,7 @@
+id_credito,segmento,fecha_corte,saldo_mxn
+001,comercio,2026-09-30,0
+002,servicios,2026-09-30,2000
+003,comercio,2026-09-30,2500
+001,comercio,2026-10-31,100
+002,servicios,2026-10-31,1900
+003,comercio,2026-10-31,2600
