@@ -46,12 +46,12 @@ Reproduce análisis en R y compara formas de almacenar y procesar datos.
 
 Entrega un reporte, elige una ruta de aplicación y después integra el trabajo.
 
-| Módulo | Resultado previsto | Material |
-| --- | --- | --- |
-| **11** · [Reportes con Quarto](11_reporting_quarto/README.md) | Reporte reconstruible con datos, código y narrativa | Disponible |
-| **12** · [Streamlit](12_streamlit/README.md) | Aplicación de datos en Python | 12.01–12.09 disponibles |
-| **13** · [Shiny y fundamentos web](13_shiny_web/README.md) | Aplicación de datos en R | Diez secciones disponibles, incluida entrega local |
-| **14** · [Proyecto reproducible](14_reproducible_projects/README.md) | Integración de datos, código, pruebas y producto final | Nueve secciones disponibles; 14.08 opcional |
+| Módulo | Aprenderás a… |
+| --- | --- |
+| **11** · [Reportes con Quarto](11_reporting_quarto/README.md) | Crear reportes reconstruibles con datos, código y narrativa |
+| **12** · [Streamlit](12_streamlit/README.md) | Construir aplicaciones de datos en Python |
+| **13** · [Shiny y fundamentos web](13_shiny_web/README.md) | Construir aplicaciones de datos en R |
+| **14** · [Proyecto reproducible](14_reproducible_projects/README.md) | Integrar datos, código, pruebas, reporte y aplicación en un producto reconstruible |
 
 > **Elige una aplicación:** Streamlit (12) y Shiny (13) son alternativas.
 > Basta una antes del proyecto final (14); puedes estudiar la otra después.
