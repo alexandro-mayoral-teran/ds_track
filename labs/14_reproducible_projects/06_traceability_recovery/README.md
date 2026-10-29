@@ -152,5 +152,5 @@ Explica qué distingue reintentar, reutilizar y reanudar; qué no permite recupe
 una huella; y por qué un log editable o una fecha no autentican una ejecución.
 No hay recuperación automática, integración reporte/app ni garantía de concurrencia.
 
-Siguiente lección: [14.07 — Integración de reporte y app](../../../curriculum/14_reproducible_projects/README.md#07-integracion-de-reporte-y-app),
-todavía planificada. [Volver a 14.06](../../../curriculum/14_reproducible_projects/06_traceability_recovery/README.md).
+Siguiente lección: [14.07 — Integración de reporte y app](../../../curriculum/14_reproducible_projects/07_report_app_integration/README.md),
+disponible con su lab. [Volver a 14.06](../../../curriculum/14_reproducible_projects/06_traceability_recovery/README.md).

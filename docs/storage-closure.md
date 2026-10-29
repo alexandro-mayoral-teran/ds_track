@@ -28,7 +28,7 @@ práctica, con preparación específica en cada lección. No instalar motores po
 leer un plan ni modificar bibliotecas globales.
 
 [11 — Quarto](../curriculum/11_reporting_quarto/README.md) también tiene material;
-Streamlit dispone de 12.01–12.09; 13.01–13.10 de Shiny están disponibles; 14.01–14.06 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas y trazabilidad; 14.07–14.09 siguen planificadas.
+Streamlit dispone de 12.01–12.09; 13.01–13.10 de Shiny están disponibles; 14.01–14.07 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad e integración local; 14.08–14.09 siguen planificadas.
 La práctica de cierre de la app elegida está en los criterios de
 [Streamlit](streamlit-closure.md) o [Shiny](shiny-closure.md).
 Los criterios de reporte están en

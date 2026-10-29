@@ -302,7 +302,7 @@ disponibles; aprobarlas no sustituye comprobar esta consulta ni leer sus registr
 Guarda evidencia y dudas en tu copia personal. La persona que acompaña debe
 poder seguir un intento, localizar el fallo y revisar tu decisión sin depender
 solo de una captura de éxito. No hay proyecto ni checkpoints implementados;
-material disponible no acredita tu práctica. Reporte y app siguen sin integrar.
+material disponible no acredita tu práctica. La integración de reporte y app se trabaja en la siguiente lección.
 
 ## Referencias primarias
 
@@ -315,4 +315,4 @@ material disponible no acredita tu práctica. Reporte y app siguen sin integrar.
 ## Siguiente paso
 
 [Volver al módulo](../README.md) · [Lab 14.06](../../../labs/14_reproducible_projects/06_traceability_recovery/README.md) ·
-[14.07 — Integración de reporte y app](../README.md#07-integracion-de-reporte-y-app), todavía planificada.
+[14.07 — Integración de reporte y app](../07_report_app_integration/README.md), disponible con su lab.

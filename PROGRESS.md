@@ -10,16 +10,16 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.06 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas y trazabilidad; 14.07–14.09 siguen planificadas.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.07 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad e integración local; 14.08–14.09 siguen planificadas.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [14.07 — Integración de reporte y app](curriculum/14_reproducible_projects/README.md#07-integracion-de-reporte-y-app), todavía planificado.
+- **Siguiente desarrollo educativo:** [14.08 — Entrega y automatización opcional](curriculum/14_reproducible_projects/README.md#08-entrega-y-automatizacion-opcional), todavía planificado.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.06 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas y trazabilidad; 14.07–14.09 conservan su plan.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.07 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad e integración local; 14.08–14.09 conservan su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-29, 14.06 — Trazabilidad y recuperación de fallas: registros por intento y recuperación comprobada en Python/R; retomar 14.07.
-- **Última revisión documental:** 2026-10-29, desarrollo de 14.06; guías de
+- **Último desarrollo educativo:** 2026-10-29, 14.07 — Integración de reporte y app: entregas, reportes Quarto y una interfaz local elegida; retomar 14.08.
+- **Última revisión documental:** 2026-10-29, desarrollo de 14.07; guías de
   navegación y cierres Quarto/Streamlit/Shiny conciliados con el estado real del módulo 14.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
@@ -35,6 +35,41 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-29, integración de reporte y app 14.07:**
+Lección/lab y recorridos completos Python/Streamlit y R/Shiny, con IDE como
+ruta principal R. Preparadores equivalentes de 53 fuentes; cálculo del pipeline
+factorizado solo en la copia nueva, sin duplicar reglas ni alterar modelos/fuentes
+de secciones previas. Lector de solo lectura comprueba fuente/configuración y
+entrega antes de presentar. Raíz de cálculo mínima e interfaces con entornos
+locales separados: lockfile Streamlit derivado de la resolución existente y
+comprobado/restaurado con uv; Shiny reutiliza los 31 registros de 13.01.
+Sin cambios de metadatos raíz ni bibliotecas globales. Bibliotecas R restauradas
+desde tarball/archivos de paquetes existentes, sin copiar bibliotecas instaladas.
+El activador elimina su tarball de arranque: se conserva otro archivo de origen.
+Tres reportes Quarto por ruta, preparados sin Jupyter/knitr: selección/contexto,
+producto.csv y .qmd, render HTML y verificador de lectura. Fotografía estática
+distinguida de comprobación actual; identidad, hora UTC y filtros visibles.
+Octubre 003/2600 y universo 3/4600; septiembre 002/2000 y 003/2500 sobre 3/4500;
+vacío válido 0/3 y sin barras; sin universo rechazado, sin entrega.
+Siete grupos heredados y once comprobaciones de integración por motor aprobados:
+mezcla de cortes, destinos ocupados, app distinta, entrega ausente/incompleta,
+HTML/.qmd/tablas alterados, fuente cambiada, duplicado fuera del corte,
+compensaciones con huellas renovadas y restauración. Preparadores: 53 fuentes
+idénticas con app explícita igual. Apps/reportes: doce comparaciones DOM a
+1280/390, valores/tablas/barras conciliados, borrador sin aplicar, rechazo que
+retira cifras y sesiones independientes. HTML offline comprobado en navegador.
+MD5 no autentica; verificador no certifica el HTML completo ni accesibilidad.
+No hay caché de cálculo/monitor de disco ni publicación atómica de productos.
+Rscript/Windows comprobados; operación completa del IDE y Bash/Linux pendientes.
+Revisión adicional: hora UTC canónica/calendario y versiones de interfaz explícitas.
+Cuatro casos de fecha inválida por lenguaje rechazados aun sincronizando metadatos,
+.qmd y HTML para aislar ese control. Fuente cambiada en navegador: ambas apps
+retiran cifras; HTML histórico intacto y vista recuperada al restaurar. Botón con
+teclado comprobado. 5585 enlaces locales de 380 Markdown sin incidencias; diez
+vistas de documentación y diagrama a 1280/390 revisados; git diff --check limpio.
+La integración local está disponible; 14.08/14.09, proyectos/checkpoints y
+práctica del estudiante siguen pendientes. Portal y cambios privados previos fuera.
 
 **Desarrollo — 2026-10-29, trazabilidad y recuperación 14.06:**
 Lección/lab y recorridos R/IDE, PowerShell y Bash; preparadores equivalentes
