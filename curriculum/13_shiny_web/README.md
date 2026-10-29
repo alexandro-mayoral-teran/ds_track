@@ -213,7 +213,7 @@ y entrega (09–10). Sus nombres se concretarán al desarrollar el proyecto.
 
 Empieza por [13.01 — Web básica y primera app](01_web_first_app/README.md), continúa con [13.02 — Entradas y salidas](02_inputs_outputs/README.md) y consulta después [13.03 — Modelo de reactividad](03_reactivity/README.md). Sigue con [13.04 — Filtros e indicadores compartidos](04_shared_filters/README.md); continúa con [13.05 — Eventos y estado de sesión](05_events_session/README.md). Sigue con [13.06 — Validación y mensajes](06_validation_messages/README.md). Continúa con [13.07 — Gráficos, tablas y descargas](07_outputs_downloads/README.md). Continúa con [13.08 — Organización y módulos](08_organization_modules/README.md). Continúa con [13.09 — Pruebas y observación del flujo](09_tests_flow/README.md). Continúa con [13.10 — Cierre y entrega local](10_local_delivery/README.md).
 
-Cuando cierres la práctica de esta ruta, sigue con [14.01 — Pregunta y contrato del producto](../14_reproducible_projects/01_product_question_contract/README.md), disponible con lección y lab; 14.02–14.07 también tienen lecciones/labs y 14.08–14.09 siguen planificadas. La otra aplicación queda como comparación opcional.
+Cuando cierres la práctica de esta ruta, sigue con [14.01 — Pregunta y contrato del producto](../14_reproducible_projects/01_product_question_contract/README.md), disponible con lección y lab; 14.02–14.08 también tienen lecciones/labs y 14.09 sigue planificada. La otra aplicación queda como comparación opcional.
 
 <details>
 <summary><strong>Referencias y apoyos</strong></summary>

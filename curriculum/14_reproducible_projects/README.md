@@ -6,8 +6,8 @@
 
 [**Empezar por 14.01 →**](01_product_question_contract/README.md) · [Lecciones y labs](#lecciones-y-labs) · [Criterio de salida](#criterio-de-salida)
 
-> **Disponible:** 14.01–14.07 con lecciones/labs, contrato, configuración, entornos, pipeline, pruebas, trazabilidad e integración local.
-> 14.08–14.09 siguen planificadas; entrega/revisión finales y checkpoints siguen pendientes.
+> **Disponible:** 14.01–14.08 con lecciones/labs, contrato, configuración, entornos, pipeline, pruebas, trazabilidad, integración local y entrega opcional.
+> 14.09 sigue planificada; 14.08 es opcional; revisión final y checkpoints siguen pendientes.
 
 <a id="propósito-y-prerrequisitos"></a>
 
@@ -17,8 +17,8 @@ Consolidar el recorrido en un producto que otra persona pueda reconstruir y eval
 14.01 define pregunta/contrato, 14.02 organiza responsabilidades/parámetros,
 14.03 reconstruye entornos locales, 14.04 produce/reutiliza entregas, 14.05 prueba reglas y calidad de datos;
 14.06 registra intentos y practica recuperación con evidencia conservada, y 14.07
-concilia la consulta, un reporte y una app local. Las secciones
-14.08–14.09 conservan su plan. La entrega final y su revisión siguen pendientes.
+concilia la consulta, un reporte y una app local. 14.08 añade entrega local
+opcional y reconstrucción desde fuentes. 14.09 conserva su plan de revisión final.
 
 ## Antes de empezar
 
@@ -26,15 +26,15 @@ Completa [11 — Quarto](../11_reporting_quarto/README.md) y una ruta de aplicac
 [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
 Las tres rutas tienen lecciones, labs y cierre local disponibles; basta una
 aplicación. Revisa la práctica de cierre de [Streamlit](../../docs/streamlit-closure.md)
-o [Shiny](../../docs/shiny-closure.md). 14.01–14.07 permiten trabajar diseño,
-configuración, entornos, reprocesamiento, pruebas, trazabilidad e integración
-con una interfaz local declarada, sin exigir entregas anteriores. No instales orquestadores por las secciones pendientes.
+o [Shiny](../../docs/shiny-closure.md). 14.01–14.08 permiten trabajar diseño,
+configuración, entornos, reprocesamiento, pruebas, trazabilidad, integración
+y entrega opcional con una interfaz local declarada, sin exigir entregas anteriores. No instales orquestadores por las secciones pendientes.
 
 ## Qué vas a aprender
 
-14.01–14.07 permiten definir el contrato, configurar una consulta, reconstruir
+14.01–14.08 permiten definir el contrato, configurar una consulta, reconstruir
 su entorno local, producir entregas separadas, repetir sin duplicados, detectar
-fallas con pruebas, decidir cómo recuperar una ejecución y conciliar sus productos. El recorrido completo prevé:
+fallas con pruebas, decidir cómo recuperar una ejecución conciliar sus productos y compartir una entrega reconstruible opcional. El recorrido completo prevé:
 
 - Declarar contrato, fuentes, configuración y criterios de aceptación.
 - Reconstruir entornos y reprocesar sin mezclar resultados.
@@ -54,7 +54,7 @@ fallas con pruebas, decidir cómo recuperar una ejecución y conciliar sus produ
 | **14.05** · [Pruebas y calidad de datos](05_tests_data_quality/README.md) | [Lab 14.05](../../labs/14_reproducible_projects/05_tests_data_quality/README.md) | Detectar fallas relevantes antes de entregar |
 | **14.06** · [Trazabilidad y recuperación de fallas](06_traceability_recovery/README.md) | [Lab 14.06](../../labs/14_reproducible_projects/06_traceability_recovery/README.md) | Explicar qué se ejecutó y qué resultados son válidos |
 | **14.07** · [Integración de reporte y app](07_report_app_integration/README.md) | [Lab 14.07](../../labs/14_reproducible_projects/07_report_app_integration/README.md) | Conciliar el mismo corte en todos los productos |
-| **14.08** · [Entrega y automatización opcional](#08-entrega-y-automatizacion-opcional) — opcional | Pendiente | Compartir una entrega reconstruible; CI opcional |
+| **14.08** · [Entrega y automatización opcional](08_delivery_optional_automation/README.md) — opcional | [Lab 14.08](../../labs/14_reproducible_projects/08_delivery_optional_automation/README.md) | Compartir una entrega reconstruible; CI opcional |
 | **14.09** · [Revisión final y defensa de decisiones](#09-revision-final-y-defensa-de-decisiones) | Pendiente | Demostrar reconstrucción y justificar límites |
 
 <a id="alcance-de-cada-sección"></a>
@@ -64,7 +64,7 @@ fallas con pruebas, decidir cómo recuperar una ejecución y conciliar sus produ
 <details>
 <summary><strong>Ver el alcance de las secciones</strong></summary>
 
-**Estado:** 14.01–14.07 están disponibles. Las secciones 14.08–14.09 describen prácticas por desarrollar.
+**Estado:** 14.01–14.08 están disponibles. La sección 14.09 describe una práctica por desarrollar.
 
 <a id="01-pregunta-y-contrato-del-producto"></a>
 
@@ -133,17 +133,18 @@ disponibles: 53 fuentes, cálculo compartido, lector de solo lectura, tres repor
 Quarto preparados y una app Streamlit/Shiny con entorno separado. Identidad,
 valores por crédito y denominadores conciliados; borrador, vacío, rechazo y
 fuente cambiada. Fotografía estática y comprobación actual diferenciadas, sin
-caché de cálculo ni despliegue. Entrega y defensa finales quedan para 08/09.
+caché de cálculo ni despliegue. Entrega opcional en 14.08; defensa final en 14.09.
 
 <a id="08-entrega-y-automatizacion-opcional"></a>
 
 ### 08 — Entrega y automatización opcional
 
-- README con preparación y ejecución, diccionario de datos, decisiones y producto
-  de muestra. Entregar solo datos sintéticos, sin credenciales ni rutas personales.
-- Práctica prevista: preparar una entrega local y distinguir fuente de salidas
-  regenerables. GitHub Actions puede ejecutar controles como extensión; publicar
-  una app o habilitar una automatización real no es requisito del cierre.
+[Lección 14.08](08_delivery_optional_automation/README.md) y [lab](../../labs/14_reproducible_projects/08_delivery_optional_automation/README.md)
+disponibles, opcionales: 60 fuentes, paquete de 90 archivos y tres casos de
+muestra. Revisor externo de solo lectura, referencia CSV externa y copia de
+fuentes para reconstruir entornos, pruebas, consultas y reportes. Catálogo
+explícito y huellas sin autenticidad; código recibido no ejecutado al verificar.
+CI manual como plantilla inactiva, sin despliegue ni dependencias nuevas.
 
 <a id="09-revision-final-y-defensa-de-decisiones"></a>
 
@@ -164,8 +165,8 @@ Empieza con 14.01 y su lab: redacta el contrato, predice los casos y revisa sus
 límites. Continúa con 14.02 para configurar, 14.03 para reconstruir el entorno,
 14.04 para ejecutar el pipeline, 14.05 para comprobar sus reglas y 14.06 para
 registrar y recuperar intentos fallidos; continúa con 14.07 para conciliar
-reporte y app. Las actividades
-14.08–14.09 siguen como propuesta; la entrega final y su revisión continúan pendientes.
+reporte y app. 14.08 añade entrega opcional y reconstrucción desde fuentes.
+14.09 conserva la propuesta de revisión final y defensa.
 
 ## Qué conservar
 
@@ -175,9 +176,9 @@ reporte y app. Las actividades
 | Estructura/configuración de 14.02 | Responsabilidades, raíz explícita y parámetros conciliados |
 | Entornos y evidencia de 14.03 | Dos copias reconstruidas, versiones y resultados comparados |
 | Pruebas y registros | Detección de fallas y trazabilidad |
-| Reportes/app locales de 14.07 e instrucciones | Valores conciliados; entrega y defensa finales pendientes |
+| Reportes/app de 14.07 y entrega opcional de 14.08 | Valores conciliados y reconstrucción; defensa final pendiente |
 
-En 14.01–14.07 conserva contrato, configuraciones, resultados por crédito,
+En 14.01–14.08 conserva contrato, configuraciones, resultados por crédito,
 resúmenes de pruebas y revisión humana. Añade una nota con comprobación, ayudas, dudas y siguiente paso en tu
 copia personal. PROGRESS.md registra material; no es un porcentaje de aprendizaje.
 
@@ -185,9 +186,9 @@ copia personal. PROGRESS.md registra material; no es un porcentaje de aprendizaj
 
 ## Criterio de salida
 
-Para cerrar el recorrido, otra persona deberá regenerar datos, ejecutar controles que detecten una falla y reconstruir un reporte HTML y una app local. Deberás justificar herramientas, contratos y límites. 14.07 aporta integración local; la revisión de cierre y el aprendizaje necesitan evidencia propia.
+Para cerrar el recorrido, otra persona deberá regenerar datos, ejecutar controles que detecten una falla y reconstruir un reporte HTML y una app local. Deberás justificar herramientas, contratos y límites. 14.07 aporta integración local y 14.08 entrega opcional; la revisión de cierre y el aprendizaje necesitan evidencia propia.
 
-La práctica integrada de 14.07 está disponible; no se han activado proyectos de projects/ ni sus checkpoints. La entrega final y su revisión se desarrollarán en 14.08/14.09.
+La práctica integrada de 14.07 está disponible; no se han activado proyectos de projects/ ni sus checkpoints. La entrega opcional de 14.08 está disponible; la revisión final se desarrollará en 14.09.
 
 <details>
 <summary><strong>Notas de integración y alcance del cierre</strong></summary>
@@ -209,8 +210,9 @@ Después realiza [14.04 — Pipeline y reprocesamiento](04_pipeline_reprocessing
 [14.05 — Pruebas y calidad de datos](05_tests_data_quality/README.md),
 [14.06 — Trazabilidad y recuperación de fallas](06_traceability_recovery/README.md) y
 [14.07 — Integración de reporte y app](07_report_app_integration/README.md), disponibles con sus labs.
-El siguiente desarrollo es [14.08 — Entrega y automatización opcional](#08-entrega-y-automatizacion-opcional),
-aún planificado. Entrega final y checkpoints siguen pendientes.
+Puedes ampliar con [14.08 — Entrega y automatización opcional](08_delivery_optional_automation/README.md) y su lab.
+El siguiente desarrollo es [14.09 — Revisión final y defensa de decisiones](#09-revision-final-y-defensa-de-decisiones),
+aún planificado. Revisión final y checkpoints siguen pendientes.
 
 Este plan cierra el recorrido. No hay un módulo 15 definido. Cuando exista una entrega verificada, conserva evidencia y revisa qué resultados son apropiados para [showcase](../../showcase/README.md).
 
@@ -224,7 +226,7 @@ Fuentes para preparar las prácticas: [entornos uv](https://docs.astral.sh/uv/co
 [ejecución de Quarto](https://quarto.org/docs/projects/code-execution.html) y
 [GitHub Actions](https://docs.github.com/en/actions/get-started/understand-github-actions).
 14.01–14.06 conservan los entornos de cálculo mínimos; 14.07 añade interfaces
-locales con versiones ya usadas en el curso. Se usa unittest o R base para pruebas. pytest/testthat son ampliaciones opcionales. Las dependencias
+locales con versiones ya usadas en el curso. 14.08 conserva esos metadatos. Se usa unittest o R base para pruebas. pytest/testthat son ampliaciones opcionales. Las dependencias
 de las secciones pendientes se decidirán al implementarlas, conservando el gestor elegido.
 
 ### Apoyos relacionados

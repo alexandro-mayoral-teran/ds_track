@@ -1,0 +1,27 @@
+# Plantilla opcional para un repositorio separado con las fuentes en su raiz.
+# Aqui no esta en .github/workflows: no habilita ni ejecuta GitHub Actions.
+name: Pruebas Python del producto
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pruebas:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, consultado 2026-10-29
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6, consultado 2026-10-29
+        with:
+          python-version: '3.12.12'
+      - name: Crear entorno local y ejecutar siete grupos
+        shell: pwsh
+        run: |
+          python -m venv --without-pip .venv
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & ./.venv/Scripts/python.exe pruebas.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+# No restaura uv/renv, renderiza Quarto, inicia apps ni publica productos.
+# windows-latest y las descargas del runner no quedan congelados por este YAML.

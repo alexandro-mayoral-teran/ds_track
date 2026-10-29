@@ -133,5 +133,5 @@ La persona que acompaña debe poder elegir un caso y conciliarlo en los producto
 Guarda la práctica en tu copia personal; PROGRESS.md registra desarrollo del
 material. No hay proyecto/checkpoint implementado, automatización ni despliegue.
 
-Siguiente lección: [14.08 — Entrega y automatización opcional](../../../curriculum/14_reproducible_projects/README.md#08-entrega-y-automatizacion-opcional),
-todavía planificada. [Volver a 14.07](../../../curriculum/14_reproducible_projects/07_report_app_integration/README.md).
+Siguiente lección: [14.08 — Entrega y automatización opcional](../../../curriculum/14_reproducible_projects/08_delivery_optional_automation/README.md),
+disponible como ampliación opcional con su lab. [Volver a 14.07](../../../curriculum/14_reproducible_projects/07_report_app_integration/README.md).

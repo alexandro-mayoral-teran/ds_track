@@ -147,6 +147,7 @@ reglas de enlace están en
 | [`14.05 — Detectar fallas antes de entregar`](14_reproducible_projects/05_tests_data_quality/) | `14_reproducible_projects` | No aplica todavía |
 | [`14.06 — Recuperar y explicar un intento fallido`](14_reproducible_projects/06_traceability_recovery/) | `14_reproducible_projects` | No aplica todavía |
 | [`14.07 — Conciliar entrega, reporte y aplicación`](14_reproducible_projects/07_report_app_integration/) | `14_reproducible_projects` | No aplica todavía |
+| [`14.08 — Entregar y reconstruir desde fuentes`](14_reproducible_projects/08_delivery_optional_automation/) — opcional | `14_reproducible_projects` | No aplica todavía |
 
 ## Cómo continuar
 

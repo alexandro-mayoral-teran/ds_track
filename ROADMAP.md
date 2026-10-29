@@ -467,7 +467,7 @@ ya tienen lecciones y labs: recálculo, revisión HTML, distribución y entrega
 reconstruible. Las nueve secciones del módulo tienen material; práctica personal,
 proyecto integrador y checkpoints siguen pendientes. Consulta los
 [criterios de cierre](docs/reporting-closure.md). Streamlit dispone de 12.01–12.09;
-13.01–13.10 de Shiny están disponibles; 14.01–14.07 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad e integración local; 14.08–14.09 conservan su plan. Consulta la
+13.01–13.10 de Shiny están disponibles; 14.01–14.08 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; 14.09 conserva su plan. Consulta la
 [reanudación de Streamlit](docs/streamlit-closure.md).
 
 **Objetivo:** transformar análisis en productos consumibles.
@@ -568,7 +568,8 @@ organiza trece archivos y revisa parámetros/rutas explícitos en Python o R;
 [14.05 — Pruebas y calidad de datos](curriculum/14_reproducible_projects/05_tests_data_quality/README.md) añade suites y detección de defectos controlados, sin paquetes nuevos.
 [14.06 — Trazabilidad y recuperación de fallas](curriculum/14_reproducible_projects/06_traceability_recovery/README.md) registra intentos y contrasta fallos antes/después de publicar, con recuperación comprobada y sin paquetes nuevos.
 [14.07 — Integración de reporte y app](curriculum/14_reproducible_projects/07_report_app_integration/README.md) concilia entregas, reportes Quarto preparados y una interfaz local elegida con entornos separados.
-14.08–14.09 siguen planificadas; las dependencias posteriores se decidirán al implementar.
+[14.08 — Entrega y automatización opcional](curriculum/14_reproducible_projects/08_delivery_optional_automation/README.md) añade paquete local, verificación externa y reconstrucción desde fuentes; CI es un ejemplo inactivo.
+14.09 sigue planificada, sin dependencias nuevas en 14.08.
 
 **Objetivo:** integrar el recorrido con prácticas de ingeniería.
 

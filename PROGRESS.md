@@ -10,16 +10,16 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 - **Material disponible:** módulos 00–13 con lecciones y labs; consultar el
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
-  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.07 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad e integración local; 14.08–14.09 siguen planificadas.
+  Las nueve secciones de Streamlit y 13.01–13.10 de Shiny están disponibles; 14.01–14.08 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; 14.09 sigue planificada.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente desarrollo educativo:** [14.08 — Entrega y automatización opcional](curriculum/14_reproducible_projects/README.md#08-entrega-y-automatizacion-opcional), todavía planificado.
+- **Siguiente desarrollo educativo:** [14.09 — Revisión final y defensa de decisiones](curriculum/14_reproducible_projects/README.md#09-revision-final-y-defensa-de-decisiones), todavía planificado.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
-  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.07 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad e integración local; 14.08–14.09 conservan su plan.
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14.01–14.08 tienen material de diseño, estructura, entornos, reprocesamiento, pruebas, trazabilidad, integración local y entrega opcional; 14.09 conserva su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-29, 14.07 — Integración de reporte y app: entregas, reportes Quarto y una interfaz local elegida; retomar 14.08.
-- **Última revisión documental:** 2026-10-29, desarrollo de 14.07; guías de
+- **Último desarrollo educativo:** 2026-10-29, 14.08 — Entrega y automatización opcional: paquete local, verificación y reconstrucción desde fuentes; retomar 14.09.
+- **Última revisión documental:** 2026-10-29, desarrollo de 14.08; guías de
   navegación y cierres Quarto/Streamlit/Shiny conciliados con el estado real del módulo 14.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
@@ -35,6 +35,37 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Desarrollo — 2026-10-29, entrega y automatización opcional 14.08:**
+Lección/lab opcionales, recorridos R/IDE, PowerShell y Bash, preparadores de
+60 fuentes y paquete de 90 archivos. Catálogo explícito, 27 archivos de muestra,
+descriptor, manual y manifiesto con 89 huellas. Tres casos conocidos: octubre
+003/2600 sobre 3/4600; septiembre 002/2000 y 003/2500 sobre 3/4500;
+selección vacía 0/3 válida. Revisor fuera del paquete, CSV externo completo
+comparado por clave y campo, filtros fijos y productos conciliados. Verificación
+de solo lectura con funciones propias del revisor: no ejecuta código recibido,
+no abre .Rprofile. MD5 y fechas no autentican ni aprueban código para ejecutar.
+Copia exclusiva de fuentes y reconstrucción explícita tras revisión/restauración:
+siete grupos heredados, tres consultas trazadas y tres reportes por ruta.
+Bibliotecas de cálculo e interfaces restauradas en copias nuevas Python/R,
+sin cambios de dependencias, lockfiles raíz ni bibliotecas globales.
+Catorce controles por lenguaje: lectura sin cambios, inventario/marca/ruta,
+referencia externa, orden por clave, filtros, duplicados fuera del corte,
+compensaciones con huellas renovadas, HTML, rutas inyectadas y sentinelas que
+prueban ausencia de ejecución del modelo recibido. Junction R rechazada.
+CI_EJEMPLO.yml queda inactivo: Windows/Python 3.12.12, ejecución manual,
+permisos de lectura, acciones fijadas a SHA oficiales y pruebas estándar.
+Comando local con venv sin pip comprobado; ejecución hospedada no acreditada.
+Preparadores R/Python: 60 fuentes idénticas byte a byte. Destinos ocupados
+rechazados, reconstrucción repetida sin reemplazar resultados y YAML validado.
+5630 enlaces locales de 385 Markdown sin incidencias; seis páginas renderizadas
+con Pandoc existente. Interfaces reconstruidas arrancan en localhost, pero la
+nueva revisión visual/DOM de 14.08 quedó pendiente: la revisión automática de
+permisos de Chrome expiró en dos intentos; no atribuirlo a un fallo del producto.
+Sin despliegue, envío a terceros ni activación real de automatizaciones.
+Rscript/Windows comprobados; operación completa del IDE y Bash/Linux pendientes.
+14.01–14.08 disponibles; 14.08 es opcional. 14.09, proyectos/checkpoints y
+práctica del estudiante siguen pendientes. Portal y privados previos fuera.
 
 **Desarrollo — 2026-10-29, integración de reporte y app 14.07:**
 Lección/lab y recorridos completos Python/Streamlit y R/Shiny, con IDE como

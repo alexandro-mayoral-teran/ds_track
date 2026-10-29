@@ -290,4 +290,4 @@ material no acredita aprendizaje. El portal conserva su alcance separado.
 ## Siguiente paso
 
 [Volver al módulo](../README.md) · [Lab 14.07](../../../labs/14_reproducible_projects/07_report_app_integration/README.md) ·
-[14.08 — Entrega y automatización opcional](../README.md#08-entrega-y-automatizacion-opcional), todavía planificada.
+[14.08 — Entrega y automatización opcional](../08_delivery_optional_automation/README.md), disponible como ampliación opcional con su lab.
