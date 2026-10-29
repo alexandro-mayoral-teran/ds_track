@@ -17,7 +17,12 @@ Consolidar el recorrido en un producto que otra persona pueda reconstruir y eval
 
 ## Antes de empezar
 
-Completa [11 — Quarto](../11_reporting_quarto/README.md) y [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md). Basta una aplicación. Esas rutas y este módulo siguen planificados; no instales orquestadores o paquetes solo por leer el plan.
+Completa [11 — Quarto](../11_reporting_quarto/README.md) y una ruta de aplicación:
+[12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
+Las tres rutas tienen lecciones, labs y cierre local disponibles; basta una
+aplicación. Revisa la práctica de cierre de [Streamlit](../../docs/streamlit-closure.md)
+o [Shiny](../../docs/shiny-closure.md). Este módulo 14 sigue planificado;
+no instales orquestadores o paquetes solo por leer su plan.
 
 ## Qué vas a aprender
 

@@ -19,7 +19,7 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 | Revisar el cierre de R/tidyverse | [Criterios de tidyverse](tidyverse-closure.md) |
 | Revisar almacenamiento, intercambio y mediciones | [Criterios de almacenamiento](storage-closure.md) |
 | Revisar reporte reproducible y práctica pendiente | [Criterios de reportes](reporting-closure.md) |
-| Retomar Streamlit, revisar descargas y cierre pendiente | [Criterios de Streamlit](streamlit-closure.md) |
+| Revisar entrega local, reconstrucción y práctica Streamlit | [Criterios de Streamlit](streamlit-closure.md) |
 | Revisar entrega local, reconstrucción y práctica Shiny | [Criterios de Shiny](shiny-closure.md) |
 | Abrir y comprobar el portal local | [Uso del portal](../portal/README.md) |
 
@@ -35,7 +35,7 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 
 | Parte | Estado de presentación |
 | --- | --- |
-| Índices de módulo 00–14 | Estructura común aplicada; 12 incluye cierre local; 13 incluye cierre local; 14 sigue planificado |
+| Índices de módulo 00–14 | Estructura común aplicada; 12 y 13 incluyen cierre local; 14 sigue planificado |
 | Lecciones 00–11 | Plantilla de lección y material de apoyo aplicados |
 | Lecciones 12.01–12.09 | Material con plantilla, apoyos y labs; cierre local disponible |
 | Lecciones 13.01–13.10 | Material con plantilla, apoyos y labs; apps, pruebas y entrega local reconstruible disponibles |

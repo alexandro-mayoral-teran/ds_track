@@ -29,7 +29,8 @@ leer un plan ni modificar bibliotecas globales.
 
 [11 — Quarto](../curriculum/11_reporting_quarto/README.md) también tiene material;
 Streamlit dispone de 12.01–12.09; 13.01–13.10 de Shiny están disponibles; 14 sigue planificado.
-La reanudación de la app está en [criterios de Streamlit](streamlit-closure.md).
+La práctica de cierre de la app elegida está en los criterios de
+[Streamlit](streamlit-closure.md) o [Shiny](shiny-closure.md).
 Los criterios de reporte están en
 [cierre de reportes](reporting-closure.md). Desarrollar una lección no completa
 las prácticas ni activa proyectos o checkpoints.

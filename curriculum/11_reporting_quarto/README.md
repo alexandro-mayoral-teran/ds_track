@@ -203,7 +203,10 @@ PDF, dashboards y publicación ampliarán el producto sin bloquear su cierre.
 
 **Para empezar:** [lee 11.01](01_report_source_render/README.md) y realiza su lab.
 
-Al cerrar, elige [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md). Ambas rutas están planificadas; basta una antes de 14.
+Al cerrar, elige [12 — Streamlit](../12_streamlit/README.md) o [13 — Shiny](../13_shiny_web/README.md).
+Ambas rutas tienen lecciones, labs y entrega local disponibles; basta una antes
+de 14, que sigue planificado. Revisa los criterios de cierre de
+[Streamlit](../../docs/streamlit-closure.md) o [Shiny](../../docs/shiny-closure.md).
 
 <details>
 <summary><strong>Referencias y apoyos</strong></summary>

@@ -14,9 +14,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
 - **Siguiente desarrollo educativo:** [14 — Proyectos reproducibles](curriculum/14_reproducible_projects/README.md), todavía planificado; revisar su diseño después de la práctica de cierre.
-- **Cierre educativo disponible:** [12.09 — Cierre y entrega local](curriculum/12_streamlit/09_local_delivery/README.md). Retomar práctica y revisión de cierre; 13.01–13.10 de la alternativa Shiny están disponibles; 14 conserva su plan.
+- **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
+  y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
+  Elegir una ruta y retomar su práctica de reconstrucción/demostración; 14 conserva su plan.
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
 - **Último desarrollo educativo:** 2026-10-28, 13.10 — Cierre y entrega local: fuentes, entorno, seis casos, verificación externa y reconstrucción; las diez secciones de Shiny tienen material.
+- **Última revisión documental:** 2026-10-28, continuidad Quarto → una app → módulo 14,
+  criterios de cierre y arquitectura de los proyectos R actualizados tras completar Shiny.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -31,6 +35,25 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Revisión documental — 2026-10-28, continuidad después del cierre de Shiny:**
+Inventario contrastado: 126 parejas lección/lab en 00–13; 14 sin lecciones/labs
+implementados y projects/ sin proyectos ejecutables. Corregidas referencias
+desfasadas de Quarto 11.09 y del plan 14 que aún trataban las apps como planes.
+Ambas rutas de aplicación tienen cierre local, sin acreditar práctica personal
+ni activar proyectos/checkpoints. Criterios de almacenamiento/tidyverse/reportes,
+catálogo de proyectos, índice documental y arquitectura enlazan las dos alternativas.
+
+Arquitectura distingue el proyecto R de análisis del proyecto independiente de
+Shiny. Guía de autoría distingue disponibilidad de recorridos y comprobación
+real del IDE, y no exige checkpoints inexistentes. Instrucciones locales
+depuradas en sus referencias de estado/reanudación; se conservan privadas.
+Solo documentación educativa: sin cambios de código, dependencias o portal,
+sin ejecutar de nuevo las suites de apps por cambios de texto. Las modificaciones
+locales anteriores del portal y su reorganización documental se mantienen aparte.
+Comprobación: 349 Markdown y 5307 enlaces locales sin incidencias, diff sin
+errores de espacios y cinco documentos renderizados a 1280/390, sin
+desbordamiento de página ni IDs duplicados. Se mantiene 14 como plan.
 
 **Desarrollo — 2026-10-28, cierre y entrega local Shiny 13.10:**
 Lección/lab, contrato, seis preguntas, instrucciones autocontenidas, preparador

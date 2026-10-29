@@ -47,8 +47,9 @@ no basta para marcar una competencia como adquirida.
 Continúa con [08 — Visualización R](../curriculum/08_visualization_r/README.md).
 Sus secciones y alcance viven en ese índice, sin repetirlos aquí. Los módulos
 09, 10 y 11 también tienen material. Streamlit dispone de 12.01–12.09;
-13.01–13.10 de Shiny están disponibles; 14 conserva su plan. Su [punto de reanudación](streamlit-closure.md)
-distingue material disponible y cierre pendiente. Los
+13.01–13.10 de Shiny están disponibles; 14 conserva su plan. Los criterios de
+[Streamlit](streamlit-closure.md) y [Shiny](shiny-closure.md) distinguen
+material disponible y práctica de cierre pendiente. Los
 [criterios de almacenamiento](storage-closure.md) y
 [reportes](reporting-closure.md) mantienen sus requisitos de integración.
 

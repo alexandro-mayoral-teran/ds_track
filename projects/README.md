@@ -18,20 +18,23 @@ Así se evita mantener esqueletos vacíos.
 
 ## Qué falta para implementarlos
 
-Los módulos 00–12 tienen material; disponer de sus lecciones y labs no activa
-los proyectos. 13.01–13.10 de Shiny también disponen de material, sin activar su proyecto. Antes de crear uno, definir pregunta, producto, entradas,
+Los módulos 00–13 tienen material; disponer de sus lecciones y labs no activa
+los proyectos. El módulo 14 sigue planificado. Antes de crear un proyecto,
+definir pregunta, producto, entradas,
 contrato, rúbrica y checkpoints vinculados al material que realmente requiere.
 No crear una carpeta vacía solo para representar el plan.
 
 Los criterios de integración pendientes están en
 [tidyverse](../docs/tidyverse-closure.md),
 [almacenamiento](../docs/storage-closure.md) y
-[reportes](../docs/reporting-closure.md). El inventario de lecciones vive en el
+[reportes](../docs/reporting-closure.md). Para la aplicación elegida, consultar
+[Streamlit](../docs/streamlit-closure.md) o [Shiny](../docs/shiny-closure.md).
+El inventario de lecciones vive en el
 [curriculum](../curriculum/README.md), no en este catálogo de proyectos.
 
-Streamlit (12) y Shiny (13) son alternativas antes de 14. La ruta Streamlit
-tiene nueve lecciones/labs y cierre local; su proyecto integrador sigue pendiente. No se exige construir dos
-aplicaciones para cerrar el recorrido.
+Streamlit (12) y Shiny (13) son alternativas antes de 14. Ambas tienen material
+y entrega local reconstruible; sus proyectos integradores siguen pendientes.
+No se exige construir dos aplicaciones para cerrar el recorrido.
 
 Los proyectos avanzan mediante checkpoints enlazados a lecciones y labs.
 Consulta el [flujo de aprendizaje](../docs/learning-workflow.md) y la

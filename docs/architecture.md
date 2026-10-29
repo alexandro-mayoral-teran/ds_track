@@ -63,9 +63,11 @@ Conda, venv + pip o uv cuando corresponde; elegir uno no implica practicar los t
 El mini proyecto uv de 00.05 es independiente del proyecto raíz usado con pandas.
 
 R utiliza renv desde [06.08](../curriculum/06_r_foundations/08_projects_renv/README.md)
-en copias autocontenidas, con biblioteca y estado locales. El mismo proyecto de
-práctica crece con los módulos posteriores; sus preparadores conservan metadatos
-y entregas previas. No se inicializa renv en la raíz ni se modifican bibliotecas
+en copias autocontenidas, con biblioteca y estado locales. El proyecto de
+análisis crece con los módulos posteriores; sus preparadores conservan metadatos
+y entregas previas. La ruta Shiny prepara un proyecto de app independiente:
+reúne las fuentes necesarias sin exigir entregas personales anteriores ni
+modificar el proyecto de análisis. No se inicializa renv en la raíz ni se modifican bibliotecas
 globales para revisar documentación. Verificar reconstrucción cuando cambien
 dependencias; no instalar herramientas solo por planificar.
 
@@ -127,8 +129,8 @@ la limpieza ni altera por sí solo el universo del indicador.
 Matplotlib/Altair y ggplot2 son las rutas de gráficos. Después se elige una
 aplicación: Streamlit cuenta con 12.01–12.09; la ruta
 Shiny dispone de 13.01–13.10; el módulo 14 conserva su plan. Ambas separan transformación y validación de la interfaz;
-elegir una aplicación es suficiente. El [estado de Streamlit](streamlit-closure.md)
-distingue material disponible, práctica y evidencia de cierre.
+elegir una aplicación es suficiente. Los criterios de [Streamlit](streamlit-closure.md)
+y [Shiny](shiny-closure.md) distinguen material disponible, práctica y evidencia de cierre.
 
 ### Recorrido de los módulos 06–08
 
@@ -165,9 +167,13 @@ texto, código, tablas y figuras reconstruibles; un motor y HTML bastan para el
 cierre esencial. PDF, publicación y autenticación son ampliaciones.
 [12 — Streamlit](../curriculum/12_streamlit/README.md) dispone de 12.01–12.09;
 incluye pruebas de funciones/AppTest y entrega local reconstruible (12.09), con referencia externa por clave.
-[13 — Shiny](../curriculum/13_shiny_web/README.md) dispone de 13.01–13.10: primeras apps
-con proyecto renv independiente y biblioteca local, sin exigir entregas del
-proyecto de análisis previo. 13.02 conecta entradas/salidas y 13.03 introduce dependencias, invalidación y demanda. 13.04 comparte selección/indicadores sobre una cartera de seis observaciones, con los mismos metadatos de app. 13.05 incorpora aplicación por evento y estado por sesión; 13.06 distingue rechazo, vacío, falta de universo y fallas de fuente con recuperación. 13.07 concilia gráfica/CSV/contexto con ggplot2 y lockfile ampliado. 13.08 organiza UI/servidor en módulos con namespaces y API reactiva de lectura. 13.09 incorpora pruebas de funciones/servidor, regresión y observación del flujo. 13.10 añade entrega local reconstruible con contraste externo; véase [cierre de Shiny](shiny-closure.md).
+[13 — Shiny](../curriculum/13_shiny_web/README.md) dispone de sus diez secciones:
+app con proyecto renv independiente y biblioteca local, cálculo separado de UI,
+consulta aplicada por sesión, módulos reutilizables y pruebas de funciones/servidor.
+El cierre 13.10 reúne fuentes, contrato, entorno y casos; verifica con un CSV
+externo y reconstruye en otra carpeta. Véase [cierre de Shiny](shiny-closure.md)
+para límites y práctica pendiente. Las entregas locales de ambas rutas no
+implementan por sí solas la integración de reporte y app del módulo 14.
 [14 — Proyectos reproducibles](../curriculum/14_reproducible_projects/README.md)
 conserva su plan. Elegir 12 o 13 antes de integrar 14, sin exigir dos aplicaciones.
 

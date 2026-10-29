@@ -81,10 +81,11 @@ enlazar la lección que refuerzan. La lección debe enlazar el lab de regreso.
 
 ## Conexión con proyectos
 
-Cuando una habilidad se aplique a un proyecto, identifica un checkpoint
-concreto. No uses solamente frases generales como "se utilizará después".
+Cuando una habilidad se aplique a un proyecto implementado, identifica un
+checkpoint concreto. Si el proyecto todavía es un plan, indícalo sin inventar
+un checkpoint disponible. No uses solamente frases generales como "se utilizará después".
 
-Ejemplo:
+Ejemplo de relación prevista, todavía sin proyecto implementado:
 
 ```text
 Proyecto: 01_clean_credit_data
@@ -120,5 +121,8 @@ una alternativa, presentarlos como apoyo opcional sin desplazar el objetivo de
 la lección ni repetir recorridos de shell innecesariamente. La reproducibilidad
 también se practica reiniciando la sesión del IDE y ejecutando el script completo.
 
-Aplicar este criterio al material nuevo. La 07.01 y su lab ya se adaptaron;
-las demás lecciones implementadas quedan para una revisión posterior.
+Aplicar este criterio al material nuevo. Shiny 13.01–13.10 incluye recorridos
+de IDE/consola R y alternativas de terminal; eso no acredita haber comprobado
+toda la interfaz del IDE. Distinguir la ejecución con Rscript, la revisión en
+navegador y la operación real en el IDE. La revisión retroactiva del recorrido
+R se conserva como pendiente; no darla por completada por tener estos apoyos.

@@ -15,8 +15,12 @@ no autentican una ejecución histórica.
 
 El proyecto `05_monthly_report` y sus checkpoints figuran en
 [proyectos](../projects/README.md), pero todavía no están implementados. No
-marcarlos completos por disponer de nueve labs. [12.01 — Primera app Streamlit](../curriculum/12_streamlit/01_first_app_execution/README.md)
-inicia la ruta Python; 13.01–13.10 de Shiny están disponibles; 14 conserva su plan y la numeración.
+marcarlos completos por disponer de nueve labs. El siguiente paso es elegir
+[12 — Streamlit](../curriculum/12_streamlit/README.md) o
+[13 — Shiny](../curriculum/13_shiny_web/README.md): ambas rutas tienen lecciones,
+labs y entrega local disponibles. Revisa los criterios de práctica de
+[Streamlit](streamlit-closure.md) o [Shiny](shiny-closure.md). Basta una app;
+14 conserva su plan de integración y la numeración.
 
 ## Siguiente trabajo: piloto de experiencia
 
