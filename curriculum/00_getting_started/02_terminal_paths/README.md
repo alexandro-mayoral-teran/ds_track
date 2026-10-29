@@ -402,7 +402,9 @@ varias líneas. La limpieza y el análisis se estudiarán con Python y pandas.
 > **Para comprobar:** identifica los nombres de las columnas. Si cambias de
 > carpeta, ¿por qué la misma ruta relativa podría dejar de funcionar?
 
-### 8. Extensión: explorar el CSV desde la terminal
+<a id="8-extensión-explorar-el-csv-desde-la-terminal"></a>
+
+### 8. Extensión opcional: explorar el CSV desde la terminal
 
 Esta sección es opcional. Muestra lo que puedes hacer al combinar comandos;
 no necesitas memorizar su sintaxis para continuar a la lección 03.
@@ -495,6 +497,32 @@ sigue siendo parte del análisis.
 
 > **Reto opcional:** filtra las ventas con al menos dos unidades. ¿Cuántos
 > registros quedan? Antes de ejecutar, predice la respuesta leyendo la muestra.
+
+<details>
+<summary>Ver resultado y explicación del reto — PowerShell</summary>
+
+Desde la raíz del proyecto, una forma de comprobarlo es:
+
+```powershell
+$ventasReto = @(Import-Csv "curriculum\00_getting_started\02_terminal_paths\ventas_demo.csv")
+$seleccionReto = @($ventasReto | Where-Object { [int]$_.unidades -ge 2 })
+$seleccionReto | Select-Object producto, unidades
+$seleccionReto.Count
+```
+
+**Resultado:** quedan **2 registros**:
+
+| Producto | Unidades |
+| --- | --- |
+| cuaderno | 2 |
+| lapiz | 5 |
+
+`[int]` convierte las unidades de texto a número en esta muestra válida y
+`-ge 2` incluye el límite: dos unidades también cumplen. La venta de `carpeta`
+tiene una unidad y queda fuera. `@(...)` reúne los registros seleccionados y
+`Count` los cuenta; no suma unidades. Contrasta estas filas con el CSV original.
+
+</details>
 
 ## Recorrido en Bash/Zsh
 
@@ -673,6 +701,36 @@ texto, no interpreta columnas, y separar por comas con `awk` no es un lector
 general de CSV: campos entre comillas pueden contener comas o saltos de línea.
 Para esos casos necesitas un lector de CSV, como los que estudiarás en Python.
 Además, `wc -l` puede dar un resultado distinto si falta el salto de línea final.
+
+> **Reto opcional:** filtra las ventas con al menos dos unidades. ¿Cuántos
+> registros quedan? Antes de ejecutar, predice la respuesta leyendo la muestra.
+
+<details>
+<summary>Ver resultado y explicación del reto — Bash/Zsh</summary>
+
+Desde la raíz del proyecto, una forma de comprobarlo es:
+
+```bash
+ventas_path="curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv"
+awk -F',' 'NR > 1 && $3 >= 2 { print $2, $3; cantidad++ } END { print "Registros:", cantidad+0 }' "$ventas_path"
+```
+
+**Resultado:**
+
+```text
+cuaderno 2
+lapiz 5
+Registros: 2
+```
+
+`NR > 1` omite el encabezado, `$3 >= 2` compara las unidades e incluye el límite
+de dos. `print $2, $3` muestra producto y unidades; `cantidad++` cuenta cada
+registro seleccionado. `END` imprime el conteo final y `cantidad+0` daría cero
+si ninguno cumpliera. La venta de `carpeta` queda fuera por tener una unidad.
+Contamos ventas, no sumamos unidades. Contrasta las filas con el CSV original;
+este uso de `awk` sigue limitado a la muestra sencilla de la lección.
+
+</details>
 
 > **Para profundizar más adelante:** se incorporará una sección de terminal
 > avanzada para estudiar con más detalle filtros, pipes, redirecciones,

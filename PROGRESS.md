@@ -36,6 +36,17 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.02 — 2026-10-29, retos equivalentes con resultado oculto:**
+Se conserva el ajuste del usuario «Extensión opcional» en PowerShell y se
+mantiene un ancla para el título anterior. Ambos recorridos incluyen el reto
+de ventas con al menos dos unidades, con resultado y explicación en details
+cerrado por defecto. Dos registros: cuaderno (2) y lapiz (5), con límite
+inclusivo y distinción entre contar ventas y sumar unidades.
+Portal y cambios locales previos ajenos al ajuste permanecen fuera del alcance.
+Verificación: ambos comandos contrastados con el CSV (dos ventas); 5726 enlaces
+locales sin incidencias. Resultados cerrados por defecto y apertura comprobada
+en HTML a 1280/390 sin desbordes. Formato y publicación selectiva revisados.
+
 **Depuración 00.02 — 2026-10-29, arranque y recorrido esencial:**
 PowerShell y Bash/Zsh incluyen apertura de terminal, ubicación en la copia
 extraída, ruta real entre comillas y confirmación; VS Code como alternativa
