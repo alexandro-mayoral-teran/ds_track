@@ -56,19 +56,54 @@ las lecciones que los necesitan. Las fuentes para profundizar están en
 
 ## En esta lección
 
-1. [Markdown: escribir y dar estructura](#1-markdown-escribir-y-dar-estructura).
+1. [Markdown: qué es, para qué sirve y cómo probarlo](#1-markdown-escribir-y-dar-estructura).
+   [Otros casos de uso](#otros-casos-de-uso), incluidos prompts y skills como introducción.
 2. [Git y GitHub: conservar y compartir](#2-git-y-github-conservar-y-compartir).
-3. [Otros usos: del perfil a tus proyectos](#3-otros-usos-del-perfil-a-tus-proyectos).
-4. [Crear tu perfil desde la web](#crear-el-perfil-desde-la-web).
+3. [Crear tu perfil desde la web](#crear-el-perfil-desde-la-web).
 
 <a id="2-markdown-escribir-y-dar-estructura"></a>
 
 ## 1. Markdown: escribir y dar estructura
 
+<a id="un-archivo-de-texto-que-puedes-leer-sin-herramientas-especiales"></a>
+
+### Qué es Markdown
+
+**Markdown** es un lenguaje de marcado ligero: permite organizar texto plano
+con marcas sencillas para que una herramienta lo presente con formato. `.md`
+es la extensión habitual del archivo. El editor muestra el texto fuente y la
+vista previa lo presenta con formato. `README.md` suele explicar qué contiene un
+repositorio y cómo usarlo.
+
+Puedes abrirlo con un editor de texto y leerlo incluso sin vista previa. Las
+marcas describen la estructura: `#` introduce un título, `-` una lista y los
+corchetes con paréntesis un enlace. Cambiar la extensión de un documento de Word
+a `.md` no lo convierte en Markdown: su contenido debe ser texto plano.
+
+Markdown estructura el documento; no ejecuta programas. Un bloque con comandos
+los muestra como ejemplo, pero debes ejecutarlos por separado si la actividad lo pide.
+
+### Para qué sirve y qué problemas resuelve
+
+Sirve para escribir documentos fáciles de leer, revisar y reutilizar. Por
+ejemplo, una nota puede explicar qué hiciste, qué necesitas y qué sigue; un
+README puede orientar a quien abre tu proyecto por primera vez.
+
+| Problema al compartir información | Cómo ayuda Markdown |
+| --- | --- |
+| Todo aparece como un bloque de texto | Los títulos y las listas separan temas y pasos |
+| Se confunden explicación, ejemplo y código | Las secciones y las marcas permiten distinguirlos |
+| Quieres revisar o adaptar el documento en otro editor | El contenido es texto plano que puedes leer y modificar |
+
+Imagina que entregas un archivo sin explicar qué contiene. Un README con
+«Propósito», «Archivos» y «Cómo empezar» ayuda a otra persona a orientarse.
+Markdown aporta la estructura; tú decides qué información necesita quien lee.
+No tienes que empezar por un perfil público: también sirve para tus apuntes.
+
 ### Primera prueba: escribir y previsualizar
 
-Antes de aprender los nombres de las herramientas, prueba qué hace Markdown.
-Crea tu propio archivo README.md y copia estas cinco líneas:
+Ahora prueba esas marcas en un documento pequeño. Crea tu propio archivo
+README.md y copia estas cinco líneas:
 
 ```markdown
 # Mi presentación
@@ -96,22 +131,6 @@ en 00.06 y no es necesario preparar Python ni un kernel aquí.
 Compara ambos: el signo # produce el título y el guion produce una viñeta.
 Cambia una palabra, guarda y observa la vista previa. Después cambia # por ##:
 ¿qué diferencia ves? Conserva el texto y explica qué marca produce cada cambio.
-
-### Un archivo de texto que puedes leer sin herramientas especiales
-
-**Markdown** es una forma de estructurar texto plano con marcas sencillas. `.md`
-es la extensión habitual del archivo. El editor muestra el texto fuente y la
-vista previa lo presenta con formato. `README.md` suele explicar qué contiene un
-repositorio y cómo usarlo.
-
-Puedes abrirlo con un editor de texto y leerlo incluso sin vista previa. Las
-marcas describen la estructura: `#` introduce un título, `-` una lista y los
-corchetes con paréntesis un enlace. Cambiar la extensión de un documento de Word
-a `.md` no lo convierte en Markdown: su contenido debe ser texto plano.
-
-Markdown es un lenguaje de marcado ligero. Te permite estructurar un documento;
-no ejecuta programas. Un bloque con comandos los muestra como ejemplo, pero
-debes ejecutarlos por separado si la actividad lo pide.
 
 ### Las marcas que usarás primero
 
@@ -178,6 +197,66 @@ encontrar ejemplos; en tu perfil, sirve para presentarte.
 > **Para comprobar:** cambia un título de `#` a `##` y observa la vista previa.
 > Después explica qué cambió en la estructura del documento.
 
+<a id="3-otros-usos-del-perfil-a-tus-proyectos"></a>
+
+### Otros casos de uso
+
+La presentación es una primera aplicación. La misma estructura de texto sirve
+para organizar información en situaciones distintas:
+
+| Caso | Qué información puedes organizar |
+| --- | --- |
+| Apuntes y bitácoras de aprendizaje | Qué intentaste, qué comprobaste, dudas y siguiente paso |
+| README de un proyecto | Propósito, archivos necesarios e instrucciones para empezar |
+| Diccionario de datos | Columnas, significado, unidades y valores ausentes |
+| Notas de reunión o decisiones | Acuerdos, motivos y tareas por realizar |
+| Explicaciones en un notebook | Pregunta, interpretación y conclusiones junto al código |
+| Sitio de documentación | Páginas que una herramienta transforma en un sitio navegable |
+| Plantillas de colaboración | Qué cambió, por qué y qué debe revisar otra persona |
+| Contexto e instrucciones para IA | Objetivo, datos de contexto, ejemplos y cómo comprobar la respuesta |
+
+Por ejemplo, [Jupyter](https://jupyterlab.readthedocs.io/en/stable/user/notebook.html)
+admite celdas Markdown, [MkDocs](https://www.mkdocs.org/user-guide/writing-your-docs/)
+construye documentación a partir de archivos Markdown y
+[GitHub](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)
+permite plantillas Markdown para proponer cambios. Son casos para reconocer;
+no necesitas preparar esas herramientas en esta lección.
+
+#### Organizar contexto e instrucciones para IA
+
+Un **prompt** es la petición que pasas a una herramienta de IA. Puede incluir
+qué necesitas, el contexto y cómo quieres comprobar el resultado. Markdown
+ayuda a separar esas partes, como explica la
+[documentación de prompts de OpenAI](https://developers.openai.com/api/docs/guides/prompt-engineering):
+
+```markdown
+# Objetivo
+Explícame la diferencia entre # y ## en Markdown.
+
+## Contexto
+Estoy escribiendo mi primera presentación.
+
+## Cómo lo comprobaré
+Dame un ejemplo breve y pídeme que prediga cómo se verá antes de mostrarlo.
+```
+
+Puedes guardar y reutilizar esa petición. Una **skill** agrupa instrucciones
+reutilizables y, cuando hacen falta, recursos para una tarea. Por ejemplo,
+revisar varios README con los mismos criterios. En herramientas compatibles,
+como Codex, esas instrucciones se describen en un archivo `SKILL.md` y pueden
+acompañarse de plantillas o ejemplos. La
+[documentación de skills de OpenAI](https://developers.openai.com/plugins/concepts/skills)
+muestra cómo se organiza ese material.
+
+Aquí basta con reconocer la conexión: escribir con estructura puede ayudarte
+a comunicarte con personas y a pasar contexto a una IA. Un archivo .md no se
+carga automáticamente en cualquier herramienta ni garantiza una respuesta
+correcta. Escribe y explica el ejemplo; crear una skill o instalar una IA queda
+fuera de esta primera práctica.
+
+> **Para explorar:** elige otro caso de uso. ¿Quién leería ese documento y qué
+> información necesitaría para utilizarlo?
+
 <a id="1-git-y-github-conservar-y-compartir"></a>
 
 ## 2. Git y GitHub: conservar y compartir
@@ -233,59 +312,6 @@ aprenderás a registrar y enviar cambios; aquí basta distinguir ambas copias.
 
 </details>
 
-## 3. Otros usos: del perfil a tus proyectos
-
-El perfil es una primera aplicación. Los mismos conceptos te servirán cuando
-empieces a analizar datos o a construir programas.
-
-### Documentar y organizar el aprendizaje
-
-Puedes escribir apuntes, instrucciones de instalación, diccionarios de datos
-y explicaciones de tus decisiones en Markdown. Al guardarlos en Git, también
-puedes consultar cómo evolucionaron esas explicaciones.
-
-| Situación | Qué puedes construir con lo aprendido |
-| --- | --- |
-| Terminas una práctica | Una nota con resultado, dudas y siguiente paso |
-| Compartes un script | Un README que explique qué hace y cómo ejecutarlo |
-| Preparas datos | Un diccionario con columnas, tipos y significado |
-| Encuentras un error | Un issue con pasos para reproducirlo y el resultado esperado |
-| Trabajas con otra persona | Una propuesta de cambio que puedan revisar juntos |
-
-### Organizar contexto e instrucciones para IA
-
-Markdown también puede ayudarte a ordenar una petición para una herramienta de
-IA. Separar objetivo, contexto y resultado esperado facilita leer, revisar y
-reutilizar la petición. Por ejemplo:
-
-```markdown
-# Objetivo
-Ayúdame a comprender la diferencia entre Git y GitHub.
-
-## Contexto
-Estoy creando mi primer perfil y todavía no he usado la terminal.
-
-## Cómo quiero practicar
-- Explica con un ejemplo basado en un README.
-- Hazme dos preguntas antes de mostrar las respuestas.
-
-## Cómo comprobaré lo aprendido
-Debo poder explicar qué hace Git y qué aporta GitHub con mis propias palabras.
-```
-
-Puedes conservar este texto como un apunte y adaptarlo para otros temas. En
-herramientas que lo admiten, también existen archivos de instrucciones de
-proyecto; GitHub Copilot, por ejemplo, utiliza
-[`.github/copilot-instructions.md`](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions).
-
-La estructura ayuda a expresar la petición, pero la precisión depende de lo
-que escribas. Un archivo `.md` no se carga automáticamente en cualquier IA y
-la respuesta debe comprobarse. Para esta lección basta con escribir y explicar
-el ejemplo; no necesitas instalar una herramienta de IA.
-
-> **Para explorar:** elige un uso distinto del perfil y cuenta qué documento
-> crearías, quién lo leería y qué información necesitaría.
-
 ## Crear el perfil desde la web
 
 1. Identifica tu nombre de usuario de GitHub.
@@ -338,7 +364,8 @@ No hay proyecto de datos asociado todavía; el README es la primera evidencia.
 - [Git: fundamentos del control de versiones](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Acerca-del-Control-de-Versiones).
 - [README de perfil de GitHub](https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme).
 - [Sintaxis de Markdown en GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-- [Instrucciones de repositorio para Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions).
+- [Markdown: presentación original de John Gruber](https://daringfireball.net/projects/markdown/).
+- Los casos de uso y la introducción a prompts/skills enlazan sus fuentes primarias en [Otros casos de uso](#otros-casos-de-uso).
 
 <a id="siguiente-lección"></a>
 

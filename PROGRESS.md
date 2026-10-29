@@ -36,6 +36,22 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.01 — 2026-10-29, propósito y casos de Markdown:**
+La parte de Markdown inicia con definición, utilidad y problemas que ayuda a
+resolver; después conserva la prueba de cinco líneas y fuente/resultado.
+Casos de uso reunidos dentro de Markdown: apuntes, README, diccionario,
+decisiones, notebooks, sitios de documentación, colaboración e IA.
+Prompts y skills introducidos brevemente como formas de organizar contexto e
+instrucciones reutilizables, sin práctica de instalación o creación de skills.
+Fuentes primarias de Markdown, Jupyter, MkDocs, GitHub y OpenAI consultadas.
+Lab alineado: elegir otro caso, con IA como una opción. Anclas previas preservadas;
+Git/GitHub permanece después de Markdown. Portal y privados previos fuera.
+Verificación: enlaces locales sin incidencias y render 1280/390 sin desbordes
+ni IDs repetidos; fuente/resultado, sintaxis de código y anclas conservados.
+Definición móvil revisada visualmente. Fuentes primarias contrastadas; skills
+como concepto, sin instalar ni crear una skill como actividad del curso.
+
+
 **Depuración 00.01 — 2026-10-29, primera prueba de Markdown:**
 Markdown precede a Git/GitHub dentro de la lección. Prueba inicial de cinco
 líneas, fuente y resultado visible; el ejemplo de perfil también muestra su

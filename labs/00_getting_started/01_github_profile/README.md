@@ -34,8 +34,10 @@ Documentar tu presentación en Markdown y comprobar su formato.
 3. Previsualiza el documento y corrige cualquier problema de formato.
 4. Si eliges GitHub, publícalo en el repositorio público con tu nombre de usuario
    y comprueba que aparece en tu perfil. Sin cuenta, conserva el archivo local.
-5. Escribe una instrucción breve para una IA con objetivo, contexto y criterio
-   de validación. Explica qué aporta Markdown a su organización.
+5. Elige uno de los [otros casos de uso](../../../curriculum/00_getting_started/01_github_profile/README.md#otros-casos-de-uso)
+   y escribe un ejemplo breve con secciones adecuadas. Si eliges IA, redacta un
+   prompt con objetivo, contexto y comprobación. Basta explicarlo: no necesitas
+   usar una IA ni crear una skill.
 
 <details>
 <summary>Una pista si no sabes qué escribir</summary>
@@ -67,7 +69,8 @@ no sustituye explicar qué hiciste.
 - ¿Qué diferencia hay entre el texto fuente y la vista previa?
 - ¿Qué distingue un repositorio de GitHub de un archivo Markdown?
 - ¿Qué información cambia al hacer público el repositorio del perfil?
-- ¿Por qué Markdown no garantiza que una IA entienda o cumpla una instrucción?
+- ¿Qué problema ayuda a resolver Markdown en el otro caso que elegiste?
+- Si elegiste IA, ¿qué contexto aporta tu prompt y cómo comprobarías la respuesta?
 
 Al terminar, conserva archivo o enlace y tus dudas en tu carpeta personal.
 Puedes copiar la [bitácora de 00](../../../templates/learning-session/bitacora-00.md).
