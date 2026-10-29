@@ -94,6 +94,12 @@ ejecutarlo. Primero aprenderás a ubicarte, leer rutas y reconocer un comando.
 
 ### Opción en navegador: cargar el archivo `.ipynb`
 
+> **Un apoyo para esta práctica:** este cuaderno es opcional y permite probar
+> comandos sin instalar Python en tu computadora. Por ahora basta con ejecutar
+> las celdas en orden y observar los resultados. En
+> [00.06 — Tu primer notebook](../06_first_notebook/README.md) aprenderás cómo
+> funciona un notebook y cómo crear y comprobar el tuyo.
+
 Un **notebook** reúne explicaciones y celdas ejecutables. Para esta opción,
 descarga [practica_terminal_colab.ipynb](practica_terminal_colab.ipynb) desde el
 repositorio y súbelo en [Google Colab](https://colab.research.google.com/), mediante
@@ -102,10 +108,9 @@ alojado de Python con CPU y ejecuta las celdas de arriba abajo. No necesitas GPU
 instalar Python en tu equipo, clonar el repositorio ni cargar otros archivos.
 
 La primera celda ejecutable prepara una carpeta temporal y las tres ventas del
-CSV. Después, cada celda `%%bash` ejecuta comandos reales de Bash. El **kernel**
-es el proceso que ejecuta las celdas; aquí Python/IPython permite enviarlas a Bash.
-No necesitas estudiar el código de preparación ni configurar kernels todavía;
-el trabajo con notebooks se desarrolla en 00.06.
+CSV. Después, cada celda `%%bash` ejecuta comandos reales de Bash. Mantén esa
+primera línea tal como está; no se escribe en una terminal normal.
+No necesitas estudiar el código de preparación ni configurar kernels todavía.
 
 Colab ejecuta en una máquina remota: las rutas y herramientas detectadas son
 las de esa sesión, aunque tu computadora use Windows. No ejecuta PowerShell ni
@@ -115,8 +120,9 @@ En una terminal interactiva el cambio de carpeta sí persiste entre comandos.
 
 Predice, ejecuta y explica cada salida. Guarda tus respuestas en una copia del
 cuaderno y descárgala: los archivos temporales pueden desaparecer al finalizar
-la sesión. Reiniciar y ejecutar todo debe reconstruir la muestra. El funcionamiento
-y los límites se describen en las [preguntas frecuentes de Colab](https://research.google.com/colaboratory/intl/es/faq.html).
+la sesión. Si se pierde la carpeta, vuelve a ejecutar la preparación y continúa
+en orden. El funcionamiento y los límites se describen en las
+[preguntas frecuentes de Colab](https://research.google.com/colaboratory/intl/es/faq.html).
 
 ### Recorrido con la terminal de tu equipo
 

@@ -36,6 +36,16 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.02 — 2026-10-29, alcance del cuaderno guiado:**
+Nota visible en lección y notebook: apoyo opcional para terminal; el aprendizaje
+formal de notebooks, kernel y ejecución desde cero corresponde a 00.06.
+Instrucciones de 00.02 simplificadas sin cambiar celdas ejecutables ni resultados.
+00.06 recupera el uso previo de forma condicional, sin exigir ese ensayo.
+Portal y cambios locales previos permanecen fuera del alcance.
+Verificación: 5724 enlaces locales sin incidencias; código del notebook
+idéntico al ya ejecutado. HTML de lección/cuaderno a 1280/390 sin desbordes
+ni IDs repetidos. Ajuste editorial, sin repetir pruebas de código sin cambios.
+
 **Depuración 00.02 — 2026-10-29, glosario y notebook para Colab:**
 Lección con glosario contextual y notebook opcional `.ipynb` autocontenido:
 preparación temporal, comandos Bash reales, rutas, CSV de tres ventas,

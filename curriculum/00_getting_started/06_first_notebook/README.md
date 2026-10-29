@@ -19,6 +19,12 @@
 Combinar explicación, código y resultados en un documento que puedas ejecutar
 y comprender, con el kernel correcto y resultados reconstruidos desde cero.
 
+Si utilizaste el cuaderno opcional de
+[00.02 — Terminal y rutas](../02_terminal_paths/README.md), allí ejecutaste un
+material preparado para practicar comandos. Ahora aprenderás cómo funciona un
+notebook, cómo modificar sus celdas y cómo comprobar su ejecución desde cero.
+Si no lo utilizaste, puedes comenzar aquí sin realizar ese ensayo previo.
+
 ## Antes de empezar
 
 Completa [00.05 — Entornos y dependencias](../05_environment/README.md) y conserva
