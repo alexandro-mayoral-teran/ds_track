@@ -36,6 +36,14 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.02 — 2026-10-29, ejecutar una macro desde un script:**
+Ejemplo conceptual de Excel de escritorio: abrir .xlsm, llamar macro existente
+con fecha/ruta como argumentos, revisar/guardar y cerrar recursos incluso ante
+errores. Workbooks.Open/Application.Run documentados con fuentes oficiales;
+se distingue script coordinador de VBA y ejecución interactiva de Office
+desatendido. No se crean scripts, libros ni tareas; no se afirma ejecución real.
+Enlaces y formato comprobados. Portal y cambios locales previos conservados.
+
 **Depuración 00.02 — 2026-10-29, macros y patrones cercanos al trabajo:**
 Puente entre macros VBA, scripts .vbs/Windows Script Host y Programador de
 tareas, sin confundir lenguajes ni crear tareas. VBScript en desuso documentado;

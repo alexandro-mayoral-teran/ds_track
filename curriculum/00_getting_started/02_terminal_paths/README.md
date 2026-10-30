@@ -782,6 +782,22 @@ En Windows, si ese componente está disponible, un programa como
 [`cscript`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cscript)
 puede ejecutar el archivo desde la línea de comandos.
 
+**Un ejemplo cercano con Excel:** en Windows con Excel de escritorio instalado,
+un script externo puede controlar Excel, abrir un libro `.xlsm` y llamar una
+macro existente pasándole argumentos. Por ejemplo:
+
+1. Abrir un libro ficticio `reporte.xlsm`.
+2. Llamar su macro `GenerarReporte` con dos datos: fecha de corte y ruta del CSV.
+3. Revisar el resultado y guardar la salida prevista.
+4. Cerrar el libro y la instancia de Excel que creó el script, incluso si falla.
+
+Excel ofrece [`Workbooks.Open`](https://learn.microsoft.com/en-us/office/vba/api/excel.workbooks.open)
+para abrir el libro y [`Application.Run`](https://learn.microsoft.com/en-us/office/vba/api/excel.application.run)
+para llamar la macro con argumentos por posición. La macro debe estar preparada
+para recibirlos y su ejecución debe estar permitida por la configuración del
+entorno. El script coordina; Excel ejecuta el código VBA. Es una posibilidad
+de automatización, no un programa listo para ejecutar en esta lección.
+
 Por ejemplo, un script podría recorrer una carpeta de entregas diarias,
 comprobar qué CSV llegaron y escribir una bitácora con archivos faltantes.
 El [Programador de tareas de Windows](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/schtasks-create)
@@ -789,6 +805,12 @@ permite iniciar programas o scripts cada día o a intervalos, como cada hora.
 El script define **qué hacer**; la tarea programada define **cuándo ejecutarlo**.
 Para repetirlo correctamente hay que indicar el programa, las rutas, la cuenta
 que lo ejecutará y cómo revisar su resultado.
+
+En el caso de Excel, una tarea que se ejecuta sin sesión interactiva requiere
+otro diseño: Microsoft [no recomienda ni admite la automatización de Office
+en contextos desatendidos](https://support.microsoft.com/en-us/visio/considerations-for-server-side-automation-of-office).
+Por eso conviene distinguir probar el flujo con una persona presente de
+garantizar que funcione de forma autónoma cada noche.
 
 **Contexto actual:** Microsoft ha declarado
 [VBScript en desuso y previsto su retirada](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features).
