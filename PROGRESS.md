@@ -36,6 +36,19 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.03 — 2026-10-29, áreas de Git como secuencia:**
+Diagrama por columnas/líneas de vida inspirado en la referencia del usuario,
+con SVG legible y fuente Mermaid editable. Separa copia/preparación/historial
+y referencias del remoto en local frente al repositorio en GitHub.
+Add/commit/push y anticipación fetch/pull --ff-only, sin adelantar merge/rebase.
+Referencias como origin/main no se presentan como otro repositorio ni estado
+en vivo. Lectura textual y acceso a tamaño completo; comandos de práctica
+previos intactos. Fuentes oficiales Git contrastadas. Portal y privados fuera.
+Verificación: Mermaid renderizado, SVG válido sin scripts y con título/descripción;
+carga en HTML a 1280/390 comprobada con imagen ajustada al ancho y enlace al
+tamaño completo. Diagrama completo y vista de escritorio revisados visualmente;
+5735 enlaces locales sin incidencias. No se amplía la integración del portal.
+
 **Depuración 00.03 — 2026-10-29, diagrama de las áreas de Git:**
 Diagrama Mermaid junto al área de preparación: copia de trabajo, selección e
 historial dentro del equipo; remoto separado y flechas add/commit/push.

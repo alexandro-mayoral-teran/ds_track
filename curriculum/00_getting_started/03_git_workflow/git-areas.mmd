@@ -1,0 +1,20 @@
+sequenceDiagram
+    box rgb(247,246,255) En tu computadora
+        participant W as Copia de trabajo
+        participant S as Preparación<br/>(staging)
+        participant L as Historial local<br/>(tu rama)
+        participant O as Referencias del remoto<br/>(p. ej., origin/main)
+    end
+    box rgb(237,233,254) En GitHub
+        participant R as Repositorio remoto
+    end
+    W->>S: git add
+    S->>L: git commit
+    L->>R: git push
+    Note over W,L: Guardar, preparar y registrar son pasos distintos
+    R-->>O: git fetch
+    Note over W,O: Fetch actualiza la información del remoto,<br/>no cambia tu rama ni tus archivos de trabajo
+    R-->>O: git pull --ff-only: traer novedades
+    O-->>L: Avanzar tu rama, si no hay divergencia
+    L-->>W: Actualizar copia de trabajo e índice
+    Note over W,R: Pull mostrado con el árbol limpio,<br/>si no puede avanzar, se detiene sin combinar historiales

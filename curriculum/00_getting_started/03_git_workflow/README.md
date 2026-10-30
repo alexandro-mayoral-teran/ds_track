@@ -60,6 +60,7 @@ como pendiente; leerlos no equivale a haber creado un commit.
 | --- | --- | --- |
 | [Plantilla del perfil](../../../templates/github-profile/PROFILE.md) | Consultar la presentación que adaptaste en 00.01 | Consulta opcional |
 | [Lección de Markdown](../01_github_profile/README.md) | Retomar cómo editar y previsualizar el README | Apoyo previo |
+| [Diagrama de las áreas de Git](git-areas.svg) | Seguir los comandos entre áreas locales y remoto | Consulta visual; disponible también a tamaño completo |
 
 Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
 trabaja las modificaciones en tu copia personal.
@@ -94,18 +95,9 @@ explica la intención, por ejemplo «Agrega mis objetivos de aprendizaje».
 
 ### Las áreas por las que pasa un cambio
 
-```mermaid
-flowchart TD
-    subgraph LOCAL["En tu computadora"]
-        TRABAJO["Copia de trabajo: archivos que editas y guardas"]
-        PREPARACION["Área de preparación: selección para el próximo commit"]
-        HISTORIAL["Historial local: commits registrados"]
-        TRABAJO -->|git add| PREPARACION
-        PREPARACION -->|git commit| HISTORIAL
-    end
-    REMOTO["Repositorio remoto: copia alojada en GitHub"]
-    HISTORIAL -->|git push| REMOTO
-```
+![Diagrama de secuencia de Git: add conecta trabajo y preparación, commit registra localmente y push envía al remoto. Fetch actualiza las referencias locales del remoto; pull --ff-only trae novedades y avanza sin combinar historiales.](git-areas.svg)
+
+[Abrir el diagrama a tamaño completo](git-areas.svg) · [Fuente editable en Mermaid](git-areas.mmd)
 
 **Lectura del diagrama:** editas en tu copia de trabajo; `add` prepara la
 versión que quieres registrar y `commit` la incorpora al historial local.
@@ -116,6 +108,21 @@ carpeta donde debas mover manualmente el README: Git mantiene esa selección.
 Las flechas representan acciones, no el traslado del archivo: tu README sigue
 en la copia de trabajo después del commit. Si vuelves a editarlo, esa nueva
 edición no cambia lo que ya preparaste ni los commits anteriores.
+
+La cuarta columna también está **en tu computadora**: contiene referencias
+como `origin/main`, que recuerdan el estado conocido de una rama del remoto.
+No es otro repositorio remoto ni una consulta en vivo a GitHub. `origin` es el
+nombre habitual del remoto y `main` es un ejemplo de nombre de rama; el tuyo
+puede ser distinto.
+
+La parte inferior es una anticipación para cuando retomes el trabajo:
+[`fetch`](https://git-scm.com/docs/git-fetch) trae novedades y actualiza esas
+referencias sin modificar tu rama ni tus archivos de trabajo. En cambio,
+[`pull --ff-only`](https://git-scm.com/docs/git-pull) trae las novedades y trata
+de avanzar tu rama; si puede, actualiza también la copia de trabajo y el índice
+(el área de preparación). Si los historiales divergen, se detiene sin combinarlos.
+En esta práctica se usa con el árbol limpio, como explica el apartado 7;
+no necesitas ejecutar fetch por separado antes de pull.
 
 - `git diff` compara la copia de trabajo con el área de preparación: muestra
   cambios sin preparar en archivos seguidos.
@@ -453,6 +460,8 @@ Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
 | Rama | Línea de trabajo del historial; aquí utilizas la que ya tiene el repositorio |
 | Remoto | Referencia a otro repositorio con el que puedes intercambiar commits |
 | origin | Nombre que clone suele dar al remoto de origen; no significa GitHub en todos los proyectos |
+| Referencia de seguimiento del remoto | Nombre local como `origin/main` que recuerda el estado conocido de una rama del remoto |
+| Fetch | Descarga de novedades del remoto sin actualizar por sí sola la rama en la que trabajas ni sus archivos |
 | Push | Envío de commits locales al remoto configurado |
 | Pull | Operación para traer e integrar novedades del remoto; aquí se usa `--ff-only` para evitar una combinación de historiales divergentes |
 | Estado limpio | Git no informa cambios pendientes ni archivos nuevos sin seguimiento; los archivos ignorados pueden quedar fuera de ese informe y no se comprueba que el contenido sea correcto |
