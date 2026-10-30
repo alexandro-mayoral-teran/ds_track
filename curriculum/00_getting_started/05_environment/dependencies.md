@@ -45,6 +45,11 @@ trabaja las modificaciones en tu copia personal.
 
 ## 1. Instalar e importar
 
+En 05A preparaste un entorno y ejecutaste el primer script, que no requería
+bibliotecas externas. Ahora queremos presentar tres ventas como una tabla:
+cuaderno 80, lapiz 50 y carpeta 35 MXN. Para hacerlo utilizaremos tabulate 0.9.0.
+El motivo y las acciones son los mismos con cualquiera de los tres gestores.
+
 ### Instalar y utilizar son dos pasos diferentes
 
 1. **Instalar el paquete:** el gestor descarga sus archivos y los coloca en el
@@ -72,8 +77,38 @@ VS Code te permite escribir el programa. Abrir un archivo o instalar una extensi
 del editor no instala automáticamente las bibliotecas que el programa necesita.
 Esas bibliotecas deben estar disponibles en el entorno del Python que lo ejecuta.
 
+### Predecir y comprobar con la demostración
+
+Antes de ejecutar [library_demo.py](library_demo.py), abre el archivo y localiza
+`from tabulate import tabulate`. Esa línea pide la función de la biblioteca;
+no la instala. No necesitas dominar todavía las estructuras del resto del script.
+
+Predice qué ocurriría si el intérprete elegido no tuviera tabulate disponible.
+Después instala y ejecuta siguiendo la parte B de tu recorrido. Debes obtener:
+
+```text
+| Producto   |   Importe MXN |
+|------------|---------------|
+| cuaderno   |            80 |
+| lapiz      |            50 |
+| carpeta    |            35 |
+```
+
+Si aparece `ModuleNotFoundError: No module named 'tabulate'`, el Python que
+ejecutó el archivo no encontró ese módulo. Comprueba la ruta del intérprete y
+la instalación de ese entorno con los comandos de tu recorrido antes de intentar
+instalar otra vez. No hace falta desinstalar nada para provocar el error.
+
+> **Para conversar:** ¿qué comprobación falta si el gestor terminó sin error,
+> pero todavía no ejecutaste el programa?
+
 
 ## 2. Qué contiene requirements.txt y cómo se utiliza
+
+**Lee el formato de tu camino; los otros quedan como consulta.** Todos cumplen
+la necesidad de conservar requisitos presentada en 05A, con alcances distintos.
+Los siguientes ejemplos explican archivos y comandos; guarda la configuración
+en la ubicación que indica tu recorrido, sin modificar los archivos raíz de DS Track.
 
 requirements.txt es un archivo de texto con una lista de cosas que pip debe
 instalar. Puedes escribir los requisitos que necesita el proyecto, por ejemplo:
@@ -94,7 +129,7 @@ Desde la carpeta que contiene el archivo y utilizando el Python del entorno:
 python -m pip install -r requirements.txt
 ```
 
-`-r` indica que pip debe leer los requisitosdel archivo. **No crea un entorno
+`-r` indica que pip debe leer los requisitos del archivo. **No crea un entorno
 ni instala Python**: primero prepara y selecciona el intérprete de 05A.
 Si no activaste el entorno, usa la ruta directa de su Python como en el recorrido pip.
 
@@ -200,6 +235,17 @@ Guarda evidencia y dudas en tu copia de la
 [bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
 o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
 Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
+
+## Glosario
+
+| Término | En esta lección |
+| --- | --- |
+| Instalar | Añadir el paquete al entorno mediante su gestor |
+| Importar | Solicitar desde el programa un módulo o una función disponible para ese Python |
+| Módulo | Unidad de código que Python puede importar; tabulate proporciona el módulo usado aquí |
+| Requisito | Declaración del software necesario, con una versión o condición cuando corresponde |
+| Resolución | Selección de versiones compatibles con los requisitos |
+| Reconstruir | Preparar el entorno de nuevo desde configuración y comprobar la ejecución |
 
 <a id="referencias-oficiales"></a>
 

@@ -25,7 +25,7 @@ importación y registro de dependencias.
 Este recorrido es el camino estándar si eliges administrar paquetes con pip. Sal de cualquier entorno activo antes de practicar.
 `.venv-practice` está separado de `.venv` y está excluido de Git.
 
-Lee primero la [teoría común](README.md). Necesitas Python 3.11 o posterior;
+Lee primero los [conceptos comunes de 05A](environment.md). Necesitas Python 3.11 o posterior;
 si falta, consulta la [descarga oficial](https://www.python.org/downloads/).
 Elige un solo shell y completa su bloque antes de pasar al lab.
 
@@ -54,9 +54,16 @@ trabaja las modificaciones en tu copia personal.
 ### Parte A — Preparar y usar el entorno
 
 ```powershell
+# Sustituye el marcador por la carpeta real de tu copia de DS Track
+Set-Location "RUTA_REAL_DE_DS_TRACK"
+Get-Location
+# Comprueba el Python disponible para crear el entorno
+python --version
 # Crea solo si todavía no existe
 python -m venv .venv-practice
 # Usa directamente el ejecutable sin activar
+.\.venv-practice\Scripts\python.exe --version
+.\.venv-practice\Scripts\python.exe -c "import sys; print(sys.executable)"
 .\.venv-practice\Scripts\python.exe -m pip --version
 .\.venv-practice\Scripts\python.exe curriculum\00_getting_started\04_first_script\first_summary.py
 ```
@@ -89,7 +96,14 @@ New-Item -ItemType Directory -Force .environment-practice
 ### Parte A — Preparar y usar el entorno
 
 ```bash
+# Sustituye el marcador por la carpeta real de tu copia
+cd "RUTA_REAL_DE_DS_TRACK"
+pwd
+python3 --version
+# Crea solo si todavía no existe
 python3 -m venv .venv-practice
+./.venv-practice/bin/python --version
+./.venv-practice/bin/python -c "import sys; print(sys.executable)"
 ./.venv-practice/bin/python -m pip --version
 ./.venv-practice/bin/python curriculum/00_getting_started/04_first_script/first_summary.py
 ```
@@ -118,7 +132,23 @@ mkdir -p .environment-practice
 Debes ver 0.9.0 y una tabla con cuaderno 80, lapiz 50 y carpeta 35.
 pip check comprueba las dependencias declaradas, no que cualquier programa funcione.
 
+## Comprobar y retomar el entorno
+
+La ruta consultada debe terminar en `.venv-practice/Scripts/python.exe` en
+Windows o `.venv-practice/bin/python` en Linux/macOS. Usa el separador de rutas
+de tu sistema. El primer script debe mostrar un total de 120 MXN con su fuente original.
+Si la carpeta ya existe, consulta su Python y sus paquetes antes de reutilizarla;
+no repitas la creación a ciegas.
+
+Al retomar, vuelve a la raíz de tu copia y utiliza la ruta directa del mismo
+Python. Cerrar la terminal no elimina el entorno. La parte B de ambos shells
+también empieza desde esa raíz.
+
 ## Registrar y reconstruir
+
+Antes de exportar, comprueba si `.environment-practice/requirements.txt` ya
+existe: la escritura lo reemplaza. Si necesitas conservarlo, usa otro nombre
+y emplea esa misma ruta al reconstruir.
 
 Revisa requirements.txt y documenta la versión de Python. freeze incluye lo
 instalado, también dependencias transitivas; no identifica por sí solo las

@@ -22,7 +22,8 @@ importación y registro de dependencias.
 
 ## Antes de empezar
 
-Lee [05A](environment.md) antes de la parte A y [05B](dependencies.md) antes de la parte B.
+Lee los conceptos comunes de [05A](environment.md) antes de elegir este camino
+y de realizar la parte A; lee [05B](dependencies.md) antes de la parte B.
 Sigue solo el bloque de tu shell.
 
 ## Qué vas a aprender
@@ -169,16 +170,38 @@ Ahora registra el entorno con la biblioteca instalada, como indica el siguiente 
 
 Desde la raíz del proyecto, con `ds-track` activado:
 
-```text
-# Exporta requisitos elegidos explícitamente, no toda la instalación
-conda env export --from-history > environment.yml
+**PowerShell:**
+
+```powershell
+New-Item -ItemType Directory -Force .environment-practice
+conda env export --from-history | Set-Content -Encoding utf8 .environment-practice/environment.yml
 ```
 
+**CMD — Anaconda Prompt:**
+
+```bat
+if not exist .environment-practice mkdir .environment-practice
+conda env export --from-history > .environment-practice\environment.yml
+```
+
+**Bash/Zsh:**
+
+```bash
+mkdir -p .environment-practice
+conda env export --from-history > .environment-practice/environment.yml
+```
+
+Ejecuta solo el bloque de tu shell. Exporta los requisitos elegidos explícitamente
+a `.environment-practice/environment.yml`, una carpeta de práctica excluida de Git.
+Antes de exportar, comprueba si el archivo ya existe: los comandos de escritura
+lo reemplazan. Si necesitas conservarlo, elige otro nombre y usa esa misma ruta
+al reconstruir.
 Revisa el archivo antes de compartirlo: elimina un campo `prefix` con una ruta
-personal si aparece. No sobrescribas un environment.yml existente sin revisarlo.
+personal si aparece.
 Este export conserva elecciones hechas con Conda; no registra paquetes instalados
 con pip ni fija todas las dependencias transitivas. No equivale a un lockfile.
-Otra persona puede reconstruirlo con `conda env create -f environment.yml`
+Otra persona puede reconstruirlo desde la raíz con
+`conda env create -f .environment-practice/environment.yml`
 si el nombre no existe. Los paquetes de pip requerirán su declaración aparte.
 
 ## Consultar, actualizar y retirar: referencia

@@ -7,7 +7,7 @@
 | Tu sesión | Qué prepararás o comprobarás |
 | --- | --- |
 | **Meta** | Preparar un entorno y comprobar su intérprete |
-| **Necesitas** | Camino elegido en 00.05 y shell correspondiente |
+| **Necesitas** | El primer script y las bases de terminal de 00.02; la elección del gestor viene al final |
 | **Evidencia** | Comprobación y nota personal de la sesión A |
 
 [Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/05_environment/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
@@ -16,16 +16,21 @@
 
 ## Propósito
 
-Elegir un camino, preparar su entorno y comprobar qué intérprete ejecuta el primer script antes de instalar bibliotecas.
+Comprender por qué separar las dependencias de los proyectos y qué piezas
+intervienen al ejecutar un programa. Después elegirás una herramienta, prepararás
+su entorno y comprobarás qué intérprete ejecuta el primer script.
 
 ## Antes de empezar
 
 Lee la [entrada de 00.05](README.md) y retoma el [primer script](../04_first_script/README.md).
-Necesitas Python 3.11 o posterior, o una herramienta que lo prepare. Sigue solo
-la parte A de un recorrido. La instalación de bibliotecas corresponde a 05B.
+Lee primero los conceptos comunes de esta página. No necesitas elegir ni instalar
+un gestor para comprenderlos. Para la práctica necesitarás Python 3.11 o posterior,
+o una herramienta que lo prepare; el recorrido elegido explicará esa preparación.
+La instalación de la biblioteca de demostración corresponde a 05B.
 
 ## Qué vas a aprender
 
+- Explicar qué problema resuelve separar los entornos.
 - Distinguir intérprete, biblioteca, dependencia y entorno.
 - Elegir Conda, venv + pip o uv según tu preparación.
 - Comprobar la ruta de Python y ejecutar el primer script en ese entorno.
@@ -34,295 +39,253 @@ la parte A de un recorrido. La instalación de bibliotecas corresponde a 05B.
 
 | Recurso | Para qué sirve | Uso |
 | --- | --- | --- |
-| [Conda](conda.md) | Preparar el entorno si eliges Anaconda | Elegir un camino |
-| [venv + pip](venv-pip.md) | Preparar un entorno con Python disponible | Elegir un camino |
-| [uv](uv.md) | Preparar el mini proyecto de práctica | Elegir un camino |
+| [Conda](conda.md) | Preparar el entorno si eliges Anaconda | Después de los conceptos comunes |
+| [venv + pip](venv-pip.md) | Preparar un entorno con Python disponible | Después de los conceptos comunes |
+| [uv](uv.md) | Preparar el mini proyecto de práctica | Después de los conceptos comunes |
 | [Primer script](../04_first_script/first_summary.py) | Ejecutar un cálculo sin bibliotecas externas | Sesión A |
 
 Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y
 trabaja las modificaciones en tu copia personal.
 
-## 1. Intérprete, bibliotecas y dependencias
+## 1. Por qué necesitamos un entorno
 
-| Concepto | Qué significa | Ejemplo |
+En [00.04](../04_first_script/README.md), Python ejecutó tu cálculo con las
+operaciones que ya incluye. Ahora queremos presentar unas ventas como tabla.
+Podríamos escribir el formato a mano, pero una biblioteca llamada `tabulate`
+ya ofrece esa funcionalidad. Para usarla, el Python que ejecuta el programa
+debe tenerla disponible.
+
+Imagina que tienes dos trabajos: una tabla de ventas y un reporte que recibiste
+de otra persona. El primero se comprobó con una versión de una biblioteca y el
+segundo necesita otra. Si ambos usan la misma instalación y cambias esa biblioteca,
+puedes afectar al trabajo anterior aunque su archivo `.py` siga igual.
+Es un ejemplo del problema; no vamos a provocar ese conflicto en tu computadora.
+
+Separar sus entornos permite mantener los paquetes de cada trabajo y comprobar
+con qué Python se ejecuta cada uno. También ayuda cuando retomas semanas después
+o compartes el código: necesitas saber qué software lo acompañaba.
+
+> **Para conversar:** si conservas el archivo `.py`, ¿qué más necesitarías saber
+> para ejecutarlo en otra computadora?
+
+<a id="1-intérprete-bibliotecas-y-dependencias"></a>
+
+## 2. Las piezas de cualquier recorrido
+
+El **intérprete** es el programa que ejecuta las instrucciones de Python. El
+archivo `ventas.py` contiene instrucciones; el ejecutable de Python las procesa.
+En una computadora puede haber varios intérpretes, con versiones o paquetes distintos.
+
+Una **biblioteca** reúne funcionalidad reutilizable. Python incluye una
+**biblioteca estándar**, por ejemplo `sys`, que permite consultar información
+del intérprete. Una biblioteca **externa**, como `tabulate`, se instala aparte.
+Para descargarla e instalarla utilizamos un **paquete distribuido**: en este
+caso también se llama `tabulate`.
+
+Cuando tu programa necesita ese software, lo llamamos una **dependencia**.
+Su **versión** identifica una edición concreta. En esta práctica utilizaremos
+`tabulate` 0.9.0 para contrastar la misma demostración en todos los caminos.
+La versión de Python y la de tabulate pertenecen a programas diferentes.
+
+```text
+Tu archivo .py contiene instrucciones
+        ↓ lo ejecuta
+Un intérprete de Python
+        ↓ utiliza
+Su biblioteca estándar y los paquetes externos disponibles en su entorno
+```
+
+El **gestor** es la herramienta que ayuda a preparar o administrar ese software.
+Algunas herramientas crean entornos; otras instalan paquetes; algunas combinan
+varias funciones. Por eso elegir un gestor viene después de entender las piezas.
+
+<details>
+<summary>Ampliación: dependencias directas y transitivas</summary>
+
+Una dependencia es **directa** cuando tu proyecto la solicita, como tabulate
+para presentar la tabla. Es **transitiva** cuando otra dependencia la necesita.
+Un gestor puede instalarla para satisfacer ese requisito. No todas las
+bibliotecas tienen dependencias externas; este ejemplo no implica que tabulate
+necesite instalar otras.
+
+</details>
+
+<a id="3-cómo-funciona-un-entorno-y-para-qué-sirve"></a>
+
+## 3. Qué reúne un entorno y qué separa
+
+Un **entorno** proporciona un intérprete y un espacio de paquetes para ejecutar
+un trabajo. Según la herramienta, puede basarse en un Python existente o incluir
+uno administrado por ella. Los paquetes externos se instalan en ese espacio.
+
+```text
+Proyecto A: código y datos → Python del entorno A → paquetes de A
+Proyecto B: código y datos → Python del entorno B → paquetes de B
+```
+
+**La carpeta del código y el entorno cumplen funciones distintas.** Tu script
+puede permanecer en la carpeta del proyecto y ejecutarse con el Python del
+entorno. Crear o activar un entorno no mueve el script ni copia tus datos.
+Algunos entornos están dentro del proyecto; otros se guardan en otra ubicación.
+No guardes tus scripts dentro de la carpeta de paquetes del entorno.
+
+Esto aporta:
+
+- **Separación:** los paquetes instalados para un entorno no se añaden al otro.
+- **Identificación:** puedes consultar el Python y las versiones que usas.
+- **Reconstrucción:** puedes preparar el entorno de nuevo desde requisitos guardados.
+
+Ocupa espacio y requiere mantenimiento. No es una máquina virtual ni una barrera
+de seguridad: un programa ejecutado conserva acceso a los archivos que permitan
+tus permisos. Tampoco garantiza resultados idénticos por sí solo; importan el
+código, los datos, las versiones y la plataforma.
+
+No crearemos un entorno por lección. El elegido puede acompañarte en DS Track;
+la demostración de uv usará un mini proyecto aparte para conservar intacta la
+configuración compartida del repositorio.
+
+<a id="4-crear-activar-y-comprobar-un-entorno"></a>
+
+## 4. Crear, seleccionar, instalar y comprobar
+
+Estas acciones aparecen en cualquier recorrido, aunque una herramienta pueda
+resolver varias con un comando:
+
+| Acción | Qué significa | Qué observarás en la práctica |
 | --- | --- | --- |
-| Intérprete | Programa que ejecuta Python | El ejecutable indicado por sys.executable |
-| Biblioteca estándar | Funcionalidad incluida con Python | csv, pathlib, sys |
-| Biblioteca externa | Funcionalidad instalada aparte | tabulate, pandas |
-| Paquete distribuido | Software descargado e instalado por el gestor | tabulate |
-| Dependencia directa | Software que tu proyecto solicita | tabulate para mostrar una tabla |
-| Dependencia transitiva | Software requerido por otra dependencia | Una biblioteca instalada para satisfacer otra |
-| Versión | Edición concreta de un paquete | tabulate==0.9.0 |
+| Crear o preparar | Disponer del intérprete y del espacio de paquetes | Un entorno con nombre o carpeta identificable |
+| Seleccionar para ejecutar | Usar el Python de ese entorno | La ruta del ejecutable que ejecuta el programa |
+| Instalar | Añadir un paquete al entorno elegido | El gestor informa qué versión está disponible allí |
+| Importar | Pedir desde el código la funcionalidad que utilizará | El Python elegido puede cargarla |
+| Comprobar | Contrastar entorno, importación y resultado | Ruta, versión y tabla esperadas |
 
-## 2. Qué es pip y qué cambia con uv
+**Crear se hace una vez; seleccionar se repite al retomar.** Abrir otra terminal
+no borra el entorno. Sin embargo, esa terminal puede seleccionar un Python
+diferente. Antes de ejecutar, comprueba cuál estás usando.
 
-### pip: instalar paquetes para un Python concreto
+### Activar es una forma de seleccionar
 
-pip es el instalador habitual de paquetes Python. Busca el paquete en un índice,
-como PyPI, obtiene una versión compatible e instala también las dependencias
-que necesita. PyPI es el catálogo; pip es la herramienta que consulta e instala.
+**Activar** prepara la sesión actual del shell para que comandos como `python`
+utilicen el entorno. No cambia el código ni instala bibliotecas. La activación
+no tiene que mantenerse al cerrar la terminal.
 
-```text
-# Consulta el pip asociado al Python elegido
-python -m pip --version
-```
+También puedes indicar directamente la ruta del ejecutable o utilizar un comando
+que ejecute dentro del proyecto. En Conda activaremos el entorno, con venv usaremos
+su ejecutable y con uv utilizaremos `uv run`. Los comandos completos están en
+los recorridos; todavía no hace falta ejecutarlos.
 
-La forma `python -m pip` indica explícitamente qué intérprete recibirá la
-instalación. La salida muestra la versión de pip y dónde está instalado.
-pip permite instalar, consultar, actualizar y retirar paquetes, pero no crea
-el entorno ni descarga otra versión del intérprete por sí solo.
+### Cómo reconocer el intérprete
 
-### uv: añadir la gestión del proyecto
-
-uv es una herramienta independiente que puede gestionar Python, crear entornos
-y resolver dependencias. En su flujo de proyectos mantiene los requisitos en
-`pyproject.toml` y la resolución en `uv.lock`.
-
-| Acción | venv + pip | uv, flujo de proyectos |
-| --- | --- | --- |
-| Preparar el entorno | Lo creas con venv | uv lo prepara para el proyecto |
-| Agregar una biblioteca | pip la instala; tú registras el requisito | uv add la declara y prepara el entorno |
-| Reconstruir | Creas el entorno e instalas un archivo de requisitos | uv sync utiliza configuración y lockfile |
-| Ejecutar | Seleccionas el Python del entorno | uv run selecciona el entorno del proyecto |
-
-uv también tiene comandos `uv pip` para flujos parecidos a pip. **No son el
-programa pip**, ni cada comando equivale a la gestión completa de un proyecto.
-En nuestro recorrido de uv utilizaremos `add`, `sync` y `run`; no necesitas
-combinar las dos interfaces para aprender la base.
-
-Conda cubre otra combinación de responsabilidades: administra entornos, Python
-y paquetes de sus canales, incluidos componentes binarios. Lo compararemos
-con las otras opciones después de comprender el aislamiento.
-
-## 3. Cómo funciona un entorno y para qué sirve
-
-Un análisis puede necesitar una versión de una biblioteca y otro una diferente.
-Si comparten una instalación global, actualizar para uno puede afectar al otro.
-Un entorno por proyecto separa sus paquetes y permite identificar el conjunto usado.
+Una vez que el recorrido haya seleccionado su Python, consultarás:
 
 ```text
-Proyecto A → entorno A → intérprete y paquetes para A
-Proyecto B → entorno B → intérprete y paquetes para B
+python -c "import sys; print(sys.executable)"
 ```
 
-### Cómo prepara el entorno cada herramienta
+Lectura del comando: `-c` pide a Python ejecutar el texto entre comillas;
+`import sys` carga una parte de su biblioteca estándar, y `print(sys.executable)`
+muestra la ruta del ejecutable actual. No instala paquetes.
+Con una ruta directa o con uv cambia el comienzo del comando; la consulta
+entre comillas es la misma.
 
-**Con venv:**
-
-- Empiezas con una instalación de Python que ya existe en tu computadora.
-- venv crea un entorno basado en ese Python, con su propio lugar para instalar
-  paquetes. Ese directorio suele llamarse `site-packages`.
-- Después utilizas pip para instalar las bibliotecas dentro de ese entorno.
-- venv no descarga otra versión de Python: debes elegir una instalación disponible.
-
-**Con Conda:**
-
-- Puedes crear un entorno indicando qué versión de Python quieres utilizar.
-- Conda instala y administra ese intérprete junto con los paquetes del entorno.
-- También puede instalar componentes binarios: bibliotecas ya compiladas que
-  algunos paquetes necesitan, además del código Python.
-
-**Con uv:**
-
-- Defines los requisitos del proyecto y uv prepara su entorno.
-- Puede obtener una versión de Python si necesita una que no está disponible.
-- Instala las dependencias y registra su resolución en un lockfile, para poder
-  preparar ese conjunto de paquetes nuevamente.
-
-Los tres caminos permiten separar los paquetes de un proyecto. La diferencia
-es qué partes administra cada herramienta y qué necesitas preparar por separado.
-
-### Ventajas y límites
-
-- **Aislamiento:** instalar en un entorno no cambia los paquetes del otro.
-- **Claridad:** puedes consultar qué Python y paquetes ejecutan la práctica.
-- **Reconstrucción:** guardas requisitos y regeneras el entorno en otro equipo.
-- **Límites:** ocupa espacio y requiere mantenimiento. No es una máquina virtual
-  ni una barrera de seguridad; no protege tus archivos de un programa ejecutado.
-
-El entorno por sí solo tampoco garantiza resultados idénticos: cuentan los datos,
-la plataforma y las versiones documentadas. No crearemos un entorno por lección;
-el elegido puede acompañarte en DS Track. La demostración de uv usa un proyecto
-aparte para no modificar las dependencias del repositorio compartido.
-
-## 4. Crear, activar y comprobar un entorno
-
-Activar cambia la selección de comandos de **esa sesión del shell**, para que
-python y otras herramientas resuelvan al entorno. No mueve tu código ni copia
-paquetes entre instalaciones. Una terminal nueva puede requerir otra activación.
-
-Puedes usar directamente el ejecutable de venv sin activarlo o ejecutar con
-uv run. En Conda activar también prepara variables que pueden requerir sus bibliotecas.
+Ejemplos ilustrativos de salida, no rutas que debas copiar:
 
 ```text
-# Consulta el ejecutable que está usando Python
-python -c "import sys; print(sys.executable)"
+Windows: C:\practicas\ds_track\.venv-practice\Scripts\python.exe
+Linux/macOS: /home/estudiante/ds_track/.venv-practice/bin/python
 ```
 
-### Crear no es lo mismo que activar
+En Windows los ejecutables de venv suelen estar en `Scripts`; en Linux/macOS,
+en `bin`. El recorrido Conda mostrará la ubicación de su entorno `ds-track`;
+el de uv, la `.venv` del mini proyecto. Compara la ruta con la ubicación del
+entorno que preparaste, no solo con el nombre que aparece en la terminal.
 
-Crear genera o prepara los archivos del entorno. Activar elige sus comandos
-para la sesión actual. Creas una vez y vuelves a activar cuando lo necesitas.
-Los siguientes bloques son referencias: ejecuta solo el camino que elegiste,
-no todos los entornos. Evita recrear una carpeta o nombre que ya existe.
+> **Predice:** si instalas tabulate para el Python del entorno A y ejecutas
+> con el del entorno B, ¿puedes asegurar que podrá importarlo?
 
-### Windows — PowerShell, venv
+<details>
+<summary>Ver explicación</summary>
 
-Desde la raíz de `ds_track`, con Python disponible:
+No. La instalación en A no instala el paquete en B. B podría tener su propia
+instalación o no tenerla. Por eso comprobamos el intérprete, la versión importada
+y el resultado, en lugar de concluir que «ya está instalado en la computadora».
 
-```powershell
-# Crea el entorno de práctica una sola vez
-python -m venv .venv-practice
-# Actívalo en esta terminal
-.\.venv-practice\Scripts\Activate.ps1
-# Comprueba qué ejecutable seleccionaste
-python -c "import sys; print(sys.executable)"
-# Sale del entorno cuando termines
-deactivate
-```
+</details>
 
-Si PowerShell bloquea Activate.ps1, no necesitas cambiar políticas: usa
-`.\.venv-practice\Scripts\python.exe` directamente, como en el recorrido pip.
+## 5. Conservar los requisitos para reconstruir
 
-### Windows — CMD o Anaconda Prompt, venv
+Al compartir un script que utiliza una biblioteca externa, otra persona necesita
+el código y una indicación de qué software preparar. Guardamos esa indicación
+en **archivos de configuración**: texto que las herramientas pueden leer para
+preparar el entorno. Documentamos también la versión de Python.
 
-```bat
-REM Crea y activa el entorno
-python -m venv .venv-practice
-.venv-practice\Scripts\activate.bat
-REM Comprueba y después sal
-python -c "import sys; print(sys.executable)"
-deactivate
-```
-
-### Linux/macOS — Bash/Zsh, venv
-
-```bash
-# Crea con el Python instalado
-python3 -m venv .venv-practice
-# Carga la activación en el shell actual
-source .venv-practice/bin/activate
-# Después de activar, python pertenece al entorno
-python -c "import sys; print(sys.executable)"
-# Sale de la activación
-deactivate
-```
-
-Windows guarda estos ejecutables y scripts en `Scripts`; Unix utiliza `bin`.
-La activación también depende del shell: no copies Activate.ps1 en Bash ni
-uses source en CMD. Estas rutas son para entornos creados en el sistema indicado.
-
-### Conda — mismo comando, shell preparado
+Un **requisito** expresa qué necesita el proyecto, por ejemplo una biblioteca y
+su versión. La **resolución** es la selección de versiones compatibles para esos
+requisitos y sus dependencias. Un **lockfile** conserva una resolución; su alcance
+depende de la herramienta y no sustituye los datos ni los requisitos del sistema.
+En 05B leerás los archivos concretos de tu camino.
 
 ```text
-# Crea una sola vez; revisa y confirma la instalación
-conda create --name ds-track python=3.12 pip
-# Activa en un shell donde Conda esté integrado
-conda activate ds-track
-python -c "import sys; print(sys.executable)"
-# Vuelve al entorno anterior
-conda deactivate
+Código + datos + configuración revisada
+        ↓ preparar el entorno e instalar lo declarado
+Ejecutar y comprobar en la nueva ubicación
 ```
 
-Funciona en PowerShell, CMD y Bash/Zsh cuando Conda está configurado para ese
-shell. Si no lo está, usa primero el acceso de Anaconda que ya funciona y
-consulta el [recorrido Conda](conda.md). No actives además un venv sobre él.
+Compartimos esos archivos en lugar de copiar la carpeta completa del entorno,
+que puede contener rutas y componentes ligados al equipo original.
+No necesitas memorizar todavía los formatos. Antes de elegir una herramienta,
+lo esencial es poder explicar por qué guardar el script por sí solo puede ser
+insuficiente.
 
-### uv — ejecución sin activación y activación opcional
-
-Entra al mini proyecto que creaste siguiendo el [recorrido uv](uv.md):
-
-```text
-# Prepara el entorno desde los archivos de ese proyecto
-uv sync --locked
-# Ejecuta directamente en él, sin activación
-uv run --locked python -c "import sys; print(sys.executable)"
-```
-
-Si quieres ejecutar `python` sin el prefijo `uv run`, puedes activar su `.venv`
-ya preparado. Elige únicamente el bloque de tu shell:
-
-**PowerShell en Windows:**
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-python -c "import sys; print(sys.executable)"
-deactivate
-```
-
-**CMD en Windows:**
-
-```bat
-.venv\Scripts\activate.bat
-python -c "import sys; print(sys.executable)"
-deactivate
-```
-
-**Bash/Zsh en Linux/macOS:**
-
-```bash
-source .venv/bin/activate
-python -c "import sys; print(sys.executable)"
-deactivate
-```
-
-Para el recorrido mantendremos `uv run`. Activar no instala paquetes nuevos
-ni sincroniza la configuración: esas son acciones diferentes.
-
-> **Para conversar:** ¿por qué «ya instalé la biblioteca» no basta para explicar
-> que el programa pueda importarla?
-
-## 5. Qué aporta cada camino
-
-### Conda
-
-**Ventajas:** encaja con Anaconda y permite gestionar Python y componentes
-binarios desde una herramienta. **Limitaciones:** disponibilidad según canales
-y plataformas, espacio de instalación y resolución de dependencias. Mezclar
-pip requiere cuidado y registrar ambas fuentes.
-
-### venv + pip
-
-**Ventajas:** herramientas estándar, ampliamente documentadas y explícitas sobre
-qué intérprete recibe cada instalación. **Limitaciones:** administras Python,
-el entorno y los requisitos por separado; pip no gestiona bibliotecas del sistema.
-pip freeze describe lo instalado, pero no es un lockfile multiplataforma.
-
-### uv
-
-**Ventajas:** registra requisitos en pyproject.toml y resolución en uv.lock,
-automatiza el entorno y está diseñado para realizar esas tareas rápidamente.
-**Limitaciones:** requiere aprender otra herramienta y sus convenciones; no
-sustituye la gestión general de componentes binarios de Conda o del sistema.
-Una sincronización exacta puede retirar paquetes que no declaraste.
-
-| Pregunta | Conda | venv + pip | uv (proyectos) |
-| --- | --- | --- | --- |
-| ¿Crea entornos? | Sí | venv | Sí |
-| ¿Gestiona Python? | Sí | Usa una instalación existente | Sí |
-| ¿De dónde obtiene paquetes? | Canales Conda | Índices como PyPI | Índices como PyPI |
-| ¿Qué compartes aquí? | environment.yml revisado | requirements.txt y versión de Python | pyproject.toml y uv.lock |
-| ¿Activas en este recorrido? | Sí | No, usamos rutas directas | No, usamos uv run |
-
-Estos archivos no son equivalentes: un YAML con requisitos o una lista de
-paquetes no fija automáticamente toda la resolución para todas las plataformas.
+<a id="5-qué-aporta-cada-camino"></a>
 
 ## 6. Elegir tu recorrido
 
-- **Ya usas Anaconda:** [Conda](conda.md).
-- **Quieres las herramientas estándar:** [venv + pip](venv-pip.md).
-- **Quieres configuración y lockfile integrados:** [uv](uv.md).
+Ahora las herramientas responden a necesidades que ya conoces. Completa un solo
+camino en las partes A y B; no necesitas dominar los tres para continuar.
 
-Cada documento separa shells, explica instalación y consulta de paquetes, e
-incluye una parte A para el entorno y una parte B con tabulate 0.9.0. En esta
-sesión completa solo A; la instalación se estudia en 05B. DS Track requiere Python 3.11 o posterior.
-No completes los tres ni mezcles gestores en el mismo entorno. Evita instalar
-los ejercicios en base o usar --user dentro de un entorno.
+| Camino | Qué administra aquí | Cuándo elegirlo |
+| --- | --- | --- |
+| [Conda](conda.md) | Entornos, intérprete de Python y paquetes de sus canales | Si ya utilizas Anaconda, es el comienzo recomendado |
+| [venv + pip](venv-pip.md) | venv crea el entorno a partir de un Python disponible; pip instala paquetes para él | Si tienes Python y quieres practicar con sus herramientas estándar |
+| [uv](uv.md) | Puede obtener Python, preparar el entorno y gestionar requisitos y lockfile | Si quieres trabajar con configuración y resolución integradas |
 
-No copies carpetas de entornos entre computadoras: reconstruye desde sus archivos.
-Antes de compartir configuración, revisa rutas personales y credenciales.
+**Si tienes dudas, elige con quien te acompaña según lo que ya esté instalado.**
+Para esta lección los tres caminos permiten comprobar lo mismo: el Python elegido
+ejecuta el primer script y después importa tabulate para presentar una tabla.
+DS Track requiere Python 3.11 o posterior; Conda y uv usarán 3.12 en esta práctica.
+
+<a id="2-qué-es-pip-y-qué-cambia-con-uv"></a>
+
+<details>
+<summary>Comparación de herramientas para consultar después de elegir</summary>
+
+- **Conda** obtiene paquetes de canales y puede administrar componentes binarios
+  que necesitan algunas bibliotecas. Su disponibilidad depende de la plataforma
+  y los canales. En este ejercicio usaremos Conda para instalar tabulate.
+- **venv** utiliza una instalación de Python existente; no descarga otra versión.
+  **pip** instala paquetes desde índices como PyPI. PyPI es el catálogo;
+  pip es la herramienta que lo consulta. `python -m pip` ejecuta el pip asociado
+  a ese Python. pip no crea el entorno ni instala Python por sí solo.
+- **uv** gestiona aquí un proyecto con `pyproject.toml` y `uv.lock`. Usaremos
+  `add`, `sync` y `run`. También ofrece una interfaz `uv pip`, pero no es el
+  programa pip ni la necesitamos para este recorrido. Una sincronización exacta
+  puede retirar paquetes que no estén declarados.
+
+Ninguna opción garantiza por sí sola que cualquier proyecto funcione en cualquier
+plataforma. Cada recorrido explica cómo conservar sus requisitos y sus límites.
+
+</details>
+
+Abre tu recorrido y completa **solo la parte A** y contrástala con la sesión A del lab.
+En 05B instalarás la biblioteca. Conserva el mismo camino para ambas partes y
+comprueba entornos existentes antes de crear otro. Evita mezclar gestores en el
+mismo entorno o instalar los ejercicios en el Python global o en `base` de Conda.
 
 ## 7. Gestionar la elección del entorno en VS Code
+
+<details>
+<summary>Apoyo opcional: seleccionar en VS Code el entorno que ya preparaste</summary>
 
 ### Seleccionar el intérprete existente
 
@@ -359,7 +322,7 @@ aunque el editor permita acciones de instalación.
 2. La extensión normalmente intenta activarlo en terminales nuevas, según su
    configuración y el shell. No supongas que ocurrió: compruébalo.
 3. Ejecuta `python -c "import sys; print(sys.executable)"` y compara la ruta con
-   el intérprete seleccionado. Si falta la activación, utiliza el bloque de tu shell.
+   el intérprete seleccionado. Si no coincide, consulta el recorrido elegido y utiliza su forma de ejecución.
 4. La comprobación de bibliotecas se realizará en la parte 05B.
 
 Seleccionar el intérprete del editor no cambia automáticamente todas las
@@ -369,6 +332,8 @@ seleccionar un intérprete en VS Code no cambia ese proyecto.
 
 En la próxima lección elegiremos además el kernel de un notebook. Consulta la
 [guía de VS Code](../../../docs/vscode-guide.md) para sus paneles y atajos.
+
+</details>
 
 <a id="práctica-y-siguiente-paso"></a>
 
@@ -390,6 +355,19 @@ Guarda evidencia y dudas en tu copia de la
 [bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
 o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
 Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
+
+## Glosario
+
+| Término | En esta lección |
+| --- | --- |
+| Intérprete | Ejecutable que procesa el programa Python |
+| Biblioteca y paquete distribuido | Funcionalidad reutilizable y software que el gestor instala para disponer de ella |
+| Dependencia | Software que el proyecto necesita para funcionar |
+| Versión | Edición concreta de Python o de un paquete |
+| Entorno | Intérprete y espacio de paquetes seleccionados para un trabajo |
+| Gestor | Herramienta que prepara o administra entornos, intérpretes o paquetes |
+| Activación | Preparación del shell actual para utilizar los comandos del entorno |
+| Configuración y lockfile | Declaración de requisitos y archivo que conserva una resolución de dependencias |
 
 <a id="referencias-oficiales"></a>
 

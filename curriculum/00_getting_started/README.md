@@ -73,13 +73,16 @@ estudiar con una copia descargada del material.
 
 ### 00.05 — Entornos y dependencias
 
-- Parte A: preparar y reconocer el Python del entorno. Parte B: instalar y registrar dependencias.
+- Parte A: comprender el motivo y los conceptos comunes antes de elegir un gestor;
+  después preparar y reconocer el Python del entorno. Parte B: instalar y registrar dependencias.
 - Elegir un único recorrido Conda, venv/pip o uv; no mezclar gestores sobre un mismo entorno.
 
 ### 00.06 — Primer notebook
 
 - Celdas, kernel, entorno y diferencia entre explorar y ejecutar un script.
-- Reiniciar y ejecutar todo; guardar el archivo no equivale a reproducir sus resultados.
+- Copia personal, predicciones y glosario; distinguir archivo, memoria y salidas.
+- Reiniciar y ejecutar todo, conservar la comprobación y retomar; guardar el archivo
+  no equivale a reproducir sus resultados.
 
 </details>
 

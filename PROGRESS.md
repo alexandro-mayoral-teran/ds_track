@@ -12,9 +12,10 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente trabajo educativo:** continuar la depuración del módulo 00 con
-  [00.05 — Entornos y dependencias](curriculum/00_getting_started/05_environment/README.md)
-  y su lab; después revisar 00.06. La práctica de cierre y la
+- **Siguiente trabajo educativo:** revisar con el usuario la lectura y práctica
+  del módulo 00 tras los ajustes de 00.05 y
+  [00.06 — Tu primer notebook](curriculum/00_getting_started/06_first_notebook/README.md),
+  y acordar la siguiente sección por depurar. La práctica de cierre y la
   [depuración transversal acordada](docs/reproducible-projects-closure.md#trabajo-posterior-depurar-y-observar)
   siguen como trabajo posterior. No hay módulo 15 definido.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
@@ -23,8 +24,8 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   del [cierre integrado de 14](docs/reproducible-projects-closure.md).
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
 - **Último desarrollo educativo:** 2026-10-29, 14.09 — Revisión final y defensa: reconstrucción, revisión por casos, decisiones y acta; base de lecciones/labs disponible.
-- **Última revisión documental:** 2026-10-29, depuración acompañada de 00.01–00.04,
-  glosarios, ejemplos y labs; cierre de sesión con reanudación en 00.05.
+- **Última revisión documental:** 2026-10-30, ajustes de 00.05 y 00.06 con sus labs:
+  motivo/conceptos comunes, glosarios y comprobaciones; práctica observada pendiente.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -39,6 +40,56 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Depuración 00.06 — 2026-10-30, notebook, memoria y glosario:**
+
+Lección parte de explorar y explicar un cálculo; distingue documento, editor,
+kernel, ipykernel y entorno antes de preparar soporte. Copia personal explícita,
+predicciones y tabla de código visible/memoria/salida; comparación de editar,
+ejecutar, guardar, limpiar y reiniciar. Reiniciar conserva ediciones; Run All
+sin reinicio no demuestra memoria limpia. Reanudación, glosario de términos y
+lab alineados; corregida continuidad a Python fundamental disponible y retirada
+estimación fija. Notebook conserva código, metadatos y celdas sin salidas; se
+actualizan solo explicaciones Markdown. Referencias oficiales VS Code/uv consultadas.
+
+Verificación: formato y 5749 enlaces locales de 392 Markdown sin incidencias antes
+de esta entrada. Notebook validado con nbformat, código contrastado con HEAD.
+Procesos nuevos Python 3.12.12 del entorno local existente comprueban 120/200,
+lab 160/200/150 MXN, estado 120/120/160 y NameError sin entradas. Intento de
+ejecución nbclient no completó arranque de kernel y se interrumpió; no se acredita
+sesión Jupyter reiniciada ni operación manual en VS Code. Sin instalaciones ni
+cambios de dependencias; portal y cambios locales previos conservados. Retomar
+revisión acompañada del módulo y acordar siguiente depuración, sin inferir
+aprendizaje del estudiante ni auditoría completa del recorrido.
+
+**Revisión para publicación — 2026-10-30, 00.05 y 00.06:**
+Índice del módulo 00 y cobertura documental alineados con los conceptos comunes,
+copia personal, predicciones, glosarios y reanudación. Versión preparada de
+13 archivos, sin cambios previos de portal ni especificaciones privadas:
+5753 enlaces locales de 394 Markdown sin incidencias; notebook válido y sin
+salidas guardadas; formato comprobado. Se conservan los límites de ejecución
+registrados arriba. ROADMAP y guías generales mantienen su alcance vigente.
+
+**Depuración 00.05 — 2026-10-30, conceptos comunes antes del recorrido:**
+
+05A parte del problema de dependencias compartidas y desarrolla intérprete,
+biblioteca/paquete, dependencia/versión, entorno y relación con código/datos;
+crear, seleccionar/activar, instalar/importar, comprobar y reconstruir antes
+de elegir Conda, venv/pip o uv. Comparación detallada, dependencias transitivas
+y apoyo VS Code quedan como consulta opcional. Se mantienen A/B y un solo camino.
+05B incorpora predicción, tabla esperada y diagnóstico de ModuleNotFoundError;
+glosarios y lab alineados, sin estimación fija de duración. venv explicita
+ubicación, versión/ruta de Python y reanudación; export Conda pasa a carpeta
+de práctica local, con bloques por shell. No se modifican scripts ni requisitos.
+
+Verificación: fuentes oficiales Python Packaging, Conda, uv y VS Code consultadas;
+5743 enlaces locales de 392 Markdown sin incidencias antes de esta entrada.
+Python 3.12.12/tabulate 0.9.0 existentes en venv de práctica y mini proyecto uv:
+rutas e importación comprobadas, tablas idénticas a 05B y primer script con
+120 MXN. Sin instalaciones ni reconstrucciones nuevas; export Conda, Bash/macOS/
+Linux e interfaz manual del IDE no ejecutados en esta ronda. Material disponible
+no acredita práctica del estudiante. Cambios locales previos y portal conservados;
+no se actualiza el sitio por este cambio educativo. Retomar revisión de 00.06.
 
 **Cierre de sesión — 2026-10-29, módulo 00:**
 

@@ -38,7 +38,7 @@ prácticas y estos documentos definen cómo organizar y revisar ese material.
 | --- | --- |
 | Índices de módulo 00–14 | Estructura común aplicada para orientar preparación, orden y salida |
 | Lecciones 00–14 | Patrón de lección y apoyos aplicados; el alcance concreto está en cada índice |
-| Labs | 00.01 y módulos 12–14 con estructura común; los demás conservan consignas y navegación |
+| Labs | 00.01 y módulos 12–14 con estructura común; 00.05–00.06 depurados con predicciones, comprobación y reanudación; los demás conservan consignas y navegación |
 | Portal local | Módulo 00 y sesión 02.01 integrados; otros módulos ofrecen sus índices |
 
 El estado de las plantillas describe presentación, no aprendizaje del estudiante.

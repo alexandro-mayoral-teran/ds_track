@@ -22,7 +22,7 @@ importación y registro de dependencias.
 
 ## Antes de empezar
 
-Lee la [teoría común](README.md). Completa este camino si eliges configuración
+Lee los [conceptos comunes de 05A](environment.md). Completa este camino si eliges configuración
 y lockfile integrados; no necesitas practicar también Conda o venv + pip.
 
 ## Qué vas a aprender
