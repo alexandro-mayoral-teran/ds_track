@@ -772,6 +772,31 @@ ni interpreta un archivo binario como BAM. El tamaño que podrás procesar, el
 tiempo y la memoria necesarios dependen del programa, la operación y el equipo;
 usar terminal no garantiza por sí solo bajo consumo de memoria.
 
+### Un vínculo con las macros: ejecutar y programar tareas
+
+Si ya usas macros de Excel, conoces la idea de guardar instrucciones para
+repetir un trabajo. Las [macros en VBA](https://learn.microsoft.com/en-us/office/dev/scripts/resources/vba-differences)
+se ejecutan dentro de aplicaciones de escritorio como Excel. Un archivo `.vbs`
+contiene **VBScript**, otro lenguaje: no basta renombrar una macro para convertirla.
+En Windows, si ese componente está disponible, un programa como
+[`cscript`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cscript)
+puede ejecutar el archivo desde la línea de comandos.
+
+Por ejemplo, un script podría recorrer una carpeta de entregas diarias,
+comprobar qué CSV llegaron y escribir una bitácora con archivos faltantes.
+El [Programador de tareas de Windows](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/schtasks-create)
+permite iniciar programas o scripts cada día o a intervalos, como cada hora.
+El script define **qué hacer**; la tarea programada define **cuándo ejecutarlo**.
+Para repetirlo correctamente hay que indicar el programa, las rutas, la cuenta
+que lo ejecutará y cómo revisar su resultado.
+
+**Contexto actual:** Microsoft ha declarado
+[VBScript en desuso y previsto su retirada](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features).
+Sirve reconocerlo si ya existe en tu trabajo; para nuevas automatizaciones
+puedes valorar PowerShell o Python según el entorno. Programar una ejecución
+no depende de usar `.vbs`. Aquí solo presentamos la posibilidad: no necesitas
+crear scripts ni tareas programadas en tu equipo para completar la lección.
+
 ### Otra puerta: buscar patrones con expresiones regulares
 
 Una **expresión regular**, o **regex**, describe un patrón de texto para buscar
@@ -791,6 +816,27 @@ segunda: `^` indica el comienzo y `ERROR` el texto que debe aparecer allí.
 La [introducción de Microsoft a regex](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.6)
 explica estos patrones. No necesitas aprender su sintaxis ahora. El `*.csv` que
 ya usaste busca nombres mediante un comodín; no es la misma sintaxis que una regex.
+
+#### Ejemplos cercanos: RFC, CURP, folios y claves
+
+| Caso | Qué puede aportar una regex | Qué requiere otra comprobación |
+| --- | --- | --- |
+| RFC: Registro Federal de Contribuyentes | Detectar longitudes o posiciones de caracteres que no cumplen el formato esperado: 12 caracteres para persona moral y 13 para persona física | La forma no confirma su inscripción; el [SAT ofrece una validación contra el padrón](https://wwwmat.sat.gob.mx/aplicacion/79615/valida-en-linea-rfc%C2%B4s-uno-a-uno-o-de-manera-masiva-hasta-5-mil-registros) |
+| CURP: Clave Única de Registro de Población | Revisar parte de la estructura de 18 caracteres descrita en el [instructivo de SEGOB](https://sidof.segob.gob.mx/notas/docFuente/5526717) | Las fechas, catálogos y dígito verificador requieren reglas adicionales; coincidir con un patrón no confirma asignación ni identidad |
+| Folios o claves internas | Seleccionar claves con cierto prefijo y forma, o extraerlas de mensajes | Comprobar que existen, no están duplicadas y corresponden al expediente correcto |
+
+Por ejemplo, para folios **ficticios** con forma `CR-2026-0042`, el patrón
+`^CR-[0-9]{4}-[0-9]{4}$` pide `CR-`, cuatro dígitos, otro guion y cuatro dígitos,
+de principio a fin. `CR-2026-0042` cumple; `CR-26-0042` no. Es una regla propia
+de este ejemplo, no un validador de RFC o CURP; tampoco confirma que el año o
+el folio existan en un sistema.
+
+En archivos grandes, buscar patrones puede reducir el texto que necesitas
+inspeccionar sin abrirlo completo en un editor. El tiempo depende del archivo,
+el patrón y la herramienta: no toda regex será rápida. Si el dato está dentro
+de un CSV, interpreta primero sus campos con un lector adecuado; buscar texto
+en una línea no garantiza que encontraste la columna correcta. Antes de usar
+un patrón en un lote, contrasta ejemplos que deben coincidir y otros que no.
 
 > **Para imaginar:** si recibieras cien archivos, ¿qué revisión pequeña querrías
 > repetir en todos y cómo comprobarías que el resultado es correcto? Estos casos
@@ -844,6 +890,8 @@ Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
 | Shell | Programa que interpreta comandos; aquí PowerShell, Bash o Zsh |
 | Comando | Instrucción que pides ejecutar al shell |
 | Script | Archivo con una secuencia de instrucciones que puedes ejecutar de nuevo |
+| Macro | Secuencia de instrucciones para repetir tareas dentro de una aplicación; aquí, macros de Excel en VBA |
+| Tarea programada | Configuración que indica cuándo iniciar un programa o script y con qué cuenta |
 | Log | Registro de mensajes sobre lo ocurrido durante una ejecución |
 | Expresión regular (regex) | Patrón para buscar coincidencias en texto, como líneas que empiezan de cierta forma |
 | Argumento | Dato que recibe un comando; por ejemplo, la ruta en `Test-Path README.md` |

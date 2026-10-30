@@ -36,6 +36,20 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.02 — 2026-10-29, macros y patrones cercanos al trabajo:**
+Puente entre macros VBA, scripts .vbs/Windows Script Host y Programador de
+tareas, sin confundir lenguajes ni crear tareas. VBScript en desuso documentado;
+PowerShell/Python como alternativas a valorar para nuevas automatizaciones.
+Regex con casos RFC/CURP/folios: formato separado de registro, reglas e identidad.
+Folio ficticio con dos casos y límites de rendimiento/lectura CSV explícitos.
+Fuentes primarias Microsoft, SAT y SEGOB consultadas. Glosario de macro/tarea
+programada; notebook, muestras y prácticas obligatorias conservados.
+Portal y cambios locales previos fuera del alcance educativo.
+Verificación: 5726 enlaces locales sin incidencias y formato correcto; patrón
+de folio contrastado con un caso aceptado y tres rechazados. HTML a 1280/390
+sin desbordes ni IDs repetidos, lectura móvil revisada. No se ejecutaron macros,
+archivos .vbs, tareas programadas ni consultas de identificadores reales.
+
 **Depuración 00.02 — 2026-10-29, aplicaciones y curiosidad por regex:**
 Sección breve después del diagnóstico de errores: scripts y ejemplos de
 genómica (SeqKit/SAMtools), logs y datos climáticos (NCO), con fuentes primarias.
