@@ -36,6 +36,23 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.03 — 2026-10-29, bases de Git y dos recorridos:**
+Problema de versiones, usos en scripts/SQL/documentación y límite de comparación
+de Excel. Preparación orientada a fuentes oficiales; descargar DS Track como
+ZIP separado de la disponibilidad de Git/GitHub. Perfil por clone y alternativa
+local en carpeta nueva con init, identidad local y dos commits sin remoto.
+Ejemplo de frase/diff y estados al guardar, preparar y registrar; cambio después
+de add explicado en desplegable. Glosario contextual y lab alineados por ruta.
+Evidencia personal dirigida a bitácora propia, no al PROGRESS editorial.
+Fuentes Git consultadas; sin cambiar entornos ni instalar Git para la revisión.
+Portal y cambios locales previos ajenos fuera del alcance.
+Índice del módulo alineado con ambas rutas. Verificación: recorrido local real
+en carpeta aislada de output, dos commits sin remoto y estados/diffs contrastados,
+incluido cambio posterior a add; configuración global conservada. 5731 enlaces
+locales sin incidencias; HTML de lección/lab a 1280/390 sin desbordes ni IDs
+repetidos, variante local móvil revisada visualmente. No se instala Git ni se
+publica un perfil durante las pruebas; autenticación real del alumno pendiente.
+
 **Depuración 00.02 — 2026-10-29, ejecutar una macro desde un script:**
 Ejemplo conceptual de Excel de escritorio: abrir .xlsm, llamar macro existente
 con fecha/ruta como argumentos, revisar/guardar y cerrar recursos incluso ante

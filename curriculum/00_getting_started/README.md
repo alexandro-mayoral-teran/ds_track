@@ -37,7 +37,7 @@ Puedes estudiar con una copia descargada y practicar Git si eliges ese recorrido
 | --- | --- | --- |
 | **00.01** · [Markdown y tu perfil](01_github_profile/README.md) | [Lab 00.01](../../labs/00_getting_started/01_github_profile/README.md) | Presentación legible; Git y GitHub distinguidos |
 | **00.02** · [Terminal y rutas](02_terminal_paths/README.md) | [Lab 00.02](../../labs/00_getting_started/02_terminal_paths/README.md) | Ubicación de archivos y comandos en el shell elegido |
-| **00.03** · [Git e historial](03_git_workflow/README.md) | [Lab 00.03](../../labs/00_getting_started/03_git_workflow/README.md) | Clonar, revisar cambios, guardar un commit y hacer push |
+| **00.03** · [Git e historial](03_git_workflow/README.md) | [Lab 00.03](../../labs/00_getting_started/03_git_workflow/README.md) | Revisar y registrar cambios; publicar el perfil o practicar solo localmente |
 | **00.04** · [Primer script Python](04_first_script/README.md) | [Lab 00.04](../../labs/00_getting_started/04_first_script/README.md) | Modificación de un cálculo y contraste del resultado |
 | **00.05** · [Entorno y dependencias: A/B](05_environment/README.md) | [Lab 00.05](../../labs/00_getting_started/05_environment/README.md) | Intérprete correcto y dependencias registradas |
 | **00.06** · [Primer notebook](06_first_notebook/README.md) | [Lab 00.06](../../labs/00_getting_started/06_first_notebook/README.md) | Kernel elegido y ejecución desde una sesión limpia |
@@ -64,7 +64,7 @@ estudiar con una copia descargada del material.
 ### 00.03 — Git e historial
 
 - Identidad, clonación, diferencias, commits, historial, push y reanudación.
-- Práctica recomendada sobre una copia; ramas y conflictos son profundización.
+- Perfil clonado con publicación o repositorio nuevo local sin GitHub; ramas y conflictos son profundización.
 
 ### 00.04 — Primer script Python
 
