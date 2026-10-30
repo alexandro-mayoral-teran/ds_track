@@ -147,6 +147,9 @@ la resolución declarada. No se comparte la carpeta del entorno.
 
 ## Evidencia y reflexión
 
+Consulta el [glosario de 00.05](../../../curriculum/00_getting_started/05_environment/README.md#glosario)
+si necesitas recuperar un término al explicar tu práctica.
+
 Conserva tu elección y su motivo, la ruta de Python, la versión importada,
 el resultado y una copia revisada de la configuración. No subas carpetas de
 entornos ni rutas privadas. Las prácticas locales están excluidas de Git.

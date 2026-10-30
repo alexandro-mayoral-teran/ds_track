@@ -41,6 +41,13 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Glosario visible de 00.05 — 2026-10-30:**
+La entrada de la lección incorpora un glosario común de quince términos con
+acceso desde su cabecera. 05A/05B conservan sus glosarios específicos y añaden
+accesos; Conda, venv/pip y uv incluyen un apartado que enlaza las definiciones
+comunes, también recuperables desde el lab. Sin cambios de comandos, scripts,
+dependencias o portal. Enlaces y formato se comprueban antes de publicar.
+
 **Depuración 00.06 — 2026-10-30, notebook, memoria y glosario:**
 
 Lección parte de explorar y explicar un cálculo; distingue documento, editor,

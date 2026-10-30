@@ -13,7 +13,7 @@
 | **Necesitas** | Python 3.11 o posterior y el shell elegido |
 | **Evidencia** | Ruta de Python, tabla comprobada y requisitos revisados |
 
-[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Comprobar](#evidencia-y-criterio-de-salida)
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Glosario](#glosario) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 ## Propósito
 
@@ -180,6 +180,13 @@ Guarda evidencia y dudas en tu copia de la
 [bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
 o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
 Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
+
+## Glosario
+
+Consulta el [glosario común de 00.05](README.md#glosario) para recuperar
+intérprete, entorno, gestor, instalación, importación y reconstrucción.
+Las lecturas incluyen además los glosarios de [05A](environment.md#glosario)
+y [05B](dependencies.md#glosario), con los conceptos utilizados en ambas partes.
 
 ## Referencias
 

@@ -10,7 +10,7 @@
 | **Necesitas** | El primer script y las bases de terminal de 00.02; la elección del gestor viene al final |
 | **Evidencia** | Comprobación y nota personal de la sesión A |
 
-[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/05_environment/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Glosario](#glosario) · [Ir al lab](../../../labs/00_getting_started/05_environment/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 [← Entrada de 00.05](README.md) · [Sesión A](environment.md) · [Sesión B](dependencies.md)
 

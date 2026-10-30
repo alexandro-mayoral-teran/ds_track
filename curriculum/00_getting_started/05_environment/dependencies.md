@@ -10,7 +10,7 @@
 | **Necesitas** | Camino elegido en 00.05 y shell correspondiente |
 | **Evidencia** | Comprobación y nota personal de la sesión B |
 
-[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/05_environment/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Glosario](#glosario) · [Ir al lab](../../../labs/00_getting_started/05_environment/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 [← Entrada de 00.05](README.md) · [Sesión A](environment.md) · [Sesión B](dependencies.md)
 

@@ -10,7 +10,7 @@
 | **Necesitas** | Tu editor y shell de 00.02–00.04; elegirás una herramienta después de comprender la base común |
 | **Evidencia** | Ruta del intérprete, demostración y configuración revisada del camino elegido |
 
-[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Ir al lab](../../../labs/00_getting_started/05_environment/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
+[Preparación](#antes-de-empezar) · [Material de apoyo](#material-de-apoyo) · [Glosario](#glosario) · [Ir al lab](../../../labs/00_getting_started/05_environment/README.md) · [Comprobar](#evidencia-y-criterio-de-salida)
 
 ## Propósito
 
@@ -91,6 +91,34 @@ Guarda evidencia y dudas en tu copia de la
 [bitácora personal de 00](../../../templates/learning-session/bitacora-00.md)
 o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso.
 Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
+
+## Glosario
+
+Consulta estos términos cuando aparezcan en las lecturas o en tu recorrido.
+Las explicaciones y ejemplos se desarrollan en [05A](environment.md) y
+[05B](dependencies.md); no necesitas memorizar la tabla antes de comenzar.
+
+| Término | Significado en 00.05 |
+| --- | --- |
+| Intérprete | Programa que ejecuta las instrucciones Python; su ruta permite identificar cuál utilizas |
+| Biblioteca | Funcionalidad reutilizable; puede estar incluida con Python o instalarse aparte, como tabulate |
+| Paquete distribuido | Software que solicitas al gestor para instalarlo; aquí se llama tabulate |
+| Dependencia | Software que tu proyecto necesita para funcionar |
+| Versión | Edición concreta de Python o de un paquete; tabulate 0.9.0 es la usada en esta práctica |
+| Entorno | Intérprete y espacio de paquetes que utilizas para ejecutar un trabajo |
+| Gestor | Herramienta que prepara o administra entornos, intérpretes o paquetes |
+| Activar | Preparar la sesión del shell para utilizar los comandos del entorno |
+| Instalar | Añadir un paquete al entorno elegido mediante su gestor |
+| Importar | Solicitar desde el código una funcionalidad disponible para ese Python; no la descarga |
+| Requisito | Declaración del software necesario y, cuando corresponde, de su versión |
+| Configuración | Archivos de texto con información que las herramientas leen para preparar el proyecto o entorno |
+| Resolución | Selección de versiones compatibles con los requisitos y sus dependencias |
+| Lockfile | Archivo que conserva una resolución de dependencias, como uv.lock; no contiene una copia del entorno |
+| Reconstruir | Preparar de nuevo el entorno desde la configuración y comprobar la ejecución |
+
+Para recuperar más detalle, consulta los glosarios de
+[entornos y herramientas — 05A](environment.md#glosario) y de
+[instalación y requisitos — 05B](dependencies.md#glosario).
 
 ## Referencias
 
