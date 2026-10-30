@@ -36,6 +36,23 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.04 — 2026-10-29, primer script con recorrido comprobable:**
+Bloque de código completo e idéntico a first_summary.py, sin modificar el
+original. Propósito de repetir cálculos y conexión con macros; esquema
+entrada/cálculo/salida con tres cuadernos a 40 MXN. Copia personal fuera de
+DS Track, comandos desde su carpeta y mismo archivo en editor/terminal.
+Lectura guiada de NameError: última línea, ruta/línea e instrucción; fallo
+antes de print separado de salidas anteriores. Glosario contextual y lab
+alineados, incluido refuerzo Git sobre carpeta propia y archivo nuevo.
+Fuentes oficiales Python consultadas; sin paquetes ni entornos nuevos.
+Portal y cambios locales previos ajenos fuera del alcance.
+Verificación: bloque completo conciliado con el archivo original; ejecución
+en copia aislada con Python 3.12.12 de 120/200/100 MXN, NameError en línea 9
+sin salida nueva y recuperación tras corregir; precio 30 produce 120 MXN.
+Original intacto. 5742 enlaces locales sin incidencias; Mermaid renderizado
+a 1280/390 sin desbordes, disposición vertical para lectura móvil. Formato
+comprobado; no se acredita operación manual en IDE ni en otros sistemas.
+
 **Depuración 00.03 — 2026-10-29, áreas de Git como secuencia:**
 Diagrama por columnas/líneas de vida inspirado en la referencia del usuario,
 con SVG legible y fuente Mermaid editable. Separa copia/preparación/historial
