@@ -751,6 +751,52 @@ Vuelve a `Get-Location` o `pwd`, comprueba la ruta y lee el mensaje completo
 antes de cambiar comandos al azar. Las herramientas pueden mostrar resultados
 correctos aunque tu versión difiera de la del ejemplo.
 
+## Para despertar curiosidad: de tres ventas a archivos enormes
+
+Estos comandos pequeños pueden formar parte de trabajos mucho mayores. Un
+**script** guarda una secuencia de instrucciones para repetirla con otras
+entradas: localizar archivos, consultar su contenido y producir un resumen.
+Bien elegidas, las herramientas de línea de comandos permiten revisar archivos
+que sería poco práctico abrir completos en un editor.
+
+| Campo | Ejemplo de uso real |
+| --- | --- |
+| Genómica: secuencias de ADN o ARN | [SeqKit](https://bioinf.shenwei.me/seqkit/usage/#stats) resume cuántas secuencias contiene un archivo FASTA/FASTQ y sus longitudes; también permite seleccionar secuencias por identificador o patrón |
+| Genómica: ubicación de lecturas de ADN en una referencia | [SAMtools](https://www.htslib.org/doc/samtools-view.html) permite consultar alineamientos de una región; para acceder por región, el archivo BAM/CRAM debe estar ordenado por coordenadas e indexado |
+| Operación de sistemas | Buscar mensajes de error en archivos de registro o **logs**, que describen lo ocurrido durante una ejecución; [Select-String](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string) permite buscar patrones en archivos de texto desde PowerShell |
+| Clima y ambiente | [NCO](https://www.unidata.ucar.edu/news/netcdf-operators-nco-version-5.4.0) reúne programas de línea de comandos para seleccionar partes de datos científicos en formato netCDF y calcular resúmenes, como promedios |
+
+La terminal coordina esos programas; las herramientas especializadas entienden
+sus formatos. Buscar líneas con `grep` no sustituye a un lector de secuencias
+ni interpreta un archivo binario como BAM. El tamaño que podrás procesar, el
+tiempo y la memoria necesarios dependen del programa, la operación y el equipo;
+usar terminal no garantiza por sí solo bajo consumo de memoria.
+
+### Otra puerta: buscar patrones con expresiones regulares
+
+Una **expresión regular**, o **regex**, describe un patrón de texto para buscar
+coincidencias. Sirve, por ejemplo, para localizar ciertos mensajes de error,
+extraer identificadores o revisar si un texto tiene una forma esperada. Esa
+comprobación de forma no demuestra que el dato sea correcto.
+
+Imagina estas dos líneas de un log ficticio:
+
+```text
+ERROR: no se encontró el archivo
+INFO: se guardó el mensaje ERROR anterior
+```
+
+Al revisar cada línea, el patrón `^ERROR` coincide con la primera y no con la
+segunda: `^` indica el comienzo y `ERROR` el texto que debe aparecer allí.
+La [introducción de Microsoft a regex](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.6)
+explica estos patrones. No necesitas aprender su sintaxis ahora. El `*.csv` que
+ya usaste busca nombres mediante un comodín; no es la misma sintaxis que una regex.
+
+> **Para imaginar:** si recibieras cien archivos, ¿qué revisión pequeña querrías
+> repetir en todos y cómo comprobarías que el resultado es correcto? Estos casos
+> son una invitación para explorar después; no necesitas instalar herramientas
+> científicas ni resolver regex para continuar a 00.03.
+
 <a id="aplicación"></a>
 
 <a id="criterio-de-salida"></a>
@@ -797,6 +843,9 @@ Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.
 | Terminal | Interfaz de texto donde escribes comandos y lees sus resultados |
 | Shell | Programa que interpreta comandos; aquí PowerShell, Bash o Zsh |
 | Comando | Instrucción que pides ejecutar al shell |
+| Script | Archivo con una secuencia de instrucciones que puedes ejecutar de nuevo |
+| Log | Registro de mensajes sobre lo ocurrido durante una ejecución |
+| Expresión regular (regex) | Patrón para buscar coincidencias en texto, como líneas que empiezan de cierta forma |
 | Argumento | Dato que recibe un comando; por ejemplo, la ruta en `Test-Path README.md` |
 | Opción | Indicación que modifica lo que hace una herramienta, como `--version` |
 | Directorio | Carpeta que contiene archivos u otras carpetas |

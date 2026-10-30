@@ -36,6 +36,19 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.02 — 2026-10-29, aplicaciones y curiosidad por regex:**
+Sección breve después del diagnóstico de errores: scripts y ejemplos de
+genómica (SeqKit/SAMtools), logs y datos climáticos (NCO), con fuentes primarias.
+Regex como patrón de texto con dos líneas ficticias y ejemplo ^ERROR;
+distinción de comodines y comprobación de forma frente a validez del dato.
+Glosario amplía script/log/regex. Sin instalar herramientas, ampliar prácticas
+obligatorias ni afirmar memoria acotada por usar terminal. Código y notebook
+previos conservados; portal y cambios locales ajenos fuera del alcance.
+Verificación: fuentes consultadas, ejemplo ^ERROR contrastado en PowerShell,
+5726 enlaces locales sin incidencias y formato correcto. HTML a 1280/390
+sin desbordes ni IDs repetidos; sección móvil revisada visualmente.
+No se ejecutaron herramientas científicas ni se midió rendimiento.
+
 **Depuración 00.02 — 2026-10-29, retos equivalentes con resultado oculto:**
 Se conserva el ajuste del usuario «Extensión opcional» en PowerShell y se
 mantiene un ancla para el título anterior. Ambos recorridos incluyen el reto
