@@ -239,6 +239,37 @@ insuficiente.
 
 <a id="5-qué-aporta-cada-camino"></a>
 
+### Un ejemplo que conecta las piezas
+
+Queremos ejecutar [library_demo.py](library_demo.py), el script que presenta
+tres ventas: cuaderno 80, lapiz 50 y carpeta 35 MXN. Ese archivo contiene el
+código y los datos del ejemplo. Utiliza tabulate 0.9.0 para dar formato a la
+tabla; el Python que lo ejecute debe poder importar esa biblioteca.
+
+Prepararemos un entorno, instalaremos allí el paquete y ejecutaremos el script
+con su intérprete. Conservaremos la configuración para poder preparar de nuevo
+lo necesario. Todavía no ejecutes comandos: primero identifica estas piezas.
+
+| Busca en la situación | Tu explicación antes de continuar |
+| --- | --- |
+| Código y datos | ¿Qué archivo conservarías? |
+| Intérprete | ¿Qué programa ejecutaría ese archivo y cómo reconocerías su ruta? |
+| Biblioteca y versión | ¿Qué funcionalidad externa necesita y qué versión utilizaremos? |
+| Entorno | ¿Dónde debe estar disponible el paquete para ese Python? |
+| Configuración | ¿Qué información permitiría preparar nuevamente sus dependencias? |
+
+<details>
+<summary>Ver cómo se relacionan</summary>
+
+El script es `library_demo.py`; en este ejemplo los datos están escritos dentro
+de él. Lo ejecutará el Python del entorno que preparemos, identificado mediante
+`sys.executable`. Tabulate 0.9.0 es la dependencia externa que presenta la tabla.
+Instalarla para ese entorno permite que su Python la importe. La configuración
+del camino elegido registra requisitos o resolución; conservamos también el
+script y documentamos Python. Guardar solo el script no instala la biblioteca.
+
+</details>
+
 ## 6. Elegir tu recorrido
 
 Ahora las herramientas responden a necesidades que ya conoces. Completa un solo

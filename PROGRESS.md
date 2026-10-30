@@ -41,6 +41,20 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Comprobaciones didácticas de 00.05–00.06 — 2026-10-30:**
+05A conecta código/datos, intérprete, biblioteca, entorno y configuración con
+la demostración existente; 05B propone transferencia opcional a otro proyecto.
+Lab 00.05 pide identificar esas piezas y explicar oralmente instalación frente
+a importación. 00.06 añade caso autónomo de salida guardada, ensayo recuperable
+NameError tras reiniciar y elección opcional notebook/script; lab y explicación
+final del notebook alineados. Soluciones desplegables, sin conceptos avanzados,
+cambios de código ejecutable, dependencias ni portal.
+Verificación: 5775 enlaces locales de 392 Markdown y formato sin incidencias;
+nbformat válido y fuentes sin salidas ni contadores. Procesos nuevos Python
+3.12.12: código visible produce 160, NameError de unidades y recuperación a
+160 MXN, ejecución completa 160/200; tabla de 05 conserva 80/50/35 MXN.
+No acredita interfaz del IDE, sesión Jupyter ni aprendizaje observado.
+
 **Glosario visible de 00.05 — 2026-10-30:**
 La entrada de la lección incorpora un glosario común de quince términos con
 acceso desde su cabecera. 05A/05B conservan sus glosarios específicos y añaden

@@ -159,6 +159,19 @@ entornos ni rutas privadas. Las prácticas locales están excluidas de Git.
 - ¿Por qué pip por sí solo no constituye todo el recorrido de un entorno?
 - ¿Qué necesitaría otra persona para reconstruir tu práctica?
 
+### Explicar las piezas con tus palabras
+
+Retoma el [ejemplo conectado de 05A](../../../curriculum/00_getting_started/05_environment/environment.md#un-ejemplo-que-conecta-las-piezas).
+Señala el archivo de código/datos, el intérprete, la biblioteca, el entorno y
+la configuración que conservaste en tu camino. Después explica a quien te
+acompaña: **«¿Por qué que una biblioteca esté instalada en la computadora no
+garantiza que mi programa pueda usarla?»** Apóyate en tu ruta de Python y en
+la importación comprobada. Tu compañero debe poder seguir qué Python utilizaste
+y para qué entorno instalaste, aunque lo expliques con otras palabras.
+
+Como conversación opcional, aplica la idea al
+[caso de otro proyecto](../../../curriculum/00_getting_started/05_environment/dependencies.md#aplicar-la-idea-a-otro-proyecto).
+
 ### Caso para diagnosticar
 
 Una persona instala tabulate sin errores, pero al ejecutar el script recibe

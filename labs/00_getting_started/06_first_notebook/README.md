@@ -41,6 +41,9 @@ modificaciones sin cambiar el ejemplo original.
    contrasta el nuevo total; comprueba que la segunda venta mantiene 200 MXN.
 4. Antes de reiniciar, explica si se perderá tu edición `unidades = 4`.
    Reinicia y ejecuta todo para verificar el cambio con una memoria limpia.
+5. Sigue el [ensayo de error y recuperación](../../../curriculum/00_getting_started/06_first_notebook/README.md#un-error-recuperable-después-de-reiniciar):
+   reinicia, ejecuta solo el cálculo y explica el NameError. Recupera la ejecución
+   desde las entradas y termina con reinicio y ejecución completa sin errores.
 
 <details>
 <summary>Ver respuesta orientativa de la parte B</summary>
@@ -52,6 +55,9 @@ Limpiar las salidas por sí solo no reinicia el estado.
 El reinicio conserva el código editado: al ejecutar todo obtienes 160 y 200 MXN.
 Guardar conserva el documento y sus salidas, pero no recalcula ni guarda toda
 la memoria del kernel.
+El NameError del ensayo identifica una entrada todavía no definida en memoria.
+La recuperación consiste en ejecutar la celda que la define y volver a calcular;
+no requiere instalar bibliotecas ni cambiar de entorno.
 
 </details>
 
@@ -107,6 +113,11 @@ otras entradas, documenta sus resultados esperados antes de compararlos.
 - Explica qué intérprete usa y por qué ese kernel fue elegido.
 - ¿Qué diferencia hay entre editar, ejecutar, borrar salidas y reiniciar?
 - ¿Por qué una salida visible no demuestra que el código actual la produjo?
+- Como conversación opcional, analiza la
+  [salida guardada de 120 con entradas para 160](../../../curriculum/00_getting_started/06_first_notebook/README.md#caso-breve-una-salida-guardada-que-no-coincide).
+  Explica qué puedes concluir y qué comprobarías, sin inventar cómo se obtuvo.
+- Si ayuda a tu práctica, justifica cuándo elegirías
+  [notebook o script](../../../curriculum/00_getting_started/06_first_notebook/README.md#elegir-entre-notebook-y-script).
 - Si tu copia personal pertenece a un repositorio Git propio, revisa los cambios
   y crea un commit después de comprobar el notebook. Si tu carpeta no utiliza
   Git, basta conservar el archivo y tu nota; no publiques en el repositorio compartido.

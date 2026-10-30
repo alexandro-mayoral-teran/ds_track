@@ -214,6 +214,23 @@ Revisa los archivos antes de compartir: evita rutas personales, credenciales y
 paquetes ajenos al proyecto. Los archivos de práctica están en carpetas locales
 ignoradas; conserva una copia revisada si necesitas presentar la evidencia.
 
+### Aplicar la idea a otro proyecto
+
+**Pregunta opcional para conversar:** mañana recibes otro proyecto que necesita
+versiones diferentes. ¿Qué revisarías antes de instalar sus dependencias?
+Responde usando las piezas de 05A, sin buscar comandos nuevos.
+
+<details>
+<summary>Ver una respuesta posible</summary>
+
+Revisaría la documentación y configuración del proyecto, la versión de Python
+necesaria y el entorno desde el que estoy ejecutando. Prepararía un entorno
+separado para ese trabajo con requisitos diferentes y comprobaría su intérprete
+antes de instalar. Conservaría el entorno de ventas y sus resultados. El gestor
+puede ser el mismo; el entorno del nuevo trabajo será distinto.
+
+</details>
+
 <a id="práctica-y-criterio-de-salida"></a>
 
 ## Práctica

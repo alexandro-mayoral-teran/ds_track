@@ -259,6 +259,32 @@ Editar no actualiza el kernel hasta ejecutar. Además, una salida guardada en el
 archivo puede pertenecer a una ejecución anterior. Por eso no basta con ver un
 resultado para asegurar que corresponde al código actual.
 
+### Caso breve: una salida guardada que no coincide
+
+Imagina que abres un notebook y ves estas entradas y cálculo:
+
+```python
+unidades = 4
+precio_unitario_mxn = 40
+importe_mxn = unidades * precio_unitario_mxn
+print(importe_mxn)
+```
+
+Debajo aparece una **salida guardada** que dice `120`. Esta es una situación
+para analizar, no el resultado esperado de ejecutar ese código desde cero.
+¿Qué puedes concluir al verla? ¿Cómo comprobarías el resultado actual?
+
+<details>
+<summary>Ver explicación</summary>
+
+Las entradas visibles corresponden a 160 MXN. La salida de 120 no demuestra que
+se haya ejecutado el código actual: puede haberse guardado antes de una edición.
+Sin más evidencia no sabemos su historia. Comprobaríamos el kernel, reiniciaríamos
+y ejecutaríamos las celdas en orden para contrastar la salida con las entradas.
+Este caso es autónomo: todas sus asignaciones están en el bloque mostrado.
+
+</details>
+
 > **Para conversar:** si dos personas leen el mismo código pero ejecutan celdas
 > en distinto orden, ¿podrían ver resultados diferentes?
 
@@ -296,6 +322,31 @@ del intérprete puede limpiarse tras la verificación.
 Guarda otra vez después de limpiar esa salida para que el archivo compartido
 conserve la limpieza. La ruta completa puede quedar en tu nota personal local.
 
+### Un error recuperable después de reiniciar
+
+Realiza este ensayo en tu copia, con `unidades = 4` en las entradas de la
+primera venta. Guarda la edición antes de comenzar.
+
+1. Predice qué ocurrirá si el cálculo se ejecuta sin haber definido sus entradas.
+2. Reinicia el kernel y ejecuta **solo la celda de cálculo de la primera venta**.
+3. Lee la última línea del error: debe indicar
+   `NameError: name 'unidades' is not defined`. Python no encontró ese nombre
+   en la sesión recién iniciada.
+4. Recupera la ejecución: ejecuta la celda de entradas y luego la del cálculo.
+   Comprueba 160 MXN. No necesitas reinstalar paquetes ni crear otro entorno.
+5. Reinicia y ejecuta todo; comprueba 160 y 200 MXN y guarda el resultado recuperado.
+
+<details>
+<summary>Ver qué demuestra el ensayo</summary>
+
+La fórmula depende de las entradas de otra celda. Reiniciar conserva el texto
+del archivo, pero elimina los valores que esas instrucciones habían creado en
+memoria. Ejecutar las entradas vuelve a definirlos y permite calcular el total.
+El error esperado sirve para identificar esa dependencia; el ensayo termina
+con todas las celdas ejecutadas en orden y sin errores.
+
+</details>
+
 ## 7. Crear tu propia celda y documentar
 
 Agrega una celda Markdown con una predicción y una celda de código con otro
@@ -304,6 +355,23 @@ explícitas para que la nueva celda pueda entenderse al ejecutar desde cero.
 
 No instales paquetes desde las celdas de este primer ejemplo: gestiona las
 dependencias desde el recorrido elegido para conservar su configuración.
+
+### Elegir entre notebook y script
+
+**Conversación opcional:** ¿qué elegirías para probar varias ventas y comentar
+sus resultados? ¿Y para repetir el mismo cálculo completo cada vez que lo necesites?
+Justifica tu elección con una característica de cada formato.
+
+<details>
+<summary>Ver decisiones posibles</summary>
+
+Un notebook permite explorar por partes y escribir la explicación junto a los
+resultados. Un script es una opción sencilla para ejecutar una secuencia completa
+de instrucciones. Ambos pueden producir resultados comprobables; la elección
+depende de la actividad. En cualquiera de los dos conservaríamos entradas,
+entorno y una forma de comprobar el resultado.
+
+</details>
 
 ## Pausar y retomar tu notebook
 
