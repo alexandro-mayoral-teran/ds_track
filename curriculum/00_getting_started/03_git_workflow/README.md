@@ -78,10 +78,8 @@ Git conserva el historial de los archivos que registras. Si modificas una
 explicación o corriges un script, puedes consultar qué cambió y por qué.
 El repositorio local está en tu computadora; el remoto está alojado en GitHub.
 
-```text
-Editar y guardar → Preparar → Registrar en el historial → Publicar en GitHub
-     editor         git add          git commit               git push
-```
+El recorrido general es editar y guardar → preparar → registrar en el historial
+→ publicar, si tienes un remoto. Cada paso tiene una comprobación distinta:
 
 | Momento | Qué ocurre | Cómo lo compruebas |
 | --- | --- | --- |
@@ -93,6 +91,41 @@ Editar y guardar → Preparar → Registrar en el historial → Publicar en GitH
 El **área de preparación** es la selección de cambios para el próximo commit.
 No es una publicación. Un commit tiene un identificador y un mensaje; el mensaje
 explica la intención, por ejemplo «Agrega mis objetivos de aprendizaje».
+
+### Las áreas por las que pasa un cambio
+
+```mermaid
+flowchart TD
+    subgraph LOCAL["En tu computadora"]
+        TRABAJO["Copia de trabajo: archivos que editas y guardas"]
+        PREPARACION["Área de preparación: selección para el próximo commit"]
+        HISTORIAL["Historial local: commits registrados"]
+        TRABAJO -->|git add| PREPARACION
+        PREPARACION -->|git commit| HISTORIAL
+    end
+    REMOTO["Repositorio remoto: copia alojada en GitHub"]
+    HISTORIAL -->|git push| REMOTO
+```
+
+**Lectura del diagrama:** editas en tu copia de trabajo; `add` prepara la
+versión que quieres registrar y `commit` la incorpora al historial local.
+Si eliges publicar, `push` envía los commits al remoto. En la práctica sin
+GitHub llegas hasta el historial local. El área de preparación no es una
+carpeta donde debas mover manualmente el README: Git mantiene esa selección.
+
+Las flechas representan acciones, no el traslado del archivo: tu README sigue
+en la copia de trabajo después del commit. Si vuelves a editarlo, esa nueva
+edición no cambia lo que ya preparaste ni los commits anteriores.
+
+- `git diff` compara la copia de trabajo con el área de preparación: muestra
+  cambios sin preparar en archivos seguidos.
+- `git diff --staged` compara el área de preparación con el último commit:
+  muestra lo que registrarías en el siguiente. Antes del primer commit,
+  muestra el contenido nuevo preparado.
+
+Ambas comparaciones son locales: no comprueban por sí solas qué se publicó
+en GitHub. Un archivo nuevo no seguido aparece en `git status`, pero su
+contenido aún no aparece en `git diff`.
 
 > **Para conversar:** si guardas el README y cierras el editor, ¿ya existe un
 > commit? ¿La copia de GitHub cambió?

@@ -36,6 +36,17 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
 
 ### Para retomar el desarrollo
 
+**Depuración 00.03 — 2026-10-29, diagrama de las áreas de Git:**
+Diagrama Mermaid junto al área de preparación: copia de trabajo, selección e
+historial dentro del equipo; remoto separado y flechas add/commit/push.
+Lectura textual equivalente, archivo conservado en la copia de trabajo y
+comparaciones diff/diff --staged explicadas, incluido archivo nuevo/primer
+commit. Sustituye el esquema lineal previo sin modificar comandos de práctica.
+Portal y cambios locales previos ajenos fuera del alcance.
+Verificación: 5731 enlaces locales sin incidencias; Mermaid renderizado con el
+motor incluido en Quarto a 1280/390 sin desbordes y móvil revisado visualmente.
+Formato comprobado. No se cambian las secuencias de comandos ya verificadas.
+
 **Depuración 00.03 — 2026-10-29, bases de Git y dos recorridos:**
 Problema de versiones, usos en scripts/SQL/documentación y límite de comparación
 de Excel. Preparación orientada a fuentes oficiales; descargar DS Track como
