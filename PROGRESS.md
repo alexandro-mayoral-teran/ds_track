@@ -12,15 +12,19 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [curriculum](curriculum/README.md) para orden, alcance y ampliaciones opcionales.
   Proyectos/checkpoints y práctica del estudiante
   siguen pendientes; material desarrollado no acredita aprendizaje.
-- **Siguiente trabajo educativo:** práctica de cierre y [depuración transversal acordada](docs/reproducible-projects-closure.md#trabajo-posterior-depurar-y-observar). No hay módulo 15 definido.
+- **Siguiente trabajo educativo:** continuar la depuración del módulo 00 con
+  [00.05 — Entornos y dependencias](curriculum/00_getting_started/05_environment/README.md)
+  y su lab; después revisar 00.06. La práctica de cierre y la
+  [depuración transversal acordada](docs/reproducible-projects-closure.md#trabajo-posterior-depurar-y-observar)
+  siguen como trabajo posterior. No hay módulo 15 definido.
 - **Cierres de aplicación disponibles:** [12.09 — Streamlit](curriculum/12_streamlit/09_local_delivery/README.md)
   y [13.10 — Shiny](curriculum/13_shiny_web/10_local_delivery/README.md).
   Elegir una ruta y retomar su práctica de reconstrucción/demostración antes
   del [cierre integrado de 14](docs/reproducible-projects-closure.md).
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
 - **Último desarrollo educativo:** 2026-10-29, 14.09 — Revisión final y defensa: reconstrucción, revisión por casos, decisiones y acta; base de lecciones/labs disponible.
-- **Última revisión documental:** 2026-10-29, cierre de ajustes de preparación y
-  reanudación; revisión visual de 14.08 completada y entorno local reconstruido.
+- **Última revisión documental:** 2026-10-29, depuración acompañada de 00.01–00.04,
+  glosarios, ejemplos y labs; cierre de sesión con reanudación en 00.05.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
@@ -35,6 +39,31 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Cierre de sesión — 2026-10-29, módulo 00:**
+
+- **Alcance revisado:** 00.01–00.04. Markdown parte de definición/problema y
+  casos de uso; terminal tiene núcleo, retos con resultados ocultos y cuaderno
+  opcional para Colab; Git tiene práctica local/perfil y diagrama de secuencia;
+  primer script tiene fuente completa, copia personal y lectura de errores.
+- **Pauta de acompañamiento:** estudiar a la par. Conservar bases esenciales,
+  ejemplos de usos cercanos al trabajo y ampliaciones opcionales adaptables a
+  dudas e intereses. No ampliar cada introducción hasta convertirla en otro
+  módulo. Explicar → predecir → ejecutar → comprobar → conversar.
+- **Último cambio educativo publicado:** `8225ba2`, mejora de 00.04 y su lab.
+  El código original de first_summary.py permanece intacto. Las verificaciones
+  concretas de cada sección están en las entradas siguientes.
+- **Para la siguiente sesión:** revisar primero 00.05 y su lab, incluida su
+  separación A/B y alternativas de entorno; valorar claridad, glosario,
+  prerrequisitos, ejemplos y comprobaciones antes de editar. Después 00.06,
+  conservando la distinción entre usar el cuaderno guiado de 00.02 y aprender
+  formalmente notebooks/kernel. No se ha depurado 00.05/00.06 en esta ronda.
+- **Pendiente de observación:** ejecución del cuaderno en Colab, sesión real
+  con quien aprende, operación manual en IDE y otras plataformas. Las pruebas
+  de autoría no acreditan aprendizaje ni esas comprobaciones pendientes.
+- **Estado local conservado:** cambios anteriores de portal y reorganización
+  documental permanecen locales, fuera de los commits educativos. AGENTS.md
+  sigue local e ignorado; no se publican output, entornos ni materiales privados.
 
 **Depuración 00.04 — 2026-10-29, primer script con recorrido comprobable:**
 Bloque de código completo e idéntico a first_summary.py, sin modificar el
