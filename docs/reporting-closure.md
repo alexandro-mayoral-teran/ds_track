@@ -24,9 +24,10 @@ antes del [proyecto reproducible y su revisión final](reproducible-projects-clo
 
 ## Siguiente trabajo: piloto de experiencia
 
-El [portal local](../portal/README.md) ya integra el módulo 00 y la sesión 02.01.
-Queda observar una sesión real con una pareja antes de ampliarlo: orientación,
-apertura y reconstrucción de la práctica, revisión de evidencia y reanudación.
+El [portal local](../portal/README.md) integra los módulos 00–05 (pandas, SQL, visualización y Python aplicado
+incluido). La prueba aislada 02.01 se retiró y 02 se integró como módulo completo. Queda observar una sesión real con
+una pareja antes de ampliarlo: orientación, apertura y reconstrucción de la
+práctica, revisión de evidencia y reanudación.
 
 El piloto no implementa Streamlit/Shiny ni los proyectos pendientes del track.
 Su operación y sus comprobaciones se documentan en portal/; estos criterios

@@ -143,18 +143,15 @@ personal; no depende de utilizar el portal. PROGRESS.md no es el expediente del
 estudiante ni se modifica para registrar cada práctica individual.
 
 El [portal local](../portal/README.md) ofrece una
-[plantilla del módulo 00](../templates/learning-session/bitacora-00.md) y conserva
-la copia del notebook y la [bitácora de 02.01](../templates/learning-session/bitacora.md).
-En estas prácticas,
-cada participante registra predicción, comprobaciones, explicación, ayudas y
-evidencia en su carpeta excluida de Git. El formulario del portal conserva un
-solo borrador para 02.01 en ese navegador; el módulo 00 usa un archivo Markdown.
-Exportar no modifica automáticamente
-la nota del paquete ni PROGRESS.md.
+[plantilla del módulo 00](../templates/learning-session/bitacora-00.md). La
+plantilla general [bitacora.md](../templates/learning-session/bitacora.md) sigue
+disponible para otras prácticas, pero la prueba 02.01 y su formulario en el
+navegador se retiraron del portal. Cada participante registra predicción,
+comprobaciones, explicación, ayudas y evidencia en su carpeta excluida de Git;
+el portal no guarda bitácoras de otras prácticas ni las sincroniza con PROGRESS.md.
 
-Esta separación está implementada para 00 y 02.01, sin migrar registros previos
-del resto del recorrido. La comprobación técnica del material y el estado
+Esta separación está implementada para 00 en el portal, sin migrar registros
+previos del resto del recorrido. La comprobación técnica del material y el estado
 declarado por la persona se registran por separado: no equivalen a aprendizaje
 observado. Una sesión real de pareja sigue siendo necesaria para evaluar la
 experiencia antes de extender el portal.
-

@@ -23,23 +23,45 @@ quien estudia pertenece a su copia personal, no a esta bitácora compartida.
   Elegir una ruta y retomar su práctica de reconstrucción/demostración antes
   del [cierre integrado de 14](docs/reproducible-projects-closure.md).
   [Estado de Streamlit](docs/streamlit-closure.md) y [cierre de Shiny](docs/shiny-closure.md).
-- **Último desarrollo educativo:** 2026-10-29, 14.09 — Revisión final y defensa: reconstrucción, revisión por casos, decisiones y acta; base de lecciones/labs disponible.
-- **Última revisión documental:** 2026-10-30, ajustes de 00.05 y 00.06 con sus labs:
-  motivo/conceptos comunes, glosarios y comprobaciones; práctica observada pendiente.
 - **Presentación:** índices 00–14 y lecciones 00–11 adaptados; la
   [cobertura vigente](docs/README.md#cobertura-de-las-plantillas-y-del-portal)
   distingue lecciones, labs y portal.
-- **Portal local:** módulo 00 y sesión 02.01 integrados, sin despliegue en Internet.
+- **Portal local:** módulos 00–05 integrados (menú lateral colapsado), sin despliegue en Internet; la prueba
+  02.01 se retiró y 02 se integró completo (diez lecciones y labs).
   [Uso y comprobaciones](portal/README.md).
-- **Último trabajo:** 2026-10-27, adaptación de las nueve lecciones de
-  Reportes con Quarto, con apoyos y cierre común; cobertura visual 00–11.
-- **Siguiente paso:** revisar el contenido y observar una sesión real de pareja
-  con el portal local:
+- **Último desarrollo educativo:** 2026-10-29, 14.09 — Revisión final y defensa: reconstrucción, revisión por casos, decisiones y acta; base de lecciones/labs disponible.
+- **Última revisión documental:** 2026-10-30, ajustes de 00.05 y 00.06 con sus labs:
+  motivo/conceptos comunes, glosarios y comprobaciones; práctica observada pendiente.
+- **Última actualización del portal:** 2026-10-31, presentación, tarjetas y menú
+  de 00.05–00.06 alineados con las fuentes vigentes; se añadieron al catálogo el
+  notebook opcional de Colab de 00.02 y los recursos del diagrama de Git.
+  17 pruebas y render completo de 118 páginas; páginas y recursos de 00 revisados.
+  Cobertura integrada 00–05; sin revisión visual nueva ni sesión real observada.
+- **Siguiente revisión del portal:** revisar el contenido y observar una sesión real de pareja
+  de los módulos 00–05 con el portal local:
   orientación, apertura, reconstrucción de práctica, revisión y reanudación.
 - **Criterios de integración:** [tidyverse](docs/tidyverse-closure.md),
   [almacenamiento](docs/storage-closure.md) y [reportes](docs/reporting-closure.md).
 
 ### Para retomar el desarrollo
+
+**Tema de noche y revisión previa a publicar — 2026-10-31:** el portal añade el
+interruptor nativo de Quarto (icono pequeño; sigue el tema del sistema y recuerda
+la elección) con ajustes `body.quarto-dark` en estilos.css. El repositorio es
+público y GitHub Pages no está activo. Revisión del sitio generado (319 archivos):
+sin rutas personales, credenciales ni enlaces absolutos a la raíz. En lecciones y
+lab de 06 se sustituyó la ruta local de los recorridos PowerShell/CMD por
+`C:\ruta\a\ds_track`, como ya hacía Bash. Plantillas versionadas sin datos
+personales. Revisión visual del tema y del historial de commits pendientes.
+
+**Sincronización del portal con el módulo 00 — 2026-10-31:** la presentación
+curada destaca el recorrido A/B de 00.05 y la comprobación de kernel/estado del
+notebook en 00.06. El catálogo incluye el notebook opcional de Colab y los
+archivos SVG/Mermaid enlazados por 00.03; las lecciones y labs se regeneran desde
+sus fuentes. Comprobación: 17 pruebas y render Quarto 1.9.38 de 118 páginas;
+se verificaron páginas 00.05/00.06 y los recursos descargados. Dos intentos
+incompletos se conservaron en output/ para diagnóstico. No se modificaron las
+fuentes educativas ni se hizo revisión visual o sesión de aprendizaje.
 
 **Comprobaciones didácticas de 00.05–00.06 — 2026-10-30:**
 05A conecta código/datos, intérprete, biblioteca, entorno y configuración con
@@ -1324,6 +1346,43 @@ imagen cargada y soluciones cerradas.
 No acredita aprendizaje ni checkpoints. Los cambios simultáneos del portal quedan
 fuera de esta implementación; no se amplía su catálogo con Streamlit.
 
+**Portal local — integración de 02–05 y menú, 2026-10-27:** se integraron pandas
+(02.01–02.10), SQL (03.01–03.09), visualización en Python (04.01–04.09) y Python
+aplicado (05.01–05.11), con lecciones, labs y apoyos (scripts, SQL, CSV de entrada,
+notebooks, imágenes, paquete `analisis_cartera` y pruebas). No se publican salidas
+generadas, bases `.sqlite` ni cachés. Los enlaces a módulos no integrados, a
+proyectos y a carpetas compartidas (CSV de 03, pruebas de 05) se resuelven a su
+tarjeta o a la lección que los presenta. El menú lateral arranca colapsado
+(`collapse-level: 1`). Comprobación: 16 pruebas, 118 páginas y 12 528 enlaces/
+fragmentos sin errores. Fuentes educativas intactas; sin commit ni despliegue.
+Pendientes: 06–14 por integrar, observar una sesión real y versionar
+`portal/plantillas/modulo.qmd` y `portal/favicon.svg` cuando se autorice.
+
+**Portal local — retiro de la prueba 02.01, 2026-10-27:** se quitó la sesión
+experimental de la navegación y generación del sitio. Sus lección, lab, notebook
+y materiales de pandas no se borraron del curriculum ni de labs. La página Material
+de consulta conserva apoyos opcionales referenciados desde 00–01 y el índice de 02;
+se excluyeron un README duplicado, material avanzado no inmediato y arquitectura
+interna. Se corrigió el enlace de continuidad de 00 hacia 01, que ya está integrado.
+Comprobación: 11 pruebas del portal, render Quarto 1.9.38 con 36 páginas HTML,
+10 páginas esenciales presentes, páginas de la prueba ausentes y 0 errores en
+enlaces/fragmentos locales. La consulta muestra tres recursos pertinentes y la
+navegación ya no presenta 02.01. No se ejecutó ni se borró material educativo.
+
+**Portal local — integración de 01:** revisados el índice y las seis parejas
+lección/lab actuales tras aplicar la plantilla de lección de Python fundamental.
+Se añadieron páginas de lectura desde las fuentes originales, navegación,
+scripts/CSV enumerados y consulta contextual; 00 conserva su composición.
+La plantilla común para índices de módulo ya se usa
+en 01. No se ejecutan las prácticas ni se cambian datos del curso.
+
+Comprobación: nueve pruebas del portal, render Quarto 1.9.38 y 40 páginas;
+3,067 enlaces, fragmentos y recursos locales revisados sin incidencias.
+Render de lectura desactivado; originales conservados. Revisada visualmente la
+página de módulo en navegador. No equivale a una sesión real ni acredita
+aprendizaje. Próximo paso: observar orientación, apertura y reanudación con
+una pareja antes de ampliar otros módulos.
+
 **Desarrollo — 2026-10-27, plantilla en Reportes con Quarto:** adaptadas
 11.01–11.09 con ubicación, ficha, preparación, objetivos, apoyos, práctica,
 evidencia/criterio, referencias y continuidad. CSV, preparadores, .qmd, análisis,
@@ -1682,7 +1741,7 @@ Catálogo del curso, seis lecciones/labs originales y seis páginas de apoyo de
 sin mezclarlo con el borrador de pandas ni exportar PROGRESS.md completo.
 Los índices restantes se ofrecen como descarga: 01–11 con material en el repo,
 12–14 planificados; no se presentan como módulos integrados en el portal.
-La [propuesta de publicación](docs/portal-publication.md) registra alternativas,
+La propuesta de publicación registra alternativas,
 audiencia pendiente, revisión de archivos y publicación explícita de versiones.
 No se contrató alojamiento ni se desplegó servicio. Render de lectura sin ejecutar
 programas o instalar entornos; fuentes educativas y lockfiles conservados.

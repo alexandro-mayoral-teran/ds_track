@@ -1,0 +1,8 @@
+---
+title: {{TITULO}}
+toc: true
+---
+
+<p class="eyebrow">MÓDULO {{ID}} / PRESENTACIÓN</p>
+
+<!-- CONTENIDO_DEL_MODULO -->

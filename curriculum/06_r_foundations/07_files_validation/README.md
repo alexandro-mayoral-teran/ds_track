@@ -367,7 +367,7 @@ Los comandos siguientes van en la terminal del sistema, no en la consola R.
 ### PowerShell
 
 ```powershell
-Set-Location C:\bluepill5\Devs\ds_track
+Set-Location C:\ruta\a\ds_track
 & "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/07_files_validation/ejecutar_archivos.R
 $LASTEXITCODE
 ```
@@ -383,7 +383,7 @@ echo $?
 ### CMD / Anaconda Prompt
 
 ```bat
-cd /d C:\bluepill5\Devs\ds_track
+cd /d C:\ruta\a\ds_track
 "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/07_files_validation/ejecutar_archivos.R
 echo %ERRORLEVEL%
 ```
@@ -398,7 +398,7 @@ Para usar otra entrada o conservar una ejecución anterior, el script recibe
 Rscript con ellos. Un ejemplo completo en PowerShell:
 
 ```powershell
-Set-Location C:\bluepill5\Devs\ds_track
+Set-Location C:\ruta\a\ds_track
 & "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/07_files_validation/ejecutar_archivos.R curriculum/06_r_foundations/07_files_validation/ventas_entrada.csv curriculum/06_r_foundations/07_files_validation/output/segunda_revision
 $LASTEXITCODE
 ```
@@ -414,7 +414,7 @@ echo $?
 ### CMD / Anaconda Prompt con argumentos
 
 ```bat
-cd /d C:\bluepill5\Devs\ds_track
+cd /d C:\ruta\a\ds_track
 "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/07_files_validation/ejecutar_archivos.R curriculum/06_r_foundations/07_files_validation/ventas_entrada.csv curriculum/06_r_foundations/07_files_validation/output/segunda_revision
 echo %ERRORLEVEL%
 ```

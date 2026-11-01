@@ -5,7 +5,7 @@ toc: false
 
 <p class="eyebrow">CONTENIDO / MÓDULO 00</p>
 <p class="lead">Prepara un lugar desde el que puedas practicar, conservar tu trabajo y explicar lo que hiciste. No necesitas experiencia previa con terminal o programación.</p>
-<div class="meta-row session-meta"><span>6 lecciones con lab</span><span>00.05 se trabaja en dos partes</span><span>Una sesión puede cubrir solo un bloque</span></div>
+<div class="meta-row session-meta"><span>6 lecciones con lab</span><span>00.05: conceptos comunes y un camino A/B</span><span>Una sesión puede cubrir solo un bloque</span></div>
 
 [← Ver todo el contenido](contenido.qmd){.back-link}
 
@@ -28,6 +28,12 @@ programas ni reemplaza la copia del curso. Trabaja sobre tu propia carpeta.
 <!-- LECCIONES_00 -->
 </div>
 
+En **00.05**, primero comprende las piezas del entorno y después elige un solo
+recorrido —Conda, venv + pip o uv— para preparar el entorno e instalar y registrar
+la dependencia. En **00.06**, trabaja con una copia personal del notebook y
+comprueba el kernel elegido. Distingue el código guardado, la memoria del kernel
+y las salidas; reinicia y ejecuta todo para reconstruir los resultados.
+
 ## Cómo trabajar con tu compañero
 
 Una persona hace la práctica y explica su predicción; la otra observa, pregunta
@@ -37,12 +43,12 @@ voluntaria y permanecen cerradas hasta que decidas abrirlas.
 
 ## Qué conservar al cerrar
 
-Tu presentación, resultado del lab de rutas, script modificado, instrucciones del
-entorno y notebook ejecutado desde cero. Además, una nota con dudas y siguiente
-paso. Puedes continuar cuando puedas reproducir esos resultados y explicar
-tus decisiones; disponer del material no acredita haberlo aprendido.
+Tu presentación, resultado del lab de rutas, script modificado, configuración
+del entorno elegido y la dependencia comprobada, y una copia personal del notebook
+con sus resultados reconstruidos desde una sesión limpia. Añade una nota con
+dudas y siguiente paso. Puedes continuar cuando reproduzcas esos resultados y
+expliques tus decisiones; disponer del material no acredita haberlo aprendido.
 
 [Preparar mi registro de evidencia →](registro.qmd){.button .secondary}
 
-El siguiente módulo es [01 — Python fundamental](contenido.qmd#modulo-01).
-Su material está en el repositorio; aún no está integrado como páginas del portal.
+Continúa con [01 — Python fundamental](modulo-01.qmd), también disponible en el portal.

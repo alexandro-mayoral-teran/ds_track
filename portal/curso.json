@@ -5,42 +5,48 @@
       "titulo": "Entorno de aprendizaje",
       "resumen": "Prepara tus herramientas, documenta y ejecuta tus primeras prácticas.",
       "fuente": "curriculum/00_getting_started/README.md",
-      "estado": "material"
+      "estado": "material",
+      "integrado": true
     },
     {
       "id": "01",
       "titulo": "Python fundamental",
       "resumen": "Construye programas con variables, funciones, archivos y comprobaciones.",
       "fuente": "curriculum/01_python_foundations/README.md",
-      "estado": "material"
+      "estado": "material",
+      "integrado": true
     },
     {
       "id": "02",
       "titulo": "pandas",
       "resumen": "Explora, transforma y comprueba tablas.",
       "fuente": "curriculum/02_pandas/README.md",
-      "estado": "material"
+      "estado": "material",
+      "integrado": true
     },
     {
       "id": "03",
       "titulo": "SQL y bases de datos",
       "resumen": "Organiza datos y responde preguntas con consultas.",
       "fuente": "curriculum/03_sql_databases/README.md",
-      "estado": "material"
+      "estado": "material",
+      "integrado": true
     },
     {
       "id": "04",
       "titulo": "Visualización en Python",
       "resumen": "Elige y construye gráficas para comunicar resultados.",
       "fuente": "curriculum/04_visualization_python/README.md",
-      "estado": "material"
+      "estado": "material",
+      "integrado": true
     },
     {
       "id": "05",
       "titulo": "Python aplicado",
       "resumen": "Organiza código reutilizable y comprueba sus contratos.",
       "fuente": "curriculum/05_python_applied/README.md",
-      "estado": "material"
+      "estado": "material",
+      "integrado": true
     },
     {
       "id": "06",
@@ -138,16 +144,341 @@
     {
       "id": "00.05",
       "titulo": "Entornos y dependencias",
-      "resultado": "Prepara un entorno y registra dependencias: partes A y B.",
+      "resultado": "Comprende el entorno, elige un camino y registra una dependencia (A/B).",
       "leccion": "curriculum/00_getting_started/05_environment/README.md",
       "lab": "labs/00_getting_started/05_environment/README.md"
     },
     {
       "id": "00.06",
       "titulo": "Tu primer notebook",
-      "resultado": "Elige kernel y ejecuta desde una sesión limpia.",
+      "resultado": "Edita una copia, comprueba el kernel y reconstruye resultados.",
       "leccion": "curriculum/00_getting_started/06_first_notebook/README.md",
       "lab": "labs/00_getting_started/06_first_notebook/README.md"
+    }
+  ],
+  "lecciones_01": [
+    {
+      "id": "01.01",
+      "titulo": "Variables, tipos y operaciones",
+      "resultado": "Interpretar entradas y comprobar un cálculo.",
+      "leccion": "curriculum/01_python_foundations/01_variables_types/README.md",
+      "lab": "labs/01_python_foundations/01_variables_types/README.md"
+    },
+    {
+      "id": "01.02",
+      "titulo": "Listas y diccionarios",
+      "resultado": "Representar, consultar y modificar varios registros.",
+      "leccion": "curriculum/01_python_foundations/02_lists_dicts/README.md",
+      "lab": "labs/01_python_foundations/02_lists_dicts/README.md"
+    },
+    {
+      "id": "01.03",
+      "titulo": "Condiciones y ciclos",
+      "resultado": "Filtrar registros y comprobar resúmenes.",
+      "leccion": "curriculum/01_python_foundations/03_conditions_loops/README.md",
+      "lab": "labs/01_python_foundations/03_conditions_loops/README.md"
+    },
+    {
+      "id": "01.04",
+      "titulo": "Funciones",
+      "resultado": "Separar, reutilizar y comprobar transformaciones.",
+      "leccion": "curriculum/01_python_foundations/04_functions/README.md",
+      "lab": "labs/01_python_foundations/04_functions/README.md"
+    },
+    {
+      "id": "01.05",
+      "titulo": "Archivos CSV",
+      "resultado": "Leer, transformar y escribir con la biblioteca estándar.",
+      "leccion": "curriculum/01_python_foundations/05_csv_files/README.md",
+      "lab": "labs/01_python_foundations/05_csv_files/README.md"
+    },
+    {
+      "id": "01.06",
+      "titulo": "Validación y resumen",
+      "resultado": "Comprobar entradas y totales, documentar reglas.",
+      "leccion": "curriculum/01_python_foundations/06_validation_summary/README.md",
+      "lab": "labs/01_python_foundations/06_validation_summary/README.md"
+    }
+  ],
+  "lecciones_02": [
+    {
+      "id": "02.01",
+      "titulo": "Series y DataFrame",
+      "resultado": "Interpretar filas, columnas, ?ndice y tipos.",
+      "leccion": "curriculum/02_pandas/01_series_dataframe/README.md",
+      "lab": "labs/02_pandas/01_series_dataframe/README.md"
+    },
+    {
+      "id": "02.02",
+      "titulo": "Leer, inspeccionar y exportar",
+      "resultado": "Cargar un CSV y verificar una salida.",
+      "leccion": "curriculum/02_pandas/02_read_inspect_export/README.md",
+      "lab": "labs/02_pandas/02_read_inspect_export/README.md"
+    },
+    {
+      "id": "02.03",
+      "titulo": "Seleccionar, filtrar y ordenar",
+      "resultado": "Responder una pregunta con un subconjunto.",
+      "leccion": "curriculum/02_pandas/03_select_filter_sort/README.md",
+      "lab": "labs/02_pandas/03_select_filter_sort/README.md"
+    },
+    {
+      "id": "02.04",
+      "titulo": "Tipos y columnas calculadas",
+      "resultado": "Convertir datos y calcular sin ciclos por fila.",
+      "leccion": "curriculum/02_pandas/04_types_calculated_columns/README.md",
+      "lab": "labs/02_pandas/04_types_calculated_columns/README.md"
+    },
+    {
+      "id": "02.05",
+      "titulo": "Faltantes, duplicados y reglas",
+      "resultado": "Conservar aceptados y rechazos con motivos.",
+      "leccion": "curriculum/02_pandas/05_missing_duplicates_rules/README.md",
+      "lab": "labs/02_pandas/05_missing_duplicates_rules/README.md"
+    },
+    {
+      "id": "02.06",
+      "titulo": "Texto y fechas",
+      "resultado": "Normalizar campos y comparar cortes.",
+      "leccion": "curriculum/02_pandas/06_text_dates/README.md",
+      "lab": "labs/02_pandas/06_text_dates/README.md"
+    },
+    {
+      "id": "02.07",
+      "titulo": "Agrupar y resumir",
+      "resultado": "Conciliar indicadores por segmento.",
+      "leccion": "curriculum/02_pandas/07_group_summarize/README.md",
+      "lab": "labs/02_pandas/07_group_summarize/README.md"
+    },
+    {
+      "id": "02.08",
+      "titulo": "Combinar tablas",
+      "resultado": "Unir datos sin multiplicar filas por accidente.",
+      "leccion": "curriculum/02_pandas/08_combine_tables/README.md",
+      "lab": "labs/02_pandas/08_combine_tables/README.md"
+    },
+    {
+      "id": "02.09",
+      "titulo": "Cambiar la forma de una tabla",
+      "resultado": "Pasar de formato largo a ancho y viceversa.",
+      "leccion": "curriculum/02_pandas/09_reshape_tables/README.md",
+      "lab": "labs/02_pandas/09_reshape_tables/README.md"
+    },
+    {
+      "id": "02.10",
+      "titulo": "An?lisis y primera gr?fica",
+      "resultado": "Reconstruir un an?lisis y explicar un hallazgo.",
+      "leccion": "curriculum/02_pandas/10_analysis_plot/README.md",
+      "lab": "labs/02_pandas/10_analysis_plot/README.md"
+    }
+  ],
+  "lecciones_03": [
+    {
+      "id": "03.01",
+      "titulo": "Modelo relacional y SQLite",
+      "resultado": "Interpretar tablas, claves y una base de datos.",
+      "leccion": "curriculum/03_sql_databases/01_relational_sqlite/README.md",
+      "lab": "labs/03_sql_databases/01_relational_sqlite/README.md"
+    },
+    {
+      "id": "03.02",
+      "titulo": "Primeras consultas",
+      "resultado": "Seleccionar, filtrar y ordenar con SQL.",
+      "leccion": "curriculum/03_sql_databases/02_first_queries/README.md",
+      "lab": "labs/03_sql_databases/02_first_queries/README.md"
+    },
+    {
+      "id": "03.03",
+      "titulo": "Crear tablas y cargar datos",
+      "resultado": "Definir un esquema y cargar registros con comprobaciones.",
+      "leccion": "curriculum/03_sql_databases/03_create_load/README.md",
+      "lab": "labs/03_sql_databases/03_create_load/README.md"
+    },
+    {
+      "id": "03.04",
+      "titulo": "Agregaciones e indicadores",
+      "resultado": "Resumir datos y conciliar indicadores.",
+      "leccion": "curriculum/03_sql_databases/04_aggregations/README.md",
+      "lab": "labs/03_sql_databases/04_aggregations/README.md"
+    },
+    {
+      "id": "03.05",
+      "titulo": "Relacionar tablas con joins",
+      "resultado": "Unir tablas sin multiplicar filas por accidente.",
+      "leccion": "curriculum/03_sql_databases/05_joins/README.md",
+      "lab": "labs/03_sql_databases/05_joins/README.md"
+    },
+    {
+      "id": "03.06",
+      "titulo": "Subconsultas y CTE",
+      "resultado": "Dividir una consulta en pasos legibles.",
+      "leccion": "curriculum/03_sql_databases/06_subqueries_cte/README.md",
+      "lab": "labs/03_sql_databases/06_subqueries_cte/README.md"
+    },
+    {
+      "id": "03.07",
+      "titulo": "Ventanas para comparar registros",
+      "resultado": "Comparar registros sin perder detalle.",
+      "leccion": "curriculum/03_sql_databases/07_windows/README.md",
+      "lab": "labs/03_sql_databases/07_windows/README.md"
+    },
+    {
+      "id": "03.08",
+      "titulo": "Escrituras y transacciones",
+      "resultado": "Modificar datos con control y recuperación.",
+      "leccion": "curriculum/03_sql_databases/08_transactions/README.md",
+      "lab": "labs/03_sql_databases/08_transactions/README.md"
+    },
+    {
+      "id": "03.09",
+      "titulo": "Integración pandas y SQL",
+      "resultado": "Reconstruir un análisis entre SQL y pandas.",
+      "leccion": "curriculum/03_sql_databases/09_pandas_sql/README.md",
+      "lab": "labs/03_sql_databases/09_pandas_sql/README.md"
+    }
+  ],
+  "lecciones_04": [
+    {
+      "id": "04.01",
+      "titulo": "Pregunta y elección de gráfico",
+      "resultado": "Justificar una representación según la pregunta.",
+      "leccion": "curriculum/04_visualization_python/01_question_chart/README.md",
+      "lab": "labs/04_visualization_python/01_question_chart/README.md"
+    },
+    {
+      "id": "04.02",
+      "titulo": "Matplotlib: Figure y Axes",
+      "resultado": "Crear y guardar una figura desde código.",
+      "leccion": "curriculum/04_visualization_python/02_figure_axes/README.md",
+      "lab": "labs/04_visualization_python/02_figure_axes/README.md"
+    },
+    {
+      "id": "04.03",
+      "titulo": "Comparaciones y evolución",
+      "resultado": "Construir barras y líneas con unidades.",
+      "leccion": "curriculum/04_visualization_python/03_comparisons_evolution/README.md",
+      "lab": "labs/04_visualization_python/03_comparisons_evolution/README.md"
+    },
+    {
+      "id": "04.04",
+      "titulo": "Distribuciones y relaciones",
+      "resultado": "Interpretar dispersión y variabilidad.",
+      "leccion": "curriculum/04_visualization_python/04_distributions_relationships/README.md",
+      "lab": "labs/04_visualization_python/04_distributions_relationships/README.md"
+    },
+    {
+      "id": "04.05",
+      "titulo": "Escalas, etiquetas y accesibilidad",
+      "resultado": "Revisar una figura que puede inducir a error.",
+      "leccion": "curriculum/04_visualization_python/05_scales_labels_accessibility/README.md",
+      "lab": "labs/04_visualization_python/05_scales_labels_accessibility/README.md"
+    },
+    {
+      "id": "04.06",
+      "titulo": "Composición y exportación",
+      "resultado": "Comparar vistas y producir una figura legible.",
+      "leccion": "curriculum/04_visualization_python/06_composition_export/README.md",
+      "lab": "labs/04_visualization_python/06_composition_export/README.md"
+    },
+    {
+      "id": "04.07",
+      "titulo": "Altair: visualización declarativa",
+      "resultado": "Expresar datos, marcas y codificaciones.",
+      "leccion": "curriculum/04_visualization_python/07_altair_declarative/README.md",
+      "lab": "labs/04_visualization_python/07_altair_declarative/README.md"
+    },
+    {
+      "id": "04.08",
+      "titulo": "Interacción con Altair (opcional)",
+      "resultado": "Explorar un indicador con filtros o selección.",
+      "leccion": "curriculum/04_visualization_python/08_altair_interaction/README.md",
+      "lab": "labs/04_visualization_python/08_altair_interaction/README.md"
+    },
+    {
+      "id": "04.09",
+      "titulo": "Cierre visual del análisis",
+      "resultado": "Entregar figuras reconstruibles e interpretación.",
+      "leccion": "curriculum/04_visualization_python/09_visual_closure/README.md",
+      "lab": "labs/04_visualization_python/09_visual_closure/README.md"
+    }
+  ],
+  "lecciones_05": [
+    {
+      "id": "05.01",
+      "titulo": "Del notebook a módulos",
+      "resultado": "Convertir una exploración en un paquete reutilizable.",
+      "leccion": "curriculum/05_python_applied/01_notebook_to_modules/README.md",
+      "lab": "labs/05_python_applied/01_notebook_to_modules/README.md"
+    },
+    {
+      "id": "05.02",
+      "titulo": "Configuración y registro",
+      "resultado": "Parametrizar una ejecución y dejar rastro de ella.",
+      "leccion": "curriculum/05_python_applied/02_configuration_logging/README.md",
+      "lab": "labs/05_python_applied/02_configuration_logging/README.md"
+    },
+    {
+      "id": "05.03",
+      "titulo": "Errores y recursos",
+      "resultado": "Fallar con claridad y cerrar recursos con seguridad.",
+      "leccion": "curriculum/05_python_applied/03_errors_resources/README.md",
+      "lab": "labs/05_python_applied/03_errors_resources/README.md"
+    },
+    {
+      "id": "05.04",
+      "titulo": "Pruebas de código y datos",
+      "resultado": "Comprobar el paquete con pruebas repetibles.",
+      "leccion": "curriculum/05_python_applied/04_testing/README.md",
+      "lab": "labs/05_python_applied/04_testing/README.md"
+    },
+    {
+      "id": "05.05",
+      "titulo": "Tipos y contratos",
+      "resultado": "Declarar entradas y salidas de las funciones.",
+      "leccion": "curriculum/05_python_applied/05_types_contracts/README.md",
+      "lab": "labs/05_python_applied/05_types_contracts/README.md"
+    },
+    {
+      "id": "05.06",
+      "titulo": "Clases y composición (opcional)",
+      "resultado": "Modelar objetos pequeños por composición.",
+      "leccion": "curriculum/05_python_applied/06_classes_composition/README.md",
+      "lab": "labs/05_python_applied/06_classes_composition/README.md"
+    },
+    {
+      "id": "05.07",
+      "titulo": "Iteradores y generadores (opcional)",
+      "resultado": "Procesar lotes sin acumular todo.",
+      "leccion": "curriculum/05_python_applied/07_iterators_generators/README.md",
+      "lab": "labs/05_python_applied/07_iterators_generators/README.md"
+    },
+    {
+      "id": "05.08",
+      "titulo": "Funciones y decoradores (opcional)",
+      "resultado": "Envolver funciones sin cambiar su contrato.",
+      "leccion": "curriculum/05_python_applied/08_functions_decorators/README.md",
+      "lab": "labs/05_python_applied/08_functions_decorators/README.md"
+    },
+    {
+      "id": "05.09",
+      "titulo": "Medir antes de optimizar (opcional)",
+      "resultado": "Medir con evidencia antes de cambiar código.",
+      "leccion": "curriculum/05_python_applied/09_measure_optimize/README.md",
+      "lab": "labs/05_python_applied/09_measure_optimize/README.md"
+    },
+    {
+      "id": "05.10",
+      "titulo": "Integración con APIs (opcional)",
+      "resultado": "Consumir una API simulada con paginación.",
+      "leccion": "curriculum/05_python_applied/10_api_integration/README.md",
+      "lab": "labs/05_python_applied/10_api_integration/README.md"
+    },
+    {
+      "id": "05.11",
+      "titulo": "Cierre del proyecto Python",
+      "resultado": "Auditar la entrega y reconstruir el resultado.",
+      "leccion": "curriculum/05_python_applied/11_project_closure/README.md",
+      "lab": "labs/05_python_applied/11_project_closure/README.md"
     }
   ],
   "paginas_00": [
@@ -179,16 +510,184 @@
   "archivos_00": [
     "curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv",
     "curriculum/00_getting_started/02_terminal_paths/check_environment.py",
+    "curriculum/00_getting_started/02_terminal_paths/practica_terminal_colab.ipynb",
+    "curriculum/00_getting_started/03_git_workflow/git-areas.svg",
+    "curriculum/00_getting_started/03_git_workflow/git-areas.mmd",
     "curriculum/00_getting_started/04_first_script/first_summary.py",
     "curriculum/00_getting_started/05_environment/library_demo.py",
     "curriculum/00_getting_started/06_first_notebook/first_notebook.ipynb",
     "templates/github-profile/PROFILE.md",
     "templates/learning-session/bitacora-00.md"
   ],
+  "archivos_01": [
+    "curriculum/01_python_foundations/01_variables_types/variables_types.py",
+    "curriculum/01_python_foundations/02_lists_dicts/lists_dicts.py",
+    "curriculum/01_python_foundations/03_conditions_loops/conditions_loops.py",
+    "curriculum/01_python_foundations/04_functions/functions_demo.py",
+    "curriculum/01_python_foundations/05_csv_files/csv_pipeline.py",
+    "curriculum/01_python_foundations/05_csv_files/ventas_entrada.csv",
+    "curriculum/01_python_foundations/06_validation_summary/validation_summary.py",
+    "curriculum/01_python_foundations/06_validation_summary/ventas_revision.csv"
+  ],
+  "archivos_02": [
+    "curriculum/02_pandas/01_series_dataframe/series_dataframe.py",
+    "curriculum/02_pandas/02_read_inspect_export/cartera_demo.csv",
+    "curriculum/02_pandas/02_read_inspect_export/read_inspect_export.py",
+    "curriculum/02_pandas/03_select_filter_sort/select_filter_sort.py",
+    "curriculum/02_pandas/04_types_calculated_columns/cartera_conversion.csv",
+    "curriculum/02_pandas/04_types_calculated_columns/types_calculated_columns.py",
+    "curriculum/02_pandas/05_missing_duplicates_rules/cartera_calidad.csv",
+    "curriculum/02_pandas/05_missing_duplicates_rules/quality_rules.py",
+    "curriculum/02_pandas/06_text_dates/cartera_texto_fechas.csv",
+    "curriculum/02_pandas/06_text_dates/text_dates.py",
+    "curriculum/02_pandas/07_group_summarize/cartera_resumen.csv",
+    "curriculum/02_pandas/07_group_summarize/group_summarize.py",
+    "curriculum/02_pandas/08_combine_tables/catalogo_segmentos.csv",
+    "curriculum/02_pandas/08_combine_tables/combine_tables.py",
+    "curriculum/02_pandas/09_reshape_tables/reshape_tables.py",
+    "curriculum/02_pandas/10_analysis_plot/analysis.py",
+    "curriculum/02_pandas/10_analysis_plot/first_analysis.ipynb",
+    "labs/02_pandas/01_series_dataframe/practica.ipynb",
+    "curriculum/02_pandas/10_analysis_plot/assets/saldo_octubre.png",
+    "pyproject.toml",
+    "uv.lock",
+    "templates/learning-session/bitacora.md"
+  ],
+  "archivos_03": [
+    "curriculum/03_sql_databases/01_relational_sqlite/data/clientes.csv",
+    "curriculum/03_sql_databases/01_relational_sqlite/data/cortes.csv",
+    "curriculum/03_sql_databases/01_relational_sqlite/data/creditos.csv",
+    "curriculum/03_sql_databases/01_relational_sqlite/relational_sqlite.py",
+    "curriculum/03_sql_databases/01_relational_sqlite/schema.sql",
+    "curriculum/03_sql_databases/02_first_queries/first_queries.py",
+    "curriculum/03_sql_databases/03_create_load/create_load.py",
+    "curriculum/03_sql_databases/03_create_load/schema.sql",
+    "curriculum/03_sql_databases/04_aggregations/aggregations.py",
+    "curriculum/03_sql_databases/05_joins/joins.py",
+    "curriculum/03_sql_databases/06_subqueries_cte/queries.py",
+    "curriculum/03_sql_databases/07_windows/windows.py",
+    "curriculum/03_sql_databases/08_transactions/transactions.py",
+    "curriculum/03_sql_databases/09_pandas_sql/assets/saldo_octubre.png",
+    "curriculum/03_sql_databases/09_pandas_sql/detail.sql",
+    "curriculum/03_sql_databases/09_pandas_sql/integration.py",
+    "curriculum/03_sql_databases/09_pandas_sql/summary.sql"
+  ],
+  "archivos_04": [
+    "curriculum/04_visualization_python/01_question_chart/assets/cuatro_preguntas.png",
+    "curriculum/04_visualization_python/01_question_chart/choice_examples.py",
+    "curriculum/04_visualization_python/02_figure_axes/assets/saldo_conocido.png",
+    "curriculum/04_visualization_python/02_figure_axes/assets/saldo_y_cobertura.png",
+    "curriculum/04_visualization_python/02_figure_axes/figure_axes.py",
+    "curriculum/04_visualization_python/02_figure_axes/resumen_octubre.csv",
+    "curriculum/04_visualization_python/03_comparisons_evolution/assets/bases.png",
+    "curriculum/04_visualization_python/03_comparisons_evolution/assets/huecos.png",
+    "curriculum/04_visualization_python/03_comparisons_evolution/assets/segmentos.png",
+    "curriculum/04_visualization_python/03_comparisons_evolution/comparisons.py",
+    "curriculum/04_visualization_python/03_comparisons_evolution/serie_mensual.csv",
+    "curriculum/04_visualization_python/04_distributions_relationships/assets/cajas.png",
+    "curriculum/04_visualization_python/04_distributions_relationships/assets/dispersion.png",
+    "curriculum/04_visualization_python/04_distributions_relationships/assets/histogramas.png",
+    "curriculum/04_visualization_python/04_distributions_relationships/assets/mismo_centro.png",
+    "curriculum/04_visualization_python/04_distributions_relationships/distributions.py",
+    "curriculum/04_visualization_python/05_scales_labels_accessibility/assets/etiquetas.png",
+    "curriculum/04_visualization_python/05_scales_labels_accessibility/assets/lineal_log.png",
+    "curriculum/04_visualization_python/05_scales_labels_accessibility/assets/origen.png",
+    "curriculum/04_visualization_python/05_scales_labels_accessibility/assets/senales.png",
+    "curriculum/04_visualization_python/05_scales_labels_accessibility/scales.py",
+    "curriculum/04_visualization_python/06_composition_export/assets/comparacion.png",
+    "curriculum/04_visualization_python/06_composition_export/assets/entrega.png",
+    "curriculum/04_visualization_python/06_composition_export/assets/entrega.svg",
+    "curriculum/04_visualization_python/06_composition_export/composition.py",
+    "curriculum/04_visualization_python/07_altair_declarative/assets/fechas.png",
+    "curriculum/04_visualization_python/07_altair_declarative/assets/medianas.png",
+    "curriculum/04_visualization_python/07_altair_declarative/assets/pares.png",
+    "curriculum/04_visualization_python/07_altair_declarative/assets/tramos.png",
+    "curriculum/04_visualization_python/07_altair_declarative/declarative.py",
+    "curriculum/04_visualization_python/08_altair_interaction/assets/filtro_consumo.png",
+    "curriculum/04_visualization_python/08_altair_interaction/assets/filtro_educacion.png",
+    "curriculum/04_visualization_python/08_altair_interaction/assets/intervalo_un_par.png",
+    "curriculum/04_visualization_python/08_altair_interaction/assets/resaltado_consumo.png",
+    "curriculum/04_visualization_python/08_altair_interaction/interaction.py",
+    "curriculum/04_visualization_python/09_visual_closure/assets/altair.png",
+    "curriculum/04_visualization_python/09_visual_closure/assets/matplotlib.png",
+    "curriculum/04_visualization_python/09_visual_closure/closure.py"
+  ],
+  "archivos_05": [
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/__init__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/__main__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/api.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/auditoria.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/cierre.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/cli.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/cli_segura.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/comprobacion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/configuracion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/contratos.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/entrada.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/flujo.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/instrumentacion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/iteracion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/medicion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/objetos.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/presentacion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/recursos.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/reglas.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/revision.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/transformacion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/ejecutar.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/ejecutar_api.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/ejecutar_configurado.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/ejecutar_contratos.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/ejecutar_decoradores.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/ejecutar_lotes.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/ejecutar_medicion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/ejecutar_objetos.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/ejecutar_seguro.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/exploracion.ipynb",
+    "curriculum/05_python_applied/01_notebook_to_modules/medidas_demo.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/__init__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/muestras.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_entrada.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_integracion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_recursos.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_transformacion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0505/__init__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0505/test_contratos.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0505/test_revision.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0506/__init__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0506/test_objetos.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0507/__init__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0507/test_iteracion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0508/__init__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0508/test_decoradores.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0509/__init__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0509/test_medicion.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0510/__init__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0510/test_api.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0511/__init__.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/pruebas_0511/test_auditoria.py",
+    "curriculum/05_python_applied/01_notebook_to_modules/verificar_entrega.py",
+    "curriculum/05_python_applied/02_configuration_logging/argumentos_demo.py",
+    "curriculum/05_python_applied/02_configuration_logging/octubre.json",
+    "curriculum/05_python_applied/02_configuration_logging/septiembre.json",
+    "curriculum/05_python_applied/03_errors_resources/recursos_demo.py",
+    "curriculum/05_python_applied/10_api_integration/config.json",
+    "curriculum/05_python_applied/10_api_integration/muestras/correcto.json",
+    "curriculum/05_python_applied/10_api_integration/muestras/error_tardio.json",
+    "curriculum/05_python_applied/10_api_integration/muestras/invalido.txt",
+    "curriculum/05_python_applied/10_api_integration/muestras/json_invalido.json",
+    "curriculum/05_python_applied/10_api_integration/muestras/pagina_01.json",
+    "curriculum/05_python_applied/10_api_integration/muestras/pagina_02.json",
+    "curriculum/05_python_applied/10_api_integration/muestras/pagina_03.json",
+    "curriculum/05_python_applied/10_api_integration/muestras/README.md",
+    "curriculum/05_python_applied/10_api_integration/muestras/recuperable.json",
+    "curriculum/05_python_applied/11_project_closure/config.json"
+  ],
   "consulta_00": [
     "docs/vscode-guide.md",
     "templates/github-profile/README.md"
   ],
+  "consulta_01": [],
   "navegacion": {
     "README.md": "index.qmd",
     "curriculum/README.md": "contenido.qmd"

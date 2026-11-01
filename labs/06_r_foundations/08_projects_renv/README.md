@@ -103,7 +103,7 @@ Estos recorridos parten otra vez de la raíz de DS Track; elige uno completo.
 ### PowerShell
 
 ```powershell
-Set-Location C:\bluepill5\Devs\ds_track
+Set-Location C:\ruta\a\ds_track
 & "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/08_projects_renv/preparar_proyecto.R curriculum/06_r_foundations/08_projects_renv/output/ventas_reconstruidas
 Set-Location curriculum/06_r_foundations/08_projects_renv/output/ventas_reconstruidas
 & "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla restaurar.R
@@ -127,7 +127,7 @@ echo $?
 ### CMD / Anaconda Prompt
 
 ```bat
-cd /d C:\bluepill5\Devs\ds_track
+cd /d C:\ruta\a\ds_track
 "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/08_projects_renv/preparar_proyecto.R curriculum/06_r_foundations/08_projects_renv/output/ventas_reconstruidas
 cd curriculum\06_r_foundations\08_projects_renv\output\ventas_reconstruidas
 "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla restaurar.R

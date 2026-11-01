@@ -1,8 +1,11 @@
 # Portal local — portada, contenido y módulo inicial
 
 Una capa de lectura y orientación sobre el material existente. La portada presenta
-el curso, Contenido muestra 00–14 y el módulo 00 integra sus seis lecciones/labs
-y apoyos. La sesión acompañada 02.01 conserva notebook y bitácora descargables. El código fuente
+el curso, Contenido muestra 00–14 y los módulos 00 a 05 integran sus lecciones,
+labs y apoyos. La interfaz usa una paleta monocromática de alto contraste y el símbolo
+del recorrido aparece como icono del sitio. Material de consulta ofrece apoyos
+opcionales de los módulos integrados.
+El código fuente
 se versiona en este repositorio; esta prueba no despliega un servicio en Internet.
 
 ## Abrir la prueba
@@ -27,11 +30,10 @@ El comando construye una copia en `output/portal-local/` si no existe, abre
 `http://127.0.0.1:8871/` y sirve únicamente el HTML generado y sus recursos.
 En Windows detecta también el Quarto incluido en RStudio en su ruta habitual.
 Si está en otra ubicación, pasa `--quarto` con la ruta del ejecutable.
-La terminal debe permanecer abierta. **Ctrl+C** detiene el servidor; las copias
-y el borrador guardado del navegador se conservan. Se enlaza solo a 127.0.0.1.
+La terminal debe permanecer abierta. **Ctrl+C** detiene el servidor y las copias
+se conservan. Se enlaza solo a 127.0.0.1.
 
-Si el puerto está ocupado, añade `--puerto 8872`; el borrador del navegador
-pertenece al origen anterior y no se traslada automáticamente a otro puerto.
+Si el puerto está ocupado, añade `--puerto 8872`.
 Si ya existe una salida completa y sus fuentes coinciden, se sirve esa copia.
 Si las fuentes cambiaron, se conserva la anterior y se genera otra carpeta
 con fecha/hora en el nombre. No se sobrescriben ni borran archivos.
@@ -50,61 +52,43 @@ El preparador rechaza destinos existentes. Las salidas, cachés y prácticas
 personales van dentro de `output/`, que ya está excluido de Git. No se versiona
 el sitio generado ni la evidencia de estudiantes.
 
-## Entrada al curso y primera sesión
+Las páginas de lección y lab se preparan desde sus fuentes actuales en
+`curriculum/` y `labs/`; no edites su copia generada en `_site/`. La presentación
+curada del módulo 00, los resúmenes de tarjetas y las etiquetas del menú se
+mantienen en `portal/paginas/modulo-00.qmd`, `portal/curso.json` y
+`portal/_quarto.yml`. Cuando cambie el material de un módulo integrado, contrasta
+esas piezas con las fuentes, actualiza solo lo que el portal presenta por
+separado y genera una salida nueva para comprobarlo. Las reglas de esta revisión
+recurrente están en las especificaciones locales del sitio; no se distribuyen
+con el portal.
+
+## Entrada al curso
 
 Empieza por Portada → Contenido → 00 — Entorno de aprendizaje. El módulo 00
 reúne las seis lecciones y labs originales, conserva 00.05 A/B y los recorridos
-Conda/venv/uv. Sus comandos usan una copia local de DS Track, como explica cada
-lección; los archivos de apoyo descargables no equivalen a un clon completo.
-Su registro usa una plantilla Markdown personal, no el formulario de pandas.
+Conda/venv/uv. Después, 01 — Python fundamental presenta seis lecciones/labs
+con sus scripts y CSV de apoyo; trabaja en una copia propia. Los archivos
+descargables de 00 a 05 no equivalen a un clon completo. El registro de 00 usa
+una plantilla Markdown personal. El módulo 02 (pandas) integra sus diez lecciones y labs, con scripts, CSV de entrada,
+notebooks y el entorno de referencia; las salidas generadas no se publican.
 
-Para la prueba adicional de pandas, después de sus prerrequisitos:
+## Tema de noche
 
-1. Entren a «Tu recorrido» y contrasten la pregunta inicial. Cada persona explica
-   su predicción antes de ejecutar.
-2. Descarguen el ZIP, extraigan la carpeta completa y lean ABRIR.md. Cada persona
-   abre su notebook en el editor que ya usa, con el kernel del entorno de estudio
-   y pandas 2.3.3. El portal no ejecuta Python en el navegador.
-3. Lean la lección y trabajen el lab. Una persona escribe, la otra pregunta;
-   cambien de papel al agregar la venta. Las soluciones permanecen cerradas.
-4. Guarden el notebook y su bitácora. El formulario web guarda un único borrador
-   local por sesión/navegador, solo al pulsar Guardar, y permite descargar Markdown.
-   No sincroniza con bitacora.md, otra persona ni el repositorio.
-5. Reinicien el kernel, ejecuten todas las celdas y expliquen una variante.
-   Anoten especialmente dónde les costó orientarse, abrir o retomar.
+El icono pequeño del interruptor es el nativo de Quarto (`theme: light/dark` en `_quarto.yml`): sigue el tema del sistema al inicio y recuerda la elección en el navegador, sin servidor. Los ajustes de la paleta oscura están al final de `estilos.css` bajo `body.quarto-dark`; al añadir componentes con colores fijos, agregar también su variante allí. Pendiente: revisión visual en navegador a 1440/768/390 px.
 
-También puedes preparar una copia sin usar las descargas (desde la raíz):
+## Alcance de la copia
 
-```text
-python portal/herramientas/preparar_practica.py output/mis-practicas/02.01
-```
+El portal integra los módulos 00 a 05. Material de consulta reúne apoyos
+opcionales enlazados desde sus lecciones. Contenido
+indica qué otros módulos ofrecen material en el repo y cuáles son planes.
+Los archivos de consulta se descargan con su ubicación en el clon.
 
-Si existe, se rechaza para conservar tu trabajo. Para retomar abre esa misma
-carpeta; no ejecutes la preparación encima.
-
-## Responsabilidades y límites
-
-- `curso.json` enumera 00–14 y las páginas/archivos del módulo 00. Solo 00 está
-  integrado como módulo completo; los demás índices se descargan como fuente,
-  con 12–14 marcados como planes. `sesiones.json` conserva la prueba 02.01.
-- `herramientas/preparar_portal.py` adapta enlaces de la lección/lab originales
-  a páginas locales; el contenido educativo no se duplica como fuente editorial.
-  Las tarjetas de lecciones se generan desde el catálogo.
-- Las fuentes de consulta fuera del piloto tienen una página con su ubicación
-  en el clon y descarga. No se convierten en sesiones adicionales del portal.
-- El adaptador admite los enlaces inline y bloques cercados presentes en estas
-  fuentes; conserva anclas explícitas, adapta índices numerados a Quarto y
-  conserva detalles desplegables. Los enlaces a directorios resuelven su README.
-  Rechaza enlaces locales no enumerados. No es un conversor universal de Markdown.
-- `procedencia.json` registra SHA-256 de las fuentes incluidas y versión Quarto;
-  ayuda a comprobar coherencia, sin autenticar autoría ni ejecución histórica.
-- La construcción de lectura desactiva ejecución y no instala entornos. La
-  comprobación del notebook es una fase separada con el entorno elegido.
-- No hay cuentas, persistencia compartida, tutor de IA ni coedición. El alcance
-  útil de esta prueba es una sesión acompañada, con copias personales.
+La lectura no ejecuta programas ni instala entornos. Las prácticas se ejecutan
+por separado en la copia personal. El registro de procedencia ayuda a contrastar
+archivos de una copia, sin autenticar autoría o ejecuciones históricas.
 
 PROGRESS.md conserva el estado editorial del curso; el portal ofrece una bitácora
-personal para 00 y conserva la de 02.01, sin migrar los registros anteriores.
+personal para 00.
 Los enlaces de 00 a PROGRESS se orientan a una guía de registro personal; el
 archivo completo de progreso no se incluye en las descargas del sitio. Una visita,
 una respuesta correcta o ejecutar el ejemplo no acredita aprendizaje. Proyecto
@@ -117,17 +101,17 @@ debe observarse; la revisión técnica no la sustituye.
 python -m unittest discover -s portal/tests -v
 ```
 
-Además se comprueba render completo, enlaces/fragmentos/recursos locales, descarga
-del paquete, notebook desde kernel limpio con ejemplo/variante/vacío, destinos
-ocupados y originales intactos. En navegador se revisan ventanas amplias/estrechas,
-soluciones cerradas, pregunta inicial, bitácora guardada/recuperada/exportada y
-teclado. No se certifica accesibilidad completa por esas comprobaciones.
+Además se comprueba el render completo, los enlaces/fragmentos/recursos locales
+y los apoyos descargables. En navegador se revisan navegación, teclado, soluciones
+cerradas y ventanas estrechas. No se certifica accesibilidad completa por esas
+comprobaciones.
 
-La [propuesta de publicación](../docs/portal-publication.md) documenta alojamiento,
-audiencia y etapas futuras; no se ha desplegado el sitio.
+La copia descrita aquí funciona localmente. La publicación en línea requiere
+definir audiencia, alojamiento y una versión revisada; no se ha desplegado el sitio.
 
-Siguiente paso: revisar el contenido y observar una sesión del módulo inicial
-antes de ampliar otros módulos o 02.02/02.03. El resto del recorrido numerado permanece intacto.
+Siguiente paso: revisar el contenido y observar una sesión real de los módulos
+00–05 antes de ampliar otros módulos. La prueba aislada 02.01 se retiró del portal;
+sus fuentes educativas permanecen en curriculum/ y labs/.
 
 Referencias primarias: [sitios Quarto](https://quarto.org/docs/websites/),
 [navegación](https://quarto.org/docs/websites/website-navigation) y

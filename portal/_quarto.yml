@@ -3,26 +3,34 @@ project:
   output-dir: _site
   render:
     - index.qmd
-    - sesion.qmd
-    - leccion.qmd
-    - lab.qmd
-    - bitacora.qmd
     - fuentes.qmd
     - contenido.qmd
     - modulo-00.qmd
+    - modulo-01.qmd
+    - modulo-02.qmd
+    - modulo-03.qmd
+    - modulo-04.qmd
+    - modulo-05.qmd
     - registro.qmd
     - "00-*.qmd"
+    - "01-*.qmd"
+    - "02-*.qmd"
+    - "03-*.qmd"
+    - "04-*.qmd"
+    - "05-*.qmd"
   resources:
     - descargas/**
     - procedencia.json
-    - portal.js
+    - favicon.svg
 website:
   title: DS Track
+  favicon: favicon.svg
   search: false
   sidebar:
     style: docked
-    background: "#f1f3f0"
-    title: "DS Track <span class='brand-dot'>●</span>"
+    collapse-level: 1
+    background: "#f2f2f2"
+    title: "<img class='brand-icon' src='favicon.svg' alt=''> DS Track"
     subtitle: "APRENDER EN COMPAÑÍA"
     contents:
       - text: "Portada"
@@ -41,22 +49,122 @@ website:
             href: 00-03-leccion.qmd
           - text: "00.04 · Primer script"
             href: 00-04-leccion.qmd
-          - text: "00.05 · Entornos"
+          - text: "00.05 · Entornos y dependencias"
             href: 00-05-leccion.qmd
-          - text: "00.06 · Primer notebook"
+          - text: "00.06 · Notebook y kernel"
             href: 00-06-leccion.qmd
           - text: "Comprobación y evidencia"
             href: registro.qmd
-      - section: "SESIÓN 02.01"
+      - section: "01 · PYTHON FUNDAMENTAL"
         contents:
-          - text: "Tu recorrido"
-            href: sesion.qmd
-          - text: "01 · Comprender"
-            href: leccion.qmd
-          - text: "02 · Practicar"
-            href: lab.qmd
-          - text: "03 · Registrar y explicar"
-            href: bitacora.qmd
+          - text: "Presentación del módulo"
+            href: modulo-01.qmd
+          - text: "01.01 · Variables y tipos"
+            href: 01-01-leccion.qmd
+          - text: "01.02 · Listas y diccionarios"
+            href: 01-02-leccion.qmd
+          - text: "01.03 · Condiciones y ciclos"
+            href: 01-03-leccion.qmd
+          - text: "01.04 · Funciones"
+            href: 01-04-leccion.qmd
+          - text: "01.05 · Archivos CSV"
+            href: 01-05-leccion.qmd
+          - text: "01.06 · Validación y resumen"
+            href: 01-06-leccion.qmd
+      - section: "02 · PANDAS"
+        contents:
+          - text: "Presentación del módulo"
+            href: modulo-02.qmd
+          - text: "02.01 · Series y DataFrame"
+            href: 02-01-leccion.qmd
+          - text: "02.02 · Leer y exportar"
+            href: 02-02-leccion.qmd
+          - text: "02.03 · Seleccionar y filtrar"
+            href: 02-03-leccion.qmd
+          - text: "02.04 · Tipos y columnas"
+            href: 02-04-leccion.qmd
+          - text: "02.05 · Faltantes y reglas"
+            href: 02-05-leccion.qmd
+          - text: "02.06 · Texto y fechas"
+            href: 02-06-leccion.qmd
+          - text: "02.07 · Agrupar y resumir"
+            href: 02-07-leccion.qmd
+          - text: "02.08 · Combinar tablas"
+            href: 02-08-leccion.qmd
+          - text: "02.09 · Forma de tablas"
+            href: 02-09-leccion.qmd
+          - text: "02.10 · Análisis y gráfica"
+            href: 02-10-leccion.qmd
+      - section: "03 · SQL Y BASES DE DATOS"
+        contents:
+          - text: "Presentación del módulo"
+            href: modulo-03.qmd
+          - text: "03.01 · Modelo relacional"
+            href: 03-01-leccion.qmd
+          - text: "03.02 · Primeras consultas"
+            href: 03-02-leccion.qmd
+          - text: "03.03 · Crear y cargar"
+            href: 03-03-leccion.qmd
+          - text: "03.04 · Agregaciones"
+            href: 03-04-leccion.qmd
+          - text: "03.05 · Joins"
+            href: 03-05-leccion.qmd
+          - text: "03.06 · Subconsultas y CTE"
+            href: 03-06-leccion.qmd
+          - text: "03.07 · Ventanas"
+            href: 03-07-leccion.qmd
+          - text: "03.08 · Transacciones"
+            href: 03-08-leccion.qmd
+          - text: "03.09 · pandas y SQL"
+            href: 03-09-leccion.qmd
+      - section: "04 · VISUALIZACIÓN EN PYTHON"
+        contents:
+          - text: "Presentación del módulo"
+            href: modulo-04.qmd
+          - text: "04.01 · Pregunta y gráfico"
+            href: 04-01-leccion.qmd
+          - text: "04.02 · Figure y Axes"
+            href: 04-02-leccion.qmd
+          - text: "04.03 · Comparaciones"
+            href: 04-03-leccion.qmd
+          - text: "04.04 · Distribuciones"
+            href: 04-04-leccion.qmd
+          - text: "04.05 · Escalas y accesibilidad"
+            href: 04-05-leccion.qmd
+          - text: "04.06 · Composición y exportación"
+            href: 04-06-leccion.qmd
+          - text: "04.07 · Altair declarativo"
+            href: 04-07-leccion.qmd
+          - text: "04.08 · Interacción (opcional)"
+            href: 04-08-leccion.qmd
+          - text: "04.09 · Cierre visual"
+            href: 04-09-leccion.qmd
+      - section: "05 · PYTHON APLICADO"
+        contents:
+          - text: "Presentación del módulo"
+            href: modulo-05.qmd
+          - text: "05.01 · Del notebook a módulos"
+            href: 05-01-leccion.qmd
+          - text: "05.02 · Configuración y registro"
+            href: 05-02-leccion.qmd
+          - text: "05.03 · Errores y recursos"
+            href: 05-03-leccion.qmd
+          - text: "05.04 · Pruebas"
+            href: 05-04-leccion.qmd
+          - text: "05.05 · Tipos y contratos"
+            href: 05-05-leccion.qmd
+          - text: "05.06 · Clases (opcional)"
+            href: 05-06-leccion.qmd
+          - text: "05.07 · Generadores (opcional)"
+            href: 05-07-leccion.qmd
+          - text: "05.08 · Decoradores (opcional)"
+            href: 05-08-leccion.qmd
+          - text: "05.09 · Medir (opcional)"
+            href: 05-09-leccion.qmd
+          - text: "05.10 · APIs (opcional)"
+            href: 05-10-leccion.qmd
+          - text: "05.11 · Cierre del proyecto"
+            href: 05-11-leccion.qmd
       - text: "Material de consulta"
         href: fuentes.qmd
   page-footer:
@@ -65,13 +173,14 @@ website:
 lang: es
 format:
   html:
-    theme: default
+    theme:
+      light: default
+      dark: darkly
     mainfont: "system-ui, -apple-system, Segoe UI, sans-serif"
     css: estilos.css
     toc: true
     toc-title: En esta página
     code-copy: true
-    include-after-body: scripts.html
 execute:
   enabled: false
   eval: false

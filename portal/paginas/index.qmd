@@ -19,5 +19,3 @@ page-layout: full
 ## Un recorrido, dos perspectivas {#como-funciona}
 
 <div class="steps-grid"><article><span class="step-num">01</span><h3>Comprende</h3><p>Lee el ejemplo y escribe tu predicción antes de ejecutar.</p></article><article><span class="step-num">02</span><h3>Experimenta</h3><p>Una persona escribe; la otra pregunta y contrasta. Luego cambien.</p></article><article><span class="step-num">03</span><h3>Explica</h3><p>Comprueba valores, adapta el ejemplo y conserva tu evidencia.</p></article></div>
-
-<div class="note-panel"><strong>¿Ya tienes preparados los fundamentos?</strong><p>Puedes <a href="sesion.qmd">probar la sesión acompañada 02.01 de pandas</a>, con notebook y bitácora. El <a href="contenido.qmd">índice completo</a> distingue el material del repositorio de las páginas integradas en este portal. Abrir una página no acredita aprendizaje.</p></div>

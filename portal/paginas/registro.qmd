@@ -23,7 +23,4 @@ carpeta: no se escribe automáticamente en el repositorio ni en PROGRESS.md,
 que mantiene el estado editorial del proyecto. No hay sincronización entre
 personas o dispositivos. Esta página ofrece la plantilla; no guarda un formulario.
 
-Para la prueba adicional de pandas, la [bitácora 02.01](bitacora.qmd) sí incluye
-el borrador del navegador. Ese borrador pertenece exclusivamente a esa sesión.
-
 [Volver al módulo 00 →](modulo-00.qmd)

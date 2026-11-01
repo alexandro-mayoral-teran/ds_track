@@ -254,7 +254,7 @@ para esta actividad. La copia reutiliza el lockfile de 06.08.
 ### PowerShell
 
 ```powershell
-Set-Location C:\bluepill5\Devs\ds_track
+Set-Location C:\ruta\a\ds_track
 python --version
 & "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/09_known_result/preparar_cierre.R
 Set-Location curriculum/06_r_foundations/09_known_result/output/cierre_ventas
@@ -288,7 +288,7 @@ echo $?
 ### CMD / Anaconda Prompt
 
 ```bat
-cd /d C:\bluepill5\Devs\ds_track
+cd /d C:\ruta\a\ds_track
 python --version
 "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/09_known_result/preparar_cierre.R
 cd curriculum\06_r_foundations\09_known_result\output\cierre_ventas

@@ -9,11 +9,141 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "herramientas"))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from preparar_portal import adaptar
-from preparar_practica import REPO, catalogo, preparar
+from preparar_portal import REPO
 from servir import fuentes_cambiaron
 
 
 class AdaptadorTest(unittest.TestCase):
+    def test_catalogo_del_modulo_00_enumera_lecciones_y_recursos_actuales(self):
+        curso = json.loads((REPO / "portal/curso.json").read_text(encoding="utf-8"))
+        modulo = next(m for m in curso["modulos"] if m["id"] == "00")
+
+        self.assertTrue(modulo["integrado"])
+        self.assertEqual([leccion["id"] for leccion in curso["lecciones_00"]],
+                         [f"00.0{i}" for i in range(1, 7)])
+        for leccion in curso["lecciones_00"]:
+            for clave in ["leccion", "lab"]:
+                self.assertTrue((REPO / leccion[clave]).is_file(), leccion[clave])
+        for pagina in curso["paginas_00"]:
+            self.assertTrue((REPO / pagina["fuente"]).is_file(), pagina["fuente"])
+        for ruta in curso["archivos_00"]:
+            self.assertTrue((REPO / ruta).is_file(), ruta)
+        self.assertIn(
+            "curriculum/00_getting_started/02_terminal_paths/practica_terminal_colab.ipynb",
+            curso["archivos_00"],
+        )
+        self.assertIn(
+            "curriculum/00_getting_started/03_git_workflow/git-areas.svg",
+            curso["archivos_00"],
+        )
+        self.assertIn(
+            "curriculum/00_getting_started/03_git_workflow/git-areas.mmd",
+            curso["archivos_00"],
+        )
+
+    def test_catalogo_del_modulo_01_enumera_lecciones_y_apoyos_existentes(self):
+        curso = json.loads((REPO / "portal/curso.json").read_text(encoding="utf-8"))
+        modulo = next(m for m in curso["modulos"] if m["id"] == "01")
+        lecciones = curso["lecciones_01"]
+
+        self.assertTrue(modulo["integrado"])
+        self.assertEqual(len(lecciones), 6)
+        self.assertEqual([leccion["id"] for leccion in lecciones],
+                         [f"01.0{i}" for i in range(1, 7)])
+        for leccion in lecciones:
+            for clave in ["leccion", "lab"]:
+                self.assertTrue((REPO / leccion[clave]).is_file(), leccion[clave])
+        for ruta in curso["archivos_01"] + curso["consulta_01"]:
+            self.assertTrue((REPO / ruta).is_file(), ruta)
+
+    def test_catalogo_del_modulo_02_enumera_lecciones_y_apoyos_existentes(self):
+        curso = json.loads((REPO / "portal/curso.json").read_text(encoding="utf-8"))
+        modulo = next(m for m in curso["modulos"] if m["id"] == "02")
+        lecciones = curso["lecciones_02"]
+
+        self.assertTrue(modulo["integrado"])
+        self.assertEqual([leccion["id"] for leccion in lecciones],
+                         [f"02.{i:02d}" for i in range(1, 11)])
+        for leccion in lecciones:
+            for clave in ["leccion", "lab"]:
+                self.assertTrue((REPO / leccion[clave]).is_file(), leccion[clave])
+        for ruta in curso["archivos_02"]:
+            self.assertTrue((REPO / ruta).is_file(), ruta)
+            self.assertNotIn("/output/", ruta)
+            self.assertNotIn("__pycache__", ruta)
+
+    def test_catalogo_del_modulo_03_enumera_lecciones_y_apoyos_existentes(self):
+        curso = json.loads((REPO / "portal/curso.json").read_text(encoding="utf-8"))
+        modulo = next(m for m in curso["modulos"] if m["id"] == "03")
+        lecciones = curso["lecciones_03"]
+
+        self.assertTrue(modulo["integrado"])
+        self.assertEqual([leccion["id"] for leccion in lecciones],
+                         [f"03.{i:02d}" for i in range(1, 10)])
+        for leccion in lecciones:
+            for clave in ["leccion", "lab"]:
+                self.assertTrue((REPO / leccion[clave]).is_file(), leccion[clave])
+        for ruta in curso["archivos_03"]:
+            self.assertTrue((REPO / ruta).is_file(), ruta)
+            self.assertNotIn("/output/", ruta)
+            self.assertFalse(ruta.endswith((".sqlite", ".db")), ruta)
+
+    def test_catalogo_del_modulo_04_enumera_lecciones_y_apoyos_existentes(self):
+        curso = json.loads((REPO / "portal/curso.json").read_text(encoding="utf-8"))
+        modulo = next(m for m in curso["modulos"] if m["id"] == "04")
+        lecciones = curso["lecciones_04"]
+
+        self.assertTrue(modulo["integrado"])
+        self.assertEqual([leccion["id"] for leccion in lecciones],
+                         [f"04.{i:02d}" for i in range(1, 10)])
+        for leccion in lecciones:
+            for clave in ["leccion", "lab"]:
+                self.assertTrue((REPO / leccion[clave]).is_file(), leccion[clave])
+        for ruta in curso["archivos_04"]:
+            self.assertTrue((REPO / ruta).is_file(), ruta)
+            self.assertNotIn("/output/", ruta)
+
+    def test_catalogo_del_modulo_05_enumera_lecciones_y_paquete_existentes(self):
+        curso = json.loads((REPO / "portal/curso.json").read_text(encoding="utf-8"))
+        modulo = next(m for m in curso["modulos"] if m["id"] == "05")
+        lecciones = curso["lecciones_05"]
+
+        self.assertTrue(modulo["integrado"])
+        self.assertEqual([leccion["id"] for leccion in lecciones],
+                         [f"05.{i:02d}" for i in range(1, 12)])
+        for leccion in lecciones:
+            for clave in ["leccion", "lab"]:
+                self.assertTrue((REPO / leccion[clave]).is_file(), leccion[clave])
+        for ruta in curso["archivos_05"]:
+            self.assertTrue((REPO / ruta).is_file(), ruta)
+            self.assertNotIn("/output/", ruta)
+            self.assertNotIn("__pycache__", ruta)
+        self.assertIn("curriculum/05_python_applied/01_notebook_to_modules/analisis_cartera/__init__.py",
+                      curso["archivos_05"])
+
+    def test_menu_lateral_deja_los_modulos_colapsados(self):
+        config = (REPO / "portal/_quarto.yml").read_text(encoding="utf-8")
+        self.assertIn("collapse-level: 1", config)
+
+    def test_sesion_de_prueba_no_se_publica_y_consulta_es_relevante(self):
+        curso = json.loads((REPO / "portal/curso.json").read_text(encoding="utf-8"))
+        fuentes = set(curso["consulta_00"] + curso["consulta_01"])
+        navegacion = (REPO / "portal/_quarto.yml").read_text(encoding="utf-8")
+        portada = (REPO / "portal/paginas/index.qmd").read_text(encoding="utf-8")
+
+        self.assertIn("docs/vscode-guide.md", fuentes)
+        self.assertIn("templates/github-profile/README.md", fuentes)
+        self.assertNotIn("curriculum/02_pandas/README.md", fuentes)
+        self.assertNotIn("docs/architecture.md", fuentes)
+        self.assertNotIn("curriculum/00_getting_started/README.md", fuentes)
+        self.assertNotIn("curriculum/05_python_applied/README.md", fuentes)
+        self.assertTrue((REPO / "curriculum/02_pandas/01_series_dataframe/README.md").is_file())
+        self.assertTrue((REPO / "labs/02_pandas/01_series_dataframe/README.md").is_file())
+        self.assertTrue((REPO / "labs/02_pandas/01_series_dataframe/practica.ipynb").is_file())
+        self.assertNotIn("sesion.qmd", navegacion)
+        self.assertNotIn("bitacora.qmd", navegacion)
+        self.assertNotIn("sesion.qmd", portada)
+
     def test_detecta_copia_anterior_o_fuentes_cambiadas_sin_escribir(self):
         salida = REPO / 'output'
         salida.mkdir(exist_ok=True)
@@ -39,6 +169,16 @@ class AdaptadorTest(unittest.TestCase):
         self.assertIn('[Ir](#mi-tema)', res)
         self.assertIn('[Otro](#2-especial)', res)
 
+    def test_fragmento_numerado_en_otro_archivo_se_adapta_a_quarto(self):
+        origen = REPO / "curriculum/01_python_foundations/04_functions/README.md"
+        destino = (origen.parent / "../02_lists_dicts/README.md").resolve()
+        texto = "[Referencias](../02_lists_dicts/README.md#5-referencias-y-copias-qué-estás-modificando)"
+
+        self.assertEqual(
+            adaptar(texto, origen, {destino: "01-02-leccion.qmd"}),
+            "[Referencias](01-02-leccion.qmd#referencias-y-copias-qué-estás-modificando)\n",
+        )
+
     def test_enlace_a_directorio_usa_su_indice(self):
         origen = REPO / 'curriculum/00_getting_started/README.md'
         destino = origen.parent / '01_github_profile/README.md'
@@ -63,33 +203,32 @@ class AdaptadorTest(unittest.TestCase):
             adaptar('[Privado](../../../AGENTS.md)',
                     REPO / 'curriculum/02_pandas/01_series_dataframe/README.md', {})
 
-    def test_consulta_fuera_del_piloto_conserva_destino_explicativo(self):
+    def test_consulta_de_otro_modulo_conserva_destino_explicativo(self):
         origen = REPO / "curriculum/02_pandas/01_series_dataframe/README.md"
         externo = (origen.parent / "../02_read_inspect_export/README.md").resolve()
         self.assertEqual(adaptar('[Siguiente](../02_read_inspect_export/README.md#tipos)',
                                 origen, {externo: 'fuentes.qmd#fuente-7'}),
                          '[Siguiente](fuentes.qmd#fuente-7)\n')
 
-    def test_preparar_conserva_originales_y_destinos_ocupados(self):
-        datos = catalogo()
-        originales = {n: (REPO / p).read_bytes() for n, p in datos['practica'].items()}
-        salida = REPO / 'output'
-        salida.mkdir(exist_ok=True)
-        self.assertTrue(salida.resolve().is_relative_to(REPO))
-        with tempfile.TemporaryDirectory(dir=salida) as tmp:
-            destino = Path(tmp) / 'personal'
-            preparar(destino)
-            self.assertEqual({p.name for p in destino.iterdir()}, set(originales))
-            for nombre, contenido in originales.items():
-                self.assertEqual((destino/nombre).read_bytes(), contenido)
-            notebook = destino / 'practica.ipynb'
-            notebook.write_text('Mi avance personal', encoding='utf-8')
-            with self.assertRaises(FileExistsError):
-                preparar(destino)
-            self.assertEqual(notebook.read_text(encoding='utf-8'), 'Mi avance personal')
-        for nombre, ruta in datos['practica'].items():
-            self.assertEqual((REPO/ruta).read_bytes(), originales[nombre])
+    def test_ruta_de_python_aplicado_lleva_a_su_modulo_en_contenido(self):
+        origen = REPO / "curriculum/01_python_foundations/README.md"
+        arquitectura = (REPO / "docs/architecture.md").resolve()
+        texto = "[ruta de Python aplicado](../../docs/architecture.md#python-aplicado-del-notebook-al-proyecto)"
 
+        self.assertEqual(
+            adaptar(texto, origen, {arquitectura: "contenido.qmd#modulo-05"}),
+            "[ruta de Python aplicado](contenido.qmd#modulo-05)\n",
+        )
+
+    def test_siguiente_leccion_fuera_del_portal_lleva_a_su_modulo(self):
+        origen = REPO / "curriculum/01_python_foundations/06_validation_summary/README.md"
+        siguiente = (origen.parent / "../../02_pandas/01_series_dataframe/README.md").resolve()
+        texto = "[Siguiente →](../../02_pandas/01_series_dataframe/README.md)"
+
+        self.assertEqual(
+            adaptar(texto, origen, {siguiente: "contenido.qmd#modulo-02"}),
+            "[Siguiente →](contenido.qmd#modulo-02)\n",
+        )
 
 if __name__ == '__main__':
     unittest.main()

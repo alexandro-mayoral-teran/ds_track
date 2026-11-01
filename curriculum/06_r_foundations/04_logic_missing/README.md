@@ -329,7 +329,7 @@ como apoyo para comprobar el mismo archivo.
 ### PowerShell
 
 ```powershell
-Set-Location C:\bluepill5\Devs\ds_track
+Set-Location C:\ruta\a\ds_track
 & "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/04_logic_missing/logica_faltantes.R
 $LASTEXITCODE
 ```
@@ -345,7 +345,7 @@ echo $?
 ### CMD / Anaconda Prompt
 
 ```bat
-cd /d C:\bluepill5\Devs\ds_track
+cd /d C:\ruta\a\ds_track
 "C:\Program Files\R\R-4.6.1\bin\Rscript.exe" --vanilla curriculum/06_r_foundations/04_logic_missing/logica_faltantes.R
 echo %ERRORLEVEL%
 ```
