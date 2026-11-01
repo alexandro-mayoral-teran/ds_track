@@ -74,7 +74,7 @@ notebooks y el entorno de referencia; las salidas generadas no se publican.
 
 ## Tema de noche
 
-El icono pequeño del interruptor es el nativo de Quarto (`theme: light/dark` en `_quarto.yml`): sigue el tema del sistema al inicio y recuerda la elección en el navegador, sin servidor. Los ajustes de la paleta oscura están al final de `estilos.css` bajo `body.quarto-dark`; al añadir componentes con colores fijos, agregar también su variante allí. Pendiente: revisión visual en navegador a 1440/768/390 px.
+El icono pequeño del interruptor es el nativo de Quarto (`theme: light/dark` y `respect-user-color-scheme: true` en `_quarto.yml`): sigue el tema del sistema al inicio y recuerda la elección en el navegador, sin servidor. Los ajustes de la paleta oscura están al final de `estilos.css` bajo `body.quarto-dark`; al añadir componentes con colores fijos, agregar también su variante allí. Revisión técnica: 13 páginas × 2 temas × 3 anchos (1440/768/390 px) sin fallos de contraste WCAG AA ni desbordes; el interruptor se activa con teclado y conserva anillo de foco. No es una certificación de accesibilidad.
 
 ## Alcance de la copia
 

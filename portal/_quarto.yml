@@ -176,6 +176,7 @@ format:
     theme:
       light: default
       dark: darkly
+    respect-user-color-scheme: true
     mainfont: "system-ui, -apple-system, Segoe UI, sans-serif"
     css: estilos.css
     toc: true

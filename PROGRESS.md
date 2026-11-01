@@ -52,7 +52,12 @@ público y GitHub Pages no está activo. Revisión del sitio generado (319 archi
 sin rutas personales, credenciales ni enlaces absolutos a la raíz. En lecciones y
 lab de 06 se sustituyó la ruta local de los recorridos PowerShell/CMD por
 `C:\ruta\a\ds_track`, como ya hacía Bash. Plantillas versionadas sin datos
-personales. Revisión visual del tema y del historial de commits pendientes.
+personales. Revisión del tema de noche: se corrigieron contrastes (resumen de
+soluciones, enlaces inactivos del menú, migas) y se activó
+`respect-user-color-scheme`; 78 comprobaciones (13 páginas × 2 temas × 3 anchos)
+sin fallos de contraste ni desbordes, interruptor operable con teclado. No es
+certificación de accesibilidad ni revisión con IDE/sesión real. Historial de
+commits revisado sin secretos (rutas antiguas permanecen; no se reescribió).
 
 **Sincronización del portal con el módulo 00 — 2026-10-31:** la presentación
 curada destaca el recorrido A/B de 00.05 y la comprobación de kernel/estado del

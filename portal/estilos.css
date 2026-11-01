@@ -49,3 +49,9 @@ body.quarto-dark .hero-data th,body.quarto-dark .hero-data td{border-bottom-colo
 body.quarto-dark .journey-strip{border-top-color:#777}
 body.quarto-dark code{color:#f2f2f2}
 body.quarto-dark a:focus-visible,body.quarto-dark button:focus-visible,body.quarto-dark summary:focus-visible,body.quarto-dark .session-card:focus-within{outline-color:#ffb27a}
+body.quarto-dark details summary{color:#f2f2f2}
+body.quarto-dark #quarto-sidebar .sidebar-link:not(.active),body.quarto-dark #quarto-sidebar .sidebar-item-text:not(.active){color:#d6d6d6}
+body.quarto-dark #quarto-sidebar .sidebar-link:hover{color:#fff}
+body.quarto-dark .breadcrumb-item,body.quarto-dark .breadcrumb-item a,body.quarto-dark .breadcrumb-item.active{color:#d6d6d6}
+body.quarto-dark .breadcrumb-item+.breadcrumb-item::before{color:#a8a8a8}
+body.quarto-dark .quarto-title-breadcrumbs .breadcrumb li:last-of-type a{color:#d6d6d6}
