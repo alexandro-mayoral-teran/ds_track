@@ -80,7 +80,7 @@ El icono pequeño del interruptor es el nativo de Quarto (`theme: light/dark` y 
 
 El portal integra los módulos 00 a 05. Material de consulta reúne apoyos
 opcionales enlazados desde sus lecciones. Contenido
-indica qué otros módulos ofrecen material en el repo y cuáles son planes.
+indica qué otros módulos (06–14) ofrecen material en el repo; ninguno figura ya como plan.
 Los archivos de consulta se descargan con su ubicación en el clon.
 
 La lectura no ejecuta programas ni instala entornos. Las prácticas se ejecutan

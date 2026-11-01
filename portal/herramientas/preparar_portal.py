@@ -216,7 +216,7 @@ def construir(destino, quarto="quarto"):
         'Streamlit (12) y Shiny (13) son alternativas: basta una aplicación antes '
         'del proyecto reproducible (14).\n\n'
         '<div class="catalogue-key"><span class="pill">00–05 · integrados</span>'
-        '<span>06–11 · material en el repositorio</span><span>12–14 · planes</span></div>\n\n'
+        '<span>06–14 · material en el repositorio</span></div>\n\n'
         '<div class="module-list">' + "\n".join(tarjetas) + '</div>\n', encoding="utf-8")
     fuentes = sorted(set([*fuentes_curso, "portal/_quarto.yml", "portal/estilos.css",
                           "portal/curso.json", "portal/favicon.svg",

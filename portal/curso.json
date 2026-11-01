@@ -95,21 +95,21 @@
       "titulo": "Aplicaciones con Streamlit",
       "resumen": "Construye una aplicación en Python.",
       "fuente": "curriculum/12_streamlit/README.md",
-      "estado": "plan"
+      "estado": "material"
     },
     {
       "id": "13",
       "titulo": "Aplicaciones con Shiny",
       "resumen": "Construye una aplicación reactiva en R.",
       "fuente": "curriculum/13_shiny_web/README.md",
-      "estado": "plan"
+      "estado": "material"
     },
     {
       "id": "14",
       "titulo": "Proyecto reproducible",
       "resumen": "Integra análisis, comunicación y reproducibilidad.",
       "fuente": "curriculum/14_reproducible_projects/README.md",
-      "estado": "plan"
+      "estado": "material"
     }
   ],
   "lecciones_00": [
