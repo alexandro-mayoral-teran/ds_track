@@ -52,7 +52,10 @@ público y GitHub Pages no está activo. Revisión del sitio generado (319 archi
 sin rutas personales, credenciales ni enlaces absolutos a la raíz. En lecciones y
 lab de 06 se sustituyó la ruta local de los recorridos PowerShell/CMD por
 `C:\ruta\a\ds_track`, como ya hacía Bash. Plantillas versionadas sin datos
-personales. Revisión del tema de noche: se corrigieron contrastes (resumen de
+personales. Prototipo publicado el 2026-10-31 (aprobado por el propietario) en
+https://alexandro-mayoral-teran.github.io/ds_track/ desde la rama `gh-pages`;
+el contenido ya era público en el repo. Catálogo: 06–14 figuran como material del
+repo (ya no como plan). Revisión del tema de noche: se corrigieron contrastes (resumen de
 soluciones, enlaces inactivos del menú, migas) y se activó
 `respect-user-color-scheme`; 78 comprobaciones (13 páginas × 2 temas × 3 anchos)
 sin fallos de contraste ni desbordes, interruptor operable con teclado. No es
