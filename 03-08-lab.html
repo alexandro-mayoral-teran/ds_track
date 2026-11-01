@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 03.08 — Escrituras y transacciones – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#entrada-actividad-y-resultado" id="toc-entrada-actividad-y-resultado" class="nav-link active" data-scroll-target="#entrada-actividad-y-resultado">Entrada, actividad y resultado</a></li>
+  <li><a href="#a-crear-y-revisar-una-copia-manual" id="toc-a-crear-y-revisar-una-copia-manual" class="nav-link" data-scroll-target="#a-crear-y-revisar-una-copia-manual">A — Crear y revisar una copia manual</a></li>
+  <li><a href="#b-ensayar-update-y-después-confirmar" id="toc-b-ensayar-update-y-después-confirmar" class="nav-link" data-scroll-target="#b-ensayar-update-y-después-confirmar">B — Ensayar UPDATE y después confirmar</a></li>
+  <li><a href="#c-fallo-a-mitad-de-una-transacción" id="toc-c-fallo-a-mitad-de-una-transacción" class="nav-link" data-scroll-target="#c-fallo-a-mitad-de-una-transacción">C — Fallo a mitad de una transacción</a></li>
+  <li><a href="#d-carga-repetible-y-conflicto" id="toc-d-carga-repetible-y-conflicto" class="nav-link" data-scroll-target="#d-carga-repetible-y-conflicto">D — Carga repetible y conflicto</a></li>
+  <li><a href="#e-delete-reversión-y-relaciones" id="toc-e-delete-reversión-y-relaciones" class="nav-link" data-scroll-target="#e-delete-reversión-y-relaciones">E — DELETE, reversión y relaciones</a></li>
+  <li><a href="#f-persistencia-y-límites-de-rollback" id="toc-f-persistencia-y-límites-de-rollback" class="nav-link" data-scroll-target="#f-persistencia-y-límites-de-rollback">F — Persistencia y límites de rollback</a></li>
+  <li><a href="#g-extensión-savepoint-dentro-de-una-transacción" id="toc-g-extensión-savepoint-dentro-de-una-transacción" class="nav-link" data-scroll-target="#g-extensión-savepoint-dentro-de-una-transacción">G — Extensión: SAVEPOINT dentro de una transacción</a></li>
+  <li><a href="#evidencia-reflexión-y-siguiente-paso" id="toc-evidencia-reflexión-y-siguiente-paso" class="nav-link" data-scroll-target="#evidencia-reflexión-y-siguiente-paso">Evidencia, reflexión y siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 03.08 — Escrituras y transacciones</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 03 / 03.08
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-03.html">SQL y bases de datos</a></p>
+<section id="entrada-actividad-y-resultado" class="level2">
+<h2 class="anchored" data-anchor-id="entrada-actividad-y-resultado">Entrada, actividad y resultado</h2>
+<p>Lee la <a href="./03-08-leccion.html">lección 03.08</a> y completa los prerrequisitos. Recibes la base ficticia de 03.01, los CSV y <a href="descargas/curriculum/03_sql_databases/08_transactions/transactions.py">transactions.py</a>. Produce una copia de práctica, tu script y una nota con selección previa, valores posteriores, decisiones de confirmación/reversión y verificación al reconectar. Conserva la fuente: ninguna escritura se hace sobre ella.</p>
+<p>Primero ejecuta la demostración completa con los comandos de la lección. Después practica A–F manualmente con otra copia. G es una extensión en memoria. Sesiones sugeridas: A–B, C–D y E–F. No necesitas completar todo en una sesión. Los archivos generados en output no se versionan; conserva evidencia textual.</p>
+</section>
+<section id="a-crear-y-revisar-una-copia-manual" class="level2">
+<h2 class="anchored" data-anchor-id="a-crear-y-revisar-una-copia-manual">A — Crear y revisar una copia manual</h2>
+<ol type="1">
+<li>Ejecuta el programa completo y anota su estado final 16/24/49.</li>
+<li>Repite: debe comprobar la copia existente sin nuevas escrituras.</li>
+<li>Crea mi_lab.py en la carpeta de esta lección, sin modificar transactions.py, con este inicio para preparar otra copia:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transactions <span class="im">import</span> <span class="ex">connect</span>, copy_new, source_rows, DEFAULT_SOURCE, HERE</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ruta <span class="op">=</span> HERE <span class="op">/</span> <span class="st">"output"</span> <span class="op">/</span> <span class="st">"lab_manual.sqlite"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> source_rows()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>creada <span class="op">=</span> copy_new(DEFAULT_SOURCE, ruta, original)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> creada:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Elige otra ruta nueva para comenzar una práctica manual"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El helper conserva archivos existentes; si encuentra una práctica parcial o distinta también se detiene sin sobrescribirla. Para retomar tu propia copia, consulta su estado conscientemente: no vuelvas a crearla ni la reinicies. Si guardas mi_lab.py en otra carpeta, adapta las importaciones y rutas antes de ejecutarlo. Añade las actividades siguientes al script en orden, por sesiones.</p>
+<ol start="4" type="1">
+<li>Abre la copia con connect(ruta) y consulta 001/octubre antes de escribir.</li>
+<li>Comprueba claves foráneas activas y que fuente y copia sean rutas distintas.</li>
+</ol>
+<details>
+<summary>
+Ver solución razonada de A
+</summary>
+<p>La demostración completa confirma 1350 en 001/octubre y conserva noviembre de 001; deja 49 cortes. La copia manual recién creada, en cambio, comienza con la muestra original: 48 cortes y 1300 en 001/octubre. Son dos archivos distintos para dos recorridos; no confundas sus estados esperados.</p>
+<p>connect(ruta) abre el archivo existente en escritura, con control explícito, y activa claves foráneas. copy_new comprueba fuente antes de crear el destino y no sobrescribe archivos. El archivo fuente sigue consultándose en lectura. Un archivo cuya ruta coincida con la fuente se rechaza.</p>
+</details>
+</section>
+<section id="b-ensayar-update-y-después-confirmar" class="level2">
+<h2 class="anchored" data-anchor-id="b-ensayar-update-y-después-confirmar">B — Ensayar UPDATE y después confirmar</h2>
+<ol type="1">
+<li>En la copia manual de A, inicia BEGIN IMMEDIATE y selecciona 001/octubre.</li>
+<li>Cambia temporalmente su saldo a 999 con clave completa; comprueba una fila afectada.</li>
+<li>Consulta el valor en esa conexión y en otra conexión de lectura.</li>
+<li>Revierte y comprueba 1300 otra vez.</li>
+<li>En otra transacción, aplica la corrección 1350 exigiendo el valor previo 1300.</li>
+<li>Comprueba atraso intacto, confirma, cierra y reconecta.</li>
+</ol>
+<details>
+<summary>
+Ver solución razonada de B
+</summary>
+<p>Durante el ensayo, la conexión escritora ve 999 y una conexión separada normal ve 1300. Cierra el lector antes de terminar la transacción escritora. Después de rollback ambas recuperan 1300. Para la corrección:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>conexion <span class="op">=</span> <span class="ex">connect</span>(ruta)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    conexion.execute(<span class="st">"BEGIN IMMEDIATE"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    previa <span class="op">=</span> conexion.execute(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"SELECT saldo_mxn, dias_atraso FROM cortes WHERE id_credito = ? AND fecha_corte = ?"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"001"</span>, <span class="st">"2026-10-31"</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    ).fetchone()</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> previa <span class="op">!=</span> (<span class="dv">1300</span>, <span class="dv">10</span>):</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Estado previo distinto del revisado"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    cursor <span class="op">=</span> conexion.execute(</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"""UPDATE cortes SET saldo_mxn = ?</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">           WHERE id_credito = ? AND fecha_corte = ? AND saldo_mxn = ?"""</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        (<span class="dv">1350</span>, <span class="st">"001"</span>, <span class="st">"2026-10-31"</span>, <span class="dv">1300</span>),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> cursor.rowcount <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Alcance de UPDATE inesperado"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    posterior <span class="op">=</span> conexion.execute(</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"SELECT saldo_mxn, dias_atraso FROM cortes WHERE id_credito = ? AND fecha_corte = ?"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"001"</span>, <span class="st">"2026-10-31"</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    ).fetchone()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> posterior <span class="op">!=</span> (<span class="dv">1350</span>, <span class="dv">10</span>):</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Resultado inesperado"</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    conexion.commit()</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span>:</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> conexion.in_transaction:</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        conexion.rollback()</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    conexion.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Después abre connect(ruta, readonly=True), consulta esa fila y cierra en finally. Esperas (1350, 10) y 48 cortes; la fuente conserva (1300, 10). Repetir la misma sentencia condicionada al previo 1300 afecta cero filas: debes revisar el estado, no afirmar que se aplicó una nueva corrección.</p>
+</details>
+</section>
+<section id="c-fallo-a-mitad-de-una-transacción" class="level2">
+<h2 class="anchored" data-anchor-id="c-fallo-a-mitad-de-una-transacción">C — Fallo a mitad de una transacción</h2>
+<p>Para aislar el mecanismo sin cambiar la copia manual, crea este caso en memoria:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>conexion <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">":memory:"</span>, isolation_level<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>conexion.execute(<span class="st">"PRAGMA foreign_keys = ON"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> conexion.execute(<span class="st">"PRAGMA foreign_keys"</span>).fetchone() <span class="op">==</span> (<span class="dv">1</span>,)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>conexion.execute(<span class="st">"CREATE TABLE clientes (id TEXT PRIMARY KEY NOT NULL)"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>conexion.execute(<span class="st">"CREATE TABLE creditos (id TEXT PRIMARY KEY NOT NULL, cliente TEXT NOT NULL REFERENCES clientes(id))"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>conexion.execute(<span class="st">"INSERT INTO clientes VALUES (?)"</span>, (<span class="st">"P"</span>,))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>En Python &gt;= 3.12, añade autocommit=sqlite3.LEGACY_TRANSACTION_CONTROL a esa llamada, como explica la lección, para fijar el mismo modo. En 3.11 conserva isolation_level=None sin ese argumento.</p>
+<ol type="1">
+<li>Inicia BEGIN. Inserta K1 con cliente P y después K2 con cliente inexistente.</li>
+<li>Captura el IntegrityError esperado. Antes de rollback, observa si K1 sigue dentro de la conexión y si in_transaction sigue verdadero.</li>
+<li>Revierte todo y comprueba que no quedó ningún crédito.</li>
+<li>Repite sin BEGIN, en otra base temporal equivalente, y explica la diferencia.</li>
+</ol>
+<details>
+<summary>
+Ver solución razonada de C
+</summary>
+<p>El esquema usa referencias inmediatas y la política normal. La inserción K2 falla, pero K1 sigue pendiente en la transacción; in_transaction es verdadero. ROLLBACK devuelve la tabla creditos al estado vacío. No confirmes después de capturar ese error si el contrato requería ambas filas como una unidad.</p>
+<p>Sin BEGIN, en nuestro modo explícito, K1 se confirma al completar su sentencia. El error de K2 y un rollback posterior no borran K1 ya confirmado. Así se ve por qué una llamada a executemany o un bloque with no sustituyen declarar los límites de la decisión. Cierra siempre la base temporal en finally.</p>
+</details>
+</section>
+<section id="d-carga-repetible-y-conflicto" class="level2">
+<h2 class="anchored" data-anchor-id="d-carga-repetible-y-conflicto">D — Carga repetible y conflicto</h2>
+<ol type="1">
+<li>En la copia manual que ya tiene la corrección de B, abre otra conexión.</li>
+<li>Importa BATCH y load_batch desde transactions y carga las dos filas de noviembre.</li>
+<li>Repite el lote; comprueba cero inserciones y los mismos valores.</li>
+<li>Prueba un lote vacío y uno con un registro nuevo seguido de una clave conflictiva.</li>
+<li>Comprueba que el conflicto no deje el registro nuevo de forma parcial.</li>
+</ol>
+<details>
+<summary>
+Ver solución razonada de D
+</summary>
+<p>load_batch(conexion, BATCH) devuelve 2 en la primera ejecución, 0 en la segunda y load_batch(conexion, []) devuelve 0. La copia tiene 50 cortes, con noviembre de 001 = (1400, 0) y 002 = (1500, 0). La clave completa identifica cada registro.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>conflictivo <span class="op">=</span> [</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"003"</span>, <span class="st">"2026-11-30"</span>, <span class="dv">1600</span>, <span class="dv">0</span>),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"001"</span>, <span class="st">"2026-11-30"</span>, <span class="dv">999</span>, <span class="dv">0</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La segunda fila difiere del valor 1400 existente y produce ValueError. El rollback del lote también elimina la inserción nueva de 003. Se conservan 50 cortes y ambos registros de noviembre anteriores. Captura el ValueError esperado para comprobar; propaga cualquier error inesperado y cierra la conexión.</p>
+<p>No basta con contar 50: compara filas y valores. Repetición exacta, clave conflictiva y corrección deliberada son tres decisiones distintas. Un lote con None conserva NULL, no cero; un saldo negativo se rechaza antes de comenzar la carga por la validación de entrada y también por el contrato SQL.</p>
+</details>
+</section>
+<section id="e-delete-reversión-y-relaciones" class="level2">
+<h2 class="anchored" data-anchor-id="e-delete-reversión-y-relaciones">E — DELETE, reversión y relaciones</h2>
+<ol type="1">
+<li>Selecciona noviembre de 002 en la copia manual de D; predice alcance y resultado.</li>
+<li>Inicia BEGIN IMMEDIATE, elimina solo esa fila y verifica ausencia.</li>
+<li>Revierte y comprueba que reaparece con sus valores originales.</li>
+<li>Selecciona otra vez, elimina, confirma y verifica al reconectar.</li>
+<li>Ensaya DELETE de C001 en una transacción aparte y explica el rechazo.</li>
+</ol>
+<details>
+<summary>
+Ver solución razonada de E
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> id_credito, fecha_corte, saldo_mxn, dias_atraso</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> cortes <span class="kw">WHERE</span> id_credito <span class="op">=</span> <span class="st">'002'</span> <span class="kw">AND</span> fecha_corte <span class="op">=</span> <span class="st">'2026-11-30'</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Devuelve (002, 2026-11-30, 1500, 0). Dentro de la transacción:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> cortes</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> id_credito <span class="op">=</span> <span class="st">'002'</span> <span class="kw">AND</span> fecha_corte <span class="op">=</span> <span class="st">'2026-11-30'</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Comprueba rowcount = 1 y SELECT vacío. Tras rollback reaparece; después del commit de la segunda transacción desaparece al reconectar. Quedan 49 cortes, con 001/noviembre y la corrección 1350 de B. El resto se conserva.</p>
+<p>C001 tiene créditos 001 y 002; el esquema no declara cascada. Con foreign_keys activo, DELETE del cliente falla por referencia y se revierte. No desactives la regla para lograr el borrado. No se elimina la fila de cliente ni sus créditos.</p>
+</details>
+</section>
+<section id="f-persistencia-y-límites-de-rollback" class="level2">
+<h2 class="anchored" data-anchor-id="f-persistencia-y-límites-de-rollback">F — Persistencia y límites de rollback</h2>
+<ol type="1">
+<li>Comprueba todas las filas de la copia manual contra final_rows(original) del script.</li>
+<li>Inicia un cambio temporal sobre 001/octubre y cierra sin confirmar; consulta con otra conexión y explica por qué sigue 1350.</li>
+<li>Explica qué harías si una sesión se interrumpe después de un commit.</li>
+<li>Vuelve a ejecutar el programa sobre su copia de demostración; comprueba que solo verifica y no inicia otro recorrido de escrituras.</li>
+</ol>
+<details>
+<summary>
+Ver solución razonada de F
+</summary>
+<p>Puedes importar final_rows y verify_file desde transactions y ejecutar verify_file(ruta, final_rows(original)). La copia manual de A–E coincide con el estado final de la demostración: 16/24/49, corrección de octubre y noviembre de 001. La fuente sigue siendo la muestra original.</p>
+<p>En este modo, un cambio con BEGIN pendiente se descarta al cerrar; el patrón recomendado expresa rollback antes de close, en vez de usar el cierre como la decisión implícita. Si ya hubo commit, cerrar o llamar a rollback no vuelve al estado anterior confirmado. Conserva la copia para investigar y documenta una corrección o empieza otro ensayo en una ruta nueva; no borres trabajo previo.</p>
+<p>Si una copia existente difiere de lo esperado, el programa la rechaza en lectura y la conserva. No acredita finalización solo por abrir el archivo: compara claves, valores, restricciones y persistencia.</p>
+</details>
+</section>
+<section id="g-extensión-savepoint-dentro-de-una-transacción" class="level2">
+<h2 class="anchored" data-anchor-id="g-extensión-savepoint-dentro-de-una-transacción">G — Extensión: SAVEPOINT dentro de una transacción</h2>
+<p>En otra base en memoria, comienza con una fila de valor 10 y prueba la secuencia:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> ensayo (<span class="kw">id</span> <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>, valor <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>);</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> ensayo <span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="dv">10</span>);</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">BEGIN</span>;</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> ensayo <span class="kw">SET</span> valor <span class="op">=</span> <span class="dv">20</span> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">1</span>;</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SAVEPOINT</span> opcion;</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> ensayo <span class="kw">SET</span> valor <span class="op">=</span> <span class="dv">99</span> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">1</span>;</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ROLLBACK</span> <span class="kw">TO</span> opcion;</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>RELEASE opcion;</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> valor <span class="kw">FROM</span> ensayo <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">1</span>;</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="kw">ROLLBACK</span>;</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> valor <span class="kw">FROM</span> ensayo <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">1</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ejecuta cada sentencia con execute sobre una conexión en isolation_level=None; no pases todo a executescript dentro de otra transacción pendiente. Cierra en finally. Predice ambos valores y explica qué decisión conserva o descarta cada nivel.</p>
+<details>
+<summary>
+Ver solución razonada de la extensión
+</summary>
+<p>Tras ROLLBACK TO opcion, el valor es 20: se descartó el cambio posterior a 99, pero no la escritura previa al savepoint. RELEASE retira ese punto y no confirma el BEGIN exterior. El primer SELECT devuelve 20; tras ROLLBACK exterior, el segundo devuelve 10. El INSERT inicial estaba confirmado antes de BEGIN en este modo. No uses reversión parcial si tu contrato exige atomicidad de todo el lote: en ese caso revierte la transacción completa.</p>
+</details>
+</section>
+<section id="evidencia-reflexión-y-siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-reflexión-y-siguiente-paso">Evidencia, reflexión y siguiente paso</h2>
+<p>Conserva script, consultas y una nota con filas seleccionadas antes/después, alcance, errores esperados, decisión de commit/rollback y comprobación al reconectar. No publiques las bases locales de output. Registra evidencia y dudas en tu bitácora personal junto a la práctica; ejecutar la demostración no acredita aprendizaje por sí solo.</p>
+<p>Explica: ¿por qué el fallo de una sentencia no garantiza revertir las anteriores? ¿Qué diferencia hay entre repetir un lote y sobrescribir una clave conflictiva? ¿Por qué cerrar no sustituye confirmar? ¿Qué protege la condición del valor previo? ¿Qué cambios quedan si la ejecución falla entre dos decisiones ya confirmadas?</p>
+<p>No hay checkpoint de proyecto implementado. Continúa con el <a href="./03-09-leccion.html">03.09 — Integración pandas y SQL</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

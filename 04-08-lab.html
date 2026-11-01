@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 04.08 — Interacción con Altair – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito-entradas-y-preparación" id="toc-propósito-entradas-y-preparación" class="nav-link active" data-scroll-target="#propósito-entradas-y-preparación">Propósito, entradas y preparación</a></li>
+  <li><a href="#a.-filtro-y-ficha-sobre-bases-diferentes" id="toc-a.-filtro-y-ficha-sobre-bases-diferentes" class="nav-link" data-scroll-target="#a.-filtro-y-ficha-sobre-bases-diferentes">A. Filtro y ficha sobre bases diferentes</a></li>
+  <li><a href="#b.-condición-y-selección-vacía" id="toc-b.-condición-y-selección-vacía" class="nav-link" data-scroll-target="#b.-condición-y-selección-vacía">B. Condición y selección vacía</a></li>
+  <li><a href="#c.-construir-una-variación-y-explorar-un-corte-vacío" id="toc-c.-construir-una-variación-y-explorar-un-corte-vacío" class="nav-link" data-scroll-target="#c.-construir-una-variación-y-explorar-un-corte-vacío">C. Construir una variación y explorar un corte vacío</a></li>
+  <li><a href="#d.-intervalo-vinculado-profundización-opcional" id="toc-d.-intervalo-vinculado-profundización-opcional" class="nav-link" data-scroll-target="#d.-intervalo-vinculado-profundización-opcional">D. Intervalo vinculado — profundización opcional</a></li>
+  <li><a href="#e.-compartir-y-explicar-un-estado" id="toc-e.-compartir-y-explicar-un-estado" class="nav-link" data-scroll-target="#e.-compartir-y-explicar-un-estado">E. Compartir y explicar un estado</a></li>
+  <li><a href="#evidencia-reflexión-y-siguiente-paso" id="toc-evidencia-reflexión-y-siguiente-paso" class="nav-link" data-scroll-target="#evidencia-reflexión-y-siguiente-paso">Evidencia, reflexión y siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 04.08 — Interacción con Altair</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 04 / 04.08
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-04.html">Visualización en Python</a></p>
+<section id="propósito-entradas-y-preparación" class="level2">
+<h2 class="anchored" data-anchor-id="propósito-entradas-y-preparación">Propósito, entradas y preparación</h2>
+<p>Este lab es <strong>extensión opcional</strong>. Lee la <a href="./04-08-leccion.html">lección 04.08</a> y completa 04.07 con sus prerrequisitos. Explorarás figuras conservando una explicación comprobable de sus estados y bases. Omitir este lab no bloquea el cierre visual ni Python aplicado.</p>
+<p><strong>Entradas:</strong> interaction.py y las fuentes sintéticas de SQL 03.01. <strong>Resultado:</strong> HTML/JSON de filtro, resaltado e intervalo, tablas, una variación propia y evidencia de estados contrastados con datos. Mantén las fuentes, scripts originales, SQLite y entregas anteriores intactos.</p>
+<p>Tiempo orientativo: dos sesiones de 60–90 minutos para A–C y E. D profundiza en intervalos y puede hacerse en otra sesión. Usa un solo gestor y el recorrido completo de tu shell indicado en la lección. Desde la raíz, ejecuta interaction.py con <code>--cut 2026-10-31</code> y una carpeta nueva <code>curriculum/04_visualization_python/08_altair_interaction/output/lab_08</code>. Abre los HTML en un navegador compatible con conexión. Si eliges <code>--bundle</code>, usa el convertidor de 04.07 y otra carpeta; la prueba sin red es ampliación. No necesitas instalar paquetes nuevos si el entorno de 04.07 ya es adecuado.</p>
+</section>
+<section id="a.-filtro-y-ficha-sobre-bases-diferentes" class="level2">
+<h2 class="anchored" data-anchor-id="a.-filtro-y-ficha-sobre-bases-diferentes">A. Filtro y ficha sobre bases diferentes</h2>
+<p>Abre filtro.html, pares.csv y resumen_segmentos.csv.</p>
+<ol type="1">
+<li>Antes de tocar el menú, registra opción inicial, número de puntos, registros del corte, saldos conocidos y mediana global.</li>
+<li>Elige consumo. Comprueba IDs y coordenadas de sus puntos con pares.csv. Cuenta también los registros y saldos de consumo en corte.csv.</li>
+<li>Explica por qué la ficha informa diez registros aunque haya nueve puntos. Calcula la mediana sobre los diez saldos conocidos del segmento.</li>
+<li>Elige educación. Escribe el mensaje y distingue registros, saldos y pares.</li>
+<li>Vuelve a Todos. Comprueba que regresan los 19 puntos y la base global.</li>
+<li>Revisa si los límites de los ejes cambiaron. ¿Qué confusión evitaron?</li>
+</ol>
+<p><strong>Resultado:</strong> ficha de tres estados y tablas conciliadas. <strong>Comprobación:</strong> Todos = 24 registros, 21 saldos, 19 pares, mediana 2300; consumo = 10, 10, 9 y 1750; educación = 3, 0, 0 y mediana ausente.</p>
+<details>
+<summary>
+Ver solución razonada de A
+</summary>
+<p>Todos incluye los segmentos completos. La mediana global 2300 se calcula sobre 21 saldos originales, no sobre cuatro medianas de grupo. En consumo, falta el atraso del crédito 006: su saldo participa en la mediana pero no forma un punto. Por eso son diez saldos y nueve pares. El crédito 004 tiene saldo cero válido y atraso 40: se conserva en (0, 40).</p>
+<p>Educación tiene tres registros sin saldo, por lo que no tiene pares ni mediana. La figura indica Sin pares conocidos y la ficha conserva 0/3. Volver a Todos restablece la base sin reescribir archivos. Los dominios se fijan desde el corte completo y permanecen iguales; una reducción de escala no hace parecer mayor un saldo del segmento seleccionado.</p>
+</details>
+</section>
+<section id="b.-condición-y-selección-vacía" class="level2">
+<h2 class="anchored" data-anchor-id="b.-condición-y-selección-vacía">B. Condición y selección vacía</h2>
+<p>Abre resaltado.html. Identifica los cuatro cuadrados superiores.</p>
+<ol type="1">
+<li>Registra el estado inicial: puntos presentes, opacidad y ficha.</li>
+<li>Haz clic en consumo. Cuenta puntos resaltados y atenuados.</li>
+<li>Compara ese resultado con elegir consumo en filtro.html. ¿Cuáles permanecen en cada dispersión? ¿Qué vista sí se filtra en resaltado.html?</li>
+<li>Haz clic en comercio y comprueba que reemplaza consumo.</li>
+<li>Haz clic en educación. ¿Por qué el control puede seleccionarse aunque no haya pares de ese segmento? Revisa su ficha.</li>
+<li>Haz doble clic sobre un cuadrado para limpiar. Explica empty=False y qué cambiaría si una selección vacía actuara como cumplimiento de todos.</li>
+</ol>
+<p><strong>Resultado:</strong> explicación de condición, filtro y limpieza. <strong>Comprobación:</strong> consumo resalta nueve puntos y atenúa diez; la dispersión conserva 19. Comercio resalta cinco y atenúa 14. Educación no resalta ninguno.</p>
+<details>
+<summary>
+Ver solución razonada de B
+</summary>
+<p>Inicialmente no se elige segmento, todos los puntos están atenuados y la ficha está vacía. La condición modifica opacidad/borde sin quitar filas. El filtro de A deja solo nueve puntos de consumo; el resaltado de B conserva 19. En B se filtra la ficha para mostrar únicamente el segmento seleccionado.</p>
+<p>toggle=False hace que el nuevo clic reemplace la selección anterior. Los controles vienen del resumen completo, no de pares.csv, por lo que educación puede elegirse y mostrar tres registros sin mediana. Elegirla deja todos los puntos atenuados y no elimina los registros de la fuente.</p>
+<p>empty=False establece que ninguna fila cumple una selección vacía. En la condición todos pasan a la alternativa atenuada; en la ficha filtrada no queda fila. Con empty=True, el predicado vacío cumpliría para todas las filas: esa decisión exige explicar un estado inicial diferente.</p>
+</details>
+</section>
+<section id="c.-construir-una-variación-y-explorar-un-corte-vacío" class="level2">
+<h2 class="anchored" data-anchor-id="c.-construir-una-variación-y-explorar-un-corte-vacío">C. Construir una variación y explorar un corte vacío</h2>
+<p>Copia interaction.py como <code>interaction_lab.py</code> <strong>en la misma carpeta</strong> para conservar la reutilización de 04.07. En la copia:</p>
+<ol type="1">
+<li>Cambia el valor inicial del menú de Todos a consumo. No cambies datos, opciones, reglas, ejes ni preparación de medianas.</li>
+<li>Ejecuta con octubre en una carpeta nueva y comprueba el estado inicial.</li>
+<li>Cambia a educación y a Todos. Verifica que la mediana no dependa del número de puntos visibles ni del orden en que usaste el menú.</li>
+<li>Ejecuta otra entrega con <code>--cut 2026-11-30</code>. Prueba Todos y consumo.</li>
+<li>Explica por qué Sin registros y cobertura no definida difieren de Sin pares conocidos y cobertura 0 % de educación en octubre.</li>
+<li>Intenta repetir una carpeta de salida: el script debe rechazarla y conservar sus archivos.</li>
+</ol>
+<p><strong>Resultado:</strong> copia propia, dos entregas y registro de estados.</p>
+<details>
+<summary>
+Ver solución razonada de C
+</summary>
+<p>Cambiar value a consumo en el parámetro segmento_elegido modifica solo el estado inicial de filtro.html. Octubre comienza con nueve puntos, mediana 1750, diez saldos y diez registros. Todos muestra otra vez 19 pares y mediana global 2300. Los CSV siguen conteniendo la base preparada completa.</p>
+<p>Noviembre no existe en la muestra. Las fichas muestran Sin registros; no hay mediana ni cobertura definida, porque el denominador es cero. Educación en octubre sí tiene registros y su cobertura es 0/3 = 0 %, aunque no tenga saldo conocido. Ambos gráficos pueden carecer de puntos, pero significan cosas distintas.</p>
+<p>La carpeta existente se rechaza por exist_ok=False. No se borra para volver a ejecutar: usa otra carpeta. Comprueba archivos y fuentes después de cualquier error; una salida parcial no equivale a una entrega completa.</p>
+</details>
+</section>
+<section id="d.-intervalo-vinculado-profundización-opcional" class="level2">
+<h2 class="anchored" data-anchor-id="d.-intervalo-vinculado-profundización-opcional">D. Intervalo vinculado — profundización opcional</h2>
+<p>Abre intervalo.html y conserva pares.csv como referencia.</p>
+<ol type="1">
+<li>Antes de arrastrar, cuenta A y B; explica el contador cero y su base.</li>
+<li>Dibuja un rectángulo pequeño alrededor de (1300 MXN, 10 días), crédito
+<ol type="1">
+<li>Comprueba que no incluye otros puntos y compara A con B.</li>
+</ol></li>
+<li>Amplía o mueve el rectángulo y registra IDs/coordenadas de los pares que entran. Concilia el conteo con la tabla usando los mismos límites.</li>
+<li>Dibuja en una zona sin puntos. Limpia con doble clic en A.</li>
+<li>Explica por qué 1/19 y 1/24 describen bases distintas y por qué el rectángulo no produce una tasa de atraso de cartera.</li>
+<li>Describe qué sucede con créditos cuyo saldo o atraso es ausente.</li>
+</ol>
+<p><strong>Resultado:</strong> captura de un intervalo, IDs y conteo conciliado. <strong>Comprobación:</strong> el rectángulo de un par deja 19 puntos en A, uno en B y contador 1/19; al limpiar, B y el contador vuelven a cero.</p>
+<details>
+<summary>
+Ver solución razonada de D
+</summary>
+<p>A conserva la población de 19 pares conocidos. B contiene el subconjunto del rectángulo. El crédito 001 aporta (1300, 10) de una sola fila; si el rectángulo es pequeño y no toca otro punto, B tiene uno. Un intervalo sin puntos también tiene conteo cero; esto difiere de no haber registros fuente.</p>
+<p>1/19 se refiere a pares conocidos seleccionados; 1/24 usa la base original de registros. El contador explicita ambas bases, pero no convierte la selección visual en una medida crediticia. Las cinco exclusiones carecen de al menos una coordenada y no pueden recuperarse mediante arrastre. Sus motivos siguen en excluidos_pares.csv. El rectángulo es una elección visual, no una muestra aleatoria ni evidencia causal.</p>
+</details>
+</section>
+<section id="e.-compartir-y-explicar-un-estado" class="level2">
+<h2 class="anchored" data-anchor-id="e.-compartir-y-explicar-un-estado">E. Compartir y explicar un estado</h2>
+<ol type="1">
+<li>Elige consumo en el menú y guarda una captura con su ficha visible. Conserva corte, opción, conteos, mediana, fuente y limitaciones en texto.</li>
+<li>Recarga filtro.html. ¿Conserva el estado anterior o el valor inicial de su especificación? Distingue la entrega original de tu copia de C.</li>
+<li>Comprueba que pares.csv no cambió con tus clics. ¿Qué recibiría alguien que interpreta ese CSV como descarga del segmento seleccionado?</li>
+<li>Si eliges –bundle, abre los tres HTML sin red y prueba menú, clic y arrastre. Compara una captura del estado elegido con _inicial.png/svg.</li>
+<li>Explica qué puede comprobar alguien que recibe la captura, el JSON, el HTML o las tablas. Adjunta texto y tablas para lectura sin cursor.</li>
+</ol>
+<details>
+<summary>
+Ver solución razonada de E
+</summary>
+<p>La captura guarda la apariencia de consumo en ese momento. La evidencia debe indicar nueve pares entre diez registros, diez saldos conocidos y mediana 1750, además de fecha y fuente sintética. El HTML original vuelve a Todos al recargar; tu copia de C vuelve a consumo por su value inicial.</p>
+<p>Los CSV son tablas preparadas, no descargas del estado de la interfaz. El HTML incorporado conserva interacción sin red con estos datos; el básico necesita bibliotecas de CDN. PNG/SVG se exportan desde la especificación inicial y no cambian al usar el HTML. Una captura prueba un aspecto del estado; tabla y código permiten comprobar sus valores y reconstrucción.</p>
+</details>
+</section>
+<section id="evidencia-reflexión-y-siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-reflexión-y-siguiente-paso">Evidencia, reflexión y siguiente paso</h2>
+<p>Conserva código propio, HTML/JSON, tablas, captura y comentario de al menos un filtro y un resaltado. Si realizas D, añade intervalo e IDs; si eliges exportación incorporada, registra la prueba sin conexión. Anota versiones, visor, estado inicial y forma de restablecer. Registra evidencias y dudas en tu bitácora personal junto a la práctica sin atribuir aprendizaje por la disponibilidad del material.</p>
+<p>Reflexiona: ¿cuándo conviene conservar puntos atenuados? ¿Qué significa una selección vacía? ¿Por qué contar solo puntos no describe todos los registros? ¿Qué necesitas guardar para que otra persona interprete tu captura?</p>
+<p>No hay checkpoint de proyecto implementado. Continúa con el <a href="./04-09-leccion.html">04.09 — Cierre visual del análisis</a>, disponible. Las referencias primarias están en la lección.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

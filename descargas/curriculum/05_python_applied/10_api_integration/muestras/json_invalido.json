@@ -1,0 +1,11 @@
+{
+  "steps": [
+    {
+      "page": 1,
+      "status": 200,
+      "content_type": "application/json",
+      "retry_after": null,
+      "body_file": "invalido.txt"
+    }
+  ]
+}

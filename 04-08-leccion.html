@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>04.08 — Interacción con Altair – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-04.html">04 · VISUALIZACIÓN EN PYTHON</a></li><li class="breadcrumb-item"><a href="./04-08-leccion.html">04.08 · Interacción (opcional)</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><img class="brand-icon" src="favicon.svg" alt=""> DS Track</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contenido.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contenido del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">00 · ENTORNO DE APRENDIZAJE</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.01 · Markdown y perfil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.02 · Terminal y rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.03 · Git e historial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.04 · Primer script</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.05 · Entornos y dependencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.06 · Notebook y kernel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprobación y evidencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 · PYTHON FUNDAMENTAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01 · Variables y tipos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02 · Listas y diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.03 · Condiciones y ciclos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.04 · Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.05 · Archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.06 · Validación y resumen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 · PANDAS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01 · Series y DataFrame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02 · Leer y exportar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03 · Seleccionar y filtrar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04 · Tipos y columnas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.05 · Faltantes y reglas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.06 · Texto y fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.07 · Agrupar y resumir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.08 · Combinar tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.09 · Forma de tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.10 · Análisis y gráfica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">03 · SQL Y BASES DE DATOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01 · Modelo relacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02 · Primeras consultas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03 · Crear y cargar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04 · Agregaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05 · Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06 · Subconsultas y CTE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07 · Ventanas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.08 · Transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09 · pandas y SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">04 · VISUALIZACIÓN EN PYTHON</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01 · Pregunta y gráfico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02 · Figure y Axes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03 · Comparaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04 · Distribuciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.05 · Escalas y accesibilidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.06 · Composición y exportación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.07 · Altair declarativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-08-leccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">04.08 · Interacción (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.09 · Cierre visual</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">05 · PYTHON APLICADO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01 · Del notebook a módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02 · Configuración y registro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03 · Errores y recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04 · Pruebas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.05 · Tipos y contratos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.06 · Clases (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.07 · Generadores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.08 · Decoradores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.09 · Medir (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.10 · APIs (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-11-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.11 · Cierre del proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fuentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material de consulta</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#contexto-y-datos-del-recorrido" id="toc-contexto-y-datos-del-recorrido" class="nav-link" data-scroll-target="#contexto-y-datos-del-recorrido">Contexto y datos del recorrido</a></li>
+  <li><a href="#el-estado-de-una-figura" id="toc-el-estado-de-una-figura" class="nav-link" data-scroll-target="#el-estado-de-una-figura">1. El estado de una figura</a></li>
+  <li><a href="#parámetro-variable-un-menú-de-segmentos" id="toc-parámetro-variable-un-menú-de-segmentos" class="nav-link" data-scroll-target="#parámetro-variable-un-menú-de-segmentos">2. Parámetro variable: un menú de segmentos</a>
+  <ul class="collapse">
+  <li><a href="#estado-ausencia-y-restablecimiento" id="toc-estado-ausencia-y-restablecimiento" class="nav-link" data-scroll-target="#estado-ausencia-y-restablecimiento">Estado, ausencia y restablecimiento</a></li>
+  </ul></li>
+  <li><a href="#selección-de-puntos-resaltar-sin-eliminar" id="toc-selección-de-puntos-resaltar-sin-eliminar" class="nav-link" data-scroll-target="#selección-de-puntos-resaltar-sin-eliminar">3. Selección de puntos: resaltar sin eliminar</a></li>
+  <li><a href="#intervalo-y-vistas-vinculadas-profundización-de-esta-extensión" id="toc-intervalo-y-vistas-vinculadas-profundización-de-esta-extensión" class="nav-link" data-scroll-target="#intervalo-y-vistas-vinculadas-profundización-de-esta-extensión">4. Intervalo y vistas vinculadas — profundización de esta extensión</a>
+  <ul class="collapse">
+  <li><a href="#cómo-conservar-un-contador-cero" id="toc-cómo-conservar-un-contador-cero" class="nav-link" data-scroll-target="#cómo-conservar-un-contador-cero">Cómo conservar un contador cero</a></li>
+  </ul></li>
+  <li><a href="#preparar-y-ejecutar" id="toc-preparar-y-ejecutar" class="nav-link" data-scroll-target="#preparar-y-ejecutar">5. Preparar y ejecutar</a>
+  <ul class="collapse">
+  <li><a href="#powershell" id="toc-powershell" class="nav-link" data-scroll-target="#powershell">PowerShell</a></li>
+  <li><a href="#bashzsh" id="toc-bashzsh" class="nav-link" data-scroll-target="#bashzsh">Bash/Zsh</a></li>
+  <li><a href="#cmd-anaconda-prompt" id="toc-cmd-anaconda-prompt" class="nav-link" data-scroll-target="#cmd-anaconda-prompt">CMD / Anaconda Prompt</a></li>
+  </ul></li>
+  <li><a href="#entrega-evidencia-y-comprobación" id="toc-entrega-evidencia-y-comprobación" class="nav-link" data-scroll-target="#entrega-evidencia-y-comprobación">6. Entrega, evidencia y comprobación</a></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-04.html">04 · VISUALIZACIÓN EN PYTHON</a></li><li class="breadcrumb-item"><a href="./04-08-leccion.html">04.08 · Interacción (opcional)</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">04.08 — Interacción con Altair</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 04 / 04.08
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-04.html">Visualización en Python</a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-04.html">Módulo 04</a> / <strong>Lección 04.08</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Explorar estados de una figura distinguiendo filtrar de resaltar</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>Recorrido Altair de 04.07; extensión opcional</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>HTML, tabla y evidencia reproducible de un estado de interacción</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#antes-de-empezar">Preparación</a> · <a href="#material-de-apoyo">Material de apoyo</a> · <a href="./04-08-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<blockquote class="blockquote">
+<p><strong>Extensión opcional:</strong> si no eliges interacción, continúa con <a href="./04-09-leccion.html">04.09 — Cierre visual del análisis</a>.</p>
+</blockquote>
+<p><a id="propósito-y-prerrequisitos"></a></p>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Explorar un indicador conocido mediante controles y selecciones, dejando claro qué población se muestra después de cada acción. Una interacción puede cambiar el aspecto de una marca o las filas que llegan a una vista: esas decisiones no son equivalentes y deben poder comprobarse.</p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Esta sección es <strong>extensión opcional</strong>. Completa <a href="./04-07-leccion.html">04.07 — Visualización declarativa</a> y su lab, especialmente datos, marcas, canales, tipos y exportación HTML. Reutiliza <a href="./04-03-leccion.html">bases de comparación de 04.03</a> y <a href="./04-04-leccion.html">pares conocidos de 04.04</a>. No necesitas JavaScript, un servidor ni una aplicación Streamlit.</p>
+<p><a id="objetivos-datos-y-versiones"></a></p>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Diferenciar un parámetro variable de una selección de puntos o intervalo.</li>
+<li>Vincular un menú a un parámetro y filtrar una vista con una regla explícita.</li>
+<li>Resaltar sin confundir atenuación con exclusión.</li>
+<li>Explicar selección vacía, restablecimiento, población y denominadores.</li>
+<li>Compartir un HTML interactivo y registrar evidencia de un estado concreto.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="descargas/curriculum/04_visualization_python/08_altair_interaction/interaction.py">Script de ejemplo</a></td>
+<td>Construir filtros y selecciones sobre datos conocidos</td>
+<td>Si eliges la extensión</td>
+</tr>
+<tr class="even">
+<td><a href="./03-01-leccion.html">Fuentes de SQL</a></td>
+<td>Consultar las observaciones y sus bases</td>
+<td>Entradas compartidas</td>
+</tr>
+<tr class="odd">
+<td><a href="descargas/curriculum/04_visualization_python/08_altair_interaction/assets/filtro_consumo.png">Filtro de referencia</a></td>
+<td>Contrastar la población tras elegir consumo</td>
+<td>Para observar</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/04_visualization_python/08_altair_interaction/assets/resaltado_consumo.png">Resaltado de referencia</a></td>
+<td>Distinguir atenuación de exclusión</td>
+<td>Para observar</td>
+</tr>
+</tbody>
+</table>
+<p>Las figuras incluidas sirven para observar y contrastar. Abre el script cuando el recorrido lo indique para regenerar o practicar; conserva las fuentes y las entregas anteriores y utiliza los destinos de práctica indicados.</p>
+</section>
+<section id="contexto-y-datos-del-recorrido" class="level2">
+<h2 class="anchored" data-anchor-id="contexto-y-datos-del-recorrido">Contexto y datos del recorrido</h2>
+<p>El <a href="descargas/curriculum/04_visualization_python/08_altair_interaction/interaction.py">script interaction.py</a> reutiliza prepare y read_detail de 04.07. Conserva las fuentes sintéticas de SQL 03.01 y sus reglas de ausencia. No vuelve a limpiar los datos ni escribe SQLite. Las versiones comprobadas son <strong>Altair 6.3.0</strong>, <strong>pandas 2.3.3</strong> y, para la ampliación de exportación, <strong>vl-convert-python 1.9.0.post1</strong>. Son referencias del curso, no una afirmación de ser las versiones más recientes. No se agregan dependencias respecto a 04.07.</p>
+<p>Octubre de 2026 tiene 24 registros, 21 saldos conocidos y 19 pares conocidos. La tabla de control incluye cada segmento, aunque no tenga puntos:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Opción</th>
+<th style="text-align: right;">Registros</th>
+<th style="text-align: right;">Saldos conocidos</th>
+<th style="text-align: right;">Pares conocidos</th>
+<th style="text-align: right;">Mediana conocida (MXN)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Todos</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">2300</td>
+</tr>
+<tr class="even">
+<td>comercio</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3100</td>
+</tr>
+<tr class="odd">
+<td>consumo</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1750</td>
+</tr>
+<tr class="even">
+<td>educacion</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">Sin mediana</td>
+</tr>
+<tr class="odd">
+<td>servicios</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2550</td>
+</tr>
+</tbody>
+</table>
+<p>La mediana usa <strong>todos los saldos conocidos de la opción</strong>, no solo las filas que tienen también atraso. Por ejemplo, consumo tiene 10 saldos conocidos y nueve pares. Filtrar una dispersión no autoriza a sustituir su base por la de otro indicador. La mediana global 2300 se calcula desde el detalle; no es la mediana ni la suma de las medianas de segmentos.</p>
+</section>
+<section id="el-estado-de-una-figura" class="level2">
+<h2 class="anchored" data-anchor-id="el-estado-de-una-figura">1. El estado de una figura</h2>
+<p>Un <strong>estado</strong> describe una configuración concreta: opción del menú, segmento seleccionado o límites de un rectángulo. Un <strong>evento</strong> es una acción que puede cambiarlo, como elegir una opción, hacer clic o arrastrar. El visor interpreta la especificación y actualiza la figura en el navegador.</p>
+<pre class="mermaid"><code>flowchart LR
+    A[Tabla comprobada] --&gt; B[Especificación con parámetros]
+    B --&gt; C[HTML abierto en navegador]
+    D[Menú, clic o arrastre] --&gt; E[Estado del parámetro]
+    E --&gt; F[Condición o filtro]
+    C --&gt; F
+    F --&gt; G[Vista y base explícita]</code></pre>
+<p>Sin renderizador: se prepara una tabla y una descripción con parámetros. Al abrir el HTML, una acción cambia un parámetro; una condición o filtro utiliza ese estado para actualizar las marcas. Los CSV originales permanecen iguales.</p>
+<p>En estos ejemplos el navegador trabaja con datos incorporados. Cambiar el menú no vuelve a ejecutar Python, no consulta SQLite y no guarda un CSV nuevo. Recargar el HTML devuelve el estado inicial; no presupongas que recuerda el último clic. La reejecución de una aplicación pertenece a otros módulos.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Acción</th>
+<th>Efecto en las marcas</th>
+<th>Pregunta de comprobación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tooltip</td>
+<td>Presenta información del punto</td>
+<td>¿De qué fila son sus valores?</td>
+</tr>
+<tr class="even">
+<td>Condición de opacidad</td>
+<td>Resalta o atenúa puntos que permanecen</td>
+<td>¿Cuántos siguen presentes?</td>
+</tr>
+<tr class="odd">
+<td>Filtro por parámetro</td>
+<td>Conserva solo filas que cumplen una regla</td>
+<td>¿Qué base queda?</td>
+</tr>
+<tr class="even">
+<td>Intervalo vinculado</td>
+<td>Filtra otra vista con el rectángulo seleccionado</td>
+<td>¿Qué pares están dentro y cuáles fuera?</td>
+</tr>
+</tbody>
+</table>
+<p>Un tooltip ya estaba en 04.07. No equivale a seleccionar ni filtrar. Tampoco crear una selección produce por sí solo un análisis correcto: debes declarar cómo afecta a la vista y contrastar los resultados.</p>
+</section>
+<section id="parámetro-variable-un-menú-de-segmentos" class="level2">
+<h2 class="anchored" data-anchor-id="parámetro-variable-un-menú-de-segmentos">2. Parámetro variable: un menú de segmentos</h2>
+<p>Una variable de Python como <code>grupo = "consumo"</code> se utiliza cuando ejecutas el código. Un <strong>parámetro variable de Altair</strong> queda en la especificación: su valor puede cambiar después en el navegador.</p>
+<p>Este ejemplo se ejecuta desde la carpeta de la lección, con el entorno elegido:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> interaction <span class="im">import</span> prepare, read_detail, OPTIONS</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>tablas <span class="op">=</span> prepare(read_detail(), <span class="st">"2026-10-31"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>control <span class="op">=</span> alt.binding_select(options<span class="op">=</span>OPTIONS, name<span class="op">=</span><span class="st">"Segmento: "</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>segmento <span class="op">=</span> alt.param(name<span class="op">=</span><span class="st">"segmento_demo"</span>, value<span class="op">=</span><span class="st">"Todos"</span>, bind<span class="op">=</span>control)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>regla <span class="op">=</span> (segmento <span class="op">==</span> <span class="st">"Todos"</span>) <span class="op">|</span> (alt.datum.segmento <span class="op">==</span> segmento)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>vista <span class="op">=</span> alt.Chart(tablas[<span class="st">"pares"</span>]).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"saldo_mxn:Q"</span>, y<span class="op">=</span><span class="st">"dias_atraso:Q"</span>, color<span class="op">=</span><span class="st">"segmento:N"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    shape<span class="op">=</span><span class="st">"segmento:N"</span>, tooltip<span class="op">=</span>[<span class="st">"id_credito:N"</span>, <span class="st">"saldo_mxn:Q"</span>, <span class="st">"dias_atraso:Q"</span>],</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>).transform_filter(regla).add_params(segmento)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>binding_select</code> describe el menú; options contiene Todos y los cuatro segmentos. <code>name</code> del control es su etiqueta visible. <code>alt.param</code> declara el nombre interno y el valor inicial. <code>add_params</code> incorpora el parámetro a la figura; definirlo en una variable sin agregarlo no basta.</p>
+<p><code>alt.datum.segmento</code> describe el campo de una fila que interpretará el visor. No selecciona una Series en pandas. La regla dice «Todos está elegido <strong>o</strong> el segmento de esta fila coincide». Aquí <code>|</code> combina expresiones declarativas; los paréntesis conservan la agrupación. No reemplazarlo por el <code>or</code> de Python. Los filtros con máscaras de pandas se explicaron en <a href="./02-03-leccion.html">02.03</a>.</p>
+<p><code>transform_filter</code> elimina filas de esa vista según la regla, sin modificar la tabla de Python ni el archivo original. Las escalas del ejemplo completo se calculan con el corte completo y se conservan al cambiar de opción. Así no confundimos cambio de escala con cambio de saldo o atraso.</p>
+<p>El fragmento enseña el mecanismo. La entrega completa añade ficha de estado, fuente y mensaje vacío; úsala para la práctica.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="descargas/curriculum/04_visualization_python/08_altair_interaction/assets/filtro_consumo.png" class="img-fluid figure-img"></p>
+<figcaption>Filtro por consumo: nueve pares, diez registros y mediana sobre diez saldos conocidos</figcaption>
+</figure>
+</div>
+<section id="estado-ausencia-y-restablecimiento" class="level3">
+<h3 class="anchored" data-anchor-id="estado-ausencia-y-restablecimiento">Estado, ausencia y restablecimiento</h3>
+<p>Al abrir filtro.html, Todos muestra 19 puntos y una ficha con 24 registros, 21 saldos conocidos y mediana 2300 MXN. Elegir consumo muestra nueve puntos, pero la ficha informa 10 registros y mediana 1750 sobre 10 saldos. Todos restablece el corte completo.</p>
+<p>Elegir educación muestra <strong>Sin pares conocidos</strong>: hay tres registros, ningún saldo conocido, ningún par y ninguna mediana. No significa que la fuente no tenga filas. Con <code>--cut 2026-11-30</code> no hay registros en la fuente: el mensaje es <strong>Sin registros</strong> y tampoco hay cobertura definida. 0/0 no es 0 %.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="descargas/curriculum/04_visualization_python/08_altair_interaction/assets/filtro_educacion.png" class="img-fluid figure-img"></p>
+<figcaption>Educación seleccionada: tres registros, ningún par y mensaje de ausencia</figcaption>
+</figure>
+</div>
+<p>La ficha utiliza resumen_segmentos.csv, con una fila preparada por opción. La dispersión utiliza pares.csv. El mismo parámetro gobierna ambas vistas, pero sus bases tienen significado distinto. La ficha permanece visible cuando la dispersión no tiene puntos, evitando que el silencio del visor se interprete como mediana cero.</p>
+</section>
+</section>
+<section id="selección-de-puntos-resaltar-sin-eliminar" class="level2">
+<h2 class="anchored" data-anchor-id="selección-de-puntos-resaltar-sin-eliminar">3. Selección de puntos: resaltar sin eliminar</h2>
+<p>Una <strong>selección de puntos</strong> captura valores de campos a partir de una acción. No tiene que representar un solo crédito: aquí fields elige segmento, por lo que seleccionar consumo identifica sus nueve pares conocidos.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>eleccion <span class="op">=</span> alt.selection_point(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"eleccion_demo"</span>, fields<span class="op">=</span>[<span class="st">"segmento"</span>],</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    on<span class="op">=</span><span class="st">"click"</span>, toggle<span class="op">=</span><span class="va">False</span>, clear<span class="op">=</span><span class="st">"dblclick"</span>, empty<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>opacidad <span class="op">=</span> alt.when(eleccion).then(alt.value(<span class="dv">1</span>)).otherwise(alt.value(<span class="fl">0.18</span>))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>resaltado <span class="op">=</span> alt.Chart(tablas[<span class="st">"pares"</span>]).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"saldo_mxn:Q"</span>, y<span class="op">=</span><span class="st">"dias_atraso:Q"</span>, color<span class="op">=</span><span class="st">"segmento:N"</span>, shape<span class="op">=</span><span class="st">"segmento:N"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span>opacidad,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>).add_params(eleccion)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>on="click"</code> define el evento; <code>toggle=False</code> hace que un clic reemplace la selección anterior, sin acumular segmentos. <code>clear="dblclick"</code> la limpia. <code>empty=False</code> hace que una selección vacía no cumpla el predicado para ninguna fila. En este ejemplo todos los puntos empiezan atenuados.</p>
+<p>Una <strong>condición</strong> decide cómo representar cada fila. <code>alt.when(...).then(...) .otherwise(...)</code> expresa «si cumple la selección, usa opacidad 1; en otro caso, 0.18». <code>alt.value</code> representa una constante visual. El navegador aplica esta condición; no es un <code>if</code> que Python vuelva a ejecutar después de cada clic. Usamos <code>when</code> con la API de referencia; ejemplos antiguos pueden usar <code>condition</code>, <code>selection_single</code> o <code>add_selection</code> y no deben mezclarse sin consultar versiones.</p>
+<p>En el fragmento se puede elegir desde un punto. La entrega utiliza un panel con <strong>cuatro cuadrados de control</strong> y agrega la selección allí. La dispersión y la ficha la reutilizan. Esto permite elegir educación aunque no tenga pares: un control construido solo con puntos conocidos impediría hacerlo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="descargas/curriculum/04_visualization_python/08_altair_interaction/assets/resaltado_consumo.png" class="img-fluid figure-img"></p>
+<figcaption>Consumo resaltado con sus nueve pares; los diez restantes permanecen atenuados</figcaption>
+</figure>
+</div>
+<p>Después de seleccionar consumo siguen presentes <strong>19 puntos</strong>; nueve se resaltan y diez se atenúan. El script también usa borde para los seleccionados y conserva forma por segmento. La ficha filtrada informa solo el segmento elegido. Filtrar la ficha no equivale a filtrar la dispersión.</p>
+<p>Sin selección, la ficha está vacía y todos los puntos atenuados; el subtítulo explica ese estado. Un doble clic sobre el control limpia la elección. Si usaras <code>empty=True</code>, una selección vacía actuaría como cumplimiento para todas las filas. Esa opción cambia lo que significa «nada elegido»; siempre debe explicarse, especialmente antes de conectar un filtro.</p>
+</section>
+<section id="intervalo-y-vistas-vinculadas-profundización-de-esta-extensión" class="level2">
+<h2 class="anchored" data-anchor-id="intervalo-y-vistas-vinculadas-profundización-de-esta-extensión">4. Intervalo y vistas vinculadas — profundización de esta extensión</h2>
+<p>Una <strong>selección de intervalo</strong> captura límites al arrastrar un rectángulo. El panel A conserva todos los pares; el B representa solo los que quedan dentro. La selección se define en A y se utiliza para filtrar B.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ventana <span class="op">=</span> alt.selection_interval(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"ventana_demo"</span>, encodings<span class="op">=</span>[<span class="st">"x"</span>, <span class="st">"y"</span>], empty<span class="op">=</span><span class="va">False</span>, clear<span class="op">=</span><span class="st">"dblclick"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> alt.Chart(tablas[<span class="st">"pares"</span>]).mark_point(filled<span class="op">=</span><span class="va">True</span>).encode(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"saldo_mxn:Q"</span>, y<span class="op">=</span><span class="st">"dias_atraso:Q"</span>, color<span class="op">=</span><span class="st">"segmento:N"</span>, shape<span class="op">=</span><span class="st">"segmento:N"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>origen <span class="op">=</span> base.add_params(ventana)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>destino <span class="op">=</span> base.transform_filter(ventana)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>vinculadas <span class="op">=</span> alt.hconcat(origen, destino)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Sin selección B está vacío por <code>empty=False</code>. Arrastrar alrededor del crédito 001, con (1300 MXN, 10 días), deja un punto en B si el rectángulo no incluye otros. A conserva 19. Doble clic en A limpia el intervalo y B vuelve a cero. Puedes mover el rectángulo; no dibujes la selección sobre la propia vista filtrada, donde perderías los puntos necesarios para escoger otra región.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="descargas/curriculum/04_visualization_python/08_altair_interaction/assets/intervalo_un_par.png" class="img-fluid figure-img"></p>
+<figcaption>Rectángulo que contiene un par: diecinueve puntos en origen y uno en destino</figcaption>
+</figure>
+</div>
+<p>El contador de la entrega distingue <strong>pares seleccionados / 19 pares conocidos</strong> y la <strong>base del corte de 24 registros</strong>. Es un conteo visual, no una tasa de morosidad ni una estimación sobre toda la cartera. Las ausencias no tienen coordenadas y no pueden seleccionarse por rectángulo; siguen documentadas en excluidos_pares.csv. Elegir una región por su apariencia tampoco produce una muestra aleatoria ni demuestra causalidad.</p>
+<section id="cómo-conservar-un-contador-cero" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-conservar-un-contador-cero">Cómo conservar un contador cero</h3>
+<p>El script calcula el conteo en el visor porque depende del rectángulo actual. En el contador, cada par pesa 1 y se suma peso después del filtro. Una fila auxiliar de peso 0 se conserva siempre, incluso con selección vacía, para que exista un resultado agregado de cero. Esa fila se usa <strong>solo en el contador</strong>: no se dibuja, no se guarda como crédito en pares.csv ni participa en medianas. Es un recurso de presentación y no una observación inventada de la cartera. No es necesario reproducir esta parte para explicar selección y filtro.</p>
+<p>El orden de transformación importa: filtrar y luego agregar responde sobre la selección. Agregar todo y luego filtrar un resumen podría responder otra pregunta. Revisa <a href="./04-07-leccion.html#preparar-un-resumen-no-es-agregar-dentro-del-gráfico">agregación de 04.07</a> antes de cambiar transformaciones. En el menú principal las medianas están preparadas por pandas; el rectángulo no las vuelve a calcular.</p>
+</section>
+</section>
+<section id="preparar-y-ejecutar" class="level2">
+<h2 class="anchored" data-anchor-id="preparar-y-ejecutar">5. Preparar y ejecutar</h2>
+<p>Usa el gestor de <a href="./00-05-leccion.html">00.05</a> y la preparación de <a href="./04-07-leccion.html#preparar-comprobar-y-ejecutar-con-el-gestor-elegido">04.07</a>. No hay paquetes nuevos. Si el entorno ya es adecuado, compruébalo y ejecuta. No instales en base ni mezcles gestores sobre un mismo entorno.</p>
+<section id="powershell" class="level3">
+<h3 class="anchored" data-anchor-id="powershell">PowerShell</h3>
+<p>Desde la raíz, con Conda O venv/pip activado:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>c <span class="st">"import altair, pandas; print(altair.__version__, pandas.__version__)"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>python curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>08_altair_interaction<span class="op">/</span>interaction<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>output curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>08_altair_interaction<span class="op">/</span>output<span class="op">/</span>octubre</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ampliación: con el convertidor de 04.07 ya preparado, otra carpeta nueva.</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>python curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>08_altair_interaction<span class="op">/</span>interaction<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>bundle <span class="op">--</span>output curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>08_altair_interaction<span class="op">/</span>output<span class="op">/</span>octubre_bundle</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Recorrido alternativo uv, sin los gestores anteriores:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>uv sync <span class="op">--</span>locked</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>uv run <span class="op">--</span>locked python <span class="op">-</span>c <span class="st">"import altair, pandas; print(altair.__version__, pandas.__version__)"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>uv run <span class="op">--</span>locked python curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>08_altair_interaction<span class="op">/</span>interaction<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>output curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>08_altair_interaction<span class="op">/</span>output<span class="op">/</span>octubre</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ampliación opcional:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>uv sync <span class="op">--</span>locked <span class="op">--</span>group chart-export</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>uv run <span class="op">--</span>locked <span class="op">--</span>group chart-export python curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>08_altair_interaction<span class="op">/</span>interaction<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>bundle <span class="op">--</span>output curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>08_altair_interaction<span class="op">/</span>output<span class="op">/</span>octubre_bundle</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="bashzsh" class="level3">
+<h3 class="anchored" data-anchor-id="bashzsh">Bash/Zsh</h3>
+<p>Desde la raíz, con Conda O venv/pip activado:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import altair, pandas; print(altair.__version__, pandas.__version__)"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/04_visualization_python/08_altair_interaction/interaction.py <span class="at">--output</span> curriculum/04_visualization_python/08_altair_interaction/output/octubre</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ampliación: convertidor ya preparado y carpeta nueva.</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/04_visualization_python/08_altair_interaction/interaction.py <span class="at">--bundle</span> <span class="at">--output</span> curriculum/04_visualization_python/08_altair_interaction/output/octubre_bundle</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Recorrido alternativo uv:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync <span class="at">--locked</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run <span class="at">--locked</span> python <span class="at">-c</span> <span class="st">"import altair, pandas; print(altair.__version__, pandas.__version__)"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run <span class="at">--locked</span> python curriculum/04_visualization_python/08_altair_interaction/interaction.py <span class="at">--output</span> curriculum/04_visualization_python/08_altair_interaction/output/octubre</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ampliación opcional:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync <span class="at">--locked</span> <span class="at">--group</span> chart-export</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run <span class="at">--locked</span> <span class="at">--group</span> chart-export python curriculum/04_visualization_python/08_altair_interaction/interaction.py <span class="at">--bundle</span> <span class="at">--output</span> curriculum/04_visualization_python/08_altair_interaction/output/octubre_bundle</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cmd-anaconda-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="cmd-anaconda-prompt">CMD / Anaconda Prompt</h3>
+<p>Desde la raíz y con el entorno Conda activado:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>python <span class="at">-c</span> <span class="st">"import altair, pandas; print(altair.__version__, pandas.__version__)"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>python curriculum<span class="at">/04_visualization_python/08_altair_interaction/interaction</span>.py -<span class="at">-output</span> curriculum<span class="at">/04_visualization_python/08_altair_interaction/output/octubre</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">REM Ampliacion: con el convertidor preparado y carpeta nueva.</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>python curriculum<span class="at">/04_visualization_python/08_altair_interaction/interaction</span>.py -<span class="at">-bundle</span> -<span class="at">-output</span> curriculum<span class="at">/04_visualization_python/08_altair_interaction/output/octubre_bundle</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="entrega-evidencia-y-comprobación" class="level2">
+<h2 class="anchored" data-anchor-id="entrega-evidencia-y-comprobación">6. Entrega, evidencia y comprobación</h2>
+<p>Cada ejecución exige una carpeta nueva. Genera filtro/resaltado/intervalo en HTML y JSON, corte.csv, pares.csv, excluidos_pares.csv, resumen_segmentos.csv, lectura.md y versiones.json. <code>--cut</code> cambia el corte completo de las tres vistas. <code>--bundle</code> incorpora bibliotecas al HTML y añade PNG/SVG del estado <strong>inicial</strong>, con sufijo _inicial. Una carpeta parcial no acredita una entrega.</p>
+<p>El HTML básico necesita red para cargar bibliotecas; la entrega incorporada usa estos datos locales y puede abrirse sin conexión. Quien abre el HTML no necesita Python. Una previsualización que bloquee JavaScript puede no dibujar la figura: prueba un navegador compatible y revisa visor, archivo y datos.</p>
+<p>PNG/SVG iniciales no incluyen menú ni interacción funcional. Tampoco guardan los clics que alguien haga después en el HTML. Para comunicar un resultado concreto conserva captura y texto con opción elegida, rectángulo o IDs seleccionados, corte, medidas y bases. Guarda también el HTML reconstruible. Los CSV generados contienen las tablas de entrada, no una descarga automática de lo que esté seleccionado en el navegador.</p>
+<p>Comprueba antes de interpretar:</p>
+<ol type="1">
+<li>Contrasta conteos, exclusiones y medianas con los CSV originales.</li>
+<li>Prueba Todos, consumo y educación; verifica ejes fijos y ficha coherente.</li>
+<li>Comprueba que resaltar consumo mantiene 19 puntos y solo nueve se destacan.</li>
+<li>Limpia cada selección y explica su estado vacío.</li>
+<li>Selecciona un par por rectángulo y coteja ID/coordenadas con pares.csv.</li>
+<li>Revisa el corte vacío y distingue falta de filas de falta de valores.</li>
+<li>Si eliges –bundle, prueba los controles sin red y revisa la entrega estática.</li>
+</ol>
+<p>Errores habituales: crear un parámetro sin agregarlo; usar el nombre de una variable Python como si fuera campo; no explicar selección vacía; confundir puntos atenuados con eliminados; cambiar denominadores al filtrar; construir controles solo con pares conocidos; enviar una captura sin el estado que la produjo. Un JSON válido no prueba que los controles respondan correctamente.</p>
+<p>El menú se puede operar con teclado en un navegador compatible; clic y arrastre requieren otra forma de interacción. No se presupone accesibilidad completa por incorporar un control. Las tablas y la explicación textual permiten comprobar resultados sin depender del cursor, color o rectángulo.</p>
+<p><a id="práctica-criterio-de-salida-y-continuidad"></a></p>
+</section>
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Solo si eliges esta extensión, realiza el <a href="./04-08-lab.html">lab 04.08</a> para reproducir un estado de interacción y comprobar su población.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HTML, tabla y nota de una acción</td>
+<td>Estado inicial, selección y restablecimiento</td>
+<td>Qué cambia al filtrar y qué permanece al resaltar</td>
+</tr>
+<tr class="even">
+<td>Evidencia reproducible de un estado</td>
+<td>Población, saldos, pares, ausencias y denominador</td>
+<td>Por qué seleccionar una dispersión no redefine automáticamente la base de otro indicador</td>
+</tr>
+</tbody>
+</table>
+<p>Si eliges esta extensión, puedes cerrarla cuando distingas filtro y resaltado, compruebes bases y ausencias, expliques el estado inicial/restablecimiento y conserves una evidencia reproducible de una interacción.</p>
+<p>Quien aprende realiza y explica la práctica; su compañero revisa. Tu compañero repite la acción registrada y contrasta filas visibles, pares e indicador. Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica. PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita por sí solo aprendizaje completado.</p>
+<p>No hay proyecto ni checkpoint implementado asociado a esta lección.</p>
+<p><a id="referencias-y-atribución"></a></p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>Ejemplos, datos, código y capturas propios de DS Track. Se consultaron fuentes primarias de los equipos Vega-Altair y Vega-Lite; no se copiaron sus datasets ni ejemplos de galería. Las páginas de documentación pueden mostrar una compilación posterior a la referencia ejecutada.</p>
+<ul>
+<li><a href="https://altair-viz.github.io/user_guide/interactions/parameters.html">Altair: parámetros, condiciones y filtros</a>.</li>
+<li><a href="https://altair-viz.github.io/user_guide/interactions/bindings_widgets.html">Altair: controles vinculados</a>.</li>
+<li><a href="https://altair-viz.github.io/user_guide/saving_charts.html">Altair: guardar gráficos</a>.</li>
+<li><a href="https://vega.github.io/vega-lite/docs/selection.html">Vega-Lite: selecciones</a> y <a href="https://vega.github.io/vega-lite/docs/filter.html">filtros</a>.</li>
+</ul>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después de la práctica y su comprobación, continúa con <a href="./04-09-leccion.html">04.09 — Cierre visual del análisis</a>.</p>
+<p>Omitir esta extensión no bloquea 04.09 ni Python aplicado.</p>
+<p><a href="./modulo-04.html">← Módulo 04</a> · <a href="./04-08-lab.html">Lab 04.08</a> · <a href="./04-09-leccion.html">Siguiente →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

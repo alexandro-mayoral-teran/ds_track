@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>03.08 — Escrituras y transacciones – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-03.html">03 · SQL Y BASES DE DATOS</a></li><li class="breadcrumb-item"><a href="./03-08-leccion.html">03.08 · Transacciones</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><img class="brand-icon" src="favicon.svg" alt=""> DS Track</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contenido.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contenido del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">00 · ENTORNO DE APRENDIZAJE</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.01 · Markdown y perfil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.02 · Terminal y rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.03 · Git e historial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.04 · Primer script</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.05 · Entornos y dependencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.06 · Notebook y kernel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprobación y evidencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 · PYTHON FUNDAMENTAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01 · Variables y tipos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02 · Listas y diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.03 · Condiciones y ciclos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.04 · Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.05 · Archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.06 · Validación y resumen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 · PANDAS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01 · Series y DataFrame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02 · Leer y exportar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03 · Seleccionar y filtrar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04 · Tipos y columnas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.05 · Faltantes y reglas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.06 · Texto y fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.07 · Agrupar y resumir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.08 · Combinar tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.09 · Forma de tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.10 · Análisis y gráfica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">03 · SQL Y BASES DE DATOS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01 · Modelo relacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02 · Primeras consultas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03 · Crear y cargar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04 · Agregaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05 · Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06 · Subconsultas y CTE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07 · Ventanas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-08-leccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">03.08 · Transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09 · pandas y SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">04 · VISUALIZACIÓN EN PYTHON</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01 · Pregunta y gráfico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02 · Figure y Axes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03 · Comparaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04 · Distribuciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.05 · Escalas y accesibilidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.06 · Composición y exportación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.07 · Altair declarativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.08 · Interacción (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.09 · Cierre visual</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">05 · PYTHON APLICADO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01 · Del notebook a módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02 · Configuración y registro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03 · Errores y recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04 · Pruebas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.05 · Tipos y contratos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.06 · Clases (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.07 · Generadores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.08 · Decoradores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.09 · Medir (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.10 · APIs (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-11-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.11 · Cierre del proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fuentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material de consulta</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a>
+  <ul class="collapse">
+  <li><a href="#cómo-organizar-la-sesión" id="toc-cómo-organizar-la-sesión" class="nav-link" data-scroll-target="#cómo-organizar-la-sesión">Cómo organizar la sesión</a></li>
+  </ul></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#preparar-un-lugar-de-práctica-separado" id="toc-preparar-un-lugar-de-práctica-separado" class="nav-link" data-scroll-target="#preparar-un-lugar-de-práctica-separado">1. Preparar un lugar de práctica separado</a></li>
+  <li><a href="#una-transacción-reúne-una-decisión" id="toc-una-transacción-reúne-una-decisión" class="nav-link" data-scroll-target="#una-transacción-reúne-una-decisión">2. Una transacción reúne una decisión</a>
+  <ul class="collapse">
+  <li><a href="#las-propiedades-acid-con-ejemplos-pequeños" id="toc-las-propiedades-acid-con-ejemplos-pequeños" class="nav-link" data-scroll-target="#las-propiedades-acid-con-ejemplos-pequeños">Las propiedades ACID, con ejemplos pequeños</a></li>
+  </ul></li>
+  <li><a href="#elegir-un-control-de-transacciones-explícito-en-python" id="toc-elegir-un-control-de-transacciones-explícito-en-python" class="nav-link" data-scroll-target="#elegir-un-control-de-transacciones-explícito-en-python">3. Elegir un control de transacciones explícito en Python</a>
+  <ul class="collapse">
+  <li><a href="#activar-relaciones-antes-de-begin" id="toc-activar-relaciones-antes-de-begin" class="nav-link" data-scroll-target="#activar-relaciones-antes-de-begin">Activar relaciones antes de BEGIN</a></li>
+  </ul></li>
+  <li><a href="#update-cambiar-un-valor-con-alcance-comprobado" id="toc-update-cambiar-un-valor-con-alcance-comprobado" class="nav-link" data-scroll-target="#update-cambiar-un-valor-con-alcance-comprobado">4. UPDATE: cambiar un valor con alcance comprobado</a>
+  <ul class="collapse">
+  <li><a href="#ensayar-y-revertir-primero" id="toc-ensayar-y-revertir-primero" class="nav-link" data-scroll-target="#ensayar-y-revertir-primero">Ensayar y revertir primero</a></li>
+  </ul></li>
+  <li><a href="#un-fallo-no-siempre-revierte-todo-automáticamente" id="toc-un-fallo-no-siempre-revierte-todo-automáticamente" class="nav-link" data-scroll-target="#un-fallo-no-siempre-revierte-todo-automáticamente">5. Un fallo no siempre revierte todo automáticamente</a>
+  <ul class="collapse">
+  <li><a href="#ejecutar-varias-filas-no-define-por-sí-solo-la-atomicidad" id="toc-ejecutar-varias-filas-no-define-por-sí-solo-la-atomicidad" class="nav-link" data-scroll-target="#ejecutar-varias-filas-no-define-por-sí-solo-la-atomicidad">Ejecutar varias filas no define por sí solo la atomicidad</a></li>
+  </ul></li>
+  <li><a href="#carga-repetible-misma-clave-mismos-valores" id="toc-carga-repetible-misma-clave-mismos-valores" class="nav-link" data-scroll-target="#carga-repetible-misma-clave-mismos-valores">6. Carga repetible: misma clave, mismos valores</a>
+  <ul class="collapse">
+  <li><a href="#update-absoluto-y-relativo-no-se-repiten-igual" id="toc-update-absoluto-y-relativo-no-se-repiten-igual" class="nav-link" data-scroll-target="#update-absoluto-y-relativo-no-se-repiten-igual">UPDATE absoluto y relativo no se repiten igual</a></li>
+  </ul></li>
+  <li><a href="#delete-retirar-una-fila-con-un-motivo-concreto" id="toc-delete-retirar-una-fila-con-un-motivo-concreto" class="nav-link" data-scroll-target="#delete-retirar-una-fila-con-un-motivo-concreto">7. DELETE: retirar una fila con un motivo concreto</a>
+  <ul class="collapse">
+  <li><a href="#relaciones-al-borrar" id="toc-relaciones-al-borrar" class="nav-link" data-scroll-target="#relaciones-al-borrar">Relaciones al borrar</a></li>
+  </ul></li>
+  <li><a href="#confirmar-cerrar-y-verificar-son-acciones-diferentes" id="toc-confirmar-cerrar-y-verificar-son-acciones-diferentes" class="nav-link" data-scroll-target="#confirmar-cerrar-y-verificar-son-acciones-diferentes">8. Confirmar, cerrar y verificar son acciones diferentes</a>
+  <ul class="collapse">
+  <li><a href="#estado-final-conocido-de-la-copia" id="toc-estado-final-conocido-de-la-copia" class="nav-link" data-scroll-target="#estado-final-conocido-de-la-copia">Estado final conocido de la copia</a></li>
+  </ul></li>
+  <li><a href="#ejecutar-la-práctica" id="toc-ejecutar-la-práctica" class="nav-link" data-scroll-target="#ejecutar-la-práctica">9. Ejecutar la práctica</a>
+  <ul class="collapse">
+  <li><a href="#powershell" id="toc-powershell" class="nav-link" data-scroll-target="#powershell">PowerShell</a></li>
+  <li><a href="#bashzsh" id="toc-bashzsh" class="nav-link" data-scroll-target="#bashzsh">Bash/Zsh</a></li>
+  </ul></li>
+  <li><a href="#extensiones-y-errores-habituales" id="toc-extensiones-y-errores-habituales" class="nav-link" data-scroll-target="#extensiones-y-errores-habituales">10. Extensiones y errores habituales</a>
+  <ul class="collapse">
+  <li><a href="#savepoint-revertir-una-parte-deliberada" id="toc-savepoint-revertir-una-parte-deliberada" class="nav-link" data-scroll-target="#savepoint-revertir-una-parte-deliberada">SAVEPOINT: revertir una parte deliberada</a></li>
+  <li><a href="#bloqueos-y-visibilidad" id="toc-bloqueos-y-visibilidad" class="nav-link" data-scroll-target="#bloqueos-y-visibilidad">Bloqueos y visibilidad</a></li>
+  </ul></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-03.html">03 · SQL Y BASES DE DATOS</a></li><li class="breadcrumb-item"><a href="./03-08-leccion.html">03.08 · Transacciones</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">03.08 — Escrituras y transacciones</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 03 / 03.08
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-03.html">SQL y bases de datos</a></p>
+<p><a id="08--escrituras-y-transacciones"></a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-03.html">Módulo 03</a> / <strong>Lección 03.08</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Confirmar o revertir escrituras con alcance y persistencia comprobados</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>Python con sqlite3; fuentes incluidas</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>SQL y nota de selección previa, transacción y verificación al reconectar</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#antes-de-empezar">Preparación</a> · <a href="#material-de-apoyo">Material de apoyo</a> · <a href="./03-08-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<p><a id="propósito-prerrequisitos-y-objetivos--esencial"></a></p>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Cambiar datos de forma deliberada, comprobar el alcance de cada escritura y decidir qué se confirma o se revierte.</p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Completa <a href="./03-07-leccion.html">03.07 — Ventanas para comparar registros</a> y su lab; recupera <a href="./03-03-leccion.html">restricciones y carga de 03.03</a>, <a href="./03-02-leccion.html">filtros de 03.02</a> y <a href="./03-05-leccion.html">claves y relaciones de 03.05</a>. Usamos sqlite3 estándar: no necesitas instalar paquetes.</p>
+<p>La fuente permanece en lectura y se escribe sobre una copia nueva. Usa las rutas y comprobaciones del apartado 1: no cambies el modo de una conexión anterior para escribir sobre la base original. Una copia existente se comprueba y conserva; una sesión nueva usa un destino nuevo.</p>
+<section id="cómo-organizar-la-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-organizar-la-sesión">Cómo organizar la sesión</h3>
+<p>La lección puede dividirse en tres sesiones: <strong>A</strong>, secciones 1–4; <strong>B</strong>, secciones 5–7; <strong>C</strong>, secciones 8–10 y lab. SAVEPOINT, UPSERT y concurrencia son ampliaciones; no necesitas dominarlas para completar el criterio esencial.</p>
+</section>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Seleccionar y comprobar el alcance antes de UPDATE o DELETE.</li>
+<li>Agrupar escrituras con control explícito y justificar commit o rollback.</li>
+<li>Distinguir error de una sentencia de reversión completa del lote.</li>
+<li>Demostrar carga repetible y persistencia conservando la fuente y las copias previas.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="descargas/curriculum/03_sql_databases/08_transactions/transactions.py">Script de ejemplo</a></td>
+<td>Crear la copia protegida y contrastar escritura, reversión y carga repetible</td>
+<td>Para el recorrido</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/03_sql_databases/01_relational_sqlite/relational_sqlite.py">Preparador de la muestra</a></td>
+<td>Preparar o comprobar la base si hace falta</td>
+<td>Preparación</td>
+</tr>
+<tr class="odd">
+<td><a href="./03-01-leccion.html">Fuentes CSV</a></td>
+<td>Consultar clientes, créditos y cortes originales</td>
+<td>Consulta compartida</td>
+</tr>
+</tbody>
+</table>
+<p>Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos. Las bases y entregas se preparan en las rutas indicadas, conservando los originales y los destinos existentes. No copies ni publiques bases de práctica como parte del material del curso.</p>
+</section>
+<section id="preparar-un-lugar-de-práctica-separado" class="level2">
+<h2 class="anchored" data-anchor-id="preparar-un-lugar-de-práctica-separado">1. Preparar un lugar de práctica separado</h2>
+<p>Hasta ahora consultamos la base de 03.01 en solo lectura. Aquí <strong>la fuente permanece en solo lectura</strong> y las escrituras ocurren en otra base local. No cambies el modo de conexión de un ejemplo anterior para escribir sobre ella.</p>
+<p><a href="descargas/curriculum/03_sql_databases/08_transactions/transactions.py">transactions.py</a> utiliza la API backup de sqlite3 para crear una copia SQLite nueva. Verifica el contenido y esquema de la fuente contra los CSV antes de copiar. La copia predeterminada vive en output/transacciones_practica.sqlite, dentro de esta lección y excluida de Git. Los CSV y la base de 03.01 se conservan.</p>
+<p>El destino debe ser distinto de la fuente. Si ya existe, el programa solo comprueba el estado final esperado en lectura y termina; no borra, recarga ni continúa escribiendo automáticamente. Si difiere, se detiene y conserva el archivo para revisión. Una nueva sesión utiliza una ruta nueva mediante –practice. Esto evita que repetir el programa duplique cambios o reinicie tu trabajo.</p>
+<p>Una copia guarda un estado de los datos; no es una autorización para usar datos privados en el repositorio. Toda esta práctica usa la cartera ficticia conocida. No se distribuye el archivo generado: conserva consultas y evidencia textual.</p>
+</section>
+<section id="una-transacción-reúne-una-decisión" class="level2">
+<h2 class="anchored" data-anchor-id="una-transacción-reúne-una-decisión">2. Una transacción reúne una decisión</h2>
+<p>Una <strong>transacción</strong> agrupa operaciones que deben confirmarse juntas o revertirse si no cumplen el resultado esperado:</p>
+<pre class="text"><code>abrir conexión → activar reglas → BEGIN → seleccionar → escribir → comprobar
+                                                        ↓ correcto: COMMIT
+                                                        ↓ fallo: ROLLBACK
+cerrar conexión → reconectar → comprobar estado confirmado</code></pre>
+<p>BEGIN inicia; COMMIT confirma los cambios pendientes; ROLLBACK los revierte. Ver un cambio en tu conexión no demuestra que ya esté confirmado. Una vez confirmado, ROLLBACK no deshace ese commit: corregir después requiere otra operación y una nueva transacción con su propia justificación.</p>
+<pre class="mermaid"><code>flowchart TD
+    B["BEGIN: iniciar decisión"] --&gt; S["Seleccionar y comprobar filas previas"]
+    S --&gt; E["Escribir con parámetros"]
+    E --&gt; V["Comprobar valores y relaciones"]
+    V --&gt;|"Resultado esperado"| C["COMMIT: confirmar"]
+    V --&gt;|"Error o resultado distinto"| R["ROLLBACK: revertir"]
+    C --&gt; P["Reconectar y comprobar persistencia"]
+    R --&gt; I["Comprobar estado previo conservado"]</code></pre>
+<p>En palabras: declaramos una unidad de cambio, comprobamos su resultado y tomamos una decisión. Una transacción no sustituye una regla de negocio: puede confirmar un dato incorrecto si las restricciones y comprobaciones lo admiten.</p>
+<section id="las-propiedades-acid-con-ejemplos-pequeños" class="level3">
+<h3 class="anchored" data-anchor-id="las-propiedades-acid-con-ejemplos-pequeños">Las propiedades ACID, con ejemplos pequeños</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Propiedad</th>
+<th>Idea</th>
+<th>Qué observamos aquí</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Atomicidad</td>
+<td>Confirmar todo el grupo o revertirlo</td>
+<td>Si falla la carga, no queda una primera fila parcial</td>
+</tr>
+<tr class="even">
+<td>Consistencia</td>
+<td>Respetar restricciones al confirmar</td>
+<td>Claves, relaciones y valores válidos; también comprobaciones del programa</td>
+</tr>
+<tr class="odd">
+<td>Aislamiento</td>
+<td>Otras conexiones no ven cambios pendientes en el modo normal de esta práctica</td>
+<td>Un lector separado sigue viendo 1300 durante el ensayo de 999</td>
+</tr>
+<tr class="even">
+<td>Durabilidad</td>
+<td>Los cambios confirmados se conservan</td>
+<td>Reconectar recupera 1350 después de COMMIT</td>
+</tr>
+</tbody>
+</table>
+<p>La comprobación al reconectar demuestra persistencia en la ejecución normal; no es un ensayo de corte de energía ni de recuperación ante daños del disco. SQLite tiene reglas de aislamiento y bloqueo propias; aquí usamos dos conexiones locales breves sin configuraciones de lectura de cambios no confirmados.</p>
+</section>
+</section>
+<section id="elegir-un-control-de-transacciones-explícito-en-python" class="level2">
+<h2 class="anchored" data-anchor-id="elegir-un-control-de-transacciones-explícito-en-python">3. Elegir un control de transacciones explícito en Python</h2>
+<p>El proyecto admite Python desde 3.11. Este ejemplo conserva el control explícito introducido en 03.03: <strong>isolation_level=None, BEGIN por SQL y commit/rollback de la conexión</strong>. No dejamos que sqlite3 abra BEGIN implícitamente.</p>
+<p>En Python 3.11 puedes abrir la copia existente así:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>conexion <span class="op">=</span> sqlite3.<span class="ex">connect</span>(ruta_copia, isolation_level<span class="op">=</span><span class="va">None</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>En Python 3.12 o posterior, para fijar el mismo modo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>conexion <span class="op">=</span> sqlite3.<span class="ex">connect</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    ruta_copia,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    isolation_level<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    autocommit<span class="op">=</span>sqlite3.LEGACY_TRANSACTION_CONTROL,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Son alternativas según la versión, no dos conexiones necesarias. El helper connect del script elige opciones compatibles y utiliza una URI con mode=rw: abre un destino que ya existe, sin crear un archivo accidental por una ruta equivocada. El destino nuevo se reserva y copia antes de abrirlo para la práctica.</p>
+<p>Con isolation_level=None en modo legado, una sentencia de escritura ejecutada <strong>sin BEGIN explícito</strong> se confirma automáticamente al completarse. Eso sería inadecuado para un lote cuya segunda sentencia puede fallar. Por eso cada unidad de escritura del ejemplo inicia una transacción antes de modificar.</p>
+<p>Desde Python 3.12 también existen los modos autocommit=True y autocommit=False. Con True, los métodos commit/rollback no tienen efecto; si abres una transacción por SQL, la terminas por SQL. Con False, sqlite3 mantiene una transacción abierta y abre otra tras commit/rollback. No mezclamos esos modelos con el de este ejemplo ni dependemos del valor predeterminado de versiones futuras.</p>
+<section id="activar-relaciones-antes-de-begin" class="level3">
+<h3 class="anchored" data-anchor-id="activar-relaciones-antes-de-begin">Activar relaciones antes de BEGIN</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>conexion.execute(<span class="st">"PRAGMA foreign_keys = ON"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> conexion.execute(<span class="st">"PRAGMA foreign_keys"</span>).fetchone() <span class="op">!=</span> (<span class="dv">1</span>,):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">RuntimeError</span>(<span class="st">"No se habilitaron las claves foráneas"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>conexion.execute(<span class="st">"BEGIN IMMEDIATE"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Las claves foráneas se comprueban por conexión, como en 03.03. Activarlas cuando ya hay una transacción abierta no cambia su estado. El helper del script lo hace inmediatamente después de conectar, antes de BEGIN.</p>
+<p>BEGIN IMMEDIATE inicia una transacción de escritura y solicita su reserva desde el comienzo. Ayuda a mantener selección previa y modificación dentro de una decisión sin que otro escritor cambie la fila entre ambas. Puede fallar si otro escritor mantiene el bloqueo; no garantiza ausencia de conflictos. BEGIN simple es diferido: puede comenzar a leer y solicitar escritura después. No anidamos BEGIN: una conexión que ya tiene transacción debe terminarla o usar SAVEPOINT en una ampliación deliberada.</p>
+</section>
+</section>
+<section id="update-cambiar-un-valor-con-alcance-comprobado" class="level2">
+<h2 class="anchored" data-anchor-id="update-cambiar-un-valor-con-alcance-comprobado">4. UPDATE: cambiar un valor con alcance comprobado</h2>
+<p>La corrección ficticia de esta práctica declara que el saldo de 001 en octubre debe pasar de 1300 a 1350 MXN. No inferimos que todo saldo deba subir 50 ni imputamos ausencias. Primero consultamos la clave completa:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> id_credito, fecha_corte, saldo_mxn, dias_atraso</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> cortes</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> id_credito <span class="op">=</span> <span class="st">'001'</span> <span class="kw">AND</span> fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>UPDATE nombra la tabla; SET indica columnas y valores nuevos; WHERE selecciona las filas. Sobre la copia y dentro de una transacción:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> cortes</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> saldo_mxn <span class="op">=</span> <span class="dv">1350</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> id_credito <span class="op">=</span> <span class="st">'001'</span> <span class="kw">AND</span> fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span> <span class="kw">AND</span> saldo_mxn <span class="op">=</span> <span class="dv">1300</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La clave crédito/fecha limita a una observación. La condición del valor anterior expresa que esta corrección solo se aplica al estado revisado. Si la fila no existe o ya no tiene 1300, no debe afectarse otra fila «parecida». Sin WHERE se modificarían todas las filas de la tabla: no es una corrección individual. Con solo id_credito modificarías sus dos fechas en esta muestra.</p>
+<p>Desde Python usamos parámetros y comprobamos el resultado:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conexion.execute(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"""UPDATE cortes SET saldo_mxn = ?</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">       WHERE id_credito = ? AND fecha_corte = ? AND saldo_mxn = ?"""</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1350</span>, <span class="st">"001"</span>, <span class="st">"2026-10-31"</span>, <span class="dv">1300</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> cursor.rowcount <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"No se modificó exactamente la fila esperada"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>rowcount ayuda a comprobar cuántas filas afectó esta sentencia simple; no demuestra por sí solo que los valores finales sean correctos ni cuenta todos los efectos posibles de triggers. Vuelve a seleccionar la fila, comprueba campos intactos y reconcilia el estado que requiere tu contrato. Aquí atraso sigue siendo 10, clientes y créditos no cambian, y octubre conserva 24 filas.</p>
+<section id="ensayar-y-revertir-primero" class="level3">
+<h3 class="anchored" data-anchor-id="ensayar-y-revertir-primero">Ensayar y revertir primero</h3>
+<p>El script inicia BEGIN IMMEDIATE, cambia temporalmente 1300 a 999, consulta el estado y ejecuta rollback. Una segunda conexión de lectura ve 1300 durante el ensayo; después del rollback la conexión escritora también vuelve a 1300. Este ensayo comprueba el mecanismo, no una corrección del dominio.</p>
+<p>La corrección verdadera usa otra transacción y confirma 1350. Al reconectar, esa fila conserva 1350; la suma conocida de octubre pasa de 46 700 a 46 750, con los mismos 21 saldos conocidos. La fuente original sigue mostrando 1300. No consultes la copia modificada con scripts anteriores que exigen exactamente la muestra original: su rechazo sería coherente con esos ejemplos.</p>
+</section>
+</section>
+<section id="un-fallo-no-siempre-revierte-todo-automáticamente" class="level2">
+<h2 class="anchored" data-anchor-id="un-fallo-no-siempre-revierte-todo-automáticamente">5. Un fallo no siempre revierte todo automáticamente</h2>
+<p>Caso: primero corregir un saldo y después insertar un crédito con un cliente inexistente. La segunda sentencia viola FOREIGN KEY y produce IntegrityError. En estas restricciones inmediatas y con la política predeterminada, falla esa sentencia, pero los cambios previos de la transacción pueden seguir pendientes. No captures la excepción para continuar y confirmar media operación.</p>
+<p>Patrón que usamos sobre una conexión ya configurada:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>conexion.execute(<span class="st">"BEGIN IMMEDIATE"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Aquí van escrituras y comprobaciones de la misma decisión.</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    conexion.execute(<span class="st">"UPDATE cortes SET saldo_mxn = ? WHERE id_credito = ? AND fecha_corte = ?"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                     (<span class="dv">1350</span>, <span class="st">"001"</span>, <span class="st">"2026-10-31"</span>))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    conexion.execute(<span class="st">"INSERT INTO creditos VALUES (?, ?, ?)"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                     (<span class="st">"prueba"</span>, <span class="st">"cliente_inexistente"</span>, <span class="st">"consumo"</span>))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    conexion.commit()</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span>:</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> conexion.in_transaction:</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        conexion.rollback()</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    conexion.close()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Este bloque es un ensayo deliberadamente fallido: ejecútalo solo sobre una copia o base temporal, como en el lab. El programa principal captura ese IntegrityError esperado, comprueba la reversión y sigue con otra decisión independiente. Una excepción inesperada se propaga después de revertir; no se presenta como éxito.</p>
+<p>in_transaction indica si SQLite mantiene una transacción activa. Si una operación o error ya la terminó, evitamos una reversión innecesaria. Incluimos commit dentro del try porque confirmar también puede fallar. Un mensaje impreso antes de commit no prueba que la operación haya terminado correctamente.</p>
+<section id="ejecutar-varias-filas-no-define-por-sí-solo-la-atomicidad" class="level3">
+<h3 class="anchored" data-anchor-id="ejecutar-varias-filas-no-define-por-sí-solo-la-atomicidad">Ejecutar varias filas no define por sí solo la atomicidad</h3>
+<p>executemany repite una sentencia. Sin una transacción que agrupe el lote, en nuestro modo explícito algunas filas podrían quedar confirmadas antes del error. BEGIN + comprobaciones + commit/rollback definen la unidad de carga. Las reglas pueden requerir rechazos por fila, como en Python fundamental, pero ese es otro contrato: aquí el lote se acepta completo o no se confirma nada nuevo.</p>
+</section>
+</section>
+<section id="carga-repetible-misma-clave-mismos-valores" class="level2">
+<h2 class="anchored" data-anchor-id="carga-repetible-misma-clave-mismos-valores">6. Carga repetible: misma clave, mismos valores</h2>
+<p><strong>Idempotencia</strong> significa que repetir la misma operación deja el mismo estado final. No equivale a ignorar cualquier error ni a sobrescribir lo existente. La regla de nuestra carga es:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situación</th>
+<th>Decisión</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Clave crédito/fecha nueva</td>
+<td>Insertar después de validar</td>
+</tr>
+<tr class="even">
+<td>Misma clave y todos los valores iguales</td>
+<td>Aceptar como repetición, sin insertar</td>
+</tr>
+<tr class="odd">
+<td>Misma clave con algún valor distinto</td>
+<td>Rechazar conflicto y revertir el lote</td>
+</tr>
+<tr class="even">
+<td>Lote vacío</td>
+<td>Cero inserciones; estado intacto</td>
+</tr>
+</tbody>
+</table>
+<p>El lote de práctica añade noviembre para 001 (1400, atraso 0) y 002 (1500, atraso 0). load_batch valida formatos y valores, inicia BEGIN IMMEDIATE y, para cada fila, busca la clave completa. Inserta si falta; compara la tupla completa si existe. Si difiere, produce ValueError y rollback. Esta función gestiona su propia transacción y requiere una conexión sin otra transacción pendiente; rechaza el intento de anidarla sin revertir trabajo ajeno.</p>
+<p>Primera carga: dos filas nuevas; repetición exacta: cero. Los desconocidos se conservan como None/NULL y la igualdad no convierte ausencias a cero. Duplicados idénticos dentro del mismo lote también se reconocen; duplicados con valores distintos son conflicto. Esa decisión está declarada, no implícita.</p>
+<p>El script prueba un lote que comienza añadiendo 003 en noviembre y luego entra en conflicto con 001 de noviembre. La carga debe revertir también la primera inserción: 003 no queda persistido. Comprobar solo «hubo una excepción» no bastaría; compara el estado completo después.</p>
+<section id="update-absoluto-y-relativo-no-se-repiten-igual" class="level3">
+<h3 class="anchored" data-anchor-id="update-absoluto-y-relativo-no-se-repiten-igual">UPDATE absoluto y relativo no se repiten igual</h3>
+<p><code>SET saldo_mxn = 1350</code> expresa un valor objetivo; <code>SET saldo_mxn = saldo_mxn + 50</code> incrementaría otra vez al repetir. Nuestra corrección exige además el valor anterior 1300, por lo que repetirla afectaría cero filas y requiere revisión: no declaramos éxito solo porque el estado final parece correcto.</p>
+<p><strong>Extensión:</strong> INSERT OR IGNORE puede ocultar restricciones y no compara todos los valores del registro repetido; no es nuestra regla de carga. UPSERT permite declarar una acción ON CONFLICT para una clave única, pero debes decidir qué conflictos se aceptan y cuáles requieren corrección. INSERT OR REPLACE puede eliminar una fila previa e insertar otra; no lo enseñamos como actualización normal ni como sustituto de revisar relaciones.</p>
+</section>
+</section>
+<section id="delete-retirar-una-fila-con-un-motivo-concreto" class="level2">
+<h2 class="anchored" data-anchor-id="delete-retirar-una-fila-con-un-motivo-concreto">7. DELETE: retirar una fila con un motivo concreto</h2>
+<p>El lote añadió dos observaciones de noviembre para demostrar carga. Declaramos que la de 002 se insertó solo para el ensayo y debe retirarse; no estamos eliminando saldos desconocidos ni registros de cartera originales.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> id_credito, fecha_corte, saldo_mxn, dias_atraso</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> cortes</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> id_credito <span class="op">=</span> <span class="st">'002'</span> <span class="kw">AND</span> fecha_corte <span class="op">=</span> <span class="st">'2026-11-30'</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Debe devolver exactamente (002, 2026-11-30, 1500, 0). Después, dentro de BEGIN:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> cortes</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> id_credito <span class="op">=</span> <span class="st">'002'</span> <span class="kw">AND</span> fecha_corte <span class="op">=</span> <span class="st">'2026-11-30'</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>DELETE elimina filas; no elimina la tabla ni cambia solo una celda. Para dejar una medida ausente necesitarías UPDATE a NULL con una regla que lo justifique. Sin WHERE, DELETE retiraría todas las filas; con una clave incompleta podría afectar otros cortes. Un resultado de cero filas afectadas puede significar una ruta/clave equivocada o que la fila ya no está; revisa el contrato.</p>
+<p>El programa ensaya DELETE y rollback para comprobar que la fila reaparece; después la selecciona nuevamente en otra transacción, elimina una fila, comprueba su ausencia, confirma y reconecta. Queda noviembre de 001, conservado como evidencia de una inserción persistente.</p>
+<section id="relaciones-al-borrar" class="level3">
+<h3 class="anchored" data-anchor-id="relaciones-al-borrar">Relaciones al borrar</h3>
+<p>Eliminar un cliente con créditos puede violar la referencia. El esquema de esta muestra no declara borrado en cascada; no asumimos que DELETE de clientes elimine sus hijos. En cada conexión de escritura mantén foreign_keys activo. Antes de retirar una entidad, revisa dependencias y la regla de conservación. Diseñar cascadas o borrados por lotes es una ampliación posterior.</p>
+</section>
+</section>
+<section id="confirmar-cerrar-y-verificar-son-acciones-diferentes" class="level2">
+<h2 class="anchored" data-anchor-id="confirmar-cerrar-y-verificar-son-acciones-diferentes">8. Confirmar, cerrar y verificar son acciones diferentes</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Acción</th>
+<th>Responsabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>commit</td>
+<td>Confirmar una transacción pendiente en el modo elegido</td>
+</tr>
+<tr class="even">
+<td>rollback</td>
+<td>Revertir cambios pendientes</td>
+</tr>
+<tr class="odd">
+<td>close</td>
+<td>Liberar la conexión; no sustituye confirmar</td>
+</tr>
+<tr class="even">
+<td>Reconectar y SELECT</td>
+<td>Comprobar datos confirmados y persistencia</td>
+</tr>
+</tbody>
+</table>
+<p>Cerrar con cambios pendientes no es una estrategia para guardar. En este modo, cerrar una transacción no confirmada descarta sus cambios; escribimos rollback explícito para que la intención quede visible y se pueda comprobar.</p>
+<p>El contexto <code>with conexion:</code> gestiona confirmación/reversión de una transacción pendiente en el modo correspondiente, pero no cierra la conexión ni garantiza crear BEGIN en nuestro modo explícito. Si no hubo BEGIN, las escrituras podrían haberse confirmado por separado. El bloque try/except/finally del ejemplo muestra por separado inicio, decisión y cierre. No uses un with como sustituto de entender la configuración de sqlite3.</p>
+<p>Evita executescript dentro de una transacción pendiente en el modo legado usado: puede confirmarla antes de ejecutar el script. Para las decisiones de esta lección usamos execute/executemany y límites explícitos; no concatenamos DML y una sentencia COMMIT dentro de texto que luego parezca protegido por rollback.</p>
+<section id="estado-final-conocido-de-la-copia" class="level3">
+<h3 class="anchored" data-anchor-id="estado-final-conocido-de-la-copia">Estado final conocido de la copia</h3>
+<ul>
+<li>16 clientes y 24 créditos, sin cambios.</li>
+<li>49 cortes: los 48 originales y noviembre de 001.</li>
+<li>Octubre de 001 corregido a 1350; atraso conservado en 10.</li>
+<li>Noviembre de 001: 1400, atraso 0.</li>
+<li>No quedan noviembre de 002, noviembre de 003 ni el crédito con cliente inexistente.</li>
+</ul>
+<p>El programa compara todas las filas, esquema, integridad y relaciones, no solo esos conteos. Reconecta tras los commits y verifica también la fuente intacta. Si una ejecución se interrumpe después de un commit anterior, la copia puede quedar en un estado parcial entre decisiones: ese commit ya ocurrió. La próxima ejecución no la reinicia; conserva el archivo para revisar y usa otra ruta nueva si quieres repetir el ensayo completo. La transacción agrupa cada decisión, no convierte toda la demostración en un solo cambio atómico.</p>
+</section>
+</section>
+<section id="ejecutar-la-práctica" class="level2">
+<h2 class="anchored" data-anchor-id="ejecutar-la-práctica">9. Ejecutar la práctica</h2>
+<section id="powershell" class="level3">
+<h3 class="anchored" data-anchor-id="powershell">PowerShell</h3>
+<p>Desde la raíz, con tu entorno elegido activo. Si ya existe la fuente de 03.01, ejecuta solo el segundo comando; el preparador conserva bases existentes.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>python curriculum\03_sql_databases\01_relational_sqlite\relational_sqlite<span class="op">.</span><span class="fu">py</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>python curriculum\03_sql_databases\08_transactions\transactions<span class="op">.</span><span class="fu">py</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Repetir comprueba el estado final sin nuevas escrituras:</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>python curriculum\03_sql_databases\08_transactions\transactions<span class="op">.</span><span class="fu">py</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Una nueva sesión conserva la copia previa y crea otra:</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>python curriculum\03_sql_databases\08_transactions\transactions<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>practice curriculum\03_sql_databases\08_transactions\output\segunda_sesion<span class="op">.</span><span class="fu">sqlite</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="bashzsh" class="level3">
+<h3 class="anchored" data-anchor-id="bashzsh">Bash/Zsh</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/03_sql_databases/01_relational_sqlite/relational_sqlite.py</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/03_sql_databases/08_transactions/transactions.py</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/03_sql_databases/08_transactions/transactions.py</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/03_sql_databases/08_transactions/transactions.py <span class="at">--practice</span> curriculum/03_sql_databases/08_transactions/output/segunda_sesion.sqlite</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Con uv, antepone <code>uv run --locked</code> a cada comando python. Mantén tu gestor y entorno; no instales en base. –source permite elegir una copia original compatible existente, por ejemplo la de 03.03, pero –practice debe seguir siendo otra ruta. No es necesario ejecutar todas las alternativas para completar el lab.</p>
+<p>Salida esperada: UPDATE reversible, lote fallido revertido, corrección confirmada, carga de dos filas y repetición de cero, conflicto sin carga parcial, DELETE reversible y confirmado, estado final 16/24/49 y fuente intacta. En la segunda ejecución solo informa verificación de la práctica existente.</p>
+</section>
+</section>
+<section id="extensiones-y-errores-habituales" class="level2">
+<h2 class="anchored" data-anchor-id="extensiones-y-errores-habituales">10. Extensiones y errores habituales</h2>
+<section id="savepoint-revertir-una-parte-deliberada" class="level3">
+<h3 class="anchored" data-anchor-id="savepoint-revertir-una-parte-deliberada">SAVEPOINT: revertir una parte deliberada</h3>
+<p>BEGIN no se anida. SAVEPOINT nombra un punto dentro de una transacción; ROLLBACK TO vuelve a él, conservando cambios anteriores de esa transacción; RELEASE retira ese punto. Un ejemplo exclusivamente en memoria está en la extensión del lab. Si el savepoint está dentro de un BEGIN, RELEASE no confirma la transacción exterior; aún debes decidir commit o rollback. No uses reversión parcial cuando el contrato exige que todo el lote sea indivisible.</p>
+</section>
+<section id="bloqueos-y-visibilidad" class="level3">
+<h3 class="anchored" data-anchor-id="bloqueos-y-visibilidad">Bloqueos y visibilidad</h3>
+<p>SQLite permite un escritor a la vez. Un bloqueo puede producir OperationalError con database is locked o database is busy; no equivale a una fila inválida. Termina las transacciones breves, cierra recursos y revisa otras conexiones. timeout indica cuánto se espera antes del error, no garantiza éxito. Reintentos, WAL y una política de concurrencia se amplían cuando exista esa necesidad.</p>
+<p>En nuestra demostración el lector separado se cierra antes del commit. Un lector con una transacción abierta puede conservar su instantánea o interferir con la confirmación según el modo de journal; no asumimos que reciba cada cambio en tiempo real. Reconectar permite comprobar el estado confirmado actualizado.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situación</th>
+<th>Qué revisar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UPDATE/DELETE afecta cero filas</td>
+<td>Ruta, clave y condición del valor anterior</td>
+</tr>
+<tr class="even">
+<td>Se modifican varios cortes</td>
+<td>¿Falta fecha en la clave del WHERE?</td>
+</tr>
+<tr class="odd">
+<td>La primera fila del lote queda tras un error</td>
+<td>¿Hubo BEGIN y rollback de todo el lote?</td>
+</tr>
+<tr class="even">
+<td>foreign key constraint failed</td>
+<td>Activa reglas y comprueba la referencia o dependencia</td>
+</tr>
+<tr class="odd">
+<td>cannot start a transaction within a transaction</td>
+<td>Revisa el modo y la transacción activa</td>
+</tr>
+<tr class="even">
+<td>ROLLBACK no deshace un cambio</td>
+<td>¿La escritura ya estaba confirmada?</td>
+</tr>
+<tr class="odd">
+<td>with no agrupa operaciones</td>
+<td>Revisa configuración y BEGIN explícito</td>
+</tr>
+<tr class="even">
+<td>Copia existente no coincide con estado final</td>
+<td>Consérvala para revisar; no reinicies ni sobrescribas</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Realiza el <a href="./03-08-lab.html">lab 03.08</a> para seleccionar antes de escribir y comprobar cambios confirmados y revertidos.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Consultas y nota de selección antes/después</td>
+<td>Filas afectadas, condiciones y fuentes intactas</td>
+<td>Qué se decide confirmar o revertir y por qué</td>
+</tr>
+<tr class="even">
+<td>Comprobaciones tras reconectar y repetir la carga</td>
+<td>Persistencia, repetición exacta y rechazo de conflicto</td>
+<td>Por qué fallar una sentencia o cerrar la conexión no demuestra atomicidad</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes continuar cuando demuestres selección previa, alcance comprobado, confirmación/reversión, carga repetible y persistencia con las fuentes intactas.</p>
+<p>Quien aprende realiza la práctica en su copia y explica las decisiones. Tu compañero plantea un error a mitad del lote y pide explicar qué cambios deben quedar al revertir. Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal; PROGRESS.md registra el desarrollo editorial del curso. El material disponible no acredita por sí solo aprendizaje completado.</p>
+<p>El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una entrega adicional de proyecto implementada para esta lección.</p>
+<p><a id="referencias-primarias"></a></p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>Ejemplos propios del proyecto, contrastados con:</p>
+<ul>
+<li><a href="https://docs.python.org/3.12/library/sqlite3.html">sqlite3 de Python 3.12: control de transacciones, backup y contexto</a>.</li>
+<li><a href="https://www.sqlite.org/lang_transaction.html">SQLite: BEGIN, COMMIT, ROLLBACK y bloqueos</a>.</li>
+<li><a href="https://www.sqlite.org/lang_update.html">SQLite UPDATE</a> y <a href="https://www.sqlite.org/lang_delete.html">DELETE</a>.</li>
+<li><a href="https://www.sqlite.org/lang_conflict.html">SQLite: conflictos y ABORT</a>.</li>
+<li><a href="https://www.sqlite.org/foreignkeys.html">SQLite: claves foráneas</a>.</li>
+<li><a href="https://www.sqlite.org/lang_savepoint.html">SQLite: SAVEPOINT</a> y <a href="https://www.sqlite.org/lang_upsert.html">UPSERT</a>.</li>
+</ul>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después del lab y su comprobación, continúa con <a href="./03-09-leccion.html">03.09 — Integración pandas y SQL</a> antes de realizar su lab.</p>
+<p><a href="./modulo-03.html">← Módulo 03</a> · <a href="./03-08-lab.html">Lab 03.08</a> · <a href="./03-09-leccion.html">Siguiente →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

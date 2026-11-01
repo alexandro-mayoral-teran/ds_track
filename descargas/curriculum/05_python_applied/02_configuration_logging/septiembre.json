@@ -1,0 +1,7 @@
+{
+  "source": "../../03_sql_databases/01_relational_sqlite/data",
+  "output": "output/septiembre",
+  "cut": "2026-09-30",
+  "dpi": 160,
+  "log_level": "INFO"
+}

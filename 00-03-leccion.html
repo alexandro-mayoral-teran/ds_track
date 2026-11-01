@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>00.03 — Git: historial y actualización del perfil – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-00.html">00 · ENTORNO DE APRENDIZAJE</a></li><li class="breadcrumb-item"><a href="./00-03-leccion.html">00.03 · Git e historial</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><img class="brand-icon" src="favicon.svg" alt=""> DS Track</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contenido.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contenido del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">00 · ENTORNO DE APRENDIZAJE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.01 · Markdown y perfil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.02 · Terminal y rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-03-leccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">00.03 · Git e historial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.04 · Primer script</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.05 · Entornos y dependencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.06 · Notebook y kernel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprobación y evidencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 · PYTHON FUNDAMENTAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01 · Variables y tipos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02 · Listas y diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.03 · Condiciones y ciclos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.04 · Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.05 · Archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.06 · Validación y resumen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 · PANDAS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01 · Series y DataFrame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02 · Leer y exportar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03 · Seleccionar y filtrar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04 · Tipos y columnas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.05 · Faltantes y reglas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.06 · Texto y fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.07 · Agrupar y resumir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.08 · Combinar tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.09 · Forma de tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.10 · Análisis y gráfica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">03 · SQL Y BASES DE DATOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01 · Modelo relacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02 · Primeras consultas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03 · Crear y cargar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04 · Agregaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05 · Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06 · Subconsultas y CTE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07 · Ventanas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.08 · Transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09 · pandas y SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">04 · VISUALIZACIÓN EN PYTHON</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01 · Pregunta y gráfico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02 · Figure y Axes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03 · Comparaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04 · Distribuciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.05 · Escalas y accesibilidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.06 · Composición y exportación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.07 · Altair declarativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.08 · Interacción (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.09 · Cierre visual</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">05 · PYTHON APLICADO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01 · Del notebook a módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02 · Configuración y registro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03 · Errores y recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04 · Pruebas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.05 · Tipos y contratos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.06 · Clases (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.07 · Generadores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.08 · Decoradores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.09 · Medir (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.10 · APIs (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-11-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.11 · Cierre del proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fuentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material de consulta</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#entender-el-recorrido-de-un-cambio" id="toc-entender-el-recorrido-de-un-cambio" class="nav-link" data-scroll-target="#entender-el-recorrido-de-un-cambio">1. Entender el recorrido de un cambio</a>
+  <ul class="collapse">
+  <li><a href="#qué-problema-resuelve-git" id="toc-qué-problema-resuelve-git" class="nav-link" data-scroll-target="#qué-problema-resuelve-git">Qué problema resuelve Git</a></li>
+  <li><a href="#las-áreas-por-las-que-pasa-un-cambio" id="toc-las-áreas-por-las-que-pasa-un-cambio" class="nav-link" data-scroll-target="#las-áreas-por-las-que-pasa-un-cambio">Las áreas por las que pasa un cambio</a></li>
+  <li><a href="#usos-cercanos-al-trabajo-con-datos" id="toc-usos-cercanos-al-trabajo-con-datos" class="nav-link" data-scroll-target="#usos-cercanos-al-trabajo-con-datos">Usos cercanos al trabajo con datos</a></li>
+  </ul></li>
+  <li><a href="#clonar-el-perfil-una-sola-vez" id="toc-clonar-el-perfil-una-sola-vez" class="nav-link" data-scroll-target="#clonar-el-perfil-una-sola-vez">2. Clonar el perfil una sola vez</a></li>
+  <li><a href="#configurar-la-identidad-del-autor" id="toc-configurar-la-identidad-del-autor" class="nav-link" data-scroll-target="#configurar-la-identidad-del-autor">3. Configurar la identidad del autor</a></li>
+  <li><a href="#editar-y-revisar-antes-de-preparar" id="toc-editar-y-revisar-antes-de-preparar" class="nav-link" data-scroll-target="#editar-y-revisar-antes-de-preparar">4. Editar y revisar antes de preparar</a></li>
+  <li><a href="#seleccionar-y-registrar-el-cambio" id="toc-seleccionar-y-registrar-el-cambio" class="nav-link" data-scroll-target="#seleccionar-y-registrar-el-cambio">5. Seleccionar y registrar el cambio</a>
+  <ul class="collapse">
+  <li><a href="#el-mismo-cambio-en-tres-momentos" id="toc-el-mismo-cambio-en-tres-momentos" class="nav-link" data-scroll-target="#el-mismo-cambio-en-tres-momentos">El mismo cambio en tres momentos</a></li>
+  </ul></li>
+  <li><a href="#publicar-y-comprobar" id="toc-publicar-y-comprobar" class="nav-link" data-scroll-target="#publicar-y-comprobar">6. Publicar y comprobar</a></li>
+  <li><a href="#retomar-el-trabajo-otro-día" id="toc-retomar-el-trabajo-otro-día" class="nav-link" data-scroll-target="#retomar-el-trabajo-otro-día">7. Retomar el trabajo otro día</a></li>
+  <li><a href="#alternativa-local-sin-github" id="toc-alternativa-local-sin-github" class="nav-link" data-scroll-target="#alternativa-local-sin-github">Alternativa local sin GitHub</a></li>
+  <li><a href="#cuando-algo-no-funciona" id="toc-cuando-algo-no-funciona" class="nav-link" data-scroll-target="#cuando-algo-no-funciona">Cuando algo no funciona</a></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario">Glosario</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-00.html">00 · ENTORNO DE APRENDIZAJE</a></li><li class="breadcrumb-item"><a href="./00-03-leccion.html">00.03 · Git e historial</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">00.03 — Git: historial y actualización del perfil</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 00 / 00.03
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-00.html">Entorno de aprendizaje</a></p>
+<p><a id="03--git-historial-y-actualización-del-perfil"></a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-00.html">Módulo 00</a> / <strong>Lección 00.03</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Conservar una actualización y distinguir archivo guardado, commit y publicación</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>Git; cuenta de GitHub y repositorio del perfil solo para publicar</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>Diff revisado, commit local y nota; comprobación remota si publicas</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#antes-de-empezar">Preparación</a> · <a href="#material-de-apoyo">Material de apoyo</a> · <a href="#glosario">Glosario</a> · <a href="./00-03-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Conservar una actualización del README comprendiendo cada paso y publicarla si eliges el recorrido con GitHub. Esta base servirá después para guardar tus scripts, consultas y documentación junto con una explicación de sus cambios.</p>
+<p><a id="prerrequisitos"></a></p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Completa <a href="./00-01-leccion.html">Markdown y perfil</a> y <a href="./00-02-leccion.html">terminal y rutas</a>. Necesitas Git instalado; no necesitas Python, pip ni uv. Primero ejecuta <code>git --version</code> en tu terminal. Si no se reconoce el comando, utiliza con quien te acompaña la <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">guía oficial de instalación de Git</a> para tu sistema. En Windows, la distribución habitual es Git for Windows; en macOS y Linux la guía explica sus opciones. Tras instalar, abre una terminal nueva y repite la comprobación. No instales otra copia si el comando ya funciona.</p>
+<p>Elige un recorrido después de leer el apartado 1:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recorrido</th>
+<th>Qué necesitas</th>
+<th>Por dónde continuar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Actualizar tu perfil y publicarlo</td>
+<td>Git, cuenta de GitHub y README del perfil creado en 00.01</td>
+<td>Apartados 2–7</td>
+</tr>
+<tr class="even">
+<td>Practicar Git solo en tu equipo</td>
+<td>Git y una carpeta nueva de práctica; no requiere cuenta ni conexión para los comandos locales</td>
+<td><a href="#alternativa-local-sin-github">Alternativa local sin GitHub</a></td>
+</tr>
+</tbody>
+</table>
+<p>Haber descargado <strong>DS Track como ZIP</strong> no impide usar Git en otro proyecto. El ZIP trae los archivos, pero no el historial Git del repositorio. En esta lección trabaja fuera de DS Track: clona tu perfil o crea la carpeta de práctica. Si todavía no puedes preparar Git, lee los ejemplos y registra la ejecución como pendiente; leerlos no equivale a haber creado un commit.</p>
+<p><a id="objetivos"></a></p>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Distinguir guardar un archivo, preparar cambios, hacer commit y publicar.</li>
+<li>Preparar una copia de trabajo: clonar el perfil o iniciar un repositorio local nuevo.</li>
+<li>Revisar los cambios y registrar una modificación; si publicas, comprobar el resultado en GitHub.</li>
+<li>Retomar una sesión reconociendo el estado del repositorio.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="descargas/templates/github-profile/PROFILE.md">Plantilla del perfil</a></td>
+<td>Consultar la presentación que adaptaste en 00.01</td>
+<td>Consulta opcional</td>
+</tr>
+<tr class="even">
+<td><a href="./00-01-leccion.html">Lección de Markdown</a></td>
+<td>Retomar cómo editar y previsualizar el README</td>
+<td>Apoyo previo</td>
+</tr>
+<tr class="odd">
+<td><a href="descargas/curriculum/00_getting_started/03_git_workflow/git-areas.svg">Diagrama de las áreas de Git</a></td>
+<td>Seguir los comandos entre áreas locales y remoto</td>
+<td>Consulta visual; disponible también a tamaño completo</td>
+</tr>
+</tbody>
+</table>
+<p>Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y trabaja las modificaciones en tu copia personal.</p>
+</section>
+<section id="entender-el-recorrido-de-un-cambio" class="level2">
+<h2 class="anchored" data-anchor-id="entender-el-recorrido-de-un-cambio">1. Entender el recorrido de un cambio</h2>
+<section id="qué-problema-resuelve-git" class="level3">
+<h3 class="anchored" data-anchor-id="qué-problema-resuelve-git">Qué problema resuelve Git</h3>
+<p>Imagina que guardas <code>reporte_final</code>, <code>reporte_final2</code> y <code>reporte_ahora_si</code>. ¿Cuál contiene la corrección? ¿Qué cambió respecto al anterior? Git permite mantener los archivos de trabajo y registrar versiones en un historial, con autor, fecha y mensaje. El mensaje debe explicar la intención: Git no sabe por sí solo por qué tomaste una decisión ni si el resultado es correcto.</p>
+<p>Git conserva el historial de los archivos que registras. Si modificas una explicación o corriges un script, puedes consultar qué cambió y por qué. El repositorio local está en tu computadora; el remoto está alojado en GitHub.</p>
+<p>El recorrido general es editar y guardar → preparar → registrar en el historial → publicar, si tienes un remoto. Cada paso tiene una comprobación distinta:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Momento</th>
+<th>Qué ocurre</th>
+<th>Cómo lo compruebas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Archivo guardado</td>
+<td>Tu editor escribe la modificación en el archivo local</td>
+<td><code>git diff</code> muestra cambios sin preparar en archivos ya registrados</td>
+</tr>
+<tr class="even">
+<td>Cambio preparado</td>
+<td>Seleccionas lo que incluirá el próximo commit</td>
+<td><code>git diff --staged</code> muestra esa selección</td>
+</tr>
+<tr class="odd">
+<td>Commit creado</td>
+<td>Git registra los cambios preparados en el historial local</td>
+<td><code>git log --oneline -1</code> muestra el último commit</td>
+</tr>
+<tr class="even">
+<td>Publicación completada</td>
+<td>Los commits se envían al remoto</td>
+<td>Compruebas el archivo y el historial en GitHub</td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>área de preparación</strong> es la selección de cambios para el próximo commit. No es una publicación. Un commit tiene un identificador y un mensaje; el mensaje explica la intención, por ejemplo «Agrega mis objetivos de aprendizaje».</p>
+</section>
+<section id="las-áreas-por-las-que-pasa-un-cambio" class="level3">
+<h3 class="anchored" data-anchor-id="las-áreas-por-las-que-pasa-un-cambio">Las áreas por las que pasa un cambio</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="descargas/curriculum/00_getting_started/03_git_workflow/git-areas.svg" class="img-fluid figure-img"></p>
+<figcaption>Diagrama de secuencia de Git: add conecta trabajo y preparación, commit registra localmente y push envía al remoto. Fetch actualiza las referencias locales del remoto; pull –ff-only trae novedades y avanza sin combinar historiales.</figcaption>
+</figure>
+</div>
+<p><a href="descargas/curriculum/00_getting_started/03_git_workflow/git-areas.svg">Abrir el diagrama a tamaño completo</a> · <a href="descargas/curriculum/00_getting_started/03_git_workflow/git-areas.mmd">Fuente editable en Mermaid</a></p>
+<p><strong>Lectura del diagrama:</strong> editas en tu copia de trabajo; <code>add</code> prepara la versión que quieres registrar y <code>commit</code> la incorpora al historial local. Si eliges publicar, <code>push</code> envía los commits al remoto. En la práctica sin GitHub llegas hasta el historial local. El área de preparación no es una carpeta donde debas mover manualmente el README: Git mantiene esa selección.</p>
+<p>Las flechas representan acciones, no el traslado del archivo: tu README sigue en la copia de trabajo después del commit. Si vuelves a editarlo, esa nueva edición no cambia lo que ya preparaste ni los commits anteriores.</p>
+<p>La cuarta columna también está <strong>en tu computadora</strong>: contiene referencias como <code>origin/main</code>, que recuerdan el estado conocido de una rama del remoto. No es otro repositorio remoto ni una consulta en vivo a GitHub. <code>origin</code> es el nombre habitual del remoto y <code>main</code> es un ejemplo de nombre de rama; el tuyo puede ser distinto.</p>
+<p>La parte inferior es una anticipación para cuando retomes el trabajo: <a href="https://git-scm.com/docs/git-fetch"><code>fetch</code></a> trae novedades y actualiza esas referencias sin modificar tu rama ni tus archivos de trabajo. En cambio, <a href="https://git-scm.com/docs/git-pull"><code>pull --ff-only</code></a> trae las novedades y trata de avanzar tu rama; si puede, actualiza también la copia de trabajo y el índice (el área de preparación). Si los historiales divergen, se detiene sin combinarlos. En esta práctica se usa con el árbol limpio, como explica el apartado 7; no necesitas ejecutar fetch por separado antes de pull.</p>
+<ul>
+<li><code>git diff</code> compara la copia de trabajo con el área de preparación: muestra cambios sin preparar en archivos seguidos.</li>
+<li><code>git diff --staged</code> compara el área de preparación con el último commit: muestra lo que registrarías en el siguiente. Antes del primer commit, muestra el contenido nuevo preparado.</li>
+</ul>
+<p>Ambas comparaciones son locales: no comprueban por sí solas qué se publicó en GitHub. Un archivo nuevo no seguido aparece en <code>git status</code>, pero su contenido aún no aparece en <code>git diff</code>.</p>
+<blockquote class="blockquote">
+<p><strong>Para conversar:</strong> si guardas el README y cierras el editor, ¿ya existe un commit? ¿La copia de GitHub cambió?</p>
+</blockquote>
+</section>
+<section id="usos-cercanos-al-trabajo-con-datos" class="level3">
+<h3 class="anchored" data-anchor-id="usos-cercanos-al-trabajo-con-datos">Usos cercanos al trabajo con datos</h3>
+<p>Puedes conservar versiones de un script que genera reportes, una consulta SQL o las instrucciones para reconstruir una entrega. La revisión permite preguntar «¿qué regla cambió?» antes de ejecutar la nueva versión.</p>
+<p>Git también puede guardar versiones de libros de Excel, pero su comparación habitual no muestra cambios de celdas ni de macros como un diff de texto. Para revisar código VBA, una posibilidad posterior es exportar sus módulos como texto. No necesitas hacerlo aquí ni añadir archivos grandes para practicar. Guardar versiones tampoco comprueba las fórmulas ni sustituye una copia de respaldo.</p>
+</section>
+</section>
+<section id="clonar-el-perfil-una-sola-vez" class="level2">
+<h2 class="anchored" data-anchor-id="clonar-el-perfil-una-sola-vez">2. Clonar el perfil una sola vez</h2>
+<p>Abre la terminal en la carpeta donde guardas tus proyectos, fuera de <code>ds_track</code>. Sustituye <code>TU_USUARIO</code> por tu usuario real en ambos lugares de la URL y en <code>cd</code>. Estos comandos de Git funcionan en PowerShell y Bash/Zsh; <code>cd</code> también está disponible en ambos.</p>
+<pre class="text"><code># Comprueba que Git está disponible
+git --version
+
+# Descarga los archivos y el historial del perfil en una carpeta nueva
+git clone https://github.com/TU_USUARIO/TU_USUARIO.git
+
+# Entra en la carpeta creada por clone
+cd TU_USUARIO
+
+# Consulta el estado de esa copia local
+git status
+
+# Comprueba la dirección del remoto
+git remote -v</code></pre>
+<p><code>clone</code> configura normalmente el remoto con el nombre <code>origin</code>. Sus direcciones para lectura (fetch) y publicación (push) deben corresponder a tu perfil. Como el repositorio ya contiene un README, no necesitas ejecutar <code>git init</code>. Si ya lo clonaste, entra en esa carpeta; no vuelvas a clonarlo en cada sesión.</p>
+<p>Antes de editar, <code>git status</code> debería indicar que no hay cambios pendientes (<code>working tree clean</code>). La descarga de un repositorio público puede funcionar sin iniciar sesión; publicar requiere autenticarte con una cuenta con permiso. Si te pide autenticación, sigue el método de inicio de sesión de tu instalación. La contraseña de tu cuenta no se usa como contraseña de Git por HTTPS.</p>
+</section>
+<section id="configurar-la-identidad-del-autor" class="level2">
+<h2 class="anchored" data-anchor-id="configurar-la-identidad-del-autor">3. Configurar la identidad del autor</h2>
+<p>Dentro del repositorio, consulta la configuración:</p>
+<pre class="text"><code>git config user.name
+git config user.email</code></pre>
+<p>Si no hay un valor o quieres utilizar otro en este repositorio, sustituye los marcadores antes de ejecutar:</p>
+<pre class="text"><code># Configura la identidad solo para este repositorio
+git config user.name "TU_NOMBRE"
+git config user.email "TU_CORREO_DE_AUTOR"</code></pre>
+<p>Usa un correo verificado de tu cuenta o el correo privado <code>noreply</code> que GitHub muestra en sus ajustes de correo. La identidad queda en los commits; configurar nombre y correo no inicia sesión ni concede permisos para publicar.</p>
+</section>
+<section id="editar-y-revisar-antes-de-preparar" class="level2">
+<h2 class="anchored" data-anchor-id="editar-y-revisar-antes-de-preparar">4. Editar y revisar antes de preparar</h2>
+<p>Abre el <code>README.md</code> de la carpeta clonada en tu editor, agrega o concreta un objetivo real y guarda el archivo. Por ejemplo, una frase podría pasar de:</p>
+<pre class="text"><code>Quiero aprender SQL.</code></pre>
+<p>a:</p>
+<pre class="text"><code>Quiero consultar ventas con SQL y comprobar los totales.</code></pre>
+<p>Adapta tu propio objetivo; no necesitas reemplazar todo el perfil por este ejemplo. Vuelve a la terminal de esa misma carpeta:</p>
+<pre class="text"><code># Identifica los archivos modificados
+git status
+
+# Revisa la diferencia respecto a lo que está preparado
+git diff</code></pre>
+<p>El README aparecerá como modificado, todavía sin preparar. El <strong>diff</strong> es una comparación de los cambios. En su contenido, las líneas con <code>+</code> muestran adiciones y las que tienen <code>-</code> muestran eliminaciones. Para el ejemplo, este sería el fragmento de contenido cambiado:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode diff code-with-copy"><code class="sourceCode diff"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="st">-Quiero aprender SQL.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">+Quiero consultar ventas con SQL y comprobar los totales.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Git también muestra encabezados con nombres de archivo y posiciones; aquí solo se presenta el fragmento para reconocer la frase anterior y la nueva. Esos signos describen la diferencia; no forman parte del archivo. Si aparece un visor con <code>(END)</code>, pulsa <code>q</code> para volver a la terminal.</p>
+</section>
+<section id="seleccionar-y-registrar-el-cambio" class="level2">
+<h2 class="anchored" data-anchor-id="seleccionar-y-registrar-el-cambio">5. Seleccionar y registrar el cambio</h2>
+<pre class="text"><code># Prepara únicamente el README
+git add README.md
+
+# Comprueba la selección que incluirá el commit
+git diff --staged
+git status
+
+# Registra esa selección con un mensaje que explique el cambio
+git commit -m "Agrega mis objetivos de aprendizaje"
+
+# Comprueba el último commit y el estado local
+git log --oneline -1
+git status</code></pre>
+<p>Después de <code>add</code>, el archivo aparece entre los cambios preparados (<code>Changes to be committed</code>). Después del commit, ya no queda modificado si no hiciste nuevas ediciones. Puede aparecer que tu rama (la línea de trabajo del historial que estás usando) está por delante de <code>origin</code>: el commit existe localmente y todavía falta publicarlo.</p>
+<p><code>git add README.md</code> selecciona un archivo concreto. No necesitas preparar toda la carpeta con <code>git add .</code>. Si editas el README después de prepararlo, vuelve a revisar y preparar la nueva edición antes del commit.</p>
+<section id="el-mismo-cambio-en-tres-momentos" class="level3">
+<h3 class="anchored" data-anchor-id="el-mismo-cambio-en-tres-momentos">El mismo cambio en tres momentos</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Momento</th>
+<th>Qué deberías observar</th>
+<th>Qué significa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Después de guardar, antes de add</td>
+<td><code>git status</code> informa cambios sin preparar y <code>git diff</code> muestra la frase anterior y la nueva</td>
+<td>El archivo cambió; todavía no seleccionaste esa edición</td>
+</tr>
+<tr class="even">
+<td>Después de add, antes del commit</td>
+<td><code>git diff --staged</code> muestra ese cambio; <code>git diff</code> queda vacío si no editaste otra vez</td>
+<td>La edición está preparada, pero aún no registrada en un commit</td>
+</tr>
+<tr class="odd">
+<td>Después del commit</td>
+<td><code>git log --oneline -1</code> muestra su identificador y mensaje; el estado queda limpio si no hay más cambios</td>
+<td>La edición quedó en el historial local; publicar es otro paso</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Predice antes de probar:</strong> si editas y guardas otra frase después de <code>git add</code>, ¿entrará automáticamente en el commit?</p>
+<details>
+<summary>
+Ver explicación del cambio posterior a add
+</summary>
+<p>No.&nbsp;El commit toma lo que preparaste. La nueva edición queda sin preparar hasta que vuelvas a revisarla y hagas <code>git add README.md</code> otra vez. Un archivo puede tener cambios preparados y sin preparar al mismo tiempo; contrasta <code>git diff --staged</code> con <code>git diff</code>. No necesitas provocar ese caso para avanzar.</p>
+</details>
+</section>
+</section>
+<section id="publicar-y-comprobar" class="level2">
+<h2 class="anchored" data-anchor-id="publicar-y-comprobar">6. Publicar y comprobar</h2>
+<pre class="text"><code># Envía los commits pendientes al remoto configurado
+git push
+
+# Consulta el estado después de publicar
+git status</code></pre>
+<p>Abre tu repositorio en GitHub y comprueba la frase en el README y el mensaje en su historial de commits. Después visita tu perfil. El commit publicado debe coincidir con el que consultaste localmente.</p>
+<blockquote class="blockquote">
+<p><strong>Para comprobar:</strong> ¿qué comando conserva el cambio localmente y cuál lo publica? ¿Cómo demostrarías que ocurrió cada acción?</p>
+</blockquote>
+</section>
+<section id="retomar-el-trabajo-otro-día" class="level2">
+<h2 class="anchored" data-anchor-id="retomar-el-trabajo-otro-día">7. Retomar el trabajo otro día</h2>
+<p>Entra en la carpeta que ya clonaste y consulta <code>git status</code>. Si no hay cambios locales pendientes, trae las novedades que pudieron hacerse desde la web:</p>
+<pre class="text"><code># Revisa el estado antes de traer cambios
+git status
+
+# Actualiza la copia local si puede avanzar sin combinar historiales divergentes
+git pull --ff-only</code></pre>
+<p>Si no hubo cambios remotos, puede indicar <code>Already up to date</code>. Después repite editar → revisar → preparar → commit → push. Si hay ediciones sin guardar en un commit o el comando indica que no puede avanzar, revisa lo pendiente con quien te acompaña antes de continuar.</p>
+</section>
+<section id="alternativa-local-sin-github" class="level2">
+<h2 class="anchored" data-anchor-id="alternativa-local-sin-github">Alternativa local sin GitHub</h2>
+<p>Este recorrido practica el historial sin publicar. No necesitas hacer también el recorrido del perfil ni crear un remoto.</p>
+<ol type="1">
+<li><p>Crea con el explorador una carpeta <strong>nueva y vacía</strong>, por ejemplo <code>practica_git</code>, fuera de DS Track y de otros repositorios. Abre tu terminal en ella como aprendiste en 00.02. Aquí sí iniciarás un repositorio nuevo:</p>
+<pre class="text"><code>git --version
+git init
+git status</code></pre></li>
+<li><p>Configura el autor solo en esta carpeta. Sustituye los marcadores por tus datos; el correo identifica el commit, no es una contraseña ni inicia sesión.</p>
+<pre class="text"><code>git config user.name "TU_NOMBRE"
+git config user.email "TU_CORREO_DE_AUTOR"</code></pre></li>
+<li><p>En el editor, crea y guarda <strong>README.md</strong> dentro de esa carpeta con este texto:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Mi práctica de Git</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>Quiero aprender SQL.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Registra una primera versión:</p>
+<pre class="text"><code>git status
+git add README.md
+git diff --staged
+git commit -m "Agrega presentación inicial"</code></pre>
+<p>Antes de add, el archivo es <strong>no seguido</strong> (<code>untracked</code>): todavía no está registrado por Git. <code>git diff</code> no muestra por defecto el contenido de esos archivos nuevos; <code>git status</code> sí los señala. Después de add puedes revisar todo el contenido nuevo con <code>git diff --staged</code>.</p></li>
+<li><p>En el editor, cambia la frase por «Quiero consultar ventas con SQL y comprobar los totales.», guarda y ejecuta un comando a la vez:</p>
+<pre class="text"><code>git status
+git diff
+git add README.md
+git diff --staged
+git commit -m "Concreta mi objetivo de SQL"
+git log --oneline -2
+git status
+git remote -v</code></pre></li>
+</ol>
+<p><strong>Resultado esperado:</strong> el diff muestra la frase anterior y la nueva; el historial tiene dos commits y el estado queda limpio. Sus identificadores dependen de tu ejecución. <code>git remote -v</code> no muestra direcciones porque no configuraste ninguna. El nombre inicial de la rama puede variar según tu Git; no necesitas cambiarlo para esta práctica.</p>
+<p>No ejecutes <code>push</code> ni <code>pull</code> aquí. Otro día entra en esta misma carpeta y consulta <code>git status</code> y <code>git log --oneline -2</code> para retomar. Conserva tu nota con los dos identificadores y explica por qué esos commits todavía solo existen localmente. Después realiza la variante local del lab.</p>
+</section>
+<section id="cuando-algo-no-funciona" class="level2">
+<h2 class="anchored" data-anchor-id="cuando-algo-no-funciona">Cuando algo no funciona</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situación</th>
+<th>Qué revisar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>not a git repository</code></td>
+<td>Estás fuera de la carpeta clonada; comprueba tu ubicación</td>
+</tr>
+<tr class="even">
+<td>Git no conoce tu identidad</td>
+<td>Configura nombre y correo dentro del repositorio</td>
+</tr>
+<tr class="odd">
+<td><code>nothing to commit</code></td>
+<td>Comprueba si guardaste el archivo correcto y preparaste su cambio</td>
+</tr>
+<tr class="even">
+<td><code>git diff</code> está vacío después de add</td>
+<td>Revisa <code>git diff --staged</code>: el cambio ya puede estar preparado</td>
+</tr>
+<tr class="odd">
+<td>Un README nuevo no aparece en <code>git diff</code></td>
+<td>Consulta <code>git status</code>; si es no seguido, revisa su contenido en el editor y después con <code>git diff --staged</code> al prepararlo</td>
+</tr>
+<tr class="even">
+<td><code>push</code> pide autenticación o rechaza permisos</td>
+<td>Confirma tu cuenta y la URL con <code>git remote -v</code></td>
+</tr>
+<tr class="odd">
+<td><code>push</code> rechaza cambios por novedades remotas</td>
+<td>Consulta el estado; con el árbol limpio prueba <code>git pull --ff-only</code> y vuelve a publicar si tuvo éxito</td>
+</tr>
+</tbody>
+</table>
+<p>Si la actualización no puede avanzar, revisa el mensaje con quien te acompaña. No uses <code>--force</code> para resolverlo. Ramas de trabajo, conflictos y pull requests se estudiarán después; esta lección se centra en una actualización sencilla.</p>
+<p><a id="práctica-y-criterio-de-salida"></a></p>
+</section>
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Realiza el <a href="./00-03-lab.html">lab 00.03</a> para modificar un README y revisar su historial en el recorrido que elegiste.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>README actualizado y commit del perfil</td>
+<td>Diff preparado, último commit y versión publicada</td>
+<td>Por qué guardar, preparar, registrar y publicar son pasos distintos</td>
+</tr>
+<tr class="even">
+<td>Si elegiste la práctica local: README y dos commits</td>
+<td>Diferencia de la segunda edición, historial local y ausencia de remoto</td>
+<td>Por qué puedes usar Git sin GitHub y qué parte no realizaste</td>
+</tr>
+<tr class="odd">
+<td>Nota para retomar la sesión</td>
+<td>Ubicación, estado del repositorio y remoto correcto</td>
+<td>Cómo reconocer lo pendiente antes de actualizar</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes cerrar el recorrido elegido cuando registres una modificación, expliques guardar frente a preparar y hacer commit, y compruebes la selección y el historial. En el perfil, añade la comprobación del commit publicado en GitHub. En la práctica local, explica que no hubo publicación y que no hay remoto configurado. Si todavía no tienes Git, registra la ejecución pendiente; no declares un commit que no realizaste. Descargar DS Track como ZIP no determina qué recorrido elegir.</p>
+<p>Quien aprende realiza la práctica y explica el resultado. Tu compañero pide identificar en qué copia está un cambio antes y después de publicarlo. Guarda evidencia y dudas en tu copia de la <a href="descargas/templates/learning-session/bitacora-00.md">bitácora personal de 00</a> o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso. Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.</p>
+</section>
+<section id="glosario" class="level2">
+<h2 class="anchored" data-anchor-id="glosario">Glosario</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Término</th>
+<th>Qué significa en esta lección</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repositorio</td>
+<td>Archivos de un proyecto junto con el historial registrado por Git</td>
+</tr>
+<tr class="even">
+<td>Clonar</td>
+<td>Crear una copia local de un repositorio existente, incluido su historial</td>
+</tr>
+<tr class="odd">
+<td>Inicializar</td>
+<td>Crear la estructura de Git para empezar un repositorio; aquí solo en la carpeta nueva de práctica</td>
+</tr>
+<tr class="even">
+<td>Copia de trabajo</td>
+<td>Archivos que tienes disponibles para leer y editar en tu computadora</td>
+</tr>
+<tr class="odd">
+<td>No seguido (untracked)</td>
+<td>Archivo que Git todavía no ha incorporado a su seguimiento</td>
+</tr>
+<tr class="even">
+<td>Área de preparación (staging)</td>
+<td>Selección de cambios que incluirá el próximo commit</td>
+</tr>
+<tr class="odd">
+<td>Diff</td>
+<td>Comparación que muestra diferencias entre versiones o estados de archivos</td>
+</tr>
+<tr class="even">
+<td>Commit</td>
+<td>Registro de los cambios preparados, con identificador, autor y mensaje</td>
+</tr>
+<tr class="odd">
+<td>Rama</td>
+<td>Línea de trabajo del historial; aquí utilizas la que ya tiene el repositorio</td>
+</tr>
+<tr class="even">
+<td>Remoto</td>
+<td>Referencia a otro repositorio con el que puedes intercambiar commits</td>
+</tr>
+<tr class="odd">
+<td>origin</td>
+<td>Nombre que clone suele dar al remoto de origen; no significa GitHub en todos los proyectos</td>
+</tr>
+<tr class="even">
+<td>Referencia de seguimiento del remoto</td>
+<td>Nombre local como <code>origin/main</code> que recuerda el estado conocido de una rama del remoto</td>
+</tr>
+<tr class="odd">
+<td>Fetch</td>
+<td>Descarga de novedades del remoto sin actualizar por sí sola la rama en la que trabajas ni sus archivos</td>
+</tr>
+<tr class="even">
+<td>Push</td>
+<td>Envío de commits locales al remoto configurado</td>
+</tr>
+<tr class="odd">
+<td>Pull</td>
+<td>Operación para traer e integrar novedades del remoto; aquí se usa <code>--ff-only</code> para evitar una combinación de historiales divergentes</td>
+</tr>
+<tr class="even">
+<td>Estado limpio</td>
+<td>Git no informa cambios pendientes ni archivos nuevos sin seguimiento; los archivos ignorados pueden quedar fuera de ese informe y no se comprueba que el contenido sea correcto</td>
+</tr>
+</tbody>
+</table>
+<p>Retoma <a href="./00-01-leccion.html#git-y-github-conservar-y-compartir">Git frente a GitHub en 00.01</a> si necesitas distinguir la herramienta de la plataforma.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://git-scm.com/book/es/v2/Fundamentos-de-Git-Obteniendo-un-repositorio-Git">Fundamentos de Git</a>.</li>
+<li><a href="https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configuraci%C3%B3n-inicial-de-Git">Configuración inicial de Git</a>.</li>
+<li><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github">Autenticación con GitHub</a>.</li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Instalar Git según el sistema</a>.</li>
+<li><a href="https://git-scm.com/docs/git-init">Crear un repositorio con git init</a>.</li>
+<li><a href="https://git-scm.com/docs/git-diff">Qué compara git diff</a>.</li>
+<li><a href="https://git-scm.com/docs/gitattributes#_diff">Comparación de texto y archivos binarios en Git</a>.</li>
+</ul>
+<p><a id="siguiente-lección"></a></p>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después del lab y su comprobación, continúa con <a href="./00-04-leccion.html">00.04 — Tu primer script Python</a>.</p>
+<p><a href="./modulo-00.html">← Módulo 00</a> · <a href="./00-03-lab.html">Lab 00.03</a> · <a href="./00-04-leccion.html">Siguiente →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

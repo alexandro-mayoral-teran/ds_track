@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>02.07 — Agrupar y resumir – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-02.html">02 · PANDAS</a></li><li class="breadcrumb-item"><a href="./02-07-leccion.html">02.07 · Agrupar y resumir</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><img class="brand-icon" src="favicon.svg" alt=""> DS Track</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contenido.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contenido del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">00 · ENTORNO DE APRENDIZAJE</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.01 · Markdown y perfil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.02 · Terminal y rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.03 · Git e historial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.04 · Primer script</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.05 · Entornos y dependencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.06 · Notebook y kernel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprobación y evidencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 · PYTHON FUNDAMENTAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01 · Variables y tipos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02 · Listas y diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.03 · Condiciones y ciclos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.04 · Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.05 · Archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.06 · Validación y resumen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">02 · PANDAS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01 · Series y DataFrame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02 · Leer y exportar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03 · Seleccionar y filtrar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04 · Tipos y columnas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.05 · Faltantes y reglas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.06 · Texto y fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07-leccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">02.07 · Agrupar y resumir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.08 · Combinar tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.09 · Forma de tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.10 · Análisis y gráfica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">03 · SQL Y BASES DE DATOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01 · Modelo relacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02 · Primeras consultas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03 · Crear y cargar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04 · Agregaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05 · Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06 · Subconsultas y CTE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07 · Ventanas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.08 · Transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09 · pandas y SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">04 · VISUALIZACIÓN EN PYTHON</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01 · Pregunta y gráfico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02 · Figure y Axes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03 · Comparaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04 · Distribuciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.05 · Escalas y accesibilidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.06 · Composición y exportación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.07 · Altair declarativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.08 · Interacción (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.09 · Cierre visual</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">05 · PYTHON APLICADO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01 · Del notebook a módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02 · Configuración y registro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03 · Errores y recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04 · Pruebas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.05 · Tipos y contratos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.06 · Clases (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.07 · Generadores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.08 · Decoradores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.09 · Medir (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.10 · APIs (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-11-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.11 · Cierre del proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fuentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material de consulta</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#definir-primero-la-unidad-del-indicador" id="toc-definir-primero-la-unidad-del-indicador" class="nav-link" data-scroll-target="#definir-primero-la-unidad-del-indicador">1. Definir primero la unidad del indicador</a></li>
+  <li><a href="#groupby-separar-calcular-y-reunir" id="toc-groupby-separar-calcular-y-reunir" class="nav-link" data-scroll-target="#groupby-separar-calcular-y-reunir">2. groupby: separar, calcular y reunir</a></li>
+  <li><a href="#size-count-y-nunique-responden-preguntas-distintas" id="toc-size-count-y-nunique-responden-preguntas-distintas" class="nav-link" data-scroll-target="#size-count-y-nunique-responden-preguntas-distintas">3. size, count y nunique responden preguntas distintas</a></li>
+  <li><a href="#agregaciones-con-nombres-claros" id="toc-agregaciones-con-nombres-claros" class="nav-link" data-scroll-target="#agregaciones-con-nombres-claros">4. Agregaciones con nombres claros</a></li>
+  <li><a href="#grupos-con-faltantes-en-la-clave-y-en-la-cantidad" id="toc-grupos-con-faltantes-en-la-clave-y-en-la-cantidad" class="nav-link" data-scroll-target="#grupos-con-faltantes-en-la-clave-y-en-la-cantidad">5. Grupos con faltantes: en la clave y en la cantidad</a></li>
+  <li><a href="#calcular-una-tasa-y-mostrar-cobertura" id="toc-calcular-una-tasa-y-mostrar-cobertura" class="nav-link" data-scroll-target="#calcular-una-tasa-y-mostrar-cobertura">6. Calcular una tasa y mostrar cobertura</a></li>
+  <li><a href="#promedios-y-porcentajes-no-se-suman-como-importes" id="toc-promedios-y-porcentajes-no-se-suman-como-importes" class="nav-link" data-scroll-target="#promedios-y-porcentajes-no-se-suman-como-importes">7. Promedios y porcentajes no se suman como importes</a></li>
+  <li><a href="#conciliar-el-resumen-contra-el-detalle" id="toc-conciliar-el-resumen-contra-el-detalle" class="nav-link" data-scroll-target="#conciliar-el-resumen-contra-el-detalle">8. Conciliar el resumen contra el detalle</a></li>
+  <li><a href="#ejecutar-y-revisar-la-salida" id="toc-ejecutar-y-revisar-la-salida" class="nav-link" data-scroll-target="#ejecutar-y-revisar-la-salida">9. Ejecutar y revisar la salida</a>
+  <ul class="collapse">
+  <li><a href="#powershell" id="toc-powershell" class="nav-link" data-scroll-target="#powershell">PowerShell</a></li>
+  <li><a href="#bashzsh" id="toc-bashzsh" class="nav-link" data-scroll-target="#bashzsh">Bash/Zsh</a></li>
+  <li><a href="#uv" id="toc-uv" class="nav-link" data-scroll-target="#uv">uv</a></li>
+  </ul></li>
+  <li><a href="#ampliación-opcional-transform" id="toc-ampliación-opcional-transform" class="nav-link" data-scroll-target="#ampliación-opcional-transform">10. Ampliación opcional: transform</a></li>
+  <li><a href="#errores-frecuentes" id="toc-errores-frecuentes" class="nav-link" data-scroll-target="#errores-frecuentes">Errores frecuentes</a></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-02.html">02 · PANDAS</a></li><li class="breadcrumb-item"><a href="./02-07-leccion.html">02.07 · Agrupar y resumir</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">02.07 — Agrupar y resumir</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 02 / 02.07
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-02.html">pandas</a></p>
+<p><a id="07--agrupar-y-resumir"></a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-02.html">Módulo 02</a> / <strong>Lección 02.07</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Construir indicadores por grupo con cobertura y conciliación contra el detalle</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>Entorno de estudio con pandas; entrada incluida o compartida según la lección</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>Resumen con cobertura y denominadores comprobados</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#antes-de-empezar">Preparación</a> · <a href="#material-de-apoyo">Material de apoyo</a> · <a href="./02-07-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<p><a id="propósito-prerrequisitos-y-objetivos"></a></p>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Convertir una tabla de observaciones en indicadores por grupo, comprobando que el resumen conserve lo conocido del detalle.</p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Completa <a href="./02-06-leccion.html">02.06 — Texto y fechas</a> y su lab. Usa el mismo entorno con pandas 2.3.3 como referencia. Trabaja desde la raíz de DS Track, con tu editor y el shell elegido. La entrada se enlaza más abajo; no necesitas producir archivos de lecciones anteriores para leer esta muestra.</p>
+<p>Transform es una ampliación breve; ventanas, acumulados y apply quedan para profundización. No son requisitos para los indicadores esenciales.</p>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Elegir las claves de agrupación y nombrar las agregaciones.</li>
+<li>Distinguir filas, valores conocidos e identificadores distintos.</li>
+<li>Explicar cobertura y denominador de tasas y promedios.</li>
+<li>Conciliar conteos y sumas del resumen con el detalle, conservando los grupos con faltantes.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="descargas/curriculum/02_pandas/07_group_summarize/group_summarize.py">Script de ejemplo</a></td>
+<td>Agrupar y contrastar indicadores, cobertura y bases de comparación</td>
+<td>Para el ejemplo</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/02_pandas/07_group_summarize/cartera_resumen.csv">CSV de entrada</a></td>
+<td>Explorar 48 observaciones sintéticas de 24 créditos en dos cortes</td>
+<td>Entrada incluida</td>
+</tr>
+</tbody>
+</table>
+<p>Abre los recursos cuando aparezcan en el recorrido. Lee el código antes de ejecutarlo y contrasta sus resultados esperados. Conserva los originales y trabaja las variantes en tu copia. Los datos compartidos se reutilizan desde su ubicación actual, sin duplicarlos.</p>
+</section>
+<section id="definir-primero-la-unidad-del-indicador" class="level2">
+<h2 class="anchored" data-anchor-id="definir-primero-la-unidad-del-indicador">1. Definir primero la unidad del indicador</h2>
+<p><a href="descargas/curriculum/02_pandas/07_group_summarize/cartera_resumen.csv">cartera_resumen.csv</a> contiene <strong>48 observaciones sintéticas</strong>: 24 créditos ficticios en dos cortes. Es una nueva muestra analítica con categorías normalizadas y fechas en formato declarado; las fuentes anteriores siguen intactas.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Campo</th>
+<th>Significado</th>
+<th>Contrato</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>id_credito</td>
+<td>Identificador ficticio</td>
+<td>Texto, presente</td>
+</tr>
+<tr class="even">
+<td>segmento</td>
+<td>Categoría de la observación</td>
+<td>Texto normalizado; puede faltar</td>
+</tr>
+<tr class="odd">
+<td>fecha_corte</td>
+<td>Fotografía del crédito</td>
+<td>2026-09-30 o 2026-10-31 en esta muestra</td>
+</tr>
+<tr class="even">
+<td>saldo_mxn</td>
+<td>Saldo de esa fotografía</td>
+<td>Pesos enteros no negativos; puede faltar</td>
+</tr>
+<tr class="odd">
+<td>dias_atraso</td>
+<td>Conteo en ese corte</td>
+<td>Entero no negativo; puede faltar</td>
+</tr>
+</tbody>
+</table>
+<p>La clave de detalle es <strong>ID + corte</strong>, única y completa. Una fila es una observación; no es necesariamente una persona ni un crédito distinto en toda la tabla. El resumen principal tendrá una fila por <strong>corte + segmento</strong>.</p>
+<p>Aquí se permite conservar segmento, saldo y atraso ausentes para describir cobertura. Es un contrato analítico diferente al de 02.05, donde esos campos eran obligatorios para aceptar una fila. No cambiamos sus reglas retroactivamente: cada pregunta debe declarar qué observaciones utiliza y qué información necesita.</p>
+<p>El lector comprueba claves y cantidades negativas antes de resumir. No resuelve duplicados mediante una suma: una repetición accidental inflaría indicadores.</p>
+</section>
+<section id="groupby-separar-calcular-y-reunir" class="level2">
+<h2 class="anchored" data-anchor-id="groupby-separar-calcular-y-reunir">2. groupby: separar, calcular y reunir</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>grupos <span class="op">=</span> detalle.groupby(<span class="st">"segmento"</span>, dropna<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>conteos <span class="op">=</span> grupos.size()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>groupby construye un objeto con las reglas de agrupación; todavía no es la tabla final. size produce el número de filas de cada grupo. Conceptualmente:</p>
+<pre class="text"><code>Detalle de observaciones
+    → separar por clave de grupo
+    → calcular conteos, sumas o promedios dentro de cada grupo
+    → reunir una fila de resultados por grupo</code></pre>
+<p>Agrupar no cambia la fuente, elimina duplicados ni ordena créditos por saldo. Si agrupas solo por segmento mezclarás los dos cortes; usa ambas claves cuando la pregunta necesite distinguir fechas.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>grupos <span class="op">=</span> detalle.groupby(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"fecha_corte"</span>, <span class="st">"segmento"</span>],</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    as_index<span class="op">=</span><span class="va">False</span>, dropna<span class="op">=</span><span class="va">False</span>, observed<span class="op">=</span><span class="va">True</span>, sort<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Opción</th>
+<th>Decisión de esta lección</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>as_index=False</td>
+<td>Mantener las claves como columnas en el resumen</td>
+</tr>
+<tr class="even">
+<td>dropna=False</td>
+<td>Conservar los grupos cuya clave contiene ausencias</td>
+</tr>
+<tr class="odd">
+<td>observed=True</td>
+<td>Para claves categóricas, incluir combinaciones observadas</td>
+</tr>
+<tr class="even">
+<td>sort=True</td>
+<td>Ordenar las claves de grupo; no elegir los mayores saldos</td>
+</tr>
+</tbody>
+</table>
+<p>Con as_index=True, las claves aparecen en el índice, posiblemente MultiIndex. No lo necesitamos para este primer resumen. observed solo tiene efecto especial cuando hay claves de tipo category; nuestra muestra usa string. Se declara para hacer explícita la decisión si después utilizas categorías.</p>
+</section>
+<section id="size-count-y-nunique-responden-preguntas-distintas" class="level2">
+<h2 class="anchored" data-anchor-id="size-count-y-nunique-responden-preguntas-distintas">3. size, count y nunique responden preguntas distintas</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operación</th>
+<th>Qué cuenta</th>
+<th>Qué ocurre con una ausencia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>size</td>
+<td>Filas del grupo</td>
+<td>La fila cuenta</td>
+</tr>
+<tr class="even">
+<td>count sobre una columna</td>
+<td>Valores presentes en ese campo</td>
+<td>No cuenta ese valor</td>
+</tr>
+<tr class="odd">
+<td>nunique sobre una columna</td>
+<td>Valores distintos presentes</td>
+<td>Por defecto no cuenta NA como valor distinto</td>
+</tr>
+</tbody>
+</table>
+<p>En consumo de septiembre hay <strong>9 filas</strong>, pero solo <strong>7 saldos conocidos</strong> y <strong>7 atrasos conocidos</strong>. Los faltantes de saldo y atraso no son necesariamente las mismas filas. Un conteo sobre saldo no sirve automáticamente como base del atraso.</p>
+<p>Dentro de cada grupo corte/segmento los IDs son únicos: nunique coincide con size porque la clave de detalle ya fue comprobada. En todo el detalle hay <strong>24 IDs</strong> pero <strong>48 observaciones</strong>. Sumar IDs distintos de varios cortes no da el número de créditos distintos de la tabla: un ID puede contarse una vez en cada grupo.</p>
+</section>
+<section id="agregaciones-con-nombres-claros" class="level2">
+<h2 class="anchored" data-anchor-id="agregaciones-con-nombres-claros">4. Agregaciones con nombres claros</h2>
+<p>El <a href="descargas/curriculum/02_pandas/07_group_summarize/group_summarize.py">script completo</a> usa agregación nombrada:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sumar_conocidos(serie):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> serie.<span class="bu">sum</span>(min_count<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>resumen <span class="op">=</span> grupos.agg(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    registros<span class="op">=</span>(<span class="st">"id_credito"</span>, <span class="st">"size"</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    saldos_conocidos<span class="op">=</span>(<span class="st">"saldo_mxn"</span>, <span class="st">"count"</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    saldo_conocido_mxn<span class="op">=</span>(<span class="st">"saldo_mxn"</span>, sumar_conocidos),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    saldo_promedio_mxn<span class="op">=</span>(<span class="st">"saldo_mxn"</span>, <span class="st">"mean"</span>),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Cada argumento tiene un <strong>nombre de salida</strong> y una tupla con columna de entrada y operación. “mean” indica el promedio de valores presentes. sumar_conocidos es la función que pandas llama con la Series de cada grupo; no la ejecutamos al escribir su nombre en agg.</p>
+<p>Esto permite decidir min_count=1 para cada suma. Una suma predeterminada puede mostrar cero cuando todos los valores faltan; aquí queremos expresar ausencia de observaciones conocidas. No confundimos un saldo cero conocido con falta de saldo.</p>
+<p>El script también calcula IDs distintos, atrasos conocidos y atrasos confirmados de al menos 30 días. Los umbrales son didácticos; no representan una regla de riesgo.</p>
+</section>
+<section id="grupos-con-faltantes-en-la-clave-y-en-la-cantidad" class="level2">
+<h2 class="anchored" data-anchor-id="grupos-con-faltantes-en-la-clave-y-en-la-cantidad">5. Grupos con faltantes: en la clave y en la cantidad</h2>
+<p>Son dos decisiones independientes:</p>
+<ol type="1">
+<li><strong>Clave ausente:</strong> ¿conservar la observación en un grupo sin segmento?</li>
+<li><strong>Cantidad ausente:</strong> ¿qué cálculo se puede hacer dentro de su grupo?</li>
+</ol>
+<p>groupby usa dropna=True por defecto, lo que excluye filas con NA en las claves de agrupación. La muestra tiene dos segmentos ausentes: saldo 1700 en septiembre y 2300 en octubre. Si se excluyen sin registrar, desaparecen dos filas y <strong>4000 MXN conocidos</strong> del resumen.</p>
+<p>Con dropna=False existen dos grupos sin segmento, uno por corte. El NA no es una categoría de negocio nueva; significa que no conocemos la categoría. Puedes rotularlo al presentar, conservando esa distinción y sin inventar una pertenencia.</p>
+<p>Para educación de octubre hay tres filas y <strong>ningún saldo conocido</strong>. Su suma y promedio son NA. Para educación de septiembre hay tres filas y <strong>ningún atraso conocido</strong>. Su tasa de atraso no se puede calcular, aunque sí tenga saldos conocidos.</p>
+</section>
+<section id="calcular-una-tasa-y-mostrar-cobertura" class="level2">
+<h2 class="anchored" data-anchor-id="calcular-una-tasa-y-mostrar-cobertura">6. Calcular una tasa y mostrar cobertura</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>trabajo <span class="op">=</span> detalle.copy()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>trabajo[<span class="st">"atraso_30"</span>] <span class="op">=</span> (trabajo[<span class="st">"dias_atraso"</span>] <span class="op">&gt;=</span> <span class="dv">30</span>).astype(<span class="st">"boolean"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>True confirma el umbral, False confirma que no se alcanza y NA expresa desconocido. No rellenamos el indicador con False antes de medir cobertura. Una suma de booleanos cuenta True; utilizamos min_count=1 para que un grupo sin evaluaciones no aparente tener cero casos confirmados con una base conocida.</p>
+<p>Después de agregar:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>resumen[<span class="st">"cobertura_atraso_pct"</span>] <span class="op">=</span> (</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    resumen[<span class="st">"atrasos_conocidos"</span>] <span class="op">/</span> resumen[<span class="st">"registros"</span>] <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> resumen[<span class="st">"atrasos_conocidos"</span>].where(resumen[<span class="st">"atrasos_conocidos"</span>] <span class="op">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>resumen[<span class="st">"atraso_30_pct_conocidos"</span>] <span class="op">=</span> (</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    resumen[<span class="st">"atrasos_30_confirmados"</span>] <span class="op">/</span> base <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Indicador</th>
+<th>Numerador</th>
+<th>Denominador</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cobertura de atraso</td>
+<td>Atrasos conocidos</td>
+<td>Filas del grupo</td>
+</tr>
+<tr class="even">
+<td>Tasa de atraso ≥ 30 entre conocidos</td>
+<td>Casos confirmados ≥ 30</td>
+<td>Atrasos conocidos</td>
+</tr>
+</tbody>
+</table>
+<p>Consumo de septiembre: 9 observaciones, 7 atrasos conocidos y 2 casos confirmados. Cobertura <strong>7/9 ≈ 77.78 %</strong>; tasa entre conocidos <strong>2/7 ≈ 28.57 %</strong>. Usar 2/9 daría otra medida: casos confirmados respecto de todas las observaciones. No equivale a conocer el atraso de quienes faltan.</p>
+<p>Educación de septiembre tiene cobertura cero y tasa NA. Si el denominador es cero, where lo vuelve ausente antes de dividir. Ningún infinito se presenta como tasa útil.</p>
+</section>
+<section id="promedios-y-porcentajes-no-se-suman-como-importes" class="level2">
+<h2 class="anchored" data-anchor-id="promedios-y-porcentajes-no-se-suman-como-importes">7. Promedios y porcentajes no se suman como importes</h2>
+<p>Para consumo de septiembre, saldo conocido 10400 entre 7 saldos presentes: promedio <strong>10400/7 ≈ 1485.71 MXN</strong>. Dividir entre las 9 filas imputaría implícitamente saldo cero a las dos desconocidas.</p>
+<p>No promedies sin ponderación los promedios de grupos con tamaños diferentes: un grupo de una fila recibiría el mismo peso que uno de diez. Para reconstruir el promedio conocido del conjunto, suma los saldos conocidos y divide entre su conteo. En esta muestra: <strong>93900/42 ≈ 2235.71 MXN por observación con saldo conocido</strong>.</p>
+<p>La tasa global entre atrasos conocidos es <strong>15/40 = 37.5 %</strong>, utilizando todos los grupos y cortes de esta tabla. No es la tasa de 24 créditos únicos en una fecha. Para tasas por corte, primero delimita ese corte o resume numeradores y bases por fecha; no sumes porcentajes ni tomes una media simple de tasas de segmentos.</p>
+<p>Redondea para mostrar, no antes de conciliar. Los campos Float64 de la salida pueden aproximar decimales; los importes enteros y conteos conservan su significado.</p>
+</section>
+<section id="conciliar-el-resumen-contra-el-detalle" class="level2">
+<h2 class="anchored" data-anchor-id="conciliar-el-resumen-contra-el-detalle">8. Conciliar el resumen contra el detalle</h2>
+<p>Resultados conocidos del ejemplo:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Comprobación</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Observaciones / grupos corte-segmento</td>
+<td>48 / 10</td>
+</tr>
+<tr class="even">
+<td>IDs distintos de toda la tabla</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>Saldos conocidos / desconocidos</td>
+<td>42 / 6</td>
+</tr>
+<tr class="even">
+<td>Saldo conocido total</td>
+<td>93900 MXN</td>
+</tr>
+<tr class="odd">
+<td>Atrasos conocidos / desconocidos</td>
+<td>40 / 8</td>
+</tr>
+<tr class="even">
+<td>Casos confirmados de atraso ≥ 30</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<p>La suma de registros de grupos debe dar 48. Los conteos de saldos y atrasos conocidos deben dar 42 y 40. Las sumas de saldos conocidos y casos confirmados deben coincidir con 93900 y 15 obtenidos directamente del detalle.</p>
+<p>El script comprueba esas igualdades y si un resultado debe permanecer NA. Conciliar un saldo parcial no lo vuelve completo: las seis cantidades desconocidas se cuentan aparte. El total de dos cortes es una suma de observaciones para verificar el proceso; no representa una cartera única vigente ni dinero acumulado durante el mes.</p>
+<p>Para investigar un grupo, filtra el detalle con el mismo corte y segmento y calcula a mano. Si el segmento es NA, utiliza isna en lugar de compararlo con <code>== pd.NA</code>. Una coincidencia global ayuda, pero no sustituye revisar grupos y denominadores.</p>
+</section>
+<section id="ejecutar-y-revisar-la-salida" class="level2">
+<h2 class="anchored" data-anchor-id="ejecutar-y-revisar-la-salida">9. Ejecutar y revisar la salida</h2>
+<section id="powershell" class="level3">
+<h3 class="anchored" data-anchor-id="powershell">PowerShell</h3>
+<p>Desde la raíz, con el entorno preparado:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear el resumen, conciliar y comprobar su lectura posterior</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>python curriculum\02_pandas\07_group_summarize\group_summarize<span class="op">.</span><span class="fu">py</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Revisar los indicadores por corte y segmento</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Content</span> curriculum\02_pandas\07_group_summarize\output\resumen_corte_segmento<span class="op">.</span><span class="fu">csv</span> <span class="op">-</span>Encoding utf8</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="bashzsh" class="level3">
+<h3 class="anchored" data-anchor-id="bashzsh">Bash/Zsh</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/02_pandas/07_group_summarize/group_summarize.py</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> curriculum/02_pandas/07_group_summarize/output/resumen_corte_segmento.csv</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="uv" class="level3">
+<h3 class="anchored" data-anchor-id="uv">uv</h3>
+<p>Con la configuración raíz del proyecto:</p>
+<pre class="text"><code>uv run --locked python curriculum/02_pandas/07_group_summarize/group_summarize.py</code></pre>
+<p>No hay nuevas dependencias. La salida se reemplaza, se relee con tipos declarados y se compara, tolerando 1e-12 para aproximaciones decimales. El CSV no almacena tipos; fecha_corte se interpreta al recargar. La fuente queda intacta y output permanece ignorado por Git. Verifica que la ejecución terminó antes de usar la salida.</p>
+</section>
+</section>
+<section id="ampliación-opcional-transform" class="level2">
+<h2 class="anchored" data-anchor-id="ampliación-opcional-transform">10. Ampliación opcional: transform</h2>
+<p>agg reduce a una fila por grupo. transform devuelve resultados alineados con las filas del objeto agrupado: sirve para añadir a cada observación un total de su grupo.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>practica <span class="op">=</span> detalle.copy()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>total_corte <span class="op">=</span> practica.groupby(<span class="st">"fecha_corte"</span>, dropna<span class="op">=</span><span class="va">False</span>)[<span class="st">"saldo_mxn"</span>].transform(sumar_conocidos)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>practica[<span class="st">"participacion_saldo_conocido_pct"</span>] <span class="op">=</span> (</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    practica[<span class="st">"saldo_mxn"</span>] <span class="op">/</span> total_corte.where(total_corte <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Una fila con saldo desconocido conserva porcentaje desconocido. Este porcentaje describe participación en el <strong>saldo conocido del corte</strong>, no en su saldo completo si faltan cantidades. No agrega ni elimina filas. No hace falta una unión para esta transformación; combinar otras tablas se estudiará en 08.</p>
+<p>Ventanas rolling, acumulados cumsum y groupby.apply se reservan para profundización. Primero comprueba resúmenes básicos, cobertura y bases de comparación.</p>
+<p><a id="errores-frecuentes-práctica-y-siguiente-paso"></a></p>
+</section>
+<section id="errores-frecuentes" class="level2">
+<h2 class="anchored" data-anchor-id="errores-frecuentes">Errores frecuentes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situación</th>
+<th>Qué revisar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Faltan filas o saldos en el resumen</td>
+<td>dropna y claves de agrupación</td>
+</tr>
+<tr class="even">
+<td>NA se convirtió en cero</td>
+<td>sum predeterminado o imputación previa</td>
+</tr>
+<tr class="odd">
+<td>Promedio demasiado bajo</td>
+<td>Si se dividió entre filas en lugar de cantidades conocidas</td>
+</tr>
+<tr class="even">
+<td>Tasa cambia sin cambiar casos</td>
+<td>Denominador y cobertura</td>
+</tr>
+<tr class="odd">
+<td>Más IDs contados que créditos distintos</td>
+<td>Repetición legítima entre cortes</td>
+</tr>
+<tr class="even">
+<td>Columnas no encontradas en la salida</td>
+<td>as_index y nombres de agregación</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Realiza el <a href="./02-07-lab.html">lab 02.07</a> para reconstruir indicadores y contrastar sus numeradores, denominadores y cobertura.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Código y nota con claves e indicadores</td>
+<td>Conteos y sumas contra el detalle</td>
+<td>Por qué size, count y nunique responden preguntas distintas</td>
+</tr>
+<tr class="even">
+<td>Cobertura, numeradores y denominadores</td>
+<td>Tratamiento de claves y medidas faltantes</td>
+<td>Por qué tasas y promedios no se suman como importes</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes avanzar cuando reconstruyas indicadores desde el detalle, expliques grupos con NA y distingas suma, promedio, cobertura y tasa.</p>
+<p>Quien aprende modifica y ejecuta su copia y explica lo que comprobó. Tu compañero elige un indicador y pide reconstruir su numerador y denominador desde el detalle. Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica; PROGRESS.md registra el desarrollo editorial del curso. El material disponible no acredita por sí solo aprendizaje completado.</p>
+<p>El proyecto de limpieza y sus checkpoints siguen previstos, sin proyecto asociado implementado ni práctica adicional de proyecto obligatoria.</p>
+<p><a id="referencias-oficiales"></a></p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/groupby.html">Agrupación y agregación nombrada</a>.</li>
+<li><a href="https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.DataFrame.groupby.html">Opciones de DataFrame.groupby</a>.</li>
+<li><a href="https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.core.groupby.DataFrameGroupBy.sum.html">Sumas y min_count</a>.</li>
+</ul>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después del lab y su comprobación, continúa con <a href="./02-08-leccion.html">02.08 — Combinar tablas</a> antes de realizar su lab.</p>
+<p><a href="./modulo-02.html">← Módulo 02</a> · <a href="./02-07-lab.html">Lab 02.07</a> · <a href="./02-08-leccion.html">Siguiente →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

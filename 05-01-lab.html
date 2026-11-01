@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 05.01 — Del notebook a módulos – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito-entradas-y-preparación" id="toc-propósito-entradas-y-preparación" class="nav-link active" data-scroll-target="#propósito-entradas-y-preparación">Propósito, entradas y preparación</a></li>
+  <li><a href="#a.-ejecutar-e-importar-un-módulo" id="toc-a.-ejecutar-e-importar-un-módulo" class="nav-link" data-scroll-target="#a.-ejecutar-e-importar-un-módulo">A. Ejecutar e importar un módulo</a></li>
+  <li><a href="#b.-explicar-las-responsabilidades-del-paquete" id="toc-b.-explicar-las-responsabilidades-del-paquete" class="nav-link" data-scroll-target="#b.-explicar-las-responsabilidades-del-paquete">B. Explicar las responsabilidades del paquete</a></li>
+  <li><a href="#c.-construir-y-cotejar-la-entrega-modular" id="toc-c.-construir-y-cotejar-la-entrega-modular" class="nav-link" data-scroll-target="#c.-construir-y-cotejar-la-entrega-modular">C. Construir y cotejar la entrega modular</a></li>
+  <li><a href="#d.-usar-las-mismas-funciones-en-un-notebook-limpio" id="toc-d.-usar-las-mismas-funciones-en-un-notebook-limpio" class="nav-link" data-scroll-target="#d.-usar-las-mismas-funciones-en-un-notebook-limpio">D. Usar las mismas funciones en un notebook limpio</a></li>
+  <li><a href="#e.-extraer-una-función-por-tu-cuenta" id="toc-e.-extraer-una-función-por-tu-cuenta" class="nav-link" data-scroll-target="#e.-extraer-una-función-por-tu-cuenta">E. Extraer una función por tu cuenta</a></li>
+  <li><a href="#reflexión-y-criterio-de-salida" id="toc-reflexión-y-criterio-de-salida" class="nav-link" data-scroll-target="#reflexión-y-criterio-de-salida">Reflexión y criterio de salida</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 05.01 — Del notebook a módulos</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 05 / 05.01
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-05.html">Python aplicado</a></p>
+<section id="propósito-entradas-y-preparación" class="level2">
+<h2 class="anchored" data-anchor-id="propósito-entradas-y-preparación">Propósito, entradas y preparación</h2>
+<p>Lee la <a href="./05-01-leccion.html">lección 05.01</a> y completa el cierre 04.09 con sus prerrequisitos. Vas a explicar y comprobar una reorganización que conserva la pregunta, los valores y las ausencias.</p>
+<p><strong>Entradas:</strong> medidas_demo.py, paquete analisis_cartera, ejecutar.py, exploracion.ipynb y los CSV sintéticos de SQL 03.01. Si conservas tu entrega de 04.09, compara sus tablas sobre las mismas fuentes. <strong>Resultado:</strong> mapa de responsabilidades, entrega modular, notebook ejecutado y explicación propia. No hay proyecto/checkpoint implementado asociado todavía.</p>
+<p>Puedes repartir el trabajo en tres bloques: A/B, C y D/E, sin duración fija. No necesitas conservar una entrega personal de 04.09: están incluidos los CSV fuente y los resultados esperados de referencia. Usa el shell y entorno elegidos según los recorridos completos de la lección. Trabaja desde <code>curriculum/05_python_applied/01_notebook_to_modules</code>; conserva todos los ejemplos, fuentes y entregas anteriores. Guarda notas y variantes en una carpeta nueva dentro de output, que está ignorada. No copies rutas personales al notebook.</p>
+</section>
+<section id="a.-ejecutar-e-importar-un-módulo" class="level2">
+<h2 class="anchored" data-anchor-id="a.-ejecutar-e-importar-un-módulo">A. Ejecutar e importar un módulo</h2>
+<ol type="1">
+<li>Lee medidas_demo.py. Señala qué instrucciones están al nivel superior, cuáles en resumir_saldos y cuáles en main.</li>
+<li>Ejecuta <code>python -c "import medidas_demo"</code>. Después <code>python medidas_demo.py</code>. Registra qué imprime cada uno y explica la diferencia.</li>
+<li>En Python o una celda importa el módulo y llama a la función con <code>[0, 100, None, 300]</code>, <code>[]</code>, <code>[None, None]</code> y <code>[0, 1]</code>.</li>
+<li>Prueba <code>from medidas_demo import resumir_saldos</code>; explica qué nombre puedes usar directamente y cuál no fue incorporado por esa instrucción.</li>
+<li>Muestra <code>medidas_demo.__name__</code> y <code>medidas_demo.__file__</code> después de <code>import medidas_demo</code>. Explica para qué sirve cada dato.</li>
+</ol>
+<p><strong>Comprobación:</strong> importar no imprime la demostración. Ejecutar sí imprime el diccionario: 4 registros, 3 conocidos, mediana 100, cobertura 75 %. <strong>Evidencia:</strong> resultados y explicación de la protección de entrada.</p>
+<details>
+<summary>
+Ver solución razonada de A
+</summary>
+<p>El import de statistics y las definiciones están al nivel superior. Definir main no ejecuta su cuerpo; la condición final llama main solo cuando el archivo es la entrada principal. Importar medidas_demo establece su nombre como medidas_demo, por lo que no cumple la condición.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Entrada</th>
+<th style="text-align: right;">Registros</th>
+<th style="text-align: right;">Conocidos</th>
+<th style="text-align: right;">Mediana</th>
+<th style="text-align: right;">Cobertura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>[0, 100, None, 300]</code></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">75 %</td>
+</tr>
+<tr class="even">
+<td><code>[]</code></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">None</td>
+<td style="text-align: right;">None</td>
+</tr>
+<tr class="odd">
+<td><code>[None, None]</code></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">None</td>
+<td style="text-align: right;">0 %</td>
+</tr>
+<tr class="even">
+<td><code>[0, 1]</code></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">100 %</td>
+</tr>
+</tbody>
+</table>
+<p><code>from medidas_demo import resumir_saldos</code> permite usar ese nombre sin prefijo; no incorpora el nombre medidas_demo a una sesión nueva. Si ya hiciste el otro import, ese nombre puede seguir en tu sesión: comprueba en una sesión limpia. <strong>name</strong> muestra la identidad del módulo; <strong>file</strong> su archivo de procedencia.</p>
+</details>
+</section>
+<section id="b.-explicar-las-responsabilidades-del-paquete" class="level2">
+<h2 class="anchored" data-anchor-id="b.-explicar-las-responsabilidades-del-paquete">B. Explicar las responsabilidades del paquete</h2>
+<ol type="1">
+<li>Dibuja la relación de ejecutar.py, <strong>main</strong>.py, flujo, entrada, transformación, comprobación y presentación. Indica qué llama a qué.</li>
+<li>Escribe entradas y resultados de read_detail, summarize, build_analysis y export.</li>
+<li>Busca una importación relativa y otra absoluta; explica su punto de partida.</li>
+<li>Señala dónde decidirías otro color, otro corte y otra carpeta de fuentes.</li>
+<li>Explica por qué comprobacion.py no llama a summarize para su referencia.</li>
+</ol>
+<p><strong>Resultado:</strong> mapa con responsabilidades y dependencias. <strong>Comprobación:</strong> el cálculo no importa al consumidor; cambiar color no requiere cambiar mediana.</p>
+<details>
+<summary>
+Ver solución razonada de B
+</summary>
+<p>ejecutar.py llama main del paquete; main elige rutas y llama export. El flujo lee mediante entrada, calcula con transformación, concilia con comprobación y construye figuras/informe con presentación. Las reglas compartidas viven en reglas.py. <strong>init</strong>.py no dispara ninguna de esas acciones.</p>
+<p>read_detail recibe carpeta y devuelve detalle validado. summarize recibe detalle/fecha y devuelve detalle del corte/resumen. build_analysis recibe carpeta/fecha y devuelve cinco tablas conciliadas. export recibe además destino/resolución, escribe una carpeta nueva y devuelve las tablas.</p>
+<p><code>from .entrada import read_detail</code> parte del paquete actual; <code>from analisis_cartera.flujo import build_analysis</code> nombra el paquete completo. Los colores pertenecen a presentación. Fecha/fuentes se pasan al flujo; la entrada principal conserva valores iniciales por ahora. La referencia CSV calcula por un camino independiente, reduciendo el riesgo de repetir un mismo error de transformación en ambos resultados.</p>
+</details>
+</section>
+<section id="c.-construir-y-cotejar-la-entrega-modular" class="level2">
+<h2 class="anchored" data-anchor-id="c.-construir-y-cotejar-la-entrega-modular">C. Construir y cotejar la entrega modular</h2>
+<ol type="1">
+<li>Importa analisis_cartera.flujo sin llamar ninguna función. Comprueba que no se crea output/entrega_modular ni aparecen figuras o resultados. Si esa carpeta ya existe, registra su estado antes/después del import.</li>
+<li>Ejecuta <code>python -m analisis_cartera</code> una vez. Si ya existe la entrega, usa export desde Python con un destino nuevo como en la solución.</li>
+<li>Revisa indicadores.csv, referencia_csv.csv y las 20 filas de conciliacion.csv. Contrasta con tu 04.09 sobre las mismas fuentes y fecha.</li>
+<li>Abre Matplotlib PNG/SVG y Altair HTML con conexión; coteja valores, etiquetas, ausencias y unidades con resumen.csv.</li>
+<li>Repite la llamada con el mismo destino y explica FileExistsError. Comprueba que las fuentes y la entrega anterior siguen intactas.</li>
+<li>Reconstruye usando fuentes/ de la nueva entrega y otro destino.</li>
+</ol>
+<p><strong>Comprobación:</strong> 24 registros, 21 conocidos, mediana global 2300 MXN y cobertura global 87,5 %. Educación: 3 registros, 0 conocidos, mediana ausente y cobertura 0 %. El saldo cero sigue siendo conocido. <strong>Evidencia:</strong> tablas comparadas, explicación de ausencias y revisión visual con un hallazgo y un límite.</p>
+<details>
+<summary>
+Ver solución razonada de C
+</summary>
+<p>Desde Python en la carpeta de la lección, una alternativa con destinos nuevos:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> analisis_cartera.flujo <span class="im">import</span> export</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>lesson <span class="op">=</span> Path.cwd()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> lesson.parents[<span class="dv">1</span>] <span class="op">/</span> <span class="st">"03_sql_databases/01_relational_sqlite/data"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>tables <span class="op">=</span> export(source, <span class="st">"output/lab_modular"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>rebuilt <span class="op">=</span> export(<span class="st">"output/lab_modular/fuentes"</span>, <span class="st">"output/lab_reconstruccion"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Comercio: mediana 3100 sobre 5/5; consumo: 1750 sobre 10/10; servicios: 2550 sobre 6/6. Las tres coberturas son 100 %. Educación conserva su categoría con ausencia de mediana. La mediana global proviene de los 21 saldos del detalle; no es una agregación de medianas.</p>
+<p>La importación no llama export. Ambas entradas explícitas llaman el mismo main y usan la misma carpeta inicial. Si existe, mkdir con exist_ok=False detiene la escritura: conserva la entrega, pero exige elegir otro destino para una ejecución posterior. entrega.json se escribe al final; una interrupción puede dejar archivos parciales, que deben identificarse al revisar.</p>
+<p>Las imágenes pueden variar en bytes; deben conservar valores, bases y mensajes. La revisión visual no se acredita automáticamente por la conciliación.</p>
+</details>
+</section>
+<section id="d.-usar-las-mismas-funciones-en-un-notebook-limpio" class="level2">
+<h2 class="anchored" data-anchor-id="d.-usar-las-mismas-funciones-en-un-notebook-limpio">D. Usar las mismas funciones en un notebook limpio</h2>
+<ol type="1">
+<li>Abre exploracion.ipynb con el kernel adecuado y comprueba intérprete/carpeta.</li>
+<li>Reinicia el kernel y ejecuta todas las celdas en orden.</li>
+<li>Identifica dónde se importa build_analysis y dónde se llama. Comprueba que el notebook no contiene otra definición de summarize.</li>
+<li>Selecciona un corte inexistente como <code>2026-11-30</code> en una celda de exploración. Describe la diferencia entre no tener registros y tener saldos ausentes.</li>
+<li>Recupera octubre, reinicia y ejecuta todo antes de conservar tu copia. Limpiar resultados visibles es otra operación y no reinicia el kernel.</li>
+</ol>
+<p><strong>Resultado:</strong> notebook ejecutable desde el comienzo, reutilizando el paquete. <strong>Evidencia:</strong> tabla, figura y explicación propia sobre caché y orden de ejecución.</p>
+<details>
+<summary>
+Ver solución razonada de D
+</summary>
+<p>El notebook importa build_analysis de flujo.py y delivery_figure de presentacion.py. La misma transformación interviene en ambos consumidores; el notebook muestra el resultado y no escribe otra entrega por defecto.</p>
+<p>En un corte vacío cada segmento tiene 0 registros/0 conocidos, con mediana y cobertura no definidas. En octubre educación tiene registros y cobertura 0 %, pero sigue sin mediana. Cero conocidos no equivale a saldo cero.</p>
+<p>Una sesión puede conservar la primera versión de un módulo importado. Reiniciar el kernel y ejecutar todo carga el archivo actual y descubre variables que antes solo existían por celdas ejecutadas fuera de orden.</p>
+</details>
+</section>
+<section id="e.-extraer-una-función-por-tu-cuenta" class="level2">
+<h2 class="anchored" data-anchor-id="e.-extraer-una-función-por-tu-cuenta">E. Extraer una función por tu cuenta</h2>
+<p>En una carpeta nueva dentro de output, crea tu variante de un módulo y un consumidor. Extrae una función pequeña que calcule conocidos/registros desde una lista; pasa la entrada como argumento, retorna el resultado y protege la demostración con <code>if __name__ == "__main__"</code>. No modifiques el ejemplo curado.</p>
+<p>Comprueba lista vacía, todo ausente, cero y una mediana de medio MXN. Importa desde tu consumidor y desde una sesión iniciada en esa carpeta. Explica qué acción querías evitar al importar y por qué creaste ese archivo.</p>
+<details>
+<summary>
+Ver orientación razonada de E
+</summary>
+<p>Una función puede reutilizar las reglas del pequeño medidas_demo, pero debe expresar entradas/salidas y conservar el cero. La demostración llama la función solo bajo la condición de entrada. Basta un módulo para este ejercicio; crear una jerarquía de paquetes no aporta claridad por sí mismo.</p>
+</details>
+</section>
+<section id="reflexión-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="reflexión-y-criterio-de-salida">Reflexión y criterio de salida</h2>
+<ul>
+<li>¿Qué ejecuta Python al importar y qué protege la condición de entrada?</li>
+<li>¿Qué cambió en la organización y qué evidencia muestra resultados conservados?</li>
+<li>¿Por qué abrir otra carpeta y activar otro entorno resuelven problemas distintos?</li>
+<li>¿Qué podría seguir equivocado aunque las 20 conciliaciones coincidan?</li>
+</ul>
+<p>Registra resultados, revisión visual, dudas y siguiente paso en tu bitácora personal junto a la práctica. Puedes avanzar cuando expliques esas decisiones y uses el mismo cálculo desde script/notebook sin editar sys.path ni depender de variables ocultas.</p>
+<p>Continúa con la <a href="./05-02-leccion.html">siguiente lección, 05.02 — Configuración y registro</a>. Volver a la <a href="./05-01-leccion.html">lección 05.01</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

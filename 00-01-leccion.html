@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>00.01 — Markdown y tu perfil en GitHub – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-00.html">00 · ENTORNO DE APRENDIZAJE</a></li><li class="breadcrumb-item"><a href="./00-01-leccion.html">00.01 · Markdown y perfil</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><img class="brand-icon" src="favicon.svg" alt=""> DS Track</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contenido.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contenido del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">00 · ENTORNO DE APRENDIZAJE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-01-leccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">00.01 · Markdown y perfil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.02 · Terminal y rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.03 · Git e historial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.04 · Primer script</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.05 · Entornos y dependencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.06 · Notebook y kernel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprobación y evidencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 · PYTHON FUNDAMENTAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01 · Variables y tipos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02 · Listas y diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.03 · Condiciones y ciclos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.04 · Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.05 · Archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.06 · Validación y resumen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 · PANDAS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01 · Series y DataFrame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02 · Leer y exportar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03 · Seleccionar y filtrar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04 · Tipos y columnas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.05 · Faltantes y reglas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.06 · Texto y fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.07 · Agrupar y resumir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.08 · Combinar tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.09 · Forma de tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.10 · Análisis y gráfica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">03 · SQL Y BASES DE DATOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01 · Modelo relacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02 · Primeras consultas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03 · Crear y cargar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04 · Agregaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05 · Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06 · Subconsultas y CTE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07 · Ventanas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.08 · Transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09 · pandas y SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">04 · VISUALIZACIÓN EN PYTHON</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01 · Pregunta y gráfico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02 · Figure y Axes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03 · Comparaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04 · Distribuciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.05 · Escalas y accesibilidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.06 · Composición y exportación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.07 · Altair declarativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.08 · Interacción (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.09 · Cierre visual</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">05 · PYTHON APLICADO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01 · Del notebook a módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02 · Configuración y registro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03 · Errores y recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04 · Pruebas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.05 · Tipos y contratos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.06 · Clases (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.07 · Generadores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.08 · Decoradores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.09 · Medir (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.10 · APIs (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-11-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.11 · Cierre del proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fuentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material de consulta</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#en-esta-lección" id="toc-en-esta-lección" class="nav-link" data-scroll-target="#en-esta-lección">En esta lección</a></li>
+  <li><a href="#markdown-escribir-y-dar-estructura" id="toc-markdown-escribir-y-dar-estructura" class="nav-link" data-scroll-target="#markdown-escribir-y-dar-estructura">1. Markdown: escribir y dar estructura</a>
+  <ul class="collapse">
+  <li><a href="#qué-es-markdown" id="toc-qué-es-markdown" class="nav-link" data-scroll-target="#qué-es-markdown">Qué es Markdown</a></li>
+  <li><a href="#para-qué-sirve-y-qué-problemas-resuelve" id="toc-para-qué-sirve-y-qué-problemas-resuelve" class="nav-link" data-scroll-target="#para-qué-sirve-y-qué-problemas-resuelve">Para qué sirve y qué problemas resuelve</a></li>
+  <li><a href="#primera-prueba-escribir-y-previsualizar" id="toc-primera-prueba-escribir-y-previsualizar" class="nav-link" data-scroll-target="#primera-prueba-escribir-y-previsualizar">Primera prueba: escribir y previsualizar</a></li>
+  <li><a href="#las-marcas-que-usarás-primero" id="toc-las-marcas-que-usarás-primero" class="nav-link" data-scroll-target="#las-marcas-que-usarás-primero">Las marcas que usarás primero</a></li>
+  <li><a href="#texto-fuente-y-resultado" id="toc-texto-fuente-y-resultado" class="nav-link" data-scroll-target="#texto-fuente-y-resultado">Texto fuente y resultado</a></li>
+  <li><a href="#otros-casos-de-uso" id="toc-otros-casos-de-uso" class="nav-link" data-scroll-target="#otros-casos-de-uso">Otros casos de uso</a></li>
+  </ul></li>
+  <li><a href="#git-y-github-conservar-y-compartir" id="toc-git-y-github-conservar-y-compartir" class="nav-link" data-scroll-target="#git-y-github-conservar-y-compartir">2. Git y GitHub: conservar y compartir</a>
+  <ul class="collapse">
+  <li><a href="#git-entender-cómo-cambió-un-archivo" id="toc-git-entender-cómo-cambió-un-archivo" class="nav-link" data-scroll-target="#git-entender-cómo-cambió-un-archivo">Git: entender cómo cambió un archivo</a></li>
+  <li><a href="#github-compartir-el-repositorio-y-trabajar-juntos" id="toc-github-compartir-el-repositorio-y-trabajar-juntos" class="nav-link" data-scroll-target="#github-compartir-el-repositorio-y-trabajar-juntos">GitHub: compartir el repositorio y trabajar juntos</a></li>
+  </ul></li>
+  <li><a href="#crear-el-perfil-desde-la-web" id="toc-crear-el-perfil-desde-la-web" class="nav-link" data-scroll-target="#crear-el-perfil-desde-la-web">Crear el perfil desde la web</a></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario">Glosario</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-00.html">00 · ENTORNO DE APRENDIZAJE</a></li><li class="breadcrumb-item"><a href="./00-01-leccion.html">00.01 · Markdown y perfil</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">00.01 — Markdown y tu perfil en GitHub</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 00 / 00.01
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-00.html">Entorno de aprendizaje</a></p>
+<p><a id="01--markdown-y-tu-perfil-en-github"></a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-00.html">Módulo 00</a> / <strong>Lección 00.01</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Presentarte con Markdown y distinguir Git de GitHub</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>Editor de texto; cuenta de GitHub solo si publicas</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>README previsualizado y una explicación con tus palabras</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#material-de-apoyo">Material de apoyo</a> · <a href="#en-esta-lección">Conceptos</a> · <a href="#glosario">Glosario</a> · <a href="./00-01-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<blockquote class="blockquote">
+<p><strong>Antes de empezar:</strong> esta es la lección 00.01, dentro de Entorno de aprendizaje. Los comandos de Git llegan en 00.03. Puedes realizar la práctica sin publicar un perfil.</p>
+</blockquote>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Escribir y previsualizar Markdown, distinguir Git de GitHub y crear una presentación desde la web. Los comandos de Git se estudian en la lección 03.</p>
+<p><a id="prerrequisitos"></a></p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Basta con un editor de texto. La publicación requiere una cuenta de GitHub. No necesitas usar la terminal ni instalar Git para esta lección.</p>
+<p>Trabaja en un archivo de texto llamado <code>README.md</code> y utiliza una vista previa de Markdown. Si eliges hacerlo desde GitHub, puedes escribir y previsualizar en su editor web. No necesitas publicar para completar la práctica.</p>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Distinguir Git de GitHub y una copia local de una remota.</li>
+<li>Escribir títulos, listas, énfasis y enlaces en Markdown y comprobar su vista previa.</li>
+<li>Adaptar una presentación con tus objetivos reales de aprendizaje.</li>
+<li>Explicar otro uso de Markdown y qué tendrías que comprobar al usarlo con IA.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<p>Abre cada recurso cuando aparezca en el recorrido. Puedes consultarlos de nuevo desde esta tabla; no necesitas descargar todo para comenzar.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./fuentes.html#fuente-1">Vista previa de Markdown</a></td>
+<td>Comparar fuente y resultado en VS Code</td>
+<td>Apoyo si eliges ese editor</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/templates/github-profile/PROFILE.md">Plantilla de perfil</a></td>
+<td>Copiar una base y adaptarla en tu README</td>
+<td>Para la actividad del perfil</td>
+</tr>
+<tr class="odd">
+<td><a href="./fuentes.html#fuente-2">Cómo adaptar la plantilla</a></td>
+<td>Revisar qué sustituir y cómo presentar tus aprendizajes</td>
+<td>Consulta opcional</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/templates/learning-session/bitacora-00.md">Bitácora personal de 00</a></td>
+<td>Anotar evidencia, dudas y revisión con tu compañero</td>
+<td>Formato opcional; también sirve una nota propia</td>
+</tr>
+</tbody>
+</table>
+<p>Aquí trabajarás con texto Markdown. Los notebooks y scripts se incorporan en las lecciones que los necesitan. Las fuentes para profundizar están en <a href="#referencias">Referencias</a>.</p>
+</section>
+<section id="en-esta-lección" class="level2">
+<h2 class="anchored" data-anchor-id="en-esta-lección">En esta lección</h2>
+<ol type="1">
+<li><a href="#markdown-escribir-y-dar-estructura">Markdown: qué es, para qué sirve y cómo probarlo</a>. <a href="#otros-casos-de-uso">Otros casos de uso</a>, incluidos prompts y skills como introducción.</li>
+<li><a href="#git-y-github-conservar-y-compartir">Git y GitHub: conservar y compartir</a>.</li>
+<li><a href="#crear-el-perfil-desde-la-web">Crear tu perfil desde la web</a>.</li>
+</ol>
+<p><a id="2-markdown-escribir-y-dar-estructura"></a></p>
+</section>
+<section id="markdown-escribir-y-dar-estructura" class="level2">
+<h2 class="anchored" data-anchor-id="markdown-escribir-y-dar-estructura">1. Markdown: escribir y dar estructura</h2>
+<p><a id="un-archivo-de-texto-que-puedes-leer-sin-herramientas-especiales"></a></p>
+<section id="qué-es-markdown" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-markdown">Qué es Markdown</h3>
+<p><strong>Markdown</strong> es un lenguaje de marcado ligero: permite organizar texto plano con marcas sencillas para que una herramienta lo presente con formato. <code>.md</code> es la extensión habitual del archivo. El editor muestra el texto fuente y la vista previa lo presenta con formato. <code>README.md</code> suele explicar qué contiene un repositorio y cómo usarlo.</p>
+<p>Puedes abrirlo con un editor de texto y leerlo incluso sin vista previa. Las marcas describen la estructura: <code>#</code> introduce un título, <code>-</code> una lista y los corchetes con paréntesis un enlace. Cambiar la extensión de un documento de Word a <code>.md</code> no lo convierte en Markdown: su contenido debe ser texto plano.</p>
+<p>Markdown estructura el documento; no ejecuta programas. Un bloque con comandos los muestra como ejemplo, pero debes ejecutarlos por separado si la actividad lo pide.</p>
+</section>
+<section id="para-qué-sirve-y-qué-problemas-resuelve" class="level3">
+<h3 class="anchored" data-anchor-id="para-qué-sirve-y-qué-problemas-resuelve">Para qué sirve y qué problemas resuelve</h3>
+<p>Sirve para escribir documentos fáciles de leer, revisar y reutilizar. Por ejemplo, una nota puede explicar qué hiciste, qué necesitas y qué sigue; un README puede orientar a quien abre tu proyecto por primera vez.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problema al compartir información</th>
+<th>Cómo ayuda Markdown</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Todo aparece como un bloque de texto</td>
+<td>Los títulos y las listas separan temas y pasos</td>
+</tr>
+<tr class="even">
+<td>Se confunden explicación, ejemplo y código</td>
+<td>Las secciones y las marcas permiten distinguirlos</td>
+</tr>
+<tr class="odd">
+<td>Quieres revisar o adaptar el documento en otro editor</td>
+<td>El contenido es texto plano que puedes leer y modificar</td>
+</tr>
+</tbody>
+</table>
+<p>Imagina que entregas un archivo sin explicar qué contiene. Un README con «Propósito», «Archivos» y «Cómo empezar» ayuda a otra persona a orientarse. Markdown aporta la estructura; tú decides qué información necesita quien lee. No tienes que empezar por un perfil público: también sirve para tus apuntes.</p>
+</section>
+<section id="primera-prueba-escribir-y-previsualizar" class="level3">
+<h3 class="anchored" data-anchor-id="primera-prueba-escribir-y-previsualizar">Primera prueba: escribir y previsualizar</h3>
+<p>Ahora prueba esas marcas en un documento pequeño. Crea tu propio archivo README.md y copia estas cinco líneas:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Mi presentación</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Estoy aprendiendo Markdown.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quiero documentar mis prácticas.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Si usas VS Code, abre la paleta de comandos y busca <strong>Markdown: Open Preview to the Side</strong> para mantener fuente y vista previa juntas. La <a href="./fuentes.html#fuente-1">guía de vista previa</a> explica cómo abrirla. Si ya elegiste el editor web de GitHub, usa su vista previa. Elige una opción: para este ejercicio basta un archivo .md; el notebook llega en 00.06 y no es necesario preparar Python ni un kernel aquí.</p>
+<p><strong>Resultado de esas mismas líneas:</strong></p>
+<blockquote class="blockquote">
+<h1 id="mi-presentación">Mi presentación</h1>
+<p>Estoy aprendiendo Markdown.</p>
+<ul>
+<li>Quiero documentar mis prácticas.</li>
+</ul>
+</blockquote>
+<p>Compara ambos: el signo # produce el título y el guion produce una viñeta. Cambia una palabra, guarda y observa la vista previa. Después cambia # por ##: ¿qué diferencia ves? Conserva el texto y explica qué marca produce cada cambio.</p>
+</section>
+<section id="las-marcas-que-usarás-primero" class="level3">
+<h3 class="anchored" data-anchor-id="las-marcas-que-usarás-primero">Las marcas que usarás primero</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Quieres escribir</th>
+<th>Texto fuente</th>
+<th>Qué verás en la vista previa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Título principal</td>
+<td><code># Mi perfil</code></td>
+<td>Un encabezado de primer nivel</td>
+</tr>
+<tr class="even">
+<td>Sección</td>
+<td><code>## Mis objetivos</code></td>
+<td>Un encabezado de segundo nivel</td>
+</tr>
+<tr class="odd">
+<td>Énfasis</td>
+<td><code>**Python**</code></td>
+<td><strong>Python</strong></td>
+</tr>
+<tr class="even">
+<td>Lista</td>
+<td><code>- Aprender SQL</code></td>
+<td>Un elemento con viñeta</td>
+</tr>
+<tr class="odd">
+<td>Enlace</td>
+<td><code>[GitHub](https://github.com)</code></td>
+<td><a href="https://github.com">GitHub</a></td>
+</tr>
+<tr class="even">
+<td>Código en línea</td>
+<td><code>`README.md`</code></td>
+<td><code>README.md</code></td>
+</tr>
+</tbody>
+</table>
+<p>Deja líneas en blanco entre párrafos, encabezados y listas. Para mostrar varias líneas de código, enciérralas entre dos líneas de tres acentos graves, como el ejemplo siguiente.</p>
+</section>
+<section id="texto-fuente-y-resultado" class="level3">
+<h3 class="anchored">Texto fuente y resultado</h3>
+<p>Copia este ejemplo en un archivo <code>.md</code> o en el editor de GitHub. Alterna entre edición y vista previa: identifica qué marca produce cada parte del resultado.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Hola, soy Tu Nombre</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Estoy aprendiendo análisis de datos.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lo que quiero aprender</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Python y SQL.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Documentar y reproducir mis análisis.</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mi recorrido</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Puedes visitar <span class="co">[</span><span class="ot">DS Track</span><span class="co">](https://github.com/alexandro-mayoral-teran/ds_track)</span>.</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>Mi primer comando será <span class="in">`git status`</span>.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Así se presenta el ejemplo anterior:</strong></p>
+<blockquote class="blockquote">
+<h1 id="hola-soy-tu-nombre">Hola, soy Tu Nombre</h1>
+<p>Estoy aprendiendo análisis de datos.</p>
+<h2 id="lo-que-quiero-aprender" class="anchored" data-anchor-id="texto-fuente-y-resultado">Lo que quiero aprender</h2>
+<ul>
+<li>Python y SQL.</li>
+<li>Documentar y reproducir mis análisis.</li>
+</ul>
+<h2 id="mi-recorrido" class="anchored">Mi recorrido</h2>
+<p>Puedes visitar <a href="https://github.com/alexandro-mayoral-teran/ds_track">DS Track</a>.</p>
+<p>Mi primer comando será <code>git status</code>.</p>
+</blockquote>
+<p>Comprueba que el título, las dos viñetas, el enlace y el código en línea corresponden al texto fuente. git status se muestra como texto: no hay que ejecutarlo en esta práctica. Los colores y tamaños pueden variar según el editor.</p>
+<p>El nombre <code>README.md</code> es una convención: indica el documento que conviene leer primero. En un proyecto suele explicar su propósito, cómo ejecutarlo y dónde encontrar ejemplos; en tu perfil, sirve para presentarte.</p>
+<blockquote class="blockquote">
+<p><strong>Para comprobar:</strong> cambia un título de <code>#</code> a <code>##</code> y observa la vista previa. Después explica qué cambió en la estructura del documento.</p>
+</blockquote>
+<p><a id="3-otros-usos-del-perfil-a-tus-proyectos"></a></p>
+</section>
+<section id="otros-casos-de-uso" class="level3">
+<h3 class="anchored" data-anchor-id="otros-casos-de-uso">Otros casos de uso</h3>
+<p>La presentación es una primera aplicación. La misma estructura de texto sirve para organizar información en situaciones distintas:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Caso</th>
+<th>Qué información puedes organizar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Apuntes y bitácoras de aprendizaje</td>
+<td>Qué intentaste, qué comprobaste, dudas y siguiente paso</td>
+</tr>
+<tr class="even">
+<td>README de un proyecto</td>
+<td>Propósito, archivos necesarios e instrucciones para empezar</td>
+</tr>
+<tr class="odd">
+<td>Diccionario de datos</td>
+<td>Columnas, significado, unidades y valores ausentes</td>
+</tr>
+<tr class="even">
+<td>Notas de reunión o decisiones</td>
+<td>Acuerdos, motivos y tareas por realizar</td>
+</tr>
+<tr class="odd">
+<td>Explicaciones en un notebook</td>
+<td>Pregunta, interpretación y conclusiones junto al código</td>
+</tr>
+<tr class="even">
+<td>Sitio de documentación</td>
+<td>Páginas que una herramienta transforma en un sitio navegable</td>
+</tr>
+<tr class="odd">
+<td>Plantillas de colaboración</td>
+<td>Qué cambió, por qué y qué debe revisar otra persona</td>
+</tr>
+<tr class="even">
+<td>Contexto e instrucciones para IA</td>
+<td>Objetivo, datos de contexto, ejemplos y cómo comprobar la respuesta</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, <a href="https://jupyterlab.readthedocs.io/en/stable/user/notebook.html">Jupyter</a> admite celdas Markdown, <a href="https://www.mkdocs.org/user-guide/writing-your-docs/">MkDocs</a> construye documentación a partir de archivos Markdown y <a href="https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository">GitHub</a> permite plantillas Markdown para proponer cambios. Son casos para reconocer; no necesitas preparar esas herramientas en esta lección.</p>
+<p><a id="organizar-contexto-e-instrucciones-para-ia"></a></p>
+<section id="caso-de-uso-organizar-contexto-e-instrucciones-para-ia" class="level4">
+<h4 class="anchored" data-anchor-id="caso-de-uso-organizar-contexto-e-instrucciones-para-ia">Caso de uso: organizar contexto e instrucciones para IA</h4>
+<p>Un <strong>prompt</strong> es la petición que pasas a una herramienta de IA. Puede incluir qué necesitas, el contexto y cómo quieres comprobar el resultado. Markdown ayuda a separar esas partes, como explica la <a href="https://developers.openai.com/api/docs/guides/prompt-engineering">documentación de prompts de OpenAI</a>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Objetivo</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Explícame la diferencia entre # y ## en Markdown.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contexto</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Estoy escribiendo mi primera presentación.</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cómo lo comprobaré</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>Dame un ejemplo breve y pídeme que prediga cómo se verá antes de mostrarlo.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Puedes guardar y reutilizar esa petición. Una <strong>skill</strong> agrupa instrucciones reutilizables y, cuando hacen falta, recursos para una tarea. Por ejemplo, revisar varios README con los mismos criterios. En herramientas compatibles, como Codex, esas instrucciones se describen en un archivo <code>SKILL.md</code> y pueden acompañarse de plantillas o ejemplos. La <a href="https://developers.openai.com/plugins/concepts/skills">documentación de skills de OpenAI</a> muestra cómo se organiza ese material.</p>
+<p>Aquí basta con reconocer la conexión: escribir con estructura puede ayudarte a comunicarte con personas y a pasar contexto a una IA. Un archivo .md no se carga automáticamente en cualquier herramienta ni garantiza una respuesta correcta. Escribe y explica el ejemplo; crear una skill o instalar una IA queda fuera de esta primera práctica.</p>
+<blockquote class="blockquote">
+<p><strong>Para explorar:</strong> elige otro caso de uso. ¿Quién leería ese documento y qué información necesitaría para utilizarlo?</p>
+</blockquote>
+<p><a id="1-git-y-github-conservar-y-compartir"></a></p>
+</section>
+</section>
+</section>
+<section id="git-y-github-conservar-y-compartir" class="level2">
+<h2 class="anchored" data-anchor-id="git-y-github-conservar-y-compartir">2. Git y GitHub: conservar y compartir</h2>
+<section id="git-entender-cómo-cambió-un-archivo" class="level3">
+<h3 class="anchored" data-anchor-id="git-entender-cómo-cambió-un-archivo">Git: entender cómo cambió un archivo</h3>
+<p><strong>Git</strong> es un sistema de control de versiones: registra cambios en archivos y permite consultar su historial. Un <strong>repositorio</strong> reúne archivos y ese historial. Un <strong>commit</strong> guarda los cambios preparados con un mensaje que explica la intención. Git puede funcionar localmente sin conexión a GitHub.</p>
+<p>Imagina que hoy escribes tu presentación y mañana cambias tus objetivos. Podrías guardar archivos como <code>perfil_final.md</code> y <code>perfil_final_ahora_si.md</code>, pero pronto sería difícil saber cuál usar y qué cambió. Con Git mantienes el nombre del archivo y registras versiones en su historial.</p>
+<p>Un commit puede incluir cambios en varios archivos. Su mensaje describe el motivo: por ejemplo, «Agrega mis objetivos de aprendizaje». Así puedes comparar versiones, consultar cómo era el contenido antes y recuperar cambios anteriores.</p>
+</section>
+<section id="github-compartir-el-repositorio-y-trabajar-juntos" class="level3">
+<h3 class="anchored" data-anchor-id="github-compartir-el-repositorio-y-trabajar-juntos">GitHub: compartir el repositorio y trabajar juntos</h3>
+<p><strong>GitHub</strong> es una plataforma para alojar repositorios Git, compartir trabajo y colaborar. El repositorio de tu computadora es <strong>local</strong>; el alojado en GitHub es <strong>remoto</strong>. Guardar un archivo, crear un commit y subirlo son acciones diferentes.</p>
+<p>En GitHub puedes leer documentación, explorar el historial e invitar a alguien a colaborar. También existen <strong>issues</strong>, para registrar preguntas o tareas, y <strong>pull requests</strong>, para proponer cambios y revisarlos antes de integrarlos. Por ahora basta con reconocer estas posibilidades; las practicarás más adelante.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concepto</th>
+<th>Qué representa</th>
+<th>Ejemplo en tu perfil</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Git</td>
+<td>Herramienta para controlar versiones</td>
+<td>Conservar cambios del README</td>
+</tr>
+<tr class="even">
+<td>GitHub</td>
+<td>Plataforma para alojar y colaborar</td>
+<td>Mostrar tu presentación en la web</td>
+</tr>
+<tr class="odd">
+<td>Repositorio</td>
+<td>Archivos y su historial</td>
+<td>El repositorio con tu nombre de usuario</td>
+</tr>
+<tr class="even">
+<td>Commit</td>
+<td>Registro de cambios seleccionados</td>
+<td>«Agrega mis objetivos»</td>
+</tr>
+<tr class="odd">
+<td>Local</td>
+<td>Repositorio en tu computadora</td>
+<td>La copia que editarás en la lección 03</td>
+</tr>
+<tr class="even">
+<td>Remoto</td>
+<td>Repositorio accesible por una conexión</td>
+<td>La copia alojada en GitHub</td>
+</tr>
+</tbody>
+</table>
+<p>Cuando editas y guardas desde GitHub, la plataforma crea un commit en el repositorio remoto. En la lección 03 harás el proceso desde tu computadora.</p>
+<blockquote class="blockquote">
+<p><strong>Para conversar:</strong> si editas un archivo en tu computadora, ¿cambia automáticamente la copia de GitHub? Explica tu respuesta.</p>
+</blockquote>
+<details>
+<summary>
+Pista para contrastar tu explicación
+</summary>
+<p>Piensa dónde se guardó el cambio: en tu computadora o en el repositorio remoto. Guardar un archivo local no modifica automáticamente GitHub. Más adelante aprenderás a registrar y enviar cambios; aquí basta distinguir ambas copias.</p>
+</details>
+</section>
+</section>
+<section id="crear-el-perfil-desde-la-web" class="level2">
+<h2 class="anchored" data-anchor-id="crear-el-perfil-desde-la-web">Crear el perfil desde la web</h2>
+<ol type="1">
+<li>Identifica tu nombre de usuario de GitHub.</li>
+<li>Crea un repositorio <strong>público</strong> con exactamente ese nombre y agrega un README. Para <code>alexandro-mayoral-teran</code>, el repositorio es <code>alexandro-mayoral-teran</code>. Si ya existe, edita su README.</li>
+<li>Copia la <a href="descargas/templates/github-profile/PROFILE.md">plantilla de perfil</a> al README. Sustituye los datos de ejemplo y adapta tu presentación, lo que estás aprendiendo y un objetivo concreto. Las <a href="./fuentes.html#fuente-2">instrucciones de la plantilla</a> explican qué conservar.</li>
+<li>Usa la vista previa para comprobar títulos, listas y enlaces.</li>
+<li>Guarda con un mensaje de commit descriptivo y visita tu perfil.</li>
+</ol>
+<p>Este repositorio del perfil es distinto del repositorio privado <code>ds_track</code>. Puedes completar la práctica sin cuenta guardando y previsualizando el README localmente. Los iconos, tarjetas de estadísticas y automatizaciones son extensiones.</p>
+<p><a id="práctica-y-criterio-de-salida"></a></p>
+</section>
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Realiza el <a href="./00-01-lab.html">lab 00.01</a>. Crearás una presentación propia y contrastarás el texto fuente con su vista previa.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<p>Puedes avanzar cuando expliques Git frente a GitHub y fuente frente a vista previa, y tu README muestre la presentación y los objetivos con formato correcto. Si eliges publicarlo, comprueba que aparece en tu perfil.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tu README adaptado</td>
+<td>Títulos, listas, énfasis y enlaces se presentan como esperabas</td>
+<td>Qué cambia entre texto fuente y vista previa</td>
+</tr>
+<tr class="even">
+<td>Una nota breve</td>
+<td>Distingues Git, GitHub y copia local/remota</td>
+<td>Por qué guardar localmente no actualiza GitHub</td>
+</tr>
+<tr class="odd">
+<td>Tus objetivos de aprendizaje</td>
+<td>Sustituiste el texto de ejemplo y abriste los enlaces</td>
+<td>Qué quieres aprender y cómo se reconoce en tu presentación</td>
+</tr>
+<tr class="even">
+<td>Otro uso de Markdown</td>
+<td>Puedes describir quién leería ese documento y para qué</td>
+<td>Qué información necesita; si usas IA, cómo comprobarías su respuesta</td>
+</tr>
+</tbody>
+</table>
+<p>Quien aprende modifica el README y explica el resultado. Su compañero revisa un enlace y pide un cambio pequeño, como convertir un título en una sección. Para registrar la revisión puedes copiar la <a href="descargas/templates/learning-session/bitacora-00.md">bitácora personal de 00</a> o escribir una nota propia junto al README. La evidencia personal no se guarda en la bitácora editorial del curso.</p>
+<p>No hay proyecto de datos asociado todavía; el README es la primera evidencia.</p>
+</section>
+<section id="glosario" class="level2">
+<h2 class="anchored" data-anchor-id="glosario">Glosario</h2>
+<p>Consulta estos términos cuando los necesites; ya aparecen explicados en el recorrido.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Término</th>
+<th>Qué significa en esta lección</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Markdown</td>
+<td>Forma de estructurar texto con marcas sencillas, como <code>#</code> para un título</td>
+</tr>
+<tr class="even">
+<td>Texto plano</td>
+<td>Texto sin formato incorporado como el de Word; puede contener marcas que otra herramienta interprete</td>
+</tr>
+<tr class="odd">
+<td>Texto fuente</td>
+<td>Lo que escribes, incluidas las marcas; por ejemplo, <code>**Python**</code></td>
+</tr>
+<tr class="even">
+<td>Vista previa</td>
+<td>Presentación del texto con las marcas interpretadas; por ejemplo, <strong>Python</strong></td>
+</tr>
+<tr class="odd">
+<td>README</td>
+<td>Documento de entrada que explica un proyecto o presenta tu perfil; suele llamarse <code>README.md</code></td>
+</tr>
+<tr class="even">
+<td>Repositorio</td>
+<td>Conjunto de archivos cuyo historial de cambios se registra con Git; por ejemplo, tu README y sus versiones</td>
+</tr>
+<tr class="odd">
+<td>Commit</td>
+<td>Registro de cambios seleccionados, acompañado de un mensaje que explica su intención</td>
+</tr>
+<tr class="even">
+<td>Local</td>
+<td>En tu computadora; aquí, la copia del repositorio que editas en ella</td>
+</tr>
+<tr class="odd">
+<td>Remoto</td>
+<td>Accesible mediante una conexión; aquí, el repositorio alojado en GitHub</td>
+</tr>
+<tr class="even">
+<td>Prompt</td>
+<td>Petición que pasas a una IA, con el contexto y las indicaciones que necesite</td>
+</tr>
+<tr class="odd">
+<td>Skill</td>
+<td>Conjunto reutilizable de instrucciones y, si hacen falta, recursos para una tarea en una herramienta compatible</td>
+</tr>
+</tbody>
+</table>
+<p>Para distinguir las herramientas, vuelve a <a href="#git-y-github-conservar-y-compartir">Git y GitHub</a>.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Acerca-del-Control-de-Versiones">Git: fundamentos del control de versiones</a>.</li>
+<li><a href="https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme">README de perfil de GitHub</a>.</li>
+<li><a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Sintaxis de Markdown en GitHub</a>.</li>
+<li><a href="https://daringfireball.net/projects/markdown/">Markdown: presentación original de John Gruber</a>.</li>
+<li>Los casos de uso y la introducción a prompts/skills enlazan sus fuentes primarias en <a href="#otros-casos-de-uso">Otros casos de uso</a>.</li>
+</ul>
+<p><a id="siguiente-lección"></a></p>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después del lab y su comprobación, continúa con <a href="./00-02-leccion.html">00.02 — Terminal y rutas</a>. Después aprenderás a actualizar el perfil con Git en la lección 03.</p>
+<p><a href="./modulo-00.html">← Módulo 00</a> · <a href="./00-01-lab.html">Practicar: lab 00.01</a> · <a href="./00-02-leccion.html">Siguiente: 00.02 →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

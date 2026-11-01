@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>00.05A — Preparar y usar un entorno – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#por-qué-necesitamos-un-entorno" id="toc-por-qué-necesitamos-un-entorno" class="nav-link" data-scroll-target="#por-qué-necesitamos-un-entorno">1. Por qué necesitamos un entorno</a></li>
+  <li><a href="#las-piezas-de-cualquier-recorrido" id="toc-las-piezas-de-cualquier-recorrido" class="nav-link" data-scroll-target="#las-piezas-de-cualquier-recorrido">2. Las piezas de cualquier recorrido</a></li>
+  <li><a href="#qué-reúne-un-entorno-y-qué-separa" id="toc-qué-reúne-un-entorno-y-qué-separa" class="nav-link" data-scroll-target="#qué-reúne-un-entorno-y-qué-separa">3. Qué reúne un entorno y qué separa</a></li>
+  <li><a href="#crear-seleccionar-instalar-y-comprobar" id="toc-crear-seleccionar-instalar-y-comprobar" class="nav-link" data-scroll-target="#crear-seleccionar-instalar-y-comprobar">4. Crear, seleccionar, instalar y comprobar</a>
+  <ul class="collapse">
+  <li><a href="#activar-es-una-forma-de-seleccionar" id="toc-activar-es-una-forma-de-seleccionar" class="nav-link" data-scroll-target="#activar-es-una-forma-de-seleccionar">Activar es una forma de seleccionar</a></li>
+  <li><a href="#cómo-reconocer-el-intérprete" id="toc-cómo-reconocer-el-intérprete" class="nav-link" data-scroll-target="#cómo-reconocer-el-intérprete">Cómo reconocer el intérprete</a></li>
+  </ul></li>
+  <li><a href="#conservar-los-requisitos-para-reconstruir" id="toc-conservar-los-requisitos-para-reconstruir" class="nav-link" data-scroll-target="#conservar-los-requisitos-para-reconstruir">5. Conservar los requisitos para reconstruir</a>
+  <ul class="collapse">
+  <li><a href="#un-ejemplo-que-conecta-las-piezas" id="toc-un-ejemplo-que-conecta-las-piezas" class="nav-link" data-scroll-target="#un-ejemplo-que-conecta-las-piezas">Un ejemplo que conecta las piezas</a></li>
+  </ul></li>
+  <li><a href="#elegir-tu-recorrido" id="toc-elegir-tu-recorrido" class="nav-link" data-scroll-target="#elegir-tu-recorrido">6. Elegir tu recorrido</a></li>
+  <li><a href="#gestionar-la-elección-del-entorno-en-vs-code" id="toc-gestionar-la-elección-del-entorno-en-vs-code" class="nav-link" data-scroll-target="#gestionar-la-elección-del-entorno-en-vs-code">7. Gestionar la elección del entorno en VS Code</a>
+  <ul class="collapse">
+  <li><a href="#seleccionar-el-intérprete-existente" id="toc-seleccionar-el-intérprete-existente" class="nav-link" data-scroll-target="#seleccionar-el-intérprete-existente">Seleccionar el intérprete existente</a></li>
+  <li><a href="#crear-y-consultar-desde-el-editor" id="toc-crear-y-consultar-desde-el-editor" class="nav-link" data-scroll-target="#crear-y-consultar-desde-el-editor">Crear y consultar desde el editor</a></li>
+  <li><a href="#comprobar-la-terminal-integrada" id="toc-comprobar-la-terminal-integrada" class="nav-link" data-scroll-target="#comprobar-la-terminal-integrada">Comprobar la terminal integrada</a></li>
+  </ul></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario">Glosario</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">00.05A — Preparar y usar un entorno</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 00 / 00 / APOYO
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-00.html">Entorno de aprendizaje</a></p>
+<p><a id="05a--preparar-y-usar-un-entorno"></a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-00.html">Módulo 00</a> / <strong>Lección 00.05A</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Preparar un entorno y comprobar su intérprete</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>El primer script y las bases de terminal de 00.02; la elección del gestor viene al final</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>Comprobación y nota personal de la sesión A</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#antes-de-empezar">Preparación</a> · <a href="#material-de-apoyo">Material de apoyo</a> · <a href="#glosario">Glosario</a> · <a href="./00-05-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<p><a href="./00-05-leccion.html">← Entrada de 00.05</a> · <a href="./00-05-entorno.html">Sesión A</a> · <a href="./00-05-dependencias.html">Sesión B</a></p>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Comprender por qué separar las dependencias de los proyectos y qué piezas intervienen al ejecutar un programa. Después elegirás una herramienta, prepararás su entorno y comprobarás qué intérprete ejecuta el primer script.</p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Lee la <a href="./00-05-leccion.html">entrada de 00.05</a> y retoma el <a href="./00-04-leccion.html">primer script</a>. Lee primero los conceptos comunes de esta página. No necesitas elegir ni instalar un gestor para comprenderlos. Para la práctica necesitarás Python 3.11 o posterior, o una herramienta que lo prepare; el recorrido elegido explicará esa preparación. La instalación de la biblioteca de demostración corresponde a 05B.</p>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Explicar qué problema resuelve separar los entornos.</li>
+<li>Distinguir intérprete, biblioteca, dependencia y entorno.</li>
+<li>Elegir Conda, venv + pip o uv según tu preparación.</li>
+<li>Comprobar la ruta de Python y ejecutar el primer script en ese entorno.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./00-05-conda.html">Conda</a></td>
+<td>Preparar el entorno si eliges Anaconda</td>
+<td>Después de los conceptos comunes</td>
+</tr>
+<tr class="even">
+<td><a href="./00-05-venv-pip.html">venv + pip</a></td>
+<td>Preparar un entorno con Python disponible</td>
+<td>Después de los conceptos comunes</td>
+</tr>
+<tr class="odd">
+<td><a href="./00-05-uv.html">uv</a></td>
+<td>Preparar el mini proyecto de práctica</td>
+<td>Después de los conceptos comunes</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/00_getting_started/04_first_script/first_summary.py">Primer script</a></td>
+<td>Ejecutar un cálculo sin bibliotecas externas</td>
+<td>Sesión A</td>
+</tr>
+</tbody>
+</table>
+<p>Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y trabaja las modificaciones en tu copia personal.</p>
+</section>
+<section id="por-qué-necesitamos-un-entorno" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-necesitamos-un-entorno">1. Por qué necesitamos un entorno</h2>
+<p>En <a href="./00-04-leccion.html">00.04</a>, Python ejecutó tu cálculo con las operaciones que ya incluye. Ahora queremos presentar unas ventas como tabla. Podríamos escribir el formato a mano, pero una biblioteca llamada <code>tabulate</code> ya ofrece esa funcionalidad. Para usarla, el Python que ejecuta el programa debe tenerla disponible.</p>
+<p>Imagina que tienes dos trabajos: una tabla de ventas y un reporte que recibiste de otra persona. El primero se comprobó con una versión de una biblioteca y el segundo necesita otra. Si ambos usan la misma instalación y cambias esa biblioteca, puedes afectar al trabajo anterior aunque su archivo <code>.py</code> siga igual. Es un ejemplo del problema; no vamos a provocar ese conflicto en tu computadora.</p>
+<p>Separar sus entornos permite mantener los paquetes de cada trabajo y comprobar con qué Python se ejecuta cada uno. También ayuda cuando retomas semanas después o compartes el código: necesitas saber qué software lo acompañaba.</p>
+<blockquote class="blockquote">
+<p><strong>Para conversar:</strong> si conservas el archivo <code>.py</code>, ¿qué más necesitarías saber para ejecutarlo en otra computadora?</p>
+</blockquote>
+<p><a id="1-intérprete-bibliotecas-y-dependencias"></a></p>
+</section>
+<section id="las-piezas-de-cualquier-recorrido" class="level2">
+<h2 class="anchored" data-anchor-id="las-piezas-de-cualquier-recorrido">2. Las piezas de cualquier recorrido</h2>
+<p>El <strong>intérprete</strong> es el programa que ejecuta las instrucciones de Python. El archivo <code>ventas.py</code> contiene instrucciones; el ejecutable de Python las procesa. En una computadora puede haber varios intérpretes, con versiones o paquetes distintos.</p>
+<p>Una <strong>biblioteca</strong> reúne funcionalidad reutilizable. Python incluye una <strong>biblioteca estándar</strong>, por ejemplo <code>sys</code>, que permite consultar información del intérprete. Una biblioteca <strong>externa</strong>, como <code>tabulate</code>, se instala aparte. Para descargarla e instalarla utilizamos un <strong>paquete distribuido</strong>: en este caso también se llama <code>tabulate</code>.</p>
+<p>Cuando tu programa necesita ese software, lo llamamos una <strong>dependencia</strong>. Su <strong>versión</strong> identifica una edición concreta. En esta práctica utilizaremos <code>tabulate</code> 0.9.0 para contrastar la misma demostración en todos los caminos. La versión de Python y la de tabulate pertenecen a programas diferentes.</p>
+<pre class="text"><code>Tu archivo .py contiene instrucciones
+        ↓ lo ejecuta
+Un intérprete de Python
+        ↓ utiliza
+Su biblioteca estándar y los paquetes externos disponibles en su entorno</code></pre>
+<p>El <strong>gestor</strong> es la herramienta que ayuda a preparar o administrar ese software. Algunas herramientas crean entornos; otras instalan paquetes; algunas combinan varias funciones. Por eso elegir un gestor viene después de entender las piezas.</p>
+<details>
+<summary>
+Ampliación: dependencias directas y transitivas
+</summary>
+<p>Una dependencia es <strong>directa</strong> cuando tu proyecto la solicita, como tabulate para presentar la tabla. Es <strong>transitiva</strong> cuando otra dependencia la necesita. Un gestor puede instalarla para satisfacer ese requisito. No todas las bibliotecas tienen dependencias externas; este ejemplo no implica que tabulate necesite instalar otras.</p>
+</details>
+<p><a id="3-cómo-funciona-un-entorno-y-para-qué-sirve"></a></p>
+</section>
+<section id="qué-reúne-un-entorno-y-qué-separa" class="level2">
+<h2 class="anchored" data-anchor-id="qué-reúne-un-entorno-y-qué-separa">3. Qué reúne un entorno y qué separa</h2>
+<p>Un <strong>entorno</strong> proporciona un intérprete y un espacio de paquetes para ejecutar un trabajo. Según la herramienta, puede basarse en un Python existente o incluir uno administrado por ella. Los paquetes externos se instalan en ese espacio.</p>
+<pre class="text"><code>Proyecto A: código y datos → Python del entorno A → paquetes de A
+Proyecto B: código y datos → Python del entorno B → paquetes de B</code></pre>
+<p><strong>La carpeta del código y el entorno cumplen funciones distintas.</strong> Tu script puede permanecer en la carpeta del proyecto y ejecutarse con el Python del entorno. Crear o activar un entorno no mueve el script ni copia tus datos. Algunos entornos están dentro del proyecto; otros se guardan en otra ubicación. No guardes tus scripts dentro de la carpeta de paquetes del entorno.</p>
+<p>Esto aporta:</p>
+<ul>
+<li><strong>Separación:</strong> los paquetes instalados para un entorno no se añaden al otro.</li>
+<li><strong>Identificación:</strong> puedes consultar el Python y las versiones que usas.</li>
+<li><strong>Reconstrucción:</strong> puedes preparar el entorno de nuevo desde requisitos guardados.</li>
+</ul>
+<p>Ocupa espacio y requiere mantenimiento. No es una máquina virtual ni una barrera de seguridad: un programa ejecutado conserva acceso a los archivos que permitan tus permisos. Tampoco garantiza resultados idénticos por sí solo; importan el código, los datos, las versiones y la plataforma.</p>
+<p>No crearemos un entorno por lección. El elegido puede acompañarte en DS Track; la demostración de uv usará un mini proyecto aparte para conservar intacta la configuración compartida del repositorio.</p>
+<p><a id="4-crear-activar-y-comprobar-un-entorno"></a></p>
+</section>
+<section id="crear-seleccionar-instalar-y-comprobar" class="level2">
+<h2 class="anchored" data-anchor-id="crear-seleccionar-instalar-y-comprobar">4. Crear, seleccionar, instalar y comprobar</h2>
+<p>Estas acciones aparecen en cualquier recorrido, aunque una herramienta pueda resolver varias con un comando:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Acción</th>
+<th>Qué significa</th>
+<th>Qué observarás en la práctica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Crear o preparar</td>
+<td>Disponer del intérprete y del espacio de paquetes</td>
+<td>Un entorno con nombre o carpeta identificable</td>
+</tr>
+<tr class="even">
+<td>Seleccionar para ejecutar</td>
+<td>Usar el Python de ese entorno</td>
+<td>La ruta del ejecutable que ejecuta el programa</td>
+</tr>
+<tr class="odd">
+<td>Instalar</td>
+<td>Añadir un paquete al entorno elegido</td>
+<td>El gestor informa qué versión está disponible allí</td>
+</tr>
+<tr class="even">
+<td>Importar</td>
+<td>Pedir desde el código la funcionalidad que utilizará</td>
+<td>El Python elegido puede cargarla</td>
+</tr>
+<tr class="odd">
+<td>Comprobar</td>
+<td>Contrastar entorno, importación y resultado</td>
+<td>Ruta, versión y tabla esperadas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Crear se hace una vez; seleccionar se repite al retomar.</strong> Abrir otra terminal no borra el entorno. Sin embargo, esa terminal puede seleccionar un Python diferente. Antes de ejecutar, comprueba cuál estás usando.</p>
+<section id="activar-es-una-forma-de-seleccionar" class="level3">
+<h3 class="anchored" data-anchor-id="activar-es-una-forma-de-seleccionar">Activar es una forma de seleccionar</h3>
+<p><strong>Activar</strong> prepara la sesión actual del shell para que comandos como <code>python</code> utilicen el entorno. No cambia el código ni instala bibliotecas. La activación no tiene que mantenerse al cerrar la terminal.</p>
+<p>También puedes indicar directamente la ruta del ejecutable o utilizar un comando que ejecute dentro del proyecto. En Conda activaremos el entorno, con venv usaremos su ejecutable y con uv utilizaremos <code>uv run</code>. Los comandos completos están en los recorridos; todavía no hace falta ejecutarlos.</p>
+</section>
+<section id="cómo-reconocer-el-intérprete" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-reconocer-el-intérprete">Cómo reconocer el intérprete</h3>
+<p>Una vez que el recorrido haya seleccionado su Python, consultarás:</p>
+<pre class="text"><code>python -c "import sys; print(sys.executable)"</code></pre>
+<p>Lectura del comando: <code>-c</code> pide a Python ejecutar el texto entre comillas; <code>import sys</code> carga una parte de su biblioteca estándar, y <code>print(sys.executable)</code> muestra la ruta del ejecutable actual. No instala paquetes. Con una ruta directa o con uv cambia el comienzo del comando; la consulta entre comillas es la misma.</p>
+<p>Ejemplos ilustrativos de salida, no rutas que debas copiar:</p>
+<pre class="text"><code>Windows: C:\practicas\ds_track\.venv-practice\Scripts\python.exe
+Linux/macOS: /home/estudiante/ds_track/.venv-practice/bin/python</code></pre>
+<p>En Windows los ejecutables de venv suelen estar en <code>Scripts</code>; en Linux/macOS, en <code>bin</code>. El recorrido Conda mostrará la ubicación de su entorno <code>ds-track</code>; el de uv, la <code>.venv</code> del mini proyecto. Compara la ruta con la ubicación del entorno que preparaste, no solo con el nombre que aparece en la terminal.</p>
+<blockquote class="blockquote">
+<p><strong>Predice:</strong> si instalas tabulate para el Python del entorno A y ejecutas con el del entorno B, ¿puedes asegurar que podrá importarlo?</p>
+</blockquote>
+<details>
+<summary>
+Ver explicación
+</summary>
+<p>No.&nbsp;La instalación en A no instala el paquete en B. B podría tener su propia instalación o no tenerla. Por eso comprobamos el intérprete, la versión importada y el resultado, en lugar de concluir que «ya está instalado en la computadora».</p>
+</details>
+</section>
+</section>
+<section id="conservar-los-requisitos-para-reconstruir" class="level2">
+<h2 class="anchored" data-anchor-id="conservar-los-requisitos-para-reconstruir">5. Conservar los requisitos para reconstruir</h2>
+<p>Al compartir un script que utiliza una biblioteca externa, otra persona necesita el código y una indicación de qué software preparar. Guardamos esa indicación en <strong>archivos de configuración</strong>: texto que las herramientas pueden leer para preparar el entorno. Documentamos también la versión de Python.</p>
+<p>Un <strong>requisito</strong> expresa qué necesita el proyecto, por ejemplo una biblioteca y su versión. La <strong>resolución</strong> es la selección de versiones compatibles para esos requisitos y sus dependencias. Un <strong>lockfile</strong> conserva una resolución; su alcance depende de la herramienta y no sustituye los datos ni los requisitos del sistema. En 05B leerás los archivos concretos de tu camino.</p>
+<pre class="text"><code>Código + datos + configuración revisada
+        ↓ preparar el entorno e instalar lo declarado
+Ejecutar y comprobar en la nueva ubicación</code></pre>
+<p>Compartimos esos archivos en lugar de copiar la carpeta completa del entorno, que puede contener rutas y componentes ligados al equipo original. No necesitas memorizar todavía los formatos. Antes de elegir una herramienta, lo esencial es poder explicar por qué guardar el script por sí solo puede ser insuficiente.</p>
+<p><a id="5-qué-aporta-cada-camino"></a></p>
+<section id="un-ejemplo-que-conecta-las-piezas" class="level3">
+<h3 class="anchored" data-anchor-id="un-ejemplo-que-conecta-las-piezas">Un ejemplo que conecta las piezas</h3>
+<p>Queremos ejecutar <a href="descargas/curriculum/00_getting_started/05_environment/library_demo.py">library_demo.py</a>, el script que presenta tres ventas: cuaderno 80, lapiz 50 y carpeta 35 MXN. Ese archivo contiene el código y los datos del ejemplo. Utiliza tabulate 0.9.0 para dar formato a la tabla; el Python que lo ejecute debe poder importar esa biblioteca.</p>
+<p>Prepararemos un entorno, instalaremos allí el paquete y ejecutaremos el script con su intérprete. Conservaremos la configuración para poder preparar de nuevo lo necesario. Todavía no ejecutes comandos: primero identifica estas piezas.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Busca en la situación</th>
+<th>Tu explicación antes de continuar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Código y datos</td>
+<td>¿Qué archivo conservarías?</td>
+</tr>
+<tr class="even">
+<td>Intérprete</td>
+<td>¿Qué programa ejecutaría ese archivo y cómo reconocerías su ruta?</td>
+</tr>
+<tr class="odd">
+<td>Biblioteca y versión</td>
+<td>¿Qué funcionalidad externa necesita y qué versión utilizaremos?</td>
+</tr>
+<tr class="even">
+<td>Entorno</td>
+<td>¿Dónde debe estar disponible el paquete para ese Python?</td>
+</tr>
+<tr class="odd">
+<td>Configuración</td>
+<td>¿Qué información permitiría preparar nuevamente sus dependencias?</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+Ver cómo se relacionan
+</summary>
+<p>El script es <code>library_demo.py</code>; en este ejemplo los datos están escritos dentro de él. Lo ejecutará el Python del entorno que preparemos, identificado mediante <code>sys.executable</code>. Tabulate 0.9.0 es la dependencia externa que presenta la tabla. Instalarla para ese entorno permite que su Python la importe. La configuración del camino elegido registra requisitos o resolución; conservamos también el script y documentamos Python. Guardar solo el script no instala la biblioteca.</p>
+</details>
+</section>
+</section>
+<section id="elegir-tu-recorrido" class="level2">
+<h2 class="anchored" data-anchor-id="elegir-tu-recorrido">6. Elegir tu recorrido</h2>
+<p>Ahora las herramientas responden a necesidades que ya conoces. Completa un solo camino en las partes A y B; no necesitas dominar los tres para continuar.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Camino</th>
+<th>Qué administra aquí</th>
+<th>Cuándo elegirlo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./00-05-conda.html">Conda</a></td>
+<td>Entornos, intérprete de Python y paquetes de sus canales</td>
+<td>Si ya utilizas Anaconda, es el comienzo recomendado</td>
+</tr>
+<tr class="even">
+<td><a href="./00-05-venv-pip.html">venv + pip</a></td>
+<td>venv crea el entorno a partir de un Python disponible; pip instala paquetes para él</td>
+<td>Si tienes Python y quieres practicar con sus herramientas estándar</td>
+</tr>
+<tr class="odd">
+<td><a href="./00-05-uv.html">uv</a></td>
+<td>Puede obtener Python, preparar el entorno y gestionar requisitos y lockfile</td>
+<td>Si quieres trabajar con configuración y resolución integradas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Si tienes dudas, elige con quien te acompaña según lo que ya esté instalado.</strong> Para esta lección los tres caminos permiten comprobar lo mismo: el Python elegido ejecuta el primer script y después importa tabulate para presentar una tabla. DS Track requiere Python 3.11 o posterior; Conda y uv usarán 3.12 en esta práctica.</p>
+<p><a id="2-qué-es-pip-y-qué-cambia-con-uv"></a></p>
+<details>
+<summary>
+Comparación de herramientas para consultar después de elegir
+</summary>
+<ul>
+<li><strong>Conda</strong> obtiene paquetes de canales y puede administrar componentes binarios que necesitan algunas bibliotecas. Su disponibilidad depende de la plataforma y los canales. En este ejercicio usaremos Conda para instalar tabulate.</li>
+<li><strong>venv</strong> utiliza una instalación de Python existente; no descarga otra versión. <strong>pip</strong> instala paquetes desde índices como PyPI. PyPI es el catálogo; pip es la herramienta que lo consulta. <code>python -m pip</code> ejecuta el pip asociado a ese Python. pip no crea el entorno ni instala Python por sí solo.</li>
+<li><strong>uv</strong> gestiona aquí un proyecto con <code>pyproject.toml</code> y <code>uv.lock</code>. Usaremos <code>add</code>, <code>sync</code> y <code>run</code>. También ofrece una interfaz <code>uv pip</code>, pero no es el programa pip ni la necesitamos para este recorrido. Una sincronización exacta puede retirar paquetes que no estén declarados.</li>
+</ul>
+<p>Ninguna opción garantiza por sí sola que cualquier proyecto funcione en cualquier plataforma. Cada recorrido explica cómo conservar sus requisitos y sus límites.</p>
+</details>
+<p>Abre tu recorrido y completa <strong>solo la parte A</strong> y contrástala con la sesión A del lab. En 05B instalarás la biblioteca. Conserva el mismo camino para ambas partes y comprueba entornos existentes antes de crear otro. Evita mezclar gestores en el mismo entorno o instalar los ejercicios en el Python global o en <code>base</code> de Conda.</p>
+</section>
+<section id="gestionar-la-elección-del-entorno-en-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="gestionar-la-elección-del-entorno-en-vs-code">7. Gestionar la elección del entorno en VS Code</h2>
+<details>
+<summary>
+Apoyo opcional: seleccionar en VS Code el entorno que ya preparaste
+</summary>
+<section id="seleccionar-el-intérprete-existente" class="level3">
+<h3 class="anchored" data-anchor-id="seleccionar-el-intérprete-existente">Seleccionar el intérprete existente</h3>
+<ol type="1">
+<li>Abre la carpeta <code>ds_track</code> e instala la extensión <strong>Python</strong>, publicada por Microsoft, si está permitida y todavía no la tienes.</li>
+<li>Abre el script y la paleta con Ctrl+Shift+P en Windows.</li>
+<li>Busca <strong>Python: Select Interpreter</strong> y elige el entorno de tu recorrido.</li>
+<li>Si no aparece, utiliza la opción para indicar la ruta del intérprete.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Recorrido</th>
+<th>Qué Python seleccionar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Conda</td>
+<td>El de ds-track; consulta su ubicación tras conda activate</td>
+</tr>
+<tr class="even">
+<td>venv + pip</td>
+<td>.venv-practice/Scripts/python.exe en Windows o .venv-practice/bin/python en Unix</td>
+</tr>
+<tr class="odd">
+<td>uv de esta práctica</td>
+<td>.environment-practice/uv-demo/.venv/Scripts/python.exe en Windows o su equivalente bin/python en Unix</td>
+</tr>
+</tbody>
+</table>
+<p>No selecciones la <code>.venv</code> de la raíz para importar tabulate del mini proyecto: son entornos distintos. Comprueba la ruta, no solo la etiqueta del menú.</p>
+</section>
+<section id="crear-y-consultar-desde-el-editor" class="level3">
+<h3 class="anchored" data-anchor-id="crear-y-consultar-desde-el-editor">Crear y consultar desde el editor</h3>
+<p>La extensión ofrece <strong>Python: Create Environment</strong> para crear entornos; las opciones dependen de las extensiones y herramientas detectadas. La extensión <strong>Python Environments</strong>, también de Microsoft, puede ofrecer una vista para descubrir, crear y consultar entornos y paquetes.</p>
+<p>Para esta lección crea el entorno con los comandos de tu recorrido y selecciónalo después. Evita crear otro automáticamente y terminar usando una instalación distinta. En proyectos uv, conserva el flujo uv add/sync para gestionar dependencias, aunque el editor permita acciones de instalación.</p>
+</section>
+<section id="comprobar-la-terminal-integrada" class="level3">
+<h3 class="anchored" data-anchor-id="comprobar-la-terminal-integrada">Comprobar la terminal integrada</h3>
+<ol type="1">
+<li>Tras seleccionar el intérprete, abre <strong>Terminal → Nueva terminal</strong>.</li>
+<li>La extensión normalmente intenta activarlo en terminales nuevas, según su configuración y el shell. No supongas que ocurrió: compruébalo.</li>
+<li>Ejecuta <code>python -c "import sys; print(sys.executable)"</code> y compara la ruta con el intérprete seleccionado. Si no coincide, consulta el recorrido elegido y utiliza su forma de ejecución.</li>
+<li>La comprobación de bibliotecas se realizará en la parte 05B.</li>
+</ol>
+<p>Seleccionar el intérprete del editor no cambia automáticamente todas las terminales abiertas. Si el botón de ejecución funciona pero tu comando no, compara ambas rutas. En el flujo uv, <code>uv run</code> elige el proyecto según la ubicación; seleccionar un intérprete en VS Code no cambia ese proyecto.</p>
+<p>En la próxima lección elegiremos además el kernel de un notebook. Consulta la <a href="./fuentes.html#fuente-1">guía de VS Code</a> para sus paneles y atajos.</p>
+</section></details>
+<p><a id="práctica-y-siguiente-paso"></a></p>
+</section>
+
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Realiza el <a href="./00-05-lab.html">lab 00.05</a> para realizar la sesión A y la parte A del recorrido elegido.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nota con gestor y ruta del intérprete</td>
+<td>El primer script corre con el Python elegido</td>
+<td>Qué separa el entorno y cómo identificaste su ejecutable</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes continuar a 05B cuando identifiques la ruta del intérprete y ejecutes el primer script en ese entorno. Conserva el mismo camino para la segunda sesión.</p>
+<p>Quien aprende realiza la práctica y explica el resultado. Tu compañero contrasta la comprobación con el camino que elegiste. Guarda evidencia y dudas en tu copia de la <a href="descargas/templates/learning-session/bitacora-00.md">bitácora personal de 00</a> o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso. Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.</p>
+</section>
+<section id="glosario" class="level2">
+<h2 class="anchored" data-anchor-id="glosario">Glosario</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Término</th>
+<th>En esta lección</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intérprete</td>
+<td>Ejecutable que procesa el programa Python</td>
+</tr>
+<tr class="even">
+<td>Biblioteca y paquete distribuido</td>
+<td>Funcionalidad reutilizable y software que el gestor instala para disponer de ella</td>
+</tr>
+<tr class="odd">
+<td>Dependencia</td>
+<td>Software que el proyecto necesita para funcionar</td>
+</tr>
+<tr class="even">
+<td>Versión</td>
+<td>Edición concreta de Python o de un paquete</td>
+</tr>
+<tr class="odd">
+<td>Entorno</td>
+<td>Intérprete y espacio de paquetes seleccionados para un trabajo</td>
+</tr>
+<tr class="even">
+<td>Gestor</td>
+<td>Herramienta que prepara o administra entornos, intérpretes o paquetes</td>
+</tr>
+<tr class="odd">
+<td>Activación</td>
+<td>Preparación del shell actual para utilizar los comandos del entorno</td>
+</tr>
+<tr class="even">
+<td>Configuración y lockfile</td>
+<td>Declaración de requisitos y archivo que conserva una resolución de dependencias</td>
+</tr>
+</tbody>
+</table>
+<p><a id="referencias-oficiales"></a></p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://docs.python.org/3/library/venv.html">Entornos de Python</a>.</li>
+<li><a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">pip y entornos</a>.</li>
+<li><a href="https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html">Conda y uso de pip</a>.</li>
+<li><a href="https://docs.astral.sh/uv/guides/projects/">Proyectos con uv</a>.</li>
+<li><a href="https://docs.astral.sh/uv/concepts/projects/sync/">Sincronización y lockfiles</a>.</li>
+<li><a href="https://code.visualstudio.com/docs/python/environments">Entornos Python en VS Code</a>.</li>
+<li><a href="https://docs.astral.sh/uv/guides/migration/pip-to-project/">De pip a proyectos uv</a>.</li>
+</ul>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después del lab y su comprobación, continúa con <a href="./00-05-dependencias.html">00.05B — Instalar y conservar dependencias</a>.</p>
+<p><a href="./modulo-00.html">← Módulo 00</a> · <a href="./00-05-lab.html">Lab 00.05</a> · <a href="./00-05-dependencias.html">Siguiente →</a></p>
+<p><a href="./00-05-leccion.html">Volver a la entrada de 00.05</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

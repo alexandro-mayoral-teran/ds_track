@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>00.02 — Terminal, rutas y verificación del entorno – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-00.html">00 · ENTORNO DE APRENDIZAJE</a></li><li class="breadcrumb-item"><a href="./00-02-leccion.html">00.02 · Terminal y rutas</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><img class="brand-icon" src="favicon.svg" alt=""> DS Track</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contenido.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contenido del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">00 · ENTORNO DE APRENDIZAJE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.01 · Markdown y perfil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-02-leccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">00.02 · Terminal y rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.03 · Git e historial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.04 · Primer script</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.05 · Entornos y dependencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.06 · Notebook y kernel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprobación y evidencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 · PYTHON FUNDAMENTAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01 · Variables y tipos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02 · Listas y diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.03 · Condiciones y ciclos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.04 · Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.05 · Archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.06 · Validación y resumen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 · PANDAS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01 · Series y DataFrame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02 · Leer y exportar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03 · Seleccionar y filtrar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04 · Tipos y columnas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.05 · Faltantes y reglas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.06 · Texto y fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.07 · Agrupar y resumir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.08 · Combinar tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.09 · Forma de tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.10 · Análisis y gráfica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">03 · SQL Y BASES DE DATOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01 · Modelo relacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02 · Primeras consultas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03 · Crear y cargar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04 · Agregaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05 · Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06 · Subconsultas y CTE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07 · Ventanas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.08 · Transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09 · pandas y SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">04 · VISUALIZACIÓN EN PYTHON</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01 · Pregunta y gráfico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02 · Figure y Axes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03 · Comparaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04 · Distribuciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.05 · Escalas y accesibilidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.06 · Composición y exportación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.07 · Altair declarativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.08 · Interacción (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.09 · Cierre visual</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">05 · PYTHON APLICADO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01 · Del notebook a módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02 · Configuración y registro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03 · Errores y recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04 · Pruebas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.05 · Tipos y contratos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.06 · Clases (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.07 · Generadores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.08 · Decoradores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.09 · Medir (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.10 · APIs (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-11-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.11 · Cierre del proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fuentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material de consulta</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#por-qué-aprender-a-trabajar-en-terminal" id="toc-por-qué-aprender-a-trabajar-en-terminal" class="nav-link" data-scroll-target="#por-qué-aprender-a-trabajar-en-terminal">Por qué aprender a trabajar en terminal</a>
+  <ul class="collapse">
+  <li><a href="#cómo-se-conecta-con-el-trabajo-con-datos" id="toc-cómo-se-conecta-con-el-trabajo-con-datos" class="nav-link" data-scroll-target="#cómo-se-conecta-con-el-trabajo-con-datos">Cómo se conecta con el trabajo con datos</a></li>
+  </ul></li>
+  <li><a href="#cómo-seguir-esta-lección" id="toc-cómo-seguir-esta-lección" class="nav-link" data-scroll-target="#cómo-seguir-esta-lección">Cómo seguir esta lección</a>
+  <ul class="collapse">
+  <li><a href="#opción-en-navegador-cargar-el-archivo-.ipynb" id="toc-opción-en-navegador-cargar-el-archivo-.ipynb" class="nav-link" data-scroll-target="#opción-en-navegador-cargar-el-archivo-.ipynb">Opción en navegador: cargar el archivo <code>.ipynb</code></a></li>
+  <li><a href="#recorrido-con-la-terminal-de-tu-equipo" id="toc-recorrido-con-la-terminal-de-tu-equipo" class="nav-link" data-scroll-target="#recorrido-con-la-terminal-de-tu-equipo">Recorrido con la terminal de tu equipo</a></li>
+  </ul></li>
+  <li><a href="#antes-de-comenzar-cuatro-conceptos-diferentes" id="toc-antes-de-comenzar-cuatro-conceptos-diferentes" class="nav-link" data-scroll-target="#antes-de-comenzar-cuatro-conceptos-diferentes">Antes de comenzar: cuatro conceptos diferentes</a>
+  <ul class="collapse">
+  <li><a href="#cómo-leer-un-comando" id="toc-cómo-leer-un-comando" class="nav-link" data-scroll-target="#cómo-leer-un-comando">Cómo leer un comando</a></li>
+  </ul></li>
+  <li><a href="#recorrido-en-powershell" id="toc-recorrido-en-powershell" class="nav-link" data-scroll-target="#recorrido-en-powershell">Recorrido en PowerShell</a>
+  <ul class="collapse">
+  <li><a href="#abrir-powershell-y-situarte-en-el-proyecto" id="toc-abrir-powershell-y-situarte-en-el-proyecto" class="nav-link" data-scroll-target="#abrir-powershell-y-situarte-en-el-proyecto">Abrir PowerShell y situarte en el proyecto</a></li>
+  <li><a href="#el-directorio-actual" id="toc-el-directorio-actual" class="nav-link" data-scroll-target="#el-directorio-actual">1. El directorio actual</a></li>
+  <li><a href="#ver-el-contenido" id="toc-ver-el-contenido" class="nav-link" data-scroll-target="#ver-el-contenido">2. Ver el contenido</a></li>
+  <li><a href="#rutas-absolutas-y-relativas" id="toc-rutas-absolutas-y-relativas" class="nav-link" data-scroll-target="#rutas-absolutas-y-relativas">3. Rutas absolutas y relativas</a></li>
+  <li><a href="#cambiar-de-carpeta" id="toc-cambiar-de-carpeta" class="nav-link" data-scroll-target="#cambiar-de-carpeta">4. Cambiar de carpeta</a></li>
+  <li><a href="#comprobar-herramientas" id="toc-comprobar-herramientas" class="nav-link" data-scroll-target="#comprobar-herramientas">5. Comprobar herramientas</a></li>
+  <li><a href="#ejecutar-el-verificador" id="toc-ejecutar-el-verificador" class="nav-link" data-scroll-target="#ejecutar-el-verificador">6. Ejecutar el verificador</a></li>
+  <li><a href="#primer-contacto-con-un-archivo-de-datos" id="toc-primer-contacto-con-un-archivo-de-datos" class="nav-link" data-scroll-target="#primer-contacto-con-un-archivo-de-datos">7. Primer contacto con un archivo de datos</a></li>
+  <li><a href="#extensión-opcional-explorar-el-csv-desde-la-terminal" id="toc-extensión-opcional-explorar-el-csv-desde-la-terminal" class="nav-link" data-scroll-target="#extensión-opcional-explorar-el-csv-desde-la-terminal">8. Extensión opcional: explorar el CSV desde la terminal</a></li>
+  </ul></li>
+  <li><a href="#recorrido-en-bashzsh" id="toc-recorrido-en-bashzsh" class="nav-link" data-scroll-target="#recorrido-en-bashzsh">Recorrido en Bash/Zsh</a>
+  <ul class="collapse">
+  <li><a href="#abrir-la-terminal-y-situarte-en-el-proyecto" id="toc-abrir-la-terminal-y-situarte-en-el-proyecto" class="nav-link" data-scroll-target="#abrir-la-terminal-y-situarte-en-el-proyecto">Abrir la terminal y situarte en el proyecto</a></li>
+  <li><a href="#identificar-tu-ubicación" id="toc-identificar-tu-ubicación" class="nav-link" data-scroll-target="#identificar-tu-ubicación">1. Identificar tu ubicación</a></li>
+  <li><a href="#listar-contenido" id="toc-listar-contenido" class="nav-link" data-scroll-target="#listar-contenido">2. Listar contenido</a></li>
+  <li><a href="#comprobar-rutas" id="toc-comprobar-rutas" class="nav-link" data-scroll-target="#comprobar-rutas">3. Comprobar rutas</a></li>
+  <li><a href="#cambiar-de-carpeta-1" id="toc-cambiar-de-carpeta-1" class="nav-link" data-scroll-target="#cambiar-de-carpeta-1">4. Cambiar de carpeta</a></li>
+  <li><a href="#comprobar-herramientas-1" id="toc-comprobar-herramientas-1" class="nav-link" data-scroll-target="#comprobar-herramientas-1">5. Comprobar herramientas</a></li>
+  <li><a href="#ejecutar-el-verificador-1" id="toc-ejecutar-el-verificador-1" class="nav-link" data-scroll-target="#ejecutar-el-verificador-1">6. Ejecutar el verificador</a></li>
+  <li><a href="#inspeccionar-el-csv" id="toc-inspeccionar-el-csv" class="nav-link" data-scroll-target="#inspeccionar-el-csv">7. Inspeccionar el CSV</a></li>
+  <li><a href="#extensión-opcional-filtrar-y-resumir" id="toc-extensión-opcional-filtrar-y-resumir" class="nav-link" data-scroll-target="#extensión-opcional-filtrar-y-resumir">8. Extensión opcional: filtrar y resumir</a></li>
+  </ul></li>
+  <li><a href="#cuando-un-comando-no-funciona" id="toc-cuando-un-comando-no-funciona" class="nav-link" data-scroll-target="#cuando-un-comando-no-funciona">Cuando un comando no funciona</a></li>
+  <li><a href="#para-despertar-curiosidad-de-tres-ventas-a-archivos-enormes" id="toc-para-despertar-curiosidad-de-tres-ventas-a-archivos-enormes" class="nav-link" data-scroll-target="#para-despertar-curiosidad-de-tres-ventas-a-archivos-enormes">Para despertar curiosidad: de tres ventas a archivos enormes</a>
+  <ul class="collapse">
+  <li><a href="#un-vínculo-con-las-macros-ejecutar-y-programar-tareas" id="toc-un-vínculo-con-las-macros-ejecutar-y-programar-tareas" class="nav-link" data-scroll-target="#un-vínculo-con-las-macros-ejecutar-y-programar-tareas">Un vínculo con las macros: ejecutar y programar tareas</a></li>
+  <li><a href="#otra-puerta-buscar-patrones-con-expresiones-regulares" id="toc-otra-puerta-buscar-patrones-con-expresiones-regulares" class="nav-link" data-scroll-target="#otra-puerta-buscar-patrones-con-expresiones-regulares">Otra puerta: buscar patrones con expresiones regulares</a></li>
+  </ul></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario">Glosario</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-00.html">00 · ENTORNO DE APRENDIZAJE</a></li><li class="breadcrumb-item"><a href="./00-02-leccion.html">00.02 · Terminal y rutas</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">00.02 — Terminal, rutas y verificación del entorno</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 00 / 00.02
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-00.html">Entorno de aprendizaje</a></p>
+<p><a id="02--terminal-rutas-y-verificación-del-entorno"></a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-00.html">Módulo 00</a> / <strong>Lección 00.02</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Ubicarte en el proyecto, interpretar rutas y comprobar herramientas</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>Copia de DS Track y PowerShell o Bash/Zsh; para un primer ensayo, notebook opcional en Colab</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>Nota con ubicación, rutas y comprobaciones del shell elegido</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#antes-de-empezar">Preparación</a> · <a href="#material-de-apoyo">Material de apoyo</a> · <a href="#glosario">Glosario</a> · <a href="./00-02-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Aprender a ubicarse dentro de un proyecto y comprobar qué herramientas están disponibles. Usaremos PowerShell en Windows y mostraremos el equivalente en un shell Unix, como Bash o Zsh. El objetivo no es memorizar dos listas de comandos, sino reconocer las operaciones comunes.</p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Retoma <a href="./00-01-leccion.html">00.01 — Markdown y perfil</a>. Necesitas una copia descargada o clonada de DS Track y acceso a una terminal. Elige PowerShell o Bash/Zsh; no necesitas completar los dos recorridos.</p>
+<p>Comienza identificando la carpeta raíz del proyecto. Las comprobaciones de versiones permiten detectar herramientas disponibles o faltantes: registra lo que falta para preparar el entorno en 00.05. El verificador requiere Python; si aún no está disponible, conserva esa comprobación pendiente.</p>
+<p>Si quieres probar sin instalar Python localmente, puedes empezar con el <a href="descargas/curriculum/00_getting_started/02_terminal_paths/practica_terminal_colab.ipynb">notebook para Colab</a>. Prepara su propia carpeta de ejemplo y permite ensayar Bash. La copia real del proyecto y la comprobación de tu entorno personal se retoman después; el notebook no las acredita.</p>
+<p><a id="objetivos"></a></p>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Identificar el directorio actual y distinguir rutas absolutas y relativas.</li>
+<li>Localizar archivos e inspeccionar un CSV con tu shell, reconociendo equivalencias con el otro recorrido.</li>
+<li>Distinguir shell de programa y consultar las versiones de las herramientas disponibles.</li>
+<li>Registrar herramientas disponibles y pendientes; si tienes Python, ejecutar el verificador e interpretar su resultado.</li>
+<li>Explicar qué información permite repetir una secuencia de comandos y comprobarla.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./00-02-referencia.html">Tabla de equivalencias</a></td>
+<td>Consultar operaciones al cambiar de shell</td>
+<td>Consulta opcional</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv">CSV de ventas</a></td>
+<td>Localizar e inspeccionar tres ventas ficticias</td>
+<td>Entrada del recorrido</td>
+</tr>
+<tr class="odd">
+<td><a href="descargas/curriculum/00_getting_started/02_terminal_paths/check_environment.py">Verificador</a></td>
+<td>Consultar qué herramientas y rutas detecta el programa</td>
+<td>Requiere Python</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/00_getting_started/02_terminal_paths/practica_terminal_colab.ipynb">Notebook de práctica para Colab</a></td>
+<td>Ejecutar comandos Bash con explicaciones y una muestra autocontenida</td>
+<td>Ensayo opcional en navegador, sin instalación local de Python</td>
+</tr>
+</tbody>
+</table>
+<p>Abre cada recurso cuando aparezca en el recorrido. Conserva los originales y trabaja las modificaciones en tu copia personal.</p>
+</section>
+<section id="por-qué-aprender-a-trabajar-en-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-aprender-a-trabajar-en-terminal">Por qué aprender a trabajar en terminal</h2>
+<p>La terminal permite indicar acciones mediante comandos: abrir una carpeta, localizar archivos, ejecutar un programa o comprobar qué versión está instalada. Estos pasos pueden escribirse, compartirse y repetirse. Cuando alguien te entregue un análisis, podrás seguir sus instrucciones y comprobar cómo se obtuvo el resultado.</p>
+<p>No necesitas dejar de usar el explorador o un editor. La terminal los complementa: el explorador ayuda a ver archivos, el editor a modificarlos y la terminal a ejecutar acciones concretas sobre ellos.</p>
+<section id="cómo-se-conecta-con-el-trabajo-con-datos" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-se-conecta-con-el-trabajo-con-datos">Cómo se conecta con el trabajo con datos</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situación</th>
+<th>Para qué sirve la terminal</th>
+<th>Qué aprenderás en el recorrido</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Recibes archivos CSV</td>
+<td>Localizar el archivo y revisar sus primeras líneas</td>
+<td>Rutas y lectura de texto en esta lección</td>
+</tr>
+<tr class="even">
+<td>Un script no encuentra los datos</td>
+<td>Comprobar desde dónde se interpreta la ruta</td>
+<td>Directorio actual y rutas relativas</td>
+</tr>
+<tr class="odd">
+<td>Un análisis funciona en otra computadora</td>
+<td>Comparar versiones y ejecutables</td>
+<td>Verificación de herramientas</td>
+</tr>
+<tr class="even">
+<td>Repites un reporte cada mes</td>
+<td>Ejecutar el mismo programa con nuevas entradas</td>
+<td>Scripts y reportes en lecciones posteriores</td>
+</tr>
+<tr class="odd">
+<td>Procesas muchos archivos</td>
+<td>Automatizar una secuencia de tareas</td>
+<td>Programación y automatización más adelante</td>
+</tr>
+<tr class="even">
+<td>Trabajas en un servidor</td>
+<td>Ejecutar procesos a través de una conexión de terminal</td>
+<td>Uso remoto como tema posterior</td>
+</tr>
+</tbody>
+</table>
+<p>Un futuro script podría recibir un archivo y producir un resumen:</p>
+<pre class="text"><code>python resumir_datos.py --entrada ventas.csv --salida resumen.csv</code></pre>
+<p>Este ejemplo muestra una posibilidad; el script todavía no existe y no debes ejecutarlo. Primero aprenderás a ubicarte, leer rutas y reconocer un comando.</p>
+<blockquote class="blockquote">
+<p><strong>Para conversar:</strong> si otra persona quisiera repetir tu análisis, ¿qué información necesitaría además del comando?</p>
+</blockquote>
+</section>
+</section>
+<section id="cómo-seguir-esta-lección" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-seguir-esta-lección">Cómo seguir esta lección</h2>
+<p>Elige <strong>un recorrido</strong>: terminal de tu equipo o ensayo opcional en Colab. El núcleo es <strong>ubicarte → listar → navegar → comprobar rutas → leer el CSV</strong>. Puedes completarlo sin Python, Git ni uv instalados.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parte</th>
+<th>Qué hacer</th>
+<th>Cuándo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Núcleo con tu terminal</td>
+<td>Abrirla y seguir los pasos 1–4 del shell elegido; después ir al paso 7, lectura del CSV</td>
+<td>Recorrido esencial</td>
+</tr>
+<tr class="even">
+<td>Consulta de herramientas, paso 5</td>
+<td>Anotar versiones o comandos no disponibles</td>
+<td>Diagnóstico; no necesitas instalar lo que falta</td>
+</tr>
+<tr class="odd">
+<td>Verificador, paso 6</td>
+<td>Ejecutarlo con Python si ya está disponible; en caso contrario, anotar el pendiente para 00.05</td>
+<td>Condicional a disponer de Python</td>
+</tr>
+<tr class="even">
+<td>Filtros y sumas, paso 8</td>
+<td>Explorar la muestra con comandos combinados</td>
+<td>Ampliación opcional, después del núcleo</td>
+</tr>
+<tr class="odd">
+<td>Ensayo en Colab</td>
+<td>Seguir el cuaderno preparado y explicar ubicación, rutas y lectura del CSV</td>
+<td>Alternativa de práctica guiada; comprobación personal pendiente</td>
+</tr>
+</tbody>
+</table>
+<p>Los pasos conservan su numeración para consultarlos. Si es tu primer contacto, puedes saltar directamente del paso 4 al 7 y volver después al diagnóstico.</p>
+<section id="opción-en-navegador-cargar-el-archivo-.ipynb" class="level3">
+<h3 class="anchored" data-anchor-id="opción-en-navegador-cargar-el-archivo-.ipynb">Opción en navegador: cargar el archivo <code>.ipynb</code></h3>
+<blockquote class="blockquote">
+<p><strong>Un apoyo para esta práctica:</strong> este cuaderno es opcional y permite probar comandos sin instalar Python en tu computadora. Por ahora basta con ejecutar las celdas en orden y observar los resultados. En <a href="./00-06-leccion.html">00.06 — Tu primer notebook</a> aprenderás cómo funciona un notebook y cómo crear y comprobar el tuyo.</p>
+</blockquote>
+<p>Un <strong>notebook</strong> reúne explicaciones y celdas ejecutables. Para esta opción, descarga <a href="descargas/curriculum/00_getting_started/02_terminal_paths/practica_terminal_colab.ipynb">practica_terminal_colab.ipynb</a> desde el repositorio y súbelo en <a href="https://colab.research.google.com/">Google Colab</a>, mediante la opción de subir un cuaderno del menú Archivo. Inicia sesión, conecta un entorno alojado de Python con CPU y ejecuta las celdas de arriba abajo. No necesitas GPU, instalar Python en tu equipo, clonar el repositorio ni cargar otros archivos.</p>
+<p>La primera celda ejecutable prepara una carpeta temporal y las tres ventas del CSV. Después, cada celda <code>%%bash</code> ejecuta comandos reales de Bash. Mantén esa primera línea tal como está; no se escribe en una terminal normal. No necesitas estudiar el código de preparación ni configurar kernels todavía.</p>
+<p>Colab ejecuta en una máquina remota: las rutas y herramientas detectadas son las de esa sesión, aunque tu computadora use Windows. No ejecuta PowerShell ni comprueba tu instalación personal. Cada celda Bash inicia un proceso nuevo; por eso el notebook vuelve a entrar en la carpeta de práctica en cada celda. En una terminal interactiva el cambio de carpeta sí persiste entre comandos.</p>
+<p>Predice, ejecuta y explica cada salida. Guarda tus respuestas en una copia del cuaderno y descárgala: los archivos temporales pueden desaparecer al finalizar la sesión. Si se pierde la carpeta, vuelve a ejecutar la preparación y continúa en orden. El funcionamiento y los límites se describen en las <a href="https://research.google.com/colaboratory/intl/es/faq.html">preguntas frecuentes de Colab</a>.</p>
+</section>
+<section id="recorrido-con-la-terminal-de-tu-equipo" class="level3">
+<h3 class="anchored" data-anchor-id="recorrido-con-la-terminal-de-tu-equipo">Recorrido con la terminal de tu equipo</h3>
+<p>Ejecuta los ejemplos del shell que uses, un comando a la vez. Comprueba el resultado antes de continuar. Elige el <a href="#recorrido-en-powershell">recorrido en PowerShell</a> o el <a href="#recorrido-en-bashzsh">recorrido en Bash/Zsh</a>; no necesitas completar ambos. Las rutas relativas parten de la raíz de <code>ds_track</code>, salvo cuando se indica un cambio de carpeta.</p>
+</section>
+</section>
+<section id="antes-de-comenzar-cuatro-conceptos-diferentes" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-comenzar-cuatro-conceptos-diferentes">Antes de comenzar: cuatro conceptos diferentes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concepto</th>
+<th>Ejemplo</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sistema operativo</td>
+<td>Windows, Linux, macOS</td>
+<td>Administra el equipo</td>
+</tr>
+<tr class="even">
+<td>Terminal</td>
+<td>Windows Terminal, una consola SSH</td>
+<td>Muestra y recibe texto</td>
+</tr>
+<tr class="odd">
+<td>Shell</td>
+<td>PowerShell, Bash, Zsh</td>
+<td>Interpreta los comandos</td>
+</tr>
+<tr class="even">
+<td>Programa</td>
+<td>Git, Python, <code>uv</code></td>
+<td>Realiza una tarea específica</td>
+</tr>
+</tbody>
+</table>
+<p>PowerShell y Bash no son sistemas operativos ni terminales: son shells. Una terminal puede ejecutar distintos shells. En servidores y contenedores es común encontrar Linux con Bash o un shell compatible.</p>
+<p>Los comandos propios del shell pueden cambiar. Los comandos de programas externos suelen conservarse:</p>
+<pre class="text"><code>git status
+python --version
+uv run python archivo.py</code></pre>
+<p>Por eso <code>git status</code> es esencialmente igual desde PowerShell o Bash, mientras que comprobar si un archivo existe utiliza sintaxis diferente.</p>
+<section id="cómo-leer-un-comando" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-leer-un-comando">Cómo leer un comando</h3>
+<p>En <code>python --version</code>, <code>python</code> es el programa y <code>--version</code> es una opción que pide mostrar su versión. En <code>Test-Path README.md</code>, <code>Test-Path</code> es el comando de PowerShell y <code>README.md</code> es el argumento que indica qué ruta comprobar.</p>
+<p>Las opciones pertenecen a cada herramienta: no todas aceptan las mismas. El comando devuelve una salida o un error; leer ambos forma parte del trabajo. Un bloque Markdown solo muestra el comando: debes ejecutarlo en la terminal.</p>
+</section>
+</section>
+<section id="recorrido-en-powershell" class="level2">
+<h2 class="anchored" data-anchor-id="recorrido-en-powershell">Recorrido en PowerShell</h2>
+<p>Sigue esta sección si usas PowerShell. Las líneas que empiezan con # son comentarios: explican el paso y no se ejecutan como comandos.</p>
+<section id="abrir-powershell-y-situarte-en-el-proyecto" class="level3">
+<h3 class="anchored" data-anchor-id="abrir-powershell-y-situarte-en-el-proyecto">Abrir PowerShell y situarte en el proyecto</h3>
+<ol type="1">
+<li><p>En el Explorador de archivos, abre la carpeta de tu copia de DS Track. Si descargaste un ZIP, extráelo primero. Busca la carpeta que contiene juntos <code>README.md</code>, <code>ROADMAP.md</code> y <code>pyproject.toml</code>; puede llamarse <code>ds_track-main</code>.</p></li>
+<li><p>Haz clic en la barra de direcciones del Explorador y copia la ruta completa de esa carpeta.</p></li>
+<li><p>En Inicio, busca <strong>Windows PowerShell</strong> o <strong>PowerShell</strong> y ábrelo normalmente. No necesitas permisos de administrador para esta práctica.</p></li>
+<li><p>En la terminal, escribe <code>Set-Location</code>, un espacio y la ruta copiada entre comillas. Pulsa <strong>Enter</strong>. Por ejemplo, si esa fuera tu ruta real:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> <span class="st">"C:\Mis proyectos\ds_track-main"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Escribe <code>Get-Location</code> y pulsa Enter. Debe mostrar la carpeta que elegiste. En el paso 2 listarás su contenido para confirmar que es la raíz del proyecto.</p></li>
+</ol>
+<p>La ruta del ejemplo no se crea al escribirla: sustitúyela por la tuya. Escribe solo el comando, sin copiar el indicador de la terminal, como <code>PS C:\...&gt;</code>. Si estás en CMD, abre PowerShell antes de seguir este recorrido.</p>
+<p><strong>Si ya usas VS Code:</strong> abre esa carpeta con <strong>Archivo → Abrir carpeta</strong> y crea una terminal con <strong>Terminal → Nueva terminal</strong>. Selecciona PowerShell en el menú de perfiles y comprueba la ubicación con <code>Get-Location</code>; abrir un archivo suelto no equivale a abrir la carpeta del proyecto. Es una alternativa, no necesitas instalar este editor para completar la lección.</p>
+</section>
+<section id="el-directorio-actual" class="level3">
+<h3 class="anchored" data-anchor-id="el-directorio-actual">1. El directorio actual</h3>
+<p>La terminal siempre está situada en una carpeta. Los comandos que usan rutas relativas parten de esa ubicación.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Location</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La ruta depende de dónde descargaste el proyecto. Por ejemplo:</p>
+<pre class="text"><code>C:\aprendizaje\ds_track</code></pre>
+<p>No copies esta ruta como si existiera en tu computadora: comprueba la tuya. La raíz del proyecto contiene <code>README.md</code>, <code>ROADMAP.md</code> y <code>pyproject.toml</code>.</p>
+</section>
+<section id="ver-el-contenido" class="level3">
+<h3 class="anchored" data-anchor-id="ver-el-contenido">2. Ver el contenido</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Su alias corto es <code>ls</code>, pero durante esta primera lección usaremos el nombre completo para hacer explícita la operación.</p>
+<p>Para mostrar también elementos ocultos, como <code>.gitignore</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> <span class="op">-</span>Force</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>PowerShell trabaja principalmente con objetos; los shells Unix tradicionalmente componen herramientas que intercambian texto. Esta diferencia será importante cuando estudiemos pipes, pero no necesitamos profundizar todavía.</p>
+</section>
+<section id="rutas-absolutas-y-relativas" class="level3">
+<h3 class="anchored" data-anchor-id="rutas-absolutas-y-relativas">3. Rutas absolutas y relativas</h3>
+<p>Una ruta absoluta parte desde una unidad:</p>
+<pre class="text"><code>C:\aprendizaje\ds_track\README.md</code></pre>
+<p>Una ruta relativa parte desde el directorio actual:</p>
+<pre class="text"><code>README.md
+curriculum\00_getting_started\README.md</code></pre>
+<p>Git y muchas herramientas aceptan <code>/</code> también en Windows. En código Python preferiremos <code>pathlib</code> para construir rutas sin asumir un sistema operativo.</p>
+<p>Si una ruta contiene espacios, escríbela entre comillas. Ejemplo ilustrativo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Test-Path</span> <span class="st">"C:\Mis proyectos\ds_track\README.md"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Podemos preguntar si ambas existen:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Test-Path</span> README<span class="op">.</span><span class="fu">md</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Test-Path</span> curriculum\00_getting_started\README<span class="op">.</span><span class="fu">md</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ambas instrucciones deben devolver <code>True</code> cuando se ejecutan desde la raíz del proyecto.</p>
+</section>
+<section id="cambiar-de-carpeta" class="level3">
+<h3 class="anchored" data-anchor-id="cambiar-de-carpeta">4. Cambiar de carpeta</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Entra al módulo desde la raíz de ds_track</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> curriculum\00_getting_started</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confirma la nueva ubicación</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Location</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista los archivos de esta carpeta</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Sube dos niveles para volver a la raíz</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> <span class="op">..</span>\<span class="op">..</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprueba que regresaste a ds_track</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Location</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>PowerShell también reconoce <code>cd</code> como alias de <code>Set-Location</code>.</p>
+<p><code>..</code> significa “carpeta padre” y <code>.</code> significa “carpeta actual”.</p>
+<p>Antes de ejecutar un archivo, vuelve a comprobar tu ubicación con <code>Get-Location</code>. Muchos errores de archivo no encontrado son, en realidad, errores de ubicación.</p>
+</section>
+<section id="comprobar-herramientas" class="level3">
+<h3 class="anchored" data-anchor-id="comprobar-herramientas">5. Comprobar herramientas</h3>
+<p><strong>Diagnóstico:</strong> después del núcleo de rutas y lectura puedes volver aquí. Un comando no disponible se registra como pendiente; no necesitas instalarlo.</p>
+<p>Desde la raíz del proyecto:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>uv <span class="op">--</span>version</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Las versiones exactas pueden cambiar. Lo importante por ahora es que cada comando responda sin error.</p>
+<p>También puedes localizar el programa que PowerShell ejecutará:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Command</span> python</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Command</span> uv</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Command</span> git</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ejecutar-el-verificador" class="level3">
+<h3 class="anchored" data-anchor-id="ejecutar-el-verificador">6. Ejecutar el verificador</h3>
+<p><strong>Solo si Python ya está disponible.</strong> Si no lo tienes, anota «verificador pendiente para 00.05» y continúa con el CSV. No impide completar el núcleo.</p>
+<blockquote class="blockquote">
+<p><strong>Nota sobre el orden de aprendizaje:</strong> todavía no hemos estudiado Python, <code>pip</code> ni <code>uv</code>. Los veremos en las lecciones de Primer script y Entorno y dependencias. Aquí solo mostramos cómo ejecutar un programa desde la terminal y leer su resultado; no necesitas comprender el código ni preparar un entorno nuevo. No se utiliza <code>pip</code>; la preparación con <code>uv</code> corresponde a 00.05. Si faltan herramientas, anótalo y deja esta verificación pendiente. Puedes continuar con la práctica de rutas y CSV y volver después de preparar el entorno.</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>python curriculum\00_getting_started\02_terminal_paths\check_environment<span class="op">.</span><span class="fu">py</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Aquí utiliza Python solo si ya está disponible. La ejecución administrada por <code>uv</code> se prepara en 00.05; no es necesario crear un entorno para este paso.</p>
+<p>Todavía no necesitas entender el código del script. Lo revisaremos en la lección de Primer script Python; antes sigue la lección 03 de Git e historial.</p>
+</section>
+<section id="primer-contacto-con-un-archivo-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="primer-contacto-con-un-archivo-de-datos">7. Primer contacto con un archivo de datos</h3>
+<p><strong>Parte del núcleo:</strong> puedes llegar aquí directamente desde el paso 4.</p>
+<p>Incluimos <a href="descargas/curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv">ventas_demo.csv</a>, una muestra ficticia de tres ventas. Un CSV es un archivo de texto que representa una tabla; en este ejemplo las columnas están separadas por comas y la primera línea contiene sus nombres.</p>
+<p>Desde la raíz del proyecto, localízalo y lee las primeras tres líneas:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Busca archivos CSV en la carpeta de la lección</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> curriculum\00_getting_started\02_terminal_paths <span class="op">-</span>Filter <span class="op">*.</span><span class="fu">csv</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confirma que existe el archivo de muestra</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Test-Path</span> curriculum\00_getting_started\02_terminal_paths\ventas_demo<span class="op">.</span><span class="fu">csv</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lee el encabezado y los primeros dos registros</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Content</span> curriculum\00_getting_started\02_terminal_paths\ventas_demo<span class="op">.</span><span class="fu">csv</span> <span class="op">-</span>TotalCount <span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>*.csv</code> busca nombres con esa extensión. <code>-TotalCount 3</code> muestra solo tres líneas, útil para inspeccionar el comienzo sin imprimir todo el archivo.</p>
+<p>Resultado esperado de la lectura:</p>
+<pre class="text"><code>fecha,producto,unidades,importe_mxn
+2026-01-01,cuaderno,2,80
+2026-01-02,lapiz,5,50</code></pre>
+<p>Observa que tres líneas incluyen el encabezado y dos registros. Mostrar el texto no valida tipos, fechas ni importes y, en otros CSV, un registro puede ocupar varias líneas. La limpieza y el análisis se estudiarán con Python y pandas.</p>
+<blockquote class="blockquote">
+<p><strong>Para comprobar:</strong> identifica los nombres de las columnas. Si cambias de carpeta, ¿por qué la misma ruta relativa podría dejar de funcionar?</p>
+</blockquote>
+<p><a id="8-extensión-explorar-el-csv-desde-la-terminal"></a></p>
+</section>
+<section id="extensión-opcional-explorar-el-csv-desde-la-terminal" class="level3">
+<h3 class="anchored" data-anchor-id="extensión-opcional-explorar-el-csv-desde-la-terminal">8. Extensión opcional: explorar el CSV desde la terminal</h3>
+<p>Esta sección es opcional. Muestra lo que puedes hacer al combinar comandos; no necesitas memorizar su sintaxis para continuar a la lección 03. Trabajaremos con el mismo archivo, sin modificarlo.</p>
+<section id="de-texto-a-registros" class="level4">
+<h4 class="anchored" data-anchor-id="de-texto-a-registros">De texto a registros</h4>
+<p>Desde la raíz de <code>ds_track</code>, guarda la ruta en una variable para no repetirla:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="va">$ventasPath</span> <span class="op">=</span> <span class="st">"curriculum\00_getting_started\02_terminal_paths\ventas_demo.csv"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Una variable conserva un valor que puedes usar en otros comandos. Aquí guarda la ruta, no el contenido del archivo.</p>
+<p><strong>Contar líneas de texto:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Content</span> <span class="va">$ventasPath</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">-</span>Line</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Verás <code>Lines: 4</code>: el encabezado y tres líneas de datos. El símbolo <code>|</code>, llamado pipe, pasa la salida del comando de la izquierda al de la derecha. <code>Measure-Object</code> mide lo que recibe.</p>
+<p><strong>Leer registros del CSV:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Interpreta el CSV y reúne sus registros en una colección</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span> <span class="op">=</span> <span class="op">@(</span><span class="fu">Import-Csv</span> <span class="va">$ventasPath</span><span class="op">)</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra los registros importados</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuenta los registros sin incluir el encabezado</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span><span class="op">.</span><span class="fu">Count</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>Import-Csv</code> interpreta el encabezado como nombres de columnas. Cada registro se convierte en un objeto con propiedades como <code>producto</code> e <code>importe_mxn</code>. <code>@(...)</code> reúne los resultados en una colección; su propiedad <code>Count</code> devuelve <code>3</code>. El encabezado ya no cuenta como un registro.</p>
+<p><strong>Filtrar por producto:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span> <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span> <span class="va">$_</span><span class="op">.</span><span class="fu">producto</span> <span class="op">-eq</span> <span class="st">"lapiz"</span> <span class="op">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>Where-Object</code> conserva los registros que cumplen la condición. Dentro de las llaves, <code>$_</code> representa el registro que se está revisando y <code>-eq</code> significa «igual a». El resultado es la venta de cinco lápices por 50 MXN.</p>
+<p><strong>Filtrar por importe y elegir columnas:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span> <span class="op">|</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Where-Object</span> <span class="op">{</span> <span class="op">[</span><span class="dt">decimal</span><span class="op">]</span><span class="va">$_</span><span class="op">.</span><span class="fu">importe_mxn</span> <span class="op">-ge</span> <span class="dv">50</span> <span class="op">}</span> <span class="op">|</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Select-Object</span> producto<span class="op">,</span> importe_mxn</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>Import-Csv</code> devuelve los campos como texto. <code>[decimal]</code> convierte el importe a número para compararlo; <code>-ge</code> significa «mayor o igual que». <code>Select-Object</code> elige las columnas que quieres mostrar. Verás <code>cuaderno</code> y <code>lapiz</code>, con importes de 80 y 50. La conversión supone importes válidos con el formato sencillo de esta muestra.</p>
+<p><strong>Contar las ventas filtradas y sumar importes:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtra los importes y cuenta los registros que cumplen: 2</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="va">$ventas</span> <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span> <span class="op">[</span><span class="dt">decimal</span><span class="op">]</span><span class="va">$_</span><span class="op">.</span><span class="fu">importe_mxn</span> <span class="op">-ge</span> <span class="dv">50</span> <span class="op">}</span> <span class="op">|</span> <span class="fu">Measure-Object</span><span class="op">).</span><span class="fu">Count</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convierte cada importe a número y suma todas las ventas: 165</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="va">$ventas</span> <span class="op">|</span> <span class="fu">ForEach-Object</span> <span class="op">{</span> <span class="op">[</span><span class="dt">decimal</span><span class="op">]</span><span class="va">$_</span><span class="op">.</span><span class="fu">importe_mxn</span> <span class="op">}</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">-</span>Sum<span class="op">).</span><span class="fu">Sum</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Obtendrás <code>2</code> ventas con importe de al menos 50 MXN y <code>165</code> MXN de importe total. <code>ForEach-Object</code> transforma cada registro en su importe numérico antes de sumar. Aquí <code>importe_mxn</code> representa el total de cada venta, no el precio por unidad; no debes multiplicarlo de nuevo por <code>unidades</code>.</p>
+</section>
+<section id="qué-demuestra-esta-práctica" class="level4">
+<h4 class="anchored" data-anchor-id="qué-demuestra-esta-práctica">Qué demuestra esta práctica</h4>
+<p>Puedes encadenar acciones pequeñas: leer → filtrar → seleccionar → resumir. Ese mismo patrón aparecerá después en pandas y SQL. La terminal te permite explorar rápidamente; elegir una herramienta adecuada y verificar el resultado sigue siendo parte del análisis.</p>
+<blockquote class="blockquote">
+<p><strong>Reto opcional:</strong> filtra las ventas con al menos dos unidades. ¿Cuántos registros quedan? Antes de ejecutar, predice la respuesta leyendo la muestra.</p>
+</blockquote>
+<details>
+<summary>
+Ver resultado y explicación del reto — PowerShell
+</summary>
+<p>Desde la raíz del proyecto, una forma de comprobarlo es:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="va">$ventasReto</span> <span class="op">=</span> <span class="op">@(</span><span class="fu">Import-Csv</span> <span class="st">"curriculum\00_getting_started\02_terminal_paths\ventas_demo.csv"</span><span class="op">)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="va">$seleccionReto</span> <span class="op">=</span> <span class="op">@(</span><span class="va">$ventasReto</span> <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span> <span class="op">[</span><span class="dt">int</span><span class="op">]</span><span class="va">$_</span><span class="op">.</span><span class="fu">unidades</span> <span class="op">-ge</span> <span class="dv">2</span> <span class="op">})</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="va">$seleccionReto</span> <span class="op">|</span> <span class="fu">Select-Object</span> producto<span class="op">,</span> unidades</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="va">$seleccionReto</span><span class="op">.</span><span class="fu">Count</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Resultado:</strong> quedan <strong>2 registros</strong>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Producto</th>
+<th>Unidades</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cuaderno</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>lapiz</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p><code>[int]</code> convierte las unidades de texto a número en esta muestra válida y <code>-ge 2</code> incluye el límite: dos unidades también cumplen. La venta de <code>carpeta</code> tiene una unidad y queda fuera. <code>@(...)</code> reúne los registros seleccionados y <code>Count</code> los cuenta; no suma unidades. Contrasta estas filas con el CSV original.</p>
+</details>
+</section>
+</section>
+</section>
+<section id="recorrido-en-bashzsh" class="level2">
+<h2 class="anchored" data-anchor-id="recorrido-en-bashzsh">Recorrido en Bash/Zsh</h2>
+<p>Sigue este apartado si usas Bash o Zsh. Parte de la raíz de ds_track y ejecuta un comando a la vez. Las líneas con # explican cada paso.</p>
+<section id="abrir-la-terminal-y-situarte-en-el-proyecto" class="level3">
+<h3 class="anchored" data-anchor-id="abrir-la-terminal-y-situarte-en-el-proyecto">Abrir la terminal y situarte en el proyecto</h3>
+<ol type="1">
+<li><p>Localiza tu copia extraída de DS Track en el administrador de archivos. Busca la carpeta que contiene juntos <code>README.md</code>, <code>ROADMAP.md</code> y <code>pyproject.toml</code>; puede llamarse <code>ds_track-main</code>.</p></li>
+<li><p>Abre la aplicación <strong>Terminal</strong> de tu sistema y utiliza una sesión Bash o Zsh. La terminal puede comenzar en tu carpeta personal, no en el proyecto.</p></li>
+<li><p>Escribe <code>cd</code>, un espacio y la ruta absoluta real de la carpeta entre comillas. Pulsa <strong>Enter</strong>. Ejemplo ilustrativo para una copia en Linux:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="st">"/home/ana/Mis proyectos/ds_track-main"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Ejecuta <code>pwd</code> para comprobar la ubicación. En el paso 2 listarás el contenido.</p></li>
+</ol>
+<p>Sustituye toda la ruta por la tuya: en macOS podría comenzar por <code>/Users/</code>. Si el administrador de archivos ofrece abrir una terminal en la carpeta, también puedes usar esa opción y confirmar con <code>pwd</code>. Escribe solo el comando, sin copiar el indicador de la terminal (<code>$</code> o <code>%</code>).</p>
+<p><strong>Si ya usas VS Code:</strong> abre la carpeta del proyecto y usa <strong>Terminal → Nueva terminal</strong>, con Bash o Zsh como perfil. Comprueba igualmente la ubicación con <code>pwd</code>; no necesitas instalar el editor para esta práctica.</p>
+</section>
+<section id="identificar-tu-ubicación" class="level3">
+<h3 class="anchored" data-anchor-id="identificar-tu-ubicación">1. Identificar tu ubicación</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra el directorio actual</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La raíz contiene <code>README.md</code>, <code>ROADMAP.md</code> y <code>pyproject.toml</code>. Su ruta absoluta depende de dónde descargaste el proyecto, por ejemplo <code>/home/usuario/ds_track</code>.</p>
+</section>
+<section id="listar-contenido" class="level3">
+<h3 class="anchored" data-anchor-id="listar-contenido">2. Listar contenido</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra archivos y carpetas visibles</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Incluye archivos ocultos (-a) y detalles (-l)</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="comprobar-rutas" class="level3">
+<h3 class="anchored" data-anchor-id="comprobar-rutas">3. Comprobar rutas</h3>
+<p>Una ruta absoluta empieza en <code>/</code>; una relativa parte del directorio actual. Pon entre comillas las rutas con espacios.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprueba la existencia y muestra un mensaje si la ruta existe</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">test</span> <span class="at">-e</span> README.md <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"existe"</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprueba un archivo dentro del módulo</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">test</span> <span class="at">-e</span> curriculum/00_getting_started/README.md <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"existe"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>test -e</code> comprueba la existencia. <code>&amp;&amp;</code> ejecuta el comando siguiente solo si esa comprobación tuvo éxito. Si la ruta no existe, estos ejemplos no imprimen el mensaje; no devuelven <code>True</code> o <code>False</code> como <code>Test-Path</code> en PowerShell.</p>
+</section>
+<section id="cambiar-de-carpeta-1" class="level3">
+<h3 class="anchored" data-anchor-id="cambiar-de-carpeta-1">4. Cambiar de carpeta</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Entra al módulo desde la raíz</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> curriculum/00_getting_started</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Confirma la nueva ubicación</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista el contenido de esa carpeta</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Sube dos niveles y vuelve a la raíz</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../..</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprueba que regresaste a ds_track</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>.</code> representa la carpeta actual y <code>..</code> la carpeta padre.</p>
+</section>
+<section id="comprobar-herramientas-1" class="level3">
+<h3 class="anchored" data-anchor-id="comprobar-herramientas-1">5. Comprobar herramientas</h3>
+<p><strong>Diagnóstico:</strong> después del núcleo de rutas y lectura puedes volver aquí. Un comando no disponible se registra como pendiente; no necesitas instalarlo.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra las versiones instaladas</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Localiza el comando que el shell utilizará</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="at">-v</span> python</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="at">-v</span> uv</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="at">-v</span> git</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Si tu sistema tiene Python como <code>python3</code>, usa <code>python3</code> en lugar de <code>python</code> en los comandos directos. Anota cualquier herramienta faltante para preparar el entorno.</p>
+</section>
+<section id="ejecutar-el-verificador-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejecutar-el-verificador-1">6. Ejecutar el verificador</h3>
+<p><strong>Solo si Python ya está disponible.</strong> Si no lo tienes, anota «verificador pendiente para 00.05» y continúa con el CSV. No impide completar el núcleo.</p>
+<blockquote class="blockquote">
+<p><strong>Nota sobre el orden de aprendizaje:</strong> todavía no hemos estudiado Python, <code>pip</code> ni <code>uv</code>. Los veremos en las lecciones de Primer script y Entorno y dependencias. Aquí solo mostramos cómo ejecutar un programa desde la terminal y leer su resultado; no necesitas comprender el código ni preparar un entorno nuevo. No se utiliza <code>pip</code>; la preparación con <code>uv</code> corresponde a 00.05. Si faltan herramientas, anótalo y deja esta verificación pendiente. Puedes continuar con la práctica de rutas y CSV y volver después de preparar el entorno.</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecuta el script desde la raíz del proyecto</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/00_getting_started/02_terminal_paths/check_environment.py</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Aquí utiliza Python solo si ya está disponible. La ejecución administrada por <code>uv</code> se prepara en 00.05; no es necesario crear un entorno para este paso.</p>
+<p>El verificador actual busca los comandos <code>python</code>, <code>uv</code> y <code>git</code>. Si solo existe <code>python3</code>, puede informar que falta <code>python</code> aunque hayas podido ejecutar el script.</p>
+</section>
+<section id="inspeccionar-el-csv" class="level3">
+<h3 class="anchored" data-anchor-id="inspeccionar-el-csv">7. Inspeccionar el CSV</h3>
+<p><strong>Parte del núcleo:</strong> puedes llegar aquí directamente desde el paso 4.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista los archivos con extensión CSV dentro de la lección</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> curriculum/00_getting_started/02_terminal_paths/<span class="pp">*</span>.csv</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprueba que existe la muestra</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">test</span> <span class="at">-e</span> curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"existe"</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra el encabezado y los primeros dos registros</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 3 curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El archivo tiene tres registros y un encabezado. Leer las líneas no valida los datos.</p>
+</section>
+<section id="extensión-opcional-filtrar-y-resumir" class="level3">
+<h3 class="anchored" data-anchor-id="extensión-opcional-filtrar-y-resumir">8. Extensión opcional: filtrar y resumir</h3>
+<p>En un shell Unix puedes combinar herramientas de texto. Desde la raíz:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="va">ventas_path</span><span class="op">=</span><span class="st">"curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv"</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuenta saltos de línea, incluido el encabezado: 4</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="op">&lt;</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Busca la línea de la venta de lápices</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">',lapiz,'</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Omite el encabezado y muestra producto e importe para ventas de al menos 50</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">','</span> <span class="st">'NR &gt; 1 &amp;&amp; $4 &gt;= 50 { print $2, $4 }'</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Suma los importes de los registros: 165</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">','</span> <span class="st">'NR &gt; 1 { total += $4 } END { print total }'</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>wc -l</code> cuenta los saltos de línea: <code>4</code> en el archivo incluido.</li>
+<li><code>grep</code> encuentra la línea que contiene <code>,lapiz,</code>.</li>
+<li><code>awk -F','</code> separa por comas; <code>NR &gt; 1</code> omite el encabezado, <code>$2</code> es producto y <code>$4</code> es importe. Los últimos comandos muestran las dos ventas de al menos 50 MXN y el total <code>165</code>.</li>
+</ul>
+<p>Estos comandos de texto funcionan para esta muestra sencilla. <code>grep</code> busca texto, no interpreta columnas, y separar por comas con <code>awk</code> no es un lector general de CSV: campos entre comillas pueden contener comas o saltos de línea. Para esos casos necesitas un lector de CSV, como los que estudiarás en Python. Además, <code>wc -l</code> puede dar un resultado distinto si falta el salto de línea final.</p>
+<blockquote class="blockquote">
+<p><strong>Reto opcional:</strong> filtra las ventas con al menos dos unidades. ¿Cuántos registros quedan? Antes de ejecutar, predice la respuesta leyendo la muestra.</p>
+</blockquote>
+<details>
+<summary>
+Ver resultado y explicación del reto — Bash/Zsh
+</summary>
+<p>Desde la raíz del proyecto, una forma de comprobarlo es:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="va">ventas_path</span><span class="op">=</span><span class="st">"curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv"</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">','</span> <span class="st">'NR &gt; 1 &amp;&amp; $3 &gt;= 2 { print $2, $3; cantidad++ } END { print "Registros:", cantidad+0 }'</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Resultado:</strong></p>
+<pre class="text"><code>cuaderno 2
+lapiz 5
+Registros: 2</code></pre>
+<p><code>NR &gt; 1</code> omite el encabezado, <code>$3 &gt;= 2</code> compara las unidades e incluye el límite de dos. <code>print $2, $3</code> muestra producto y unidades; <code>cantidad++</code> cuenta cada registro seleccionado. <code>END</code> imprime el conteo final y <code>cantidad+0</code> daría cero si ninguno cumpliera. La venta de <code>carpeta</code> queda fuera por tener una unidad. Contamos ventas, no sumamos unidades. Contrasta las filas con el CSV original; este uso de <code>awk</code> sigue limitado a la muestra sencilla de la lección.</p>
+</details>
+<blockquote class="blockquote">
+<p><strong>Para profundizar más adelante:</strong> se incorporará una sección de terminal avanzada para estudiar con más detalle filtros, pipes, redirecciones, herramientas como <code>grep</code> y <code>awk</code>, y automatización de tareas con datos. Estos ejemplos son una primera exploración; no necesitas dominar toda su sintaxis para continuar con el recorrido.</p>
+</blockquote>
+</section>
+</section>
+<section id="cuando-un-comando-no-funciona" class="level2">
+<h2 class="anchored" data-anchor-id="cuando-un-comando-no-funciona">Cuando un comando no funciona</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mensaje o situación</th>
+<th>Qué revisar primero</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Archivo o ruta no encontrados</td>
+<td>Tu ubicación, el nombre y los separadores</td>
+</tr>
+<tr class="even">
+<td>Comando no reconocido</td>
+<td>La instalación de la herramienta y su ubicación</td>
+</tr>
+<tr class="odd">
+<td>Una ruta con espacios falla</td>
+<td>Si la escribiste entre comillas</td>
+</tr>
+<tr class="even">
+<td>El verificador informa herramientas faltantes</td>
+<td>Qué herramienta falta; conserva la duda para preparar el entorno</td>
+</tr>
+</tbody>
+</table>
+<p>Vuelve a <code>Get-Location</code> o <code>pwd</code>, comprueba la ruta y lee el mensaje completo antes de cambiar comandos al azar. Las herramientas pueden mostrar resultados correctos aunque tu versión difiera de la del ejemplo.</p>
+</section>
+<section id="para-despertar-curiosidad-de-tres-ventas-a-archivos-enormes" class="level2">
+<h2 class="anchored" data-anchor-id="para-despertar-curiosidad-de-tres-ventas-a-archivos-enormes">Para despertar curiosidad: de tres ventas a archivos enormes</h2>
+<p>Estos comandos pequeños pueden formar parte de trabajos mucho mayores. Un <strong>script</strong> guarda una secuencia de instrucciones para repetirla con otras entradas: localizar archivos, consultar su contenido y producir un resumen. Bien elegidas, las herramientas de línea de comandos permiten revisar archivos que sería poco práctico abrir completos en un editor.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Campo</th>
+<th>Ejemplo de uso real</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Genómica: secuencias de ADN o ARN</td>
+<td><a href="https://bioinf.shenwei.me/seqkit/usage/#stats">SeqKit</a> resume cuántas secuencias contiene un archivo FASTA/FASTQ y sus longitudes; también permite seleccionar secuencias por identificador o patrón</td>
+</tr>
+<tr class="even">
+<td>Genómica: ubicación de lecturas de ADN en una referencia</td>
+<td><a href="https://www.htslib.org/doc/samtools-view.html">SAMtools</a> permite consultar alineamientos de una región; para acceder por región, el archivo BAM/CRAM debe estar ordenado por coordenadas e indexado</td>
+</tr>
+<tr class="odd">
+<td>Operación de sistemas</td>
+<td>Buscar mensajes de error en archivos de registro o <strong>logs</strong>, que describen lo ocurrido durante una ejecución; <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string">Select-String</a> permite buscar patrones en archivos de texto desde PowerShell</td>
+</tr>
+<tr class="even">
+<td>Clima y ambiente</td>
+<td><a href="https://www.unidata.ucar.edu/news/netcdf-operators-nco-version-5.4.0">NCO</a> reúne programas de línea de comandos para seleccionar partes de datos científicos en formato netCDF y calcular resúmenes, como promedios</td>
+</tr>
+</tbody>
+</table>
+<p>La terminal coordina esos programas; las herramientas especializadas entienden sus formatos. Buscar líneas con <code>grep</code> no sustituye a un lector de secuencias ni interpreta un archivo binario como BAM. El tamaño que podrás procesar, el tiempo y la memoria necesarios dependen del programa, la operación y el equipo; usar terminal no garantiza por sí solo bajo consumo de memoria.</p>
+<section id="un-vínculo-con-las-macros-ejecutar-y-programar-tareas" class="level3">
+<h3 class="anchored" data-anchor-id="un-vínculo-con-las-macros-ejecutar-y-programar-tareas">Un vínculo con las macros: ejecutar y programar tareas</h3>
+<p>Si ya usas macros de Excel, conoces la idea de guardar instrucciones para repetir un trabajo. Las <a href="https://learn.microsoft.com/en-us/office/dev/scripts/resources/vba-differences">macros en VBA</a> se ejecutan dentro de aplicaciones de escritorio como Excel. Un archivo <code>.vbs</code> contiene <strong>VBScript</strong>, otro lenguaje: no basta renombrar una macro para convertirla. En Windows, si ese componente está disponible, un programa como <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cscript"><code>cscript</code></a> puede ejecutar el archivo desde la línea de comandos.</p>
+<p><strong>Un ejemplo cercano con Excel:</strong> en Windows con Excel de escritorio instalado, un script externo puede controlar Excel, abrir un libro <code>.xlsm</code> y llamar una macro existente pasándole argumentos. Por ejemplo:</p>
+<ol type="1">
+<li>Abrir un libro ficticio <code>reporte.xlsm</code>.</li>
+<li>Llamar su macro <code>GenerarReporte</code> con dos datos: fecha de corte y ruta del CSV.</li>
+<li>Revisar el resultado y guardar la salida prevista.</li>
+<li>Cerrar el libro y la instancia de Excel que creó el script, incluso si falla.</li>
+</ol>
+<p>Excel ofrece <a href="https://learn.microsoft.com/en-us/office/vba/api/excel.workbooks.open"><code>Workbooks.Open</code></a> para abrir el libro y <a href="https://learn.microsoft.com/en-us/office/vba/api/excel.application.run"><code>Application.Run</code></a> para llamar la macro con argumentos por posición. La macro debe estar preparada para recibirlos y su ejecución debe estar permitida por la configuración del entorno. El script coordina; Excel ejecuta el código VBA. Es una posibilidad de automatización, no un programa listo para ejecutar en esta lección.</p>
+<p>Por ejemplo, un script podría recorrer una carpeta de entregas diarias, comprobar qué CSV llegaron y escribir una bitácora con archivos faltantes. El <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/schtasks-create">Programador de tareas de Windows</a> permite iniciar programas o scripts cada día o a intervalos, como cada hora. El script define <strong>qué hacer</strong>; la tarea programada define <strong>cuándo ejecutarlo</strong>. Para repetirlo correctamente hay que indicar el programa, las rutas, la cuenta que lo ejecutará y cómo revisar su resultado.</p>
+<p>En el caso de Excel, una tarea que se ejecuta sin sesión interactiva requiere otro diseño: Microsoft <a href="https://support.microsoft.com/en-us/visio/considerations-for-server-side-automation-of-office">no recomienda ni admite la automatización de Office en contextos desatendidos</a>. Por eso conviene distinguir probar el flujo con una persona presente de garantizar que funcione de forma autónoma cada noche.</p>
+<p><strong>Contexto actual:</strong> Microsoft ha declarado <a href="https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features">VBScript en desuso y previsto su retirada</a>. Sirve reconocerlo si ya existe en tu trabajo; para nuevas automatizaciones puedes valorar PowerShell o Python según el entorno. Programar una ejecución no depende de usar <code>.vbs</code>. Aquí solo presentamos la posibilidad: no necesitas crear scripts ni tareas programadas en tu equipo para completar la lección.</p>
+</section>
+<section id="otra-puerta-buscar-patrones-con-expresiones-regulares" class="level3">
+<h3 class="anchored" data-anchor-id="otra-puerta-buscar-patrones-con-expresiones-regulares">Otra puerta: buscar patrones con expresiones regulares</h3>
+<p>Una <strong>expresión regular</strong>, o <strong>regex</strong>, describe un patrón de texto para buscar coincidencias. Sirve, por ejemplo, para localizar ciertos mensajes de error, extraer identificadores o revisar si un texto tiene una forma esperada. Esa comprobación de forma no demuestra que el dato sea correcto.</p>
+<p>Imagina estas dos líneas de un log ficticio:</p>
+<pre class="text"><code>ERROR: no se encontró el archivo
+INFO: se guardó el mensaje ERROR anterior</code></pre>
+<p>Al revisar cada línea, el patrón <code>^ERROR</code> coincide con la primera y no con la segunda: <code>^</code> indica el comienzo y <code>ERROR</code> el texto que debe aparecer allí. La <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.6">introducción de Microsoft a regex</a> explica estos patrones. No necesitas aprender su sintaxis ahora. El <code>*.csv</code> que ya usaste busca nombres mediante un comodín; no es la misma sintaxis que una regex.</p>
+<section id="ejemplos-cercanos-rfc-curp-folios-y-claves" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplos-cercanos-rfc-curp-folios-y-claves">Ejemplos cercanos: RFC, CURP, folios y claves</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Caso</th>
+<th>Qué puede aportar una regex</th>
+<th>Qué requiere otra comprobación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RFC: Registro Federal de Contribuyentes</td>
+<td>Detectar longitudes o posiciones de caracteres que no cumplen el formato esperado: 12 caracteres para persona moral y 13 para persona física</td>
+<td>La forma no confirma su inscripción; el <a href="https://wwwmat.sat.gob.mx/aplicacion/79615/valida-en-linea-rfc%C2%B4s-uno-a-uno-o-de-manera-masiva-hasta-5-mil-registros">SAT ofrece una validación contra el padrón</a></td>
+</tr>
+<tr class="even">
+<td>CURP: Clave Única de Registro de Población</td>
+<td>Revisar parte de la estructura de 18 caracteres descrita en el <a href="https://sidof.segob.gob.mx/notas/docFuente/5526717">instructivo de SEGOB</a></td>
+<td>Las fechas, catálogos y dígito verificador requieren reglas adicionales; coincidir con un patrón no confirma asignación ni identidad</td>
+</tr>
+<tr class="odd">
+<td>Folios o claves internas</td>
+<td>Seleccionar claves con cierto prefijo y forma, o extraerlas de mensajes</td>
+<td>Comprobar que existen, no están duplicadas y corresponden al expediente correcto</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, para folios <strong>ficticios</strong> con forma <code>CR-2026-0042</code>, el patrón <code>^CR-[0-9]{4}-[0-9]{4}$</code> pide <code>CR-</code>, cuatro dígitos, otro guion y cuatro dígitos, de principio a fin. <code>CR-2026-0042</code> cumple; <code>CR-26-0042</code> no. Es una regla propia de este ejemplo, no un validador de RFC o CURP; tampoco confirma que el año o el folio existan en un sistema.</p>
+<p>En archivos grandes, buscar patrones puede reducir el texto que necesitas inspeccionar sin abrirlo completo en un editor. El tiempo depende del archivo, el patrón y la herramienta: no toda regex será rápida. Si el dato está dentro de un CSV, interpreta primero sus campos con un lector adecuado; buscar texto en una línea no garantiza que encontraste la columna correcta. Antes de usar un patrón en un lote, contrasta ejemplos que deben coincidir y otros que no.</p>
+<blockquote class="blockquote">
+<p><strong>Para imaginar:</strong> si recibieras cien archivos, ¿qué revisión pequeña querrías repetir en todos y cómo comprobarías que el resultado es correcto? Estos casos son una invitación para explorar después; no necesitas instalar herramientas científicas ni resolver regex para continuar a 00.03.</p>
+</blockquote>
+<p><a id="aplicación"></a></p>
+<p><a id="criterio-de-salida"></a></p>
+</section>
+</section>
+</section>
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Realiza el <a href="./00-02-lab.html">lab 00.02</a> para practicar ubicación, rutas e inspección con tu shell.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tu nota con directorio y rutas</td>
+<td>Los archivos se localizan desde la carpeta indicada</td>
+<td>Desde dónde se interpreta una ruta relativa</td>
+</tr>
+<tr class="even">
+<td>Salida del verificador o comprobaciones pendientes</td>
+<td>Herramientas detectadas y faltantes, sin confundir ambos estados</td>
+<td>Qué debes preparar y cómo distinguir shell, terminal y programa</td>
+</tr>
+<tr class="odd">
+<td>Si usaste el notebook: copia con respuestas</td>
+<td>Ubicación, rutas y CSV en la carpeta de ejemplo</td>
+<td>Qué se ejecutó remotamente y qué falta comprobar en tu equipo</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes cerrar el núcleo cuando localices los archivos del proyecto, expliques rutas relativas y absolutas y distingas el encabezado de los registros al leer el CSV con tu shell. Usa la tabla de equivalencias como consulta; no necesitas memorizar el otro recorrido.</p>
+<p>En el diagnóstico, registra qué herramientas encontraste y cuáles faltan. Si Python está disponible, ejecuta el verificador sin cambiar su código y explica lo que informa, aunque detecte herramientas faltantes. Si Python aún no está disponible, registrar esa comprobación pendiente y cuándo retomarla es un resultado válido. Vuelve a ella en 00.05, al preparar el entorno. No necesitas obtener «entorno mínimo disponible» para avanzar a 00.03. Si practicaste en Colab, conserva el ensayo como evidencia de esos conceptos y anota como pendiente la comprobación de la copia real y del entorno personal.</p>
+<p>Quien aprende realiza la práctica y explica el resultado. Tu compañero propone otra carpeta y te pide explicar cómo cambiaría una ruta relativa. Guarda evidencia y dudas en tu copia de la <a href="descargas/templates/learning-session/bitacora-00.md">bitácora personal de 00</a> o en una nota propia. PROGRESS.md registra el desarrollo editorial del curso. Todavía no hay proyecto de datos ni checkpoint asociado a esta lección.</p>
+<p><a id="referencia-rápida"></a></p>
+</section>
+<section id="glosario" class="level2">
+<h2 class="anchored" data-anchor-id="glosario">Glosario</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Término</th>
+<th>Qué significa en esta lección</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sistema operativo</td>
+<td>Software que administra el equipo, como Windows, Linux o macOS</td>
+</tr>
+<tr class="even">
+<td>Terminal</td>
+<td>Interfaz de texto donde escribes comandos y lees sus resultados</td>
+</tr>
+<tr class="odd">
+<td>Shell</td>
+<td>Programa que interpreta comandos; aquí PowerShell, Bash o Zsh</td>
+</tr>
+<tr class="even">
+<td>Comando</td>
+<td>Instrucción que pides ejecutar al shell</td>
+</tr>
+<tr class="odd">
+<td>Script</td>
+<td>Archivo con una secuencia de instrucciones que puedes ejecutar de nuevo</td>
+</tr>
+<tr class="even">
+<td>Macro</td>
+<td>Secuencia de instrucciones para repetir tareas dentro de una aplicación; aquí, macros de Excel en VBA</td>
+</tr>
+<tr class="odd">
+<td>Tarea programada</td>
+<td>Configuración que indica cuándo iniciar un programa o script y con qué cuenta</td>
+</tr>
+<tr class="even">
+<td>Log</td>
+<td>Registro de mensajes sobre lo ocurrido durante una ejecución</td>
+</tr>
+<tr class="odd">
+<td>Expresión regular (regex)</td>
+<td>Patrón para buscar coincidencias en texto, como líneas que empiezan de cierta forma</td>
+</tr>
+<tr class="even">
+<td>Argumento</td>
+<td>Dato que recibe un comando; por ejemplo, la ruta en <code>Test-Path README.md</code></td>
+</tr>
+<tr class="odd">
+<td>Opción</td>
+<td>Indicación que modifica lo que hace una herramienta, como <code>--version</code></td>
+</tr>
+<tr class="even">
+<td>Directorio</td>
+<td>Carpeta que contiene archivos u otras carpetas</td>
+</tr>
+<tr class="odd">
+<td>Directorio actual</td>
+<td>Carpeta desde la que se interpretan las rutas relativas</td>
+</tr>
+<tr class="even">
+<td>Raíz del proyecto</td>
+<td>Carpeta principal de DS Track; no es necesariamente la raíz de la unidad</td>
+</tr>
+<tr class="odd">
+<td>Ruta absoluta</td>
+<td>Ubicación completa de un archivo o carpeta desde una raíz, como <code>C:\aprendizaje\ds_track\README.md</code> en Windows</td>
+</tr>
+<tr class="even">
+<td>Ruta relativa</td>
+<td>Ubicación que parte del directorio actual, como <code>datos/ventas_demo.csv</code></td>
+</tr>
+<tr class="odd">
+<td>Ejecutable</td>
+<td>Programa que puede iniciarse; su ubicación permite saber qué instalación se usa</td>
+</tr>
+<tr class="even">
+<td>CSV</td>
+<td>Archivo de texto que representa una tabla; en la muestra separa columnas con comas</td>
+</tr>
+<tr class="odd">
+<td>Encabezado del CSV</td>
+<td>Primera línea de la muestra, con los nombres de las columnas</td>
+</tr>
+<tr class="even">
+<td>Registro</td>
+<td>Una fila de datos; cada venta es un registro en esta muestra</td>
+</tr>
+<tr class="odd">
+<td>Variable</td>
+<td>Nombre que conserva un valor, como una ruta, para reutilizarlo</td>
+</tr>
+<tr class="even">
+<td>Pipe (<code>\|</code>)</td>
+<td>Conexión que pasa la salida de un comando al siguiente</td>
+</tr>
+<tr class="odd">
+<td>Notebook (<code>.ipynb</code>)</td>
+<td>Documento con explicaciones y celdas ejecutables</td>
+</tr>
+<tr class="even">
+<td>Kernel</td>
+<td>Proceso que ejecuta las celdas de un notebook</td>
+</tr>
+<tr class="odd">
+<td>Entorno remoto</td>
+<td>Máquina accesible a través de un servicio; sus archivos y herramientas son distintos de los de tu equipo</td>
+</tr>
+</tbody>
+</table>
+<p>Para términos como repositorio, consulta el <a href="./00-01-leccion.html#glosario">glosario de 00.01</a>.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>Consulta la <a href="./00-02-referencia.html">tabla de equivalencias</a> para contrastar PowerShell y Bash/Zsh; no necesitas memorizarla completa.</p>
+<ul>
+<li><a href="https://research.google.com/colaboratory/intl/es/faq.html">Colab: funcionamiento y límites</a>.</li>
+<li><a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-bash">IPython: ejecución de celdas Bash</a>.</li>
+<li><a href="https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell">Microsoft: abrir Windows PowerShell</a>.</li>
+<li><a href="https://code.visualstudio.com/docs/terminal/getting-started">VS Code: primeros pasos con la terminal integrada</a>.</li>
+</ul>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después del lab y su comprobación, continúa con <a href="./00-03-leccion.html">00.03 — Git: historial y actualización del perfil</a>.</p>
+<p><a href="./modulo-00.html">← Módulo 00</a> · <a href="./00-02-lab.html">Lab 00.02</a> · <a href="./00-03-leccion.html">Siguiente →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

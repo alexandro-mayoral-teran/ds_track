@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>04.06 — Composición y exportación – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-04.html">04 · VISUALIZACIÓN EN PYTHON</a></li><li class="breadcrumb-item"><a href="./04-06-leccion.html">04.06 · Composición y exportación</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><img class="brand-icon" src="favicon.svg" alt=""> DS Track</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contenido.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contenido del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">00 · ENTORNO DE APRENDIZAJE</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.01 · Markdown y perfil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.02 · Terminal y rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.03 · Git e historial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.04 · Primer script</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.05 · Entornos y dependencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.06 · Notebook y kernel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprobación y evidencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 · PYTHON FUNDAMENTAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01 · Variables y tipos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02 · Listas y diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.03 · Condiciones y ciclos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.04 · Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.05 · Archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.06 · Validación y resumen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 · PANDAS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01 · Series y DataFrame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02 · Leer y exportar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03 · Seleccionar y filtrar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04 · Tipos y columnas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.05 · Faltantes y reglas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.06 · Texto y fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.07 · Agrupar y resumir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.08 · Combinar tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.09 · Forma de tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.10 · Análisis y gráfica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">03 · SQL Y BASES DE DATOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01 · Modelo relacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02 · Primeras consultas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03 · Crear y cargar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04 · Agregaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05 · Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06 · Subconsultas y CTE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07 · Ventanas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.08 · Transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09 · pandas y SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">04 · VISUALIZACIÓN EN PYTHON</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01 · Pregunta y gráfico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02 · Figure y Axes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03 · Comparaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04 · Distribuciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.05 · Escalas y accesibilidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-leccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">04.06 · Composición y exportación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.07 · Altair declarativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.08 · Interacción (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.09 · Cierre visual</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">05 · PYTHON APLICADO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01 · Del notebook a módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02 · Configuración y registro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03 · Errores y recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04 · Pruebas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.05 · Tipos y contratos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.06 · Clases (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.07 · Generadores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.08 · Decoradores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.09 · Medir (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.10 · APIs (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-11-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.11 · Cierre del proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fuentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material de consulta</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#contexto-y-datos-del-recorrido" id="toc-contexto-y-datos-del-recorrido" class="nav-link" data-scroll-target="#contexto-y-datos-del-recorrido">Contexto y datos del recorrido</a></li>
+  <li><a href="#antes-de-crear-paneles-define-qué-relación-mostrarás" id="toc-antes-de-crear-paneles-define-qué-relación-mostrarás" class="nav-link" data-scroll-target="#antes-de-crear-paneles-define-qué-relación-mostrarás">1. Antes de crear paneles, define qué relación mostrarás</a></li>
+  <li><a href="#una-medida-en-dos-fechas-límites-comunes" id="toc-una-medida-en-dos-fechas-límites-comunes" class="nav-link" data-scroll-target="#una-medida-en-dos-fechas-límites-comunes">2. Una medida en dos fechas: límites comunes</a></li>
+  <li><a href="#medida-y-cobertura-compartir-categorías-conservar-unidades" id="toc-medida-y-cobertura-compartir-categorías-conservar-unidades" class="nav-link" data-scroll-target="#medida-y-cobertura-compartir-categorías-conservar-unidades">3. Medida y cobertura: compartir categorías, conservar unidades</a></li>
+  <li><a href="#anotaciones-separar-el-dato-y-la-explicación" id="toc-anotaciones-separar-el-dato-y-la-explicación" class="nav-link" data-scroll-target="#anotaciones-separar-el-dato-y-la-explicación">4. Anotaciones: separar el dato y la explicación</a></li>
+  <li><a href="#espacio-para-títulos-ejes-y-etiquetas" id="toc-espacio-para-títulos-ejes-y-etiquetas" class="nav-link" data-scroll-target="#espacio-para-títulos-ejes-y-etiquetas">5. Espacio para títulos, ejes y etiquetas</a></li>
+  <li><a href="#tamaño-resolución-y-píxeles-tres-decisiones-relacionadas" id="toc-tamaño-resolución-y-píxeles-tres-decisiones-relacionadas" class="nav-link" data-scroll-target="#tamaño-resolución-y-píxeles-tres-decisiones-relacionadas">6. Tamaño, resolución y píxeles: tres decisiones relacionadas</a></li>
+  <li><a href="#png-o-svg-según-el-destino" id="toc-png-o-svg-según-el-destino" class="nav-link" data-scroll-target="#png-o-svg-según-el-destino">7. PNG o SVG según el destino</a></li>
+  <li><a href="#guardar-la-figure-correcta-y-cerrar-después" id="toc-guardar-la-figure-correcta-y-cerrar-después" class="nav-link" data-scroll-target="#guardar-la-figure-correcta-y-cerrar-después">8. Guardar la Figure correcta y cerrar después</a></li>
+  <li><a href="#reconstruir-y-revisar-los-archivos" id="toc-reconstruir-y-revisar-los-archivos" class="nav-link" data-scroll-target="#reconstruir-y-revisar-los-archivos">9. Reconstruir y revisar los archivos</a>
+  <ul class="collapse">
+  <li><a href="#powershell" id="toc-powershell" class="nav-link" data-scroll-target="#powershell">PowerShell</a></li>
+  <li><a href="#bashzsh" id="toc-bashzsh" class="nav-link" data-scroll-target="#bashzsh">Bash/Zsh</a></li>
+  </ul></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-04.html">04 · VISUALIZACIÓN EN PYTHON</a></li><li class="breadcrumb-item"><a href="./04-06-leccion.html">04.06 · Composición y exportación</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">04.06 — Composición y exportación</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 04 / 04.06
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-04.html">Visualización en Python</a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-04.html">Módulo 04</a> / <strong>Lección 04.06</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Componer paneles y exportar una entrega legible con contexto</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>Pandas/Matplotlib y fuentes compartidas; Altair no es necesario aquí</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>Código, tablas, PNG/SVG y nota de lectura y dimensiones</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#antes-de-empezar">Preparación</a> · <a href="#material-de-apoyo">Material de apoyo</a> · <a href="./04-06-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<p><a id="propósito-y-prerrequisitos"></a></p>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Preparar una figura que otra persona pueda leer fuera de tu sesión de trabajo. Componer significa organizar varias vistas con una relación clara; exportar significa guardar una entrega con tamaño, formato y contexto adecuados para su destino. Una figura guardada sin errores todavía necesita revisión de lectura.</p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Completa <a href="./04-05-leccion.html">04.05 — Escalas, etiquetas y accesibilidad</a> y su lab. Reutiliza <a href="./04-02-leccion.html">Figure y Axes de 04.02</a>, <a href="./04-03-leccion.html">comparaciones de 04.03</a> y <a href="./04-04-leccion.html">medianas de 04.04</a>. No necesitas una herramienta de diseño ni aprender otra biblioteca de gráficos.</p>
+<p><strong>Práctica principal:</strong> vistas múltiples, ejes comparables, anotaciones, espacio, PNG/SVG y cierre de figuras. <strong>Ampliación:</strong> recorte ajustado, fondos transparentes y exportación para impresión. Las ampliaciones no bloquean avanzar.</p>
+<p><a id="objetivos-entradas-y-entrega"></a></p>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Elegir una composición según la comparación que necesita el público.</li>
+<li>Compartir ejes cuando representan lo mismo y conservar unidades distintas.</li>
+<li>Añadir una anotación que explique un dato sin cubrirlo ni inventarlo.</li>
+<li>Relacionar pulgadas, píxeles y resolución para dimensionar un PNG.</li>
+<li>Elegir entre PNG y SVG y revisar el archivo en su destino.</li>
+<li>Exportar desde una Figure identificada, conservar entregas anteriores y cerrar recursos.</li>
+<li>Compartir código, tablas y lectura textual junto con la imagen.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="descargas/curriculum/04_visualization_python/06_composition_export/composition.py">Script de ejemplo</a></td>
+<td>Construir composiciones y exportaciones comprobadas</td>
+<td>Para el recorrido</td>
+</tr>
+<tr class="even">
+<td><a href="./03-01-leccion.html">Fuentes de SQL</a></td>
+<td>Consultar créditos y cortes utilizados</td>
+<td>Entradas compartidas</td>
+</tr>
+<tr class="odd">
+<td><a href="descargas/curriculum/04_visualization_python/06_composition_export/assets/entrega.png">Entrega PNG</a></td>
+<td>Contrastar medianas y cobertura en dos paneles</td>
+<td>Para observar</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/04_visualization_python/06_composition_export/assets/entrega.svg">Entrega SVG</a></td>
+<td>Comparar formatos de la misma composición</td>
+<td>Para observar</td>
+</tr>
+</tbody>
+</table>
+<p>Las figuras incluidas sirven para observar y contrastar. Abre el script cuando el recorrido lo indique para regenerar o practicar; conserva las fuentes y las entregas anteriores y utiliza los destinos de práctica indicados.</p>
+</section>
+<section id="contexto-y-datos-del-recorrido" class="level2">
+<h2 class="anchored" data-anchor-id="contexto-y-datos-del-recorrido">Contexto y datos del recorrido</h2>
+<p>El <a href="descargas/curriculum/04_visualization_python/06_composition_export/composition.py">script composition.py</a> lee los <a href="./03-01-leccion.html">CSV sintéticos originales de SQL 03.01</a>. Reutiliza el lector y los cuartiles de 04.04; no recalcula limpieza con otra regla ni modifica la base SQLite. La organización interna del script se profundizará en <a href="./modulo-05.html">Python aplicado</a>, no es una nueva tarea de esta sección.</p>
+<p>Hay 24 créditos por corte. Las tablas comprobadas para las composiciones son:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Segmento</th>
+<th>Septiembre: mediana MXN (conocidos/registros)</th>
+<th>Octubre: mediana MXN (conocidos/registros)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>comercio</td>
+<td>2 900 (5/5)</td>
+<td>3 100 (5/5)</td>
+</tr>
+<tr class="even">
+<td>consumo</td>
+<td>1 500 (8/10)</td>
+<td>1 750 (10/10)</td>
+</tr>
+<tr class="odd">
+<td>educacion</td>
+<td>3 250 (2/3)</td>
+<td>Sin mediana (0/3)</td>
+</tr>
+<tr class="even">
+<td>servicios</td>
+<td>2 350 (6/6)</td>
+<td>2 550 (6/6)</td>
+</tr>
+</tbody>
+</table>
+<p>Cada fecha tiene 21 saldos conocidos entre 24 registros, pero no necesariamente los mismos créditos. La comparación describe medianas disponibles: no estima un cambio individual ni mide riesgo. La mediana es un valor central, no una suma. Los tres ausentes de octubre pertenecen a educación; el cero de consumo sigue siendo un saldo conocido válido.</p>
+<p>La entrega incluirá dos composiciones, PNG a dos resoluciones, SVG, tablas de comprobación, registro de formatos y una nota de lectura. Los archivos de práctica se generan en <code>output/</code>; las vistas curadas de esta lección se conservan en <code>assets/</code>.</p>
+</section>
+<section id="antes-de-crear-paneles-define-qué-relación-mostrarás" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-crear-paneles-define-qué-relación-mostrarás">1. Antes de crear paneles, define qué relación mostrarás</h2>
+<p>Varios gráficos juntos no forman automáticamente una explicación. Decide qué pregunta responde cada panel y por qué conviene verlos juntos. En esta práctica:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Composición</th>
+<th>Pregunta del primer panel</th>
+<th>Pregunta del segundo</th>
+<th>Relación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Comparación entre cortes</td>
+<td>¿Qué medianas conocidas había en septiembre?</td>
+<td>¿Cuáles hay en octubre?</td>
+<td>Misma medida y segmentos; distintas fechas</td>
+</tr>
+<tr class="even">
+<td>Figura de entrega</td>
+<td>¿Cuál es la mediana conocida de octubre?</td>
+<td>¿Qué proporción de saldos conocemos?</td>
+<td>Medida y cobertura sobre el mismo corte</td>
+</tr>
+</tbody>
+</table>
+<p>Una disposición horizontal facilita seguir un segmento de izquierda a derecha. En una columna estrecha, dos paneles apilados pueden resultar más legibles; hay que reorganizarlos desde código, no comprimir una figura ancha hasta que las letras sean diminutas. Más paneles exigen más espacio y más atención: no agregar un histograma o una dispersión solo porque caben.</p>
+<p>El orden de lectura también orienta la explicación. Usa títulos de panel o letras A/B cuando necesites referirte a cada vista en el texto. Mantén nombres y orden de segmentos comunes. Si ordenas cada panel por su valor, una misma fila puede representar segmentos distintos y dificultar la comparación.</p>
+</section>
+<section id="una-medida-en-dos-fechas-límites-comunes" class="level2">
+<h2 class="anchored" data-anchor-id="una-medida-en-dos-fechas-límites-comunes">2. Una medida en dos fechas: límites comunes</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="descargas/curriculum/04_visualization_python/06_composition_export/assets/comparacion.png" class="img-fluid figure-img"></p>
+<figcaption>Medianas de septiembre y octubre en paneles con el mismo eje de MXN; educación conserva una ausencia en octubre</figcaption>
+</figure>
+</div>
+<p>Lectura sin imagen: las medianas conocidas son las de la tabla anterior. Los dos paneles tienen el mismo rango horizontal, de 0 a 5 000 MXN, y el mismo orden vertical. Septiembre usa barras lisas y octubre, barras con trama; las fechas escritas identifican cada panel. Educación no tiene barra de octubre.</p>
+<p>En esta composición <strong>compartimos x</strong> porque ambos ejes horizontales muestran la misma medida, unidad y escala. <strong>Compartimos y</strong> porque las posiciones verticales representan los mismos segmentos. El rango deja espacio para etiquetas y todas las barras parten de cero, como se justificó en 04.05.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="dv">2</span>,                    <span class="co"># Una fila, dos columnas.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">5.5</span>),        <span class="co"># Tamaño total de la Figure en pulgadas.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    layout<span class="op">=</span><span class="st">"constrained"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>izquierda <span class="op">=</span> axes[<span class="dv">0</span>]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>derecha <span class="op">=</span> axes[<span class="dv">1</span>]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>izquierda.set_xlim(<span class="dv">0</span>, <span class="dv">5000</span>)   <span class="co"># El límite se comparte con el otro Axes.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>axes</code> contiene los dos Axes; sus posiciones no son datos. Este fragmento prepara la estructura, pero aún no dibuja las medianas. La función <code>comparison_figure</code> del script dibuja tablas ya preparadas con <code>draw_medians</code>, sin cambiar sus valores.</p>
+<p>Compartir ejes enlaza límites y escalas; no concilia automáticamente las bases. Necesitas verificar la medida y la población antes de dibujar. Además, Matplotlib puede ocultar etiquetas repetidas en ejes compartidos: no desaparecieron datos. El ejemplo las vuelve a mostrar con <code>ax.tick_params(axis="y", labelleft=True)</code> para que ambos paneles puedan leerse directamente.</p>
+<p>No compares alturas o longitudes de paneles con límites distintos sin avisarlo. Tampoco unas las barras de educación entre fechas como si un saldo ausente fuera cero. Si la pregunta pide movimientos de los mismos créditos, vuelve a los <a href="./04-03-leccion.html">pares conocidos de 04.03</a>.</p>
+</section>
+<section id="medida-y-cobertura-compartir-categorías-conservar-unidades" class="level2">
+<h2 class="anchored" data-anchor-id="medida-y-cobertura-compartir-categorías-conservar-unidades">3. Medida y cobertura: compartir categorías, conservar unidades</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="descargas/curriculum/04_visualization_python/06_composition_export/assets/entrega.png" class="img-fluid figure-img"></p>
+<figcaption>Figura de entrega: medianas conocidas a la izquierda y cobertura a la derecha; educación tiene cobertura cero y mediana ausente</figcaption>
+</figure>
+</div>
+<p>El panel A muestra medianas en MXN. El B muestra porcentajes de saldos conocidos entre registros. Se comparten las categorías verticales, <strong>no el eje horizontal</strong>: 3 100 MXN y 100 % no son magnitudes comparables. Una posición igual en los dos paneles no significa valor igual ni asociación causal.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">5.5</span>), sharey<span class="op">=</span><span class="va">True</span>, layout<span class="op">=</span><span class="st">"constrained"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">"Mediana conocida (MXN)"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">"Saldos conocidos / registros (%)"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># No se añade sharex=True: los ejes horizontales tienen unidades distintas.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La cobertura de octubre es 100 % para comercio, consumo y servicios y 0 % para educación. Globalmente es 21/24 = 87,5 %. No promediar sin ponderación los cuatro porcentajes de grupo: (100 + 100 + 0 + 100)/4 = 75 % responde otra pregunta, asignando el mismo peso a grupos de tamaños distintos.</p>
+<p>El panel B dibuja 0 % para educación porque existen tres registros y conocemos cero saldos. El panel A no dibuja mediana cero: no puede calcularla sin valores. Si no hubiera registros, la cobertura sería indefinida, pues el denominador sería cero. El script muestra «Sin registros» y conserva una ausencia numérica.</p>
+<p>El rango de cobertura se extiende de −5 a 125 para dar margen a puntos y texto, pero las marcas numéricas van de 0 a 100. Ese margen no autoriza coberturas negativas ni superiores al 100 %; los conteos proceden de las tablas verificadas. Los valores de mediana tampoco son porcentajes de cartera.</p>
+</section>
+<section id="anotaciones-separar-el-dato-y-la-explicación" class="level2">
+<h2 class="anchored" data-anchor-id="anotaciones-separar-el-dato-y-la-explicación">4. Anotaciones: separar el dato y la explicación</h2>
+<p>Una anotación conecta una afirmación breve con un dato concreto. En la entrega, la flecha apunta al 0 % de educación y explica «Hay registros, ningún saldo conocido». No apunta a una mediana inventada y no afirma que el saldo sea cero.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].annotate(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hay registros,</span><span class="ch">\n</span><span class="st">ningún saldo conocido"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    xy<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">2</span>),                <span class="co"># Dato: cobertura 0 %, segmento en posición 2.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    xytext<span class="op">=</span>(<span class="dv">28</span>, <span class="op">-</span><span class="dv">42</span>),          <span class="co"># Desplazar el texto respecto al dato.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    textcoords<span class="op">=</span><span class="st">"offset points"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    arrowprops<span class="op">=</span>{<span class="st">"arrowstyle"</span>: <span class="st">"-&gt;"</span>},</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>xy</code> señala la posición del dato en el Axes. <code>xytext</code> ubica el texto; aquí se interpreta en <strong>puntos de desplazamiento</strong> gracias a <code>textcoords</code>. Un punto tipográfico es 1/72 de pulgada. Así movemos la explicación sin sumar MXN ni porcentajes al dato. <code>\n</code> divide la explicación en dos líneas; la flecha enlaza ambas ubicaciones. Cambiar el desplazamiento solo mueve el texto.</p>
+<p>Para un mensaje general, puedes usar coordenadas relativas al panel, como en 04.02: <code>ax.text(0.5, 0.5, "Sin registros", transform=ax.transAxes)</code> coloca texto en el centro del Axes. No confundir esas coordenadas 0–1 con datos porcentuales. Un título general pertenece a la Figure, mientras una anotación de cobertura pertenece al Axes que muestra cobertura.</p>
+<p>Escribe pocas anotaciones y comprueba que la flecha señala el dato correcto. No cubras puntos, valores o leyendas; no resaltes como «anomalía» un valor que no revisaste. Una anotación puede atraer atención, pero no aporta por sí sola evidencia causal ni estadística. El texto extenso vive junto a la figura.</p>
+</section>
+<section id="espacio-para-títulos-ejes-y-etiquetas" class="level2">
+<h2 class="anchored" data-anchor-id="espacio-para-títulos-ejes-y-etiquetas">5. Espacio para títulos, ejes y etiquetas</h2>
+<p><code>layout="constrained"</code> ayuda a distribuir espacio entre paneles y sus elementos. No garantiza legibilidad a cualquier tamaño: un texto largo o demasiados paneles pueden exceder el espacio disponible. Revisa el resultado después de guardar. En esta práctica usamos esa estrategia desde <code>plt.subplots</code>; no añadimos <code>tight_layout()</code> después, pues puede desactivar el ajuste elegido.</p>
+<p>La composición tiene tres niveles de texto:</p>
+<ul>
+<li><code>ax.set_title(...)</code>: identifica la pregunta de un panel.</li>
+<li><code>fig.suptitle(...)</code>: nombra el conjunto y el corte.</li>
+<li><code>fig.supxlabel(...)</code>: coloca aquí una nota común debajo, con fuente y límite. Aunque el nombre alude a una etiqueta global de x, el ejemplo lo usa para una nota breve; cada panel conserva su etiqueta de unidad.</li>
+</ul>
+<p>Las etiquetas numéricas tienen espacio a la derecha porque el límite deja margen. No extenderlo tanto que todas las diferencias sean imperceptibles. Si los nombres son largos, las barras horizontales permiten leerlos sin girar palabras; una abreviatura requiere explicación. Si falta espacio, amplía o reorganiza la composición antes de reducir demasiado la letra.</p>
+<p>Al revisar la entrega mira bordes y cruces: títulos cortados, notas fuera del lienzo, flechas sobre etiquetas, números que chocan con un punto y etiquetas de ejes de un panel que invaden al otro. No basta con que el código termine.</p>
+</section>
+<section id="tamaño-resolución-y-píxeles-tres-decisiones-relacionadas" class="level2">
+<h2 class="anchored" data-anchor-id="tamaño-resolución-y-píxeles-tres-decisiones-relacionadas">6. Tamaño, resolución y píxeles: tres decisiones relacionadas</h2>
+<p><code>figsize=(ancho, alto)</code> usa <strong>pulgadas</strong>. En un PNG, <code>dpi</code> fija cuántos píxeles se generan por pulgada nominal. Sin recorte adicional:</p>
+<pre class="text"><code>ancho en píxeles = ancho en pulgadas × dpi
+alto en píxeles  = alto en pulgadas × dpi</code></pre>
+<p>Si el producto no es entero, el raster se limita a una cantidad entera de píxeles; el script registra la parte entera esperada y se comprueba el archivo. Los tamaños y resoluciones predeterminados de esta práctica dan productos enteros.</p>
+<p>Nuestra Figure mide 12 × 5,5 pulgadas. Al exportarla:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Archivo</th>
+<th>Tamaño nominal</th>
+<th style="text-align: right;">Resolución PNG</th>
+<th>Dimensiones esperadas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>entrega_160.png</td>
+<td>12 × 5,5 pulgadas</td>
+<td style="text-align: right;">160 dpi</td>
+<td>1 920 × 880 píxeles</td>
+</tr>
+<tr class="even">
+<td>entrega_320.png</td>
+<td>12 × 5,5 pulgadas</td>
+<td style="text-align: right;">320 dpi</td>
+<td>3 840 × 1 760 píxeles</td>
+</tr>
+<tr class="odd">
+<td>entrega.svg</td>
+<td>12 × 5,5 pulgadas</td>
+<td style="text-align: right;">No fija una cuadrícula de píxeles para estas formas</td>
+<td>Escalable; tamaño declarado y viewBox</td>
+</tr>
+</tbody>
+</table>
+<p>Duplicar dpi duplica cada dimensión del PNG y cuadruplica el número de píxeles. El tamaño del archivo en bytes no necesariamente se cuadruplica: depende de compresión y contenido. Tampoco aparecen nuevos registros o mayor precisión analítica. Si ambos PNG se muestran con el mismo ancho en pantalla, la letra ocupa aproximadamente el mismo espacio; el segundo aporta más detalle de dibujo.</p>
+<p>Por ejemplo, si la figura se presenta a 960 píxeles de ancho, el primer PNG aporta dos píxeles de imagen por cada píxel de ese ancho de presentación; el segundo aporta cuatro. La apariencia final depende también del dispositivo y de cómo el visor redimensiona. Aumentar dpi no arregla una composición ilegible que se encoge demasiado en el destino.</p>
+<p>La letra se define en puntos tipográficos, no como un número fijo de píxeles. Cambiar <code>figsize</code> da más o menos espacio al contenido; cambiar dpi cambia el detalle del raster. Para ajustar una figura a una columna estrecha, prueba una composición vertical con textos adecuados, no solo una exportación de más dpi.</p>
+<p>Para impresión, sigue el tamaño y resolución solicitados por el destino; 300 dpi es una referencia habitual para raster, no una regla universal ni un requisito de este lab. Centímetros / 2,54 = pulgadas, si tu entrega se mide en centímetros. Esta sección se completa con revisión en pantalla.</p>
+</section>
+<section id="png-o-svg-según-el-destino" class="level2">
+<h2 class="anchored" data-anchor-id="png-o-svg-según-el-destino">7. PNG o SVG según el destino</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Formato</th>
+<th>Qué conserva</th>
+<th>Ventaja en esta práctica</th>
+<th>Qué comprobar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PNG</td>
+<td>Cuadrícula de píxeles</td>
+<td>Fácil de insertar en visores, Markdown y presentaciones</td>
+<td>Dimensiones y lectura al tamaño final</td>
+</tr>
+<tr class="even">
+<td>SVG</td>
+<td>Formas y trazados vectoriales</td>
+<td>Ampliar líneas, barras y texto sin una cuadrícula fija</td>
+<td>Compatibilidad, tipografía y contenido al abrirlo</td>
+</tr>
+</tbody>
+</table>
+<p>SVG no es un CSV ni convierte la figura en un análisis interactivo. Puede contener imágenes rasterizadas si el gráfico las usa; nuestras barras y puntos se exportan como elementos vectoriales. Cambiar dpi no aumenta la resolución de esos trazados, aunque sí puede afectar componentes rasterizados en otras figuras. Un SVG con miles de objetos tampoco tiene garantizado menor tamaño que un PNG.</p>
+<p>Puedes abrir la <a href="descargas/curriculum/04_visualization_python/06_composition_export/assets/entrega.svg">versión SVG de la figura de entrega</a> para contrastarla con la vista PNG de esta lección antes de regenerarla.</p>
+<p>Según la configuración de Matplotlib, el texto del SVG puede guardarse como trazados de letras. Eso preserva su forma sin depender igual de una fuente instalada, pero no garantiza texto seleccionable, fácil de editar ni accesibilidad automática. Acompaña ambos formatos con <a href="./04-05-leccion.html">descripción y tabla, como en 04.05</a>.</p>
+<p>No renombres un PNG a <code>.svg</code> para cambiar el formato. <code>savefig</code> puede inferirlo por la extensión o recibir <code>format</code>; si ambos se contradicen, la extensión puede resultar engañosa. El ejemplo usa extensiones coherentes y fondo blanco explícito para que texto y tramas se revisen sobre un fondo conocido.</p>
+<p><strong>Ampliación:</strong> <code>transparent=True</code> permite fondos transparentes en contextos adecuados, pero hay que comprobar contraste sobre el fondo de destino. Para esta entrega usamos <code>transparent=False</code>; no cambiamos colores según una suposición sobre dónde la persona abrirá la figura.</p>
+</section>
+<section id="guardar-la-figure-correcta-y-cerrar-después" class="level2">
+<h2 class="anchored" data-anchor-id="guardar-la-figure-correcta-y-cerrar-después">8. Guardar la Figure correcta y cerrar después</h2>
+<p>Guarda con <code>fig.savefig(...)</code>: tienes una referencia explícita a la composición. Al generar varias figuras, depender de «la figura actual» puede exportar otra vista. Conserva la separación practicada en 04.02: preparar tabla → dibujar → guardar → cerrar. La función que dibuja no necesita escribir CSV ni cerrar el Axes.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fig ya contiene la composición revisada; usa una carpeta de entrega nueva.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    fig.savefig(<span class="st">"entrega_160.png"</span>, dpi<span class="op">=</span><span class="dv">160</span>, facecolor<span class="op">=</span><span class="st">"white"</span>, transparent<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    fig.savefig(<span class="st">"entrega_320.png"</span>, dpi<span class="op">=</span><span class="dv">320</span>, facecolor<span class="op">=</span><span class="st">"white"</span>, transparent<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    fig.savefig(<span class="st">"entrega.svg"</span>, facecolor<span class="op">=</span><span class="st">"white"</span>, transparent<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    plt.close(fig)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El mismo objeto puede guardarse en varios formatos antes de cerrarlo. <code>finally</code> asegura el cierre incluso si falla el guardado. Cerrar libera la referencia que mantiene pyplot; no borra las imágenes ni los CSV y no reinicia el entorno. Usa <code>plt.close(fig)</code>, no <code>plt.close("all")</code>, para conservar otras figuras de la sesión. Guardar tampoco requiere abrir una ventana con <code>plt.show()</code>.</p>
+<p>En el script, cada entrega exige una carpeta nueva: no sobrescribe una anterior. Guarda los datos usados, lectura.md y formatos.csv, que registra formato, pulgadas, dpi cuando aplica, píxeles esperados y bytes. Así puedes explicar qué compartiste y con qué parámetros sin depender de memoria de la sesión.</p>
+<p><strong>Ampliación sobre recorte:</strong> <code>bbox_inches="tight"</code> intenta ajustar el borde al contenido y <code>pad_inches</code> controla el margen. Eso puede cambiar las dimensiones finales respecto a <code>figsize × dpi</code>; no promete el mismo tamaño nominal. Tampoco resuelve superposiciones entre textos. El ejemplo conserva el lienzo completo sin recorte, mediante una configuración local de guardado; no modifica ajustes globales de tu sesión.</p>
+</section>
+<section id="reconstruir-y-revisar-los-archivos" class="level2">
+<h2 class="anchored" data-anchor-id="reconstruir-y-revisar-los-archivos">9. Reconstruir y revisar los archivos</h2>
+<p>Usa el entorno elegido en <a href="./00-05-leccion.html">00.05</a>, ya activado. Referencias: pandas 2.3.3 y Matplotlib 3.10.7. La comprobación local usa pandas 2.3.3 y Matplotlib 3.10.6; no se agregan dependencias. Desde la raíz del repositorio, elige un recorrido completo.</p>
+<section id="powershell" class="level3">
+<h3 class="anchored" data-anchor-id="powershell">PowerShell</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conda o venv/pip ya activado:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>python curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>06_composition_export<span class="op">/</span>composition<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>cut <span class="dv">2026</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">31</span> <span class="op">--</span>dpi <span class="dv">160</span> <span class="op">--</span>output curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>06_composition_export<span class="op">/</span>output<span class="op">/</span>octubre</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternativa para uv: ejecutar en lugar del comando anterior.</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>uv run <span class="op">--</span>locked python curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>06_composition_export<span class="op">/</span>composition<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>cut <span class="dv">2026</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">31</span> <span class="op">--</span>dpi <span class="dv">160</span> <span class="op">--</span>output curriculum<span class="op">/</span>04_visualization_python<span class="op">/</span>06_composition_export<span class="op">/</span>output<span class="op">/</span>octubre</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="bashzsh" class="level3">
+<h3 class="anchored" data-anchor-id="bashzsh">Bash/Zsh</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conda o venv/pip ya activado:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/04_visualization_python/06_composition_export/composition.py <span class="at">--cut</span> 2026-10-31 <span class="at">--dpi</span> 160 <span class="at">--output</span> curriculum/04_visualization_python/06_composition_export/output/octubre</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternativa para uv: ejecutar en lugar del comando anterior.</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run <span class="at">--locked</span> python curriculum/04_visualization_python/06_composition_export/composition.py <span class="at">--cut</span> 2026-10-31 <span class="at">--dpi</span> 160 <span class="at">--output</span> curriculum/04_visualization_python/06_composition_export/output/octubre</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Se generan tres PNG, un SVG, cuatro CSV (corte, resumen, comparacion y formatos) y lectura.md. <code>--cut</code> elige la fecha de entrega y su resumen; comparacion conserva septiembre/octubre. <code>--dpi</code> elige la primera resolución PNG y se exporta también el doble. Para otra ejecución, usa otra carpeta nueva. Las vistas curadas de la lección corresponden a octubre con 160 dpi.</p>
+<p>Comprobación gradual:</p>
+<ol type="1">
+<li>Concilia corte.csv: 24 registros, 21 conocidos y 3 ausentes. El cero cuenta como conocido.</li>
+<li>Comprueba las medianas de resumen.csv contra los saldos del corte y la tabla inicial.</li>
+<li>Recalcula cobertura por segmento y global; distingue 0/3 de 0/0.</li>
+<li>Coteja paneles, etiquetas y flecha con esas tablas. Verifica límites comunes en comparacion y unidades separadas en entrega.</li>
+<li>Abre ambos PNG y consulta dimensiones en tu visor o propiedades del archivo; verifica formatos.csv. Abre entrega.svg en un visor compatible, por ejemplo un navegador, y amplía para revisar texto, tramas y flecha.</li>
+<li>Revisa al tamaño de presentación final, además de ampliar. Conserva lectura.md junto con las imágenes y las tablas. Si falla una exportación, la existencia de una carpeta parcial no demuestra una entrega completa.</li>
+</ol>
+<p><a id="práctica-criterio-de-salida-y-continuidad"></a></p>
+</section>
+</section>
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Realiza el <a href="./04-06-lab.html">lab 04.06</a> para componer paneles y revisar una exportación fuera de la sesión original.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Código, tablas y composición propia</td>
+<td>Relación entre paneles, medidas, ejes y datos</td>
+<td>Por qué cada panel existe y qué comparten sus escalas</td>
+</tr>
+<tr class="even">
+<td>PNG/SVG y nota de lectura</td>
+<td>Formatos, dimensiones y legibilidad en el destino</td>
+<td>Cómo se relacionan tamaño, resolución y píxeles y qué contexto acompaña la figura</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes avanzar cuando expliques por qué cada panel existe, compruebes sus datos y ejes, exportes una entrega legible y cotejes formatos y dimensiones. Entrega código, tabla, imagen y comentario de población, medida, fuente y límites.</p>
+<p>Quien aprende realiza y explica la práctica; su compañero revisa. Tu compañero abre la exportación y pregunta qué población y medida describe cada panel. Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica. PROGRESS.md conserva el desarrollo editorial; disponer del material no acredita por sí solo aprendizaje completado.</p>
+<p>No hay proyecto ni checkpoint implementado asociado a esta lección.</p>
+<p><a id="referencias-y-atribución"></a></p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>Código, composiciones y explicaciones propios de DS Track. Se consultaron las fuentes primarias de Matplotlib; las páginas stable pueden mostrar versiones posteriores a la referencia 3.10.7. No se copiaron imágenes ni ejemplos completos.</p>
+<ul>
+<li><a href="https://matplotlib.org/3.10.7/users/explain/axes/constrainedlayout_guide.html">Matplotlib 3.10.7: ajuste de composición</a>.</li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.figure.Figure.savefig.html">Matplotlib: guardar una Figure</a>.</li>
+<li><a href="https://matplotlib.org/stable/users/explain/text/annotations.html">Matplotlib: anotaciones y coordenadas</a>.</li>
+<li><a href="https://matplotlib.org/stable/gallery/subplots_axes_and_figures/figure_size_units.html">Matplotlib: unidades del tamaño de figura</a>.</li>
+</ul>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después de la práctica y su comprobación, continúa con <a href="./04-07-leccion.html">04.07 — Altair: visualización declarativa</a>.</p>
+<p><a href="./modulo-04.html">← Módulo 04</a> · <a href="./04-06-lab.html">Lab 04.06</a> · <a href="./04-07-leccion.html">Siguiente →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>05.04 — Pruebas de código y datos – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-05.html">05 · PYTHON APLICADO</a></li><li class="breadcrumb-item"><a href="./05-04-leccion.html">05.04 · Pruebas</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><img class="brand-icon" src="favicon.svg" alt=""> DS Track</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contenido.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contenido del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">00 · ENTORNO DE APRENDIZAJE</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.01 · Markdown y perfil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.02 · Terminal y rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.03 · Git e historial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.04 · Primer script</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.05 · Entornos y dependencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.06 · Notebook y kernel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprobación y evidencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 · PYTHON FUNDAMENTAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01 · Variables y tipos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02 · Listas y diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.03 · Condiciones y ciclos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.04 · Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.05 · Archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.06 · Validación y resumen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 · PANDAS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01 · Series y DataFrame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02 · Leer y exportar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03 · Seleccionar y filtrar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04 · Tipos y columnas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.05 · Faltantes y reglas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.06 · Texto y fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.07 · Agrupar y resumir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.08 · Combinar tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.09 · Forma de tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.10 · Análisis y gráfica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">03 · SQL Y BASES DE DATOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01 · Modelo relacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02 · Primeras consultas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03 · Crear y cargar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04 · Agregaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05 · Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.06 · Subconsultas y CTE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07 · Ventanas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.08 · Transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09 · pandas y SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">04 · VISUALIZACIÓN EN PYTHON</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01 · Pregunta y gráfico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02 · Figure y Axes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03 · Comparaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04 · Distribuciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.05 · Escalas y accesibilidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.06 · Composición y exportación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.07 · Altair declarativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.08 · Interacción (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.09 · Cierre visual</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">05 · PYTHON APLICADO</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01 · Del notebook a módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02 · Configuración y registro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03 · Errores y recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-leccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">05.04 · Pruebas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.05 · Tipos y contratos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.06 · Clases (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.07 · Generadores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.08 · Decoradores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.09 · Medir (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.10 · APIs (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-11-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.11 · Cierre del proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fuentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material de consulta</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#que-termine-sin-error-no-demuestra-que-calcule-bien" id="toc-que-termine-sin-error-no-demuestra-que-calcule-bien" class="nav-link" data-scroll-target="#que-termine-sin-error-no-demuestra-que-calcule-bien">1. Que termine sin error no demuestra que calcule bien</a></li>
+  <li><a href="#tres-preguntas-diferentes" id="toc-tres-preguntas-diferentes" class="nav-link" data-scroll-target="#tres-preguntas-diferentes">2. Tres preguntas diferentes</a></li>
+  <li><a href="#elegir-una-muestra-que-puedas-explicar" id="toc-elegir-una-muestra-que-puedas-explicar" class="nav-link" data-scroll-target="#elegir-una-muestra-que-puedas-explicar">3. Elegir una muestra que puedas explicar</a></li>
+  <li><a href="#primera-prueba-con-unittest-leída-línea-por-línea" id="toc-primera-prueba-con-unittest-leída-línea-por-línea" class="nav-link" data-scroll-target="#primera-prueba-con-unittest-leída-línea-por-línea">4. Primera prueba con unittest, leída línea por línea</a></li>
+  <li><a href="#ejecutar-desde-el-directorio-correcto" id="toc-ejecutar-desde-el-directorio-correcto" class="nav-link" data-scroll-target="#ejecutar-desde-el-directorio-correcto">5. Ejecutar desde el directorio correcto</a>
+  <ul class="collapse">
+  <li><a href="#powershell" id="toc-powershell" class="nav-link" data-scroll-target="#powershell">PowerShell</a></li>
+  <li><a href="#bashzsh" id="toc-bashzsh" class="nav-link" data-scroll-target="#bashzsh">Bash/Zsh</a></li>
+  <li><a href="#cmd-anaconda-prompt" id="toc-cmd-anaconda-prompt" class="nav-link" data-scroll-target="#cmd-anaconda-prompt">CMD / Anaconda Prompt</a></li>
+  </ul></li>
+  <li><a href="#leer-fail-error-y-una-excepción-esperada" id="toc-leer-fail-error-y-una-excepción-esperada" class="nav-link" data-scroll-target="#leer-fail-error-y-una-excepción-esperada">6. Leer FAIL, ERROR y una excepción esperada</a></li>
+  <li><a href="#elegir-la-comparación-adecuada" id="toc-elegir-la-comparación-adecuada" class="nav-link" data-scroll-target="#elegir-la-comparación-adecuada">7. Elegir la comparación adecuada</a></li>
+  <li><a href="#fronteras-y-vacíos-que-cambian-el-significado" id="toc-fronteras-y-vacíos-que-cambian-el-significado" class="nav-link" data-scroll-target="#fronteras-y-vacíos-que-cambian-el-significado">8. Fronteras y vacíos que cambian el significado</a></li>
+  <li><a href="#archivos-temporales-y-fallas-sin-dañar-entregas" id="toc-archivos-temporales-y-fallas-sin-dañar-entregas" class="nav-link" data-scroll-target="#archivos-temporales-y-fallas-sin-dañar-entregas">9. Archivos temporales y fallas sin dañar entregas</a></li>
+  <li><a href="#integración-y-límites-de-lo-comprobado" id="toc-integración-y-límites-de-lo-comprobado" class="nav-link" data-scroll-target="#integración-y-límites-de-lo-comprobado">10. Integración y límites de lo comprobado</a></li>
+  <li><a href="#comprobar-que-una-prueba-puede-detectar-el-cambio" id="toc-comprobar-que-una-prueba-puede-detectar-el-cambio" class="nav-link" data-scroll-target="#comprobar-que-una-prueba-puede-detectar-el-cambio">11. Comprobar que una prueba puede detectar el cambio</a></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-05.html">05 · PYTHON APLICADO</a></li><li class="breadcrumb-item"><a href="./05-04-leccion.html">05.04 · Pruebas</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">05.04 — Pruebas de código y datos</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 05 / 05.04
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-05.html">Python aplicado</a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-05.html">Módulo 05</a> / <strong>Lección 05.04</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Detectar regresiones con casos conocidos y respuestas justificadas</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>Paquete de 05.01 y unittest de la biblioteca estándar</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>Prueba propia, falla demostrada y explicación de los resultados</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#antes-de-empezar">Preparación</a> · <a href="#material-de-apoyo">Material de apoyo</a> · <a href="./05-04-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<p><a id="propósito-y-prerrequisitos"></a></p>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Detectar cambios que alteran resultados o rompen una regla del análisis. Una prueba conserva una pregunta concreta, una entrada y una respuesta esperada para poder repetir la comprobación después de modificar el código.</p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Completa <a href="./05-03-leccion.html">05.03 — Errores y recursos</a> y su lab. Recupera <a href="./01-04-leccion.html">funciones de 01.04</a>, <a href="./02-05-leccion.html">calidad de datos de 02.05</a> y <a href="./02-08-leccion.html">uniones de 02.08</a>. Reutilizamos el paquete de <a href="./05-01-leccion.html">05.01</a>. No se instala pytest ni otra dependencia: unittest pertenece a Python.</p>
+<p><strong>Esencial:</strong> casos conocidos, fronteras, vacíos, fallas esperadas e interpretación del resultado. <strong>Práctica:</strong> tablas, archivos temporales e integración real. <strong>Extensión:</strong> orden de ejecución y diseño de nuevas pruebas; cobertura automática, mocking y CI pueden estudiarse después. No necesitas terminar todo en una sesión.</p>
+<p><a id="objetivos-observables"></a></p>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Escribir una comprobación cuyo resultado esperado puedas justificar a mano.</li>
+<li>Ejecutar una prueba y una colección, comprobar cuántas se descubrieron y leer fallas.</li>
+<li>Diferenciar prueba de función, integración y validación de datos de cada ejecución.</li>
+<li>Conservar claves, tipos, ausencias y entradas al comparar tablas.</li>
+<li>Comprobar rechazos y escrituras fallidas sin tocar fuentes o entregas anteriores.</li>
+<li>Demostrar que un cambio incorrecto produce una falla y que corregirlo recupera el éxito.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./05-04-leccion.html">Colección de pruebas</a></td>
+<td>Consultar casos de función e integración</td>
+<td>Para el recorrido</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/muestras.py">Muestras de prueba</a></td>
+<td>Justificar resultados conocidos</td>
+<td>Para el recorrido</td>
+</tr>
+<tr class="odd">
+<td><a href="descargas/curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_transformacion.py">Pruebas de transformación</a></td>
+<td>Contrastar claves, tipos y ausencias</td>
+<td>Para el recorrido</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_integracion.py">Pruebas de integración</a></td>
+<td>Seguir una ejecución completa comprobada</td>
+<td>Para el recorrido</td>
+</tr>
+</tbody>
+</table>
+<p>Abre los recursos cuando aparezcan en el recorrido. El paquete compartido vive en 05.01 y se reutiliza sin copiar sus módulos; conserva las fuentes y entregas anteriores. Lee las comprobaciones y los resultados esperados antes de ejecutar.</p>
+</section>
+<section id="que-termine-sin-error-no-demuestra-que-calcule-bien" class="level2">
+<h2 class="anchored" data-anchor-id="que-termine-sin-error-no-demuestra-que-calcule-bien">1. Que termine sin error no demuestra que calcule bien</h2>
+<p>Imagina que cambiamos la cobertura de <code>conocidos / registros</code> a <code>conocidos / conocidos</code>. El programa podría exportar CSV y figuras sin lanzar excepciones. Sin embargo, diría 100 % aunque hubiera saldos desconocidos. Una <strong>regresión</strong> es la pérdida de un comportamiento que antes debía conservarse. Automatizar ejemplos significativos ayuda a detectarla al volver a ejecutar.</p>
+<p>Antes de programar una prueba, escribe:</p>
+<ol type="1">
+<li><strong>Regla:</strong> el cero cuenta como conocido; el ausente no.</li>
+<li><strong>Entrada:</strong> tres registros con saldos 0, 1 y desconocido.</li>
+<li><strong>Esperado:</strong> dos conocidos, mediana 0,5 y cobertura 2/3 × 100.</li>
+<li><strong>Error que detectaría:</strong> excluir cero, imputar ausencia o cambiar el denominador.</li>
+</ol>
+<p>La respuesta esperada también se llama <em>oráculo</em>. Calcularla llamando otra vez a la misma función reproduce sus errores. Aquí usamos cuentas manuales y la referencia CSV independiente de 04.09; ninguna referencia es infalible, por eso también revisamos las reglas y ejemplos pequeños.</p>
+</section>
+<section id="tres-preguntas-diferentes" class="level2">
+<h2 class="anchored" data-anchor-id="tres-preguntas-diferentes">2. Tres preguntas diferentes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Comprobación</th>
+<th>Pregunta</th>
+<th>Ejemplo del paquete</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prueba de función o unitaria</td>
+<td>¿Esta función cumple su comportamiento para este caso?</td>
+<td>summarize recibe tabla tipada y conserva cero/ausencia</td>
+</tr>
+<tr class="even">
+<td>Prueba de integración</td>
+<td>¿Las partes trabajan juntas?</td>
+<td>CSV → lectura → resumen → conciliación → entrega</td>
+</tr>
+<tr class="odd">
+<td>Validación durante el uso</td>
+<td>¿Estos datos concretos cumplen las reglas al procesarlos?</td>
+<td>read_detail rechaza claves repetidas o créditos sin correspondencia</td>
+</tr>
+</tbody>
+</table>
+<p>Una prueba usa una entrada elegida; la validación debe seguir ejecutándose cuando llegan archivos nuevos. Haber probado una unión no vuelve válidos todos los CSV futuros. Las veinte conciliaciones de cada entrega siguen siendo controles de esa ejecución; no son veinte métodos de unittest.</p>
+<p>La frontera entre pruebas depende de lo que se conecte: leer CSV temporales ya integra función y sistema de archivos. El nombre del archivo organiza la lectura; no convierte mágicamente una prueba en unitaria.</p>
+</section>
+<section id="elegir-una-muestra-que-puedas-explicar" class="level2">
+<h2 class="anchored" data-anchor-id="elegir-una-muestra-que-puedas-explicar">3. Elegir una muestra que puedas explicar</h2>
+<p>Las pruebas nuevas viven junto al paquete compartido en <a href="./05-04-leccion.html">pruebas_0504</a>. Su <a href="descargas/curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/muestras.py">muestra</a> contiene seis observaciones. Cinco son del 31 de octubre; otra es del 30 de septiembre y permite detectar una selección de fecha equivocada. Los identificadores son texto con ceros iniciales. Campo vacío en CSV significa desconocido.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Segmento, octubre</th>
+<th>Saldos MXN</th>
+<th style="text-align: right;">Registros</th>
+<th style="text-align: right;">Conocidos</th>
+<th style="text-align: right;">Mediana MXN</th>
+<th style="text-align: right;">Cobertura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>comercio</td>
+<td>0; 1; desconocido</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0,5</td>
+<td style="text-align: right;">66,666… %</td>
+</tr>
+<tr class="even">
+<td>consumo</td>
+<td>10</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">100 %</td>
+</tr>
+<tr class="odd">
+<td>educacion</td>
+<td>desconocido</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">No definida</td>
+<td style="text-align: right;">0 %</td>
+</tr>
+<tr class="even">
+<td>servicios</td>
+<td>Sin filas</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">No definida</td>
+<td style="text-align: right;">No definida</td>
+</tr>
+<tr class="odd">
+<td>Todos</td>
+<td>0; 1; desconocido; 10; desconocido</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">60 %</td>
+</tr>
+</tbody>
+</table>
+<p>La mediana global se calcula desde [0, 1, 10], no promediando medianas de segmentos. La mediana de [0, 1] es (0 + 1)/2: los saldos enteros no obligan a una mediana entera. Educación tiene base y ningún conocido; servicios no tiene base. Esas dos situaciones no deben producir la misma cobertura.</p>
+<p>Una <em>fixture</em> es la preparación y limpieza necesarias para una prueba. Puede ser una tabla recién creada o una carpeta temporal con CSV; no es obligatoriamente un archivo especial. detail_fixture construye una tabla sin usar read_detail: así podemos probar summarize aunque el lector tenga un defecto. write_sources prepara CSV para probar el lector y el recorrido real.</p>
+</section>
+<section id="primera-prueba-con-unittest-leída-línea-por-línea" class="level2">
+<h2 class="anchored" data-anchor-id="primera-prueba-con-unittest-leída-línea-por-línea">4. Primera prueba con unittest, leída línea por línea</h2>
+<p>Abre <a href="descargas/curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_transformacion.py">test_transformacion.py</a>. Este ejemplo abreviado usa la misma muestra y función:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> unittest</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> analisis_cartera.transformacion <span class="im">import</span> summarize</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pruebas_0504.muestras <span class="im">import</span> CUT, detail_fixture</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PruebasResumen(unittest.TestCase):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_mediana_con_cero_y_medio_peso(<span class="va">self</span>):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        detail <span class="op">=</span> detail_fixture()                    <span class="co"># preparar</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        selected, summary <span class="op">=</span> summarize(detail, CUT)    <span class="co"># actuar</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        row <span class="op">=</span> summary.set_index(<span class="st">"segmento"</span>).loc[<span class="st">"comercio"</span>]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.assertEqual(row[<span class="st">"mediana_mxn"</span>], <span class="fl">0.5</span>)     <span class="co"># comprobar</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Aquí introducimos únicamente la sintaxis de clase necesaria para usar TestCase:</p>
+<ul>
+<li><code>class PruebasResumen(unittest.TestCase):</code> agrupa comprobaciones y recibe las herramientas de TestCase. No exige diseñar clases para nuestro análisis; composición y diseño de objetos se desarrollarán en 05.06.</li>
+<li><code>def test_...(self):</code> define una función dentro de esa clase, llamada método. self representa el caso actual. unittest crea y ejecuta esos casos por nosotros.</li>
+<li><code>self.assertEqual(actual, esperado)</code> falla si los valores no son iguales. El método no devuelve una nota: termina normalmente o señala una diferencia.</li>
+<li>El nombre descriptivo explica la regla; el prefijo <code>test_</code> permite descubrirla.</li>
+</ul>
+<p>El archivo completo usa <code>setUp(self)</code> para crear self.detail antes de <strong>cada</strong> método de prueba. Se reutiliza la receta, no una tabla ya modificada por otro método. Preparar → actuar → comprobar ayuda a ver qué falló. No hace falta forzar una única afirmación cuando varias describen el mismo comportamiento.</p>
+</section>
+<section id="ejecutar-desde-el-directorio-correcto" class="level2">
+<h2 class="anchored" data-anchor-id="ejecutar-desde-el-directorio-correcto">5. Ejecutar desde el directorio correcto</h2>
+<p>Activa el entorno elegido en <a href="./00-05-leccion.html">00.05</a>. Si ya contiene las dependencias declaradas, úsalo sin reinstalar. Los recorridos siguientes empiezan en la raíz de DS Track con ese entorno activo. El cambio de carpeta permite importar el paquete local sin modificar sys.path.</p>
+<section id="powershell" class="level3">
+<h3 class="anchored" data-anchor-id="powershell">PowerShell</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>c <span class="st">"import sys, pandas, matplotlib, altair; print(sys.executable); print(pandas.__version__, matplotlib.__version__, altair.__version__)"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> curriculum<span class="op">/</span>05_python_applied<span class="op">/</span>01_notebook_to_modules</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m unittest <span class="op">-</span>v pruebas_0504<span class="op">.</span><span class="fu">test_transformacion</span><span class="op">.</span><span class="fu">PruebasResumen</span><span class="op">.</span><span class="fu">test_mediana_con_cero_y_medio_peso</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">$LASTEXITCODE</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m unittest discover <span class="op">-</span>s pruebas_0504 <span class="op">-</span>t <span class="op">.</span> <span class="op">-</span>p <span class="st">"test_*.py"</span> <span class="op">-</span>v</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="va">$LASTEXITCODE</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> <span class="op">../../..</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="bashzsh" class="level3">
+<h3 class="anchored" data-anchor-id="bashzsh">Bash/Zsh</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import sys, pandas, matplotlib, altair; print(sys.executable); print(pandas.__version__, matplotlib.__version__, altair.__version__)"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> curriculum/05_python_applied/01_notebook_to_modules</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> unittest <span class="at">-v</span> pruebas_0504.test_transformacion.PruebasResumen.test_mediana_con_cero_y_medio_peso</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$?</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> pruebas_0504 <span class="at">-t</span> . <span class="at">-p</span> <span class="st">'test_*.py'</span> <span class="at">-v</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$?</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../../..</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cmd-anaconda-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="cmd-anaconda-prompt">CMD / Anaconda Prompt</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>python <span class="at">-c</span> <span class="st">"import sys, pandas, matplotlib, altair; print(sys.executable); print(pandas.__version__, matplotlib.__version__, altair.__version__)"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> curriculum\05_python_applied\01_notebook_to_modules</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>python <span class="at">-m</span> unittest <span class="at">-v</span> pruebas_0504.test_transformacion.PruebasResumen.test_mediana_con_cero_y_medio_peso</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="pp">%</span><span class="va">ERRORLEVEL</span><span class="pp">%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>python <span class="at">-m</span> unittest discover <span class="at">-s</span> pruebas_0504 <span class="at">-t</span> . <span class="at">-p</span> <span class="st">"test_*.py"</span> <span class="at">-v</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="pp">%</span><span class="va">ERRORLEVEL</span><span class="pp">%</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..\..\..</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>-m unittest</code> ejecuta el módulo de Python; <code>-v</code> muestra los nombres. <code>discover</code> busca archivos; <code>-s</code> indica dónde empezar, <code>-t .</code> establece la base de importaciones y <code>-p</code> selecciona nombres. Los archivos <strong>init</strong>.py permiten usar paquetes regulares, también con Python 3.11. No ejecutes estos archivos por doble clic ni los copies fuera de su estructura.</p>
+<p>Resultado del material original: <strong>una prueba</strong> en el primer comando y <strong>21 pruebas</strong> en la colección, <code>OK</code> y código 0. La duración varía. Las variantes subTest no se cuentan como métodos adicionales. El código se consulta inmediatamente después de Python; otro comando puede sustituirlo. <code>Ran 0 tests</code> no comprueba este material aunque aparezca OK: revisa directorio, nombres y argumentos.</p>
+</section>
+</section>
+<section id="leer-fail-error-y-una-excepción-esperada" class="level2">
+<h2 class="anchored" data-anchor-id="leer-fail-error-y-una-excepción-esperada">6. Leer FAIL, ERROR y una excepción esperada</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Resultado</th>
+<th>Interpretación inicial</th>
+<th>Qué revisar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ok / OK</td>
+<td>Pasaron los casos ejecutados</td>
+<td>Cantidad, alcance y expectativas</td>
+</tr>
+<tr class="even">
+<td>FAIL</td>
+<td>Una comprobación encontró una diferencia</td>
+<td>Valor observado, esperado y regla</td>
+</tr>
+<tr class="odd">
+<td>ERROR</td>
+<td>Una excepción interrumpió el caso fuera de lo previsto</td>
+<td>Traceback, importación, preparación y operación</td>
+</tr>
+</tbody>
+</table>
+<p>Una falla puede señalar un defecto del programa <strong>o de la propia prueba</strong>. No cambies la expectativa hasta que coincida solo para obtener verde: vuelve al ejemplo manual y a la regla. Si falta pandas, revisa el intérprete; si falta analisis_cartera, revisa la carpeta. Si aparece PermissionError en un temporal, revisa el directorio temporal y sus permisos: no es una diferencia de mediana.</p>
+<p>Para comprobar que se rechaza una entrada usamos:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="va">self</span>.assertRaises(<span class="pp">ValueError</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    summarize(<span class="va">self</span>.detail, <span class="st">"2026-02-30"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Este <code>with</code> observa la llamada: pasa si ocurre ValueError, falla si no hay excepción y registra error si aparece otra no esperada. Protege solo la operación bajo prueba. <code>assertRaisesRegex</code> añade una búsqueda por patrón en el mensaje; usamos fragmentos significativos como <code>sin crédito correspondiente</code>, sin exigir rutas o mensajes internos completos que cambian entre versiones.</p>
+<p><code>with self.subTest(cut=cut):</code> identifica variantes de una misma regla y permite continuar con las siguientes cuando una falla. No sustituye separar pruebas que tienen propósitos distintos.</p>
+</section>
+<section id="elegir-la-comparación-adecuada" class="level2">
+<h2 class="anchored" data-anchor-id="elegir-la-comparación-adecuada">7. Elegir la comparación adecuada</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dato</th>
+<th>Comprobación del material</th>
+<th>Motivo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Conteos, claves y 0,5 MXN</td>
+<td>assertEqual</td>
+<td>Resultado exacto conocido</td>
+</tr>
+<tr class="even">
+<td>Cobertura 200/3</td>
+<td>assertAlmostEqual con places=10</td>
+<td>Comparar redondeo de punto flotante en puntos porcentuales</td>
+</tr>
+<tr class="odd">
+<td>Mediana/cobertura ausente</td>
+<td>assertTrue(pd.isna(valor))</td>
+<td>NaN no se compara mediante igualdad ordinaria</td>
+</tr>
+<tr class="even">
+<td>Tabla conservada/reconstruida</td>
+<td>pandas.testing.assert_frame_equal con check_exact=True</td>
+<td>Revisar valores, tipos, índices y columnas</td>
+</tr>
+<tr class="odd">
+<td>Fuente o JSON anterior</td>
+<td>Igualdad de bytes</td>
+<td>Debe conservarse exactamente</td>
+</tr>
+</tbody>
+</table>
+<p>0,5 tiene representación binaria exacta; 2/3 no. La tolerancia se elige por la unidad y la precisión requerida, no para esconder una diferencia económica. <code>places=10</code> comprueba la diferencia redondeada a diez decimales; no significa que los datos originales tengan esa precisión. En otras aplicaciones se definiría una tolerancia absoluta/relativa o unidades monetarias enteras.</p>
+<p><code>DataFrame == DataFrame</code> produce una tabla de booleanos, no una única decisión. assert_frame_equal informa dónde difieren las tablas y comprueba dtype por defecto. No desactives tipos para hacer pasar una clave numérica que perdió “001”. Si el orden no forma parte del contrato, primero define claves, comprueba unicidad y ordena ambos lados de la misma manera. Aquí el orden es parte del resultado conocido.</p>
+<p>En conservación hacemos una copia previa con <code>copy(deep=True)</code>, llamamos summarize y comparamos. Después alteramos selected y volvemos a comparar la entrada: esto detecta también una selección que comparta datos indebidamente. La muestra contiene escalares; deep=True no promete copiar recursivamente objetos Python anidados que pudieran guardarse en otras tablas.</p>
+</section>
+<section id="fronteras-y-vacíos-que-cambian-el-significado" class="level2">
+<h2 class="anchored" data-anchor-id="fronteras-y-vacíos-que-cambian-el-significado">8. Fronteras y vacíos que cambian el significado</h2>
+<p>No se trata de generar muchos casos al azar. Elegimos los puntos donde cambia una regla: cero frente a positivo; cero/uno/dos conocidos; ninguna fila frente a filas todas desconocidas; fecha válida sin observaciones frente a fecha imposible. Vacío debe conservar estructura: columnas y tipos para poder continuar el recorrido.</p>
+<p>El <a href="descargas/curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_transformacion.py">archivo de transformación</a> comprueba esos casos. El <a href="descargas/curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_entrada.py">archivo de entrada</a> añade claves duplicadas, falta de correspondencia, valores negativos, archivo ausente y CSV con cabeceras sin registros. Una clave crédito/fecha repetida no se arregla borrando una fila arbitraria; un crédito repetido no debe multiplicar la unión. Los días 30 y 31 son datos de la muestra, pero este resumen no calcula mora; incluirlos no demuestra que aquí se haya probado un umbral de atraso.</p>
+<p>Una variante independiente usa [1, 2, 100]: su mediana 2 distingue el centro del promedio 103/3. El lab añade [0, 0, 100] para practicar también con ceros repetidos. Los casos complementan la muestra CSV sin cambiarla.</p>
+</section>
+<section id="archivos-temporales-y-fallas-sin-dañar-entregas" class="level2">
+<h2 class="anchored" data-anchor-id="archivos-temporales-y-fallas-sin-dañar-entregas">9. Archivos temporales y fallas sin dañar entregas</h2>
+<p>TemporaryDirectory crea una carpeta aislada y la elimina al cerrar el bloque:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tempfile <span class="im">import</span> TemporaryDirectory</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> TemporaryDirectory() <span class="im">as</span> folder:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    destination <span class="op">=</span> Path(folder) <span class="op">/</span> <span class="st">"registro.json"</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    destination.write_text(<span class="st">'{"anterior": true}'</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Aquí se llama y comprueba write_json_atomic; ver test_recursos.py.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>En setUp usamos <code>self.addCleanup(temporary.cleanup)</code> para registrar la limpieza de cada carpeta. Esa limpieza se ejecuta aun si falla el caso; no depende de que otro método termine antes. Cada prueba recibe una carpeta nueva. Los archivos son pequeños y desechables; la evidencia del lab se registra fuera del temporal.</p>
+<p><a href="descargas/curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_recursos.py">test_recursos.py</a> comprueba reemplazo normal, error antes de replace y serialización inválida. Ante falla exige bytes anteriores intactos y ausencia de temporales sobrantes; además comprueba que se conserva la causa OSError. Usa la simulación de 05.03, no permisos globales ni desconectar el disco. Esto prueba ese punto de falla; no reproduce un apagón ni demuestra durabilidad total del sistema de archivos.</p>
+</section>
+<section id="integración-y-límites-de-lo-comprobado" class="level2">
+<h2 class="anchored" data-anchor-id="integración-y-límites-de-lo-comprobado">10. Integración y límites de lo comprobado</h2>
+<p><a href="descargas/curriculum/05_python_applied/01_notebook_to_modules/pruebas_0504/test_integracion.py">test_integracion.py</a> usa los CSV pequeños con lectura, referencia independiente y consumidores reales. Exige total manual 5/3/1/60 y veinte conciliaciones; altera una mediana en una copia para comprobar que reconcile rechaza la diferencia. Luego exporta, reconstruye desde fuentes conservadas, compara tablas y exige que un destino existente quede intacto. Las tres simulaciones de 05.03 deben conservar carpeta parcial sin cierre válido.</p>
+<p>Las figuras se guardan mediante el backend Agg, seleccionado para estas pruebas sin ventanas. Se comprueba que no quedan figuras abiertas. No comparamos bytes de PNG/SVG: formato y metadatos pueden variar. Esta suite no automatiza la revisión visual ni los comandos completos de terminal de 05.02/05.03. Una entrega válida todavía requiere revisar figuras y narrativa; ningún OK acredita aprendizaje.</p>
+<p>La configuración <code>tool.pytest.ini_options</code> de la raíz no ejecuta estas pruebas; es una configuración de otra herramienta. Aquí se utiliza el comando explícito de unittest. No hace falta instalar pytest ni agregar dependencias para continuar.</p>
+</section>
+<section id="comprobar-que-una-prueba-puede-detectar-el-cambio" class="level2">
+<h2 class="anchored" data-anchor-id="comprobar-que-una-prueba-puede-detectar-el-cambio">11. Comprobar que una prueba puede detectar el cambio</h2>
+<p>En el <a href="./05-04-lab.html">lab 05.04</a> provocarás una expectativa equivocada de forma controlada y después la restaurarás. Eso enseña a leer FAIL. También diseñarás un caso nuevo: [0, 0, 100] distingue mediana 0 de promedio 33,333…; [0, 1] no distingue ambas operaciones. Una prueba que pasa con un cálculo incorrecto necesita un caso más informativo.</p>
+<p>Al revisar este material se comprobó además, sobre copias temporales del paquete, que sustituir mediana por promedio, cambiar el denominador o excluir ceros provoca fallas. El paquete original y sus consumidores permanecen conservados. Estas comprobaciones acotan ejemplos de regresión, no demuestran ausencia de todos los defectos.</p>
+<p><a id="práctica-criterio-de-salida-y-continuidad"></a></p>
+</section>
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Realiza el <a href="./05-04-lab.html">lab 05.04</a> para añadir un caso con respuesta manual y demostrar una regresión y su corrección.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Caso propio y respuesta esperada razonada</td>
+<td>Descubrimiento de pruebas, fallo relevante y recuperación</td>
+<td>Por qué el caso puede detectar un error</td>
+</tr>
+<tr class="even">
+<td>Nota sobre colección y datos</td>
+<td>Entradas, claves, tipos y ausencias conservados</td>
+<td>Diferencia entre pruebas del programa y validación de cada entrada</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes avanzar cuando ejecutes y expliques la colección, interpretes una falla, agregues un caso con respuesta manual y distingas validación de datos y pruebas.</p>
+<p>Quien aprende realiza la práctica y explica las decisiones; su compañero revisa. Tu compañero pregunta qué modificación incorrecta detectaría tu caso y por qué. Guarda evidencia, ayudas y dudas en una nota personal junto a tu práctica. PROGRESS.md registra el desarrollo editorial, no tu expediente de aprendizaje. No hay proyecto ni checkpoint implementado asociado en projects/; esta práctica reutiliza el paquete educativo sin dar por completado un proyecto del catálogo.</p>
+<p><a id="referencias-y-atribución"></a></p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>Ejemplos propios de DS Track sobre el análisis compartido de 05.01–05.03; referencia CSV/statistics procedente de 04.09. Consulta: 2026-10-15. APIs de Python 3.11 y pandas 2.3.3; comprobación local con el entorno existente, sin nuevas dependencias. unittest y tempfile son biblioteca estándar.</p>
+<ul>
+<li><a href="https://docs.python.org/3.11/library/unittest.html">Python: unittest</a>, ejecución y herramientas de comprobación.</li>
+<li><a href="https://docs.python.org/3.11/library/tempfile.html#tempfile.TemporaryDirectory">Python: TemporaryDirectory</a>, preparación y limpieza temporal.</li>
+<li><a href="https://docs.python.org/3.11/reference/simple_stmts.html#the-assert-statement">Python: sentencia assert</a>, omisión con optimización.</li>
+<li><a href="https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.testing.assert_frame_equal.html">pandas 2.3: assert_frame_equal</a>, comparación de tablas.</li>
+</ul>
+<p>La sentencia Python <code>assert condicion</code> puede omitirse con <code>python -O</code>. Por eso la validación necesaria para aceptar datos usa comprobaciones y <code>raise</code> explícitos. Los métodos de TestCase como assertEqual son llamadas normales, distintas de esa sentencia. Pasar una suite tampoco reemplaza validaciones al usar el programa.</p>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después de la práctica y su comprobación, la continuación del núcleo es <a href="./05-05-leccion.html">05.05 — Tipos y contratos de funciones</a>.</p>
+<p><a href="./modulo-05.html">← Módulo 05</a> · <a href="./05-04-lab.html">Lab 05.04</a> · <a href="./05-05-leccion.html">Siguiente →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

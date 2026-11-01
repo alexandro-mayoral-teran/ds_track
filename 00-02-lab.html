@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 00.02 — Terminal y rutas – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#relación" id="toc-relación" class="nav-link active" data-scroll-target="#relación">Relación</a></li>
+  <li><a href="#tiempo-orientativo" id="toc-tiempo-orientativo" class="nav-link" data-scroll-target="#tiempo-orientativo">Tiempo orientativo</a></li>
+  <li><a href="#recorrido-esencial-y-diagnóstico" id="toc-recorrido-esencial-y-diagnóstico" class="nav-link" data-scroll-target="#recorrido-esencial-y-diagnóstico">Recorrido esencial y diagnóstico</a></li>
+  <li><a href="#parte-a-ubicación" id="toc-parte-a-ubicación" class="nav-link" data-scroll-target="#parte-a-ubicación">Parte A — Ubicación</a></li>
+  <li><a href="#parte-b-navegación" id="toc-parte-b-navegación" class="nav-link" data-scroll-target="#parte-b-navegación">Parte B — Navegación</a></li>
+  <li><a href="#parte-c-herramientas" id="toc-parte-c-herramientas" class="nav-link" data-scroll-target="#parte-c-herramientas">Parte C — Herramientas</a></li>
+  <li><a href="#parte-d-verificación" id="toc-parte-d-verificación" class="nav-link" data-scroll-target="#parte-d-verificación">Parte D — Verificación</a></li>
+  <li><a href="#parte-e-inspección-de-datos" id="toc-parte-e-inspección-de-datos" class="nav-link" data-scroll-target="#parte-e-inspección-de-datos">Parte E — Inspección de datos</a></li>
+  <li><a href="#extensión-opcional-explorar-el-csv" id="toc-extensión-opcional-explorar-el-csv" class="nav-link" data-scroll-target="#extensión-opcional-explorar-el-csv">Extensión opcional — Explorar el CSV</a></li>
+  <li><a href="#evidencia" id="toc-evidencia" class="nav-link" data-scroll-target="#evidencia">Evidencia</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 00.02 — Terminal y rutas</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 00 / 00.02
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-00.html">Entorno de aprendizaje</a></p>
+<section id="relación" class="level2">
+<h2 class="anchored" data-anchor-id="relación">Relación</h2>
+<ul>
+<li><strong>Módulo:</strong> <code>00_getting_started</code>.</li>
+<li><strong>Lección:</strong> <a href="./00-02-leccion.html"><code>02_terminal_paths</code></a>.</li>
+<li><strong>Proyecto:</strong> no aplica; prepara el entorno común del recorrido.</li>
+</ul>
+</section>
+<section id="tiempo-orientativo" class="level2">
+<h2 class="anchored" data-anchor-id="tiempo-orientativo">Tiempo orientativo</h2>
+<p>30 a 45 minutos. No es una carrera: el objetivo es poder explicar cada resultado.</p>
+<p>Realiza el lab en el shell que estés usando. Las instrucciones principales están expresadas por intención; consulta la <a href="./00-02-referencia.html">tabla de equivalencias</a> para PowerShell y Bash/Zsh.</p>
+<p>Si aún no tienes un entorno local, puedes hacer primero el ensayo del <a href="descargas/curriculum/00_getting_started/02_terminal_paths/practica_terminal_colab.ipynb">notebook para Colab</a>. Incluye sus propias instrucciones, carpeta temporal y CSV. Allí practicas los conceptos de ubicación, navegación e inspección de las partes A, B y E con una muestra distinta de la copia del repositorio. No busques <code>ROADMAP.md</code> ni <code>pyproject.toml</code> en esa muestra. Las partes C y D del entorno personal quedan pendientes: las herramientas de Colab corresponden a la máquina remota. Conserva tu cuaderno con respuestas y retoma la copia real en tu equipo después.</p>
+<p>Intenta cada parte antes de abrir su solución. Los apartados desplegables muestran una forma de resolverla y explican el resultado; otras respuestas pueden ser válidas.</p>
+</section>
+<section id="recorrido-esencial-y-diagnóstico" class="level2">
+<h2 class="anchored" data-anchor-id="recorrido-esencial-y-diagnóstico">Recorrido esencial y diagnóstico</h2>
+<p>Para comenzar, sigue <strong>A → B → E</strong>: ubicación, navegación y lectura del CSV. Después vuelve a <strong>C</strong> para registrar herramientas disponibles o faltantes y a <strong>D</strong> si Python ya está disponible. Dejar el verificador pendiente con una nota para retomarlo en 00.05 es un resultado válido. La extensión de filtros y sumas es opcional y no bloquea avanzar.</p>
+<p>Si no sabes abrir la terminal en la carpeta del proyecto, sigue primero el inicio del <a href="./00-02-leccion.html#abrir-powershell-y-situarte-en-el-proyecto">recorrido PowerShell</a> o del <a href="./00-02-leccion.html#abrir-la-terminal-y-situarte-en-el-proyecto">recorrido Bash/Zsh</a>.</p>
+</section>
+<section id="parte-a-ubicación" class="level2">
+<h2 class="anchored" data-anchor-id="parte-a-ubicación">Parte A — Ubicación</h2>
+<ol type="1">
+<li>Ve a la raíz de <code>ds_track</code>.</li>
+<li>Muestra el directorio actual.</li>
+<li>Lista los elementos visibles y ocultos.</li>
+<li>Comprueba que existen <code>README.md</code>, <code>ROADMAP.md</code> y <code>pyproject.toml</code>.</li>
+</ol>
+<p>Preguntas:</p>
+<ul>
+<li>¿Qué diferencia observaste al incluir los elementos ocultos?</li>
+<li>¿Qué devuelve la comprobación de existencia cuando cambias una letra del nombre?</li>
+</ul>
+<details>
+<summary>
+Ver solución de la parte A — PowerShell
+</summary>
+<p>Abre la terminal en la carpeta donde descargaste <code>ds_track</code>. Si estás en otra ubicación, usa <code>Set-Location "RUTA_REAL_DEL_PROYECTO"</code>, sustituyendo el marcador.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprueba la ubicación</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Location</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista el contenido visible y después incluye los elementos ocultos</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> <span class="op">-</span>Force</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprueba los archivos que identifican la raíz</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Test-Path</span> README<span class="op">.</span><span class="fu">md</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Test-Path</span> ROADMAP<span class="op">.</span><span class="fu">md</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Test-Path</span> pyproject<span class="op">.</span><span class="fu">toml</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Las tres comprobaciones devuelven <code>True</code>. <code>-Force</code> incluye elementos marcados como ocultos; la diferencia visible depende del sistema y los atributos de los archivos. Un nombre inexistente devuelve <code>False</code>; cambiar solo mayúsculas puede seguir encontrando el archivo en un sistema que no distingue mayúsculas y minúsculas.</p>
+</details>
+<details>
+<summary>
+Ver solución de la parte A — Bash/Zsh
+</summary>
+<p>Sitúate en tu carpeta del proyecto con <code>cd "RUTA_REAL_DEL_PROYECTO"</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprueba la ubicación y lista los archivos</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Incluye nombres que empiezan por punto y muestra detalles</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprime un mensaje si cada archivo existe</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">test</span> <span class="at">-e</span> README.md <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"existe"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">test</span> <span class="at">-e</span> ROADMAP.md <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"existe"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">test</span> <span class="at">-e</span> pyproject.toml <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"existe"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Los archivos ocultos suelen comenzar por punto. Si la ruta no existe, <code>test -e</code> falla y no se imprime el mensaje; no muestra <code>False</code>.</p>
+</details>
+</section>
+<section id="parte-b-navegación" class="level2">
+<h2 class="anchored" data-anchor-id="parte-b-navegación">Parte B — Navegación</h2>
+<ol type="1">
+<li>Entra a <code>curriculum/00_getting_started</code> usando una ruta relativa y el separador apropiado para tu shell.</li>
+<li>Lista su contenido.</li>
+<li>Regresa a la raíz sin escribir la ruta absoluta completa.</li>
+<li>Confirma nuevamente tu ubicación.</li>
+</ol>
+<p>Pregunta:</p>
+<ul>
+<li>Si estás en <code>curriculum/00_getting_started</code>, ¿qué representa subir dos veces a la carpeta padre (<code>../..</code> o <code>..\..</code>)?</li>
+</ul>
+<details>
+<summary>
+Ver solución de la parte B — PowerShell
+</summary>
+<p>Desde la raíz:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Entra al módulo</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> curriculum\00_getting_started</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista su contenido</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sube al directorio curriculum y después a ds_track</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Location</span> <span class="op">..</span>\<span class="op">..</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Confirma que regresaste a la raíz</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Location</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Cada <code>..</code> representa una carpeta padre. Subir dos veces desde el módulo te lleva a la raíz de <code>ds_track</code>; no significa ir siempre a la raíz de la unidad.</p>
+</details>
+<details>
+<summary>
+Ver solución de la parte B — Bash/Zsh
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Desde la raíz, entra al módulo y lista su contenido</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> curriculum/00_getting_started</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sube dos carpetas y confirma la ubicación</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../..</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La primera subida llega a <code>curriculum</code> y la segunda a <code>ds_track</code>.</p>
+</details>
+</section>
+<section id="parte-c-herramientas" class="level2">
+<h2 class="anchored" data-anchor-id="parte-c-herramientas">Parte C — Herramientas</h2>
+<p>Consulta la versión y ubicación de las herramientas disponibles. Anota cuáles no se encuentran en tu sesión, sin instalarlas como parte de este lab:</p>
+<ul>
+<li>Python;</li>
+<li><code>uv</code>;</li>
+<li>Git.</li>
+</ul>
+<p>No es necesario que tus versiones coincidan exactamente con las de otra persona.</p>
+<details>
+<summary>
+Ver solución de la parte C — PowerShell
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consulta las versiones</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>uv <span class="op">--</span>version</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Consulta qué comandos resolverá el shell</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Command</span> python</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Command</span> uv</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Command</span> git</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Las rutas y versiones dependen de tu instalación. Un comando no reconocido indica que la herramienta no está disponible en esa sesión. Anota cuál falta; la preparación de Python y uv se estudiará más adelante.</p>
+</details>
+<details>
+<summary>
+Ver solución de la parte C — Bash/Zsh
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consulta las versiones</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Localiza los comandos</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="at">-v</span> python</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="at">-v</span> uv</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="at">-v</span> git</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Si Python está instalado como <code>python3</code>, comprueba <code>python3 --version</code> y <code>command -v python3</code>. Anota la diferencia para la configuración del entorno.</p>
+</details>
+</section>
+<section id="parte-d-verificación" class="level2">
+<h2 class="anchored" data-anchor-id="parte-d-verificación">Parte D — Verificación</h2>
+<p>Python, pip y uv se explicarán más adelante. Ejecuta esta parte si Python ya está disponible; las demás herramientas pueden faltar y el script lo informará. Si no tienes Python, anota «verificador pendiente; retomar en 00.05» y continúa con las rutas y el CSV. No necesitas una salida positiva para avanzar.</p>
+<p>En PowerShell ejecuta:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>python curriculum\00_getting_started\02_terminal_paths\check_environment<span class="op">.</span><span class="fu">py</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Si las herramientas y la ubicación están preparadas, el resultado final será:</p>
+<pre class="text"><code>Resultado: entorno minimo disponible.</code></pre>
+<p>En Bash o Zsh, el comando equivalente es:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/00_getting_started/02_terminal_paths/check_environment.py</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<details>
+<summary>
+Ver solución y explicación de la parte D
+</summary>
+<p>Desde la raíz, el comando dado ejecuta el script con el Python disponible. El script comprueba la ubicación y si están disponibles <code>python</code>, <code>uv</code> y <code>git</code>. Si todo está preparado, termina con <code>Resultado: entorno minimo disponible.</code></p>
+<p>Si no aparece ese resultado, lee qué herramienta falta o si la raíz no fue encontrada. Si tu comando es <code>python3</code>, úsalo en lugar de <code>python</code>, como indica la lección. Eso no elimina las comprobaciones internas del script. Que falte una herramienta es una observación del entorno, no una respuesta incorrecta al ejercicio. Registra el pendiente y retómalo en la lección de entorno. No instales herramientas para forzar una salida positiva en este paso.</p>
+</details>
+</section>
+<section id="parte-e-inspección-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="parte-e-inspección-de-datos">Parte E — Inspección de datos</h2>
+<ol type="1">
+<li>Desde la raíz, localiza <code>ventas_demo.csv</code> dentro de la carpeta de la lección.</li>
+<li>Comprueba que existe y muestra sus primeras tres líneas.</li>
+<li>Identifica las columnas y explica cuántos registros viste, sin contar el encabezado.</li>
+<li>Explica una tarea de datos que podrías repetir mediante un comando y qué necesitaría otra persona para ejecutarlo en su computadora.</li>
+</ol>
+<details>
+<summary>
+Ver solución de la parte E — PowerShell
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista CSV de la lección</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> curriculum\00_getting_started\02_terminal_paths <span class="op">-</span>Filter <span class="op">*.</span><span class="fu">csv</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Guarda la ruta de la muestra</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="va">$ventasPath</span> <span class="op">=</span> <span class="st">"curriculum\00_getting_started\02_terminal_paths\ventas_demo.csv"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Confirma la existencia y muestra tres líneas</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Test-Path</span> <span class="va">$ventasPath</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Content</span> <span class="va">$ventasPath</span> <span class="op">-</span>TotalCount <span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Las columnas son <code>fecha</code>, <code>producto</code>, <code>unidades</code> e <code>importe_mxn</code>. Ves el encabezado y dos registros; el archivo completo contiene tres registros. Una tarea repetible sería generar un resumen mensual. Otra persona necesitaría el programa, los datos, las dependencias y saber desde dónde ejecutarlo.</p>
+</details>
+<details>
+<summary>
+Ver solución de la parte E — Bash/Zsh
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista CSV y guarda la ruta</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> curriculum/00_getting_started/02_terminal_paths/<span class="pp">*</span>.csv</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="va">ventas_path</span><span class="op">=</span><span class="st">"curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprueba el archivo y muestra tres líneas</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">test</span> <span class="at">-e</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span> <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">"existe"</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 3 <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La primera línea contiene los cuatro nombres de columnas y las siguientes dos son registros. El encabezado no es una venta. Para repetir un análisis, comparte también sus entradas e instrucciones de ejecución.</p>
+</details>
+</section>
+<section id="extensión-opcional-explorar-el-csv" class="level2">
+<h2 class="anchored" data-anchor-id="extensión-opcional-explorar-el-csv">Extensión opcional — Explorar el CSV</h2>
+<p>Después de leer la sección 8 de la lección:</p>
+<ol type="1">
+<li>Cuenta las líneas y compara el resultado con la cantidad de registros.</li>
+<li>Filtra las ventas de <code>lapiz</code> y comprueba el resultado en el archivo.</li>
+<li>Filtra los importes de al menos 50 MXN y explica qué registros permanecen.</li>
+<li>Calcula el importe total y compruébalo sumando los tres valores manualmente.</li>
+<li>Prueba el reto de unidades y explica qué aporta combinar comandos.</li>
+</ol>
+<p>Esta extensión no bloquea el avance. En PowerShell, compara los números convirtiendo los campos de texto; en Bash/Zsh, aplica los ejemplos solo a la muestra sencilla y explica su limitación para CSV más complejos.</p>
+<details>
+<summary>
+Ver solución de la extensión — PowerShell
+</summary>
+<p>Desde la raíz:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lee líneas de texto y cuenta: 4</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">$ventasPath</span> <span class="op">=</span> <span class="st">"curriculum\00_getting_started\02_terminal_paths\ventas_demo.csv"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Content</span> <span class="va">$ventasPath</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">-</span>Line</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa registros y cuenta sin encabezado: 3</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span> <span class="op">=</span> <span class="op">@(</span><span class="fu">Import-Csv</span> <span class="va">$ventasPath</span><span class="op">)</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span><span class="op">.</span><span class="fu">Count</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtra el producto: una venta, 5 unidades, 50 MXN</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span> <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span> <span class="va">$_</span><span class="op">.</span><span class="fu">producto</span> <span class="op">-eq</span> <span class="st">"lapiz"</span> <span class="op">}</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtra importes: cuaderno (80) y lapiz (50)</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span> <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span> <span class="op">[</span><span class="dt">decimal</span><span class="op">]</span><span class="va">$_</span><span class="op">.</span><span class="fu">importe_mxn</span> <span class="op">-ge</span> <span class="dv">50</span> <span class="op">}</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Suma importes: 165</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="va">$ventas</span> <span class="op">|</span> <span class="fu">ForEach-Object</span> <span class="op">{</span> <span class="op">[</span><span class="dt">decimal</span><span class="op">]</span><span class="va">$_</span><span class="op">.</span><span class="fu">importe_mxn</span> <span class="op">}</span> <span class="op">|</span> <span class="fu">Measure-Object</span> <span class="op">-</span>Sum<span class="op">).</span><span class="fu">Sum</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Reto: al menos dos unidades; quedan cuaderno y lapiz</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="va">$ventas</span> <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span> <span class="op">[</span><span class="dt">int</span><span class="op">]</span><span class="va">$_</span><span class="op">.</span><span class="fu">unidades</span> <span class="op">-ge</span> <span class="dv">2</span> <span class="op">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La comprobación manual es <code>80 + 50 + 35 = 165</code>. Los campos del CSV son texto, por eso se convierten antes de comparar números o sumar. Cada comando cumple una tarea y los pipes permiten combinar lectura, filtro y resumen.</p>
+</details>
+<details>
+<summary>
+Ver solución de la extensión — Bash/Zsh
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">ventas_path</span><span class="op">=</span><span class="st">"curriculum/00_getting_started/02_terminal_paths/ventas_demo.csv"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuenta saltos de línea: 4</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> <span class="op">&lt;</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuenta registros de esta muestra sencilla: 3</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'NR &gt; 1 { cantidad++ } END { print cantidad }'</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Busca la venta de lapiz</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">',lapiz,'</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Muestra cuaderno 80 y lapiz 50</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">','</span> <span class="st">'NR &gt; 1 &amp;&amp; $4 &gt;= 50 { print $2, $4 }'</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Suma importes: 165</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">','</span> <span class="st">'NR &gt; 1 { total += $4 } END { print total }'</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Reto de unidades: cuaderno y lapiz</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="at">-F</span><span class="st">','</span> <span class="st">'NR &gt; 1 &amp;&amp; $3 &gt;= 2 { print $2, $3 }'</span> <span class="st">"</span><span class="va">$ventas_path</span><span class="st">"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La suma manual es <code>80 + 50 + 35 = 165</code>. Estas herramientas procesan texto: separar por comas funciona aquí, pero no interpreta CSV con comas dentro de campos entre comillas o registros de varias líneas.</p>
+</details>
+</section>
+<section id="evidencia" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia">Evidencia</h2>
+<p>Para el núcleo, conserva una nota con tu ubicación, una ruta absoluta, una relativa y los nombres de columnas y registros que viste al leer tres líneas. Para el diagnóstico, registra versiones/rutas encontradas y herramientas faltantes. Si no ejecutaste el verificador, indica el motivo y retómalo en 00.05. Los filtros y sumas no son requisitos de cierre.</p>
+<p>Da por terminado el lab cuando puedas responder sobre lo que comprobaste, distinguiendo los pendientes, sin probar al azar:</p>
+<ul>
+<li>¿Cuál es la raíz del proyecto?</li>
+<li>¿Desde dónde se interpreta una ruta relativa?</li>
+<li>¿Cómo compruebas si un archivo existe?</li>
+<li>Si Python está disponible, ¿cómo sabes qué ejecutable corresponde al comando <code>python</code>? Si falta, ¿qué registraste para retomarlo?</li>
+<li>¿Qué comandos anteriores pertenecen al shell y cuáles son programas externos?</li>
+<li>¿Qué cambiaría si realizaras el lab en Bash o Zsh?</li>
+<li>¿Qué aporta la terminal al repetir un análisis?</li>
+<li>¿Por qué leer las primeras líneas de un CSV no equivale a validar sus datos?</li>
+</ul>
+<p>No es necesario guardar capturas ni salidas de la terminal en Git.</p>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Continúa con la <a href="./00-03-leccion.html">lección 03 — Git: historial y actualización del perfil</a>. Lee los conceptos y ejemplos antes de realizar su lab asociado.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

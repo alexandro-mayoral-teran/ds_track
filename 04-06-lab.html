@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 04.06 — Composición y exportación – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito-entradas-y-preparación" id="toc-propósito-entradas-y-preparación" class="nav-link active" data-scroll-target="#propósito-entradas-y-preparación">Propósito, entradas y preparación</a></li>
+  <li><a href="#a.-explicar-qué-relación-tienen-los-paneles" id="toc-a.-explicar-qué-relación-tienen-los-paneles" class="nav-link" data-scroll-target="#a.-explicar-qué-relación-tienen-los-paneles">A. Explicar qué relación tienen los paneles</a></li>
+  <li><a href="#b.-conservar-unidades-y-comprobar-la-anotación" id="toc-b.-conservar-unidades-y-comprobar-la-anotación" class="nav-link" data-scroll-target="#b.-conservar-unidades-y-comprobar-la-anotación">B. Conservar unidades y comprobar la anotación</a></li>
+  <li><a href="#c.-preparar-una-versión-propia-legible" id="toc-c.-preparar-una-versión-propia-legible" class="nav-link" data-scroll-target="#c.-preparar-una-versión-propia-legible">C. Preparar una versión propia legible</a></li>
+  <li><a href="#d.-comparar-archivos-y-elegir-qué-compartir" id="toc-d.-comparar-archivos-y-elegir-qué-compartir" class="nav-link" data-scroll-target="#d.-comparar-archivos-y-elegir-qué-compartir">D. Comparar archivos y elegir qué compartir</a></li>
+  <li><a href="#e.-ampliaciones-composición-estrecha-y-selección-vacía" id="toc-e.-ampliaciones-composición-estrecha-y-selección-vacía" class="nav-link" data-scroll-target="#e.-ampliaciones-composición-estrecha-y-selección-vacía">E. Ampliaciones: composición estrecha y selección vacía</a></li>
+  <li><a href="#evidencia-reflexión-y-siguiente-paso" id="toc-evidencia-reflexión-y-siguiente-paso" class="nav-link" data-scroll-target="#evidencia-reflexión-y-siguiente-paso">Evidencia, reflexión y siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 04.06 — Composición y exportación</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 04 / 04.06
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-04.html">Visualización en Python</a></p>
+<section id="propósito-entradas-y-preparación" class="level2">
+<h2 class="anchored" data-anchor-id="propósito-entradas-y-preparación">Propósito, entradas y preparación</h2>
+<p>Lee la <a href="./04-06-leccion.html">lección 04.06</a> y completa 04.05 con sus prerrequisitos. Prepararás una figura que otra persona pueda leer, comprobar y abrir fuera de tu sesión.</p>
+<p><strong>Entradas:</strong> composition.py y los CSV sintéticos de SQL. <strong>Resultado:</strong> una composición con medidas comprobadas, exportaciones PNG/SVG, tablas y comentario de lectura. Conserva las fuentes, SQLite y las entregas anteriores.</p>
+<p>Tiempo orientativo: dos sesiones de 60–90 minutos para A–D. E es ampliación. Puedes detenerte después de una actividad y registrar preguntas. Usa el entorno elegido y el recorrido de tu shell indicado en la lección. Desde la raíz ejecuta composition.py con <code>--cut 2026-10-31 --dpi 160</code> y una carpeta nueva <code>curriculum/04_visualization_python/06_composition_export/output/lab_06</code>.</p>
+<p>Recibes corte.csv, resumen.csv, comparacion.csv, formatos.csv, lectura.md, entrega_160.png, entrega_320.png, entrega.svg y comparacion.png. No se requiere un notebook, una presentación ni una aplicación.</p>
+</section>
+<section id="a.-explicar-qué-relación-tienen-los-paneles" class="level2">
+<h2 class="anchored" data-anchor-id="a.-explicar-qué-relación-tienen-los-paneles">A. Explicar qué relación tienen los paneles</h2>
+<p>Abre comparacion.png y comparacion.csv. Antes de mirar la solución:</p>
+<ol type="1">
+<li>Escribe una pregunta para cada panel y nombra la medida, unidad y fecha.</li>
+<li>Coteja las medianas y sus coberturas con los saldos originales: no te bases únicamente en la longitud de las barras.</li>
+<li>Verifica el mismo orden de segmentos y rango horizontal en ambos paneles.</li>
+<li>Explica qué podría confundirse si cada panel se ordenara por su valor o usara un máximo diferente.</li>
+<li>Explica por qué educación no debe tener una barra de cero en octubre.</li>
+<li>Redacta una frase de comparación que no afirme movimientos individuales.</li>
+</ol>
+<p><strong>Resultado:</strong> ficha de comparación y valores comprobados. <strong>Comprobación:</strong> los dos paneles muestran medianas conocidas en MXN con rango 0–5000. Conservan 5/5, 8/10, 2/3, 6/6 en septiembre y 5/5, 10/10, 0/3, 6/6 en octubre.</p>
+<details>
+<summary>
+Ver solución razonada de A
+</summary>
+<p>Preguntas: «¿Cuál era la mediana del saldo conocido por segmento al 30 de septiembre?» y «¿Cuál es al 31 de octubre?». La unidad es MXN, no porcentaje ni suma. Medianas: comercio 2900/3100, consumo 1500/1750, educación 3250/sin mediana y servicios 2350/2550. El mismo orden alinea categorías y los límites comunes permiten comparar longitudes desde cero. Con máximos distintos una barra igual podría significar valores distintos. Educación tiene tres registros sin saldo conocido: no una mediana de cero. Una frase válida: «La mediana conocida de consumo es 1750 en octubre y 1500 en septiembre; sus bases conocidas son 10/10 y 8/10, por lo que no describe necesariamente el cambio de los mismos créditos».</p>
+</details>
+</section>
+<section id="b.-conservar-unidades-y-comprobar-la-anotación" class="level2">
+<h2 class="anchored" data-anchor-id="b.-conservar-unidades-y-comprobar-la-anotación">B. Conservar unidades y comprobar la anotación</h2>
+<p>Abre entrega_160.png y resumen.csv.</p>
+<ol type="1">
+<li>Nombra qué comparten los paneles A y B y qué no deben compartir.</li>
+<li>Calcula cobertura de cada grupo y global a partir de conteos. ¿Por qué el promedio simple de los cuatro porcentajes no da la cobertura global?</li>
+<li>Describe qué dato señala la flecha y qué parte es solo posición de texto.</li>
+<li>Distingue saldo cero, ningún saldo conocido y ningún registro.</li>
+<li>Explica si colocar ambos paneles lado a lado demuestra una relación causal.</li>
+</ol>
+<p><strong>Resultado:</strong> cálculos, lectura de la flecha y tres casos bien distinguidos. <strong>Comprobación:</strong> 21/24 = 87,5 % global; educación tiene cobertura 0 % y mediana ausente. No cambiar <code>sharey=True</code> a <code>sharex=True</code> para emparejar MXN con porcentaje.</p>
+<details>
+<summary>
+Ver solución razonada de B
+</summary>
+<p>Se comparten categorías verticales; x mide MXN en A y porcentaje en B. Comercio, consumo y servicios tienen 100 %; educación, 0 %. El promedio sin ponderación es 75 %, que da igual peso a cada grupo. La cobertura global usa 21 conocidos entre 24 registros y da 87,5 %. La flecha señala (0, 2): cobertura cero de educación. El texto se desplaza en puntos tipográficos; no cambia el porcentaje. El crédito 004 tiene saldo cero válido, educación tiene registros sin saldos conocidos y una fecha fuera de la fuente no tiene registros. Estas situaciones requieren mensajes distintos. La composición explica medida y cobertura, no causa.</p>
+</details>
+</section>
+<section id="c.-preparar-una-versión-propia-legible" class="level2">
+<h2 class="anchored" data-anchor-id="c.-preparar-una-versión-propia-legible">C. Preparar una versión propia legible</h2>
+<p>Copia composition.py como <code>composition_lab.py</code> <strong>en la misma carpeta que el original</strong>, para que conserve la reutilización del lector de 04.04. No cambies las fuentes ni el script original. En tu copia:</p>
+<ol type="1">
+<li>Escribe un título general propio que incluya medida, fecha y origen sintético.</li>
+<li>Revisa la nota común. Si la acortas, conserva fuente, base y límite en la figura o en una nota de lectura que entregarás junto a ella.</li>
+<li>En <code>delivery_figure</code>, mueve la explicación de educación cambiando <code>xytext</code> y deja <code>xy</code> intacto. Evita tapar el punto, 0/3 o el nombre del segmento.</li>
+<li>Conserva trama de barras, formas, unidades y datos. No reduzcas la letra para meter un párrafo completo dentro del panel.</li>
+<li>Ejecuta tu copia hacia otra carpeta nueva y revisa el PNG en el tamaño en que lo compartirías. Pide a quien te acompaña que explique la figura con tus tablas y texto, sin recibir instrucciones orales adicionales.</li>
+</ol>
+<p><strong>Resultado:</strong> código propio, PNG, tablas y nota de cambios. <strong>Comprobación:</strong> las medianas, porcentajes y flecha al dato deben seguir coincidiendo con B. No basta con que Python termine sin error.</p>
+<details>
+<summary>
+Ver solución razonada de C
+</summary>
+<p>Un título posible: «Octubre de 2026: mediana conocida y cobertura · muestra sintética». Una nota posible: «Fuente: SQL 03.01; 21/24 saldos conocidos. La mediana describe los valores disponibles». El resto de los límites se conserva en lectura.md. Puedes probar <code>xytext=(35, -48)</code> en la anotación de educación, manteniendo <code>xy=(0, GROUPS.index("educacion"))</code>. No existe un desplazamiento universal: revisa la imagen. Comprueba que no haya recortes, superposiciones ni inferencias nuevas. Escribe por qué moviste el texto y qué permaneció intacto.</p>
+</details>
+</section>
+<section id="d.-comparar-archivos-y-elegir-qué-compartir" class="level2">
+<h2 class="anchored" data-anchor-id="d.-comparar-archivos-y-elegir-qué-compartir">D. Comparar archivos y elegir qué compartir</h2>
+<p>Abre los dos PNG y el SVG en un visor compatible. Consulta formatos.csv y las dimensiones del PNG mediante propiedades o información del visor.</p>
+<ol type="1">
+<li>Calcula dimensiones esperadas para 12 × 5,5 pulgadas a 160 y 320 dpi.</li>
+<li>Calcula la razón del número de píxeles. Compara después bytes reales; explica por qué no necesitas encontrar la misma razón en los archivos.</li>
+<li>Muestra los PNG con el mismo ancho de lectura, y luego amplíalos. Describe qué cambió en el dibujo y qué no cambió en los datos.</li>
+<li>Amplía el SVG y revisa flecha, texto, tramas y colores. No lo renombres como PNG para insertarlo en un destino que no lo admita.</li>
+<li>Elige un formato para compartir con quien te acompaña, considerando su visor. Incluye CSV y lectura textual; explica la elección.</li>
+</ol>
+<p><strong>Resultado:</strong> comparación de formatos y entrega elegida. <strong>Comprobación:</strong> 1920 × 880 y 3840 × 1760 píxeles; 4 veces el número total de píxeles. Los valores analíticos son iguales en todas las versiones.</p>
+<details>
+<summary>
+Ver solución razonada de D
+</summary>
+<p>12 × 160 = 1920 y 5,5 × 160 = 880; a 320 resultan 3840 y 1760. Cada dimensión se duplica, por lo que el área en píxeles se cuadruplica. Los bytes dependen también de compresión y contenido. A igual ancho de presentación, 320 dpi ofrece más detalle raster, no textos proporcionalmente más grandes ni saldos más precisos. SVG conserva trazados escalables de esta figura; no implica interactividad ni datos accesibles por sí solos. PNG es una elección razonable para un visor compatible solo con imágenes raster; SVG si el destino lo admite y interesa ampliar. Ambas elecciones requieren revisar la entrega real.</p>
+</details>
+</section>
+<section id="e.-ampliaciones-composición-estrecha-y-selección-vacía" class="level2">
+<h2 class="anchored" data-anchor-id="e.-ampliaciones-composición-estrecha-y-selección-vacía">E. Ampliaciones: composición estrecha y selección vacía</h2>
+<p>Elige una o ambas, sin bloquear el cierre principal:</p>
+<ul>
+<li>Para un destino estrecho, prueba dos paneles apilados en otra copia del código: usa <code>plt.subplots(2, 1, figsize=(8, 9), layout="constrained")</code> en <code>delivery_figure</code>. Establece explícitamente los segmentos y su orden también en el panel de cobertura con <code>set_yticks</code> y <code>set_ylim</code>, pues ya no comparte y. Revisa y acorta el título y la nota común; compara legibilidad al ancho final.</li>
+<li>Ejecuta el original con <code>--cut 2026-11-30</code> y otra carpeta nueva. Coteja los mensajes y los CSV. No interpretes 0/0 como cobertura 0 %. Recuerda que comparacion.png sigue usando las fechas originales de las fuentes.</li>
+</ul>
+<details>
+<summary>
+Ver solución razonada de E
+</summary>
+<p>Apilar paneles da más ancho útil a cada uno, pero exige revisar altura, nombres, notas y recorrido de lectura. En el panel B, puedes usar <code>axes[1].set_yticks(range(len(GROUPS)), GROUPS)</code> y <code>axes[1].set_ylim(len(GROUPS) - .6, -.6)</code>. No compartir x: las unidades siguen siendo distintas. SIZE permanece como tamaño de comparación; cambia también el tamaño predeterminado de delivery_figure si quieres que export lo utilice. Para noviembre hay cero registros: medianas y porcentajes están ausentes, no son ceros observados. Las tablas conservan las categorías y los mensajes lo explican.</p>
+</details>
+</section>
+<section id="evidencia-reflexión-y-siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-reflexión-y-siguiente-paso">Evidencia, reflexión y siguiente paso</h2>
+<p>Conserva código propio, tablas, PNG o SVG revisado, registro de tamaños y comentario de lectura. Escribe fuente, fecha, unidad, base conocida y límites; registra evidencia y preguntas en tu bitácora personal junto a la práctica. La disponibilidad de esta sección no acredita que hayas terminado su práctica.</p>
+<p>Reflexiona: ¿por qué ver juntas esas dos vistas ayuda? ¿Cuándo sería incorrecto compartir un eje? ¿Qué error no arregla aumentar dpi? ¿Qué necesita alguien que recibe solo el archivo de imagen? ¿Cómo comprobarías que exportaste la Figure correcta si tu sesión tuviera varias abiertas?</p>
+<p>No hay checkpoint de proyecto implementado. Continúa con el <a href="./04-07-leccion.html">04.07 — Altair: visualización declarativa</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

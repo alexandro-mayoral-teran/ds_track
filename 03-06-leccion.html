@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>03.06 — Subconsultas y CTE – DS Track</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-80d4581ed23f17e4afd4e87af8d89316.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6fb84eef5b9b1488487e3456cb3cacd6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-03.html">03 · SQL Y BASES DE DATOS</a></li><li class="breadcrumb-item"><a href="./03-06-leccion.html">03.06 · Subconsultas y CTE</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><img class="brand-icon" src="favicon.svg" alt=""> DS Track</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./contenido.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contenido del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">00 · ENTORNO DE APRENDIZAJE</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.01 · Markdown y perfil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.02 · Terminal y rutas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.03 · Git e historial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.04 · Primer script</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.05 · Entornos y dependencias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00.06 · Notebook y kernel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comprobación y evidencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 · PYTHON FUNDAMENTAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.01 · Variables y tipos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.02 · Listas y diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.03 · Condiciones y ciclos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.04 · Funciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.05 · Archivos CSV</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01.06 · Validación y resumen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 · PANDAS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.01 · Series y DataFrame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.02 · Leer y exportar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.03 · Seleccionar y filtrar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.04 · Tipos y columnas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.05 · Faltantes y reglas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.06 · Texto y fechas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.07 · Agrupar y resumir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.08 · Combinar tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.09 · Forma de tablas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02.10 · Análisis y gráfica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">03 · SQL Y BASES DE DATOS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.01 · Modelo relacional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.02 · Primeras consultas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.03 · Crear y cargar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.04 · Agregaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.05 · Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-06-leccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">03.06 · Subconsultas y CTE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.07 · Ventanas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.08 · Transacciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03.09 · pandas y SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">04 · VISUALIZACIÓN EN PYTHON</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.01 · Pregunta y gráfico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.02 · Figure y Axes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.03 · Comparaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.04 · Distribuciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.05 · Escalas y accesibilidad</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.06 · Composición y exportación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.07 · Altair declarativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.08 · Interacción (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04.09 · Cierre visual</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">05 · PYTHON APLICADO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modulo-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación del módulo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.01 · Del notebook a módulos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.02 · Configuración y registro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.03 · Errores y recursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-04-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.04 · Pruebas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-05-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.05 · Tipos y contratos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-06-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.06 · Clases (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-07-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.07 · Generadores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-08-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.08 · Decoradores (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-09-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.09 · Medir (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-10-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.10 · APIs (opcional)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-11-leccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05.11 · Cierre del proyecto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fuentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material de consulta</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#propósito" id="toc-propósito" class="nav-link active" data-scroll-target="#propósito">Propósito</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link" data-scroll-target="#antes-de-empezar">Antes de empezar</a>
+  <ul class="collapse">
+  <li><a href="#cómo-organizar-la-sesión" id="toc-cómo-organizar-la-sesión" class="nav-link" data-scroll-target="#cómo-organizar-la-sesión">Cómo organizar la sesión</a></li>
+  </ul></li>
+  <li><a href="#qué-vas-a-aprender" id="toc-qué-vas-a-aprender" class="nav-link" data-scroll-target="#qué-vas-a-aprender">Qué vas a aprender</a></li>
+  <li><a href="#material-de-apoyo" id="toc-material-de-apoyo" class="nav-link" data-scroll-target="#material-de-apoyo">Material de apoyo</a></li>
+  <li><a href="#una-pregunta-puede-necesitar-otra-pregunta" id="toc-una-pregunta-puede-necesitar-otra-pregunta" class="nav-link" data-scroll-target="#una-pregunta-puede-necesitar-otra-pregunta">1. Una pregunta puede necesitar otra pregunta</a></li>
+  <li><a href="#subconsulta-escalar-una-referencia-de-un-valor" id="toc-subconsulta-escalar-una-referencia-de-un-valor" class="nav-link" data-scroll-target="#subconsulta-escalar-una-referencia-de-un-valor">2. Subconsulta escalar: una referencia de un valor</a>
+  <ul class="collapse">
+  <li><a href="#qué-ocurre-si-la-subconsulta-devuelve-varias-filas" id="toc-qué-ocurre-si-la-subconsulta-devuelve-varias-filas" class="nav-link" data-scroll-target="#qué-ocurre-si-la-subconsulta-devuelve-varias-filas">¿Qué ocurre si la subconsulta devuelve varias filas?</a></li>
+  </ul></li>
+  <li><a href="#in-pertenecer-a-una-lista-obtenida-con-sql" id="toc-in-pertenecer-a-una-lista-obtenida-con-sql" class="nav-link" data-scroll-target="#in-pertenecer-a-una-lista-obtenida-con-sql">3. IN: pertenecer a una lista obtenida con SQL</a></li>
+  <li><a href="#exists-preguntar-si-hay-al-menos-una-fila" id="toc-exists-preguntar-si-hay-al-menos-una-fila" class="nav-link" data-scroll-target="#exists-preguntar-si-hay-al-menos-una-fila">4. EXISTS: preguntar si hay al menos una fila</a>
+  <ul class="collapse">
+  <li><a href="#exists-frente-a-un-join" id="toc-exists-frente-a-un-join" class="nav-link" data-scroll-target="#exists-frente-a-un-join">EXISTS frente a un join</a></li>
+  </ul></li>
+  <li><a href="#not-exists-not-in-y-null" id="toc-not-exists-not-in-y-null" class="nav-link" data-scroll-target="#not-exists-not-in-y-null">5. NOT EXISTS, NOT IN y NULL</a>
+  <ul class="collapse">
+  <li><a href="#un-caso-pequeño-para-ver-la-trampa-de-not-in" id="toc-un-caso-pequeño-para-ver-la-trampa-de-not-in" class="nav-link" data-scroll-target="#un-caso-pequeño-para-ver-la-trampa-de-not-in">Un caso pequeño para ver la trampa de NOT IN</a></li>
+  </ul></li>
+  <li><a href="#subconsulta-en-from-consultar-un-resumen-como-tabla" id="toc-subconsulta-en-from-consultar-un-resumen-como-tabla" class="nav-link" data-scroll-target="#subconsulta-en-from-consultar-un-resumen-como-tabla">6. Subconsulta en FROM: consultar un resumen como tabla</a></li>
+  <li><a href="#with-y-cte-dar-nombre-a-un-resultado-intermedio" id="toc-with-y-cte-dar-nombre-a-un-resultado-intermedio" class="nav-link" data-scroll-target="#with-y-cte-dar-nombre-a-un-resultado-intermedio">7. WITH y CTE: dar nombre a un resultado intermedio</a></li>
+  <li><a href="#varias-cte-seleccionar-relacionar-resumir-presentar" id="toc-varias-cte-seleccionar-relacionar-resumir-presentar" class="nav-link" data-scroll-target="#varias-cte-seleccionar-relacionar-resumir-presentar">8. Varias CTE: seleccionar → relacionar → resumir → presentar</a>
+  <ul class="collapse">
+  <li><a href="#cómo-inspeccionar-una-etapa" id="toc-cómo-inspeccionar-una-etapa" class="nav-link" data-scroll-target="#cómo-inspeccionar-una-etapa">Cómo inspeccionar una etapa</a></li>
+  </ul></li>
+  <li><a href="#comparar-alternativas-con-evidencia" id="toc-comparar-alternativas-con-evidencia" class="nav-link" data-scroll-target="#comparar-alternativas-con-evidencia">9. Comparar alternativas con evidencia</a>
+  <ul class="collapse">
+  <li><a href="#parámetros-con-nombre-desde-python" id="toc-parámetros-con-nombre-desde-python" class="nav-link" data-scroll-target="#parámetros-con-nombre-desde-python">Parámetros con nombre desde Python</a></li>
+  <li><a href="#powershell" id="toc-powershell" class="nav-link" data-scroll-target="#powershell">PowerShell</a></li>
+  <li><a href="#bashzsh" id="toc-bashzsh" class="nav-link" data-scroll-target="#bashzsh">Bash/Zsh</a></li>
+  </ul></li>
+  <li><a href="#extensiones-referencias-por-grupo-y-rendimiento" id="toc-extensiones-referencias-por-grupo-y-rendimiento" class="nav-link" data-scroll-target="#extensiones-referencias-por-grupo-y-rendimiento">10. Extensiones: referencias por grupo y rendimiento</a></li>
+  <li><a href="#errores-habituales" id="toc-errores-habituales" class="nav-link" data-scroll-target="#errores-habituales">11. Errores habituales</a></li>
+  <li><a href="#práctica" id="toc-práctica" class="nav-link" data-scroll-target="#práctica">Práctica</a></li>
+  <li><a href="#evidencia-y-criterio-de-salida" id="toc-evidencia-y-criterio-de-salida" class="nav-link" data-scroll-target="#evidencia-y-criterio-de-salida">Evidencia y criterio de salida</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#siguiente-paso" id="toc-siguiente-paso" class="nav-link" data-scroll-target="#siguiente-paso">Siguiente paso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modulo-03.html">03 · SQL Y BASES DE DATOS</a></li><li class="breadcrumb-item"><a href="./03-06-leccion.html">03.06 · Subconsultas y CTE</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">03.06 — Subconsultas y CTE</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p class="eyebrow">
+MÓDULO 03 / 03.06
+</p>
+<p><a href="./contenido.html">Contenido</a> / <a href="./modulo-03.html">SQL y bases de datos</a></p>
+<p><a id="06--subconsultas-y-cte"></a></p>
+<p><a href="./index.html">Inicio</a> / <a href="./modulo-03.html">Módulo 03</a> / <strong>Lección 03.06</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu sesión</th>
+<th>Qué prepararás o comprobarás</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta</strong></td>
+<td>Dividir una pregunta en consultas que puedas comprobar por etapas</td>
+</tr>
+<tr class="even">
+<td><strong>Necesitas</strong></td>
+<td>Python con sqlite3; fuentes incluidas</td>
+</tr>
+<tr class="odd">
+<td><strong>Evidencia</strong></td>
+<td>SQL por etapas y comparación de alternativas equivalentes</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#antes-de-empezar">Preparación</a> · <a href="#material-de-apoyo">Material de apoyo</a> · <a href="./03-06-lab.html">Ir al lab</a> · <a href="#evidencia-y-criterio-de-salida">Comprobar</a></p>
+<p><a id="propósito-prerrequisitos-y-objetivos--práctica"></a></p>
+<section id="propósito" class="level2">
+<h2 class="anchored" data-anchor-id="propósito">Propósito</h2>
+<p>Dividir una pregunta SQL en partes que puedas leer, comprobar y explicar.</p>
+</section>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Completa <a href="./03-05-leccion.html">03.05 — Relacionar tablas con joins</a> y su lab; recupera <a href="./03-04-leccion.html">agregados y denominadores de 03.04</a>. Necesitas reconocer SELECT, WHERE, alias, NULL, GROUP BY y claves de unión. Usamos sqlite3 estándar y la base ficticia de 03.01; no hay dependencias nuevas.</p>
+<section id="cómo-organizar-la-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-organizar-la-sesión">Cómo organizar la sesión</h3>
+<p>Esta lección es más extensa porque introduce varias formas de composición. Puedes estudiarla en tres sesiones: <strong>A</strong>, secciones 1–5; <strong>B</strong>, secciones 6–8; <strong>C</strong>, secciones 9–11 y lab. Las extensiones no bloquean el siguiente módulo. CTE recursivas y optimización avanzada quedan fuera del criterio de salida.</p>
+</section>
+</section>
+<section id="qué-vas-a-aprender" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-aprender">Qué vas a aprender</h2>
+<ul>
+<li>Distinguir subconsultas que devuelven un valor, una lista o una tabla.</li>
+<li>Justificar presencia y correlación con EXISTS y contrastar NOT IN con NULL.</li>
+<li>Organizar selección, relaciones e indicadores mediante WITH y CTE.</li>
+<li>Comprobar cada etapa y demostrar equivalencia de valores, claves y universo.</li>
+</ul>
+</section>
+<section id="material-de-apoyo" class="level2">
+<h2 class="anchored" data-anchor-id="material-de-apoyo">Material de apoyo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Para qué sirve</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="descargas/curriculum/03_sql_databases/06_subqueries_cte/queries.py">Script de ejemplo</a></td>
+<td>Comparar subconsultas y CTE con los mismos registros y referencias</td>
+<td>Para el recorrido</td>
+</tr>
+<tr class="even">
+<td><a href="descargas/curriculum/03_sql_databases/01_relational_sqlite/relational_sqlite.py">Preparador de la muestra</a></td>
+<td>Preparar o comprobar la base si hace falta</td>
+<td>Preparación</td>
+</tr>
+<tr class="odd">
+<td><a href="./03-01-leccion.html">Fuentes CSV</a></td>
+<td>Consultar clientes, créditos y cortes originales</td>
+<td>Consulta compartida</td>
+</tr>
+</tbody>
+</table>
+<p>Abre cada recurso cuando aparezca en el recorrido. Lee el script y el SQL antes de ejecutarlos; contrasta resultados con las fuentes y ejemplos conocidos. Las bases y entregas se preparan en las rutas indicadas, conservando los originales y los destinos existentes. No copies ni publiques bases de práctica como parte del material del curso.</p>
+</section>
+<section id="una-pregunta-puede-necesitar-otra-pregunta" class="level2">
+<h2 class="anchored" data-anchor-id="una-pregunta-puede-necesitar-otra-pregunta">1. Una pregunta puede necesitar otra pregunta</h2>
+<p>En 03.04 calculaste el promedio conocido de octubre. En 03.02 filtraste valores. Ahora queremos combinar ambas operaciones:</p>
+<blockquote class="blockquote">
+<p>¿Qué créditos tienen saldo conocido mayor que el promedio conocido de octubre?</p>
+</blockquote>
+<p>La pregunta pequeña es «¿cuál es ese promedio?». La principal es «¿qué saldos lo superan?». Una <strong>subconsulta</strong> es un SELECT dentro de otra sentencia SQL. Permite usar el resultado de una pregunta como parte de otra.</p>
+<pre class="mermaid"><code>flowchart LR
+    F["Octubre: 24 observaciones"] --&gt; A["AVG: 21 saldos conocidos"]
+    A --&gt; V["Un valor: 46700 / 21"]
+    F --&gt; C["Comparar cada saldo con ese valor"]
+    V --&gt; C
+    C --&gt; R["11 créditos sobre el promedio conocido"]</code></pre>
+<p>En palabras: calculamos una referencia sobre los saldos conocidos y comparamos con ella las observaciones del mismo corte. El diagrama organiza la explicación; no promete un orden físico de ejecución del motor.</p>
+<p>Antes de componer consultas, anota la <strong>forma del resultado intermedio</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Necesitas</th>
+<th>Forma</th>
+<th>Uso habitual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Un promedio o conteo</td>
+<td>Un valor</td>
+<td>Subconsulta escalar en una expresión</td>
+</tr>
+<tr class="even">
+<td>Saber si hay pareja</td>
+<td>Verdadero/falso</td>
+<td>EXISTS o NOT EXISTS</td>
+</tr>
+<tr class="odd">
+<td>IDs que cumplen una regla</td>
+<td>Una columna con varios valores</td>
+<td>IN</td>
+</tr>
+<tr class="even">
+<td>Un resumen que consultar después</td>
+<td>Filas y columnas</td>
+<td>Subconsulta en FROM o CTE</td>
+</tr>
+</tbody>
+</table>
+<p>No son sintaxis intercambiables: cada posición espera una forma distinta.</p>
+</section>
+<section id="subconsulta-escalar-una-referencia-de-un-valor" class="level2">
+<h2 class="anchored" data-anchor-id="subconsulta-escalar-una-referencia-de-un-valor">2. Subconsulta escalar: una referencia de un valor</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> o.id_credito, o.saldo_mxn</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> cortes <span class="kw">AS</span> o</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> o.fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> o.saldo_mxn <span class="op">&gt;</span> (</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">SELECT</span> <span class="fu">AVG</span>(r.saldo_mxn)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">FROM</span> cortes <span class="kw">AS</span> r</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">WHERE</span> r.fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> o.id_credito;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Lee desde adentro para entender la dependencia:</p>
+<ol type="1">
+<li>La subconsulta selecciona octubre y calcula AVG sobre sus conocidos.</li>
+<li>Su resultado es un solo valor, aproximadamente 2 223.8095 MXN.</li>
+<li>La consulta exterior selecciona también octubre y compara cada saldo con él.</li>
+<li>WHERE conserva solo comparaciones verdaderas; saldos NULL no cumplen.</li>
+<li>Ordenamos por ID para comprobar el resultado.</li>
+</ol>
+<p>Obtienes 011–021, once filas. 010 tiene 2 200 y no supera el promedio; 011 tiene 2 300 y sí. La referencia y el detalle usan <strong>la misma fecha</strong>. Omitir la fecha en la subconsulta calcularía el promedio del histórico y cambiaría la pregunta. No copies manualmente el promedio redondeado como límite: conserva la precisión del cálculo y el vínculo con los datos.</p>
+<p>AVG sin GROUP BY devuelve una fila. Si no hay registros o todos los saldos son NULL, el valor es NULL y ninguna comparación <code>saldo &gt; NULL</code> es verdadera. Esto produce una selección vacía, no un promedio cero.</p>
+<section id="qué-ocurre-si-la-subconsulta-devuelve-varias-filas" class="level3">
+<h3 class="anchored" data-anchor-id="qué-ocurre-si-la-subconsulta-devuelve-varias-filas">¿Qué ocurre si la subconsulta devuelve varias filas?</h3>
+<p>Una subconsulta escalar debe estar diseñada para devolver un valor. En SQLite, si devuelve varias filas se toma la primera; otros motores pueden rechazarla. No dependas de esa diferencia ni de una primera fila sin orden.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> (<span class="kw">SELECT</span> saldo_mxn</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        <span class="kw">FROM</span> cortes</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">WHERE</span> id_credito <span class="op">=</span> <span class="st">'001'</span> <span class="kw">AND</span> fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span>) <span class="kw">AS</span> saldo;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La clave completa garantiza como máximo una observación; devuelve 1300. Si usas solo id_credito, hay dos fechas y la consulta deja de expresar un valor único. LIMIT 1 tampoco resuelve una clave incompleta salvo que la pregunta pida explícitamente elegir una fila y hayas definido su orden/desempate. Si una subconsulta escalar no produce filas, su valor es NULL.</p>
+</section>
+</section>
+<section id="in-pertenecer-a-una-lista-obtenida-con-sql" class="level2">
+<h2 class="anchored" data-anchor-id="in-pertenecer-a-una-lista-obtenida-con-sql">3. IN: pertenecer a una lista obtenida con SQL</h2>
+<p>Pregunta: ¿qué clientes tienen al menos un crédito con 30 o más días de atraso conocido en octubre?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.id_cliente</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> clientes <span class="kw">AS</span> p</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> p.id_cliente <span class="kw">IN</span> (</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> c.id_cliente</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> creditos <span class="kw">AS</span> c</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> cortes <span class="kw">AS</span> o <span class="kw">ON</span> o.id_credito <span class="op">=</span> c.id_credito</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> o.fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span> <span class="kw">AND</span> o.dias_atraso <span class="op">&gt;=</span> <span class="dv">30</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> p.id_cliente;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La subconsulta devuelve una columna con IDs; IN pregunta si el ID exterior pertenece a ese resultado. Puede haber IDs repetidos en la lista: eso no duplica las filas exteriores. No necesitas DISTINCT dentro de este IN para obtener una fila por cliente, porque la tabla exterior ya tiene una clave única.</p>
+<p>Resultado: C002, C004, C005, C007, C010, C011 y C015, siete clientes. Hay nueve créditos confirmados, pero algunos pertenecen al mismo cliente. IN compara valores; no añade columnas de la consulta interior. Si necesitas mostrar qué crédito o cuál saldo produjo la coincidencia, usa un join y define la unidad de ese detalle.</p>
+</section>
+<section id="exists-preguntar-si-hay-al-menos-una-fila" class="level2">
+<h2 class="anchored" data-anchor-id="exists-preguntar-si-hay-al-menos-una-fila">4. EXISTS: preguntar si hay al menos una fila</h2>
+<p>La misma selección puede expresarse así:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> p.id_cliente</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> clientes <span class="kw">AS</span> p</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">EXISTS</span> (</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> <span class="dv">1</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> creditos <span class="kw">AS</span> c</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> cortes <span class="kw">AS</span> o <span class="kw">ON</span> o.id_credito <span class="op">=</span> c.id_credito</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> c.id_cliente <span class="op">=</span> p.id_cliente</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">AND</span> o.fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">AND</span> o.dias_atraso <span class="op">&gt;=</span> <span class="dv">30</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> p.id_cliente;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>EXISTS pregunta si la subconsulta produce alguna fila. Devuelve 1 o 0 en SQLite. SELECT 1 comunica que importa la presencia; no cuenta filas ni exige que exista un valor 1 almacenado. SELECT o.saldo_mxn también haría verdadera la existencia de una fila cuyo saldo fuera NULL: EXISTS no examina el valor proyectado.</p>
+<p>Esta subconsulta es <strong>correlacionada</strong> porque usa <code>p.id_cliente</code>, definido en la consulta exterior. Para entenderla, imagina cada cliente y pregunta si existe un crédito suyo con la regla del corte. <code>c.id_cliente = p.id_cliente</code> establece esa relación. Si la omites, la pregunta interior es global: si hay algún atraso confirmado en toda la cartera, todos los clientes exteriores podrían pasar.</p>
+<p>El alias exterior p es visible dentro de la subconsulta; los alias interiores c y o pertenecen a su bloque. Califica los campos incluso cuando SQL podría resolverlos por nombre: evita correlaciones accidentales y ambigüedades. «Para cada cliente» es una lectura lógica, no una medición de cuántas veces SQLite ejecutará físicamente cada operación.</p>
+<section id="exists-frente-a-un-join" class="level3">
+<h3 class="anchored" data-anchor-id="exists-frente-a-un-join">EXISTS frente a un join</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> p.id_cliente</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> clientes <span class="kw">AS</span> p</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> creditos <span class="kw">AS</span> c <span class="kw">ON</span> c.id_cliente <span class="op">=</span> p.id_cliente</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> cortes <span class="kw">AS</span> o <span class="kw">ON</span> o.id_credito <span class="op">=</span> c.id_credito</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> o.fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span> <span class="kw">AND</span> o.dias_atraso <span class="op">&gt;=</span> <span class="dv">30</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> p.id_cliente;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El join genera parejas cliente/crédito/corte: nueve filas antes de DISTINCT. La pregunta pide clientes, por lo que esta proyección distinta es deliberada y válida; no intenta esconder un join incorrecto. EXISTS expresa directamente esa presencia y conserva una fila por cliente exterior. Ni EXISTS ni IN eliminan duplicados que ya existieran en la entrada exterior.</p>
+<p>Las tres formas entregan los mismos siete IDs aquí. No afirmamos que una sea más rápida por su sintaxis: esa comparación necesitaría datos y mediciones.</p>
+</section>
+</section>
+<section id="not-exists-not-in-y-null" class="level2">
+<h2 class="anchored" data-anchor-id="not-exists-not-in-y-null">5. NOT EXISTS, NOT IN y NULL</h2>
+<p>Para preguntar por clientes sin ningún crédito que cumpla la regla anterior, cambia EXISTS por NOT EXISTS manteniendo la misma correlación. Obtienes nueve clientes de la muestra. Eso significa <strong>sin atraso confirmado por esa consulta</strong>; no demuestra que todos sus atrasos sean conocidos ni que no tengan créditos.</p>
+<p>La negación de presencia es distinta de asumir que todo valor ausente es cero. Con una fecha inexistente, EXISTS selecciona cero clientes y NOT EXISTS conserva los 16: no hay evidencia de una coincidencia en esa fecha.</p>
+<section id="un-caso-pequeño-para-ver-la-trampa-de-not-in" class="level3">
+<h3 class="anchored" data-anchor-id="un-caso-pequeño-para-ver-la-trampa-de-not-in">Un caso pequeño para ver la trampa de NOT IN</h3>
+<p>El script crea en memoria candidatos A, B, C y una selección con A y NULL. No modifica la cartera. Queremos candidatos sin un ID coincidente:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> candidatos</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">id</span> <span class="kw">NOT</span> <span class="kw">IN</span> (<span class="kw">SELECT</span> <span class="kw">id</span> <span class="kw">FROM</span> seleccion)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="kw">id</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Devuelve cero filas. A está en la lista y falla la negación; para B y C no hay coincidencia conocida, pero NULL impide afirmar que no pertenecen. El resultado lógico es desconocido y WHERE lo descarta.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> c.<span class="kw">id</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> candidatos <span class="kw">AS</span> c</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> (</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> <span class="dv">1</span> <span class="kw">FROM</span> seleccion <span class="kw">AS</span> s <span class="kw">WHERE</span> s.<span class="kw">id</span> <span class="op">=</span> c.<span class="kw">id</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> c.<span class="kw">id</span>;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Devuelve B y C. Para cada candidato no hay ninguna igualdad verdadera en la selección; la fila NULL no produce una pareja por igualdad ordinaria. Esto es la antiunión vista con LEFT JOIN en 03.05, expresada por presencia.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Candidato</th>
+<th>IN con A, NULL</th>
+<th>NOT IN con A, NULL</th>
+<th>NOT EXISTS por igualdad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>Verdadero</td>
+<td>Falso</td>
+<td>Falso</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Desconocido</td>
+<td>Desconocido</td>
+<td>Verdadero</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>Desconocido</td>
+<td>Desconocido</td>
+<td>Verdadero</td>
+</tr>
+</tbody>
+</table>
+<p>Si la columna seleccionada está garantizada NOT NULL y las claves exteriores tampoco son NULL, esta trampa no aparece. Filtrar los NULL de la lista puede ser adecuado si responde a tu contrato, pero no sustituye analizar ausencias exteriores. Con igualdad normal, una clave exterior NULL tampoco encuentra pareja en NOT EXISTS; decide primero qué significa una clave faltante.</p>
+<p><strong>Extensión:</strong> una lista vacía hace IN falso y NOT IN verdadero en SQLite. No construyas manualmente <code>IN ()</code> para una lista Python vacía: elige una consulta o regla de selección explícita. En esta lección usamos subconsultas, no listas de marcadores generadas por texto.</p>
+</section>
+</section>
+<section id="subconsulta-en-from-consultar-un-resumen-como-tabla" class="level2">
+<h2 class="anchored" data-anchor-id="subconsulta-en-from-consultar-un-resumen-como-tabla">6. Subconsulta en FROM: consultar un resumen como tabla</h2>
+<p>Ahora queremos obtener una tasa por segmento sin repetir sus conteos en toda la expresión. Primero construimos el resumen; después calculamos la tasa:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> r.segmento, r.registros, r.atrasos_conocidos, r.confirmados,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fl">100.0</span> <span class="op">*</span> r.confirmados <span class="op">/</span> <span class="fu">NULLIF</span>(r.atrasos_conocidos, <span class="dv">0</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>           <span class="kw">AS</span> tasa_conocidos_pct</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> (</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> c.segmento, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> registros,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">COUNT</span>(o.dias_atraso) <span class="kw">AS</span> atrasos_conocidos,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">COUNT</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> o.dias_atraso <span class="op">&gt;=</span> <span class="dv">30</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">END</span>) <span class="kw">AS</span> confirmados</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> cortes <span class="kw">AS</span> o</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> creditos <span class="kw">AS</span> c <span class="kw">ON</span> c.id_credito <span class="op">=</span> o.id_credito</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> o.fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">GROUP</span> <span class="kw">BY</span> c.segmento</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>) <span class="kw">AS</span> r</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> r.segmento;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La subconsulta produce una tabla derivada: cuatro filas, una por segmento. AS r nombra esa entrada para el SELECT exterior. Sus columnas son las claves y alias del resumen interior; el ID de cada crédito ya no forma parte de esa tabla. La unidad exterior sigue siendo segmento.</p>
+<p>Separar capas permite usar confirmados y atrasos_conocidos como columnas ya definidas. Evita intentar usar un alias recién creado dentro de otra expresión hermana del mismo SELECT. Aunque SQLite admita algunos usos de alias en otras cláusulas, las capas hacen explícita la dependencia y facilitan portarla.</p>
+<p>Subconsulta en FROM y subconsulta escalar tienen paréntesis, pero producen formas diferentes: una se usa como tabla; la otra como valor.</p>
+</section>
+<section id="with-y-cte-dar-nombre-a-un-resultado-intermedio" class="level2">
+<h2 class="anchored" data-anchor-id="with-y-cte-dar-nombre-a-un-resultado-intermedio">7. WITH y CTE: dar nombre a un resultado intermedio</h2>
+<p>CTE significa <em>Common Table Expression</em>, o expresión de tabla común. Una CTE ordinaria nombra un resultado de consulta para usarlo dentro de una sola sentencia. No crea una tabla guardada ni cambia la base.</p>
+<p>La consulta anterior puede reorganizarse:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> resumen <span class="kw">AS</span> (</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> c.segmento, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> registros,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">COUNT</span>(o.dias_atraso) <span class="kw">AS</span> atrasos_conocidos,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">COUNT</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> o.dias_atraso <span class="op">&gt;=</span> <span class="dv">30</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">END</span>) <span class="kw">AS</span> confirmados</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> cortes <span class="kw">AS</span> o</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> creditos <span class="kw">AS</span> c <span class="kw">ON</span> c.id_credito <span class="op">=</span> o.id_credito</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> o.fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">GROUP</span> <span class="kw">BY</span> c.segmento</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> segmento, registros, atrasos_conocidos, confirmados,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>       <span class="fl">100.0</span> <span class="op">*</span> confirmados <span class="op">/</span> <span class="fu">NULLIF</span>(atrasos_conocidos, <span class="dv">0</span>) <span class="kw">AS</span> tasa_conocidos_pct</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> resumen</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> segmento;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>WITH comienza la sentencia; resumen es el nombre elegido; AS (…) contiene el SELECT que describe sus columnas. El SELECT final consume ese resultado. El punto y coma va al final de toda la sentencia, no entre WITH y su SELECT. Después no puedes ejecutar <code>SELECT * FROM resumen</code> como otra sentencia: el nombre dejó de existir. Para consultar una etapa repite su WITH y cambia el SELECT final, conservando los filtros de la pregunta.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>segmento</th>
+<th>registros</th>
+<th>atrasos_conocidos</th>
+<th>confirmados</th>
+<th>tasa_conocidos_pct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>comercio</td>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td>consumo</td>
+<td>10</td>
+<td>9</td>
+<td>4</td>
+<td>≈ 44.44</td>
+</tr>
+<tr class="odd">
+<td>educacion</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>servicios</td>
+<td>6</td>
+<td>5</td>
+<td>2</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<p>Es el mismo cálculo que la tabla derivada. Cambiar la estructura no autoriza cambiar el universo, denominadores o tratamiento de NULL.</p>
+</section>
+<section id="varias-cte-seleccionar-relacionar-resumir-presentar" class="level2">
+<h2 class="anchored" data-anchor-id="varias-cte-seleccionar-relacionar-resumir-presentar">8. Varias CTE: seleccionar → relacionar → resumir → presentar</h2>
+<p>Para un reporte verificable añadimos saldos conocidos y cobertura. Escribimos una sola cláusula WITH, con CTE separadas por comas:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> corte <span class="kw">AS</span> (</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> id_credito, saldo_mxn, dias_atraso</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> cortes</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>), detalle <span class="kw">AS</span> (</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> o.id_credito, o.saldo_mxn, o.dias_atraso, c.segmento</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> corte <span class="kw">AS</span> o</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> creditos <span class="kw">AS</span> c <span class="kw">ON</span> c.id_credito <span class="op">=</span> o.id_credito</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>), resumen <span class="kw">AS</span> (</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> segmento,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>           <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> registros,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>           <span class="fu">COUNT</span>(saldo_mxn) <span class="kw">AS</span> saldos_conocidos,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>           <span class="fu">SUM</span>(saldo_mxn) <span class="kw">AS</span> suma_conocida_mxn,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>           <span class="fu">COUNT</span>(dias_atraso) <span class="kw">AS</span> atrasos_conocidos,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>           <span class="fu">COUNT</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> dias_atraso <span class="op">&gt;=</span> <span class="dv">30</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">END</span>) <span class="kw">AS</span> confirmados</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> detalle</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">GROUP</span> <span class="kw">BY</span> segmento</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> segmento, registros, saldos_conocidos, suma_conocida_mxn,</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>       atrasos_conocidos, confirmados,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>       <span class="fl">100.0</span> <span class="op">*</span> confirmados <span class="op">/</span> <span class="fu">NULLIF</span>(atrasos_conocidos, <span class="dv">0</span>) <span class="kw">AS</span> tasa_conocidos_pct,</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>       <span class="fl">100.0</span> <span class="op">*</span> atrasos_conocidos <span class="op">/</span> <span class="fu">NULLIF</span>(registros, <span class="dv">0</span>) <span class="kw">AS</span> cobertura_atraso_pct</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> resumen</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> segmento;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Cada etapa tiene una responsabilidad y una unidad que puedes comprobar:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Etapa</th>
+<th>Responsabilidad</th>
+<th>Unidad y filas de octubre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>corte</td>
+<td>Seleccionar fecha y campos necesarios</td>
+<td>Una observación por crédito en esa fecha; 24</td>
+</tr>
+<tr class="even">
+<td>detalle</td>
+<td>Añadir segmento con una relación muchos a uno</td>
+<td>Misma observación; 24</td>
+</tr>
+<tr class="odd">
+<td>resumen</td>
+<td>Agregar sin perder cobertura</td>
+<td>Un segmento; 4</td>
+</tr>
+<tr class="even">
+<td>SELECT final</td>
+<td>Calcular y presentar tasas</td>
+<td>Un segmento; 4</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    C["corte: 24 observaciones"] --&gt; D["detalle: 24 observaciones con segmento"]
+    D --&gt; R["resumen: 4 segmentos"]
+    R --&gt; F["final: tasas con denominadores explícitos"]</code></pre>
+<p>En palabras: restringimos la fecha, añadimos un atributo, agrupamos y calculamos indicadores sobre esos conteos. Es una cadena de dependencias para leer la consulta; no garantiza que el motor guarde ni ejecute cada etapa por separado. Define primero los pasos de los que dependen los siguientes y usa nombres que describan su contenido. No llames tabla1, tabla2 a etapas con funciones claras.</p>
+<p>El script conserva 46 700 MXN conocidos y 21 saldos conocidos entre los cuatro grupos. educacion tiene tres registros y ningún saldo conocido: su SUM es NULL, aunque su tasa de atraso entre los dos conocidos sea 50 %. En septiembre ese segmento tiene cero atrasos conocidos: tasa NULL y cobertura 0 %. No filtres todos los NULL en corte solo para obtener números en todas las columnas; cambiarías el universo antes de medir cobertura.</p>
+<section id="cómo-inspeccionar-una-etapa" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-inspeccionar-una-etapa">Cómo inspeccionar una etapa</h3>
+<p>Prueba esta consulta corta antes del reporte completo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> corte <span class="kw">AS</span> (</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> id_credito, saldo_mxn, dias_atraso</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> cortes <span class="kw">WHERE</span> fecha_corte <span class="op">=</span> <span class="st">'2026-10-31'</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> registros, <span class="fu">COUNT</span>(saldo_mxn) <span class="kw">AS</span> saldos_conocidos,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">SUM</span>(saldo_mxn) <span class="kw">AS</span> suma_conocida_mxn</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> corte;</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Esperas (24, 21, 46700). Para inspeccionar detalle incluye también su definición y selecciona sus claves; para resumen incluye las tres definiciones y selecciona sus grupos. Al modificar el SELECT final mantén la sentencia completa. Comprueba unicidad y valores antes de agrupar: una CTE también puede contener un join que multiplique filas, y el agregado ocultaría su origen.</p>
+</section>
+</section>
+<section id="comparar-alternativas-con-evidencia" class="level2">
+<h2 class="anchored" data-anchor-id="comparar-alternativas-con-evidencia">9. Comparar alternativas con evidencia</h2>
+<p><a href="descargas/curriculum/03_sql_databases/06_subqueries_cte/queries.py">queries.py</a> incluye las versiones escalar/CTE del filtro sobre promedio, IN/EXISTS/join para clientes y tabla derivada/CTE para el reporte. Las contrasta con referencias calculadas directamente desde los CSV en Python. Verifica también que corte y detalle tengan las mismas observaciones y valores.</p>
+<p>Comparar no significa convertir todo a set. Un conjunto quitaría duplicados y podría esconder una multiplicación de filas. Conserva tuplas completas, ordena por una clave explícita y compara cantidades, columnas, NULL y valores. Los reales se comparan con tolerancia pequeña; redondea solo para presentar.</p>
+<p>Con otra fecha o umbral, todas las versiones de <strong>la misma pregunta</strong> deben seguir coincidiendo. Cambiar un filtro solo en una versión invalida la comparación. El script prueba septiembre, octubre, fecha inexistente y umbral 100. En la fecha inexistente no hay grupos ni créditos sobre promedio, pero NOT EXISTS conserva los 16 clientes. Con umbral 100 nadie confirma atraso; esto no modifica los promedios de saldo porque son otra medida.</p>
+<section id="parámetros-con-nombre-desde-python" class="level3">
+<h3 class="anchored" data-anchor-id="parámetros-con-nombre-desde-python">Parámetros con nombre desde Python</h3>
+<p>Para reutilizar una fecha en varios bloques, el script usa parámetros nombrados:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>parametros <span class="op">=</span> {<span class="st">"fecha"</span>: <span class="st">"2026-10-31"</span>, <span class="st">"umbral"</span>: <span class="dv">30</span>}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>filas <span class="op">=</span> conexion.execute(CLIENTS_EXISTS, parametros).fetchall()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>En SQL se escriben :fecha y :umbral, sin comillas. En el diccionario las claves no llevan dos puntos. Un nombre repetido recibe el mismo valor en la sentencia; esto evita pasar fechas diferentes por accidente en un filtro y su referencia. Como con los ? de 03.02, los parámetros representan valores, no tablas ni columnas. CLIENTS_EXISTS es una constante SQL del script, no una tabla.</p>
+</section>
+<section id="powershell" class="level3">
+<h3 class="anchored" data-anchor-id="powershell">PowerShell</h3>
+<p>Desde la raíz y con tu entorno elegido activo. Si ya existe la base de 03.01, ejecuta solo el segundo comando; el preparador conserva bases existentes.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>python curriculum\03_sql_databases\01_relational_sqlite\relational_sqlite<span class="op">.</span><span class="fu">py</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>python curriculum\03_sql_databases\06_subqueries_cte\queries<span class="op">.</span><span class="fu">py</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Otra copia compatible existente:</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>python curriculum\03_sql_databases\06_subqueries_cte\queries<span class="op">.</span><span class="fu">py</span> <span class="op">--</span>database curriculum\03_sql_databases\03_create_load\output\carga_practica<span class="op">.</span><span class="fu">sqlite</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="bashzsh" class="level3">
+<h3 class="anchored" data-anchor-id="bashzsh">Bash/Zsh</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/03_sql_databases/01_relational_sqlite/relational_sqlite.py</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/03_sql_databases/06_subqueries_cte/queries.py</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> curriculum/03_sql_databases/06_subqueries_cte/queries.py <span class="at">--database</span> curriculum/03_sql_databases/03_create_load/output/carga_practica.sqlite</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El tercer comando requiere la copia creada en 03.03. Con uv, antepone <code>uv run --locked</code> a cada comando python; no cambies de gestor ni reinstales paquetes. La conexión al archivo usa mode=ro y una transacción de lectura; se cierra en finally. Los casos NULL viven en otra base en memoria que se cierra. El programa compara entradas con las fuentes y falla si difieren, sin repararlas.</p>
+</section>
+</section>
+<section id="extensiones-referencias-por-grupo-y-rendimiento" class="level2">
+<h2 class="anchored" data-anchor-id="extensiones-referencias-por-grupo-y-rendimiento">10. Extensiones: referencias por grupo y rendimiento</h2>
+<p><strong>Referencia correlacionada por grupo:</strong> «mayor que el promedio de su segmento» es diferente de «mayor que el promedio de todo octubre». Puedes construir primero una CTE con un promedio por segmento y unirla al detalle por segmento. La clave del resumen debe ser única para que cada observación encuentre una sola referencia. También podría expresarse con una subconsulta correlacionada; no la elijas antes de aclarar si la referencia es global o por grupo. Esta ampliación se practica de forma opcional en el lab.</p>
+<p><strong>CTE y rendimiento:</strong> WITH mejora la organización cuando los nombres y etapas ayudan. No garantiza más velocidad, menor memoria ni ejecución única de cada etapa. SQLite puede integrar o materializar resultados según el plan; pistas MATERIALIZED/NOT MATERIALIZED y EXPLAIN QUERY PLAN se estudian cuando exista una necesidad medible. No hace falta usarlas para completar esta lección.</p>
+<p><strong>CTE recursivas:</strong> permiten recorrer jerarquías o generar secuencias a partir de una base y una regla repetida. No son necesarias para los ejemplos actuales. Se profundizarán con una pregunta que justifique la repetición y su criterio de terminación; escribir WITH no implica usar recursión.</p>
+<p><a id="11-errores-habituales-lab-y-criterio-de-salida"></a></p>
+</section>
+<section id="errores-habituales" class="level2">
+<h2 class="anchored" data-anchor-id="errores-habituales">11. Errores habituales</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situación</th>
+<th>Qué revisar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Todos los clientes pasan EXISTS</td>
+<td>Puede faltar la correlación con el cliente exterior</td>
+</tr>
+<tr class="even">
+<td>NOT IN no devuelve los IDs esperados</td>
+<td>Inspecciona NULL y la lista interior</td>
+</tr>
+<tr class="odd">
+<td>Una referencia escalar elige un saldo arbitrario</td>
+<td>Usa clave completa o agregado que exprese la pregunta</td>
+</tr>
+<tr class="even">
+<td>no such table: resumen</td>
+<td>La CTE solo existe en su sentencia; incluye WITH</td>
+</tr>
+<tr class="odd">
+<td>syntax error cerca del SELECT final</td>
+<td>Revisa comas, paréntesis y punto y coma</td>
+</tr>
+<tr class="even">
+<td>El indicador cambia al reorganizar SQL</td>
+<td>Compara filtros, claves, multiplicidad y denominadores</td>
+</tr>
+<tr class="odd">
+<td>CTE parece correcta pero saldo se duplica</td>
+<td>Inspecciona el detalle antes de resumir</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="práctica" class="level2">
+<h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
+<p>Realiza el <a href="./03-06-lab.html">lab 03.06</a> para componer consultas por etapas y contrastar sus resultados.</p>
+</section>
+<section id="evidencia-y-criterio-de-salida" class="level2">
+<h2 class="anchored" data-anchor-id="evidencia-y-criterio-de-salida">Evidencia y criterio de salida</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conserva</th>
+<th>Comprueba</th>
+<th>Explica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SQL de alternativas y parámetros</td>
+<td>Claves, valores y resultados intermedios</td>
+<td>Qué forma devuelve la subconsulta y cómo se relaciona con la consulta exterior</td>
+</tr>
+<tr class="even">
+<td>Nota de comparación y casos con NULL</td>
+<td>Equivalencia sin ocultar multiplicidad ni desconocidos</td>
+<td>Por qué reescribir SQL no demuestra por sí solo equivalencia ni rendimiento</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes continuar cuando identifiques la forma de cada subconsulta, justifiques presencia y correlación, compruebes cada etapa y demuestres equivalencia sin ocultar duplicados ni NULL.</p>
+<p>Quien aprende realiza la práctica en su copia y explica las decisiones. Tu compañero elige una CTE y pide explicar su entrada, su resultado y la comprobación que la respalda. Conserva consultas, resultados pertinentes, ayudas y dudas en una nota personal; PROGRESS.md registra el desarrollo editorial del curso. El material disponible no acredita por sí solo aprendizaje completado.</p>
+<p>El proyecto 02_credit_database y sus checkpoints siguen pendientes; no hay una entrega adicional de proyecto implementada para esta lección.</p>
+<p><a id="referencias-primarias"></a></p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>Ejemplos propios del proyecto, contrastados con:</p>
+<ul>
+<li><a href="https://www.sqlite.org/lang_with.html">SQLite: WITH y CTE ordinarias/recursivas</a>.</li>
+<li><a href="https://www.sqlite.org/lang_expr.html">SQLite: subconsultas escalares, IN y EXISTS</a>.</li>
+<li><a href="https://www.sqlite.org/lang_select.html">SQLite SELECT: entradas derivadas, agregación y joins</a>.</li>
+<li><a href="https://www.sqlite.org/lang_aggfunc.html">SQLite: comportamiento de AVG, SUM y COUNT</a>.</li>
+<li><a href="https://docs.python.org/3.12/library/sqlite3.html">sqlite3 de Python 3.12: parámetros nombrados y cierre</a>.</li>
+</ul>
+</section>
+<section id="siguiente-paso" class="level2">
+<h2 class="anchored" data-anchor-id="siguiente-paso">Siguiente paso</h2>
+<p>Después del lab y su comprobación, continúa con <a href="./03-07-leccion.html">03.07 — Ventanas para comparar registros</a> antes de realizar su lab.</p>
+<p><a href="./modulo-03.html">← Módulo 03</a> · <a href="./03-06-lab.html">Lab 03.06</a> · <a href="./03-07-leccion.html">Siguiente →</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/alexandro-mayoral-teran\.github\.io\/ds_track\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>DS Track · Aprendizaje acompañado</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Leer → practicar → comprobar → explicar</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

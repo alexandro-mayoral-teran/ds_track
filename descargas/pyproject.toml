@@ -1,0 +1,39 @@
+[project]
+name = "ds-track"
+version = "0.1.0"
+description = "Ruta práctica de aprendizaje para datos con un dominio crediticio sintético"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "altair==6.3.0",
+    "duckdb==2.0.0",
+    "matplotlib==3.10.7",
+    "pandas==2.3.3",
+    "polars==2.0.0",
+    "pyarrow==21.0.0",
+]
+
+[dependency-groups]
+dev = []
+notebooks = [
+    "ipykernel==6.30.1",
+    "jupyter-cache==1.0.1",
+    "nbclient==0.10.2",
+    "nbformat==5.10.4",
+    "papermill==2.7.0",
+    "pyyaml==6.0.3",
+]
+chart-export = [
+    "vl-convert-python==1.9.0.post1",
+]
+streamlit = [
+    "streamlit==1.66.1",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
